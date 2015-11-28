@@ -22,8 +22,6 @@ var request = require('request');
 var omdb = require('./methods/omdb');
 var beschel = require('./methods/beschel');
 
-var movieScript = '';
-
 //test movie scripts
 // var scriptPath = './scripts/fault-in-our-stars.txt';
 // var scriptPath = './scripts/short.txt';
@@ -114,6 +112,7 @@ function readMovieTitle(path) {
 function readScript(path) {
   return Q.promise(function (resolve, reject) {
     var rs = fs.createReadStream(path, { encoding : 'utf8' });
+    var movieScript = '';
 
     rs.on('data', function (chunk) {
         movieScript += chunk;
