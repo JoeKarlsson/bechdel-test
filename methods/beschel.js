@@ -1,33 +1,5 @@
 var Q = require('q'); //A tool for creating and composing asynchronous promises
 
-var patriacryKeywords = [
-    'Man',
-    'Men',
-    'Boy',
-    'Boys',
-    'Guy',
-    'Guys',
-    'Male',
-    'Males',
-    'Dude',
-    'Dudes',
-    'He',
-    'His',
-    'Him',
-    'Husband',
-    'Husbands',
-    'Boyfriend',
-    'Boyfriends',
-    'Father',
-    'Fathers',
-    'Dad',
-    'Dads',
-    'Brother',
-    'Brothers',
-    'Son',
-    'Sons'
-]
-
 module.exports.extractScenes = function(movieScript) {
   return Q.promise(function (resolve, reject) {
     console.log('Breaking up scenes...');
@@ -94,35 +66,102 @@ function countCharacterDialouge(a, s) {
 
 module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
   return Q.promise(function (resolve, reject) {
+    var beschelPass = [];
 
     console.log('Scanning scenes for character names...');
     for ( var idx in sceneArray ) {
       var scene = sceneArray[idx]
 
       var count = countCharacterDialouge(movieCharacters, scene);
-      beschelTestPass(movieCharacters, count);
+      if (beschelTestPass(movieCharacters, count, scene) === true ) {
+        console.log('Passes the Beschel Test');
+        console.log(scene);
 
-      // console.log(count);
+
+      }
 
     }
-
-    // var blah = isCharFemale(movieCharacters, 'IRVING ROSENFELD');
-
     resolve( count );
   })
 
 }
 
-function beschelTestPass (movieCharacters, count) {
+/**
+ * [beschelTestPass description]
+ * @param  {[type]} movieCharacters [description]
+ * @param  {[type]} count           [description]
+ * @param  {[type]} scene           [description]
+ * @return {[type]}                 [description]
+ */
+function beschelTestPass (movieCharacters, count, scene) {
 
   if (twoOrMoreFemalesInScene(movieCharacters, count) === true ) {
-    console.log('hit');
+    if (containsPatriarchalKeywords(scene) === false) {
+      // Passes the Beschel Test
+      return true;
+    }
+
+    // Contains dialouge about men - fails the beschel test
+    return false
   }
+
+  // This scene does not have 2 or more females with dialogue.
+  return false
 
 }
 
-function doesDialogueContainPatriacalKeywords () {
+function containsPatriarchalKeywords(s) {
 
+  var patriacryKeywords = [
+      'Man',
+      'Men',
+      'Boy',
+      'Boys',
+      'Guy',
+      'Guys',
+      'Male',
+      'Males',
+      'Dude',
+      'Dudes',
+      'He',
+      'His',
+      'Him',
+      'Husband',
+      'Husbands',
+      'Boyfriend',
+      'Boyfriends',
+      'Father',
+      'Fathers',
+      'Dad',
+      'Dads',
+      'Brother',
+      'Brothers',
+      'Son',
+      'Sons'
+  ]
+
+  if (s === '' || undefined || null) {
+    console.error('Invalid scene input');
+  }
+  var keywordHits = 0;
+  var x, i, output = {};
+  for (x = 0; x < patriacryKeywords.length; x++) {
+    i = 0;
+
+    output[patriacryKeywords[x]] = 0;
+    while ((i = s.indexOf(patriacryKeywords[x], i)) > -1) {
+      output[patriacryKeywords[x]]++;
+      i++
+      keywordHits++;
+    }
+  }
+
+  if (keywordHits > 0) {
+    return true
+  }
+
+  // console.log(output);
+  return false;
 }
 
 /**
