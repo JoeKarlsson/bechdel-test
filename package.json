@@ -1,0 +1,73 @@
+{
+  "name": "express-foundation-template",
+  "version": "0.2.0",
+  "engines": {
+    "node": "0.12.x"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "author": "Nguyen Ly <lyphtec [at] gmail [dot] com>",
+  "homepage": "https://github.com/lyphtec/express-foundation-template",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "errorhandler": "^1.4.1",
+    "express": "^4.13.1",
+    "lodash": "^3.10.0",
+    "markdown-serve": "^0.3.2",
+    "method-override": "^2.3.4",
+    "moment": "^2.10.6",
+    "morgan": "^1.6.1",
+    "multer": "^1.0.1",
+    "q": "^1.4.1",
+    "serve-favicon": "^2.3.0",
+    "vash": "^0.9.3",
+    "winston": "^1.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "chalk": "^1.1.0",
+    "dateformat": "^1.0.11",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-cache": "^0.2.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-header": "^1.2.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^1.0.0-rc",
+    "gulp-load-utils": "0.0.4",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-size": "^1.2.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-tap": "^0.1.3",
+    "gulp-uglify": "^1.2.0",
+    "jshint-stylish": "^2.0.1",
+    "minimist": "^1.1.2",
+    "run-sequence": "^1.1.2"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "client",
+      "lib": "client/js",
+      "packages": "client/lib"
+    },
+    "dependencies": {
+      "babel-core": "npm:babel-core@^5.8.14",
+      "fastclick": "npm:fastclick@^1.0.6",
+      "foundation": "github:zurb/bower-foundation@^5.5.2",
+      "jquery": "github:components/jquery@^2.1.4",
+      "modernizr": "github:Modernizr/Modernizr@^2.8.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.14",
+      "babel-runtime": "npm:babel-runtime@^5.8.12",
+      "core-js": "npm:core-js@^0.9.18"
+    }
+  }
+}
