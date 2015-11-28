@@ -1,0 +1,131 @@
+@import "settings";
+@import "foundation";
+@import "normalize";
+
+body {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.button {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif; 
+}
+
+.button-group {
+    float: none;
+
+    li { 
+        padding-top: 3%;
+    }
+
+    a {
+        color: rgba(0, 0, 0, 1);
+        background-color: transparent;
+    }
+
+    a:hover {
+        color: rgba(0, 0, 0, 0.4);
+        background-color: transparent;
+    }
+}
+
+.namelogo {
+    padding: 20px 10px 0px 10px;
+}
+
+.namelogo h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.hero {
+    background: url("http://lorempixel.com/1300/800/nature");
+    background-size: cover;
+    box-shadow: inset 0px 0px 0 2000px rgba(0,0,0,0.15);
+    height: 80%;
+}
+
+.intro-text {
+    padding-top: 40%;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+
+    p {
+        font-family: 'Shadows Into Light', cursive;
+        font-size: 44px;
+    }
+}
+
+@media only screen and (min-width: 40.063em) {
+    .button-group {
+        float: right;
+    }
+
+    .namelogo {
+        padding-bottom: 20px;
+        h1 {
+            font-size: 16px;
+            text-align: left;
+        }
+    }
+
+    .intro-text {
+        padding-top: 25%;
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    .namelogo h1 {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .intro-text{
+        padding-top: 18%;
+    }
+}
+
+.contain-to-grid,
+.top-bar {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.about, .work, .contact {
+    padding: 50px 0 0 0;
+}
+
+.about img {
+    width: 250px;
+    height: 250px;
+    border-radius: 150px;
+}
+
+.work {
+    img:hover {
+        opacity: 0.5;
+        transition: 0.3s ease;
+    }
+
+    li {
+        height: 140px;
+        overflow: hidden; 
+    }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    opacity: 0.8;
+}
+
+footer {
+    padding: 80px 0 10px 0;
+
+    a:hover {
+        color: rgba(0, 0, 0, 0.4);
+        background-color: transparent;
+    }
+}
