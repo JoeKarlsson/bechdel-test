@@ -1,0 +1,27 @@
+{
+    "node": true,
+    "esnext": true,
+    "jquery": true,
+    "browser": true, // Standard browser globals e.g. `window`, `document`.
+    "bitwise": true,
+    "camelcase": true,
+    "eqeqeq": true,    
+    "immed": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
+    "latedef": true, // Prohibit variable use before definition.
+    "newcap": true, // Require capitalization of all constructor functions e.g. `new F()`.
+    "noarg": true, // Prohibit use of `arguments.caller` and `arguments.callee`.
+    "quotmark": "single", // Define quotes to string values.
+    "undef": true, // Require all non-global variables be declared before they are used.
+    "unused": true, // Warn unused variables.
+    "trailing": true, // Prohibit trailing whitespaces.
+    "smarttabs": false, // Suppresses warnings about mixed tabs and spaces
+    "indent": 4, // Specify indentation spacing
+    "devel": true, // Allow development statements e.g. `console.log();`.
+    "noempty": true, // Prohibit use of empty blocks.
+    "nonbsp": true,
+    "globals": {
+        "jQuery": true,
+        "moment": true,
+        "kendo": true
+    }
+}
