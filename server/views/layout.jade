@@ -1,0 +1,68 @@
+doctype html
+
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Bechdel Tester accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. ')
+    meta(name='author', content='Joe Carlson <joe [at] callmejoe [dot] net>')
+    meta(name='copyright', content='Copyright (c) 2015 - Joe Carlson')
+    link(href='http://fonts.googleapis.com/css?family=Raleway:600,400,200', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Shadows+Into+Light', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='css/app.min.css')
+    link(rel='stylesheet', href='css/app.css')
+
+  body
+    .row
+      .small-12.medium-4.large-6.columns.namelogo
+        h1
+            a.button(href='/') Bechdel Tester
+      .small-12.medium-8.large-6.columns
+        .nav-bar
+          ul.button-group
+            li
+              a.button(href='/about') About
+            li
+              a.button(href='/contact') Contact
+
+    block content
+
+    .row.contact
+      hr
+      .large-12.columns
+        h4 Contact Me
+        .large-4.columns
+          strong Email
+          | :
+          a(href='mailto:Joe.Carlson@callmejoe.net') Joe.Carlson@callmejoe.net
+        .large-4.columns
+          strong Twitter
+          | : @JoeCarlson131
+        .large-4.columns
+          strong Web
+          | :
+          a(href='http://www.callmejoe.net/') callmejoe.net
+    footer.row
+      .large-12.columns
+        .row
+          .large-6.columns
+            p © 2015
+          .large-6.columns
+            ul.inline-list.right
+              li
+                a(href='#') FAQ
+              li
+                a(href='#') Privacy
+              li
+                a(href='#') Subscribe
+    //
+      <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-xxxxx', 'site.com');
+      ga('send', 'pageview');
+      </script>
+      //

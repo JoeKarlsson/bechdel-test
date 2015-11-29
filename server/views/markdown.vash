@@ -1,9 +1,0 @@
-@html.extend('layout', function(model) {
-
-    @html.block('content', function(model) {
-
-        @html.raw(model.content)
-
-    })
-
-})
