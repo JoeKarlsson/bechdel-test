@@ -1,5 +1,5 @@
 {
-  "name": "express-foundation-template",
+  "name": "Bechdel Parser",
   "version": "0.2.0",
   "engines": {
     "node": "0.12.x"
@@ -9,12 +9,13 @@
     "start": "node server.js"
   },
   "main": "server.js",
-  "author": "Nguyen Ly <lyphtec [at] gmail [dot] com>",
-  "homepage": "https://github.com/lyphtec/express-foundation-template",
+  "author": "Joe Carlson",
+  "homepage": "https://www.callmejoe.net",
   "dependencies": {
     "body-parser": "^1.13.2",
     "errorhandler": "^1.4.1",
     "express": "^4.13.1",
+    "jade": "^1.11.0",
     "lodash": "^3.10.0",
     "markdown-serve": "^0.3.2",
     "method-override": "^2.3.4",
@@ -23,7 +24,6 @@
     "multer": "^1.0.1",
     "q": "^1.4.1",
     "serve-favicon": "^2.3.0",
-    "vash": "^0.9.3",
     "winston": "^1.0.1"
   },
   "devDependencies": {
