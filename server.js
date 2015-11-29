@@ -18,6 +18,9 @@ var fs = require('fs'); //node tool for reading and writing from the file system
 var Q = require('q'); //A tool for creating and composing asynchronous promises
 var request = require('request');
 
+var routes = require('./routes/index');
+var about = require('./routes/about');
+
 //My Methods
 var omdb = require('./methods/omdb');
 var beschel = require('./methods/beschel');
@@ -34,15 +37,17 @@ app.locals.isProd = (app.get('env') === 'production');
 // all environments
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'server/views'));
-app.set('view engine', 'vash');
+app.set('view engine', 'jade');
 app.use(favicon(__dirname + '/client/favicon.ico'));
 app.use(logger('dev'));
 app.use(methodOverride());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended : true }));
 app.use(express.static(path.join(__dirname, 'client')));
+app.use(bodyParser.urlencoded({ extended : false }));
 
 // routes
+app.use('/', routes);
+app.use('/about', about);
 
 // other middleware
 app.use(mds.middleware({

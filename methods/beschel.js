@@ -1,5 +1,11 @@
 var Q = require('q'); //A tool for creating and composing asynchronous promises
 
+//@TODO
+//Average keyword hits per scene
+//Num of scenes that pass the test
+//Num of female characters
+//male v female
+
 module.exports.extractScenes = function(movieScript) {
   return Q.promise(function (resolve, reject) {
     console.log('Breaking up scenes...');
