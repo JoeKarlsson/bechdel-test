@@ -8,61 +8,64 @@ html
     meta(name='description', content='Bechdel Tester accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. ')
     meta(name='author', content='Joe Carlson <joe [at] callmejoe [dot] net>')
     meta(name='copyright', content='Copyright (c) 2015 - Joe Carlson')
-    link(href='http://fonts.googleapis.com/css?family=Raleway:600,400,200', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Shadows+Into+Light', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', href='css/app.min.css')
     link(rel='stylesheet', href='css/app.css')
 
   body
-    .row
-      .small-12.medium-4.large-6.columns.namelogo
-        h1
-            a.button(href='/') Bechdel Tester
-      .small-12.medium-8.large-6.columns
-        .nav-bar
-          ul.button-group
-            li
-              a.button(href='/about') About
-            li
-              a.button(href='/contact') Contact
+    .row.fullWidth.layout
+      aside#aside-main.aside-main.small-12.medium-4.large-3.columns.unpad
+        .row.header-bar.text-center.grey2
+          | Dashboard
+        header
+          img.center(src='http://placehold.it/700x500')
+        ul.no-bullet.side-nav
+          li
+            a(href='#')
+              i.fi-torso
+              |           Account
+          li.clearfix
+            a.left(href='#')
+              i.fi-alert
+              |           Notifications
+            span.alert.radius.label.right 0
+          li
+            a(href='#')
+              i.fi-wrench
+              |           Link #3
+          li
+            a(href='#')
+              i.fi-cloud
+              |           Link #4
+          li
+            a(href='#')
+              i.fi-graph-bar
+              |           Link #5
+          footer.footer
+            .row
+              .small-12
+                p.slogan Finger-lickin' good
+                p.links
+                  a(href='#') About
+                  a(href='#') Faq
+                  a(href='#') Contact
+                p.copywrite Copywrite not copypwrite © 2015
 
-    block content
+      #section-main.small-12.medium-8.large-9.columns
+        .row.header-bar.grey1
+          ul.inline-list.left
+            li
+              a#aside-toggle(href='#')
+                i.fi-list
+            li
+              a(href='#') Bechdel Test Visualization
 
-    .row.contact
-      hr
-      .large-12.columns
-        h4 Contact Me
-        .large-4.columns
-          strong Email
-          | :
-          a(href='mailto:Joe.Carlson@callmejoe.net') Joe.Carlson@callmejoe.net
-        .large-4.columns
-          strong Twitter
-          | : @JoeCarlson131
-        .large-4.columns
-          strong Web
-          | :
-          a(href='http://www.callmejoe.net/') callmejoe.net
-    footer.row
-      .large-12.columns
-        .row
-          .large-6.columns
-            p © 2015
-          .large-6.columns
-            ul.inline-list.right
-              li
-                a(href='#') FAQ
-              li
-                a(href='#') Privacy
-              li
-                a(href='#') Subscribe
-    //
-      <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-xxxxx', 'site.com');
-      ga('send', 'pageview');
-      </script>
-      //
+        block content
+
+  script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+  script(src='http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js')
+  script.
+    $(document).foundation();
+    $("#aside-toggle").click(function() {
+    $("#aside-main").toggleClass('hide');
+    $("#section-main").toggleClass('medium-8').toggleClass('medium-12');
+    $("#section-main").toggleClass('large-9').toggleClass('large-12');
+    });

@@ -72,7 +72,7 @@ function countCharacterDialouge(a, s) {
 
 module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
   return Q.promise(function (resolve, reject) {
-    var beschelPass = [];
+    var beschelPass = false;
 
     console.log('Scanning scenes for character names...');
     for ( var idx in sceneArray ) {
@@ -80,12 +80,16 @@ module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
 
       var count = countCharacterDialouge(movieCharacters, scene);
       if (beschelTestPass(movieCharacters, count, scene) === true ) {
-        console.log('Passes the Beschel Test');
+        console.log('This scene passes the Beschel Test');
+        beschelPass = true;
         console.log(scene);
-
-
       }
 
+    }
+    if (beschelPass === true) {
+      console.log('This movie passes the Beschel Test');
+    } else {
+      console.log('This movie does NOT pass the Beschel Test');
     }
     resolve( count );
   })

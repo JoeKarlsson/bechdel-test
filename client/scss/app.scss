@@ -1,131 +1,103 @@
 @import "settings";
 @import "foundation";
 @import "normalize";
+@import 'foundation/components/offcanvas';
+@import 'foundation/components/grid';
+@import 'foundation/components/visibility';
 
-body {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    background-color: rgba(0, 0, 0, 0.02);
+/**
+ * Common
+ */
+.fullWidth {
+   width: 100%;
+   min-width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+   min-height: 100%;
+}
+img.center {
+  display: block;
+  margin: auto;
+}
+.unpad {
+  padding: 0;
 }
 
-.button {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif; 
+body{
+  background-image:url('http://www.jamiecoulter.co.uk/dev/codepen/blurred_bg.jpg');
+  font-family: 'Raleway', sans-serif;
+  height:100%;
 }
 
-.button-group {
-    float: none;
-
-    li { 
-        padding-top: 3%;
-    }
-
-    a {
-        color: rgba(0, 0, 0, 1);
-        background-color: transparent;
-    }
-
-    a:hover {
-        color: rgba(0, 0, 0, 0.4);
-        background-color: transparent;
-    }
+/**
+ * Page
+ */
+html, body, .layout, #aside-main, .aside-main, .side-nav {
+  height: 100%;
+}
+.header-bar {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: $dark2;
+}
+.header-bar a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.aside-toggle {
+  font-size: 1.4em;
+}
+.header-bar ul {
+  line-height: inherit;
 }
 
-.namelogo {
-    padding: 20px 10px 0px 10px;
+.aside-main,
+.aside-main .header-bar,
+.side-nav {
+  background-color: $dark1;
+  top: 0;
+  bottom: 0;
+}
+.side-nav li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #DBDBDB;
+  font-size: 1.2em;
+}
+.side-nav li a {
+  color: $light;
 }
 
-.namelogo h1 {
-    font-size: 1.5em;
-    font-weight: 600;
-    text-align: center;
+.main_inner {
+  padding: 20px;
 }
 
-.hero {
-    background: url("http://lorempixel.com/1300/800/nature");
-    background-size: cover;
-    box-shadow: inset 0px 0px 0 2000px rgba(0,0,0,0.15);
-    height: 80%;
-}
+/**
+ * Footer
+ */
 
-.intro-text {
-    padding-top: 40%;
-    color: rgba(255, 255, 255, 1);
-    text-align: center;
-
-    p {
-        font-family: 'Shadows Into Light', cursive;
-        font-size: 44px;
-    }
-}
-
-@media only screen and (min-width: 40.063em) {
-    .button-group {
-        float: right;
-    }
-
-    .namelogo {
-        padding-bottom: 20px;
-        h1 {
-            font-size: 16px;
-            text-align: left;
-        }
-    }
-
-    .intro-text {
-        padding-top: 25%;
-    }
-}
-
-@media only screen and (min-width: 64.063em) {
-    .namelogo h1 {
-        font-size: 24px;
-        text-align: left;
-    }
-
-    .intro-text{
-        padding-top: 18%;
-    }
-}
-
-.contain-to-grid,
-.top-bar {
-    background: rgba(0, 0, 0, 0.02);
-}
-
-.about, .work, .contact {
-    padding: 50px 0 0 0;
-}
-
-.about img {
-    width: 250px;
-    height: 250px;
-    border-radius: 150px;
-}
-
-.work {
-    img:hover {
-        opacity: 0.5;
-        transition: 0.3s ease;
-    }
-
-    li {
-        height: 140px;
-        overflow: hidden; 
-    }
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
-    opacity: 0.8;
-}
-
-footer {
-    padding: 80px 0 10px 0;
-
-    a:hover {
-        color: rgba(0, 0, 0, 0.4);
-        background-color: transparent;
-    }
-}
+.footer {
+  background-color: $dark1;
+  text-align: center;
+  font-size: 1.2rem; }
+  .footer p.slogan {
+    color: $primary;
+    font-size: 1.8rem;
+    margin: 0 0 1rem; }
+  .footer p.copywrite {
+    color: $primary;
+    font-size: 0.875rem;
+    margin: 0 0 1rem; }
+  .footer .links a {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 3rem 0 2rem;
+    margin: 0; }
+    .footer .links a::after {
+      content: "•";
+      padding: 0 0.4rem 0 0.8rem; }
+    .footer .links a:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem; }
