@@ -27,8 +27,8 @@ var beschel = require('./methods/beschel');
 
 //test movie scripts
 // var scriptPath = './scripts/fault-in-our-stars.txt';
-// var scriptPath = './scripts/short.txt';
-var scriptPath = './scripts/american-hustle.txt';
+var scriptPath = './scripts/taxi-driver.txt';
+// var scriptPath = './scripts/american-hustle.txt';
 
 var app = express();
 
@@ -49,29 +49,6 @@ app.use(bodyParser.urlencoded({ extended : false }));
 app.use('/', routes);
 app.use('/about', about);
 
-// other middleware
-app.use(mds.middleware({
-  rootDirectory : path.resolve(__dirname, 'content'),
-  handler : function(markdownFile, req, res, next) {
-    if (req.method !== 'GET') next();
-
-    // limit access based on draft variable in front-matter
-    if (markdownFile.meta && markdownFile.meta.draft && !req.isAuthenticated && !req.user.isAdmin) {
-      next();
-      return;
-    }
-
-    var model = { content : markdownFile.parseContent(), version : pkg.version, isProd : req.app.locals.isProd, meta : markdownFile.meta };
-
-    var view = 'markdown';  // default view
-
-    // if content file specifies view, we use that instead
-    if (markdownFile.meta && markdownFile.meta.layout)
-        view = markdownFile.meta.layout;
-
-    res.render(view, model);
-  }
-}));
 
 // error handling middleware should be loaded last
 // log for all environments
