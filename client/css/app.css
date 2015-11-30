@@ -1,3 +1,4 @@
+@charset "UTF-8";
 meta.foundation-version {
   font-family: "/5.5.2/"; }
 
@@ -6440,95 +6441,98 @@ td,
 th {
   padding: 0; }
 
+/**
+ * Common
+ */
+.fullWidth {
+  width: 100%;
+  min-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+  min-height: 100%; }
+
+img.center {
+  display: block;
+  margin: auto; }
+
+.unpad {
+  padding: 0; }
+
 body {
-  font-family: 'Raleway', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.02); }
+  background-image: url("http://www.jamiecoulter.co.uk/dev/codepen/blurred_bg.jpg");
+  font-family: 'Raleway', sans-serif;
+  height: 100%; }
 
-.button {
-  font-family: 'Raleway', Helvetica, Arial, sans-serif; }
+/**
+ * Page
+ */
+html, body, .layout, #aside-main, .aside-main, .side-nav {
+  height: 100%; }
 
-.button-group {
-  float: none; }
-  .button-group li {
-    padding-top: 3%; }
-  .button-group a {
-    color: black;
-    background-color: transparent; }
-  .button-group a:hover {
-    color: rgba(0, 0, 0, 0.4);
-    background-color: transparent; }
+.header-bar {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #374650; }
 
-.namelogo {
-  padding: 20px 10px 0px 10px; }
+.header-bar a {
+  color: rgba(255, 255, 255, 0.8); }
 
-.namelogo h1 {
-  font-size: 1.5em;
-  font-weight: 600;
-  text-align: center; }
+.aside-toggle {
+  font-size: 1.4em; }
 
-.hero {
-  background: url("http://lorempixel.com/1300/800/nature");
-  background-size: cover;
-  box-shadow: inset 0px 0px 0 2000px rgba(0, 0, 0, 0.15);
-  height: 80%; }
+.header-bar ul {
+  line-height: inherit; }
 
-.intro-text {
-  padding-top: 40%;
-  color: white;
-  text-align: center; }
-  .intro-text p {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 44px; }
+.aside-main,
+.aside-main .header-bar,
+.side-nav {
+  background-color: #19262C;
+  top: 0;
+  bottom: 0; }
 
-@media only screen and (min-width: 40.063em) {
-  .button-group {
-    float: right; }
-  .namelogo {
-    padding-bottom: 20px; }
-    .namelogo h1 {
-      font-size: 16px;
-      text-align: left; }
-  .intro-text {
-    padding-top: 25%; } }
+.side-nav li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #DBDBDB;
+  font-size: 1.2em; }
 
-@media only screen and (min-width: 64.063em) {
-  .namelogo h1 {
-    font-size: 24px;
-    text-align: left; }
-  .intro-text {
-    padding-top: 18%; } }
+.side-nav li a {
+  color: white; }
 
-.contain-to-grid,
-.top-bar {
-  background: rgba(0, 0, 0, 0.02); }
+.main_inner {
+  padding: 20px; }
 
-.about, .work, .contact {
-  padding: 50px 0 0 0; }
+/**
+ * Footer
+ */
+.footer {
+  background-color: #19262C;
+  text-align: center;
+  font-size: 1.2rem; }
 
-.about img {
-  width: 250px;
-  height: 250px;
-  border-radius: 150px; }
+.footer p.slogan {
+  color: #95C4E8;
+  font-size: 1.8rem;
+  margin: 0 0 1rem; }
 
-.work img:hover {
-  opacity: 0.5;
-  -webkit-transition: 0.3s ease;
-          transition: 0.3s ease; }
+.footer p.copywrite {
+  color: #95C4E8;
+  font-size: 0.875rem;
+  margin: 0 0 1rem; }
 
-.work li {
-  height: 140px;
-  overflow: hidden; }
+.footer .links a {
+  list-style: none;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 3rem 0 2rem;
+  margin: 0; }
 
-hr {
-  border: 0;
-  height: 1px;
-  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
-  background-image: linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
-  opacity: 0.8; }
+.footer .links a::after {
+  content: "•";
+  padding: 0 0.4rem 0 0.8rem; }
 
-footer {
-  padding: 80px 0 10px 0; }
-  footer a:hover {
-    color: rgba(0, 0, 0, 0.4);
-    background-color: transparent; }
+.footer .links a:last-child::after {
+  content: "";
+  padding: 0 0.4rem 0 0.8rem; }

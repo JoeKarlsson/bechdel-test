@@ -53,14 +53,45 @@ Again, this will nuke any changes you've made locally so use carefully.
 - SCSS - Foundation
 - D3.js
 
-##Node Modules used
-- path
+##Dependencies
+- body-parser
+- errorhandler
+- express
+- jade
+- lodash
+- markdown-serve
+- method-override
+- moment
+- morgan
+- multer
+- q
 - serve-favicon
-- morgan //HTTP request logger
-- cookieParser //Parse Cookie header and populate req.cookies with an object keyed by the cookie names.
-- bodyParser //Node.js body parsing middleware
-- fs //node tool for reading and writing from the file system
-- Q //A tool for creating and composing asynchronous promises
+- winston
+
+##Dev Dependencies
+- browser-sync": "^2.8.0",
+- chalk": "^1.1.0",
+- dateformat": "^1.0.11",
+- del": "^1.2.0",
+- gulp": "^3.9.0",
+- gulp-autoprefixer": "^2.3.1",
+- gulp-cache": "^0.2.10",
+- gulp-concat": "^2.6.0",
+- gulp-header": "^1.2.2",
+- gulp-jshint": "^1.11.2",
+- gulp-load-plugins": "^1.0.0-rc",
+- gulp-load-utils": "0.0.4",
+- gulp-minify-css": "^1.2.0",
+- gulp-nodemon": "^2.0.3",
+- gulp-notify": "^2.2.0",
+- gulp-sass": "^2.0.4",
+- gulp-size": "^1.2.3",
+- gulp-sourcemaps": "^1.5.2",
+- gulp-tap": "^0.1.3",
+- gulp-uglify": "^1.2.0",
+- jshint-stylish": "^2.0.1",
+- minimist": "^1.1.2",
+- run-sequence": "^1.1.2"
 
 ##Notes about parsing movie scripts
 When a character speaks, his or her name is capitalized and centered on the page. The character’s dialogue generally appears one line below. As we discuss below, there are variations within this general format that create parsing challenges.
