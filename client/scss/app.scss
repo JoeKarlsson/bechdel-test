@@ -74,9 +74,22 @@ html, body, .layout, #aside-main, .aside-main, .side-nav {
 }
 
 /**
+ * D3 Graphs
+ */
+ .chart rect {
+   fill: steelblue;
+ }
+
+ .chart text {
+   fill: white;
+   font: 10px sans-serif;
+   text-anchor: end;
+ }
+
+
+/**
  * Footer
  */
-
 .footer {
   background-color: $dark1;
   text-align: center;
