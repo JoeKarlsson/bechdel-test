@@ -21,9 +21,8 @@ This program accepts a movie script and analzes whether or not it passes the Bes
 
 This will install the node and npm executables onto your system and have you ready to use Node.
 
-5. run 'npm start' or 'DEBUG=myapp:* npm start' if you want to test the app
+5. run 'gulp' if you want to start the app
 6. Open your browser window to 'http://localhost:3000/'
-7. Input a movie script .txt movie script and see if the film passes the Beschel Test
 
 ##Updating Code from GitHub
 1. Navigate to the beschel-test directory in terminal ('cd Desktop/beschel-test')
