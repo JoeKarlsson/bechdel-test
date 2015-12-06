@@ -13,6 +13,8 @@ var multer = require('multer');
 var errorHandler = require('errorhandler');
 var mds = require('markdown-serve');
 var winston = require('./server/logger.js');
+var d3 = require('d3');
+var jsdom = require('node-jsdom');
 
 var fs = require('fs'); //node tool for reading and writing from the file system
 var Q = require('q'); //A tool for creating and composing asynchronous promises
@@ -21,16 +23,19 @@ var request = require('request');
 var routes = require('./routes/index');
 var about = require('./routes/about');
 
+
 //My Methods
 var omdb = require('./methods/omdb');
 var beschel = require('./methods/beschel');
 
 //test movie scripts
 // var scriptPath = './scripts/fault-in-our-stars.txt';
-var scriptPath = './scripts/taxi-driver.txt';
-// var scriptPath = './scripts/american-hustle.txt';
+// var scriptPath = './scripts/taxi-driver.txt';
+
+var scriptPath = './scripts/american-hustle.txt';
 
 var app = express();
+
 
 app.locals.isProd = (app.get('env') === 'production');
 
@@ -48,7 +53,6 @@ app.use(bodyParser.urlencoded({ extended : false }));
 // routes
 app.use('/', routes);
 app.use('/about', about);
-
 
 // error handling middleware should be loaded last
 // log for all environments

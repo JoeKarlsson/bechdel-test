@@ -29,11 +29,10 @@ This will install the node and npm executables onto your system and have you rea
 1. Navigate to the beschel-test directory in terminal ('cd Desktop/beschel-test')
 2. If you don't care about any local changes and just want a copy from the repo:
 
-- git reset --hard HEAD
-- git clean -f
+- git fetch --all
 - git pull
 
-Again, this will nuke any changes you've made locally so use carefully.
+Your code should now be up to date! ;)
 
 ##Contributing
 1. Fork it!
