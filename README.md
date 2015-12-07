@@ -113,9 +113,9 @@ When a character speaks, his or her name is capitalized and centered on the page
 -Do directors tend to make movies that pass the Beschdal test?
 
 ##Related Links
-- http://www.imsdb.com/scripts/American-Hustle.html
-- http://www.omdbapi.com/
-- http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html
+- [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+- [The Open Movie Database](http://www.omdbapi.com/)
+- [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
 
 ##License
 The MIT License (MIT)
