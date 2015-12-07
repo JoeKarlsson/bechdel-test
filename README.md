@@ -20,12 +20,12 @@ This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http
 ##Usage
 1. Intall node.js https://nodejs.org/en/
 
-2. npm install -g jspm
-3. npm install -g gulp
+2. ```npm install -g jspm```
+3. ```npm install -g gulp```
 4. Git Clone/Fork project
-5. cd beschel-test
-6. npm install
-7. jspm install
+5. ```cd beschel-test```
+6. ```npm install```
+7. ```jspm install```
 
 This will install the node and npm executables onto your system and have you ready to use Node.
 
@@ -38,16 +38,16 @@ Starts web application
 1. Navigate to the beschel-test directory in terminal ('cd Desktop/beschel-test')
 2. If you don't care about any local changes and just want a copy from the repo:
 
-- git fetch --all
-- git pull
+- ```git fetch --all```
+- ```git pull```
 
 Your code should now be up to date! ;)
 
 ##Contributing
 1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
+2. Create your feature branch: ```git checkout -b my-new-feature```
+3. Commit your changes: ```git commit -am 'Add some feature'```
+4. Push to the branch: ````git push origin my-new-feature````
 5. Submit a pull request :D
 
 ##Credits
