@@ -20,14 +20,15 @@ This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http
 1. Intall [node.js](https://nodejs.org/en/)
 2. ```npm install -g jspm```
 3. ```npm install -g gulp```
-4. Git Clone/Fork project ```git clone git@github.com:JoeKarlsson1/beschel-test.git```
+4. Git Clone/Fork project
+```git clone git@github.com:JoeKarlsson1/beschel-test.git```
 5. ```cd beschel-test```
 6. ```npm install```
 7. ```jspm install```
 This will install the node and npm executables onto your system and have you ready to use Node.
 5. ```gulp```
 Starts web application
-6. Open your browser window to 'http://localhost:3000/'
+6. Open your browser window to [http://localhost:3000/](http://localhost:3000/)
 
 ##Updating Code from GitHub
 1. Navigate to the beschel-test directory in terminal ```cd Desktop/beschel-test```
