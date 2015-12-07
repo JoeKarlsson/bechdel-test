@@ -13,15 +13,25 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 
 This program accepts a movie script and analzes whether or not it passes the Beschel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
+## Requirements
+
+This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http://gulpjs.com/) for build automation during development so you should have these installed globally
+
 ##Usage
 1. Intall node.js https://nodejs.org/en/
-2. Git Clone/Fork project
-3. cd beschel-test
-4. run 'npm Install'
+
+2. npm install -g jspm
+3. npm install -g gulp
+4. Git Clone/Fork project
+5. cd beschel-test
+6. npm install
+7. jspm install
 
 This will install the node and npm executables onto your system and have you ready to use Node.
 
-5. run 'gulp' if you want to start the app
+5. gulp
+Starts web application
+
 6. Open your browser window to 'http://localhost:3000/'
 
 ##Updating Code from GitHub
@@ -50,6 +60,7 @@ Your code should now be up to date! ;)
 - ES6
 - SCSS - Foundation
 - D3.js
+- C3.js
 
 ##Dependencies
 - body-parser
@@ -95,7 +106,6 @@ Your code should now be up to date! ;)
 When a character speaks, his or her name is capitalized and centered on the page. The character’s dialogue generally appears one line below. As we discuss below, there are variations within this general format that create parsing challenges.
 
 ##Todo
-- Parse movie scripts (.txt or .html)
 - Show data - Where and when they talk
 - Score: How much of the movie contains dialogue that passes the test
 - Breakdown:
