@@ -24,8 +24,9 @@ This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http
 ```git clone git@github.com:JoeKarlsson1/beschel-test.git```
 5. ```cd beschel-test```
 6. ```npm install```
-7. ```jspm install```
 This will install the node and npm executables onto your system and have you ready to use Node.
+7. ```jspm install```
+This will install the jspm dependencies.
 5. ```gulp```
 Starts web application
 6. Open your browser window to [http://localhost:3000/](http://localhost:3000/)
