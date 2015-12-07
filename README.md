@@ -30,7 +30,7 @@ Starts web application
 6. Open your browser window to 'http://localhost:3000/'
 
 ##Updating Code from GitHub
-1. Navigate to the beschel-test directory in terminal ('cd Desktop/beschel-test')
+1. Navigate to the beschel-test directory in terminal (```cd Desktop/beschel-test```)
 2. If you don't care about any local changes and just want a copy from the repo:
 
 - ```git fetch --all```
