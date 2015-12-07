@@ -30,9 +30,9 @@ var beschel = require('./methods/beschel');
 
 //test movie scripts
 // var scriptPath = './scripts/fault-in-our-stars.txt';
-// var scriptPath = './scripts/taxi-driver.txt';
+var scriptPath = './scripts/taxi-driver.txt';
 
-var scriptPath = './scripts/american-hustle.txt';
+// var scriptPath = './scripts/american-hustle.txt';
 
 var app = express();
 
