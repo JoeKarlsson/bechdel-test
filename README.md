@@ -30,7 +30,7 @@ Starts web application
 6. Open your browser window to 'http://localhost:3000/'
 
 ##Updating Code from GitHub
-1. Navigate to the beschel-test directory in terminal (```cd Desktop/beschel-test```)
+1. Navigate to the beschel-test directory in terminal ```cd Desktop/beschel-test```
 2. If you don't care about any local changes and just want a copy from the repo:
 
 - ```git fetch --all```
@@ -49,7 +49,7 @@ Your code should now be up to date! ;)
 - Joe Carlson
 - Laurel Carlson
 
-##built with
+##Built with
 - Express
 - Node 5.1.0
 - ES6
@@ -117,7 +117,6 @@ When a character speaks, his or her name is capitalized and centered on the page
 - http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html
 
 ##License
-
 The MIT License (MIT)
 
 Copyright (c) 2015 Joseph Carlson
