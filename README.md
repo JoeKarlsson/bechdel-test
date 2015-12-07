@@ -14,24 +14,19 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 This program accepts a movie script and analzes whether or not it passes the Beschel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
 ## Requirements
-
 This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http://gulpjs.com/) for build automation during development so you should have these installed globally
 
 ##Usage
 1. Intall node.js https://nodejs.org/en/
-
 2. ```npm install -g jspm```
 3. ```npm install -g gulp```
 4. Git Clone/Fork project
 5. ```cd beschel-test```
 6. ```npm install```
 7. ```jspm install```
-
 This will install the node and npm executables onto your system and have you ready to use Node.
-
-5. gulp
+5. ```gulp```
 Starts web application
-
 6. Open your browser window to 'http://localhost:3000/'
 
 ##Updating Code from GitHub
