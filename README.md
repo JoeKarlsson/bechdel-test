@@ -17,10 +17,10 @@ This program accepts a movie script and analzes whether or not it passes the Bes
 This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http://gulpjs.com/) for build automation during development so you should have these installed globally
 
 ##Usage
-1. Intall node.js https://nodejs.org/en/
+1. Intall [node.js](https://nodejs.org/en/)
 2. ```npm install -g jspm```
 3. ```npm install -g gulp```
-4. Git Clone/Fork project
+4. Git Clone/Fork project ```git clone git@github.com:JoeKarlsson1/beschel-test.git```
 5. ```cd beschel-test```
 6. ```npm install```
 7. ```jspm install```
