@@ -154,3 +154,7 @@ gulp.task('serveprod', function() {
     livereload: false
   });
 });
+
+gulp.task('heroku:production', function(){
+  runSeq('clean', 'build')
+})
