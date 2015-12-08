@@ -146,3 +146,11 @@ gulp.task('watch', ['browser-sync'], function() {
 gulp.task('default', function(cb) {
   runSequence('build', 'watch', cb);
 });
+
+gulp.task('serveprod', function() {
+  connect.server({
+    root: paths.source.root,
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
+});
