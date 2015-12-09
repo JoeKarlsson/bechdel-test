@@ -1,0 +1,100 @@
+02:47:40.050,"GET /: Error: /Users/joecarlson/Documents/Dev/JavaScript/beschel-test/server/views/index.jade:20
+    18|       li Aliquam tincidunt mauris eu risus.
+    19| 
+  > 20|   |
+    21|     script.
+    22|       barChartHelper.getBarChart({
+    23|       data: fixtureData,
+
+unexpected text |
+   
+    at Object.Lexer.fail (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:887:11)
+    at Object.Lexer.next (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:947:15)
+    at Object.Lexer.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:113:46)
+    at Parser.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:102:23)
+    at Parser.peek (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:79:17)
+    at Parser.block (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:725:30)
+    at Parser.parseBlock (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:535:14)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:215:21)
+    at Parser.parse (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:122:25)
+    at parse (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/index.js:104:21)"
+02:48:40.225,"GET /: Error: /Users/joecarlson/Documents/Dev/JavaScript/beschel-test/server/views/index.jade:21
+    19| 
+    20|   h1 D3 Server-side Demo
+  > 21|     |
+    22|       script.
+    23|         barChartHelper.getBarChart({
+    24|         data: fixtureData,
+
+unexpected text |
+   
+    at Object.Lexer.fail (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:887:11)
+    at Object.Lexer.next (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:947:15)
+    at Object.Lexer.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:113:46)
+    at Parser.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:102:23)
+    at Parser.peek (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:79:17)
+    at Parser.block (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:725:30)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:838:24)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.block (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:729:25)"
+03:24:25.644,"GET /: Error: /Users/joecarlson/Documents/Dev/JavaScript/beschel-test/server/views/index.jade:23
+    21| 
+    22|     - barChartHelper.getBarChart({
+  > 23|       data: fixtureData,
+    24|       width: 400,
+    25|       height: 300,
+    26|       xAxisLabel: '2012',
+
+unexpected text ,
+   
+    at Object.Lexer.fail (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:887:11)
+    at Object.Lexer.next (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:947:15)
+    at Object.Lexer.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:113:46)
+    at Parser.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:102:23)
+    at Parser.peek (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:79:17)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:773:22)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:819:29)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)"
+03:24:44.084,"GET /: Error: /Users/joecarlson/Documents/Dev/JavaScript/beschel-test/server/views/index.jade:23
+    21| 
+    22|     - barChartHelper.getBarChart({
+  > 23|       data: fixtureData,
+    24|       width: 400,
+    25|       height: 300,
+    26|       xAxisLabel: '2012',
+
+unexpected text ,
+   
+    at Object.Lexer.fail (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:887:11)
+    at Object.Lexer.next (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:947:15)
+    at Object.Lexer.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:113:46)
+    at Parser.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:102:23)
+    at Parser.peek (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:79:17)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:773:22)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:819:29)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)"
+03:25:03.649,"GET /: Error: /Users/joecarlson/Documents/Dev/JavaScript/beschel-test/server/views/index.jade:23
+    21| 
+    22|     - barChartHelper.getBarChart({
+  > 23|       data: fixtureData,
+    24|       width: 400,
+    25|       height: 300,
+    26|       xAxisLabel: '2012',
+
+unexpected text ,
+   
+    at Object.Lexer.fail (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:887:11)
+    at Object.Lexer.next (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:947:15)
+    at Object.Lexer.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/lexer.js:113:46)
+    at Parser.lookahead (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:102:23)
+    at Parser.peek (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:79:17)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:773:22)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:819:29)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/JavaScript/beschel-test/node_modules/jade/lib/parser.js:759:17)"
