@@ -29,14 +29,13 @@ var contact = require('./routes/contact');
 var omdb = require('./methods/omdb');
 var beschel = require('./methods/beschel');
 
-//test movie scripts
+//Test movie scripts
 // var scriptPath = './scripts/fault-in-our-stars.txt';
 var scriptPath = './scripts/taxi-driver.txt';
 
 // var scriptPath = './scripts/american-hustle.txt';
 
 var app = express();
-
 
 app.locals.isProd = (app.get('env') === 'production');
 
