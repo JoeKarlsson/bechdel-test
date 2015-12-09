@@ -148,10 +148,14 @@ gulp.task('default', function(cb) {
   runSequence('build', 'watch', cb);
 });
 
-gulp.task('heroku:production', function(){
+gulp.task('production', function(){
   connect.server({
     root: paths.source.root,
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
+})
+
+gulp.task('heroku:production', function(){
+  runSequence('build');
 })
