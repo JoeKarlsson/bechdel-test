@@ -16,39 +16,36 @@ html
     .row.fullWidth.layout
       aside#aside-main.aside-main.small-12.medium-4.large-3.columns.unpad
         .row.header-bar.text-center.grey2
-          | Dashboard
+          a(href='/') Bechdel Test Visualization
         header
           img.center(src='http://placehold.it/700x500')
         ul.no-bullet.side-nav
           li
-            a(href='#')
+            a(href='/')
               i.fi-torso
-              |           Account
+              |           Dashboard
           li.clearfix
-            a.left(href='#')
+            a.left(href='/about')
               i.fi-alert
-              |           Notifications
+              |           About
           li
-            a(href='#')
+            a(href='/philosophy')
               i.fi-wrench
-              |           Link #3
+              |           Philosophy
           li
-            a(href='#')
+            a(href='/contact')
               i.fi-cloud
-              |           Link #4
-          li
-            a(href='#')
-              i.fi-graph-bar
-              |           Link #5
+              |           Contact
           footer.footer
             .row
               .small-12
-                p.slogan Bechdel Test Visualization
-                p.links
-                  a(href='/about') About
-                  a(href='/philosophy') Philosophy
-                  a(href='/contact') Contact
-                p.copywrite Copywrite Joe & Laurel Carlson © 2015
+                p.slogan
+                  a(href='/') Bechdel Test
+                //- p.links
+                //-   a(href='/about') About
+                //-   a(href='/philosophy') Philosophy
+                //-   a(href='/contact') Contact
+                p.copywrite Karlsson Productions © 2015
 
       #section-main.small-12.medium-8.large-9.columns
         .row.header-bar.grey1
@@ -57,7 +54,7 @@ html
               a#aside-toggle(href='#')
                 i.fi-list
             li
-              a(href='#') Bechdel Test Visualization
+              //- a(href='/') Bechdel Test Visualization
 
         block content
 

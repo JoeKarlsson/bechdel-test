@@ -147,7 +147,11 @@ function containsPatriarchalKeywords(s) {
       'Brother',
       'Brothers',
       'Son',
-      'Sons'
+      'Sons',
+      'bro',
+      'bros',
+      'Bro',
+      'Bros'
   ]
 
   if (s === '' || undefined || null) {
