@@ -6,7 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp default"
   },
   "main": "server.js",
   "author": "Joe Carlson",
