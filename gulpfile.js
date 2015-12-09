@@ -13,6 +13,7 @@ var del           = require('del'),
     tap           = require('gulp-tap'),
     runSequence   = require('run-sequence').use(gulp),
     exec          = require('child_process').exec,
+    connect       = require('gulp-connect'),
     nodemon       = require('gulp-nodemon');
 
 // Auto load all gulp plugins
@@ -147,16 +148,7 @@ gulp.task('default', function(cb) {
   runSequence('build', 'watch', cb);
 });
 
-gulp.task('serveprod', function() {
-  connect.server({
-    root: paths.source.root,
-    port: process.env.PORT || 5000, // localhost:5000
-    livereload: false
-  });
-});
-
 gulp.task('heroku:production', function(){
-  // runSequence('clean')
   connect.server({
     root: paths.source.root,
     port: process.env.PORT || 5000, // localhost:5000
