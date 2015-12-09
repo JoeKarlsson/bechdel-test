@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp default"
+    "postinstall": "gulp heroku:production"
   },
   "main": "server.js",
   "author": "Joe Carlson",
