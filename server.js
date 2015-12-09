@@ -22,7 +22,8 @@ var request = require('request');
 
 var routes = require('./routes/index');
 var about = require('./routes/about');
-
+var philosophy = require('./routes/philosophy');
+var contact = require('./routes/contact');
 
 //My Methods
 var omdb = require('./methods/omdb');
@@ -53,6 +54,9 @@ app.use(bodyParser.urlencoded({ extended : false }));
 // routes
 app.use('/', routes);
 app.use('/about', about);
+app.use('/philosophy', philosophy);
+app.use('/contact', contact);
+
 
 // error handling middleware should be loaded last
 // log for all environments
