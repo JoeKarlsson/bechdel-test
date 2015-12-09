@@ -117,6 +117,7 @@ When a character speaks, his or her name is capitalized and centered on the page
 - [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
 - [The Open Movie Database](http://www.omdbapi.com/)
 - [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+- [Check out our trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ##License
 The MIT License (MIT)
