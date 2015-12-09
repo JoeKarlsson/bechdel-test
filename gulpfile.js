@@ -156,5 +156,5 @@ gulp.task('serveprod', function() {
 });
 
 gulp.task('heroku:production', function(){
-  runSeq('clean', 'js')
+  runSequence('clean', 'js')
 })
