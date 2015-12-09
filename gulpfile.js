@@ -157,6 +157,10 @@ gulp.task('production', function(){
 })
 
 gulp.task('heroku:production', function(){
-  runSequence('clean',
-              ['css']);
+  runSequence('clean','css');
+  connect.server({
+    root: paths.source.root,
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
 })
