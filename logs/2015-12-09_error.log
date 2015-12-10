@@ -1,0 +1,20 @@
+23:35:34.980,"GET /contact: Error: /Users/joecarlson/Documents/Dev/beschel-test/server/views/contact.jade:8
+    6|     .large-9.columns
+    7|         h3 Get in Touch!
+  > 8|         |
+    9|         p
+    10|           | We&apos;d love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day
+    11|           em all day
+
+unexpected text |
+   
+    at Object.Lexer.fail (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/lexer.js:887:11)
+    at Object.Lexer.next (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/lexer.js:947:15)
+    at Object.Lexer.lookahead (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/lexer.js:113:46)
+    at Parser.lookahead (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:102:23)
+    at Parser.peek (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:79:17)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:832:30)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.block (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:729:25)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:838:24)"
