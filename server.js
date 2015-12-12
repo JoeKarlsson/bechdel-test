@@ -31,17 +31,20 @@ var beschel = require('./methods/beschel');
 
 //Test movie scripts
 // var scriptPath = './scripts/american-sniper.txt';
-var scriptPath = './scripts/birdman.txt';
-// var scriptPath = './scripts/boyhood.txt';
+// var scriptPath = './scripts/birdman.txt';
+// var scriptPath = './scripts/boyhood.txt'; //issues getting api
 // var scriptPath = './scripts/foxcatcher.txt';
 // var scriptPath = './scripts/gone-girl.txt';
 // var scriptPath = './scripts/grand-budapest-hotel.txt';
-// var scriptPath = './scripts/imitation-game.txt';
+var scriptPath = './scripts/imitation-game.txt'; //issues getting api
 // var scriptPath = './scripts/still-alice.txt';
 // var scriptPath = './scripts/taxi-driver.txt';
 // var scriptPath = './scripts/theory-of-everything.txt';
-// var scriptPath = './scripts/whiplash.txt';
+// var scriptPath = './scripts/whiplash.txt'; //issues getting api
 // var scriptPath = './scripts/american-hustle.txt';
+// var scriptPath = './scripts/into-the-woods.txt';
+// var scriptPath = './scripts/judge.txt';
+// var scriptPath = './scripts/wild.txt';
 
 var app = express();
 

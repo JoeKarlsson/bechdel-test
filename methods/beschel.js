@@ -8,7 +8,7 @@ var Q = require('q'); //A tool for creating and composing asynchronous promises
 
 module.exports.extractScenes = function(movieScript) {
   return Q.promise(function (resolve, reject) {
-    console.log('Breaking up scenes...');
+    console.log('Breaking up movie script by scene...');
 
     if (movieScript == '') {
       reject('Script has to yet been loaded into memory');
@@ -63,6 +63,7 @@ function countCharacterDialouge(a, s) {
 
     output[a[x].characterName] = 0;
     while ((i = s.indexOf(a[x].characterName, i)) > -1) {
+      console.log(a[x])
       output[a[x].characterName]++;
       i++
     }
@@ -74,9 +75,10 @@ module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
   return Q.promise(function (resolve, reject) {
     var beschelPass = false;
 
-    console.log('Scanning scenes for character names...');
+    console.log('Checking to see if this film passes the Bechdel Test...');
     for ( var idx in sceneArray ) {
       var scene = sceneArray[idx]
+      // console.log(scene);
 
       var count = countCharacterDialouge(movieCharacters, scene);
       if (beschelTestPass(movieCharacters, count, scene) === true ) {
@@ -151,7 +153,11 @@ function containsPatriarchalKeywords(s) {
       'bro',
       'bros',
       'Bro',
-      'Bros'
+      'Bros',
+      'King',
+      'Kings',
+      'Prince',
+      'Princes'
   ]
 
   if (s === '' || undefined || null) {
