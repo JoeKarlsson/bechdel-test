@@ -1,18 +1,29 @@
 var Q = require('q'); //A tool for creating and composing asynchronous promises
 
+var bechdelScore = 0;
+var numScenesPass = 0;
+var numOfFemalesChars = 0;
+var numOfMaleChars = 0;
+var numOfFemalesCharsWithDialogue = 0;
+var numOfMaleCharsWithDialogue = 0;
+var totalLinesFemaleDialogue = 0;
+var totalLinesMaleDialogue = 0;
+
 //@TODO
 //Average keyword hits per scene
 //Num of scenes that pass the test
 //Num of female characters
 //male v female
 
-module.exports.extractScenes = function(movieScript) {
+module.exports.extractScenes = function(movieCharacters, movieScript) {
   return Q.promise(function (resolve, reject) {
     console.log('Breaking up movie script by scene...');
 
     if (movieScript == '') {
       reject('Script has to yet been loaded into memory');
     }
+
+    scriptGenderAnalytics(movieCharacters, movieScript);
 
     var result = [];
     var subScene = '';
@@ -45,6 +56,26 @@ module.exports.extractScenes = function(movieScript) {
   })
 }
 
+function scriptGenderAnalytics(movieCharacters, movieScript) {
+  var count = countCharacterDialouge(movieCharacters, movieScript);
+
+  for ( name in count ) {
+    if ( isCharFemale( movieCharacters, name ) ){
+      numOfFemalesChars++;
+      if ( count[name] > 0 ) {
+        numOfFemalesCharsWithDialogue++;
+        totalLinesFemaleDialogue += count[name];
+      }
+    } else {
+      numOfMaleChars++
+      if ( count[name] > 0 ) {
+        numOfMaleCharsWithDialogue++;
+        totalLinesMaleDialogue += count[name];
+      }
+    }
+  }
+}
+
 /**
  * Returns an object with all of the characters in the movie and the number times they talk in a given scene
  * @param  [Array] a array of movie characters
@@ -63,7 +94,6 @@ function countCharacterDialouge(a, s) {
 
     output[a[x].characterName] = 0;
     while ((i = s.indexOf(a[x].characterName, i)) > -1) {
-      console.log(a[x])
       output[a[x].characterName]++;
       i++
     }
@@ -88,11 +118,22 @@ module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
       }
 
     }
+
+    console.log('Number of female characters: ' + numOfFemalesChars);
+    console.log('Number of male characters: ' + numOfMaleChars);
+    console.log('Number of female characters w dialogue: ' +numOfFemalesCharsWithDialogue);
+    console.log('Number of male characters w dialogue: ' + numOfMaleCharsWithDialogue);
+    console.log('Total lines of female dialogue: ' + totalLinesFemaleDialogue);
+    console.log('Total lines of male dialogue: ' + totalLinesMaleDialogue);
+
+    console.log('Bechdel Score: ' + bechdelScore);
     if (beschelPass === true) {
+      console.log('Number of scenes that pass the Beschel Test: ' + numScenesPass);
       console.log('This movie passes the Beschel Test');
     } else {
       console.log('This movie does NOT pass the Beschel Test');
     }
+
     resolve( count );
   })
 
@@ -108,18 +149,30 @@ module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
 function beschelTestPass (movieCharacters, count, scene) {
 
   if (twoOrMoreFemalesInScene(movieCharacters, count) === true ) {
+    updateScore(2);
     if (containsPatriarchalKeywords(scene) === false) {
       // Passes the Beschel Test
+      numScenesPass++
+      updateScore(3);
       return true;
     }
 
     // Contains dialouge about men - fails the beschel test
+    updateScore(2);
     return false
   }
 
   // This scene does not have 2 or more females with dialogue.
+  updateScore(1);
   return false
 
+}
+
+function updateScore (number) {
+  if ( number > bechdelScore ) {
+    bechdelScore = number;
+    return bechdelScore
+  }
 }
 
 function containsPatriarchalKeywords(s) {

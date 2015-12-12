@@ -113,6 +113,9 @@ When a character speaks, his or her name is capitalized and centered on the page
 -Number of scenes with women v # w/ men
 -Do directors tend to make movies that pass the Beschdal test?
 
+###
+My app my designed in order to test if a movie can pass the bechdel test, but I discovered that parsing a script for context is a very complicated subject. My app however is very good at generating data on gender participation in films.
+
 ##Related Links
 - [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
 - [The Open Movie Database](http://www.omdbapi.com/)
