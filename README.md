@@ -14,9 +14,9 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 This program accepts a movie script and analzes whether or not it passes the Beschel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
 ## How It Works
-Of all narrative textual forms, the motion picture screenplay may be the most perfectly pre-disposed for computational analysis[Murtagh, Ganz, and Reddington 2011](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Screenplays contain capitalized character names, indented dialogue, and other formatting conventions that enable an algorithmic approach to analyzing and visualizing film narratives. Coupled with massive online movie data bases, we can parse through movie scripts and collect insights on a level not yet seen before[Hoyt, Ponto, Roy](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). In this article, the authors introduce their new tool, Bechdel Test Visulizer, which parses screenplays, outputs statistical gender values which can be analyzed, and offers four different types of visualization, each with its own utility. In this analysis, the authors use the Bechdel Test Visualizer to analyze the 2014 Oscar Best Picture Nominees.
+Of all narrative textual forms, the motion picture screenplay may be the most perfectly pre-disposed for computational analysis [[Murtagh, Ganz, and Reddington 2011]](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Screenplays contain capitalized character names, indented dialogue, and other formatting conventions that enable an algorithmic approach to analyzing and visualizing film narratives [[Hoyt, Ponto, Roy]](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Coupled with massive online movie databases, we can parse through movie scripts and collect insights on a level not yet seen before. In this article, the authors introduce their new tool, Bechdel Test Visulizer, which parses screenplays, outputs statistical gender values which can be analyzed, and offers four different types of visualization, each with its own utility. In this analysis, the authors use the Bechdel Test Visualizer to analyze the 2014 Oscar Best Picture Nominees.
 
-In the process of building this tool’s prototype, I have come to appreciate the many ways that a computer reads a screenplay differently from you or me. Humans gather insight from watching and experiencing the emotion, tension, and dynamics of a movie or screenplay. Rather than attempting to train a computer to understand a film in the exact same way I do, I would prefer to ask a computer to do tasks that it is designed to do well and that we humans struggle with. Humans have memory limitations when it comes to matters of sequential timing and the entrances and exits of dozens of characters. In contrast, computers are excellent at gathering and recording these sorts of details from structured texts. Lev Manovich has suggested that one of the most valuable things that comes from combining computational analysis and the visualization of vast amounts of information in a single image is that it defamiliarizes our understanding of the works that we study in the Humanities [Manovich 2012](https://sc.edu/about/centers/digital_humanities/future_knowledge_archive/manovich_videopage.php). As I hope to demonstrate, the Bechdel Test Visualizer is a powerful tool for defamiliarization, provoking new questions and gender and film, and producing new answers through the combined strengths of the human analyst and the computer.
+In the process of building this tool’s prototype, I have come to appreciate the many ways that a computer reads a screenplay differently from you or me. Humans gather insight from watching and experiencing the emotion, tension, and dynamics of a movie or screenplay. Rather than attempting to train a computer to understand a film in the exact same way I do, I would prefer to ask a computer to do tasks that it is designed to do well and that we humans struggle with. Humans have memory limitations when it comes to matters of sequential timing and the entrances and exits of dozens of characters. In contrast, computers are excellent at gathering and recording these sorts of details from structured texts. Lev Manovich has suggested that one of the most valuable things that comes from combining computational analysis and the visualization of vast amounts of information in a single image is that it defamiliarizes our understanding of the works that we study in the Humanities [[Manovich 2012]](https://sc.edu/about/centers/digital_humanities/future_knowledge_archive/manovich_videopage.php). As I hope to demonstrate, the Bechdel Test Visualizer is a powerful tool for defamiliarization, provoking new questions and gender and film, and producing new answers through the combined strengths of the human analyst and the computer.
 
 ## Parsing Method
 The Bechdel Test Visualizer is web application built enirely using JavaScript and Node.js. This tool uses a combination of online databases manual script parsing in order to collect insights about a film.
@@ -69,7 +69,7 @@ Your code should now be up to date! ;)
 - Express
 - Node 5.1.0
 - ES6
-- SCSS - Foundation
+- Foundation
 - D3.js
 - C3.js
 
@@ -112,9 +112,6 @@ Your code should now be up to date! ;)
 - jshint-stylish": "^2.0.1",
 - minimist": "^1.1.2",
 - run-sequence": "^1.1.2"
-
-##Notes about parsing movie scripts
-When a character speaks, his or her name is capitalized and centered on the page. The character’s dialogue generally appears one line below. As we discuss below, there are variations within this general format that create parsing challenges.
 
 ##Todo
 - Show data - Where and when they talk
