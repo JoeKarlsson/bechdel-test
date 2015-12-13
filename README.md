@@ -11,7 +11,7 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 ![Bechdel Test]
 (http://www.mestudios.com/wp-content/uploads/2014/12/Bechdel-the-rule.jpg)
 
-This program accepts a movie script and analzes whether or not it passes the Beschel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
+This program accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
 ## How It Works
 Of all narrative textual forms, the motion picture screenplay may be the most perfectly pre-disposed for computational analysis [[Murtagh, Ganz, and Reddington 2011]](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Screenplays contain capitalized character names, indented dialogue, and other formatting conventions that enable an algorithmic approach to analyzing and visualizing film narratives [[Hoyt, Ponto, Roy]](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Coupled with massive online movie databases, we can parse through movie scripts and collect insights on a level not yet seen before. In this article, the authors introduce their new tool, Bechdel Test Visulizer, which parses screenplays, outputs statistical gender values which can be analyzed, and offers four different types of visualization, each with its own utility. In this analysis, the authors use the Bechdel Test Visualizer to analyze the 2014 Oscar Best Picture Nominees.
@@ -35,8 +35,8 @@ This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http
 2. ```npm install -g jspm```
 3. ```npm install -g gulp```
 4. Git Clone/Fork project
-```git clone git@github.com:JoeKarlsson1/beschel-test.git```
-5. ```cd beschel-test```
+```git clone git@github.com:JoeKarlsson1/bechdel-test.git```
+5. ```cd bechdel-test```
 6. ```npm install```
 This will install the node and npm executables onto your system and have you ready to use Node.
 7. ```jspm install```
@@ -46,7 +46,7 @@ Starts web application
 6. Open your browser window to [http://localhost:3000/](http://localhost:3000/)
 
 ##Updating Code from GitHub
-1. Navigate to the beschel-test directory in terminal ```cd Desktop/beschel-test```
+1. Navigate to the bechdel-test directory in terminal ```cd Desktop/bechdel-test```
 2. If you don't care about any local changes and just want a copy from the repo:
 
 - ```git fetch --all```
