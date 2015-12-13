@@ -2,6 +2,7 @@ var Q = require('q'); //A tool for creating and composing asynchronous promises
 
 var bechdelScore = 0;
 var numScenesPass = 0;
+var numScenesDontPass = 0;
 var numOfFemalesChars = 0;
 var numOfMaleChars = 0;
 var numOfFemalesCharsWithDialogue = 0;
@@ -56,8 +57,15 @@ module.exports.extractScenes = function(movieCharacters, movieScript) {
   })
 }
 
+/**
+ * Function to collect gender statistics based on the entire movie script. Collects information on  numOfFemalesChars, numOfMaleChars, numOfFemalesCharsWithDialogue, numOfMaleCharsWithDialogue, totalLinesFemaleDialogue, and the totalLinesMaleDialogue.
+ * @param  {[type]} movieCharacters [description]
+ * @param  {[type]} movieScript     [description]
+ * @return {[type]}                 [description]
+ */
 function scriptGenderAnalytics(movieCharacters, movieScript) {
   var count = countCharacterDialouge(movieCharacters, movieScript);
+  // console.log(count);
 
   for ( name in count ) {
     if ( isCharFemale( movieCharacters, name ) ){
@@ -112,7 +120,7 @@ module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
 
       var count = countCharacterDialouge(movieCharacters, scene);
       if (beschelTestPass(movieCharacters, count, scene) === true ) {
-        console.log('This scene passes the Beschel Test');
+        console.log('This scene passes the Bechdel Test');
         beschelPass = true;
         console.log(scene);
       }
@@ -125,13 +133,14 @@ module.exports.sceneAnalysis = function(movieCharacters, sceneArray) {
     console.log('Number of male characters w dialogue: ' + numOfMaleCharsWithDialogue);
     console.log('Total lines of female dialogue: ' + totalLinesFemaleDialogue);
     console.log('Total lines of male dialogue: ' + totalLinesMaleDialogue);
+    console.log('Number of scenes that pass the Bechdel Test: ' + numScenesPass);
+    console.log('Number of scenes that dont pass the Bechdel Test: ' + numScenesDontPass);
 
     console.log('Bechdel Score: ' + bechdelScore);
     if (beschelPass === true) {
-      console.log('Number of scenes that pass the Beschel Test: ' + numScenesPass);
-      console.log('This movie passes the Beschel Test');
+      console.log('This movie passes the Bechdel Test');
     } else {
-      console.log('This movie does NOT pass the Beschel Test');
+      console.log('This movie does NOT pass the Bechdel Test');
     }
 
     resolve( count );
@@ -152,22 +161,29 @@ function beschelTestPass (movieCharacters, count, scene) {
     updateScore(2);
     if (containsPatriarchalKeywords(scene) === false) {
       // Passes the Beschel Test
-      numScenesPass++
+      numScenesPass++;
       updateScore(3);
       return true;
     }
 
     // Contains dialouge about men - fails the beschel test
     updateScore(2);
-    return false
+    numScenesDontPass++;
+    return false;
   }
 
   // This scene does not have 2 or more females with dialogue.
   updateScore(1);
-  return false
+  numScenesDontPass++;
+  return false;
 
 }
 
+/**
+ * Updates the Bechdel Score based on on if the input score number is higher than it's previous value
+ * @param  {[type]} number [description]
+ * @return {[type]}        [description]
+ */
 function updateScore (number) {
   if ( number > bechdelScore ) {
     bechdelScore = number;
@@ -175,6 +191,11 @@ function updateScore (number) {
   }
 }
 
+/**
+ * Scans a scene for a list of patriachal keywords, if one of these keywords is found in the scene, it returns true.
+ * @param  {[type]} s [description]
+ * @return {[boolean]}   Boolean indicating whether or not a scene contains patriarchal keywords or not.
+ */
 function containsPatriarchalKeywords(s) {
 
   var patriacryKeywords = [
