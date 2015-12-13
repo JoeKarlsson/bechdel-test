@@ -30,7 +30,7 @@ var omdb = require('./methods/omdb');
 var beschel = require('./methods/beschel');
 
 //Test movie scripts
-// var scriptPath = './scripts/american-sniper.txt';
+var scriptPath = './scripts/american-sniper.txt';
 // var scriptPath = './scripts/birdman.txt';
 // var scriptPath = './scripts/boyhood.txt'; //issues getting api
 // var scriptPath = './scripts/foxcatcher.txt';
@@ -40,8 +40,8 @@ var beschel = require('./methods/beschel');
 // var scriptPath = './scripts/still-alice.txt';
 // var scriptPath = './scripts/taxi-driver.txt';
 // var scriptPath = './scripts/theory-of-everything.txt';
-// var scriptPath = './scripts/whiplash.txt'; //issues getting api
-var scriptPath = './scripts/american-hustle.txt';
+// var scriptPath = './scripts/whiplash.txt';
+// var scriptPath = './scripts/american-hustle.txt';
 // var scriptPath = './scripts/into-the-woods.txt';
 // var scriptPath = './scripts/judge.txt';
 // var scriptPath = './scripts/wild.txt';
@@ -127,43 +127,43 @@ function readScript(path) {
   });
 };
 
-// readMovieTitle(scriptPath)
-// .then(function (movieTitle) {
-//   // If the HTTP response returns 200 OK, log the response text.
-//   console.log('Movie Script Title: ', movieTitle);
-//   return omdb.getOmdbData(movieTitle)
-//     .then(function(movieCharacters) {
-//       return readScript(scriptPath)
-//         .then(function (movieScript) {
-//           return beschel.extractScenes(movieCharacters, movieScript)
-//             .then(function (sceneArray) {
-//               return beschel.sceneAnalysis(movieCharacters, sceneArray)
-//                 .then(function (result) {
+readMovieTitle(scriptPath)
+.then(function (movieTitle) {
+  // If the HTTP response returns 200 OK, log the response text.
+  console.log('Movie Script Title: ', movieTitle);
+  return omdb.getOmdbData(movieTitle)
+    .then(function(movieCharacters) {
+      return readScript(scriptPath)
+        .then(function (movieScript) {
+          return beschel.extractScenes(movieCharacters, movieScript)
+            .then(function (sceneArray) {
+              return beschel.sceneAnalysis(movieCharacters, sceneArray)
+                .then(function (result) {
 
-//                 }, function (error) {
-//                   // If there's an error or a non-200 status code, log the error.
-//                   console.error(error);
-//                 })
+                }, function (error) {
+                  // If there's an error or a non-200 status code, log the error.
+                  console.error(error);
+                })
 
-//             }, function (error) {
-//                 // If there's an error or a non-200 status code, log the error.
-//                 console.error(error);
-//               })
+            }, function (error) {
+                // If there's an error or a non-200 status code, log the error.
+                console.error(error);
+              })
 
-//         }, function (error) {
-//             // If there's an error or a non-200 status code, log the error.
-//             console.error(error);
-//           })
-//     }, function (error) {
-//         // If there's an error or a non-200 status code, log the error.
-//         console.error(error);
-//       })
-// }, function (error) {
-//   // If there's an error or a non-200 status code, log the error.
-//   console.error(error);
-// })
-// .catch(function (error) {
-//   // Handle any error from all above steps
-// })
-// .done();
+        }, function (error) {
+            // If there's an error or a non-200 status code, log the error.
+            console.error(error);
+          })
+    }, function (error) {
+        // If there's an error or a non-200 status code, log the error.
+        console.error(error);
+      })
+}, function (error) {
+  // If there's an error or a non-200 status code, log the error.
+  console.error(error);
+})
+.catch(function (error) {
+  // Handle any error from all above steps
+})
+.done();
 

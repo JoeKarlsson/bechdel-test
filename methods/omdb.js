@@ -70,22 +70,22 @@ function omdbDataParser(body, inputType) {
   }
 
   movieData = JSON.parse(body); // Show the request for the omdb api.
-  console.log(movieData);
-
-  // if ( 'actors' in movieData.data ) {
 
   rawMovieCharacters = movieData.data.movies[0].actors;
+
+  if ( rawMovieCharacters !== undefined || null || '' ) {
+
 
   //Save character/actor & actress data to the movieCharacters array
   var charObj;
   for (var i = 0; i < rawMovieCharacters.length; i++) {
     //TODO Format char names - still has 'around some of the names'
     var characterNameFormatted = rawMovieCharacters[i].character.replace(/'([^']+(?='))'/g, '$1').toUpperCase();
-    console.log(characterNameFormatted);
 
     //If a char is missing biography info - skip this character
-    if ( characterNameFormatted = '') {
+    if ( characterNameFormatted !== '' || undefined || null) {
       if ( 'biography' in rawMovieCharacters[i] ) {
+
         if ( inputType === 'fullCast') {
           var castType = true;
         } else {
@@ -103,9 +103,9 @@ function omdbDataParser(body, inputType) {
 
   }
 
-  // } else {
-  //   console.error('Error: Connected to myfilmapi, but no actor data returned');
-  // }
+  } else {
+    console.error('Error: Connected to myfilmapi, but no actor data returned');
+  }
 
   //Returns an array of movie characters with gender data
   return movieCharacters;
