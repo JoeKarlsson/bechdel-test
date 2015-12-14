@@ -20,3 +20,41 @@ unexpected text |
     at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)
     at Parser.parseExpr (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:211:21)
     at Parser.block (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:729:25)"
+06:26:21.949,"GET /: Error: /Users/joecarlson/Documents/Dev/beschel-test/server/views/layout.jade:58
+    56|         ul.right
+    57|           li.active
+  > 58|             a(href='/')dashboard
+    59|           li.has-dropdown
+    60|             a(href='/about')films
+    61|             ul.dropdown
+
+Unexpected token `tag` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:828:15)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.block (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:729:25)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:838:24)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.block (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:729:25)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:838:24)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)"
+06:26:23.648,"GET /: Error: /Users/joecarlson/Documents/Dev/beschel-test/server/views/layout.jade:58
+    56|         ul.right
+    57|           li.active
+  > 58|             a(href='/')dashboard
+    59|           li.has-dropdown
+    60|             a(href='/about')films
+    61|             ul.dropdown
+
+Unexpected token `tag` expected `text`, `code`, `:`, `newline` or `eos`
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:828:15)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.block (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:729:25)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:838:24)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)
+    at Parser.parseExpr (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:211:21)
+    at Parser.block (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:729:25)
+    at Parser.tag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:838:24)
+    at Parser.parseTag (/Users/joecarlson/Documents/Dev/beschel-test/node_modules/jade/lib/parser.js:759:17)"

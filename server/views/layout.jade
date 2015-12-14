@@ -42,8 +42,60 @@ html
     script(src='/js/c3.min.js')
 
   body
+    // Nav for mobile screens
+    nav.show-for-small.top-bar(data-topbar="", role="navigation")
+      ul.title-area
+        li.name
+          h1
+            a(href="#") bechdel test visualizer
+        // Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+        li.toggle-topbar.menu-icon
+          a(href="#")
+            span Menu
+      section.top-bar-section
+        // Right Nav Section
+        ul.right
+          li
+            a(href='/') dashboard
+          li
+            a(href='/about') about
+
+          li.has-dropdown
+            a(href='/film') films
+            ul.dropdown
+              li
+                a(href="/film") American Sniper
+              li
+                a(href="/film") Birdman
+              li
+                a(href="/film") Boyhood
+              li
+                a(href="/film") Foxcather
+              li
+                a(href="/film") Gone Girl
+              li
+                a(href="/film") Grand Budapest Hotel
+              li
+                a(href="/film") Imitation Game
+              li
+                a(href="/film") Into The Woods
+              li
+                a(href="/film") Still Alice
+              li
+                a(href="/film") Theory of Everything
+              li
+                a(href="/film") The Judge
+              li
+                a(href="/film") Whiplash
+              li
+                a(href="/film") Wild
+          li
+            a(href='/philosophy') philosophy
+          li
+            a(href='/contact') contact
 
     .row.fullWidth.layout
+      // Nav for non mobile screens
       aside#aside-main.aside-main.small-12.medium-4.large-3.columns.unpad.hide-for-small
         .row.header-bar.text-center
           a(href='/') bechdel test visualizer
@@ -52,18 +104,49 @@ html
             img.center(src='/img/bechdel-test-square.jpg')
         ul.no-bullet.side-nav
           li
-            a(href='/')
-              |           dashboard
-          li.clearfix
-            a(href='/about')
-              |           about
+            a(href='/') dashboard
+          li
+            a(href='/about') about
+
+          ul.accordion(data-accordion="")
+            li.accordion-navigation
+                a(href="#panel2a") films
+                #panel2a.content
+
+                  ul
+                    li
+                      a(href="/film") American Sniper
+                    li
+                      a(href="/film") Birdman
+                    li
+                      a(href="/film") Boyhood
+                    li
+                      a(href="/film") Foxcather
+                    li
+                      a(href="/film") Gone Girl
+                    li
+                      a(href="/film") Grand Budapest Hotel
+                    li
+                      a(href="/film") Imitation Game
+                    li
+                      a(href="/film") Into The Woods
+                    li
+                      a(href="/film") Still Alice
+                    li
+                      a(href="/film") Theory of Everything
+                    li
+                      a(href="/film") The Judge
+                    li
+                      a(href="/film") Whiplash
+                    li
+                      a(href="/film") Wild
           li
             a(href='/philosophy')
               |           philosophy
           li
             a(href='/contact')
               |           contact
-          footer.footer.show-for-medium-up
+          footer.footer
             .row
               .small-12
                 p.slogan
@@ -75,7 +158,7 @@ html
                 p.copywrite a karlsson production © 2015
 
       #section-main.small-12.medium-8.large-9.columns
-        .row.header-bar.grey1
+        .row.header-bar.grey1.hide-for-small
           ul.inline-list.left
             li
               a#aside-toggle(href='#')
