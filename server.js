@@ -18,10 +18,20 @@ var fs = require('fs'); //node tool for reading and writing from the file system
 var Q = require('q'); //A tool for creating and composing asynchronous promises
 var request = require('request');
 
+var app = express();
+
 var routes = require('./routes/index');
 var about = require('./routes/about');
 var philosophy = require('./routes/philosophy');
+var film = require('./routes/film');
 var contact = require('./routes/contact');
+
+// routes
+app.use('/', routes);
+app.use('/about', about);
+app.use('/philosophy', philosophy);
+app.use('/film', film);
+app.use('/contact', contact);
 
 //My Methods
 var omdb = require('./methods/omdb');
@@ -44,7 +54,6 @@ var scriptPath = './scripts/american-sniper.txt';
 // var scriptPath = './scripts/judge.txt';
 // var scriptPath = './scripts/wild.txt';
 
-var app = express();
 
 app.locals.isProd = (app.get('env') === 'production');
 
@@ -59,11 +68,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.urlencoded({ extended : false }));
 
-// routes
-app.use('/', routes);
-app.use('/about', about);
-app.use('/philosophy', philosophy);
-app.use('/contact', contact);
 
 
 // error handling middleware should be loaded last
