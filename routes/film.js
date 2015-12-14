@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET films listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('film', {
+    title : 'Bechdel Test Visualizer'
+  });
+
 });
 
 module.exports = router;
