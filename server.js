@@ -1,5 +1,3 @@
-/// <reference path="typings/tsd.d.ts"/>
-
 var express = require('express');
 var path = require('path');
 var os = require('os');
@@ -27,7 +25,7 @@ var contact = require('./routes/contact');
 
 //My Methods
 var omdb = require('./methods/omdb');
-var beschel = require('./methods/beschel');
+var bechdel = require('./methods/bechdel');
 
 //Test movie scripts
 var scriptPath = './scripts/american-sniper.txt';
@@ -54,7 +52,7 @@ app.locals.isProd = (app.get('env') === 'production');
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'server/views'));
 app.set('view engine', 'jade');
-app.use(favicon(__dirname + '/client/favicon.ico'));
+app.use(favicon(__dirname + '/client/favicon/favicon.ico'));
 app.use(logger('dev'));
 app.use(methodOverride());
 app.use(bodyParser.json());
@@ -127,43 +125,43 @@ function readScript(path) {
   });
 };
 
-readMovieTitle(scriptPath)
-.then(function (movieTitle) {
-  // If the HTTP response returns 200 OK, log the response text.
-  console.log('Movie Script Title: ', movieTitle);
-  return omdb.getOmdbData(movieTitle)
-    .then(function(movieCharacters) {
-      return readScript(scriptPath)
-        .then(function (movieScript) {
-          return beschel.extractScenes(movieCharacters, movieScript)
-            .then(function (sceneArray) {
-              return beschel.sceneAnalysis(movieCharacters, sceneArray)
-                .then(function (result) {
+// readMovieTitle(scriptPath)
+// .then(function (movieTitle) {
+//   // If the HTTP response returns 200 OK, log the response text.
+//   console.log('Movie Script Title: ', movieTitle);
+//   return omdb.getOmdbData(movieTitle)
+//     .then(function(movieCharacters) {
+//       return readScript(scriptPath)
+//         .then(function (movieScript) {
+//           return bechdel.extractScenes(movieCharacters, movieScript)
+//             .then(function (sceneArray) {
+//               return bechdel.sceneAnalysis(movieCharacters, sceneArray)
+//                 .then(function (result) {
 
-                }, function (error) {
-                  // If there's an error or a non-200 status code, log the error.
-                  console.error(error);
-                })
+//                 }, function (error) {
+//                   // If there's an error or a non-200 status code, log the error.
+//                   console.error(error);
+//                 })
 
-            }, function (error) {
-                // If there's an error or a non-200 status code, log the error.
-                console.error(error);
-              })
+//             }, function (error) {
+//                 // If there's an error or a non-200 status code, log the error.
+//                 console.error(error);
+//               })
 
-        }, function (error) {
-            // If there's an error or a non-200 status code, log the error.
-            console.error(error);
-          })
-    }, function (error) {
-        // If there's an error or a non-200 status code, log the error.
-        console.error(error);
-      })
-}, function (error) {
-  // If there's an error or a non-200 status code, log the error.
-  console.error(error);
-})
-.catch(function (error) {
-  // Handle any error from all above steps
-})
-.done();
+//         }, function (error) {
+//             // If there's an error or a non-200 status code, log the error.
+//             console.error(error);
+//           })
+//     }, function (error) {
+//         // If there's an error or a non-200 status code, log the error.
+//         console.error(error);
+//       })
+// }, function (error) {
+//   // If there's an error or a non-200 status code, log the error.
+//   console.error(error);
+// })
+// .catch(function (error) {
+//   // Handle any error from all above steps
+// })
+// .done();
 
