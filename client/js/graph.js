@@ -59,13 +59,13 @@ var bechdelScoreBar = c3.generate({
   bindto : '#bechdelScoreBar',
   data : {
     columns : [
-      ['Beschel Score', 2, 1, 3, 1, 3, 1, 3, 3, 1, 1, 1, 1, 3]
+      ['Bechdel Score', 2, 1, 3, 1, 3, 1, 3, 3, 1, 1, 1, 1, 3]
     ],
     type : 'bar'
   },
   bar : {
     width : {
-      ratio : 0.5 // this makes bar width 50% of length between ticks
+      ratio : .90 // this makes bar width 50% of length between ticks
     }
   },
   grid : {
