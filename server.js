@@ -125,6 +125,8 @@ function readScript(path) {
   });
 };
 
+//In order to test locally, you must uncomment this section. I have commented this out, because I was making too many API calls on the server and it was causing issues when testing.
+
 // readMovieTitle(scriptPath)
 // .then(function (movieTitle) {
 //   // If the HTTP response returns 200 OK, log the response text.
