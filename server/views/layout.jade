@@ -33,9 +33,9 @@ html
     meta(property="og:title", content="Bechdel Test Visualizer")
     meta(property="og:url", content="https://bechdel-test.herokuapp.com/")
     meta(property="og:type", content="website")
-    meta(property="og:image", content="https://bechdel-test.herokuapp.com/img/bechdel-test-app-photo.jpg")
+    meta(property="og:image", content="https://bechdel-test.herokuapp.com/img/bechdel-test-rectangle.jpg")
     link(rel="author", href="https://plus.google.com/u/0/+JoeKarlsson/posts")
-    meta(name="twitter:card", content="https://bechdel-test.herokuapp.com/img/bechdel-test-app-photo.jpg")
+    meta(name="twitter:card", content="https://bechdel-test.herokuapp.com/img/bechdel-test-rectangle.jpg")
 
     link(rel='stylesheet', href='css/app.css')
     script(src='/js/d3.min.js')
@@ -44,26 +44,22 @@ html
   body
     .row.fullWidth.layout
       aside#aside-main.aside-main.small-12.medium-4.large-3.columns.unpad
-        .row.header-bar.text-center.grey2
+        .row.header-bar.text-center
           a(href='/') Bechdel Test Visualization
         header
-          img.center(src='http://placehold.it/700x500')
+          img.center(src='/img/bechdel-test-square.jpg')
         ul.no-bullet.side-nav
           li
             a(href='/')
-              i.fi-torso
               |           Dashboard
           li.clearfix
-            a.left(href='/about')
-              i.fi-alert
+            a(href='/about')
               |           About
           li
             a(href='/philosophy')
-              i.fi-wrench
               |           Philosophy
           li
             a(href='/contact')
-              i.fi-cloud
               |           Contact
           footer.footer
             .row
@@ -92,8 +88,3 @@ html
 
   script.
     $(document).foundation();
-    $("#aside-toggle").click(function() {
-    $("#aside-main").toggleClass('hide');
-    $("#section-main").toggleClass('medium-8').toggleClass('medium-12');
-    $("#section-main").toggleClass('large-9').toggleClass('large-12');
-    });
