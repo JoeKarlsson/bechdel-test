@@ -6,15 +6,23 @@ block content
 
   .row
     .large-4.columns
-      div#chartOne.chart
+      div#passedBechdelDonut.chart
+      p.text-center
+        |Percent of films that passed the Bechdel Test
 
     .large-4.columns
-      div#chartTwo.chart
+      div#charWithDialogueDonut.chart
+      p.text-center
+        |Average percent of characters with dialogue per film
 
     .large-4.columns
-      div#chartThree.chart
+      div#totalLinesDialogueDonut.chart
+      p.text-center
+        |Average total lines of dialogue per film
 
     .column.small-12
-      div#chartFour.chart
+      div#bechdelScoreBar.chart
+      p.text-center
+        |Bechdel Score by Film
 
   script(src="/js/graph.js")
