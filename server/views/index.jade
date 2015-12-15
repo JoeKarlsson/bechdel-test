@@ -1,26 +1,48 @@
 extends layout
 
 block content
+  .row
+    .small-12.columns
 
-  h1 2015 oscar best picture nominees
+  .row
+    .medium-6.columns
+      p
+        h6 The Bechdel Test Visualizer
+        |was a collaborative project between a English Scholar and a software engineer. With the tool we’ve created, the process of determing whether a film passes the Beschdel Test is automated, which allows massive amounts of data to be generated with ease. Thus, data can be produced for large bodies of film, i.e. a certain director’s filmography, a certain actress’ body of work, or for the films released in a specific year.
+    .medium-6.columns
+      p
+        h6
+        br
+        |In order to test effectivness of this tool, we have selected and analyzed the 2014 Oscar's Best Picture Nominees. The data below shows congregate data form all of the nominees, and additional data about each film.
+      p
+        |If you have any suggestions for how to grow the application, we would love to hear from you.
+      br
+      br
+
+  .row
+    .small-12.columns
+      h4 2015 oscar best picture nominees
+      br
+      br
 
   .row
     .large-4.columns
       p.text-center
         |Percent of films that passed the Bechdel Test
       div#passedBechdelDonut.chart
-
     .large-4.columns
       p.text-center
         |Average percent of characters with dialogue per film
       div#charWithDialogueDonut.chart
-
     .large-4.columns
       p.text-center
         |Average total lines of dialogue per film
       div#totalLinesDialogueDonut.chart
 
+  .row
     .column.small-12
+      br
+      br
       p.text-center
         |Bechdel Score by Film
       div#bechdelScoreBar.chart

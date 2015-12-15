@@ -47,7 +47,7 @@ html
       ul.title-area
         li.name
           h1
-            a(href="#") bechdel test visualizer
+            a(href="/") bechdel test visualizer
         // Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
         li.toggle-topbar.menu-icon
           a(href="#")
@@ -61,43 +61,45 @@ html
             a(href='/about') about
 
           li.has-dropdown
-            a(href='/film') films
+            a(href='/films') films
             ul.dropdown
               li
-                a(href="/film") American Sniper
+                a(href="/american-sniper") American Sniper
               li
-                a(href="/film") Birdman
+                a(href="/birdman") Birdman
               li
-                a(href="/film") Boyhood
+                a(href="/boyhood") Boyhood
               li
-                a(href="/film") Foxcather
+                a(href="/foxcatcher") Foxcather
               li
-                a(href="/film") Gone Girl
+                a(href="/gone-girl") Gone Girl
               li
-                a(href="/film") Grand Budapest Hotel
+                a(href="/grand-budapest-hotel") Grand Budapest Hotel
               li
-                a(href="/film") Imitation Game
+                a(href="/imitation-game") Imitation Game
               li
-                a(href="/film") Into The Woods
+                a(href="/into-the-woods") Into The Woods
               li
-                a(href="/film") Still Alice
+                a(href="/still-alice") Still Alice
               li
-                a(href="/film") Theory of Everything
+                a(href="/theory-of-everything") Theory of Everything
               li
-                a(href="/film") The Judge
+                a(href="/judge") The Judge
               li
-                a(href="/film") Whiplash
+                a(href="/whiplash") Whiplash
               li
-                a(href="/film") Wild
+                a(href="/wild") Wild
           li
             a(href='/philosophy') philosophy
+          li
+            a(href='/case-study') case study
           li
             a(href='/contact') contact
 
     .row.fullWidth.layout
       // Nav for non mobile screens
       aside#aside-main.aside-main.small-12.medium-4.large-3.columns.unpad.hide-for-small
-        .row.header-bar.text-center
+        .row.header-bar.text-left
           a(href='/') bechdel test visualizer
         header.show-for-medium-up
           a(href='/')
@@ -107,45 +109,14 @@ html
             a(href='/') dashboard
           li
             a(href='/about') about
-
-          ul.accordion(data-accordion="")
-            li.accordion-navigation
-                a(href="#panel2a") films
-                #panel2a.content
-
-                  ul
-                    li
-                      a(href="/film") American Sniper
-                    li
-                      a(href="/film") Birdman
-                    li
-                      a(href="/film") Boyhood
-                    li
-                      a(href="/film") Foxcather
-                    li
-                      a(href="/film") Gone Girl
-                    li
-                      a(href="/film") Grand Budapest Hotel
-                    li
-                      a(href="/film") Imitation Game
-                    li
-                      a(href="/film") Into The Woods
-                    li
-                      a(href="/film") Still Alice
-                    li
-                      a(href="/film") Theory of Everything
-                    li
-                      a(href="/film") The Judge
-                    li
-                      a(href="/film") Whiplash
-                    li
-                      a(href="/film") Wild
           li
-            a(href='/philosophy')
-              |           philosophy
+            a(href='/films') films
           li
-            a(href='/contact')
-              |           contact
+            a(href='/philosophy') philosophy
+          li
+            a(href='/case-study') case study
+          li
+            a(href='/contact') contact
           footer.footer
             .row
               .small-12

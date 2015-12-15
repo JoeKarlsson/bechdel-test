@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+  .row
+    .large-4.columns.text-left
+      h1 The Judge (2014)
+
+  .row
+    .large-4.columns
+      .poster
+        img(src="http://static2.hypable.com/wp-content/uploads/2014/06/the-judge-poster.jpg")
+      h5 Bechdel Test: Failed
+      h5 Bechdel Score: 1 out of 3
+
+    .large-4.columns
+        p
+          |Big-city lawyer Hank Palmer returns to his childhood home where his father, the town's judge, is suspected of murder. Hank sets out to discover the truth and, along the way, reconnects with his estranged family.
+        p
+          |Director: David Dobkin
+          |Writers: Nick Schenk (screenplay), Bill Dubuque (screenplay)
+          |Stars: Robert Downey Jr., Robert Duvall, Vera Farmiga
+        p
+          |Genre: Crime | Drama
+        p
+          |Box Office:
+          |Budget: $50,000,000 (estimated)
+          |Opening Weekend:  $13,116,226 (USA) (10 October 2014)
+          |Gross: $47,105,085 (USA) (9 January 2015)
+
+    .large-4.columns
+      iframe(width="100%", height="100%", src="https://www.youtube.com/embed/ZBvK6ni97W8", frameborder="0", allowfullscreen="")
+      p
+        a(href='http://www.imdb.com/title/tt1872194/?ref_=fn_al_tt_1') IMDB Page
+      p
+        a(href='http://bechdeltest.com/view/6118/american_sniper/') bechdeltest.com Page
+
+  .row
+    .large-4.columns
+      p.text-center
+        |Number of scenes that passed the Bechdel Test
+      div#passedBechdelDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Characters with dialogue
+      div#charWithDialogueDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Total lines of dialogue
+      div#totalLinesDialogueDonut.chart
+
+  script(src="/js/graph.js")

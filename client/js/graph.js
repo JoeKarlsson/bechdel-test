@@ -61,11 +61,15 @@ var bechdelScoreBar = c3.generate({
     columns : [
       ['Bechdel Score', 2, 1, 3, 1, 3, 1, 3, 3, 1, 1, 1, 1, 3]
     ],
-    type : 'bar'
+    type : 'bar',
+    labels : true
+  },
+  legend : {
+    show : false
   },
   bar : {
     width : {
-      ratio : .90 // this makes bar width 50% of length between ticks
+      ratio : .75 // this makes bar width 50% of length between ticks
     }
   },
   grid : {
@@ -76,18 +80,20 @@ var bechdelScoreBar = c3.generate({
   axis : {
     x :  {
       type : 'category',
-      categories : ['American Sniper', 'Birdman', 'Boyhood', 'Foxcatcher', 'Gone Girl', 'Grand Budapest Hotel', 'Imitation Game', 'Into The Woods', 'Still Alice', 'Theory of Everything', 'The Judge', 'Whiplash', 'Wild']
+      categories : [
+        'American Sniper', 'Birdman', 'Boyhood', 'Foxcatcher', 'Gone Girl', 'Grand Budapest Hotel', 'Imitation Game', 'Into The Woods', 'Still Alice', 'Theory of Everything', 'The Judge', 'Whiplash', 'Wild'
+      ]
     },
     y : {
       type : 'category',
       categories : ['1', '2', '3'],
       tick : {
-        values: ['1', '2', '3'],
+        values : ['1', '2', '3'],
         count : 3
       },
-      label: {
-        text: 'Bechdel Score',
-        position: 'outer-center'
+      label : {
+        text : 'Bechdel Score',
+        position : 'outer-middle'
       }
     }
   },

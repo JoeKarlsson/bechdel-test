@@ -1,0 +1,100 @@
+extends layout
+
+block content
+
+  .row
+    .large-4.columns.text-left
+      h1 Boyhood (2014)
+
+  .row
+    .large-4.columns
+      .poster
+        img(src="http://randomcelebs.com/wp-content/uploads/2015/02/Boyhood-Movie-Poster-13.jpg")
+      h5 Bechdel Test: Passed
+      h5 Bechdel Score: 23out of 3
+
+    .large-4.columns
+        p
+          |Filmed over 12 years with the same cast, Richard Linklater's BOYHOOD is a groundbreaking story of growing up as seen through the eyes of a child named Mason (a breakthrough performance by Ellar Coltrane), who literally grows up on screen before our eyes.
+        p
+          |Director: Richard Linklater
+          |Writers: Richard Linklater
+          |Stars: Ellar Coltrane, Patricia Arquette, Ethan Hawke
+        p
+          |Genre: Drama
+        p
+          |Box Office:
+          |Budget: $4,000,000 (estimated)
+          |Opening Weekend: $387,618 (USA) (11 July 2014)
+          |Gross: $25,359,200 (USA) (27 February 2015)
+
+    .large-4.columns
+      iframe(width="100%", height="100%", src="https://www.youtube.com/watch?v=Y0oX0xiwOv8", frameborder="0", allowfullscreen="")
+      p
+        a(href='http://www.imdb.com/title/tt1065073/?ref_=fn_al_tt_1') IMDB Page
+      p
+        a(href='http://bechdeltest.com/view/5508/boyhood/') bechdeltest.com Page
+
+  .row
+    .large-4.columns
+      p.text-center
+        |Number of scenes that passed the Bechdel Test
+      div#passedBechdelDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Characters with dialogue
+      div#charWithDialogueDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Total lines of dialogue
+      div#totalLinesDialogueDonut.chart
+  br
+
+  .row
+    .large-6.columns
+      h5 Scenes that pass the Bechdel Test
+      p
+        |INT. KITCHEN - DAY
+        |Mom, Samantha, and Mason eat lunch.
+        |MOM
+        |So listen, guys, I wanna talk to you
+        |about something, and you might not like this idea at first but... we're moving to Houston.
+        |When?
+        |MASON
+        |MOM
+        |Well, soon. We should be out by the
+        |first, so we don't have to pay two rents next month.
+        |SAMANTHA
+        |No, Mother, we're not moving. Nope,
+        |nope, sorry Mom. Nope. Nope. Smack, smack, smack...
+        |Smack.
+        |MOM
+        |Samantha, I have to go back to college
+        |so I can make us a better living.
+        |MOM (O.S.) (CONT'D) With this job I can't take care of
+        |us the way I'd like to. I can't keep going this way. And Grandma said she'd help us out... and it would be nice to be near her.
+        |SAMANTHA
+        |Fine, Mother. You can do whatever
+        |you want but (shrugs)
+        |We're not moving. (Smacks)
+        |Mason moves his fork around in his bowl.
+        |9.
+        |MASON
+        |What about our friends?
+        |MOM
+        |Oh, baby, we can e-mail them or write.
+        |We can come back to visit. And guess what?
+        |She reaches out to touch Samantha's arm.
+        |MOM (CONT'D)
+        |This place that Grandma found us,
+        |you'll each have your own room. Right?
+        |Samantha shrugs.
+        |MOM (CONT'D) And there's a pool.
+
+    .large-6.columns
+      p.text-center
+        |Continued...
+
+  script(src="/js/graph.js")

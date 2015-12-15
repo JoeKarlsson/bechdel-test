@@ -1,0 +1,84 @@
+extends layout
+
+block content
+
+  .row
+    .large-4.columns.text-left
+      h1 Wild (2014)
+
+  .row
+    .large-4.columns
+      .poster
+        img(src="http://www.dvdsreleasedates.com/posters/800/W/Wild-2014-movie-poster.jpg")
+      h5 Bechdel Test: Passed
+      h5 Bechdel Score: 3 out of 3
+
+    .large-4.columns
+        p
+          |A chronicle of one woman's 1,100-mile solo hike undertaken as a way to recover from a recent personal tragedy.
+        p
+          |Director: Jean-Marc Vallée
+          |Writers: Nick Hornby (screenplay), Cheryl Strayed
+          |Stars: Reese Witherspoon, Laura Dern, Gaby Hoffmann
+        p
+          |Genre: Adventure | Biography | Drama | History
+        p
+          |Box Office:
+          |Budget: $58,800,000 (estimated)
+          |Opening Weekend: $676,909 (USA) (2 January 2015)
+          |Gross: $350,123,553 (USA) (19 June 2015)
+
+    .large-4.columns
+      iframe(width="100%", height="100%", src="https://www.youtube.com/embed/tn2-GSqPyl0", frameborder="0", allowfullscreen="")
+      p
+        a(href='http://www.imdb.com/title/tt2305051/') IMDB Page
+      p
+        a(href='http://bechdeltest.com/view/5971/wild/') bechdeltest.com Page
+
+  .row
+    .large-4.columns
+      p.text-center
+        |Number of scenes that passed the Bechdel Test
+      div#passedBechdelDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Characters with dialogue
+      div#charWithDialogueDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Total lines of dialogue
+      div#totalLinesDialogueDonut.chart
+  br
+
+  .row
+    .large-6.columns
+      h5 Scenes that pass the Bechdel Test
+      p
+        |INT. BLETCHLEY PARK - BEER HUT - NIGHT
+        |An impromptu ENGAGEMENT PARTY in the Beer Hut that night:
+        |— A BANNER made from PUNCH CARDS reads: “CONGRATULATIONS!”
+        |— Music plays as DANCERS TWIRL in the center of the Hut.
+        |— Joan LAUGHS with her WREN FRIENDS in one corner, while in another Alan drinks beer with his team.
+        |ON JOAN AND THE GIRLS: She shows off her makeshift wire engagement ring:
+      p
+        |JOAN’S FRIEND (trying her best)
+        |... It’s... beautiful? Joan LAUGHS. She understands.
+      p
+        |JOAN CLARKE
+        |I know it’s not an ordinary ring...
+        |She looks over at Alan warmly.
+      p
+        |JOAN CLARKE (CONT’D) ... But who ever loved ordinary?
+        |ON ALAN AND THE BOYS: They’re are all a bit drunk, TELLING DIRTY STORIES:
+      p
+        |HUGH ALEXANDER
+        |... So she’s got it in her hands,
+        |right, and she looks up at me and says, “I’m to put it in my mouth?” And I say, “yes, you know. The French way.” So she pops it in, closes her lips around the thing... And then she starts humming the bloody Marseillaise!
+
+    .large-6.columns
+      p.text-center
+        |Continued...
+
+  script(src="/js/graph.js")

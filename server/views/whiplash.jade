@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+  .row
+    .large-4.columns.text-left
+      h1 Whiplash (2014)
+
+  .row
+    .large-4.columns
+      .poster
+        img(src="https://s.aolcdn.com/hss/storage/midas/220e7241ec0f8e5cacafdc576d2a80be/200579756/WHIPLASH+onesheet.jpg")
+      h5 Bechdel Test: Failed
+      h5 Bechdel Score: 1 out of 3
+
+    .large-4.columns
+        p
+          |A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.
+        p
+          |Director: Damien Chazelle
+          |Writers: Damien Chazelle
+          |Stars: Miles Teller, J.K. Simmons, Melissa Benoist
+        p
+          |Genre: Drama | Music
+        p
+          |Box Office:
+          |Budget: $58,800,000 (estimated)
+          |Opening Weekend: $676,909 (USA) (2 January 2015)
+          |Gross: $350,123,553 (USA) (19 June 2015)
+
+    .large-4.columns
+      iframe(width="100%", height="100%", src="https://www.youtube.com/embed/7d_jQycdQGo", frameborder="0", allowfullscreen="")
+      p
+        a(href='http://www.imdb.com/title/tt2582802/') IMDB Page
+      p
+        a(href='http://bechdeltest.com/view/5818/whiplash/') bechdeltest.com Page
+
+  .row
+    .large-4.columns
+      p.text-center
+        |Number of scenes that passed the Bechdel Test
+      div#passedBechdelDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Characters with dialogue
+      div#charWithDialogueDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Total lines of dialogue
+      div#totalLinesDialogueDonut.chart
+
+  script(src="/js/graph.js")
