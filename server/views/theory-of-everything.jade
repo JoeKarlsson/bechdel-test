@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+  .row
+    .large-4.columns.text-left
+      h1 Theory of Everything (2014)
+
+  .row
+    .large-4.columns
+      .poster
+        img(src="http://www.seat42f.com/wp-content/uploads/2014/08/The_Theory-Of_Everything_Movie_Poster.jpg")
+      h5 Bechdel Test: Failed
+      h5 Bechdel Score: 1 out of 3
+
+    .large-4.columns
+        p
+          |A look at the relationship between the famous physicist Stephen Hawking and his wife.
+        p
+          |Director: James Marsh
+          |Writers: Anthony McCarten (screenplay), Jane Hawking (book)
+          |Stars: Eddie Redmayne, Felicity Jones, Tom Prior
+        p
+          |Genre: Biography | Drama | Romance
+        p
+          |Box Office:
+          |Budget: $58,800,000 (estimated)
+          |Opening Weekend: $676,909 (USA) (2 January 2015)
+          |Gross: $350,123,553 (USA) (19 June 2015)
+
+    .large-4.columns
+      iframe(width="100%", height="100%", src="https://www.youtube.com/embed/Salz7uGp72c", frameborder="0", allowfullscreen="")
+      p
+        a(href='http://www.imdb.com/title/tt2980516/') IMDB Page
+      p
+        a(href='http://bechdeltest.com/view/5970/the_theory_of_everything/') bechdeltest.com Page
+
+  .row
+    .large-4.columns
+      p.text-center
+        |Number of scenes that passed the Bechdel Test
+      div#passedBechdelDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Characters with dialogue
+      div#charWithDialogueDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Total lines of dialogue
+      div#totalLinesDialogueDonut.chart
+
+  script(src="/js/graph.js")
