@@ -113,17 +113,6 @@ Your code should now be up to date! ;)
 - minimist": "^1.1.2",
 - run-sequence": "^1.1.2"
 
-##Todo
-- Show data - Where and when they talk
-- Score: How much of the movie contains dialogue that passes the test
-- Breakdown:
-    Male to male interactions
-    male to female interactions
-    female to female interactions
-    Other
--Number of scenes with women v # w/ men
--Do directors tend to make movies that pass the Beschdal test?
-
 ##Related Links
 - [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
 - [The Open Movie Database](http://www.omdbapi.com/)
