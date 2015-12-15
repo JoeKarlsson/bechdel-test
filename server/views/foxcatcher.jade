@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+  .row
+    .large-4.columns.text-left
+      h1 Foxcatcher (2014)
+
+  .row
+    .large-4.columns
+      .poster
+        img(src="http://www.movienewz.com/img/gallery/foxcatcher/posters/foxcatcher_movie_poster_1.jpg")
+      h5 Bechdel Test: Failed
+      h5 Bechdel Score: 1 out of 3
+
+    .large-4.columns
+        p
+          |The greatest Olympic Wrestling Champion brother team joins Team Foxcatcher led by multimillionaire sponsor John E. du Pont as they train for the 1988 games in Seoul - a union that leads to unlikely circumstances.
+        p
+          |Director: Bennett Miller
+          |Writers: E. Max Frye, Dan Futterman
+          |Stars: Steve Carell, Channing Tatum, Mark Ruffalo
+        p
+          |Genre: Biography | Drama | Sport
+        p
+          |Box Office
+          |Budget: $24,000,000 (estimated)
+          |Opening Weekend: $474,000 (USA) (21 November 2014)
+          |Gross: $12,096,300 (USA) (6 March 2015)
+
+    .large-4.columns
+      iframe(width="100%", height="100%", src="https://www.youtube.com/watch?v=8361stZ8n0w", frameborder="0", allowfullscreen="")
+      p
+        a(href='http://www.imdb.com/title/tt1100089/?ref_=fn_al_tt_1') IMDB Page
+      p
+        a(href='http://bechdeltest.com/view/5942/foxcatcher/') bechdeltest.com Page
+
+  .row
+    .large-4.columns
+      p.text-center
+        |Number of scenes that passed the Bechdel Test
+      div#passedBechdelDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Characters with dialogue
+      div#charWithDialogueDonut.chart
+
+    .large-4.columns
+      p.text-center
+        |Total lines of dialogue
+      div#totalLinesDialogueDonut.chart
+
+  script(src="/js/graph.js")
