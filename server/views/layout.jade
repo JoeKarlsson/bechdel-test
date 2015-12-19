@@ -35,7 +35,12 @@ html
     meta(property="og:type", content="website")
     meta(property="og:image", content="https://bechdel-test.herokuapp.com/img/bechdel-test-rectangle.jpg")
     link(rel="author", href="https://plus.google.com/u/0/+JoeKarlsson/posts")
-    meta(name="twitter:card", content="https://bechdel-test.herokuapp.com/img/bechdel-test-rectangle.jpg")
+    meta(name='twitter:card', content='summary_large_image')
+    meta(name='twitter:description', content='Bechdel Test Visualizer automatically tests films using the Bechdel Test, and visualizes the results.')
+    meta(name='twitter:title', content='Bechdel Test Visualizer')
+    meta(name='twitter:site', content='@JoeCarlson131')
+    meta(name='twitter:image', content='https://bechdel-test.herokuapp.com/img/bechdel-test-rectangle.jpg')
+    meta(name='twitter:creator', content='@josephcarlson131')
 
     link(rel='stylesheet', href='css/app.css')
     script(src='/js/d3.min.js')
@@ -90,8 +95,6 @@ html
               li
                 a(href="/wild") Wild
           li
-            a(href='/philosophy') philosophy
-          li
             a(href='/case-study') case study
           li
             a(href='/contact') contact
@@ -111,8 +114,6 @@ html
             a(href='/about') about
           li
             a(href='/films') films
-          li
-            a(href='/philosophy') philosophy
           li
             a(href='/case-study') case study
           li
@@ -144,3 +145,11 @@ html
 
   script.
     $(document).foundation();
+
+  script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-71592361-1', 'auto');
+        ga('send', 'pageview');
