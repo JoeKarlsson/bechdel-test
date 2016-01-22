@@ -2,6 +2,7 @@
 
 var Q = require('q');
 var request = require('request');
+var fs = require('fs');
 
 //Token for http://api.myapifilms.com/imdb.do
 var myapifilmstoken = 'd44147a7-5e6e-4450-92ba-773be44791ce';
@@ -17,20 +18,22 @@ module.exports.getOmdbData = (movieTitle) => {
 
     var splitTitle = movieTitle.split(' ').join('+');
 
-    omdbSimpleCast(splitTitle)
-      .then(function (data) {
-        return omdbFullCast(splitTitle)
-          .then(function () {
-            console.log('Finished retrieving all data from myapifilms..');
-            resolve(movieCharacters);
-          }), function (error) {
-            // If there's an error or a non-200 status code, log the error.
-            throw new Error(error);
-          }
-      }, function (error) {
-          // If there's an error or a non-200 status code, log the error.
-          throw new Error(error);
-        })
+    addFilmToDB(movieTitle)
+
+    // omdbSimpleCast(splitTitle)
+    //   .then(function (data) {
+    //     return omdbFullCast(splitTitle)
+    //       .then(function () {
+    //         console.log('Finished retrieving all data from myapifilms..');
+    //         resolve(movieCharacters);
+    //       }), function (error) {
+    //         // If there's an error or a non-200 status code, log the error.
+    //         throw new Error(error);
+    //       }
+    //   }, function (error) {
+    //       // If there's an error or a non-200 status code, log the error.
+    //       throw new Error(error);
+    //     })
   })
 }
 
@@ -71,6 +74,8 @@ let omdbDataParser = ( body, inputType ) => {
   // Show the request for the omdb api.
   let movieData = JSON.parse( body );
 
+  addFilmToDB(movieData.data.movies[0]);
+
   let rawMovieCharacters = movieData.data.movies[0].actors;
 
   if ( rawMovieCharacters !== undefined || null || '' ) {
@@ -96,10 +101,8 @@ let omdbDataParser = ( body, inputType ) => {
               'characterName' : characterNameFormatted,
               'mainCast' : castType
             });
-
         }
       }
-
     }
 
   } else {
@@ -108,4 +111,19 @@ let omdbDataParser = ( body, inputType ) => {
 
   //Returns an array of movie characters with gender data
   return movieCharacters;
+}
+
+let addFilmToDB = ( data ) => {
+
+  console.log(data);
+  fs.readFile('./db/film.json', ( err, data ) => {
+    if ( err ) throw new Error( err );
+    // let db = data.toString();
+    // let movieData = JSON.parse( data );
+    console.log(data);
+    for (var i = movieData.length - 1; i >= 0; i--) {
+      console.log(movieData[i])
+    };
+    let filmData = {}
+  })
 }
