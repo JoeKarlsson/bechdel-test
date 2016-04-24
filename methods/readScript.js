@@ -7,6 +7,7 @@ var bechdel = require('./bechdel');
 
 //Test movie scripts
 var scriptPath = './scripts/american-sniper.txt';
+
 // var scriptPath = './scripts/birdman.txt';
 // var scriptPath = './scripts/boyhood.txt';
 // var scriptPath = './scripts/foxcatcher.txt';
@@ -74,8 +75,10 @@ let readAndAnalyzeScript = () => {
     console.log( 'Movie Script Title: ', movieTitle );
     return omdb.getOmdbData( movieTitle )
 
-        .then( ( movieCharacters ) => {
+      .then( ( movieCharacters ) => {
+
         movieCharacters = movieCharacters;
+
         return readScript(scriptPath)
 
           .then( ( movieScript ) => {
