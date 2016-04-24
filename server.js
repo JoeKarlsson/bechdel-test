@@ -12,7 +12,7 @@ var errorHandler = require('errorhandler');
 var mds = require('markdown-serve');
 var winston = require('./server/logger.js');
 var request = require('request');
-var readAndAnalyzeScript = require('./methods/readScript');
+var readScript = require('./methods/readScript');
 var db = require('./model/index.js')
 
 app.locals.isProd = (app.get('env') === 'production');
@@ -88,4 +88,4 @@ app.listen(app.get('port'), function() {
   winston.info('Server started');
 });
 
-readAndAnalyzeScript();
+readScript.readAndAnalyzeScript();
