@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 var path = require('path');
 var os = require('os');
 var pkg = require('./package.json');
@@ -12,7 +13,7 @@ var mds = require('markdown-serve');
 var winston = require('./server/logger.js');
 var request = require('request');
 var readAndAnalyzeScript = require('./methods/readScript');
-var app = express();
+var db = require('./model/index.js')
 
 app.locals.isProd = (app.get('env') === 'production');
 
