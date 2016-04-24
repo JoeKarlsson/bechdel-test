@@ -258,8 +258,9 @@ let containsPatriarchalKeywords = (s) => {
  * twoOrMoreFemalesInScene Determines is a scene includes two or more female characters in it. This function does not determine if these women have a conversation or if they talk about men.
  * @param  {[type]} count An object containing the list of all movie charachters and the number of times they talk in a given scene.
  * @return {[Boolean]}       Returns a boolean depending on whether or not a scene has two or more women in it.
+ *
  */
-function twoOrMoreFemalesInScene(movieCharacters, count) {
+let twoOrMoreFemalesInScene = (movieCharacters, count) => {
 
   var femalesWithDialogue = 0;
 
@@ -283,7 +284,7 @@ function twoOrMoreFemalesInScene(movieCharacters, count) {
  * @param  {[type]}  name            [description]
  * @return {Boolean}                 [description]
  */
-function isCharFemale (movieCharacters, name) {
+const isCharFemale = (movieCharacters, name) => {
   for (var idx in movieCharacters) {
     var character = movieCharacters[idx];
     if (name == character.characterName) {

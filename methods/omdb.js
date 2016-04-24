@@ -2,7 +2,6 @@
 
 var Q = require('q');
 var request = require('request');
-var fs = require('fs');
 
 //Token for http://api.myapifilms.com/imdb.do
 var myapifilmstoken = 'd44147a7-5e6e-4450-92ba-773be44791ce';
@@ -18,16 +17,28 @@ module.exports.getOmdbData = (movieTitle) => {
 
     var splitTitle = movieTitle.split(' ').join('+');
 
-    addFilmToDB(movieTitle)
-
+    omdbSimpleCast(splitTitle)
+      .then(function (data) {
+        return omdbFullCast(splitTitle)
+          .then(function () {
+            console.log('Finished retrieving all data from myapifilms..');
+            resolve(movieCharacters);
+          }), function (error) {
+            // If there's an error or a non-200 status code, log the error.
+            throw new Error(error);
+          }
+      }, function (error) {
+          // If there's an error or a non-200 status code, log the error.
+          throw new Error(error);
+        })
   })
 }
 
-let omdbSimpleCast = ( movieTitle ) => {
+let omdbSimpleCast = ( splitTitle ) => {
   return Q.promise(function (resolve, reject) {
     console.log('Started phase I - Retrieving simple movie data via myapifilms...');
 
-    request('http://api.myapifilms.com/imdb/idIMDB?title=' + movieTitle + '&token=' + myapifilmstoken + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=1&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0', (error, response, body) => {
+    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + myapifilmstoken + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=1&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0', (error, response, body) => {
       if (!error && response.statusCode == 200) {
         resolve(omdbDataParser(body, 'mainCast'));
       }  else {
@@ -37,11 +48,11 @@ let omdbSimpleCast = ( movieTitle ) => {
   })
 }
 
-let omdbFullCast = (movieTitle) => {
+let omdbFullCast = (splitTitle) => {
   return Q.promise(function (resolve, reject) {
     console.log('Started Phase II - Retreiving full character data from myapifilms..');
 
-    request('http://api.myapifilms.com/imdb/idIMDB?title=' + movieTitle + '&token=' + myapifilmstoken + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=2&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0',
+    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + myapifilmstoken + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=2&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0',
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
         resolve(omdbDataParser(body, 'fullCast'));
@@ -59,9 +70,6 @@ let omdbDataParser = ( body, inputType ) => {
 
   // Show the request for the omdb api.
   let movieData = JSON.parse( body );
-  console.log(movieData)
-
-  addFilmToDB(movieData.data.movies[0]);
 
   let rawMovieCharacters = movieData.data.movies[0].actors;
 
@@ -88,8 +96,10 @@ let omdbDataParser = ( body, inputType ) => {
               'characterName' : characterNameFormatted,
               'mainCast' : castType
             });
+
         }
       }
+
     }
 
   } else {
@@ -98,19 +108,4 @@ let omdbDataParser = ( body, inputType ) => {
 
   //Returns an array of movie characters with gender data
   return movieCharacters;
-}
-
-let addFilmToDB = ( data ) => {
-
-  console.log(data);
-  fs.readFile('./db/film.json', ( err, data ) => {
-    if ( err ) throw new Error( err );
-    // let db = data.toString();
-    // let movieData = JSON.parse( data );
-    console.log(data);
-    for (var i = movieData.length - 1; i >= 0; i--) {
-      console.log(movieData[i])
-    };
-    let filmData = {}
-  })
 }
