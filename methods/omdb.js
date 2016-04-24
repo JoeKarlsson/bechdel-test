@@ -1,12 +1,9 @@
 'use strict'
 
-var Q = require('q');
-var request = require('request');
-
-//Token for http://api.myapifilms.com/imdb.do
-var myapifilmstoken = 'd44147a7-5e6e-4450-92ba-773be44791ce';
-
-var movieCharacters = [];
+const Q = require('q');
+const request = require('request');
+const omdbDataScrubber = require('./omdbDataScrubber.js');
+const config = require('../config/config.json');
 
 module.exports.getOmdbData = (movieTitle) => {
   return Q.promise(function (resolve, reject) {
@@ -20,7 +17,7 @@ module.exports.getOmdbData = (movieTitle) => {
     omdbSimpleCast(splitTitle)
       .then(function (data) {
         return omdbFullCast(splitTitle)
-          .then(function () {
+          .then(function (movieCharacters) {
             console.log('Finished retrieving all data from myapifilms..');
             resolve(movieCharacters);
           }), function (error) {
@@ -34,78 +31,31 @@ module.exports.getOmdbData = (movieTitle) => {
   })
 }
 
-let omdbSimpleCast = ( splitTitle ) => {
-  return Q.promise(function (resolve, reject) {
+const omdbSimpleCast = ( splitTitle ) => {
+  return Q.promise( function ( resolve, reject ) {
     console.log('Started phase I - Retrieving simple movie data via myapifilms...');
 
-    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + myapifilmstoken + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=1&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0', (error, response, body) => {
-      if (!error && response.statusCode == 200) {
-        resolve(omdbDataParser(body, 'mainCast'));
+    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + config.myapifilms + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=1&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0', (error, response, body) => {
+      if ( !error && response.statusCode == 200 ) {
+        resolve(omdbDataScrubber( body, 'mainCast' ));
       }  else {
-        reject(error);
+        reject( error );
       }
-    })
-  })
-}
+    });
+  });
+};
 
-let omdbFullCast = (splitTitle) => {
+const omdbFullCast = (splitTitle) => {
   return Q.promise(function (resolve, reject) {
     console.log('Started Phase II - Retreiving full character data from myapifilms..');
 
-    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + myapifilmstoken + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=2&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0',
+    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + config.myapifilms + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=2&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0',
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        resolve(omdbDataParser(body, 'fullCast'));
+        resolve(omdbDataScrubber(body, 'fullCast'));
       }  else {
         reject(error);
       }
-    })
-  })
-}
-
-let omdbDataParser = ( body, inputType ) => {
-  if ( body === undefined || null || '' ) {
-    console.error( 'Body is undefined' );
-  }
-
-  // Show the request for the omdb api.
-  let movieData = JSON.parse( body );
-
-  let rawMovieCharacters = movieData.data.movies[0].actors;
-
-  if ( rawMovieCharacters !== undefined || null || '' ) {
-
-    //Save character/actor & actress data to the movieCharacters array
-    let charObj;
-    for (var i = 0; i < rawMovieCharacters.length; i++) {
-
-      let characterNameFormatted = rawMovieCharacters[i].character.replace(/'([^']+(?='))'/g, '$1').toUpperCase();
-
-      //If a char is missing biography info - skip this character
-      if ( characterNameFormatted !== '' || undefined || null) {
-        if ( 'biography' in rawMovieCharacters[i] ) {
-
-          if ( inputType === 'fullCast') {
-            var castType = true;
-          } else {
-            castType = false
-          }
-          movieCharacters.push({
-              'actorName' : rawMovieCharacters[i].actorName,
-              'gender' : rawMovieCharacters[i].biography.actorActress,
-              'characterName' : characterNameFormatted,
-              'mainCast' : castType
-            });
-
-        }
-      }
-
-    }
-
-  } else {
-    console.error('Error: Connected to myfilmapi, but no actor data returned');
-  }
-
-  //Returns an array of movie characters with gender data
-  return movieCharacters;
-}
+    });
+  });
+};
