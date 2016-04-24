@@ -1,27 +1,28 @@
 'use strict'
 
-var fs = require('fs');
-var Q = require('q');
-var omdb = require('./omdb');
-var bechdel = require('./bechdel');
+const fs = require('fs');
+const Q = require('q');
+const omdb = require('./omdb');
+const bechdel = require('./bechdel');
+const Film = require('../model/Film');
 
 //Test movie scripts
-var scriptPath = './scripts/american-sniper.txt';
+const scriptPath = './scripts/american-sniper.txt';
 
-// var scriptPath = './scripts/birdman.txt';
-// var scriptPath = './scripts/boyhood.txt';
-// var scriptPath = './scripts/foxcatcher.txt';
-// var scriptPath = './scripts/gone-girl.txt';
-// var scriptPath = './scripts/grand-budapest-hotel.txt';
-// var scriptPath = './scripts/imitation-game.txt';
-// var scriptPath = './scripts/still-alice.txt';
-// var scriptPath = './scripts/taxi-driver.txt';
-// var scriptPath = './scripts/theory-of-everything.txt';
-// var scriptPath = './scripts/whiplash.txt';
-// var scriptPath = './scripts/american-hustle.txt';
-// var scriptPath = './scripts/into-the-woods.txt';
-// var scriptPath = './scripts/judge.txt';
-// var scriptPath = './scripts/wild.txt';
+// const scriptPath = './scripts/birdman.txt';
+// const scriptPath = './scripts/boyhood.txt';
+// const scriptPath = './scripts/foxcatcher.txt';
+// const scriptPath = './scripts/gone-girl.txt';
+// const scriptPath = './scripts/grand-budapest-hotel.txt';
+// const scriptPath = './scripts/imitation-game.txt';
+// const scriptPath = './scripts/still-alice.txt';
+// const scriptPath = './scripts/taxi-driver.txt';
+// const scriptPath = './scripts/theory-of-everything.txt';
+// const scriptPath = './scripts/whiplash.txt';
+// const scriptPath = './scripts/american-hustle.txt';
+// const scriptPath = './scripts/into-the-woods.txt';
+// const scriptPath = './scripts/judge.txt';
+// const scriptPath = './scripts/wild.txt';
 
 let readMovieTitle = (path) => {
   return Q.promise( (resolve, reject) => {
@@ -54,7 +55,6 @@ let readScript = (path) => {
       movieScript += chunk;
     })
       .on('close', () => {
-        // console.log(movieScript);
         resolve(movieScript);
       })
       .on('error', (err) => {
@@ -63,51 +63,77 @@ let readScript = (path) => {
   });
 };
 
-//In order to test locally, you must uncomment this section. I have commented this out, because I was making too many API calls on the server and it was causing issues when testing.
+const filmExists = ( film ) => {
+  Film.findOne({ 'title' : film }, function ( err, film ) {
+    if ( err ) {
+      return false;
+    }
+    if ( film === null ) {
+      return false;
+    }
+    return true;
+  });
+};
 
-let readAndAnalyzeScript = () => {
+module.exports.readAndAnalyzeScript = () => {
   let movieCharacters = [];
   let movieScript = '';
 
   readMovieTitle(scriptPath)
   .then( (movieTitle) => {
-    // If the HTTP response returns 200 OK, log the response text.
     console.log( 'Movie Script Title: ', movieTitle );
-    return omdb.getOmdbData( movieTitle )
-
-      .then( ( movieCharacters ) => {
-
-        movieCharacters = movieCharacters;
-
-        return readScript(scriptPath)
-
-          .then( ( movieScript ) => {
-            movieScript = movieScript;
-            return bechdel.extractScenes( movieCharacters, movieScript )
-
-              .then( ( sceneArray ) => {
-                return bechdel.sceneAnalysis( movieCharacters, sceneArray )
-                  .then( ( result ) => {
-
-                  }, ( error ) => {
-                    // If there's an error or a non-200 status code, log the error.
-                    throw new Error( error );
-                  })
-
-              }, (error) => {
-                // If there's an error or a non-200 status code, log the error.
-                throw new Error(error);
-              })
-
-          }, (error) => {
-            // If there's an error or a non-200 status code, log the error.
-            throw new Error(error);
-          })
-
-      }, (error) => {
-        // If there's an error or a non-200 status code, log the error.
-        throw new Error(error);
+    if (filmExists(movieTitle)) {
+      Film.findOne({ 'title' : movieTitle }, function ( err, film ) {
+        if ( err ) {
+          throw new Error(err);
+        }
+        console.log(film)
+      });
+    } else {
+      var film = new Film({ title : movieTitle });
+      film.save(function (err, film, numAffected) {
+        if ( err ) {
+          throw new Error(err);
+        }
+        console.log(film, 'Film saved')
       })
+
+      return omdb.getOmdbData( movieTitle )
+
+        .then( ( movieCharacters ) => {
+
+          movieCharacters = movieCharacters;
+
+          return readScript(scriptPath)
+
+            .then( ( movieScript ) => {
+              movieScript = movieScript;
+              return bechdel.extractScenes( movieCharacters, movieScript )
+
+                .then( ( sceneArray ) => {
+                  return bechdel.sceneAnalysis( movieCharacters, sceneArray )
+                    .then( ( result ) => {
+
+                    }, ( error ) => {
+                      // If there's an error or a non-200 status code, log the error.
+                      throw new Error( error );
+                    })
+
+                }, (error) => {
+                  // If there's an error or a non-200 status code, log the error.
+                  throw new Error(error);
+                })
+
+            }, (error) => {
+              // If there's an error or a non-200 status code, log the error.
+              throw new Error(error);
+            })
+
+        }, (error) => {
+          // If there's an error or a non-200 status code, log the error.
+          throw new Error(error);
+        })
+    }
 
   }, (error) => {
     // If there's an error or a non-200 status code, log the error.
@@ -121,5 +147,3 @@ let readAndAnalyzeScript = () => {
 
   .done();
 }
-
-module.exports = readAndAnalyzeScript;
