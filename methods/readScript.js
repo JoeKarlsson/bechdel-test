@@ -74,7 +74,7 @@ let readAndAnalyzeScript = () => {
     console.log( 'Movie Script Title: ', movieTitle );
     return omdb.getOmdbData( movieTitle )
 
-      .then( ( movieCharacters ) => {
+        .then( ( movieCharacters ) => {
         movieCharacters = movieCharacters;
         return readScript(scriptPath)
 
