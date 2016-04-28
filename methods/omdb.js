@@ -24,11 +24,11 @@ module.exports.getOmdbData = (movieTitle) => {
             resolve(movieCharacters);
           }), function (error) {
             // If there's an error or a non-200 status code, log the error.
-            throw new Error(error);
+            reject(error);
           }
       }, function (error) {
           // If there's an error or a non-200 status code, log the error.
-          throw new Error(error);
+          reject(error);
         })
   })
 }
