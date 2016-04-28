@@ -4,11 +4,11 @@ const db = require('./index.js');
 const mongoose = require('mongoose');
 
 let filmSchema = mongoose.Schema({
-  title : String,
+  title : { type: String, required: true },
   plot : String,
   simplePlot : String,
   year : Number,
-  Actors : [ { actorName : String, character : String } ],
+  actors : [ { actorName : String, character : String, actorActress : String } ],
   directors : [ { name : String, id : String } ],
   writers : [ { name : String, id : String } ],
   rated : String,
@@ -33,5 +33,17 @@ let filmSchema = mongoose.Schema({
 });
 
 const Film = mongoose.model( 'Film', filmSchema);
+
+var listFilms = function() {
+  var query = Film.find();
+
+  query.exec(function(err, films) {
+    if (err) {
+      console.log(err);
+    }
+
+    console.log(accounts);
+  });
+}
 
 module.exports = Film;
