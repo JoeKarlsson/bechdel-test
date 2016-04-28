@@ -12,8 +12,6 @@ var errorHandler = require('errorhandler');
 var mds = require('markdown-serve');
 var winston = require('./server/logger.js');
 var request = require('request');
-var readScript = require('./methods/readScript');
-var db = require('./model/index.js')
 
 app.locals.isProd = (app.get('env') === 'production');
 
@@ -40,46 +38,22 @@ if ( 'development' === app.get( 'env' ) ) {
   app.set('host', 'http://localhost');
 }
 
-var routes = require('./routes/index');
-var about = require('./routes/about');
-var films = require('./routes/films');
-var philosophy = require('./routes/philosophy');
-var caseStudy = require('./routes/case-study');
-var americanSniper = require('./routes/american-sniper');
-var birdman = require('./routes/birdman');
-var boyhood = require('./routes/boyhood');
-var foxcatcher = require('./routes/foxcatcher');
-var goneGirl = require('./routes/gone-girl');
-var grandBudapestHotel = require('./routes/grand-budapest-hotel');
-var imitationGame = require('./routes/imitation-game');
-var intoTheWoods = require('./routes/into-the-woods');
-var stillAlice = require('./routes/still-alice');
-var theoryOfEverything = require('./routes/theory-of-everything');
-var judge = require('./routes/judge');
-var whiplash = require('./routes/whiplash');
-var wild = require('./routes/wild');
-var contact = require('./routes/contact');
+var root = require('./routes/root');
+var film = require('./routes/film');
+
+// var americanSniper = require('./routes/american-sniper');
 
 // routes
-app.use('/', routes);
-app.use('/about', about);
-app.use('/films', films);
-app.use('/philosophy', philosophy);
-app.use('/case-study', caseStudy);
-app.use('/american-sniper', americanSniper);
-app.use('/birdman', birdman);
-app.use('/boyhood', boyhood);
-app.use('/foxcatcher', foxcatcher);
-app.use('/gone-girl', goneGirl);
-app.use('/grand-budapest-hotel', grandBudapestHotel);
-app.use('/imitation-game', imitationGame);
-app.use('/into-the-woods', intoTheWoods);
-app.use('/still-alice', stillAlice);
-app.use('/theory-of-everything', theoryOfEverything);
-app.use('/judge', judge);
-app.use('/whiplash', whiplash);
-app.use('/wild', wild);
-app.use('/contact', contact);
+app.use('/', root);
+app.use('/film', film);
+
+app.get('/404', function (req, res) {
+  res.render('404');
+});
+
+app.all('*', function (req, res ) {
+  res.redirect('/404');
+});
 
 // start
 app.listen(app.get('port'), function() {
@@ -87,5 +61,3 @@ app.listen(app.get('port'), function() {
   console.log('Express server listening at %s', h);
   winston.info('Server started');
 });
-
-readScript.readAndAnalyzeScript();
