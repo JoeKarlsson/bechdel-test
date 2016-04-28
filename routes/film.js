@@ -31,107 +31,191 @@ const cpUpload = upload.fields([
   }
 ]);
 
+const findFilmByID = (id) =>{
+  if (id == null) {
+    throw new Error('No film ID found');
+  }
+  var query = Film.findById(id);
+
+  return query.exec(function(err, film) {
+    if (err) {
+      throw new Error(err);
+    }
+    return film;
+  });
+}
+
+const findFilmByTitle = function(title) {
+  if (title == null) {
+    throw new Error('No film tile found');
+  }
+  var query = Film.find({ title :title });
+
+  return query.exec(function(err, film) {
+    if (err) {
+      throw new Error(err);
+    }
+    return film;
+  });
+}
+
+const listFilms = () => {
+  var query = Film.find();
+
+  return query.exec(function(err, films) {
+    if (err) {
+      throw new Error(err);
+    }
+    return films;
+  });
+}
+
+const insertFilm = (film, callback) => {
+  // var Account = new AccountModel();
+  // Account.name = account.name;
+  // Account.currency = account.currency;
+  // Account.records = [];
+
+  // Account.save(function(err) {
+  //   if (err) {
+  //     console.log(err);
+  //     return null;
+  //   }
+
+  //   return callback(Account._id);
+  // });
+}
+
+var deleteFilm = (filmID) => {
+  var query = Film.findOne({ _id :filmID });
+
+  return query.exec(function(err, film) {
+    if (err) {
+      throw new Error(err);
+    }
+    return film.remove();
+  });
+}
+
+const clearTempScript = (path) => {
+  fs.unlink(path, function(err) {
+    if (err) {
+      throw new Error(err);
+    }
+  });
+}
+
 router.route('/')
+  .get(function(req, res) {
+    listFilms()
+    .then((films) => {
+      res.send(films)
+
+      // res.render('films', { films : films });
+    })
+  })
   .post(cpUpload, function (req, res) {
-    const movieTitle = req.body.film;
+    let filmTitle;
+    let movieChar;
+    let scriptPath;
+
     if (Object.keys(req.files).length === 0 ) {
       //No script file sent
       res.send('No script submitted, please try again');
     } else {
       if (path.extname(req.files.script[0].originalname) !== '.txt') {
-        //incorrect extention
+        //incorrect extention1
         res.send('Please send a .txt script');
       }
-      const scriptPath = req.files.script[0].path;
-
-      Film.findOne({ 'title' : movieTitle }, function ( err, film ) {
-        if ( err ) {
-          throw new Error(err);
+      scriptPath = req.files.script[0].path;
+      scriptParser.readMovieTitle(scriptPath)
+      .then((title) => {
+        filmTitle = title;
+        return findFilmByTitle(filmTitle);
+      })
+      .then((film) => {
+        if ( film.length !== 0 ) {
+          res.send(film);
+          clearTempScript(scriptPath);
         }
-        if ( film === null ) {
-          //Film not in DB
-          var film = new Film({ });
-          var movieChar = [];
+      })
+      .then(() => {
+        return omdb.getOmdbData( filmTitle )
+      })
+      .then( (movieCharacters) => {
+        movieChar = movieCharacters;
+        return scriptParser.readScript(scriptPath)
+      })
+      .then( ( movieScript ) => {
+        return bechdel.extractScenes( movieChar, movieScript )
+      })
+      .then( ( sceneArray ) => {
+        return bechdel.sceneAnalysis( movieChar, sceneArray )
+      })
+      .then( ( bechdelResults ) => {
+        let film = new Film({ title : filmTitle });
+        film.bechdelResults = bechdelResults;
+        return omdb.getAllOmdbBData(function(data) {
+           if (data === undefined) {
+             throw new Error('No data returned from OMDB')
+           }
+           film.plot = data[0].plot;
+           film.simplePlot = data[0].simplePlot;
+           film.year = data[0].year;
+           film.directors = data[0].directors;
+           film.writers = data[0].writers;
+           film.rated = data[0].rated;
+           film.genres = data[0].genres;
+           film.urlPoster = data[0].urlPoster;
+           film.idIMDB = data[0].idIMDB;
+           film.urlIMDB = data[0].urlIMDB;
 
-          scriptParser.readMovieTitle(scriptPath)
-         .then( (movieTitle) => {
-           console.log( 'Movie Script Title: ', movieTitle );
-           film.title = movieTitle;
-           return omdb.getOmdbData( movieTitle )
-         })
-         .then( (movieCharacters) => {
-           movieChar = movieCharacters;
-           return scriptParser.readScript(scriptPath)
-         })
-         .then( ( movieScript ) => {
-           return bechdel.extractScenes( movieChar, movieScript )
-         })
-         .then( ( sceneArray ) => {
-           return bechdel.sceneAnalysis( movieChar, sceneArray )
-         })
-         .then( ( bechdelResults ) => {
-           film.bechdelResults = bechdelResults;
-           omdb.getAllOmdbBData(function(data) {
-              console.log(data[0])
-              if (data === undefined) {
-                throw new Error('No data returned from OMDB')
+           var actorsArr = []
+           for (var i = 0; i < data[0].actors.length; i++) {
+             var actor = {};
+             actor.actorName = data[0].actors[i].actorName;
+             actor.character = data[0].actors[i].character;
+             actor.actorActress = data[0].actors[i].biography.actorActress;
+             actorsArr.push(actor)
+           }
+           film.actors = actorsArr;
+           film.save(function(err, film) {
+              if (err) {
+                throw new Error(err)
               }
-              film.plot = data[0].plot;
-              film.simplePlot = data[0].simplePlot;
-              film.year = data[0].year;
-              film.directors = data[0].directors;
-              film.writers = data[0].writers;
-              film.rated = data[0].rated;
-              film.genres = data[0].genres;
-              film.urlPoster = data[0].urlPoster;
-              film.idIMDB = data[0].idIMDB;
-              film.urlIMDB = data[0].urlIMDB;
-
-              let omdbAcrtors = data[0].actors;
-              var actorsArr = []
-              for (var i = 0; i < omdbAcrtors.length; i++) {
-                var actor = {};
-                actor.actorName = omdbAcrtors[i].actorName;
-                actor.character = omdbAcrtors[i].character;
-                actorsArr.push(actor)
-              }
-              film.actors = actorsArr;
-
-              film.save(function(err, film, numAffected) {
-                 if (err) {
-                   throw new Error(err)
-                 }
-                 console.log(film, numAffected, 'film, numAffected')
-               })
-
-              scriptParser.deleteTmpScript(scriptPath)
               res.send(film)
-              .then(omdb.clearOmdbBData())
             })
-         })
-         .catch(function (error) {
-           // Handle any error from all above steps
-           reject(error);
-         })
 
-        }
-      });
+           clearTempScript(scriptPath);
+         })
+      })
+      .catch(function (error) {
+        // Handle any error from all above steps
+        throw new Error(error);
+      })
     }
-
-  })
-  .get(function (req, res) {
-    //returns all of the films in the DB
   })
 
 router.route('/:id')
   .get(function (req, res) {
     //get single film
+    const filmID = req.params.id;
+    const film = findFilmByTitle(filmID)
+    .then((film) => {
+      res.send(film)
+    });
+
   })
   .put(function (req, res) {
     //edit single film
   })
   .delete(function (req, res) {
     //delete single film
+    const filmID = req.params.id;
+    const film = deleteFilm(filmID)
+    .then((film) => {
+      res.send(film)
+    });
   });
 
 // export for server.js

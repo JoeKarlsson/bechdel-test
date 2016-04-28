@@ -1,6 +1,7 @@
 'use strict'
 
 const Q = require('q');
+const scriptParser = require('./scriptParser');
 
 let bechdelScore = 0;
 let numScenesPass = 0;
@@ -12,6 +13,23 @@ let numOfMaleCharsWithDialogue = 0;
 let totalLinesFemaleDialogue = 0;
 let totalLinesMaleDialogue = 0;
 let scenesThatPass = [];
+
+const getBechdelResults = (filmTitle) => {
+  return omdb.getOmdbData( filmTitle )
+    .then( (movieCharacters) => {
+      movieChar = movieCharacters;
+      return scriptParser.readScript(scriptPath)
+    })
+    .then( ( movieScript ) => {
+      return bechdel.extractScenes( movieChar, movieScript )
+    })
+    .then( ( sceneArray ) => {
+      return bechdel.sceneAnalysis( movieChar, sceneArray )
+    })
+    .then( ( bechdelResults ) => {
+      return bechdelResults
+    })
+}
 
 module.exports.extractScenes = ( movieCharacters, movieScript ) =>  {
 
