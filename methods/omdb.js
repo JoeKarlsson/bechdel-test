@@ -5,6 +5,8 @@ const request = require('request');
 const omdbDataScrubber = require('./omdbDataScrubber.js');
 const config = require('../config/config.json');
 
+let omdbData = [];
+
 module.exports.getOmdbData = (movieTitle) => {
   return Q.promise(function (resolve, reject) {
 
@@ -37,7 +39,10 @@ const omdbSimpleCast = ( splitTitle ) => {
 
     request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + config.myapifilms + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=1&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0', (error, response, body) => {
       if ( !error && response.statusCode == 200 ) {
-        resolve(omdbDataScrubber( body, 'mainCast' ));
+        // Show the request for the omdb api.
+        let data = JSON.parse( body );
+        omdbData.push( data.data.movies[0] );
+        resolve(omdbDataScrubber( data, 'mainCast' ));
       }  else {
         reject( error );
       }
@@ -52,10 +57,19 @@ const omdbFullCast = (splitTitle) => {
     request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' + config.myapifilms + '&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=2&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0',
     function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        resolve(omdbDataScrubber(body, 'fullCast'));
+        let data = JSON.parse( body );
+        resolve(omdbDataScrubber(data, 'fullCast'));
       }  else {
         reject(error);
       }
     });
   });
+};
+
+module.exports.getAllOmdbBData = (cb) => {
+  return cb(omdbData);
+};
+
+module.exports.clearOmdbBData = () => {
+  omdbData = [];
 };
