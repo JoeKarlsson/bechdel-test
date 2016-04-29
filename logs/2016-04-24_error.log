@@ -1,0 +1,17 @@
+08:34:26.392,"POST /film: Error: request entity too large
+    at readStream (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/raw-body/index.js:196:17)
+    at getRawBody (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/raw-body/index.js:106:12)
+    at read (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/body-parser/lib/read.js:76:3)
+    at urlencodedParser (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/body-parser/lib/types/urlencoded.js:109:5)
+    at Layer.handle [as handle_request] (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:312:13)
+    at /Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:271:10)
+    at serveStatic (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/serve-static/index.js:74:16)
+    at Layer.handle [as handle_request] (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:312:13)
+    at /Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/express/lib/router/index.js:271:10)
+    at jsonParser (/Users/joecarlson/Documents/Dev/bechdel-test/node_modules/body-parser/lib/types/json.js:107:37)"
