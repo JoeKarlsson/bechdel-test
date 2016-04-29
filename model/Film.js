@@ -34,16 +34,4 @@ let filmSchema = mongoose.Schema({
 
 const Film = mongoose.model( 'Film', filmSchema);
 
-var listFilms = function() {
-  var query = Film.find();
-
-  query.exec(function(err, films) {
-    if (err) {
-      console.log(err);
-    }
-
-    console.log(accounts);
-  });
-}
-
 module.exports = Film;

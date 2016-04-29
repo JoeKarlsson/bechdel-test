@@ -5,9 +5,9 @@ const request = require('request');
 const omdbDataScrubber = require('./omdbDataScrubber.js');
 const config = require('../config/config.json');
 
-let omdbData = [];
+let filmData = [];
 
-module.exports.getOmdbData = (movieTitle) => {
+module.exports.getFilmData = (movieTitle) => {
   return Q.promise(function (resolve, reject) {
 
     if (movieTitle === '') {
@@ -41,9 +41,9 @@ const omdbSimpleCast = ( splitTitle ) => {
       if ( !error && response.statusCode == 200 ) {
         // Show the request for the omdb api.
         let data = JSON.parse( body );
-        omdbData.push( data.data.movies[0] );
+        filmData.push( data.data.movies[0] );
         resolve(omdbDataScrubber( data, 'mainCast' ));
-      }  else {
+      } else {
         reject( error );
       }
     });
@@ -59,17 +59,20 @@ const omdbFullCast = (splitTitle) => {
       if (!error && response.statusCode == 200) {
         let data = JSON.parse( body );
         resolve(omdbDataScrubber(data, 'fullCast'));
-      }  else {
+      } else {
         reject(error);
       }
     });
   });
 };
 
-module.exports.getAllOmdbBData = (cb) => {
-  return cb(omdbData);
+module.exports.getAllFilmData = (cb) => {
+  if (filmData.length === 0) {
+    throw new Error('No OMDB data found');
+  }
+  return cb(filmData)
 };
 
-module.exports.clearOmdbBData = () => {
-  omdbData = [];
+module.exports.clearFilmData = () => {
+  filmData = [];
 };
