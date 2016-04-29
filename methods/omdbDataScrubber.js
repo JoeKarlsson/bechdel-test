@@ -1,18 +1,16 @@
 'use strict'
 
-var movieCharacters = [];
-
 const omdbDataParser = ( body, inputType ) => {
   if ( body === undefined || null || '' ) {
     console.error( 'Body is undefined' );
   }
 
   // Show the request for the omdb api.
-  let movieData = JSON.parse( body );
-  let rawMovieCharacters = movieData.data.movies[0].actors;
+  let rawMovieCharacters = body.data.movies[0].actors;
+  var movieCharacters = [];
 
   if ( rawMovieCharacters !== undefined || null || '' ) {
-    createOMDBCharcArr( rawMovieCharacters );
+    movieCharacters = createOMDBCharcArr( movieCharacters, rawMovieCharacters, inputType );
   } else {
     console.error('Error: Connected to myfilmapi, but no actor data returned');
   }
@@ -21,7 +19,8 @@ const omdbDataParser = ( body, inputType ) => {
   return movieCharacters;
 }
 
-const createOMDBCharcArr = ( rawMovieCharacters, inputType ) =>  {
+const createOMDBCharcArr = ( arr, rawMovieCharacters, inputType ) =>  {
+
   //Save character/actor & actress data to the movieCharacters array
   let charObj;
   for (var i = 0; i < rawMovieCharacters.length; i++) {
@@ -29,23 +28,26 @@ const createOMDBCharcArr = ( rawMovieCharacters, inputType ) =>  {
     let characterNameFormatted = rawMovieCharacters[i].character.replace(/'([^']+(?='))'/g, '$1').toUpperCase();
 
     //If a char is missing biography info - skip this character
-    if ( characterNameFormatted !== '' || undefined || null) {
-      if ( 'biography' in rawMovieCharacters[i] ) {
-        if ( inputType === 'fullCast') {
-          var castType = true;
-        } else {
-          castType = false
-        }
-        movieCharacters.push({
+    if (
+      characterNameFormatted !== '' ||
+      characterNameFormatted !== undefined ||
+      characterNameFormatted !== null ||
+      'biography' in rawMovieCharacters[i]
+      ) {
+      if ( inputType === 'fullCast') {
+        var castType = true;
+      } else {
+        castType = false
+      }
+      arr.push({
           'actorName' : rawMovieCharacters[i].actorName,
           'gender' : rawMovieCharacters[i].biography.actorActress,
           'characterName' : characterNameFormatted,
           'mainCast' : castType
         });
-      }
     }
   }
-  return movieCharacters;
+  return arr;
 }
 
 module.exports = omdbDataParser;
