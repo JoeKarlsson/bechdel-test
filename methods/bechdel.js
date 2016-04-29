@@ -2,6 +2,7 @@
 
 const Q = require('q');
 const scriptParser = require('./scriptParser');
+const omdb = require('./omdb');
 
 let bechdelScore = 0;
 let numScenesPass = 0;
@@ -14,24 +15,33 @@ let totalLinesFemaleDialogue = 0;
 let totalLinesMaleDialogue = 0;
 let scenesThatPass = [];
 
-const getBechdelResults = (filmTitle) => {
-  return omdb.getOmdbData( filmTitle )
+module.exports.getBechdelResults = (filmTitle, scriptPath) => {
+  let movieChar;
+
+  return omdb.getFilmData( filmTitle )
     .then( (movieCharacters) => {
+      console.log('readScript')
       movieChar = movieCharacters;
-      return scriptParser.readScript(scriptPath)
+      return scriptParser.readScript(scriptPath);
     })
     .then( ( movieScript ) => {
-      return bechdel.extractScenes( movieChar, movieScript )
+      console.log('extractScenes')
+      return extractScenes( movieChar, movieScript );
     })
     .then( ( sceneArray ) => {
-      return bechdel.sceneAnalysis( movieChar, sceneArray )
+      console.log(sceneArray[0], 'sceneAnalysis')
+      return sceneAnalysis( movieChar, sceneArray );
     })
     .then( ( bechdelResults ) => {
       return bechdelResults
     })
+    .catch(function (error) {
+      // Handle any error from all above steps
+      throw new Error(error);
+    })
 }
 
-module.exports.extractScenes = ( movieCharacters, movieScript ) =>  {
+const extractScenes = ( movieCharacters, movieScript ) =>  {
 
   return Q.promise( (resolve, reject) => {
     console.log('Breaking up movie script by scene...');
@@ -124,7 +134,7 @@ let countCharacterDialouge = ( a, s ) => {
   return output;
 }
 
-module.exports.sceneAnalysis = ( movieCharacters, sceneArray ) => {
+const sceneAnalysis = ( movieCharacters, sceneArray ) => {
   return Q.promise( (resolve, reject) => {
     let beschelPass = false;
     let bechdelResults = {};
