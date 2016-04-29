@@ -1,6 +1,8 @@
 'use strict'
 
 const Q = require('q');
+const scriptParser = require('./scriptParser');
+const omdb = require('./omdb');
 
 let bechdelScore = 0;
 let numScenesPass = 0;
@@ -11,8 +13,35 @@ let numOfFemalesCharsWithDialogue = 0;
 let numOfMaleCharsWithDialogue = 0;
 let totalLinesFemaleDialogue = 0;
 let totalLinesMaleDialogue = 0;
+let scenesThatPass = [];
 
-module.exports.extractScenes = ( movieCharacters, movieScript ) =>  {
+module.exports.getBechdelResults = (filmTitle, scriptPath) => {
+  let movieChar;
+
+  return omdb.getFilmData( filmTitle )
+    .then( (movieCharacters) => {
+      console.log('readScript')
+      movieChar = movieCharacters;
+      return scriptParser.readScript(scriptPath);
+    })
+    .then( ( movieScript ) => {
+      console.log('extractScenes')
+      return extractScenes( movieChar, movieScript );
+    })
+    .then( ( sceneArray ) => {
+      console.log(sceneArray[0], 'sceneAnalysis')
+      return sceneAnalysis( movieChar, sceneArray );
+    })
+    .then( ( bechdelResults ) => {
+      return bechdelResults
+    })
+    .catch(function (error) {
+      // Handle any error from all above steps
+      throw new Error(error);
+    })
+}
+
+const extractScenes = ( movieCharacters, movieScript ) =>  {
 
   return Q.promise( (resolve, reject) => {
     console.log('Breaking up movie script by scene...');
@@ -64,7 +93,7 @@ let scriptGenderAnalytics = ( movieCharacters, movieScript ) => {
   var count = countCharacterDialouge( movieCharacters, movieScript );
 
   for (var name in count ) {
-    if ( isCharFemale( movieCharacters, name ) ){
+    if ( isCharFemale( movieCharacters, name ) ) {
       numOfFemalesChars++;
       if ( count[name] > 0 ) {
         numOfFemalesCharsWithDialogue++;
@@ -105,41 +134,43 @@ let countCharacterDialouge = ( a, s ) => {
   return output;
 }
 
-module.exports.sceneAnalysis = ( movieCharacters, sceneArray ) => {
+const sceneAnalysis = ( movieCharacters, sceneArray ) => {
   return Q.promise( (resolve, reject) => {
     let beschelPass = false;
+    let bechdelResults = {};
 
-    console.log( 'Checking to see if this film passes the Bechdel Test...' );
     for ( let idx in sceneArray ) {
       let scene = sceneArray[idx]
-      // console.log(scene);
-
       var count = countCharacterDialouge( movieCharacters, scene) ;
+
+      //scene passes Bechdel test
       if ( beschelTestPass( movieCharacters, count, scene ) === true ) {
-        console.log( 'This scene passes the Bechdel Test' );
         beschelPass = true;
-        console.log( scene );
+        scenesThatPass.push(scene)
       }
-
     }
 
-    console.log('Number of female characters: ' + numOfFemalesChars);
-    console.log('Number of male characters: ' + numOfMaleChars);
-    console.log('Number of female characters w dialogue: ' +numOfFemalesCharsWithDialogue);
-    console.log('Number of male characters w dialogue: ' + numOfMaleCharsWithDialogue);
-    console.log('Total lines of female dialogue: ' + totalLinesFemaleDialogue);
-    console.log('Total lines of male dialogue: ' + totalLinesMaleDialogue);
-    console.log('Number of scenes that pass the Bechdel Test: ' + numScenesPass);
-    console.log('Number of scenes that dont pass the Bechdel Test: ' + numScenesDontPass);
-
-    console.log('Bechdel Score: ' + bechdelScore);
     if (beschelPass === true) {
-      console.log('This movie passes the Bechdel Test');
+      // This movie passes the Bechdel Test
     } else {
-      console.log('This movie does NOT pass the Bechdel Test');
+      // This movie does NOT pass the Bechdel Test
     }
 
-    resolve( count );
+    bechdelResults = {
+      pass : beschelPass,
+      bechdelScore : bechdelScore,
+      numScenesPass : numScenesPass,
+      numScenesDontPass : numScenesDontPass,
+      numOfFemalesChars : numOfFemalesChars,
+      numOfMaleChars : numOfMaleChars,
+      numOfFemalesCharsWithDialogue : numOfFemalesCharsWithDialogue,
+      numOfMaleCharsWithDialogue : numOfMaleCharsWithDialogue,
+      totalLinesFemaleDialogue : totalLinesFemaleDialogue,
+      totalLinesMaleDialogue : totalLinesMaleDialogue,
+      scenesThatPass : scenesThatPass
+    }
+
+    resolve( bechdelResults );
   })
 
 }
@@ -231,7 +262,7 @@ let containsPatriarchalKeywords = (s) => {
   ]
 
   if (s === '' || undefined || null) {
-    console.error('Invalid scene input');
+    throw new Error('Invalid scene input');
   }
   var keywordHits = 0;
   var x, i, output = {};
