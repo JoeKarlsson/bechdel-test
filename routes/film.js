@@ -31,7 +31,7 @@ const cpUpload = upload.fields([
   }
 ]);
 
-const findFilmByID = (id) =>{
+const findFilmByID = (id) => {
   if (id == null) {
     throw new Error('No film ID found');
   }
@@ -70,20 +70,50 @@ const listFilms = () => {
   });
 }
 
-const insertFilm = (film, callback) => {
-  // var Account = new AccountModel();
-  // Account.name = account.name;
-  // Account.currency = account.currency;
-  // Account.records = [];
+const saveFilm = (film) => {
+  return film.save(function(err, film) {
+    if (err) {
+      throw new Error(err);
+    }
+    return film;
+  })
+}
 
-  // Account.save(function(err) {
-  //   if (err) {
-  //     console.log(err);
-  //     return null;
-  //   }
+const insertFilm = (filmTitle, bechdelResults, omdbData) => {
+  let film = new Film({ title : filmTitle });
+  film.bechdelResults = bechdelResults;
+  film.plot = omdbData[0].plot;
+  film.simplePlot = omdbData[0].simplePlot;
+  film.year = omdbData[0].year;
+  film.directors = omdbData[0].directors;
+  film.writers = omdbData[0].writers;
+  film.rated = omdbData[0].rated;
+  film.genres = omdbData[0].genres;
+  film.urlPoster = omdbData[0].urlPoster;
+  film.idIMDB = omdbData[0].idIMDB;
+  film.urlIMDB = omdbData[0].urlIMDB;
+  film.actors = parseActorArr(omdbData[0].actors);
 
-  //   return callback(Account._id);
-  // });
+  return saveFilm(film)
+  .then((film) => {
+    return film;
+  })
+  .catch(function (error) {
+    // Handle any error from all above steps
+    throw new Error(error);
+  })
+}
+
+const parseActorArr = (arr) => {
+  var actorsArr = []
+  for (var i = 0; i < arr.length; i++) {
+    var actor = {};
+    actor.actorName = arr[i].actorName;
+    actor.character = arr[i].character;
+    actor.actorActress = arr[i].biography.actorActress;
+    actorsArr.push(actor);
+  }
+  return actorsArr;
 }
 
 var deleteFilm = (filmID) => {
@@ -109,15 +139,14 @@ router.route('/')
   .get(function(req, res) {
     listFilms()
     .then((films) => {
-      res.send(films)
+      res.send(films);
 
       // res.render('films', { films : films });
     })
   })
   .post(cpUpload, function (req, res) {
-    let filmTitle;
-    let movieChar;
     let scriptPath;
+    let filmTitle;
 
     if (Object.keys(req.files).length === 0 ) {
       //No script file sent
@@ -135,59 +164,25 @@ router.route('/')
       })
       .then((film) => {
         if ( film.length !== 0 ) {
+          // Fil, is already in our database - serve up info
           res.send(film);
           clearTempScript(scriptPath);
         }
       })
       .then(() => {
-        return omdb.getOmdbData( filmTitle )
-      })
-      .then( (movieCharacters) => {
-        movieChar = movieCharacters;
-        return scriptParser.readScript(scriptPath)
-      })
-      .then( ( movieScript ) => {
-        return bechdel.extractScenes( movieChar, movieScript )
-      })
-      .then( ( sceneArray ) => {
-        return bechdel.sceneAnalysis( movieChar, sceneArray )
+        return bechdel.getBechdelResults( filmTitle, scriptPath );
       })
       .then( ( bechdelResults ) => {
-        let film = new Film({ title : filmTitle });
-        film.bechdelResults = bechdelResults;
-        return omdb.getAllOmdbBData(function(data) {
-           if (data === undefined) {
-             throw new Error('No data returned from OMDB')
-           }
-           film.plot = data[0].plot;
-           film.simplePlot = data[0].simplePlot;
-           film.year = data[0].year;
-           film.directors = data[0].directors;
-           film.writers = data[0].writers;
-           film.rated = data[0].rated;
-           film.genres = data[0].genres;
-           film.urlPoster = data[0].urlPoster;
-           film.idIMDB = data[0].idIMDB;
-           film.urlIMDB = data[0].urlIMDB;
-
-           var actorsArr = []
-           for (var i = 0; i < data[0].actors.length; i++) {
-             var actor = {};
-             actor.actorName = data[0].actors[i].actorName;
-             actor.character = data[0].actors[i].character;
-             actor.actorActress = data[0].actors[i].biography.actorActress;
-             actorsArr.push(actor)
-           }
-           film.actors = actorsArr;
-           film.save(function(err, film) {
-              if (err) {
-                throw new Error(err)
-              }
-              res.send(film)
-            })
-
-           clearTempScript(scriptPath);
-         })
+        let filmData;
+        omdb.getAllFilmData(function(data) {
+          filmData = data;
+        });
+        console.log(filmData, 'filmData')
+        return insertFilm(filmTitle, bechdelResults, filmData);
+      })
+      .then((film) => {
+        res.send(film);
+        clearTempScript(scriptPath);
       })
       .catch(function (error) {
         // Handle any error from all above steps
@@ -200,9 +195,9 @@ router.route('/:id')
   .get(function (req, res) {
     //get single film
     const filmID = req.params.id;
-    const film = findFilmByTitle(filmID)
+    findFilmByTitle(filmID)
     .then((film) => {
-      res.send(film)
+      res.send(film);
     });
 
   })
@@ -212,9 +207,9 @@ router.route('/:id')
   .delete(function (req, res) {
     //delete single film
     const filmID = req.params.id;
-    const film = deleteFilm(filmID)
+    deleteFilm(filmID)
     .then((film) => {
-      res.send(film)
+      res.send(film);
     });
   });
 
