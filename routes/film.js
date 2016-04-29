@@ -198,9 +198,10 @@ router.route('/:id')
   .get(function (req, res) {
     //get single film
     const filmID = req.params.id;
-    findFilmByTitle(filmID)
+    findFilmByID(filmID)
     .then((film) => {
       res.send(film);
+      res.render('film', { film : film })
     });
 
   })
