@@ -164,25 +164,28 @@ router.route('/')
       })
       .then((film) => {
         if ( film.length !== 0 ) {
-          // Fil, is already in our database - serve up info
+          // Fill is already in our database - serve up info
           res.send(film);
           clearTempScript(scriptPath);
+        } else {
+          bechdel.getBechdelResults( filmTitle, scriptPath )
+          .then( ( bechdelResults ) => {
+            let filmData;
+            omdb.getAllFilmData(function(data) {
+              filmData = data;
+              omdb.clearFilmData();
+            });
+            return insertFilm(filmTitle, bechdelResults, filmData);
+          })
+          .then((film) => {
+            res.send(film);
+            clearTempScript(scriptPath);
+          })
+          .catch(function (error) {
+            // Handle any error from all above steps
+            throw new Error(error);
+          })
         }
-      })
-      .then(() => {
-        return bechdel.getBechdelResults( filmTitle, scriptPath );
-      })
-      .then( ( bechdelResults ) => {
-        let filmData;
-        omdb.getAllFilmData(function(data) {
-          filmData = data;
-        });
-        console.log(filmData, 'filmData')
-        return insertFilm(filmTitle, bechdelResults, filmData);
-      })
-      .then((film) => {
-        res.send(film);
-        clearTempScript(scriptPath);
       })
       .catch(function (error) {
         // Handle any error from all above steps
