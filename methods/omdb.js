@@ -74,5 +74,6 @@ module.exports.getAllFilmData = (cb) => {
 };
 
 module.exports.clearFilmData = () => {
+  console.log('clear film data')
   filmData = [];
 };
