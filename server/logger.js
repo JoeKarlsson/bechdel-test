@@ -1,11 +1,11 @@
-var winston = require('winston'),
-    fs = require('fs'),
-    util = require('util'),
-    moment = require('moment'),
-    path = require('path');
+const winston = require('winston'),
+      fs      = require('fs'),
+      util    = require('util'),
+      moment  = require('moment'),
+      path    = require('path');
 
 // Setup a custom logger as per https://github.com/flatiron/winston#adding-custom-transports
-var SplitFileLogger = winston.transports.SplitFileLogger = function(options) {
+const SplitFileLogger = winston.transports.SplitFileLogger = function(options) {
   winston.Transport.call(this, options);    // required, otherwise debug level messages will never pass through - https://github.com/flatiron/winston/issues/392
   this.directory = options.directory || path.join(__dirname, 'logs');
 };
@@ -49,8 +49,8 @@ function getFile(level) {
 // configure winston
 winston.setLevels({
   debug : 0,
-  info : 1,
-  warn : 2,
+  info  : 1,
+  warn  : 2,
   error : 3,
   fatal : 4
 });
