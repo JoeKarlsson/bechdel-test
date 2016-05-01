@@ -1,61 +1,50 @@
 'use strict'
 
-const Q = require('q');
-const scriptParser = require('./scriptParser');
-const omdb = require('./omdb');
+const Q       = require('q');
+const script  = require('./script');
+const film    = require('./film');
 
-let bechdelScore = 0;
-let numScenesPass = 0;
-let numScenesDontPass = 0;
-let numOfFemalesChars = 0;
-let numOfMaleChars = 0;
+let bechdelScore                  = 0;
+let numScenesPass                 = 0;
+let numScenesDontPass             = 0;
+let numOfFemalesChars             = 0;
+let numOfMaleChars                = 0;
 let numOfFemalesCharsWithDialogue = 0;
-let numOfMaleCharsWithDialogue = 0;
-let totalLinesFemaleDialogue = 0;
-let totalLinesMaleDialogue = 0;
-let scenesThatPass = [];
+let numOfMaleCharsWithDialogue    = 0;
+let totalLinesFemaleDialogue      = 0;
+let totalLinesMaleDialogue        = 0;
+let scenesThatPass                = [];
 
-module.exports.getBechdelResults = (filmTitle, scriptPath) => {
+module.exports.getBechdelResults = (title, path) => {
   let movieChar;
 
-  return omdb.getFilmData( filmTitle )
-    .then( (movieCharacters) => {
+  return film.getData( title )
+    .then( (characters) => {
       console.log('readScript')
-      movieChar = movieCharacters;
-      return scriptParser.readScript(scriptPath);
+      movieChar = characters;
+      return script.read(path);
     })
     .then( ( movieScript ) => {
-      console.log('extractScenes')
+      console.log('Breaking up movie script by scene...');
       return extractScenes( movieChar, movieScript );
     })
     .then( ( sceneArray ) => {
-      console.log(sceneArray[0], 'sceneAnalysis')
+      console.log('Scenes extracted from script')
       return sceneAnalysis( movieChar, sceneArray );
     })
-    .then( ( bechdelResults ) => {
-      return bechdelResults
-    })
     .catch(function (error) {
-      // Handle any error from all above steps
       throw new Error(error);
     })
 }
 
-const extractScenes = ( movieCharacters, movieScript ) =>  {
-
+const extractScenes = ( characters, movieScript ) =>  {
   return Q.promise( (resolve, reject) => {
-    console.log('Breaking up movie script by scene...');
-
     if (movieScript == '') {
       reject('Script has to yet been loaded into memory');
     }
-
-    scriptGenderAnalytics(movieCharacters, movieScript);
-
-    var result = [];
-    var subScene = '';
-    var sceneArray = [];
-    var keywords =  [
+    let result, sceneArray = [];
+    let subScene = '';
+    let keywords =  [
       'EXT',
       'INT',
       'EXTERIOR',
@@ -63,11 +52,12 @@ const extractScenes = ( movieCharacters, movieScript ) =>  {
       'INT/EXT',
       'I/E'
     ];
+    let idx;
 
+    scriptGenderAnalytics(characters, movieScript);
     movieScript.split('\n').forEach( (pg) => {
-      for (var idx in keywords) {
-        var keyword = keywords[idx];
-
+      for (idx in keywords) {
+        let keyword = keywords[idx];
         if (pg.indexOf(keyword) != -1) {
           sceneArray.push(subScene);
           subScene = '';
@@ -77,11 +67,9 @@ const extractScenes = ( movieCharacters, movieScript ) =>  {
       subScene += (pg + '\n');
     });
     sceneArray.push(subScene);
-
-    console.log('Scenes extracted from script')
     resolve(sceneArray);
-  })
-}
+  });
+};
 
 /**
  * Function to collect gender statistics based on the entire movie script. Collects information on  numOfFemalesChars, numOfMaleChars, numOfFemalesCharsWithDialogue, numOfMaleCharsWithDialogue, totalLinesFemaleDialogue, and the totalLinesMaleDialogue.
@@ -90,24 +78,25 @@ const extractScenes = ( movieCharacters, movieScript ) =>  {
  * @return {[type]}                 [description]
  */
 let scriptGenderAnalytics = ( movieCharacters, movieScript ) => {
-  var count = countCharacterDialouge( movieCharacters, movieScript );
+  let count = countCharacterDialouge( movieCharacters, movieScript );
+  let name;
 
-  for (var name in count ) {
+  for (name in count ) {
     if ( isCharFemale( movieCharacters, name ) ) {
       numOfFemalesChars++;
       if ( count[name] > 0 ) {
         numOfFemalesCharsWithDialogue++;
         totalLinesFemaleDialogue += count[name];
-      }
+      };
     } else {
       numOfMaleChars++
       if ( count[name] > 0 ) {
         numOfMaleCharsWithDialogue++;
         totalLinesMaleDialogue += count[name];
-      }
-    }
-  }
-}
+      };
+    };
+  };
+};
 
 /**
  * Returns an object with all of the characters in the movie and the number times they talk in a given scene
@@ -116,116 +105,90 @@ let scriptGenderAnalytics = ( movieCharacters, movieScript ) => {
  * @return [object] an object with all of the characters in the movie and the number times they talk in a given scene
  */
 let countCharacterDialouge = ( a, s ) => {
-
   if (s === '' || undefined || null) {
     throw new Error( 'Invalid Movie Script' )
-  }
-
+  };
   let x, i, output = {};
+
   for (x = 0; x < a.length; x++) {
     i = 0;
-
     output[a[x].characterName] = 0;
     while ((i = s.indexOf(a[x].characterName, i)) > -1) {
       output[a[x].characterName]++;
       i++
-    }
-  }
+    };
+  };
   return output;
-}
+};
 
-const sceneAnalysis = ( movieCharacters, sceneArray ) => {
+const sceneAnalysis = ( characters, sceneArray ) => {
   return Q.promise( (resolve, reject) => {
-    let beschelPass = false;
+    let bechdelPass = false;
     let bechdelResults = {};
+    let idx, scene, count;
 
-    for ( let idx in sceneArray ) {
-      let scene = sceneArray[idx]
-      var count = countCharacterDialouge( movieCharacters, scene) ;
-
-      //scene passes Bechdel test
-      if ( beschelTestPass( movieCharacters, count, scene ) === true ) {
-        beschelPass = true;
+    for ( idx in sceneArray ) {
+      scene = sceneArray[idx];
+      count = countCharacterDialouge( characters, scene);
+      if ( bechdelTestPass( characters, count, scene ) === true ) {
+        bechdelPass = true;
         scenesThatPass.push(scene)
-      }
-    }
-
-    if (beschelPass === true) {
-      // This movie passes the Bechdel Test
-    } else {
-      // This movie does NOT pass the Bechdel Test
-    }
-
+      };
+    };
     bechdelResults = {
-      pass : beschelPass,
-      bechdelScore : bechdelScore,
-      numScenesPass : numScenesPass,
-      numScenesDontPass : numScenesDontPass,
-      numOfFemalesChars : numOfFemalesChars,
-      numOfMaleChars : numOfMaleChars,
+      pass                          : bechdelPass,
+      bechdelScore                  : bechdelScore,
+      numScenesPass                 : numScenesPass,
+      numScenesDontPass             : numScenesDontPass,
+      numOfFemalesChars             : numOfFemalesChars,
+      numOfMaleChars                : numOfMaleChars,
       numOfFemalesCharsWithDialogue : numOfFemalesCharsWithDialogue,
-      numOfMaleCharsWithDialogue : numOfMaleCharsWithDialogue,
-      totalLinesFemaleDialogue : totalLinesFemaleDialogue,
-      totalLinesMaleDialogue : totalLinesMaleDialogue,
-      scenesThatPass : scenesThatPass
-    }
-
-    resolve( bechdelResults );
-  })
-
-}
+      numOfMaleCharsWithDialogue    : numOfMaleCharsWithDialogue,
+      totalLinesFemaleDialogue      : totalLinesFemaleDialogue,
+      totalLinesMaleDialogue        : totalLinesMaleDialogue,
+      scenesThatPass                : scenesThatPass
+    };
+    resolve(bechdelResults);
+  });
+};
 
 /**
- * [beschelTestPass description]
- * @param  {[type]} movieCharacters [description]
+ * [bechdelTestPass description]
+ * @param  {[type]} characters [description]
  * @param  {[type]} count           [description]
- * @param  {[type]} scene           [description]
  * @return {[type]}                 [description]
  */
-let beschelTestPass = ( movieCharacters, count, scene ) => {
-
-  if ( twoOrMoreFemalesInScene( movieCharacters, count ) === true ) {
-    updateScore( 2 );
+const bechdelTestPass = (characters, count, scene) => {
+  if (twoOrMoreFemalesInScene(characters, count) === true ) {
+    updateScore(2);
     if (containsPatriarchalKeywords(scene) === false) {
-      // Passes the Beschel Test
       numScenesPass++;
       updateScore(3);
       return true;
-    }
-
-    // Contains dialouge about men - fails the beschel test
+    };
     updateScore(2);
     numScenesDontPass++;
     return false;
-  }
-
-  // This scene does not have 2 or more females with dialogue.
+  };
   updateScore(1);
   numScenesDontPass++;
   return false;
+};
 
-}
-
-/**
- * Updates the Bechdel Score based on on if the input score number is higher than it's previous value
- * @param  {[type]} number [description]
- * @return {[type]}        [description]
- */
-let updateScore = (number) => {
-  if ( number > bechdelScore ) {
-    bechdelScore = number;
+const updateScore = (n) => {
+  if ( n > bechdelScore ) {
+    bechdelScore = n;
     return bechdelScore
-  }
-}
+  };
+};
 
 /**
  * Scans a scene for a list of patriachal keywords, if one of these keywords is found in the scene, it returns true.
  * @param  {[type]} s [description]
  * @return {[boolean]}   Boolean indicating whether or not a scene contains patriarchal keywords or not.
  */
-let containsPatriarchalKeywords = (s) => {
-
-  var patriacryKeywords = [
+const containsPatriarchalKeywords = (s) => {
+  const patriacryKeywords = [
       'Man',
       'Men',
       'Boy',
@@ -259,31 +222,26 @@ let containsPatriarchalKeywords = (s) => {
       'Kings',
       'Prince',
       'Princes'
-  ]
-
+  ];
   if (s === '' || undefined || null) {
     throw new Error('Invalid scene input');
-  }
-  var keywordHits = 0;
-  var x, i, output = {};
+  };
+  let keywordHits = 0;
+  let x, i, output = {};
   for (x = 0; x < patriacryKeywords.length; x++) {
     i = 0;
-
     output[patriacryKeywords[x]] = 0;
     while ((i = s.indexOf(patriacryKeywords[x], i)) > -1) {
       output[patriacryKeywords[x]]++;
       i++
       keywordHits++;
-    }
-  }
-
+    };
+  };
   if (keywordHits > 0) {
     return true
-  }
-
-  // console.log(output);
+  };
   return false;
-}
+};
 
 /**
  * twoOrMoreFemalesInScene Determines is a scene includes two or more female characters in it. This function does not determine if these women have a conversation or if they talk about men.
@@ -291,45 +249,42 @@ let containsPatriarchalKeywords = (s) => {
  * @return {[Boolean]}       Returns a boolean depending on whether or not a scene has two or more women in it.
  *
  */
-let twoOrMoreFemalesInScene = (movieCharacters, count) => {
+const twoOrMoreFemalesInScene = (charcters, count) => {
+  let femalesWithDialogue = 0;
+  let name;
 
-  var femalesWithDialogue = 0;
-
-  for (let name in count) {
-    var linesOfDialogue = count[name];
+  for (name in count) {
+    let linesOfDialogue = count[name];
     if (linesOfDialogue > 0) {
-      if (isCharFemale(movieCharacters, name)) {
+      if (isCharFemale(charcters, name)) {
         femalesWithDialogue++;
-      }
-    }
-  }
-
+      };
+    };
+  };
   if (femalesWithDialogue > 1) {
     return true;
-  }
-}
+  };
+};
 
 /**
  * Returns a boolean depending on whether or not a char is female or not
- * @param  {[type]}  movieCharacters [description]
- * @param  {[type]}  name            [description]
+ * @param  {[type]}  charcters [description]
  * @return {Boolean}                 [description]
  */
-const isCharFemale = (movieCharacters, name) => {
-  for (var idx in movieCharacters) {
-    var character = movieCharacters[idx];
+const isCharFemale = (charcters, name) => {
+  let idx;
+
+  for (idx in charcters) {
+    let character = charcters[idx];
     if (name == character.characterName) {
       if (character.gender === 'Actress') {
-        // console.log(character.characterName + ' is female');
         return true;
       } else if (character.gender === 'Actor') {
-        // console.log(character.characterName + ' is male');
         return false;
       } else {
-        // console.log(character.characterName + ' is undefined or other');
         return false;
-      }
-    }
-  }
-  console.error('Character not found');
-}
+      };
+    };
+  };
+  throw new Error('Character not found');
+};

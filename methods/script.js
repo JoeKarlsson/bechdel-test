@@ -1,18 +1,16 @@
 'use strict'
 
-const fs = require('fs');
-const Q = require('q');
-const omdb = require('./omdb');
+const fs      = require('fs');
+const Q       = require('q');
 const bechdel = require('./bechdel');
-const Film = require('../model/Film');
-
+const Film    = require('../model/Film');
 
 module.exports.readMovieTitle = (path) => {
   return Q.promise( (resolve, reject) => {
-    var rs = fs.createReadStream(path, { encoding : 'utf8' });
-    var acc = '';
-    var pos = 0;
-    var index;
+    let rs = fs.createReadStream(path, { encoding : 'utf8' });
+    let acc = '';
+    let pos = 0;
+    let index;
 
     rs.on('data', (chunk) => {
       index = chunk.indexOf('\n');
@@ -29,10 +27,10 @@ module.exports.readMovieTitle = (path) => {
   });
 };
 
-module.exports.readScript = (path) => {
+module.exports.read = (path) => {
   return Q.promise( (resolve, reject) => {
-    var rs = fs.createReadStream(path, { encoding : 'utf8' });
-    var movieScript = '';
+    let rs = fs.createReadStream(path, { encoding : 'utf8' });
+    let movieScript = '';
 
     rs.on('data', (chunk) => {
       movieScript += chunk;
@@ -46,7 +44,7 @@ module.exports.readScript = (path) => {
   });
 };
 
-module.exports.deleteTmpScript = (path) => {
+module.exports.clearTemp = (path) => {
   return Q.promise( (resolve, reject) => {
     fs.unlink(scriptPath, function(err) {
       if (err) {
