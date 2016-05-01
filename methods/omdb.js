@@ -9,27 +9,21 @@ let filmData = [];
 
 module.exports.getFilmData = (movieTitle) => {
   return Q.promise(function (resolve, reject) {
-
     if (movieTitle === '') {
       reject('Invalid Movie Title');
     }
-
     var splitTitle = movieTitle.split(' ').join('+');
-
     omdbSimpleCast(splitTitle)
-      .then(function (data) {
-        return omdbFullCast(splitTitle)
-          .then(function (movieCharacters) {
-            console.log('Finished retrieving all data from myapifilms..');
-            resolve(movieCharacters);
-          }), function (error) {
-            // If there's an error or a non-200 status code, log the error.
-            reject(error);
-          }
-      }, function (error) {
-          // If there's an error or a non-200 status code, log the error.
-          reject(error);
-        })
+    .then(function (data) {
+      return omdbFullCast(splitTitle);
+    })
+    .then(function (movieCharacters) {
+      console.log('Finished retrieving all data from myapifilms..');
+      resolve(movieCharacters);
+    })
+    .catch(function (err) {
+      throw new Error(err);
+    })
   })
 }
 
@@ -74,6 +68,5 @@ module.exports.getAllFilmData = (cb) => {
 };
 
 module.exports.clearFilmData = () => {
-  console.log('clear film data')
   filmData = [];
 };
