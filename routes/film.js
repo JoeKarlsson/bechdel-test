@@ -118,7 +118,6 @@ const parseActorArr = (arr) => {
 
 var deleteFilm = (filmID) => {
   var query = Film.findOne({ _id :filmID });
-
   return query.exec(function(err, film) {
     if (err) {
       throw new Error(err);
@@ -140,8 +139,6 @@ router.route('/')
     listFilms()
     .then((films) => {
       res.send(films);
-
-      // res.render('films', { films : films });
     })
   })
   .post(cpUpload, function (req, res) {
@@ -153,7 +150,7 @@ router.route('/')
       res.send('No script submitted, please try again');
     } else {
       if (path.extname(req.files.script[0].originalname) !== '.txt') {
-        //incorrect extention1
+        //incorrect extention
         res.send('Please send a .txt script');
       }
       scriptPath = req.files.script[0].path;
