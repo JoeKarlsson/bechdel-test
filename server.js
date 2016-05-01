@@ -1,3 +1,5 @@
+'use strict'
+
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -33,10 +35,10 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-if ( 'development' === app.get( 'env' ) ) {
+if ('development' === app.get( 'env' )) {
   app.use(errorHandler());
   app.set('host', 'http://localhost');
-}
+};
 
 var root = require('./routes/root');
 var film = require('./routes/film');
@@ -47,16 +49,16 @@ var film = require('./routes/film');
 app.use('/', root);
 app.use('/film', film);
 
-app.get('/404', function (req, res) {
+app.get('/404', (req, res) => {
   res.render('404');
 });
 
-app.all('*', function (req, res ) {
+app.all('*', (req, res ) => {
   res.redirect('/404');
 });
 
 // start
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   var h = (app.get('host') || os.hostname() || 'unknown') + ':' + app.get('port');
   console.log('Express server listening at %s', h);
   winston.info('Server started');
