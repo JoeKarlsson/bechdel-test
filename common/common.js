@@ -4,7 +4,7 @@ module.exports = {
   createComments : function(gutil) {
     var comments = [
         'Joe Carlson',
-        'Copyright 2015',
+        'Copyright 2016',
         'MIT License',
         'Compiled on ' + gutil.date('mmm d, yyyy h:MM:ss TT Z')
     ];
