@@ -1,19 +1,17 @@
-'use strict'
+'use strict';
 
-var express = require('express');
-var app = express();
-var path = require('path');
-var os = require('os');
-var pkg = require('./package.json');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var multer = require('multer');
-var errorHandler = require('errorhandler');
-var mds = require('markdown-serve');
-var winston = require('./server/logger.js');
-var request = require('request');
+const express        = require('express');
+const app            = express();
+const path           = require('path');
+const os             = require('os');
+const favicon        = require('serve-favicon');
+const logger         = require('morgan');
+const bodyParser     = require('body-parser');
+const methodOverride = require('method-override');
+const errorHandler   = require('errorhandler');
+const winston        = require('./server/logger.js');
+const root           = require('./routes/root');
+const film           = require('./routes/film');
 
 app.locals.isProd = (app.get('env') === 'production');
 
@@ -38,26 +36,18 @@ app.use((err, req, res, next) => {
 if ('development' === app.get( 'env' )) {
   app.use(errorHandler());
   app.set('host', 'http://localhost');
-};
-
-var root = require('./routes/root');
-var film = require('./routes/film');
-
-// var americanSniper = require('./routes/american-sniper');
+}
 
 // routes
 app.use('/', root);
 app.use('/film', film);
-
 app.get('/404', (req, res) => {
   res.render('404');
 });
-
 app.all('*', (req, res ) => {
   res.redirect('/404');
 });
 
-// start
 app.listen(app.get('port'), () => {
   var h = (app.get('host') || os.hostname() || 'unknown') + ':' + app.get('port');
   console.log('Express server listening at %s', h);

@@ -1,8 +1,7 @@
-'use strict'
+'use strict';
 
 const express = require('express');
 const router  = express.Router();
-const fs      = require('fs');
 const path    = require('path');
 const film    = require('../methods/film');
 const script  = require('../methods/script');
@@ -10,18 +9,16 @@ const bechdel = require('../methods/bechdel');
 const multer  = require('multer');
 const storage = multer.diskStorage({
   destination : (req, file, cb) => {
-    cb(null, './tmp')
+    cb(null, './tmp');
   },
   filename : (req, file, cb) => {
-    cb(null, file.originalname)
+    cb(null, file.originalname);
   }
 });
 const upload   = multer({ storage : storage });
 const cpUpload = upload.fields([
   {
     name : 'script', maxCount : 1
-  }, {
-    name : 'scriptName', maxCount : 1
   }
 ]);
 
@@ -33,7 +30,7 @@ router.route('/')
     film.listAll()
     .then((films) => {
       res.send(films);
-    })
+    });
   })
   .post(cpUpload, (req, res) => {
     let scriptPath,
@@ -60,26 +57,24 @@ router.route('/')
           bechdel.getBechdelResults( filmTitle, scriptPath )
           .then((bechdelResults) => {
             film.getAllData((data) => {
-              console.log('get all data');
               filmData = data;
               film.clearData();
             });
             return film.insert(filmTitle, bechdelResults, filmData);
           })
           .then((_film) => {
-            console.log(4);
             res.send(_film);
             script.clearTemp(scriptPath);
           })
           .catch((error) => {
             throw new Error(error);
-          })
+          });
         }
       })
       .catch((error) => {
         throw new Error(error);
-      })
-    };
+      });
+    }
   });
 
 router.route('/:id')
@@ -88,12 +83,11 @@ router.route('/:id')
     film.findByID(id)
     .then((film) => {
       res.send(film);
-      res.render('film', { film : film })
     });
   })
   .delete((req, res) => {
-    const filmID = req.params.id;
-    film.delete(filmID)
+    const id = req.params.id;
+    film.delete(id)
     .then((film) => {
       res.send(film);
     });

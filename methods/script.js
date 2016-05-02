@@ -1,13 +1,11 @@
-'use strict'
+'use strict';
 
 const fs      = require('fs');
 const Q       = require('q');
-const bechdel = require('./bechdel');
-const Film    = require('../model/Film');
 
 module.exports.readMovieTitle = (path) => {
   return Q.promise( (resolve, reject) => {
-    let rs = fs.createReadStream(path, { encoding : 'utf8' });
+    let rs  = fs.createReadStream(path, { encoding : 'utf8' });
     let acc = '';
     let pos = 0;
     let index;
@@ -23,7 +21,7 @@ module.exports.readMovieTitle = (path) => {
     })
     .on('error', (err) => {
       reject(err);
-    })
+    });
   });
 };
 
@@ -35,18 +33,18 @@ module.exports.read = (path) => {
     rs.on('data', (chunk) => {
       movieScript += chunk;
     })
-      .on('close', () => {
-        resolve(movieScript);
-      })
-      .on('error', (err) => {
-        reject(err);
-      })
+    .on('close', () => {
+      resolve(movieScript);
+    })
+    .on('error', (err) => {
+      reject(err);
+    });
   });
 };
 
 module.exports.clearTemp = (path) => {
   return Q.promise( (resolve, reject) => {
-    fs.unlink(scriptPath, function(err) {
+    fs.unlink(path, function(err) {
       if (err) {
         reject(err);
       }
