@@ -3,6 +3,7 @@
 const express = require('express');
 const router  = express.Router();
 const path    = require('path');
+const Promise = require("bluebird");
 const film    = require('../methods/film');
 const script  = require('../methods/script');
 const bechdel = require('../methods/bechdel');
@@ -21,6 +22,9 @@ const cpUpload = upload.fields([
     name : 'script', maxCount : 1
   }
 ]);
+Promise.onPossiblyUnhandledRejection(function(error){
+    throw error;
+});
 
 /*
   * FILM ROUTES
@@ -33,11 +37,11 @@ router.route('/')
     });
   })
   .post(cpUpload, (req, res) => {
-    let scriptPath,
-        filmTitle,
-        filmData;
+    let scriptPath;
+    let filmTitle;
+    let filmData;
 
-    if (Object.keys(req.files).length === 0 ) {
+    if (!req.files) {
       res.send('No script submitted, please try again');
     } else {
       if (path.extname(req.files.script[0].originalname) !== '.txt') {
@@ -49,48 +53,52 @@ router.route('/')
         filmTitle = title;
         return film.findByTitle(filmTitle);
       })
-      .then((_film) => {
-        if ( _film.length !== 0 ) {
-          res.send(_film);
+      .then((movie) => {
+        if (movie.length !== 0 || movie === null) {
+          res.send(movie);
           script.clearTemp(scriptPath);
         } else {
           bechdel.getBechdelResults( filmTitle, scriptPath )
           .then((bechdelResults) => {
-            film.getAllData((data) => {
-              filmData = data;
-              film.clearData();
-            });
-            return film.insert(filmTitle, bechdelResults, filmData);
+            return film.insert(filmTitle, bechdelResults, film.getAllData());
           })
-          .then((_film) => {
-            res.send(_film);
+          .then((movie) => {
+            film.clearData();
+            res.send(movie);
             script.clearTemp(scriptPath);
           })
-          .catch((error) => {
-            throw new Error(error);
+          .catch((err) => {
+            throw new Error(err);
           });
         }
       })
-      .catch((error) => {
-        throw new Error(error);
+      .catch((err) => {
+        throw new Error(err);
+      })
+      .error((err) => {
+        throw new Error(err);
       });
     }
   });
 
 router.route('/:id')
   .get((req, res) => {
-    const id = req.params.id;
-    film.findByID(id)
+    film.findByID(req.params.id)
     .then((film) => {
       res.send(film);
-    });
+    })
+    .catch((err) => {
+      throw new Error(err);
+    })
   })
   .delete((req, res) => {
-    const id = req.params.id;
-    film.delete(id)
+    film.delete(req.params.id)
     .then((film) => {
       res.send(film);
-    });
+    })
+    .catch((err) => {
+      throw new Error(err);
+    })
   });
 
 module.exports = router;

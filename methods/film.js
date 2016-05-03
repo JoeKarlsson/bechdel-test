@@ -1,61 +1,68 @@
 'use strict';
 
-const Q       = require('q');
+const Promise = require("bluebird");
 const request = require('request');
+const assert = require('assert');
 const Film    = require('../model/Film');
 const CONFIG  = require('../config/config.json');
-
 let filmData = [];
 
 module.exports.findByID = (id) => {
-  if (id === null) {
-    throw new Error('No  ID found');
+  if (!id) {
+    throw new Error('Invalid findByID input');
   }
-  let query = Film.findById(id);
-
-  return query.exec(function(err, film) {
+  return Film.findById(id)
+  .then((film) => {
     if (err) {
       throw new Error(err);
     }
     return film;
+  })
+  .catch((err) => {
+    throw new Error(err);
   });
 };
 
 module.exports.findByTitle = (title) => {
-  if (title === null) {
+  if (!title) {
     throw new Error('No film tile found');
   }
-  let query = Film.find({ title :title });
-
-  return query.exec(function(err, film) {
-    if (err) {
-      throw new Error(err);
-    }
+  return Film.find({ title : title }).exec()
+  .then((film) => {
     return film;
-  });
+  })
+  .catch((err) => {
+    throw new Error(err);
+  })
 };
 
 module.exports.listAll = () => {
-  let query = Film.find();
-
-  return query.exec((err, films) => {
-    if (err) {
-      throw new Error(err);
-    }
+  return Film.find().exec()
+  .then((films) => {
     return films;
-  });
+  })
+  .catch((err) => {
+    throw new Error(err);
+  })
 };
 
 const save = (film) => {
-  return film.save((err, film) => {
-    if (err) {
-      throw new Error(err);
-    }
+  if (!film) {
+    throw new Error('Cannot save film');
+  }
+  return film.save()
+  .then(() => {
     return film;
-  });
+  })
+  .catch((err) => {
+    throw new Error(err);
+  })
 };
 
 const parseActorArr = (arr) => {
+  if (!arr) {
+    throw new Error('Cannot parseActorArr');
+  }
   let actorsArr = [];
   let i;
 
@@ -70,6 +77,9 @@ const parseActorArr = (arr) => {
 };
 
 module.exports.insert = (filmTitle, bechdelResults, data) => {
+  if (!filmTitle || !bechdelResults || !data) {
+    throw new Error('Cannot insert film');
+  }
   let film            = new Film({ title : filmTitle });
   film.bechdelResults = bechdelResults;
   film.plot           = data[0].plot;
@@ -83,7 +93,6 @@ module.exports.insert = (filmTitle, bechdelResults, data) => {
   film.idIMDB         = data[0].idIMDB;
   film.urlIMDB        = data[0].urlIMDB;
   film.actors         = parseActorArr(data[0].actors);
-
   return save(film)
   .then((film) => {
     return film;
@@ -94,19 +103,19 @@ module.exports.insert = (filmTitle, bechdelResults, data) => {
 };
 
 module.exports.delete = (filmID) => {
-  let query = Film.findOne({ _id :filmID });
-  return query.exec((err, film) => {
-    if (err) {
-      throw new Error(err);
-    }
+  return Film.findOne({ _id :filmID }).exec()
+  .then((film) => {
     return film.remove();
+  })
+  .catch( (error) => {
+    throw new Error(error);
   });
 };
 
 const createCharcArr = (arr, characters, type) =>  {
-  let castType,
-      cleanName,
-      i;
+  let castType;
+  let cleanName;
+  let i;
 
   for (i = 0; i < characters.length; i++) {
     cleanName = characters[i].character.replace(/'([^']+(?='))'/g, '$1').toUpperCase();
@@ -146,11 +155,11 @@ const dataParser = (body, type) => {
   return movieCharacters;
 };
 
-const getSimpleCastData = (splitTitle) => {
-  return Q.promise((resolve, reject) => {
+const getSimpleCastData = (title) => {
+  return new Promise((resolve, reject) => {
     console.log('Started phase I - Retrieving simple movie data via myapifilms...');
 
-    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' +
+    request('http://api.myapifilms.com/imdb/idIMDB?title=' + title + '&token=' +
       CONFIG.myapifilms + '&format=json&language=en-us&aka=0&business=' +
       '0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1' +
       '&forceYear=0&trailers=0&movieTrivia=0&awards' +
@@ -162,17 +171,17 @@ const getSimpleCastData = (splitTitle) => {
           filmData.push(data.data.movies[0]);
           resolve(dataParser(data, 'mainCast'));
         } else {
-          reject(error);
+          reject(new Error(error));
         }
       });
   });
 };
 
-const getFullCastData = (splitTitle) => {
-  return Q.promise((resolve, reject) => {
+const getFullCastData = (title) => {
+  return new Promise((resolve, reject) => {
     console.log('Started Phase II - Retreiving full character data from myapifilms..');
 
-    request('http://api.myapifilms.com/imdb/idIMDB?title=' + splitTitle + '&token=' +
+    request('http://api.myapifilms.com/imdb/idIMDB?title=' + title + '&token=' +
       CONFIG.myapifilms + '&format=json&language=en-us&aka=0&business=0' +
       '&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1' +
       '&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0' +
@@ -183,18 +192,20 @@ const getFullCastData = (splitTitle) => {
         let data = JSON.parse( body );
         resolve(dataParser(data, 'fullCast'));
       } else {
-        reject(error);
+        reject(new Error(error));
       }
     });
   });
 };
 
 module.exports.getData = (movieTitle) => {
-  return Q.promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if (movieTitle === '') {
-      reject('Invalid Movie Title');
+      reject(new Error('Invalid Movie Title'));
     }
-    let splitTitle = movieTitle.split(' ').join('+');
+    let splitTitle = movieTitle
+      .split(' ')
+      .join('+');
     getSimpleCastData(splitTitle)
     .then(() => {
       resolve(getFullCastData(splitTitle));
@@ -205,11 +216,11 @@ module.exports.getData = (movieTitle) => {
   });
 };
 
-module.exports.getAllData = (cb) => {
-  if (filmData.length === 0) {
+module.exports.getAllData = () => {
+  if (!filmData.length) {
     throw new Error('No OMDB data found');
   }
-  return cb(filmData);
+  return filmData;
 };
 
 module.exports.clearData = () => {

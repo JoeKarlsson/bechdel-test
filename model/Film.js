@@ -2,6 +2,7 @@
 
 const db = require('./index.js');
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 let filmSchema = mongoose.Schema({
   title : { type: String, required: true },
