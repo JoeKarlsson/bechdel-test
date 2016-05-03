@@ -10,6 +10,7 @@ const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const errorHandler   = require('errorhandler');
 const winston        = require('./server/logger.js');
+const Promise        = require('bluebird');
 const root           = require('./routes/root');
 const film           = require('./routes/film');
 
@@ -26,6 +27,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.urlencoded({ extended : false }));
 
+Promise.onPossiblyUnhandledRejection(function(error){
+    throw error;
+});
+
 // error handling middleware should be loaded last
 // log for all environments
 app.use((err, req, res, next) => {
@@ -33,7 +38,7 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-if ('development' === app.get( 'env' )) {
+if ( 'development' === app.get( 'env' )) {
   app.use(errorHandler());
   app.set('host', 'http://localhost');
 }
@@ -49,7 +54,7 @@ app.all('*', (req, res ) => {
 });
 
 app.listen(app.get('port'), () => {
-  var h = (app.get('host') || os.hostname() || 'unknown') + ':' + app.get('port');
+  const h = (app.get('host') || os.hostname() || 'unknown') + ':' + app.get('port');
   console.log('Express server listening at %s', h);
   winston.info('Server started');
 });

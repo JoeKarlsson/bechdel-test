@@ -1,10 +1,13 @@
 'use strict';
 
 const fs      = require('fs');
-const Q       = require('q');
+const Promise = require('bluebird');
 
 module.exports.readMovieTitle = (path) => {
-  return Q.promise( (resolve, reject) => {
+  return new Promise((resolve, reject) => {
+    if (!path) {
+      reject(new Error('Invalid readMovieTitle input'));
+    }
     let rs  = fs.createReadStream(path, { encoding : 'utf8' });
     let acc = '';
     let pos = 0;
@@ -20,13 +23,16 @@ module.exports.readMovieTitle = (path) => {
       resolve(movieTitle);
     })
     .on('error', (err) => {
-      reject(err);
+      reject(new Error(err));
     });
   });
 };
 
 module.exports.read = (path) => {
-  return Q.promise( (resolve, reject) => {
+  return new Promise((resolve, reject) => {
+    if (!path) {
+      reject(new Error('Invalid read input'));
+    }
     let rs = fs.createReadStream(path, { encoding : 'utf8' });
     let movieScript = '';
 
@@ -37,18 +43,21 @@ module.exports.read = (path) => {
       resolve(movieScript);
     })
     .on('error', (err) => {
-      reject(err);
+      reject(new Error(err));
     });
   });
 };
 
 module.exports.clearTemp = (path) => {
-  return Q.promise( (resolve, reject) => {
-    fs.unlink(path, function(err) {
+  return new Promise((resolve, reject) => {
+    if (!path) {
+      reject(new Error('Invalid clearTemp input'));
+    }
+    fs.unlink(path, (err) => {
       if (err) {
-        reject(err);
+        reject(new Error(err));
       }
-      resolve();
+      resolve(true);
     });
   });
 };
