@@ -3,9 +3,6 @@
 const Promise = require('bluebird');
 const script  = require('./script');
 const film    = require('./film');
-Promise.onPossiblyUnhandledRejection(function(error){
-    throw error;
-});
 let bechdelScore                  = 0;
 let numScenesPass                 = 0;
 let numScenesDontPass             = 0;
@@ -26,20 +23,20 @@ let scenesThatPass                = [];
  * @return [object] an object with all of the characters in
  * the movie and the number times they talk in a given scene
  */
-let countCharacterDialouge = (a, s) => {
+let countCharacterDialouge = (arr, scene) => {
   // console.log(a,s, 'countCharacterDialouge')
-  if (!a || !s) {
+  if (!arr) {
     throw new Error('Invalid countCharacterDialouge input');
   }
   let x;
   let i;
   let output = {};
 
-  for (x = 0; x < a.length; x++) {
+  for (x = 0; x < arr.length; x++) {
     i = 0;
-    output[a[x].characterName] = 0;
-    while ((i = s.indexOf(a[x].characterName, i)) > -1) {
-      output[a[x].characterName]++;
+    output[arr[x].characterName] = 0;
+    while ((i = scene.indexOf(arr[x].characterName, i)) > -1) {
+      output[arr[x].characterName]++;
       i++;
     }
   }
@@ -108,7 +105,10 @@ let scriptGenderAnalytics = (characters, movieScript) => {
 const extractScenes = (characters, movieScript) =>  {
   return new Promise( (resolve, reject) => {
     if (!movieScript || !characters) {
-      reject(new Error('Failed when extracting scenes - Script has to yet been loaded into memory'));
+      reject(new Error(
+        'Failed when extracting scenes -' +
+        ' Script has to yet been loaded into memory'
+      ));
     }
     let idx;
     let scenes = [];
@@ -307,7 +307,7 @@ const sceneAnalysis = (characters, scenes) => {
   });
 };
 
-module.exports.getBechdelResults = (title, path) => {
+const getBechdelResults = (title, path) => {
   if (!title || !path) {
     throw new Error('Invalid getBechdelResults input');
   }
@@ -328,3 +328,5 @@ module.exports.getBechdelResults = (title, path) => {
       throw new Error(error);
     });
 };
+
+export { getBechdelResults };

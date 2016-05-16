@@ -3,11 +3,11 @@
 const Promise = require("bluebird");
 const request = require('request');
 const assert = require('assert');
-const Film    = require('../model/Film');
-const CONFIG  = require('../config/config.json');
+import { Film } from '../model/Film';
+const CONFIG  = require('../../config/config.json');
 let filmData = [];
 
-module.exports.findByID = (id) => {
+const findByID = (id) => {
   if (!id) {
     throw new Error('Invalid findByID input');
   }
@@ -23,7 +23,7 @@ module.exports.findByID = (id) => {
   });
 };
 
-module.exports.findByTitle = (title) => {
+const findByTitle = (title) => {
   if (!title) {
     throw new Error('No film tile found');
   }
@@ -36,7 +36,7 @@ module.exports.findByTitle = (title) => {
   })
 };
 
-module.exports.listAll = () => {
+const listAll = () => {
   return Film.find().exec()
   .then((films) => {
     return films;
@@ -76,7 +76,7 @@ const parseActorArr = (arr) => {
   return actorsArr;
 };
 
-module.exports.insert = (filmTitle, bechdelResults, data) => {
+const insert = (filmTitle, bechdelResults, data) => {
   if (!filmTitle || !bechdelResults || !data) {
     throw new Error('Cannot insert film');
   }
@@ -102,7 +102,7 @@ module.exports.insert = (filmTitle, bechdelResults, data) => {
   });
 };
 
-module.exports.delete = (filmID) => {
+const deleteFilm = (filmID) => {
   return Film.findOne({ _id :filmID }).exec()
   .then((film) => {
     return film.remove();
@@ -198,7 +198,7 @@ const getFullCastData = (title) => {
   });
 };
 
-module.exports.getData = (movieTitle) => {
+const getData = (movieTitle) => {
   return new Promise((resolve, reject) => {
     if (movieTitle === '') {
       reject(new Error('Invalid Movie Title'));
@@ -216,14 +216,15 @@ module.exports.getData = (movieTitle) => {
   });
 };
 
-module.exports.getAllData = () => {
+const getAllData = () => {
   if (!filmData.length) {
     throw new Error('No OMDB data found');
   }
   return filmData;
 };
 
-module.exports.clearData = () => {
+const clearData = () => {
   filmData = [];
 };
 
+export { findByID, findByTitle, getData, deleteFilm, insert, listAll, getAllData, clearData };
