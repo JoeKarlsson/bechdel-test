@@ -1,26 +1,28 @@
-// Uses some ideas from https://gist.github.com/kevinSuttle/c8b198aaa30349088c35
+'use strict';
 
-var gulp = require('gulp');
-var pkg = require('./package.json');
-var common = require('./common/common');
+const gulp          = require('gulp');
+const pkg           = require('./package.json');
+const common        = require('./common/common');
+const del           = require('del');
+const sass          = require('gulp-sass');
+const sourcemaps    = require('gulp-sourcemaps');
+const autoprefixer  = require('gulp-autoprefixer');
+const browserSync   = require('browser-sync');
+const reload        = browserSync.reload;
+const tap           = require('gulp-tap');
+const runSequence   = require('run-sequence').use(gulp);
+const exec          = require('child_process').exec;
+const connect       = require('gulp-connect');
+const nodemon       = require('gulp-nodemon');
+const concat        = require('gulp-concat');
+const babel         = require('gulp-babel');
 
-var del           = require('del'),
-    sass          = require('gulp-sass'),
-    sourcemaps    = require('gulp-sourcemaps'),
-    autoprefixer  = require('gulp-autoprefixer'),
-    browserSync   = require('browser-sync'),
-    reload        = browserSync.reload,
-    tap           = require('gulp-tap'),
-    runSequence   = require('run-sequence').use(gulp),
-    exec          = require('child_process').exec,
-    connect       = require('gulp-connect'),
-    nodemon       = require('gulp-nodemon');
 
 // Auto load all gulp plugins
-var plug = require('gulp-load-plugins')();
+const plug = require('gulp-load-plugins')();
 
 // Paths
-var paths = {
+const paths = {
   source : {
     root : './client',
     css : [
@@ -43,20 +45,13 @@ var paths = {
 };
 
 // Load common utils
-var _ = plug.loadUtils(['colors', 'env', 'log', 'date']);
+const _ = plug.loadUtils(['colors', 'env', 'log', 'date']);
 
 // Create comments for minified files
-var commentHeader = common.createComments(_);
+const commentHeader = common.createComments(_);
 
 // TASKS
 // ----------------------------
-
-// Js linter -- currently not used!
-gulp.task('jshint', function() {
-  return gulp.src(paths.source.jsMain)
-             .pipe(plug.jshint('.jshintrc'))
-             .pipe(plug.jshint.reporter('jshint-stylish'));
-});
 
 // uses jspm to create a self-executing bundle at /client/app.js
 gulp.task('jspmBundle', function(cb) {
@@ -73,7 +68,9 @@ gulp.task('js', ['jspmBundle'], function() {
              .pipe(plug.uglify())
              .pipe(plug.header(commentHeader))
                .pipe(tap(function(file,t) {
-                 file.path = file.path.replace(/\.js$/, '.min.js');  // using gulp-tap to create a .min.js file with same name in same folder
+
+                // using gulp-tap to create a .min.js file with same name in same folder
+                 file.path = file.path.replace(/\.js$/, '.min.js');
                }))
                .pipe(gulp.dest(paths.source.root))
                .pipe(plug.size({ showFiles : true }));
@@ -112,20 +109,34 @@ gulp.task('clean', function(cb) {
   });
 });
 
+gulp.task('babel', function () {
+  return gulp.src("src/**/*.js")
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['es2015']
+    }))
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("dist"));
+});
+
 gulp.task('build', function(cb) {
   runSequence('clean',
               ['css', 'js'],
+              ['babel'],
               cb);
 });
 
 gulp.task('nodemon', function(cb) {
   var called = false;
-  return nodemon({ script : pkg.main, ext : 'js vash ejs jade', ignore : ['./client/**', './logs/**'] }).on('start', function() {
+  return nodemon({ script : pkg.main, ext : 'js', ignore : ['./client/**', './dist/**'] }).on('start', function() {
     if (!called) {
       _.log(_.colors.green('Starting nodemon..'));
       called = true;
       cb();
     }
+  })
+  .on('restart', function () {
+    console.log('Server restarted!')
   });
 });
 
@@ -142,6 +153,7 @@ function reportChange(event) {
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(paths.source.sassMain, ['sass', reload({ stream : true })]).on('change', reportChange);
   gulp.watch(paths.source.js, ['', reload]).on('change', reportChange);
+  gulp.watch("src/**/*.js", ['babel']).on('change', reportChange);
 });
 
 gulp.task('default', function(cb) {

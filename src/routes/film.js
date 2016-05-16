@@ -4,9 +4,9 @@ const express = require('express');
 const router  = express.Router();
 const path    = require('path');
 const Promise = require("bluebird");
-const film    = require('../methods/film');
-const script  = require('../methods/script');
-const bechdel = require('../methods/bechdel');
+import { listAll, findByTitle, findByID, insert, clearData, getAllData, deleteFilm } from '../methods/film';
+import { readMovieTitle, clearTemp } from '../methods/script';
+import { getBechdelResults } from '../methods/bechdel.js';
 const multer  = require('multer');
 const storage = multer.diskStorage({
   destination : (req, file, cb) => {
@@ -31,7 +31,7 @@ Promise.onPossiblyUnhandledRejection(function(error){
 */
 router.route('/')
   .get((req, res) => {
-    film.listAll()
+    listAll()
     .then((films) => {
       res.send(films);
     });
@@ -48,24 +48,24 @@ router.route('/')
         res.send('Please send a .txt script');
       }
       scriptPath = req.files.script[0].path;
-      script.readMovieTitle(scriptPath)
+      readMovieTitle(scriptPath)
       .then((title) => {
         filmTitle = title;
-        return film.findByTitle(filmTitle);
+        return findByTitle(filmTitle);
       })
       .then((movie) => {
         if (movie.length !== 0 || movie === null) {
           res.send(movie);
-          script.clearTemp(scriptPath);
+          clearTemp(scriptPath);
         } else {
-          bechdel.getBechdelResults( filmTitle, scriptPath )
+          getBechdelResults( filmTitle, scriptPath )
           .then((bechdelResults) => {
-            return film.insert(filmTitle, bechdelResults, film.getAllData());
+            return insert(filmTitle, bechdelResults, getAllData());
           })
           .then((movie) => {
-            film.clearData();
+            clearData();
             res.send(movie);
-            script.clearTemp(scriptPath);
+            clearTemp(scriptPath);
           })
           .catch((err) => {
             throw new Error(err);
@@ -83,7 +83,7 @@ router.route('/')
 
 router.route('/:id')
   .get((req, res) => {
-    film.findByID(req.params.id)
+    findByID(req.params.id)
     .then((film) => {
       res.send(film);
     })
@@ -92,7 +92,7 @@ router.route('/:id')
     })
   })
   .delete((req, res) => {
-    film.delete(req.params.id)
+    deleteFilm(req.params.id)
     .then((film) => {
       res.send(film);
     })
