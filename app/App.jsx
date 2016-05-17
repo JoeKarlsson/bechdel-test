@@ -6,6 +6,7 @@ import { IndexLink, Link } from 'react-router';
 import NavLink from './navigation/NavLink.jsx';
 import Home from './home/Home.jsx';
 import About from './about/About.jsx';
+import Films from './films/Films.jsx';
 import styles from './App.scss';
 
 export default React.createClass({
@@ -17,6 +18,7 @@ export default React.createClass({
           <ul className="header--nav">
             <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/films">Films</NavLink></li>
           </ul>
         </header>
 
