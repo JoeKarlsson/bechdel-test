@@ -15,9 +15,8 @@
   const Promise               = require('bluebird');
   const CONFIG                = require('./config/config');
   const film                  = require('./routes/film');
-
-  const isDeveloping = process.env.NODE_ENV !== 'production';
-  const port = isDeveloping ? 3000 : process.env.PORT;
+  const isDeveloping          = process.env.NODE_ENV !== 'production';
+  const port                  = isDeveloping ? 3000 : process.env.PORT;
 
   app.use(partials());
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,12 +24,11 @@
   app.use(methodOverride());
   app.use(express.static(__dirname + '/public'));
 
-  Promise.onPossiblyUnhandledRejection(function(error){
-      throw error;
+  Promise.onPossiblyUnhandledRejection((error) => {
+      throw new Error(error);
   });
 
-  // routes
-  app.use('/film', film);
+  app.use('/api/film', film);
 
   if (isDeveloping) {
     const compiler = webpack(config);
