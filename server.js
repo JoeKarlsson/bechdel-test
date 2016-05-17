@@ -24,8 +24,8 @@
   app.use(methodOverride());
   app.use(express.static(__dirname + '/public'));
 
-  Promise.onPossiblyUnhandledRejection((error) => {
-      throw new Error(error);
+  Promise.onPossiblyUnhandledRejection((err) => {
+      throw new Error(err);
   });
 
   app.use('/api/film', film);

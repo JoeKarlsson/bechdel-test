@@ -3,7 +3,6 @@
 
 const Promise = require("bluebird");
 const request = require('request');
-const assert = require('assert');
 const Film    = require('../model/Film');
 const CONFIG  = require('./../config/config.json');
 let filmData = [];
@@ -14,9 +13,6 @@ module.exports.findByID = (id) => {
   }
   return Film.findById(id)
   .then((film) => {
-    if (err) {
-      throw new Error(err);
-    }
     return film;
   })
   .catch((err) => {

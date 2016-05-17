@@ -9,6 +9,7 @@ import Home from './home/Home.jsx';
 import About from './about/About.jsx';
 import Films from './films/Films.jsx';
 import Film from './film/Film.jsx';
+import NewFilm from './new/NewFilm.jsx';
 import NoMatch from './shared/NoMatch.jsx';
 
 const requireAuth = (nextState, replace) => {
@@ -26,6 +27,7 @@ ReactDOM.render(
       <IndexRoute component={Home}/>
       <Route path="/about" component={About}/>
       <Route path="/films" component={Films}/>
+      <Route path="/film/new" component={NewFilm}/>
       <Route path="/film/:id" component={Film}/>
       <Route path="*" component={NoMatch}/>
     </Route>
