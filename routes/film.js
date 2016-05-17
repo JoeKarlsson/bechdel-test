@@ -29,7 +29,6 @@ const cpUpload = upload.fields([
 */
 router.route('/')
   .get((req, res) => {
-    console.log('hit')
     film.listAll()
     .then((films) => {
       res.send(films);
@@ -88,7 +87,7 @@ router.route('/:id')
     })
     .catch((err) => {
       throw new Error(err);
-    })
+    });
   })
   .delete((req, res) => {
     film.deleteFilm(req.params.id)
@@ -97,7 +96,7 @@ router.route('/:id')
     })
     .catch((err) => {
       throw new Error(err);
-    })
+    });
   });
 
 module.exports = router;
