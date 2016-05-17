@@ -7,7 +7,6 @@ import FilmItem from './FilmItem.jsx';
 const FilmList = React.createClass({
   render: function() {
     var filmListNode = this.props.films.map(function(filmData){
-      console.log(filmData, 'FilmData')
       return (
         <FilmItem
           film={filmData}

@@ -2,6 +2,7 @@
 'use strict';
 
 import React from 'react';
+import { Link } from 'react-router';
 import FilmList from './FilmList.jsx';
 import styles from './Films.scss';
 import * as $ from'jquery';
@@ -38,6 +39,7 @@ const Films = React.createClass({
       <div className={styles.filmList}>
         <div className='u-full-width'>
           <h1>Films</h1>
+          <Link to={'/film/new'}><button>Add Film</button></Link>
         </div>
         <div className='row'>
           <FilmList films={this.state.films} />
