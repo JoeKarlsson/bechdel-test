@@ -35,7 +35,7 @@ const Films = React.createClass({
 
   render: function() {
     return (
-      <div className={styles.gistList}>
+      <div className={styles.filmList}>
         <div className='u-full-width'>
           <h1>Films</h1>
         </div>

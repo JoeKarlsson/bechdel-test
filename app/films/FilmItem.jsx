@@ -10,7 +10,13 @@ const FilmItem = React.createClass({
       <div className='FilmItem'>
         <li>
           <div>
-            <p>{this.props.film.title}</p>
+            <p>
+            <Link
+              className='gist-description'
+              to={"/film/" + this.props.film._id}
+            >
+              {this.props.film.title}
+            </Link></p>
           </div>
         </li>
       </div>
