@@ -16,9 +16,7 @@ module.exports.findByID = (id) => {
     throw new Error('Invalid findByID input');
   }
   return Film.findById(id)
-  .then((film) => {
-    return film;
-  })
+  .then((film) => film)
   .catch((err) => {
     throw new Error(err);
   });
@@ -29,9 +27,7 @@ module.exports.findByTitle = (movieTitle) => {
     throw new Error('No film tile found');
   }
   return Film.find({ title: movieTitle }).exec()
-  .then((film) => {
-    return film;
-  })
+  .then((film) => film)
   .catch((err) => {
     throw new Error(err);
   });
@@ -53,9 +49,7 @@ const save = (film) => {
     throw new Error('Cannot save film');
   }
   return film.save()
-  .then(() => {
-    return film;
-  })
+  .then(() => film)
   .catch((err) => {
     throw new Error(err);
   });
@@ -84,8 +78,8 @@ const parseImageData = (images) => {
   }
   const img = {};
 
-  img.backdrop = 'https://image.tmdb.org/t/p/w1000' + images.backdrops[0].file_path;
-  img.poster = 'https://image.tmdb.org/t/p/w300' + images.posters[0].file_path;
+  img.backdrop = `https://image.tmdb.org/t/p/w1000${images.backdrops[0].file_path}`;
+  img.poster = `https://image.tmdb.org/t/p/w300${images.posters[0].file_path}`;
   return img;
 };
 
@@ -109,9 +103,7 @@ module.exports.insert = (filmTitle, bechdelResults, data, images) => {
   film.images = parseImageData(images);
 
   return save(film)
-  .then((savedFilm) => {
-    return savedFilm;
-  })
+  .then((savedFilm) => savedFilm)
   .catch((error) => {
     throw new Error(error);
   });
@@ -170,15 +162,13 @@ const dataParser = (body, type) => {
 
 const getFilmImages = (ID) => {
   return new Promise((resolve, reject) => {
-    console.log('Started phase III');
     if (ID === null) {
       reject(new Error('No IMDB ID found.'));
     }
-
     request(
       'https://api.themoviedb.org/3/movie/' +
-      ID + '/images?' +
-      'api_key=' + CONFIG.themoviedb +
+      `${ID}/images?` +
+      `api_key=${CONFIG.themoviedb}` +
       '&language=en&' +
       'include_image_language=en,null',
       (error, response, body) => {
@@ -197,12 +187,10 @@ const getSimpleCastData = (title) => {
     if (!title) {
       reject(new Error('No Title sent getSimpleCastData'))
     }
-    console.log('Started phase I');
-
     request(
       'http://api.myapifilms.com/imdb/idIMDB?' +
-      'title=' + title + '&' +
-      'token=' + CONFIG.myapifilms + '&' +
+      `title=${title}&` +
+      `token=${CONFIG.myapifilms}&` +
       'format=json&' +
       'language=en-us&' +
       'aka=0&' +
@@ -245,12 +233,10 @@ const getSimpleCastData = (title) => {
 
 const getFullCastData = (title) => {
   return new Promise((resolve, reject) => {
-    console.log('Started Phase II');
-
     request(
       'http://api.myapifilms.com/imdb/idIMDB?' +
-      'title=' + title + '&' +
-      'token=' + CONFIG.myapifilms + '&' +
+      `title=${title}&` +
+      `token=${CONFIG.myapifilms}&` +
       'format=json&' +
       'language=en-us&' +
       'aka=0&' +
