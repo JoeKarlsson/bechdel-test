@@ -1,8 +1,4 @@
-/* jshint esversion: 6 */
-'use strict';
-
 import React from 'react';
-import { IndexLink, Link } from 'react-router';
 import NavLink from './navigation/NavLink.jsx';
 import Home from './home/Home.jsx';
 import About from './about/About.jsx';

@@ -29,6 +29,9 @@ module.exports = {
     })
   ],
   module: {
+    // preLoaders: [
+    //     { test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ }
+    // ],
     loaders: [{
       test: /(\.js$|\.jsx$)/,
       exclude: /node_modules/,
@@ -45,6 +48,8 @@ module.exports = {
     }]
   },
   eslint: {
-    configFile: '.eslintrc'
+    configFile: '.eslintrc.js',
+    failOnWarning: false,
+    failOnError: false,
   }
 };
