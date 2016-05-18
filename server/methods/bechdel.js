@@ -61,9 +61,8 @@ const isCharFemale = (characters, name) => {
         return true;
       } else if (character.gender === 'Actor') {
         return false;
-      } else {
-        return false;
       }
+      return false;
     }
   }
   throw new Error('Character not found');
@@ -102,7 +101,7 @@ const scriptGenderAnalytics = (characters, movieScript) => {
   }
 };
 
-const extractScenes = (characters, movieScript) =>  {
+const extractScenes = (characters, movieScript) => {
   return new Promise((resolve, reject) => {
     if (!movieScript || !characters) {
       reject(new Error(
@@ -123,7 +122,7 @@ const extractScenes = (characters, movieScript) =>  {
     let subScene = '';
 
     scriptGenderAnalytics(characters, movieScript);
-    movieScript.split('\n').forEach( (pg) => {
+    movieScript.split('\n').forEach((pg) => {
       for (idx in keywords) {
         const keyword = keywords[idx];
         if (pg.indexOf(keyword) !== -1) {
@@ -132,7 +131,7 @@ const extractScenes = (characters, movieScript) =>  {
           break;
         }
       }
-      subScene += (pg + '\n');
+      subScene += ('${pg}\n');
     });
     scenes.push(subScene);
     resolve(scenes);
