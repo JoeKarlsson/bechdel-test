@@ -25,8 +25,7 @@ let scenesThatPass                = [];
  * the movie and the number times they talk in a given scene
  */
 let countCharacterDialouge = (arr, scene) => {
-  // console.log(a,s, 'countCharacterDialouge')
-  if (!arr) {
+  if (!arr || !scene) {
     throw new Error('Invalid countCharacterDialouge input');
   }
   let x;
@@ -315,14 +314,14 @@ module.exports.getBechdelResults = (title, path) => {
   let movieChar;
 
   return film.getData( title )
-    .then( (characters) => {
-      movieChar = characters;
+    .then((data) => {
+      movieChar = data;
       return script.read(path);
     })
-    .then( ( movieScript ) => {
+    .then(( movieScript ) => {
       return extractScenes( movieChar, movieScript );
     })
-    .then( ( scenes ) => {
+    .then(( scenes ) => {
       return sceneAnalysis( movieChar, scenes );
     })
     .catch(function (error) {
