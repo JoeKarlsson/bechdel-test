@@ -1,7 +1,7 @@
-/* jshint esversion: 6 */
+/* eslint strict: 0*/
 'use strict';
 
-const fs      = require('fs');
+const fs = require('fs');
 const Promise = require('bluebird');
 
 module.exports.readMovieTitle = (path) => {
@@ -9,7 +9,7 @@ module.exports.readMovieTitle = (path) => {
     if (!path) {
       reject(new Error('Invalid readMovieTitle input'));
     }
-    let rs  = fs.createReadStream(path, { encoding : 'utf8' });
+    const rs = fs.createReadStream(path, { encoding: 'utf8' });
     let acc = '';
     let pos = 0;
     let index;
@@ -20,7 +20,7 @@ module.exports.readMovieTitle = (path) => {
       index !== -1 ? rs.close() : pos += chunk.length;
     })
     .on('close', () => {
-      let movieTitle = acc.slice(0, pos + index);
+      const movieTitle = acc.slice(0, pos + index);
       resolve(movieTitle);
     })
     .on('error', (err) => {
@@ -34,7 +34,7 @@ module.exports.read = (path) => {
     if (!path) {
       reject(new Error('Invalid read input'));
     }
-    let rs = fs.createReadStream(path, { encoding : 'utf8' });
+    const rs = fs.createReadStream(path, { encoding: 'utf8' });
     let movieScript = '';
 
     rs.on('data', (chunk) => {

@@ -2,26 +2,26 @@
 'use strict';
 
 const express = require('express');
-const router  = express.Router();
-const fs      = require('fs');
-const path    = require('path');
-const film    = require('../methods/film');
-const script  = require('../methods/script');
+const router = express.Router();
+const path = require('path');
+const film = require('../methods/film');
+const script = require('../methods/script');
 const bechdel = require('../methods/bechdel');
-const multer  = require('multer');
+const multer = require('multer');
 const storage = multer.diskStorage({
-  destination : (req, file, cb) => {
+  destination: (req, file, cb) => {
     cb(null, './tmp');
   },
-  filename : (req, file, cb) => {
+  filename: (req, file, cb) => {
     cb(null, file.originalname);
-  }
+  },
 });
-const upload   = multer({ storage : storage });
+const upload = multer({ storage: storage });
 const cpUpload = upload.fields([
   {
-    name : 'script', maxCount : 1
-  }
+    name: 'script',
+    maxCount: 1,
+  },
 ]);
 
 /*
@@ -37,8 +37,6 @@ router.route('/')
   .post(cpUpload, (req, res) => {
     let scriptPath;
     let filmTitle;
-    let filmData;
-    let filmImages;
 
     if (!req.files) {
       res.send('No script submitted, please try again');
@@ -57,10 +55,9 @@ router.route('/')
           res.send(movie);
           script.clearTemp(scriptPath);
         } else {
-          bechdel.getBechdelResults( filmTitle, scriptPath )
+          bechdel.getBechdelResults(filmTitle, scriptPath)
           .then((bechdelResults) => {
             const data = film.getAllData();
-            console.log((film.getAllData()).images, 'film.getAllData().images');
             return film.insert(
               filmTitle,
               bechdelResults,
@@ -68,9 +65,9 @@ router.route('/')
               data.images
             );
           })
-          .then((movie) => {
+          .then((savedFilm) => {
             film.clearData();
-            res.send(movie);
+            res.send(savedFilm);
             script.clearTemp(scriptPath);
           })
           .catch((err) => {
@@ -90,8 +87,8 @@ router.route('/')
 router.route('/:id')
   .get((req, res) => {
     film.findByID(req.params.id)
-    .then((film) => {
-      res.send(film);
+    .then((movie) => {
+      res.send(movie);
     })
     .catch((err) => {
       throw new Error(err);
@@ -99,8 +96,8 @@ router.route('/:id')
   })
   .delete((req, res) => {
     film.deleteFilm(req.params.id)
-    .then((film) => {
-      res.send(film);
+    .then((movie) => {
+      res.send(movie);
     })
     .catch((err) => {
       throw new Error(err);
