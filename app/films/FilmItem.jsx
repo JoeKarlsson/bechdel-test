@@ -10,6 +10,10 @@ const FilmItem = React.createClass({
       <div className='FilmItem'>
         <li>
           <div>
+            <img
+              src='https://image.tmdb.org/t/p/w150/vUxvNDEVulagDdFcA4ifXVF02VG.jpg'
+              alt={this.props.film.title}
+            />
             <p>
             <Link
               className='gist-description'
