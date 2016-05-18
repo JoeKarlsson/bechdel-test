@@ -147,6 +147,7 @@ const updateScore = (n) => {
     bechdelScore = n;
     return bechdelScore;
   }
+  return n;
 };
 
 /**
@@ -292,16 +293,16 @@ const sceneAnalysis = (characters, scenes) => {
     }
     bechdelResults = {
       pass: bechdelPass,
-      bechdelScore: bechdelScore,
-      numScenesPass: numScenesPass,
-      numScenesDontPass: numScenesDontPass,
-      numOfFemalesChars: numOfFemalesChars,
-      numOfMaleChars: numOfMaleChars,
-      numOfFemalesCharsWithDialogue: numOfFemalesCharsWithDialogue,
-      numOfMaleCharsWithDialogue: numOfMaleCharsWithDialogue,
-      totalLinesFemaleDialogue: totalLinesFemaleDialogue,
-      totalLinesMaleDialogue: totalLinesMaleDialogue,
-      scenesThatPass: scenesThatPass,
+      bechdelScore,
+      numScenesPass,
+      numScenesDontPass,
+      numOfFemalesChars,
+      numOfMaleChars,
+      numOfFemalesCharsWithDialogue,
+      numOfMaleCharsWithDialogue,
+      totalLinesFemaleDialogue,
+      totalLinesMaleDialogue,
+      scenesThatPass,
     };
     resolve(bechdelResults);
   });
@@ -318,12 +319,8 @@ module.exports.getBechdelResults = (title, path) => {
       movieChar = data;
       return script.read(path);
     })
-    .then((movieScript) => {
-      return extractScenes(movieChar, movieScript);
-    })
-    .then((scenes) => {
-      return sceneAnalysis(movieChar, scenes);
-    })
+    .then((movieScript) => extractScenes(movieChar, movieScript))
+    .then((scenes) => sceneAnalysis(movieChar, scenes))
     .catch((error) => {
       throw new Error(error);
     });
