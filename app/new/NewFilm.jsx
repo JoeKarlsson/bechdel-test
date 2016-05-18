@@ -1,8 +1,3 @@
-/* jshint esversion: 6 */
-// https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects
-// https://stackoverflow.com/questions/4856917/jquery-upload-progress-and-ajax-file-upload#494377
-'use strict';
-
 import React from 'react';
 import styles from './NewFilm.scss';
 import * as $ from'jquery';
@@ -12,7 +7,7 @@ export default React.createClass({
     return {
       film: '',
       fileName: '',
-      blob: ''
+      blob: '',
     }
   },
   handleFilmSubmit(e) {

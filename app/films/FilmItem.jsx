@@ -11,7 +11,7 @@ const FilmItem = React.createClass({
         <li>
           <div>
             <img
-              src='https://image.tmdb.org/t/p/w150/vUxvNDEVulagDdFcA4ifXVF02VG.jpg'
+              src={this.props.film.images.poster}
               alt={this.props.film.title}
             />
             <p>
