@@ -10,7 +10,7 @@ import * as $ from'jquery';
 const Films = React.createClass({
   getInitialState() {
     return {
-      films: {}
+      films: []
     }
   },
 

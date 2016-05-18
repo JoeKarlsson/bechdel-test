@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* eslint strict: 0*/
 'use strict';
 
 const express = require('express');
@@ -38,6 +38,7 @@ router.route('/')
     let scriptPath;
     let filmTitle;
     let filmData;
+    let filmImages;
 
     if (!req.files) {
       res.send('No script submitted, please try again');
@@ -58,7 +59,14 @@ router.route('/')
         } else {
           bechdel.getBechdelResults( filmTitle, scriptPath )
           .then((bechdelResults) => {
-            return film.insert(filmTitle, bechdelResults, film.getAllData());
+            const data = film.getAllData();
+            console.log((film.getAllData()).images, 'film.getAllData().images');
+            return film.insert(
+              filmTitle,
+              bechdelResults,
+              data.data,
+              data.images
+            );
           })
           .then((movie) => {
             film.clearData();

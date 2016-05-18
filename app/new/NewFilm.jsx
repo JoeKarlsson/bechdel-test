@@ -27,7 +27,7 @@ export default React.createClass({
       contentType: false,
       success: function(data) {
         console.log(data, 'SUCCESS');
-        window.location = '/film/' + data[0]._id;
+        window.location = '/film/' + data._id;
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(status, err.toString());
