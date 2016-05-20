@@ -5,13 +5,12 @@ import About from './about/About.jsx';
 import Films from './films/Films.jsx';
 import styles from './App.scss';
 
-export default React.createClass({
-
+class App extends React.Component {
   render() {
     return (
       <div className="site">
         <header>
-          <a href='/' className="header--logo">Bechdel Test</a>
+          <NavLink to="/" onlyActiveOnIndex={true} className="header--logo">Bechdel Test</NavLink>
           <ul className="header--nav">
             <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
@@ -30,6 +29,8 @@ export default React.createClass({
           </div>
         </footer>
       </div>
-    )
-  },
-});
+    );
+  }
+}
+
+export default App;

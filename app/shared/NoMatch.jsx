@@ -1,7 +1,11 @@
 import React from 'react';
 
-export default React.createClass({
+class NoMatch extends React.Component {
   render() {
-    return <div>No Page Found</div>;
-  },
-});
+    return (
+      <div>No Page Found</div>
+    );
+  }
+}
+
+export default NoMatch;
