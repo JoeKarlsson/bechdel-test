@@ -19,7 +19,6 @@ class Films extends React.Component {
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log(data, 'data')
         console.log(this.state.films , 'state')
         this.setState({ films: data });
         console.log(this.state.films , 'state')
@@ -51,11 +50,11 @@ class Films extends React.Component {
   }
 }
 
-FilmList.propTypes = {
+Films.propTypes = {
   films: React.PropTypes.array,
 };
 
-FilmList.defaultProps = {
+Films.defaultProps = {
   films: [],
 };
 
