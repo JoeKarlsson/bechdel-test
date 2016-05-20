@@ -9,13 +9,13 @@ class FilmList extends React.Component {
         <FilmItem
           film={filmData}
           key={filmData._id}
-          className={styles.filmListNode}
+          className='filmListNode'
         />
       );
     });
 
     return (
-      <div className={styles.FilmList}>
+      <div className='filmList'>
         {filmListNode}
       </div>
     );

@@ -2,7 +2,8 @@
 'use strict';
 
 const db = require('./index.js');
-const mongoose = require('mongoose');
+const Promise = require('bluebird');
+const mongoose = Promise.promisifyAll(require("mongoose"));
 mongoose.Promise = require('bluebird');
 
 const filmSchema = mongoose.Schema({

@@ -34,7 +34,7 @@ router.route('/')
       res.send(films);
     });
   })
-  .post(cpUpload, (req, res) => {
+  .post(cpUpload, (req, res, next) => {
     let scriptPath;
     let filmTitle;
 
@@ -76,14 +76,16 @@ router.route('/')
           });
         }
       })
-      .catch((err) => {
-        throw new Error(err);
-      })
+      .catch(next)
       .error((err) => {
         throw new Error(err);
       });
     }
   });
+
+const errorHandler = (err, req, res) => {
+  console.error(err);
+};
 
 router.route('/:id')
   .get((req, res) => {
