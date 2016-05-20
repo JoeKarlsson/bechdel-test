@@ -11,11 +11,10 @@ export default React.createClass({
     return (
       <div className="site">
         <header>
-          <a href='/films' className="header--logo">Bechdel Test</a>
+          <a href='/' className="header--logo">Bechdel Test</a>
           <ul className="header--nav">
             <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/films">Films</NavLink></li>
           </ul>
         </header>
 

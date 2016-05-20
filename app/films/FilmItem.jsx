@@ -1,24 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router';
-import styles from './Films.scss';
+import styles from './FilmItem.scss';
 
 class FilmItem extends React.Component {
   render() {
     return (
-      <div className={styles.filmItem}>
+      <div className='filmItem'>
         <li>
           <div>
-            <img
-              src={this.props.film.images.poster}
-              alt={this.props.film.title}
-            />
-            <p>
-              <Link
-                className={styles.gist_description}
-                to={`/film/${this.props.film._id}`}
-              >
-              {this.props.film.title}
-              </Link></p>
+            <Link
+              className='gist_description'
+              to={`/film/${this.props.film._id}`}
+            >
+              <img
+                src={this.props.film.images.poster}
+                alt={this.props.film.title}
+              />
+              <p>
+                {this.props.film.title}
+              </p>
+            </Link>
           </div>
         </li>
       </div>

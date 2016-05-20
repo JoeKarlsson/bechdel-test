@@ -36,11 +36,11 @@ class Films extends React.Component {
 
   render() {
     return (
-      <div className={styles.filmList}>
+      <div className='films'>
         <div className='u-full-width'>
           <h1>Films</h1>
           <Link to={'/film/new'}>
-            <button>Add Film</button>
+            <button>Add Films</button>
           </Link>
         </div>
         <div className='row'>
