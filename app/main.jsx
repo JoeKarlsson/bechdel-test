@@ -12,9 +12,8 @@ import NoMatch from './shared/NoMatch.jsx';
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={Films} />
       <Route path="/about" component={About} />
-      <Route path="/films" component={Films} />
       <Route path="/film/new" component={NewFilm} />
       <Route path="/film/:id" component={Film} />
       <Route path="*" component={NoMatch} />
