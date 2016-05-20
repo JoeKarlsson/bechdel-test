@@ -47,7 +47,6 @@ router.route('/')
       scriptPath = req.files.script[0].path;
       script.readMovieTitle(scriptPath)
       .then((title) => {
-        console.log(title);
         filmTitle = title;
         return film.findByTitle(filmTitle);
       })
@@ -82,10 +81,6 @@ router.route('/')
       });
     }
   });
-
-const errorHandler = (err, req, res) => {
-  console.error(err);
-};
 
 router.route('/:id')
   .get((req, res) => {

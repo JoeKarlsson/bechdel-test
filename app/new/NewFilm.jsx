@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router';
 import styles from './NewFilm.scss';
 import * as $ from'jquery';
 
-export default React.createClass({
-  getInitialState() {
-    return {
+class NewFilm extends React.Component {
+  constructor() {
+    super();
+    this.state = {
       film: '',
       fileName: '',
       blob: '',
-    }
-  },
+    };
+  }
+
   handleFilmSubmit(e) {
     e.preventDefault();
     let fd = new FormData(document.querySelector("form"));
@@ -28,7 +31,8 @@ export default React.createClass({
         console.error(status, err.toString());
       }.bind(this)
     });
-  },
+  }
+
   handleScriptUploadChange(e){
     var reader = new FileReader();
     var file = e.target.files[0];
@@ -41,7 +45,8 @@ export default React.createClass({
       reader.readAsDataURL(file);
 
     }
-  },
+  }
+
   render() {
     return (
       <div>
@@ -66,4 +71,18 @@ export default React.createClass({
       </div>
     )
   }
-});
+}
+
+NewFilm.propTypes = {
+  film: React.PropTypes.string,
+  fileName: React.PropTypes.string,
+  blob: React.PropTypes.string,
+};
+
+NewFilm.defaultProps = {
+  film: '',
+  fileName: '',
+  blob: '',
+};
+
+export default NewFilm;

@@ -1,13 +1,15 @@
 import React from 'react';
-import * as $ from'jquery';
 import { Link } from 'react-router';
+import styles from './Film.scss';
+import * as $ from'jquery';
 
-export default React.createClass({
-  getInitialState() {
-    return {
-      film: {}
-    }
-  },
+class Film extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      film: {},
+    };
+ }
 
   getFilm() {
     $.ajax({
@@ -23,19 +25,29 @@ export default React.createClass({
         console.error(this.props, status, err.toString());
       }.bind(this)
     });
-  },
+  }
 
   componentDidMount() {
     this.getFilm();
-  },
+  }
 
   render() {
     return (
       <div>
         <h2>{this.state.film.title}</h2>
         <p>{this.state.film.plot}</p>
-        <Link to={'/films'}><button>All Films</button></Link>
+        <Link to={'/'}><button>All Films</button></Link>
       </div>
     )
   }
-});
+}
+
+Film.propTypes = {
+  films: React.PropTypes.object,
+};
+
+Film.defaultProps = {
+  film: {},
+};
+
+export default Film;

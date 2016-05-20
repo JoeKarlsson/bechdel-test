@@ -195,7 +195,7 @@ const getFilmImages = (ID) => {
 const getSimpleCastData = (title) => {
   return new Promise((resolve, reject) => {
     if (!title) {
-      reject(new Error('No Title sent getSimpleCastData'))
+      reject(new Error('No Title sent getSimpleCastData'));
     }
     request(
       'http://api.myapifilms.com/imdb/idIMDB?' +
