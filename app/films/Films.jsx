@@ -1,20 +1,18 @@
-/* jshint esversion: 6 */
-'use strict';
-
 import React from 'react';
 import { Link } from 'react-router';
 import FilmList from './FilmList.jsx';
 import styles from './Films.scss';
 import * as $ from'jquery';
 
-const Films = React.createClass({
-  getInitialState() {
-    return {
-      films: []
-    }
-  },
+class Films extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      films: [],
+    };
+ }
 
-  getAllFilms: function() {
+  getAllFilms() {
     $.ajax({
       url: "/api/film",
       method: 'GET',
@@ -22,24 +20,28 @@ const Films = React.createClass({
       cache: false,
       success: function(data) {
         console.log(data, 'data')
+        console.log(this.state.films , 'state')
         this.setState({ films: data });
+        console.log(this.state.films , 'state')
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props, status, err.toString());
       }.bind(this)
     });
-  },
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     this.getAllFilms();
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div className={styles.filmList}>
         <div className='u-full-width'>
           <h1>Films</h1>
-          <Link to={'/film/new'}><button>Add Film</button></Link>
+          <Link to={'/film/new'}>
+            <button>Add Film</button>
+          </Link>
         </div>
         <div className='row'>
           <FilmList films={this.state.films} />
@@ -47,6 +49,14 @@ const Films = React.createClass({
       </div>
     )
   }
-});
+}
+
+FilmList.propTypes = {
+  films: React.PropTypes.array,
+};
+
+FilmList.defaultProps = {
+  films: [],
+};
 
 export default Films;

@@ -4,7 +4,7 @@
   "engines": {
     "node": "5.8.0"
   },
-  "description": "A React application for managing your Github GISTs",
+  "description": "A node based interactive site to analyze a movie script in order to tell if it passes the Bechdel Test.",
   "main": "server/server.js",
   "repository": {
     "type": "git",
@@ -22,11 +22,10 @@
   },
   "homepage": "https://github.com/JoeKarlsson1/bechdel-test",
   "scripts": {
-    "test": "",
-    "start": "node server",
+    "test": "./node_modules/.bin/mocha -R spec server/test --watch",
+    "start": "nodemon server/server.js",
     "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint .",
-    "jscs": "jscs ."
+    "eslint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
     "babel-cli": "^6.4.0",
@@ -55,7 +54,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.1.0",
     "babel-preset-stage-0": "^6.3.13",
-    "chai": "^3.2.0",
+    "chai": "^3.5.0",
     "css-loader": "^0.19.0",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^9.0.1",
@@ -75,6 +74,7 @@
     "mocha": "^2.3.3",
     "mocha-jsdom": "^1.0.0",
     "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
     "postcss-loader": "^0.6.0",
     "react-addons-test-utils": "^0.14.3",
     "react-transform-hmr": "^1.0.0",
@@ -84,6 +84,7 @@
     "sinon-chai": "^2.8.0",
     "stats-webpack-plugin": "^0.2.1",
     "style-loader": "^0.12.4",
+    "supertest": "^1.2.0",
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"
