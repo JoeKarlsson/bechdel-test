@@ -11,11 +11,16 @@ let filmData = {
 };
 let imdbID = null;
 
+/**
+ * Find Film in the datavase by ID
+ * @param  {[String]} id [description]
+ * @return {[type]}    [description]
+ */
 module.exports.findByID = (id) => {
   if (!id) {
     throw new Error('Invalid findByID input');
   }
-  return Film.findById(id)
+  return Film.findById(id).exec()
   .then((film) => film)
   .catch((err) => {
     throw new Error(err);
@@ -84,7 +89,12 @@ const parseImageData = (images) => {
 };
 
 module.exports.insert = (filmTitle, bechdelResults, data, images) => {
-  if (!filmTitle || !bechdelResults || !data || !images) {
+  if (
+    !filmTitle ||
+    !bechdelResults ||
+    !data ||
+    !images
+  ) {
     throw new Error('Cannot insert film');
   }
   const film = new Film({ title: filmTitle });

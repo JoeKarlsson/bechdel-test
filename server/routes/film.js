@@ -47,6 +47,7 @@ router.route('/')
       scriptPath = req.files.script[0].path;
       script.readMovieTitle(scriptPath)
       .then((title) => {
+        console.log(title);
         filmTitle = title;
         return film.findByTitle(filmTitle);
       })

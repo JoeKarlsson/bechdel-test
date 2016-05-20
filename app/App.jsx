@@ -32,5 +32,5 @@ export default React.createClass({
         </footer>
       </div>
     )
-  }
+  },
 });

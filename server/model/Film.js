@@ -1,13 +1,14 @@
-'use strict'
+/* eslint strict: 0*/
+'use strict';
 
 const db = require('./index.js');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-let filmSchema = mongoose.Schema({
+const filmSchema = mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   plot: String,
   simplePlot: String,
@@ -15,28 +16,28 @@ let filmSchema = mongoose.Schema({
   actors: [{
     actorName: String,
     character: String,
-    actorActress: String
+    actorActress: String,
   }],
   directors: [{
     name: String,
-    id: String
+    id: String,
   }],
   writers: [{
     name: String,
-    id: String
+    id: String,
   }],
   rated: String,
-  genres: [ String ],
+  genres: [String],
   urlPoster: String,
   idIMDB: String,
   urlIMDB: String,
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   bechdelResults: {
     pass: Boolean,
@@ -48,14 +49,14 @@ let filmSchema = mongoose.Schema({
     numOfFemalesCharsWithDialogue: Number,
     numOfMaleCharsWithDialogue: Number,
     totalLinesFemaleDialogue: Number,
-    totalLinesMaleDialogue: Number
+    totalLinesMaleDialogue: Number,
   },
   images: {
     backdrop: String,
-    poster: String
-  }
+    poster: String,
+  },
 });
 
-const Film = mongoose.model( 'Film', filmSchema);
+const Film = mongoose.model('Film', filmSchema);
 
 module.exports = Film;

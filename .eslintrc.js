@@ -1,10 +1,15 @@
 module.exports = {
     "extends": "airbnb",
     ecmaFeatures: {
-        'jsx': true,
-        'modules': true
+      'jsx': true,
+      'modules': true,
     },
     "plugins": [
-        "react"
-    ]
+      "react"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true,
+    },
 };
