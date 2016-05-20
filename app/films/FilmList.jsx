@@ -1,26 +1,33 @@
-/* jshint esversion: 6 */
-'use strict';
-
 import React from 'react';
 import FilmItem from './FilmItem.jsx';
+import styles from './FilmList.scss';
 
-const FilmList = React.createClass({
-  render: function() {
-    var filmListNode = this.props.films.map(function(filmData){
+class FilmList extends React.Component {
+  render() {
+    let filmListNode = this.props.films.map((filmData) => {
       return (
         <FilmItem
           film={filmData}
-          key={filmData._id} >
-        </FilmItem>
-      )
+          key={filmData._id}
+          className={styles.filmListNode}
+        />
+      );
     });
 
     return (
-      <div className='filmList'>
-        { filmListNode }
+      <div className={styles.FilmList}>
+        {filmListNode}
       </div>
-    )
+    );
   }
-});
+}
+
+FilmList.propTypes = {
+  films: React.PropTypes.array,
+};
+
+FilmList.defaultProps = {
+  films: [],
+};
 
 export default FilmList;

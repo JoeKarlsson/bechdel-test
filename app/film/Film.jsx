@@ -1,6 +1,3 @@
-/* jshint esversion: 6 */
-'use strict';
-
 import React from 'react';
 import * as $ from'jquery';
 import { Link } from 'react-router';
@@ -12,7 +9,7 @@ export default React.createClass({
     }
   },
 
-  getFilm: function() {
+  getFilm() {
     $.ajax({
       url: "/api/film/" + this.props.params.id,
       method: 'GET',

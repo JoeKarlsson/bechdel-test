@@ -1,12 +1,11 @@
-/* jshint esversion: 6 */
-'use strict';
-
 import React from 'react';
 import { Link } from 'react-router';
 import styles from './NavLink.scss';
 
-export default React.createClass({
+class NavLink extends React.Component {
   render() {
-    return <Link {...this.props} activeClassName={styles.active}/>
+    return <Link {...this.props} activeClassName={styles.active} />;
   }
-});
+}
+
+export default NavLink;
