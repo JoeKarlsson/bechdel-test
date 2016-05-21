@@ -7,7 +7,22 @@ class Film extends React.Component {
   constructor() {
     super();
     this.state = {
-      film: {},
+      film: {
+        title: '',
+        images: {
+          poster: '',
+          backdrop: '',
+        },
+        plot: '',
+        directors: [],
+        writers: [],
+        genres: [],
+        rated: '',
+        bechdelResults: {
+          pass: 'false',
+
+        }
+      },
     };
  }
 
@@ -32,9 +47,67 @@ class Film extends React.Component {
   }
 
   render() {
+    const directorNode = this.state.film.directors.map((director) => {
+      const directors = this.state.film.directors;
+      if ( directors.length === 1) {
+        return (
+          <span key={director.id}>{director.name}</span>
+        );
+      } else if ( director.name === directors[directors.length-1].name) {
+        return (
+          <span key={director.id}>{director.name}</span>
+        );
+      }
+      return (
+        <span key={director.id}>{director.name} & </span>
+      );
+    });
+    const writerNode = this.state.film.writers.map((writer) => {
+      const writers = this.state.film.writers;
+      if ( writers.length === 1) {
+        return (
+          <span key={writer.id}>{writer.name}</span>
+        );
+      } else if ( writer.name !== writers[writers.length-1].name) {
+        return (
+          <span key={writer.id}>{writer.name} & </span>
+        );
+      } else {
+        return (
+          <span key={writer.id}>{writer.name}</span>
+        );
+      }
+    });
+    const genreNode = this.state.film.genres.map((genre) => {
+      const genres = this.state.film.genres;
+      if ( genres.length === 1) {
+        return (
+          <span key={Math.floor(Math.random()*100)}>{genre}</span>
+        );
+      } else if ( genre !== genres[genres.length-1]) {
+        return (
+          <span key={Math.floor(Math.random()*100)}>{genre} | </span>
+        );
+      } else {
+        return (
+          <span key={Math.floor(Math.random()*100)}>{genre}</span>
+        );
+      }
+    });
     return (
       <div>
+        <img
+          src={this.state.film.images.backdrop}
+          alt={this.state.film.title}
+        />
         <h2>{this.state.film.title}</h2>
+        <p>Directors: {directorNode}</p>
+        <p>Writers: {writerNode}</p>
+        <p>Genre: {genreNode}</p>
+        <p>Rated: {this.state.film.rated}</p>
+        <p>IMDB: <a href={`http://www.imdb.com/title/${this.state.film.idIMDB}`} target='_blank'>{this.state.film.title}</a></p>
+        <p>Bechdel Pass: {this.state.film.bechdelResults.pass.toString()}</p>
+        <p>Bechdel Score: {this.state.film.bechdelResults.bechdelScore} of 3</p>
         <p>{this.state.film.plot}</p>
         <Link to={'/'}><button>All Films</button></Link>
       </div>
@@ -43,11 +116,7 @@ class Film extends React.Component {
 }
 
 Film.propTypes = {
-  films: React.PropTypes.object,
-};
-
-Film.defaultProps = {
-  film: {},
+  film: React.PropTypes.object,
 };
 
 export default Film;
