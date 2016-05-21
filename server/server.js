@@ -67,6 +67,9 @@ const onStart = (err) => {
     `Open up http://0.0.0.0:${port}/ in your browser.`
   );
 };
-app.listen(port, '0.0.0.0', onStart);
+
+if (!module.parent) {
+  app.listen(port, '0.0.0.0', onStart);
+}
 
 module.exports = app;

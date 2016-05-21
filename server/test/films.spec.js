@@ -1,13 +1,32 @@
 /* eslint-env mocha */
+'use strict';
 
 const request = require('supertest');
 const app = require('../server.js');
 const chai = require('chai');
 const expect = chai.expect;
+const mongoose = require('mongoose');
+
+mongoose.models = {};
+mongoose.modelSchemas = {};
 
 describe('film routes', () => {
+  let connection;
+  beforeEach((done) => {
+    connection = mongoose.createConnection('mongodb://localhost/bechdelTest');
+    connection.once('open', () => {
+      done();
+    });
+  });
+
+  afterEach((done) => {
+    connection.close(() => {
+      done();
+    });
+  });
+
   describe('GET /api/film', () => {
-    it('should send JSON with a list of films', (done) => {
+    it('should send JSON with an array of films', (done) => {
       request(app)
         .get('/api/film')
         .expect(200)
@@ -16,7 +35,24 @@ describe('film routes', () => {
           if (err) {
             return done(err);
           }
-          expect(res).to.be.an('object');
+          expect(res.body).to.be.an('array');
+          return done();
+        });
+    });
+  });
+
+  describe('GET /api/film/:id', () => {
+    it('should send JSON with a single film', (done) => {
+      request(app)
+        .get('/api/film/573cf127b6cb9a35032eefc4')
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .end((err, res) => {
+          if (err) {
+            return done(err);
+          }
+          expect(res.body).to.be.an('object');
+          expect(res.body).to.include.keys('title');
           return done();
         });
     });
