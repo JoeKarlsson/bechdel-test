@@ -49,7 +49,12 @@ module.exports = {
       loader: 'json',
     }, {
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass'],
+      loaders: [
+        'style',
+        'css?modules&importLoaders=1' +
+        '&localIdentName=[path][local]__[hash:base64:5]!sass',
+        'sass',
+      ],
     }],
   },
   eslint: {

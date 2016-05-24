@@ -15,9 +15,9 @@ class NewFilm extends React.Component {
 
   handleFilmSubmit(e) {
     e.preventDefault();
-    let fd = new FormData(document.querySelector("form"));
+    let fd = new FormData(document.querySelector('form'));
     $.ajax({
-      url: "/api/film",
+      url: '/api/film',
       method: 'POST',
       data: fd,
       cache: false,
@@ -52,16 +52,16 @@ class NewFilm extends React.Component {
       <div>
         <div>New Film</div>
         <form
-          name="script"
-          action="/api/film"
-          encType="multipart/form-data"
-          method="POST"
+          name='script'
+          action='/api/film'
+          encType='multipart/form-data'
+          method='POST'
         >
           <p>Please specify a file, or a set of files:<br /></p>
           <input
-            type="file"
-            name="script"
-            size="40"
+            type='file'
+            name='script'
+            size='40'
             onChange={this.handleScriptUploadChange}
           />
           <div>
