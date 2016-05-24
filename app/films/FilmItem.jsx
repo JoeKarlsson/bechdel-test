@@ -6,7 +6,7 @@ class FilmItem extends React.Component {
   render() {
     return (
       <div className='filmItem'>
-        <li>
+        <li className='filmItem_ListItem'>
           <div>
             <Link
               className='gist_description'
@@ -16,7 +16,7 @@ class FilmItem extends React.Component {
                 src={this.props.film.images.poster}
                 alt={this.props.film.title}
               />
-              <p>
+              <p className='filmItem_title'>
                 {this.props.film.title}
               </p>
             </Link>

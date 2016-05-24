@@ -96,18 +96,18 @@ class Film extends React.Component {
     });
     return (
       <div>
+        <h1>{this.state.film.title}</h1>
+        <h3>Bechdel Pass: {this.state.film.bechdelResults.pass.toString()}</h3>
+        <p>Bechdel Score: {this.state.film.bechdelResults.bechdelScore} of 3</p>
         <img
           src={this.state.film.images.backdrop}
           alt={this.state.film.title}
         />
-        <h2>{this.state.film.title}</h2>
         <p>Directors: {directorNode}</p>
         <p>Writers: {writerNode}</p>
         <p>Genre: {genreNode}</p>
         <p>Rated: {this.state.film.rated}</p>
         <p>IMDB: <a href={`http://www.imdb.com/title/${this.state.film.idIMDB}`} target='_blank'>{this.state.film.title}</a></p>
-        <p>Bechdel Pass: {this.state.film.bechdelResults.pass.toString()}</p>
-        <p>Bechdel Score: {this.state.film.bechdelResults.bechdelScore} of 3</p>
         <p>{this.state.film.plot}</p>
         <Link to={'/'}><button>All Films</button></Link>
       </div>
