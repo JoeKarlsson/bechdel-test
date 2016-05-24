@@ -1,8 +1,8 @@
 import React from 'react';
-import NavLink from './navigation/NavLink.jsx';
+import NavLink from './shared/navigation/NavLink.jsx';
 import Home from './home/Home.jsx';
 import About from './about/About.jsx';
-import Films from './films/Films.jsx';
+import Films from './films/films/Films.jsx';
 import styles from './App.scss';
 
 class App extends React.Component {

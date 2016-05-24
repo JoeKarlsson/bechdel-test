@@ -49,11 +49,7 @@ class Film extends React.Component {
   render() {
     const directorNode = this.state.film.directors.map((director) => {
       const directors = this.state.film.directors;
-      if ( directors.length === 1) {
-        return (
-          <span key={director.id}>{director.name}</span>
-        );
-      } else if ( director.name === directors[directors.length-1].name) {
+      if ( director.name === directors[directors.length-1].name) {
         return (
           <span key={director.id}>{director.name}</span>
         );
@@ -64,11 +60,7 @@ class Film extends React.Component {
     });
     const writerNode = this.state.film.writers.map((writer) => {
       const writers = this.state.film.writers;
-      if ( writers.length === 1) {
-        return (
-          <span key={writer.id}>{writer.name}</span>
-        );
-      } else if ( writer.name !== writers[writers.length-1].name) {
+      if ( writer.name !== writers[writers.length-1].name) {
         return (
           <span key={writer.id}>{writer.name} & </span>
         );
@@ -80,11 +72,7 @@ class Film extends React.Component {
     });
     const genreNode = this.state.film.genres.map((genre) => {
       const genres = this.state.film.genres;
-      if ( genres.length === 1) {
-        return (
-          <span key={Math.floor(Math.random()*100)}>{genre}</span>
-        );
-      } else if ( genre !== genres[genres.length-1]) {
+      if ( genre !== genres[genres.length-1]) {
         return (
           <span key={Math.floor(Math.random()*100)}>{genre} | </span>
         );
