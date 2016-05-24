@@ -11,12 +11,12 @@ import NoMatch from './shared/NoMatch.jsx';
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App}>
+    <Route path='/' component={App}>
       <IndexRoute component={Films} />
-      <Route path="/about" component={About} />
-      <Route path="/film/new" component={NewFilm} />
-      <Route path="/film/:id" component={Film} />
-      <Route path="*" component={NoMatch} />
+      <Route path='/about' component={About} />
+      <Route path='/film/new' component={NewFilm} />
+      <Route path='/film/:id' component={Film} />
+      <Route path='*' component={NoMatch} />
     </Route>
   </Router>,
   document.getElementById('root')
