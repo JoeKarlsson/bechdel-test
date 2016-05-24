@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './App.jsx';
 import Home from './home/Home.jsx';
-import About from './about/About.jsx';
-import Films from './films/Films.jsx';
-import Film from './film/Film.jsx';
-import NewFilm from './new/NewFilm.jsx';
+import About from './static/about/About.jsx';
+import Films from './films/films/Films.jsx';
+import Film from './films/film/Film.jsx';
+import NewFilm from './films/new/NewFilm.jsx';
 import NoMatch from './shared/NoMatch.jsx';
 
 ReactDOM.render(
