@@ -178,7 +178,7 @@ const getFilmImages = (ID) => {
     request(
       'https://api.themoviedb.org/3/movie/' +
       `${ID}/images?` +
-      `api_key=${CONFIG.themoviedb}` +
+      `api_key=${CONFIG.THEMOVIEDB}` +
       '&language=en&' +
       'include_image_language=en,null',
       (error, response, body) => {
@@ -200,7 +200,7 @@ const getSimpleCastData = (title) => {
     request(
       'http://api.myapifilms.com/imdb/idIMDB?' +
       `title=${title}&` +
-      `token=${CONFIG.myapifilms}&` +
+      `token=${CONFIG.MYAPIFILMS}&` +
       'format=json&' +
       'language=en-us&' +
       'aka=0&' +
@@ -246,7 +246,7 @@ const getFullCastData = (title) => {
     request(
       'http://api.myapifilms.com/imdb/idIMDB?' +
       `title=${title}&` +
-      `token=${CONFIG.myapifilms}&` +
+      `token=${CONFIG.MYAPIFILMS}&` +
       'format=json&' +
       'language=en-us&' +
       'aka=0&' +
