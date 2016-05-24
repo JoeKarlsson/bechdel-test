@@ -1,7 +1,7 @@
 import React from 'react';
 import NavLink from './shared/navigation/NavLink.jsx';
 import Home from './home/Home.jsx';
-import About from './about/About.jsx';
+import About from './static/about/About.jsx';
 import Films from './films/films/Films.jsx';
 import styles from './App.scss';
 
