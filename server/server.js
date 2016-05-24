@@ -20,7 +20,6 @@ app.use(partials());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(express.static(`${__dirname}/public`));
 
 Promise.onPossiblyUnhandledRejection((err) => {
   throw new Error(err);

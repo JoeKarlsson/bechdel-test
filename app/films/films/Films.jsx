@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import FilmList from './FilmList.jsx';
+import skeleton from '../../shared/css/skeleton.css';
 import styles from './Films.scss';
 import * as $ from'jquery';
 
@@ -34,7 +35,7 @@ class Films extends React.Component {
   render() {
     return (
       <div className={styles.films}>
-        <div className='u-full-width'>
+        <div className={skeleton.u_full_width}>
           <h1>Films</h1>
           <Link to={'/film/new'}>
             <button>Add Films</button>
