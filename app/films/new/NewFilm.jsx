@@ -49,7 +49,7 @@ class NewFilm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.newFilm}>
         <div>New Film</div>
         <form
           name='script'
