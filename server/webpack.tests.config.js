@@ -51,11 +51,20 @@ module.exports = {
       test: /\.scss$/,
       loaders: [
         'style',
-        'css?modules&importLoaders=1' +
-        '&localIdentName=[path][local]__[hash:base64:5]!sass',
+        'css',
         'sass',
+        'css?modules&importLoaders=1' +
+        '&localIdentName=[path][local]__[hash:base64:5]!sass'
       ],
-    }],
+    }
+    // , {
+    //   test: /(\.test/.js)$/,
+    //   include: [
+    //     path.resolve(__dirname, test)
+    //   ],
+    //   loaders: ['mocha'],
+    // }
+    ],
   },
   eslint: {
     configFile: '.eslintrc.js',

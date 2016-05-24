@@ -14,14 +14,12 @@ class Films extends React.Component {
 
   getAllFilms() {
     $.ajax({
-      url: "/api/film",
+      url: '/api/film',
       method: 'GET',
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log(this.state.films , 'state')
         this.setState({ films: data });
-        console.log(this.state.films , 'state')
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props, status, err.toString());
@@ -35,7 +33,7 @@ class Films extends React.Component {
 
   render() {
     return (
-      <div className='films'>
+      <div className={styles.films}>
         <div className='u-full-width'>
           <h1>Films</h1>
           <Link to={'/film/new'}>
