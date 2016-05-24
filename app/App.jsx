@@ -1,5 +1,7 @@
 import React from 'react';
 import NavLink from './shared/navigation/NavLink.jsx';
+import skeleton from './shared/css/skeleton.css';
+import normalize from './shared/css/normalize.css';
 import Home from './home/Home.jsx';
 import About from './static/about/About.jsx';
 import Films from './films/films/Films.jsx';
@@ -17,10 +19,12 @@ class App extends React.Component {
           </ul>
         </header>
 
-        <div className='container content'>
-          {
-              this.props.children || <Home/>
-          }
+        <div className={styles.content}>
+          <div className={skeleton.container}>
+            {
+                this.props.children || <Home/>
+            }
+          </div>
         </div>
 
         <footer className={styles.footer}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import normalize from './shared/css/normalize.css';
 import App from './App.jsx';
 import Home from './home/Home.jsx';
 import About from './static/about/About.jsx';
