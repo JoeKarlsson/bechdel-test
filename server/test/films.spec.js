@@ -131,7 +131,7 @@ describe('film routes', () => {
   });
 
   describe('DELETE /api/film/:id', () => {
-    it('should delete a film from the', (done) => {
+    it('should delete a film from the database', (done) => {
       request(app)
         .del(`/api/film/${id}`)
         .expect(200)
