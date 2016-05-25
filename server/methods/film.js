@@ -6,7 +6,7 @@ const request = require('request');
 const Film = require('../model/Film');
 const CONFIG = require('./../config/config.json');
 let filmData = {
-  data: [],
+  actors: [],
   images: {},
 };
 let imdbID = null;
@@ -66,12 +66,11 @@ const parseActorArr = (arr) => {
   }
   const actorsArr = [];
   let i;
-
   for (i = 0; i < arr.length; i++) {
     const actor = {};
     actor.actorName = arr[i].actorName;
     actor.character = arr[i].character;
-    actor.actorActress = arr[i].biography.actorActress;
+    actor.actorActress = arr[i].gender;
     actorsArr.push(actor);
   }
   return actorsArr;
@@ -111,6 +110,7 @@ module.exports.insert = (filmTitle, bechdelResults, data, images) => {
   film.urlIMDB = data[0].urlIMDB;
   film.actors = parseActorArr(data[0]);
   film.images = parseImageData(images);
+  console.log('done')
 
   return save(film)
   .then((savedFilm) => savedFilm)
@@ -120,6 +120,9 @@ module.exports.insert = (filmTitle, bechdelResults, data, images) => {
 };
 
 module.exports.deleteFilm = (filmID) => {
+  if (!filmID) {
+    throw new Error('Invalid input on deleteFilm');
+  }
   return Film.findOne({ _id: filmID }).exec()
   .then((film) => film.remove())
   .catch((error) => {
@@ -128,6 +131,9 @@ module.exports.deleteFilm = (filmID) => {
 };
 
 const createCharcArr = (arr, characters, type) => {
+  if (!arr || !characters || !type) {
+    throw new Error('Invalid input on createCharcArr');
+  }
   let castType;
   let cleanName;
   let i;
@@ -144,7 +150,8 @@ const createCharcArr = (arr, characters, type) => {
         castType = true;
       } else {
         castType = false;
-      } arr.push({
+      }
+      arr.push({
         actorName: characters[i].actorName,
         gender: characters[i].biography.actorActress,
         characterName: cleanName,
@@ -156,7 +163,7 @@ const createCharcArr = (arr, characters, type) => {
 };
 
 const dataParser = (body, type) => {
-  if (body === undefined || null || '') {
+  if (!body || !type) {
     throw new Error('Body is undefined');
   }
   const rawMovieCharacters = body.data.movies[0].actors;
@@ -167,12 +174,13 @@ const dataParser = (body, type) => {
   } else {
     throw new Error('Error: Connected to myfilmapi, but no actor data returned');
   }
+  filmData.actors.push(movieCharacters);
   return movieCharacters;
 };
 
 const getFilmImages = (ID) => {
   return new Promise((resolve, reject) => {
-    if (ID === null) {
+    if (!ID) {
       reject(new Error('No IMDB ID found.'));
     }
     request(
@@ -231,7 +239,6 @@ const getSimpleCastData = (title) => {
         if (!error && response.statusCode === 200) {
           const data = JSON.parse(body);
           imdbID = data.data.movies[0].idIMDB;
-          filmData.data.push(data.data.movies[0]);
           resolve(dataParser(data, 'mainCast'));
         } else {
           reject(new Error(error));
@@ -286,19 +293,31 @@ const getFullCastData = (title) => {
 
 module.exports.getData = (movieTitle) => {
   return new Promise((resolve, reject) => {
-    if (movieTitle === '') {
+    if (!movieTitle) {
       reject(new Error('Invalid Movie Title'));
     }
     const splitTitle = movieTitle
       .split(' ')
       .join('+');
     getSimpleCastData(splitTitle)
-    .then(() => {
+    .then((simpleCastdata) => {
+      if (!simpleCastdata) {
+        reject(new Error('Failed on getSimpleCastData'));
+      }
       getFilmImages(imdbID)
       .then((images) => {
+        if (!images) {
+          reject(new Error('Failed on getFilmImages'));
+        }
         filmData.images = images;
       });
-      resolve(getFullCastData(splitTitle));
+      return getFullCastData(splitTitle)
+      .then((fullCastdata) => {
+        if (!fullCastdata) {
+          reject(new Error('Failed on getFullCastData'));
+        }
+        resolve(filmData.actors);
+      });
     })
     .catch((err) => {
       throw new Error(err);
@@ -307,7 +326,10 @@ module.exports.getData = (movieTitle) => {
 };
 
 module.exports.getAllData = () => {
-  if (!filmData.data.length) {
+  if (
+    filmData.actors === [] ||
+    filmData.images === {}
+  ) {
     throw new Error('No film data found');
   }
   return filmData;

@@ -56,7 +56,7 @@ module.exports.clearTemp = (path) => {
     }
     fs.unlink(path, (err) => {
       if (err) {
-        reject(new Error(err));
+        console.error(err);
       }
       resolve(true);
     });

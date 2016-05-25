@@ -31,6 +31,9 @@ router.route('/')
   .get((req, res) => {
     film.listAll()
     .then((films) => {
+      if (!films) {
+        throw new Error('No list of films returned from film.listAll()');
+      }
       res.send(films);
     });
   })
@@ -47,6 +50,9 @@ router.route('/')
       scriptPath = req.files.script[0].path;
       script.readMovieTitle(scriptPath)
       .then((title) => {
+        if (!title) {
+          throw new Error('No movie returned from script.readMovieTitle(scriptPath)');
+        }
         filmTitle = title;
         return film.findByTitle(filmTitle);
       })
@@ -57,15 +63,25 @@ router.route('/')
         } else {
           bechdel.getBechdelResults(filmTitle, scriptPath)
           .then((bechdelResults) => {
+            if (!bechdelResults) {
+              throw new Error(
+                'No movie returned from ' +
+                'bechdel.getBechdelResults(filmTitle, scriptPath)'
+              );
+            }
+            console.log('3');
             const data = film.getAllData();
             return film.insert(
               filmTitle,
               bechdelResults,
-              data.data,
+              data.actors,
               data.images
             );
           })
           .then((savedFilm) => {
+            if (!savedFilm) {
+              throw new Error('Film not properly saved');
+            }
             film.clearData();
             res.send(savedFilm);
             script.clearTemp(scriptPath);
@@ -86,6 +102,9 @@ router.route('/:id')
   .get((req, res) => {
     film.findByID(req.params.id)
     .then((movie) => {
+      if (!movie) {
+        throw new Error('No movie returned from film.findByID(req.params.id)');
+      }
       res.send(movie);
     })
     .catch((err) => {
@@ -95,6 +114,9 @@ router.route('/:id')
   .delete((req, res) => {
     film.deleteFilm(req.params.id)
     .then((movie) => {
+      if (!movie) {
+        throw new Error('No movie returned from film.deleteFilm(req.params.id)');
+      }
       res.send(movie);
     })
     .catch((err) => {
