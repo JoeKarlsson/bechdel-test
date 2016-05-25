@@ -11,6 +11,7 @@ const config = require('./webpack/webpack.config.js');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
+const favicon = require('express-favicon');
 const Promise = require('bluebird');
 const film = require('./routes/film');
 const isDeveloping = process.env.NODE_ENV !== 'production';
@@ -20,6 +21,7 @@ app.use(partials());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride());
+app.use(favicon(__dirname + '/favicon.ico'));
 
 Promise.onPossiblyUnhandledRejection((err) => {
   throw new Error(err);
