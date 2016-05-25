@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './About.scss';
 
 class About extends React.Component {
   render() {
     return (
-      <div>
+      <div className={styles.about}>
         <h3>about</h3>
         <p>
           The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule

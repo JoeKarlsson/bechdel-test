@@ -49,7 +49,7 @@ const countCharacterDialouge = (arr, scene) => {
  * @return {Boolean} [description]
  */
 const isCharFemale = (characters, name) => {
-  if (!characters || !name) {
+  if (!characters) {
     throw new Error('Invalid isCharFemale input');
   }
   let idx;
@@ -85,57 +85,62 @@ const scriptGenderAnalytics = (characters, movieScript) => {
   let name;
 
   for (name in count) {
-    if (isCharFemale(characters, name)) {
-      numOfFemalesChars++;
-      if (count[name] > 0) {
-        numOfFemalesCharsWithDialogue++;
-        totalLinesFemaleDialogue += count[name];
-      }
+    if (!name) {
+      // Do nothing
     } else {
-      numOfMaleChars++;
-      if (count[name] > 0) {
-        numOfMaleCharsWithDialogue++;
-        totalLinesMaleDialogue += count[name];
+      if (isCharFemale(characters, name)) {
+        numOfFemalesChars++;
+        if (count[name] > 0) {
+          numOfFemalesCharsWithDialogue++;
+          totalLinesFemaleDialogue += count[name];
+        }
+      } else {
+        numOfMaleChars++;
+        if (count[name] > 0) {
+          numOfMaleCharsWithDialogue++;
+          totalLinesMaleDialogue += count[name];
+        }
       }
     }
   }
 };
 
 const extractScenes = (characters, movieScript) => {
-  return new Promise((resolve, reject) => {
-    if (!movieScript || !characters) {
-      reject(new Error(
-        'Failed when extracting scenes -' +
-        ' Script has to yet been loaded into memory'
-      ));
-    }
-    const keywords = [
-      'EXT',
-      'INT',
-      'EXTERIOR',
-      'INTERIOR',
-      'INT/EXT',
-      'I/E',
-    ];
-    const scenes = [];
-    let idx;
-    let subScene = '';
+  if (!characters || !movieScript) {
+    throw new Error(
+      'Failed when extracting scenes -' +
+      ' Script has to yet been loaded into memory'
+    );
+  }
+  const keywords = [
+    'EXT',
+    'INT',
+    'EXTERIOR',
+    'INTERIOR',
+    'INT/EXT',
+    'I/E',
+  ];
+  const scenes = [];
+  let idx;
+  let subScene = '';
 
-    scriptGenderAnalytics(characters, movieScript);
-    movieScript.split('\n').forEach((pg) => {
-      for (idx in keywords) {
-        const keyword = keywords[idx];
-        if (pg.indexOf(keyword) !== -1) {
-          scenes.push(subScene);
-          subScene = '';
-          break;
-        }
+  scriptGenderAnalytics(characters, movieScript);
+  movieScript.split('\n').forEach((pg) => {
+    for (idx in keywords) {
+      const keyword = keywords[idx];
+      if (pg.indexOf(keyword) !== -1) {
+        scenes.push(subScene);
+        subScene = '';
+        break;
       }
-      subScene += ('${pg}\n');
-    });
-    scenes.push(subScene);
-    resolve(scenes);
+    }
+    subScene += (`${pg}\n`);
   });
+  scenes.push(subScene);
+  if (scenes === []) {
+    throw new Error('Error while exctracting scenes');
+  }
+  return scenes;
 };
 
 const updateScore = (n) => {
@@ -308,20 +313,31 @@ const sceneAnalysis = (characters, scenes) => {
 };
 
 module.exports.getBechdelResults = (title, path) => {
-  if (!title || !path) {
-    throw new Error('Invalid getBechdelResults input');
-  }
-  let movieChar;
+  return new Promise((resolve, reject) => {
+    if (!title || !path) {
+      reject(new Error('Invalid getBechdelResults input'));
+    }
+    let movieChar;
 
-  return film.getData(title)
+    film.getData(title)
     .then((data) => {
-      movieChar = data;
+      if (!data) {
+        throw new Error('No data returned from getData');
+      }
+      movieChar = data[0];
       return script.read(path);
     })
-    .then((movieScript) => extractScenes(movieChar, movieScript))
-    .then((scenes) => sceneAnalysis(movieChar, scenes))
+    .then((movieScript) => {
+      if (!movieScript) {
+        throw new Error('No movieScript returned from script.read(path)');
+      }
+      const scenes = extractScenes(movieChar, movieScript);
+      const analysis = sceneAnalysis(movieChar, scenes);
+      resolve(analysis);
+    })
     .catch((error) => {
       throw new Error(error);
     });
+  });
 };
 
