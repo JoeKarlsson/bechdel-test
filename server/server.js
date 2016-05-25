@@ -21,7 +21,7 @@ app.use(partials());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(favicon(__dirname + '/favicon.ico'));
+app.use(favicon(`${__dirname}/favicon.ico`));
 
 Promise.onPossiblyUnhandledRejection((err) => {
   throw new Error(err);
@@ -44,21 +44,21 @@ if (isDeveloping) {
       modules: false,
     },
   });
-  const response = (req, res) => {
-    res.write(middleware.fileSystem.readFileSync(path.join(`${__dirname}/dist/index.html`)));
-    res.end();
-  };
+  // const response = (req, res) => {
+  //   res.write(middleware.fileSystem.readFileSync(path.resolve(__dirname, 'dist/index.html')));
+  //   res.end();
+  // };
 
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
-  app.get('*', response);
-} else {
-  const response = (req, res) => {
-    res.sendFile(path.join(`${__dirname}/dist/index.html`));
-  };
-  app.use(express.static(`${__dirname}/dist`));
-  app.get('*', response);
+  // app.get('*', response);
 }
+app.use(express.static(`${__dirname}/dist`));
+const response = (req, res) => {
+  res.write(path.join(__dirname, 'dist/index.html'));
+};
+app.get('*', response);
+
 
 const onStart = (err) => {
   if (err) {
