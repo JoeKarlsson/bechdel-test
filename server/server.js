@@ -7,7 +7,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('./webpack.config.js');
+const config = require('./webpack/webpack.config.js');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
@@ -28,6 +28,7 @@ Promise.onPossiblyUnhandledRejection((err) => {
 app.use('/api/film', film);
 
 if (isDeveloping) {
+  app.set('host', 'http://localhost');
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
     publicPath: config.output.publicPath,
@@ -63,12 +64,12 @@ const onStart = (err) => {
   }
   console.info(
     `==> 🌎 Listening on port ${port}. ` +
-    `Open up http://0.0.0.0:${port}/ in your browser.`
+    `Open up http://localhost:${port}/ in your browser.`
   );
 };
 
 if (!module.parent) {
-  app.listen(port, '0.0.0.0', onStart);
+  app.listen(port, 'localhost', onStart);
 }
 
 module.exports = app;

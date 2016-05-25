@@ -33,7 +33,8 @@
   },
   "homepage": "https://github.com/JoeKarlsson1/bechdel-test",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec server/test --watch",
+    "test": "./node_modules/.bin/mocha -R spec server/test",
+    "test:watch": "./node_modules/.bin/mocha -R spec server/test --watch",
     "start": "nodemon server/server.js",
     "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
     "eslint": "./node_modules/.bin/eslint .",
@@ -100,6 +101,7 @@
     "sinon-chai": "^2.8.0",
     "supertest": "^1.2.0",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.2.0"
+    "webpack-hot-middleware": "^2.2.0",
+    "webpack-node-externals": "^1.2.0"
   }
 }
