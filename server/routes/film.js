@@ -44,7 +44,6 @@ router.route('/')
       if (path.extname(req.files.script[0].originalname) !== '.txt') {
         res.send('Please send a .txt script');
       }
-      console.log(req.files.script[0])
       scriptPath = req.files.script[0].path;
       script.readMovieTitle(scriptPath)
       .then((title) => {
