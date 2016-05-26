@@ -14,6 +14,7 @@ const filmSchema = mongoose.Schema({
   plot: String,
   simplePlot: String,
   year: Number,
+  releaseDate: String,
   actors: [{
     actorName: String,
     character: String,
@@ -32,6 +33,8 @@ const filmSchema = mongoose.Schema({
   urlPoster: String,
   idIMDB: String,
   urlIMDB: String,
+  rating: String,
+  metascore: Number,
   createdAt: {
     type: Date,
     default: Date.now,

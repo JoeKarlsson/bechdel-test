@@ -75,7 +75,8 @@ router.route('/')
               filmTitle,
               bechdelResults,
               data.actors,
-              data.images
+              data.images,
+              data.data[0].data.movies
             );
           })
           .then((savedFilm) => {
@@ -115,7 +116,7 @@ router.route('/:id')
     film.deleteFilm(req.params.id)
     .then((movie) => {
       if (!movie) {
-        throw new Error('No movie returned from film.deleteFilm(req.params.id)');
+        // throw new Error('No movie returned from film.deleteFilm(req.params.id)');
       }
       res.send(movie);
     })

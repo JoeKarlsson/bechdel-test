@@ -8,6 +8,7 @@ const CONFIG = require('./../config/config.json');
 let filmData = {
   actors: [],
   images: {},
+  data: [],
 };
 let imdbID = null;
 
@@ -87,11 +88,11 @@ const parseImageData = (images) => {
   return img;
 };
 
-module.exports.insert = (filmTitle, bechdelResults, data, images) => {
+module.exports.insert = (filmTitle, bechdelResults, actors, images, data) => {
   if (
     !filmTitle ||
     !bechdelResults ||
-    !data ||
+    !actors ||
     !images
   ) {
     throw new Error('Cannot insert film');
@@ -101,16 +102,18 @@ module.exports.insert = (filmTitle, bechdelResults, data, images) => {
   film.plot = data[0].plot;
   film.simplePlot = data[0].simplePlot;
   film.year = data[0].year;
+  film.releaseDate = data[0].releaseDate;
   film.directors = data[0].directors;
   film.writers = data[0].writers;
   film.rated = data[0].rated;
   film.genres = data[0].genres;
   film.urlPoster = data[0].urlPoster;
   film.idIMDB = data[0].idIMDB;
+  film.rating = data[0].rating;
+  film.metascore = data[0].metascore;
   film.urlIMDB = data[0].urlIMDB;
-  film.actors = parseActorArr(data[0]);
+  film.actors = parseActorArr(actors);
   film.images = parseImageData(images);
-  console.log('done')
 
   return save(film)
   .then((savedFilm) => savedFilm)
@@ -238,6 +241,7 @@ const getSimpleCastData = (title) => {
       (error, response, body) => {
         if (!error && response.statusCode === 200) {
           const data = JSON.parse(body);
+          filmData.data.push(data);
           imdbID = data.data.movies[0].idIMDB;
           resolve(dataParser(data, 'mainCast'));
         } else {
@@ -283,6 +287,7 @@ const getFullCastData = (title) => {
     (error, response, body) => {
       if (!error && response.statusCode === 200) {
         const data = JSON.parse(body);
+        filmData.data.push(data);
         resolve(dataParser(data, 'fullCast'));
       } else {
         reject(new Error(error));
@@ -328,7 +333,8 @@ module.exports.getData = (movieTitle) => {
 module.exports.getAllData = () => {
   if (
     filmData.actors === [] ||
-    filmData.images === {}
+    filmData.images === {} ||
+    filmData.data === []
   ) {
     throw new Error('No film data found');
   }
@@ -339,5 +345,6 @@ module.exports.clearData = () => {
   filmData = {
     actors: [],
     images: {},
+    data: [],
   };
 };
