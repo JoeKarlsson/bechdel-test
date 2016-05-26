@@ -33,8 +33,9 @@
   },
   "homepage": "https://github.com/JoeKarlsson1/bechdel-test",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec server/test",
-    "test:watch": "./node_modules/.bin/mocha -R spec server/test --watch",
+    "test": "./node_modules/.bin/mocha -R spec tests/server",
+    "test:server:watch": "npm run test --watch",
+    "test:client": "mocha tests/app/.setup.js tests/app/**/*-test.js",
     "start": "nodemon server/server.js",
     "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
     "eslint": "./node_modules/.bin/eslint .",
@@ -83,7 +84,9 @@
     "webpack": "^1.13.0"
   },
   "devDependencies": {
+    "babel-register": "^6.9.0",
     "chai": "^3.5.0",
+    "enzyme": "^2.3.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-config-standard": "^5.3.1",
     "eslint-plugin-import": "^1.8.0",
@@ -97,6 +100,7 @@
     "mocha-jsdom": "^1.0.0",
     "mocha-loader": "^0.7.1",
     "nodemon": "^1.9.2",
+    "react-addons-test-utils": "^0.14.8",
     "rimraf": "^2.4.3",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
