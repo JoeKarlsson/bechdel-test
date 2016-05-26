@@ -43,8 +43,49 @@ describe('film routes', () => {
     });
   });
 
+  describe('POST /api/film/ already in the database', () => {
+    it('should return the film', function(done) {
+      this.timeout(0);
+      request(app)
+        .post('/api/film/')
+        .attach('script', path.join(__dirname, 'test-script-2.txt'))
+        .expect(200)
+        .expect('Content-Type', /json/)
+        .end((err, res) => {
+          if (err) {
+            return done(err);
+          }
+          expect(res.body).to.be.an('array');
+          expect(res.body[0]).to.include.keys('title');
+          expect(res.body[0].title).to.equal('AMERICAN HUSTLE');
+          expect(res.body[0].idIMDB).to.equal('tt1800241');
+          expect(res.body[0].bechdelResults.pass).to.equal(true);
+          expect(res.body[0].bechdelResults.bechdelScore).to.equal(3);
+          expect(res.body[0].bechdelResults.numScenesPass).to.equal(33);
+          expect(res.body[0].bechdelResults.numScenesDontPass).to.equal(313);
+          expect(res.body[0].bechdelResults.numOfFemalesChars).to.equal(10);
+          expect(res.body[0].bechdelResults.numOfMaleChars).to.equal(20);
+          expect(res.body[0].bechdelResults.numOfFemalesCharsWithDialogue).to.equal(8);
+          expect(res.body[0].bechdelResults.numOfMaleCharsWithDialogue).to.equal(15);
+          expect(res.body[0].bechdelResults.totalLinesFemaleDialogue).to.equal(782);
+          expect(res.body[0].bechdelResults.totalLinesMaleDialogue).to.equal(1670);
+          expect(res.body[0].images.backdrop).to.equal('https://image.tmdb.org/t/p/w1000/dpGGeiTPDzqrcbK7h8if2YHHBXN.jpg');
+          expect(res.body[0].images.poster).to.equal('https://image.tmdb.org/t/p/w300/mhB7C62lSMpGO2HYNaW6d7W3TVH.jpg');
+          expect(res.body[0].actors).to.be.an('array');
+          expect(res.body[0].actors).to.have.length.above(1);
+          expect(res.body[0].genres).to.be.an('array');
+          expect(res.body[0].genres).to.have.length.above(0);
+          expect(res.body[0].writers).to.be.an('array');
+          expect(res.body[0].writers).to.have.length.above(0);
+          expect(res.body[0].directors).to.be.an('array');
+          expect(res.body[0].directors).to.have.length.above(0);
+          return done();
+        });
+    });
+  });
+
   describe('POST /api/film/', () => {
-    it('should create a new film in the database', function(done) {
+    it('should return a new film in the database', function(done) {
       this.timeout(0);
       request(app)
         .post('/api/film/')
@@ -75,48 +116,6 @@ describe('film routes', () => {
           expect(res.body[0].bechdelResults.totalLinesMaleDialogue).to.equal(872);
           expect(res.body[0].images.backdrop).to.not.be.empty;
           expect(res.body[0].images.poster).to.not.be.empty;
-          expect(res.body[0].actors).to.be.an('array');
-          expect(res.body[0].actors).to.have.length.above(1);
-          expect(res.body[0].genres).to.be.an('array');
-          expect(res.body[0].genres).to.have.length.above(0);
-          expect(res.body[0].writers).to.be.an('array');
-          expect(res.body[0].writers).to.have.length.above(0);
-          expect(res.body[0].directors).to.be.an('array');
-          expect(res.body[0].directors).to.have.length.above(0);
-          return done();
-        });
-    });
-  });
-
-  describe('POST /api/film/', () => {
-    it('should create a new film in the database', function(done) {
-      this.timeout(0);
-      request(app)
-        .post('/api/film/')
-        .attach('script', path.join(__dirname, 'test-script-2.txt'))
-        .expect(200)
-        .expect('Content-Type', /json/)
-        .end((err, res) => {
-          if (err) {
-            return done(err);
-          }
-          console.log(res.body[0]);
-          expect(res.body).to.be.an('array');
-          expect(res.body[0]).to.include.keys('title');
-          expect(res.body[0].title).to.equal('AMERICAN HUSTLE');
-          expect(res.body[0].idIMDB).to.equal('tt1800241');
-          expect(res.body[0].bechdelResults.pass).to.equal(true);
-          expect(res.body[0].bechdelResults.bechdelScore).to.equal(3);
-          expect(res.body[0].bechdelResults.numScenesPass).to.equal(33);
-          expect(res.body[0].bechdelResults.numScenesDontPass).to.equal(313);
-          expect(res.body[0].bechdelResults.numOfFemalesChars).to.equal(10);
-          expect(res.body[0].bechdelResults.numOfMaleChars).to.equal(20);
-          expect(res.body[0].bechdelResults.numOfFemalesCharsWithDialogue).to.equal(8);
-          expect(res.body[0].bechdelResults.numOfMaleCharsWithDialogue).to.equal(15);
-          expect(res.body[0].bechdelResults.totalLinesFemaleDialogue).to.equal(782);
-          expect(res.body[0].bechdelResults.totalLinesMaleDialogue).to.equal(1670);
-          expect(res.body[0].images.backdrop).to.equal('https://image.tmdb.org/t/p/w1000/dpGGeiTPDzqrcbK7h8if2YHHBXN.jpg');
-          expect(res.body[0].images.poster).to.equal('https://image.tmdb.org/t/p/w300/mhB7C62lSMpGO2HYNaW6d7W3TVH.jpg');
           expect(res.body[0].actors).to.be.an('array');
           expect(res.body[0].actors).to.have.length.above(1);
           expect(res.body[0].genres).to.be.an('array');
