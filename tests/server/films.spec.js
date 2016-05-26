@@ -2,7 +2,7 @@
 'use strict';
 
 const request = require('supertest');
-const app = require('../server.js');
+const app = require('../../server/server.js');
 const path = require('path');
 const chai = require('chai');
 const expect = chai.expect;
