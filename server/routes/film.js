@@ -103,9 +103,9 @@ router.route('/:id')
   .get((req, res) => {
     film.findByID(req.params.id)
     .then((movie) => {
-      if (!movie) {
-        throw new Error('No movie returned from film.findByID(req.params.id)');
-      }
+      // if (!movie) {
+      //   throw new Error('No movie returned from film.findByID(req.params.id)');
+      // }
       res.send(movie);
     })
     .catch((err) => {
