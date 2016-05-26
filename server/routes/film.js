@@ -69,7 +69,6 @@ router.route('/')
                 'bechdel.getBechdelResults(filmTitle, scriptPath)'
               );
             }
-            console.log('3');
             const data = film.getAllData();
             return film.insert(
               filmTitle,

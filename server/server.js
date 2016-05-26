@@ -4,6 +4,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -44,20 +45,22 @@ if (isDeveloping) {
       modules: false,
     },
   });
-  // const response = (req, res) => {
-  //   res.write(middleware.fileSystem.readFileSync(path.resolve(__dirname, 'dist/index.html')));
-  //   res.end();
-  // };
+  const response = (req, res) => {
+    res.write(middleware.fileSystem.readFileSync(path.resolve(__dirname, 'dist/index.html')));
+    res.end();
+  };
 
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
-  // app.get('*', response);
+  app.get('*', response);
+} else {
+  app.use(express.static(`${__dirname}/dist`));
+  app.get('*', function response(req, res) {
+    res.write(
+      fs.readFileSync(path.resolve(__dirname, 'dist/index.html'))
+    );
+  });
 }
-app.use(express.static(`${__dirname}/dist`));
-const response = (req, res) => {
-  res.write(path.join(__dirname, 'dist/index.html'));
-};
-app.get('*', response);
 
 
 const onStart = (err) => {

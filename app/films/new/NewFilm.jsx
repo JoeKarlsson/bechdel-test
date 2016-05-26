@@ -38,7 +38,10 @@ class NewFilm extends React.Component {
     var file = e.target.files[0];
 
     reader.onload = (upload) => {
-      this.setState({blob: upload.target.result, fileName: file.name});
+      this.setState({
+        blob: upload.target.result,
+        fileName: file.name,
+      });
     }
 
     if(file){
@@ -62,7 +65,7 @@ class NewFilm extends React.Component {
             type='file'
             name='script'
             size='40'
-            onChange={this.handleScriptUploadChange}
+            onChange={this.handleScriptUploadChange.bind(this)}
           />
           <div>
             <button onClick={this.handleFilmSubmit}>Submit Script</button>
