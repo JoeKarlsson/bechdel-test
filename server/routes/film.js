@@ -56,6 +56,7 @@ router.route('/')
       script.readMovieTitle(scriptPath)
       .then((title) => {
         if (!title) {
+          res.status(500).send('No movie returned from script.readMovieTitle(scriptPath)');
           throw new Error('No movie returned from script.readMovieTitle(scriptPath)');
         }
         filmTitle = title;

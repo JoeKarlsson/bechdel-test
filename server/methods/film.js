@@ -18,36 +18,39 @@ let imdbID = null;
  * @return {[type]}    [description]
  */
 module.exports.findByID = (id) => {
-  if (id === undefined) {
-    throw new Error('Invalid findByID input');
-  }
-  return Film.find({ _id: id }).exec()
-  .then((film) => {
-    if (Array.isArray(film)) {
-      return film[0];
+  return new Promise((resolve, reject) => {
+    if (id === undefined) {
+      reject(new Error('Invalid findByID input'));
     }
-    return film;
-  })
-  .catch((err) => {
-    throw new Error(err);
+    return Film.find({ _id: id }).exec()
+    .then((film) => {
+      if (Array.isArray(film)) {
+        return resolve(film[0]);
+      }
+      return resolve(film);
+    })
+    .catch((err) => {
+      reject(new Error(err));
+    });
   });
 };
 
 
 module.exports.findByTitle = (movieTitle) => {
-  if (!movieTitle) {
-    throw new Error('No film tile found');
-  }
-  return Film.find({ title: movieTitle }).exec()
-  .then((film) => {
-    if (Array.isArray(film)) {
-      return film[0];
+  return new Promise((resolve, reject) => {
+    if (!movieTitle) {
+      reject(new Error('No film tile found'));
     }
-    console.log(film, 'film');
-    return film;
-  })
-  .catch((err) => {
-    throw new Error(err);
+    Film.find({ title: movieTitle }).exec()
+    .then((film) => {
+      if (Array.isArray(film)) {
+        return resolve(film[0]);
+      }
+      return resolve(film);
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   });
 };
 
