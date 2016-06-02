@@ -33,6 +33,7 @@ module.exports.findByID = (id) => {
   });
 };
 
+
 module.exports.findByTitle = (movieTitle) => {
   if (!movieTitle) {
     throw new Error('No film tile found');
@@ -42,12 +43,14 @@ module.exports.findByTitle = (movieTitle) => {
     if (Array.isArray(film)) {
       return film[0];
     }
+    console.log(film, 'film');
     return film;
   })
   .catch((err) => {
     throw new Error(err);
   });
 };
+
 
 module.exports.listAll = () => {
   const query = Film.find();
