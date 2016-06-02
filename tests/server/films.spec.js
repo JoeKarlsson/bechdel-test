@@ -39,6 +39,9 @@ describe('Bechdel Test', () => {
         .then((title) => {
           expect(title).to.equal('BOYHOOD');
           return done();
+        })
+        .catch((err) => {
+          console.error(err);
         });
       });
     });
@@ -52,6 +55,9 @@ describe('Bechdel Test', () => {
           expect(scriptBody).to.be.a('string');
           expect(scriptBody).to.not.be.empty;
           return done();
+        })
+        .catch((err) => {
+          console.error(err);
         });
       });
     });
@@ -62,34 +68,35 @@ describe('Bechdel Test', () => {
       it('should find a film by its Title', (done) => {
         film.findByTitle('BOYHOOD')
         .then((movie) => {
-          console.log(movie, 'movie');
           id = movie._id.toString();
-          console.log(id);
-          expect(movie).to.be.ok;
-          expect(movie).to.be.an('object');
-          expect(movie).to.not.be.a('error');
           expect(movie._id).to.be.ok;
           expect(id).to.be.an('string');
+          expect(movie).to.be.ok;
+          expect(movie).to.be.an('object');
           expect(movie.title).to.equal('BOYHOOD');
-          expect(movie).to.include.keys('_id');
           return done();
+        })
+        .catch((err) => {
+          return done(err);
         });
       });
     });
 
-    // describe('findByID', () => {
-    //   it('should find a film by its ID', (done) => {
-    //     console.log(id, 'id');
-    //     film.findByID(id)
-    //     .then((movie) => {
-    //       expect(movie).to.not.be.a('error');
-    //       console.log(movie, 'movie');
-    //       console.log('ERERR');
-    //       expect(movie.title).to.equal('AMERICAN HUSTLE');
-      //     return done();
-    //     });
-    //   });
-    // });
+    describe('findByID', () => {
+      it('should find a film by its ID', (done) => {
+        film.findByID(id)
+        .then((movie) => {
+          expect(movie._id).to.be.ok;
+          expect(movie).to.be.ok;
+          expect(movie).to.be.an('object');
+          expect(movie.title).to.equal('BOYHOOD');
+          return done();
+        })
+        .catch((err) => {
+          return done(err);
+        });
+      });
+    });
   });
 
   // describe('Bechdel Test methods', () => {
@@ -283,7 +290,6 @@ describe('Bechdel Test', () => {
               return done(err);
             }
             expect(res.body).to.be.an('object');
-            console.log(res.body, 'DELETE');
             // expect(res.body.sucess).to.be.true;
             return request(app)
             .get(`/api/film/${id}`)
