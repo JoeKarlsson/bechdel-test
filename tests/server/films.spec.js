@@ -1,4 +1,6 @@
-/* eslint-env mocha */
+/* eslint no-unused-expressions: 0, func-names: 0, strict: 0 */
+/* eslint-env mocha, mongo */
+
 'use strict';
 
 const request = require('supertest');
@@ -56,18 +58,18 @@ describe('Bechdel Test', () => {
   });
 
   describe('Film methods', () => {
-    let id;
-
     describe('findByTitle', () => {
       it('should find a film by its Title', (done) => {
         film.findByTitle('BOYHOOD')
         .then((movie) => {
+          console.log(movie, 'movie');
+          id = movie._id.toString();
+          console.log(id);
           expect(movie).to.be.ok;
           expect(movie).to.be.an('object');
-          expect(movie._id).to.be.ok;
-          expect(movie._id).to.be.an('string');
-          id = movie._id;
           expect(movie).to.not.be.a('error');
+          expect(movie._id).to.be.ok;
+          expect(id).to.be.an('string');
           expect(movie.title).to.equal('BOYHOOD');
           expect(movie).to.include.keys('_id');
           return done();
@@ -143,7 +145,7 @@ describe('Bechdel Test', () => {
             expect(res.body.bechdelResults.totalLinesMaleDialogue).to.equal(798);
             expect(res.body.images.backdrop).to.equal('https://image.tmdb.org/t/p/w1000/dpGGeiTPDzqrcbK7h8if2YHHBXN.jpg');
             expect(res.body.images.poster).to.equal('https://image.tmdb.org/t/p/w300/mhB7C62lSMpGO2HYNaW6d7W3TVH.jpg');
-             const actors = res.body.actors;
+            const actors = res.body.actors;
             expect(actors).to.be.an('array');
             expect(actors).to.have.length.above(1);
             for (let i = 0; i < actors; i++) {
@@ -280,11 +282,14 @@ describe('Bechdel Test', () => {
             if (err) {
               return done(err);
             }
-            request(app)
+            expect(res.body).to.be.an('object');
+            console.log(res.body, 'DELETE');
+            // expect(res.body.sucess).to.be.true;
+            return request(app)
             .get(`/api/film/${id}`)
             .end((error, response) => {
               if (error) {
-                return done(err);
+                return done(error);
               }
               expect(response.body).to.be.empty;
               return done();

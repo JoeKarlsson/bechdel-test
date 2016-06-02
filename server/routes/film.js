@@ -112,7 +112,7 @@ router.route('/:id')
     film.findByID(req.params.id)
     .then((movie) => {
       if (!movie) {
-        throw new Error('No movie returned from film.findByID(req.params.id)');
+        return res.send('No movie found by that ID');
       }
       res.send(movie);
     })
@@ -125,9 +125,9 @@ router.route('/:id')
     film.deleteFilm(req.params.id)
     .then((movie) => {
       if (!movie) {
-        // throw new Error('No movie returned from film.deleteFilm(req.params.id)');
+        return res.send('No movie found by that ID');
       }
-      res.send(movie);
+      res.json({ success: true });
     })
     .catch((err) => {
       res.status(500).send(err);
