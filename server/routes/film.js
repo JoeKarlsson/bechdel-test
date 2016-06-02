@@ -32,20 +32,25 @@ router.route('/')
     film.listAll()
     .then((films) => {
       if (!films) {
+        res.status(500).send('No list of films returned from film.listAll()');
         throw new Error('No list of films returned from film.listAll()');
       }
       res.send(films);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+      throw new Error(err);
     });
   })
-  .post(cpUpload, (req, res, next) => {
+  .post(cpUpload, (req, res) => {
     let scriptPath;
     let filmTitle;
 
     if (!req.files.script) {
-      res.send('No script submitted, please try again');
+      res.status(500).send('No script submitted, please try again');
     } else {
       if (path.extname(req.files.script[0].originalname) !== '.txt') {
-        res.send('Please send a .txt script');
+        res.status(500).send('Please send a .txt script');
       }
       scriptPath = req.files.script[0].path;
       script.readMovieTitle(scriptPath)
@@ -57,42 +62,46 @@ router.route('/')
         return film.findByTitle(filmTitle);
       })
       .then((movie) => {
-        if (movie.length !== 0 || movie === null) {
-          res.send(movie);
+        if (movie) {
           script.clearTemp(scriptPath);
-        } else {
-          bechdel.getBechdelResults(filmTitle, scriptPath)
-          .then((bechdelResults) => {
-            if (!bechdelResults) {
-              throw new Error(
-                'No movie returned from ' +
-                'bechdel.getBechdelResults(filmTitle, scriptPath)'
-              );
-            }
-            const data = film.getAllData();
-            return film.insert(
-              filmTitle,
-              bechdelResults,
-              data.actors,
-              data.images,
-              data.data[0].data.movies
-            );
-          })
-          .then((savedFilm) => {
-            if (!savedFilm) {
-              throw new Error('Film not properly saved');
-            }
-            film.clearData();
-            res.send(savedFilm);
-            script.clearTemp(scriptPath);
-          })
-          .catch((err) => {
-            throw new Error(err);
-          });
+          return res.send(movie);
         }
+        bechdel.getBechdelResults(filmTitle, scriptPath)
+        .then((bechdelResults) => {
+          if (!bechdelResults) {
+            throw new Error(
+              'No movie returned from ' +
+              'bechdel.getBechdelResults(filmTitle, scriptPath)'
+            );
+          }
+          const data = film.getAllData();
+          return film.insert(
+            filmTitle,
+            bechdelResults,
+            data.actors,
+            data.images,
+            data.data[0].data.movies
+          );
+        })
+        .then((savedFilm) => {
+          if (!savedFilm) {
+            res.status(500).send('Film not properly saved.');
+          }
+          film.clearData();
+          script.clearTemp(scriptPath);
+          return res.send(savedFilm);
+        })
+        .catch((err) => {
+          res.status(500).send(err);
+          throw new Error(err);
+        });
       })
-      .catch(next)
+      .catch((err) => {
+        res.status(500).send(err);
+        throw new Error(err);
+      })
       .error((err) => {
+        res.status(500).send(err);
         throw new Error(err);
       });
     }
@@ -102,12 +111,13 @@ router.route('/:id')
   .get((req, res) => {
     film.findByID(req.params.id)
     .then((movie) => {
-      // if (!movie) {
-      //   throw new Error('No movie returned from film.findByID(req.params.id)');
-      // }
+      if (!movie) {
+        throw new Error('No movie returned from film.findByID(req.params.id)');
+      }
       res.send(movie);
     })
     .catch((err) => {
+      res.status(500).send(err);
       throw new Error(err);
     });
   })
@@ -120,6 +130,7 @@ router.route('/:id')
       res.send(movie);
     })
     .catch((err) => {
+      res.status(500).send(err);
       throw new Error(err);
     });
   });
