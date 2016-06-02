@@ -18,11 +18,16 @@ let imdbID = null;
  * @return {[type]}    [description]
  */
 module.exports.findByID = (id) => {
-  if (!id) {
+  if (id === undefined) {
     throw new Error('Invalid findByID input');
   }
-  return Film.findById(id).exec()
-  .then((film) => film)
+  return Film.find({ _id: id }).exec()
+  .then((film) => {
+    if (Array.isArray(film)) {
+      return film[0];
+    }
+    return film;
+  })
   .catch((err) => {
     throw new Error(err);
   });
@@ -33,7 +38,12 @@ module.exports.findByTitle = (movieTitle) => {
     throw new Error('No film tile found');
   }
   return Film.find({ title: movieTitle }).exec()
-  .then((film) => film)
+  .then((film) => {
+    if (Array.isArray(film)) {
+      return film[0];
+    }
+    return film;
+  })
   .catch((err) => {
     throw new Error(err);
   });
@@ -95,7 +105,7 @@ module.exports.insert = (filmTitle, bechdelResults, actors, images, data) => {
     !actors ||
     !images
   ) {
-    throw new Error('Cannot insert film');
+    throw new Error('Cannot insert film into the database');
   }
   const film = new Film({ title: filmTitle });
   film.bechdelResults = bechdelResults;
@@ -112,11 +122,16 @@ module.exports.insert = (filmTitle, bechdelResults, actors, images, data) => {
   film.rating = data[0].rating;
   film.metascore = data[0].metascore;
   film.urlIMDB = data[0].urlIMDB;
-  film.actors = parseActorArr(actors);
+  film.actors = parseActorArr(actors[0]);
   film.images = parseImageData(images);
 
   return save(film)
-  .then((savedFilm) => savedFilm)
+  .then((savedFilm) => {
+    if (Array.isArray(savedFilm)) {
+      return savedFilm[0];
+    }
+    return savedFilm;
+  })
   .catch((error) => {
     throw new Error(error);
   });

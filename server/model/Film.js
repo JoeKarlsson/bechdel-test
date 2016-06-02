@@ -3,7 +3,7 @@
 
 const db = require('./index.js');
 const Promise = require('bluebird');
-const mongoose = Promise.promisifyAll(require("mongoose"));
+const mongoose = Promise.promisifyAll(require('mongoose'));
 mongoose.Promise = require('bluebird');
 
 const filmSchema = mongoose.Schema({
@@ -36,10 +36,6 @@ const filmSchema = mongoose.Schema({
   rating: String,
   metascore: Number,
   createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
     type: Date,
     default: Date.now,
   },
