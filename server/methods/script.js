@@ -1,11 +1,11 @@
-/* eslint strict: 0*/
+/* eslint strict: 0 */
 'use strict';
 
 const fs = require('fs');
 const Promise = require('bluebird');
 
 module.exports.readMovieTitle = (path) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!path) {
       reject(new Error('Invalid readMovieTitle input'));
     }
@@ -27,10 +27,11 @@ module.exports.readMovieTitle = (path) => {
       reject(new Error(err));
     });
   });
+  return promise;
 };
 
 module.exports.read = (path) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!path) {
       reject(new Error('Invalid read input'));
     }
@@ -47,10 +48,11 @@ module.exports.read = (path) => {
       reject(new Error(err));
     });
   });
+  return promise;
 };
 
 module.exports.clearTemp = (path) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!path) {
       reject(new Error('Invalid clearTemp input'));
     }
@@ -61,4 +63,5 @@ module.exports.clearTemp = (path) => {
       resolve(true);
     });
   });
+  return promise;
 };

@@ -1,4 +1,4 @@
-/* eslint strict: 0*/
+/* eslint strict: 0 */
 'use strict';
 
 const Promise = require('bluebird');
@@ -277,7 +277,7 @@ const bechdelTestPass = (characters, count, scene) => {
 };
 
 const sceneAnalysis = (characters, scenes) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!characters || !scenes) {
       reject(new Error('Invalid sceneAnalysis input'));
     }
@@ -310,10 +310,11 @@ const sceneAnalysis = (characters, scenes) => {
     };
     resolve(bechdelResults);
   });
+  return promise;
 };
 
 module.exports.getBechdelResults = (title, path) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!title || !path) {
       reject(new Error('Invalid getBechdelResults input'));
     }
@@ -339,5 +340,6 @@ module.exports.getBechdelResults = (title, path) => {
       throw new Error(error);
     });
   });
+  return promise;
 };
 
