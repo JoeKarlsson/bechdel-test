@@ -13,12 +13,22 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 
 This program accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
-##Usage
-**NOTE!** Use the latest version of Node, 5.x.x.
-* Git Clone/Fork project
-* `npm install`
-* `npm start`
-* Navigate to [http://localhost:3000](http://localhost:3000) in your browser of choice.
+## Setup Your Project
+
+Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
+
+    git clone https://github.com/JoeKarlsson1/bechdel-test
+    cd bechdel-test
+
+Next, inside the project, you need to install the project's various NPM dependencies:
+
+    npm install
+
+And you should now be ready to spin up a development build of your new project:
+
+    npm start
+
+Navigate to [http://localhost:3000](http://localhost:3000) in your browser of choice.
 
 ##Introduction
 The Bechdel Test Script Parser was a collaborative digital humanities project between myself and my sister, Laurel Karlsson. It is the product of a shared passion for film, feminism, and the creative potential of technology. By combining the talents and interests of myself, a software engineer, we’ve been able to create an innovative data mining tool for film analysis that we hope to continue to work on and improve. You can check out the project on our [website](https://bechdel-test.herokuapp.com/).
@@ -38,6 +48,33 @@ First, the script finds the title of the film, this is generally on the first pa
 Once all of the gender and film data has been collected via the API - I can begin analyzing the script. The first step is to break the script down into scenes in order to tell if two females shared a scene together. Scenes were determined by looking for a user defined set of keywords, such as "int." or "ext.". In practice, it was determined that a list of 10-12 keywords well captured scene changes.
 
 In the scene, I collected dialogue by character by using simple parsing techniques. I was then able to test if two female character's shared a scene. If two or more females shared a scene together, I tested their dialogue by checking if their dialogue contained keywords that indicated that they were speaking about a men or men. This list included words like 'He', 'Him', 'Father', 'King', etc. This list is very basic, and after initial tests, I can see that this list needs additional work, as patriarchal words are very ingrained in the English Language, and judging context is very difficult for a computer to do. However, for the context of my experiments, this list has sufficed. This tool, however is very good at generating data on gender participation in films.
+
+### Available Targets
+
+#### `start`
+
+Starts up the server - used for dev purposes
+
+#### `test`
+
+Runs server side tests once. Tests are run using Mocha, Chai and SuperTest
+
+#### `test:server:watch`
+
+Have the test run continuously in the background.
+
+### `build`
+
+Build the application as it would be setup on a Production server - used for testing production webpack configuration on local development enviornment.
+
+### `eslint`
+
+Lint the file using a custom AirBnB configuration.
+
+### `postinstall`
+
+Used for cleaning up webpack build on Heroku.
+
 
 ##Contributing
 1. Fork it!
