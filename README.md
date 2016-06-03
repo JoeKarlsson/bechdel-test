@@ -13,6 +13,13 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 
 This program accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
+##Usage
+**NOTE!** Use the latest version of Node, 5.x.x.
+* Git Clone/Fork project
+* `npm install`
+* `npm start`
+* Navigate to [http://localhost:3000](http://localhost:3000) in your browser of choice.
+
 ##Introduction
 The Bechdel Test Script Parser was a collaborative digital humanities project between myself and my sister, Laurel Karlsson. It is the product of a shared passion for film, feminism, and the creative potential of technology. By combining the talents and interests of myself, a software engineer, we’ve been able to create an innovative data mining tool for film analysis that we hope to continue to work on and improve. You can check out the project on our [website](https://bechdel-test.herokuapp.com/).
 
@@ -32,28 +39,6 @@ Once all of the gender and film data has been collected via the API - I can begi
 
 In the scene, I collected dialogue by character by using simple parsing techniques. I was then able to test if two female character's shared a scene. If two or more females shared a scene together, I tested their dialogue by checking if their dialogue contained keywords that indicated that they were speaking about a men or men. This list included words like 'He', 'Him', 'Father', 'King', etc. This list is very basic, and after initial tests, I can see that this list needs additional work, as patriarchal words are very ingrained in the English Language, and judging context is very difficult for a computer to do. However, for the context of my experiments, this list has sufficed. This tool, however is very good at generating data on gender participation in films.
 
-## Requirements
-This uses [jspm](http://jspm.io/) as the browser package manager and [gulp](http://gulpjs.com/) for build automation during development so you should have these installed globally
-
-##Usage
-**NOTE!** Use the latest version of Node, 4.x.x.
-1. Intall [node.js](https://nodejs.org/en/)
-1. Git Clone/Fork project
-```git clone git@github.com:JoeKarlsson1/bechdel-test.git```
-1. ```cd bechdel-test```
-1. npm install
-1. npm start
-1. navigate to http://localhost:3000 in your browser of choice.
-
-##Updating Code from GitHub
-1. Navigate to the bechdel-test directory in terminal ```cd Desktop/bechdel-test```
-1. If you don't care about any local changes and just want a copy from the repo:
-
-- ```git fetch --all```
-- ```git pull```
-
-Your code should now be up to date! ;)
-
 ##Contributing
 1. Fork it!
 2. Create your feature branch: ```git checkout -b my-new-feature```
@@ -65,39 +50,8 @@ Your code should now be up to date! ;)
 - Joe Carlson
 - Laurel Carlson
 
-##Built with
-- Express
-- Node 5.1.0
-- ES6
-- React
-- D3.js
-- C3.js
-
 ##Related Links
 - [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
 - [The Open Movie Database](http://www.omdbapi.com/)
 - [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
 - [Check out our trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
-
-##License
-The MIT License (MIT)
-
-Copyright (c) 2016 Joseph Carlson
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.

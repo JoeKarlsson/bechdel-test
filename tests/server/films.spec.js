@@ -1,4 +1,9 @@
-/* eslint no-unused-expressions: 0, func-names: 0, strict: 0 */
+/*
+  eslint
+    no-unused-expressions: 0,
+    func-names: 0,
+    strict: 0
+*/
 /* eslint-env mocha, mongo */
 
 'use strict';
