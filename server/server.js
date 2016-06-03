@@ -55,7 +55,7 @@ if (isDeveloping) {
   app.get('*', response);
 } else {
   app.use(express.static(`${__dirname}/dist`));
-  app.get('*', function response(req, res) {
+  app.get('*', (req, res) => {
     res.write(
       fs.readFileSync(path.resolve(__dirname, 'dist/index.html'))
     );

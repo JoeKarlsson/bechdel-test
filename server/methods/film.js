@@ -18,7 +18,7 @@ let imdbID = null;
  * @return {[type]}    [description]
  */
 module.exports.findByID = (id) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (id === undefined) {
       reject(new Error('Invalid findByID input'));
     }
@@ -33,11 +33,12 @@ module.exports.findByID = (id) => {
       reject(new Error(err));
     });
   });
+  return promise;
 };
 
 
 module.exports.findByTitle = (movieTitle) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!movieTitle) {
       reject(new Error('No film tile found'));
     }
@@ -52,29 +53,37 @@ module.exports.findByTitle = (movieTitle) => {
       throw new Error(err);
     });
   });
+  return promise;
 };
 
 
 module.exports.listAll = () => {
-  const query = Film.find();
-
-  return query.exec((err, films) => {
-    if (err) {
-      throw new Error(err);
-    }
-    return films;
+  const promise = new Promise((resolve, reject) => {
+    const query = Film.find();
+    query.exec((err, films) => {
+      if (err) {
+        reject(new Error(err));
+      }
+      return resolve(films);
+    });
   });
+  return promise;
 };
 
 const save = (film) => {
-  if (!film) {
-    throw new Error('Cannot save film');
-  }
-  return film.save()
-  .then(() => film)
-  .catch((err) => {
-    throw new Error(err);
+  const promise = new Promise((resolve, reject) => {
+    if (!film) {
+      throw new Error('Cannot save film');
+    }
+    film.save()
+    .then(() => {
+      resolve(film);
+    })
+    .catch((err) => {
+      reject(new Error(err));
+    });
   });
+  return promise;
 };
 
 const parseActorArr = (arr) => {
@@ -203,7 +212,7 @@ const dataParser = (body, type) => {
 };
 
 const getFilmImages = (ID) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!ID) {
       reject(new Error('No IMDB ID found.'));
     }
@@ -220,12 +229,14 @@ const getFilmImages = (ID) => {
         } else {
           reject(new Error(error));
         }
-      });
+      }
+    );
   });
+  return promise;
 };
 
 const getSimpleCastData = (title) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!title) {
       reject(new Error('No Title sent getSimpleCastData'));
     }
@@ -271,10 +282,11 @@ const getSimpleCastData = (title) => {
       }
     );
   });
+  return promise;
 };
 
 const getFullCastData = (title) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     request(
       'http://api.myapifilms.com/imdb/idIMDB?' +
       `title=${title}&` +
@@ -315,10 +327,11 @@ const getFullCastData = (title) => {
       }
     });
   });
+  return promise;
 };
 
 module.exports.getData = (movieTitle) => {
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     if (!movieTitle) {
       reject(new Error('Invalid Movie Title'));
     }
@@ -349,6 +362,7 @@ module.exports.getData = (movieTitle) => {
       throw new Error(err);
     });
   });
+  return promise;
 };
 
 module.exports.getAllData = () => {
