@@ -43,7 +43,6 @@ class Film extends React.Component {
       cache: false,
       success: function(data) {
         this.setState({ film: data });
-        console.log(this.state.film, 'data')
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props, status, err.toString());
