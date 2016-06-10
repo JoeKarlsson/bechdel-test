@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import styles from './Film.scss';
 import * as $ from 'jquery';
-import Chart from '../../graphs/Chart.jsx';
+import BarChart from '../../graphs/barChart/BarChart.jsx';
+import DonutChart from '../../graphs/donutChart/DonutChart.jsx';
 
 class Film extends React.Component {
   constructor() {
@@ -35,7 +36,7 @@ class Film extends React.Component {
       },
     };
     this.getFilm = this.getFilm.bind(this)
-  }
+  };
 
   getFilm() {
     $.ajax({
@@ -50,11 +51,11 @@ class Film extends React.Component {
         console.error(this.props, status, err.toString());
       }.bind(this)
     });
-  }
+  };
 
   componentDidMount() {
     this.getFilm();
-  }
+  };
 
   render() {
     const directorNode = this.state.film.directors.map((director) => {
@@ -117,12 +118,13 @@ class Film extends React.Component {
         <p>Total Lines of Male Dialogue: {this.state.film.bechdelResults.totalLinesMaleDialogue}</p>
         <p>{this.state.film.plot}</p>
 
-        <Chart />
+        <BarChart />
+        <DonutChart />
         <Link to={'/'}><button>All Films</button></Link>
       </div>
     )
   }
-}
+};
 
 Film.propTypes = {
   film: React.PropTypes.object,
