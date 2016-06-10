@@ -304,7 +304,7 @@ describe('Bechdel Test', () => {
     });
 
     describe('DELETE /api/film/:id', () => {
-      it('should delete a film from the database', (done) => {
+      it('should return success:true after deleting movie from the database', (done) => {
         request(app)
         .del(`/api/film/${id}`)
         .expect(200)
@@ -314,18 +314,21 @@ describe('Bechdel Test', () => {
             return done(err);
           }
           expect(res.body).to.be.an('object');
-          // expect(res.body.sucess).to.be.true;
-          return request(app)
-          .get(`/api/film/${id}`)
-          .end((error, response) => {
-            if (error) {
-              return done(error);
-            }
-            expect(response.body).to.be.empty;
-            return done();
-          });
+          return done();
+        });
+      });
+      it('The movie should be removed from the database', (done) => {
+        request(app)
+        .get(`/api/film/${id}`)
+        .end((error, response) => {
+          if (error) {
+            return done(error);
+          }
+          expect(response.body).to.be.empty;
+          return done();
         });
       });
     });
   });
 });
+
