@@ -28,5 +28,4 @@ const circle1 = d3.select(node)
     // .attr('x', function(d, i) { return width })
     .text((d) => d);
 
-
 export default node;
