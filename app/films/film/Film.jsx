@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import styles from './Film.scss';
-import * as $ from'jquery';
+import * as $ from 'jquery';
+import Chart from '../../graphs/Chart.jsx';
 
 class Film extends React.Component {
   constructor() {
@@ -30,10 +31,11 @@ class Film extends React.Component {
           numOfMaleCharsWithDialogue: 0,
           totalLinesFemaleDialogue: 0,
           totalLinesMaleDialogue: 0,
-        }
+        },
       },
     };
- }
+    this.getFilm = this.getFilm.bind(this)
+  }
 
   getFilm() {
     $.ajax({
@@ -114,6 +116,8 @@ class Film extends React.Component {
         <p>Total Lines of Female Dialogue: {this.state.film.bechdelResults.totalLinesFemaleDialogue}</p>
         <p>Total Lines of Male Dialogue: {this.state.film.bechdelResults.totalLinesMaleDialogue}</p>
         <p>{this.state.film.plot}</p>
+
+        <Chart />
         <Link to={'/'}><button>All Films</button></Link>
       </div>
     )
