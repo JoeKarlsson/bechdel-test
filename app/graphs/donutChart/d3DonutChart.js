@@ -1,5 +1,4 @@
 import d3 from 'd3';
-// import csvData from './data.csv';
 
 const node = document.createElement('div');
 

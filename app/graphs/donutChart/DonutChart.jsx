@@ -18,7 +18,7 @@ class DonutChart extends React.Component {
   render() {
     return (
       <div>
-        <RD3Component 'data={this.state.d3} />
+        <RD3Component data={this.state.d3} />
       </div>
     );
   };

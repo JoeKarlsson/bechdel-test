@@ -2,7 +2,7 @@
   "name": "Bechdel_Test",
   "version": "0.3.0",
   "engines": {
-    "node": "5.8.0"
+    "node": "6.2.0"
   },
   "description": "A node based interactive site to analyze a movie script in order to tell if it passes the Bechdel Test.",
   "main": "server/server.js",
@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/JoeKarlsson1/bechdel-test",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec tests/server",
+    "test": "./node_modules/.bin/mocha -R spec tests/server/**/*.spec.js",
     "test:server:watch": "npm run test --watch",
     "test:client": "mocha tests/app/.setup.js tests/app/**/*-test.js",
     "start": "nodemon server/server.js",
@@ -72,7 +72,7 @@
     "passport": "^0.3.2",
     "passport-github2": "^0.1.10",
     "postcss-loader": "^0.6.0",
-    "react": "^0.14.3",
+    "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
     "react-addons-test-utils": "^0.14.3",
     "react-addons-transition-group": "^15.1.0",
@@ -82,6 +82,7 @@
     "react-transform-hmr": "^1.0.0",
     "request": "^2.67.0",
     "sass-loader": "^3.2.0",
+    "sinon": "^1.17.4",
     "stats-webpack-plugin": "^0.2.1",
     "style-loader": "^0.12.4",
     "util": "^0.10.3",
