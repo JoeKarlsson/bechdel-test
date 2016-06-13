@@ -164,7 +164,6 @@ module.exports.deleteFilm = (filmID) => {
 };
 
 const createCharcArr = (arr, characters, type) => {
-  console.log(characters, 'arr, characters, type');
   if (!arr || !characters || !type) {
     throw new Error('Invalid input on createCharcArr');
   }
