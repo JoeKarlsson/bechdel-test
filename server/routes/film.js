@@ -86,7 +86,7 @@ router.route('/')
         })
         .then((savedFilm) => {
           if (!savedFilm) {
-            res.status(500).send('Film not properly saved.');
+            return res.status(500).send('Film not properly saved.');
           }
           film.clearData();
           script.clearTemp(scriptPath);
@@ -115,7 +115,7 @@ router.route('/:id')
       if (!movie) {
         return res.send('No movie found by that ID');
       }
-      res.send(movie);
+      return res.send(movie);
     })
     .catch((err) => {
       res.status(500).send(err);
@@ -128,7 +128,7 @@ router.route('/:id')
       if (!movie) {
         return res.send('No movie found by that ID');
       }
-      res.json({ success: true });
+      return res.json({ success: true });
     })
     .catch((err) => {
       res.status(500).send(err);
