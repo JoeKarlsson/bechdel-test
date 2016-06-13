@@ -57,6 +57,12 @@ const filmSchema = mongoose.Schema({
   },
 });
 
+filmSchema.static('listAll', function () {
+  return this.find()
+    .sort('-date')
+    .exec();
+});
+
 const Film = mongoose.model('Film', filmSchema);
 
 module.exports = Film;
