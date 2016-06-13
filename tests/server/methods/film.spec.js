@@ -9,10 +9,12 @@
 'use strict';
 
 const path = require('path');
+const request = require('request');
+const $ = require('jquery');
 const sinon = require('sinon');
 const chai = require('chai');
 const expect = chai.expect;
-const film = require('../../../../server/methods/film.js');
+const film = require('../../../server/methods/film.js');
 
 describe('Film methods', () => {
   let id = '';
@@ -71,15 +73,15 @@ describe('Film methods', () => {
   });
 
   describe('getSimpleCastData', () => {
-    it('should increment stored value by one', function() {
-      var storeMock = sinon.mock(store);
-      storeMock.expects('get').withArgs('data').returns(0);
-      storeMock.expects('set').once().withArgs('data', 1);
+    it('should call dataParser on success', () => {
+      //We'll stub $.post so a request is not sent
+      const req = sinon.stub(request, 'get');
+      var expectedUrl = 'http://api.myapifilms.com/imdb/idIMDB?title=BOYHOOD&token=d44147a7-5e6e-4450-92ba-773be44791ce&format=json&language=en-us&aka=0&business=0&seasons=0&seasonYear=0&technical=0&filter=3&exactFilter=0&limit=1&forceYear=0&trailers=0&movieTrivia=0&awards=0&moviePhotos=0&movieVideos=0&actors=1&biography=1&uniqueName=0&filmography=0&bornAndDead=0&starSign=0&actorActress=1&actorTrivia=0&similarMovies=0&adultSearch=0';
 
-      incrementStoredData();
+      film.getSimpleCastData('BOYHOOD', () => {});
 
-      storeMock.restore();
-      storeMock.verify();
+      req.restore();
+      sinon.assert.calledWith(req, expectedUrl);
     });
   });
 });

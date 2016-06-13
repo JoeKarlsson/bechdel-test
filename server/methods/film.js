@@ -235,54 +235,52 @@ const getFilmImages = (ID) => {
   return promise;
 };
 
-const getSimpleCastData = (title) => {
-  const promise = new Promise((resolve, reject) => {
-    if (!title) {
-      reject(new Error('No Title sent getSimpleCastData'));
-    }
-    request(
-      'http://api.myapifilms.com/imdb/idIMDB?' +
-      `title=${title}&` +
-      `token=${CONFIG.MYAPIFILMS}&` +
-      'format=json&' +
-      'language=en-us&' +
-      'aka=0&' +
-      'business=0&' +
-      'seasons=0&' +
-      'seasonYear=0&' +
-      'technical=0&' +
-      'filter=3&' +
-      'exactFilter=0&' +
-      'limit=1&' +
-      'forceYear=0&' +
-      'trailers=0&' +
-      'movieTrivia=0&' +
-      'awards=0&' +
-      'moviePhotos=0&' +
-      'movieVideos=0&' +
-      'actors=1&' +
-      'biography=1&' +
-      'uniqueName=0&' +
-      'filmography=0&' +
-      'bornAndDead=0&' +
-      'starSign=0&' +
-      'actorActress=1&' +
-      'actorTrivia=0&' +
-      'similarMovies=0&' +
-      'adultSearch=0',
-      (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-          const data = JSON.parse(body);
-          filmData.data.push(data);
-          imdbID = data.data.movies[0].idIMDB;
-          resolve(dataParser(data, 'mainCast'));
-        } else {
-          reject(new Error(error));
-        }
+module.exports.getSimpleCastData = (title, callback) => {
+  if (!title) {
+    throw new Error('No Title sent getSimpleCastData');
+  }
+  request.get(
+    'http://api.myapifilms.com/imdb/idIMDB?' +
+    `title=${title}&` +
+    `token=${CONFIG.MYAPIFILMS}&` +
+    'format=json&' +
+    'language=en-us&' +
+    'aka=0&' +
+    'business=0&' +
+    'seasons=0&' +
+    'seasonYear=0&' +
+    'technical=0&' +
+    'filter=3&' +
+    'exactFilter=0&' +
+    'limit=1&' +
+    'forceYear=0&' +
+    'trailers=0&' +
+    'movieTrivia=0&' +
+    'awards=0&' +
+    'moviePhotos=0&' +
+    'movieVideos=0&' +
+    'actors=1&' +
+    'biography=1&' +
+    'uniqueName=0&' +
+    'filmography=0&' +
+    'bornAndDead=0&' +
+    'starSign=0&' +
+    'actorActress=1&' +
+    'actorTrivia=0&' +
+    'similarMovies=0&' +
+    'adultSearch=0',
+    (error, response, body) => {
+      console.log(response);
+      if (!error) {
+        console.log(body);
+        const data = JSON.parse(body);
+        filmData.data.push(data);
+        imdbID = data.data.movies[0].idIMDB;
+        return callback(data, 'mainCast');
       }
-    );
-  });
-  return promise;
+      throw new Error(error);
+    }
+  );
 };
 
 const getFullCastData = (title) => {
@@ -338,7 +336,7 @@ module.exports.getData = (movieTitle) => {
     const splitTitle = movieTitle
       .split(' ')
       .join('+');
-    getSimpleCastData(splitTitle)
+    getSimpleCastData(splitTitle, dataParser)
     .then((simpleCastdata) => {
       if (!simpleCastdata) {
         reject(new Error('Failed on getSimpleCastData'));
