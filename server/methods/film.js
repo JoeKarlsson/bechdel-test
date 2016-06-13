@@ -202,7 +202,7 @@ const dataParser = (body, type) => {
   const rawMovieCharacters = body.data.movies[0].actors;
   let movieCharacters = [];
 
-  if (rawMovieCharacters !== undefined || null || '') {
+  if (!rawMovieCharacters) {
     movieCharacters = createCharcArr(movieCharacters, rawMovieCharacters, type);
   } else {
     throw new Error('Error: Connected to myfilmapi, but no actor data returned');
@@ -235,7 +235,7 @@ const getFilmImages = (ID) => {
   return promise;
 };
 
-module.exports.getSimpleCastData = (title, callback) => {
+module.exports.getSimpleCastData = (title) => {
   if (!title) {
     throw new Error('No Title sent getSimpleCastData');
   }
@@ -270,22 +270,20 @@ module.exports.getSimpleCastData = (title, callback) => {
     'similarMovies=0&' +
     'adultSearch=0',
     (error, response, body) => {
-      console.log(response);
       if (!error) {
-        console.log(body);
         const data = JSON.parse(body);
         filmData.data.push(data);
         imdbID = data.data.movies[0].idIMDB;
-        return callback(data, 'mainCast');
+        return data;
       }
       throw new Error(error);
     }
   );
 };
 
-const getFullCastData = (title) => {
+module.exports.getFullCastData = (title) => {
   const promise = new Promise((resolve, reject) => {
-    request(
+    request.get(
       'http://api.myapifilms.com/imdb/idIMDB?' +
       `title=${title}&` +
       `token=${CONFIG.MYAPIFILMS}&` +
@@ -316,10 +314,10 @@ const getFullCastData = (title) => {
       'similarMovies=0&' +
       'adultSearch=0',
     (error, response, body) => {
-      if (!error && response.statusCode === 200) {
+      if (!error) {
         const data = JSON.parse(body);
         filmData.data.push(data);
-        resolve(dataParser(data, 'fullCast'));
+        resolve(data);
       } else {
         reject(new Error(error));
       }
@@ -341,6 +339,7 @@ module.exports.getData = (movieTitle) => {
       if (!simpleCastdata) {
         reject(new Error('Failed on getSimpleCastData'));
       }
+      dataParser(simpleCastdata, 'mainCast');
       getFilmImages(imdbID)
       .then((images) => {
         if (!images) {
@@ -353,6 +352,7 @@ module.exports.getData = (movieTitle) => {
         if (!fullCastdata) {
           reject(new Error('Failed on getFullCastData'));
         }
+        dataParser(fullCastdata, 'mainCast');
         resolve(filmData.actors);
       });
     })

@@ -9,6 +9,7 @@
 'use strict';
 
 const path = require('path');
+const fs = require('fs');
 const sinon = require('sinon');
 const chai = require('chai');
 const expect = chai.expect;
@@ -41,6 +42,17 @@ describe('Script methods', () => {
       })
       .catch((err) => {
         done(err);
+      });
+    });
+  });
+
+  describe('clearTemp', () => {
+    it('should return true after success', () => {
+      const unlink = sinon.stub(fs, 'unlink');
+      script.clearTemp('/path/to/file')
+      .then((result) => {
+        unlink.restore();
+        expect(result).to.be.true;
       });
     });
   });
