@@ -15,61 +15,6 @@ const expect = chai.expect;
 const film = require('../../../server/methods/film.js');
 
 describe('Film methods', () => {
-  let id = '';
-
-  describe('findByTitle', () => {
-    it('should find a film by its Title', (done) => {
-      film.findByTitle('BOYHOOD')
-      .then((movie) => {
-        id = movie._id.toString();
-        expect(movie._id).to.be.ok;
-        expect(id).to.be.an('string');
-        expect(movie).to.be.ok;
-        expect(movie).to.be.an('object');
-        expect(movie.title).to.equal('BOYHOOD');
-        return done();
-      })
-      .catch((err) => {
-        done(err);
-      });
-    });
-  });
-
-  describe('findByID', () => {
-    it('should find a film by its ID', (done) => {
-      film.findByID(id)
-      .then((movie) => {
-        expect(movie._id).to.be.ok;
-        expect(movie).to.be.ok;
-        expect(movie).to.be.an('object');
-        expect(movie.title).to.equal('BOYHOOD');
-        return done();
-      })
-      .catch((err) => {
-        done(err);
-      });
-    });
-  });
-
-  describe('listAll', () => {
-    it('should list all films in the database', (done) => {
-      film.listAll()
-      .then((movies) => {
-        expect(movies).to.be.an('array');
-        expect(movies).to.have.length.above(0);
-        for (let i = 0; i < movies; i++) {
-          expect(movies[i].id).to.be.ok;
-          expect(movies[i].title).to.be.ok;
-          expect(movies[i].title).to.be.an('string');
-        }
-        return done();
-      })
-      .catch((err) => {
-        done(err);
-      });
-    });
-  });
-
   describe('getSimpleCastData', () => {
     afterEach(() => {
       film.clearData();
