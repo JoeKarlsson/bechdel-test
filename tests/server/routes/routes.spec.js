@@ -63,6 +63,7 @@ describe('Film Routes Test', () => {
         if (err) {
           return done(err);
         }
+        console.log(res.body);
         expect(res.body).to.include.keys('_id');
         expect(res.body._id).to.be.ok;
         expect(res.body._id).to.be.an('string');
