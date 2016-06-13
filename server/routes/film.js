@@ -4,6 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const mongoose = require('mongoose');
 const film = require('../methods/film');
 const script = require('../methods/script');
 const bechdel = require('../methods/bechdel');
@@ -23,13 +24,14 @@ const cpUpload = upload.fields([
     maxCount: 1,
   },
 ]);
+const Film = mongoose.model('Film');
 
 /*
   * FILM ROUTES
 */
 router.route('/')
   .get((req, res) => {
-    film.listAll()
+    Film.listAll()
     .then((films) => {
       if (!films) {
         res.status(500).send('No list of films returned from film.listAll()');

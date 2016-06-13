@@ -56,20 +56,6 @@ module.exports.findByTitle = (movieTitle) => {
   return promise;
 };
 
-
-module.exports.listAll = () => {
-  const promise = new Promise((resolve, reject) => {
-    const query = Film.find();
-    query.exec((err, films) => {
-      if (err) {
-        reject(new Error(err));
-      }
-      return resolve(films);
-    });
-  });
-  return promise;
-};
-
 const save = (film) => {
   const promise = new Promise((resolve, reject) => {
     if (!film) {
