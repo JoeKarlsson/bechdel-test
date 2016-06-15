@@ -78,7 +78,7 @@ router.route('/')
             );
           }
           const data = film.getAllData();
-          return film.insert(
+          return Film.insert(
             filmTitle,
             bechdelResults,
             data.actors,
@@ -125,7 +125,7 @@ router.route('/:id')
     });
   })
   .delete((req, res) => {
-    film.deleteFilm(req.params.id)
+    Film.deleteFilm(req.params.id)
     .then((movie) => {
       if (!movie) {
         return res.send('No movie found by that ID');
