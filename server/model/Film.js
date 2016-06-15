@@ -111,6 +111,99 @@ filmSchema.static('findByTitle', function (movieTitle) {
   return promise;
 });
 
+filmSchema.static('saveFilm', function (film) {
+  const promise = new Promise((resolve, reject) => {
+    if (!film) {
+      throw new Error('Cannot save film');
+    }
+    film.save()
+    .then((result) => {
+      resolve(result);
+    })
+    .catch((err) => {
+      reject(new Error(err));
+    });
+  });
+  return promise;
+});
+
+filmSchema.static('deleteFilm', function (id) {
+  if (!id) {
+    throw new Error('Invalid input on deleteFilm');
+  }
+  return this.findOne({ _id: id }).exec()
+  .then((film) => film.remove())
+  .catch((error) => {
+    throw new Error(error);
+  });
+});
+
+const parseActorArr = (arr) => {
+  if (!arr) {
+    throw new Error('Cannot parseActorArr');
+  }
+  const actorsArr = [];
+  let i;
+  for (i = 0; i < arr.length; i++) {
+    const actor = {};
+    actor.actorName = arr[i].actorName;
+    actor.character = arr[i].character;
+    actor.actorActress = arr[i].gender;
+    actorsArr.push(actor);
+  }
+  return actorsArr;
+};
+
+const parseImageData = (images) => {
+  if (!images) {
+    throw new Error('Cannot parseImageData');
+  }
+  const img = {};
+
+  img.backdrop = `https://image.tmdb.org/t/p/w1000${images.backdrops[0].file_path}`;
+  img.poster = `https://image.tmdb.org/t/p/w300${images.posters[0].file_path}`;
+  return img;
+};
+
+filmSchema.static('insert', function (filmTitle, bechdelResults, actors, images, data) {
+  if (
+    !filmTitle ||
+    !bechdelResults ||
+    !actors ||
+    !images
+  ) {
+    throw new Error('Cannot insert film into the database');
+  }
+  const film = new Film({ title: filmTitle });
+  film.bechdelResults = bechdelResults;
+  film.plot = data[0].plot;
+  film.simplePlot = data[0].simplePlot;
+  film.year = data[0].year;
+  film.releaseDate = data[0].releaseDate;
+  film.directors = data[0].directors;
+  film.writers = data[0].writers;
+  film.rated = data[0].rated;
+  film.genres = data[0].genres;
+  film.urlPoster = data[0].urlPoster;
+  film.idIMDB = data[0].idIMDB;
+  film.rating = data[0].rating;
+  film.metascore = data[0].metascore;
+  film.urlIMDB = data[0].urlIMDB;
+  film.actors = parseActorArr(actors[0]);
+  film.images = parseImageData(images);
+
+  return this.saveFilm(film)
+  .then((savedFilm) => {
+    if (Array.isArray(savedFilm)) {
+      return savedFilm[0];
+    }
+    return savedFilm;
+  })
+  .catch((error) => {
+    throw new Error(error);
+  });
+});
+
 const Film = mongoose.model('Film', filmSchema);
 
 module.exports = Film;
