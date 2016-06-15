@@ -16,7 +16,7 @@ const expect = chai.expect;
 const script = require('../../../server/methods/script.js');
 
 describe('Script methods', () => {
-  describe('readMovieTitle', () => {
+  describe('#readMovieTitle', () => {
     it('should read a script and return the title', (done) => {
       const scriptPath = path.join(__dirname, 'test-script.txt');
       script.readMovieTitle(scriptPath)
@@ -30,7 +30,7 @@ describe('Script methods', () => {
     });
   });
 
-  describe('read', () => {
+  describe('#read', () => {
     it('should read a script', function (done) {
       this.timeout(4000);
       const scriptPath = path.join(__dirname, 'test-script.txt');
@@ -46,7 +46,7 @@ describe('Script methods', () => {
     });
   });
 
-  describe('clearTemp', () => {
+  describe('#clearTemp', () => {
     it('should return true after success', () => {
       const unlink = sinon.stub(fs, 'unlink');
       script.clearTemp('/path/to/file')

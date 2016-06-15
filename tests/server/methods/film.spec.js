@@ -15,7 +15,7 @@ const expect = chai.expect;
 const film = require('../../../server/methods/film.js');
 
 describe('Film methods', () => {
-  describe('getSimpleCastData', () => {
+  describe('#getSimpleCastData', () => {
     afterEach(() => {
       film.clearData();
     });
@@ -38,7 +38,7 @@ describe('Film methods', () => {
     }));
   });
 
-  describe('getFullCastData', () => {
+  describe('#getFullCastData', () => {
     afterEach(() => {
       film.clearData();
     });
