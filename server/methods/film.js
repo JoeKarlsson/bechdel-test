@@ -12,31 +12,6 @@ let filmData = {
 };
 let imdbID = null;
 
-/**
- * Find Film in the datavase by ID
- * @param  {[String]} id [description]
- * @return {[type]}    [description]
- */
-module.exports.findByID = (id) => {
-  const promise = new Promise((resolve, reject) => {
-    if (id === undefined) {
-      reject(new Error('Invalid findByID input'));
-    }
-    return Film.find({ _id: id }).exec()
-    .then((film) => {
-      if (Array.isArray(film)) {
-        return resolve(film[0]);
-      }
-      return resolve(film);
-    })
-    .catch((err) => {
-      reject(new Error(err));
-    });
-  });
-  return promise;
-};
-
-
 module.exports.findByTitle = (movieTitle) => {
   const promise = new Promise((resolve, reject) => {
     if (!movieTitle) {

@@ -1,7 +1,15 @@
-/* eslint strict: 0*/
+/*
+  eslint
+    no-unused-expressions: 0,
+    func-names: 0,
+    strict: 0,
+    new-cap:0,
+    arrow-body-style: 0
+*/
+/* eslint-env mocha, mongo */
 'use strict';
 
-const db = require('./index.js');
+require('./index.js');
 const Promise = require('bluebird');
 const mongoose = Promise.promisifyAll(require('mongoose'));
 mongoose.Promise = require('bluebird');
@@ -58,9 +66,49 @@ const filmSchema = mongoose.Schema({
 });
 
 filmSchema.static('listAll', function () {
-  return this.find()
+  const promise = new Promise((resolve) => {
+    this.find()
     .sort('-date')
-    .exec();
+    .exec()
+    .then((result) => {
+      return resolve(result);
+    });
+  });
+  return promise;
+});
+
+filmSchema.static('findByID', function (id) {
+  const promise = new Promise((resolve) => {
+    this.find({ _id: id })
+    .sort('-date')
+    .exec()
+    .then((result) => {
+      if (Array.isArray(result)) {
+        return resolve(result[0]);
+      }
+      return resolve(result);
+    });
+  });
+  return promise;
+});
+
+filmSchema.static('findByTitle', function (movieTitle) {
+  const promise = new Promise((resolve, reject) => {
+    if (!movieTitle) {
+      reject(new Error('No film tile found'));
+    }
+    this.find({ title: movieTitle }).exec()
+    .then((result) => {
+      if (Array.isArray(result)) {
+        return resolve(result[0]);
+      }
+      return resolve(result);
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
+  });
+  return promise;
 });
 
 const Film = mongoose.model('Film', filmSchema);
