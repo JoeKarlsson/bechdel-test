@@ -62,7 +62,7 @@ router.route('/')
           throw new Error('No movie returned from script.readMovieTitle(scriptPath)');
         }
         filmTitle = title;
-        return film.findByTitle(filmTitle);
+        return Film.findByTitle(filmTitle);
       })
       .then((movie) => {
         if (movie) {
@@ -112,7 +112,7 @@ router.route('/')
 
 router.route('/:id')
   .get((req, res) => {
-    film.findByID(req.params.id)
+    Film.findByID(req.params.id)
     .then((movie) => {
       if (!movie) {
         return res.send('No movie found by that ID');
