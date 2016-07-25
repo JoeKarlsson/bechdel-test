@@ -5,6 +5,7 @@ import normalize from './shared/css/normalize.css';
 import App from './App.jsx';
 import Home from './home/Home.jsx';
 import About from './static/about/About.jsx';
+import CaseStudy from './static/caseStudy/CaseStudy.jsx';
 import Films from './films/films/Films.jsx';
 import Film from './films/film/Film.jsx';
 import NewFilm from './films/new/NewFilm.jsx';
@@ -15,6 +16,7 @@ ReactDOM.render(
     <Route path='/' component={App}>
       <IndexRoute component={Films} />
       <Route path='/about' component={About} />
+      <Route path='/case-study' component={CaseStudy} />
       <Route path='/film/new' component={NewFilm} />
       <Route path='/film/:id' component={Film} />
       <Route path='*' component={NoMatch} />

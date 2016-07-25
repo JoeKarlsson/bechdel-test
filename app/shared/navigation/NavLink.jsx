@@ -4,7 +4,7 @@ import styles from './NavLink.scss';
 
 class NavLink extends React.Component {
   render() {
-    return <Link {...this.props} activeClassName={styles.active} />;
+    return <Link {...this.props} activeClassName={styles.active}/>;
   }
 }
 

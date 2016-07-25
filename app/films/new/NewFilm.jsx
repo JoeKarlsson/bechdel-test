@@ -59,7 +59,7 @@ class NewFilm extends React.Component {
   render() {
     return (
       <div className={styles.newFilm}>
-        <div>New Film</div>
+        <h1>test a new script</h1>
         {
           this.state.isLoading ?
           <Loading />
@@ -70,7 +70,18 @@ class NewFilm extends React.Component {
             encType='multipart/form-data'
             method='POST'
           >
-            <p>Please specify a file, or a set of files:<br /></p>
+            <p>
+              Note: This tool currently only suppports scripts with a .txt format, and the script must follow the <a target="blank" href='http://www.simplyscripts.com/WR_format.html'>Standard Script Format</a>.
+            </p>
+            <p>
+              If you are still having issues using the tool, try adding the title of the script is on the first line. Or you can submit an <a target="blank" href="https://github.com/JoeKarlsson1/bechdel-test/issues">issue</a>.
+            </p>
+            <p>
+              You can check out a example script <a target="blank" href='https://github.com/JoeKarlsson1/bechdel-test/blob/master/tests/server/methods/test-script.txt'>here</a>.
+            </p>
+            <p>
+              Please specify a file, or a set of files:<br />
+            </p>
             <input
               type='file'
               name='script'
