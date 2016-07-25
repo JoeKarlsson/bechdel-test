@@ -15,5 +15,9 @@ const expect = chai.expect;
 const bechdel = require('../../../server/methods/bechdel.js');
 
 describe('Bechdel methods', () => {
+  describe('#getBechdelResults', () => {
+    it('should return the bechdel result for a script', () => {
 
+    });
+  });
 });
