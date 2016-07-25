@@ -36,14 +36,23 @@ class Films extends React.Component {
     return (
       <div className={styles.films}>
         <div className={skeleton.u_full_width}>
-          <h1>Films</h1>
-          <Link to={'/film/new'}>
-            <button>Add Films</button>
-          </Link>
+          <div className='row'>
+            <h1>Bechdel Test Visualizer</h1>
+            <p>
+              The Bechdel Test Visualizer was a collaborative project between a English Scholar and a Software Engineer. With the tool we’ve created, the process of determing whether a film passes the Beschdel Test is automated, which allows massive amounts of data to be generated with ease. Thus, data can be produced for large bodies of film, i.e. a certain director’s filmography, a certain actress’ body of work, or for the films released in a specific year.
+            </p>
+          </div>
         </div>
+        <h3>Films</h3>
+        <Link to={'/film/new'}>
+          <button>Add a Film</button>
+        </Link>
         <div className='row'>
           <FilmList films={this.state.films} />
         </div>
+        <p>
+          If you have any suggestions for how to grow the application, we would love to hear from <a target="blank" href="https://www.callmejoe.net/contact/">you</a>.
+        </p>
       </div>
     )
   }

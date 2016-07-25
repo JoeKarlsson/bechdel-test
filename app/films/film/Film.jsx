@@ -94,7 +94,7 @@ class Film extends React.Component {
       }
     });
     return (
-      <div>
+      <div className={styles.filmInfo}>
         <h1>{this.state.film.title}</h1>
         <h3>Bechdel Pass: {this.state.film.bechdelResults.pass.toString().toUpperCase()}</h3>
         <p>Bechdel Score: {this.state.film.bechdelResults.bechdelScore} of 3</p>
@@ -102,23 +102,41 @@ class Film extends React.Component {
           src={this.state.film.images.backdrop}
           alt={this.state.film.title}
         />
-        <p>Directors: {directorNode}</p>
-        <p>Writers: {writerNode}</p>
-        <p>Genre: {genreNode}</p>
-        <p>Rated: {this.state.film.rated}</p>
-        <p>IMDB: <a href={`http://www.imdb.com/title/${this.state.film.idIMDB}`} target='_blank'>{this.state.film.title}</a></p>
-        <p>Bechdel Score: {this.state.film.bechdelResults.bechdelScore} of 3</p>
-        <p>Number of Scenes that pass: {this.state.film.bechdelResults.numScenesPass}</p>
-        <p>Number of Scenes that dont pass: {this.state.film.bechdelResults.numScenesDontPass}</p>
-        <p>Number Of Females Characters: {this.state.film.bechdelResults.numOfFemalesChars}</p>
-        <p>Number Of Male Characters: {this.state.film.bechdelResults.numOfMaleChars}</p>
-        <p>Number of Females Characters With Dialogue: {this.state.film.bechdelResults.numOfFemalesCharsWithDialogue}</p>
-        <p>Number of Male Characters With Dialogue: {this.state.film.bechdelResults.numOfMaleCharsWithDialogue}</p>
-        <p>Total Lines of Female Dialogue: {this.state.film.bechdelResults.totalLinesFemaleDialogue}</p>
-        <p>Total Lines of Male Dialogue: {this.state.film.bechdelResults.totalLinesMaleDialogue}</p>
-        <p>{this.state.film.plot}</p>
-
-        <BarChart />
+        <div class='plot'>
+          <p>{this.state.film.plot}</p>
+        </div>
+        <span className={styles.results}>
+          <div className={styles.filmData}>
+            <span className={styles.catName}>Directors:</span> {directorNode}<br></br>
+            <span className={styles.catName}>Writers:</span> {writerNode} <br></br>
+            <span className={styles.catName}>Genre:</span> {genreNode}<br></br>
+            <span className={styles.catName}>Rated:</span> {this.state.film.rated}<br></br>
+            <span className={styles.catName}>IMDB:</span> <a href={`http://www.imdb.com/title/${this.state.film.idIMDB}`} target='_blank'>{this.state.film.title}</a><br></br>
+          </div>
+          <div class='bechdelResults'>
+            <span className={styles.catName}>
+              Bechdel Score:
+            </span> {this.state.film.bechdelResults.bechdelScore} of 3<br></br>
+            <span className={styles.catName}>
+              Number of Scenes that pass:
+            </span> {this.state.film.bechdelResults.numScenesPass}<br></br>
+            <span className={styles.catName}>
+              Number of Scenes that dont pass:
+            </span> {this.state.film.bechdelResults.numScenesDontPass}<br></br>
+            <span className={styles.catName}>
+              Number Of Females Characters:</span> {this.state.film.bechdelResults.numOfFemalesChars}<br></br>
+            <span className={styles.catName}>
+              Number Of Male Characters:</span> {this.state.film.bechdelResults.numOfMaleChars}<br></br>
+            <span className={styles.catName}>
+              Number of Females Characters With Dialogue:</span> {this.state.film.bechdelResults.numOfFemalesCharsWithDialogue}<br></br>
+            <span className={styles.catName}>
+              Number of Male Characters With Dialogue:</span> {this.state.film.bechdelResults.numOfMaleCharsWithDialogue}<br></br>
+            <span className={styles.catName}>
+              Total Lines of Female Dialogue:</span> {this.state.film.bechdelResults.totalLinesFemaleDialogue}<br></br>
+            <span className={styles.catName}>
+              Total Lines of Male Dialogue:</span> {this.state.film.bechdelResults.totalLinesMaleDialogue}<br></br>
+          </div>
+        </span>
         <DonutChart />
         <Link to={'/'}><button>All Films</button></Link>
       </div>
