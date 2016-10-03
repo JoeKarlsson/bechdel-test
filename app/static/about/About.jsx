@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import styles from './About.scss';
 
 class About extends React.Component {
@@ -33,7 +34,7 @@ class About extends React.Component {
         <p>
         --Laurel & Joe
         </p>
-
+        <Link to={'/'}><button>All Films</button></Link>
       </div>
     );
   }

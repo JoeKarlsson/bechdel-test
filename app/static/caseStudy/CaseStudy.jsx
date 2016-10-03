@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router';
+
 import styles from './CaseStudy.scss';
 
 class CaseStudy extends React.Component {
@@ -29,8 +31,7 @@ class CaseStudy extends React.Component {
           To view more specific data on each film that was analyzed, please visit the individual film pages.
           </p>
         </div>
-
-
+        <Link to={'/'}><button>all films</button></Link>
       </div>
     );
   }

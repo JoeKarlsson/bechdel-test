@@ -36,7 +36,7 @@
     "test": "./node_modules/.bin/mocha -R spec tests/server/**/**.spec.js",
     "test:server:watch": "npm run test --watch",
     "test:client": "mocha tests/app/.setup.js tests/app/**/*-test.js",
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
     "eslint": "./node_modules/.bin/eslint .",
     "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors"
