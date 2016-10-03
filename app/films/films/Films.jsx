@@ -43,10 +43,12 @@ class Films extends React.Component {
             </p>
           </div>
         </div>
-        <h3>Films</h3>
-        <Link to={'/film/new'}>
-          <button>Add a Film</button>
-        </Link>
+        <div className={styles.films_Header}>
+          <h3>films</h3>
+          <Link to={'/film/new'}>
+            <button>Add a Film</button>
+          </Link>
+        </div>
         <div className='row'>
           <FilmList films={this.state.films} />
         </div>

@@ -4,7 +4,20 @@
 const Promise = require('bluebird');
 const request = require('request');
 const Film = require('../model/Film');
-const CONFIG = require('./../config/config.json');
+const isDeveloping = process.env.NODE_ENV !== 'production';
+let CONFIG;
+let THEMOVIEDB;
+let MYAPIFILMS;
+
+if (isDeveloping) {
+  CONFIG = require('./../config/config.json');
+  THEMOVIEDB = CONFIG.THEMOVIEDB;
+  MYAPIFILMS = CONFIG.MYAPIFILMS;
+} else {
+  THEMOVIEDB = process.env.THEMOVIEDB;
+  MYAPIFILMS = process.env.MYAPIFILMS;
+}
+
 let filmData = {
   actors: [],
   images: {},
