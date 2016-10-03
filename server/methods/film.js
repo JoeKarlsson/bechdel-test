@@ -18,8 +18,6 @@ if (isDeveloping) {
   MYAPIFILMS = process.env.MYAPIFILMS;
 }
 
-console.log('THEMOVIEDB: ', THEMOVIEDB);
-
 let filmData = {
   actors: [],
   images: {},
@@ -83,7 +81,7 @@ const getFilmImages = (ID) => {
     request(
       'https://api.themoviedb.org/3/movie/' +
       `${ID}/images?` +
-      `api_key=${CONFIG.THEMOVIEDB}` +
+      `api_key=${THEMOVIEDB}` +
       '&language=en&' +
       'include_image_language=en,null',
       (error, response, body) => {
@@ -107,7 +105,7 @@ module.exports.getSimpleCastData = (title) => {
     request.get(
       'http://api.myapifilms.com/imdb/idIMDB?' +
       `title=${title}&` +
-      `token=${CONFIG.MYAPIFILMS}&` +
+      `token=${MYAPIFILMS}&` +
       'format=json&' +
       'language=en-us&' +
       'aka=0&' +
@@ -153,7 +151,7 @@ module.exports.getFullCastData = (title) => {
     request.get(
       'http://api.myapifilms.com/imdb/idIMDB?' +
       `title=${title}&` +
-      `token=${CONFIG.MYAPIFILMS}&` +
+      `token=${MYAPIFILMS}&` +
       'format=json&' +
       'language=en-us&' +
       'aka=0&' +
