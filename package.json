@@ -37,9 +37,9 @@
     "test:server:watch": "npm run test --watch",
     "test:client": "mocha tests/app/.setup.js tests/app/**/*-test.js",
     "start": "node server/server.js",
-    "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "rimraf dist && set NODE_ENV=production && webpack --config ./server/webpack/webpack.production.config.js --progress --profile --colors",
     "eslint": "./node_modules/.bin/eslint .",
-    "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors"
+    "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./server/webpack/webpack.production.config.js --progress --profile --colors"
   },
   "dependencies": {
     "autoprefixer": "^6.0.3",
