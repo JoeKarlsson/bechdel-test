@@ -10,9 +10,6 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('./webpack/webpack.config.js');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
@@ -35,6 +32,10 @@ Promise.onPossiblyUnhandledRejection((err) => {
 app.use('/api/film', film);
 
 if (isDeveloping) {
+  const webpackMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const config = require('./webpack/webpack.config.js');
+
   app.set('host', 'http://localhost');
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
