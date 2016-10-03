@@ -18,6 +18,8 @@ if (isDeveloping) {
   MYAPIFILMS = process.env.MYAPIFILMS;
 }
 
+console.log('THEMOVIEDB: ', THEMOVIEDB);
+
 let filmData = {
   actors: [],
   images: {},
