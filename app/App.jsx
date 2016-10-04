@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div className={styles.site}>
         <header className={styles.header_bar}>
-          <NavLink to='/' onlyActiveOnIndex={true} className={styles.header_logo}>bechdel test visualizer</NavLink>
+          <NavLink to='/' onlyActiveOnIndex={true} className={styles.header_logo}>bechdel.io</NavLink>
           <ul className={styles.header_nav}>
             <li><NavLink to='/about'>about</NavLink></li>
             <li><NavLink to='/case-study'>case study</NavLink></li>
