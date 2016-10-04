@@ -137,7 +137,6 @@ class Film extends React.Component {
               Total Lines of Male Dialogue:</span> {this.state.film.bechdelResults.totalLinesMaleDialogue}<br></br>
           </div>
         </span>
-        <DonutChart />
         <Link to={'/'}><button>All Films</button></Link>
       </div>
     )
