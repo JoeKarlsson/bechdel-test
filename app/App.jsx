@@ -28,7 +28,7 @@ class App extends React.Component {
 
         <footer className={styles.footer}>
           <div className={styles.footer_content}>
-            <a target='_blank' href='https://github.com/JoeKarlsson1/bechdel-test'><p>a karlsson production.</p></a>
+            <a target='_blank' href='https://github.com/JoeKarlsson/bechdel-test'><p>a karlsson production.</p></a>
           </div>
         </footer>
       </div>
