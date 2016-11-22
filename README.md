@@ -17,7 +17,7 @@ This program accepts a movie script and analzes whether or not it passes the Bec
 
 Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
 
-    git clone https://github.com/JoeKarlsson1/bechdel-test
+    git clone https://github.com/JoeKarlsson/bechdel-test
     cd bechdel-test
 
 Next, inside the project, you need to install the project's various NPM dependencies:
