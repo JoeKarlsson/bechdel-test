@@ -1,6 +1,6 @@
-#Bechdel Test Movie Script Parser
+# Bechdel Test Movie Script Parser
 
-##The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
+## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
 1. It includes at least two women
 2. who have at least one conversation
@@ -8,8 +8,7 @@
 
 The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule. For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on [feministfrequency.com](http://feministfrequency.com/).
 
-![Bechdel Test]
-(http://www.mestudios.com/wp-content/uploads/2014/12/Bechdel-the-rule.jpg)
+![Bechdel Test](http://www.mestudios.com/wp-content/uploads/2014/12/Bechdel-the-rule.jpg)
 
 This program accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
 
