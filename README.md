@@ -75,18 +75,18 @@ Lint the file using a custom AirBnB configuration.
 Used for cleaning up webpack build on Heroku.
 
 
-##Contributing
+## Contributing
 1. Fork it!
 2. Create your feature branch: ```git checkout -b my-new-feature```
 3. Commit your changes: ```git commit -am 'Add some feature'```
 4. Push to the branch: ````git push origin my-new-feature````
 5. Submit a pull request :D
 
-##Credits
-- Joe Carlson
+## Credits
+- Joe Karlsson
 - Laurel Carlson
 
-##Related Links
+## Related Links
 - [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
 - [The Open Movie Database](http://www.omdbapi.com/)
 - [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
