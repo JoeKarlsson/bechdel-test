@@ -34,7 +34,7 @@ app.use('/api/film', film);
 if (isDeveloping) {
   const webpackMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
-  const config = require('./webpack/webpack.config.js');
+  const config = require('../webpack.config.js');
 
   app.set('host', 'http://localhost');
   const compiler = webpack(config);

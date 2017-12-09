@@ -1,10 +1,11 @@
-import React from 'react';
-import FilmItem from './FilmItem.jsx';
-import styles from './FilmList.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import FilmItem from "./FilmItem.jsx";
+import styles from "./FilmList.scss";
 
 class FilmList extends React.Component {
   render() {
-    let filmListNode = this.props.films.map((filmData) => {
+    let filmListNode = this.props.films.map(filmData => {
       return (
         <FilmItem
           film={filmData}
@@ -14,20 +15,16 @@ class FilmList extends React.Component {
       );
     });
 
-    return (
-      <div className={styles.filmList}>
-        {filmListNode}
-      </div>
-    );
+    return <div className={styles.filmList}>{filmListNode}</div>;
   }
 }
 
 FilmList.propTypes = {
-  films: React.PropTypes.array,
+  films: PropTypes.array
 };
 
 FilmList.defaultProps = {
-  films: [],
+  films: []
 };
 
 export default FilmList;

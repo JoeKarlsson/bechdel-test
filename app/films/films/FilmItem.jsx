@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router';
-import styles from './FilmItem.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router";
+import styles from "./FilmItem.scss";
 
 class FilmItem extends React.Component {
   render() {
@@ -16,9 +17,7 @@ class FilmItem extends React.Component {
                 src={this.props.film.images.poster}
                 alt={this.props.film.title}
               />
-              <p className={styles.filmItem_title}>
-                {this.props.film.title}
-              </p>
+              <p className={styles.filmItem_title}>{this.props.film.title}</p>
             </Link>
           </div>
         </li>
@@ -28,17 +27,17 @@ class FilmItem extends React.Component {
 }
 
 FilmItem.propTypes = {
-  film: React.PropTypes.object,
+  film: PropTypes.object
 };
 
 FilmItem.defaultProps = {
   film: {
-    title: 'Movie Title',
+    title: "Movie Title",
     images: {
-      poster: 'Movie Poster URL',
+      poster: "Movie Poster URL"
     },
-    id: '123456',
-  },
+    id: "123456"
+  }
 };
 
 export default FilmItem;

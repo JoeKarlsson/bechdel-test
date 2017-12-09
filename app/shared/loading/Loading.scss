@@ -1,65 +1,101 @@
 .Loader_indicator.fade-enter,
 .Loader_content.fade-enter {
-  opacity: 0;
+	opacity: 0;
 }
 
 .Loader_indicator.fade-enter-active,
 .Loader_content.fade-enter-active {
-  opacity: 1;
+	opacity: 1;
 }
 
 .Loader_indicator.fade-leave,
 .Loader_content.fade-leave {
-  opacity: 1;
+	opacity: 1;
 }
 
 .Loader_indicator.fade-leave-active,
 .Loader_content.fade-leave-active {
-  opacity: 0;
+	opacity: 0;
 }
 
 .Loader_content,
 .Loader_indicator {
-  transition: opacity 1s;
+	transition: opacity 1s;
 }
 
 .Loader_ellipsisDot {
-  padding: 0 3px 0 1px;
-  opacity: 0;
-  animation-duration: 3000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+	padding: 0 3px 0 1px;
+	opacity: 0;
+	animation-duration: 3000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
 @keyframes Loader_ellipsisDot1 {
-  0%   { opacity: 0; }
-  25%  { opacity: 0; }
-  35%  { opacity: 1; }
-  100% { opacity: 1; }
+
+	0% {
+		opacity: 0;
+	}
+
+	25% {
+		opacity: 0;
+	}
+
+	35% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes Loader_ellipsisDot2 {
-  0%   { opacity: 0; }
-  50%  { opacity: 0; }
-  60%  { opacity: 1; }
-  100% { opacity: 1; }
+
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	60% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes Loader_ellipsisDot3 {
-  0%   { opacity: 0; }
-  75%  { opacity: 0; }
-  85%  { opacity: 1; }
-  100% { opacity: 1; }
+
+	0% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0;
+	}
+
+	85% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 .Loader_ellipsisDot:nth-child(1) {
-  animation-name: Loader_ellipsisDot1;
+	animation-name: Loader_ellipsisDot1;
 }
 
 .Loader_ellipsisDot:nth-child(2) {
-  animation-name: Loader_ellipsisDot2;
+	animation-name: Loader_ellipsisDot2;
 }
 
 .Loader_ellipsisDot:nth-child(3) {
-  animation-name: Loader_ellipsisDot3;
+	animation-name: Loader_ellipsisDot3;
 }
