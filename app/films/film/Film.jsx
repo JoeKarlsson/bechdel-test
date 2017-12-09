@@ -1,27 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router';
-import styles from './Film.scss';
-import * as $ from 'jquery';
-import BarChart from '../../graphs/barChart/BarChart.jsx';
-import DonutChart from '../../graphs/donutChart/DonutChart.jsx';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router";
+import styles from "./Film.scss";
+import * as $ from "jquery";
 
 class Film extends React.Component {
   constructor() {
     super();
     this.state = {
       film: {
-        title: '',
+        title: "",
         images: {
-          poster: '',
-          backdrop: '',
+          poster: "",
+          backdrop: ""
         },
-        plot: '',
+        plot: "",
         directors: [],
         writers: [],
         genres: [],
-        rated: '',
+        rated: "",
         bechdelResults: {
-          pass: 'false',
+          pass: "false",
           bechdelScore: 0,
           numScenesPass: 0,
           scenesThatPass: [],
@@ -31,18 +30,18 @@ class Film extends React.Component {
           numOfFemalesCharsWithDialogue: 0,
           numOfMaleCharsWithDialogue: 0,
           totalLinesFemaleDialogue: 0,
-          totalLinesMaleDialogue: 0,
-        },
-      },
+          totalLinesMaleDialogue: 0
+        }
+      }
     };
-    this.getFilm = this.getFilm.bind(this)
-  };
+    this.getFilm = this.getFilm.bind(this);
+  }
 
   getFilm() {
     $.ajax({
       url: "/api/film/" + this.props.params.id,
-      method: 'GET',
-      dataType: 'json',
+      method: "GET",
+      dataType: "json",
       cache: false,
       success: function(data) {
         this.setState({ film: data });
@@ -51,100 +50,125 @@ class Film extends React.Component {
         console.error(this.props, status, err.toString());
       }.bind(this)
     });
-  };
+  }
 
   componentDidMount() {
     this.getFilm();
-  };
+  }
 
   render() {
-    const directorNode = this.state.film.directors.map((director) => {
+    const directorNode = this.state.film.directors.map(director => {
       const directors = this.state.film.directors;
-      if ( director.name === directors[directors.length-1].name) {
-        return (
-          <span key={director.id}>{director.name}</span>
-        );
+      if (director.name === directors[directors.length - 1].name) {
+        return <span key={director.id}>{director.name}</span>;
       }
-      return (
-        <span key={director.id}>{director.name} & </span>
-      );
+      return <span key={director.id}>{director.name} & </span>;
     });
-    const writerNode = this.state.film.writers.map((writer) => {
+    const writerNode = this.state.film.writers.map(writer => {
       const writers = this.state.film.writers;
-      if ( writer.name !== writers[writers.length-1].name) {
-        return (
-          <span key={writer.id}>{writer.name} & </span>
-        );
+      if (writer.name !== writers[writers.length - 1].name) {
+        return <span key={writer.id}>{writer.name} & </span>;
       } else {
-        return (
-          <span key={writer.id}>{writer.name}</span>
-        );
+        return <span key={writer.id}>{writer.name}</span>;
       }
     });
-    const genreNode = this.state.film.genres.map((genre) => {
+    const genreNode = this.state.film.genres.map(genre => {
       const genres = this.state.film.genres;
-      if ( genre !== genres[genres.length-1]) {
-        return (
-          <span key={Math.floor(Math.random()*100)}>{genre} | </span>
-        );
+      if (genre !== genres[genres.length - 1]) {
+        return <span key={Math.floor(Math.random() * 100)}>{genre} | </span>;
       } else {
-        return (
-          <span key={Math.floor(Math.random()*100)}>{genre}</span>
-        );
+        return <span key={Math.floor(Math.random() * 100)}>{genre}</span>;
       }
     });
     return (
       <div className={styles.filmInfo}>
         <h1>{this.state.film.title}</h1>
-        <h3>Bechdel Pass: {this.state.film.bechdelResults.pass.toString().toUpperCase()}</h3>
+        <h3>
+          Bechdel Pass:{" "}
+          {this.state.film.bechdelResults.pass.toString().toUpperCase()}
+        </h3>
         <p>Bechdel Score: {this.state.film.bechdelResults.bechdelScore} of 3</p>
         <img
           src={this.state.film.images.backdrop}
           alt={this.state.film.title}
         />
-        <div class='plot'>
+        <div className="plot">
           <p>{this.state.film.plot}</p>
         </div>
         <span className={styles.results}>
           <div className={styles.filmData}>
-            <span className={styles.catName}>Directors:</span> {directorNode}<br></br>
-            <span className={styles.catName}>Writers:</span> {writerNode} <br></br>
-            <span className={styles.catName}>Genre:</span> {genreNode}<br></br>
-            <span className={styles.catName}>Rated:</span> {this.state.film.rated}<br></br>
-            <span className={styles.catName}>IMDB:</span> <a href={`http://www.imdb.com/title/${this.state.film.idIMDB}`} target='_blank'>{this.state.film.title}</a><br></br>
+            <span className={styles.catName}>Directors:</span> {directorNode}
+            <br />
+            <span className={styles.catName}>Writers:</span> {writerNode} <br />
+            <span className={styles.catName}>Genre:</span> {genreNode}
+            <br />
+            <span className={styles.catName}>Rated:</span>{" "}
+            {this.state.film.rated}
+            <br />
+            <span className={styles.catName}>IMDB:</span>{" "}
+            <a
+              href={`http://www.imdb.com/title/${this.state.film.idIMDB}`}
+              target="_blank"
+            >
+              {this.state.film.title}
+            </a>
+            <br />
           </div>
-          <div class='bechdelResults'>
-            <span className={styles.catName}>
-              Bechdel Score:
-            </span> {this.state.film.bechdelResults.bechdelScore} of 3<br></br>
+          <div className="bechdelResults">
+            <span className={styles.catName}>Bechdel Score:</span>{" "}
+            {this.state.film.bechdelResults.bechdelScore} of 3<br />
             <span className={styles.catName}>
               Number of Scenes that pass:
-            </span> {this.state.film.bechdelResults.numScenesPass}<br></br>
+            </span>{" "}
+            {this.state.film.bechdelResults.numScenesPass}
+            <br />
             <span className={styles.catName}>
               Number of Scenes that dont pass:
-            </span> {this.state.film.bechdelResults.numScenesDontPass}<br></br>
+            </span>{" "}
+            {this.state.film.bechdelResults.numScenesDontPass}
+            <br />
             <span className={styles.catName}>
-              Number Of Females Characters:</span> {this.state.film.bechdelResults.numOfFemalesChars}<br></br>
+              Number Of Females Characters:
+            </span>{" "}
+            {this.state.film.bechdelResults.numOfFemalesChars}
+            <br />
             <span className={styles.catName}>
-              Number Of Male Characters:</span> {this.state.film.bechdelResults.numOfMaleChars}<br></br>
+              Number Of Male Characters:
+            </span>{" "}
+            {this.state.film.bechdelResults.numOfMaleChars}
+            <br />
             <span className={styles.catName}>
-              Number of Females Characters With Dialogue:</span> {this.state.film.bechdelResults.numOfFemalesCharsWithDialogue}<br></br>
+              Number of Females Characters With Dialogue:
+            </span>{" "}
+            {this.state.film.bechdelResults.numOfFemalesCharsWithDialogue}
+            <br />
             <span className={styles.catName}>
-              Number of Male Characters With Dialogue:</span> {this.state.film.bechdelResults.numOfMaleCharsWithDialogue}<br></br>
+              Number of Male Characters With Dialogue:
+            </span>{" "}
+            {this.state.film.bechdelResults.numOfMaleCharsWithDialogue}
+            <br />
             <span className={styles.catName}>
-              Total Lines of Female Dialogue:</span> {this.state.film.bechdelResults.totalLinesFemaleDialogue}<br></br>
+              Total Lines of Female Dialogue:
+            </span>{" "}
+            {this.state.film.bechdelResults.totalLinesFemaleDialogue}
+            <br />
             <span className={styles.catName}>
-              Total Lines of Male Dialogue:</span> {this.state.film.bechdelResults.totalLinesMaleDialogue}<br></br>
+              Total Lines of Male Dialogue:
+            </span>{" "}
+            {this.state.film.bechdelResults.totalLinesMaleDialogue}
+            <br />
           </div>
         </span>
-        <Link to={'/'}><button>All Films</button></Link>
+        <Link to={"/"}>
+          <button>All Films</button>
+        </Link>
       </div>
-    )
+    );
   }
-};
+}
 
 Film.propTypes = {
-  film: React.PropTypes.object,
+  film: PropTypes.object
 };
 
 export default Film;

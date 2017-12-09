@@ -1,10 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router';
-import styles from './NavLink.scss';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styles from "./NavLink.scss";
+
+const activeStyles = {
+  color: "red"
+};
 
 class NavLink extends React.Component {
   render() {
-    return <Link {...this.props} activeClassName={styles.active}/>;
+    return <NavLink {...this.props} activeStyle={activeStyles} />;
   }
 }
 
