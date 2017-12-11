@@ -1,9 +1,7 @@
 /*
-  eslint strict: 0
+  eslint
   no-console: 0
 */
-
-'use strict';
 
 const express = require('express');
 const app = express();
