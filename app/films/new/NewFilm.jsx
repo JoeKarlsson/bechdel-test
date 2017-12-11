@@ -57,7 +57,7 @@ class NewFilm extends React.Component {
 
   render() {
     return (
-      <div className={styles.newFilm}>
+      <div className="newFilm">
         <h1>test a new script</h1>
         {this.state.isLoading ? (
           <Loading />
