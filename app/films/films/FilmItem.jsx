@@ -1,23 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router";
-import styles from "./FilmItem.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './FilmItem.scss';
 
 class FilmItem extends React.Component {
   render() {
+    const { film } = this.props;
+		const filmUrl = `/film/${this.props.film._id}`;
+    console.log('filmUrl', filmUrl);
+
     return (
-      <div className={styles.filmItem}>
-        <li className={styles.filmItem_ListItem}>
+      <div className='filmItem'>
+        <li className='filmItem_ListItem'>
           <div>
-            <Link
-              className={styles.gist_description}
-              to={`/film/${this.props.film._id}`}
-            >
+            <Link to={filmUrl} >
               <img
                 src={this.props.film.images.poster}
                 alt={this.props.film.title}
               />
-              <p className={styles.filmItem_title}>{this.props.film.title}</p>
+              <p className='filmItem_title'>{this.props.film.title}</p>
             </Link>
           </div>
         </li>
@@ -32,11 +33,11 @@ FilmItem.propTypes = {
 
 FilmItem.defaultProps = {
   film: {
-    title: "Movie Title",
+    title: 'Movie Title',
     images: {
-      poster: "Movie Poster URL"
+      poster: 'Movie Poster URL'
     },
-    id: "123456"
+    id: '123456'
   }
 };
 

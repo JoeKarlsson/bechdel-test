@@ -24,7 +24,7 @@ This program accepts a movie script and analzes whether or not it passes the Bec
 
 ## Prerequisites
 
-[MongoDB](https://www.mongodb.com/) is a required dependency of this project.
+* [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
 
 ## Setup Your Project
 
