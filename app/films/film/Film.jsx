@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styles from "./Film.scss";
 import * as $ from "jquery";
 
@@ -39,7 +39,7 @@ class Film extends React.Component {
 
   getFilm() {
     $.ajax({
-      url: "/api/film/" + this.props.params.id,
+      url: "/api/film/" + this.props.match.params.id,
       method: "GET",
       dataType: "json",
       cache: false,
