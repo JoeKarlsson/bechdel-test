@@ -57,10 +57,10 @@ if (isDeveloping) {
   app.use(webpackHotMiddleware(compiler));
   app.get('*', response);
 } else {
-  app.use(express.static(`${__dirname}/dist`));
+  app.use(express.static('dist'));
   app.get('*', (req, res) => {
     res.write(
-      fs.readFileSync(path.resolve(__dirname, 'dist/index.html'))
+      fs.readFileSync(path.resolve(__dirname, '../dist/index.html'))
     );
   });
 }
