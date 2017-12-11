@@ -42,6 +42,7 @@
     "lint:out": "npm run lint -- -f checkstyle -o coverage/checkstyle.xml",
     "lint:css": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:css:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
+		"coverage": "echo 'hello'",
     "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors",
     "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors"
   },
