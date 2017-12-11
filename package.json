@@ -2,7 +2,7 @@
   "name": "Bechdel_Test",
   "version": "0.3.0",
   "engines": {
-    "node": "6.2.0"
+    "node": "8.8.0"
   },
   "description": "A node based interactive site to analyze a movie script in order to tell if it passes the Bechdel Test.",
   "main": "server/server.js",
@@ -43,7 +43,6 @@
     "lint:css": "stylelint 'src/**/*.scss' --syntax scss",
     "lint:css:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
     "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors",
-    "eslint": "./node_modules/.bin/eslint .",
     "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors"
   },
   "dependencies": {
@@ -88,7 +87,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "6.24.x",
     "babel-register": "6.x.x",
-    "browserslist": "^2.10.0",
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -102,7 +100,6 @@
     "mocha-loader": "^0.7.1",
     "nodemon": "^1.9.2",
     "npm": "^3.9.5",
-    "prettier": "1.9.1",
     "prop-types": "^15.6.0",
     "react-addons-test-utils": "^0.14.8",
     "rimraf": "^2.4.3",
