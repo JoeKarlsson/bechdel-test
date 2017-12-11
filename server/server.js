@@ -49,7 +49,7 @@ if (isDeveloping) {
     },
   });
   const response = (req, res) => {
-    res.write(middleware.fileSystem.readFileSync(path.resolve(__dirname, 'dist/index.html')));
+    res.write(middleware.fileSystem.readFileSync(path.resolve(__dirname, '../dist/index.html')));
     res.end();
   };
 
