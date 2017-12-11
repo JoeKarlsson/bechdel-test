@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const isDeveloping = process.env.NODE_ENV !== 'production';
+const mongoose = require("mongoose");
+const isDeveloping = process.env.NODE_ENV !== "production";
 
 if (isDeveloping) {
-  mongoose.connect('mongodb://localhost/bechdelTest');
+  mongoose.connect("mongodb://localhost/bechdelTest");
 } else {
   /*
    * Mongoose by default sets the auto_reconnect option to true.
@@ -11,19 +11,26 @@ if (isDeveloping) {
    * plenty of time in most operating environments.
    */
   const options = {
-    server: { socketOptions: {
-      keepAlive: 300000, connectTimeoutMS: 30000,
-    } },
-    replset: { socketOptions: {
-      keepAlive: 300000, connectTimeoutMS: 30000,
-    } },
+    server: {
+      socketOptions: {
+        keepAlive: 300000,
+        connectTimeoutMS: 30000
+      }
+    },
+    replset: {
+      socketOptions: {
+        keepAlive: 300000,
+        connectTimeoutMS: 30000
+      }
+    }
   };
+  console.log("process.env", process.env.MONGODB_URI);
   mongoose.connect(process.env.MONGODB_URI, options);
 }
 const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
   // We're connected to MongoDB
 });
 
