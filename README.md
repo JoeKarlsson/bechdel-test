@@ -149,5 +149,5 @@ Used for cleaning up webpack build on Heroku.
 [license-url]: https://github.com/JoeKarlsson/bechdel-test/blob/master/LICENSE
 [twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/bechdel-test.svg?style=social&style=flat-square
 [twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbechdel-test
-[code style: prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+[code style: prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
 [code style: prettier-url]: https://github.com/prettier/prettier
