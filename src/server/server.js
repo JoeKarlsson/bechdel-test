@@ -1,8 +1,3 @@
-/*
-  eslint
-  no-console: 0
-*/
-
 const express = require('express');
 const webpack = require('webpack');
 const webpackHotMiddleware = require('webpack-hot-middleware');
