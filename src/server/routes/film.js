@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose');
+const Film = require('../model/Film');
 const film = require('../methods/film');
 const script = require('../methods/script');
 const bechdel = require('../methods/bechdel');
@@ -9,132 +9,130 @@ const multer = require('multer');
 const router = express.Router();
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, '../tmp');
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
+	destination: (req, file, cb) => {
+		cb(null, '../tmp');
+	},
+	filename: (req, file, cb) => {
+		cb(null, file.originalname);
+	},
 });
 const upload = multer({ storage });
-const cpUpload = upload.fields([
-  {
-    name: 'script',
-    maxCount: 1,
-  },
-]);
-const Film = mongoose.model('Film');
+const cpUpload = upload.fields([{
+	name: 'script',
+	maxCount: 1,
+}]);
 
 /*
   * FILM ROUTES
 */
 router.route('/')
-  .get((req, res) => {
-    Film.listAll()
-    .then((films) => {
-      if (!films) {
-        res.status(500).send('No list of films returned from film.listAll()');
-        throw new Error('No list of films returned from film.listAll()');
-      }
-      res.send(films);
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-      throw new Error(err);
-    });
-  })
-  .post(cpUpload, (req, res) => {
-    let scriptPath;
-    let filmTitle;
+	.get((req, res) => {
+		Film.listAll()
+			.then((films) => {
+				if (!films) {
+					res.status(500).send('No list of films returned from film.listAll()');
+					throw new Error('No list of films returned from film.listAll()');
+				}
+				res.send(films);
+			})
+			.catch((err) => {
+				res.status(500).send(err);
+				throw new Error(err);
+			});
+	})
+	.post(cpUpload, (req, res) => {
+		let scriptPath;
+		let filmTitle;
+		console.log('req.files.script', req.files.script);
 
-    if (!req.files.script) {
-      res.status(500).send('No script submitted, please try again');
-    } else {
-      if (path.extname(req.files.script[0].originalname) !== '.txt') {
-        res.status(500).send('Please send a .txt script');
-      }
-      scriptPath = req.files.script[0].path;
-      script.readMovieTitle(scriptPath)
-      .then((title) => {
-        if (!title) {
-          res.status(500).send('No movie returned from script.readMovieTitle(scriptPath)');
-          throw new Error('No movie returned from script.readMovieTitle(scriptPath)');
-        }
-        filmTitle = title;
-        return Film.findByTitle(filmTitle);
-      })
-      .then((movie) => {
-        if (movie) {
-          script.clearTemp(scriptPath);
-          return res.send(movie);
-        }
-        bechdel.getBechdelResults(filmTitle, scriptPath)
-        .then((bechdelResults) => {
-          if (!bechdelResults) {
-            throw new Error(
-              'No movie returned from ' +
-              'bechdel.getBechdelResults(filmTitle, scriptPath)'
-            );
-          }
-          const data = film.getAllData();
-          return Film.insert(
-            filmTitle,
-            bechdelResults,
-            data.actors,
-            data.images,
-            data.data[0].data.movies
-          );
-        })
-        .then((savedFilm) => {
-          if (!savedFilm) {
-            return res.status(500).send('Film not properly saved.');
-          }
-          film.clearData();
-          script.clearTemp(scriptPath);
-          return res.send(savedFilm);
-        })
-        .catch((err) => {
-          res.status(500).send(err);
-          throw new Error(err);
-        });
-      })
-      .catch((err) => {
-        res.status(500).send(err);
-        throw new Error(err);
-      })
-      .error((err) => {
-        res.status(500).send(err);
-        throw new Error(err);
-      });
-    }
-  });
+		if (!req.files.script) {
+			res.status(500).send('No script submitted, please try again');
+		} else {
+			if (path.extname(req.files.script[0].originalname) !== '.txt') {
+				res.status(500).send('Please send a .txt script');
+			}
+			scriptPath = req.files.script[0].path;
+			script.readMovieTitle(scriptPath)
+				.then((title) => {
+					if (!title) {
+						res.status(500).send('No movie returned from script.readMovieTitle(scriptPath)');
+						throw new Error('No movie returned from script.readMovieTitle(scriptPath)');
+					}
+					filmTitle = title;
+					return Film.findByTitle(filmTitle);
+				})
+				.then((movie) => {
+					if (movie) {
+						script.clearTemp(scriptPath);
+						return res.send(movie);
+					}
+					bechdel.getBechdelResults(filmTitle, scriptPath)
+						.then((bechdelResults) => {
+							if (!bechdelResults) {
+								throw new Error(
+									'No movie returned from ' +
+									'bechdel.getBechdelResults(filmTitle, scriptPath)',
+								);
+							}
+							const data = film.getAllData();
+							return Film.insert(
+								filmTitle,
+								bechdelResults,
+								data.actors,
+								data.images,
+								data.data[0].data.movies,
+							);
+						})
+						.then((savedFilm) => {
+							if (!savedFilm) {
+								return res.status(500).send('Film not properly saved.');
+							}
+							film.clearData();
+							script.clearTemp(scriptPath);
+							return res.send(savedFilm);
+						})
+						.catch((err) => {
+							res.status(500).send(err);
+							throw new Error(err);
+						});
+				})
+				.catch((err) => {
+					res.status(500).send(err);
+					throw new Error(err);
+				})
+				.error((err) => {
+					res.status(500).send(err);
+					throw new Error(err);
+				});
+		}
+	});
 
 router.route('/:id')
-  .get((req, res) => {
-    Film.findByID(req.params.id)
-    .then((movie) => {
-      if (!movie) {
-        return res.send('No movie found by that ID');
-      }
-      return res.send(movie);
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-      throw new Error(err);
-    });
-  })
-  .delete((req, res) => {
-    Film.deleteFilm(req.params.id)
-    .then((movie) => {
-      if (!movie) {
-        return res.send('No movie found by that ID');
-      }
-      return res.json({ success: true });
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-      throw new Error(err);
-    });
-  });
+	.get((req, res) => {
+		Film.findByID(req.params.id)
+			.then((movie) => {
+				if (!movie) {
+					return res.send('No movie found by that ID');
+				}
+				return res.send(movie);
+			})
+			.catch((err) => {
+				res.status(500).send(err);
+				throw new Error(err);
+			});
+	})
+	.delete((req, res) => {
+		Film.deleteFilm(req.params.id)
+			.then((movie) => {
+				if (!movie) {
+					return res.send('No movie found by that ID');
+				}
+				return res.json({ success: true });
+			})
+			.catch((err) => {
+				res.status(500).send(err);
+				throw new Error(err);
+			});
+	});
 
 module.exports = router;
