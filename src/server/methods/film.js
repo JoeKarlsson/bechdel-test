@@ -13,7 +13,7 @@ let THEMOVIEDB;
 let MYAPIFILMS;
 
 if (isDeveloping) {
-	CONFIG = require('../config/config.json');
+	CONFIG = require('../config/config.json'); // eslint-disable-line global-require
 	THEMOVIEDB = CONFIG.THEMOVIEDB;
 	MYAPIFILMS = CONFIG.MYAPIFILMS;
 } else {
@@ -249,6 +249,8 @@ const clearData = () => {
 		images: {},
 		data: [],
 	};
+
+	return filmData;
 };
 
 module.exports = {
