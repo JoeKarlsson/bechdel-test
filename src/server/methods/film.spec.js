@@ -205,9 +205,34 @@ describe('Film methods', () => {
 
 			film.getFullCastData(filmTitle)
 				.then((body) => {
-					console.log('body', body);
 					expect(body).toMatchObject({});
 				});
+		}));
+	});
+
+	describe('#getAllData', () => {
+		it('should return the empty filmData obj', (() => {
+			const result = film.getAllData();
+
+			const filmData = {
+				actors: [],
+				images: {},
+				data: [],
+			};
+			expect(result).toMatchObject(filmData);
+		}));
+	});
+
+	describe('#clearData', () => {
+		it('should clear the filmData obj', (() => {
+			const result = film.clearData();
+
+			const filmData = {
+				actors: [],
+				images: {},
+				data: [],
+			};
+			expect(result).toMatchObject(filmData);
 		}));
 	});
 });
