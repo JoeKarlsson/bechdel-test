@@ -1,14 +1,13 @@
-/* eslint strict: 0*/
-'use strict';
-
 const express = require('express');
-const router = express.Router();
 const path = require('path');
 const mongoose = require('mongoose');
 const film = require('../methods/film');
 const script = require('../methods/script');
 const bechdel = require('../methods/bechdel');
 const multer = require('multer');
+
+const router = express.Router();
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, '../tmp');

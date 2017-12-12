@@ -1,5 +1,11 @@
+/* eslint
+	no-unused-vars: 0
+	prefer-destructuring: 0
+*/
+
 const Promise = require('bluebird');
 const request = require('request');
+const Film = require('../model/Film');
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 let CONFIG;
