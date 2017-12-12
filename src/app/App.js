@@ -1,20 +1,16 @@
-import React from "react";
-import { Route, Switch, NavLink } from "react-router-dom";
-import skeleton from "./shared/css/skeleton.css";
-import normalize from "./shared/css/normalize.css";
-import Home from "./home/Home.jsx";
-import About from "./static/about/About.jsx";
-import CaseStudy from "./static/caseStudy/CaseStudy.jsx";
-import Films from "./films/films/Films.jsx";
-import Film from "./films/film/Film.jsx";
-import NewFilm from "./films/new/NewFilm.jsx";
-import NoMatch from "./shared/NoMatch.jsx";
-import ErrorBoundary from "./shared/ErrorBoundary/ErrorBoundary";
-import styles from "./App.scss";
-
-const activeStyles = {
-  color: "red"
-};
+import React from 'react';
+import { Route, Switch, NavLink } from 'react-router-dom';
+import skeleton from './shared/css/skeleton.css';
+import normalize from './shared/css/normalize.css';
+import Home from './home/Home.jsx';
+import About from './static/about/About.jsx';
+import CaseStudy from './static/caseStudy/CaseStudy.jsx';
+import Films from './films/films/Films.jsx';
+import Film from './films/film/Film.jsx';
+import NewFilm from './films/new/NewFilm.jsx';
+import NoMatch from './shared/NoMatch.jsx';
+import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
+import styles from './App.scss';
 
 class App extends React.Component {
   render() {
