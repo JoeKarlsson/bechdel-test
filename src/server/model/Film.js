@@ -2,12 +2,10 @@
   eslint
     no-unused-expressions: 0,
     func-names: 0,
-    strict: 0,
     new-cap:0,
     arrow-body-style: 0
 */
 /* eslint-env mocha, mongo */
-'use strict';
 
 require('./index.js');
 const Promise = require('bluebird');

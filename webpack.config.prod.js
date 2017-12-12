@@ -8,7 +8,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
 	entry: [
-		path.join(__dirname, '/app/entry.jsx'),
+		path.join(__dirname, '/src/app/entry.jsx'),
 	],
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -22,7 +22,7 @@ module.exports = {
 			allChunks: true,
 		}),
 		new HtmlWebpackPlugin({
-			template: 'app/index.tpl.html',
+			template: 'src/app/index.tpl.html',
 			inject: 'body',
 			filename: 'index.html',
 		}),
