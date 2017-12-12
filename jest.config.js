@@ -5,9 +5,6 @@ module.exports = {
 	collectCoverageFrom: [
 		'src/**/*.js',
 	],
-	coveragePathIgnorePatterns: [
-		'<rootDir>/preview',
-	],
 	coverageReporters: [
 		'html',
 		'text-summary',
@@ -18,7 +15,6 @@ module.exports = {
 	coverageDirectory: 'coverage',
 	moduleDirectories: [
 		'node_modules',
-		'node_modules/@shop',
 		'src',
 	],
 	coverageThreshold: {

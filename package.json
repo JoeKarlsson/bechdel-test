@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/JoeKarlsson/bechdel-test",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node src/server/server.js",
     "test": "jest --coverage",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "test:watch": "jest --watch",
@@ -87,6 +87,7 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.4.13",
     "multer": "^1.1.0",
+    "nock": "^9.1.4",
     "node-sass": "^3.7.0",
     "npm": "^3.9.5",
     "nyc": "^11.3.0",
