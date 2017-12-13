@@ -5,7 +5,6 @@
     new-cap:0,
     arrow-body-style: 0
 */
-/* eslint-env mocha, mongo */
 
 require('./index.js');
 const Promise = require('bluebird');

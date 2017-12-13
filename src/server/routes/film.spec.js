@@ -4,34 +4,9 @@ const app = require('../server.js');
 const mockListAllResponse = ['foo', 'bar'];
 const mockFindByIDResponse = { title: 'Boyhood' };
 
-jest.mock('../methods/film');
-jest.mock('../methods/bechdel', () => {
-	return {
-		getBechdelResults: jest.fn(() => {
-			const p = new Promise((resolve) => {
-				resolve(mockFindByIDResponse);
-			});
-			return p;
-		}),
-	};
-});
-
-jest.mock('../methods/script', () => {
-	return {
-		readMovieTitle: jest.fn(() => {
-			const p = new Promise((resolve) => {
-				resolve('Boyhood');
-			});
-			return p;
-		}),
-		clearTemp: jest.fn(() => {
-			const p = new Promise((resolve) => {
-				resolve();
-			});
-			return p;
-		}),
-	};
-});
+jest.mock('../methods/getFilmData');
+jest.mock('../methods/bechdel');
+jest.mock('../methods/script');
 
 jest.mock('../model/Film', () => {
 	class Film {
@@ -66,6 +41,7 @@ jest.mock('../model/Film', () => {
 			});
 		}
 	}
+
 	return new Film();
 });
 
