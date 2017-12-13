@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
-import FilmList from "./FilmList.jsx";
-import skeleton from "../../shared/css/skeleton.css";
-import styles from "./Films.scss";
-import * as $ from "jquery";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import FilmList from './FilmList/FilmList';
+import skeleton from '../../shared/css/skeleton.css';
+import styles from './Films.scss';
+import * as $ from 'jquery';
 
 class Films extends React.Component {
   constructor() {
