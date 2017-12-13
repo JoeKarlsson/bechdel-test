@@ -1,30 +1,33 @@
-import React from "react";
-import PropTypes from "prop-types";
-import FilmItem from "../FilmItem/FilmItem";
-import styles from "./FilmList.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import FilmItem from '../FilmItem/FilmItem';
+import './FilmList.scss';
 
-class FilmList extends React.Component {
-  render() {
-    let filmListNode = this.props.films.map(filmData => {
-      return (
-        <FilmItem
-          film={filmData}
-          key={filmData._id}
-          className={styles.filmListNode}
-        />
-      );
-    });
+const FilmList = (props) => {
+	const filmListNode = props.films.map((filmData) => {
+		return (
+			<FilmItem
+				film={filmData}
+				key={filmData._id}
+				className="filmListNode"
+			/>
+		);
+	});
 
-    return <div className={styles.filmList}>{filmListNode}</div>;
-  }
-}
+
+	return (
+		<div className="FilmList">
+			{filmListNode}
+		</div>
+	);
+};
 
 FilmList.propTypes = {
-  films: PropTypes.array
+	films: PropTypes.array
 };
 
 FilmList.defaultProps = {
-  films: []
+	films: [],
 };
 
 export default FilmList;

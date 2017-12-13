@@ -1,21 +1,3 @@
-// import * as $ from 'jquery';
-//
-// const getAllFilms = () => {
-// 	$.ajax({
-// 		url: '/api/film',
-// 		method: 'GET',
-// 		dataType: 'json',
-// 		cache: false,
-// 		success: (data) => {
-// 			return { films: data };
-// 		},
-// 		error: (xhr, status, err) => {
-// 			console.error(this.props, status, err.toString());
-// 		}
-// 	});
-// }
-//
-//
 import { DEFAULT_ERROR_MESSAGE } from './constants';
 
 const getAllFilms = () => {
