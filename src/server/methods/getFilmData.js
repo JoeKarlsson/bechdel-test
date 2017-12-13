@@ -6,13 +6,13 @@
 const Promise = require('bluebird');
 const request = require('request');
 const Film = require('../model/Film');
+const meta = require('../helper/meta');
 
-const isDeveloping = process.env.NODE_ENV !== 'production';
 let CONFIG;
 let THEMOVIEDB;
 let MYAPIFILMS;
 
-if (isDeveloping) {
+if (meta.isDeveloping) {
 	CONFIG = require('../config/config.json'); // eslint-disable-line global-require
 	THEMOVIEDB = CONFIG.THEMOVIEDB;
 	MYAPIFILMS = CONFIG.MYAPIFILMS;

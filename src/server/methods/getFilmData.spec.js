@@ -1,5 +1,5 @@
 const nock = require('nock');
-const film = require('./film.js');
+const film = require('./getFilmData.js');
 
 describe('Film methods', () => {
 	const filmTitle = 'BOYHOOD';

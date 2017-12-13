@@ -22,7 +22,6 @@ if (isDeveloping) {
 			},
 		},
 	};
-	console.log('process.env', process.env.MONGODB_URI);
 	mongoose.connect(process.env.MONGODB_URI, options);
 }
 const db = mongoose.connection;
