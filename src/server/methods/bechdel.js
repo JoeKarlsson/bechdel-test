@@ -1,8 +1,8 @@
-/* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax */
+/* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax, no-lonely-if */
 
 const Promise = require('bluebird');
 const script = require('./script');
-const film = require('./getFilmData');
+const getFilmData = require('./getFilmData');
 
 const scenesThatPass = [];
 let bechdelScore = 0;
@@ -93,12 +93,12 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 				if (count[name] > 0) {
 					numOfFemalesCharsWithDialogue++;
 					totalLinesFemaleDialogue += count[name];
-					}
-				} else {
-					numOfMaleChars++;
-					if (count[name] > 0) {
-						numOfMaleCharsWithDialogue++;
-						totalLinesMaleDialogue += count[name];
+				}
+			} else {
+				numOfMaleChars++;
+				if (count[name] > 0) {
+					numOfMaleCharsWithDialogue++;
+					totalLinesMaleDialogue += count[name];
 				}
 			}
 		}
@@ -106,7 +106,9 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 };
 
 const extractScenes = (characters, movieScript) => {
+
 	if (!characters || !movieScript) {
+		console.log('characters', characters);
 		throw new Error(
 			'Failed when extracting scenes -' +
 			' Script has to yet been loaded into memory',
@@ -320,7 +322,7 @@ const getBechdelResults = (title, path) => {
 		}
 		let movieChar;
 
-		film.getData(title)
+		getFilmData.getData(title)
 			.then((data) => {
 				if (!data) {
 					throw new Error('No data returned from getData');

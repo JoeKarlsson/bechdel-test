@@ -1,11 +1,11 @@
 const nock = require('nock');
-const film = require('./getFilmData.js');
+const getFilmData = require('./getFilmData.js');
 
 describe('Film methods', () => {
 	const filmTitle = 'BOYHOOD';
 
 	afterEach(() => {
-		film.clearData();
+		getFilmData.clearData();
 	});
 
 	describe('#getSimpleCastData', () => {
@@ -54,7 +54,7 @@ describe('Film methods', () => {
 				.reply(200, mockResponse);
 
 
-			film.getSimpleCastData(filmTitle)
+			getFilmData.getSimpleCastData(filmTitle)
 				.then((body) => {
 					expect(body).toMatchObject(mockResponse);
 				})
@@ -110,7 +110,7 @@ describe('Film methods', () => {
 				.get(path)
 				.reply(200, mockResponse);
 
-			film.getFullCastData(filmTitle)
+			getFilmData.getFullCastData(filmTitle)
 				.then((body) => {
 					expect(body).toMatchObject(mockResponse);
 				});
@@ -203,7 +203,7 @@ describe('Film methods', () => {
 				.get(pathComplex)
 				.reply(200, mockResponseComplex);
 
-			film.getFullCastData(filmTitle)
+			getFilmData.getFullCastData(filmTitle)
 				.then((body) => {
 					expect(body).toMatchObject({});
 				});
@@ -212,7 +212,7 @@ describe('Film methods', () => {
 
 	describe('#getAllData', () => {
 		it('should return the empty filmData obj', (() => {
-			const result = film.getAllData();
+			const result = getFilmData.getAllData();
 
 			const filmData = {
 				actors: [],
@@ -225,7 +225,7 @@ describe('Film methods', () => {
 
 	describe('#clearData', () => {
 		it('should clear the filmData obj', (() => {
-			const result = film.clearData();
+			const result = getFilmData.clearData();
 
 			const filmData = {
 				actors: [],
