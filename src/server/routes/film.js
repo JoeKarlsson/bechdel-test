@@ -45,15 +45,20 @@ router.route('/')
 		let filmTitle;
 
 		if (!req.files.script) {
+			console.log('hit1');
 			res.status(500).send('No script submitted, please try again');
 		} else {
 			if (path.extname(req.files.script[0].originalname) !== '.txt') {
+				console.log('hit2');
+
 				res.status(500).send('Please send a .txt script');
 			}
 			scriptPath = req.files.script[0].path;
 			script.readMovieTitle(scriptPath)
 				.then((title) => {
 					if (!title) {
+						console.log('hit3');
+
 						res.status(500).send('No movie returned from script.readMovieTitle(scriptPath)');
 						throw new Error('No movie returned from script.readMovieTitle(scriptPath)');
 					}
@@ -63,10 +68,15 @@ router.route('/')
 				.then((movie) => {
 					if (movie) {
 						script.clearTemp(scriptPath);
-						return res.send(movie);
+						console.log('movie', movie);
+						console.log('hit4');
+
+						return res.status(200).send(movie);
 					}
+					console.log('hit2');
 					bechdel.getBechdelResults(filmTitle, scriptPath)
 						.then((bechdelResults) => {
+							console.log('bechdelResults', bechdelResults);
 							if (!bechdelResults) {
 								throw new Error(
 									'No movie returned from ' +
@@ -91,15 +101,20 @@ router.route('/')
 							return res.send(savedFilm);
 						})
 						.catch((err) => {
+							console.log('hit');
 							res.status(500).send(err);
 							throw new Error(err);
 						});
 				})
 				.catch((err) => {
-					res.status(500).send(err);
+					console.log('hit3', err);
+
+					// res.status(500).send(err);
 					throw new Error(err);
 				})
 				.error((err) => {
+					console.log('hit4');
+
 					res.status(500).send(err);
 					throw new Error(err);
 				});

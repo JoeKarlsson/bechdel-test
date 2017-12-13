@@ -1,6 +1,3 @@
-/* eslint strict: 0 */
-'use strict';
-
 const Promise = require('bluebird');
 const script = require('./script');
 const film = require('./film');
@@ -342,4 +339,3 @@ module.exports.getBechdelResults = (title, path) => {
   });
   return promise;
 };
-

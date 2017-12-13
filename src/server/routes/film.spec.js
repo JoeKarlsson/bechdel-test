@@ -1,9 +1,37 @@
-const path = require('path');
 const request = require('supertest');
 const app = require('../server.js');
 
 const mockListAllResponse = ['foo', 'bar'];
 const mockFindByIDResponse = { title: 'Boyhood' };
+
+jest.mock('../methods/film');
+jest.mock('../methods/bechdel', () => {
+	return {
+		getBechdelResults: jest.fn(() => {
+			const p = new Promise((resolve) => {
+				resolve(mockFindByIDResponse);
+			});
+			return p;
+		}),
+	};
+});
+
+jest.mock('../methods/script', () => {
+	return {
+		readMovieTitle: jest.fn(() => {
+			const p = new Promise((resolve) => {
+				resolve('Boyhood');
+			});
+			return p;
+		}),
+		clearTemp: jest.fn(() => {
+			const p = new Promise((resolve) => {
+				resolve();
+			});
+			return p;
+		}),
+	};
+});
 
 jest.mock('../model/Film', () => {
 	class Film {
@@ -24,6 +52,13 @@ jest.mock('../model/Film', () => {
 			});
 
 			this.deleteFilm = jest.fn(() => {
+				const p = new Promise((resolve) => {
+					resolve(mockFindByIDResponse);
+				});
+				return p;
+			});
+
+			this.findByTitle = jest.fn(() => {
 				const p = new Promise((resolve) => {
 					resolve(mockFindByIDResponse);
 				});
@@ -53,10 +88,8 @@ describe('Film Routes Test', () => {
 
 	// describe('POST /api/film/ already in the database', () => {
 	// 	it('should return the film', (done) => {
-	//
 	// 		const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
-	// 		console.log('hit');
-	// 		console.log('testScript', testScript);
+	//
 	// 		request(app)
 	// 			.post('/api/film/')
 	// 			.attach('script', testScript)
@@ -67,6 +100,8 @@ describe('Film Routes Test', () => {
 	// 					console.log('err', err);
 	// 					return done(err);
 	// 				}
+	// 				console.log('res.body', res);
+	// 				console.log('res.status', res.status);
 	// 				expect(res.body).toContain('_id');
 	// 				expect(res.body._id).toTruthy();
 	// 				expect(typeof res.body._id).toBe('string');
