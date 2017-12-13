@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header rendering initial state is rendered 1`] = `
+<header
+  className="header_bar"
+>
+  <a
+    aria-current="true"
+    className="header_logo active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    bechdel.io
+  </a>
+  <ul
+    className="header_nav"
+  >
+    <li>
+      <a
+        aria-current={false}
+        className={undefined}
+        href="/about"
+        onClick={[Function]}
+        style={undefined}
+      >
+        about
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current={false}
+        className={undefined}
+        href="/case-study"
+        onClick={[Function]}
+        style={undefined}
+      >
+        case study
+      </a>
+    </li>
+  </ul>
+</header>
+`;

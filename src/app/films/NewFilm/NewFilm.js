@@ -1,8 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router";
-import * as $ from "jquery";
-import Loading from "../../shared/loading/Loading.jsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import * as $ from 'jquery';
+import Loading from '../../shared/Loading/Loading';
 
 class NewFilm extends React.Component {
   constructor() {
