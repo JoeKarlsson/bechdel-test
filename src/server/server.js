@@ -14,9 +14,6 @@ const handleListen = require('./helper/handleListen');
 const log = require('./helper/log');
 const meta = require('./helper/meta');
 
-const filmmethod = require('./methods/film');
-filmmethod.getSimpleCastData('BOYHOOD');
-
 const app = express();
 
 app.use(partials());

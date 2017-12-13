@@ -43,7 +43,6 @@ router.route('/')
 	.post(cpUpload, (req, res) => {
 		let scriptPath;
 		let filmTitle;
-		console.log('req.files.script', req.files.script);
 
 		if (!req.files.script) {
 			res.status(500).send('No script submitted, please try again');
