@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import FilmItem from "./FilmItem.jsx";
+import FilmItem from "../FilmItem/FilmItem";
 import styles from "./FilmList.scss";
 
 class FilmList extends React.Component {

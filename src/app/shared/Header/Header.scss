@@ -1,22 +1,5 @@
 $purple: purple;
 $white: white;
-$bg: #bdbaf3;
-$red: tomato;
-
-a {
-	text-decoration: none;
-}
-
-.site {
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-}
-
-.content {
-	padding-top: 2%;
-	flex: 1;
-}
 
 header {
 	width: 100%;
@@ -60,17 +43,4 @@ ul {
 	padding-right: 5%;
 	flex: 0 1 auto;
 	order: 20;
-}
-
-.footer {
-	background-color: $red;
-
-	.footer_content {
-		padding: 30px;
-		text-align: center;
-	}
-
-	a {
-		color: $white;
-	}
 }
