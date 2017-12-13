@@ -12,6 +12,13 @@ jest.mock('../model/Film', () => {
 	class Film {
 		constructor() {
 
+			this.getData = jest.fn(() => {
+				const p = new Promise((resolve) => {
+					resolve(mockFindByIDResponse);
+				});
+				return p;
+			});
+
 			this.listAll = jest.fn(() => {
 				const p = new Promise((resolve) => {
 					resolve(mockListAllResponse);
