@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Promise = require('bluebird');
 
-module.exports.readMovieTitle = (path) => {
+const readMovieTitle = (path) => {
 	const promise = new Promise((resolve, reject) => {
 		if (!path) {
 			reject(new Error('Invalid readMovieTitle input'));
@@ -31,7 +31,7 @@ module.exports.readMovieTitle = (path) => {
 	return promise;
 };
 
-module.exports.read = (path) => {
+const read = (path) => {
 	const promise = new Promise((resolve, reject) => {
 		if (!path) {
 			reject(new Error('Invalid read input'));
@@ -52,7 +52,7 @@ module.exports.read = (path) => {
 	return promise;
 };
 
-module.exports.clearTemp = (path) => {
+const clearTemp = (path) => {
 	const promise = new Promise((resolve, reject) => {
 		if (!path) {
 			reject(new Error('Invalid clearTemp input'));
@@ -65,4 +65,10 @@ module.exports.clearTemp = (path) => {
 		});
 	});
 	return promise;
+};
+
+module.exports = {
+	readMovieTitle,
+	read,
+	clearTemp,
 };

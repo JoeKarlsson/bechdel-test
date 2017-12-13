@@ -2,14 +2,30 @@ const path = require('path');
 const request = require('supertest');
 const app = require('../server.js');
 
-const mockResponse = ['foo', 'bar'];
+const mockListAllResponse = ['foo', 'bar'];
+const mockFindByIDResponse = { title: 'Boyhood' };
 
 jest.mock('../model/Film', () => {
 	class Film {
 		constructor() {
+
 			this.listAll = jest.fn(() => {
 				const p = new Promise((resolve) => {
-					resolve(mockResponse);
+					resolve(mockListAllResponse);
+				});
+				return p;
+			});
+
+			this.findByID = jest.fn(() => {
+				const p = new Promise((resolve) => {
+					resolve(mockFindByIDResponse);
+				});
+				return p;
+			});
+
+			this.deleteFilm = jest.fn(() => {
+				const p = new Promise((resolve) => {
+					resolve(mockFindByIDResponse);
 				});
 				return p;
 			});
@@ -29,7 +45,7 @@ describe('Film Routes Test', () => {
 					if (err) {
 						return done(err);
 					}
-					expect(res.body).toMatchObject(mockResponse);
+					expect(res.body).toMatchObject(mockListAllResponse);
 					return done();
 				});
 		});
@@ -57,4 +73,42 @@ describe('Film Routes Test', () => {
 	// 			});
 	// 	});
 	// });
+
+	describe('GET /api/film/:id', () => {
+		it('should send JSON with a single film', (done) => {
+			const id = 1234;
+
+			request(app)
+				.get(`/api/film/${id}`)
+				.expect(200)
+				.expect('Content-Type', /json/)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(res.body).toBeTruthy();
+					expect(res.body.title).toEqual('Boyhood');
+					expect(res.body).toMatchObject(mockFindByIDResponse);
+					return done();
+				});
+		});
+	});
+
+	describe('DELETE /api/film/:id', () => {
+		it('should return success:true after deleting movie from the database', (done) => {
+			const id = 1234;
+
+			request(app)
+				.del(`/api/film/${id}`)
+				.expect(200)
+				.expect('Content-Type', /json/)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(typeof res.body).toBe('object');
+					return done();
+				});
+		});
+	});
 });
