@@ -139,6 +139,7 @@ const getSimpleCastData = (title) => {
 				if (!error) {
 					const data = JSON.parse(body);
 					filmData.data.push(data);
+					console.log('data', data);
 					imdbID = data.data.movies[0].idIMDB;
 					resolve(data);
 				}
