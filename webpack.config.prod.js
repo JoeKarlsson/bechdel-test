@@ -15,12 +15,16 @@ module.exports = {
 		filename: '[name]-[hash].min.js',
 		publicPath: '/',
 	},
+	context: path.resolve(__dirname, "src"),
 	resolve: {},
 	plugins: [
+		new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
 		new ExtractTextPlugin({
 			filename: '[name]-[hash].css',
 			allChunks: true,
 		}),
+		// new FaviconsWebpackPlugin('app/assets/images/my-logo.png'),
 		new HtmlWebpackPlugin({
 			template: 'src/app/index.tpl.html',
 			inject: 'body',
@@ -69,6 +73,9 @@ module.exports = {
 				},
 			],
 		}, {
+			test: /\.png$/,
+			use: 'url-loader?lmit=1000&mimetype=image/png',
+		},  {
 			test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
 			use: 'file-loader',
 		}, {
