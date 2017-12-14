@@ -1,11 +1,16 @@
 const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
+const WebpackDevMiddleware = require('webpack-dev-middleware');
 const config = require('../../../webpack.config.js');
 
 const compiler = webpack(config);
-const middleware = webpackMiddleware(compiler, {
+const middleware = WebpackDevMiddleware(compiler, {
 	publicPath: config.output.publicPath,
 	contentBase: 'src',
+	historyApiFallback: true,
+	hot: true,
+	quiet: true,
+	noInfo: false,
+	lazy: false,
 	stats: {
 		colors: true,
 		hash: false,
