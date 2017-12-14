@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import FilmList from './FilmList/FilmList';
 import getAllFilmData from '../../helper/api';
 import skeleton from '../../assets/styles/skeleton.css';
-import styles from './Films.scss';
+import './Films.scss';
 
 class Films extends Component {
 	constructor() {
@@ -19,7 +19,7 @@ class Films extends Component {
 
 	render() {
 		return (
-			<div className={styles.films}>
+			<div className="films">
 				<div className={skeleton.u_full_width}>
 					<div className="row">
 						<h1>Bechdel.io</h1>
@@ -34,7 +34,7 @@ class Films extends Component {
 						</p>
 					</div>
 				</div>
-				<div className={styles.films_Header}>
+				<div className="films_Header">
 					<h3>films</h3>
 					<NavLink to="/film/new">
 						<button>Add a Film</button>
@@ -47,7 +47,7 @@ class Films extends Component {
 					If you have any suggestions for how to grow the application, we would
 					love to hear from
 					<a target="blank" href="https://www.callmejoe.net/contact/">
-					you
+					{' '}you
 					</a>.
 				</p>
 			</div>
