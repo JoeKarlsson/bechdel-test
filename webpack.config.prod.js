@@ -15,16 +15,17 @@ module.exports = {
 		filename: '[name]-[hash].min.js',
 		publicPath: '/',
 	},
-	context: path.resolve(__dirname, "src"),
 	resolve: {},
 	plugins: [
-		new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
+		new FaviconsWebpackPlugin({
+			logo: './src/app/assets/images/my_logo.png',
+			inject: true,
+			title: '[name]',
+		}),
 		new ExtractTextPlugin({
 			filename: '[name]-[hash].css',
 			allChunks: true,
 		}),
-		// new FaviconsWebpackPlugin('app/assets/images/my-logo.png'),
 		new HtmlWebpackPlugin({
 			template: 'src/app/index.tpl.html',
 			inject: 'body',

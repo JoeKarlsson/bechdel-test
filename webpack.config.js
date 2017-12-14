@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const config = require('./webpack.config.prod.js');
 
-config.devtool = 'cheap-eval-source-map';
+config.devtool = 'eval-source-map';
 
 config.entry = [
 	'webpack-hot-middleware/client?reload=true',
