@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Footer.scss';
+import './Footer.scss';
 
 const Footer = () => (
-	<footer className={styles.footer}>
-		<div className={styles.footer_content}>
+	<footer className="footer">
+		<div className="footer_content">
 			<a
 				target="_blank"
 				rel="noopener noreferrer"

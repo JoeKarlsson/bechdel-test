@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import getAllFilmData from '../../helper/api';
 import hash from '../../helper/hash';
-import styles from './Film.scss';
+import './Film.scss';
 
 class Film extends React.Component {
 	constructor() {
@@ -66,7 +66,7 @@ class Film extends React.Component {
 		});
 
 		return (
-			<div className={styles.filmInfo}>
+			<div className="filmInfo">
 				<h1>{this.state.film.title}</h1>
 				<h3>
 				Bechdel Pass:{' '}
@@ -80,17 +80,17 @@ class Film extends React.Component {
 				<div className="plot">
 					<p>{this.state.film.plot}</p>
 				</div>
-				<span className={styles.results}>
-					<div className={styles.filmData}>
-						<span className={styles.catName}>Directors:</span> {directorNode}
+				<span className="results">
+					<div className="filmData">
+						<span className="catName">Directors:</span> {directorNode}
 						<br />
-						<span className={styles.catName}>Writers:</span> {writerNode} <br />
-						<span className={styles.catName}>Genre:</span> {genreNode}
+						<span className="catName">Writers:</span> {writerNode} <br />
+						<span className="catName">Genre:</span> {genreNode}
 						<br />
-						<span className={styles.catName}>Rated:</span>{' '}
+						<span className="catName">Rated:</span>{' '}
 						{this.state.film.rated}
 						<br />
-						<span className={styles.catName}>IMDB:</span>{' '}
+						<span className="catName">IMDB:</span>{' '}
 						<a
 							href={`http://www.imdb.com/title/${this.state.film.idIMDB}`}
 							target="_blank"
@@ -100,44 +100,44 @@ class Film extends React.Component {
 						<br />
 					</div>
 					<div className="bechdelResults">
-						<span className={styles.catName}>Bechdel Score:</span>{' '}
+						<span className="catName">Bechdel Score:</span>{' '}
 						{this.state.film.bechdelResults.bechdelScore} of 3<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Number of Scenes that pass:
 						</span>{' '}
 						{this.state.film.bechdelResults.numScenesPass}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Number of Scenes that dont pass:
 						</span>{' '}
 						{this.state.film.bechdelResults.numScenesDontPass}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Number Of Females Characters:
 						</span>{' '}
 						{this.state.film.bechdelResults.numOfFemalesChars}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Number Of Male Characters:
 						</span>{' '}
 						{this.state.film.bechdelResults.numOfMaleChars}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Number of Females Characters With Dialogue:
 						</span>{' '}
 						{this.state.film.bechdelResults.numOfFemalesCharsWithDialogue}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Number of Male Characters With Dialogue:
 						</span>{' '}
 						{this.state.film.bechdelResults.numOfMaleCharsWithDialogue}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Total Lines of Female Dialogue:
 						</span>{' '}
 						{this.state.film.bechdelResults.totalLinesFemaleDialogue}
 						<br />
-						<span className={styles.catName}>
+						<span className="catName">
 						Total Lines of Male Dialogue:
 						</span>{' '}
 						{this.state.film.bechdelResults.totalLinesMaleDialogue}
