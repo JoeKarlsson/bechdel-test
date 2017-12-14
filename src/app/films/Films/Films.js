@@ -30,7 +30,7 @@ class Films extends Component {
 						automated, which allows massive amounts of data to be generated
 						with ease. Thus, data can be produced for large bodies of film,
 						i.e. a certain director’s filmography, a certain actress’ body of
-						work, or for the films released in a specific year.
+						work, or for the films released in a specific year...
 						</p>
 					</div>
 				</div>
