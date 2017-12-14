@@ -18,7 +18,7 @@ export const PrimaryLayout = () => {
 		<div className="PrimaryLayout">
 			<Header />
 			<div className="content">
-				<div className={skeleton.container}>
+				<div className="container">
 					<ErrorBoundary>
 						<Switch>
 							<Route exact path="/" component={Films} />
