@@ -1,16 +1,16 @@
 import React from 'react';
-import styles from './Loading.scss';
+import './Loading.scss';
 
 const Loading = () => (
 	<div>
-		<span className={styles.Loader}>
-			<div className={styles.Loader_indicator} >
+		<span className="Loader">
+			<div className="Loader_indicator" >
 				<h1>
 					<span>Destroying the Patriarchy</span>
-					<span className={styles.Loader_ellipsis} >
-						<span className={styles.Loader_ellipsisDot}>.</span>
-						<span className={styles.Loader_ellipsisDot}>.</span>
-						<span className={styles.Loader_ellipsisDot}>.</span>
+					<span className="Loader_ellipsis" >
+						<span className="Loader_ellipsisDot">.</span>
+						<span className="Loader_ellipsisDot">.</span>
+						<span className="Loader_ellipsisDot">.</span>
 					</span>
 				</h1>
 			</div>

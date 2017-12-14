@@ -1,7 +1,7 @@
 $purple: purple;
 $white: white;
 
-header {
+.header_bar {
 	width: 100%;
 	background-color: $purple;
 	padding-top: 2%;
@@ -9,9 +9,6 @@ header {
 	font-size: 1.25rem;
 	display: flex;
 	flex-direction: row;
-}
-
-.header_bar {
 
 	a {
 		color: $white;
@@ -43,4 +40,5 @@ ul {
 	padding-right: 5%;
 	flex: 0 1 auto;
 	order: 20;
+	list-style: none;
 }

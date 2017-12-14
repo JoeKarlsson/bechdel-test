@@ -11,13 +11,13 @@ import NoMatch from '../../static/NoMatch/NoMatch';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import skeleton from '../../assets/styles/skeleton.css';
 import '../../assets/styles/normalize.css';
-import styles from './PrimaryLayout.scss';
+import './PrimaryLayout.scss';
 
 export const PrimaryLayout = () => {
 	return (
-		<div className={styles.PrimaryLayout}>
+		<div className="PrimaryLayout">
 			<Header />
-			<div className={styles.content}>
+			<div className="content">
 				<div className={skeleton.container}>
 					<ErrorBoundary>
 						<Switch>
