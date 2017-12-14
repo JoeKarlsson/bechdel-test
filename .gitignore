@@ -1,9 +1,41 @@
-node_modules
+# Application Files *
+#####################
+node_modules/
+npm-debug.log
+
+# OS generated files #
+######################
 .DS_Store
-dist
-*.log
-coverage
-.idea
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# IDE generated content
+.idea/
+.editorconfig
+.vscode/
+
+
+# Program Files
 server/tmp
 config/config.json
 .tmp
+dist/
+coverage/
+testCoverage/
+preview/
+bin/**/*
+webpack.stats.json
+.jshintignore
+.jshintrc
+yarn-error*.log
