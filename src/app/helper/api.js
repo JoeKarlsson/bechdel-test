@@ -1,6 +1,6 @@
 import { DEFAULT_ERROR_MESSAGE } from './constants';
 
-const getAllFilms = (filmID = null) => {
+const getAllFilms = (filmID = '') => {
 
 	const myInit = {
 		method: 'GET',
