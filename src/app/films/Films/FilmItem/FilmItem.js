@@ -3,42 +3,40 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './FilmItem.scss';
 
-class FilmItem extends React.Component {
-  render() {
-    const { film } = this.props;
-		const filmUrl = `/film/${this.props.film._id}`;
-    console.log('filmUrl', filmUrl);
+const FilmItem = (props) => {
 
-    return (
-      <div className='filmItem'>
-        <li className='filmItem_ListItem'>
-          <div>
-            <Link to={filmUrl} >
-              <img
-                src={this.props.film.images.poster}
-                alt={this.props.film.title}
-              />
-              <p className='filmItem_title'>{this.props.film.title}</p>
-            </Link>
-          </div>
-        </li>
-      </div>
-    );
-  }
-}
+	const { film } = props;
+	const filmUrl = `/film/${film._id}`;
+
+	return (
+		<div className="filmItem">
+			<li className="filmItem_ListItem">
+				<div>
+					<Link to={filmUrl} >
+						<img
+							src={film.images.poster}
+							alt={film.title}
+						/>
+						<p className="filmItem_title">{film.title}</p>
+					</Link>
+				</div>
+			</li>
+		</div>
+	);
+};
 
 FilmItem.propTypes = {
-  film: PropTypes.object
+	film: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 FilmItem.defaultProps = {
-  film: {
-    title: 'Movie Title',
-    images: {
-      poster: 'Movie Poster URL'
-    },
-    id: '123456'
-  }
+	film: {
+		title: 'Movie Title',
+		images: {
+			poster: 'Movie Poster URL',
+		},
+		id: '123456',
+	},
 };
 
 export default FilmItem;

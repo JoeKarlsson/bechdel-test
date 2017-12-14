@@ -1,18 +1,14 @@
 import { DEFAULT_ERROR_MESSAGE } from './constants';
 
-const getAllFilms = () => {
+const getAllFilms = (filmID = null) => {
 
 	const myInit = {
 		method: 'GET',
 	};
 
-	return fetch('/api/film', myInit)
+	return fetch(`/api/film/${filmID}`, myInit)
 		.then(response => response.json())
-		.then((data) => {
-			return {
-				films: data,
-			};
-		})
+		.then(data => data)
 		.catch((err) => {
 			return {
 				err,

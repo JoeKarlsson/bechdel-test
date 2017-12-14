@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import FilmList from './FilmList/FilmList';
-import getAllFilms from '../../helper/api';
+import getAllFilmData from '../../helper/api';
 import skeleton from '../../assets/styles/skeleton.css';
 import styles from './Films.scss';
 
@@ -14,7 +14,7 @@ class Films extends Component {
 	}
 
 	componentDidMount() {
-		getAllFilms();
+		getAllFilmData();
 	}
 
 	render() {
