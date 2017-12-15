@@ -1,9 +1,6 @@
-/*
-  eslint
-    no-unused-expressions: 0,
-    func-names: 0,
-    new-cap:0,
-    arrow-body-style: 0
+/* eslint
+  func-names: 0,
+  arrow-body-style: 0
 */
 
 require('./index.js');
