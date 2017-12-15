@@ -36,6 +36,7 @@ const read = () => {
 	});
 	return promise;
 };
+
 module.exports = {
 	readMovieTitle,
 	clearTemp,

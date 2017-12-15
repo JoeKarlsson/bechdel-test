@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import FilmList from './FilmList/FilmList';
-import getAllFilmData from '../../helper/api';
+import getAllFilmData from '../../helper/getAllFilms';
 import skeleton from '../../assets/styles/skeleton.css';
 import './Films.scss';
 
@@ -14,7 +15,12 @@ class Films extends Component {
 	}
 
 	componentDidMount() {
-		getAllFilmData();
+		getAllFilmData()
+			.then((data) => {
+				this.setState({
+					films: data,
+				});
+			});
 	}
 
 	render() {
@@ -41,13 +47,15 @@ class Films extends Component {
 					</NavLink>
 				</div>
 				<div className="row">
-					<FilmList films={this.state.films} />
+					<ErrorBoundary>
+						<FilmList films={this.state.films} />
+					</ErrorBoundary>
 				</div>
 				<p>
 					If you have any suggestions for how to grow the application, we would
 					love to hear from
 					<a target="blank" href="https://www.callmejoe.net/contact/">
-					{' '}you
+						{' '}you
 					</a>.
 				</p>
 			</div>
