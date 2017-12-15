@@ -23,7 +23,7 @@ const FilmList = (props) => {
 };
 
 FilmList.propTypes = {
-	films: PropTypes.array
+	films: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 };
 
 FilmList.defaultProps = {

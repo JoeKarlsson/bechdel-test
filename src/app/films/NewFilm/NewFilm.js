@@ -6,12 +6,8 @@ class NewFilm extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			film: '',
-			fileName: '',
-			blob: '',
 			isLoading: false,
 		};
-		this.handleScriptUploadChange = this.handleScriptUploadChange.bind(this);
 		this.handleFilmSubmit = this.handleFilmSubmit.bind(this);
 	}
 
@@ -20,22 +16,6 @@ class NewFilm extends React.Component {
 		this.setState({ isLoading: true });
 		const fd = new FormData(document.querySelector('form'));
 		postFilmScript(fd);
-	}
-
-	handleScriptUploadChange(e) {
-		const reader = new FileReader();
-		const file = e.target.files[0];
-
-		reader.onload = (upload) => {
-			this.setState({
-				blob: upload.target.result,
-				fileName: file.name,
-			});
-		};
-
-		if (file) {
-			reader.readAsDataURL(file);
-		}
 	}
 
 	render() {
@@ -87,7 +67,6 @@ class NewFilm extends React.Component {
 							type="file"
 							name="script"
 							size="40"
-							onChange={this.handleScriptUploadChange}
 						/>
 						<div>
 							<button onClick={this.handleFilmSubmit}>
