@@ -9,7 +9,7 @@ import Film from '../../films/Film/Film';
 import NewFilm from '../../films/NewFilm/NewFilm';
 import NoMatch from '../../static/NoMatch/NoMatch';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
-import skeleton from '../../assets/styles/skeleton.css';
+import '../../assets/styles/skeleton.css';
 import '../../assets/styles/normalize.css';
 import './PrimaryLayout.scss';
 
