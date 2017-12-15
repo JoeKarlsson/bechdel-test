@@ -8,49 +8,7 @@ jest.mock('../methods/getFilmData');
 jest.mock('../methods/bechdel');
 jest.mock('../methods/script');
 
-jest.mock('../model/Film', () => {
-	class Film {
-		constructor() {
-
-			this.getData = jest.fn(() => {
-				const p = new Promise((resolve) => {
-					resolve(mockFindByIDResponse);
-				});
-				return p;
-			});
-
-			this.listAll = jest.fn(() => {
-				const p = new Promise((resolve) => {
-					resolve(mockListAllResponse);
-				});
-				return p;
-			});
-
-			this.findByID = jest.fn(() => {
-				const p = new Promise((resolve) => {
-					resolve(mockFindByIDResponse);
-				});
-				return p;
-			});
-
-			this.deleteFilm = jest.fn(() => {
-				const p = new Promise((resolve) => {
-					resolve(mockFindByIDResponse);
-				});
-				return p;
-			});
-
-			this.findByTitle = jest.fn(() => {
-				const p = new Promise((resolve) => {
-					resolve(mockFindByIDResponse);
-				});
-				return p;
-			});
-		}
-	}
-
-	return new Film();
-});
+jest.mock('../model/Film');
 
 describe('Film Routes Test', () => {
 	describe('GET /api/film', () => {
