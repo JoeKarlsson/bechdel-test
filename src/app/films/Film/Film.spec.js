@@ -10,7 +10,7 @@ import {
 import Adapter from 'enzyme-adapter-react-16';
 import Film from './Film';
 
-jest.mock('../../helper/api');
+jest.mock('../../helper/getAllFilms');
 
 configure({ adapter: new Adapter() });
 
