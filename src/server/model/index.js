@@ -9,6 +9,7 @@ if (isDeveloping) {
 	});
 } else {
 	const options = {
+		useMongoClient: true,
 		server: {
 			socketOptions: {
 				keepAlive: 300000,
