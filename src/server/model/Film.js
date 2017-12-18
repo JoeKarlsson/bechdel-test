@@ -6,6 +6,7 @@
 require('./index.js');
 const Promise = require('bluebird');
 const mongoose = Promise.promisifyAll(require('mongoose'));
+const parseData = require('./parseData');
 mongoose.Promise = require('bluebird');
 
 const filmSchema = mongoose.Schema({
@@ -136,33 +137,6 @@ filmSchema.static('deleteFilm', function (id) {
 		});
 });
 
-const parseActorArr = (arr) => {
-	if (!arr) {
-		throw new Error('Cannot parseActorArr');
-	}
-	const actorsArr = [];
-	let i;
-	for (i = 0; i < arr.length; i++) {
-		const actor = {};
-		actor.actorName = arr[i].actorName;
-		actor.character = arr[i].character;
-		actor.actorActress = arr[i].gender;
-		actorsArr.push(actor);
-	}
-	return actorsArr;
-};
-
-const parseImageData = (images) => {
-	if (!images) {
-		throw new Error('Cannot parseImageData');
-	}
-	const img = {};
-
-	img.backdrop = `https://image.tmdb.org/t/p/w1000${images.backdrops[0].file_path}`;
-	img.poster = `https://image.tmdb.org/t/p/w300${images.posters[0].file_path}`;
-	return img;
-};
-
 filmSchema.static('insert', function (filmTitle, bechdelResults, actors, images, data) {
 	if (
 		!filmTitle ||
@@ -187,8 +161,8 @@ filmSchema.static('insert', function (filmTitle, bechdelResults, actors, images,
 	film.rating = data[0].rating;
 	film.metascore = data[0].metascore;
 	film.urlIMDB = data[0].urlIMDB;
-	film.actors = parseActorArr(actors[0]);
-	film.images = parseImageData(images);
+	film.actors = parseData.parseActorArr(actors[0]);
+	film.images = parseData.parseImageData(images);
 
 	return this.saveFilm(film)
 		.then((savedFilm) => {
