@@ -72,7 +72,7 @@ filmSchema.static('listAll', function () {
 });
 
 filmSchema.static('findByID', function (id) {
-	const promise = new Promise((resolve) => {
+	const promise = new Promise((resolve, reject) => {
 		this.find({ _id: id })
 			.sort('-date')
 			.exec()
@@ -81,6 +81,9 @@ filmSchema.static('findByID', function (id) {
 					return resolve(result[0]);
 				}
 				return resolve(result);
+			})
+			.catch((err) => {
+				reject(new Error(err));
 			});
 	});
 	return promise;
@@ -108,7 +111,7 @@ filmSchema.static('findByTitle', function (movieTitle) {
 filmSchema.static('saveFilm', (film) => {
 	const promise = new Promise((resolve, reject) => {
 		if (!film) {
-			throw new Error('Cannot save film');
+			reject(new Error('Cannot save film'));
 		}
 		film.save()
 			.then((result) => {
@@ -123,10 +126,11 @@ filmSchema.static('saveFilm', (film) => {
 
 filmSchema.static('deleteFilm', function (id) {
 	if (!id) {
-		throw new Error('Invalid input on deleteFilm');
+		return 'Invalid input on deleteFilm';
 	}
 	return this.findOne({ _id: id }).exec()
-		.then(film => film.remove())
+		.then(film => film.remove)
+		.then(() => true)
 		.catch((error) => {
 			throw new Error(error);
 		});
