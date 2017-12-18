@@ -5,15 +5,15 @@
 
 const Promise = require('bluebird');
 const request = require('request');
-const Film = require('../model/Film');
-const meta = require('../helper/meta');
+const Film = require('../../model/Film');
+const meta = require('../../helper/meta');
 
 let CONFIG;
 let THEMOVIEDB;
 let MYAPIFILMS;
 
 if (meta.isDeveloping) {
-	CONFIG = require('../config/config.json'); // eslint-disable-line global-require
+	CONFIG = require('../../config/config.json'); // eslint-disable-line global-require
 	THEMOVIEDB = CONFIG.THEMOVIEDB;
 	MYAPIFILMS = CONFIG.MYAPIFILMS;
 } else {

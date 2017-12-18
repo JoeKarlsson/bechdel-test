@@ -4,7 +4,7 @@ const app = require('../server.js');
 const mockListAllResponse = ['foo', 'bar'];
 const mockFindByIDResponse = { title: 'Boyhood' };
 
-jest.mock('../methods/getFilmData');
+jest.mock('../methods/getFilmData/getFilmData');
 jest.mock('../methods/bechdel');
 jest.mock('../methods/script');
 
