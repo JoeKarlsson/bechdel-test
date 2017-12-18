@@ -2,7 +2,7 @@
 
 const Promise = require('bluebird');
 const script = require('./script');
-const getFilmData = require('./getFilmData');
+const getFilmData = require('./getFilmData/getFilmData');
 
 const scenesThatPass = [];
 let bechdelScore = 0;
