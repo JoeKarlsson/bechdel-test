@@ -44,7 +44,14 @@ class FilmData {
 		this._actors = [];
 		this._images = {};
 		this._metadata = [];
+		return {
+			actors: this._actors,
+			images: this._images,
+			metadata: this._metadata,
+		};
 	}
 }
 
-module.exports = FilmData;
+const filmData = new FilmData();
+
+module.exports = filmData;

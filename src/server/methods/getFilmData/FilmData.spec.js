@@ -1,10 +1,9 @@
-const FilmData = require('./FilmData');
+const filmData = require('./FilmData');
 
 describe('FilmData', () => {
-	let filmData;
 
 	beforeEach(() => {
-		filmData = new FilmData();
+		filmData.clear();
 	});
 
 	describe('inital state', () => {

@@ -1,11 +1,12 @@
 const nock = require('nock');
 const getFilmData = require('./getFilmData.js');
+const filmData = require('./FilmData.js');
 
 describe('Film methods', () => {
 	const filmTitle = 'BOYHOOD';
 
-	afterEach(() => {
-		getFilmData.clearData();
+	beforeEach(() => {
+		filmData.clear();
 	});
 
 	describe('#getSimpleCastData', () => {
@@ -207,32 +208,6 @@ describe('Film methods', () => {
 				.then((body) => {
 					expect(body).toMatchObject({});
 				});
-		}));
-	});
-
-	describe('#getAllData', () => {
-		it('should return the empty filmData obj', (() => {
-			const result = getFilmData.getAllData();
-
-			const filmData = {
-				actors: [],
-				images: {},
-				data: [],
-			};
-			expect(result).toMatchObject(filmData);
-		}));
-	});
-
-	describe('#clearData', () => {
-		it('should clear the filmData obj', (() => {
-			const result = getFilmData.clearData();
-
-			const filmData = {
-				actors: [],
-				images: {},
-				data: [],
-			};
-			expect(result).toMatchObject(filmData);
 		}));
 	});
 });
