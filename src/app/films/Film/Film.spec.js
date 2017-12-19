@@ -2,7 +2,6 @@ import React from 'react';
 import {
 	MemoryRouter,
 } from 'react-router-dom';
-import renderer from 'react-test-renderer';
 import {
 	shallow,
 	configure,
@@ -34,15 +33,15 @@ describe('Film', () => {
 
 	describe('rendering', () => {
 		describe('initial state', () => {
-			it('match the snapshot', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<Film match={router} />
-					</MemoryRouter>,
-				);
-				const tree = component.toJSON();
-				expect(tree).toMatchSnapshot();
-			});
+			// it('match the snapshot', () => {
+			// 	const component = renderer.create(
+			// 		<MemoryRouter>
+			// 			<Film match={router} />
+			// 		</MemoryRouter>,
+			// 	);
+			// 	const tree = component.toJSON();
+			// 	expect(tree).toMatchSnapshot();
+			// });
 			it('is rendered correctly', () => {
 				expect(wrapper).toHaveLength(1);
 			});

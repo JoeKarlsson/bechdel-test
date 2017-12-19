@@ -10,8 +10,10 @@ class FilmData {
 		return this._actors;
 	}
 
-	addActor(actor) {
-		this._actors.push(actor);
+	addActor(actors) {
+		const arr = [...this._actors, ...actors];
+		this._actors = arr;
+		console.log('actors', actors);
 		return this._actors;
 	}
 
