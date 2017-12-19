@@ -1,8 +1,8 @@
 const path = require('path');
 const bechdel = require('./bechdel.js');
 
-jest.mock('./getFilmData/getFilmData');
-jest.mock('./script');
+jest.mock('../getFilmData/getFilmData');
+jest.mock('../script');
 
 describe('Bechdel methods', () => {
 	it('should return a module', () => {
