@@ -1,5 +1,5 @@
 const mockListAllResponse = ['foo', 'bar'];
-const mockFindByIDResponse = { title: 'Boyhood' };
+const mockFindByIDResponse = { title: 'American Hustle' };
 
 class Film {
 	constructor() {

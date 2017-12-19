@@ -64,7 +64,6 @@ const getSimpleCastData = (title) => {
 		request.get(URL, (error, response, body) => {
 			if (!error) {
 				const metadata = JSON.parse(body);
-				console.log('metadata', metadata);
 				filmData.imdbID = metadata.data.movies[0].idIMDB;
 				filmData.addMetaData(metadata);
 				resolve(metadata);
@@ -129,7 +128,8 @@ const getData = (movieTitle) => {
 		const splitTitle = movieTitle
 			.split(' ')
 			.join('+');
-		this.getSimpleCastData(splitTitle, dataParser)
+
+		getSimpleCastData(splitTitle)
 			.then((simpleCastdata) => {
 				if (!simpleCastdata) {
 					reject(new Error('Failed on getSimpleCastData'));
@@ -142,13 +142,14 @@ const getData = (movieTitle) => {
 						}
 						filmData.images = images;
 					});
-				return this.getFullCastData(splitTitle)
+				return getFullCastData(splitTitle)
 					.then((fullCastdata) => {
 						if (!fullCastdata) {
 							reject(new Error('Failed on getFullCastData'));
 						}
+						console.log('fullCastdata', fullCastdata);
 						dataParser(fullCastdata, 'fullCast');
-						resolve(filmData.actors);
+						resolve(filmData.getAllData());
 					});
 			})
 			.catch((err) => {

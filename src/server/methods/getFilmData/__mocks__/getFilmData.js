@@ -15,6 +15,33 @@ const mockGetSimpleCastData = {
 				name: 'Richard Linklater',
 				id: 'nm0000500',
 			}],
+			actors: [
+				{
+					actorName: 'Christian Bale',
+					character: 'Steve',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+					biography: {
+						actorActress: 'actor',
+					},
+				}, {
+					actorName: 'Bradley Cooper',
+					character: 'Mike',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b96',
+					biography: {
+						actorActress: 'actor',
+					},
+				}, {
+					actorName: 'Amy Adams',
+					character: 'Nicole',
+					actorActress: 'Actress',
+					_id: '5a2f044e491eef5edab46b95',
+					biography: {
+						actorActress: 'actress',
+					},
+				},
+			],
 			runtime: '165 min',
 			urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_UX182_CR0,0,182,268_AL_.jpg',
 			countries: ['USA'],
