@@ -13,7 +13,7 @@ describe('Script methods', () => {
 					expect(title).toBe('BOYHOOD');
 				})
 				.catch((err) => {
-					console.log('err', err);
+					console.error('err', err);
 				});
 		});
 	});
@@ -28,7 +28,7 @@ describe('Script methods', () => {
 					expect(scriptBody.length).toBeGreaterThan(0);
 				})
 				.catch((err) => {
-					console.log('err', err);
+					console.error('err', err);
 				});
 		});
 	});
@@ -36,7 +36,6 @@ describe('Script methods', () => {
 	describe('#clearTemp', () => {
 		it('should return true after success', () => {
 			script.clearTemp('/path/to/file').then((result) => {
-				console.log('result', result);
 				expect(result).toBe(true);
 			});
 		});

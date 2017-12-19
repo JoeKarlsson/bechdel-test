@@ -1,12 +1,12 @@
 const path = require('path');
-const bechdel = require('./bechdel.js');
+const getBechdelResults = require('./bechdel.js');
 
 jest.mock('../getFilmData/getFilmData');
 jest.mock('../script');
 
 describe('Bechdel methods', () => {
 	it('should return a module', () => {
-		expect(typeof bechdel).toBe('object');
+		expect(typeof getBechdelResults).toBe('function');
 	});
 
 	describe('#getBechdelResults', () => {
@@ -28,7 +28,7 @@ describe('Bechdel methods', () => {
 				scenesThatPass: [],
 			};
 
-			bechdel.getBechdelResults(title, scriptPath)
+			getBechdelResults(title, scriptPath)
 				.then((results) => {
 					expect(results).toMatchObject(expectedResult);
 				});

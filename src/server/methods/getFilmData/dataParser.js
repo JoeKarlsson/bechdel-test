@@ -26,6 +26,7 @@ const createCharcArr = (arr, characters, type) => {
 };
 
 const dataParser = (body, type) => {
+	console.log('body.data.movies[0]', body.data.movies[0].actors);
 	const rawMovieCharacters = body.data.movies[0].actors;
 	let movieCharacters = [];
 
@@ -34,6 +35,7 @@ const dataParser = (body, type) => {
 	} else {
 		throw new Error('Error: Connected to myfilmapi, but no actor data returned');
 	}
+	console.log('movieCharacters', movieCharacters);
 	filmData.addActor(movieCharacters);
 	return movieCharacters;
 };

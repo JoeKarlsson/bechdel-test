@@ -139,6 +139,33 @@ describe('Film methods', () => {
 							name: 'Richard Linklater',
 							id: 'nm0000500',
 						}],
+						actors: [
+							{
+								actorName: 'Christian Bale',
+								character: 'Steve',
+								actorActress: 'Actor',
+								_id: '5a2f044e491eef5edab46b97',
+								biography: {
+									actorActress: 'actor',
+								},
+							}, {
+								actorName: 'Bradley Cooper',
+								character: 'Mike',
+								actorActress: 'Actor',
+								_id: '5a2f044e491eef5edab46b96',
+								biography: {
+									actorActress: 'actor',
+								},
+							}, {
+								actorName: 'Amy Adams',
+								character: 'Nicole',
+								actorActress: 'Actress',
+								_id: '5a2f044e491eef5edab46b95',
+								biography: {
+									actorActress: 'actress',
+								},
+							},
+						],
 						runtime: '165 min',
 						urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_UX182_CR0,0,182,268_AL_.jpg',
 						countries: ['USA'],
@@ -176,6 +203,49 @@ describe('Film methods', () => {
 							name: 'Richard Linklater',
 							id: 'nm0000500',
 						}],
+						actors: [
+							{
+								actorName: 'Ellar Coltrane',
+								character: 'Mason',
+								actorActress: 'actor',
+								_id: '5a2f044e491eef5edab46b97',
+								biography: {
+									actorActress: 'actor',
+								},
+							}, {
+								actorName: 'Patricia Arquette',
+								character: 'Mom',
+								actorActress: 'actress',
+								_id: '5a2f044e491eef5edab46b96',
+								biography: {
+									actorActress: 'actress',
+								},
+							}, {
+								actorName: 'Elijah Smith',
+								character: 'Tommy',
+								actorActress: 'actor',
+								_id: '5a2f044e491eef5edab46b95',
+								biography: {
+									actorActress: 'actor',
+								},
+							}, {
+								actorName: 'Lorelei Linklater',
+								character: 'Samantha',
+								actorActress: 'actress',
+								_id: '5a2f044e491eef5edab46b95',
+								biography: {
+									actorActress: 'actress',
+								},
+							}, {
+								actorName: 'Ethan Hawke',
+								character: 'Dad',
+								actorActress: 'actor',
+								_id: '5a2f044e491eef5edab46b95',
+								biography: {
+									actorActress: 'actor',
+								},
+							},
+						],
 						runtime: '165 min',
 						urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_UX182_CR0,0,182,268_AL_.jpg',
 						countries: ['USA'],
@@ -204,7 +274,7 @@ describe('Film methods', () => {
 				.get(pathComplex)
 				.reply(200, mockResponseComplex);
 
-			getFilmData.getFullCastData(filmTitle)
+			getFilmData.getData(filmTitle)
 				.then((body) => {
 					expect(body).toMatchObject({});
 				});

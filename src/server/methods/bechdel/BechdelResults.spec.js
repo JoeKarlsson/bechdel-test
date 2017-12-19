@@ -1,15 +1,15 @@
-const BechdelResults = require('./BechdelResults');
+const bechdelResults = require('./BechdelResults');
 
 describe('Bechdel Results', () => {
-	let bechdelResults;
 
 	beforeEach(() => {
-		bechdelResults = new BechdelResults();
+		bechdelResults.reset();
 	});
 
 	describe('inital state', () => {
 		it('should be empty', () => {
 			expect(bechdelResults.bechdelScore).toBe(0);
+			expect(bechdelResults.bechdelPass).toBe(false);
 			expect(bechdelResults.numScenesPass).toBe(0);
 			expect(bechdelResults.numScenesDontPass).toBe(0);
 			expect(bechdelResults.numOfFemalesChars).toBe(0);
@@ -25,14 +25,19 @@ describe('Bechdel Results', () => {
 	describe('bechdelScore', () => {
 		it('should increment bechdelScore by one', () => {
 			expect(bechdelResults.bechdelScore).toBe(0);
-			bechdelResults.bechdelScoreIncrement();
+			expect(bechdelResults.bechdelPass).toBe(false);
+			bechdelResults.bechdelScore = 1;
 			expect(bechdelResults.bechdelScore).toBe(1);
-			bechdelResults.bechdelScoreIncrement();
+			expect(bechdelResults.bechdelPass).toBe(false);
+			bechdelResults.bechdelScore = 2;
 			expect(bechdelResults.bechdelScore).toBe(2);
-			bechdelResults.bechdelScoreIncrement();
+			expect(bechdelResults.bechdelPass).toBe(false);
+			bechdelResults.bechdelScore = 3;
 			expect(bechdelResults.bechdelScore).toBe(3);
-			bechdelResults.bechdelScoreIncrement();
+			expect(bechdelResults.bechdelPass).toBe(true);
+			bechdelResults.bechdelScore = 3;
 			expect(bechdelResults.bechdelScore).toBe(3);
+			expect(bechdelResults.bechdelPass).toBe(true);
 		});
 	});
 
