@@ -51,7 +51,7 @@
     "precommit": "npm run lint",
     "prepush": "npm prune && npm run healthcheck",
     "postcommit": "git status",
-    "postmerge": "git fetch -p && npm install --loglevel=error",
+    "postmerge": "git fetch && npm install --loglevel=error",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
