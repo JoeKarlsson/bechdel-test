@@ -16,12 +16,11 @@ class BechdelResults {
 		return this._bechdelScore;
 	}
 
-	set bechdelScore(score) {
-		if (score < 0 || score > 3) {
+	bechdelScoreIncrement() {
+		if (this._bechdelScore >= 3) {
 			return this._bechdelScore;
 		}
-		this._bechdelScore = score;
-		return this._bechdelScore;
+		return this._bechdelScore++;
 	}
 
 	get numScenesPass() {
@@ -33,7 +32,7 @@ class BechdelResults {
 	}
 
 	get numScenesDontPass() {
-		return this._numScenesPass;
+		return this._numScenesDontPass;
 	}
 
 	numScenesDontPassIncrement() {
