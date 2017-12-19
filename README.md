@@ -20,7 +20,7 @@
 
 The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule. For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on [feministfrequency.com](http://feministfrequency.com/).
 
-This program accepts a movie script and analzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechel Test?"
+This program accepts a movie script and analyzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechdel Test?"
 
 ## Prerequisites
 
@@ -57,9 +57,9 @@ In the process of building this tool’s prototype, I have come to appreciate th
 
 ## Parsing Method
 
-The Bechdel Test Visualizer is web application built enirely using JavaScript and Node.js. This tool uses a combination of online databases manual script parsing in order to collect insights about a film.
+The Bechdel Test Visualizer is web application built entirely using JavaScript and Node.js. This tool uses a combination of online databases manual script parsing in order to collect insights about a film.
 
-First, the script finds the title of the film, this is generally on the first page, and for the prototype, it is requireed to be the first line of text in the txt file. Once the title of the film has been identified, I make an API call out to [myapifilms.com](http://api.myapifilms.com/imdb.do). From here, I can collect general information about the film, such as genre, release year, runtime, etc. But the most important information comes from collecting information about the actors and actresses in the film. Using this API, I can collect a list of all of the actors and actresses, their character's name in the film, and what gender they are. The character's gender is the most important bit of information I can collect, since it is essential when trying to determine if a scene passes the bechdel test or not.
+First, the script finds the title of the film, this is generally on the first page, and for the prototype, it is required to be the first line of text in the txt file. Once the title of the film has been identified, I make an API call out to [myapifilms.com](http://api.myapifilms.com/imdb.do). From here, I can collect general information about the film, such as genre, release year, runtime, etc. But the most important information comes from collecting information about the actors and actresses in the film. Using this API, I can collect a list of all of the actors and actresses, their character's name in the film, and what gender they are. The character's gender is the most important bit of information I can collect, since it is essential when trying to determine if a scene passes the bechdel test or not.
 
 Once all of the gender and film data has been collected via the API - I can begin analyzing the script. The first step is to break the script down into scenes in order to tell if two females shared a scene together. Scenes were determined by looking for a user defined set of keywords, such as "int." or "ext.". In practice, it was determined that a list of 10-12 keywords well captured scene changes.
 
@@ -81,7 +81,7 @@ Have the test run continuously in the background.
 
 ### `build`
 
-Build the application as it would be setup on a Production server - used for testing production webpack configuration on local development enviornment.
+Build the application as it would be setup on a Production server - used for testing production Webpack configuration on local development environment.
 
 ### `eslint`
 
@@ -89,7 +89,7 @@ Lint the file using a custom AirBnB configuration.
 
 ### `postinstall`
 
-Used for cleaning up webpack build on Heroku.
+Used for cleaning up Webpack build on Heroku.
 
 ## Contributing
 
@@ -129,7 +129,7 @@ Used for cleaning up webpack build on Heroku.
 * [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
 * [The Open Movie Database](http://www.omdbapi.com/)
 * [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
-* [Check out our trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+* [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ### Resources
 

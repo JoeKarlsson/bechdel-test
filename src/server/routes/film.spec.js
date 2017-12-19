@@ -5,7 +5,7 @@ const mockListAllResponse = ['foo', 'bar'];
 const mockFindByIDResponse = { title: 'Boyhood' };
 
 jest.mock('../methods/getFilmData/getFilmData');
-jest.mock('../methods/bechdel');
+jest.mock('../methods/bechdel/bechdel');
 jest.mock('../methods/script');
 
 jest.mock('../model/Film');
