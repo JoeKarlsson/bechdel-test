@@ -10,7 +10,7 @@
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
 [![twitter][twitter]][twitter-url]
-[![code style: prettier][code style: prettier]][code style: prettier-url]
+[![Known Vulnerabilities](https://snyk.io/test/github/joekarlsson/bechdel-test/badge.svg)](https://snyk.io/test/github/joekarlsson/bechdel-test)
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
