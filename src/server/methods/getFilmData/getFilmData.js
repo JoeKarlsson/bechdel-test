@@ -1,29 +1,8 @@
-/* eslint
-	no-unused-vars: 0
-	prefer-destructuring: 0
-*/
-
 const Promise = require('bluebird');
 const request = require('request');
 const filmData = require('./FilmData');
 const dataParser = require('./dataParser');
-const Film = require('../../model/Film');
 const meta = require('../../helper/meta');
-
-let CONFIG;
-let THEMOVIEDB;
-let MYAPIFILMS;
-
-if (meta.isDeveloping) {
-	CONFIG = require('../../config/config.json'); // eslint-disable-line global-require
-	THEMOVIEDB = CONFIG.THEMOVIEDB;
-	MYAPIFILMS = CONFIG.MYAPIFILMS;
-} else {
-	THEMOVIEDB = process.env.THEMOVIEDB;
-	MYAPIFILMS = process.env.MYAPIFILMS;
-}
-
-let imdbID = null;
 
 const getFilmImages = (ID) => {
 	const promise = new Promise((resolve, reject) => {
@@ -33,7 +12,7 @@ const getFilmImages = (ID) => {
 		request(
 			'https://api.themoviedb.org/3/movie/' +
 			`${ID}/images?` +
-			`api_key=${THEMOVIEDB}` +
+			`api_key=${meta.THEMOVIEDB}` +
 			'&language=en&' +
 			'include_image_language=en,null',
 			(error, response, body) => {
@@ -54,7 +33,7 @@ const getSimpleCastData = (title) => {
 
 		const URL = 'http://api.myapifilms.com/imdb/idIMDB?' +
 		`title=${title}&` +
-		`token=${MYAPIFILMS}&` +
+		`token=${meta.MYAPIFILMS}&` +
 		'format=json&' +
 		'language=en-us&' +
 		'aka=0&' +
@@ -86,7 +65,7 @@ const getSimpleCastData = (title) => {
 			if (!error) {
 				const metadata = JSON.parse(body);
 				console.log('metadata', metadata);
-				imdbID = metadata.data.movies[0].idIMDB;
+				filmData.imdbID = metadata.data.movies[0].idIMDB;
 				filmData.addMetaData(metadata);
 				resolve(metadata);
 			}
@@ -100,7 +79,7 @@ const getFullCastData = (title) => {
 	const promise = new Promise((resolve, reject) => {
 		const URL = 'http://api.myapifilms.com/imdb/idIMDB?' +
 		`title=${title}&` +
-		`token=${MYAPIFILMS}&` +
+		`token=${meta.MYAPIFILMS}&` +
 		'format=json&' +
 		'language=en-us&' +
 		'aka=0&' +
@@ -156,7 +135,7 @@ const getData = (movieTitle) => {
 					reject(new Error('Failed on getSimpleCastData'));
 				}
 				dataParser(simpleCastdata, 'mainCast');
-				getFilmImages(imdbID)
+				getFilmImages(filmData.imdbID)
 					.then((images) => {
 						if (!images) {
 							reject(new Error('Failed on getFilmImages'));

@@ -3,6 +3,7 @@ class FilmData {
 		this._actors = [];
 		this._images = {};
 		this._metadata = [];
+		this._imdbID = null;
 	}
 
 	get actors() {
@@ -30,6 +31,15 @@ class FilmData {
 	addMetaData(data) {
 		this._metadata.push(data);
 		return this._metadata;
+	}
+
+	get imdbID() {
+		return this._imdbID;
+	}
+
+	set imdbID(newImdbID) {
+		this._imdbID = newImdbID;
+		return this._imdbID;
 	}
 
 	getAllData() {
