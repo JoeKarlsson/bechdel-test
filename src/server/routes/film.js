@@ -3,7 +3,7 @@ const path = require('path');
 const Film = require('../model/Film');
 const film = require('../methods/getFilmData/getFilmData');
 const script = require('../methods/script');
-const bechdel = require('../methods/bechdel');
+const bechdel = require('../methods/bechdel/bechdel');
 const multer = require('multer');
 
 const router = express.Router();

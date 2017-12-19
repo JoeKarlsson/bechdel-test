@@ -1,8 +1,8 @@
 /* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax, no-lonely-if */
 
 const Promise = require('bluebird');
-const script = require('./script');
-const getFilmData = require('./getFilmData/getFilmData');
+const script = require('../script');
+const getFilmData = require('../getFilmData/getFilmData');
 
 const scenesThatPass = [];
 let bechdelScore = 0;
