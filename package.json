@@ -51,7 +51,9 @@
     "precommit": "npm run lint",
     "prepush": "npm prune && npm run healthcheck",
     "postcommit": "git status",
-    "postmerge": "git fetch -p && npm install --loglevel=error"
+    "postmerge": "git fetch -p && npm install --loglevel=error",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "autoprefixer": "7.2.x",
@@ -112,13 +114,15 @@
     "stylelint-config-recommended-scss": "3.x.x",
     "stylelint-scss": "2.x.x",
     "stylelint-webpack-plugin": "0.9.x",
-    "supertest": "1.x.x",
+    "supertest": "3.0.0",
     "url-loader": "0.6.x",
     "util": "0.10.x",
     "webpack": "3.x.x",
     "webpack-dev-middleware": "1.x.x",
     "webpack-dev-server": "2.9.x",
-    "webpack-hot-middleware": "2.9.x"
+    "webpack-hot-middleware": "2.9.x",
+    "snyk": "^1.61.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "snyk": true
 }
