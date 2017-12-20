@@ -2,6 +2,8 @@
 
 # Bechdel Test Movie Script Parser
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JoeKarlsson/bechdel-test.svg)](https://greenkeeper.io/)
+
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
 [![Build Status][tests]][tests-url]
