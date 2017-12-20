@@ -1,8 +1,6 @@
 /* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax */
 
 const fs = require('fs');
-const Promise = require('bluebird');
-// import bechdelResults from './bechdel/BechdelResults';
 
 const readMovieTitle = (path) => {
 	const promise = new Promise((resolve, reject) => {

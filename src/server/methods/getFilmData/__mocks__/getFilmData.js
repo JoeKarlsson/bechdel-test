@@ -1,5 +1,3 @@
-const Promise = require('bluebird');
-
 const mockGetSimpleCastData = {
 	data: {
 		movies: [{
@@ -15,6 +13,10 @@ const mockGetSimpleCastData = {
 				name: 'Richard Linklater',
 				id: 'nm0000500',
 			}],
+			images: {
+				backdrops: [{ file_path: '/test-backdrop' }],
+				posters: [{ file_path: '/test-poster' }],
+			},
 			actors: [
 				{
 					actorName: 'Ellar Coltrane',
@@ -108,6 +110,10 @@ const mockGetData = [{
 			gender: 'Actress',
 		},
 	],
+	images: {
+		backdrops: [{ file_path: '/test-backdrop' }],
+		posters: [{ file_path: '/test-poster' }],
+	},
 	runtime: '165 min',
 	urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTYzNDc2MDc0N15BMl5BanBnXkFtZTgwOTcwMDQ5MTE@._V1_UX182_CR0,0,182,268_AL_.jpg',
 	countries: ['USA'],

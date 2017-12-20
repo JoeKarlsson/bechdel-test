@@ -4,10 +4,10 @@
 */
 
 require('./index.js');
-const Promise = require('bluebird');
-const mongoose = Promise.promisifyAll(require('mongoose'));
+const mongoose = require('mongoose');
 const parseData = require('./parseData');
-mongoose.Promise = require('bluebird');
+
+mongoose.Promise = global.Promise;
 
 const filmSchema = mongoose.Schema({
 	title: {
@@ -137,42 +137,46 @@ filmSchema.static('deleteFilm', function (id) {
 		});
 });
 
-filmSchema.static('insert', function (filmTitle, bechdelResults, actors, images, data) {
-	if (
-		!filmTitle ||
-		!bechdelResults ||
-		!actors ||
-		!images
-	) {
-		throw new Error('Cannot insert film into the database');
-	}
+filmSchema.static('insert', function (filmMetaData) {
+	const {
+		filmTitle,
+		bechdelResults,
+		actors,
+		images,
+		data,
+	} = filmMetaData;
+
 	const film = new Film({ title: filmTitle });
 	film.bechdelResults = bechdelResults;
-	film.plot = data[0].plot;
-	film.simplePlot = data[0].simplePlot;
-	film.year = data[0].year;
-	film.releaseDate = data[0].releaseDate;
-	film.directors = data[0].directors;
-	film.writers = data[0].writers;
-	film.rated = data[0].rated;
-	film.genres = data[0].genres;
-	film.urlPoster = data[0].urlPoster;
-	film.idIMDB = data[0].idIMDB;
-	film.rating = data[0].rating;
-	film.metascore = data[0].metascore;
-	film.urlIMDB = data[0].urlIMDB;
-	film.actors = parseData.parseActorArr(actors[0]);
+	film.plot = data.plot;
+	film.simplePlot = data.simplePlot;
+	film.year = data.year;
+	film.releaseDate = data.releaseDate;
+	film.directors = data.directors;
+	film.writers = data.writers;
+	film.rated = data.rated;
+	film.genres = data.genres;
+	film.urlPoster = data.urlPoster;
+	film.idIMDB = data.idIMDB;
+	film.rating = data.rating;
+	film.metascore = data.metascore;
+	film.urlIMDB = data.urlIMDB;
+	film.actors = parseData.parseActorArr(actors);
 	film.images = parseData.parseImageData(images);
 
 	return this.saveFilm(film)
 		.then((savedFilm) => {
 			if (Array.isArray(savedFilm)) {
+				// resolve(savedFilm[0]);
+				console.log('hiut');
 				return savedFilm[0];
 			}
+			console.log('hit');
+			// resolve(savedFilm);
 			return savedFilm;
 		})
 		.catch((error) => {
-			throw new Error(error);
+			reject(error);
 		});
 });
 

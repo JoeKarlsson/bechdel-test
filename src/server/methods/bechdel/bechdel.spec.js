@@ -16,15 +16,15 @@ describe('Bechdel methods', () => {
 
 			const expectedResult = {
 				pass: false,
-				bechdelScore: 1,
+				bechdelScore: 0,
 				numScenesPass: 0,
-				numScenesDontPass: 161,
-				numOfFemalesChars: 0,
-				numOfMaleChars: 0,
-				numOfFemalesCharsWithDialogue: 0,
-				numOfMaleCharsWithDialogue: 0,
-				totalLinesFemaleDialogue: 0,
-				totalLinesMaleDialogue: 0,
+				numScenesDontPass: 0,
+				numOfFemalesChars: 2,
+				numOfMaleChars: 2,
+				numOfFemalesCharsWithDialogue: 2,
+				numOfMaleCharsWithDialogue: 2,
+				totalLinesFemaleDialogue: 493,
+				totalLinesMaleDialogue: 459,
 				scenesThatPass: [],
 			};
 
