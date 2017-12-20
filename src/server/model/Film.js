@@ -176,7 +176,7 @@ filmSchema.static('insert', function (filmMetaData) {
 			return savedFilm;
 		})
 		.catch((error) => {
-			reject(error);
+			throw new Error(error);
 		});
 });
 
