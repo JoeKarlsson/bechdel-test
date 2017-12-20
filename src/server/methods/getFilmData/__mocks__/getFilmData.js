@@ -17,28 +17,44 @@ const mockGetSimpleCastData = {
 			}],
 			actors: [
 				{
-					actorName: 'Christian Bale',
-					character: 'Steve',
-					actorActress: 'Actor',
+					actorName: 'Ellar Coltrane',
+					character: 'Mason',
+					actorActress: 'actor',
 					_id: '5a2f044e491eef5edab46b97',
 					biography: {
 						actorActress: 'actor',
 					},
 				}, {
-					actorName: 'Bradley Cooper',
-					character: 'Mike',
-					actorActress: 'Actor',
+					actorName: 'Patricia Arquette',
+					character: 'Mom',
+					actorActress: 'actress',
 					_id: '5a2f044e491eef5edab46b96',
+					biography: {
+						actorActress: 'actress',
+					},
+				}, {
+					actorName: 'Elijah Smith',
+					character: 'Tommy',
+					actorActress: 'actor',
+					_id: '5a2f044e491eef5edab46b95',
 					biography: {
 						actorActress: 'actor',
 					},
 				}, {
-					actorName: 'Amy Adams',
-					character: 'Nicole',
-					actorActress: 'Actress',
+					actorName: 'Lorelei Linklater',
+					character: 'Samantha',
+					actorActress: 'actress',
 					_id: '5a2f044e491eef5edab46b95',
 					biography: {
 						actorActress: 'actress',
+					},
+				}, {
+					actorName: 'Ethan Hawke',
+					character: 'Dad',
+					actorActress: 'actor',
+					_id: '5a2f044e491eef5edab46b95',
+					biography: {
+						actorActress: 'actor',
 					},
 				},
 			],
@@ -115,6 +131,13 @@ const getSimpleCastData = jest.fn(() => {
 	return p;
 });
 
+const getFullCastData = jest.fn(() => {
+	const p = new Promise((resolve) => {
+		resolve(mockGetSimpleCastData);
+	});
+	return p;
+});
+
 const getData = jest.fn(() => {
 	const p = new Promise((resolve) => {
 		resolve(mockGetData);
@@ -124,5 +147,6 @@ const getData = jest.fn(() => {
 
 module.exports = {
 	getSimpleCastData,
+	getFullCastData,
 	getData,
 };

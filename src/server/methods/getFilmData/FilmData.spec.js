@@ -17,13 +17,19 @@ describe('FilmData', () => {
 	describe('Actors', () => {
 		it('should add a new actor to the actor array', () => {
 			expect(filmData.actors).toMatchObject([]);
-			const actor = {
-				actorName: 'Christian Bale',
-				actorActress: 'Actor',
-				_id: '5a2f044e491eef5edab46b97',
-			};
+			const actor = [
+				{
+					actorName: 'Christian Bale',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+				}, {
+					actorName: 'Christian Bale',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+				},
+			];
 
-			const expectedResult = [actor];
+			const expectedResult = actor;
 
 			filmData.addActor(actor);
 			expect(filmData.actors).toMatchObject(expectedResult);
@@ -94,12 +100,18 @@ describe('FilmData', () => {
 	describe('getAllData', () => {
 		it('should return all the data as an object', () => {
 			expect(filmData.actors).toMatchObject([]);
-			const actor = {
-				actorName: 'Christian Bale',
-				actorActress: 'Actor',
-				_id: '5a2f044e491eef5edab46b97',
-			};
-			filmData.addActor(actor);
+			const actors = [
+				{
+					actorName: 'Christian Bale',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+				}, {
+					actorName: 'Christian Bale',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+				},
+			];
+			filmData.addActor(actors);
 
 			const image = {
 				backdrops: ['https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg'],
@@ -123,7 +135,7 @@ describe('FilmData', () => {
 			filmData.addMetaData(metadata);
 
 			const expectedResult = {
-				actors: [actor],
+				actors,
 				images: image,
 				metadata: [metadata],
 			};
@@ -135,12 +147,18 @@ describe('FilmData', () => {
 	describe('clear', () => {
 		it('should clear all the data in the object', () => {
 			expect(filmData.actors).toMatchObject([]);
-			const actor = {
-				actorName: 'Christian Bale',
-				actorActress: 'Actor',
-				_id: '5a2f044e491eef5edab46b97',
-			};
-			filmData.addActor(actor);
+			const actors = [
+				{
+					actorName: 'Christian Bale',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+				}, {
+					actorName: 'Christian Bale',
+					actorActress: 'Actor',
+					_id: '5a2f044e491eef5edab46b97',
+				},
+			];
+			filmData.addActor(actors);
 
 			const image = {
 				backdrops: ['https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg'],
@@ -164,7 +182,7 @@ describe('FilmData', () => {
 			filmData.addMetaData(metadata);
 
 			const expectedResult = {
-				actors: [actor],
+				actors,
 				images: image,
 				metadata: [metadata],
 			};
