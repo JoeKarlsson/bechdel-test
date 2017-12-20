@@ -55,13 +55,8 @@ router.route('/')
 					}
 					getBechdelResults(filmTitle, scriptPath)
 						.then((bechdelResults) => {
-							if (!bechdelResults) {
-								throw new Error(
-									'No movie returned from ' +
-									'getBechdelResults(filmTitle, scriptPath)',
-								);
-							}
 							const data = FilmData.getAllData();
+							console.log('hit');
 							console.log('data', data);
 							return Film.insert(
 								filmTitle,
@@ -81,8 +76,7 @@ router.route('/')
 							return res.send(savedFilm);
 						})
 						.catch((err) => {
-							res.status(500).send(err);
-							throw new Error(err);
+							return res.status(500).send(err);
 						});
 				})
 				.catch((err) => {
