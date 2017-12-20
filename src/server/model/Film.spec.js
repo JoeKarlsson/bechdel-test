@@ -96,7 +96,7 @@ const _doc = {
 	_id: '5a2f044e491eef5edab46b85',
 };
 
-const filmData = [{
+const filmData = {
 	directors: [
 		{
 			name: 'David O. Russell',
@@ -130,7 +130,7 @@ const filmData = [{
 		},
 	],
 	year: 2013,
-}];
+};
 
 const bechdelResults = {
 	bechdelScore: 1,
@@ -301,8 +301,16 @@ describe('Mongoose Film model', () => {
 		it('should return the doc with insert', () => {
 			mockingoose.Film.toReturn(_doc, 'save');
 
+			const filmMetaData = {
+				filmTitle: 'American Hustle',
+				bechdelResults,
+				actors,
+				images,
+				data: filmData,
+			};
+
 			return Film
-				.insert('American Hustle', bechdelResults, actors, images, filmData)
+				.insert(filmMetaData)
 				.then((doc) => {
 					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
 				});

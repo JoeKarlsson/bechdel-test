@@ -1,6 +1,5 @@
 /* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax */
 
-const Promise = require('bluebird');
 const script = require('../script');
 const scriptAnalysis = require('./scriptAnalysis');
 const bechdelResults = require('./BechdelResults');
