@@ -3,11 +3,10 @@ import request from 'supertest';
 // import path from 'path';
 import app from '../server';
 
+// jest.mock('../methods/getFilmData/FilmData');
 jest.mock('../methods/getFilmData/getFilmData');
-jest.mock('../methods/getFilmData/FilmData');
-// jest.mock('../methods/bechdel/bechdel');
 jest.mock('../methods/script');
-// jest.mock('../model/Film');
+jest.unmock('../model/Film');
 
 describe('Film Routes Test', () => {
 	beforeEach(() => {
@@ -47,10 +46,12 @@ describe('Film Routes Test', () => {
 	// 	it('should return the film', (done) => {
 	// 		const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
 	// 		const _doc = { };
-	// 		mockingoose.Film.toReturn(_doc, 'find');
+	// 		mockingoose.Film
+	// 			.toReturn(_doc, 'find')
+	// 			.toReturn(_doc, 'save');
 	//
 	// 		request(app)
-	// 			.post('/api/film/')
+	// 			.post('/api/film')
 	// 			.attach('script', testScript)
 	// 			.expect(200)
 	// 			.expect('Content-Type', /json/)
