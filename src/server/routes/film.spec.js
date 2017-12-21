@@ -3,7 +3,6 @@ import request from 'supertest';
 // import path from 'path';
 import app from '../server';
 
-// jest.mock('../methods/getFilmData/FilmData');
 jest.mock('../methods/getFilmData/getFilmData');
 jest.mock('../methods/script');
 jest.unmock('../model/Film');
@@ -14,7 +13,7 @@ describe('Film Routes Test', () => {
 	});
 
 	describe('GET /api/film', () => {
-		it('should send JSON with an array of films', (done) => {
+		it('should send JSON with an array of films', done => {
 			const _doc = { title: 'American Hustle 2' };
 			mockingoose.Film.toReturn(_doc, 'find');
 
@@ -67,7 +66,7 @@ describe('Film Routes Test', () => {
 	// });
 
 	describe('GET /api/film/:id', () => {
-		it('should send JSON with a single film', (done) => {
+		it('should send JSON with a single film', done => {
 			const _id = '5a2f044e491eef5edab46b85';
 			const title = 'American Hustle 2';
 			const _doc = {
@@ -103,13 +102,11 @@ describe('Film Routes Test', () => {
 	});
 
 	describe('DELETE /api/film/:id', () => {
-		it('should return success:true after deleting movie from the database', (done) => {
+		it('should return success:true after deleting movie from the database', done => {
 			const id = 1234;
 			const _doc = { id: 1234, title: 'American Hustle 2' };
 
-			mockingoose.Film
-				.toReturn(_doc, 'findOne')
-				.toReturn(true, 'remove');
+			mockingoose.Film.toReturn(_doc, 'findOne').toReturn(true, 'remove');
 
 			request(app)
 				.del(`/api/film/${id}`)
