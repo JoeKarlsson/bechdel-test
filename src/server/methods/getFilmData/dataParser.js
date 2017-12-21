@@ -1,13 +1,13 @@
 const filmData = require('./FilmData');
 
-const isFullCast = (type) => {
+const isFullCast = type => {
 	if (type === 'fullCast') {
 		return true;
 	}
 	return false;
 };
 
-const cleanCharName = (name) => {
+const cleanCharName = name => {
 	return name.replace(/'([^']+(?='))'/g, '$1').toUpperCase();
 };
 
@@ -32,7 +32,9 @@ const dataParser = (body, type) => {
 	if (rawMovieCharacters !== []) {
 		movieCharacters = createCharcArr(movieCharacters, rawMovieCharacters, type);
 	} else {
-		throw new Error('Error: Connected to myfilmapi, but no actor data returned');
+		throw new Error(
+			'Error: Connected to myfilmapi, but no actor data returned',
+		);
 	}
 	filmData.addActor(movieCharacters);
 	return movieCharacters;

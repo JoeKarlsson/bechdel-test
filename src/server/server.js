@@ -1,6 +1,5 @@
 const express = require('express');
-const app = express();
-
+const helmet = require('helmet');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -12,6 +11,9 @@ const handleListen = require('./helper/handleListen');
 const log = require('./helper/log');
 const meta = require('./helper/meta');
 
+const app = express();
+
+app.use(helmet());
 app.use(partials());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
