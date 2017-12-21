@@ -1,4 +1,3 @@
-// const nock = require('nock');
 const getFilmImages = require('./getFilmImages');
 const fetchMock = require('fetch-mock');
 const meta = require('../../helper/meta');
