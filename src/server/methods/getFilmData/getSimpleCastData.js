@@ -1,5 +1,4 @@
 require('isomorphic-fetch');
-const filmData = require('./FilmData');
 const meta = require('../../helper/meta');
 
 const getSimpleCastData = title => {
@@ -40,11 +39,6 @@ const getSimpleCastData = title => {
 				throw new Error('Bad response from server');
 			}
 			return response.json();
-		})
-		.then(metadata => {
-			filmData.imdbID = metadata.data.movies[0].idIMDB;
-			filmData.addMetaData(metadata);
-			return metadata;
 		})
 		.catch(err => {
 			throw new Error(err);
