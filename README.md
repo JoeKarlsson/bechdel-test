@@ -1,4 +1,7 @@
-![Bechdel Test](http://www.mestudios.com/wp-content/uploads/2014/12/Bechdel-the-rule.jpg)
+
+<div align="center">
+	![687474703a2f2f7777772e6d6573747564696f732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f31322f4265636864656c2d7468652d72756c652e6a7067](https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg)
+</table>
 
 # Bechdel Test Movie Script Parser
 
@@ -16,9 +19,9 @@
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
-1. It includes at least two women
-2. who have at least one conversation
-3. about something other than a man or men.
+1.  It includes at least two women
+2.  who have at least one conversation
+3.  about something other than a man or men.
 
 The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule. For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on [feministfrequency.com](http://feministfrequency.com/).
 
@@ -26,7 +29,7 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 ## Prerequisites
 
-  * [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
+*   [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
 
 ## Setup Your Project
 
@@ -95,11 +98,11 @@ Used for cleaning up Webpack build on Heroku.
 
 ## Contributing
 
- 1. Fork it!
- 2. Create your feature branch: `git checkout -b my-new-feature`
- 3. Commit your changes: `git commit -am 'Add some feature'`
- 4. Push to the branch: `git push origin my-new-feature`
- 5. Submit a pull request :D
+1.  Fork it!
+1.  Create your feature branch: `git checkout -b my-new-feature`
+1.  Commit your changes: `git commit -am 'Add some feature'`
+1.  Push to the branch: `git push origin my-new-feature`
+1.  Submit a pull request :D
 
 ### Maintainers
 
@@ -128,10 +131,10 @@ Used for cleaning up Webpack build on Heroku.
 
 ## Related Links
 
-  * [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
-  * [The Open Movie Database](http://www.omdbapi.com/)
-  * [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
-  * [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+*   [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+*   [The Open Movie Database](http://www.omdbapi.com/)
+*   [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+*   [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ### Resources
 

@@ -12,11 +12,11 @@ Please search [issues](../../issues/) and [pull requests](../../pulls/) before a
 
 This project welcomes any kind of contribution! Here are a few suggestions:
 
-- **Ideas**: participate in an issue thread or start your own to have your voice heard.
-- **Writing**: contribute your expertise in an area by helping expand the included content.
-- **Copy editing**: fix typos, clarify language, and generally improve the quality of the content.
-- **Formatting**: help keep content easy to read with consistent formatting.
-- **Code**: help maintain and improve the project codebase.
+**Ideas**: participate in an issue thread or start your own to have your voice heard.
+**Writing**: contribute your expertise in an area by helping expand the included content.
+**Copy editing**: fix typos, clarify language, and generally improve the quality of the content.
+**Formatting**: help keep content easy to read with consistent formatting.
+**Code**: help maintain and improve the project codebase.
 
 ## Code Style
 
@@ -26,8 +26,6 @@ This repository uses [`standard`][standard-url] to maintain code style and consi
 
 [standard-image]: https://cdn.rawgit.com/feross/standard/master/badge.svg
 [standard-url]: https://github.com/feross/standard
-[semistandard-image]: https://cdn.rawgit.com/flet/semistandard/master/badge.svg
-[semistandard-url]: https://github.com/Flet/semistandard
 
 ## Project Governance
 
@@ -39,11 +37,11 @@ Individuals making significant and valuable contributions are given commit acces
 
 There are a few basic ground rules for collaborators:
 
-1. **No `--force` pushes** or modifying the Git history in any way.
-1. **Non-master branches** ought to be used for ongoing work.
-1. **External API changes and significant modifications** ought to be subject to an **internal pull request** to solicit feedback from other contributors.
-1. Internal pull requests to solicit feedback are *encouraged* for any other non-trivial contribution but left to the discretion of the contributor.
-1. Contributors should attempt to adhere to the prevailing code style.
+1.  **No `--force` pushes** or modifying the Git history in any way.
+1.  **Non-master branches** ought to be used for ongoing work.
+1.  **External API changes and significant modifications** ought to be subject to an **internal pull request** to solicit feedback from other contributors.
+1.  Internal pull requests to solicit feedback are *encouraged* for any other non-trivial contribution but left to the discretion of the contributor.
+1.  Contributors should attempt to adhere to the prevailing code style.
 
 ### Releases
 
