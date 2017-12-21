@@ -5,17 +5,18 @@
 </p>
 <h1 align="center">Bechdel Test Movie Script Parser</h1>
 
-
-[![deps][deps]][deps-url]
-[![Coverage Status][cover]][cover-url]
-[![Build Status][tests]][tests-url]
-[![Maintainability][maintainability]][maintainability-url]
-[![stars][stars]][stars-url]
-[![pr][pr]][pr-url]
-[![license][license]][license-url]
-[![twitter][twitter]][twitter-url]
-[![snyk][snyk]][snyk-url]
-[![greenkeeper][greenkeeper]][greenkeeper-url]
+<p align="center">
+	[![deps][deps]][deps-url]
+	[![Coverage Status][cover]][cover-url]
+	[![Build Status][tests]][tests-url]
+	[![Maintainability][maintainability]][maintainability-url]
+	[![stars][stars]][stars-url]
+	[![pr][pr]][pr-url]
+	[![license][license]][license-url]
+	[![twitter][twitter]][twitter-url]
+	[![snyk][snyk]][snyk-url]
+	[![greenkeeper][greenkeeper]][greenkeeper-url]
+</p>
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
