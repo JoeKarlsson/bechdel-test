@@ -2,7 +2,6 @@
 
 # Bechdel Test Movie Script Parser
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/JoeKarlsson/bechdel-test.svg)](https://greenkeeper.io/)
 
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
@@ -13,6 +12,7 @@
 [![license][license]][license-url]
 [![twitter][twitter]][twitter-url]
 [![Known Vulnerabilities](https://snyk.io/test/github/joekarlsson/bechdel-test/badge.svg)](https://snyk.io/test/github/joekarlsson/bechdel-test)
+[![greenkeeper][greenkeeeper]][greenkeeeper-url]
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
@@ -26,7 +26,7 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 ## Prerequisites
 
-* [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
+  * [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
 
 ## Setup Your Project
 
@@ -95,11 +95,11 @@ Used for cleaning up Webpack build on Heroku.
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+ 1. Fork it!
+ 2. Create your feature branch: `git checkout -b my-new-feature`
+ 3. Commit your changes: `git commit -am 'Add some feature'`
+ 4. Push to the branch: `git push origin my-new-feature`
+ 5. Submit a pull request :D
 
 ### Maintainers
 
@@ -128,10 +128,10 @@ Used for cleaning up Webpack build on Heroku.
 
 ## Related Links
 
-* [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
-* [The Open Movie Database](http://www.omdbapi.com/)
-* [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
-* [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+  * [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+  * [The Open Movie Database](http://www.omdbapi.com/)
+  * [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+  * [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ### Resources
 
@@ -151,5 +151,5 @@ Used for cleaning up Webpack build on Heroku.
 [license-url]: https://github.com/JoeKarlsson/bechdel-test/blob/develop/LICENSE
 [twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/bechdel-test.svg?style=social&style=flat-square
 [twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbechdel-test
-[code style: prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
-[code style: prettier-url]: https://github.com/prettier/prettier
+[greenkeeper]: https://badges.greenkeeper.io/JoeKarlsson/bechdel-test.svg
+[greenkeeper-url]: https://greenkeeper.io/
