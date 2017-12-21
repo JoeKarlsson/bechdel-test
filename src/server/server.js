@@ -13,7 +13,7 @@ const meta = require('./helper/meta');
 
 const app = express();
 
-require('es6-promise').polyfill();
+// require('es6-promise').polyfill();
 
 app.use(helmet());
 app.use(partials());
