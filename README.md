@@ -1,7 +1,7 @@
 
 <div align="center">
-	![687474703a2f2f7777772e6d6573747564696f732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f31322f4265636864656c2d7468652d72756c652e6a7067](https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg)
-</table>
+	![Bechdel_test](https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg)
+</div>
 
 # Bechdel Test Movie Script Parser
 
