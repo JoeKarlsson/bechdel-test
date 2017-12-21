@@ -18,19 +18,25 @@ const filmSchema = mongoose.Schema({
 	simplePlot: String,
 	year: Number,
 	releaseDate: String,
-	actors: [{
-		actorName: String,
-		character: String,
-		actorActress: String,
-	}],
-	directors: [{
-		name: String,
-		id: String,
-	}],
-	writers: [{
-		name: String,
-		id: String,
-	}],
+	actors: [
+		{
+			actorName: String,
+			character: String,
+			actorActress: String,
+		},
+	],
+	directors: [
+		{
+			name: String,
+			id: String,
+		},
+	],
+	writers: [
+		{
+			name: String,
+			id: String,
+		},
+	],
 	rated: String,
 	genres: [String],
 	urlPoster: String,
@@ -60,91 +66,88 @@ const filmSchema = mongoose.Schema({
 	},
 });
 
-filmSchema.static('listAll', function () {
-	const promise = new Promise((resolve) => {
+filmSchema.static('listAll', function() {
+	const promise = new Promise(resolve => {
 		this.find()
 			.sort('-date')
 			.exec()
-			.then((result) => {
+			.then(result => {
 				return resolve(result);
 			});
 	});
 	return promise;
 });
 
-filmSchema.static('findByID', function (id) {
+filmSchema.static('findByID', function(id) {
 	const promise = new Promise((resolve, reject) => {
 		this.find({ _id: id })
 			.sort('-date')
 			.exec()
-			.then((result) => {
+			.then(result => {
 				if (Array.isArray(result)) {
 					return resolve(result[0]);
 				}
 				return resolve(result);
 			})
-			.catch((err) => {
+			.catch(err => {
 				reject(new Error(err));
 			});
 	});
 	return promise;
 });
 
-filmSchema.static('findByTitle', function (movieTitle) {
+filmSchema.static('findByTitle', function(movieTitle) {
 	const promise = new Promise((resolve, reject) => {
 		if (!movieTitle) {
 			reject(new Error('No film tile found'));
 		}
-		this.find({ title: movieTitle }).exec()
-			.then((result) => {
+		this.find({ title: movieTitle })
+			.exec()
+			.then(result => {
 				if (Array.isArray(result)) {
 					return resolve(result[0]);
 				}
 				return resolve(result);
 			})
-			.catch((err) => {
+			.catch(err => {
 				throw new Error(err);
 			});
 	});
 	return promise;
 });
 
-filmSchema.static('saveFilm', (film) => {
+filmSchema.static('saveFilm', film => {
 	const promise = new Promise((resolve, reject) => {
 		if (!film) {
 			reject(new Error('Cannot save film'));
 		}
-		film.save()
-			.then((result) => {
+		film
+			.save()
+			.then(result => {
 				resolve(result);
 			})
-			.catch((err) => {
+			.catch(err => {
 				reject(new Error(err));
 			});
 	});
 	return promise;
 });
 
-filmSchema.static('deleteFilm', function (id) {
+filmSchema.static('deleteFilm', function(id) {
 	if (!id) {
 		return 'Invalid input on deleteFilm';
 	}
-	return this.findOne({ _id: id }).exec()
+	return this.findOne({ _id: id })
+		.exec()
 		.then(film => film.remove)
 		.then(() => true)
-		.catch((error) => {
+		.catch(error => {
 			throw new Error(error);
 		});
 });
 
-filmSchema.static('insert', function (filmMetaData) {
-	const {
-		filmTitle,
-		bechdelResults,
-		actors,
-		images,
-		data,
-	} = filmMetaData;
+filmSchema.static('insert', function(filmMetaData) {
+	const { filmTitle, bechdelResults, actors, images, data } = filmMetaData;
 
 	const film = new Film({ title: filmTitle });
 	film.bechdelResults = bechdelResults;
@@ -165,17 +168,15 @@ filmSchema.static('insert', function (filmMetaData) {
 	film.images = parseData.parseImageData(images);
 
 	return this.saveFilm(film)
-		.then((savedFilm) => {
+		.then(savedFilm => {
 			if (Array.isArray(savedFilm)) {
 				// resolve(savedFilm[0]);
-				console.log('hiut');
 				return savedFilm[0];
 			}
-			console.log('hit');
 			// resolve(savedFilm);
 			return savedFilm;
 		})
-		.catch((error) => {
+		.catch(error => {
 			throw new Error(error);
 		});
 });
