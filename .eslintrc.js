@@ -1,5 +1,8 @@
 module.exports = {
-  extends: "airbnb",
+  extends: [
+		"airbnb",
+		"prettier",
+	],
   rules: {
     "import/no-named-as-default": 0,
     "no-underscore-dangle": "off",
@@ -27,7 +30,7 @@ module.exports = {
         specialLink: [],
         aspects: ["noHref", "invalidHref", "preferButton"]
       }
-    ]
+    ],
   },
   env: {
     browser: true,
@@ -36,5 +39,8 @@ module.exports = {
     mocha: true,
     mongo: true
   },
-  plugins: ["import"]
+  plugins: [
+		"import",
+		"prettier",
+	]
 };
