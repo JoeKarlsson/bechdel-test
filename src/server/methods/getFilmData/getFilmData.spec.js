@@ -89,7 +89,6 @@ describe('Film methods', () => {
 			fetchMock.mock(fullURL, mockGetFullCastData);
 
 			getFilmData(filmTitle).then(body => {
-				console.log('body', body);
 				expect(body).toMatchObject({});
 			});
 		});
