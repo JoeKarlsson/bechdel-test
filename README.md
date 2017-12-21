@@ -1,9 +1,9 @@
 
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
-</p>
 
-# Bechdel Test Movie Script Parser
+	<h1>Bechdel Test Movie Script Parser</h1>
+</p>
 
 
 [![deps][deps]][deps-url]
