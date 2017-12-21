@@ -42,7 +42,6 @@ const getFullCastData = title => {
 			return response.json();
 		})
 		.then(metadata => {
-			filmData.imdbID = metadata.data.movies[0].idIMDB;
 			filmData.addMetaData(metadata);
 			return metadata;
 		})
