@@ -4,7 +4,7 @@ import path from 'path';
 import app from '../server';
 
 jest.mock('../methods/getFilmData/getFilmData');
-jest.mock('../methods/script');
+// jest.mock('../methods/script');
 // jest.mock('../model/Film');
 
 describe('Film Routes Test', () => {
@@ -57,7 +57,7 @@ describe('Film Routes Test', () => {
 					if (err) {
 						return done(err);
 					}
-					expect(typeof res.body.title).toBe('string');
+					expect(res.body._doc.title).toBe('American Hustle');
 					return done();
 				});
 		});

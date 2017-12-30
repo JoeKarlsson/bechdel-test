@@ -21,6 +21,9 @@ const getBechdelResults = async (title, path) => {
 					.scriptAnalysis(bechdelResults.characters, scenes)
 					.then(analysis => {
 						resolve(analysis);
+					})
+					.catch(error => {
+						reject(new Error(error));
 					});
 			})
 			.catch(error => {
