@@ -14,7 +14,7 @@ describe('Film methods', () => {
 
 	describe('#getData', () => {
 		it('should return all the film data as a promise', () => {
-			const ID = 'tt1065073';
+			const idIMDB = 'tt1065073';
 			const filmTitle = 'BOYHOOD';
 
 			const simpleURL =
@@ -49,8 +49,8 @@ describe('Film methods', () => {
 				'adultSearch=0';
 
 			const fullURL =
-				'http://api.myapifilms.com/imdb/idIMDB?' +
-				`title=${filmTitle}&` +
+				'http://www.myapifilms.com/' +
+				`imdb/idIMDB?idIMDB=${idIMDB}&` +
 				`token=${meta.MYAPIFILMS}&` +
 				'format=json&' +
 				'language=en-us&' +
@@ -59,27 +59,23 @@ describe('Film methods', () => {
 				'seasons=0&' +
 				'seasonYear=0&' +
 				'technical=0&' +
-				'filter=3&' +
-				'exactFilter=0&' +
-				'limit=1&' +
-				'forceYear=0&' +
-				'trailers=0&' +
+				'trailers=1&' +
 				'movieTrivia=0&' +
 				'awards=0&' +
 				'moviePhotos=0&' +
 				'movieVideos=0&' +
-				'actors=2&' +
+				'actors=1&' +
 				'biography=1&' +
-				'uniqueName=0&' +
-				'filmography=0&' +
-				'bornAndDead=0&' +
-				'starSign=0&' +
 				'actorActress=1&' +
-				'actorTrivia=0&' +
 				'similarMovies=0&' +
-				'adultSearch=0';
+				'goofs=0&' +
+				'keyword=0&' +
+				'quotes=0&' +
+				'fullSize=0&' +
+				'companyCredits=0&' +
+				'filmingLocations=0';
 
-			const hostnameImages = `https://api.themoviedb.org/3/movie/${ID}/images?`;
+			const hostnameImages = `https://api.themoviedb.org/3/movie/${idIMDB}/images?`;
 			const pathImages = `api_key=${
 				meta.THEMOVIEDB
 			}&language=en&include_image_language=en,null`;
@@ -88,9 +84,13 @@ describe('Film methods', () => {
 			fetchMock.mock(simpleURL, mockGetSimpleCastData);
 			fetchMock.mock(fullURL, mockGetFullCastData);
 
-			getFilmData(filmTitle).then(body => {
-				expect(body).toMatchObject({});
-			});
+			getFilmData(filmTitle)
+				.then(body => {
+					expect(body).toMatchObject({});
+				})
+				.catch(error => {
+					throw new Error(error);
+				});
 		});
 	});
 });
