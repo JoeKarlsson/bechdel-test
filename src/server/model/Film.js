@@ -96,21 +96,24 @@ filmSchema.static('findByID', function(id) {
 	return promise;
 });
 
-filmSchema.static('findByTitle', function(movieTitle) {
+filmSchema.static('findByTitle', function(title) {
 	const promise = new Promise((resolve, reject) => {
-		if (!movieTitle) {
+		if (!title) {
 			reject(new Error('No film tile found'));
 		}
-		this.find({ title: movieTitle })
+		this.find({ title })
 			.exec()
 			.then(result => {
+				if (result.length === 0) {
+					reject(new Error('film not found'));
+				}
 				if (Array.isArray(result)) {
 					return resolve(result[0]);
 				}
 				return resolve(result);
 			})
 			.catch(err => {
-				throw new Error(err);
+				reject(new Error(err));
 			});
 	});
 	return promise;
@@ -132,7 +135,7 @@ filmSchema.static('deleteFilm', function(id) {
 filmSchema.static('insertFilm', filmMetaData => {
 	const promise = new Promise((resolve, reject) => {
 		const { title, bechdelResults, actors, images, data } = filmMetaData;
-
+		console.log(title, 'title');
 		const film = new Film({ title });
 		film.title = title;
 		film.bechdelResults = bechdelResults;

@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const Film = require('../model/Film');
-const getFilmData = require('../methods/getFilmData/getFilmData');
 const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
 const getBechdelResults = require('../methods/bechdel/bechdel');
@@ -41,38 +40,42 @@ router
 		}
 		try {
 			const title = await script.readMovieTitle(scriptPath);
-			const film = await Film.findByTitle(title);
-			if (film.title) {
+			console.log(title, 'title');
+			if (!title) {
+				return res.status(500).send('Error reading script');
+			}
+			try {
+				const film = await Film.findByTitle(title);
 				script.clearTemp(scriptPath);
 				return res.json({
 					...film,
-					title,
 					success: true,
 					cacheHit: true,
 				});
+			} catch (err) {
+				const bechdelResults = await getBechdelResults(title, scriptPath);
+				const { actors, images, metadata } = filmData.getAllData();
+
+				const filmMetaData = {
+					title,
+					bechdelResults,
+					actors,
+					images,
+					data: metadata,
+				};
+				await Film.insertFilm(filmMetaData);
+				const finalFilm = await Film.findByTitle(title);
+
+				filmData.clear();
+				script.clearTemp(scriptPath);
+
+				res.json({
+					...finalFilm,
+					title,
+					success: true,
+					cacheHit: false,
+				});
 			}
-			const bechdelResults = await getBechdelResults(title, scriptPath);
-			const data = await getFilmData();
-
-			const filmMetaData = {
-				title,
-				bechdelResults,
-				actors: data.actors,
-				images: data.images,
-				data: data.metadata,
-			};
-			await Film.insertFilm(filmMetaData);
-			const finalFilm = await Film.findByTitle(title);
-
-			filmData.clear();
-			script.clearTemp(scriptPath);
-
-			res.json({
-				...finalFilm,
-				title,
-				success: true,
-				cacheHit: false,
-			});
 		} catch (err) {
 			console.log(err);
 			filmData.clear();
