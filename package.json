@@ -34,11 +34,11 @@
   "homepage": "https://github.com/JoeKarlsson/bechdel-test",
   "scripts": {
     "start": "node src/server/server.js",
-    "test": "jest --coverage && open coverage/index.html",
+    "test": "jest --coverage",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
-    "test:coverage": "jest --coverage && open ./coverage/index.html",
+    "test:coverage": "jest --coverage",
     "lint": "eslint src && npm run lint:css && npm run lint:md",
     "lint:fix": "npm run lint -- --fix",
     "lint:out": "npm run lint -- -f checkstyle -o coverage/checkstyle.xml",
