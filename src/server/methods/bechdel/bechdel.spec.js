@@ -10,30 +10,23 @@ describe('Bechdel methods', () => {
 	});
 
 	describe('#getBechdelResults', () => {
-		it('should return the bechdel result for a script', () => {
+		it('should return the bechdel result for a script', async () => {
 			const title = 'BOYHOOD';
-			const scriptPath = path.join(
-				__dirname,
-				'../../../../scripts/boyhood.txt'
-			);
+			const scriptPath = path.join(__dirname, '../__mocks__/mock-boyhood.txt');
 
-			const expectedResult = {
-				pass: false,
-				bechdelScore: 0,
-				numScenesPass: 0,
-				numScenesDontPass: 0,
-				numOfFemalesChars: 32,
-				numOfMaleChars: 52,
-				numOfFemalesCharsWithDialogue: 19,
-				numOfMaleCharsWithDialogue: 22,
-				totalLinesFemaleDialogue: 493,
-				totalLinesMaleDialogue: 459,
-				scenesThatPass: [],
-			};
+			const result = await getBechdelResults(title, scriptPath);
 
-			getBechdelResults(title, scriptPath).then(results => {
-				expect(results).toMatchObject(expectedResult);
-			});
+			expect(result.pass).toBe(true);
+			expect(result.bechdelScore).toBe(3);
+			expect(result.numScenesPass).toBe(10);
+			expect(result.numScenesDontPass).toBe(151);
+			expect(result.numOfFemalesChars).toBe(32);
+			expect(result.numOfMaleChars).toBe(52);
+			expect(result.numOfFemalesCharsWithDialogue).toBe(19);
+			expect(result.numOfMaleCharsWithDialogue).toBe(22);
+			expect(result.totalLinesFemaleDialogue).toBe(802);
+			expect(result.totalLinesMaleDialogue).toBe(1063);
+			expect(result.scenesThatPass.length).toBe(10);
 		});
 	});
 });

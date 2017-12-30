@@ -34,7 +34,7 @@
   "homepage": "https://github.com/JoeKarlsson/bechdel-test",
   "scripts": {
     "start": "node src/server/server.js",
-    "test": "jest --coverage",
+    "test": "jest --coverage && open coverage/index.html",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
@@ -63,7 +63,7 @@
     "babel-loader": "7.x.x",
     "babel-plugin-transform-object-rest-spread": "6.x.x",
     "babel-plugin-transform-react-jsx": "6.x.x",
-    "babel-preset-env": "1.x.x",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "6.x.x",
     "babel-register": "6.x.x",
     "body-parser": "1.x.x",

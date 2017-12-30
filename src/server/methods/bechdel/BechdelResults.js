@@ -24,7 +24,6 @@ class BechdelResults {
 		return this._pass;
 	}
 
-
 	get bechdelScore() {
 		return this._bechdelScore;
 	}
@@ -33,8 +32,9 @@ class BechdelResults {
 		if (score >= 3) {
 			this._bechdelScore = 3;
 		}
-		if (score === 3) {
+		if (this._bechdelScore === 3) {
 			this._pass = true;
+			return this._bechdelScore;
 		}
 		this._bechdelScore = score;
 		return this._bechdelScore;
@@ -138,7 +138,7 @@ class BechdelResults {
 	}
 
 	get scenes() {
-		return this._scenesThatPass;
+		return this._scenes;
 	}
 
 	addScene(scene) {
@@ -160,7 +160,7 @@ class BechdelResults {
 			totalLinesMaleDialogue: this._totalLinesMaleDialogue,
 			characters: this._characters,
 			scenesThatPass: this._scenesThatPass,
-			scenes: this._scenes,
+			// scenes: this._scenes,
 		};
 	}
 

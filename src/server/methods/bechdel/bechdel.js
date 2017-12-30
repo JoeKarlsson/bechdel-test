@@ -1,35 +1,10 @@
-/* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax */
-
 const script = require('../script');
-const scriptAnalysis = require('./scriptAnalysis');
+const scriptAnalysis = require('./scriptAnalysis/scriptAnalysis');
 const bechdelResults = require('./BechdelResults');
+const extractScenes = require('./extractScenes');
 const getFilmData = require('../getFilmData/getFilmData');
 
-const extractScenes = (characters, movieScript) => {
-	const keywords = ['EXT', 'INT', 'EXTERIOR', 'INTERIOR', 'INT/EXT', 'I/E'];
-	let idx;
-	let subScene = '';
-
-	movieScript.split('\n').forEach(pg => {
-		for (idx in keywords) {
-			const keyword = keywords[idx];
-			if (pg.indexOf(keyword) !== -1) {
-				bechdelResults.addScene(subScene);
-				subScene = '';
-				break;
-			}
-		}
-		subScene += `${pg}\n`;
-	});
-	bechdelResults.addScene(subScene);
-
-	if (bechdelResults.scenes === []) {
-		throw new Error('Error while exctracting scenes');
-	}
-	return bechdelResults.scenes;
-};
-
-const getBechdelResults = (title, path) => {
+const getBechdelResults = async (title, path) => {
 	return new Promise((resolve, reject) => {
 		return getFilmData(title)
 			.then(data => {
@@ -41,13 +16,12 @@ const getBechdelResults = (title, path) => {
 					bechdelResults.characters,
 					movieScript
 				);
-				const scenes = extractScenes(bechdelResults.characters, movieScript);
-
-				const analysis = scriptAnalysis.scriptAnalysis(
-					bechdelResults.characters,
-					scenes
-				);
-				resolve(analysis);
+				const scenes = extractScenes(movieScript);
+				scriptAnalysis
+					.scriptAnalysis(bechdelResults.characters, scenes)
+					.then(analysis => {
+						resolve(analysis);
+					});
 			})
 			.catch(error => {
 				reject(new Error(error));
