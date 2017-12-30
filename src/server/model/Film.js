@@ -116,23 +116,6 @@ filmSchema.static('findByTitle', function(movieTitle) {
 	return promise;
 });
 
-filmSchema.static('saveFilm', film => {
-	const promise = new Promise((resolve, reject) => {
-		if (!film) {
-			reject(new Error('Cannot save film'));
-		}
-		film
-			.save()
-			.then(result => {
-				resolve(result);
-			})
-			.catch(err => {
-				reject(new Error(err));
-			});
-	});
-	return promise;
-});
-
 filmSchema.static('deleteFilm', function(id) {
 	if (!id) {
 		return 'Invalid input on deleteFilm';
@@ -146,39 +129,39 @@ filmSchema.static('deleteFilm', function(id) {
 		});
 });
 
-filmSchema.static('insert', function(filmMetaData) {
-	const { filmTitle, bechdelResults, actors, images, data } = filmMetaData;
+filmSchema.static('insertFilm', filmMetaData => {
+	const promise = new Promise((resolve, reject) => {
+		const { title, bechdelResults, actors, images, data } = filmMetaData;
 
-	const film = new Film({ title: filmTitle });
-	film.bechdelResults = bechdelResults;
-	film.plot = data.plot;
-	film.simplePlot = data.simplePlot;
-	film.year = data.year;
-	film.releaseDate = data.releaseDate;
-	film.directors = data.directors;
-	film.writers = data.writers;
-	film.rated = data.rated;
-	film.genres = data.genres;
-	film.urlPoster = data.urlPoster;
-	film.idIMDB = data.idIMDB;
-	film.rating = data.rating;
-	film.metascore = data.metascore;
-	film.urlIMDB = data.urlIMDB;
-	film.actors = parseData.parseActorArr(actors);
-	film.images = parseData.parseImageData(images);
+		const film = new Film({ title });
+		film.title = title;
+		film.bechdelResults = bechdelResults;
+		film.plot = data.plot;
+		film.simplePlot = data.simplePlot;
+		film.year = data.year;
+		film.releaseDate = data.releaseDate;
+		film.directors = data.directors;
+		film.writers = data.writers;
+		film.rated = data.rated;
+		film.genres = data.genres;
+		film.urlPoster = data.urlPoster;
+		film.idIMDB = data.idIMDB;
+		film.rating = data.rating;
+		film.metascore = data.metascore;
+		film.urlIMDB = data.urlIMDB;
+		film.actors = parseData.parseActorArr(actors);
+		film.images = parseData.parseImageData(images);
 
-	return this.saveFilm(film)
-		.then(savedFilm => {
-			if (Array.isArray(savedFilm)) {
-				// resolve(savedFilm[0]);
-				return savedFilm[0];
-			}
-			// resolve(savedFilm);
-			return savedFilm;
-		})
-		.catch(error => {
-			throw new Error(error);
-		});
+		return film
+			.save()
+			.then(result => {
+				return resolve(result);
+			})
+			.catch(err => {
+				return reject(new Error(err));
+			});
+	});
+	return promise;
 });
 
 const Film = mongoose.model('Film', filmSchema);
