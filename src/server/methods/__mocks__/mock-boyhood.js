@@ -200,14 +200,12 @@ MASON Quit! Mom!
 SAMANTHA
 "But to lose all my senses-- that
 is..."
-He tries to drown out this last bit with a sustained scream. Soon the door flies open and Mom enters, angry.
 MOM
 What the hell is going on in here?!
 Samantha has instantaneously shifted from singing to crying.
 MOM (O.S.) (CONT'D) Do you guys know what time it is?
 7.
 SAMANTHA (through tears/sobs)
-He's throwing things at me...
 MOM
 Mason! Do not throw things at your
 sister!
@@ -5074,4 +5072,3 @@ Yeah. Yeah, I know. It's constant,
 the moments, it's just... it's like always right now, you know?
 181.
 `;
-
