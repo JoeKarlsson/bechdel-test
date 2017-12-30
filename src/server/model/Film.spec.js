@@ -7,36 +7,43 @@ const _doc = {
 			actorName: 'Christian Bale',
 			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b97',
-		}, {
+		},
+		{
 			actorName: 'Bradley Cooper',
 			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b96',
-		}, {
+		},
+		{
 			actorName: 'Amy Adams',
 			actorActress: 'Actress',
 			_id: '5a2f044e491eef5edab46b95',
-		}, {
+		},
+		{
 			actorName: 'Jeremy Renner',
-			actorActress:
-			'Actor',
+			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b94',
-		}, {
+		},
+		{
 			actorName: 'Jennifer Lawrence',
 			actorActress: 'Actress',
 			_id: '5a2f044e491eef5edab46b93',
-		}, {
+		},
+		{
 			actorName: 'Louis C.K.',
 			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b92',
-		}, {
+		},
+		{
 			actorName: 'Jack Huston',
 			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b91',
-		}, {
+		},
+		{
 			actorName: 'Michael Peña',
 			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b90',
-		}, {
+		},
+		{
 			actorName: 'Shea Whigham',
 			actorActress: 'Actor',
 			_id: '5a2f044e491eef5edab46b8f',
@@ -62,30 +69,32 @@ const _doc = {
 			_id: '5a2f044e491eef5edab46b86',
 		},
 	],
-	genres: [
-		'Crime',
-		'Drama',
-	],
+	genres: ['Crime', 'Drama'],
 	idIMDB: 'tt1800241',
 	images: {
-		backdrop: 'https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg',
+		backdrop:
+			'https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg',
 		poster: 'https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg',
 	},
 	metascore: 90,
-	plot: 'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
+	plot:
+		'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
 	rated: 'R',
 	rating: '7.3',
 	releaseDate: '20131220',
-	simplePlot: 'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
+	simplePlot:
+		'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
 	title: 'American Hustle',
 	urlIMDB: 'http://www.imdb.com/title/tt1800241',
-	urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
+	urlPoster:
+		'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
 	writers: [
 		{
 			name: 'Eric Warren Singer',
 			id: 'nm2545235',
 			_id: '5a2f044e491eef5edab46b88',
-		}, {
+		},
+		{
 			name: 'David O. Russell',
 			id: 'nm0751102',
 			_id: '5a2f044e491eef5edab46b87',
@@ -104,26 +113,27 @@ const filmData = {
 			_id: '5a2f044e491eef5edab46b86',
 		},
 	],
-	genres: [
-		'Crime',
-		'Drama',
-	],
+	genres: ['Crime', 'Drama'],
 	idIMDB: 'tt1800241',
 	metascore: 90,
-	plot: 'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
+	plot:
+		'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
 	rated: 'R',
 	rating: '7.3',
 	releaseDate: '20131220',
-	simplePlot: 'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
+	simplePlot:
+		'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
 	title: 'American Hustle',
 	urlIMDB: 'http://www.imdb.com/title/tt1800241',
-	urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
+	urlPoster:
+		'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
 	writers: [
 		{
 			name: 'Eric Warren Singer',
 			id: 'nm2545235',
 			_id: '5a2f044e491eef5edab46b88',
-		}, {
+		},
+		{
 			name: 'David O. Russell',
 			id: 'nm0751102',
 			_id: '5a2f044e491eef5edab46b87',
@@ -150,36 +160,43 @@ const actors = [
 		actorName: 'Christian Bale',
 		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b97',
-	}, {
+	},
+	{
 		actorName: 'Bradley Cooper',
 		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b96',
-	}, {
+	},
+	{
 		actorName: 'Amy Adams',
 		actorActress: 'Actress',
 		_id: '5a2f044e491eef5edab46b95',
-	}, {
+	},
+	{
 		actorName: 'Jeremy Renner',
-		actorActress:
-		'Actor',
+		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b94',
-	}, {
+	},
+	{
 		actorName: 'Jennifer Lawrence',
 		actorActress: 'Actress',
 		_id: '5a2f044e491eef5edab46b93',
-	}, {
+	},
+	{
 		actorName: 'Louis C.K.',
 		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b92',
-	}, {
+	},
+	{
 		actorName: 'Jack Huston',
 		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b91',
-	}, {
+	},
+	{
 		actorName: 'Michael Peña',
 		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b90',
-	}, {
+	},
+	{
 		actorName: 'Shea Whigham',
 		actorActress: 'Actor',
 		_id: '5a2f044e491eef5edab46b8f',
@@ -187,7 +204,9 @@ const actors = [
 ];
 
 const images = {
-	backdrops: ['https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg'],
+	backdrops: [
+		'https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg',
+	],
 	posters: ['https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg'],
 };
 
@@ -213,19 +232,15 @@ describe('Mongoose Film model', () => {
 		it('should return the doc with findById', () => {
 			mockingoose.Film.toReturn(_doc, 'find');
 
-			return Film
-				.findByID('5a2f044e491eef5edab46b85')
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
-				});
+			return Film.findByID('5a2f044e491eef5edab46b85').then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
+			});
 		});
 		it('should return error if not found', () => {
 			mockingoose.Film.toReturn(_errDoc, 'find');
-			return Film
-				.findByID('5a2f044e491eef5edab46b85')
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_errDocResult);
-				});
+			return Film.findByID('5a2f044e491eef5edab46b85').then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_errDocResult);
+			});
 		});
 	});
 
@@ -233,19 +248,15 @@ describe('Mongoose Film model', () => {
 		it('should return the doc with findByTitle', () => {
 			mockingoose.Film.toReturn(_doc, 'find');
 
-			return Film
-				.findByTitle('American Hustle')
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
-				});
+			return Film.findByTitle('American Hustle').then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
+			});
 		});
 		it('should return error if not found', () => {
 			mockingoose.Film.toReturn(_errDoc, 'find');
-			return Film
-				.findByTitle('American Hustle')
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_errDocResult);
-				});
+			return Film.findByTitle('American Hustle').then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_errDocResult);
+			});
 		});
 	});
 
@@ -253,68 +264,43 @@ describe('Mongoose Film model', () => {
 		it('should return the doc with listAll', () => {
 			mockingoose.Film.toReturn(_doc, 'find');
 
-			return Film
-				.listAll()
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
-				});
+			return Film.listAll().then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
+			});
 		});
 		it('should return error if not found', () => {
 			mockingoose.Film.toReturn(_errDoc, 'find');
-			return Film
-				.listAll()
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_errDocResult);
-				});
-		});
-	});
-
-	describe('#saveFilm', () => {
-		it('should return the doc with saveFilm', () => {
-			mockingoose.Film.toReturn(_doc, 'save');
-
-			const newFilm = new Film({ title: 'filmTitle' });
-
-			return Film
-				.saveFilm(newFilm)
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
-				});
+			return Film.listAll().then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_errDocResult);
+			});
 		});
 	});
 
 	describe('#deleteFilm', () => {
 		it('should return the doc with deleteFilm', () => {
-			mockingoose.Film
-				.toReturn(_doc, 'findOne')
-				.toReturn(true, 'remove');
+			mockingoose.Film.toReturn(_doc, 'findOne').toReturn(true, 'remove');
 
-			return Film
-				.deleteFilm('5a2f044e491eef5edab46b85')
-				.then((success) => {
-					expect(success).toBe(true);
-				});
+			return Film.deleteFilm('5a2f044e491eef5edab46b85').then(success => {
+				expect(success).toBe(true);
+			});
 		});
 	});
 
-	describe('#insert', () => {
-		it('should return the doc with insert', () => {
+	describe('#insertFilm', () => {
+		it('should return the doc with insertFilm', () => {
 			mockingoose.Film.toReturn(_doc, 'save');
 
 			const filmMetaData = {
-				filmTitle: 'American Hustle',
+				title: 'American Hustle',
 				bechdelResults,
 				actors,
 				images,
 				data: filmData,
 			};
 
-			return Film
-				.insert(filmMetaData)
-				.then((doc) => {
-					expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
-				});
+			return Film.insertFilm(filmMetaData).then(doc => {
+				expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
+			});
 		});
 	});
-
 });

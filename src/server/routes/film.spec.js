@@ -1,11 +1,11 @@
 import mockingoose from 'mockingoose';
 import request from 'supertest';
-// import path from 'path';
+import path from 'path';
 import app from '../server';
 
 jest.mock('../methods/getFilmData/getFilmData');
 jest.mock('../methods/script');
-jest.unmock('../model/Film');
+// jest.mock('../model/Film');
 
 describe('Film Routes Test', () => {
 	beforeEach(() => {
@@ -41,29 +41,28 @@ describe('Film Routes Test', () => {
 		});
 	});
 
-	// describe('POST /api/film/ already in the database', () => {
-	// 	it('should return the film', (done) => {
-	// 		const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
-	// 		const _doc = { };
-	// 		mockingoose.Film
-	// 			.toReturn(_doc, 'find')
-	// 			.toReturn(_doc, 'save');
-	//
-	// 		request(app)
-	// 			.post('/api/film')
-	// 			.attach('script', testScript)
-	// 			.expect(200)
-	// 			.expect('Content-Type', /json/)
-	// 			.end((err, res) => {
-	// 				if (err) {
-	// 					return done(err);
-	// 				}
-	// 				console.log('res.body', res.body);
-	// 				expect(typeof res.body.title).toBe('string');
-	// 				return done();
-	// 			});
-	// 	});
-	// });
+	describe('POST /api/film/ already in the database', () => {
+		it('should return the film', done => {
+			const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
+			const _doc = { title: 'American Hustle', test: true };
+			mockingoose.Film.toReturn(_doc, 'find');
+			mockingoose.Film.toReturn({}, 'save');
+
+			request(app)
+				.post('/api/film')
+				.attach('script', testScript)
+				.expect(200)
+				.expect('Content-Type', /json/)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					console.log('res.body', res.body);
+					expect(typeof res.body.title).toBe('string');
+					return done();
+				});
+		});
+	});
 
 	describe('GET /api/film/:id', () => {
 		it('should send JSON with a single film', done => {
