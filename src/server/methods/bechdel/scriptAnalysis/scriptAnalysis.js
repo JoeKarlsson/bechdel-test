@@ -17,9 +17,6 @@ const {
  * @return {[type]}                 [description]
  */
 const scriptGenderAnalytics = (characters, movieScript) => {
-	if (!characters || !movieScript) {
-		throw new Error('Invalid scriptGenderAnalytics input');
-	}
 	const count = countCharacterDialouge(characters, movieScript);
 	let name;
 
@@ -38,6 +35,7 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 			}
 		}
 	}
+	return bechdelResults.getBechdelResults();
 };
 
 const scriptAnalysis = (characters, scenes) => {
