@@ -57,7 +57,6 @@ describe('Film Routes Test', () => {
 					if (err) {
 						return done(err);
 					}
-					console.log('res.body', res.body);
 					expect(typeof res.body.title).toBe('string');
 					return done();
 				});
