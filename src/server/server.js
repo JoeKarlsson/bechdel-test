@@ -13,8 +13,6 @@ const meta = require('./helper/meta');
 
 const app = express();
 
-// require('es6-promise').polyfill();
-
 app.use(helmet());
 app.use(partials());
 app.use(bodyParser.urlencoded({ extended: true }));
