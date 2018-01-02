@@ -1,5 +1,6 @@
 const helper = require('./helper');
 const mockData = require('../../getFilmData/__mocks__/mock-film-data');
+const mockMovieScript = require('../../__mocks__/mock-boyhood');
 
 const {
 	countCharacterDialouge,
@@ -92,6 +93,93 @@ const sceneBechdelPassCount = {
 	SAMANTHA: 5,
 };
 
+const wholeScriptCount = {
+	MASON: 452,
+	MOM: 276,
+	TOMMY: 7,
+	SAMANTHA: 217,
+	TED: 19,
+	TEACHER: 19,
+	'ELEMENTARY SCHOOL GIRL': 0,
+	GRANDMA: 42,
+	DAD: 368,
+	'PROFESSOR BILL WELBROCK': 0,
+	MINDY: 23,
+	RANDY: 24,
+	'NEIGHBORHOOD FRIEND #1': 0,
+	'NEIGHBORHOOD FRIEND #2': 0,
+	PAUL: 2,
+	'BOOK TRIVIA JUDGE': 1,
+	'BOOK RELEASE EMCEE': 0,
+	JIMMY: 15,
+	BARBER: 1,
+	"MASON'S 4TH GRADE TEACHER": 0,
+	'LIQUOR STORE CLERK': 0,
+	CAROL: 15,
+	LEE: 1,
+	ABBY: 3,
+	KENNY: 3,
+	'MRS. DARBY': 7,
+	'NO OBAMA MAN': 0,
+	'OBAMA MAMA': 0,
+	TAMMY: 13,
+	TONY: 15,
+	'BULLY 1': 0,
+	'BULLY 2': 0,
+	JILL: 20,
+	JIM: 54,
+	'COLLEGE GIRL SINGER': 0,
+	GABI: 0,
+	CHASE: 15,
+	CHARLIE: 20,
+	"CHARLIE'S FRIEND": 0,
+	'PROFESSOR DOUGLAS': 16,
+	'MAKE OUT GIRL': 0,
+	ANNIE: 35,
+	COOPER: 1,
+	ENRIQUE: 0,
+	'GRANDPA CLIFF': 20,
+	NANA: 12,
+	PASTOR: 0,
+	'MR. TURLINGTON': 1,
+	NICK: 16,
+	'BEER PONG GUY': 1,
+	'HIGH SCHOOL BAND SINGER': 0,
+	SHEENA: 69,
+	APRIL: 5,
+	"MASON'S BOSS": 0,
+	"SAM'S COLLEGE BOYFRIEND": 0,
+	HOOPER: 0,
+	'GUITAR PLAYER': 0,
+	'BEAT BOX': 0,
+	'BAND MEMBER 1': 0,
+	'BAND MEMBER 2': 0,
+	'BAND MEMBER 3': 0,
+	'BAND MEMBER 4': 0,
+	'GUY IN DINER': 0,
+	"SAM'S ROOMMATE": 0,
+	'HIGH SCHOOL TEACHER': 0,
+	'UNCLE STEVE': 11,
+	'TWIN COUSIN 1': 0,
+	'TWIN COUSIN 2': 0,
+	'WOMAN AT PARTY': 1,
+	"JIMMY'S BANDMATE 1": 0,
+	"JIMMY'S BANDMATE 2": 0,
+	"JIMMY'S BANDMATE 3": 0,
+	DALTON: 15,
+	BARB: 7,
+	NICOLE: 21,
+	'PATRON IN RESTAURANT': 0,
+	STUDENT: 2,
+	'HIMSELF -- HOUSTON CATCHER': 0,
+	'ADDITIONAL VOICES': 0,
+	'KITCHEN WORKER': 0,
+	'COLLEGE STUDENT': 0,
+	'MAN IN RESTAURANT': 0,
+	'ROGER CLEMENS': 0,
+	'QUESO WAITRESS': 0,
+};
+
 describe('Script Analysis Helper Methods', () => {
 	describe('#isCharFemale', () => {
 		it('should return false if the character is not a female', () => {
@@ -116,6 +204,12 @@ describe('Script Analysis Helper Methods', () => {
 
 			const result2 = countCharacterDialouge(characters, sceneBechdelPass);
 			expect(result2).toMatchObject(sceneBechdelPassCount);
+		});
+
+		it('should be able to handle an entire movie script', () => {
+			const characters = mockData.actors;
+			const result = countCharacterDialouge(characters, mockMovieScript);
+			expect(result).toMatchObject(wholeScriptCount);
 		});
 	});
 
