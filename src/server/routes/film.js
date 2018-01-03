@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const Film = require('../model/Film');
-const getFilmData = require('../methods/getFilmData/getFilmData');
 const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
 const getBechdelResults = require('../methods/bechdel/bechdel');
@@ -42,7 +41,8 @@ router
 		try {
 			const title = await script.readMovieTitle(scriptPath);
 			const film = await Film.findByTitle(title);
-			if (film.title) {
+			// eslint-disable-next-line no-prototype-builtins
+			if (film.hasOwnProperty('title')) {
 				script.clearTemp(scriptPath);
 				return res.json({
 					...film,
@@ -52,7 +52,7 @@ router
 				});
 			}
 			const bechdelResults = await getBechdelResults(title, scriptPath);
-			const data = await getFilmData();
+			const data = filmData.getAllData();
 
 			const filmMetaData = {
 				title,
