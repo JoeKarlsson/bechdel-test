@@ -12,14 +12,19 @@ const getBechdelResults = async (title, path) => {
 				return script.read(path);
 			})
 			.then(movieScript => {
+				console.log('film data aquired');
 				scriptAnalysis.scriptGenderAnalytics(
 					bechdelResults.characters,
 					movieScript
 				);
+				console.log('gender analytics complete');
 				const scenes = extractScenes(movieScript);
+				console.log('scenes extracted');
 				scriptAnalysis
 					.scriptAnalysis(bechdelResults.characters, scenes)
 					.then(analysis => {
+						console.log('scriptAnalysis complete');
+						console.log(analysis, 'analysis');
 						resolve(analysis);
 					})
 					.catch(error => {

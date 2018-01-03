@@ -13,12 +13,11 @@ const getFilmData = movieTitle => {
 
 	return getSimpleCastData(title)
 		.then(simpleCastdata => {
-			console.log(title);
 			try {
 				const data = simpleCastdata.data.movies[0];
+				const { actors } = data;
 				filmData.imdbID = data.idIMDB;
 				filmData.addMetaData(data);
-				const { actors } = data;
 				dataParser(actors, 'mainCast');
 			} catch (err) {
 				console.log(err);
@@ -33,8 +32,10 @@ const getFilmData = movieTitle => {
 			return getFullCastData(filmData.imdbID)
 				.then(fullCastdata => {
 					try {
-						const { actors } = fullCastdata.data.movies[0];
+						const data = fullCastdata.data.movies[0];
+						const { actors } = data;
 						dataParser(actors, 'fullCast');
+						filmData.addMetaData(data);
 						return filmData.getAllData();
 					} catch (err) {
 						console.log(err);
