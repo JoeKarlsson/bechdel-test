@@ -41,8 +41,9 @@ router
 		try {
 			const title = await script.readMovieTitle(scriptPath);
 			const film = await Film.findByTitle(title);
+
 			// eslint-disable-next-line no-prototype-builtins
-			if (film.hasOwnProperty('title')) {
+			if (film) {
 				script.clearTemp(scriptPath);
 				return res.json({
 					...film,
