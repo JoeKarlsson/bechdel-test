@@ -10,7 +10,13 @@ const createImageUrl = ID => {
 	);
 };
 
-const createSimpleDataURL = title => {
+const splitTitle = title => {
+	return title.split(' ').join('+');
+};
+
+const createSimpleDataURL = movieTitle => {
+	const title = splitTitle(movieTitle);
+
 	return (
 		'http://api.myapifilms.com/imdb/idIMDB?' +
 		`title=${title}&` +
