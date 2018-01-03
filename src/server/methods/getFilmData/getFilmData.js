@@ -5,12 +5,7 @@ const URLFormatter = require('./URLFormatter');
 
 const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
 
-const splitTitle = title => {
-	return title.split(' ').join('+');
-};
-
-const getFilmData = movieTitle => {
-	const title = splitTitle(movieTitle);
+const getFilmData = title => {
 	const simpleURL = createSimpleDataURL(title);
 
 	return getDataFrom(simpleURL)
