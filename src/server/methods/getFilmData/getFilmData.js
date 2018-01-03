@@ -1,8 +1,9 @@
 const filmData = require('./FilmData');
 const dataParser = require('./dataParser');
-const getFilmImages = require('./getFilmImages');
-const getSimpleCastData = require('./getSimpleCastData');
-const getFullCastData = require('./getFullCastData');
+const getDataFrom = require('./getDataFrom');
+const URLFormatter = require('./URLFormatter');
+
+const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
 
 const splitTitle = title => {
 	return title.split(' ').join('+');
@@ -10,16 +11,23 @@ const splitTitle = title => {
 
 const getFilmData = movieTitle => {
 	const title = splitTitle(movieTitle);
+	const simpleURL = createSimpleDataURL(title);
 
-	return getSimpleCastData(title)
+	return getDataFrom(simpleURL)
 		.then(simpleCastdata => {
 			filmData.imdbID = simpleCastdata.data.movies[0].idIMDB;
 			filmData.addMetaData(simpleCastdata);
 			dataParser(simpleCastdata, 'mainCast');
-			getFilmImages(filmData.imdbID).then(images => {
+			const imagesURL = createImageUrl(filmData.imdbID);
+
+			getDataFrom(imagesURL).then(images => {
 				filmData.images = images;
 			});
-			return getFullCastData(title).then(fullCastdata => {
+
+			const fullURL = createFullDataURL(filmData.imdbID);
+
+			return getDataFrom(fullURL).then(fullCastdata => {
+				filmData.addMetaData(fullCastdata);
 				dataParser(fullCastdata, 'fullCast');
 				return filmData.getAllData();
 			});
