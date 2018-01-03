@@ -54,6 +54,7 @@ router
 				});
 			} catch (err) {
 				const bechdelResults = await getBechdelResults(title, scriptPath);
+				console.log(bechdelResults);
 				const { actors, images, metadata } = filmData.getAllData();
 
 				const filmMetaData = {
