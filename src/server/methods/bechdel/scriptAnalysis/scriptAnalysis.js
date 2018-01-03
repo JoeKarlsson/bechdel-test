@@ -17,24 +17,35 @@ const {
  * @return {[type]}                 [description]
  */
 const scriptGenderAnalytics = (characters, movieScript) => {
+	console.log('scriptGenderAnalytics started');
 	const count = countCharacterDialouge(characters, movieScript);
 	let name;
-
-	for (name in count) {
-		if (isCharFemale(characters, name)) {
-			bechdelResults.numOfFemalesCharsIncrement();
-			if (count[name] > 0) {
-				bechdelResults.numOfFemalesCharsWithDialogueIncrement();
-				bechdelResults.totalLinesFemaleDialogueAdd(count[name]);
-			}
-		} else {
-			bechdelResults.numOfMaleCharsIncrement();
-			if (count[name] > 0) {
-				bechdelResults.numOfMaleCharsWithDialogueIncrement();
-				bechdelResults.totalLinesMaleDialogueAdd(count[name]);
+	try {
+		for (name in count) {
+			if (isCharFemale(characters, name)) {
+				bechdelResults.numOfFemalesCharsIncrement();
+				if (count[name] > 0) {
+					bechdelResults.numOfFemalesCharsWithDialogueIncrement();
+					bechdelResults.totalLinesFemaleDialogueAdd(count[name]);
+				}
+			} else {
+				bechdelResults.numOfMaleCharsIncrement();
+				if (count[name] > 0) {
+					bechdelResults.numOfMaleCharsWithDialogueIncrement();
+					bechdelResults.totalLinesMaleDialogueAdd(count[name]);
+				}
 			}
 		}
+	} catch (err) {
+		console.log(err);
+		throw new Error(err);
 	}
+
+	console.log('scriptGenderAnalytics finished');
+	console.log(
+		bechdelResults.getBechdelResults(),
+		'bechdelResults.getBechdelResults();'
+	);
 	return bechdelResults.getBechdelResults();
 };
 
