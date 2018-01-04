@@ -135,7 +135,6 @@ filmSchema.static('deleteFilm', function(id) {
 filmSchema.static('insertFilm', filmMetaData => {
 	const promise = new Promise((resolve, reject) => {
 		const { title, bechdelResults, actors, images, data } = filmMetaData;
-		console.log(title, 'title');
 		const film = new Film({ title });
 		film.title = title;
 		film.bechdelResults = bechdelResults;

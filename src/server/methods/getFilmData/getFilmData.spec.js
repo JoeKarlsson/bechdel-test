@@ -1,10 +1,12 @@
 const fetchMock = require('fetch-mock');
 const getFilmData = require('./getFilmData.js');
 const filmData = require('./FilmData.js');
-const meta = require('../../helper/meta');
+const URLFormatter = require('./URLFormatter');
 const mockGetSimpleCastData = require('./__mocks__/mock-simple-data.json');
 const mockGetFullCastData = require('./__mocks__/mock-full-data.json');
 const mockImagesData = require('./__mocks__/mock-images-data.json');
+
+const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
 
 describe('Film methods', () => {
 	beforeEach(() => {
@@ -14,75 +16,16 @@ describe('Film methods', () => {
 
 	describe('#getData', () => {
 		it('should return all the film data as a promise', () => {
-			const idIMDB = 'tt1065073';
 			const filmTitle = 'BOYHOOD';
+			const imdbID = 'tt1065073';
 
-			const simpleURL =
-				'http://api.myapifilms.com/imdb/idIMDB?' +
-				`title=${filmTitle}&` +
-				`token=${meta.MYAPIFILMS}&` +
-				'format=json&' +
-				'language=en-us&' +
-				'aka=0&' +
-				'business=0&' +
-				'seasons=0&' +
-				'seasonYear=0&' +
-				'technical=0&' +
-				'filter=3&' +
-				'exactFilter=0&' +
-				'limit=1&' +
-				'forceYear=0&' +
-				'trailers=0&' +
-				'movieTrivia=0&' +
-				'awards=0&' +
-				'moviePhotos=0&' +
-				'movieVideos=0&' +
-				'actors=1&' +
-				'biography=1&' +
-				'uniqueName=0&' +
-				'filmography=0&' +
-				'bornAndDead=0&' +
-				'starSign=0&' +
-				'actorActress=1&' +
-				'actorTrivia=0&' +
-				'similarMovies=0&' +
-				'adultSearch=0';
+			const simpleURL = createSimpleDataURL(filmTitle);
+			const fullURL = createFullDataURL(imdbID);
+			const imagesURL = createImageUrl(imdbID);
 
-			const fullURL =
-				'http://www.myapifilms.com/' +
-				`imdb/idIMDB?idIMDB=${idIMDB}&` +
-				`token=${meta.MYAPIFILMS}&` +
-				'format=json&' +
-				'language=en-us&' +
-				'aka=0&' +
-				'business=0&' +
-				'seasons=0&' +
-				'seasonYear=0&' +
-				'technical=0&' +
-				'trailers=1&' +
-				'movieTrivia=0&' +
-				'awards=0&' +
-				'moviePhotos=0&' +
-				'movieVideos=0&' +
-				'actors=1&' +
-				'biography=1&' +
-				'actorActress=1&' +
-				'similarMovies=0&' +
-				'goofs=0&' +
-				'keyword=0&' +
-				'quotes=0&' +
-				'fullSize=0&' +
-				'companyCredits=0&' +
-				'filmingLocations=0';
-
-			const hostnameImages = `https://api.themoviedb.org/3/movie/${idIMDB}/images?`;
-			const pathImages = `api_key=${
-				meta.THEMOVIEDB
-			}&language=en&include_image_language=en,null`;
-
-			fetchMock.mock(hostnameImages + pathImages, mockImagesData);
 			fetchMock.mock(simpleURL, mockGetSimpleCastData);
 			fetchMock.mock(fullURL, mockGetFullCastData);
+			fetchMock.mock(imagesURL, mockImagesData);
 
 			getFilmData(filmTitle)
 				.then(body => {
