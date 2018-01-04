@@ -3,7 +3,7 @@ const mockData = require('../../getFilmData/__mocks__/mock-film-data');
 const mockMovieScript = require('../../__mocks__/mock-boyhood');
 
 const {
-	countCharacterDialouge,
+	countCharacterDialogue,
 	isCharFemale,
 	containsPatriarchalKeywords,
 	twoOrMoreFemalesInScene,
@@ -196,19 +196,19 @@ describe('Script Analysis Helper Methods', () => {
 		});
 	});
 
-	describe('#countCharacterDialouge', () => {
+	describe('#countCharacterDialogue', () => {
 		it('should return an object with all of the characters in the movie and the number times they talk in a given scene', () => {
 			const characters = mockData.actors;
-			const result1 = countCharacterDialouge(characters, sceneBechdelFail);
+			const result1 = countCharacterDialogue(characters, sceneBechdelFail);
 			expect(result1).toMatchObject(sceneBechdelFailCount);
 
-			const result2 = countCharacterDialouge(characters, sceneBechdelPass);
+			const result2 = countCharacterDialogue(characters, sceneBechdelPass);
 			expect(result2).toMatchObject(sceneBechdelPassCount);
 		});
 
 		it('should be able to handle an entire movie script', () => {
 			const characters = mockData.actors;
-			const result = countCharacterDialouge(characters, mockMovieScript);
+			const result = countCharacterDialogue(characters, mockMovieScript);
 			expect(result).toMatchObject(wholeScriptCount);
 		});
 	});
