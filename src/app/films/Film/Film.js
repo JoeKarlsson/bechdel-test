@@ -68,24 +68,22 @@ class Film extends Component {
 			images,
 		} = this.state.film;
 
-		const directorNode = directors.map(director => {
-			if (director.name === directors[directors.length - 1].name) {
-				return <span key={director.id}>{director.name}</span>;
-			}
-			return <span key={director.id}>{director.name} & </span>;
-		});
-		const writerNode = writers.map(writer => {
-			if (writer.name !== writers[writers.length - 1].name) {
-				return <span key={writer.id}>{writer.name} & </span>;
-			}
-			return <span key={writer.id}>{writer.name}</span>;
-		});
-		const genreNode = genres.map(genre => {
-			if (genre !== genres[genres.length - 1]) {
-				return <span key={hash(genre)}>{genre} | </span>;
-			}
-			return <span key={hash(genre)}>{genre}</span>;
-		});
+		const isLastItem = (item, array) => {
+			return item !== array[array.length - 1];
+		};
+
+		const nodeBuilder = array => {
+			return array.map(item => {
+				if (isLastItem(item, array)) {
+					return <span key={hash(item)}>{item} | </span>;
+				}
+				return <span key={hash(item)}>{item}</span>;
+			});
+		};
+
+		const directorNode = nodeBuilder(directors);
+		const writerNode = nodeBuilder(writers);
+		const genreNode = nodeBuilder(genres);
 
 		return (
 			<div className="filmInfo">
