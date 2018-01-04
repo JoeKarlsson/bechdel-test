@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
@@ -7,7 +7,7 @@ import getAllFilmData from '../../helper/getAllFilms';
 import hash from '../../helper/hash';
 import './Film.scss';
 
-class Film extends React.Component {
+class Film extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -43,10 +43,13 @@ class Film extends React.Component {
 		const { id } = this.props.match.params;
 
 		getAllFilmData(id)
-			.then((data) => {
+			.then(data => {
 				this.setState({
 					film: data,
 				});
+			})
+			.catch(err => {
+				console.error(err);
 			});
 	}
 
@@ -60,19 +63,19 @@ class Film extends React.Component {
 			images,
 		} = this.state.film;
 
-		const directorNode = directors.map((director) => {
+		const directorNode = directors.map(director => {
 			if (director.name === directors[directors.length - 1].name) {
 				return <span key={director.id}>{director.name}</span>;
 			}
 			return <span key={director.id}>{director.name} & </span>;
 		});
-		const writerNode = writers.map((writer) => {
+		const writerNode = writers.map(writer => {
 			if (writer.name !== writers[writers.length - 1].name) {
 				return <span key={writer.id}>{writer.name} & </span>;
 			}
 			return <span key={writer.id}>{writer.name}</span>;
 		});
-		const genreNode = genres.map((genre) => {
+		const genreNode = genres.map(genre => {
 			if (genre !== genres[genres.length - 1]) {
 				return <span key={hash(genre)}>{genre} | </span>;
 			}
@@ -82,20 +85,10 @@ class Film extends React.Component {
 		return (
 			<div className="filmInfo">
 				<ErrorBoundary>
-					<h1>
-						{title}
-					</h1>
-					<h3>
-						Bechdel Pass:{' '}
-						{bechdelResults.pass.toString().toUpperCase()}
-					</h3>
-					<p>
-						Bechdel Score: {bechdelResults.bechdelScore} of 3
-					</p>
-					<img
-						src={images.backdrop}
-						alt={title}
-					/>
+					<h1>{title}</h1>
+					<h3>Bechdel Pass: {bechdelResults.pass.toString().toUpperCase()}</h3>
+					<p>Bechdel Score: {bechdelResults.bechdelScore} of 3</p>
+					<img src={images.backdrop} alt={title} />
 					<div className="plot">
 						<p>{this.state.film.plot}</p>
 					</div>
@@ -106,8 +99,7 @@ class Film extends React.Component {
 							<span className="catName">Writers:</span> {writerNode} <br />
 							<span className="catName">Genre:</span> {genreNode}
 							<br />
-							<span className="catName">Rated:</span>{' '}
-							{this.state.film.rated}
+							<span className="catName">Rated:</span> {this.state.film.rated}
 							<br />
 							<span className="catName">IMDB:</span>{' '}
 							<a
