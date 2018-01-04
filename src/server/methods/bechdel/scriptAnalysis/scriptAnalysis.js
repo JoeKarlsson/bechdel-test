@@ -1,11 +1,13 @@
-/* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax, no-lonely-if */
-
 const bechdelResults = require('../BechdelResults');
 const {
 	isCharFemale,
 	countCharacterDialouge,
 	bechdelTestPass,
 } = require('./helper');
+
+const greaterThanZero = num => {
+	return num > 0;
+};
 
 /**
  * Function to collect gender statistics based on the entire movie script.
@@ -17,27 +19,28 @@ const {
  * @return {[type]}                 [description]
  */
 const scriptGenderAnalytics = (characters, movieScript) => {
-	const count = countCharacterDialouge(characters, movieScript);
-	let name;
-	try {
-		for (name in count) {
-			if (isCharFemale(characters, name)) {
-				bechdelResults.numOfFemalesCharsIncrement();
-				if (count[name] > 0) {
-					bechdelResults.numOfFemalesCharsWithDialogueIncrement();
-					bechdelResults.totalLinesFemaleDialogueAdd(count[name]);
-				}
-			} else {
-				bechdelResults.numOfMaleCharsIncrement();
-				if (count[name] > 0) {
-					bechdelResults.numOfMaleCharsWithDialogueIncrement();
-					bechdelResults.totalLinesMaleDialogueAdd(count[name]);
-				}
+	const charCount = countCharacterDialouge(characters, movieScript);
+	const names = Object.keys(charCount);
+
+	for (let i = 0; i < names.length; i++) {
+		const name = names[i];
+
+		if (isCharFemale(characters, name)) {
+			bechdelResults.numOfFemalesCharsIncrement();
+			const numLinesOfDialogue = charCount[name];
+
+			if (greaterThanZero(numLinesOfDialogue)) {
+				bechdelResults.numOfFemalesCharsWithDialogueIncrement();
+				bechdelResults.totalLinesFemaleDialogueAdd(charCount[name]);
+			}
+		} else {
+			bechdelResults.numOfMaleCharsIncrement();
+			const numLinesOfDialogue = charCount[name];
+			if (greaterThanZero(numLinesOfDialogue)) {
+				bechdelResults.numOfMaleCharsWithDialogueIncrement();
+				bechdelResults.totalLinesMaleDialogueAdd(charCount[name]);
 			}
 		}
-	} catch (err) {
-		console.log(err);
-		throw new Error(err);
 	}
 
 	return bechdelResults.getBechdelResults();
@@ -45,8 +48,8 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 
 const scriptAnalysis = (characters, scenes) => {
 	const promise = new Promise(resolve => {
-		for (const idx in scenes) {
-			const scene = scenes[idx];
+		for (let i = 0; i < scenes.length; i++) {
+			const scene = scenes[i];
 			const count = countCharacterDialouge(characters, scene);
 			const sceneData = {
 				characters,
