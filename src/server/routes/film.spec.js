@@ -79,26 +79,26 @@ describe('Film Routes Test', () => {
 				});
 		});
 
-		it('should return the film [full version - no mocks]', done => {
-			const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
-			const title = 'Boyhood';
-			const _doc = { title, test: true };
-			mockingoose.Film.toReturn(_doc, 'find');
-			mockingoose.Film.toReturn({}, 'save');
-
-			request(app)
-				.post('/api/film')
-				.attach('script', testScript)
-				.expect(200)
-				.expect('Content-Type', /json/)
-				.end((err, res) => {
-					if (err) {
-						return done(err);
-					}
-					expect(res.body._doc.title).toBe('Boyhood');
-					return done();
-				});
-		});
+		// it('should return the film [full version - no mocks]', done => {
+		// 	const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
+		// 	const title = 'Boyhood';
+		// 	const _doc = { title, test: true };
+		// 	mockingoose.Film.toReturn(_doc, 'find');
+		// 	mockingoose.Film.toReturn({}, 'save');
+		//
+		// 	request(app)
+		// 		.post('/api/film')
+		// 		.attach('script', testScript)
+		// 		.expect(200)
+		// 		.expect('Content-Type', /json/)
+		// 		.end((err, res) => {
+		// 			if (err) {
+		// 				return done(err);
+		// 			}
+		// 			expect(res.body._doc.title).toBe('Boyhood');
+		// 			return done();
+		// 		});
+		// });
 	});
 
 	describe('GET /api/film/:id', () => {
