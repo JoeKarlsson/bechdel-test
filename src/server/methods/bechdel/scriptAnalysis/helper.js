@@ -1,6 +1,9 @@
 /* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax, no-lonely-if */
-
 const bechdelResults = require('../BechdelResults');
+
+const greaterThanZero = num => {
+	return num > 0;
+};
 
 /**
  * Returns an object with all of the characters in the movie and
@@ -11,7 +14,28 @@ const bechdelResults = require('../BechdelResults');
  * @return [object] an object with all of the characters in
  * the movie and the number times they talk in a given scene
  */
-const countCharacterDialouge = (arr, scene) => {
+const countCharacterDialogue = (arr, scene) => {
+	// if (!chars || !scene) {
+	// 	throw new Error('Invalid countCharacterDialouge input');
+	// }
+	// const charDialogueCount = {};
+	//
+	// console.log('chars', chars);
+	//
+	// for (let i = 0; i < chars.length; i++) {
+	// 	const { characterName } = chars[i];
+	// 	let fromIndex = scene.indexOf(characterName, 0);
+	// 	charDialogueCount[characterName] = 0;
+	//
+	// 	console.log('fromIndex', fromIndex);
+	//
+	// 	while (fromIndex > -1) {
+	// 		charDialogueCount[characterName]++;
+	// 		fromIndex = scene.indexOf(characterName, fromIndex);
+	// 	}
+	// }
+	// return charDialogueCount;
+
 	if (!arr || !scene) {
 		throw new Error('Invalid countCharacterDialouge input');
 	}
@@ -37,10 +61,9 @@ const isCharFemale = (characters, name) => {
 	if (!characters) {
 		throw new Error('Invalid isCharFemale input');
 	}
-	let idx;
 
-	for (idx in characters) {
-		const character = characters[idx];
+	for (let i = 0; i < characters.length; i++) {
+		const character = characters[i];
 		if (name === character.characterName) {
 			if (character.gender === 'Actress') {
 				return true;
@@ -129,15 +152,19 @@ const containsPatriarchalKeywords = s => {
  */
 const twoOrMoreFemalesInScene = (characters, count) => {
 	let femalesWithDialogue = 0;
-	let name;
+	const names = Object.keys(count);
 
-	for (name in count) {
-		if (count[name]) {
+	for (let i = 0; i < names.length; i++) {
+		const name = names[i];
+		const dialogueCount = count[name];
+
+		if (greaterThanZero(dialogueCount)) {
 			if (isCharFemale(characters, name)) {
 				femalesWithDialogue++;
 			}
 		}
 	}
+
 	if (femalesWithDialogue >= 2) {
 		return true;
 	}
@@ -166,7 +193,7 @@ const bechdelTestPass = sceneData => {
 };
 
 module.exports = {
-	countCharacterDialouge,
+	countCharacterDialogue,
 	isCharFemale,
 	containsPatriarchalKeywords,
 	twoOrMoreFemalesInScene,
