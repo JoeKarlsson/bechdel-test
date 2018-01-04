@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-// import postFilmScript from './postFilmScript';
+import postFilmScript from './postFilmScript';
 
 describe('postFilmScript', () => {
 	beforeEach(() => {
@@ -7,12 +7,12 @@ describe('postFilmScript', () => {
 	});
 
 	it('should call callback after success', async () => {
-		const path = '/api/film/';
+		const path = '/api/film';
 		const mockResponse = { success: true };
 		const options = { method: 'POST' };
 		fetchMock.mock(path, mockResponse, options);
 
-		// const response = await postFilmScript();
-		// expect(response).toMatchObject(mockResponse);
+		const response = await postFilmScript();
+		expect(response).toMatchObject(mockResponse);
 	});
 });

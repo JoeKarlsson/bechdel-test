@@ -15,7 +15,9 @@ class NewFilm extends React.Component {
 		e.preventDefault();
 		this.setState({ isLoading: true });
 		const fd = new FormData(document.querySelector('form'));
-		postFilmScript(fd);
+		postFilmScript(fd).then(response => {
+			window.location = `/film/${response._id}`;
+		});
 	}
 
 	render() {
@@ -32,46 +34,40 @@ class NewFilm extends React.Component {
 						method="POST"
 					>
 						<p>
-						Note: This tool currently only suppports scripts with a .txt
-						format, and the script must follow the{' '}
+							Note: This tool currently only suppports scripts with a .txt
+							format, and the script must follow the{' '}
 							<a
 								target="blank"
 								href="http://www.simplyscripts.com/WR_format.html"
 							>
-							Standard Script Format
+								Standard Script Format
 							</a>.
 						</p>
 						<p>
-						If you are still having issues using the tool, try adding the
-						title of the script is on the first line. Or you can submit an{' '}
+							If you are still having issues using the tool, try adding the
+							title of the script is on the first line. Or you can submit an{' '}
 							<a
 								target="blank"
 								href="https://github.com/JoeKarlsson1/bechdel-test/issues"
 							>
-							issue
+								issue
 							</a>.
 						</p>
 						<p>
-						You can check out a example script{' '}
+							You can check out a example script{' '}
 							<a
 								target="blank"
 								href="https://github.com/JoeKarlsson1/bechdel-test/blob/master/tests/server/methods/test-script.txt"
 							>
-							here
+								here
 							</a>.
 						</p>
 						<p>
-						Please specify a file, or a set of files:<br />
+							Please specify a file, or a set of files:<br />
 						</p>
-						<input
-							type="file"
-							name="script"
-							size="40"
-						/>
+						<input type="file" name="script" size="40" />
 						<div>
-							<button onClick={this.handleFilmSubmit}>
-								Submit Script
-							</button>
+							<button onClick={this.handleFilmSubmit}>Submit Script</button>
 						</div>
 					</form>
 				)}
