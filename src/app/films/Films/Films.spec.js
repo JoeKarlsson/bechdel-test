@@ -1,16 +1,11 @@
 import React from 'react';
-import {
-	MemoryRouter,
-} from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import {
-	shallow,
-	configure,
-} from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Films from './Films';
 
-jest.mock('../../helper/getAllFilms');
+jest.mock('../../helper/api');
 
 configure({ adapter: new Adapter() });
 
@@ -22,7 +17,7 @@ describe('Films', () => {
 		wrapper = shallow(
 			<MemoryRouter>
 				<Films />
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		inst = wrapper.instance();
 	});
@@ -33,7 +28,7 @@ describe('Films', () => {
 				const component = renderer.create(
 					<MemoryRouter>
 						<Films />
-					</MemoryRouter>,
+					</MemoryRouter>
 				);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();

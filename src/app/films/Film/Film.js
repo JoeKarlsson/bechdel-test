@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import BechdelResults from './BechdelResults/BechdelResults';
-import getAllFilmData from '../../helper/getAllFilms';
+import api from '../../helper/api';
 import hash from '../../helper/hash';
 import './Film.scss';
 
@@ -42,7 +42,12 @@ class Film extends Component {
 	componentDidMount() {
 		const { id } = this.props.match.params;
 
-		getAllFilmData(id)
+		const url = `/api/film/${id}`;
+		const options = {
+			method: 'GET',
+		};
+
+		api(url, options)
 			.then(data => {
 				this.setState({
 					film: data,

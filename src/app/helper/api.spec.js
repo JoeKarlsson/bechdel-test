@@ -1,13 +1,16 @@
 import fetchMock from 'fetch-mock';
-import getAllFilms from './getAllFilms';
+import api from './api';
 
-describe('getAllFilms', () => {
+describe('api', () => {
 	beforeEach(() => {
 		fetchMock.reset();
 	});
 
 	it('should call callback after success', async () => {
-		const path = '/api/film/';
+		const url = '/api/film/';
+		const options = {
+			method: 'GET',
+		};
 		const mockResponse = [
 			{
 				_id: '57f2ee630d35ef00036e8432',
@@ -79,9 +82,9 @@ describe('getAllFilms', () => {
 				],
 			},
 		];
-		fetchMock.mock(path, mockResponse);
+		fetchMock.mock(url, mockResponse);
 
-		const response = await getAllFilms();
+		const response = await api(url, options);
 		expect(response).toMatchObject(mockResponse);
 	});
 });
