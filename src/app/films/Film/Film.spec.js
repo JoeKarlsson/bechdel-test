@@ -39,7 +39,13 @@ describe('Film', () => {
 			});
 			it('should not have any inital props', () => {
 				const initialProps = inst.props;
-				const expectedProps = {};
+				const expectedProps = {
+					match: {
+						params: {
+							id: 1234,
+						},
+					},
+				};
 				expect(initialProps).toMatchObject(expectedProps);
 			});
 			it('should not have any inital state', () => {
