@@ -13,7 +13,6 @@ const handleImageData = images => {
 const handleFullData = data => {
 	filmData.addMetaData(data);
 	dataParser(data, 'fullCast');
-	return filmData.getAllData();
 };
 
 const handleSimpleData = async data => {
@@ -21,21 +20,28 @@ const handleSimpleData = async data => {
 	filmData.addMetaData(data);
 	dataParser(data, 'mainCast');
 
-	const imagesURL = createImageUrl(filmData.imdbID);
-	getDataFrom(imagesURL).then(handleImageData);
+	try {
+		const imagesURL = createImageUrl(filmData.imdbID);
+		const imageData = await getDataFrom(imagesURL);
+		handleImageData(imageData);
 
-	const fullURL = createFullDataURL(filmData.imdbID);
-	return getDataFrom(fullURL).then(handleFullData);
+		const fullURL = createFullDataURL(filmData.imdbID);
+		const fullData = await getDataFrom(fullURL);
+		handleFullData(fullData);
+		return filmData.getAllData();
+	} catch (err) {
+		throw new Error(err);
+	}
 };
 
-const getFilmData = title => {
+const getFilmData = async title => {
 	const simpleURL = createSimpleDataURL(title);
-
-	return getDataFrom(simpleURL)
-		.then(handleSimpleData)
-		.catch(err => {
-			throw new Error(err);
-		});
+	try {
+		const data = await getDataFrom(simpleURL);
+		return handleSimpleData(data);
+	} catch (err) {
+		throw new Error(err);
+	}
 };
 
 module.exports = getFilmData;
