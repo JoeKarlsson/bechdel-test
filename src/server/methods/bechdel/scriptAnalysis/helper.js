@@ -1,4 +1,5 @@
-/* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax, no-lonely-if */
+/* eslint-disable no-cond-assign */
+
 const bechdelResults = require('../BechdelResults');
 
 const greaterThanZero = num => {
@@ -14,39 +15,20 @@ const greaterThanZero = num => {
  * @return [object] an object with all of the characters in
  * the movie and the number times they talk in a given scene
  */
-const countCharacterDialogue = (arr, scene) => {
-	// if (!chars || !scene) {
-	// 	throw new Error('Invalid countCharacterDialouge input');
-	// }
-	// const charDialogueCount = {};
-	//
-	// console.log('chars', chars);
-	//
-	// for (let i = 0; i < chars.length; i++) {
-	// 	const { characterName } = chars[i];
-	// 	let fromIndex = scene.indexOf(characterName, 0);
-	// 	charDialogueCount[characterName] = 0;
-	//
-	// 	console.log('fromIndex', fromIndex);
-	//
-	// 	while (fromIndex > -1) {
-	// 		charDialogueCount[characterName]++;
-	// 		fromIndex = scene.indexOf(characterName, fromIndex);
-	// 	}
-	// }
-	// return charDialogueCount;
-
-	if (!arr || !scene) {
+const countCharacterDialogue = (characters, scene) => {
+	if (!characters || !scene) {
 		throw new Error('Invalid countCharacterDialouge input');
 	}
 	const charDialougeCount = {};
 
-	for (let x = 0; x < arr.length; x++) {
-		let i = 0;
-		charDialougeCount[arr[x].characterName] = 0;
-		while ((i = scene.indexOf(arr[x].characterName, i)) > -1) {
-			charDialougeCount[arr[x].characterName]++;
-			i++;
+	for (let i = 0; i < characters.length; i++) {
+		let count = 0;
+		const { characterName } = characters[i];
+		charDialougeCount[characterName] = 0;
+
+		while ((count = scene.indexOf(characterName, count)) > -1) {
+			charDialougeCount[characterName]++;
+			count++;
 		}
 	}
 	return charDialougeCount;
