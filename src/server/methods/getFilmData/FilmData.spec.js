@@ -1,7 +1,6 @@
 const filmData = require('./FilmData');
 
 describe('FilmData', () => {
-
 	beforeEach(() => {
 		filmData.clear();
 	});
@@ -10,7 +9,7 @@ describe('FilmData', () => {
 		it('should be empty', () => {
 			expect(filmData.actors).toMatchObject([]);
 			expect(filmData.images).toMatchObject({});
-			expect(filmData.metaData).toMatchObject([]);
+			expect(filmData.metaData).toMatchObject({});
 		});
 	});
 
@@ -22,7 +21,8 @@ describe('FilmData', () => {
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
 					_id: '5a2f044e491eef5edab46b97',
-				}, {
+				},
+				{
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
 					_id: '5a2f044e491eef5edab46b97',
@@ -40,8 +40,12 @@ describe('FilmData', () => {
 		it('should add a new image to the images object', () => {
 			expect(filmData.images).toMatchObject({});
 			const image = {
-				backdrops: ['https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg'],
-				posters: ['https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg'],
+				backdrops: [
+					'https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg',
+				],
+				posters: [
+					'https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg',
+				],
 			};
 
 			const expectedResult = image;
@@ -52,8 +56,8 @@ describe('FilmData', () => {
 	});
 
 	describe('Metadata', () => {
-		it('should add a new image to the images object', () => {
-			expect(filmData.metaData).toMatchObject([]);
+		it('should add metadata to the metadata property', () => {
+			expect(filmData.metaData).toMatchObject({});
 			const metaData = {
 				directors: [
 					{
@@ -62,26 +66,27 @@ describe('FilmData', () => {
 						_id: '5a2f044e491eef5edab46b86',
 					},
 				],
-				genres: [
-					'Crime',
-					'Drama',
-				],
+				genres: ['Crime', 'Drama'],
 				idIMDB: 'tt1800241',
 				metascore: 90,
-				plot: 'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
+				plot:
+					'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
 				rated: 'R',
 				rating: '7.3',
 				releaseDate: '20131220',
-				simplePlot: 'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
+				simplePlot:
+					'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
 				title: 'American Hustle',
 				urlIMDB: 'http://www.imdb.com/title/tt1800241',
-				urlPoster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
+				urlPoster:
+					'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
 				writers: [
 					{
 						name: 'Eric Warren Singer',
 						id: 'nm2545235',
 						_id: '5a2f044e491eef5edab46b88',
-					}, {
+					},
+					{
 						name: 'David O. Russell',
 						id: 'nm0751102',
 						_id: '5a2f044e491eef5edab46b87',
@@ -90,10 +95,44 @@ describe('FilmData', () => {
 				year: 2013,
 			};
 
-			const expectedResult = [metaData];
+			const expectedResult = metaData;
 
 			filmData.addMetaData(metaData);
 			expect(filmData.metaData).toMatchObject(expectedResult);
+		});
+
+		it('should combine multiple objects together', () => {
+			expect(filmData.metaData).toMatchObject({});
+
+			const metaData1 = {
+				genres: ['Crime', 'Drama'],
+				idIMDB: 'tt1800241',
+				metascore: 90,
+				rated: 'R',
+				rating: '7.3',
+				releaseDate: '20131220',
+				year: 2013,
+			};
+
+			const metaData2 = {
+				metascore: 10000,
+				simplePlot:
+					'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
+				title: 'American Hustle',
+				urlIMDB: 'http://www.imdb.com/title/tt1800241',
+				urlPoster:
+					'https://images-na.ssl-images-amazon.com/images/M/MV5BMmM4YzJjZGMtNjQxMy00NjdlLWJjYTItZWZkYzdhOTdhNzFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
+			};
+
+			const expectedResult1 = metaData1;
+			const expectedResult2 = Object.assign({}, metaData1, metaData2);
+
+			filmData.addMetaData(metaData1);
+			expect(filmData.metaData).toMatchObject(expectedResult1);
+
+			filmData.addMetaData(metaData2);
+			console.log('filmData.metaData', filmData.metaData);
+			expect(filmData.metaData).toMatchObject(expectedResult2);
 		});
 	});
 
@@ -105,7 +144,8 @@ describe('FilmData', () => {
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
 					_id: '5a2f044e491eef5edab46b97',
-				}, {
+				},
+				{
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
 					_id: '5a2f044e491eef5edab46b97',
@@ -114,8 +154,12 @@ describe('FilmData', () => {
 			filmData.addActor(actors);
 
 			const image = {
-				backdrops: ['https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg'],
-				posters: ['https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg'],
+				backdrops: [
+					'https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg',
+				],
+				posters: [
+					'https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg',
+				],
 			};
 			filmData.images = image;
 
@@ -127,17 +171,14 @@ describe('FilmData', () => {
 						_id: '5a2f044e491eef5edab46b86',
 					},
 				],
-				genres: [
-					'Crime',
-					'Drama',
-				],
+				genres: ['Crime', 'Drama'],
 			};
 			filmData.addMetaData(metadata);
 
 			const expectedResult = {
 				actors,
 				images: image,
-				metadata: [metadata],
+				metadata,
 			};
 
 			expect(filmData.getAllData()).toMatchObject(expectedResult);
@@ -152,7 +193,8 @@ describe('FilmData', () => {
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
 					_id: '5a2f044e491eef5edab46b97',
-				}, {
+				},
+				{
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
 					_id: '5a2f044e491eef5edab46b97',
@@ -161,8 +203,12 @@ describe('FilmData', () => {
 			filmData.addActor(actors);
 
 			const image = {
-				backdrops: ['https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg'],
-				posters: ['https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg'],
+				backdrops: [
+					'https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg',
+				],
+				posters: [
+					'https://image.tmdb.org/t/p/w300/eKi4e5zXhQKs0De4xu5AAMvu376.jpg',
+				],
 			};
 			filmData.images = image;
 
@@ -174,17 +220,14 @@ describe('FilmData', () => {
 						_id: '5a2f044e491eef5edab46b86',
 					},
 				],
-				genres: [
-					'Crime',
-					'Drama',
-				],
+				genres: ['Crime', 'Drama'],
 			};
 			filmData.addMetaData(metadata);
 
 			const expectedResult = {
 				actors,
 				images: image,
-				metadata: [metadata],
+				metadata,
 			};
 
 			expect(filmData.getAllData()).toMatchObject(expectedResult);
@@ -192,7 +235,7 @@ describe('FilmData', () => {
 			const expectedClearResult = {
 				actors: [],
 				images: {},
-				metadata: [],
+				metadata: {},
 			};
 
 			filmData.clear();

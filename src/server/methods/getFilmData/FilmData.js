@@ -1,8 +1,12 @@
+const combine = (obj, src) => {
+	return Object.assign(src, obj);
+};
+
 class FilmData {
 	constructor() {
 		this._actors = [];
 		this._images = {};
-		this._metadata = [];
+		this._metadata = {};
 		this._imdbID = null;
 	}
 
@@ -30,7 +34,9 @@ class FilmData {
 	}
 
 	addMetaData(data) {
-		this._metadata.push(data);
+		const newObj = combine(data, this._metadata);
+		this._metadata = newObj;
+
 		return this._metadata;
 	}
 
@@ -54,7 +60,7 @@ class FilmData {
 	clear() {
 		this._actors = [];
 		this._images = {};
-		this._metadata = [];
+		this._metadata = {};
 		return {
 			actors: this._actors,
 			images: this._images,
