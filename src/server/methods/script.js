@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const readMovieTitle = (path) => {
+const readMovieTitle = path => {
 	const promise = new Promise((resolve, reject) => {
 		if (!path) {
 			reject(new Error('Invalid readMovieTitle input'));
@@ -12,27 +12,28 @@ const readMovieTitle = (path) => {
 		let pos = 0;
 		let index;
 
-		rs.on('data', (chunk) => {
-			index = chunk.indexOf('\n');
-			acc += chunk;
-			if (index !== -1) {
-				rs.close();
-			} else {
-				pos += chunk.length;
-			}
-		})
+		rs
+			.on('data', chunk => {
+				index = chunk.indexOf('\n');
+				acc += chunk;
+				if (index !== -1) {
+					rs.close();
+				} else {
+					pos += chunk.length;
+				}
+			})
 			.on('close', () => {
 				const movieTitle = acc.slice(0, pos + index);
 				resolve(movieTitle);
 			})
-			.on('error', (err) => {
+			.on('error', err => {
 				reject(new Error(err));
 			});
 	});
 	return promise;
 };
 
-const read = (path) => {
+const read = path => {
 	const promise = new Promise((resolve, reject) => {
 		if (!path) {
 			reject(new Error('Invalid read input'));
@@ -40,25 +41,26 @@ const read = (path) => {
 		const rs = fs.createReadStream(path, { encoding: 'utf8' });
 		let movieScript = '';
 
-		rs.on('data', (chunk) => {
-			movieScript += chunk;
-		})
+		rs
+			.on('data', chunk => {
+				movieScript += chunk;
+			})
 			.on('close', () => {
 				resolve(movieScript);
 			})
-			.on('error', (err) => {
+			.on('error', err => {
 				reject(new Error(err));
 			});
 	});
 	return promise;
 };
 
-const clearTemp = (path) => {
+const clearTemp = path => {
 	const promise = new Promise((resolve, reject) => {
 		if (!path) {
 			reject(new Error('Invalid clearTemp input'));
 		}
-		fs.unlink(path, (err) => {
+		fs.unlink(path, err => {
 			if (err) {
 				console.error(err);
 			}

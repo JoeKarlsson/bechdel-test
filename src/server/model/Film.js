@@ -104,12 +104,6 @@ filmSchema.static('findByTitle', function(title) {
 		this.find({ title })
 			.exec()
 			.then(result => {
-				if (result.length === 0) {
-					reject(new Error('film not found'));
-				}
-				if (Array.isArray(result)) {
-					return resolve(result[0]);
-				}
 				return resolve(result);
 			})
 			.catch(err => {

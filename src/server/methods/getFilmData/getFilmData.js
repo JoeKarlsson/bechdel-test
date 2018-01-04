@@ -7,11 +7,13 @@ const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
 
 const handleImageData = images => {
 	filmData.images = images;
+	return images;
 };
 
 const handleFullData = data => {
 	filmData.addMetaData(data);
 	dataParser(data, 'fullCast');
+	console.log(data, 'simple full complete');
 	return filmData.getAllData();
 };
 
@@ -19,6 +21,7 @@ const handleSimpleData = data => {
 	filmData.imdbID = data.data.movies[0].idIMDB;
 	filmData.addMetaData(data);
 	dataParser(data, 'mainCast');
+	console.log('simple data complete');
 
 	const imagesURL = createImageUrl(filmData.imdbID);
 	getDataFrom(imagesURL).then(handleImageData);

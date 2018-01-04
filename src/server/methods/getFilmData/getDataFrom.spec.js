@@ -13,7 +13,7 @@ describe('getDataFrom', () => {
 	});
 
 	it('should return data from simple data endpoint', () => {
-		const title = 'American+Hustle';
+		const title = 'American Hustle';
 		const simpleURL = createSimpleDataURL(title);
 
 		fetchMock.mock(simpleURL, mockSimpleData);
