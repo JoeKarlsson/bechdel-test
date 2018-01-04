@@ -1,5 +1,5 @@
 import React from 'react';
-import postFilmScript from '../../helper/postFilmScript';
+import api from '../../helper/api';
 import Loading from '../../shared/Loading/Loading';
 
 class NewFilm extends React.Component {
@@ -14,8 +14,15 @@ class NewFilm extends React.Component {
 	handleFilmSubmit(e) {
 		e.preventDefault();
 		this.setState({ isLoading: true });
-		const fd = new FormData(document.querySelector('form'));
-		postFilmScript(fd).then(response => {
+
+		const formData = new FormData(document.querySelector('form'));
+		const url = '/api/film';
+		const options = {
+			method: 'POST',
+			body: formData,
+		};
+
+		api(url, options).then(response => {
 			window.location = `/film/${response._id}`;
 		});
 	}
