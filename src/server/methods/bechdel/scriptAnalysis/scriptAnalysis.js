@@ -1,7 +1,7 @@
 const bechdelResults = require('../BechdelResults');
 const {
 	isCharFemale,
-	countCharacterDialouge,
+	countCharacterDialogue,
 	bechdelTestPass,
 } = require('./helper');
 
@@ -19,7 +19,7 @@ const greaterThanZero = num => {
  * @return {[type]}                 [description]
  */
 const scriptGenderAnalytics = (characters, movieScript) => {
-	const charCount = countCharacterDialouge(characters, movieScript);
+	const charCount = countCharacterDialogue(characters, movieScript);
 	const names = Object.keys(charCount);
 
 	for (let i = 0; i < names.length; i++) {
@@ -50,7 +50,7 @@ const scriptAnalysis = (characters, scenes) => {
 	const promise = new Promise(resolve => {
 		for (let i = 0; i < scenes.length; i++) {
 			const scene = scenes[i];
-			const count = countCharacterDialouge(characters, scene);
+			const count = countCharacterDialogue(characters, scene);
 			const sceneData = {
 				characters,
 				count,
