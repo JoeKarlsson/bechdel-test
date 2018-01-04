@@ -16,7 +16,7 @@ const handleFullData = data => {
 	return filmData.getAllData();
 };
 
-const handleSimpleData = data => {
+const handleSimpleData = async data => {
 	filmData.imdbID = data.data.movies[0].idIMDB;
 	filmData.addMetaData(data);
 	dataParser(data, 'mainCast');
