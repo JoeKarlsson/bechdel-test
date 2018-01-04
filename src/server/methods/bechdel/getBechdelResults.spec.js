@@ -1,5 +1,5 @@
 const path = require('path');
-const getBechdelResults = require('./bechdel');
+const getBechdelResults = require('./getBechdelResults');
 
 jest.mock('../getFilmData/getFilmData');
 jest.mock('../script');
