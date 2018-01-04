@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-	MemoryRouter,
-} from 'react-router-dom';
-import {
-	shallow,
-	configure,
-} from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
 import Film from './Film';
 
 jest.mock('../../helper/getAllFilms');
@@ -23,25 +19,21 @@ describe('Film', () => {
 	};
 
 	beforeEach(() => {
-		wrapper = shallow(
-			<MemoryRouter>
-				<Film match={router} />
-			</MemoryRouter>,
-		);
+		wrapper = shallow(<Film match={router} />);
 		inst = wrapper.instance();
 	});
 
 	describe('rendering', () => {
 		describe('initial state', () => {
-			// it('match the snapshot', () => {
-			// 	const component = renderer.create(
-			// 		<MemoryRouter>
-			// 			<Film match={router} />
-			// 		</MemoryRouter>,
-			// 	);
-			// 	const tree = component.toJSON();
-			// 	expect(tree).toMatchSnapshot();
-			// });
+			it('match the snapshot', () => {
+				const component = renderer.create(
+					<MemoryRouter>
+						<Film match={router} />
+					</MemoryRouter>
+				);
+				const tree = component.toJSON();
+				expect(tree).toMatchSnapshot();
+			});
 			it('is rendered correctly', () => {
 				expect(wrapper).toHaveLength(1);
 			});
@@ -52,7 +44,33 @@ describe('Film', () => {
 			});
 			it('should not have any inital state', () => {
 				const initialState = inst.state;
-				const expectedState = {};
+				const expectedState = {
+					film: {
+						title: '',
+						images: {
+							poster: '',
+							backdrop: '',
+						},
+						plot: '',
+						directors: [],
+						writers: [],
+						genres: [],
+						rated: '',
+						bechdelResults: {
+							pass: 'false',
+							bechdelScore: 0,
+							numScenesPass: 0,
+							scenesThatPass: [],
+							numScenesDontPass: 0,
+							numOfFemalesChars: 0,
+							numOfMaleChars: 0,
+							numOfFemalesCharsWithDialogue: 0,
+							numOfMaleCharsWithDialogue: 0,
+							totalLinesFemaleDialogue: 0,
+							totalLinesMaleDialogue: 0,
+						},
+					},
+				};
 				expect(initialState).toMatchObject(expectedState);
 			});
 		});
