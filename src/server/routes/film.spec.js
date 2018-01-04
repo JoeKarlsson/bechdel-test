@@ -1,15 +1,22 @@
 import mockingoose from 'mockingoose';
+import fetchMock from 'fetch-mock';
 import request from 'supertest';
 import path from 'path';
 import app from '../server';
+import URLFormatter from '../methods/getFilmData/URLFormatter';
+import mockGetSimpleCastData from '../methods/getFilmData/__mocks__/mock-simple-data.json';
+import mockGetFullCastData from '../methods/getFilmData/__mocks__/mock-full-data.json';
+import mockImagesData from '../methods/getFilmData/__mocks__/mock-images-data.json';
 
-jest.mock('../methods/getFilmData/getFilmData');
-// jest.mock('../methods/script');
-// jest.mock('../model/Film');
+const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+
+// jest.mock('../methods/getFilmData/getFilmData');
+jest.mock('../methods/script');
 
 describe('Film Routes Test', () => {
 	beforeEach(() => {
 		mockingoose.resetAll();
+		fetchMock.reset();
 	});
 
 	describe('GET /api/film', () => {
@@ -44,9 +51,19 @@ describe('Film Routes Test', () => {
 	describe('POST /api/film/ already in the database', () => {
 		it('should return the film', done => {
 			const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
-			const _doc = { title: 'American Hustle', test: true };
+			const title = 'Boyhood';
+			const imdbID = 'tt1065073';
+			const _doc = { title, test: true };
 			mockingoose.Film.toReturn(_doc, 'find');
 			mockingoose.Film.toReturn({}, 'save');
+
+			const simpleURL = createSimpleDataURL(title);
+			const fullURL = createFullDataURL(imdbID);
+			const imagesURL = createImageUrl(imdbID);
+
+			fetchMock.mock(simpleURL, mockGetSimpleCastData);
+			fetchMock.mock(fullURL, mockGetFullCastData);
+			fetchMock.mock(imagesURL, mockImagesData);
 
 			request(app)
 				.post('/api/film')
@@ -57,7 +74,7 @@ describe('Film Routes Test', () => {
 					if (err) {
 						return done(err);
 					}
-					expect(res.body._doc.title).toBe('American Hustle');
+					expect(res.body._doc.title).toBe('Boyhood');
 					return done();
 				});
 		});

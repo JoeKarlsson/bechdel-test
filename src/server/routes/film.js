@@ -9,6 +9,15 @@ const multer = require('multer');
 const router = express.Router();
 const upload = multer({ dest: 'uploads/' });
 
+const handleFilmFoundInDB = (res, film, scriptPath) => {
+	script.clearTemp(scriptPath);
+	return res.json({
+		...film,
+		success: true,
+		cacheHit: true,
+	});
+};
+
 /*
   * FILM ROUTES
 */
@@ -40,45 +49,37 @@ router
 		}
 		try {
 			const title = await script.readMovieTitle(scriptPath);
-			console.log(title, 'title');
 			if (!title) {
 				return res.status(500).send('Error reading script');
 			}
-			try {
-				const film = await Film.findByTitle(title);
-				script.clearTemp(scriptPath);
-				return res.json({
-					...film,
-					success: true,
-					cacheHit: true,
-				});
-			} catch (err) {
-				const bechdelResults = await getBechdelResults(title, scriptPath);
-				console.log(bechdelResults);
-				const { actors, images, metadata } = filmData.getAllData();
-
-				const filmMetaData = {
-					title,
-					bechdelResults,
-					actors,
-					images,
-					data: metadata,
-				};
-				await Film.insertFilm(filmMetaData);
-				const finalFilm = await Film.findByTitle(title);
-
-				filmData.clear();
-				script.clearTemp(scriptPath);
-
-				res.json({
-					...finalFilm,
-					title,
-					success: true,
-					cacheHit: false,
-				});
+			const film = await Film.findByTitle(title);
+			if (film) {
+				return handleFilmFoundInDB(res, film, scriptPath);
 			}
+			const bechdelResults = await getBechdelResults(title, scriptPath);
+			const { actors, images, metadata } = filmData.getAllData();
+
+			const filmMetaData = {
+				title,
+				bechdelResults,
+				actors,
+				images,
+				data: metadata,
+			};
+			await Film.insertFilm(filmMetaData);
+			const finalFilm = await Film.findByTitle(title);
+
+			filmData.clear();
+			script.clearTemp(scriptPath);
+
+			return res.json({
+				...finalFilm,
+				title,
+				success: true,
+				cacheHit: false,
+			});
 		} catch (err) {
-			console.log(err);
+			console.error(err);
 			filmData.clear();
 			script.clearTemp(scriptPath);
 			return res.status(500).send('Please try again');
