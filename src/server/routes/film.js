@@ -18,6 +18,29 @@ const handleFilmFoundInDB = (res, film, scriptPath) => {
 	});
 };
 
+const isNotCorrectFileFormat = file => {
+	return path.extname(file.originalname) !== '.txt';
+};
+
+const fileWasNotUploadedCorrectly = file => {
+	const exists = !file;
+	return exists;
+};
+
+const errorReadingScript = title => {
+	const titleExists = !title;
+	return titleExists;
+};
+
+const handleError = (res, errMsg) => {
+	console.log(errMsg);
+	return res.status(500).send(errMsg);
+};
+
+const filmFound = film => {
+	return film.length > 0;
+};
+
 /*
   * FILM ROUTES
 */
@@ -27,8 +50,10 @@ router
 		Film.listAll()
 			.then(films => {
 				if (!films) {
-					res.status(500).send('No list of films returned from film.listAll()');
-					throw new Error('No list of films returned from film.listAll()');
+					return handleError(
+						res,
+						'No list of films returned from film.listAll()'
+					);
 				}
 				res.send(films);
 			})
@@ -41,22 +66,24 @@ router
 		const { file } = req;
 		const scriptPath = file.path;
 
-		if (!file) {
-			return res.status(500).send('No script submitted, please try again');
+		if (fileWasNotUploadedCorrectly(file)) {
+			return handleError(res, 'No script submitted, please try again');
 		}
-		if (path.extname(file.originalname) !== '.txt') {
-			return res.status(500).send('Please send a .txt script');
+		if (isNotCorrectFileFormat(file)) {
+			return handleError(res, 'Please send a .txt script');
 		}
 		try {
 			const title = await script.readMovieTitle(scriptPath);
-			if (!title) {
-				return res.status(500).send('Error reading script');
+			if (errorReadingScript(title)) {
+				console.log('hit');
+				return handleError(res, 'Error reading script');
 			}
 			const film = await Film.findByTitle(title);
-			if (film) {
+			if (filmFound(film)) {
 				return handleFilmFoundInDB(res, film, scriptPath);
 			}
 			const bechdelResults = await getBechdelResults(title, scriptPath);
+			console.log(bechdelResults, 'bechdelResults');
 			const { actors, images, metadata } = filmData.getAllData();
 
 			const filmMetaData = {

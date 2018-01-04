@@ -9,6 +9,7 @@ const getBechdelResults = async (title, path) => {
 		return getFilmData(title)
 			.then(data => {
 				bechdelResults.characters = data.actors;
+				console.log('all data complete');
 				return script.read(path);
 			})
 			.then(movieScript => {
