@@ -1,15 +1,20 @@
 import { DEFAULT_ERROR_MESSAGE } from './constants';
 
 const getAllFilms = (filmID = '') => {
-
+	const url = `/api/film/${filmID}`;
 	const myInit = {
 		method: 'GET',
 	};
 
-	return fetch(`/api/film/${filmID}`, myInit)
-		.then(response => response.json())
-		.then(data => data)
-		.catch((err) => {
+	return fetch(url, myInit)
+		.then(response => {
+			if (response.status >= 400) {
+				throw new Error('Bad response from server');
+			}
+			return response.json();
+		})
+		.catch(err => {
+			console.error(err.toString());
 			return {
 				err,
 				msg: DEFAULT_ERROR_MESSAGE,
