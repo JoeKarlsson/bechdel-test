@@ -12,9 +12,14 @@ class Films extends Component {
 		this.state = {
 			films: [],
 		};
+		this.getAllFilms = this.getAllFilms.bind(this);
 	}
 
 	componentDidMount() {
+		this.getAllFilms();
+	}
+
+	getAllFilms() {
 		const url = '/api/film/';
 		const options = {
 			method: 'GET',

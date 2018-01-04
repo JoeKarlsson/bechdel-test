@@ -37,11 +37,16 @@ class Film extends Component {
 				},
 			},
 		};
+
+		this.getFilm = this.getFilm.bind(this);
 	}
 
 	componentDidMount() {
-		const { id } = this.props.match.params;
+		this.getFilm();
+	}
 
+	getFilm() {
+		const { id } = this.props.match.params;
 		const url = `/api/film/${id}`;
 		const options = {
 			method: 'GET',

@@ -9,12 +9,10 @@ class NewFilm extends React.Component {
 			isLoading: false,
 		};
 		this.handleFilmSubmit = this.handleFilmSubmit.bind(this);
+		this.postFilm = this.postFilm.bind(this);
 	}
 
-	handleFilmSubmit(e) {
-		e.preventDefault();
-		this.setState({ isLoading: true });
-
+	postFilm() {
 		const formData = new FormData(document.querySelector('form'));
 		const url = '/api/film';
 		const options = {
@@ -23,8 +21,16 @@ class NewFilm extends React.Component {
 		};
 
 		api(url, options).then(response => {
+			this.setState({ isLoading: false });
 			window.location = `/film/${response._id}`;
 		});
+	}
+
+	handleFilmSubmit(e) {
+		e.preventDefault();
+		this.setState({ isLoading: true });
+
+		this.postFilm();
 	}
 
 	render() {
