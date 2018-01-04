@@ -24,7 +24,7 @@ const errorReadingScript = title => {
 };
 
 const handleError = (res, errMsg) => {
-	console.log(errMsg);
+	console.error(errMsg);
 	return res.status(500).send(errMsg);
 };
 
