@@ -1,4 +1,3 @@
-
 <p align="center">
 	<img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
 
@@ -18,9 +17,9 @@
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
-1.  It includes at least two women
-2.  who have at least one conversation
-3.  about something other than a man or men.
+1. It includes at least two women
+2. who have at least one conversation
+3. about something other than a man or men.
 
 The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule. For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on [feministfrequency.com](http://feministfrequency.com/).
 
@@ -28,7 +27,7 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 ## Prerequisites
 
-*   [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
+* [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
 
 ## Setup Your Project
 
@@ -95,13 +94,17 @@ Lint the file using a custom AirBnB configuration.
 
 Used for cleaning up Webpack build on Heroku.
 
+### TODO
+
+* http://nivo.rocks/#/chord
+
 ## Contributing
 
-1.  Fork it!
-1.  Create your feature branch: `git checkout -b my-new-feature`
-1.  Commit your changes: `git commit -am 'Add some feature'`
-1.  Push to the branch: `git push origin my-new-feature`
-1.  Submit a pull request :D
+1. Fork it!
+1. Create your feature branch: `git checkout -b my-new-feature`
+1. Commit your changes: `git commit -am 'Add some feature'`
+1. Push to the branch: `git push origin my-new-feature`
+1. Submit a pull request :D
 
 ### Maintainers
 
@@ -130,10 +133,10 @@ Used for cleaning up Webpack build on Heroku.
 
 ## Related Links
 
-*   [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
-*   [The Open Movie Database](http://www.omdbapi.com/)
-*   [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
-*   [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+* [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+* [The Open Movie Database](http://www.omdbapi.com/)
+* [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+* [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ### Resources
 

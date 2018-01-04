@@ -17,7 +17,6 @@ const {
  * @return {[type]}                 [description]
  */
 const scriptGenderAnalytics = (characters, movieScript) => {
-	console.log('scriptGenderAnalytics started');
 	const count = countCharacterDialouge(characters, movieScript);
 	let name;
 	try {
@@ -41,11 +40,6 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 		throw new Error(err);
 	}
 
-	console.log('scriptGenderAnalytics finished');
-	console.log(
-		bechdelResults.getBechdelResults(),
-		'bechdelResults.getBechdelResults();'
-	);
 	return bechdelResults.getBechdelResults();
 };
 

@@ -1,50 +1,37 @@
 const filmData = require('./FilmData');
 const dataParser = require('./dataParser');
-const getFilmImages = require('./getFilmImages');
-const getSimpleCastData = require('./getSimpleCastData');
-const getFullCastData = require('./getFullCastData');
+const getDataFrom = require('./getDataFrom');
+const URLFormatter = require('./URLFormatter');
 
-const splitTitle = title => {
-	return title.split(' ').join('+');
+const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+
+const handleImageData = images => {
+	filmData.images = images;
 };
 
-const getFilmData = movieTitle => {
-	const title = splitTitle(movieTitle);
+const handleFullData = data => {
+	filmData.addMetaData(data);
+	dataParser(data, 'fullCast');
+	return filmData.getAllData();
+};
 
-	return getSimpleCastData(title)
-		.then(simpleCastdata => {
-			try {
-				const data = simpleCastdata.data.movies[0];
-				const { actors } = data;
-				filmData.imdbID = data.idIMDB;
-				filmData.addMetaData(data);
-				dataParser(actors, 'mainCast');
-			} catch (err) {
-				console.log(err);
-			}
-			getFilmImages(filmData.imdbID)
-				.then(images => {
-					filmData.images = images;
-				})
-				.catch(error => {
-					throw new Error(error);
-				});
-			return getFullCastData(filmData.imdbID)
-				.then(fullCastdata => {
-					try {
-						const data = fullCastdata.data.movies[0];
-						const { actors } = data;
-						dataParser(actors, 'fullCast');
-						filmData.addMetaData(data);
-						return filmData.getAllData();
-					} catch (err) {
-						console.log(err);
-					}
-				})
-				.catch(error => {
-					throw new Error(error);
-				});
-		})
+const handleSimpleData = data => {
+	filmData.imdbID = data.data.movies[0].idIMDB;
+	filmData.addMetaData(data);
+	dataParser(data, 'mainCast');
+
+	const imagesURL = createImageUrl(filmData.imdbID);
+	getDataFrom(imagesURL).then(handleImageData);
+
+	const fullURL = createFullDataURL(filmData.imdbID);
+	return getDataFrom(fullURL).then(handleFullData);
+};
+
+const getFilmData = title => {
+	const simpleURL = createSimpleDataURL(title);
+
+	return getDataFrom(simpleURL)
+		.then(handleSimpleData)
 		.catch(err => {
 			throw new Error(err);
 		});

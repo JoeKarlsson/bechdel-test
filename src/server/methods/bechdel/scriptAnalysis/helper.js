@@ -16,8 +16,6 @@ const countCharacterDialouge = (arr, scene) => {
 		throw new Error('Invalid countCharacterDialouge input');
 	}
 	const charDialougeCount = {};
-	console.log(arr, 'arr');
-	console.log('countCharacterDialouge started');
 
 	for (let x = 0; x < arr.length; x++) {
 		let i = 0;
@@ -25,13 +23,8 @@ const countCharacterDialouge = (arr, scene) => {
 		while ((i = scene.indexOf(arr[x].characterName, i)) > -1) {
 			charDialougeCount[arr[x].characterName]++;
 			i++;
-			console.log(
-				charDialougeCount[arr[x].characterName],
-				'charDialougeCount[arr[x].characterName]'
-			);
 		}
 	}
-	console.log(charDialougeCount, 'countCharacterDialouge finished');
 	return charDialougeCount;
 };
 
