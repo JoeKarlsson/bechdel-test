@@ -5,31 +5,22 @@ const extractScenes = require('./extractScenes');
 const getFilmData = require('../getFilmData/getFilmData');
 
 const getBechdelResults = async (title, path) => {
-	return new Promise((resolve, reject) => {
-		return getFilmData(title)
-			.then(data => {
-				bechdelResults.characters = data.actors;
-				return script.read(path);
-			})
-			.then(movieScript => {
-				scriptAnalysis.scriptGenderAnalytics(
-					bechdelResults.characters,
-					movieScript
-				);
-				const scenes = extractScenes(movieScript);
-				scriptAnalysis
-					.scriptAnalysis(bechdelResults.characters, scenes)
-					.then(analysis => {
-						resolve(analysis);
-					})
-					.catch(error => {
-						reject(new Error(error));
-					});
-			})
-			.catch(error => {
-				reject(new Error(error));
-			});
-	});
+	try {
+		const data = await getFilmData(title);
+		bechdelResults.characters = data.actors;
+
+		const movieScript = await script.read(path);
+
+		scriptAnalysis.scriptGenderAnalytics(
+			bechdelResults.characters,
+			movieScript
+		);
+
+		const scenes = extractScenes(movieScript);
+		return scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes);
+	} catch (err) {
+		throw new Error(err);
+	}
 };
 
 module.exports = getBechdelResults;
