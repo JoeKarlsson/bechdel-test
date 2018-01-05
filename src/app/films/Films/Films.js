@@ -6,10 +6,19 @@ import api from '../../helper/api';
 // import './Films.scss';
 
 class Films extends Component {
+	static renderLoading() {
+		return <div>Loading...</div>;
+	}
+
+	static renderError() {
+		return <div>Im sorry! Please try again.</div>;
+	}
+
 	constructor() {
 		super();
 		this.state = {
 			films: [],
+			loading: false,
 		};
 		this.getAllFilms = this.getAllFilms.bind(this);
 	}
@@ -19,19 +28,28 @@ class Films extends Component {
 	}
 
 	getAllFilms() {
-		const url = '/api/film/';
+		const url = '/api/filmasdas/';
 		const options = {
 			method: 'GET',
 		};
 
+		this.setState({
+			loading: true,
+		});
+
 		api(url, options).then(data => {
 			this.setState({
 				films: data,
+				loading: false,
+			}).catch(() => {
+				this.setState({
+					loading: false,
+				});
 			});
 		});
 	}
 
-	render() {
+	renderFilms() {
 		return (
 			<div className="films">
 				<Hero />
@@ -42,6 +60,15 @@ class Films extends Component {
 				</div>
 			</div>
 		);
+	}
+
+	render() {
+		if (this.state.loading) {
+			return Films.renderLoading();
+		} else if (this.state.films) {
+			return Films.renderFilms();
+		}
+		return this.renderError();
 	}
 }
 
