@@ -5,43 +5,73 @@ const URLFormatter = require('./URLFormatter');
 
 const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
 
-const handleImageData = images => {
-	filmData.images = images;
-	return images;
+const handleError = err => {
+	console.error(err);
+	throw new Error(err);
 };
 
-const handleFullData = data => {
-	filmData.addMetaData(data);
-	dataParser(data, 'fullCast');
+const notValidData = data => {
+	if (!data) {
+		return true;
+	}
+	return false;
 };
 
-const handleSimpleData = async data => {
-	filmData.imdbID = data.data.movies[0].idIMDB;
-	filmData.addMetaData(data);
-	dataParser(data, 'mainCast');
-
+const handleImageData = async () => {
 	try {
 		const imagesURL = createImageUrl(filmData.imdbID);
-		const imageData = await getDataFrom(imagesURL);
-		handleImageData(imageData);
+		const images = await getDataFrom(imagesURL);
 
-		const fullURL = createFullDataURL(filmData.imdbID);
-		const fullData = await getDataFrom(fullURL);
-		handleFullData(fullData);
-		return filmData.getAllData();
+		if (notValidData(images)) {
+			handleError('imageData not valid');
+		}
+		filmData.images = images;
+		return images;
 	} catch (err) {
-		throw new Error(err);
+		return handleError(err);
 	}
 };
 
-const getFilmData = async title => {
-	const simpleURL = createSimpleDataURL(title);
+const handleFullData = async () => {
 	try {
-		const data = await getDataFrom(simpleURL);
-		return handleSimpleData(data);
+		const fullURL = createFullDataURL(filmData.imdbID);
+		const fullData = await getDataFrom(fullURL);
+		const fullMetaData = fullData.data.movies[0];
+
+		if (notValidData(fullMetaData)) {
+			handleError('fullMetaData not valid');
+		}
+		filmData.addMetaData(fullMetaData);
+		return dataParser(fullMetaData, 'fullCast');
 	} catch (err) {
-		throw new Error(err);
+		return handleError(err);
 	}
+};
+
+const handleSimpleData = async title => {
+	try {
+		const simpleURL = createSimpleDataURL(title);
+		const data = await getDataFrom(simpleURL);
+		const simpleMetaData = data.data.movies[0];
+
+		if (notValidData(simpleMetaData)) {
+			handleError('simpleMetaData not valid');
+		}
+
+		filmData.imdbID = simpleMetaData.idIMDB;
+		filmData.addMetaData(data);
+		dataParser(data, 'mainCast');
+
+		handleImageData();
+		await handleFullData();
+		return filmData.getAllData();
+	} catch (err) {
+		return handleError(err);
+	}
+};
+
+const getFilmData = title => {
+	return handleSimpleData(title);
 };
 
 module.exports = getFilmData;
