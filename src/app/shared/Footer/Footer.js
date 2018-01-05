@@ -9,7 +9,7 @@ const Footer = () => (
 				rel="noopener noreferrer"
 				href="https://github.com/JoeKarlsson/bechdel-test"
 			>
-				<p>a karlsson production.</p>
+				<p>{new Date().getFullYear()} - a karlsson production.</p>
 			</a>
 		</div>
 	</footer>
