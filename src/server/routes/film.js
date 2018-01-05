@@ -60,20 +60,7 @@ const handleGetAllFilms = async (req, res) => {
 	}
 };
 
-const handleResponse = (res, data) => {
-	return res.json(data);
-};
-
-const handlePostFilm = async (req, res) => {
-	const { file } = req;
-	const scriptPath = file.path;
-
-	if (fileWasNotUploadedCorrectly(file)) {
-		return handleError(res, 'No script submitted, please try again');
-	}
-	if (isNotCorrectFileFormat(file)) {
-		return handleError(res, 'Please send a .txt script');
-	}
+const processScript = async (res, scriptPath) => {
 	try {
 		const title = await script.readMovieTitle(scriptPath);
 		if (errorReadingScript(title)) {
@@ -109,6 +96,23 @@ const handlePostFilm = async (req, res) => {
 		resetAll(scriptPath);
 		return handleError(res, 'Please try again');
 	}
+};
+
+const handleResponse = (res, data) => {
+	return res.json(data);
+};
+
+const handlePostFilm = async (req, res) => {
+	const { file } = req;
+	const scriptPath = file.path;
+
+	if (fileWasNotUploadedCorrectly(file)) {
+		return handleError(res, 'No script submitted, please try again');
+	}
+	if (isNotCorrectFileFormat(file)) {
+		return handleError(res, 'Please send a .txt script');
+	}
+	processScript(res, scriptPath);
 };
 
 const handleDeleteFilm = async (req, res) => {
