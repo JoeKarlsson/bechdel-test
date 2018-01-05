@@ -1,5 +1,24 @@
-const combine = (obj, src) => {
+const mergeObj = (obj, src) => {
 	return Object.assign(src, obj);
+};
+
+const mergeArr = (arr, src) => {
+	const newArr = [...src];
+	let isUnique = true;
+
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < src.length; j++) {
+			if (arr[i].character === src[j].character) {
+				isUnique = false;
+				break;
+			}
+		}
+		if (isUnique) {
+			newArr.push(arr[i]);
+		}
+		isUnique = true;
+	}
+	return newArr;
 };
 
 class FilmData {
@@ -15,8 +34,7 @@ class FilmData {
 	}
 
 	addActor(actors) {
-		const arr = [...this._actors, ...actors];
-		this._actors = arr;
+		this._actors = mergeArr(actors, this._actors);
 		return this._actors;
 	}
 
@@ -34,7 +52,7 @@ class FilmData {
 	}
 
 	addMetaData(data) {
-		const newObj = combine(data, this._metadata);
+		const newObj = mergeObj(data, this._metadata);
 		this._metadata = newObj;
 
 		return this._metadata;
@@ -54,6 +72,7 @@ class FilmData {
 			actors: this._actors,
 			images: this._images,
 			metadata: this._metadata,
+			imdbID: this._imdbID,
 		};
 	}
 
@@ -61,10 +80,13 @@ class FilmData {
 		this._actors = [];
 		this._images = {};
 		this._metadata = {};
+		this._imdbID = null;
+
 		return {
 			actors: this._actors,
 			images: this._images,
 			metadata: this._metadata,
+			imdbID: this._imdbID,
 		};
 	}
 }
