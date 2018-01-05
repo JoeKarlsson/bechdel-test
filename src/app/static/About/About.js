@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const About = () => (
-	<div className="About">
+	<div className="About container">
 		<h1>about bechdel.io</h1>
 		<p>
 			The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is

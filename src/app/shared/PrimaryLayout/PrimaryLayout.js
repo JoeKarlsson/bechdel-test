@@ -18,18 +18,16 @@ export const PrimaryLayout = () => {
 		<div className="PrimaryLayout">
 			<Header />
 			<div className="content">
-				<div>
-					<ErrorBoundary>
-						<Switch>
-							<Route exact path="/" component={Films} />
-							<Route path="/about" component={About} />
-							<Route path="/case-study" component={CaseStudy} />
-							<Route path="/film/new" component={NewFilm} />
-							<Route path="/film/:id" component={Film} />
-							<Route path="*" component={NoMatch} />
-						</Switch>
-					</ErrorBoundary>
-				</div>
+				<ErrorBoundary>
+					<Switch>
+						<Route exact path="/" component={Films} />
+						<Route path="/about" component={About} />
+						<Route path="/case-study" component={CaseStudy} />
+						<Route path="/film/new" component={NewFilm} />
+						<Route path="/film/:id" component={Film} />
+						<Route path="*" component={NoMatch} />
+					</Switch>
+				</ErrorBoundary>
 			</div>
 			<Footer />
 		</div>
