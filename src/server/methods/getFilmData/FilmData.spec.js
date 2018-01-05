@@ -16,16 +16,17 @@ describe('FilmData', () => {
 	describe('Actors', () => {
 		it('should add a new actor to the actor array', () => {
 			expect(filmData.actors).toMatchObject([]);
+
 			const actor = [
 				{
 					actorName: 'Christian Bale',
+					character: 'Steve',
 					actorActress: 'Actor',
-					_id: '5a2f044e491eef5edab46b97',
 				},
 				{
-					actorName: 'Christian Bale',
-					actorActress: 'Actor',
-					_id: '5a2f044e491eef5edab46b97',
+					actorName: 'Ellar Coltrane',
+					character: 'MASON',
+					mainCast: false,
 				},
 			];
 
@@ -33,6 +34,48 @@ describe('FilmData', () => {
 
 			filmData.addActor(actor);
 			expect(filmData.actors).toMatchObject(expectedResult);
+			expect(filmData.actors.length).toBe(2);
+		});
+
+		it('should merge two sets of actors with no duplicates', () => {
+			expect(filmData.actors).toMatchObject([]);
+			const actors1 = [
+				{
+					actorName: 'Ellar Coltrane',
+					character: 'MASON',
+				},
+				{
+					actorName: 'Patricia Arquette',
+					character: 'MOM',
+				},
+			];
+
+			const actors2 = [
+				{
+					actorName: 'Ellar Coltrane',
+					character: 'MASON',
+				},
+				{
+					actorName: 'Patricia Arquette',
+					character: 'MOM',
+				},
+				{
+					actorName: 'Elijah Smith',
+					character: 'TOMMY',
+				},
+				{
+					actorName: 'Lorelei Linklater',
+					character: 'SAMANTHA',
+				},
+			];
+
+			filmData.addActor(actors1);
+			expect(filmData.actors).toMatchObject(actors1);
+			expect(filmData.actors.length).toBe(2);
+
+			filmData.addActor(actors2);
+			expect(filmData.actors).toMatchObject(actors2);
+			expect(filmData.actors.length).toBe(4);
 		});
 	});
 
@@ -69,13 +112,9 @@ describe('FilmData', () => {
 				genres: ['Crime', 'Drama'],
 				idIMDB: 'tt1800241',
 				metascore: 90,
-				plot:
-					'A fictional film set in the alluring world of one of the most stunning scandals to rock our nation, American Hustle tells the story of brilliant con man Irving Rosenfeld (), who along with his equally cunning and seductive British partner Sydney Prosser () is forced to work for a wild FBI agent Richie DiMaso (). DiMaso pushes them into a world of Jersey powerbrokers and mafia thats as dangerous as it is enchanting. is Carmine Polito, the passionate, volatile, New Jersey political operator caught between the con-artists and Feds. Irvings unpredictable wife Rosalyn () could be the one to pull the thread that brings the entire world crashing down.',
 				rated: 'R',
 				rating: '7.3',
 				releaseDate: '20131220',
-				simplePlot:
-					'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
 				title: 'American Hustle',
 				urlIMDB: 'http://www.imdb.com/title/tt1800241',
 				urlPoster:
@@ -115,7 +154,6 @@ describe('FilmData', () => {
 			};
 
 			const metaData2 = {
-				metascore: 10000,
 				simplePlot:
 					'A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser, is forced to work for a wild F.B.I. Agent, Richie DiMaso, who pushes them into a world of Jersey powerbrokers and Mafia.',
 				title: 'American Hustle',
@@ -131,7 +169,6 @@ describe('FilmData', () => {
 			expect(filmData.metaData).toMatchObject(expectedResult1);
 
 			filmData.addMetaData(metaData2);
-			console.log('filmData.metaData', filmData.metaData);
 			expect(filmData.metaData).toMatchObject(expectedResult2);
 		});
 	});
@@ -142,13 +179,11 @@ describe('FilmData', () => {
 			const actors = [
 				{
 					actorName: 'Christian Bale',
-					actorActress: 'Actor',
-					_id: '5a2f044e491eef5edab46b97',
+					character: 'TOMMY',
 				},
 				{
 					actorName: 'Christian Bale',
-					actorActress: 'Actor',
-					_id: '5a2f044e491eef5edab46b97',
+					character: 'TOMMY',
 				},
 			];
 			filmData.addActor(actors);
@@ -192,12 +227,12 @@ describe('FilmData', () => {
 				{
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
-					_id: '5a2f044e491eef5edab46b97',
+					character: 'TOMMY',
 				},
 				{
 					actorName: 'Christian Bale',
 					actorActress: 'Actor',
-					_id: '5a2f044e491eef5edab46b97',
+					character: 'Mike',
 				},
 			];
 			filmData.addActor(actors);
