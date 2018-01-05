@@ -4,9 +4,7 @@ exports[`FilmItem rendering initial state is rendered 1`] = `
 <div
   className="filmItem"
 >
-  <li
-    className="filmItem_ListItem"
-  >
+  <li>
     <div>
       <a
         href="/film/undefined"
@@ -16,11 +14,18 @@ exports[`FilmItem rendering initial state is rendered 1`] = `
           alt="Movie Title"
           src="Movie Poster URL"
         />
-        <p
-          className="filmItem_title"
+        <div
+          className="description"
         >
-          Movie Title
-        </p>
+          <h2
+            className="filmItem_title"
+          >
+            Movie Title
+          </h2>
+          <p>
+            2015
+          </p>
+        </div>
       </a>
     </div>
   </li>
