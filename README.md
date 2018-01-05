@@ -14,6 +14,7 @@
 [![twitter][twitter]][twitter-url]
 [![snyk][snyk]][snyk-url]
 [![greenkeeper][greenkeeper]][greenkeeper-url]
+[![bch compliance][bchcompliance]][bchcompliance-url]
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
@@ -160,3 +161,5 @@ Used for cleaning up Webpack build on Heroku.
 [greenkeeper-url]: https://greenkeeper.io/
 [snyk]: https://snyk.io/test/github/joekarlsson/bechdel-test/badge.svg
 [snyk-url]: https://snyk.io/test/github/joekarlsson/bechdel-test
+[bchcompliance]: https://bettercodehub.com/edge/badge/JoeKarlsson/bechdel-test?branch=develop
+[bchcompliance-url]: https://bettercodehub.com/
