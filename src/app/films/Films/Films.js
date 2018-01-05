@@ -66,9 +66,9 @@ class Films extends Component {
 		if (this.state.loading) {
 			return Films.renderLoading();
 		} else if (this.state.films) {
-			return Films.renderFilms();
+			return this.renderFilms();
 		}
-		return this.renderError();
+		return Films.renderError();
 	}
 }
 
