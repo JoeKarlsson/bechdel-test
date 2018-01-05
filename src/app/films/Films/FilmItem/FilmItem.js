@@ -3,21 +3,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './FilmItem.scss';
 
-const FilmItem = (props) => {
-
+const FilmItem = props => {
 	const { film } = props;
 	const filmUrl = `/film/${film._id}`;
 
 	return (
 		<div className="filmItem">
-			<li className="filmItem_ListItem">
+			<li>
 				<div>
-					<Link to={filmUrl} >
-						<img
-							src={film.images.poster}
-							alt={film.title}
-						/>
-						<p className="filmItem_title">{film.title}</p>
+					<Link to={filmUrl}>
+						<img src={film.images.poster} alt={film.title} />
+						<div className="description">
+							<h2 className="filmItem_title">{film.title}</h2>
+							<p>2015</p>
+						</div>
 					</Link>
 				</div>
 			</li>
