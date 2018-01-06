@@ -13,6 +13,7 @@ const handleError = err => {
 };
 
 const handleResponse = response => {
+	console.log(response);
 	const { status } = response;
 	if (isNotHappyStatus(status)) {
 		return handleError('Bad response from server');
