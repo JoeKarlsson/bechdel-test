@@ -28,7 +28,7 @@ class Films extends Component {
 	}
 
 	getAllFilms() {
-		const url = '/api/filmasdas/';
+		const url = '/api/film';
 		const options = {
 			method: 'GET',
 		};

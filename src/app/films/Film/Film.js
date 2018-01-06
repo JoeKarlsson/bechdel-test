@@ -77,18 +77,29 @@ class Film extends Component {
 			return item !== array[array.length - 1];
 		};
 
-		const nodeBuilder = array => {
+		const genreNodeBuilder = array => {
+			console.log(array);
 			return array.map(item => {
 				if (isLastItem(item, array)) {
-					return <span key={hash(item)}>{item} | </span>;
+					return <span key={hash(item.toString())}>{item} | </span>;
 				}
 				return <span key={hash(item)}>{item}</span>;
 			});
 		};
 
+		const nodeBuilder = array => {
+			console.log(array);
+			return array.map(item => {
+				if (isLastItem(item, array)) {
+					return <span key={hash(item.toString())}>{item.name} | </span>;
+				}
+				return <span key={hash(item)}>{item.name}</span>;
+			});
+		};
+
 		const directorNode = nodeBuilder(directors);
 		const writerNode = nodeBuilder(writers);
-		const genreNode = nodeBuilder(genres);
+		const genreNode = genreNodeBuilder(genres);
 
 		return (
 			<div className="filmInfo">
