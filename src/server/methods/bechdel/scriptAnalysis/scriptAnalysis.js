@@ -47,23 +47,20 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 };
 
 const scriptAnalysis = (characters, scenes) => {
-	const promise = new Promise(resolve => {
-		for (let i = 0; i < scenes.length; i++) {
-			const scene = scenes[i];
-			const count = countCharacterDialogue(characters, scene);
-			const sceneData = {
-				characters,
-				count,
-				scene,
-			};
-			if (bechdelTestPass(sceneData) === true) {
-				bechdelResults.bechdelPass = true;
-				bechdelResults.addBechdelPassingScene(scene);
-			}
+	for (let i = 0; i < scenes.length; i++) {
+		const scene = scenes[i];
+		const count = countCharacterDialogue(characters, scene);
+		const sceneData = {
+			characters,
+			count,
+			scene,
+		};
+		if (bechdelTestPass(sceneData) === true) {
+			bechdelResults.bechdelPass = true;
+			bechdelResults.addBechdelPassingScene(scene);
 		}
-		resolve(bechdelResults.getBechdelResults());
-	});
-	return promise;
+	}
+	return bechdelResults.getBechdelResults();
 };
 
 module.exports = {
