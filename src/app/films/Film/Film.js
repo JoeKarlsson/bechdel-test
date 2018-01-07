@@ -78,7 +78,6 @@ class Film extends Component {
 		};
 
 		const genreNodeBuilder = array => {
-			console.log(array);
 			return array.map(item => {
 				if (isLastItem(item, array)) {
 					return <span key={hash(item.toString())}>{item} | </span>;
@@ -88,7 +87,6 @@ class Film extends Component {
 		};
 
 		const nodeBuilder = array => {
-			console.log(array);
 			return array.map(item => {
 				if (isLastItem(item, array)) {
 					return <span key={hash(item.toString())}>{item.name} | </span>;
