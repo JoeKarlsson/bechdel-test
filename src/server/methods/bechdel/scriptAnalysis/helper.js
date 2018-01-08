@@ -1,6 +1,7 @@
 /* eslint-disable no-cond-assign */
 
 const bechdelResults = require('../BechdelResults');
+const handleError = require('../../../helper/handleError');
 
 const greaterThanZero = num => {
 	return num > 0;
@@ -17,7 +18,7 @@ const greaterThanZero = num => {
  */
 const countCharacterDialogue = (characters, scene) => {
 	if (!characters || !scene) {
-		throw new Error('Invalid countCharacterDialouge input');
+		handleError('Invalid countCharacterDialouge input');
 	}
 	const charDialougeCount = {};
 
@@ -41,7 +42,7 @@ const countCharacterDialogue = (characters, scene) => {
  */
 const isCharFemale = (characters, name) => {
 	if (!characters) {
-		throw new Error('Invalid isCharFemale input');
+		handleError('Invalid isCharFemale input');
 	}
 
 	for (let i = 0; i < characters.length; i++) {
@@ -55,7 +56,7 @@ const isCharFemale = (characters, name) => {
 			return false;
 		}
 	}
-	throw new Error('Character not found');
+	handleError('Character not found');
 };
 
 /**

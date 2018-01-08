@@ -1,4 +1,5 @@
 const filmData = require('./FilmData');
+const handleError = require('../../helper/handleError');
 
 const isFullCast = type => {
 	if (type === 'fullCast') {
@@ -11,32 +12,44 @@ const cleanCharName = name => {
 	return name.replace(/'([^']+(?='))'/g, '$1').toUpperCase();
 };
 
-const createCharcArr = (arr, characters, type) => {
-	for (let i = 0; i < characters.length; i++) {
-		const characterName = cleanCharName(characters[i].character);
+const isValidArr = arr => {
+	return arr.length !== 0;
+};
 
-		arr.push({
-			actorName: characters[i].actorName,
-			gender: characters[i].biography.actorActress,
+const createCharcArr = (rawCharacters, type) => {
+	const processedCharArr = [];
+
+	for (let i = 0; i < rawCharacters.length; i++) {
+		const characterName = cleanCharName(rawCharacters[i].character);
+		console.log(characterName);
+
+		processedCharArr.push({
+			actorName: rawCharacters[i].actorName,
+			gender: rawCharacters[i].biography.actorActress,
 			characterName,
 			mainCast: isFullCast(type),
 		});
 	}
-	return arr;
+	console.log(processedCharArr, '1');
+	return processedCharArr;
 };
 
-const dataParser = (rawMovieCharacters, type) => {
-	let movieCharacters = [];
+const dataParser = (rawCharacters, type) => {
+	let processedCharArr;
 
-	if (rawMovieCharacters !== []) {
-		movieCharacters = createCharcArr(movieCharacters, rawMovieCharacters, type);
+	if (isValidArr(rawCharacters)) {
+		console.log('hit');
+		processedCharArr = createCharcArr(rawCharacters, type);
+		console.log(processedCharArr, '2');
 	} else {
-		throw new Error(
-			'Error: Connected to myfilmapi, but no actor data returned'
-		);
+		handleError('Error: Connected to myfilmapi, but no actor data returned');
 	}
-	filmData.addActor(movieCharacters);
-	return movieCharacters;
+	filmData.addActor(processedCharArr);
+	if (isValidArr(rawCharacters)) {
+		handleError('Error when parsing char arr');
+	}
+
+	return processedCharArr;
 };
 
 module.exports = dataParser;
