@@ -16,12 +16,15 @@ const isValidArr = arr => {
 	return arr.length !== 0;
 };
 
+const isNotValidArr = arr => {
+	return !isValidArr(arr);
+};
+
 const createCharcArr = (rawCharacters, type) => {
 	const processedCharArr = [];
 
 	for (let i = 0; i < rawCharacters.length; i++) {
 		const characterName = cleanCharName(rawCharacters[i].character);
-		console.log(characterName);
 
 		processedCharArr.push({
 			actorName: rawCharacters[i].actorName,
@@ -30,7 +33,6 @@ const createCharcArr = (rawCharacters, type) => {
 			mainCast: isFullCast(type),
 		});
 	}
-	console.log(processedCharArr, '1');
 	return processedCharArr;
 };
 
@@ -38,14 +40,13 @@ const dataParser = (rawCharacters, type) => {
 	let processedCharArr;
 
 	if (isValidArr(rawCharacters)) {
-		console.log('hit');
 		processedCharArr = createCharcArr(rawCharacters, type);
-		console.log(processedCharArr, '2');
 	} else {
 		handleError('Error: Connected to myfilmapi, but no actor data returned');
 	}
+
 	filmData.addActor(processedCharArr);
-	if (isValidArr(rawCharacters)) {
+	if (isNotValidArr(processedCharArr)) {
 		handleError('Error when parsing char arr');
 	}
 
