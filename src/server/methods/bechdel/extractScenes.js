@@ -1,4 +1,5 @@
 const bechdelResults = require('./BechdelResults');
+const handleError = require('../../helper/handleError');
 
 const keywords = ['EXT', 'INT', 'EXTERIOR', 'INTERIOR', 'INT/EXT', 'I/E'];
 
@@ -28,7 +29,7 @@ const extractScenes = movieScript => {
 	bechdelResults.addScene(subScene);
 
 	if (isArrayEmpty(bechdelResults.scenes)) {
-		throw new Error('Error while exctracting scenes');
+		handleError('Error while exctracting scenes');
 	}
 	return bechdelResults.scenes;
 };
