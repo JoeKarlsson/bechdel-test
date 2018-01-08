@@ -13,12 +13,15 @@ mongoose.Promise = global.Promise;
 const filmSchema = mongoose.Schema(schema);
 
 filmSchema.static('listAll', function() {
-	const promise = new Promise(resolve => {
+	const promise = new Promise((resolve, reject) => {
 		this.find()
 			.sort('-date')
 			.exec()
 			.then(result => {
 				return resolve(result);
+			})
+			.catch(err => {
+				reject(new Error(err));
 			});
 	});
 	return promise;

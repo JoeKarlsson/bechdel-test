@@ -73,6 +73,7 @@ const processScript = async (res, scriptPath) => {
 		console.log(title);
 		const bechdelResults = await getBechdelResults(title, scriptPath);
 		const { actors, images, metadata } = filmData.getAllData();
+		console.log(actors, 'actors');
 
 		const filmMetaData = {
 			title,

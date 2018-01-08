@@ -37,7 +37,6 @@ const handleFullData = async () => {
 		const fullURL = createFullDataURL(filmData.imdbID);
 		const fullData = await getDataFrom(fullURL);
 		const fullMetaData = fullData.data.movies[0];
-		console.log(fullMetaData);
 
 		if (notValidData(fullMetaData)) {
 			handleError('fullMetaData not valid');
@@ -60,8 +59,8 @@ const handleSimpleData = async title => {
 		}
 
 		filmData.imdbID = simpleMetaData.idIMDB;
-		filmData.addMetaData(data);
-		dataParser(data, 'mainCast');
+		filmData.addMetaData(simpleMetaData);
+		dataParser(simpleMetaData, 'mainCast');
 
 		handleImageData();
 		await handleFullData();
