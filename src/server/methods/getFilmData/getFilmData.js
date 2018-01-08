@@ -42,7 +42,8 @@ const handleFullData = async () => {
 			handleError('fullMetaData not valid');
 		}
 		filmData.addMetaData(fullMetaData);
-		return dataParser(fullMetaData, 'fullCast');
+		const { actors } = fullMetaData;
+		return dataParser(actors, 'fullCast');
 	} catch (err) {
 		return handleError(err);
 	}
@@ -60,7 +61,8 @@ const handleSimpleData = async title => {
 
 		filmData.imdbID = simpleMetaData.idIMDB;
 		filmData.addMetaData(simpleMetaData);
-		dataParser(simpleMetaData, 'mainCast');
+		const { actors } = simpleMetaData;
+		dataParser(actors, 'mainCast');
 
 		handleImageData();
 		await handleFullData();
