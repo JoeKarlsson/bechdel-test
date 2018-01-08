@@ -37,16 +37,19 @@ class Films extends Component {
 			loading: true,
 		});
 
-		api(url, options).then(data => {
-			this.setState({
-				films: data,
-				loading: false,
-			}).catch(() => {
+		api(url, options)
+			.then(data => {
+				this.setState({
+					films: data,
+					loading: false,
+				});
+			})
+			.catch(err => {
+				console.err(err);
 				this.setState({
 					loading: false,
 				});
 			});
-		});
 	}
 
 	renderFilms() {
