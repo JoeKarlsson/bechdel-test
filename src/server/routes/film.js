@@ -63,6 +63,7 @@ const handleGetAllFilms = async (req, res) => {
 const processScript = async (res, scriptPath) => {
 	try {
 		const title = await script.readMovieTitle(scriptPath);
+		console.log('title', title);
 		if (errorReadingScript(title)) {
 			return handleError(res, 'Error reading script');
 		}
@@ -71,6 +72,7 @@ const processScript = async (res, scriptPath) => {
 			return handleFilmFoundInDB(res, film, scriptPath);
 		}
 		const bechdelResults = await getBechdelResults(title, scriptPath);
+		console.log('bechdelResults', bechdelResults);
 		const { actors, images, metadata } = filmData.getAllData();
 
 		const filmMetaData = {
