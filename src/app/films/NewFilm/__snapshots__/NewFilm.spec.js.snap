@@ -5,40 +5,36 @@ exports[`NewFilm rendering initial state is rendered 1`] = `
   className="newFilm"
 >
   <div>
-    <div
-      className="Error"
-    >
-      <h1>
-        Something went wrong.
-      </h1>
-      <details
-        style={
-          Object {
-            "whiteSpace": "pre-wrap",
-          }
-        }
+    <h1>
+      test a new script
+    </h1>
+    <div>
+      <div
+        className="Error"
       >
-        ReferenceError: document is not defined
-        <br />
-        
+        <h1>
+          Something went wrong.
+        </h1>
+        <details
+          style={
+            Object {
+              "whiteSpace": "pre-wrap",
+            }
+          }
+        >
+          ReferenceError: document is not defined
+          <br />
+          
     in DragDrop (created by Uploader)
     in ErrorBoundary (created by Uploader)
     in div (created by Uploader)
     in Uploader (created by NewFilm)
     in div (created by NewFilm)
+    in div (created by NewFilm)
     in NewFilm
-      </details>
+        </details>
+      </div>
     </div>
-  </div>
-  <h1>
-    test a new script
-  </h1>
-  <form
-    action="/api/film"
-    encType="multipart/form-data"
-    method="POST"
-    name="script"
-  >
     <p>
       Note: This tool currently only suppports scripts with a .txt format, and the script must follow the
        
@@ -61,33 +57,6 @@ exports[`NewFilm rendering initial state is rendered 1`] = `
       </a>
       .
     </p>
-    <p>
-      You can check out a example script
-       
-      <a
-        href="https://github.com/JoeKarlsson1/bechdel-test/blob/master/tests/server/methods/test-script.txt"
-        target="blank"
-      >
-        here
-      </a>
-      .
-    </p>
-    <p>
-      Please specify a file, or a set of files:
-      <br />
-    </p>
-    <input
-      name="script"
-      size="40"
-      type="file"
-    />
-    <div>
-      <button
-        onClick={[Function]}
-      >
-        Submit Script
-      </button>
-    </div>
-  </form>
+  </div>
 </div>
 `;
