@@ -1,11 +1,9 @@
 import React from 'react';
+import Uppy from 'uppy/lib/core';
+import XHRUpload from 'uppy/lib/plugins/XHRUpload';
+import DragDrop from 'uppy/lib/react/DragDrop';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
-
 import './Uploader.scss';
-
-const Uppy = require('uppy/lib/core');
-const XHRUpload = require('uppy/lib/plugins/XHRUpload');
-const DragDrop = require('uppy/lib/react/DragDrop');
 
 const uppy = Uppy({
 	meta: { type: 'avatar' },

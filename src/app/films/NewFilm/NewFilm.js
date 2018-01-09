@@ -30,6 +30,7 @@ class NewFilm extends React.Component {
 	handleFilmSubmit(e) {
 		e.preventDefault();
 		this.setState({ isLoading: true });
+
 		this.postFilm();
 	}
 
