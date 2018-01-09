@@ -1,4 +1,5 @@
 import React from 'react';
+import Uploader from './Uploader/Uploader';
 import api from '../../helper/api';
 import Loading from '../../shared/Loading/Loading';
 
@@ -36,6 +37,7 @@ class NewFilm extends React.Component {
 	render() {
 		return (
 			<div className="newFilm">
+				<Uploader />
 				<h1>test a new script</h1>
 				{this.state.isLoading ? (
 					<Loading />
