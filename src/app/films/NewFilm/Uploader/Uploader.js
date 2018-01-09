@@ -15,6 +15,7 @@ const uppy = Uppy({
 
 uppy.use(XHRUpload, {
 	endpoint: '/api/film',
+	fieldName: 'script',
 	method: 'post',
 	formData: true,
 	limit: 1,
