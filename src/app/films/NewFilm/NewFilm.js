@@ -30,24 +30,18 @@ class NewFilm extends React.Component {
 	handleFilmSubmit(e) {
 		e.preventDefault();
 		this.setState({ isLoading: true });
-
 		this.postFilm();
 	}
 
 	render() {
 		return (
 			<div className="newFilm">
-				<Uploader />
-				<h1>test a new script</h1>
 				{this.state.isLoading ? (
 					<Loading />
 				) : (
-					<form
-						name="script"
-						action="/api/film"
-						encType="multipart/form-data"
-						method="POST"
-					>
+					<div>
+						<h1>test a new script</h1>
+						<Uploader />
 						<p>
 							Note: This tool currently only suppports scripts with a .txt
 							format, and the script must follow the{' '}
@@ -68,23 +62,7 @@ class NewFilm extends React.Component {
 								issue
 							</a>.
 						</p>
-						<p>
-							You can check out a example script{' '}
-							<a
-								target="blank"
-								href="https://github.com/JoeKarlsson1/bechdel-test/blob/master/tests/server/methods/test-script.txt"
-							>
-								here
-							</a>.
-						</p>
-						<p>
-							Please specify a file, or a set of files:<br />
-						</p>
-						<input type="file" name="script" size="40" />
-						<div>
-							<button onClick={this.handleFilmSubmit}>Submit Script</button>
-						</div>
-					</form>
+					</div>
 				)}
 			</div>
 		);
