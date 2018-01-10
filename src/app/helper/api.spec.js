@@ -1,4 +1,5 @@
 import fetchMock from 'fetch-mock';
+import { DEFAULT_ERROR_MESSAGE } from './constants';
 import api from './api';
 
 describe('api', () => {
@@ -82,9 +83,30 @@ describe('api', () => {
 				],
 			},
 		];
-		fetchMock.mock(url, mockResponse);
+		fetchMock.once(url, mockResponse);
 
 		const response = await api(url, options);
 		expect(response).toMatchObject(mockResponse);
+	});
+
+	it('should handle Errors Statuses > 400', async () => {
+		const url = '/api/film';
+		const errMsg = 'Bad response from server';
+		const errResponse = {
+			body: errMsg,
+			status: 500,
+		};
+		const options = {
+			status: 500,
+		};
+		fetchMock.once(url, errResponse, options);
+
+		const expectedResponse = {
+			errMsg,
+			msg: DEFAULT_ERROR_MESSAGE,
+		};
+
+		const response = await api(url, options);
+		expect(response).toMatchObject(expectedResponse);
 	});
 });
