@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Hero from './Hero/Hero';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import FilmList from './FilmList/FilmList';
 import api from '../../helper/api';
@@ -39,6 +38,7 @@ class Films extends Component {
 
 		api(url, options)
 			.then(data => {
+				console.log('data', data);
 				this.setState({
 					films: data,
 					loading: false,
@@ -55,7 +55,6 @@ class Films extends Component {
 	renderFilms() {
 		return (
 			<div className="films">
-				<Hero />
 				<div className="row">
 					<ErrorBoundary>
 						<FilmList films={this.state.films} />

@@ -8,33 +8,6 @@ exports[`NewFilm rendering initial state is rendered 1`] = `
     <h1>
       test a new script
     </h1>
-    <div>
-      <div
-        className="Error"
-      >
-        <h1>
-          Something went wrong.
-        </h1>
-        <details
-          style={
-            Object {
-              "whiteSpace": "pre-wrap",
-            }
-          }
-        >
-          ReferenceError: document is not defined
-          <br />
-          
-    in DragDrop (created by Uploader)
-    in ErrorBoundary (created by Uploader)
-    in div (created by Uploader)
-    in Uploader (created by NewFilm)
-    in div (created by NewFilm)
-    in div (created by NewFilm)
-    in NewFilm
-        </details>
-      </div>
-    </div>
     <p>
       Note: This tool currently only suppports scripts with a .txt format, and the script must follow the
        
