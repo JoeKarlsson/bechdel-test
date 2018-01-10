@@ -10,11 +10,17 @@ configure({ adapter: new Adapter() });
 describe('Hero', () => {
 	let wrapper;
 	let inst;
+	const title = 'Boyhood';
+	const bechdelResults = {
+		pass: true,
+		bechdelScore: 3,
+	};
+	const images = {};
 
 	beforeEach(() => {
 		wrapper = shallow(
 			<MemoryRouter>
-				<Hero />
+				<Hero title={title} bechdelResults={bechdelResults} images={images} />
 			</MemoryRouter>
 		);
 		inst = wrapper.instance();
@@ -25,7 +31,11 @@ describe('Hero', () => {
 			it('match the snapshot', () => {
 				const component = renderer.create(
 					<MemoryRouter>
-						<Hero />
+						<Hero
+							title={title}
+							bechdelResults={bechdelResults}
+							images={images}
+						/>
 					</MemoryRouter>
 				);
 				const tree = component.toJSON();
