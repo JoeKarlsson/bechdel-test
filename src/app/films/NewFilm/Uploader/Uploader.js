@@ -6,7 +6,7 @@ import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 import './Uploader.scss';
 
 const uppy = Uppy({
-	meta: { type: 'avatar' },
+	meta: { type: 'script' },
 	restrictions: { maxNumberOfFiles: 1 },
 	autoProceed: true,
 });
