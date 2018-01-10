@@ -4,32 +4,35 @@ exports[`NewFilm rendering initial state is rendered 1`] = `
 <div
   className="newFilm"
 >
-  <div>
-    <h1>
-      test a new script
-    </h1>
-    <p>
-      Note: This tool currently only suppports scripts with a .txt format, and the script must follow the
-       
-      <a
-        href="http://www.simplyscripts.com/WR_format.html"
-        target="blank"
-      >
-        Standard Script Format
-      </a>
-      .
-    </p>
-    <p>
-      If you are still having issues using the tool, try adding the title of the script is on the first line. Or you can submit an
-       
-      <a
-        href="https://github.com/JoeKarlsson1/bechdel-test/issues"
-        target="blank"
-      >
-        issue
-      </a>
-      .
-    </p>
+  <h1>
+    test a new script
+  </h1>
+  <div
+    className="container"
+  >
+    Mock Uploader
   </div>
+  <p>
+    Note: This tool currently only suppports scripts with a .txt format, and the script must follow the
+     
+    <a
+      href="http://www.simplyscripts.com/WR_format.html"
+      target="blank"
+    >
+      Standard Script Format
+    </a>
+    .
+  </p>
+  <p>
+    If you are still having issues using the tool, try adding the title of the script is on the first line. Or you can submit an
+     
+    <a
+      href="https://github.com/JoeKarlsson1/bechdel-test/issues"
+      target="blank"
+    >
+      issue
+    </a>
+    .
+  </p>
 </div>
 `;
