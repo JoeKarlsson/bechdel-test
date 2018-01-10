@@ -2,40 +2,28 @@
 
 exports[`Hero rendering initial state match the snapshot 1`] = `
 <div
-  className="section hero"
+  className="film-image"
 >
-  <div
-    className="container"
+  <img
+    alt="Boyhood"
+    className="film-image"
+    src={undefined}
+  />
+  <span
+    className="film-hero-title"
   >
-    <div
-      className="row"
-    >
-      <div
-        className="u-max-full-width "
-      >
-        <h4
-          className="hero-heading"
-        >
-          bechdel.io
-        </h4>
-        <h5>
-          find out if your favorite film passes the test.
-        </h5>
-        <a
-          aria-current={false}
-          className={undefined}
-          href="/film/new"
-          onClick={[Function]}
-          style={undefined}
-        >
-          <button
-            className="button"
-          >
-            upload script
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
+    <h4>
+      Boyhood
+    </h4>
+    <h3>
+      Bechdel Pass: 
+      TRUE
+    </h3>
+    <p>
+      Bechdel Score: 
+      3
+       of 3
+    </p>
+  </span>
 </div>
 `;
