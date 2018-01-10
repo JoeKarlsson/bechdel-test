@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Hero from './Hero/Hero';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import BechdelResults from './BechdelResults/BechdelResults';
 import api from '../../helper/api';
@@ -102,36 +103,33 @@ class Film extends Component {
 		return (
 			<div className="filmInfo">
 				<ErrorBoundary>
-					<h1>{title}</h1>
-					<h3>Bechdel Pass: {bechdelResults.pass.toString().toUpperCase()}</h3>
-					<p>Bechdel Score: {bechdelResults.bechdelScore} of 3</p>
-					<img src={images.backdrop} alt={title} />
-					<div className="plot">
+					<Hero title={title} bechdelResults={bechdelResults} images={images} />
+					<div className="plot container">
 						<p>{this.state.film.plot}</p>
+						<span className="results container">
+							<div className="filmData">
+								<span className="catName">Directors:</span> {directorNode}
+								<br />
+								<span className="catName">Writers:</span> {writerNode} <br />
+								<span className="catName">Genre:</span> {genreNode}
+								<br />
+								<span className="catName">Rated:</span> {this.state.film.rated}
+								<br />
+								<span className="catName">IMDB:</span>{' '}
+								<a
+									href={`http://www.imdb.com/title/${this.state.film.idIMDB}`}
+									target="_blank"
+								>
+									{this.state.film.title}
+								</a>
+								<br />
+							</div>
+							<BechdelResults bechdelResults={bechdelResults} />
+						</span>
+						<Link to="/">
+							<button>All Films</button>
+						</Link>
 					</div>
-					<span className="results">
-						<div className="filmData">
-							<span className="catName">Directors:</span> {directorNode}
-							<br />
-							<span className="catName">Writers:</span> {writerNode} <br />
-							<span className="catName">Genre:</span> {genreNode}
-							<br />
-							<span className="catName">Rated:</span> {this.state.film.rated}
-							<br />
-							<span className="catName">IMDB:</span>{' '}
-							<a
-								href={`http://www.imdb.com/title/${this.state.film.idIMDB}`}
-								target="_blank"
-							>
-								{this.state.film.title}
-							</a>
-							<br />
-						</div>
-						<BechdelResults bechdelResults={bechdelResults} />
-					</span>
-					<Link to="/">
-						<button>All Films</button>
-					</Link>
 				</ErrorBoundary>
 			</div>
 		);
