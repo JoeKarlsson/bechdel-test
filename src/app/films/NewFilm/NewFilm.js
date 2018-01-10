@@ -1,5 +1,5 @@
 import React from 'react';
-import Uploader from './Uploader/Uploader';
+// import Uploader from './Uploader/Uploader';
 import api from '../../helper/api';
 import Loading from '../../shared/Loading/Loading';
 
@@ -42,7 +42,6 @@ class NewFilm extends React.Component {
 				) : (
 					<div>
 						<h1>test a new script</h1>
-						<Uploader />
 						<p>
 							Note: This tool currently only suppports scripts with a .txt
 							format, and the script must follow the{' '}
