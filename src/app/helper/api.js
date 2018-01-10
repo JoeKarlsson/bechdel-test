@@ -5,9 +5,10 @@ const isNotHappyStatus = status => {
 };
 
 const handleError = err => {
-	console.error(err.toString());
+	const errMsg = err.toString();
+	console.error(errMsg);
 	return {
-		err,
+		errMsg,
 		msg: DEFAULT_ERROR_MESSAGE,
 	};
 };
