@@ -72,7 +72,6 @@ const processScript = async (res, scriptPath) => {
 			return handleFilmFoundInDB(res, film, scriptPath);
 		}
 		const bechdelResults = await getBechdelResults(title, scriptPath);
-		console.log('bechdelResults', bechdelResults);
 		const { actors, images, metadata } = filmData.getAllData();
 
 		const filmMetaData = {

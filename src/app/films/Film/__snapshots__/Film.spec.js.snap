@@ -4,164 +4,173 @@ exports[`Film rendering initial state match the snapshot 1`] = `
 <div
   className="filmInfo"
 >
-  <h1>
-    
-  </h1>
-  <h3>
-    Bechdel Pass: 
-    FALSE
-  </h3>
-  <p>
-    Bechdel Score: 
-    0
-     of 3
-  </p>
-  <img
-    alt=""
-    src=""
-  />
   <div
-    className="plot"
+    className="film-image"
+  >
+    <img
+      alt=""
+      className="film-image"
+      src=""
+    />
+    <span
+      className="film-hero-title"
+    >
+      <h4>
+        
+      </h4>
+      <h3>
+        Bechdel Pass: 
+        FALSE
+      </h3>
+      <p>
+        Bechdel Score: 
+        0
+         of 3
+      </p>
+    </span>
+  </div>
+  <div
+    className="plot container"
   >
     <p>
       
     </p>
-  </div>
-  <span
-    className="results"
-  >
-    <div
-      className="filmData"
+    <span
+      className="results container"
     >
-      <span
-        className="catName"
+      <div
+        className="filmData"
       >
-        Directors:
-      </span>
-       
-      <br />
-      <span
-        className="catName"
-      >
-        Writers:
-      </span>
-       
-       
-      <br />
-      <span
-        className="catName"
-      >
-        Genre:
-      </span>
-       
-      <br />
-      <span
-        className="catName"
-      >
-        Rated:
-      </span>
-       
-      
-      <br />
-      <span
-        className="catName"
-      >
-        IMDB:
-      </span>
-       
-      <a
-        href="http://www.imdb.com/title/undefined"
-        target="_blank"
-      >
+        <span
+          className="catName"
+        >
+          Directors:
+        </span>
+         
+        <br />
+        <span
+          className="catName"
+        >
+          Writers:
+        </span>
+         
+         
+        <br />
+        <span
+          className="catName"
+        >
+          Genre:
+        </span>
+         
+        <br />
+        <span
+          className="catName"
+        >
+          Rated:
+        </span>
+         
         
-      </a>
-      <br />
-    </div>
-    <div
-      className="BechdelResults"
+        <br />
+        <span
+          className="catName"
+        >
+          IMDB:
+        </span>
+         
+        <a
+          href="http://www.imdb.com/title/undefined"
+          target="_blank"
+        >
+          
+        </a>
+        <br />
+      </div>
+      <div
+        className="BechdelResults"
+      >
+        <span
+          className="catName"
+        >
+          Bechdel Score:
+        </span>
+         
+        0
+         of 3
+        <br />
+        <span
+          className="catName"
+        >
+          Number of Scenes that pass:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Number of Scenes that dont pass:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Number Of Females Characters:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Number Of Male Characters:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Number of Females Characters With Dialogue:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Number of Male Characters With Dialogue:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Total Lines of Female Dialogue:
+        </span>
+         
+        0
+        <br />
+        <span
+          className="catName"
+        >
+          Total Lines of Male Dialogue:
+        </span>
+         
+        0
+        <br />
+      </div>
+    </span>
+    <a
+      href="/"
+      onClick={[Function]}
     >
-      <span
-        className="catName"
-      >
-        Bechdel Score:
-      </span>
-       
-      0
-       of 3
-      <br />
-      <span
-        className="catName"
-      >
-        Number of Scenes that pass:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Number of Scenes that dont pass:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Number Of Females Characters:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Number Of Male Characters:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Number of Females Characters With Dialogue:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Number of Male Characters With Dialogue:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Total Lines of Female Dialogue:
-      </span>
-       
-      0
-      <br />
-      <span
-        className="catName"
-      >
-        Total Lines of Male Dialogue:
-      </span>
-       
-      0
-      <br />
-    </div>
-  </span>
-  <a
-    href="/"
-    onClick={[Function]}
-  >
-    <button>
-      All Films
-    </button>
-  </a>
+      <button>
+        All Films
+      </button>
+    </a>
+  </div>
 </div>
 `;
