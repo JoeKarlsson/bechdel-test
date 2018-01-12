@@ -51,7 +51,7 @@ const handleFilmFoundInDB = (res, film, scriptPath) => {
 const handleGetAllFilms = async (req, res) => {
 	try {
 		const films = await Film.listAll();
-		if (!filmFound) {
+		if (!filmFound(films)) {
 			return handleError(res, 'No list of films returned from film.listAll()');
 		}
 		return handleResponse(res, films);
