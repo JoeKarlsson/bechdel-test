@@ -21,18 +21,32 @@ describe('Film Routes Test', () => {
 
 	describe('GET /api/film', () => {
 		it('should send JSON with an array of films', done => {
-			const _doc = { title: 'American Hustle 2' };
+			const _doc = [
+				{ title: 'American Hustle' },
+				{ title: 'American Hustle 2' },
+			];
 			mockingoose.Film.toReturn(_doc, 'find');
 
-			const expectedResponse = {
-				_id: expect.any(String),
-				actors: [],
-				createdAt: expect.any(String),
-				directors: [],
-				genres: [],
-				title: 'American Hustle 2',
-				writers: [],
-			};
+			const expectedResponse = [
+				{
+					_id: expect.any(String),
+					actors: [],
+					createdAt: expect.any(String),
+					directors: [],
+					genres: [],
+					title: 'American Hustle',
+					writers: [],
+				},
+				{
+					_id: expect.any(String),
+					actors: [],
+					createdAt: expect.any(String),
+					directors: [],
+					genres: [],
+					title: 'American Hustle 2',
+					writers: [],
+				},
+			];
 
 			request(app)
 				.get('/api/film')
