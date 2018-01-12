@@ -1,13 +1,12 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import {
-	shallow,
-	configure,
-} from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import PrimaryLayout from './PrimaryLayout';
 
 configure({ adapter: new Adapter() });
+
+jest.mock('../../films/NewFilm/Uploader/Uploader');
 
 describe('PrimaryLayout Page', () => {
 	let wrapper;
@@ -17,7 +16,7 @@ describe('PrimaryLayout Page', () => {
 		wrapper = shallow(
 			<MemoryRouter>
 				<PrimaryLayout />
-			</MemoryRouter>,
+			</MemoryRouter>
 		);
 		inst = wrapper.instance();
 	});
@@ -43,15 +42,30 @@ describe('PrimaryLayout Page', () => {
 			});
 
 			it('should be selectable by the class `PrimaryLayout`', () => {
-				expect(wrapper.dive().dive().is('.PrimaryLayout')).toBe(true);
+				expect(
+					wrapper
+						.dive()
+						.dive()
+						.is('.PrimaryLayout')
+				).toBe(true);
 			});
 
 			it('should mount in the full DOM', () => {
-				expect(wrapper.dive().dive().find('.PrimaryLayout').length).toBe(1);
+				expect(
+					wrapper
+						.dive()
+						.dive()
+						.find('.PrimaryLayout').length
+				).toBe(1);
 			});
 
 			it('should render to static HTML', () => {
-				expect(wrapper.dive().dive().text()).toContain('<Header /><ErrorBoundary /><Footer />');
+				expect(
+					wrapper
+						.dive()
+						.dive()
+						.text()
+				).toContain('<Header /><ErrorBoundary /><Footer />');
 			});
 
 			it('should have correct inital state', () => {

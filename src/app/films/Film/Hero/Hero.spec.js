@@ -47,7 +47,13 @@ describe('Hero', () => {
 			it('should not have any inital props', () => {
 				const initialProps = inst.props;
 				const expectedProps = {
-					children: <Hero />,
+					children: (
+						<Hero
+							title={title}
+							bechdelResults={bechdelResults}
+							images={images}
+						/>
+					),
 				};
 				expect(initialProps).toMatchObject(expectedProps);
 			});

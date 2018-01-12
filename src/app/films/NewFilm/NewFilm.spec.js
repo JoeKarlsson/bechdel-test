@@ -4,17 +4,21 @@ import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import NewFilm from './NewFilm';
 
-jest.mock('./Uploader/Uploader', () => {
-	const mockComponent = () => <div className="container">Mock Uploader</div>;
-	return mockComponent;
-});
+jest.mock('./Uploader/Uploader');
 
-// global.document = jest.fn();
-// global.window = {
-// 	navigator: {
-// 		onLine: true,
-// 	},
-// };
+// jest.mock('uppy');
+// jest.mock('uppy/lib');
+// jest.mock('uppy/lib/core');
+// jest.mock('uppy/lib/core/Core.js');
+// jest.mock('uppy/lib/plugins/XHRUpload');
+// jest.mock('uppy/lib/react');
+// jest.mock('uppy/lib/react/DragDrop');
+
+global.window = {
+	navigator: {
+		onLine: true,
+	},
+};
 
 configure({ adapter: new Adapter() });
 
