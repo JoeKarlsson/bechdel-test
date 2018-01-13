@@ -13,12 +13,10 @@ const getBechdelResults = async (title, path) => {
 
 		const movieScript = await script.read(path);
 
-		const scriptResults = scriptAnalysis.scriptGenderAnalytics(
+		scriptAnalysis.scriptGenderAnalytics(
 			bechdelResults.characters,
 			movieScript
 		);
-		console.log(scriptResults);
-
 		const scenes = extractScenes(movieScript);
 		return scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes);
 	} catch (err) {
