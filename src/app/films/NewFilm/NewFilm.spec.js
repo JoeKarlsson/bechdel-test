@@ -4,17 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import NewFilm from './NewFilm';
 
-jest.mock('./Uploader/Uploader', () => {
-	const mockComponent = () => <div className="container">Mock Uploader</div>;
-	return mockComponent;
-});
-
-// global.document = jest.fn();
-// global.window = {
-// 	navigator: {
-// 		onLine: true,
-// 	},
-// };
+jest.mock('./Uploader/Uploader');
 
 configure({ adapter: new Adapter() });
 
