@@ -38,7 +38,6 @@ class Films extends Component {
 
 		api(url, options)
 			.then(data => {
-				console.log('data', data);
 				this.setState({
 					films: data,
 					loading: false,

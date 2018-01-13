@@ -1,3 +1,8 @@
+.film-hero {
+	height: 500px;
+	overflow: hidden;
+}
+
 .film-image {
 	width: 100%;
 	position: relative;
@@ -9,9 +14,8 @@
 	left: 0;
 	width: 100%;
 	color: #fff;
-	display: flex;
 	align-items: center;
-	background: rgb(0, 0, 0); /* fallback color */
+	margin-left: 10%;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 10px;
 }
