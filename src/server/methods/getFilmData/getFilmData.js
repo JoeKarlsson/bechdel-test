@@ -35,8 +35,11 @@ const handleImageData = async () => {
 const handleFullData = async () => {
 	try {
 		const fullURL = createFullDataURL(filmData.imdbID);
+		console.log(fullURL);
 		const fullData = await getDataFrom(fullURL);
 		const fullMetaData = fullData.data.movies[0];
+		console.log('full complete');
+		console.log(fullMetaData);
 
 		if (notValidData(fullMetaData)) {
 			handleError('fullMetaData not valid');
@@ -52,8 +55,10 @@ const handleFullData = async () => {
 const handleSimpleData = async title => {
 	try {
 		const simpleURL = createSimpleDataURL(title);
+		console.log(simpleURL);
 		const data = await getDataFrom(simpleURL);
 		const simpleMetaData = data.data.movies[0];
+		console.log('simple complete');
 
 		if (notValidData(simpleMetaData)) {
 			handleError('simpleMetaData not valid');

@@ -20,6 +20,8 @@ const countCharacterDialogue = (characters, scene) => {
 	if (!characters || !scene) {
 		handleError('Invalid countCharacterDialouge input');
 	}
+	console.log('countCharacterDialogue start');
+	console.log(characters);
 	const charDialougeCount = {};
 
 	for (let i = 0; i < characters.length; i++) {
@@ -32,6 +34,8 @@ const countCharacterDialogue = (characters, scene) => {
 			count++;
 		}
 	}
+	console.log(charDialougeCount);
+	console.log('countCharacterDialogue complete');
 	return charDialougeCount;
 };
 
