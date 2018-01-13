@@ -1,8 +1,8 @@
-const mockGetFilmData = require('./mock-film-data');
+const mockFilmData = require('./mock-film-data');
 
 const getFilmData = jest.fn(() => {
 	const p = new Promise(resolve => {
-		resolve(mockGetFilmData);
+		resolve(mockFilmData);
 	});
 	return p;
 });

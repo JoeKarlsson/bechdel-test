@@ -20,22 +20,18 @@ const countCharacterDialogue = (characters, scene) => {
 	if (!characters || !scene) {
 		handleError('Invalid countCharacterDialouge input');
 	}
-	console.log('countCharacterDialogue start');
-	console.log(characters);
 	const charDialougeCount = {};
 
 	for (let i = 0; i < characters.length; i++) {
 		let count = 0;
-		const { characterName } = characters[i];
-		charDialougeCount[characterName] = 0;
+		const { cleanCharName } = characters[i];
+		charDialougeCount[cleanCharName] = 0;
 
-		while ((count = scene.indexOf(characterName, count)) > -1) {
-			charDialougeCount[characterName]++;
+		while ((count = scene.indexOf(cleanCharName, count)) > -1) {
+			charDialougeCount[cleanCharName]++;
 			count++;
 		}
 	}
-	console.log(charDialougeCount);
-	console.log('countCharacterDialogue complete');
 	return charDialougeCount;
 };
 
@@ -51,10 +47,10 @@ const isCharFemale = (characters, name) => {
 
 	for (let i = 0; i < characters.length; i++) {
 		const character = characters[i];
-		if (name === character.characterName) {
-			if (character.gender === 'Actress') {
+		if (name === character.cleanCharName) {
+			if (character.gender === 1) {
 				return true;
-			} else if (character.gender === 'Actor') {
+			} else if (character.gender === 2) {
 				return false;
 			}
 			return false;
