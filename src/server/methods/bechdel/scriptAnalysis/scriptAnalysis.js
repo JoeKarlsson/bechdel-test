@@ -19,8 +19,12 @@ const greaterThanZero = num => {
  * @return {[type]}                 [description]
  */
 const scriptGenderAnalytics = (characters, movieScript) => {
+	console.log('scriptGenderAnalytics start');
 	const charCount = countCharacterDialogue(characters, movieScript);
 	const names = Object.keys(charCount);
+
+	console.log(names, 'names');
+	console.log(movieScript);
 
 	for (let i = 0; i < names.length; i++) {
 		const name = names[i];
@@ -42,6 +46,7 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 			}
 		}
 	}
+	console.log('scriptGenderAnalytics Complete');
 
 	return bechdelResults.getBechdelResults();
 };
