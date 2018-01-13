@@ -2,10 +2,14 @@ const getDataFrom = require('./getDataFrom');
 const fetchMock = require('fetch-mock');
 const URLFormatter = require('./URLFormatter');
 const mockSimpleData = require('./__mocks__/mock-simple-data.json');
-const mockFullData = require('./__mocks__/mock-full-data.json');
+const mockFullCastData = require('./__mocks__/mock-full-cast-data.json');
 const mockImagesData = require('./__mocks__/mock-images-data.json');
 
-const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+const {
+	createSimpleDataURL,
+	createFilmCreditsURL,
+	createImageUrl,
+} = URLFormatter;
 
 describe('getDataFrom', () => {
 	beforeEach(() => {
@@ -23,14 +27,14 @@ describe('getDataFrom', () => {
 		});
 	});
 
-	it('should return data from full data endpoint', () => {
+	it('should return data from cast data endpoint', () => {
 		const imdbID = 'tt1065073';
-		const fullURL = createFullDataURL(imdbID);
+		const castURL = createFilmCreditsURL(imdbID);
 
-		fetchMock.mock(fullURL, mockFullData);
+		fetchMock.mock(castURL, mockFullCastData);
 
-		getDataFrom(fullURL).then(body => {
-			expect(body).toMatchObject(mockFullData);
+		getDataFrom(castURL).then(body => {
+			expect(body).toMatchObject(mockFullCastData);
 		});
 	});
 

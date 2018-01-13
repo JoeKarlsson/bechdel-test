@@ -5,10 +5,14 @@ import path from 'path';
 import app from '../server';
 import URLFormatter from '../methods/getFilmData/URLFormatter';
 import mockGetSimpleCastData from '../methods/getFilmData/__mocks__/mock-simple-data.json';
-import mockGetFullCastData from '../methods/getFilmData/__mocks__/mock-full-data.json';
+import mockGetFullCastData from '../methods/getFilmData/__mocks__/mock-full-cast-data.json';
 import mockImagesData from '../methods/getFilmData/__mocks__/mock-images-data.json';
 
-const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+const {
+	createSimpleDataURL,
+	createFilmCreditsURL,
+	createImageUrl,
+} = URLFormatter;
 
 // jest.mock('../methods/getFilmData/getFilmData');
 jest.mock('../methods/script');
@@ -58,7 +62,7 @@ describe('Film Routes Test', () => {
 			mockingoose.Film.toReturn({}, 'save');
 
 			const simpleURL = createSimpleDataURL(title);
-			const fullURL = createFullDataURL(imdbID);
+			const fullURL = createFilmCreditsURL(imdbID);
 			const imagesURL = createImageUrl(imdbID);
 
 			fetchMock.mock(simpleURL, mockGetSimpleCastData);
