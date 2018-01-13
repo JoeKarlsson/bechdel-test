@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryLayout Page rendering initial state should match the snapshot 1`] = `
+<div
+  className="PrimaryLayout"
+>
+  <header
+    className="header_bar"
+  >
+    <a
+      aria-current="true"
+      className="header_logo active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      bechdel.io
+    </a>
+    <ul
+      className="header_nav"
+    >
+      <li>
+        <a
+          aria-current={false}
+          className={undefined}
+          href="/about"
+          onClick={[Function]}
+          style={undefined}
+        >
+          about
+        </a>
+      </li>
+      <li>
+        <a
+          aria-current={false}
+          className={undefined}
+          href="/case-study"
+          onClick={[Function]}
+          style={undefined}
+        >
+          case study
+        </a>
+      </li>
+    </ul>
+  </header>
+  <div
+    className="content"
+  >
+    <div
+      className="Home"
+    >
+      <div
+        className="section hero"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="u-max-full-width "
+            >
+              <h4
+                className="hero-heading"
+              >
+                bechdel.io
+              </h4>
+              <h5>
+                find out if your favorite film passes the test.
+              </h5>
+              <a
+                aria-current={false}
+                className={undefined}
+                href="/film/new"
+                onClick={[Function]}
+                style={undefined}
+              >
+                <button
+                  className="button"
+                >
+                  upload script
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        Loading...
+      </div>
+    </div>
+  </div>
+  <footer
+    className="footer"
+  >
+    <div
+      className="footer_content"
+    >
+      <a
+        href="https://github.com/JoeKarlsson/bechdel-test"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <p>
+          2018
+           - a karlsson production.
+        </p>
+      </a>
+    </div>
+  </footer>
+</div>
+`;
