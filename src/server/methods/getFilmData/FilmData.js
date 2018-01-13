@@ -14,7 +14,7 @@ class FilmData {
 		return this._actors;
 	}
 
-	addActor(actors) {
+	addActors(actors) {
 		this._actors = mergeArr(actors, this._actors);
 		return this._actors;
 	}

@@ -3,7 +3,11 @@ const dataParser = require('./dataParser');
 const getDataFrom = require('./getDataFrom');
 const URLFormatter = require('./URLFormatter');
 
-const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+const {
+	createSimpleDataURL,
+	createFilmCreditsURL,
+	createImageUrl,
+} = URLFormatter;
 
 const handleError = err => {
 	console.error(err);
@@ -32,21 +36,19 @@ const handleImageData = async () => {
 	}
 };
 
-const handleFullData = async () => {
+const handleGetCredits = async () => {
 	try {
-		const fullURL = createFullDataURL(filmData.imdbID);
-		console.log(fullURL);
-		const fullData = await getDataFrom(fullURL);
-		const fullMetaData = fullData.data.movies[0];
-		console.log('full complete');
-		console.log(fullMetaData);
+		const castURL = createFilmCreditsURL(filmData.imdbID);
+		const castData = await getDataFrom(castURL);
+		console.log('castData complete');
 
-		if (notValidData(fullMetaData)) {
-			handleError('fullMetaData not valid');
+		if (notValidData(castData)) {
+			handleError('castData not valid');
 		}
-		filmData.addMetaData(fullMetaData);
-		const { actors } = fullMetaData;
-		return dataParser(actors, 'fullCast');
+		const { cast } = castData;
+		const cleanCastData = dataParser(cast);
+		filmData.addActors(cleanCastData);
+		return cleanCastData;
 	} catch (err) {
 		return handleError(err);
 	}
@@ -55,10 +57,8 @@ const handleFullData = async () => {
 const handleSimpleData = async title => {
 	try {
 		const simpleURL = createSimpleDataURL(title);
-		console.log(simpleURL);
 		const data = await getDataFrom(simpleURL);
 		const simpleMetaData = data.data.movies[0];
-		console.log('simple complete');
 
 		if (notValidData(simpleMetaData)) {
 			handleError('simpleMetaData not valid');
@@ -66,11 +66,9 @@ const handleSimpleData = async title => {
 
 		filmData.imdbID = simpleMetaData.idIMDB;
 		filmData.addMetaData(simpleMetaData);
-		const { actors } = simpleMetaData;
-		dataParser(actors, 'mainCast');
 
 		handleImageData();
-		await handleFullData();
+		await handleGetCredits();
 		return filmData.getAllData();
 	} catch (err) {
 		return handleError(err);
