@@ -104,7 +104,11 @@ const CaseStudy = () => (
 						paddingAngle={5}
 					>
 						{dataPie.map((entry, index) => (
-							<Cell key={hash(entry)} fill={COLORS[index % COLORS.length]} />
+							<Cell
+								key={hash(entry)}
+								dataKey={hash(entry)}
+								fill={COLORS[index % COLORS.length]}
+							/>
 						))}
 					</Pie>
 				</PieChart>
