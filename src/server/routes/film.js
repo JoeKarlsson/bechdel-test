@@ -3,7 +3,7 @@ const path = require('path');
 const Film = require('../model/Film');
 const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
-const getBechdelResults = require('../methods/bechdel/getBechdelResults');
+const processScript = require('../methods/processScript');
 const multer = require('multer');
 
 const router = express.Router();
@@ -18,18 +18,13 @@ const fileWasNotUploadedCorrectly = file => {
 	return exists;
 };
 
-const errorReadingScript = title => {
-	const titleExists = !title;
-	return titleExists;
-};
-
 const resetAll = scriptPath => {
 	filmData.clear();
 	script.clearTemp(scriptPath);
 	return true;
 };
 
-const handleError = (res, errMsg, scriptPath = null) => {
+const handleError = (res, errMsg = 'Please try again.', scriptPath = null) => {
 	console.error(errMsg);
 	const response = {
 		success: false,
@@ -45,16 +40,6 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
-const handleFilmFoundInDB = (res, film, scriptPath) => {
-	script.clearTemp(scriptPath);
-	const response = {
-		...film,
-		success: true,
-		cacheHit: true,
-	};
-	return handleResponse(res, response);
-};
-
 const handleGetAllFilms = async (req, res) => {
 	try {
 		const films = await Film.listAll();
@@ -65,48 +50,6 @@ const handleGetAllFilms = async (req, res) => {
 		return handleResponse(res, films);
 	} catch (error) {
 		return handleError(res, error);
-	}
-};
-
-const processScript = async (res, scriptPath) => {
-	try {
-		const title = await script.readMovieTitle(scriptPath);
-		console.log('title', title);
-		if (errorReadingScript(title)) {
-			return handleError(res, 'Error reading script', scriptPath);
-		}
-		const film = await Film.findByTitle(title);
-		if (filmFound(film)) {
-			return handleFilmFoundInDB(res, film, scriptPath);
-		}
-		const bechdelResults = await getBechdelResults(title, scriptPath);
-
-		console.log('processed Film');
-		const { actors, images, metadata } = filmData.getAllData();
-
-		const filmMetaData = {
-			title,
-			bechdelResults,
-			actors,
-			images,
-			data: metadata,
-		};
-		await Film.insertFilm(filmMetaData);
-		const finalFilm = await Film.findByTitle(title);
-
-		resetAll(scriptPath);
-
-		const response = {
-			...finalFilm,
-			title,
-			success: true,
-			cacheHit: false,
-		};
-		console.log('saved film');
-		return handleResponse(res, response);
-	} catch (err) {
-		resetAll(scriptPath);
-		return handleError(res, 'Please try again', scriptPath);
 	}
 };
 
@@ -124,7 +67,12 @@ const handlePostFilm = async (req, res) => {
 	if (isNotCorrectFileFormat(file)) {
 		return handleError(res, 'Please send a .txt script', scriptPath);
 	}
-	processScript(res, scriptPath);
+	try {
+		const response = await processScript(scriptPath);
+		return handleResponse(res, response);
+	} catch (err) {
+		return handleError(res, err);
+	}
 };
 
 const handleDeleteFilm = async (req, res) => {
