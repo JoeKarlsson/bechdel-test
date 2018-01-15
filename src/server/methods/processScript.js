@@ -18,8 +18,7 @@ const handleError = (err, scriptPath) => {
 };
 
 const errorReadingScript = title => {
-	const titleExists = !title;
-	return titleExists;
+	return title.length === 0;
 };
 
 const handleFilmFoundInDB = (film, scriptPath) => {
@@ -39,9 +38,8 @@ const filmFound = film => {
 const processScript = async scriptPath => {
 	try {
 		const title = await script.readMovieTitle(scriptPath);
-		console.log('title', title);
 		if (errorReadingScript(title)) {
-			return handleError('Error reading script', scriptPath);
+			throw new Error('Error reading script');
 		}
 		const film = await Film.findByTitle(title);
 		if (filmFound(film)) {
@@ -72,7 +70,7 @@ const processScript = async scriptPath => {
 		console.log('saved film');
 		return response;
 	} catch (err) {
-		return handleError('Please try again');
+		return handleError('Please try again', scriptPath);
 	}
 };
 
