@@ -40,7 +40,6 @@ const handleGetCredits = async () => {
 	try {
 		const castURL = createFilmCreditsURL(filmData.imdbID);
 		const castData = await getDataFrom(castURL);
-		console.log('castData complete');
 
 		if (notValidData(castData)) {
 			handleError('castData not valid');
