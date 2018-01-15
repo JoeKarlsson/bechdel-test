@@ -66,9 +66,9 @@ describe('Film Routes Test', () => {
 		});
 	});
 
-	describe('POST /api/film/ already in the database', () => {
+	describe('POST /api/film/', () => {
 		it('should return the film [mocked version]', done => {
-			const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
+			const testScript = path.join(__dirname, './__mocks__/boyhood.txt');
 			const title = 'Boyhood';
 			const imdbID = 'tt1065073';
 			const _doc = { title, test: true };
@@ -93,6 +93,101 @@ describe('Film Routes Test', () => {
 						return done(err);
 					}
 					expect(res.body._doc.title).toBe('Boyhood');
+					return done();
+				});
+		});
+
+		it('should handle a non .txt file', done => {
+			const testScript = path.join(__dirname, './__mocks__/boyhood.tpt');
+			const expectedResponse = {
+				success: false,
+				error: 'Please send a .txt script',
+			};
+
+			request(app)
+				.post('/api/film')
+				.attach('script', testScript)
+				.expect(500)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(res.body).toMatchObject(expectedResponse);
+					return done();
+				});
+		});
+
+		it('should handle a upload failure', done => {
+			const expectedResponse = {
+				success: false,
+				error: 'No script submitted, please try again',
+			};
+
+			request(app)
+				.post('/api/film')
+				.expect(500)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(res.body).toMatchObject(expectedResponse);
+					return done();
+				});
+		});
+
+		it('should handle a script without a title', done => {
+			const testScript = path.join(
+				__dirname,
+				'./__mocks__/no-title-boyhood.txt'
+			);
+
+			const expectedResponse = {
+				success: false,
+				error: 'Please try again',
+			};
+
+			request(app)
+				.post('/api/film')
+				.attach('script', testScript)
+				.expect(500)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(res.body).toMatchObject(expectedResponse);
+					return done();
+				});
+		});
+
+		it('should handle a film that is already in the db', done => {
+			const testScript = path.join(__dirname, './__mocks__/boyhood.txt');
+			const _doc = [{ title: 'Boyhood' }];
+			mockingoose.Film.toReturn(_doc, 'find');
+
+			const expectedResponse = {
+				0: {
+					title: 'Boyhood',
+					_id: expect.any(String),
+					createdAt: expect.any(String),
+					genres: [],
+					writers: [],
+					directors: [],
+					actors: [],
+				},
+				success: true,
+				cacheHit: true,
+			};
+
+			request(app)
+				.post('/api/film')
+				.attach('script', testScript)
+				.expect(200)
+				.expect('Content-Type', /json/)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(res.body).toMatchObject(expectedResponse);
 					return done();
 				});
 		});

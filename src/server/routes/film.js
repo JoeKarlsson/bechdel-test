@@ -23,19 +23,26 @@ const errorReadingScript = title => {
 	return titleExists;
 };
 
-const handleError = (res, errMsg) => {
-	console.error(errMsg);
-	return res.status(500).send(errMsg);
-};
-
-const filmFound = film => {
-	return film.length > 0;
-};
-
 const resetAll = scriptPath => {
 	filmData.clear();
 	script.clearTemp(scriptPath);
 	return true;
+};
+
+const handleError = (res, errMsg, scriptPath = null) => {
+	console.error(errMsg);
+	const response = {
+		success: false,
+		error: errMsg,
+	};
+	if (scriptPath) {
+		resetAll(scriptPath);
+	}
+	return res.status(500).json(response);
+};
+
+const filmFound = film => {
+	return film.length > 0;
 };
 
 const handleFilmFoundInDB = (res, film, scriptPath) => {
@@ -66,7 +73,7 @@ const processScript = async (res, scriptPath) => {
 		const title = await script.readMovieTitle(scriptPath);
 		console.log('title', title);
 		if (errorReadingScript(title)) {
-			return handleError(res, 'Error reading script');
+			return handleError(res, 'Error reading script', scriptPath);
 		}
 		const film = await Film.findByTitle(title);
 		if (filmFound(film)) {
@@ -95,10 +102,11 @@ const processScript = async (res, scriptPath) => {
 			success: true,
 			cacheHit: false,
 		};
+		console.log('saved film');
 		return handleResponse(res, response);
 	} catch (err) {
 		resetAll(scriptPath);
-		return handleError(res, 'Please try again');
+		return handleError(res, 'Please try again', scriptPath);
 	}
 };
 
@@ -108,13 +116,13 @@ const handleResponse = (res, data) => {
 
 const handlePostFilm = async (req, res) => {
 	const { file } = req;
-	const scriptPath = file.path;
 
 	if (fileWasNotUploadedCorrectly(file)) {
 		return handleError(res, 'No script submitted, please try again');
 	}
+	const scriptPath = file.path;
 	if (isNotCorrectFileFormat(file)) {
-		return handleError(res, 'Please send a .txt script');
+		return handleError(res, 'Please send a .txt script', scriptPath);
 	}
 	processScript(res, scriptPath);
 };
