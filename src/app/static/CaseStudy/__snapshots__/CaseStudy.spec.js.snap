@@ -11,9 +11,1284 @@ exports[`CaseStudy Page rendering initial state match the snapshot 1`] = `
     <p>
       The Bechdel Test, popularized by cartoonist Alison Bechdel, uses three simple requirements to test whether a film, or any work of fiction, features a scene with two women speaking to each other about something other than a man. The test is often used to highlight the sexism present in the film industry, as a surprising number of films tested do not pass, despite the test’s relatively simple requirements. While feminism as a concept has become much more socially accepted in recent years, the film industry is still largely dominated by men. Not only are the majority of speaking roles in films played by men, but important behind-the-scenes roles, such as directing and screenwriting, are still largely male-dominated as well. In order to get a feel for the current state of the film industry using recent data from popular and critically acclaimed films, we’ve chosen to analyze thirteen films that were nominated for Oscars in 2015 in the following highly-anticipated categories: Best Picture, Best Actor, Best Actress, Best Supporting Actor, and Best Supporting Actress.
     </p>
+    <div
+      className="row barchart"
+    >
+      <div
+        className="recharts-wrapper"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseMove={[Function]}
+        onTouchMove={[Function]}
+        style={
+          Object {
+            "cursor": "default",
+            "height": 300,
+            "position": "relative",
+            "width": 600,
+          }
+        }
+      >
+        <svg
+          className="recharts-surface"
+          height={300}
+          style={undefined}
+          version="1.1"
+          viewBox="0 0 600 300"
+          width={600}
+        >
+          <g
+            className="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis"
+          >
+            <line
+              className="recharts-cartesian-axis-line"
+              fill="none"
+              height={30}
+              stroke="#666"
+              width={490}
+              x={80}
+              x1={80}
+              x2={570}
+              y={265}
+              y1={265}
+              y2={265}
+            />
+            <g
+              className="recharts-cartesian-axis-ticks"
+            >
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={98.84615384615384}
+                  x2={98.84615384615384}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={98.84615384615384}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={98.84615384615384}
+                  >
+                    American Sniper
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={136.53846153846155}
+                  x2={136.53846153846155}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={136.53846153846155}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={136.53846153846155}
+                  >
+                    Birdman
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={174.23076923076923}
+                  x2={174.23076923076923}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={174.23076923076923}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={174.23076923076923}
+                  >
+                    Boyhood
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={211.92307692307693}
+                  x2={211.92307692307693}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={211.92307692307693}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={211.92307692307693}
+                  >
+                    Foxcatcher
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={249.6153846153846}
+                  x2={249.6153846153846}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={249.6153846153846}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={249.6153846153846}
+                  >
+                    Gone Girl
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={287.3076923076923}
+                  x2={287.3076923076923}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={287.3076923076923}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={287.3076923076923}
+                  >
+                    Grand Budapest
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={325.00000000000006}
+                  x2={325.00000000000006}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={325.00000000000006}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={325.00000000000006}
+                  >
+                    Imitation Game
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={362.69230769230774}
+                  x2={362.69230769230774}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={362.69230769230774}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={362.69230769230774}
+                  >
+                    Into The Woods
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={400.3846153846154}
+                  x2={400.3846153846154}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={400.3846153846154}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={400.3846153846154}
+                  >
+                    Still Alice
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={438.0769230769231}
+                  x2={438.0769230769231}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={438.0769230769231}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={438.0769230769231}
+                  >
+                    Theory of Everything
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={475.7692307692308}
+                  x2={475.7692307692308}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={475.7692307692308}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={475.7692307692308}
+                  >
+                    The Judge
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={513.4615384615385}
+                  x2={513.4615384615385}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={513.4615384615385}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={513.4615384615385}
+                  >
+                    Whiplash
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={30}
+                  stroke="#666"
+                  width={490}
+                  x={80}
+                  x1={551.1538461538462}
+                  x2={551.1538461538462}
+                  y={265}
+                  y1={271}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={30}
+                  stroke="none"
+                  textAnchor="middle"
+                  width={490}
+                  x={551.1538461538462}
+                  y={273}
+                >
+                  <tspan
+                    dy="0.71em"
+                    x={551.1538461538462}
+                  >
+                    Wild
+                  </tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis"
+          >
+            <line
+              className="recharts-cartesian-axis-line"
+              fill="none"
+              height={260}
+              stroke="#666"
+              width={60}
+              x={20}
+              x1={80}
+              x2={80}
+              y={5}
+              y1={5}
+              y2={265}
+            />
+            <g
+              className="recharts-cartesian-axis-ticks"
+            >
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={260}
+                  stroke="#666"
+                  width={60}
+                  x={20}
+                  x1={74}
+                  x2={80}
+                  y={5}
+                  y1={265}
+                  y2={265}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={260}
+                  stroke="none"
+                  textAnchor="end"
+                  width={60}
+                  x={72}
+                  y={265}
+                >
+                  <tspan
+                    dy="0.355em"
+                    x={72}
+                  >
+                    0
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={260}
+                  stroke="#666"
+                  width={60}
+                  x={20}
+                  x1={74}
+                  x2={80}
+                  y={5}
+                  y1={200}
+                  y2={200}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={260}
+                  stroke="none"
+                  textAnchor="end"
+                  width={60}
+                  x={72}
+                  y={200}
+                >
+                  <tspan
+                    dy="0.355em"
+                    x={72}
+                  >
+                    0.75
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={260}
+                  stroke="#666"
+                  width={60}
+                  x={20}
+                  x1={74}
+                  x2={80}
+                  y={5}
+                  y1={135}
+                  y2={135}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={260}
+                  stroke="none"
+                  textAnchor="end"
+                  width={60}
+                  x={72}
+                  y={135}
+                >
+                  <tspan
+                    dy="0.355em"
+                    x={72}
+                  >
+                    1.5
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={260}
+                  stroke="#666"
+                  width={60}
+                  x={20}
+                  x1={74}
+                  x2={80}
+                  y={5}
+                  y1={70}
+                  y2={70}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={260}
+                  stroke="none"
+                  textAnchor="end"
+                  width={60}
+                  x={72}
+                  y={70}
+                >
+                  <tspan
+                    dy="0.355em"
+                    x={72}
+                  >
+                    2.25
+                  </tspan>
+                </text>
+              </g>
+              <g
+                className="recharts-layer recharts-cartesian-axis-tick"
+              >
+                <line
+                  className="recharts-cartesian-axis-tick-line"
+                  fill="none"
+                  height={260}
+                  stroke="#666"
+                  width={60}
+                  x={20}
+                  x1={74}
+                  x2={80}
+                  y={5}
+                  y1={5}
+                  y2={5}
+                />
+                <text
+                  className="recharts-text recharts-cartesian-axis-tick-value"
+                  fill="#666"
+                  height={260}
+                  stroke="none"
+                  textAnchor="end"
+                  width={60}
+                  x={72}
+                  y={5}
+                >
+                  <tspan
+                    dy="0.355em"
+                    x={72}
+                  >
+                    3
+                  </tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+          <g
+            className="recharts-cartesian-grid"
+          >
+            <g
+              className="recharts-cartesian-grid-horizontal"
+            >
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={80}
+                x2={570}
+                y={5}
+                y1={265}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={80}
+                x2={570}
+                y={5}
+                y1={200}
+                y2={200}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={80}
+                x2={570}
+                y={5}
+                y1={135}
+                y2={135}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={80}
+                x2={570}
+                y={5}
+                y1={70}
+                y2={70}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={80}
+                x2={570}
+                y={5}
+                y1={5}
+                y2={5}
+              />
+            </g>
+            <g
+              className="recharts-cartesian-grid-vertical"
+            >
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={98.84615384615384}
+                x2={98.84615384615384}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={136.53846153846155}
+                x2={136.53846153846155}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={174.23076923076923}
+                x2={174.23076923076923}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={211.92307692307693}
+                x2={211.92307692307693}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={249.6153846153846}
+                x2={249.6153846153846}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={287.3076923076923}
+                x2={287.3076923076923}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={325.00000000000006}
+                x2={325.00000000000006}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={362.69230769230774}
+                x2={362.69230769230774}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={400.3846153846154}
+                x2={400.3846153846154}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={438.0769230769231}
+                x2={438.0769230769231}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={475.7692307692308}
+                x2={475.7692307692308}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={513.4615384615385}
+                x2={513.4615384615385}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={551.1538461538462}
+                x2={551.1538461538462}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={80}
+                x2={80}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+              <line
+                fill="none"
+                height={260}
+                stroke="#ccc"
+                width={490}
+                x={80}
+                x1={570}
+                x2={570}
+                y={5}
+                y1={5}
+                y2={265}
+              />
+            </g>
+          </g>
+          <g
+            className="recharts-layer recharts-bar"
+          >
+            <g
+              className="recharts-layer recharts-bar-rectangles"
+              clipPath={null}
+            >
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 83.76923076923077,91.66666666666669 h 30 v 173.33333333333331 h -30 Z"
+                  fill="#8884d8"
+                  height={173.33333333333331}
+                  radius={0}
+                  width={30}
+                  x={83.76923076923077}
+                  y={91.66666666666669}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 121.46153846153847,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={121.46153846153847}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 159.15384615384616,5 h 30 v 260 h -30 Z"
+                  fill="#8884d8"
+                  height={260}
+                  radius={0}
+                  width={30}
+                  x={159.15384615384616}
+                  y={5}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 196.84615384615387,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={196.84615384615387}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 234.53846153846155,5 h 30 v 260 h -30 Z"
+                  fill="#8884d8"
+                  height={260}
+                  radius={0}
+                  width={30}
+                  x={234.53846153846155}
+                  y={5}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 272.2307692307692,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={272.2307692307692}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 309.92307692307696,5 h 30 v 260 h -30 Z"
+                  fill="#8884d8"
+                  height={260}
+                  radius={0}
+                  width={30}
+                  x={309.92307692307696}
+                  y={5}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 347.61538461538464,5 h 30 v 260 h -30 Z"
+                  fill="#8884d8"
+                  height={260}
+                  radius={0}
+                  width={30}
+                  x={347.61538461538464}
+                  y={5}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 385.3076923076923,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={385.3076923076923}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 423,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={423}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 460.6923076923077,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={460.6923076923077}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 498.3846153846154,178.33333333333334 h 30 v 86.66666666666666 h -30 Z"
+                  fill="#8884d8"
+                  height={86.66666666666666}
+                  radius={0}
+                  width={30}
+                  x={498.3846153846154}
+                  y={178.33333333333334}
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-bar-rectangle"
+              >
+                <path
+                  className="recharts-rectangle"
+                  d="M 536.0769230769231,5 h 30 v 260 h -30 Z"
+                  fill="#8884d8"
+                  height={260}
+                  radius={0}
+                  width={30}
+                  x={536.0769230769231}
+                  y={5}
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <div
+          className="recharts-tooltip-wrapper"
+          style={
+            Object {
+              "MozTransform": "translate(undefinedpx, undefinedpx)",
+              "OTransform": "translate(undefinedpx, undefinedpx)",
+              "WebkitTransform": "translate(undefinedpx, undefinedpx)",
+              "msTransform": "translate(undefinedpx, undefinedpx)",
+              "pointerEvents": "none",
+              "position": "absolute",
+              "top": 0,
+              "transform": "translate(undefinedpx, undefinedpx)",
+              "visibility": "hidden",
+            }
+          }
+        >
+          <div
+            className="recharts-default-tooltip"
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "border": "1px solid #ccc",
+                "margin": 0,
+                "padding": 10,
+                "whiteSpace": "nowrap",
+              }
+            }
+          >
+            <p
+              className="recharts-tooltip-label"
+              style={
+                Object {
+                  "margin": 0,
+                }
+              }
+            >
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <p>
-      A quick glance at the Bechdel Test pass/fail data for the 87th Annual Academy Awards (originally aired on February 22, 2015) makes the gender imbalance immediately clear. Of all of the Oscar nominated films that we were able to test, only 38.46% passed the Bechdel Test. This percentage is somewhat generous, as only 28.57% of the Best Picture nominees passed the test. The category of Best Picture gives the best general overview of the year’s critically acclaimed films, as the Best Picture category is not limited by the gender of the lead actors (as are the categories of Best Actor and Best Actress). When the Academy has free reign to choose the eight films that they feel were the best overall films of the year, it’s incredibly revealing to see how those eight films stack up in terms of gender. While 28.57% of the Best Picture nominees passed the Bechdel Test, it’s also important to note that all eight of the nominees were focused on a male-dominated narrative, each of them featuring a male lead rather than a female lead.
+      A quick glance at the Bechdel Test pass/fail data for the 87th Annual Academy Awards (originally aired on February 22, 2015) makes the gender imbalance immediately clear. Of all of the Oscar nominated films that we were able to test, only 38.46% passed the Bechdel Test. This percentage is somewhat generous, as only 28.57% of the Best Picture nominees passed1 21 the test. The category of Best Picture gives the best general overview of the year’s critically acclaimed films, as the Best Picture category is not limited by the gender of the lead actors (as are the categories of Best Actor and Best Actress). When the Academy has free reign to choose the eight films that they feel were the best overall films of the year, it’s incredibly revealing to see how those eight films stack up in terms of gender. While 28.57% of the Best Picture nominees passed the Bechdel Test, it’s also important to note that all eight of the nominees were focused on a male-dominated narrative, each of them featuring a male lead rather than a female lead.
     </p>
+    <div
+      className="row"
+    >
+      <div
+        className="recharts-wrapper"
+        style={
+          Object {
+            "cursor": "default",
+            "height": 400,
+            "position": "relative",
+            "width": 800,
+          }
+        }
+      >
+        <svg
+          className="recharts-surface"
+          height={400}
+          style={undefined}
+          version="1.1"
+          viewBox="0 0 800 400"
+          width={800}
+        >
+          <g
+            className="recharts-layer recharts-pie"
+          >
+            <g
+              clipPath="url(#recharts-pie-5)"
+            >
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  className="recharts-sector"
+                  d="M 345,205
+    A 80,80,0,
+    0,1,
+    379.1138850919163,139.46783645688066
+  L 390.58541381893724,155.8508773426605
+            A 60,60,0,
+            0,0,
+            365,205 Z"
+                  fill="#0088FE"
+                  stroke="#fff"
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  className="recharts-sector"
+                  d="M 385,135.7179676972449
+    A 80,80,0,
+    0,1,
+    440.60722576129024,126.53717756774157
+  L 436.7054193209677,146.15288317580618
+            A 60,60,0,
+            0,0,
+            395,153.03847577293368 Z"
+                  fill="#00C49F"
+                  stroke="#fff"
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  className="recharts-sector"
+                  d="M 447.3863211224794,128.1960116491257
+    A 80,80,0,
+    0,1,
+    492.47131566503083,162.0160313322541
+  L 475.60348674877315,172.76202349919058
+            A 60,60,0,
+            0,0,
+            441.7897408418595,147.39700873684427 Z"
+                  fill="#FFBB28"
+                  stroke="#fff"
+                />
+              </g>
+              <g
+                className="recharts-layer recharts-pie-sector"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <path
+                  className="recharts-sector"
+                  d="M 495.96086665425776,168.06011094119728
+    A 80,80,0,
+    0,1,
+    505,205
+  L 485,205
+            A 60,60,0,
+            0,0,
+            478.2206499906933,177.29508320589798 Z"
+                  fill="#FF8042"
+                  stroke="#fff"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
     <p>
       It’s interesting to note the lack of overlap between Best Picture nominees and films featuring a nominee for Best Actress. Only one of the films featuring a nominee for Best Actress was also nominated for Best Picture: The Theory of Everything. What this reveals is the lack of lead actresses being featured in Best Picture nominees, which points out the Academy’s preference for films with a male-dominated narrative. On the other hand, four of the films featuring a nominee for Best Actor were also nominated for Best Picture: The Theory of Everything, American Sniper, The Imitation Game, and Birdman. It’s easy for Best Picture nominees to also feature a nominee for Best Actor when all of the Best Picture nominees are led by men. This preference for male-lead narratives is also present in the Bechdel Test statistics for films featuring a Best Actor nominee versus a Best Actress nominee; while 50% of the films featuring a Best Actress nominee pass the test (neither of which were also nominated for Best Picture), only 20% of the films featuring a Best Actor nominee pass. The Academy’s preference for male-dominated films is obvious here. When nominating women for the category of Best Actress, they are forced to look outside the canon of Best Picture nominees, since very few of the Best Picture nominees feature a lead actress .
     </p>
