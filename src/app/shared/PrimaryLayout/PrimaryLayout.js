@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 import About from '../../static/About/About';
 import CaseStudy from '../../static/CaseStudy/CaseStudy';
 import Home from '../../static/Home/Home';
-import Film from '../../films/Film/Film';
+import FilmContainer from '../../films/Film/FilmContainer';
 import NewFilm from '../../films/NewFilm/NewFilm';
 import NoMatch from '../../static/NoMatch/NoMatch';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
@@ -24,7 +24,7 @@ export const PrimaryLayout = () => {
 						<Route path="/about" component={About} />
 						<Route path="/case-study" component={CaseStudy} />
 						<Route path="/film/new" component={NewFilm} />
-						<Route path="/film/:id" component={Film} />
+						<Route path="/film/:id" component={FilmContainer} />
 						<Route path="*" component={NoMatch} />
 					</Switch>
 				</ErrorBoundary>
