@@ -1,9 +1,9 @@
-const mockMergedData = require('./mock-merged-data');
-const mockActorData = require('./mock-actor-data.json');
+const mockSimpleData = require('./mock-simple-data');
+const mockCastData = require('./mock-cast-data.json');
 const mockImageData = require('./mock-image-data.json');
 
 module.exports = {
-	actors: mockActorData,
+	actors: mockCastData,
 	images: mockImageData,
-	metadata: mockMergedData,
+	metadata: mockSimpleData,
 };

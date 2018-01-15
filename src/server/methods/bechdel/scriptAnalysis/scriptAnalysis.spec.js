@@ -16,9 +16,9 @@ describe('Script Analysis methods', () => {
 
 			expect(result.pass).toBe(true);
 			expect(result.bechdelScore).toBe(3);
-			expect(result.numScenesPass).toBe(10);
-			expect(result.numScenesDontPass).toBe(151);
-			expect(result.scenesThatPass.length).toBe(10);
+			expect(result.numScenesPass).toBe(5);
+			expect(result.numScenesDontPass).toBe(156);
+			expect(result.scenesThatPass.length).toBe(5);
 		});
 	});
 
@@ -32,13 +32,13 @@ describe('Script Analysis methods', () => {
 
 			expect(result.pass).toBe(true);
 			expect(result.bechdelScore).toBe(3);
-			expect(result.numScenesPass).toBe(10);
-			expect(result.numScenesDontPass).toBe(151);
-			expect(result.scenesThatPass.length).toBe(10);
-			expect(result.numOfFemalesCharsWithDialogue).toBe(19);
-			expect(result.numOfMaleCharsWithDialogue).toBe(22);
-			expect(result.totalLinesFemaleDialogue).toBe(802);
-			expect(result.totalLinesMaleDialogue).toBe(1063);
+			expect(result.numScenesPass).toBe(5);
+			expect(result.numScenesDontPass).toBe(156);
+			expect(result.scenesThatPass.length).toBe(5);
+			expect(result.numOfFemalesCharsWithDialogue).toBe(5);
+			expect(result.numOfMaleCharsWithDialogue).toBe(36);
+			expect(result.totalLinesFemaleDialogue).toBe(550);
+			expect(result.totalLinesMaleDialogue).toBe(1318);
 		});
 	});
 });

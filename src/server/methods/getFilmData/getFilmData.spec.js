@@ -3,10 +3,14 @@ const getFilmData = require('./getFilmData.js');
 const filmData = require('./FilmData.js');
 const URLFormatter = require('./URLFormatter');
 const mockGetSimpleCastData = require('./__mocks__/mock-simple-data.json');
-const mockGetFullCastData = require('./__mocks__/mock-full-data.json');
+const mockGetFullCastData = require('./__mocks__/mock-full-cast-data.json');
 const mockImagesData = require('./__mocks__/mock-images-data.json');
 
-const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+const {
+	createSimpleDataURL,
+	createFilmCreditsURL,
+	createImageUrl,
+} = URLFormatter;
 
 describe('Film methods', () => {
 	beforeEach(() => {
@@ -20,11 +24,11 @@ describe('Film methods', () => {
 			const imdbID = 'tt1065073';
 
 			const simpleURL = createSimpleDataURL(filmTitle);
-			const fullURL = createFullDataURL(imdbID);
+			const castURL = createFilmCreditsURL(imdbID);
 			const imagesURL = createImageUrl(imdbID);
 
 			fetchMock.mock(simpleURL, mockGetSimpleCastData);
-			fetchMock.mock(fullURL, mockGetFullCastData);
+			fetchMock.mock(castURL, mockGetFullCastData);
 			fetchMock.mock(imagesURL, mockImagesData);
 
 			getFilmData(filmTitle)
