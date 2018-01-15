@@ -32,7 +32,7 @@ describe('FilmData', () => {
 
 			const expectedResult = actor;
 
-			filmData.addActor(actor);
+			filmData.addActors(actor);
 			expect(filmData.actors).toMatchObject(expectedResult);
 			expect(filmData.actors.length).toBe(2);
 		});
@@ -69,11 +69,11 @@ describe('FilmData', () => {
 				},
 			];
 
-			filmData.addActor(actors1);
+			filmData.addActors(actors1);
 			expect(filmData.actors).toMatchObject(actors1);
 			expect(filmData.actors.length).toBe(2);
 
-			filmData.addActor(actors2);
+			filmData.addActors(actors2);
 			expect(filmData.actors).toMatchObject(actors2);
 			expect(filmData.actors.length).toBe(4);
 		});
@@ -186,7 +186,7 @@ describe('FilmData', () => {
 					character: 'TOMMY',
 				},
 			];
-			filmData.addActor(actors);
+			filmData.addActors(actors);
 
 			const image = {
 				backdrops: [
@@ -235,7 +235,7 @@ describe('FilmData', () => {
 					character: 'Mike',
 				},
 			];
-			filmData.addActor(actors);
+			filmData.addActors(actors);
 
 			const image = {
 				backdrops: [

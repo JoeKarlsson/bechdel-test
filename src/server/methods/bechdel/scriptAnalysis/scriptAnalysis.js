@@ -42,7 +42,6 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 			}
 		}
 	}
-
 	return bechdelResults.getBechdelResults();
 };
 

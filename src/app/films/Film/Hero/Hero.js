@@ -5,7 +5,7 @@ import './Hero.scss';
 const Hero = props => {
 	const { title, bechdelResults, images } = props;
 	return (
-		<div className="film-image">
+		<div className="film-hero">
 			<img className="film-image" src={images.backdrop} alt={title} />
 			<span className="film-hero-title">
 				<h4>{title}</h4>

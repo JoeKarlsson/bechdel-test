@@ -17,7 +17,6 @@ const getBechdelResults = async (title, path) => {
 			bechdelResults.characters,
 			movieScript
 		);
-
 		const scenes = extractScenes(movieScript);
 		return scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes);
 	} catch (err) {

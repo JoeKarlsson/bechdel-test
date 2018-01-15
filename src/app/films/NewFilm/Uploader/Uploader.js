@@ -20,8 +20,16 @@ uppy.use(XHRUpload, {
 });
 
 uppy.on('complete', result => {
-	const url = result.successful[0].uploadURL;
-	console.log('url', url);
+	// const url = result.successful[0].uploadURL;
+	// console.log('url', url);
+	console.log(result);
+});
+
+uppy.on('upload-success', result => {
+	// const url = result.successful[0].uploadURL;
+	// console.log('url', url);
+	console.log(result);
+	// window.location = `/film/${response._id}`;
 });
 
 uppy.run();
@@ -34,7 +42,7 @@ const Uploader = () => {
 					uppy={uppy}
 					locale={{
 						strings: {
-							chooseFile: 'Pick a new avatar',
+							chooseFile: 'Choose a script',
 						},
 					}}
 				/>
