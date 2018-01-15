@@ -14,7 +14,6 @@ const {
 	createImageUrl,
 } = URLFormatter;
 
-// jest.mock('../methods/getFilmData/getFilmData');
 jest.mock('../methods/script');
 
 describe('Film Routes Test', () => {
@@ -56,6 +55,27 @@ describe('Film Routes Test', () => {
 				.get('/api/film')
 				.expect(200)
 				.expect('Content-Type', /json/)
+				.end((err, res) => {
+					if (err) {
+						return done(err);
+					}
+					expect(res.body).toMatchObject(expectedResponse);
+					return done();
+				});
+		});
+
+		it('should should throw an error if there are no films in the DB', done => {
+			const _doc = [];
+			mockingoose.Film.toReturn(_doc, 'find');
+
+			const expectedResponse = {
+				success: false,
+				error: 'No list of films returned from film.listAll()',
+			};
+
+			request(app)
+				.get('/api/film')
+				.expect(500)
 				.end((err, res) => {
 					if (err) {
 						return done(err);
