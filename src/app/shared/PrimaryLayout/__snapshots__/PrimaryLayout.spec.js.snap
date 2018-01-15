@@ -87,7 +87,38 @@ exports[`PrimaryLayout Page rendering initial state should match the snapshot 1`
         </div>
       </div>
       <div>
-        Loading...
+        <span
+          className="Loader"
+        >
+          <div
+            className="Loader_indicator"
+          >
+            <h1>
+              <span>
+                Destroying the Patriarchy
+              </span>
+              <span
+                className="Loader_ellipsis"
+              >
+                <span
+                  className="Loader_ellipsisDot"
+                >
+                  .
+                </span>
+                <span
+                  className="Loader_ellipsisDot"
+                >
+                  .
+                </span>
+                <span
+                  className="Loader_ellipsisDot"
+                >
+                  .
+                </span>
+              </span>
+            </h1>
+          </div>
+        </span>
       </div>
     </div>
   </div>

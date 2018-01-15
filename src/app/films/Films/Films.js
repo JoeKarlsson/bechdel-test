@@ -1,62 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import FilmList from './FilmList/FilmList';
-import api from '../../helper/api';
-// import './Films.scss';
+import Loading from '../../shared/Loading/Loading';
+import Error from '../../shared/Error/Error';
 
 class Films extends Component {
-	static renderLoading() {
-		return <div>Loading...</div>;
-	}
-
-	static renderError() {
-		return <div>Im sorry! Please try again.</div>;
-	}
-
-	constructor() {
-		super();
-		this.state = {
-			films: [],
-			loading: false,
-		};
-		this.getAllFilms = this.getAllFilms.bind(this);
-	}
-
-	componentDidMount() {
-		this.getAllFilms();
-	}
-
-	getAllFilms() {
-		const url = '/api/film';
-		const options = {
-			method: 'GET',
-		};
-
-		this.setState({
-			loading: true,
-		});
-
-		api(url, options)
-			.then(data => {
-				this.setState({
-					films: data,
-					loading: false,
-				});
-			})
-			.catch(err => {
-				console.err(err);
-				this.setState({
-					loading: false,
-				});
-			});
-	}
-
 	renderFilms() {
+		const { films } = this.props;
+
 		return (
 			<div className="films">
 				<div className="row">
 					<ErrorBoundary>
-						<FilmList films={this.state.films} />
+						<FilmList films={films} />
 					</ErrorBoundary>
 				</div>
 			</div>
@@ -64,17 +21,25 @@ class Films extends Component {
 	}
 
 	render() {
-		if (this.state.loading) {
-			return Films.renderLoading();
-		} else if (this.state.films) {
+		const { films, loading } = this.props;
+
+		if (loading) {
+			return <Loading />;
+		} else if (films) {
 			return this.renderFilms();
 		}
-		return Films.renderError();
+		return <Error />;
 	}
 }
 
-Films.propTypes = {};
+Films.propTypes = {
+	films: PropTypes.array, // eslint-disable-line react/forbid-prop-types
+	loading: PropTypes.bool,
+};
 
-Films.defaultProps = {};
+Films.defaultProps = {
+	films: [],
+	loading: false,
+};
 
 export default Films;
