@@ -4,67 +4,39 @@ import { Link } from 'react-router-dom';
 import Hero from './Hero/Hero';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import BechdelResults from './BechdelResults/BechdelResults';
-import api from '../../helper/api';
+import Loading from '../../shared/Loading/Loading';
+import Error from '../../shared/Error/Error';
 import hash from '../../helper/hash';
 import './Film.scss';
 
+const isLastItem = (item, array) => {
+	return item !== array[array.length - 1];
+};
+
+const genreNodeBuilder = array => {
+	return array.map(item => {
+		if (isLastItem(item, array)) {
+			return <span key={hash(item.toString())}>{item} | </span>;
+		}
+		return <span key={hash(item)}>{item}</span>;
+	});
+};
+
+const nodeBuilder = array => {
+	return array.map(item => {
+		if (isLastItem(item, array)) {
+			return <span key={hash(item.toString())}>{item.name} | </span>;
+		}
+		return <span key={hash(item)}>{item.name}</span>;
+	});
+};
+
+const isValidFilm = film => {
+	return film.title !== '';
+};
+
 class Film extends Component {
-	constructor() {
-		super();
-		this.state = {
-			film: {
-				title: '',
-				images: {
-					poster: '',
-					backdrop: '',
-				},
-				plot: '',
-				directors: [],
-				writers: [],
-				genres: [],
-				rated: '',
-				bechdelResults: {
-					pass: 'false',
-					bechdelScore: 0,
-					numScenesPass: 0,
-					scenesThatPass: [],
-					numScenesDontPass: 0,
-					numOfFemalesChars: 0,
-					numOfMaleChars: 0,
-					numOfFemalesCharsWithDialogue: 0,
-					numOfMaleCharsWithDialogue: 0,
-					totalLinesFemaleDialogue: 0,
-					totalLinesMaleDialogue: 0,
-				},
-			},
-		};
-
-		this.getFilm = this.getFilm.bind(this);
-	}
-
-	componentDidMount() {
-		this.getFilm();
-	}
-
-	getFilm() {
-		const { id } = this.props.match.params;
-		const url = `/api/film/${id}`;
-		const options = {
-			method: 'GET',
-		};
-
-		api(url, options)
-			.then(data => {
-				this.setState({
-					film: data,
-				});
-			})
-			.catch(err => {
-				console.error(err);
-			});
-	}
-
-	render() {
+	renderFilm() {
 		const {
 			directors,
 			writers,
@@ -72,29 +44,11 @@ class Film extends Component {
 			title,
 			bechdelResults,
 			images,
-		} = this.state.film;
-
-		const isLastItem = (item, array) => {
-			return item !== array[array.length - 1];
-		};
-
-		const genreNodeBuilder = array => {
-			return array.map(item => {
-				if (isLastItem(item, array)) {
-					return <span key={hash(item.toString())}>{item} | </span>;
-				}
-				return <span key={hash(item)}>{item}</span>;
-			});
-		};
-
-		const nodeBuilder = array => {
-			return array.map(item => {
-				if (isLastItem(item, array)) {
-					return <span key={hash(item.toString())}>{item.name} | </span>;
-				}
-				return <span key={hash(item)}>{item.name}</span>;
-			});
-		};
+			plot,
+			idIMDB,
+			rated,
+		} = this.props.film;
+		console.log('directors', directors);
 
 		const directorNode = nodeBuilder(directors);
 		const writerNode = nodeBuilder(writers);
@@ -105,7 +59,7 @@ class Film extends Component {
 				<ErrorBoundary>
 					<Hero title={title} bechdelResults={bechdelResults} images={images} />
 					<div className="plot container">
-						<p>{this.state.film.plot}</p>
+						<p>{plot}</p>
 						<span className="results container">
 							<div className="filmData">
 								<span className="catName">Directors:</span> {directorNode}
@@ -113,14 +67,11 @@ class Film extends Component {
 								<span className="catName">Writers:</span> {writerNode} <br />
 								<span className="catName">Genre:</span> {genreNode}
 								<br />
-								<span className="catName">Rated:</span> {this.state.film.rated}
+								<span className="catName">Rated:</span> {rated}
 								<br />
 								<span className="catName">IMDB:</span>{' '}
-								<a
-									href={`http://www.imdb.com/title/${this.state.film.idIMDB}`}
-									target="_blank"
-								>
-									{this.state.film.title}
+								<a href={`http://www.imdb.com/title/${idIMDB}`} target="_blank">
+									{title}
 								</a>
 								<br />
 							</div>
@@ -134,12 +85,84 @@ class Film extends Component {
 			</div>
 		);
 	}
+
+	render() {
+		const { film, loading } = this.props;
+
+		if (loading) {
+			return <Loading />;
+		} else if (isValidFilm(film)) {
+			return this.renderFilm();
+		}
+		return <Error />;
+	}
 }
 
 Film.propTypes = {
-	match: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+	film: PropTypes.shape({
+		title: PropTypes.string,
+		images: PropTypes.shape({
+			poster: PropTypes.string,
+			backdrop: PropTypes.string,
+		}),
+		plot: PropTypes.string,
+		idIMDB: PropTypes.string,
+		rated: PropTypes.string,
+		directors: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+			})
+		),
+		writers: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+			})
+		),
+		genres: PropTypes.arrayOf(PropTypes.string),
+		bechdelResults: PropTypes.shape({
+			pass: PropTypes.string,
+			bechdelScore: PropTypes.number,
+			numScenesPass: PropTypes.number,
+			scenesThatPass: PropTypes.arrayOf(PropTypes.string),
+			numScenesDontPass: PropTypes.number,
+			numOfFemalesChars: PropTypes.number,
+			numOfMaleChars: PropTypes.number,
+			numOfFemalesCharsWithDialogue: PropTypes.number,
+			numOfMaleCharsWithDialogue: PropTypes.number,
+			totalLinesFemaleDialogue: PropTypes.number,
+			totalLinesMaleDialogue: PropTypes.number,
+		}),
+	}),
+	loading: PropTypes.bool,
 };
 
-Film.defaultProps = {};
+Film.defaultProps = {
+	film: {
+		title: '',
+		images: {
+			poster: '',
+			backdrop: '',
+		},
+		plot: '',
+		directors: [{ name: '' }],
+		writers: [{ name: '' }],
+		genres: [],
+		rated: '',
+		bechdelResults: {
+			pass: 'false',
+			bechdelScore: 0,
+			numScenesPass: 0,
+			scenesThatPass: [],
+			numScenesDontPass: 0,
+			numOfFemalesChars: 0,
+			numOfMaleChars: 0,
+			numOfFemalesCharsWithDialogue: 0,
+			numOfMaleCharsWithDialogue: 0,
+			totalLinesFemaleDialogue: 0,
+			totalLinesMaleDialogue: 0,
+		},
+	},
+	loading: true,
+};
 
 export default Film;

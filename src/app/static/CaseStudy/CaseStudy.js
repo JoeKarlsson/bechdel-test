@@ -94,6 +94,7 @@ const CaseStudy = () => (
 				<PieChart width={800} height={400}>
 					<Pie
 						data={dataPie}
+						dataKey={hash(dataPie)}
 						cx={420}
 						cy={200}
 						startAngle={180}
