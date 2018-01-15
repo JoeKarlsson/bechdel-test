@@ -48,7 +48,6 @@ class Film extends Component {
 			idIMDB,
 			rated,
 		} = this.props.film;
-		console.log('directors', directors);
 
 		const directorNode = nodeBuilder(directors);
 		const writerNode = nodeBuilder(writers);
@@ -144,10 +143,11 @@ Film.defaultProps = {
 			backdrop: '',
 		},
 		plot: '',
+		idIMDB: '',
+		rated: '',
 		directors: [{ name: '' }],
 		writers: [{ name: '' }],
 		genres: [],
-		rated: '',
 		bechdelResults: {
 			pass: 'false',
 			bechdelScore: 0,
