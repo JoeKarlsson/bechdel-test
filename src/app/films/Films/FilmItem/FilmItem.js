@@ -12,11 +12,11 @@ const FilmItem = props => {
 			<li>
 				<div>
 					<Link to={filmUrl}>
-						<img src={film.images.poster} alt={film.title} />
-						<div className="description">
-							<h2 className="filmItem_title">{film.title}</h2>
-							<p>2015</p>
-						</div>
+						<img
+							className="film-poster"
+							src={film.images.poster}
+							alt={film.title}
+						/>
 					</Link>
 				</div>
 			</li>

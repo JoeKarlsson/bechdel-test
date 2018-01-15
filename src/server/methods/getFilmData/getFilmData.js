@@ -3,7 +3,11 @@ const dataParser = require('./dataParser');
 const getDataFrom = require('./getDataFrom');
 const URLFormatter = require('./URLFormatter');
 
-const { createSimpleDataURL, createFullDataURL, createImageUrl } = URLFormatter;
+const {
+	createSimpleDataURL,
+	createFilmCreditsURL,
+	createImageUrl,
+} = URLFormatter;
 
 const handleError = err => {
 	console.error(err);
@@ -32,18 +36,19 @@ const handleImageData = async () => {
 	}
 };
 
-const handleFullData = async () => {
+const handleGetCredits = async () => {
 	try {
-		const fullURL = createFullDataURL(filmData.imdbID);
-		const fullData = await getDataFrom(fullURL);
-		const fullMetaData = fullData.data.movies[0];
+		const castURL = createFilmCreditsURL(filmData.imdbID);
+		const castData = await getDataFrom(castURL);
+		console.log('castData complete');
 
-		if (notValidData(fullMetaData)) {
-			handleError('fullMetaData not valid');
+		if (notValidData(castData)) {
+			handleError('castData not valid');
 		}
-		filmData.addMetaData(fullMetaData);
-		const { actors } = fullMetaData;
-		return dataParser(actors, 'fullCast');
+		const { cast } = castData;
+		const cleanCastData = dataParser(cast);
+		filmData.addActors(cleanCastData);
+		return cleanCastData;
 	} catch (err) {
 		return handleError(err);
 	}
@@ -61,11 +66,9 @@ const handleSimpleData = async title => {
 
 		filmData.imdbID = simpleMetaData.idIMDB;
 		filmData.addMetaData(simpleMetaData);
-		const { actors } = simpleMetaData;
-		dataParser(actors, 'mainCast');
 
 		handleImageData();
-		await handleFullData();
+		await handleGetCredits();
 		return filmData.getAllData();
 	} catch (err) {
 		return handleError(err);

@@ -1,44 +1,16 @@
 .filmItem {
-	background-image: url(http://placehold.it/170x240);
-	background-size: 100% 100%;
-	display: inline-block;
-	height: 240px;
-	width: 170px;
-	font-size: 10pt;
-	margin: 2.5px;
-	color: #000;
-	position: relative;
 	cursor: pointer;
-
-	.description {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 0px;
-		padding: 0px;
-		background-color: rgba(0, 0, 0, 0.85);
-		color: white;
-		overflow: hidden;
-		transition: all 0.3s;
-	}
-
-	&:hover {
-		height: 30px;
-		padding: 10px;
-	}
-
-	h2 {
-		color: #33cc33;
-		font-weight: bold;
-	}
+	line-height: 0;
+	flex-grow: 1;
+	text-align: center;
+	width: 100px;
 
 	li {
 		list-style-type: none;
+		margin-bottom: 0;
 	}
+}
 
-	.filmItem_title {
-		text-align: center;
-		color: black;
-	}
+.film-poster {
+	width: 100%;
 }

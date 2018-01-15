@@ -6,20 +6,6 @@ import NewFilm from './NewFilm';
 
 jest.mock('./Uploader/Uploader');
 
-// jest.mock('uppy');
-// jest.mock('uppy/lib');
-// jest.mock('uppy/lib/core');
-// jest.mock('uppy/lib/core/Core.js');
-// jest.mock('uppy/lib/plugins/XHRUpload');
-// jest.mock('uppy/lib/react');
-// jest.mock('uppy/lib/react/DragDrop');
-
-global.window = {
-	navigator: {
-		onLine: true,
-	},
-};
-
 configure({ adapter: new Adapter() });
 
 describe('NewFilm', () => {
