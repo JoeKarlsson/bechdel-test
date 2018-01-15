@@ -1,5 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+	BarChart,
+	Bar,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	PieChart,
+	Pie,
+	Cell,
+} from 'recharts';
+import hash from '../../helper/hash';
+
+const data = [
+	{ name: 'American Sniper', bechdelScore: 2 },
+	{ name: 'Birdman', bechdelScore: 1 },
+	{ name: 'Boyhood', bechdelScore: 3 },
+	{ name: 'Foxcatcher', bechdelScore: 1 },
+	{ name: 'Gone Girl', bechdelScore: 3 },
+	{ name: 'Grand Budapest', bechdelScore: 1 },
+	{ name: 'Imitation Game', bechdelScore: 3 },
+	{ name: 'Into The Woods', bechdelScore: 3 },
+	{ name: 'Still Alice', bechdelScore: 1 },
+	{ name: 'Theory of Everything', bechdelScore: 1 },
+	{ name: 'The Judge', bechdelScore: 1 },
+	{ name: 'Whiplash', bechdelScore: 1 },
+	{ name: 'Wild', bechdelScore: 3 },
+];
+
+const dataPie = [
+	{ name: 'Group A', value: 400 },
+	{ name: 'Group B', value: 300 },
+	{ name: 'Group C', value: 300 },
+	{ name: 'Group D', value: 200 },
+];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const CaseStudy = () => (
 	<div className="CaseStudy container">
@@ -23,23 +59,56 @@ const CaseStudy = () => (
 				categories: Best Picture, Best Actor, Best Actress, Best Supporting
 				Actor, and Best Supporting Actress.
 			</p>
+			<div className="row barchart">
+				<BarChart
+					width={600}
+					height={300}
+					data={data}
+					margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+				>
+					<XAxis dataKey="name" />
+					<YAxis />
+					<CartesianGrid />
+					<Tooltip />
+					<Bar dataKey="bechdelScore" fill="#8884d8" />
+				</BarChart>
+			</div>
 			<p>
 				A quick glance at the Bechdel Test pass/fail data for the 87th Annual
 				Academy Awards (originally aired on February 22, 2015) makes the gender
 				imbalance immediately clear. Of all of the Oscar nominated films that we
 				were able to test, only 38.46% passed the Bechdel Test. This percentage
-				is somewhat generous, as only 28.57% of the Best Picture nominees passed
-				the test. The category of Best Picture gives the best general overview
-				of the year’s critically acclaimed films, as the Best Picture category
-				is not limited by the gender of the lead actors (as are the categories
-				of Best Actor and Best Actress). When the Academy has free reign to
-				choose the eight films that they feel were the best overall films of the
-				year, it’s incredibly revealing to see how those eight films stack up in
-				terms of gender. While 28.57% of the Best Picture nominees passed the
-				Bechdel Test, it’s also important to note that all eight of the nominees
-				were focused on a male-dominated narrative, each of them featuring a
-				male lead rather than a female lead.
+				is somewhat generous, as only 28.57% of the Best Picture nominees
+				passed1 21 the test. The category of Best Picture gives the best general
+				overview of the year’s critically acclaimed films, as the Best Picture
+				category is not limited by the gender of the lead actors (as are the
+				categories of Best Actor and Best Actress). When the Academy has free
+				reign to choose the eight films that they feel were the best overall
+				films of the year, it’s incredibly revealing to see how those eight
+				films stack up in terms of gender. While 28.57% of the Best Picture
+				nominees passed the Bechdel Test, it’s also important to note that all
+				eight of the nominees were focused on a male-dominated narrative, each
+				of them featuring a male lead rather than a female lead.
 			</p>
+			<div className="row">
+				<PieChart width={800} height={400}>
+					<Pie
+						data={dataPie}
+						cx={420}
+						cy={200}
+						startAngle={180}
+						endAngle={0}
+						innerRadius={60}
+						outerRadius={80}
+						fill="#8884d8"
+						paddingAngle={5}
+					>
+						{dataPie.map((entry, index) => (
+							<Cell key={hash(entry)} fill={COLORS[index % COLORS.length]} />
+						))}
+					</Pie>
+				</PieChart>
+			</div>
 			<p>
 				It’s interesting to note the lack of overlap between Best Picture
 				nominees and films featuring a nominee for Best Actress. Only one of the
