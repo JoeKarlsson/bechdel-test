@@ -71,7 +71,14 @@ describe('Film', () => {
 				totalLinesMaleDialogue: 1202,
 			},
 		},
-		laoding: false,
+		loading: false,
+	};
+
+	const errorData = {
+		film: {
+			title: '',
+		},
+		loading: false,
 	};
 
 	beforeEach(() => {
@@ -95,6 +102,16 @@ describe('Film', () => {
 				const component = renderer.create(
 					<MemoryRouter>
 						<Film {...filmData} />
+					</MemoryRouter>
+				);
+				const tree = component.toJSON();
+				expect(tree).toMatchSnapshot();
+			});
+
+			it('should render error state correctly', () => {
+				const component = renderer.create(
+					<MemoryRouter>
+						<Film {...errorData} />
 					</MemoryRouter>
 				);
 				const tree = component.toJSON();
