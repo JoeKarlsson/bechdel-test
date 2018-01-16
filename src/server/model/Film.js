@@ -77,16 +77,25 @@ filmSchema.static('deleteFilm', function(id) {
 
 filmSchema.static('insertFilm', filmMetaData => {
 	const promise = new Promise((resolve, reject) => {
-		const { title, bechdelResults, actors, images, data } = filmMetaData;
+		const {
+			title,
+			bechdelResults,
+			bechdelData,
+			actors,
+			images,
+			data,
+		} = filmMetaData;
 		const film = new Film({ title });
 		film.title = title;
 		film.bechdelResults = bechdelResults;
+		film.bechdelData = bechdelData;
 		film.plot = data.plot;
 		film.simplePlot = data.simplePlot;
 		film.year = data.year;
 		film.releaseDate = data.releaseDate;
 		film.directors = data.directors;
 		film.writers = data.writers;
+		film.awards = data.awards;
 		film.rated = data.rated;
 		film.genres = data.genres;
 		film.urlPoster = data.urlPoster;

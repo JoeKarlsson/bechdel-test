@@ -48,11 +48,12 @@ const processScript = async scriptPath => {
 		}
 		const bechdelResults = await getBechdelResults(title, scriptPath);
 
-		const { actors, images, metadata } = filmData.getAllData();
+		const { actors, images, metadata, bechdelData } = filmData.getAllData();
 
 		const filmMetaData = {
 			title,
 			bechdelResults,
+			bechdelData,
 			actors,
 			images,
 			data: metadata,
