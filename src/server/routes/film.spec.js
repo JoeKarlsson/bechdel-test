@@ -204,7 +204,6 @@ describe('Film Routes Test', () => {
 						console.log('err', err);
 						return done(err);
 					}
-					console.log('res.body', res.body);
 					expect(res.body).toBe(expectedResponse);
 					return done();
 				});
