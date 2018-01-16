@@ -116,8 +116,6 @@ const handleResponse = (res, data) => {
 
 const handlePostFilm = async (req, res) => {
 	const { files } = req;
-	console.log('req.file', req.file);
-	console.log('files', files);
 
 	if (fileWasNotUploadedCorrectly(files)) {
 		return handleError(res, 'No script submitted, please try again');
