@@ -18,11 +18,6 @@ const fileWasNotUploadedCorrectly = file => {
 	return exists;
 };
 
-// const errorReadingScript = title => {
-// 	const titleExists = !title;
-// 	return titleExists;
-// };
-
 const resetAll = scriptPath => {
 	filmData.clear();
 	script.clearTemp(scriptPath);
@@ -74,7 +69,7 @@ const handlePostFilm = async (req, res) => {
 		return handleError(res, 'No script submitted, please try again');
 	}
 
-	files.forEach(async file => {
+	files.forEach(async (file, i) => {
 		if (fileWasNotUploadedCorrectly(file)) {
 			return handleError(res, 'No script submitted, please try again');
 		}
@@ -84,7 +79,10 @@ const handlePostFilm = async (req, res) => {
 		const title = extractTitle(file);
 		const scriptPath = file.path;
 		const response = await processScript(scriptPath, title);
-		return handleResponse(res, response);
+
+		if (i === files.length - 1) {
+			return handleResponse(res, response);
+		}
 	});
 };
 
