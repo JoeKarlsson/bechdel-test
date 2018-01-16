@@ -7,7 +7,7 @@ const processScript = require('../methods/processScript');
 const multer = require('multer');
 
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: 'uploads/', preservePath: true });
 
 const isNotCorrectFileFormat = file => {
 	return path.extname(file.originalname) !== '.txt';
