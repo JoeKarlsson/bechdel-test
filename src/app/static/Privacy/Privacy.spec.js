@@ -2,12 +2,11 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
-import { MemoryRouter } from 'react-router-dom';
-import Footer from './Footer';
+import Privacy from './Privacy';
 
 configure({ adapter: new Adapter() });
 
-describe('Footer', () => {
+describe('Privacy', () => {
 	let wrapper;
 
 	global.requestAnimationFrame = callback => {
@@ -15,21 +14,13 @@ describe('Footer', () => {
 	};
 
 	beforeEach(() => {
-		wrapper = shallow(
-			<MemoryRouter>
-				<Footer />
-			</MemoryRouter>
-		);
+		wrapper = shallow(<Privacy />);
 	});
 
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('is rendered', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<Footer />
-					</MemoryRouter>
-				);
+				const component = renderer.create(<Privacy />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});
@@ -39,12 +30,9 @@ describe('Footer', () => {
 			});
 
 			it('should have correct inital instance', () => {
-				const initialState = wrapper
-					.dive()
-					.dive()
-					.instance();
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
+				const initialInstance = wrapper.instance();
+				const expectedInstance = null;
+				expect(initialInstance).toBe(expectedInstance);
 			});
 		});
 	});

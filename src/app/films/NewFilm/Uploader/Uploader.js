@@ -22,7 +22,7 @@ uppy.use(XHRUpload, {
 	fieldName: 'script',
 	method: 'post',
 	formData: true,
-	limit: 1,
+	limit: 10,
 	getResponseData: xhr => {
 		let response = JSON.parse(xhr.response);
 		response = response['0'];

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Footer.scss';
 
 const Footer = () => (
@@ -11,6 +12,7 @@ const Footer = () => (
 			>
 				<p>{new Date().getFullYear()} - a karlsson production.</p>
 			</a>
+			<NavLink to="/privacy">privacy policy</NavLink>
 		</div>
 	</footer>
 );

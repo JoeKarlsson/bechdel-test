@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import About from '../../static/About/About';
+import Privacy from '../../static/Privacy/Privacy';
 import CaseStudy from '../../static/CaseStudy/CaseStudy';
 import Home from '../../static/Home/Home';
 import FilmContainer from '../../films/Film/FilmContainer';
@@ -22,6 +23,7 @@ export const PrimaryLayout = () => {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/about" component={About} />
+						<Route path="/privacy" component={Privacy} />
 						<Route path="/case-study" component={CaseStudy} />
 						<Route path="/film/new" component={NewFilm} />
 						<Route path="/film/:id" component={FilmContainer} />
