@@ -68,10 +68,8 @@ const handleGetAllFilms = async (req, res) => {
 	}
 };
 
-const processScript = async (res, scriptPath) => {
+const processScript = async (res, scriptPath, title) => {
 	try {
-		const title = await script.readMovieTitle(scriptPath);
-		console.log('title', title);
 		if (errorReadingScript(title)) {
 			return handleError(res, 'Error reading script', scriptPath);
 		}
@@ -114,6 +112,11 @@ const handleResponse = (res, data) => {
 	return res.json(data);
 };
 
+const extractTitle = file => {
+	const title = path.parse(file.originalname).name;
+	return title;
+};
+
 const handlePostFilm = async (req, res) => {
 	const { files } = req;
 
@@ -125,11 +128,13 @@ const handlePostFilm = async (req, res) => {
 		if (fileWasNotUploadedCorrectly(file)) {
 			return handleError(res, 'No script submitted, please try again');
 		}
-		const scriptPath = file.path;
 		if (isNotCorrectFileFormat(file)) {
 			return handleError(res, 'Please send a .txt script', scriptPath);
 		}
-		processScript(res, scriptPath);
+		const title = extractTitle(file);
+		const scriptPath = file.path;
+		console.log(title);
+		processScript(res, scriptPath, title);
 	});
 };
 
