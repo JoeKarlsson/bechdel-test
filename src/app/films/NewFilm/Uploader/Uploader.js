@@ -17,19 +17,23 @@ uppy.use(XHRUpload, {
 	method: 'post',
 	formData: true,
 	limit: 1,
+	getResponseData: xhr => {
+		let response = JSON.parse(xhr.response);
+		response = response['0'];
+
+		window.location = `/film/${response._id}`;
+		return {
+			url: xhr.responseXML.querySelector('Location').textContent,
+		};
+	},
 });
 
 uppy.on('complete', result => {
-	// const url = result.successful[0].uploadURL;
-	// console.log('url', url);
 	console.log(result);
 });
 
 uppy.on('upload-success', result => {
-	// const url = result.successful[0].uploadURL;
-	// console.log('url', url);
 	console.log(result);
-	// window.location = `/film/${response._id}`;
 });
 
 uppy.run();

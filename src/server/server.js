@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const historyApiFallback = require('connect-history-api-fallback');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
@@ -25,6 +26,8 @@ if (meta.isDeveloping) {
 	app.set('host', 'http://localhost');
 	app.use(webpackDevConfig.middleware);
 	app.use(webpackHotMiddleware(webpackDevConfig.compiler));
+	app.use(historyApiFallback());
+	app.use(webpackDevConfig.middleware);
 } else {
 	app.use(express.static('dist'));
 	app.get('*', prodResponse);
