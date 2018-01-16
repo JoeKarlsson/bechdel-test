@@ -227,27 +227,6 @@ describe('Film Routes Test', () => {
 				});
 		});
 
-		it('should handle a script without a title', done => {
-			const testScript = path.join(
-				__dirname,
-				'./__mocks__/no-title-boyhood.txt'
-			);
-
-			const expectedResponse = { error: 'Please try again', success: false };
-
-			request(app)
-				.post('/api/film')
-				.attach('script', testScript)
-				.end((err, res) => {
-					if (err) {
-						console.log('err', err);
-						return done(err);
-					}
-					expect(res.body).toMatchObject(expectedResponse);
-					return done();
-				});
-		});
-
 		// it('should return the film [full version - no mocks]', done => {
 		// 	const testScript = path.join(__dirname, '../../../scripts/boyhood.txt');
 		// 	const title = 'Boyhood';
