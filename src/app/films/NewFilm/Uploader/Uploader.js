@@ -1,13 +1,20 @@
 import React from 'react';
 import Uppy from 'uppy/lib/core';
 import XHRUpload from 'uppy/lib/plugins/XHRUpload';
+import Dashboard from 'uppy/lib/react/Dashboard';
 import DragDrop from 'uppy/lib/react/DragDrop';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 import './Uploader.scss';
 
 const uppy = Uppy({
 	meta: { type: 'script' },
-	restrictions: { maxNumberOfFiles: 1 },
+	restrictions: {
+		maxNumberOfFiles: 10,
+		maxFileSize: 1000000,
+		minNumberOfFiles: 1,
+		allowedFileTypes: ['text/plain/*'],
+	},
+	thumbnailGeneration: true,
 	autoProceed: true,
 });
 
@@ -20,16 +27,18 @@ uppy.use(XHRUpload, {
 	getResponseData: xhr => {
 		let response = JSON.parse(xhr.response);
 		response = response['0'];
+		console.log('response', response);
 
-		window.location = `/film/${response._id}`;
-		return {
-			url: xhr.responseXML.querySelector('Location').textContent,
-		};
+		// window.location = `/film/${response._id}`;
+		// return {
+		// 	url: xhr.responseXML.querySelector('Location').textContent,
+		// };
 	},
 });
 
 uppy.on('complete', result => {
-	console.log(result);
+	console.log('successful files:', result.successful);
+	console.log('failed files:', result.failed);
 });
 
 uppy.on('upload-success', result => {
@@ -42,14 +51,7 @@ const Uploader = () => {
 	return (
 		<div>
 			<ErrorBoundary>
-				<DragDrop
-					uppy={uppy}
-					locale={{
-						strings: {
-							chooseFile: 'Choose a script',
-						},
-					}}
-				/>
+				<Dashboard uppy={uppy} />
 			</ErrorBoundary>
 		</div>
 	);
