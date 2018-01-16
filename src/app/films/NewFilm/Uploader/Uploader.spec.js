@@ -28,9 +28,9 @@ jest.mock('uppy/lib/core', () => {
 	return Uppy;
 });
 jest.mock('uppy/lib/plugins/XHRUpload');
-jest.mock('uppy/lib/react/DragDrop', () => {
-	const DragDrop = () => <div>Drag and Drop</div>;
-	return DragDrop;
+jest.mock('uppy/lib/react/Dashboard', () => {
+	const Dashboard = () => <div>Drag and Drop</div>;
+	return Dashboard;
 });
 
 configure({ adapter: new Adapter() });
