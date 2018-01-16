@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import About from '../../static/About/About';
 import Privacy from '../../static/Privacy/Privacy';
 import CaseStudy from '../../static/CaseStudy/CaseStudy';
+import ApiDocs from '../../static/ApiDocs/ApiDocs';
 import Home from '../../static/Home/Home';
 import FilmContainer from '../../films/Film/FilmContainer';
 import NewFilm from '../../films/NewFilm/NewFilm';
@@ -24,6 +25,7 @@ export const PrimaryLayout = () => {
 						<Route exact path="/" component={Home} />
 						<Route path="/about" component={About} />
 						<Route path="/privacy" component={Privacy} />
+						<Route path="/api-docs" component={ApiDocs} />
 						<Route path="/case-study" component={CaseStudy} />
 						<Route path="/film/new" component={NewFilm} />
 						<Route path="/film/:id" component={FilmContainer} />

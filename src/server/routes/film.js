@@ -69,6 +69,9 @@ const handleResponse = (res, data) => {
 
 const handlePostFilm = async (req, res) => {
 	const { file } = req;
+	console.log('req.files', req.files);
+	console.log('file', file);
+	console.log('req.body', req.body);
 
 	if (fileWasNotUploadedCorrectly(file)) {
 		return handleError(res, 'No script submitted, please try again');
@@ -117,7 +120,7 @@ const handleGetFilm = async (req, res) => {
 router
 	.route('/')
 	.get(handleGetAllFilms)
-	.post(upload.single('script'), handlePostFilm);
+	.post(upload.array('script'), handlePostFilm);
 
 router
 	.route('/:id')
