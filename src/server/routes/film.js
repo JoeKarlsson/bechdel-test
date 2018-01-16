@@ -3,21 +3,11 @@ const path = require('path');
 const Film = require('../model/Film');
 const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
-const processScript = require('../methods/processScript');
+const getBechdelResults = require('../methods/bechdel/getBechdelResults');
 const multer = require('multer');
 
 const router = express.Router();
-
-const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
-		cb(null, 'uploads/');
-	},
-	filename: (req, file, cb) => {
-		cb(null, file.originalname);
-	},
-});
-
-const upload = multer({ storage });
+const upload = multer({ dest: 'uploads/' });
 
 const isNotCorrectFileFormat = file => {
 	return path.extname(file.originalname) !== '.txt';
@@ -28,13 +18,18 @@ const fileWasNotUploadedCorrectly = file => {
 	return exists;
 };
 
+const errorReadingScript = title => {
+	const titleExists = !title;
+	return titleExists;
+};
+
 const resetAll = scriptPath => {
 	filmData.clear();
 	script.clearTemp(scriptPath);
 	return true;
 };
 
-const handleError = (res, errMsg = 'Please try again.', scriptPath = null) => {
+const handleError = (res, errMsg, scriptPath = null) => {
 	console.error(errMsg);
 	const response = {
 		success: false,
@@ -50,6 +45,16 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
+const handleFilmFoundInDB = (res, film, scriptPath) => {
+	script.clearTemp(scriptPath);
+	const response = {
+		...film,
+		success: true,
+		cacheHit: true,
+	};
+	return handleResponse(res, response);
+};
+
 const handleGetAllFilms = async (req, res) => {
 	try {
 		const films = await Film.listAll();
@@ -63,29 +68,71 @@ const handleGetAllFilms = async (req, res) => {
 	}
 };
 
+const processScript = async (res, scriptPath) => {
+	try {
+		const title = await script.readMovieTitle(scriptPath);
+		console.log('title', title);
+		if (errorReadingScript(title)) {
+			return handleError(res, 'Error reading script', scriptPath);
+		}
+		const film = await Film.findByTitle(title);
+		if (filmFound(film)) {
+			return handleFilmFoundInDB(res, film, scriptPath);
+		}
+		const bechdelResults = await getBechdelResults(title, scriptPath);
+
+		console.log('processed Film');
+		const { actors, images, metadata } = filmData.getAllData();
+
+		const filmMetaData = {
+			title,
+			bechdelResults,
+			actors,
+			images,
+			data: metadata,
+		};
+		await Film.insertFilm(filmMetaData);
+		const finalFilm = await Film.findByTitle(title);
+
+		resetAll(scriptPath);
+
+		const response = {
+			...finalFilm,
+			title,
+			success: true,
+			cacheHit: false,
+		};
+		console.log('saved film');
+		return handleResponse(res, response);
+	} catch (err) {
+		resetAll(scriptPath);
+		return handleError(res, 'Please try again', scriptPath);
+	}
+};
+
 const handleResponse = (res, data) => {
 	return res.json(data);
 };
 
 const handlePostFilm = async (req, res) => {
-	const { file } = req;
-	console.log('req.files', req.files);
-	console.log('file', file);
-	console.log('req.body', req.body);
+	const { files } = req;
+	console.log('req.file', req.file);
+	console.log('files', files);
 
-	if (fileWasNotUploadedCorrectly(file)) {
+	if (fileWasNotUploadedCorrectly(files)) {
 		return handleError(res, 'No script submitted, please try again');
 	}
-	const scriptPath = file.path;
-	if (isNotCorrectFileFormat(file)) {
-		return handleError(res, 'Please send a .txt script', scriptPath);
-	}
-	try {
-		const response = await processScript(scriptPath);
-		return handleResponse(res, response);
-	} catch (err) {
-		return handleError(res, err);
-	}
+
+	files.forEach(file => {
+		if (fileWasNotUploadedCorrectly(file)) {
+			return handleError(res, 'No script submitted, please try again');
+		}
+		const scriptPath = file.path;
+		if (isNotCorrectFileFormat(file)) {
+			return handleError(res, 'Please send a .txt script', scriptPath);
+		}
+		processScript(res, scriptPath);
+	});
 };
 
 const handleDeleteFilm = async (req, res) => {

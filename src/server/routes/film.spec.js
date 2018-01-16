@@ -200,7 +200,7 @@ describe('Film Routes Test', () => {
 				'./__mocks__/no-title-boyhood.txt'
 			);
 
-			const expectedResponse = 'Please try again';
+			const expectedResponse = { error: 'Please try again', success: false };
 
 			request(app)
 				.post('/api/film')
@@ -210,7 +210,7 @@ describe('Film Routes Test', () => {
 						console.log('err', err);
 						return done(err);
 					}
-					expect(res.body).toBe(expectedResponse);
+					expect(res.body).toMatchObject(expectedResponse);
 					return done();
 				});
 		});
