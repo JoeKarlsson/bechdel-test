@@ -123,6 +123,41 @@ describe('Film Routes Test', () => {
 				});
 		});
 
+		// it('should process mutliple scripts', done => {
+		// 	const testScript = path.join(__dirname, './__mocks__/boyhood.txt');
+		// 	const title = 'Boyhood';
+		// 	const imdbID = 'tt1065073';
+		// 	const _doc = { title, test: true };
+		// 	mockingoose.Film.toReturn(_doc, 'find');
+		// 	mockingoose.Film.toReturn({}, 'save');
+		//
+		// 	const simpleURL = createSimpleDataURL(title);
+		// 	const fullURL = createFilmCreditsURL(imdbID);
+		// 	const imagesURL = createImageUrl(imdbID);
+		// 	const bechdelURL = createBechdelUrl(imdbID);
+		//
+		// 	fetchMock.mock(simpleURL, mockGetSimpleCastData);
+		// 	fetchMock.mock(fullURL, mockGetFullCastData);
+		// 	fetchMock.mock(imagesURL, mockImagesData);
+		// 	fetchMock.mock(bechdelURL, mockBechdelData);
+		//
+		// 	console.log('testScript', testScript);
+		//
+		// 	request(app)
+		// 		.post('/api/film')
+		// 		.attach('script', testScript)
+		// 		.attach('script', testScript)
+		// 		.expect(200)
+		// 		.expect('Content-Type', /json/)
+		// 		.end((err, res) => {
+		// 			if (err) {
+		// 				return done(err);
+		// 			}
+		// 			expect(res.body._doc.title).toBe('Boyhood');
+		// 			return done();
+		// 		});
+		// });
+
 		it('should handle a non .txt file', done => {
 			const testScript = path.join(__dirname, './__mocks__/boyhood.tpt');
 			const expectedResponse = {
