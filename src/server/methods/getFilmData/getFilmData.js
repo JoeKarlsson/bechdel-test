@@ -7,6 +7,7 @@ const {
 	createSimpleDataURL,
 	createFilmCreditsURL,
 	createImageUrl,
+	createBechdelUrl,
 } = URLFormatter;
 
 const handleError = err => {
@@ -31,6 +32,21 @@ const handleImageData = async () => {
 		}
 		filmData.images = images;
 		return images;
+	} catch (err) {
+		return handleError(err);
+	}
+};
+
+const handleBechdelData = async () => {
+	try {
+		const bechdelURL = createBechdelUrl(filmData.imdbID);
+		const bechdelData = await getDataFrom(bechdelURL);
+
+		if (notValidData(bechdelData)) {
+			handleError('imageData not valid');
+		}
+		filmData.bechdelData = bechdelData;
+		return bechdelData;
 	} catch (err) {
 		return handleError(err);
 	}
@@ -67,6 +83,7 @@ const handleSimpleData = async title => {
 		filmData.addMetaData(simpleMetaData);
 
 		handleImageData();
+		handleBechdelData();
 		await handleGetCredits();
 		return filmData.getAllData();
 	} catch (err) {
