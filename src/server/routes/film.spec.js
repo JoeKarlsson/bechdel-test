@@ -107,6 +107,8 @@ describe('Film Routes Test', () => {
 			fetchMock.mock(imagesURL, mockImagesData);
 			fetchMock.mock(bechdelURL, mockBechdelData);
 
+			console.log('testScript', testScript);
+
 			request(app)
 				.post('/api/film')
 				.attach('script', testScript)
