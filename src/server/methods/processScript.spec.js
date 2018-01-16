@@ -42,8 +42,8 @@ describe('Film Routes Test', () => {
 			fetchMock.mock(imagesURL, mockImagesData);
 			fetchMock.mock(bechdelURL, mockBechdelData);
 
-			const result = await processScript(testScript);
-			expect(result._doc.title).toBe('Boyhood');
+			const result = await processScript(testScript, title);
+			expect(result._doc.title).toBe(title);
 		});
 	});
 });

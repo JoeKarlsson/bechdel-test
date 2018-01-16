@@ -17,10 +17,6 @@ const handleError = (err, scriptPath) => {
 	return err;
 };
 
-const errorReadingScript = title => {
-	return title.length === 0;
-};
-
 const handleFilmFoundInDB = (film, scriptPath) => {
 	resetAll(scriptPath);
 	const response = {
@@ -35,13 +31,10 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
-const processScript = async scriptPath => {
+const processScript = async (scriptPath, title) => {
 	try {
-		const title = script.readMovieTitle(scriptPath);
 		console.log('title', title);
-		if (errorReadingScript(title)) {
-			throw new Error('Error reading script');
-		}
+
 		const film = await Film.findByTitle(title);
 		if (filmFound(film)) {
 			return handleFilmFoundInDB(film, scriptPath);
