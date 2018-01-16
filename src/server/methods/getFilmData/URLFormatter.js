@@ -11,6 +11,10 @@ const createImageUrl = idIMDB => {
 	);
 };
 
+const createBechdelUrl = idIMDB => {
+	return `http://bechdeltest.com/api/v1/getMovieByImdbId?imdbid=${idIMDB}`;
+};
+
 const splitTitle = title => {
 	if (title.indexOf('-') > 0) {
 		return title.split('-').join('+');
@@ -65,6 +69,7 @@ const createFilmCreditsURL = idIMDB => {
 
 module.exports = {
 	createImageUrl,
+	createBechdelUrl,
 	createSimpleDataURL,
 	createFilmCreditsURL,
 };

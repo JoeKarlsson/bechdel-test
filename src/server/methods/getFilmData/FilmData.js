@@ -7,6 +7,7 @@ class FilmData {
 		this._actors = [];
 		this._images = {};
 		this._metadata = {};
+		this._bechdelData = {};
 		this._imdbID = null;
 	}
 
@@ -39,6 +40,15 @@ class FilmData {
 		return this._metadata;
 	}
 
+	get bechdelData() {
+		return this._bechdelData;
+	}
+
+	set bechdelData(data) {
+		this._bechdelData = data;
+		return this._bechdelData;
+	}
+
 	get imdbID() {
 		return this._imdbID;
 	}
@@ -61,12 +71,14 @@ class FilmData {
 		this._actors = [];
 		this._images = {};
 		this._metadata = {};
+		this._bechdelData = {};
 		this._imdbID = null;
 
 		return {
 			actors: this._actors,
 			images: this._images,
 			metadata: this._metadata,
+			bechdelData: this._bechdelData,
 			imdbID: this._imdbID,
 		};
 	}

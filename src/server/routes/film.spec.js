@@ -7,11 +7,13 @@ import URLFormatter from '../methods/getFilmData/URLFormatter';
 import mockGetSimpleCastData from '../methods/getFilmData/__mocks__/mock-simple-data.json';
 import mockGetFullCastData from '../methods/getFilmData/__mocks__/mock-full-cast-data.json';
 import mockImagesData from '../methods/getFilmData/__mocks__/mock-images-data.json';
+import mockBechdelData from '../methods/getFilmData/__mocks__/mock-bechdel-data.json';
 
 const {
 	createSimpleDataURL,
 	createFilmCreditsURL,
 	createImageUrl,
+	createBechdelUrl,
 } = URLFormatter;
 
 jest.mock('../methods/script');
@@ -98,10 +100,12 @@ describe('Film Routes Test', () => {
 			const simpleURL = createSimpleDataURL(title);
 			const fullURL = createFilmCreditsURL(imdbID);
 			const imagesURL = createImageUrl(imdbID);
+			const bechdelURL = createBechdelUrl(imdbID);
 
 			fetchMock.mock(simpleURL, mockGetSimpleCastData);
 			fetchMock.mock(fullURL, mockGetFullCastData);
 			fetchMock.mock(imagesURL, mockImagesData);
+			fetchMock.mock(bechdelURL, mockBechdelData);
 
 			request(app)
 				.post('/api/film')
