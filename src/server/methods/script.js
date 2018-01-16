@@ -1,36 +1,11 @@
 /* eslint-disable guard-for-in, no-cond-assign, no-restricted-syntax */
-
 const fs = require('fs');
+const path = require('path');
 
-const readMovieTitle = path => {
-	const promise = new Promise((resolve, reject) => {
-		if (!path) {
-			reject(new Error('Invalid readMovieTitle input'));
-		}
-		const rs = fs.createReadStream(path, { encoding: 'utf8' });
-		let acc = '';
-		let pos = 0;
-		let index;
-
-		rs
-			.on('data', chunk => {
-				index = chunk.indexOf('\n');
-				acc += chunk;
-				if (index !== -1) {
-					rs.close();
-				} else {
-					pos += chunk.length;
-				}
-			})
-			.on('close', () => {
-				const movieTitle = acc.slice(0, pos + index);
-				resolve(movieTitle);
-			})
-			.on('error', err => {
-				reject(new Error(err));
-			});
-	});
-	return promise;
+const readMovieTitle = scriptPath => {
+	const title = path.basename(scriptPath, '.txt');
+	console.log('title', title);
+	return title;
 };
 
 const read = path => {
