@@ -91,7 +91,7 @@ describe('Film Routes Test', () => {
 	describe('POST /api/film/', () => {
 		it('should return the film [mocked version]', done => {
 			const testScript = path.join(__dirname, './__mocks__/boyhood.txt');
-			const title = 'Boyhood';
+			const title = 'boyhood';
 			const imdbID = 'tt1065073';
 			const _doc = { title, test: true };
 			mockingoose.Film.toReturn(_doc, 'find');
@@ -107,8 +107,6 @@ describe('Film Routes Test', () => {
 			fetchMock.mock(imagesURL, mockImagesData);
 			fetchMock.mock(bechdelURL, mockBechdelData);
 
-			console.log('testScript', testScript);
-
 			request(app)
 				.post('/api/film')
 				.attach('script', testScript)
@@ -118,7 +116,7 @@ describe('Film Routes Test', () => {
 					if (err) {
 						return done(err);
 					}
-					expect(res.body._doc.title).toBe('Boyhood');
+					expect(res.body._doc.title).toBe(title);
 					return done();
 				});
 		});
