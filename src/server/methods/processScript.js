@@ -37,7 +37,8 @@ const filmFound = film => {
 
 const processScript = async scriptPath => {
 	try {
-		const title = await script.readMovieTitle(scriptPath);
+		const title = script.readMovieTitle(scriptPath);
+		console.log('title', title);
 		if (errorReadingScript(title)) {
 			throw new Error('Error reading script');
 		}

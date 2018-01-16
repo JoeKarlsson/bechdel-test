@@ -12,6 +12,11 @@ const createImageUrl = idIMDB => {
 };
 
 const splitTitle = title => {
+	console.log('title', title);
+
+	if (title.indexOf('-') > 0) {
+		return title.split('-').join('+');
+	}
 	return title.split(' ').join('+');
 };
 

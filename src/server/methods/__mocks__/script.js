@@ -2,9 +2,7 @@ const fs = require('fs');
 const script = require('./mock-boyhood');
 
 const readMovieTitle = jest.fn(() => {
-	return new Promise(resolve => {
-		resolve('Boyhood');
-	});
+	return 'Boyhood';
 });
 
 const clearTemp = path => {

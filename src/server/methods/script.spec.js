@@ -7,14 +7,8 @@ describe('Script methods', () => {
 	describe('#readMovieTitle', () => {
 		it('should read a script and return the title', () => {
 			const scriptPath = path.join(__dirname, '../../../scripts/boyhood.txt');
-			script
-				.readMovieTitle(scriptPath)
-				.then((title) => {
-					expect(title).toBe('BOYHOOD');
-				})
-				.catch((err) => {
-					console.error('err', err);
-				});
+			const title = script.readMovieTitle(scriptPath);
+			expect(title).toBe('boyhood');
 		});
 	});
 
@@ -23,11 +17,11 @@ describe('Script methods', () => {
 			const scriptPath = path.join(__dirname, 'test-script.txt');
 			script
 				.read(scriptPath)
-				.then((scriptBody) => {
+				.then(scriptBody => {
 					expect(typeof scriptBody).toBe('string');
 					expect(scriptBody.length).toBeGreaterThan(0);
 				})
-				.catch((err) => {
+				.catch(err => {
 					console.error('err', err);
 				});
 		});
@@ -35,7 +29,7 @@ describe('Script methods', () => {
 
 	describe('#clearTemp', () => {
 		it('should return true after success', () => {
-			script.clearTemp('/path/to/file').then((result) => {
+			script.clearTemp('/path/to/file').then(result => {
 				expect(result).toBe(true);
 			});
 		});
