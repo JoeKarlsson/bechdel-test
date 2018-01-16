@@ -3,7 +3,7 @@ const path = require('path');
 const Film = require('../model/Film');
 const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
-const getBechdelResults = require('../methods/bechdel/getBechdelResults');
+const processScript = require('../methods/processScript');
 const multer = require('multer');
 
 const router = express.Router();
@@ -18,10 +18,10 @@ const fileWasNotUploadedCorrectly = file => {
 	return exists;
 };
 
-const errorReadingScript = title => {
-	const titleExists = !title;
-	return titleExists;
-};
+// const errorReadingScript = title => {
+// 	const titleExists = !title;
+// 	return titleExists;
+// };
 
 const resetAll = scriptPath => {
 	filmData.clear();
@@ -45,16 +45,6 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
-const handleFilmFoundInDB = (res, film, scriptPath) => {
-	script.clearTemp(scriptPath);
-	const response = {
-		...film,
-		success: true,
-		cacheHit: true,
-	};
-	return handleResponse(res, response);
-};
-
 const handleGetAllFilms = async (req, res) => {
 	try {
 		const films = await Film.listAll();
@@ -65,46 +55,6 @@ const handleGetAllFilms = async (req, res) => {
 		return handleResponse(res, films);
 	} catch (error) {
 		return handleError(res, error);
-	}
-};
-
-const processScript = async (res, scriptPath, title) => {
-	try {
-		if (errorReadingScript(title)) {
-			return handleError(res, 'Error reading script', scriptPath);
-		}
-		const film = await Film.findByTitle(title);
-		if (filmFound(film)) {
-			return handleFilmFoundInDB(res, film, scriptPath);
-		}
-		const bechdelResults = await getBechdelResults(title, scriptPath);
-
-		console.log('processed Film');
-		const { actors, images, metadata } = filmData.getAllData();
-
-		const filmMetaData = {
-			title,
-			bechdelResults,
-			actors,
-			images,
-			data: metadata,
-		};
-		await Film.insertFilm(filmMetaData);
-		const finalFilm = await Film.findByTitle(title);
-
-		resetAll(scriptPath);
-
-		const response = {
-			...finalFilm,
-			title,
-			success: true,
-			cacheHit: false,
-		};
-		console.log('saved film');
-		return handleResponse(res, response);
-	} catch (err) {
-		resetAll(scriptPath);
-		return handleError(res, 'Please try again', scriptPath);
 	}
 };
 
@@ -124,7 +74,7 @@ const handlePostFilm = async (req, res) => {
 		return handleError(res, 'No script submitted, please try again');
 	}
 
-	files.forEach(file => {
+	files.forEach(async file => {
 		if (fileWasNotUploadedCorrectly(file)) {
 			return handleError(res, 'No script submitted, please try again');
 		}
@@ -133,8 +83,8 @@ const handlePostFilm = async (req, res) => {
 		}
 		const title = extractTitle(file);
 		const scriptPath = file.path;
-		console.log(title);
-		processScript(res, scriptPath, title);
+		const response = await processScript(scriptPath, title);
+		return handleResponse(res, response);
 	});
 };
 
