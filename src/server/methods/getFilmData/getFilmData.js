@@ -82,8 +82,8 @@ const handleSimpleData = async title => {
 		filmData.imdbID = simpleMetaData.idIMDB;
 		filmData.addMetaData(simpleMetaData);
 
-		handleImageData();
-		handleBechdelData();
+		await handleImageData();
+		await handleBechdelData();
 		await handleGetCredits();
 		return filmData.getAllData();
 	} catch (err) {

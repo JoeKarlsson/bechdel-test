@@ -63,6 +63,7 @@ class FilmData {
 			actors: this._actors,
 			images: this._images,
 			metadata: this._metadata,
+			bechdelData: this._bechdelData,
 			imdbID: this._imdbID,
 		};
 	}

@@ -26,6 +26,12 @@ const filmSchema = {
 			id: String,
 		},
 	],
+	awards: [
+		{
+			name: String,
+			id: String,
+		},
+	],
 	rated: String,
 	genres: [String],
 	urlPoster: String,
@@ -52,6 +58,16 @@ const filmSchema = {
 	images: {
 		backdrop: String,
 		poster: String,
+	},
+	bechdelData: {
+		visible: Number,
+		dubious: Number,
+		submitterid: Number,
+		rating: Number,
+		year: Number,
+		id: Number,
+		imdbid: Number,
+		title: String,
 	},
 };
 
