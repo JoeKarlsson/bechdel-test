@@ -3,21 +3,24 @@ import PropTypes from 'prop-types';
 import FilmItem from '../FilmItem/FilmItem';
 import './FilmList.scss';
 
-const FilmList = (props) => {
-	const filmListNode = props.films.map((filmData) => {
+const FilmList = props => {
+	const filmListNode = props.films.map(filmData => {
 		return (
-			<FilmItem
-				film={filmData}
-				key={filmData._id}
-				className="filmListNode"
-			/>
+			<FilmItem film={filmData} key={filmData._id} className="filmListNode" />
 		);
 	});
 
+	const numFillerNodes = props.films.length % 6;
+
+	const arr = new Array(numFillerNodes);
+	const fillerNode = arr.map(() => {
+		return <div className="fillerNode" />;
+	});
 
 	return (
 		<div className="FilmList">
 			{filmListNode}
+			{fillerNode}
 		</div>
 	);
 };
