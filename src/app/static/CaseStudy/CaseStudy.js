@@ -1,17 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-	BarChart,
-	Bar,
-	XAxis,
-	YAxis,
-	CartesianGrid,
-	Tooltip,
-	PieChart,
-	Pie,
-	Cell,
-} from 'recharts';
-import hash from '../../helper/hash';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import './CaseStudy.scss';
 
 const data = [
 	{ name: 'American Sniper', bechdelScore: 2 },
@@ -28,14 +18,6 @@ const data = [
 	{ name: 'Whiplash', bechdelScore: 1 },
 	{ name: 'Wild', bechdelScore: 3 },
 ];
-
-const dataPie = [
-	{ name: 'Group A', value: 400 },
-	{ name: 'Group B', value: 300 },
-	{ name: 'Group C', value: 300 },
-	{ name: 'Group D', value: 200 },
-];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const CaseStudy = () => (
 	<div className="CaseStudy container">
@@ -59,10 +41,10 @@ const CaseStudy = () => (
 				categories: Best Picture, Best Actor, Best Actress, Best Supporting
 				Actor, and Best Supporting Actress.
 			</p>
-			<div className="row barchart">
+			<div className="center">
 				<BarChart
-					width={600}
-					height={300}
+					width={900}
+					height={250}
 					data={data}
 					margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
 				>
@@ -90,30 +72,6 @@ const CaseStudy = () => (
 				eight of the nominees were focused on a male-dominated narrative, each
 				of them featuring a male lead rather than a female lead.
 			</p>
-			<div className="row">
-				<PieChart width={800} height={400}>
-					<Pie
-						data={dataPie}
-						dataKey={hash(dataPie)}
-						cx={420}
-						cy={200}
-						startAngle={180}
-						endAngle={0}
-						innerRadius={60}
-						outerRadius={80}
-						fill="#8884d8"
-						paddingAngle={5}
-					>
-						{dataPie.map((entry, index) => (
-							<Cell
-								key={hash(entry)}
-								dataKey={hash(entry)}
-								fill={COLORS[index % COLORS.length]}
-							/>
-						))}
-					</Pie>
-				</PieChart>
-			</div>
 			<p>
 				It’s interesting to note the lack of overlap between Best Picture
 				nominees and films featuring a nominee for Best Actress. Only one of the
