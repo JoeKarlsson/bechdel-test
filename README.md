@@ -15,6 +15,7 @@
 [![snyk][snyk]][snyk-url]
 [![greenkeeper][greenkeeper]][greenkeeper-url]
 [![bch compliance][bchcompliance]][bchcompliance-url]
+[![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
 
@@ -28,7 +29,10 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 ## Prerequisites
 
-* [MongoDB](https://www.mongodb.com/) is a required dependency of this project. \* Create a new database called `bechdelTest` in MongoDD.
+# Pre-reqs
+
+* Install [Node.js](https://nodejs.org/en/)
+* Install [MongoDB](https://docs.mongodb.com/manual/installation/) \* Create a new database called `bechdelTest` in MongoDD.
 
 ## Setup Your Project
 
@@ -41,11 +45,36 @@ Next, inside the project, you need to install the project's various NPM dependen
 
     npm install
 
-And you should now be ready to spin up a development build of your new project:
+Start up your local mongo server
+
+    mongod
+
+Configure Mongo, and create a new Mongo collection called `bechdelTest`:
+
+    mongo
+    use bechdelTest
+
+Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
 
     npm start
 
-Navigate to [http://localhost:3000](http://localhost:3000) in your browser of choice.
+Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Testing
+
+Follow the setup steps listed above. Once the app is running
+
+```
+git clone https://github.com/hoodiehq/hoodie.git
+cd hoodie
+npm install
+```
+
+The `hoodie` test suite is run with `npm test`.
+You can [read more about testing Hoodie](test).
+
+You can start hoodie for itself using `npm start`. It will serve the contents
+of the [public folder](public).
 
 ## Introduction
 
@@ -69,37 +98,11 @@ Once all of the gender and film data has been collected via the API - I can begi
 
 In the scene, I collected dialogue by character by using simple parsing techniques. I was then able to test if two female character's shared a scene. If two or more females shared a scene together, I tested their dialogue by checking if their dialogue contained keywords that indicated that they were speaking about a men or men. This list included words like 'He', 'Him', 'Father', 'King', etc. This list is very basic, and after initial tests, I can see that this list needs additional work, as patriarchal words are very ingrained in the English Language, and judging context is very difficult for a computer to do. However, for the context of my experiments, this list has sufficed. This tool, however is very good at generating data on gender participation in films.
 
-### Available Targets
-
-#### `start`
-
-Starts up the server - used for dev purposes
-
-#### `test`
-
-Runs server side tests once. Tests are run using Mocha, Chai and SuperTest
-
-#### `test:server:watch`
-
-Have the test run continuously in the background.
-
-### `build`
-
-Build the application as it would be setup on a Production server - used for testing production Webpack configuration on local development environment.
-
-### `eslint`
-
-Lint the file using a custom AirBnB configuration.
-
-### `postinstall`
-
-Used for cleaning up Webpack build on Heroku.
-
-### TODO
-
-* http://nivo.rocks/#/chord
-
 ## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/develop/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+### TLDR;
 
 1. Fork it!
 1. Create your feature branch: `git checkout -b my-new-feature`
