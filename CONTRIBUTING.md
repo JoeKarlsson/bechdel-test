@@ -187,7 +187,7 @@ same license as that used by the project.
 
 ## Triagers
 
-There is a [defined process](docs/developers/TRIAGING.rst) to manage issues, because this helps to speed up releases and minimizes user pain.
+There is a [defined process](docs/developers/TRIAGING.md) to manage issues, because this helps to speed up releases and minimizes user pain.
 Triaging is a great way to contribute to bechel.io without having to write code.
 If you are interested, please [leave a comment here](https://github.com/hoodiehq/discussion/issues/50) asking to join the triaging team.
 
@@ -257,22 +257,6 @@ hub checkout link-to-pull-request
 
 meaning that you will automatically check out the branch for the pull request,
 without needing any other steps like setting git upstreams! :sparkles:
-
-## Project Governance
-
-**This is an [OPEN Open Source Project](http://openopensource.org/).**
-
-Individuals making significant and valuable contributions are given commit access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
-
-### Rules
-
-There are a few basic ground rules for collaborators:
-
-1. **No `--force` pushes** or modifying the Git history in any way.
-1. **Non-master branches** ought to be used for ongoing work.
-1. **External API changes and significant modifications** ought to be subject to an **internal pull request** to solicit feedback from other contributors.
-1. Internal pull requests to solicit feedback are _encouraged_ for any other non-trivial contribution but left to the discretion of the contributor.
-1. Contributors should attempt to adhere to the prevailing code style.
 
 ### Releases
 
