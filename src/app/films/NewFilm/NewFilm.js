@@ -18,7 +18,7 @@ const NewFilm = () => {
 			</p>
 			<p>
 				If you are still having issues using the tool, try adding the title of
-				the script is on the first line. Or you can submit an{' '}
+				the script on the first line. Or you can submit an{' '}
 				<a
 					target="blank"
 					href="https://github.com/JoeKarlsson1/bechdel-test/issues"
