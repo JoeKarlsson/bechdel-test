@@ -8,7 +8,7 @@ the developers managing and developing this open source project. In return,
 they should reciprocate that respect in addressing your issue, assessing
 changes, and helping you finalize your pull requests.
 
-As for everything else in the project, the contributions to bechel.io are governed by our [Code of Conduct](http://hood.ie/code-of-conduct/).
+As for everything else in the project, the contributions to bechel.io are governed by our [Code of Conduct](https://github.com/JoeKarlsson/bechdel-test/blob/develop/CODE_OF_CONDUCT.md).
 
 ## Using the issue tracker
 
