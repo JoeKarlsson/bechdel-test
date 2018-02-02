@@ -5,7 +5,7 @@ triage issues. The labels are used later on for `assigning work <#assigning-work
 
 ## Triaging Process
 
-This process based on the idea of minimizing user pain `from this blog post <http://www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html>`\_\_.
+This process based on the idea of minimizing user pain `from this blog post <http://www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html>`.
 
 1. Open the list of [non triaged issues](https://github.com/joekarlsson/bechdel-test/issues)
 
@@ -20,21 +20,21 @@ This process based on the idea of minimizing user pain `from this blog post <htt
 
 3. Understandable? - verify if the description of the request is clear.
 
-   * If not, `close it <#closing-an-issue-or-pr>`\_\_ according to the
+   * If not, `close it <#closing-an-issue-or-pr>` according to the
      instructions below and go to the last step.
 
 4. Duplicate?
 
-   * If you've seen this issue before `close it <#closing-an-issue-or-pr>`\_\_, and go to the last step.
+   * If you've seen this issue before `close it <#closing-an-issue-or-pr>`, and go to the last step.
    * Check if there are comments that link to a dupe. If so verify
-     that this is indeed a dupe, `close it <#closing-an-issue-or-pr>`\_\_, and go to the last step.
+     that this is indeed a dupe, `close it <#closing-an-issue-or-pr>`, and go to the last step.
 
 5. Bugs:
 
    * Label `Type: Bug`
    * Reproducible? - Steps to reproduce the bug are clear. If they are
      not, ask for a clarification. If there's no reply after a week,
-     `close it <#closing-an-issue-or-pr>`\_\_.
+     `close it <#closing-an-issue-or-pr>`.
    * Reproducible on master?
 
 6. Non bugs:
@@ -42,7 +42,7 @@ This process based on the idea of minimizing user pain `from this blog post <htt
    * Label `Type: Feature`, `Type: Chore`, or `Type: Perf`
    * Belongs in core? – Often new features should be implemented as a
      plugin rather than an addition to the core. If this doesn't
-     belong, `close it <#closing-an-issue-or-pr>`\_\_, and go to the
+     belong, `close it <#closing-an-issue-or-pr>`, and go to the
      last step.
    * Label `needs: breaking change` - if needed
    * Label `needs: public api` - if the issue requires introduction
