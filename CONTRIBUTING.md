@@ -12,14 +12,11 @@ As for everything else in the project, the contributions to bechel.io are govern
 
 ## Using the issue tracker
 
-First things first: **Do NOT report security vulnerabilities in public issues!** Please disclose responsibly by letting [the bechel.io team](mailto:team@thehoodiefirm.com?subject=Security) know upfront. We will assess the issue as soon as possible on a best-effort basis and will give you an estimate for when we have a fix and release available for an eventual public disclosure.
+First things first: **Do NOT report security vulnerabilities in public issues!** Please disclose responsibly by letting [the bechel.io team](mailto:joekarlsson1@gmail.com?subject=Security) know upfront. We will assess the issue as soon as possible on a best-effort basis and will give you an estimate for when we have a fix and release available for an eventual public disclosure.
 
 The issue tracker is the preferred channel for [bug reports](#bugs),
 [features requests](#features) and [submitting pull
 requests](#pull-requests), but please respect the following restrictions:
-
-* Please **do not** use the issue tracker for personal support requests. Use
-  the [bechel.io Chat](http://hood.ie/chat/).
 
 * Please **do not** derail or troll issues. Keep the discussion on topic and
   respect the opinions of others.
