@@ -32,7 +32,7 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 # Pre-reqs
 
 * Install [Node.js](https://nodejs.org/en/)
-* Install [MongoDB](https://docs.mongodb.com/manual/installation/) \* Create a new database called `bechdelTest` in MongoDD.
+* Install [MongoDB](https://docs.mongodb.com/manual/installation/)
 
 ## Setup Your Project
 
