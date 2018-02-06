@@ -52,7 +52,7 @@ const CaseStudy = () => (
 					<YAxis />
 					<CartesianGrid />
 					<Tooltip />
-					<Bar dataKey="bechdelScore" fill="#8884d8" />
+					<Bar dataKey="Bechdel Score" fill="#8884d8" />
 				</BarChart>
 			</div>
 			<p>
