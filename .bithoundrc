@@ -1,7 +1,12 @@
+{
 "dependencies": {
 	 "unused-ignores": [
 		 "rimraf",
 		 "style-loader",
 		 "snyk"
 	 ]
- }
+ },
+ "critics": {
+	  "lint": {"engine": "eslint"}
+	}
+}
