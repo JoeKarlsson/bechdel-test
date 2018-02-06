@@ -1,9 +1,9 @@
 # Coding Style Guide
 
-Please see `Contributing to bechdel.io <CONTRIBUTING.html>`\_\_ for more guidelines on
+Please see [Contributing to bechdel.io](/CONTRIBUTING.md) for more guidelines on
 contributing to bechdel.io.
 
-bechdel.io uses the (AirBnb JavaScript Style guide)[http://airbnb.io/javascript/]
+bechdel.io uses the [AirBnb JavaScript Style guide](http://airbnb.io/javascript/)
 
 This file explains coding-style considerations that are beyond the
 syntax check of the _Standard_.
@@ -72,7 +72,7 @@ Client code should be tested using
 
 For client-side JavaScript code, it is important to limit the amount of
 code that is downloaded to the client to the code that is actually
-needed. The `loadash <https://lodash.com>`\_\_ library is a collection of
+needed. The [loadash](https://lodash.com) library is a collection of
 utilities that are useful individually and in combination.
 
 For example, if you want to use the `merge` function of lodash,
@@ -89,9 +89,6 @@ full lodash module:
 .. code:: javascript
 
     var _ = require('lodash')
-
-If multiple modules use the same lodash function, `our frontend bundling tool <http://browserify.org>`\_\_ will do the right thing and only include
-that code once.
 
 ## Server
 
