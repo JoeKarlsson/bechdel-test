@@ -1,0 +1,8 @@
+{
+	"hooks": {
+		"pre-commit": "npm run lint",
+    "pre-push": "npm prune && npm run healthcheck",
+    "post-commit": "git status",
+    "post-merge": "npm install"
+	}
+}
