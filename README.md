@@ -2,7 +2,8 @@
 	<img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
 
 </p>
-<h1 align="center">Bechdel Test Movie Script Parser</h1>
+<h1 align="center">bechdel.io</h1>
+<h3>Find out if your favorite film passes the test</h3>
 
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
@@ -64,17 +65,14 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 Follow the setup steps listed above. Once the app is running
 
-```
-git clone https://github.com/hoodiehq/hoodie.git
-cd hoodie
-npm install
-```
+    	git clone https://github.com/JoeKarlsson/bechdel-test
+    	cd bechdel-test
+    	npm install
 
-The `hoodie` test suite is run with `npm test`.
-You can [read more about testing Hoodie](test).
+The `bechdel.io` test suite is run with `npm test`.
+You can [read more about testing bechdel.io](test).
 
-You can start hoodie for itself using `npm start`. It will serve the contents
-of the [public folder](public).
+You can start bechdel.io by using `npm start`.
 
 ## Introduction
 
