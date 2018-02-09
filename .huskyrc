@@ -2,7 +2,7 @@
 	"hooks": {
 		"pre-commit": "npm run lint",
     "pre-push": "npm prune && npm run healthcheck",
-    "post-commit": "git status",
+    "post-commit": "git status && pretty-quick --staged",
     "post-merge": "npm install"
 	}
 }
