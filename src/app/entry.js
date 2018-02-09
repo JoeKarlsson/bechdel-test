@@ -10,5 +10,5 @@ ReactDOM.render(
 			<PrimaryLayout />
 		</Router>
 	</ErrorBoundary>,
-	document.getElementById('root'),
+	document.getElementById('root')
 );
