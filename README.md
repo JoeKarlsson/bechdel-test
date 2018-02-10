@@ -3,7 +3,7 @@
 
 </p>
 <h1 align="center">bechdel.io</h1>
-<h3>Find out if your favorite film passes the test</h3>
+<h3 align="center">Find out if your favorite film passes the test</h3>
 
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
