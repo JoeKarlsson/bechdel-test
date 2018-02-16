@@ -4,7 +4,7 @@ const meta = require('../helper/meta');
 const { isDeveloping } = meta;
 
 if (isDeveloping) {
-	mongoose.connect('mongodb://localhost/bechdelTest', {
+	mongoose.connect('mongodb://database/bechdelTest', {
 		useMongoClient: true,
 	});
 } else {
