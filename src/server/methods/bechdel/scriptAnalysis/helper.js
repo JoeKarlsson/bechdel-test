@@ -7,6 +7,42 @@ const greaterThanZero = num => {
 	return num > 0;
 };
 
+const patriacryKeywords = [
+	'Man',
+	'Men',
+	'Boy',
+	'Boys',
+	'Guy',
+	'Guys',
+	'Male',
+	'Males',
+	'Dude',
+	'Dudes',
+	'He',
+	'His',
+	'Him',
+	'Husband',
+	'Husbands',
+	'Boyfriend',
+	'Boyfriends',
+	'Father',
+	'Fathers',
+	'Dad',
+	'Dads',
+	'Brother',
+	'Brothers',
+	'Son',
+	'Sons',
+	'bro',
+	'bros',
+	'Bro',
+	'Bros',
+	'King',
+	'Kings',
+	'Prince',
+	'Princes',
+];
+
 /**
  * Returns an object with all of the characters in the movie and
  * the number times they talk in a given scene
@@ -67,57 +103,10 @@ const isCharFemale = (characters, name) => {
  * contains patriarchal keywords or not.
  */
 const containsPatriarchalKeywords = s => {
-	const patriacryKeywords = [
-		'Man',
-		'Men',
-		'Boy',
-		'Boys',
-		'Guy',
-		'Guys',
-		'Male',
-		'Males',
-		'Dude',
-		'Dudes',
-		'He',
-		'His',
-		'Him',
-		'Husband',
-		'Husbands',
-		'Boyfriend',
-		'Boyfriends',
-		'Father',
-		'Fathers',
-		'Dad',
-		'Dads',
-		'Brother',
-		'Brothers',
-		'Son',
-		'Sons',
-		'bro',
-		'bros',
-		'Bro',
-		'Bros',
-		'King',
-		'Kings',
-		'Prince',
-		'Princes',
-	];
-	const output = {};
-	let keywordHits = 0;
-	let x;
-	let i;
-
-	for (x = 0; x < patriacryKeywords.length; x++) {
-		i = 0;
-		output[patriacryKeywords[x]] = 0;
-		while ((i = s.indexOf(patriacryKeywords[x], i)) > -1) {
-			output[patriacryKeywords[x]]++;
-			i++;
-			keywordHits++;
+	for (let x = 0; x < patriacryKeywords.length; x++) {
+		if (s.indexOf(patriacryKeywords[x]) > -1) {
+			return true;
 		}
-	}
-	if (keywordHits > 0) {
-		return true;
 	}
 	return false;
 };
