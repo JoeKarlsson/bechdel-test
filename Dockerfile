@@ -11,9 +11,6 @@ RUN npm install
 
 COPY . $HOME/bechdelTest
 
-RUN npm uninstall --save node-sass
-RUN npm install --save node-sass
-
 RUN mkdir -p node_modules/node-sass/vendor/linux-x64-59
 RUN curl -L https://github.com/sass/node-sass/releases/download/v4.7.2/linux-x64-59_binding.node -o node_modules/node-sass/vendor/linux-x64-59/binding.node
 
