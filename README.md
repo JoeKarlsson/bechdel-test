@@ -30,12 +30,14 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 ## Prerequisites
 
-# Pre-reqs
+## Fast Way - Setup Your Project with Docker
+
+Start here if you want to get setup quickly using a docker image
+
+### Pre-reqs
 
 * Install [Node.js](https://nodejs.org/en/)
 * Install [Docker](https://www.docker.com/)
-
-## Setup Your Project
 
 Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
 
@@ -49,6 +51,39 @@ Next, inside the project, you need to install the project's various NPM dependen
 Start up Docker, and you should now be ready to spin up a development build of your new project:
 
     npm run start:docker
+
+Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Slow Way - Setup Your Project Locally
+
+### Pre-reqs
+
+* Install [Node.js](https://nodejs.org/en/)
+* Install [MongoDB](https://docs.mongodb.com/manual/installation/) \* Create a new database called `bechdelTest` in MongoDD.
+
+## Setup Your Project
+
+Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
+
+    git clone https://github.com/JoeKarlsson/bechdel-test
+    cd bechdel-test
+
+Next, inside the project, you need to install the project's various NPM dependencies:
+
+    npm install
+
+Start up your local mongo server
+
+    mongod
+
+Configure Mongo, and create a new Mongo collection called `bechdelTest`:
+
+    mongo
+    use bechdelTest
+
+Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
+
+    npm start
 
 Navigate to [http://localhost:3000](http://localhost:3000)
 
