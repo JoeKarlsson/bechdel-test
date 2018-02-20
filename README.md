@@ -48,7 +48,7 @@ Next, inside the project, you need to install the project's various NPM dependen
 
 Start up Docker, and you should now be ready to spin up a development build of your new project:
 
-    npm start
+    npm run start:docker
 
 Navigate to [http://localhost:3000](http://localhost:3000)
 
@@ -63,7 +63,7 @@ Follow the setup steps listed above. Once the app is running
 The `bechdel.io` test suite is run with `npm test`.
 You can [read more about testing bechdel.io](test).
 
-You can start bechdel.io by using `npm start`.
+You can start bechdel.io by using `start:docker`.
 
 ## Introduction
 
