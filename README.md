@@ -59,8 +59,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ### Pre-reqs
 
 * Install [Node.js](https://nodejs.org/en/)
-* Install [MongoDB](https://docs.mongodb.com/manual/installation/)
-* Create a new database called `bechdelTest` in MongoDD.
+* Install [MongoDB](https://docs.mongodb.com/manual/installation/) (Create a new database called `bechdelTest` in MongoDD.)
 
 ## Setup Your Project
 
