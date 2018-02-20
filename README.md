@@ -48,7 +48,7 @@ Next, inside the project, you need to install the project's various NPM dependen
 
 Start up Docker, and you should now be ready to spin up a development build of your new project:
 
-    npm start
+    npm run start:docker
 
 Navigate to [http://localhost:3000](http://localhost:3000)
 
