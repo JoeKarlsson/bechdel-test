@@ -32,7 +32,7 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 ## Fast Way - Setup Your Project with Docker
 
-Start here if you want to get setup quickly using a docker image
+Start here if you want to get setup quickly using a docker image.
 
 ### Pre-reqs
 
@@ -59,7 +59,8 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ### Pre-reqs
 
 * Install [Node.js](https://nodejs.org/en/)
-* Install [MongoDB](https://docs.mongodb.com/manual/installation/) \* Create a new database called `bechdelTest` in MongoDD.
+* Install [MongoDB](https://docs.mongodb.com/manual/installation/)
+* Create a new database called `bechdelTest` in MongoDD.
 
 ## Setup Your Project
 
@@ -91,9 +92,11 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 Follow the setup steps listed above. Once the app is running
 
-    	git clone https://github.com/JoeKarlsson/bechdel-test
-    	cd bechdel-test
-    	npm install
+```bash
+git clone https://github.com/JoeKarlsson/bechdel-test
+cd bechdel-test
+npm install
+```
 
 The `bechdel.io` test suite is run with `npm test`.
 You can [read more about testing bechdel.io](test).
