@@ -34,7 +34,7 @@
   "homepage": "https://github.com/JoeKarlsson/bechdel-test",
   "scripts": {
     "start": "node src/server/server.js",
-		"start:docker": "docker-compose up --build",
+    "start:docker": "docker-compose up --build",
     "stop": "killall -s KILL node",
     "test": "jest --coverage",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
@@ -52,9 +52,10 @@
     "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors",
     "runProd": "export NODE_ENV=production MONGODB_URI=mongodb://localhost/bechdelTest PORT=8081 MYAPIFILMS=d44147a7-5e6e-4450-92ba-773be44791ce THEMOVIEDB=6ec9ddad40a319b47c562e0838f7eda3 && node src/server/server.js",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
-	"dependencies": {
+  "dependencies": {
     "autoprefixer": "7.2.5",
     "babel-core": "6.26.0",
     "babel-jest": "22.1.0",
@@ -115,7 +116,7 @@
     "remark-preset-lint-recommended": "3.0.1",
     "rimraf": "2.4.3",
     "sass-loader": "6.0.6",
-    "snyk": "1.69.0",
+    "snyk": "^1.83.0",
     "stats-webpack-plugin": "0.6.2",
     "style-loader": "0.19.1",
     "stylelint": "8.4.0",
@@ -134,8 +135,8 @@
   "devDependencies": {
     "pretty-quick": "^1.3.0"
   },
-	"optionalDependencies": {
-		"husky": "^0.14.3"
+  "optionalDependencies": {
+    "husky": "^0.14.3"
   },
   "snyk": true
 }
