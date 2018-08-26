@@ -13,8 +13,6 @@
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
 [![twitter][twitter]][twitter-url]
-[![snyk][snyk]][snyk-url]
-[![greenkeeper][greenkeeper]][greenkeeper-url]
 [![bch compliance][bchcompliance]][bchcompliance-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
