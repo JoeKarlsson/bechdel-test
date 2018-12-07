@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.10.1
+version: v1.13.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -15,3 +15,68 @@ patch:
   'npm:request:20160119':
     - coveralls > log-driver > codecov.io > request:
         patched: '2018-02-10T00:25:00.033Z'
+  'npm:hoek:20180212':
+    - webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack-dev-server > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - remark-cli > unified-args > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack-dev-server > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - remark-cli > unified-args > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack-dev-server > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - remark-cli > unified-args > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - remark-cli > unified-args > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - webpack-dev-server > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - favicons-webpack-plugin > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-haste-map > sane > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-07T23:21:55.559Z'
