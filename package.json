@@ -34,7 +34,6 @@
 	"homepage": "https://github.com/JoeKarlsson/bechdel-test",
 	"scripts": {
 		"start": "node src/server/server.js",
-		"start:docker": "docker-compose up --build",
 		"stop": "killall -s KILL node",
 		"test": "jest --coverage",
 		"coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
