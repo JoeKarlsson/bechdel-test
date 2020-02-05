@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
 const meta = require('../helper/meta');
+const handleError = require('../helper/handleError');
 
 const { isDeveloping, MONGODB_URI } = meta;
 
-// mongodb+srv://joeKarlsson:<password>@bechdel-lmhrw.mongodb.net/test?retryWrites=true&w=majority
-
 if (isDeveloping) {
-	mongoose.connect(MONGODB_URI, {
-		useMongoClient: true,
-	});
+	mongoose
+		.connect(MONGODB_URI)
+		.then(() => console.log('Connected to MongoDB Atlas!'))
+		.catch(error => {
+			handleError(error);
+		});
 } else {
 	const options = {
-		useMongoClient: true,
 		server: {
 			socketOptions: {
 				keepAlive: 300000,
