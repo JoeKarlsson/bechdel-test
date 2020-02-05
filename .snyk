@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.10.1
+version: v1.14.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -15,3 +15,28 @@ patch:
   'npm:request:20160119':
     - coveralls > log-driver > codecov.io > request:
         patched: '2018-02-10T00:25:00.033Z'
+  'npm:hoek:20180212':
+    - jest > jest-cli > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > boom > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > sntp > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > boom > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > sntp > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > boom > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > sntp > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
+    - jest > jest-cli > jest-runner > jest-runtime > jest-validate > jest-config > jest-environment-jsdom > jsdom > request > hawk > cryptiles > boom > hoek:
+        patched: '2020-02-05T20:07:45.832Z'
