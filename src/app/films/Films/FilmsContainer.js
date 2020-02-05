@@ -42,6 +42,9 @@ class FilmsContainer extends Component {
 	}
 
 	render() {
+		if (this.state.films === 0) {
+			return <div>No Films Have Been Added Yet</div>;
+		}
 		return <Films {...this.state} />;
 	}
 }
