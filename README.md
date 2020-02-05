@@ -44,9 +44,9 @@ cd bechdel-test
 You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/) and [My API Films](https://www.myapifilms.com/).
 
 * You can sign up for an API key for The MovieDB, here: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
-  * Additional Documentation about this API can be found here; [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
+  * Additional Documentation about this API can be found here: [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
 * You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
-  * Additional Documentation about this API can be found here; [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
+  * Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
 
 
 ### 3. Log on to Atlas
@@ -70,7 +70,9 @@ To use MongoDB Atlas, you must be logged into [Atlas](https://cloud.mongodb.com)
 
 Change `src/server/config/config_example.json` to `src/server/config/config.json` and
 
-Paste your MongoDB URI into the `MONGODB_URI` feild.
+* Paste your MongoDB URI into the `MONGODB_URI` feild.
+* Paste your MovieDB API Key into the `THEMOVIEDB` feild.
+* Paste your My API Films API Key into the `MYAPIFILMS` feild.
 
 ### 7. Install dependencies & run locally
 
