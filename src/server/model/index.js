@@ -6,13 +6,15 @@ const { isDeveloping, MONGODB_URI } = meta;
 
 if (isDeveloping) {
 	mongoose
-		.connect(MONGODB_URI)
+		.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 		.then(() => console.log('Connected to MongoDB Atlas!'))
 		.catch(error => {
 			handleError(error);
 		});
 } else {
 	const options = {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
 		server: {
 			socketOptions: {
 				keepAlive: 300000,
