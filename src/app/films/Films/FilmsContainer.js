@@ -28,21 +28,30 @@ class FilmsContainer extends Component {
 
 		api(url, options)
 			.then(data => {
-				this.setState({
-					films: data,
-					loading: false,
-				});
+				console.log(data);
+				if (data.errMsg) {
+					this.setState({
+						loading: false,
+						films: [],
+					});
+				} else {
+					this.setState({
+						films: data,
+						loading: false,
+					});
+				}
 			})
 			.catch(err => {
 				console.err(err);
 				this.setState({
 					loading: false,
+					films: [],
 				});
 			});
 	}
 
 	render() {
-		if (this.state.films === 0) {
+		if (this.state.films.length === 0) {
 			return <div>No Films Have Been Added Yet</div>;
 		}
 		return <Films {...this.state} />;

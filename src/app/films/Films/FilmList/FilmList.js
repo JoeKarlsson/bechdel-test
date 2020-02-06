@@ -4,6 +4,10 @@ import FilmItem from '../FilmItem/FilmItem';
 import './FilmList.scss';
 
 const FilmList = props => {
+	console.log(props.films.length);
+	if (props.films.length === 0) {
+		return <div>No Films Have Been Added Yet</div>;
+	}
 	const filmListNode = props.films.map(filmData => {
 		return (
 			<FilmItem film={filmData} key={filmData._id} className="filmListNode" />

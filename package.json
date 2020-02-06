@@ -47,6 +47,7 @@
 		"lint:css:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
 		"lint:md": "remark .",
 		"healthcheck": "npm run lint && npm run test:coverage",
+		"processScript": "nodemon src/server/helper/processScript.js",
 		"build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors",
 		"postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.prod.js --progress --profile --colors",
 		"runProd": "export NODE_ENV=production MONGODB_URI=mongodb://localhost/bechdelTest PORT=8081 MYAPIFILMS=d44147a7-5e6e-4450-92ba-773be44791ce THEMOVIEDB=6ec9ddad40a319b47c562e0838f7eda3 && node src/server/server.js",

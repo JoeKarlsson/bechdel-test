@@ -6,8 +6,6 @@ import { Dashboard, DragDrop, ProgressBar } from '@uppy/react';
 import XHRUpload from '@uppy/xhr-upload';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 
-console.log(XHRUpload);
-
 class Uploader extends Component {
 	constructor(props) {
 		super(props);
