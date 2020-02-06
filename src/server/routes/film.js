@@ -74,7 +74,7 @@ const handlePostFilm = async (req, res) => {
 			return handleError(res, 'No script submitted, please try again');
 		}
 		if (isNotCorrectFileFormat(file)) {
-			return handleError(res, 'Please send a .txt script', scriptPath);
+			return handleError(res, 'Please send a .txt script');
 		}
 		const title = extractTitle(file);
 		const scriptPath = file.path;
@@ -113,8 +113,8 @@ const handleGetFilm = async (req, res) => {
 };
 
 /*
-  * FILM ROUTES
-*/
+ * FILM ROUTES
+ */
 router
 	.route('/')
 	.get(handleGetAllFilms)

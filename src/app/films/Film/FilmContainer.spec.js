@@ -1,5 +1,4 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
@@ -26,11 +25,7 @@ describe('FilmContainer', () => {
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('should render zero state correctly', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<FilmContainer match={router} />
-					</MemoryRouter>
-				);
+				const component = renderer.create(<FilmContainer match={router} />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});

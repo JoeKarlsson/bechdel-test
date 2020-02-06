@@ -5,193 +5,28 @@ exports[`Film rendering initial state should render data state correctly 1`] = `
   className="filmInfo"
 >
   <div
-    className="film-hero"
+    className="Error"
   >
-    <img
-      alt="Boyhood"
-      className="film-image"
-      src="https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg"
-    />
-    <span
-      className="film-hero-title"
+    <h1>
+      Something went wrong.
+    </h1>
+    <details
+      style={
+        Object {
+          "whiteSpace": "pre-wrap",
+        }
+      }
     >
-      <h4>
-        Boyhood
-      </h4>
-      <h3>
-        Bechdel Pass: 
-        TRUE
-      </h3>
-      <p>
-        Bechdel Score: 
-        1
-         of 3
-      </p>
-    </span>
-  </div>
-  <div
-    className="plot container"
-  >
-    <p>
-      The life of Mason, from early childhood to his arrival at college.
-    </p>
-    <span
-      className="results container"
-    >
-      <div
-        className="filmData"
-      >
-        <span
-          className="catName"
-        >
-          Directors:
-        </span>
-         
-        <span>
-          Richard Linklater
-           | 
-        </span>
-        <span>
-          John Doe
-        </span>
-        <br />
-        <span
-          className="catName"
-        >
-          Writers:
-        </span>
-         
-        <span>
-          Richard Linklater
-           | 
-        </span>
-        <span>
-          John Doe
-        </span>
-         
-        <br />
-        <span
-          className="catName"
-        >
-          Genre:
-        </span>
-         
-        <span>
-          Comedy
-           | 
-        </span>
-        <span>
-          Drama
-        </span>
-        <br />
-        <span
-          className="catName"
-        >
-          Rated:
-        </span>
-         
-        97
-        <br />
-        <span
-          className="catName"
-        >
-          IMDB:
-        </span>
-         
-        <a
-          href="http://www.imdb.com/title/undefined"
-          target="_blank"
-        >
-          Boyhood
-        </a>
-        <br />
-      </div>
-      <div
-        className="BechdelResults"
-      >
-        <span
-          className="catName"
-        >
-          Bechdel Score:
-        </span>
-         
-        1
-         of 3
-        <br />
-        <span
-          className="catName"
-        >
-          Number of Scenes that pass:
-        </span>
-         
-        45
-        <br />
-        <span
-          className="catName"
-        >
-          Number of Scenes that dont pass:
-        </span>
-         
-        123
-        <br />
-        <span
-          className="catName"
-        >
-          Number Of Females Characters:
-        </span>
-         
-        23
-        <br />
-        <span
-          className="catName"
-        >
-          Number Of Male Characters:
-        </span>
-         
-        54
-        <br />
-        <span
-          className="catName"
-        >
-          Number of Females Characters With Dialogue:
-        </span>
-         
-        12
-        <br />
-        <span
-          className="catName"
-        >
-          Number of Male Characters With Dialogue:
-        </span>
-         
-        23
-        <br />
-        <span
-          className="catName"
-        >
-          Total Lines of Female Dialogue:
-        </span>
-         
-        1012
-        <br />
-        <span
-          className="catName"
-        >
-          Total Lines of Male Dialogue:
-        </span>
-         
-        1202
-        <br />
-      </div>
-    </span>
-    <a
-      href="/"
-      onClick={[Function]}
-    >
-      <button>
-        All Films
-      </button>
-    </a>
+      Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
+
+Check the render method of \`Film\`.
+      <br />
+      
+    in div (created by Film)
+    in ErrorBoundary (created by Film)
+    in div (created by Film)
+    in Film
+    </details>
   </div>
 </div>
 `;
