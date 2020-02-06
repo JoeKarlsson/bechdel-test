@@ -1,5 +1,5 @@
 import React from 'react';
-// import Uploader from './Uploader/Uploader';
+import Uploader from './Uploader/Uploader';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 
 const NewFilm = () => {
