@@ -1,5 +1,5 @@
 import React from 'react';
-import Uploader from './Uploader/Uploader';
+// import Uploader from './Uploader/Uploader';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 
 const NewFilm = () => {
@@ -14,7 +14,8 @@ const NewFilm = () => {
 				the script must follow the{' '}
 				<a target="blank" href="http://www.simplyscripts.com/WR_format.html">
 					Standard Script Format
-				</a>.
+				</a>
+				.
 			</p>
 			<p>
 				If you are still having issues using the tool, try adding the title of
@@ -24,7 +25,8 @@ const NewFilm = () => {
 					href="https://github.com/JoeKarlsson1/bechdel-test/issues"
 				>
 					issue
-				</a>.
+				</a>
+				.
 			</p>
 		</div>
 	);
