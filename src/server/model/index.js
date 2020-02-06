@@ -3,7 +3,7 @@ const meta = require('../helper/meta');
 const handleError = require('../helper/handleError');
 
 const { isDeveloping, MONGODB_URI } = meta;
-console.log(MONGODB_URI);
+
 if (isDeveloping) {
 	mongoose
 		.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
