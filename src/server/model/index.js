@@ -1,15 +1,20 @@
 const mongoose = require('mongoose');
 const meta = require('../helper/meta');
+const handleError = require('../helper/handleError');
 
-const { isDeveloping } = meta;
+const { isDeveloping, MONGODB_URI } = meta;
 
 if (isDeveloping) {
-	mongoose.connect('mongodb://database/bechdelTest', {
-		useMongoClient: true,
-	});
+	mongoose
+		.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+		.then(() => console.log('Connected to MongoDB Atlas!'))
+		.catch(error => {
+			handleError(error);
+		});
 } else {
 	const options = {
-		useMongoClient: true,
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
 		server: {
 			socketOptions: {
 				keepAlive: 300000,

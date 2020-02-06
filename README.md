@@ -13,8 +13,6 @@
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
 [![twitter][twitter]][twitter-url]
-[![snyk][snyk]][snyk-url]
-[![greenkeeper][greenkeeper]][greenkeeper-url]
 [![bch compliance][bchcompliance]][bchcompliance-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
@@ -28,42 +26,68 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 
 This program accepts a movie script and analyzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechdel Test?"
 
-## Prerequisites
+#### Prerequisites
 
-# Pre-reqs
+- Install [Node.js](https://nodejs.org/en/)
 
-* Install [Node.js](https://nodejs.org/en/)
-* Install [Docker](https://www.docker.com/)
+## Quickstart:
 
-## Setup Your Project
+### 1. Clone The Repository
 
-Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
+```sh
+git clone https://github.com/JoeKarlsson/bechdel-test
+cd bechdel-test
+```
 
-    git clone https://github.com/JoeKarlsson/bechdel-test
-    cd bechdel-test
+### 2. Get API Keys For The MovieDB and My API Films
 
-Next, inside the project, you need to install the project's various NPM dependencies:
+You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/) and [My API Films](https://www.myapifilms.com/).
 
-    npm install
+- You can sign up for an API key for The MovieDB, here: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
+  - Additional Documentation about this API can be found here: [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
+- You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
+  - Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
 
-Start up Docker, and you should now be ready to spin up a development build of your new project:
+### 3. Log on to Atlas
 
-    npm run start:docker
+To use MongoDB Atlas, you must be logged into [Atlas](https://cloud.mongodb.com).
 
-Navigate to [http://localhost:3000](http://localhost:3000)
+### 4. Create an Atlas Cluster
+
+1. In the left navigation pane, click Clusters, and then click the Build New Cluster button. The Create New Cluster page opens.
+2. Choose your preferred provider and region, tier, and additional settings. As you build your cluster, Atlas displays the associated costs at the bottom of the page.
+3. The default cluster name is Cluster0. If you wish to change the name, do so now, as cluster names cannot be changed once configured.
+4. Click the Create Cluster button to save your changes.
+
+### 5. Configure Your Atlas Cluster
+
+1. Go to Database Access and hit Add New User. Add a username and password, if you autogenerate a password make sure you copy it, we’ll need it later.
+2. Go to Network Access, hit Add IP Address, and hit Add Current IP Address, then confirm.
+3. Go to Clusters, if your cluster build is done then hit Connect, Connect Your Application, and copy the line of code it gives you
+
+### 6. Connect Bechdel.io to MongoDB and the various other APIs
+
+Change `src/server/config/config_example.json` to `src/server/config/config.json` and
+
+- Paste your MongoDB URI into the `MONGODB_URI` feild.
+- Paste your MovieDB API Key into the `THEMOVIEDB` feild.
+- Paste your My API Films API Key into the `MYAPIFILMS` feild.
+
+### 7. Install dependencies & run locally
+
+```sh
+npm install
+npm start # open http://localhost:3000 in your browser
+```
 
 ## Testing
-
-Follow the setup steps listed above. Once the app is running
-
-    	git clone https://github.com/JoeKarlsson/bechdel-test
-    	cd bechdel-test
-    	npm install
 
 The `bechdel.io` test suite is run with `npm test`.
 You can [read more about testing bechdel.io](test).
 
-You can start bechdel.io by using `npm start`.
+## Where to Get Movie Scripts?
+
+If you are looking to get your hands on some movie scripts to test, you can check out my CLI Movie Script Grabber [https://github.com/JoeKarlsson/movie-script-scraper](https://github.com/JoeKarlsson/movie-script-scraper)
 
 ## Introduction
 
@@ -110,10 +134,10 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
 
 ## Related Links
 
-* [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
-* [The Open Movie Database](http://www.omdbapi.com/)
-* [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
-* [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+- [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+- [The Open Movie Database](http://www.omdbapi.com/)
+- [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+- [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ### Resources
 
