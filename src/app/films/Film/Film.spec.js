@@ -1,5 +1,4 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
@@ -89,31 +88,19 @@ describe('Film', () => {
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('should render zero state correctly', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<Film {...zeroState} />
-					</MemoryRouter>
-				);
+				const component = renderer.create(<Film {...zeroState} />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});
 
 			it('should render data state correctly', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<Film {...filmData} />
-					</MemoryRouter>
-				);
+				const component = renderer.create(<Film {...filmData} />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});
 
 			it('should render error state correctly', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<Film {...errorData} />
-					</MemoryRouter>
-				);
+				const component = renderer.create(<Film {...errorData} />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});

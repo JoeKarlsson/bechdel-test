@@ -1,5 +1,5 @@
 import fetchMock from 'fetch-mock';
-import { DEFAULT_ERROR_MESSAGE } from './constants';
+import DEFAULT_ERROR_MESSAGE from './constants';
 import api from './api';
 
 describe('api', () => {
