@@ -47,7 +47,7 @@ class Uploader extends Component {
 	render() {
 		return (
 			<ErrorBoundary>
-				<Dashboard uppy={uppy} />
+				<Dashboard uppy={this.uppy} />
 
 				<DragDrop
 					uppy={this.uppy}
