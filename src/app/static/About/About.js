@@ -68,7 +68,8 @@ const About = () => (
 			<a target="blank" href="https://www.callmejoe.net/contact/">
 				{' '}
 				you
-			</a>.
+			</a>
+			.
 		</p>
 		<Link to="/">
 			<button>All Films</button>
