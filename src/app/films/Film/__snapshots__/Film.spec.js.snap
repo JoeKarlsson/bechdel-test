@@ -1,40 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Film rendering initial state should render data state correctly 1`] = `
-<div
-  className="filmInfo"
->
-  <div
-    className="Error"
-  >
-    <h1>
-      Something went wrong.
-    </h1>
-    <details
-      style={
-        Object {
-          "whiteSpace": "pre-wrap",
-        }
-      }
-    >
-      Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.
-
-Check the render method of \`Film\`.
-      <br />
-      
-    in div (created by Film)
-    in ErrorBoundary (created by Film)
-    in div (created by Film)
-    in Film
-    </details>
-  </div>
-</div>
+ShallowWrapper {
+  "length": 1,
+}
 `;
 
-exports[`Film rendering initial state should render error state correctly 1`] = `
-<div>
-  Im sorry! Please try again.
-</div>
+exports[`Film rendering initial state should render data state correctly 2`] = `
+ShallowWrapper {
+  "length": 1,
+}
 `;
 
 exports[`Film rendering initial state should render zero state correctly 1`] = `
