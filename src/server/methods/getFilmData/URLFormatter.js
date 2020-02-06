@@ -27,7 +27,7 @@ const createSimpleDataURL = movieTitle => {
 	const title = splitTitle(movieTitle);
 
 	return (
-		'http://api.myapifilms.com/imdb/idIMDB?' +
+		'http://myapifilms.com/imdb/idIMDB?' +
 		`title=${title}&` +
 		`token=${meta.MYAPIFILMS}&` +
 		'format=json&' +
