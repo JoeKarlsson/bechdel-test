@@ -14,22 +14,14 @@ describe('Films', () => {
 	let inst;
 
 	beforeEach(() => {
-		wrapper = shallow(
-			<MemoryRouter>
-				<Films />
-			</MemoryRouter>
-		);
+		wrapper = shallow(<Films />);
 		inst = wrapper.instance();
 	});
 
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('match the snapshot', () => {
-				const component = renderer.create(
-					<MemoryRouter>
-						<Films />
-					</MemoryRouter>
-				);
+				const component = renderer.create(<Films />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});
@@ -39,7 +31,8 @@ describe('Films', () => {
 			it('should not have any inital props', () => {
 				const initialProps = inst.props;
 				const expectedProps = {
-					children: <Films />,
+					films: [],
+					loading: false,
 				};
 				expect(initialProps).toMatchObject(expectedProps);
 			});
