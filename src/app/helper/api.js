@@ -1,4 +1,4 @@
-import { DEFAULT_ERROR_MESSAGE } from './constants';
+import DEFAULT_ERROR_MESSAGE from './constants';
 
 const isNotHappyStatus = status => {
 	return status >= 400;
