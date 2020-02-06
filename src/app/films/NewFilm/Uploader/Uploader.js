@@ -1,7 +1,5 @@
 import React from 'react';
-import Uppy from 'uppy/lib/core';
-import XHRUpload from 'uppy/lib/plugins/XHRUpload';
-import Dashboard from 'uppy/lib/react/Dashboard';
+import Uppy, { XHRUpload, Dashboard } from 'uppy';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 import './Uploader.scss';
 

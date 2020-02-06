@@ -15,6 +15,8 @@ config.output = {
 	publicPath: '/',
 };
 
+config.mode = 'development';
+
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 module.exports = config;
