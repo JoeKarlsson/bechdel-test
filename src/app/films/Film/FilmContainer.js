@@ -38,11 +38,15 @@ class FilmContainer extends Component {
 		this.getFilm = this.getFilm.bind(this);
 	}
 
-	componentDidMount() {
-		this.getFilm();
+	async componentDidMount() {
+		try {
+			await this.getFilm();
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
-	getFilm() {
+	async getFilm() {
 		const { id } = this.props.match.params;
 		const url = `/api/film/${id}`;
 		const options = {
@@ -53,12 +57,14 @@ class FilmContainer extends Component {
 			loading: true,
 		});
 
-		api(url, options)
+		await api(url, options)
 			.then(data => {
+				// console.log(data);
 				this.setState({
 					film: data,
 					loading: false,
 				});
+				return data;
 			})
 			.catch(err => {
 				console.error(err);
@@ -69,6 +75,7 @@ class FilmContainer extends Component {
 	}
 
 	render() {
+		console.log(this.state.film.title);
 		return <Film {...this.state} />;
 	}
 }
