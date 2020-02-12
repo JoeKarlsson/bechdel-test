@@ -46,11 +46,6 @@ describe('Hero', () => {
 				};
 				expect(initialProps).toMatchObject(expectedProps);
 			});
-			it('should not have any inital state', () => {
-				const initialState = inst.state;
-				const expectedState = {};
-				expect(initialState).toMatchObject(expectedState);
-			});
 		});
 	});
 });

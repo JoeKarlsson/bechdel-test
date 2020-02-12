@@ -25,7 +25,7 @@ describe('Film', () => {
 			genres: [],
 			rated: '',
 			bechdelResults: {
-				pass: 'false',
+				pass: false,
 				bechdelScore: 0,
 				numScenesPass: 0,
 				scenesThatPass: [],
@@ -57,7 +57,7 @@ describe('Film', () => {
 			genres: ['Comedy', 'Drama'],
 			rated: '97',
 			bechdelResults: {
-				pass: 'true',
+				pass: true,
 				bechdelScore: 1,
 				numScenesPass: 45,
 				scenesThatPass: ['Scene1', 'Scene2', 'Scene3'],
