@@ -38,15 +38,15 @@ class FilmContainer extends Component {
 		this.getFilm = this.getFilm.bind(this);
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
 		try {
-			await this.getFilm();
+			this.getFilm();
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
-	async getFilm() {
+	getFilm() {
 		const { id } = this.props.match.params;
 		const url = `/api/film/${id}`;
 		const options = {
@@ -57,7 +57,7 @@ class FilmContainer extends Component {
 			loading: true,
 		});
 
-		await api(url, options)
+		api(url, options)
 			.then(data => {
 				// console.log(data);
 				this.setState({
@@ -75,7 +75,6 @@ class FilmContainer extends Component {
 	}
 
 	render() {
-		console.log(this.state.film.title);
 		return <Film {...this.state} />;
 	}
 }
