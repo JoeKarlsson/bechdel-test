@@ -31,7 +31,6 @@ class Uploader extends Component {
 			getResponseData: xhr => {
 				let response = JSON.parse(xhr.response);
 				response = response['0'];
-				console.log('response', response);
 
 				window.location = `/film/${response._id}`;
 				return {

@@ -19,7 +19,7 @@ class FilmContainer extends Component {
 				genres: [],
 				rated: '',
 				bechdelResults: {
-					pass: 'false',
+					pass: false,
 					bechdelScore: 0,
 					numScenesPass: 0,
 					scenesThatPass: [],
@@ -76,7 +76,7 @@ class FilmContainer extends Component {
 FilmContainer.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
-			id: PropTypes.number,
+			id: PropTypes.string,
 		}),
 	}).isRequired,
 };
