@@ -26,7 +26,6 @@ const handleImageData = async () => {
 	try {
 		const imagesURL = createImageUrl(filmData.imdbID);
 		const images = await getDataFrom(imagesURL);
-
 		if (notValidData(images)) {
 			handleError('imageData not valid');
 		}

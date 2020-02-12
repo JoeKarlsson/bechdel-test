@@ -28,7 +28,6 @@ class FilmsContainer extends Component {
 
 		api(url, options)
 			.then(data => {
-				console.log(data);
 				if (data.errMsg) {
 					this.setState({
 						loading: false,

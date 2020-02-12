@@ -58,7 +58,7 @@ describe('FilmContainer', () => {
 						genres: [],
 						rated: '',
 						bechdelResults: {
-							pass: 'false',
+							pass: false,
 							bechdelScore: 0,
 							numScenesPass: 0,
 							scenesThatPass: [],

@@ -34,6 +34,7 @@
 	"homepage": "https://github.com/JoeKarlsson/bechdel-test",
 	"scripts": {
 		"start": "set NODE_ENV=development && node src/server/server.js",
+		"start:dev": "set NODE_ENV=development && nodemon src/server/server.js",
 		"stop": "killall -s KILL node",
 		"test": "jest --coverage",
 		"coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",

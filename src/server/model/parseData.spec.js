@@ -8,7 +8,8 @@ describe('Parse Data', () => {
 					actorName: 'Joe',
 					character: 'Mike Bonchez',
 					gender: 'actor',
-				}, {
+				},
+				{
 					actorName: 'Laurel',
 					character: 'Wonder Woman',
 					gender: 'actress',
@@ -19,7 +20,8 @@ describe('Parse Data', () => {
 					actorName: 'Joe',
 					character: 'Mike Bonchez',
 					actorActress: 'actor',
-				}, {
+				},
+				{
 					actorName: 'Laurel',
 					character: 'Wonder Woman',
 					actorActress: 'actress',
@@ -38,7 +40,7 @@ describe('Parse Data', () => {
 			};
 
 			const expectedResult = {
-				backdrop: 'https://image.tmdb.org/t/p/w1000/test-backdrop',
+				backdrop: 'https://image.tmdb.org/t/p/original/test-backdrop',
 				poster: 'https://image.tmdb.org/t/p/w300/test-poster',
 			};
 			const result = parseData.parseImageData(mockImageObj);
