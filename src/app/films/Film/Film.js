@@ -119,7 +119,7 @@ Film.propTypes = {
 		),
 		genres: PropTypes.arrayOf(PropTypes.string),
 		bechdelResults: PropTypes.shape({
-			pass: PropTypes.string,
+			pass: PropTypes.bool,
 			bechdelScore: PropTypes.number,
 			numScenesPass: PropTypes.number,
 			scenesThatPass: PropTypes.arrayOf(PropTypes.string),
@@ -149,7 +149,7 @@ Film.defaultProps = {
 		writers: [{ name: '' }],
 		genres: [],
 		bechdelResults: {
-			pass: 'false',
+			pass: false,
 			bechdelScore: 0,
 			numScenesPass: 0,
 			scenesThatPass: [],

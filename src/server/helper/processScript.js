@@ -12,7 +12,7 @@ const processScriptServerSide = async () => {
 
 	const title = extractTitle(scriptPath);
 	const result = await processScript(scriptPath, title);
-	console.log(result);
+	return result;
 };
 
 try {
