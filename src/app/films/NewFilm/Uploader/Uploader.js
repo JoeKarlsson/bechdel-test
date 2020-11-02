@@ -6,8 +6,6 @@ import { Dashboard, DragDrop, ProgressBar } from '@uppy/react';
 import XHRUpload from '@uppy/xhr-upload';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 
-console.log(XHRUpload);
-
 class Uploader extends Component {
 	constructor(props) {
 		super(props);
@@ -33,7 +31,6 @@ class Uploader extends Component {
 			getResponseData: xhr => {
 				let response = JSON.parse(xhr.response);
 				response = response['0'];
-				console.log('response', response);
 
 				window.location = `/film/${response._id}`;
 				return {

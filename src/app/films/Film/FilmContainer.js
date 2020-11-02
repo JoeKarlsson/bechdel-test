@@ -19,7 +19,7 @@ class FilmContainer extends Component {
 				genres: [],
 				rated: '',
 				bechdelResults: {
-					pass: 'false',
+					pass: false,
 					bechdelScore: 0,
 					numScenesPass: 0,
 					scenesThatPass: [],
@@ -39,7 +39,11 @@ class FilmContainer extends Component {
 	}
 
 	componentDidMount() {
-		this.getFilm();
+		try {
+			this.getFilm();
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
 	getFilm() {
@@ -59,6 +63,7 @@ class FilmContainer extends Component {
 					film: data,
 					loading: false,
 				});
+				return data;
 			})
 			.catch(err => {
 				console.error(err);
@@ -76,7 +81,7 @@ class FilmContainer extends Component {
 FilmContainer.propTypes = {
 	match: PropTypes.shape({
 		params: PropTypes.shape({
-			id: PropTypes.number,
+			id: PropTypes.string,
 		}),
 	}).isRequired,
 };
