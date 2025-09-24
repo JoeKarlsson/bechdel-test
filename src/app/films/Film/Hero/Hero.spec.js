@@ -1,11 +1,9 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Hero from './Hero';
 
 describe('Hero', () => {
-	let wrapper;
-	let inst;
 	const title = 'Boyhood';
 	const bechdelResults = {
 		pass: true,
@@ -13,38 +11,23 @@ describe('Hero', () => {
 	};
 	const images = {};
 
-	beforeEach(() => {
-		wrapper = shallow(
-			<MemoryRouter>
-				<Hero title={title} bechdelResults={bechdelResults} images={images} />
-			</MemoryRouter>
-		);
-		inst = wrapper.instance();
-	});
-
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('match the snapshot', () => {
-				const wrapper = shallow(
-					<Hero title={title} bechdelResults={bechdelResults} images={images} />
+				const { container } = render(
+					<MemoryRouter>
+						<Hero title={title} bechdelResults={bechdelResults} images={images} />
+					</MemoryRouter>
 				);
-				expect(wrapper).toMatchSnapshot();
+				expect(container.firstChild).toMatchSnapshot();
 			});
 			it('is rendered correctly', () => {
-				expect(wrapper).toHaveLength(1);
-			});
-			it('should not have any inital props', () => {
-				const initialProps = inst.props;
-				const expectedProps = {
-					children: (
-						<Hero
-							title={title}
-							bechdelResults={bechdelResults}
-							images={images}
-						/>
-					),
-				};
-				expect(initialProps).toMatchObject(expectedProps);
+				const { container } = render(
+					<MemoryRouter>
+						<Hero title={title} bechdelResults={bechdelResults} images={images} />
+					</MemoryRouter>
+				);
+				expect(container.firstChild).toBeTruthy();
 			});
 		});
 	});

@@ -1,11 +1,12 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import ApiDocs from './ApiDocs';
 
 describe('Api Docs Page', () => {
 	describe('rendering', () => {
 		it('match the snapshot', () => {
-			const wrapper = shallow(<ApiDocs />);
-			expect(wrapper).toMatchSnapshot();
+			const { container } = render(<ApiDocs />);
+			expect(container.firstChild).toMatchSnapshot();
 		});
 	});
 });
