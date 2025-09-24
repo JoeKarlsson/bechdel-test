@@ -155,14 +155,10 @@ const Film = memo(({
 						</div>
 					</div>
 
-					{/* Charts and Score Data Section */}
-					<div className="charts-data-section">
-						<div className="charts-data-content">
+					{/* Charts Section */}
+					<div className="charts-section">
+						<div className="charts-content">
 							<BechdelCharts bechdelResults={bechdelResults} />
-							<div className="detailed-results">
-								<h3>Detailed Bechdel Analysis</h3>
-								<BechdelResults bechdelResults={bechdelResults} />
-							</div>
 						</div>
 					</div>
 
@@ -171,6 +167,14 @@ const Film = memo(({
 							bechdelResults={bechdelResults}
 							characters={actors}
 						/>
+					</div>
+
+					{/* Detailed Bechdel Analysis Section */}
+					<div className="detailed-analysis-section">
+						<div className="detailed-analysis-content">
+							<h3>Detailed Bechdel Analysis</h3>
+							<BechdelResults bechdelResults={bechdelResults} />
+						</div>
 					</div>
 
 					<div className="navigation-section">

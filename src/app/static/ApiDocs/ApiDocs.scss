@@ -150,6 +150,7 @@ $info-color: #17a2b8;
 }
 
 .endpoint-details {
+
 	.endpoint-header {
 		margin-bottom: 2rem;
 		padding-bottom: 1rem;
@@ -245,12 +246,6 @@ $info-color: #17a2b8;
 			min-width: 80px;
 		}
 
-		code {
-			font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-			background: transparent;
-			padding: 0;
-		}
-
 		pre {
 			margin: 0;
 			font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
@@ -262,6 +257,7 @@ $info-color: #17a2b8;
 		}
 	}
 }
+
 
 .response-example {
 	margin-bottom: 1.5rem;
@@ -300,10 +296,14 @@ $info-color: #17a2b8;
 	}
 }
 
+
+/* stylelint-disable no-descending-specificity */
+
 .data-models,
 .error-handling,
 .rate-limiting,
-.support {
+.support,
+.detailed-bechdel-analysis {
 	margin-bottom: 3rem;
 	padding: 2rem;
 	background: $white;
@@ -376,8 +376,122 @@ $info-color: #17a2b8;
 	}
 }
 
+.detailed-bechdel-analysis {
+
+	.analysis-description {
+		margin-bottom: 2rem;
+
+		p {
+			margin-bottom: 1rem;
+			font-size: 1.1rem;
+			line-height: 1.6;
+		}
+
+		ol {
+			margin-top: 1rem;
+			padding-left: 2rem;
+
+			li {
+				margin-bottom: 0.75rem;
+				font-size: 1rem;
+				line-height: 1.6;
+			}
+		}
+	}
+
+	.analysis-table-container {
+		overflow-x: auto;
+		border-radius: 8px;
+		border: 1px solid $border-color;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	.bechdel-analysis-table {
+		width: 100%;
+		border-collapse: collapse;
+		background: $white;
+		font-size: 0.95rem;
+
+		thead {
+			background: linear-gradient(135deg, $purple 0%, darken($purple, 10%) 100%);
+			color: $white;
+
+			th {
+				padding: 1rem 1.5rem;
+				text-align: left;
+				font-weight: 600;
+				font-size: 0.9rem;
+				letter-spacing: 0.5px;
+				border-bottom: 2px solid darken($purple, 15%);
+
+				&:first-child {
+					border-top-left-radius: 8px;
+				}
+
+				&:last-child {
+					border-top-right-radius: 8px;
+				}
+			}
+		}
+
+		tbody {
+
+			tr {
+				border-bottom: 1px solid $border-color;
+				transition: background-color 0.2s ease;
+
+				&:hover {
+					background-color: rgba($purple, 0.05);
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				td {
+					padding: 1rem 1.5rem;
+					vertical-align: top;
+					line-height: 1.5;
+
+					&:first-child {
+						font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+						font-weight: 600;
+						color: $purple;
+						background: rgba($purple, 0.05);
+						border-right: 1px solid $border-color;
+						min-width: 200px;
+					}
+
+					&:nth-child(2) {
+						font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+						font-weight: 500;
+						color: $info-color;
+						min-width: 100px;
+					}
+
+					&:last-child {
+						color: $dark-gray;
+						line-height: 1.6;
+					}
+
+					code {
+						background: transparent;
+						padding: 0;
+						font-size: inherit;
+						color: inherit;
+					}
+				}
+			}
+		}
+	}
+}
+/* stylelint-enable no-descending-specificity */
+
+
 // Responsive design
+
 @media (max-width: 768px) {
+
 	.api-docs-header {
 		padding: 1.5rem;
 
@@ -404,7 +518,9 @@ $info-color: #17a2b8;
 	}
 
 	.endpoint-details {
+
 		.endpoint-header {
+
 			.endpoint-title {
 				flex-direction: column;
 				align-items: flex-start;
@@ -418,6 +534,7 @@ $info-color: #17a2b8;
 	}
 
 	.code-block {
+
 		.code-header {
 			flex-direction: column;
 			align-items: flex-start;
@@ -432,52 +549,33 @@ $info-color: #17a2b8;
 	.data-models,
 	.error-handling,
 	.rate-limiting,
-	.support {
+	.support,
+	.detailed-bechdel-analysis {
 		padding: 1.5rem;
 	}
-}
 
-// Dark mode support (optional)
-@media (prefers-color-scheme: dark) {
-	.api-docs {
-		background-color: #1a1a1a;
-		color: #e0e0e0;
+	.detailed-bechdel-analysis {
 
-		.api-docs-nav,
-		.api-docs-main,
-		.data-models,
-		.error-handling,
-		.rate-limiting,
-		.support {
-			background: #2d2d2d;
-			color: #e0e0e0;
-		}
+		.bechdel-analysis-table {
+			font-size: 0.85rem;
 
-		.code-block {
-			background: #1a1a1a;
-			border-color: #404040;
-
-			.code-header {
-				background: #2d2d2d;
-				border-color: #404040;
+			thead th {
+				padding: 0.75rem 1rem;
+				font-size: 0.8rem;
 			}
-		}
 
-		.status-codes .status-code {
-			background: #1a1a1a;
-		}
+			tbody td {
+				padding: 0.75rem 1rem;
 
-		h1, h2, h3, h4 {
-			color: #e0e0e0;
-		}
+				&:first-child {
+					min-width: 150px;
+				}
 
-		p, li {
-			color: #e0e0e0;
-		}
-
-		.endpoint-url {
-			background: #1a1a1a;
-			color: #e0e0e0;
+				&:nth-child(2) {
+					min-width: 80px;
+				}
+			}
 		}
 	}
 }
+

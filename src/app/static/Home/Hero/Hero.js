@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Hero.scss';
 
 const Hero = () => (
@@ -8,10 +7,7 @@ const Hero = () => (
 			<div className="row">
 				<div className="u-max-full-width ">
 					<h4 className="hero-heading">bechdel.io</h4>
-					<h5>find out if your favorite film passes the test.</h5>
-					<NavLink to="/film/new">
-						<button type="button" className="button">upload script</button>
-					</NavLink>
+					<h5 className="hero-tagline">discover which movies pass the bechdel test and explore feminist film data.</h5>
 				</div>
 			</div>
 		</div>
