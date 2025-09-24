@@ -1,79 +1,115 @@
 const webpack = require('webpack');
 const path = require('path');
-const config = require('./webpack.config.prod.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Development-specific overrides
-config.devtool = 'eval-cheap-module-source-map';
-
-config.entry = [
-	'webpack-hot-middleware/client?reload=true',
-	path.join(__dirname, './src/app/entry.js'),
-];
-
-config.output = {
-	path: path.resolve(__dirname, './dist'),
-	filename: '[name].js',
-	chunkFilename: '[name].chunk.js',
-	publicPath: '/',
-	clean: false, // Don't clean in development for faster builds
-};
-
-config.mode = 'development';
-
-// Remove production optimizations
-config.optimization = {
-	...config.optimization,
-	minimize: false,
-	splitChunks: {
-		chunks: 'all',
-		cacheGroups: {
-			default: false,
-			vendors: false,
-			// Only split vendor chunks in development
-			vendor: {
-				test: /[\\/]node_modules[\\/]/,
-				name: 'vendors',
-				chunks: 'all',
+module.exports = {
+	entry: [
+		'webpack-hot-middleware/client?reload=true',
+		path.join(__dirname, './src/app/entry.js'),
+	],
+	output: {
+		path: path.resolve(__dirname, './dist'),
+		filename: '[name].js',
+		chunkFilename: '[name].chunk.js',
+		publicPath: '/',
+		clean: false, // Don't clean in development for faster builds
+	},
+	mode: 'development',
+	devtool: 'eval-cheap-module-source-map',
+	resolve: {
+		extensions: ['.js', '.jsx'],
+		alias: {
+			'@': path.resolve(__dirname, 'src'),
+		},
+	},
+	optimization: {
+		minimize: false,
+		splitChunks: {
+			chunks: 'all',
+			cacheGroups: {
+				default: false,
+				vendors: false,
+				// Only split vendor chunks in development
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all',
+				},
 			},
 		},
 	},
-};
-
-// Remove production plugins and add development ones
-config.plugins = config.plugins.filter(plugin => 
-	plugin.constructor.name !== 'MiniCssExtractPlugin' &&
-	plugin.constructor.name !== 'CssMinimizerPlugin' &&
-	plugin.constructor.name !== 'TerserPlugin'
-);
-
-// Add HotModuleReplacementPlugin for development
-config.plugins.push(new webpack.HotModuleReplacementPlugin());
-
-// Update CSS loader for development to use style-loader
-config.module.rules.forEach(rule => {
-	if (rule.test && rule.test.toString().includes('scss|css')) {
-		rule.use = [
-			'style-loader',
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('development'),
+		}),
+		new HtmlWebpackPlugin({
+			template: 'src/app/index.tpl.html',
+			inject: 'body',
+			filename: 'index.html',
+			favicon: './src/app/assets/images/my_logo.png',
+		}),
+	],
+	module: {
+		rules: [
 			{
-				loader: 'css-loader',
-				options: {
-					sourceMap: true,
+				test: /(\.js$|\.jsx$)/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							presets: [
+								['@babel/preset-env', {
+									targets: {
+										browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
+									},
+									modules: false,
+								}],
+								['@babel/preset-react', {
+									runtime: 'automatic'
+								}],
+							],
+							cacheDirectory: true,
+						},
+					},
+				],
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
+				type: 'asset/resource',
+				generator: {
+					filename: 'assets/[name]-[contenthash][ext]',
 				},
 			},
 			{
-				loader: 'sass-loader',
-				options: {
-					sourceMap: true,
-				},
+				test: /\.(mp4|webm)$/,
+				type: 'asset/inline',
 			},
-		];
-	}
-});
-
-// Add resolve aliases for development
-config.resolve.alias = {
-	...config.resolve.alias,
-	'react-dom': '@hot-loader/react-dom',
+			{
+				test: /(\.scss$|\.css$)/,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: true,
+							modules: false,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
+		],
+	},
+	performance: {
+		hints: 'warning',
+		maxEntrypointSize: 512000,
+		maxAssetSize: 512000,
+	},
 };
-
-module.exports = config;

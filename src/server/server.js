@@ -1,16 +1,21 @@
 const express = require('express');
 const helmet = require('helmet');
-const webpackHotMiddleware = require('webpack-hot-middleware');
 const historyApiFallback = require('connect-history-api-fallback');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
 const film = require('./routes/film');
-const webpackDevConfig = require('./helper/webpackDevConfig');
 const prodResponse = require('./helper/responseProd');
 const handleListen = require('./helper/handleListen');
 const log = require('./helper/log');
 const meta = require('./helper/meta');
+
+// Only import webpack-related modules in development
+let webpackHotMiddleware, webpackDevConfig;
+if (meta.isDeveloping) {
+	webpackHotMiddleware = require('webpack-hot-middleware');
+	webpackDevConfig = require('./helper/webpackDevConfig');
+}
 
 const app = express();
 
