@@ -121,6 +121,12 @@ const BechdelCharts = ({ bechdelResults }) => {
         );
     };
 
+    // Check if data arrays have any non-zero values
+    const hasCharacterData = characterData.some(item => item.value > 0);
+    const hasDialogueData = dialogueData.some(item => item.lines > 0);
+    const hasSceneData = sceneData.some(item => item.count > 0);
+    const hasCharactersWithDialogueData = charactersWithDialogueData.some(item => item.count > 0);
+
     return (
         <div className="bechdel-charts">
             <div
@@ -156,129 +162,137 @@ const BechdelCharts = ({ bechdelResults }) => {
                 </div>
 
                 {/* Character Distribution */}
-                <div
-                    ref={characterChartRef.ref}
-                    className={`chart-card ${characterChartRef.isIntersecting ? 'animate-in' : ''}`}
-                >
-                    <h3>Character Distribution</h3>
-                    <ResponsiveContainer width="100%" height={200}>
-                        <PieChart>
-                            <Pie
-                                data={characterData}
-                                cx="50%"
-                                cy="50%"
-                                outerRadius={60}
-                                fill="#8884d8"
-                                dataKey="value"
-                                label={<CustomLabel />}
-                                animationBegin={characterChartRef.isIntersecting ? 0 : 1000}
-                                animationDuration={800}
-                                animationEasing="ease-out"
-                            >
-                                {characterData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.color} />
-                                ))}
-                            </Pie>
-                            <Tooltip content={<CustomTooltip />} />
-                        </PieChart>
-                    </ResponsiveContainer>
-                </div>
+                {hasCharacterData && (
+                    <div
+                        ref={characterChartRef.ref}
+                        className={`chart-card ${characterChartRef.isIntersecting ? 'animate-in' : ''}`}
+                    >
+                        <h3>Character Distribution</h3>
+                        <ResponsiveContainer width="100%" height={200}>
+                            <PieChart>
+                                <Pie
+                                    data={characterData}
+                                    cx="50%"
+                                    cy="50%"
+                                    outerRadius={60}
+                                    fill="#8884d8"
+                                    dataKey="value"
+                                    label={<CustomLabel />}
+                                    animationBegin={characterChartRef.isIntersecting ? 0 : 1000}
+                                    animationDuration={800}
+                                    animationEasing="ease-out"
+                                >
+                                    {characterData.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={entry.color} />
+                                    ))}
+                                </Pie>
+                                <Tooltip content={<CustomTooltip />} />
+                            </PieChart>
+                        </ResponsiveContainer>
+                    </div>
+                )}
 
                 {/* Dialogue Lines Comparison */}
-                <div
-                    ref={dialogueChartRef.ref}
-                    className={`chart-card ${dialogueChartRef.isIntersecting ? 'animate-in' : ''}`}
-                >
-                    <h3>Dialogue Lines</h3>
-                    <ResponsiveContainer width="100%" height={200}>
-                        <BarChart data={dialogueData}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Bar
-                                dataKey="lines"
-                                fill="#8884d8"
-                                animationBegin={dialogueChartRef.isIntersecting ? 0 : 1000}
-                                animationDuration={600}
-                                animationEasing="ease-out"
-                            >
-                                {dialogueData.map((entry, index) => (
-                                    <Cell
-                                        key={`cell-${index}`}
-                                        fill={entry.color}
-                                        animationBegin={dialogueChartRef.isIntersecting ? index * 200 : 1000}
-                                        animationDuration={600}
-                                    />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
-                </div>
+                {hasDialogueData && (
+                    <div
+                        ref={dialogueChartRef.ref}
+                        className={`chart-card ${dialogueChartRef.isIntersecting ? 'animate-in' : ''}`}
+                    >
+                        <h3>Dialogue Lines</h3>
+                        <ResponsiveContainer width="100%" height={200}>
+                            <BarChart data={dialogueData}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis domain={[0, 'dataMax']} allowDecimals={false} />
+                                <Tooltip />
+                                <Bar
+                                    dataKey="lines"
+                                    fill="#8884d8"
+                                    animationBegin={dialogueChartRef.isIntersecting ? 0 : 1000}
+                                    animationDuration={600}
+                                    animationEasing="ease-out"
+                                >
+                                    {dialogueData.map((entry, index) => (
+                                        <Cell
+                                            key={`cell-${index}`}
+                                            fill={entry.color}
+                                            animationBegin={dialogueChartRef.isIntersecting ? index * 200 : 1000}
+                                            animationDuration={600}
+                                        />
+                                    ))}
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
+                )}
 
                 {/* Scene Analysis */}
-                <div
-                    ref={sceneChartRef.ref}
-                    className={`chart-card ${sceneChartRef.isIntersecting ? 'animate-in' : ''}`}
-                >
-                    <h3>Scene Analysis</h3>
-                    <ResponsiveContainer width="100%" height={200}>
-                        <BarChart data={sceneData}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Bar
-                                dataKey="count"
-                                fill="#8884d8"
-                                animationBegin={sceneChartRef.isIntersecting ? 0 : 1000}
-                                animationDuration={600}
-                                animationEasing="ease-out"
-                            >
-                                {sceneData.map((entry, index) => (
-                                    <Cell
-                                        key={`cell-${index}`}
-                                        fill={entry.color}
-                                        animationBegin={sceneChartRef.isIntersecting ? index * 200 : 1000}
-                                        animationDuration={600}
-                                    />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
-                </div>
+                {hasSceneData && (
+                    <div
+                        ref={sceneChartRef.ref}
+                        className={`chart-card ${sceneChartRef.isIntersecting ? 'animate-in' : ''}`}
+                    >
+                        <h3>Scene Analysis</h3>
+                        <ResponsiveContainer width="100%" height={200}>
+                            <BarChart data={sceneData}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis domain={[0, 'dataMax']} allowDecimals={false} />
+                                <Tooltip />
+                                <Bar
+                                    dataKey="count"
+                                    fill="#8884d8"
+                                    animationBegin={sceneChartRef.isIntersecting ? 0 : 1000}
+                                    animationDuration={600}
+                                    animationEasing="ease-out"
+                                >
+                                    {sceneData.map((entry, index) => (
+                                        <Cell
+                                            key={`cell-${index}`}
+                                            fill={entry.color}
+                                            animationBegin={sceneChartRef.isIntersecting ? index * 200 : 1000}
+                                            animationDuration={600}
+                                        />
+                                    ))}
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
+                )}
 
                 {/* Characters with Dialogue */}
-                <div
-                    ref={charactersWithDialogueRef.ref}
-                    className={`chart-card ${charactersWithDialogueRef.isIntersecting ? 'animate-in' : ''}`}
-                >
-                    <h3>Characters with Dialogue</h3>
-                    <ResponsiveContainer width="100%" height={200}>
-                        <BarChart data={charactersWithDialogueData}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
-                            <YAxis />
-                            <Tooltip />
-                            <Bar
-                                dataKey="count"
-                                fill="#8884d8"
-                                animationBegin={charactersWithDialogueRef.isIntersecting ? 0 : 1000}
-                                animationDuration={600}
-                                animationEasing="ease-out"
-                            >
-                                {charactersWithDialogueData.map((entry, index) => (
-                                    <Cell
-                                        key={`cell-${index}`}
-                                        fill={entry.color}
-                                        animationBegin={charactersWithDialogueRef.isIntersecting ? index * 200 : 1000}
-                                        animationDuration={600}
-                                    />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
-                </div>
+                {hasCharactersWithDialogueData && (
+                    <div
+                        ref={charactersWithDialogueRef.ref}
+                        className={`chart-card ${charactersWithDialogueRef.isIntersecting ? 'animate-in' : ''}`}
+                    >
+                        <h3>Characters with Dialogue</h3>
+                        <ResponsiveContainer width="100%" height={200}>
+                            <BarChart data={charactersWithDialogueData}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis domain={[0, 'dataMax']} allowDecimals={false} />
+                                <Tooltip />
+                                <Bar
+                                    dataKey="count"
+                                    fill="#8884d8"
+                                    animationBegin={charactersWithDialogueRef.isIntersecting ? 0 : 1000}
+                                    animationDuration={600}
+                                    animationEasing="ease-out"
+                                >
+                                    {charactersWithDialogueData.map((entry, index) => (
+                                        <Cell
+                                            key={`cell-${index}`}
+                                            fill={entry.color}
+                                            animationBegin={charactersWithDialogueRef.isIntersecting ? index * 200 : 1000}
+                                            animationDuration={600}
+                                        />
+                                    ))}
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
+                )}
 
                 {/* Summary Stats */}
                 <div

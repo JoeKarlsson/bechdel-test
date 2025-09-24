@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const SearchContext = createContext();
@@ -19,6 +20,8 @@ export const SearchProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
     const [isSearching, setIsSearching] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     // Debounce search query updates
     useEffect(() => {
@@ -31,9 +34,21 @@ export const SearchProvider = ({ children }) => {
         return () => clearTimeout(timeoutId);
     }, [searchQuery]);
 
+    // Function to handle search
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+    };
+
+    // Effect to handle navigation after debounce
+    useEffect(() => {
+        if (debouncedSearchQuery && location.pathname !== '/') {
+            navigate('/');
+        }
+    }, [debouncedSearchQuery, location.pathname, navigate]);
+
     const value = {
         searchQuery,
-        setSearchQuery,
+        setSearchQuery: handleSearch,
         debouncedSearchQuery,
         isSearching,
     };

@@ -1,67 +1,81 @@
 .section {
-	padding: 1rem 0 0.5rem;
+	padding: var(--spacing-lg) 0;
 }
 
 .section-heading,
 .section-description {
-	margin-bottom: 1.2rem;
+	margin-bottom: var(--heading-margin-bottom);
 }
 
 .hero {
-	background-image: url('../../../assets/images/hero.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../../assets/images/hero.jpg');
 	background-size: cover;
 	color: #fff;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	text-align: center;
-	min-height: 15vh;
+	min-height: 25vh;
+	padding: 0;
 
 	.hero-heading {
 		text-align: center;
 		font-size: 3.5rem;
 		font-weight: 600;
-		margin-bottom: 0.5rem;
+		margin-bottom: var(--spacing-sm);
+		color: #fff;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
 	.hero-tagline {
-		font-size: 1.3rem;
+		font-size: 1.6rem;
 		font-weight: 300;
-		line-height: 1.4;
+		line-height: 1.8;
 		max-width: 800px;
 		margin: 0 auto;
+		color: #fff;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 		opacity: 0.95;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		padding: 0 2rem;
+		letter-spacing: 0.1em;
 	}
 
 	// Responsive design
 	@media (max-width: 768px) {
-		min-height: 12vh;
-		padding: 0.8rem 0 0.3rem;
+		min-height: 20vh;
 
 		.hero-heading {
 			font-size: 2.8rem;
-			margin-bottom: 0.3rem;
+			margin-bottom: var(--spacing-xs);
 		}
 
 		.hero-tagline {
-			font-size: 1.1rem;
-			padding: 0 1rem;
+			font-size: 1.4rem;
+			padding: 0 var(--spacing-lg);
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
+			line-height: 1.7;
+			letter-spacing: 0.08em;
 		}
 	}
 
 	@media (max-width: 480px) {
-		min-height: 10vh;
-		padding: 0.5rem 0 0.2rem;
+		min-height: 17.5vh;
 
 		.hero-heading {
 			font-size: 2.4rem;
-			margin-bottom: 0.2rem;
+			margin-bottom: var(--spacing-xs);
 		}
 
 		.hero-tagline {
-			font-size: 1rem;
-			padding: 0 0.5rem;
+			font-size: 1.2rem;
+			padding: 0 var(--spacing-md);
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			line-height: 1.6;
+			letter-spacing: 0.06em;
 		}
 	}
 }

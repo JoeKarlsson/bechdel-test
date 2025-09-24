@@ -8,20 +8,20 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 $border-radius: 0px;
 
 .new-film {
-	padding: 2rem 0;
+	padding: var(--section-padding-y) 0;
 	min-height: 80vh;
 	background-color: #ffffff; // Explicit white background for light mode
 
 	.container {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 0 1rem;
+		padding: 0 var(--container-padding-x);
 	}
 
 	&__header {
 		text-align: center;
 		margin-bottom: 3rem;
-		padding: 2rem 0; // Removed horizontal padding, kept vertical
+		padding: var(--section-padding-y) 0; // Removed horizontal padding, kept vertical
 		background: transparent; // Removed colored background
 		color: #333333 !important; // Dark gray for readability
 		box-shadow: none; // Removed box shadow

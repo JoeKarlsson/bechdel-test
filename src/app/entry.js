@@ -5,6 +5,7 @@ import PrimaryLayout from './shared/PrimaryLayout/PrimaryLayout';
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 import './app-error.scss';
 import './assets/styles/scroll-animations.css';
+import './assets/styles/spacing.css';
 
 // Get the root element
 const container = document.getElementById('root');

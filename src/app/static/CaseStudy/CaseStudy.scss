@@ -8,20 +8,20 @@ $accent-color: #1eaedb;
 $chart-color: #8884d8;
 
 .CaseStudy {
-	padding: 2rem 0;
+	padding: var(--section-padding-y) 0;
 	min-height: 80vh;
 	background-color: $light-gray;
 
 	.container {
 		max-width: 1000px;
 		margin: 0 auto;
-		padding: 0 1rem;
+		padding: 0 var(--container-padding-x);
 	}
 
 	.case-study-header {
 		text-align: center;
-		margin-bottom: 3rem;
-		padding: 2rem;
+		margin-bottom: var(--spacing-3xl);
+		padding: var(--card-padding);
 		background: linear-gradient(135deg, $purple 0%, darken($purple, 20%) 100%);
 		color: $white;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -31,6 +31,7 @@ $chart-color: #8884d8;
 			margin-bottom: 1rem;
 			font-weight: 600;
 			text-transform: lowercase;
+			color: $white !important;
 		}
 
 		.case-study-subtitle {
@@ -38,19 +39,20 @@ $chart-color: #8884d8;
 			margin-bottom: 2rem;
 			opacity: 0.9;
 			line-height: 1.6;
+			color: $white !important;
 		}
 	}
 
 	.case-study-content {
 		background: $white;
-		padding: 2rem;
+		padding: var(--card-padding);
 		margin-bottom: 2rem;
 
 		p {
-			line-height: 1.6;
-			color: $dark-gray;
+			line-height: 1.7;
+			color: #1a1a1a;
 			margin-bottom: 1.5rem;
-			font-size: 1rem;
+			font-size: 1.2rem;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -115,8 +117,8 @@ $chart-color: #8884d8;
 
 			p {
 				margin-bottom: 0.5rem;
-				font-size: 0.95rem;
-				color: $text-muted;
+				font-size: 1.1rem;
+				color: #1a1a1a;
 
 				&:last-child {
 					margin-bottom: 0;
@@ -174,7 +176,7 @@ $chart-color: #8884d8;
 			padding: 1.5rem;
 
 			p {
-				font-size: 0.95rem;
+				font-size: 1.1rem;
 			}
 
 			.chart-section {

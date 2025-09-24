@@ -1,59 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Component rendering match the snapshot 1`] = `
-<header
-  class="header_bar"
-  role="banner"
+<a
+  class="skip-link"
+  href="#main-content"
 >
-  <a
-    aria-current="page"
-    aria-label="bechdel.io - Home"
-    class="header_logo active"
-    href="/"
-  >
-    bechdel.io
-  </a>
-  <button
-    aria-expanded="false"
-    aria-label="Toggle navigation menu"
-    class="mobile_menu_button"
-    type="button"
-  >
-    <span
-      class="hamburger_line"
-    />
-    <span
-      class="hamburger_line"
-    />
-    <span
-      class="hamburger_line"
-    />
-  </button>
-  <nav
-    aria-label="Main navigation"
-    class="header_nav "
-    role="navigation"
-  >
-    <ul
-      class="nav_list"
-    >
-      <li>
-        <a
-          class="nav_link"
-          href="/about"
-        >
-          About
-        </a>
-      </li>
-      <li>
-        <a
-          class="nav_link"
-          href="/case-study"
-        >
-          Case Study
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
+  Skip to main content
+</a>
 `;

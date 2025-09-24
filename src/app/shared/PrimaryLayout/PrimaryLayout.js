@@ -10,6 +10,7 @@ import { DarkModeProvider } from '../DarkModeContext/DarkModeContext';
 import '../../assets/styles/skeleton.css';
 import '../../assets/styles/normalize.css';
 import '../../assets/styles/dark-mode.css';
+import '../../assets/styles/accessibility.css';
 import './PrimaryLayout.scss';
 
 // Lazy load components for better performance
@@ -48,7 +49,7 @@ export const PrimaryLayout = () => {
 			<SearchProvider>
 				<div className="PrimaryLayout">
 					<Header />
-					<main className="content" role="main">
+					<main id="main-content" className="content" role="main">
 						<ErrorBoundary fallback={RouteErrorFallback}>
 							<Suspense fallback={<PageLoading />}>
 								<Routes>

@@ -65,7 +65,7 @@ const CaseStudy = () => {
 								margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
 							>
 								<XAxis dataKey="name" />
-								<YAxis />
+								<YAxis domain={[0, 3]} ticks={[0, 1, 2, 3]} />
 								<CartesianGrid />
 								<Tooltip />
 								<Bar dataKey="bechdelScore" fill="#8884d8" />
