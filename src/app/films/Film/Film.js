@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Hero from './Hero/Hero';
@@ -35,8 +35,36 @@ const isValidFilm = film => {
 	return film.title !== '';
 };
 
-class Film extends Component {
-	renderFilm() {
+const Film = ({ 
+	film = {
+		title: '',
+		images: {
+			poster: '',
+			backdrop: '',
+		},
+		plot: '',
+		idIMDB: '',
+		rated: '',
+		directors: [{ name: '' }],
+		writers: [{ name: '' }],
+		genres: [],
+		bechdelResults: {
+			pass: false,
+			bechdelScore: 0,
+			numScenesPass: 0,
+			scenesThatPass: [],
+			numScenesDontPass: 0,
+			numOfFemalesChars: 0,
+			numOfMaleChars: 0,
+			numOfFemalesCharsWithDialogue: 0,
+			numOfMaleCharsWithDialogue: 0,
+			totalLinesFemaleDialogue: 0,
+			totalLinesMaleDialogue: 0,
+		},
+	}, 
+	loading = true 
+}) => {
+	const renderFilm = () => {
 		const {
 			directors,
 			writers,
@@ -47,7 +75,7 @@ class Film extends Component {
 			plot,
 			idIMDB,
 			rated,
-		} = this.props.film;
+		} = film;
 
 		const directorNode = nodeBuilder(directors);
 		const writerNode = nodeBuilder(writers);
@@ -83,19 +111,15 @@ class Film extends Component {
 				</ErrorBoundary>
 			</div>
 		);
-	}
+	};
 
-	render() {
-		const { film, loading } = this.props;
-
-		if (loading) {
-			return <Loading />;
-		} else if (isValidFilm(film)) {
-			return this.renderFilm();
-		}
-		return <Error />;
+	if (loading) {
+		return <Loading />;
+	} else if (isValidFilm(film)) {
+		return renderFilm();
 	}
-}
+	return <Error />;
+};
 
 Film.propTypes = {
 	film: PropTypes.shape({
@@ -135,34 +159,5 @@ Film.propTypes = {
 	loading: PropTypes.bool,
 };
 
-Film.defaultProps = {
-	film: {
-		title: '',
-		images: {
-			poster: '',
-			backdrop: '',
-		},
-		plot: '',
-		idIMDB: '',
-		rated: '',
-		directors: [{ name: '' }],
-		writers: [{ name: '' }],
-		genres: [],
-		bechdelResults: {
-			pass: false,
-			bechdelScore: 0,
-			numScenesPass: 0,
-			scenesThatPass: [],
-			numScenesDontPass: 0,
-			numOfFemalesChars: 0,
-			numOfMaleChars: 0,
-			numOfFemalesCharsWithDialogue: 0,
-			numOfMaleCharsWithDialogue: 0,
-			totalLinesFemaleDialogue: 0,
-			totalLinesMaleDialogue: 0,
-		},
-	},
-	loading: true,
-};
 
 export default Film;
