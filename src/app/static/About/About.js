@@ -72,7 +72,7 @@ const About = () => (
 			.
 		</p>
 		<Link to="/">
-			<button>All Films</button>
+			<button type="button">All Films</button>
 		</Link>
 	</div>
 );

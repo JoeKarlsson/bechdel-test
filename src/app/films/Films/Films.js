@@ -20,7 +20,7 @@ const Films = ({ films = [], loading = false }) => {
 
 	if (loading) {
 		return <Loading />;
-	} else if (films) {
+	} if (films) {
 		return renderFilms();
 	}
 	return <Error />;

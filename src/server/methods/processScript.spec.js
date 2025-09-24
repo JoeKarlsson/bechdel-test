@@ -1,12 +1,13 @@
-const mockingoose = require('mockingoose');
 import fetchMock from 'fetch-mock';
 import path from 'path';
 import processScript from './processScript';
-import URLFormatter from '../methods/getFilmData/URLFormatter';
-import mockGetSimpleCastData from '../methods/getFilmData/__mocks__/mock-simple-data.json';
-import mockGetFullCastData from '../methods/getFilmData/__mocks__/mock-full-cast-data.json';
-import mockImagesData from '../methods/getFilmData/__mocks__/mock-images-data.json';
-import mockBechdelData from '../methods/getFilmData/__mocks__/mock-bechdel-data.json';
+import URLFormatter from "./getFilmData/URLFormatter";
+import mockGetSimpleCastData from "./getFilmData/__mocks__/mock-simple-data.json";
+import mockGetFullCastData from "./getFilmData/__mocks__/mock-full-cast-data.json";
+import mockImagesData from "./getFilmData/__mocks__/mock-images-data.json";
+import mockBechdelData from "./getFilmData/__mocks__/mock-bechdel-data.json";
+
+const mockingoose = require('mockingoose');
 
 const {
 	createSimpleDataURL,

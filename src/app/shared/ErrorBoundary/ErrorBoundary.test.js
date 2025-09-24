@@ -51,6 +51,7 @@ describe('Error Boundary', () => {
 			componentDidMount() {
 				throw new Error('I crashed!');
 			}
+
 			render() {
 				return <h1>Buggy Component</h1>;
 			}

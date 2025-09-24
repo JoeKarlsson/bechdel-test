@@ -100,6 +100,7 @@ exports[`Film rendering initial state should render data state correctly 1`] = `
          
         <a
           href="http://www.imdb.com/title/undefined"
+          rel="noreferrer"
           target="_blank"
         >
           Boyhood
@@ -188,7 +189,9 @@ exports[`Film rendering initial state should render data state correctly 1`] = `
       href="/"
       onClick={[Function]}
     >
-      <button>
+      <button
+        type="button"
+      >
         All Films
       </button>
     </a>
