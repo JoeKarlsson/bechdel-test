@@ -35,6 +35,7 @@ const getBechdelResults = async (title, path) => {
 			numOfMaleCharsWithDialogue: genderAnalytics.numOfMaleCharsWithDialogue,
 			totalLinesFemaleDialogue: genderAnalytics.totalLinesFemaleDialogue,
 			totalLinesMaleDialogue: genderAnalytics.totalLinesMaleDialogue,
+			scenes: bechdelResults.scenes,
 		};
 	} catch (err) {
 		handleError(err);

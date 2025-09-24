@@ -7,6 +7,7 @@ import BechdelResults from './BechdelResults/BechdelResults';
 import BechdelCharts from './BechdelCharts';
 import FilmInfoCard from './FilmInfoCard';
 import PlotSection from './PlotSection';
+import ScriptTimeline from './ScriptTimeline';
 import Loading from '../../shared/Loading/Loading';
 import Error from '../../shared/Error/Error';
 import hash from '../../helper/hash';
@@ -73,20 +74,21 @@ const Film = ({
 			bechdelResults,
 			images,
 			plot,
+			actors,
 		} = film;
 
 		return (
 			<div className="filmInfo">
 				<ErrorBoundary>
 					<Hero title={title} bechdelResults={bechdelResults} images={images} />
-
+					
 					<div className="film-content">
 						<div className="content-grid">
 							<div className="left-column">
 								<PlotSection plot={plot} />
 								<FilmInfoCard film={film} />
 							</div>
-
+							
 							<div className="right-column">
 								<BechdelCharts bechdelResults={bechdelResults} />
 								<div className="detailed-results">
@@ -95,7 +97,11 @@ const Film = ({
 								</div>
 							</div>
 						</div>
-
+						
+						<div className="timeline-section">
+							<ScriptTimeline bechdelResults={bechdelResults} characters={actors} />
+						</div>
+						
 						<div className="navigation-section">
 							<Link to="/" className="back-button">
 								<span className="button-icon">←</span>
