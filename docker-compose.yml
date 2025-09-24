@@ -16,9 +16,16 @@ services:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
       - bechdel-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   app:
-    build: .
+    build:
+      context: .
+      target: production
     container_name: bechdel-app
     restart: unless-stopped
     ports:
@@ -30,11 +37,43 @@ services:
       OMDB: ee57b776
       PORT: 3000
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
     volumes:
       - ./uploads:/app/uploads
     networks:
       - bechdel-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Development service
+  app-dev:
+    build:
+      context: .
+      target: development
+    container_name: bechdel-app-dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/bechdelTest?authSource=admin
+      THEMOVIEDB: 6ec9ddad40a319b47c562e0838f7eda3
+      OMDB: ee57b776
+      PORT: 3000
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./uploads:/app/uploads
+    networks:
+      - bechdel-network
+    profiles:
+      - dev
 
 volumes:
   mongodb_data:
