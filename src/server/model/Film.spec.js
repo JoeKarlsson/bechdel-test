@@ -1,4 +1,4 @@
-import mockingoose from 'mockingoose';
+const mockingoose = require('mockingoose');
 import Film from './Film';
 
 const _doc = {

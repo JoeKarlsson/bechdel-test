@@ -1,4 +1,4 @@
-import mockingoose from 'mockingoose';
+const mockingoose = require('mockingoose');
 import fetchMock from 'fetch-mock';
 import path from 'path';
 import processScript from './processScript';
