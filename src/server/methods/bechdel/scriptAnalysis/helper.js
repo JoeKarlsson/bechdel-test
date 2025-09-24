@@ -60,48 +60,43 @@ const isCharFemale = (characters, name) => {
 };
 
 /**
- * Scans a scene for a list of patriachal keywords,
- * if one of these keywords is found in the scene, it returns true.
+ * Enhanced patriarchal keywords detection with more comprehensive list
+ * and context awareness
  * @param  {[type]} s [description]
  * @return {[boolean]}   Boolean indicating whether or not a scene
  * contains patriarchal keywords or not.
  */
 const containsPatriarchalKeywords = s => {
 	const patriacryKeywords = [
-		'Man',
-		'Men',
-		'Boy',
-		'Boys',
-		'Guy',
-		'Guys',
-		'Male',
-		'Males',
-		'Dude',
-		'Dudes',
-		'He',
-		'His',
-		'Him',
-		'Husband',
-		'Husbands',
-		'Boyfriend',
-		'Boyfriends',
-		'Father',
-		'Fathers',
-		'Dad',
-		'Dads',
-		'Brother',
-		'Brothers',
-		'Son',
-		'Sons',
-		'bro',
-		'bros',
-		'Bro',
-		'Bros',
-		'King',
-		'Kings',
-		'Prince',
-		'Princes',
+		// Basic male references
+		'Man', 'Men', 'Boy', 'Boys', 'Guy', 'Guys', 'Male', 'Males', 'Dude', 'Dudes',
+		'He', 'His', 'Him', 'Husband', 'Husbands', 'Boyfriend', 'Boyfriends',
+		'Father', 'Fathers', 'Dad', 'Dads', 'Brother', 'Brothers', 'Son', 'Sons',
+		'bro', 'bros', 'Bro', 'Bros', 'King', 'Kings', 'Prince', 'Princes',
+
+		// Male-specific terms and titles
+		'Sir', 'Mr', 'Mister', 'Master', 'Lord', 'Duke', 'Earl', 'Baron',
+		'Gentleman', 'Gentlemen', 'Fellow', 'Fellows', 'Buddy', 'Bud', 'Pal',
+
+		// Relationship terms that imply male focus
+		'boyfriend', 'husband', 'fiancé', 'ex-boyfriend', 'ex-husband',
+		'my man', 'my guy', 'my boy', 'the man', 'that guy', 'this guy',
+
+		// Common male names (partial list)
+		'John', 'Mike', 'David', 'Robert', 'James', 'William', 'Richard', 'Charles',
+		'Thomas', 'Christopher', 'Daniel', 'Matthew', 'Anthony', 'Mark', 'Donald',
+		'Steven', 'Paul', 'Andrew', 'Joshua', 'Kenneth', 'Kevin', 'Brian', 'George',
+		'Edward', 'Ronald', 'Timothy', 'Jason', 'Jeffrey', 'Ryan', 'Jacob', 'Gary',
+		'Nicholas', 'Eric', 'Jonathan', 'Stephen', 'Larry', 'Justin', 'Scott',
+		'Brandon', 'Benjamin', 'Samuel', 'Gregory', 'Frank', 'Raymond', 'Alexander',
+		'Patrick', 'Jack', 'Dennis', 'Jerry', 'Tyler', 'Aaron', 'Jose', 'Henry',
+		'Adam', 'Douglas', 'Nathan', 'Peter', 'Zachary', 'Kyle', 'Walter', 'Harold',
+		'Carl', 'Jeremy', 'Keith', 'Roger', 'Gerald', 'Ethan', 'Arthur', 'Terry',
+		'Christian', 'Sean', 'Lawrence', 'Austin', 'Joe', 'Noah', 'Jesse', 'Albert',
+		'Bryan', 'Billy', 'Bruce', 'Willie', 'Jordan', 'Alan', 'Wayne', 'Roy',
+		'Ralph', 'Eugene', 'Louis', 'Philip', 'Bobby', 'Johnny', 'Howard'
 	];
+
 	const output = {};
 	let keywordHits = 0;
 	let x;
@@ -120,6 +115,172 @@ const containsPatriarchalKeywords = s => {
 		return true;
 	}
 	return false;
+};
+
+/**
+ * Extracts dialogue sequences from a scene to analyze conversation flow
+ * @param {string} scene - The scene text
+ * @param {Array} characters - Array of character objects
+ * @returns {Array} Array of dialogue objects with character, text, and position
+ */
+const extractDialogueSequences = (scene, characters) => {
+	const dialogueSequences = [];
+	const lines = scene.split('\n');
+
+	for (let i = 0; i < lines.length; i++) {
+		const line = lines[i].trim();
+
+		// Check if this line is a character name (dialogue)
+		for (let j = 0; j < characters.length; j++) {
+			const character = characters[j];
+			if (line === character.cleanCharName) {
+				// Look for the dialogue text in the next few lines
+				let dialogueText = '';
+				let k = i + 1;
+
+				// Collect dialogue until we hit another character name or empty line
+				while (k < lines.length && lines[k].trim() !== '' &&
+					!characters.some(char => lines[k].trim() === char.cleanCharName)) {
+					dialogueText += lines[k].trim() + ' ';
+					k++;
+				}
+
+				if (dialogueText.trim()) {
+					dialogueSequences.push({
+						character: character.cleanCharName,
+						text: dialogueText.trim(),
+						position: i,
+						isFemale: character.gender === 1
+					});
+				}
+				break;
+			}
+		}
+	}
+
+	return dialogueSequences;
+};
+
+/**
+ * Analyzes if female characters are having a meaningful conversation
+ * @param {Array} dialogueSequences - Array of dialogue objects
+ * @param {Array} characters - Array of character objects
+ * @returns {Object} Analysis result with conversation quality metrics
+ */
+const analyzeFemaleConversation = (dialogueSequences, characters) => {
+	const femaleDialogue = dialogueSequences.filter(d => d.isFemale);
+
+	if (femaleDialogue.length < 2) {
+		return {
+			hasConversation: false,
+			reason: 'Not enough female dialogue',
+			quality: 0
+		};
+	}
+
+	// Check if women are responding to each other (conversation flow)
+	let conversationPairs = 0;
+	let meaningfulTopics = 0;
+	let totalFemaleWords = 0;
+
+	for (let i = 0; i < femaleDialogue.length - 1; i++) {
+		const current = femaleDialogue[i];
+		const next = femaleDialogue[i + 1];
+
+		// Check if they're responding to each other (not just sequential dialogue)
+		const wordsBetween = dialogueSequences.filter(d =>
+			d.position > current.position && d.position < next.position
+		);
+
+		// If there are few or no male characters speaking between female dialogue,
+		// it's likely a conversation
+		if (wordsBetween.length <= 2) {
+			conversationPairs++;
+		}
+
+		// Analyze dialogue content for meaningful topics
+		const currentText = current.text.toLowerCase();
+		const nextText = next.text.toLowerCase();
+
+		// Check for question-answer patterns
+		if (currentText.includes('?') || nextText.includes('?')) {
+			meaningfulTopics++;
+		}
+
+		// Check for emotional responses
+		const emotionalWords = ['feel', 'think', 'believe', 'want', 'need', 'love', 'hate', 'fear', 'hope'];
+		if (emotionalWords.some(word => currentText.includes(word) || nextText.includes(word))) {
+			meaningfulTopics++;
+		}
+
+		// Check for personal topics
+		const personalWords = ['my', 'me', 'i', 'we', 'our', 'us'];
+		if (personalWords.some(word => currentText.includes(word) || nextText.includes(word))) {
+			meaningfulTopics++;
+		}
+
+		totalFemaleWords += current.text.split(' ').length;
+	}
+
+	// Calculate conversation quality score
+	const qualityScore = (conversationPairs * 0.4) + (meaningfulTopics * 0.3) +
+		Math.min(totalFemaleWords / 50, 1) * 0.3;
+
+	return {
+		hasConversation: conversationPairs > 0 && meaningfulTopics > 0,
+		reason: conversationPairs > 0 ? 'Has conversation flow' : 'No conversation flow',
+		quality: qualityScore,
+		conversationPairs,
+		meaningfulTopics,
+		totalFemaleWords
+	};
+};
+
+/**
+ * Enhanced Bechdel test that checks for actual conversations between women
+ * @param {Object} sceneData - Scene data object
+ * @returns {boolean} Whether the scene passes the enhanced Bechdel test
+ */
+const enhancedBechdelTestPass = (sceneData) => {
+	const { characters, count, scene } = sceneData;
+
+	// First check: Are there 2+ female characters with dialogue?
+	if (!twoOrMoreFemalesInScene(characters, count)) {
+		bechdelResults.numScenesDontPassIncrement();
+		bechdelResults.bechdelScore = 1;
+		return false;
+	}
+
+	// Second check: Extract and analyze dialogue sequences
+	const dialogueSequences = extractDialogueSequences(scene, characters);
+	const conversationAnalysis = analyzeFemaleConversation(dialogueSequences, characters);
+
+	// Third check: Do women have meaningful conversations?
+	if (!conversationAnalysis.hasConversation) {
+		bechdelResults.numScenesDontPassIncrement();
+		bechdelResults.bechdelScore = 2;
+		return false;
+	}
+
+	// Fourth check: Are they talking about men/patriarchal topics?
+	if (containsPatriarchalKeywords(scene)) {
+		bechdelResults.numScenesDontPassIncrement();
+		bechdelResults.bechdelScore = 2;
+		return false;
+	}
+
+	// Fifth check: Is the conversation quality sufficient?
+	if (conversationAnalysis.quality < 0.3) {
+		bechdelResults.numScenesDontPassIncrement();
+		bechdelResults.bechdelScore = 2;
+		return false;
+	}
+
+	// All checks passed!
+	bechdelResults.numScenesPassIncrement();
+	bechdelResults.bechdelScore = 3;
+	bechdelResults.bechdelPass = true;
+	return true;
 };
 
 /**
@@ -154,6 +315,7 @@ const twoOrMoreFemalesInScene = (characters, count) => {
 	return false;
 };
 
+// Keep the original function for backward compatibility
 const bechdelTestPass = sceneData => {
 	const { characters, count, scene } = sceneData;
 
@@ -181,4 +343,7 @@ module.exports = {
 	containsPatriarchalKeywords,
 	twoOrMoreFemalesInScene,
 	bechdelTestPass,
+	enhancedBechdelTestPass,
+	extractDialogueSequences,
+	analyzeFemaleConversation,
 };
