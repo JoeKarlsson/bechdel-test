@@ -4,8 +4,9 @@ const bechdelResults = require('./BechdelResults');
 const extractScenes = require('./extractScenes');
 const getFilmData = require('../getFilmData/getFilmData');
 const handleError = require('../../helper/handleError');
+const EnhancedAnalytics = require('../enhancedAnalytics');
 
-const getBechdelResults = async (title, path, processId = null) => {
+const getBechdelResults = async (title, path, processId = null, claudeApiKey = null) => {
 	try {
 		// Reset the bechdelResults singleton to ensure clean state
 		bechdelResults.reset();
@@ -69,8 +70,30 @@ const getBechdelResults = async (title, path, processId = null) => {
 
 		const sceneAnalysis = scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes);
 
+		// Run enhanced analytics if Claude API key is provided
+		let enhancedAnalyticsData = null;
+		if (claudeApiKey) {
+			try {
+				if (processId) {
+					const cleanupManager = require('../../helper/cleanupManager');
+					cleanupManager.updateProcessStage(processId, 'running_enhanced_analytics');
+					cleanupManager.setProcessMessage(processId, 'Running advanced AI analytics...');
+				}
+
+				const enhancedAnalytics = new EnhancedAnalytics(claudeApiKey);
+				enhancedAnalyticsData = await enhancedAnalytics.analyzeScript(path, bechdelResults.characters, processId);
+			} catch (error) {
+				console.error('Enhanced analytics failed:', error);
+				// Continue without enhanced analytics rather than failing completely
+				if (processId) {
+					const cleanupManager = require('../../helper/cleanupManager');
+					cleanupManager.setProcessMessage(processId, 'Enhanced analytics failed, continuing with basic analysis...');
+				}
+			}
+		}
+
 		// Combine both results, preserving character dialogue statistics
-		return {
+		const result = {
 			...sceneAnalysis,
 			numOfFemalesChars: genderAnalytics.numOfFemalesChars,
 			numOfMaleChars: genderAnalytics.numOfMaleChars,
@@ -80,6 +103,15 @@ const getBechdelResults = async (title, path, processId = null) => {
 			totalLinesMaleDialogue: genderAnalytics.totalLinesMaleDialogue,
 			scenesThatPass: bechdelResults.scenesThatPassBechdel,
 		};
+
+		// Add enhanced analytics if available
+		if (enhancedAnalyticsData) {
+			result.enhancedAnalytics = enhancedAnalyticsData.enhancedAnalytics;
+			result.analyticsSummary = enhancedAnalyticsData.analyticsSummary;
+			result.analysisMetadata = enhancedAnalyticsData.analysisMetadata;
+		}
+
+		return result;
 	} catch (err) {
 		handleError(err);
 		throw err; // Re-throw the error so it can be caught by processScript

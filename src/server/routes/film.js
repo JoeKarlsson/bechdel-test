@@ -87,6 +87,9 @@ const handlePostFilm = async (req, res) => {
 
 	const title = extractTitle(file);
 	const scriptPath = file.path;
+	
+	// Extract Claude API key from request body or headers
+	const claudeApiKey = req.body.claudeApiKey || req.headers['x-claude-api-key'];
 
 	try {
 		console.log(`Starting film processing for: "${title}"`);
@@ -106,11 +109,12 @@ const handlePostFilm = async (req, res) => {
 			success: true,
 			processId: processId,
 			title: title,
-			message: 'Processing started. Connect to SSE for real-time updates.'
+			message: 'Processing started. Connect to SSE for real-time updates.',
+			enhancedAnalytics: !!claudeApiKey
 		});
 
 		// Process asynchronously
-		processScript(scriptPath, title, processId).then(response => {
+		processScript(scriptPath, title, processId, claudeApiKey).then(response => {
 			console.log(`Film processing completed successfully for: "${title}"`);
 		}).catch(error => {
 			console.error(`Unexpected error during film processing for "${title}":`, error);
