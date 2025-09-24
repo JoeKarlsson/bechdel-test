@@ -1,5 +1,6 @@
-const mockingoose = require('mockingoose');
 import Film from './Film';
+
+const mockingoose = require('mockingoose');
 
 const _doc = {
 	actors: [

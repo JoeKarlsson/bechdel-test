@@ -163,7 +163,7 @@ describe('FilmData', () => {
 			};
 
 			const expectedResult1 = metaData1;
-			const expectedResult2 = Object.assign({}, metaData1, metaData2);
+			const expectedResult2 = { ...metaData1, ...metaData2};
 
 			filmData.addMetaData(metaData1);
 			expect(filmData.metaData).toMatchObject(expectedResult1);

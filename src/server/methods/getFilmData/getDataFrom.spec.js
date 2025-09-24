@@ -1,5 +1,5 @@
-const getDataFrom = require('./getDataFrom');
 const fetchMock = require('fetch-mock');
+const getDataFrom = require('./getDataFrom');
 const URLFormatter = require('./URLFormatter');
 const mockSimpleData = require('./__mocks__/mock-simple-data.json');
 const mockFullCastData = require('./__mocks__/mock-full-cast-data.json');

@@ -10,7 +10,7 @@ const Hero = () => (
 					<h4 className="hero-heading">bechdel.io</h4>
 					<h5>find out if your favorite film passes the test.</h5>
 					<NavLink to="/film/new">
-						<button className="button">upload script</button>
+						<button type="button" className="button">upload script</button>
 					</NavLink>
 				</div>
 			</div>
