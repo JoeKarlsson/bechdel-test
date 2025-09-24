@@ -5,6 +5,7 @@ const config = require('../../../webpack.config.js');
 const compiler = webpack(config);
 const middleware = WebpackDevMiddleware(compiler, {
 	publicPath: config.output.publicPath,
+	// contentBase is deprecated but still works in webpack-dev-middleware
 	contentBase: 'src',
 	historyApiFallback: true,
 	hot: true,
