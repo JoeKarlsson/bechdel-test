@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import useDocumentTitle from '../../helper/useDocumentTitle';
 import './ApiDocs.scss';
 
 const ApiDocs = () => {
+	// Set document title
+	useDocumentTitle('api docs');
+
 	const [activeEndpoint, setActiveEndpoint] = useState('get-all-films');
+	const [searchQuery, setSearchQuery] = useState('');
 
 	const endpoints = [
 		{
@@ -268,6 +273,28 @@ const ApiDocs = () => {
 		return colors[method] || '#61affe';
 	};
 
+	// Filter endpoints based on search query
+	const filteredEndpoints = endpoints.filter(endpoint => {
+		if (!searchQuery.trim()) return true;
+
+		const query = searchQuery.toLowerCase();
+		return (
+			endpoint.title.toLowerCase().includes(query) ||
+			endpoint.path.toLowerCase().includes(query) ||
+			endpoint.description.toLowerCase().includes(query) ||
+			endpoint.method.toLowerCase().includes(query)
+		);
+	});
+
+	// Update active endpoint if current one is filtered out
+	useEffect(() => {
+		if (!filteredEndpoints.find(ep => ep.id === activeEndpoint)) {
+			if (filteredEndpoints.length > 0) {
+				setActiveEndpoint(filteredEndpoints[0].id);
+			}
+		}
+	}, [searchQuery, activeEndpoint, filteredEndpoints]);
+
 	return (
 		<div className="api-docs">
 			<div className="container">
@@ -277,6 +304,19 @@ const ApiDocs = () => {
 						RESTful API for analyzing movie scripts with the Bechdel Test. Upload scripts,
 						retrieve analysis results, and explore feminist film data.
 					</p>
+					<div className="search-container">
+						<div className="search-bar">
+							<input
+								type="text"
+								placeholder="Search endpoints..."
+								value={searchQuery}
+								onChange={(e) => setSearchQuery(e.target.value)}
+								className="search-input"
+							/>
+							<div className="search-icon">🔍</div>
+						</div>
+					</div>
+
 					<div className="api-info">
 						<div className="api-info-item">
 							<strong>Base URL:</strong> <code>https://bechdel.io</code>
@@ -292,9 +332,9 @@ const ApiDocs = () => {
 
 				<div className="api-docs-content">
 					<nav className="api-docs-nav">
-						<h3>Endpoints</h3>
+						<h3>Endpoints {searchQuery && `(${filteredEndpoints.length} found)`}</h3>
 						<ul>
-							{endpoints.map((endpoint) => (
+							{filteredEndpoints.map((endpoint) => (
 								<li key={endpoint.id}>
 									<button
 										className={`nav-item ${activeEndpoint === endpoint.id ? 'active' : ''}`}
@@ -310,11 +350,16 @@ const ApiDocs = () => {
 									</button>
 								</li>
 							))}
+							{filteredEndpoints.length === 0 && searchQuery && (
+								<li className="no-results">
+									<p>No endpoints found matching "{searchQuery}"</p>
+								</li>
+							)}
 						</ul>
 					</nav>
 
 					<main className="api-docs-main">
-						{endpoints.map((endpoint) => {
+						{filteredEndpoints.map((endpoint) => {
 							if (activeEndpoint !== endpoint.id) return null;
 
 							const details = getEndpointDetails(endpoint.id);
@@ -406,6 +451,12 @@ const ApiDocs = () => {
 								</div>
 							);
 						})}
+						{filteredEndpoints.length === 0 && searchQuery && (
+							<div className="no-results-main">
+								<h2>No Results Found</h2>
+								<p>No endpoints match your search for "{searchQuery}". Try adjusting your search terms.</p>
+							</div>
+						)}
 					</main>
 				</div>
 

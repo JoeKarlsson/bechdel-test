@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Loading from '../Loading/Loading';
+import { SearchProvider } from '../SearchContext/SearchContext';
 import '../../assets/styles/skeleton.css';
 import '../../assets/styles/normalize.css';
 import './PrimaryLayout.scss';
@@ -41,27 +42,29 @@ const RouteErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportErr
 
 export const PrimaryLayout = () => {
 	return (
-		<div className="PrimaryLayout">
-			<Header />
-			<main className="content" role="main">
-				<ErrorBoundary fallback={RouteErrorFallback}>
-					<Suspense fallback={<PageLoading />}>
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/about" element={<About />} />
-							<Route path="/privacy" element={<Privacy />} />
-							<Route path="/api-docs" element={<ApiDocs />} />
-							<Route path="/case-study" element={<CaseStudy />} />
-							<Route path="/film/new" element={<NewFilm />} />
-							<Route path="/film/:id" element={<FilmContainer />} />
-							<Route path="/films" element={<FilmsContainer />} />
-							<Route path="*" element={<NoMatch />} />
-						</Routes>
-					</Suspense>
-				</ErrorBoundary>
-			</main>
-			<Footer />
-		</div>
+		<SearchProvider>
+			<div className="PrimaryLayout">
+				<Header />
+				<main className="content" role="main">
+					<ErrorBoundary fallback={RouteErrorFallback}>
+						<Suspense fallback={<PageLoading />}>
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="/about" element={<About />} />
+								<Route path="/privacy" element={<Privacy />} />
+								<Route path="/api-docs" element={<ApiDocs />} />
+								<Route path="/case-study" element={<CaseStudy />} />
+								<Route path="/film/new" element={<NewFilm />} />
+								<Route path="/film/:id" element={<FilmContainer />} />
+								<Route path="/films" element={<FilmsContainer />} />
+								<Route path="*" element={<NoMatch />} />
+							</Routes>
+						</Suspense>
+					</ErrorBoundary>
+				</main>
+				<Footer />
+			</div>
+		</SearchProvider>
 	);
 };
 

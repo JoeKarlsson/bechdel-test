@@ -42,6 +42,51 @@ $info-color: #17a2b8;
 		line-height: 1.6;
 	}
 
+	.search-container {
+		margin-bottom: 2rem;
+		display: flex;
+		justify-content: center;
+
+		.search-bar {
+			position: relative;
+			max-width: 500px;
+			width: 100%;
+
+			.search-input {
+				width: 100%;
+				padding: 1rem 3rem 1rem 1rem;
+				border: none;
+				border-radius: 25px;
+				font-size: 1rem;
+				background: rgba(255, 255, 255, 0.9);
+				color: $dark-gray;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+
+				&:focus {
+					outline: none;
+					background: $white;
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+					transform: translateY(-1px);
+				}
+
+				&::placeholder {
+					color: rgba($dark-gray, 0.6);
+				}
+			}
+
+			.search-icon {
+				position: absolute;
+				right: 1rem;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 1.2rem;
+				color: rgba($dark-gray, 0.6);
+				pointer-events: none;
+			}
+		}
+	}
+
 	.api-info {
 		display: flex;
 		justify-content: center;
@@ -60,6 +105,17 @@ $info-color: #17a2b8;
 				border-radius: 4px;
 				font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 			}
+		}
+	}
+
+	.no-results {
+		padding: 1rem;
+		text-align: center;
+		color: rgba($dark-gray, 0.7);
+		font-style: italic;
+
+		p {
+			margin: 0;
 		}
 	}
 }
@@ -147,6 +203,23 @@ $info-color: #17a2b8;
 	border-radius: 8px;
 	padding: 2rem;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+	.no-results-main {
+		text-align: center;
+		padding: 3rem 2rem;
+		color: rgba($dark-gray, 0.7);
+
+		h2 {
+			color: $dark-gray;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		p {
+			font-size: 1.1rem;
+			line-height: 1.6;
+		}
+	}
 }
 
 .endpoint-details {
@@ -501,6 +574,22 @@ $info-color: #17a2b8;
 
 		.api-docs-subtitle {
 			font-size: 1rem;
+		}
+
+		.search-container {
+			margin-bottom: 1.5rem;
+
+			.search-bar {
+				.search-input {
+					padding: 0.875rem 2.5rem 0.875rem 0.875rem;
+					font-size: 0.9rem;
+				}
+
+				.search-icon {
+					right: 0.875rem;
+					font-size: 1rem;
+				}
+			}
 		}
 
 		.api-info {

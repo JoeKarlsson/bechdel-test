@@ -23,7 +23,7 @@ const FilmItem = props => {
 						/>
 						<div className="film-overlay">
 							<div className="film-info">
-								<h3 className="film-title">Help</h3>
+								<h3 className="film-title">{displayTitle}</h3>
 								<div className="test-result">
 									<span className={`test-icon ${passesTest ? 'pass' : 'fail'}`}>
 										{testIcon}
