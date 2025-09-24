@@ -62,7 +62,7 @@ describe('Error Boundary', () => {
 					<BuggyComponent />
 				</ErrorBoundary>
 			);
-			
+
 			// Error boundary should catch the error and render fallback UI
 			expect(getByText('Something went wrong.')).toBeTruthy();
 		});
