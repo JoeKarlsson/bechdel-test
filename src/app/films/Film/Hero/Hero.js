@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Hero.scss';
 
-const Hero = props => {
-	const { title, bechdelResults, images } = props;
+const Hero = ({ title, bechdelResults, images }) => {
 	return (
 		<div className="film-hero">
 			<img className="film-image" src={images.backdrop} alt={title} />
@@ -22,6 +21,5 @@ Hero.propTypes = {
 	images: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
-Hero.defaultProps = {};
 
 export default Hero;
