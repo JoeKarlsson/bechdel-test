@@ -5,20 +5,19 @@ $dark-gray: #333;
 $border-color: #e1e5e9;
 $text-muted: #6c757d;
 $accent-color: #1eaedb;
-$chart-color: #8884d8;
 
-.CaseStudy {
+.About {
 	padding: 2rem 0;
 	min-height: 80vh;
 	background-color: $light-gray;
 
 	.container {
-		max-width: 1000px;
+		max-width: 800px;
 		margin: 0 auto;
 		padding: 0 1rem;
 	}
 
-	.case-study-header {
+	.about-header {
 		text-align: center;
 		margin-bottom: 3rem;
 		padding: 2rem;
@@ -34,7 +33,7 @@ $chart-color: #8884d8;
 			text-transform: lowercase;
 		}
 
-		.case-study-subtitle {
+		.about-subtitle {
 			font-size: 1.2rem;
 			margin-bottom: 2rem;
 			opacity: 0.9;
@@ -42,15 +41,22 @@ $chart-color: #8884d8;
 		}
 	}
 
-	.case-study-content {
+	.about-content {
 		background: $white;
 		padding: 2rem;
 		margin-bottom: 2rem;
 
+		h2 {
+			color: $dark-gray;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
 		p {
 			line-height: 1.6;
 			color: $dark-gray;
-			margin-bottom: 1.5rem;
+			margin-bottom: 1rem;
 			font-size: 1rem;
 
 			&:last-child {
@@ -58,40 +64,7 @@ $chart-color: #8884d8;
 			}
 		}
 
-		.intro-section {
-			margin-bottom: 2rem;
-		}
-
-		.chart-section {
-			margin: 2rem 0;
-
-			.chart-container {
-				display: flex;
-				justify-content: center;
-				margin: 1rem 0;
-
-				.recharts-wrapper {
-					overflow: visible;
-				}
-			}
-
-			.chart-description {
-				text-align: center;
-				margin-top: 1rem;
-				font-style: italic;
-				color: $text-muted;
-			}
-		}
-
-		.analysis-section {
-			margin-bottom: 1.5rem;
-
-			p {
-				margin-bottom: 1rem;
-			}
-		}
-
-		.statistics {
+		.bechdel-criteria {
 			margin: 1.5rem 0;
 
 			p {
@@ -101,37 +74,26 @@ $chart-color: #8884d8;
 					margin-bottom: 0;
 				}
 			}
-
-			.stat-highlight {
-				font-weight: 600;
-			}
 		}
 
-		.conclusion-section {
-			margin-top: 2rem;
-		}
-
-		.challenges-section {
-			margin: 1.5rem 0;
-
-			p {
-				margin-bottom: 0.5rem;
-				font-size: 0.95rem;
-				color: $text-muted;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
-
-		.call-to-action {
-			text-align: center;
+		.signature {
+			text-align: right;
+			font-style: italic;
+			color: $text-muted;
 			margin-top: 1.5rem;
+		}
+
+		a {
+			color: $purple;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
-	.case-study-actions {
+	.about-actions {
 		text-align: center;
 		padding: 1rem;
 
@@ -158,7 +120,7 @@ $chart-color: #8884d8;
 			padding: 0 0.5rem;
 		}
 
-		.case-study-header {
+		.about-header {
 			padding: 1.5rem;
 			margin-bottom: 2rem;
 
@@ -166,30 +128,28 @@ $chart-color: #8884d8;
 				font-size: 2rem;
 			}
 
-			.case-study-subtitle {
+			.about-subtitle {
 				font-size: 1rem;
 			}
 		}
 
-		.case-study-content {
+		.about-content {
 			padding: 1.5rem;
+
+			h2 {
+				font-size: 1.3rem;
+			}
 
 			p {
 				font-size: 0.95rem;
 			}
 
-			.chart-section {
-				.chart-container {
-					overflow-x: auto;
-
-					.recharts-wrapper {
-						min-width: 600px;
-					}
-				}
+			.bechdel-criteria {
+				margin: 1rem 0;
 			}
 		}
 
-		.case-study-actions {
+		.about-actions {
 			padding: 0.75rem;
 
 			button {
@@ -200,21 +160,17 @@ $chart-color: #8884d8;
 	}
 
 	@media (max-width: 480px) {
-		.case-study-header {
+		.about-header {
 			h1 {
 				font-size: 1.8rem;
 			}
 		}
 
-		.case-study-content {
+		.about-content {
 			padding: 1rem;
 
-			.chart-section {
-				.chart-container {
-					.recharts-wrapper {
-						min-width: 500px;
-					}
-				}
+			h2 {
+				font-size: 1.2rem;
 			}
 		}
 	}

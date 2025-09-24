@@ -29,48 +29,52 @@ const BechdelResults = ({
 
 	return (
 		<div className="BechdelResults">
-			<span className="catName">Bechdel Score:</span>{' '}
-			{bechdelScore} of 3<br />
-			<span className="catName">
-				Number of Scenes that pass:
-			</span>{' '}
-			{numScenesPass}
-			<br />
-			<span className="catName">
-				Number of Scenes that dont pass:
-			</span>{' '}
-			{numScenesDontPass}
-			<br />
-			<span className="catName">
-				Number Of Females Characters:
-			</span>{' '}
-			{numOfFemalesChars}
-			<br />
-			<span className="catName">
-				Number Of Male Characters:
-			</span>{' '}
-			{numOfMaleChars}
-			<br />
-			<span className="catName">
-				Number of Females Characters With Dialogue:
-			</span>{' '}
-			{numOfFemalesCharsWithDialogue}
-			<br />
-			<span className="catName">
-				Number of Male Characters With Dialogue:
-			</span>{' '}
-			{numOfMaleCharsWithDialogue}
-			<br />
-			<span className="catName">
-				Total Lines of Female Dialogue:
-			</span>{' '}
-			{totalLinesFemaleDialogue}
-			<br />
-			<span className="catName">
-				Total Lines of Male Dialogue:
-			</span>{' '}
-			{totalLinesMaleDialogue}
-			<br />
+			<table className="bechdel-results-table">
+				<thead>
+					<tr>
+						<th>Metric</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td className="metric-name">Bechdel Score</td>
+						<td className="metric-value">{bechdelScore} of 3</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Scenes that Pass</td>
+						<td className="metric-value">{numScenesPass}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Scenes that Don't Pass</td>
+						<td className="metric-value">{numScenesDontPass}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Female Characters</td>
+						<td className="metric-value">{numOfFemalesChars}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Male Characters</td>
+						<td className="metric-value">{numOfMaleChars}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Female Characters with Dialogue</td>
+						<td className="metric-value">{numOfFemalesCharsWithDialogue}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Male Characters with Dialogue</td>
+						<td className="metric-value">{numOfMaleCharsWithDialogue}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Total Lines of Female Dialogue</td>
+						<td className="metric-value">{totalLinesFemaleDialogue}</td>
+					</tr>
+					<tr>
+						<td className="metric-name">Total Lines of Male Dialogue</td>
+						<td className="metric-value">{totalLinesMaleDialogue}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	);
 };
