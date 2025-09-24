@@ -72,14 +72,44 @@ const handleSimpleData = async title => {
 	try {
 		const simpleURL = createSimpleDataURL(title);
 		const data = await getDataFrom(simpleURL);
-		const simpleMetaData = data.data.movies[0];
+		
+		// OMDB API returns data directly, not nested in data.movies array
+		const simpleMetaData = data;
 
-		if (notValidData(simpleMetaData)) {
+		if (notValidData(simpleMetaData) || simpleMetaData.Response === 'False') {
 			handleError('simpleMetaData not valid');
 		}
 
-		filmData.imdbID = simpleMetaData.idIMDB;
-		filmData.addMetaData(simpleMetaData);
+		// Map OMDB fields to expected format
+		const mappedData = {
+			idIMDB: simpleMetaData.imdbID,
+			title: simpleMetaData.Title,
+			year: simpleMetaData.Year,
+			rated: simpleMetaData.Rated,
+			released: simpleMetaData.Released,
+			runtime: simpleMetaData.Runtime,
+			genre: simpleMetaData.Genre,
+			director: simpleMetaData.Director,
+			writer: simpleMetaData.Writer,
+			actors: simpleMetaData.Actors, // This will be a comma-separated string
+			plot: simpleMetaData.Plot,
+			language: simpleMetaData.Language,
+			country: simpleMetaData.Country,
+			awards: simpleMetaData.Awards,
+			poster: simpleMetaData.Poster,
+			ratings: simpleMetaData.Ratings,
+			metascore: simpleMetaData.Metascore,
+			imdbRating: simpleMetaData.imdbRating,
+			imdbVotes: simpleMetaData.imdbVotes,
+			type: simpleMetaData.Type,
+			dvd: simpleMetaData.DVD,
+			boxOffice: simpleMetaData.BoxOffice,
+			production: simpleMetaData.Production,
+			website: simpleMetaData.Website
+		};
+
+		filmData.imdbID = mappedData.idIMDB;
+		filmData.addMetaData(mappedData);
 
 		await handleImageData();
 		await handleBechdelData();
