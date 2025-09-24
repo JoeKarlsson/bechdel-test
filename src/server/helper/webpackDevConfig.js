@@ -13,6 +13,9 @@ const middleware = WebpackDevMiddleware(compiler, {
 		chunkModules: false,
 		modules: false,
 	},
+	// Webpack 5 compatibility options
+	serverSideRender: false,
+	writeToDisk: false,
 });
 
 module.exports = {
