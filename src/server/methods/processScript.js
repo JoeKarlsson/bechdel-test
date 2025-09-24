@@ -31,15 +31,11 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
-const processScript = async (scriptPath, title, useEnhancedTest = false) => {
+const processScript = async (scriptPath, title) => {
 	try {
 		console.log('title', title);
 
-		const film = await Film.findByTitle(title);
-		if (filmFound(film)) {
-			return handleFilmFoundInDB(film, scriptPath);
-		}
-		const bechdelResults = await getBechdelResults(title, scriptPath, useEnhancedTest);
+		const bechdelResults = await getBechdelResults(title, scriptPath);
 
 		const { actors, images, metadata, bechdelData } = filmData.getAllData();
 
@@ -51,22 +47,24 @@ const processScript = async (scriptPath, title, useEnhancedTest = false) => {
 			images,
 			data: metadata,
 		};
-		await Film.insertFilm(filmMetaData);
+
+		// Use updateOrInsertFilm to replace existing films or create new ones
+		const savedFilm = await Film.updateOrInsertFilm(filmMetaData);
 		const finalFilm = await Film.findByTitle(title);
 
 		resetAll(scriptPath);
 
 		const response = {
-			...finalFilm,
+			...finalFilm[0].toObject(),
 			title,
 			success: true,
 			cacheHit: false,
 		};
-		console.log('saved film');
+		console.log('saved/updated film');
 		return response;
 	} catch (err) {
 		console.error('Error processing script:', err);
-		return handleError('Please try again');
+		return handleError(err, scriptPath);
 	}
 };
 

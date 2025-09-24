@@ -14,8 +14,7 @@ const isNotCorrectFileFormat = file => {
 };
 
 const fileWasNotUploadedCorrectly = file => {
-	const exists = !file;
-	return exists;
+	return !file;
 };
 
 const resetAll = scriptPath => {
@@ -42,12 +41,24 @@ const filmFound = film => {
 
 const handleGetAllFilms = async (req, res) => {
 	try {
-		const films = await Film.listAll();
+		// Parse pagination parameters from query string
+		const page = parseInt(req.query.page, 10) || 1;
+		const limit = parseInt(req.query.limit, 10) || 10;
 
-		if (!filmFound(films)) {
-			return handleError(res, 'No list of films returned from film.listAll()');
+		// Validate pagination parameters
+		if (page < 1) {
+			return handleError(res, 'Page parameter must be greater than 0');
 		}
-		return handleResponse(res, films);
+		if (limit < 1 || limit > 100) {
+			return handleError(res, 'Limit parameter must be between 1 and 100');
+		}
+
+		const result = await Film.listAllPaginated(page, limit);
+
+		if (!filmFound(result.films)) {
+			return handleError(res, 'No list of films returned from film.listAllPaginated()');
+		}
+		return handleResponse(res, result);
 	} catch (error) {
 		return handleError(res, error);
 	}
@@ -63,42 +74,23 @@ const extractTitle = file => {
 };
 
 const handlePostFilm = async (req, res) => {
-	const { files } = req;
+	const { file } = req;
 
-	if (fileWasNotUploadedCorrectly(files)) {
+	if (fileWasNotUploadedCorrectly(file)) {
 		return handleError(res, 'No script submitted, please try again');
 	}
 
-	files.forEach(async (file, i) => {
-		if (fileWasNotUploadedCorrectly(file)) {
-			return handleError(res, 'No script submitted, please try again');
-		}
-		if (isNotCorrectFileFormat(file)) {
-			return handleError(res, 'Please send a .txt script');
-		}
-		const title = extractTitle(file);
-		const scriptPath = file.path;
-		const response = await processScript(scriptPath, title);
-
-		if (i === files.length - 1) {
-			return handleResponse(res, response);
-		}
-	});
-};
-
-const handleDeleteFilm = async (req, res) => {
-	try {
-		const success = await Film.deleteFilm(req.params.id);
-
-		if (success) {
-			const response = { success: true };
-			return handleResponse(res, response);
-		}
-		return handleError(res, 'No movie found by that ID');
-	} catch (err) {
-		return handleError(res, err);
+	if (isNotCorrectFileFormat(file)) {
+		return handleError(res, 'Please send a .txt script');
 	}
+
+	const title = extractTitle(file);
+	const scriptPath = file.path;
+	const response = await processScript(scriptPath, title);
+
+	return handleResponse(res, response);
 };
+
 
 const handleGetFilm = async (req, res) => {
 	try {
@@ -118,11 +110,10 @@ const handleGetFilm = async (req, res) => {
 router
 	.route('/')
 	.get(handleGetAllFilms)
-	.post(upload.array('script'), handlePostFilm);
+	.post(upload.single('script'), handlePostFilm);
 
 router
 	.route('/:id')
-	.get(handleGetFilm)
-	.delete(handleDeleteFilm);
+	.get(handleGetFilm);
 
 module.exports = router;

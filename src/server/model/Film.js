@@ -27,6 +27,42 @@ filmSchema.static('listAll', function () {
 	return promise;
 });
 
+filmSchema.static('listAllPaginated', function (page = 1, limit = 10) {
+	const promise = new Promise((resolve, reject) => {
+		const skip = (page - 1) * limit;
+
+		Promise.all([
+			this.find()
+				.sort('-date')
+				.skip(skip)
+				.limit(limit)
+				.exec(),
+			this.countDocuments()
+		])
+			.then(([films, totalCount]) => {
+				const totalPages = Math.ceil(totalCount / limit);
+				const hasNextPage = page < totalPages;
+				const hasPrevPage = page > 1;
+
+				return resolve({
+					films,
+					pagination: {
+						currentPage: page,
+						totalPages,
+						totalCount,
+						limit,
+						hasNextPage,
+						hasPrevPage
+					}
+				});
+			})
+			.catch(err => {
+				reject(new Error(err));
+			});
+	});
+	return promise;
+});
+
 filmSchema.static('findByID', function (id) {
 	const promise = new Promise((resolve, reject) => {
 		this.find({ _id: id })
@@ -104,13 +140,88 @@ filmSchema.static('insertFilm', filmMetaData => {
 		film.urlPoster = data.poster;
 		film.idIMDB = data.idIMDB;
 		film.rating = data.imdbRating;
-		film.metascore = data.metascore;
+		film.metascore = data.metascore && data.metascore !== 'N/A' ? parseInt(data.metascore, 10) : null;
 		film.urlIMDB = `https://www.imdb.com/title/${data.idIMDB}/`;
 		film.actors = parseData.parseActorArr(actors);
 		film.images = parseData.parseImageData(images);
+		film.dateUploaded = new Date(); // Set the upload date
 
 		return film
 			.save()
+			.then(result => {
+				return resolve(result);
+			})
+			.catch(err => {
+				return reject(new Error(err));
+			});
+	});
+	return promise;
+});
+
+filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
+	const promise = new Promise((resolve, reject) => {
+		const {
+			title,
+			bechdelResults,
+			bechdelData,
+			actors,
+			images,
+			data,
+		} = filmMetaData;
+
+		// First, try to find existing film by title
+		this.findOne({ title })
+			.then(existingFilm => {
+				if (existingFilm) {
+					// Update existing film
+					existingFilm.bechdelResults = bechdelResults;
+					existingFilm.bechdelData = bechdelData;
+					existingFilm.plot = data.plot;
+					existingFilm.simplePlot = data.plot;
+					existingFilm.year = data.year;
+					existingFilm.releaseDate = data.released;
+					existingFilm.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
+					existingFilm.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
+					existingFilm.awards = data.awards ? [{ name: data.awards }] : [];
+					existingFilm.rated = data.rated;
+					existingFilm.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
+					existingFilm.urlPoster = data.poster;
+					existingFilm.idIMDB = data.idIMDB;
+					existingFilm.rating = data.imdbRating;
+					existingFilm.metascore = data.metascore && data.metascore !== 'N/A' ? parseInt(data.metascore, 10) : null;
+					existingFilm.urlIMDB = `https://www.imdb.com/title/${data.idIMDB}/`;
+					existingFilm.actors = parseData.parseActorArr(actors);
+					existingFilm.images = parseData.parseImageData(images);
+					existingFilm.dateUploaded = new Date(); // Update the upload date
+
+					return existingFilm.save();
+				} else {
+					// Create new film
+					const film = new Film({ title });
+					film.title = title;
+					film.bechdelResults = bechdelResults;
+					film.bechdelData = bechdelData;
+					film.plot = data.plot;
+					film.simplePlot = data.plot;
+					film.year = data.year;
+					film.releaseDate = data.released;
+					film.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
+					film.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
+					film.awards = data.awards ? [{ name: data.awards }] : [];
+					film.rated = data.rated;
+					film.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
+					film.urlPoster = data.poster;
+					film.idIMDB = data.idIMDB;
+					film.rating = data.imdbRating;
+					film.metascore = data.metascore && data.metascore !== 'N/A' ? parseInt(data.metascore, 10) : null;
+					film.urlIMDB = `https://www.imdb.com/title/${data.idIMDB}/`;
+					film.actors = parseData.parseActorArr(actors);
+					film.images = parseData.parseImageData(images);
+					film.dateUploaded = new Date();
+
+					return film.save();
+				}
+			})
 			.then(result => {
 				return resolve(result);
 			})

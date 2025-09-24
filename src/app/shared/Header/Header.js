@@ -1,27 +1,77 @@
-import React from 'react';
-import {
-	NavLink,
-} from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
-const activeStyles = {
-	color: 'red',
-};
-
 const Header = () => {
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
+
+	const closeMobileMenu = () => {
+		setIsMobileMenuOpen(false);
+	};
+
 	return (
-		<header className="header_bar">
-			<NavLink to="/" className="header_logo">
+		<header className="header_bar" role="banner">
+			<NavLink to="/" className="header_logo" aria-label="bechdel.io - Home">
 				bechdel.io
 			</NavLink>
-			<ul className="header_nav">
-				<li>
-					<NavLink to="/about" activeStyle={activeStyles}>about</NavLink>
-				</li>
-				<li>
-					<NavLink to="/case-study"activeStyle={activeStyles}>case study</NavLink>
-				</li>
-			</ul>
+
+			{/* Mobile menu button */}
+			<button
+				type="button"
+				className="mobile_menu_button"
+				onClick={toggleMobileMenu}
+				aria-label="Toggle navigation menu"
+				aria-expanded={isMobileMenuOpen}
+			>
+				<span className="hamburger_line" />
+				<span className="hamburger_line" />
+				<span className="hamburger_line" />
+			</button>
+
+			<nav className={`header_nav ${isMobileMenuOpen ? 'mobile_menu_open' : ''}`} role="navigation" aria-label="Main navigation">
+				<ul className="nav_list">
+					<li>
+						<NavLink
+							to="/about"
+							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
+							onClick={closeMobileMenu}
+						>
+							About
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/case-study"
+							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
+							onClick={closeMobileMenu}
+						>
+							Case Study
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/api-docs"
+							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
+							onClick={closeMobileMenu}
+						>
+							API Docs
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to="/privacy"
+							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
+							onClick={closeMobileMenu}
+						>
+							Privacy
+						</NavLink>
+					</li>
+				</ul>
+			</nav>
 		</header>
 	);
 };

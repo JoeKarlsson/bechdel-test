@@ -99,3 +99,52 @@
 .Loader_ellipsisDot:nth-child(3) {
 	animation-name: Loader_ellipsisDot3;
 }
+
+// Center the loading component
+.Loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 60vh;
+	padding: 2rem;
+	
+	.Loader_indicator {
+		text-align: center;
+		
+		h1 {
+			font-size: 2rem;
+			font-weight: 600;
+			color: #2c3e50;
+			margin: 0;
+			
+			span {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+			
+			.Loader_ellipsis {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.Loader {
+		min-height: 50vh;
+		padding: 1rem;
+		
+		.Loader_indicator h1 {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.Loader {
+		.Loader_indicator h1 {
+			font-size: 1.3rem;
+		}
+	}
+}

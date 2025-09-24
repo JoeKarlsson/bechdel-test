@@ -1,0 +1,149 @@
+// Films Container Error and Empty States
+.films-error,
+.empty-films {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 60vh;
+	padding: 2rem;
+	
+	&__container {
+		text-align: center;
+		max-width: 500px;
+		background: #ffffff;
+		border-radius: 12px;
+		padding: 3rem 2rem;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+		border: 1px solid #e1e5e9;
+	}
+	
+	&__icon {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+		display: block;
+	}
+	
+	&__title {
+		font-size: 1.8rem;
+		font-weight: 600;
+		color: #2c3e50;
+		margin: 0 0 1rem 0;
+	}
+	
+	&__message {
+		font-size: 1.1rem;
+		color: #6c757d;
+		line-height: 1.6;
+		margin: 0 0 2rem 0;
+	}
+	
+	&__actions {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	
+	&__button {
+		padding: 0.875rem 2rem;
+		border-radius: 50px;
+		font-weight: 600;
+		font-size: 1rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		
+		&--primary {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+			
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+				text-decoration: none;
+				color: white;
+			}
+		}
+		
+		&--secondary {
+			background: transparent;
+			color: #667eea;
+			border: 2px solid #667eea;
+			
+			&:hover {
+				background: #667eea;
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+	
+	&__retry-count {
+		font-size: 0.9rem;
+		color: #6c757d;
+		margin-top: 1.5rem;
+		font-style: italic;
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.films-error,
+	.empty-films {
+		min-height: 50vh;
+		padding: 1rem;
+		
+		&__container {
+			padding: 2rem 1.5rem;
+		}
+		
+		&__icon {
+			font-size: 3rem;
+		}
+		
+		&__title {
+			font-size: 1.5rem;
+		}
+		
+		&__message {
+			font-size: 1rem;
+		}
+		
+		&__button {
+			padding: 0.75rem 1.5rem;
+			font-size: 0.95rem;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.films-error,
+	.empty-films {
+		&__container {
+			padding: 1.5rem 1rem;
+		}
+		
+		&__icon {
+			font-size: 2.5rem;
+		}
+		
+		&__title {
+			font-size: 1.3rem;
+		}
+		
+		&__actions {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		&__button {
+			width: 100%;
+			max-width: 200px;
+		}
+	}
+}

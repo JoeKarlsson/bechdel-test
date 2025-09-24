@@ -43,6 +43,10 @@ const filmSchema = {
 		type: Date,
 		default: Date.now,
 	},
+	dateUploaded: {
+		type: Date,
+		default: Date.now,
+	},
 	bechdelResults: {
 		pass: Boolean,
 		bechdelScore: Number,
@@ -54,6 +58,7 @@ const filmSchema = {
 		numOfMaleCharsWithDialogue: Number,
 		totalLinesFemaleDialogue: Number,
 		totalLinesMaleDialogue: Number,
+		scenesThatPass: [String],
 	},
 	images: {
 		backdrop: String,

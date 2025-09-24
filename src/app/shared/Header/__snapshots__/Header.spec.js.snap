@@ -1,37 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Page rendering match the snapshot 1`] = `
+exports[`Header Component rendering match the snapshot 1`] = `
 <header
   class="header_bar"
+  role="banner"
 >
   <a
     aria-current="page"
+    aria-label="bechdel.io - Home"
     class="header_logo active"
     href="/"
   >
     bechdel.io
   </a>
-  <ul
-    class="header_nav"
+  <button
+    aria-expanded="false"
+    aria-label="Toggle navigation menu"
+    class="mobile_menu_button"
+    type="button"
   >
-    <li>
-      <a
-        activestyle="[object Object]"
-        class=""
-        href="/about"
-      >
-        about
-      </a>
-    </li>
-    <li>
-      <a
-        activestyle="[object Object]"
-        class=""
-        href="/case-study"
-      >
-        case study
-      </a>
-    </li>
-  </ul>
+    <span
+      class="hamburger_line"
+    />
+    <span
+      class="hamburger_line"
+    />
+    <span
+      class="hamburger_line"
+    />
+  </button>
+  <nav
+    aria-label="Main navigation"
+    class="header_nav "
+    role="navigation"
+  >
+    <ul
+      class="nav_list"
+    >
+      <li>
+        <a
+          class="nav_link"
+          href="/about"
+        >
+          About
+        </a>
+      </li>
+      <li>
+        <a
+          class="nav_link"
+          href="/case-study"
+        >
+          Case Study
+        </a>
+      </li>
+      <li>
+        <a
+          class="nav_link"
+          href="/api-docs"
+        >
+          API Docs
+        </a>
+      </li>
+      <li>
+        <a
+          class="nav_link"
+          href="/privacy"
+        >
+          Privacy
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>
 `;
