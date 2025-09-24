@@ -27,7 +27,7 @@ services:
       NODE_ENV: production
       MONGODB_URI: mongodb://admin:password@mongodb:27017/bechdelTest?authSource=admin
       THEMOVIEDB: 6ec9ddad40a319b47c562e0838f7eda3
-      MYAPIFILMS: 8b35b6b8-9faa-4719-a2ac-bc2735b14434
+      OMDB: ee57b776
       PORT: 3000
     depends_on:
       - mongodb

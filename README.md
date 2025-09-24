@@ -61,6 +61,7 @@ docker compose up -d
 ```
 
 To stop the containers:
+
 ```sh
 docker compose down
 ```
