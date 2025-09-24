@@ -1,7 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BechdelResults = (props) => {
+const BechdelResults = ({ 
+	bechdelResults = {
+		bechdelScore: 0,
+		numScenesPass: 0,
+		numScenesDontPass: 0,
+		numOfFemalesChars: 0,
+		numOfMaleChars: 0,
+		numOfFemalesCharsWithDialogue: 0,
+		numOfMaleCharsWithDialogue: 0,
+		totalLinesFemaleDialogue: 0,
+		totalLinesMaleDialogue: 0,
+	}
+}) => {
 
 	const {
 		bechdelScore,
@@ -13,7 +25,7 @@ const BechdelResults = (props) => {
 		numOfMaleCharsWithDialogue,
 		totalLinesFemaleDialogue,
 		totalLinesMaleDialogue,
-	} = props.bechdelResults;
+	} = bechdelResults;
 
 	return (
 		<div className="BechdelResults">
@@ -77,18 +89,5 @@ BechdelResults.propTypes = {
 	}),
 };
 
-BechdelResults.defaultProps = {
-	bechdelResults: {
-		bechdelScore: 0,
-		numScenesPass: 0,
-		numScenesDontPass: 0,
-		numOfFemalesChars: 0,
-		numOfMaleChars: 0,
-		numOfFemalesCharsWithDialogue: 0,
-		numOfMaleCharsWithDialogue: 0,
-		totalLinesFemaleDialogue: 0,
-		totalLinesMaleDialogue: 0,
-	},
-};
 
 export default BechdelResults;

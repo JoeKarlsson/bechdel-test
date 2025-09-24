@@ -1,61 +1,45 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Films from './Films';
 import api from '../../helper/api';
 
-class FilmsContainer extends Component {
-	constructor() {
-		super();
-		this.state = {
-			films: [],
-			loading: false,
-		};
-		this.getAllFilms = this.getAllFilms.bind(this);
-	}
+const FilmsContainer = () => {
+	const [films, setFilms] = useState([]);
+	const [loading, setLoading] = useState(false);
 
-	componentDidMount() {
-		this.getAllFilms();
-	}
-
-	getAllFilms() {
+	const getAllFilms = () => {
 		const url = '/api/film';
 		const options = {
 			method: 'GET',
 		};
 
-		this.setState({
-			loading: true,
-		});
+		setLoading(true);
 
 		api(url, options)
 			.then(data => {
 				if (data.errMsg) {
-					this.setState({
-						loading: false,
-						films: [],
-					});
+					setLoading(false);
+					setFilms([]);
 				} else {
-					this.setState({
-						films: data,
-						loading: false,
-					});
+					setFilms(data);
+					setLoading(false);
 				}
 			})
 			.catch(err => {
-				console.err(err);
-				this.setState({
-					loading: false,
-					films: [],
-				});
+				console.error(err);
+				setLoading(false);
+				setFilms([]);
 			});
-	}
+	};
 
-	render() {
-		if (this.state.films.length === 0) {
-			return <div>No Films Have Been Added Yet</div>;
-		}
-		return <Films {...this.state} />;
+	useEffect(() => {
+		getAllFilms();
+	}, []);
+
+	if (films.length === 0) {
+		return <div>No Films Have Been Added Yet</div>;
 	}
-}
+	return <Films films={films} loading={loading} />;
+};
 
 FilmsContainer.propTypes = {};
 

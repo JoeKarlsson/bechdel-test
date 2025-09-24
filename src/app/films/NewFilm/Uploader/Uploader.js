@@ -1,16 +1,16 @@
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Uppy } from '@uppy/core';
 import { Dashboard, DragDrop, ProgressBar } from '@uppy/react';
 import XHRUpload from '@uppy/xhr-upload';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 
-class Uploader extends Component {
-	constructor(props) {
-		super(props);
+const Uploader = () => {
+	const uppyRef = useRef(null);
 
-		this.uppy = new Uppy({
+	useEffect(() => {
+		const uppy = new Uppy({
 			id: 'uppy',
 			meta: { type: 'script' },
 			restrictions: {
@@ -38,31 +38,34 @@ class Uploader extends Component {
 				};
 			},
 		});
-	}
-	componentWillUnmount() {
-		this.uppy.close();
-	}
 
-	render() {
-		return (
-			<ErrorBoundary>
-				<Dashboard uppy={this.uppy} />
+		uppyRef.current = uppy;
 
-				<DragDrop
-					uppy={this.uppy}
-					locale={{
-						strings: {
-							chooseFile: 'Boop a file',
-							orDragDrop: 'or yoink it here',
-						},
-					}}
-				/>
+		return () => {
+			if (uppyRef.current) {
+				uppyRef.current.close();
+			}
+		};
+	}, []);
 
-				<h2>Progress Bar</h2>
-				<ProgressBar uppy={this.uppy} hideAfterFinish={false} />
-			</ErrorBoundary>
-		);
-	}
-}
+	return (
+		<ErrorBoundary>
+			<Dashboard uppy={uppyRef.current} />
+
+			<DragDrop
+				uppy={uppyRef.current}
+				locale={{
+					strings: {
+						chooseFile: 'Boop a file',
+						orDragDrop: 'or yoink it here',
+					},
+				}}
+			/>
+
+			<h2>Progress Bar</h2>
+			<ProgressBar uppy={uppyRef.current} hideAfterFinish={false} />
+		</ErrorBoundary>
+	);
+};
 
 export default Uploader;
