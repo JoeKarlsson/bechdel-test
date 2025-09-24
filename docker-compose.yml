@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: bechdel-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: bechdelTest
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - bechdel-network
+
+  app:
+    build: .
+    container_name: bechdel-app
+    restart: unless-stopped
+    ports:
+      - "8080:3000"
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/bechdelTest?authSource=admin
+      THEMOVIEDB: 6ec9ddad40a319b47c562e0838f7eda3
+      MYAPIFILMS: 8b35b6b8-9faa-4719-a2ac-bc2735b14434
+      PORT: 3000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./uploads:/app/uploads
+    networks:
+      - bechdel-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  bechdel-network:
+    driver: bridge

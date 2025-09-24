@@ -1,5 +1,5 @@
 <p align="center">
-	<img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
+ <img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
 
 </p>
 <h1 align="center">bechdel.io</h1>
@@ -16,7 +16,7 @@
 [![bch compliance][bchcompliance]][bchcompliance-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
-## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria:
+## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria
 
 1. It includes at least two women
 2. who have at least one conversation
@@ -30,7 +30,7 @@ This program accepts a movie script and analyzes whether or not it passes the Be
 
 * Install [Node.js](https://nodejs.org/en/)
 
-## Quickstart:
+## Quickstart
 
 ### 1. Clone The Repository
 
@@ -48,12 +48,12 @@ You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/) and
 * You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
   * Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
 
-
 ### 3. Install MongoDB Locally
 
 Install MongoDB locally on your system:
 
 **macOS (using Homebrew):**
+
 ```sh
 brew tap mongodb/brew
 brew install mongodb-community
@@ -61,6 +61,7 @@ brew services start mongodb/brew/mongodb-community
 ```
 
 **Ubuntu/Debian:**
+
 ```sh
 sudo apt-get install mongodb
 sudo systemctl start mongodb
@@ -103,7 +104,7 @@ This project was born when my sister reached out to me for advice on a few ideas
 
 Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/develop/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-### TLDR;
+### TLDR
 
 1. Fork it!
 1. Create your feature branch: `git checkout -b my-new-feature`
@@ -122,7 +123,7 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
         <br />
         <a href="https://github.com/JoeKarlsson">Joe Karlsson</a>
       </td>
-			<td align="center">
+   <td align="center">
         <img width="150 height="150"
         src="https://avatars.githubusercontent.com/laurelcarlson?v=3">
         <br />
@@ -161,9 +162,5 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
 [license-url]: https://github.com/JoeKarlsson/bechdel-test/blob/develop/LICENSE
 [twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/bechdel-test.svg?style=social&style=flat-square
 [twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbechdel-test
-[greenkeeper]: https://badges.greenkeeper.io/JoeKarlsson/bechdel-test.svg
-[greenkeeper-url]: https://greenkeeper.io/
-[snyk]: https://snyk.io/test/github/joekarlsson/bechdel-test/badge.svg
-[snyk-url]: https://snyk.io/test/github/joekarlsson/bechdel-test
 [bchcompliance]: https://bettercodehub.com/edge/badge/JoeKarlsson/bechdel-test?branch=develop
 [bchcompliance-url]: https://bettercodehub.com/
