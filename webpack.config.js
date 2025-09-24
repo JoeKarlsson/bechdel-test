@@ -17,6 +17,21 @@ config.output = {
 
 config.mode = 'development';
 
+// Remove MiniCssExtractPlugin for development
+config.plugins = config.plugins.filter(plugin => plugin.constructor.name !== 'MiniCssExtractPlugin');
+
+// Add HotModuleReplacementPlugin for development
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
+
+// Update CSS loader for development to use style-loader
+config.module.rules.forEach(rule => {
+	if (rule.test && rule.test.toString().includes('scss|css')) {
+		rule.use = [
+			'style-loader',
+			'css-loader',
+			'sass-loader',
+		];
+	}
+});
 
 module.exports = config;

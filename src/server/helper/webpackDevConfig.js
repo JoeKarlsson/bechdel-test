@@ -18,13 +18,6 @@ const middleware = WebpackDevMiddleware(compiler, {
 	// Webpack 5 compatibility options
 	serverSideRender: false,
 	writeToDisk: false,
-	// Additional Webpack 5 options
-	index: false,
-	mimeTypes: {
-		'text/html': ['html'],
-		'text/css': ['css'],
-		'application/javascript': ['js'],
-	},
 });
 
 module.exports = {
