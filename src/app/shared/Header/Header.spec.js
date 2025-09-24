@@ -15,8 +15,6 @@ describe('Header Component', () => {
 			expect(screen.getByText('bechdel.io')).toBeInTheDocument();
 			expect(screen.getByText('About')).toBeInTheDocument();
 			expect(screen.getByText('Case Study')).toBeInTheDocument();
-			expect(screen.getByText('API Docs')).toBeInTheDocument();
-			expect(screen.getByText('Privacy')).toBeInTheDocument();
 		});
 
 		it('renders mobile menu button', () => {

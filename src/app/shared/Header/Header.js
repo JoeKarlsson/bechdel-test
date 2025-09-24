@@ -40,7 +40,7 @@ const Header = () => {
 							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
 							onClick={closeMobileMenu}
 						>
-							About
+							about
 						</NavLink>
 					</li>
 					<li>
@@ -49,25 +49,7 @@ const Header = () => {
 							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
 							onClick={closeMobileMenu}
 						>
-							Case Study
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							to="/api-docs"
-							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
-							onClick={closeMobileMenu}
-						>
-							API Docs
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							to="/privacy"
-							className={({ isActive }) => isActive ? 'nav_link active' : 'nav_link'}
-							onClick={closeMobileMenu}
-						>
-							Privacy
+							case study
 						</NavLink>
 					</li>
 				</ul>

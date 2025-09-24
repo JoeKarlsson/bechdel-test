@@ -1,4 +1,5 @@
 // Films Container Error and Empty States
+
 .films-error,
 .empty-films {
 	display: flex;
@@ -92,7 +93,9 @@
 }
 
 // Responsive adjustments
+
 @media (max-width: 768px) {
+
 	.films-error,
 	.empty-films {
 		min-height: 50vh;
@@ -122,8 +125,10 @@
 }
 
 @media (max-width: 480px) {
+
 	.films-error,
 	.empty-films {
+
 		&__container {
 			padding: 1.5rem 1rem;
 		}

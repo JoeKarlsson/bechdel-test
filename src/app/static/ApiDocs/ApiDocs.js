@@ -474,32 +474,6 @@ const ApiDocs = () => {
 						</div>
 					</div>
 
-					<div className="model-section">
-						<h3>Bechdel Test Results</h3>
-						<div className="model-description">
-							<p>The Bechdel Test analysis results for a film. The test passes if:</p>
-							<ol>
-								<li>The film has at least two named female characters</li>
-								<li>These characters have at least one conversation</li>
-								<li>The conversation is about something other than a man</li>
-							</ol>
-						</div>
-						<div className="code-block">
-							<pre><code>{formatJson({
-								pass: 'boolean - Whether the film passes the Bechdel Test',
-								bechdelScore: 'number - Score from 0-3 based on criteria met',
-								numScenesPass: 'number - Number of scenes that pass the test',
-								numScenesDontPass: 'number - Number of scenes that fail the test',
-								numOfFemalesChars: 'number - Total female characters in the film',
-								numOfMaleChars: 'number - Total male characters in the film',
-								numOfFemalesCharsWithDialogue: 'number - Female characters with speaking roles',
-								numOfMaleCharsWithDialogue: 'number - Male characters with speaking roles',
-								totalLinesFemaleDialogue: 'number - Total lines spoken by female characters',
-								totalLinesMaleDialogue: 'number - Total lines spoken by male characters',
-								scenesThatPass: 'array - List of scene descriptions that pass the test',
-							})}</code></pre>
-						</div>
-					</div>
 				</section>
 
 				<section className="error-handling">
@@ -566,10 +540,89 @@ const ApiDocs = () => {
 						<a href="https://github.com/JoeKarlsson/bechdel-test" target="_blank" rel="noopener noreferrer"> GitHub repository</a>.
 					</p>
 				</section>
+
+				<section className="detailed-bechdel-analysis">
+					<h2>Detailed Bechdel Analysis</h2>
+					<div className="analysis-description">
+						<p>The Bechdel Test analysis results for a film. The test passes if:</p>
+						<ol>
+							<li>The film has at least two named female characters</li>
+							<li>These characters have at least one conversation</li>
+							<li>The conversation is about something other than a man</li>
+						</ol>
+					</div>
+					<div className="analysis-table-container">
+						<table className="bechdel-analysis-table">
+							<thead>
+								<tr>
+									<th>Field</th>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>pass</code></td>
+									<td>boolean</td>
+									<td>Whether the film passes the Bechdel Test</td>
+								</tr>
+								<tr>
+									<td><code>bechdelScore</code></td>
+									<td>number</td>
+									<td>Score from 0-3 based on criteria met</td>
+								</tr>
+								<tr>
+									<td><code>numScenesPass</code></td>
+									<td>number</td>
+									<td>Number of scenes that pass the test</td>
+								</tr>
+								<tr>
+									<td><code>numScenesDontPass</code></td>
+									<td>number</td>
+									<td>Number of scenes that fail the test</td>
+								</tr>
+								<tr>
+									<td><code>numOfFemalesChars</code></td>
+									<td>number</td>
+									<td>Total female characters in the film</td>
+								</tr>
+								<tr>
+									<td><code>numOfMaleChars</code></td>
+									<td>number</td>
+									<td>Total male characters in the film</td>
+								</tr>
+								<tr>
+									<td><code>numOfFemalesCharsWithDialogue</code></td>
+									<td>number</td>
+									<td>Female characters with speaking roles</td>
+								</tr>
+								<tr>
+									<td><code>numOfMaleCharsWithDialogue</code></td>
+									<td>number</td>
+									<td>Male characters with speaking roles</td>
+								</tr>
+								<tr>
+									<td><code>totalLinesFemaleDialogue</code></td>
+									<td>number</td>
+									<td>Total lines spoken by female characters</td>
+								</tr>
+								<tr>
+									<td><code>totalLinesMaleDialogue</code></td>
+									<td>number</td>
+									<td>Total lines spoken by male characters</td>
+								</tr>
+								<tr>
+									<td><code>scenesThatPass</code></td>
+									<td>array</td>
+									<td>List of scene descriptions that pass the test</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
 			</div>
 		</div>
 	);
 };
 
 export default ApiDocs;
-NOOOI

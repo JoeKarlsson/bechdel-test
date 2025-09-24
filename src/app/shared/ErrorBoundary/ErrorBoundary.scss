@@ -152,6 +152,7 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
 
 	&__error-stack {
+
 		strong {
 			color: $dark-gray;
 			display: block;
@@ -173,7 +174,9 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // Dark mode support
+
 @media (prefers-color-scheme: dark) {
+
 	.error-boundary {
 		background: #1a1a1a; // Changed to solid dark background instead of gradient
 
@@ -206,6 +209,7 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		}
 
 		&__error-stack {
+
 			strong {
 				color: #e0e0e0;
 			}
@@ -220,7 +224,9 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // Reduced motion support
+
 @media (prefers-reduced-motion: reduce) {
+
 	.error-boundary__button {
 		transition: none;
 

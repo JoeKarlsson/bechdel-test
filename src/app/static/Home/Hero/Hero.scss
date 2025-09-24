@@ -1,5 +1,5 @@
 .section {
-	padding: 8rem 0 7rem;
+	padding: 1rem 0 0.5rem;
 }
 
 .section-heading,
@@ -14,12 +14,54 @@
 	display: flex;
 	align-items: center;
 	text-align: center;
+	min-height: 15vh;
 
 	.hero-heading {
 		text-align: center;
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 
-	button {
-		color: white;
+	.hero-tagline {
+		font-size: 1.3rem;
+		font-weight: 300;
+		line-height: 1.4;
+		max-width: 800px;
+		margin: 0 auto;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+		opacity: 0.95;
+	}
+
+	// Responsive design
+	@media (max-width: 768px) {
+		min-height: 12vh;
+		padding: 0.8rem 0 0.3rem;
+
+		.hero-heading {
+			font-size: 2rem;
+			margin-bottom: 0.3rem;
+		}
+
+		.hero-tagline {
+			font-size: 1.1rem;
+			padding: 0 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		min-height: 10vh;
+		padding: 0.5rem 0 0.2rem;
+
+		.hero-heading {
+			font-size: 1.8rem;
+			margin-bottom: 0.2rem;
+		}
+
+		.hero-tagline {
+			font-size: 1rem;
+			padding: 0 0.5rem;
+		}
 	}
 }
