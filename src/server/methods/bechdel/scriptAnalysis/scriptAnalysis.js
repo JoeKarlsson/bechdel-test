@@ -46,7 +46,11 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 	return bechdelResults.getBechdelResults();
 };
 
-const scriptAnalysis = (characters, scenes, useEnhancedTest = true) => {
+const scriptAnalysis = (characters, scenes, useEnhancedTest = false) => {
+	// Check environment variable for enhanced test
+	const envEnhancedTest = process.env.USE_ENHANCED_BECHDEL_TEST === 'true';
+	const shouldUseEnhanced = useEnhancedTest || envEnhancedTest;
+	
 	for (let i = 0; i < scenes.length; i++) {
 		const scene = scenes[i];
 		const count = countCharacterDialogue(characters, scene);
@@ -56,8 +60,8 @@ const scriptAnalysis = (characters, scenes, useEnhancedTest = true) => {
 			scene,
 		};
 
-		// Use enhanced test by default, fall back to original if needed
-		const testFunction = useEnhancedTest ? enhancedBechdelTestPass : bechdelTestPass;
+		// Use enhanced test only when explicitly requested or via environment variable
+		const testFunction = shouldUseEnhanced ? enhancedBechdelTestPass : bechdelTestPass;
 
 		if (testFunction(sceneData) === true) {
 			bechdelResults.bechdelPass = true;

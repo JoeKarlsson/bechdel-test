@@ -31,7 +31,7 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
-const processScript = async (scriptPath, title) => {
+const processScript = async (scriptPath, title, useEnhancedTest = false) => {
 	try {
 		console.log('title', title);
 
@@ -39,7 +39,7 @@ const processScript = async (scriptPath, title) => {
 		if (filmFound(film)) {
 			return handleFilmFoundInDB(film, scriptPath);
 		}
-		const bechdelResults = await getBechdelResults(title, scriptPath);
+		const bechdelResults = await getBechdelResults(title, scriptPath, useEnhancedTest);
 
 		const { actors, images, metadata, bechdelData } = filmData.getAllData();
 

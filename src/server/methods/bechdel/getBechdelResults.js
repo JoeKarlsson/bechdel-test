@@ -5,7 +5,7 @@ const extractScenes = require('./extractScenes');
 const getFilmData = require('../getFilmData/getFilmData');
 const handleError = require('../../helper/handleError');
 
-const getBechdelResults = async (title, path) => {
+const getBechdelResults = async (title, path, useEnhancedTest = false) => {
 	try {
 		// Reset the bechdelResults singleton to ensure clean state
 		bechdelResults.reset();
@@ -24,7 +24,7 @@ const getBechdelResults = async (title, path) => {
 
 		// Then, analyze scenes for Bechdel test
 		const scenes = extractScenes(movieScript);
-		const sceneAnalysis = scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes);
+		const sceneAnalysis = scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes, useEnhancedTest);
 
 		// Combine both results, preserving character dialogue statistics
 		return {
@@ -35,7 +35,7 @@ const getBechdelResults = async (title, path) => {
 			numOfMaleCharsWithDialogue: genderAnalytics.numOfMaleCharsWithDialogue,
 			totalLinesFemaleDialogue: genderAnalytics.totalLinesFemaleDialogue,
 			totalLinesMaleDialogue: genderAnalytics.totalLinesMaleDialogue,
-			scenes: bechdelResults.scenes,
+			scenesThatPass: bechdelResults.scenesThatPassBechdel,
 		};
 	} catch (err) {
 		handleError(err);
