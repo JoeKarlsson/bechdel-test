@@ -2,35 +2,87 @@ const webpack = require('webpack');
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const StatsPlugin = require('stats-webpack-plugin'); // Not compatible with Webpack 5
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
 	entry: [path.join(__dirname, '/src/app/entry.js')],
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: '[name]-[hash].min.js',
+		filename: '[name]-[contenthash].min.js',
+		chunkFilename: '[name]-[contenthash].chunk.js',
 		publicPath: '/',
+		clean: true, // Clean output directory before emit
 	},
 	mode: 'production',
-	resolve: {},
+	resolve: {
+		extensions: ['.js', '.jsx'],
+		alias: {
+			'@': path.resolve(__dirname, 'src'),
+		},
+	},
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new TerserPlugin({
+				terserOptions: {
+					compress: {
+						drop_console: true, // Remove console.log in production
+						drop_debugger: true,
+					},
+				},
+			}),
+		],
+		splitChunks: {
+			chunks: 'all',
+			cacheGroups: {
+				vendor: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all',
+				},
+				common: {
+					name: 'common',
+					minChunks: 2,
+					chunks: 'all',
+					enforce: true,
+				},
+			},
+		},
+		runtimeChunk: 'single',
+	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: '[name].css',
-			chunkFilename: '[id].css',
+			filename: '[name]-[contenthash].css',
+			chunkFilename: '[name]-[contenthash].chunk.css',
 		}),
 		new HtmlWebpackPlugin({
 			template: 'src/app/index.tpl.html',
 			inject: 'body',
 			filename: 'index.html',
 			favicon: './src/app/assets/images/my_logo.png',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeRedundantAttributes: true,
+				useShortDoctype: true,
+				removeEmptyAttributes: true,
+				removeStyleLinkTypeAttributes: true,
+				keepClosingSlash: true,
+				minifyJS: true,
+				minifyCSS: true,
+				minifyURLs: true,
+			},
 		}),
-		// webpack.NoEmitOnErrorsPlugin is now built into Webpack 5
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
-		// StatsPlugin removed - not compatible with Webpack 5
-		new StyleLintPlugin(),
+		new StyleLintPlugin({
+			files: ['src/**/*.{css,scss}'],
+			fix: true,
+		}),
+		// Add bundle analyzer in development
+		...(process.env.ANALYZE === 'true' ? [new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)()] : []),
 	],
 	module: {
 		rules: [
@@ -41,7 +93,18 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['@babel/preset-react', '@babel/preset-env'],
+							presets: [
+								['@babel/preset-env', {
+									targets: {
+										browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
+									},
+									modules: false,
+								}],
+								['@babel/preset-react', {
+									runtime: 'automatic'
+								}],
+							],
+							cacheDirectory: true,
 						},
 					},
 				],
@@ -49,6 +112,9 @@ module.exports = {
 			{
 				test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
 				type: 'asset/resource',
+				generator: {
+					filename: 'assets/[name]-[contenthash][ext]',
+				},
 			},
 			{
 				test: /\.(mp4|webm)$/,
@@ -57,13 +123,26 @@ module.exports = {
 			{
 				test: /(\.scss$|\.css$)/,
 				use: [
-					process.env.NODE_ENV !== 'production'
-						? 'style-loader'
-						: MiniCssExtractPlugin.loader,
-					'css-loader',
-					'sass-loader',
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: false,
+						},
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: false,
+						},
+					},
 				],
 			},
 		],
+	},
+	performance: {
+		hints: 'warning',
+		maxEntrypointSize: 512000,
+		maxAssetSize: 512000,
 	},
 };

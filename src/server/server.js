@@ -35,6 +35,16 @@ app.use(methodOverride());
 
 app.use('/api/film', film);
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+	res.status(200).json({
+		status: 'healthy',
+		timestamp: new Date().toISOString(),
+		uptime: process.uptime(),
+		environment: process.env.NODE_ENV || 'development',
+	});
+});
+
 if (meta.isDeveloping) {
 	app.set('host', 'http://localhost');
 	app.use(webpackDevConfig.middleware);
