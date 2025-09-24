@@ -42,8 +42,8 @@ This application has been modernized and now uses:
 
 ## Prerequisites
 
-* Install [Node.js](https://nodejs.org/en/) (version 16 or higher)
-* Install [Docker](https://www.docker.com/) (recommended)
+- Install [Node.js](https://nodejs.org/en/) (version 16 or higher)
+- Install [Docker](https://www.docker.com/) (recommended)
 
 ## Quickstart
 
@@ -58,10 +58,10 @@ cd bechdel-test
 
 You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/) and [My API Films](https://www.myapifilms.com/).
 
-* You can sign up for an API key for The MovieDB, here: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
-  * Additional Documentation about this API can be found here: [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
-* You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
-  * Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
+- You can sign up for an API key for The MovieDB, here: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
+  - Additional Documentation about this API can be found here: [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
+- You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
+  - Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
 
 ### 3. Docker Setup (Recommended)
 
@@ -76,6 +76,7 @@ docker compose up -d
 ```
 
 **Docker Services:**
+
 - `mongodb` - MongoDB 7.0 with authentication
 - `app` - Production application (port 8080)
 - `app-dev` - Development application with hot reload (port 3000)
@@ -87,6 +88,7 @@ docker compose down
 ```
 
 **Development with Docker:**
+
 ```sh
 # Start only MongoDB for local development
 docker compose up mongodb -d
@@ -121,9 +123,9 @@ Download and install MongoDB Community Server from [https://www.mongodb.com/try/
 
 The project is now configured to use a local MongoDB instance. The configuration file `src/server/config/config.json` has been created with the provided API keys:
 
-* TMDB API Key: `6ec9ddad40a319b47c562e0838f7eda3`
-* MyAPIFilms API Key: `8b35b6b8-9faa-4719-a2ac-bc2735b14434`
-* MongoDB URI: `mongodb://localhost:27017/bechdelTest`
+- TMDB API Key: `6ec9ddad40a319b47c562e0838f7eda3`
+- MyAPIFilms API Key: `8b35b6b8-9faa-4719-a2ac-bc2735b14434`
+- MongoDB URI: `mongodb://localhost:27017/bechdelTest`
 
 ### 6. Install dependencies & run locally (Manual setup only)
 
@@ -156,6 +158,7 @@ npm run test:updateSnapshot # Update Jest snapshots
 ```
 
 **Test Coverage:**
+
 - Unit tests for React components
 - Integration tests for API endpoints
 - Snapshot testing for UI consistency
@@ -166,6 +169,7 @@ You can [read more about testing bechdel.io](test).
 ## Development Workflow
 
 ### Code Quality
+
 ```sh
 npm run lint              # Check code quality
 npm run lint:fix          # Auto-fix linting issues
@@ -175,6 +179,7 @@ npm run lint:md           # Check Markdown files
 ```
 
 ### Building for Production
+
 ```sh
 npm run build             # Build production assets
 npm run build:analyze     # Build with bundle analysis
@@ -183,6 +188,7 @@ npm run runProd           # Run production server
 ```
 
 ### Development Tools
+
 ```sh
 npm run processScript     # Process movie scripts
 npm run healthcheck       # Run linting and tests
@@ -238,10 +244,10 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
 
 ## Related Links
 
-* [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
-* [The Open Movie Database](http://www.omdbapi.com/)
-* [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
-* [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+- [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+- [The Open Movie Database](http://www.omdbapi.com/)
+- [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+- [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
 
 ### Resources
 
