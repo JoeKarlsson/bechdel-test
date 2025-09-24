@@ -1,91 +1,66 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Film from './Film';
 import api from '../../helper/api';
 
-class FilmContainer extends Component {
-	constructor() {
-		super();
-		this.state = {
-			film: {
-				title: '',
-				images: {
-					poster: '',
-					backdrop: '',
-				},
-				plot: '',
-				directors: [],
-				writers: [],
-				genres: [],
-				rated: '',
-				bechdelResults: {
-					pass: false,
-					bechdelScore: 0,
-					numScenesPass: 0,
-					scenesThatPass: [],
-					numScenesDontPass: 0,
-					numOfFemalesChars: 0,
-					numOfMaleChars: 0,
-					numOfFemalesCharsWithDialogue: 0,
-					numOfMaleCharsWithDialogue: 0,
-					totalLinesFemaleDialogue: 0,
-					totalLinesMaleDialogue: 0,
-				},
-			},
-			loading: true,
-		};
+const FilmContainer = () => {
+	const { id } = useParams();
+	const [film, setFilm] = useState({
+		title: '',
+		images: {
+			poster: '',
+			backdrop: '',
+		},
+		plot: '',
+		directors: [],
+		writers: [],
+		genres: [],
+		rated: '',
+		bechdelResults: {
+			pass: false,
+			bechdelScore: 0,
+			numScenesPass: 0,
+			scenesThatPass: [],
+			numScenesDontPass: 0,
+			numOfFemalesChars: 0,
+			numOfMaleChars: 0,
+			numOfFemalesCharsWithDialogue: 0,
+			numOfMaleCharsWithDialogue: 0,
+			totalLinesFemaleDialogue: 0,
+			totalLinesMaleDialogue: 0,
+		},
+	});
+	const [loading, setLoading] = useState(true);
 
-		this.getFilm = this.getFilm.bind(this);
-	}
-
-	componentDidMount() {
-		try {
-			this.getFilm();
-		} catch (error) {
-			console.log(error);
-		}
-	}
-
-	getFilm() {
-		const { id } = this.props.match.params;
+	const getFilm = () => {
 		const url = `/api/film/${id}`;
 		const options = {
 			method: 'GET',
 		};
 
-		this.setState({
-			loading: true,
-		});
+		setLoading(true);
 
 		api(url, options)
 			.then(data => {
-				this.setState({
-					film: data,
-					loading: false,
-				});
+				setFilm(data);
+				setLoading(false);
 				return data;
 			})
 			.catch(err => {
 				console.error(err);
-				this.setState({
-					loading: false,
-				});
+				setLoading(false);
 			});
-	}
+	};
 
-	render() {
-		return <Film {...this.state} />;
-	}
-}
+	useEffect(() => {
+		try {
+			getFilm();
+		} catch (error) {
+			console.log(error);
+		}
+	}, [id]);
 
-FilmContainer.propTypes = {
-	match: PropTypes.shape({
-		params: PropTypes.shape({
-			id: PropTypes.string,
-		}),
-	}).isRequired,
+	return <Film film={film} loading={loading} />;
 };
-
-FilmContainer.defaultProps = {};
 
 export default FilmContainer;

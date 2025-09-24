@@ -14,7 +14,20 @@ const meta = require('./helper/meta');
 
 const app = express();
 
-app.use(helmet());
+// Configure helmet with CSP that allows webpack development mode
+const helmetConfig = meta.isDeveloping ? {
+	contentSecurityPolicy: {
+		directives: {
+			defaultSrc: ["'self'"],
+			scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
+			styleSrc: ["'self'", "'unsafe-inline'"],
+			imgSrc: ["'self'", "data:", "https:"],
+			connectSrc: ["'self'", "ws:", "wss:"],
+		},
+	},
+} : {};
+
+app.use(helmet(helmetConfig));
 app.use(partials());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
