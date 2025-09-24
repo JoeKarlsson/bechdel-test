@@ -1,20 +1,11 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import NewFilm from './NewFilm';
 
 jest.mock('./Uploader/Uploader');
 
-configure({ adapter: new Adapter() });
-
 describe('NewFilm', () => {
-	let wrapper;
-
-	beforeEach(() => {
-		wrapper = shallow(<NewFilm />);
-	});
-
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('is rendered', () => {
@@ -23,13 +14,8 @@ describe('NewFilm', () => {
 				expect(tree).toMatchSnapshot();
 			});
 			it('is rendered correctly', () => {
-				expect(wrapper).toHaveLength(1);
-			});
-
-			it('should have correct inital instance', () => {
-				const initialInstance = wrapper.instance();
-				const expectedInstance = null;
-				expect(initialInstance).toBe(expectedInstance);
+				const { container } = render(<NewFilm />);
+				expect(container.firstChild).toBeTruthy();
 			});
 		});
 	});
