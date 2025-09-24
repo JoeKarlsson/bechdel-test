@@ -30,11 +30,26 @@ module.exports = {
 			cacheGroups: {
 				default: false,
 				vendors: false,
-				// Only split vendor chunks in development
+				// Split vendor chunks more granularly for better caching
 				vendor: {
 					test: /[\\/]node_modules[\\/]/,
 					name: 'vendors',
 					chunks: 'all',
+					priority: 10,
+				},
+				// Separate React and React-DOM for better caching
+				react: {
+					test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+					name: 'react',
+					chunks: 'all',
+					priority: 20,
+				},
+				// Separate router libraries
+				router: {
+					test: /[\\/]node_modules[\\/](react-router|react-router-dom)[\\/]/,
+					name: 'router',
+					chunks: 'all',
+					priority: 15,
 				},
 			},
 		},
@@ -119,7 +134,7 @@ module.exports = {
 	},
 	performance: {
 		hints: 'warning',
-		maxEntrypointSize: 512000,
-		maxAssetSize: 512000,
+		maxEntrypointSize: 2048000, // 2MB for development
+		maxAssetSize: 2048000, // 2MB for development
 	},
 };

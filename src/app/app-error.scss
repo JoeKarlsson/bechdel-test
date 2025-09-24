@@ -149,7 +149,9 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // Dark mode support
+
 @media (prefers-color-scheme: dark) {
+
 	.app-error {
 		background: #1a1a1a;
 
@@ -190,7 +192,9 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 // Reduced motion support
+
 @media (prefers-reduced-motion: reduce) {
+
 	.app-error__button {
 		transition: none;
 

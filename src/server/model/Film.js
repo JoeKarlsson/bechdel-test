@@ -15,7 +15,7 @@ const filmSchema = mongoose.Schema(schema);
 filmSchema.static('listAll', function () {
 	const promise = new Promise((resolve, reject) => {
 		this.find()
-			.sort('-date')
+			.sort('-dateUploaded')
 			.exec()
 			.then(result => {
 				return resolve(result);
@@ -33,7 +33,7 @@ filmSchema.static('listAllPaginated', function (page = 1, limit = 10) {
 
 		Promise.all([
 			this.find()
-				.sort('-date')
+				.sort('-dateUploaded')
 				.skip(skip)
 				.limit(limit)
 				.exec(),
@@ -66,7 +66,7 @@ filmSchema.static('listAllPaginated', function (page = 1, limit = 10) {
 filmSchema.static('findByID', function (id) {
 	const promise = new Promise((resolve, reject) => {
 		this.find({ _id: id })
-			.sort('-date')
+			.sort('-dateUploaded')
 			.exec()
 			.then(result => {
 				if (Array.isArray(result)) {
@@ -121,8 +121,8 @@ filmSchema.static('insertFilm', filmMetaData => {
 			images,
 			data,
 		} = filmMetaData;
-		const film = new Film({ title });
-		film.title = title;
+		const film = new Film({ title: data.title });
+		film.title = data.title;
 		film.bechdelResults = bechdelResults;
 		film.bechdelData = bechdelData;
 		film.plot = data.plot;
@@ -197,8 +197,8 @@ filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
 					return existingFilm.save();
 				} else {
 					// Create new film
-					const film = new Film({ title });
-					film.title = title;
+					const film = new Film({ title: data.title });
+					film.title = data.title;
 					film.bechdelResults = bechdelResults;
 					film.bechdelData = bechdelData;
 					film.plot = data.plot;

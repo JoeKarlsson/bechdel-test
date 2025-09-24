@@ -22,8 +22,14 @@ const notValidData = data => {
 	return false;
 };
 
-const handleImageData = async () => {
+const handleImageData = async (processId = null) => {
 	try {
+		// Update stage to TMDB images
+		if (processId) {
+			const cleanupManager = require('../../helper/cleanupManager');
+			cleanupManager.updateProcessStage(processId, 'tmdb_images');
+		}
+
 		const imagesURL = createImageUrl(filmData.imdbID);
 		const images = await getDataFrom(imagesURL);
 		if (notValidData(images)) {
@@ -36,8 +42,14 @@ const handleImageData = async () => {
 	}
 };
 
-const handleBechdelData = async () => {
+const handleBechdelData = async (processId = null) => {
 	try {
+		// Update stage to Bechdel API
+		if (processId) {
+			const cleanupManager = require('../../helper/cleanupManager');
+			cleanupManager.updateProcessStage(processId, 'bechdel_api');
+		}
+
 		const bechdelURL = createBechdelUrl(filmData.imdbID);
 		const bechdelData = await getDataFrom(bechdelURL);
 
@@ -51,8 +63,14 @@ const handleBechdelData = async () => {
 	}
 };
 
-const handleGetCredits = async () => {
+const handleGetCredits = async (processId = null) => {
 	try {
+		// Update stage to TMDB credits
+		if (processId) {
+			const cleanupManager = require('../../helper/cleanupManager');
+			cleanupManager.updateProcessStage(processId, 'tmdb_credits');
+		}
+
 		const castURL = createFilmCreditsURL(filmData.imdbID);
 		const castData = await getDataFrom(castURL);
 
@@ -68,8 +86,14 @@ const handleGetCredits = async () => {
 	}
 };
 
-const handleSimpleData = async title => {
+const handleSimpleData = async (title, processId = null) => {
 	try {
+		// Update stage to OMDB API
+		if (processId) {
+			const cleanupManager = require('../../helper/cleanupManager');
+			cleanupManager.updateProcessStage(processId, 'omdb_api');
+		}
+
 		const simpleURL = createSimpleDataURL(title);
 		const data = await getDataFrom(simpleURL);
 
@@ -111,17 +135,33 @@ const handleSimpleData = async title => {
 		filmData.imdbID = mappedData.idIMDB;
 		filmData.addMetaData(mappedData);
 
-		await handleImageData();
-		await handleBechdelData();
-		await handleGetCredits();
+		// Update progress after OMDB data is retrieved
+		if (processId) {
+			const cleanupManager = require('../../helper/cleanupManager');
+			cleanupManager.setProcessMessage(processId, 'OMDB data retrieved, fetching additional data...');
+		}
+
+		// Run these API calls in parallel for faster processing
+		await Promise.all([
+			handleImageData(processId),
+			handleBechdelData(processId),
+			handleGetCredits(processId)
+		]);
+
+		// Update progress after all API calls complete
+		if (processId) {
+			const cleanupManager = require('../../helper/cleanupManager');
+			cleanupManager.setProcessMessage(processId, 'All film data retrieved successfully!');
+		}
+
 		return filmData.getAllData();
 	} catch (err) {
 		return handleError(err);
 	}
 };
 
-const getFilmData = title => {
-	return handleSimpleData(title);
+const getFilmData = (title, processId = null) => {
+	return handleSimpleData(title, processId);
 };
 
 module.exports = getFilmData;

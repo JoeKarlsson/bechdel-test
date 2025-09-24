@@ -13,7 +13,7 @@ const createImageUrl = idIMDB => {
 
 const createBechdelUrl = idIMDB => {
 	idIMDB = idIMDB.substring(2, idIMDB.length);
-	return `http://bechdeltest.com/api/v1/getMovieByImdbId?imdbid=${idIMDB}`;
+	return `https://bechdeltest.com/api/v1/getMovieByImdbId?imdbid=${idIMDB}`;
 };
 
 const splitTitle = title => {

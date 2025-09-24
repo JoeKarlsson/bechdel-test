@@ -70,7 +70,7 @@ const defaultFilmData = {
 };
 
 // Error component for film loading errors
-const FilmError = ({ error, onRetry, retryCount }) => (
+const FilmError = ({ error = null, onRetry, retryCount = 0 }) => (
 	<div className="film-error" role="alert" aria-live="polite">
 		<div className="film-error__container">
 			<div className="film-error__icon" aria-hidden="true">
@@ -110,11 +110,6 @@ FilmError.propTypes = {
 	error: PropTypes.string,
 	onRetry: PropTypes.func.isRequired,
 	retryCount: PropTypes.number,
-};
-
-FilmError.defaultProps = {
-	error: null,
-	retryCount: 0,
 };
 
 const Film = memo(({
@@ -265,13 +260,6 @@ Film.propTypes = {
 	retryCount: PropTypes.number,
 };
 
-Film.defaultProps = {
-	film: defaultFilmData,
-	loading: true,
-	error: null,
-	onRetry: null,
-	retryCount: 0,
-};
 
 // Add display name for debugging
 Film.displayName = 'Film';

@@ -77,8 +77,4 @@ PrimaryLayout.propTypes = {
 	// No props needed for this component
 };
 
-PrimaryLayout.defaultProps = {
-	// No default props
-};
-
 export default PrimaryLayout;

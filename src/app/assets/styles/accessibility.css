@@ -1,142 +1,155 @@
 /* Accessibility Improvements - Color Contrast and Focus Indicators */
 
 /* Enhanced Color Variables for Better Contrast */
+
 :root {
-  /* Primary colors with improved contrast */
-  --color-primary: #1a1a1a;        /* Darker text for better contrast */
-  --color-secondary: #4a4a4a;      /* Medium gray for secondary text */
-  --color-muted: #6c757d;          /* Muted text with better contrast */
-  --color-link: #0066cc;           /* Blue links with better contrast */
-  --color-link-hover: #004499;     /* Darker blue for hover state */
-  --color-error: #dc3545;          /* Error color with good contrast */
-  --color-success: #28a745;        /* Success color with good contrast */
-  --color-warning: #ffc107;        /* Warning color with good contrast */
-  --color-info: #17a2b8;           /* Info color with good contrast */
+	/* Primary colors with improved contrast */
+	--color-primary: #1a1a1a;        /* Darker text for better contrast */
+	--color-secondary: #4a4a4a;      /* Medium gray for secondary text */
+	--color-muted: #6c757d;          /* Muted text with better contrast */
+	--color-link: #0066cc;           /* Blue links with better contrast */
+	--color-link-hover: #004499;     /* Darker blue for hover state */
+	--color-error: #dc3545;          /* Error color with good contrast */
+	--color-success: #28a745;        /* Success color with good contrast */
+	--color-warning: #ffc107;        /* Warning color with good contrast */
+	--color-info: #17a2b8;           /* Info color with good contrast */
   
-  /* Background colors */
-  --color-bg-primary: #ffffff;     /* Pure white background */
-  --color-bg-secondary: #f8f9fa;   /* Light gray background */
-  --color-bg-muted: #e9ecef;       /* Muted background */
+	/* Background colors */
+	--color-bg-primary: #ffffff;     /* Pure white background */
+	--color-bg-secondary: #f8f9fa;   /* Light gray background */
+	--color-bg-muted: #e9ecef;       /* Muted background */
   
-  /* Focus indicators */
-  --color-focus: #007bff;          /* Blue focus ring */
-  --color-focus-ring: rgba(0, 123, 255, 0.25); /* Focus ring with transparency */
+	/* Focus indicators */
+	--color-focus: #007bff;          /* Blue focus ring */
+	--color-focus-ring: rgba(0, 123, 255, 0.25); /* Focus ring with transparency */
 }
 
 /* Dark mode color overrides */
+
 [data-theme="dark"] {
-  --color-primary: #ffffff;        /* White text on dark background */
-  --color-secondary: #e0e0e0;     /* Light gray for secondary text */
-  --color-muted: #b0b0b0;          /* Muted text in dark mode */
-  --color-link: #66b3ff;          /* Lighter blue for dark mode */
-  --color-link-hover: #99ccff;    /* Even lighter blue for hover */
-  --color-bg-primary: #1a1a1a;    /* Dark background */
-  --color-bg-secondary: #2d2d2d;  /* Darker secondary background */
-  --color-bg-muted: #404040;      /* Muted dark background */
+	--color-primary: #ffffff;        /* White text on dark background */
+	--color-secondary: #e0e0e0;     /* Light gray for secondary text */
+	--color-muted: #b0b0b0;          /* Muted text in dark mode */
+	--color-link: #66b3ff;          /* Lighter blue for dark mode */
+	--color-link-hover: #99ccff;    /* Even lighter blue for hover */
+	--color-bg-primary: #1a1a1a;    /* Dark background */
+	--color-bg-secondary: #2d2d2d;  /* Darker secondary background */
+	--color-bg-muted: #404040;      /* Muted dark background */
 }
 
 /* Enhanced Focus Indicators */
+
 *:focus {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--color-focus-ring);
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 4px var(--color-focus-ring);
 }
 
 /* Remove outline only when using mouse (not keyboard) */
+
 *:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
+	outline: none;
+	box-shadow: none;
 }
 
 /* Enhanced focus for interactive elements */
+
 button:focus,
 input:focus,
 select:focus,
 textarea:focus,
 a:focus,
 [tabindex]:focus {
-  outline: 2px solid var(--color-focus);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--color-focus-ring);
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 4px var(--color-focus-ring);
 }
 
 /* High contrast mode support */
+
 @media (prefers-contrast: high) {
-  :root {
-    --color-primary: #000000;
-    --color-secondary: #000000;
-    --color-link: #0000ff;
-    --color-focus: #ff0000;
-  }
+
+	:root {
+		--color-primary: #000000;
+		--color-secondary: #000000;
+		--color-link: #0000ff;
+		--color-focus: #ff0000;
+	}
   
-  [data-theme="dark"] {
-    --color-primary: #ffffff;
-    --color-secondary: #ffffff;
-    --color-link: #ffff00;
-    --color-focus: #ffff00;
-  }
+	[data-theme="dark"] {
+		--color-primary: #ffffff;
+		--color-secondary: #ffffff;
+		--color-link: #ffff00;
+		--color-focus: #ffff00;
+	}
 }
 
 /* Reduced motion support */
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 /* Text contrast improvements */
+
 .text-primary {
-  color: var(--color-primary) !important;
+	color: var(--color-primary) !important;
 }
 
 .text-secondary {
-  color: var(--color-secondary) !important;
+	color: var(--color-secondary) !important;
 }
 
 .text-muted {
-  color: var(--color-muted) !important;
+	color: var(--color-muted) !important;
 }
 
 /* Link contrast improvements */
+
 a {
-  color: var(--color-link);
-  text-decoration: underline;
+	color: var(--color-link);
+	text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-  color: var(--color-link-hover);
-  text-decoration: underline;
+	color: var(--color-link-hover);
+	text-decoration: underline;
 }
 
 /* Button contrast improvements */
+
 .btn-primary {
-  background-color: var(--color-focus);
-  color: white;
-  border: 2px solid var(--color-focus);
+	background-color: var(--color-focus);
+	color: white;
+	border: 2px solid var(--color-focus);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: var(--color-link-hover);
-  border-color: var(--color-link-hover);
+	background-color: var(--color-link-hover);
+	border-color: var(--color-link-hover);
 }
 
 /* Form element contrast improvements */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"],
 textarea,
 select {
-  background-color: var(--color-bg-primary);
-  color: var(--color-primary);
-  border: 2px solid var(--color-muted);
+	background-color: var(--color-bg-primary);
+	color: var(--color-primary);
+	border: 2px solid var(--color-muted);
 }
 
 input[type="text"]:focus,
@@ -145,149 +158,164 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--color-focus);
-  box-shadow: 0 0 0 4px var(--color-focus-ring);
+	border-color: var(--color-focus);
+	box-shadow: 0 0 0 4px var(--color-focus-ring);
 }
 
 /* Error and success message contrast */
+
 .alert-error {
-  background-color: var(--color-error);
-  color: white;
-  border: 2px solid var(--color-error);
+	background-color: var(--color-error);
+	color: white;
+	border: 2px solid var(--color-error);
 }
 
 .alert-success {
-  background-color: var(--color-success);
-  color: white;
-  border: 2px solid var(--color-success);
+	background-color: var(--color-success);
+	color: white;
+	border: 2px solid var(--color-success);
 }
 
 .alert-warning {
-  background-color: var(--color-warning);
-  color: var(--color-primary);
-  border: 2px solid var(--color-warning);
+	background-color: var(--color-warning);
+	color: var(--color-primary);
+	border: 2px solid var(--color-warning);
 }
 
 .alert-info {
-  background-color: var(--color-info);
-  color: white;
-  border: 2px solid var(--color-info);
+	background-color: var(--color-info);
+	color: white;
+	border: 2px solid var(--color-info);
 }
 
 /* Skip link improvements - only styling, positioning handled in Header.scss */
+
 .skip-link {
-  background-color: var(--color-primary) !important;
-  color: var(--color-bg-primary) !important;
-  border: 2px solid var(--color-focus) !important;
+	background-color: var(--color-primary) !important;
+	color: var(--color-bg-primary) !important;
+	border: 2px solid var(--color-focus) !important;
 }
 
 /* Ensure minimum contrast for all text */
+
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-primary);
+	color: var(--color-primary);
 }
 
 p, span, div {
-  color: var(--color-primary);
+	color: var(--color-primary);
 }
 
 /* Dark mode specific improvements */
+
 [data-theme="dark"] .skip-link {
-  background-color: var(--color-bg-primary) !important;
-  color: var(--color-primary) !important;
-  border-color: var(--color-focus) !important;
+	background-color: var(--color-bg-primary) !important;
+	color: var(--color-primary) !important;
+	border-color: var(--color-focus) !important;
 }
 
 /* Fix dark mode contrast issues */
+
 body.dark-mode {
-  /* Override problematic dark backgrounds with better contrast */
-  .chart-card,
-  .film-info-card,
-  .plot-section,
-  .info-card,
-  .bechdel-charts .chart-card,
-  .new-film,
-  .api-docs-main,
-  .case-study,
-  .privacy,
-  .about {
-    background-color: #2d2d2d !important; /* Lighter than #333 for better contrast */
-    color: #ffffff !important;
-  }
+	/* Override problematic dark backgrounds with better contrast */
+
+	.chart-card,
+	.film-info-card,
+	.plot-section,
+	.info-card,
+	.bechdel-charts .chart-card,
+	.new-film,
+	.api-docs-main,
+	.case-study,
+	.privacy,
+	.about {
+		background-color: #2d2d2d !important; /* Lighter than #333 for better contrast */
+		color: #ffffff !important;
+	}
   
-  /* Ensure text has proper contrast */
-  h1, h2, h3, h4, h5, h6 {
-    color: #ffffff !important;
-  }
+	/* Ensure text has proper contrast */
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #ffffff !important;
+	}
   
-  p, span, div, li {
-    color: #e0e0e0 !important;
-  }
+	p, span, div, li {
+		color: #e0e0e0 !important;
+	}
   
-  /* Fix form elements */
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="search"],
-  textarea,
-  select {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important;
-    border-color: #555 !important;
-  }
+	/* Fix form elements */
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="search"],
+	textarea,
+	select {
+		background-color: #2d2d2d !important;
+		color: #ffffff !important;
+		border-color: #555 !important;
+	}
   
-  /* Fix table headers */
-  thead th {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important;
-  }
+	/* Fix table headers */
+
+	thead th {
+		background-color: #2d2d2d !important;
+		color: #ffffff !important;
+	}
   
-  /* Fix code blocks */
-  .code-block {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important;
-  }
+	/* Fix code blocks */
+
+	.code-block {
+		background-color: #2d2d2d !important;
+		color: #ffffff !important;
+	}
   
-  /* Fix tooltips */
-  .tooltip {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important;
-  }
+	/* Fix tooltips */
+
+	.tooltip {
+		background-color: #2d2d2d !important;
+		color: #ffffff !important;
+	}
   
-  /* Fix buttons */
-  button {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important;
-    border-color: #555 !important;
-  }
+	/* Fix buttons */
+
+	button {
+		background-color: #2d2d2d !important;
+		color: #ffffff !important;
+		border-color: #555 !important;
+	}
   
-  button:hover {
-    background-color: #3d3d3d !important;
-    color: #ffffff !important;
-  }
+	button:hover {
+		background-color: #3d3d3d !important;
+		color: #ffffff !important;
+	}
   
-  /* Fix hover effects for cards */
-  .chart-card:hover,
-  .film-info-card:hover,
-  .plot-section:hover {
-    background-color: #3d3d3d !important; /* Slightly lighter on hover */
-    color: #ffffff !important;
-  }
+	/* Fix hover effects for cards */
+
+	.chart-card:hover,
+	.film-info-card:hover,
+	.plot-section:hover {
+		background-color: #3d3d3d !important; /* Slightly lighter on hover */
+		color: #ffffff !important;
+	}
   
-  /* Fix links */
-  a {
-    color: #66b3ff !important;
-  }
+	/* Fix links */
+
+	a {
+		color: #66b3ff !important;
+	}
   
-  a:hover {
-    color: #99ccff !important;
-  }
+	a:hover {
+		color: #99ccff !important;
+	}
   
-  /* Fix navigation */
-  .nav_link {
-    color: #ffffff !important;
-  }
+	/* Fix navigation */
+
+	.nav_link {
+		color: #ffffff !important;
+	}
   
-  .nav_link:hover {
-    color: #ffd700 !important;
-  }
+	.nav_link:hover {
+		color: #ffd700 !important;
+	}
 }

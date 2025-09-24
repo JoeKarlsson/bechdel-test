@@ -1,10 +1,12 @@
 /* Dark Mode Styles */
+
 body.dark-mode {
 	background-color: #1a1a1a;
 	color: #e0e0e0;
 }
 
 /* Ensure all pages have dark background */
+
 body.dark-mode .PrimaryLayout {
 	background-color: #1a1a1a;
 	min-height: 100vh;
@@ -15,11 +17,13 @@ body.dark-mode .content {
 }
 
 /* Dark mode for Home page */
+
 body.dark-mode .Home {
 	background-color: #1a1a1a;
 }
 
 /* Dark mode for About page */
+
 body.dark-mode .About {
 	background-color: #1a1a1a;
 }
@@ -60,11 +64,13 @@ body.dark-mode .About .about-actions button:hover {
 }
 
 /* Dark mode for Hero section */
+
 body.dark-mode .hero {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero.jpg');
 }
 
 /* Dark mode for Films page */
+
 body.dark-mode .films {
 	background-color: #1a1a1a;
 }
@@ -74,6 +80,7 @@ body.dark-mode .FilmList {
 }
 
 /* Dark mode for FilmItem */
+
 body.dark-mode .filmItem {
 	background-color: transparent;
 }
@@ -96,6 +103,7 @@ body.dark-mode .film-title {
 }
 
 /* Dark mode for individual Film page */
+
 body.dark-mode .Film {
 	background-color: #1a1a1a;
 }
@@ -121,6 +129,7 @@ body.dark-mode .film-info-card p {
 }
 
 /* Dark mode for NewFilm page */
+
 body.dark-mode .NewFilm {
 	background-color: #1a1a1a;
 }
@@ -153,6 +162,7 @@ body.dark-mode .upload-form textarea:focus {
 }
 
 /* Dark mode for ApiDocs page */
+
 body.dark-mode .api-docs {
 	background-color: #1a1a1a;
 }
@@ -385,6 +395,7 @@ body.dark-mode .api-docs-main .analysis-description p {
 }
 
 /* Dark mode for Film detail pages */
+
 body.dark-mode .filmInfo {
 	background-color: #1a1a1a;
 }
@@ -440,6 +451,7 @@ body.dark-mode .filmInfo .detailed-results .BechdelResults .bechdel-results-tabl
 }
 
 /* Dark mode for FilmInfoCard */
+
 body.dark-mode .film-info-card {
 	background-color: #333;
 	border-color: #555;
@@ -477,6 +489,7 @@ body.dark-mode .film-info-card .info-value .upload-date {
 }
 
 /* Dark mode for PlotSection */
+
 body.dark-mode .plot-section {
 	background-color: #333;
 	border-color: #555;
@@ -495,6 +508,7 @@ body.dark-mode .plot-section .plot-content p {
 }
 
 /* Dark mode for Film Error State */
+
 body.dark-mode .film-error__container {
 	background-color: #333;
 	border-color: #555;
@@ -509,6 +523,7 @@ body.dark-mode .film-error__message {
 }
 
 /* Dark mode for NewFilm page */
+
 body.dark-mode .new-film {
 	background-color: #1a1a1a;
 }
@@ -555,6 +570,7 @@ body.dark-mode .info-card a {
 }
 
 /* Dark mode for BechdelCharts */
+
 body.dark-mode .bechdel-charts .chart-card {
 	background-color: #333;
 	border-color: #555;
@@ -583,6 +599,7 @@ body.dark-mode .bechdel-charts .stats-card .stats-grid .stat-item .stat-label {
 }
 
 /* Dark mode for Recharts components */
+
 body.dark-mode .recharts-wrapper {
 	color: #ffffff;
 }
@@ -634,6 +651,7 @@ body.dark-mode .recharts-label {
 }
 
 /* Specific chart text elements */
+
 body.dark-mode .recharts-pie-label-text {
 	fill: #ffffff !important;
 }
@@ -647,6 +665,7 @@ body.dark-mode .recharts-line-label-text {
 }
 
 /* Dark mode for CaseStudy page */
+
 body.dark-mode .CaseStudy {
 	background-color: #1a1a1a;
 }
@@ -683,6 +702,7 @@ body.dark-mode .CaseStudy .case-study-actions button:hover {
 }
 
 /* Dark mode for Privacy page */
+
 body.dark-mode .Privacy {
 	background-color: #1a1a1a;
 }
@@ -723,6 +743,7 @@ body.dark-mode .Privacy .privacy-actions button:hover {
 }
 
 /* Dark mode for NoMatch page */
+
 body.dark-mode .NoMatch {
 	background-color: #1a1a1a;
 }
@@ -741,6 +762,7 @@ body.dark-mode .no-match-container p {
 }
 
 /* Dark mode for Bechdel charts and results */
+
 body.dark-mode .bechdel-charts {
 	background-color: #2d2d2d;
 	color: #e0e0e0;
@@ -760,6 +782,7 @@ body.dark-mode .bechdel-results p {
 }
 
 /* Dark mode for plot section */
+
 body.dark-mode .plot-section {
 	background-color: #2d2d2d;
 	color: #e0e0e0;
@@ -774,6 +797,7 @@ body.dark-mode .plot-section p {
 }
 
 /* Dark mode for script timeline */
+
 body.dark-mode .script-timeline {
 	background-color: #2d2d2d;
 	color: #e0e0e0;
@@ -784,6 +808,7 @@ body.dark-mode .script-timeline h3 {
 }
 
 /* Dark mode for loading states */
+
 body.dark-mode .loading {
 	background-color: #1a1a1a;
 	color: #e0e0e0;
@@ -799,6 +824,7 @@ body.dark-mode .page-loading__text {
 }
 
 /* Dark mode for error states */
+
 body.dark-mode .error {
 	background-color: #4a1a1a;
 	color: #ffcdd2;
@@ -834,6 +860,7 @@ body.dark-mode .route-error__container button:hover {
 }
 
 /* Dark mode for app error */
+
 body.dark-mode .app-error {
 	background-color: #1a1a1a;
 	color: #e0e0e0;
@@ -902,6 +929,7 @@ body.dark-mode .app-error__error-content pre {
 }
 
 /* Dark mode overrides for skeleton.css elements */
+
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -1011,6 +1039,7 @@ body.dark-mode hr {
 }
 
 /* Dark mode for Header */
+
 body.dark-mode .header_bar {
 	background-color: #2d2d2d;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -1047,17 +1076,20 @@ body.dark-mode .nav_link.active {
 }
 
 /* Dark mode for Footer */
+
 body.dark-mode .footer {
 	background-color: #2d2d2d;
 	color: #e0e0e0;
 }
 
 /* Dark mode for content areas */
+
 body.dark-mode .container {
 	background-color: transparent;
 }
 
 /* Dark mode for film cards and other components */
+
 body.dark-mode .film-card,
 body.dark-mode .card,
 body.dark-mode .info-card {
@@ -1067,6 +1099,7 @@ body.dark-mode .info-card {
 }
 
 /* Dark mode for forms */
+
 body.dark-mode .form-group,
 body.dark-mode .form-field {
 	background-color: transparent;
@@ -1077,6 +1110,7 @@ body.dark-mode label {
 }
 
 /* Dark mode for tables */
+
 body.dark-mode table {
 	background-color: #2d2d2d;
 }
@@ -1086,6 +1120,7 @@ body.dark-mode thead {
 }
 
 /* Dark mode for modals and overlays */
+
 body.dark-mode .modal,
 body.dark-mode .overlay {
 	background-color: rgba(0, 0, 0, 0.8);
@@ -1097,6 +1132,7 @@ body.dark-mode .modal-content {
 }
 
 /* Dark mode for dropdowns */
+
 body.dark-mode .dropdown {
 	background-color: #2d2d2d;
 	border-color: #555;
@@ -1111,6 +1147,7 @@ body.dark-mode .dropdown-item:hover {
 }
 
 /* Dark mode for tooltips */
+
 body.dark-mode .tooltip {
 	background-color: #333;
 	color: #e0e0e0;
@@ -1118,6 +1155,7 @@ body.dark-mode .tooltip {
 }
 
 /* Dark mode for progress bars */
+
 body.dark-mode .progress-bar {
 	background-color: #333;
 }
@@ -1127,6 +1165,7 @@ body.dark-mode .progress-fill {
 }
 
 /* Dark mode for badges and tags */
+
 body.dark-mode .badge,
 body.dark-mode .tag {
 	background-color: #444;
@@ -1134,6 +1173,7 @@ body.dark-mode .tag {
 }
 
 /* Dark mode for Films Container states (No Films Found, Empty Films, Films Error) */
+
 body.dark-mode .no-search-results,
 body.dark-mode .empty-films,
 body.dark-mode .films-error {
@@ -1209,6 +1249,7 @@ body.dark-mode .films-error__retry-count {
 }
 
 /* Dark mode for alerts */
+
 body.dark-mode .alert {
 	background-color: #2d2d2d;
 	border-color: #555;

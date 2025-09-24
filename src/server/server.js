@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const partials = require('express-partials');
 const film = require('./routes/film');
+const { router: statusRouter, sendStatusUpdate } = require('./routes/status');
+const cleanupManager = require('./helper/cleanupManager');
 const prodResponse = require('./helper/responseProd');
 const handleListen = require('./helper/handleListen');
 const log = require('./helper/log');
@@ -39,6 +41,10 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 app.use('/api/film', film);
+app.use('/api/status', statusRouter);
+
+// Set up SSE callback for cleanup manager
+cleanupManager.setStatusUpdateCallback(sendStatusUpdate);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

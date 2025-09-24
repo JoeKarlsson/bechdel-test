@@ -7,7 +7,16 @@ import Error from '../../shared/Error/Error';
 import { useSearch } from '../../shared/SearchContext/SearchContext';
 import './Films.scss';
 
-const Films = ({ films = [], loading = false }) => {
+const Films = ({
+	films = [],
+	loading = false,
+	pagination = null,
+	currentPage = 1,
+	pageSize = 10,
+	onNextPage = null,
+	onPrevPage = null,
+	onPageSizeChange = null
+}) => {
 	const { debouncedSearchQuery } = useSearch();
 
 	const renderFilms = () => {
@@ -22,7 +31,15 @@ const Films = ({ films = [], loading = false }) => {
 				)}
 				<div className="row">
 					<ErrorBoundary>
-						<FilmList films={films} />
+						<FilmList
+							films={films}
+							pagination={pagination}
+							currentPage={currentPage}
+							pageSize={pageSize}
+							onNextPage={onNextPage}
+							onPrevPage={onPrevPage}
+							onPageSizeChange={onPageSizeChange}
+						/>
 					</ErrorBoundary>
 				</div>
 			</div>
@@ -40,6 +57,12 @@ const Films = ({ films = [], loading = false }) => {
 Films.propTypes = {
 	films: PropTypes.array, // eslint-disable-line react/forbid-prop-types
 	loading: PropTypes.bool,
+	pagination: PropTypes.object,
+	currentPage: PropTypes.number,
+	pageSize: PropTypes.number,
+	onNextPage: PropTypes.func,
+	onPrevPage: PropTypes.func,
+	onPageSizeChange: PropTypes.func,
 };
 
 
