@@ -1,9 +1,11 @@
 const bechdelResults = require('../BechdelResults');
 const {
 	isCharFemale,
+	hasValidGender,
 	countCharacterDialogue,
 	bechdelTestPass,
 	enhancedBechdelTestPass,
+	twoOrMoreFemalesInScene,
 } = require('./helper');
 
 const greaterThanZero = num => {
@@ -26,31 +28,31 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 	for (let i = 0; i < names.length; i++) {
 		const name = names[i];
 
-		if (isCharFemale(characters, name)) {
-			bechdelResults.numOfFemalesCharsIncrement();
-			const numLinesOfDialogue = charCount[name];
+		// Only count characters with valid gender (1 or 2)
+		if (hasValidGender(characters, name)) {
+			if (isCharFemale(characters, name)) {
+				bechdelResults.numOfFemalesCharsIncrement();
+				const numLinesOfDialogue = charCount[name];
 
-			if (greaterThanZero(numLinesOfDialogue)) {
-				bechdelResults.numOfFemalesCharsWithDialogueIncrement();
-				bechdelResults.totalLinesFemaleDialogueAdd(charCount[name]);
-			}
-		} else {
-			bechdelResults.numOfMaleCharsIncrement();
-			const numLinesOfDialogue = charCount[name];
-			if (greaterThanZero(numLinesOfDialogue)) {
-				bechdelResults.numOfMaleCharsWithDialogueIncrement();
-				bechdelResults.totalLinesMaleDialogueAdd(charCount[name]);
+				if (greaterThanZero(numLinesOfDialogue)) {
+					bechdelResults.numOfFemalesCharsWithDialogueIncrement();
+					bechdelResults.totalLinesFemaleDialogueAdd(charCount[name]);
+				}
+			} else {
+				bechdelResults.numOfMaleCharsIncrement();
+				const numLinesOfDialogue = charCount[name];
+				if (greaterThanZero(numLinesOfDialogue)) {
+					bechdelResults.numOfMaleCharsWithDialogueIncrement();
+					bechdelResults.totalLinesMaleDialogueAdd(charCount[name]);
+				}
 			}
 		}
+		// Characters with gender: 0 (unknown/other) are excluded from the count
 	}
 	return bechdelResults.getBechdelResults();
 };
 
-const scriptAnalysis = (characters, scenes, useEnhancedTest = false) => {
-	// Check environment variable for enhanced test
-	const envEnhancedTest = process.env.USE_ENHANCED_BECHDEL_TEST === 'true';
-	const shouldUseEnhanced = useEnhancedTest || envEnhancedTest;
-	
+const scriptAnalysis = (characters, scenes) => {
 	for (let i = 0; i < scenes.length; i++) {
 		const scene = scenes[i];
 		const count = countCharacterDialogue(characters, scene);
@@ -60,12 +62,21 @@ const scriptAnalysis = (characters, scenes, useEnhancedTest = false) => {
 			scene,
 		};
 
-		// Use enhanced test only when explicitly requested or via environment variable
-		const testFunction = shouldUseEnhanced ? enhancedBechdelTestPass : bechdelTestPass;
-
-		if (testFunction(sceneData) === true) {
+		// Always use enhanced test by default
+		if (enhancedBechdelTestPass(sceneData) === true) {
 			bechdelResults.bechdelPass = true;
+			bechdelResults.bechdelScore = 3;
 			bechdelResults.addBechdelPassingScene(scene);
+		} else {
+			// Count scenes that don't pass
+			bechdelResults.numScenesDontPassIncrement();
+
+			// Check if at least 2 females are present for score 2
+			if (twoOrMoreFemalesInScene(characters, count)) {
+				bechdelResults.bechdelScore = Math.max(bechdelResults.bechdelScore, 2);
+			} else {
+				bechdelResults.bechdelScore = Math.max(bechdelResults.bechdelScore, 1);
+			}
 		}
 	}
 	return bechdelResults.getBechdelResults();

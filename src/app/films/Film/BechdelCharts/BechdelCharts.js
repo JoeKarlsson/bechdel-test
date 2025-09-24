@@ -26,12 +26,13 @@ const BechdelCharts = ({ bechdelResults }) => {
         numScenesPass,
         numScenesDontPass,
         bechdelScore,
+        pass,
     } = bechdelResults;
 
     // Character distribution data
     const characterData = [
-        { name: 'Female Characters', value: numOfFemalesChars, color: '#ff6b9d' },
-        { name: 'Male Characters', value: numOfMaleChars, color: '#4ecdc4' },
+        { name: 'Female', value: numOfFemalesChars, color: '#ff6b9d' },
+        { name: 'Male', value: numOfMaleChars, color: '#4ecdc4' },
     ];
 
     // Dialogue data
@@ -56,11 +57,49 @@ const BechdelCharts = ({ bechdelResults }) => {
         if (active && payload && payload.length) {
             return (
                 <div className="custom-tooltip">
-                    <p className="label">{`${label}: ${payload[0].value}`}</p>
+                    <p className="label">{`${label}: ${payload[0].value} characters`}</p>
                 </div>
             );
         }
         return null;
+    };
+
+    const CustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, name, value }) => {
+        const RADIAN = Math.PI / 180;
+        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+        const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+        return (
+            <g>
+                <text
+                    x={x}
+                    y={y - 8}
+                    fill="white"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="14"
+                    fontWeight="bold"
+                    stroke="black"
+                    strokeWidth="0.5"
+                >
+                    {name}
+                </text>
+                <text
+                    x={x}
+                    y={y + 8}
+                    fill="white"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="12"
+                    fontWeight="bold"
+                    stroke="black"
+                    strokeWidth="0.5"
+                >
+                    {value}
+                </text>
+            </g>
+        );
     };
 
     return (
@@ -70,7 +109,7 @@ const BechdelCharts = ({ bechdelResults }) => {
                 <div className="chart-card score-card">
                     <h3>Bechdel Score</h3>
                     <div className="score-progress">
-                        <div className="score-circle">
+                        <div className={`score-circle ${pass ? 'passed' : 'failed'}`}>
                             <div className="score-number">{bechdelScore}</div>
                             <div className="score-total">/ 3</div>
                         </div>
@@ -103,7 +142,7 @@ const BechdelCharts = ({ bechdelResults }) => {
                                 outerRadius={60}
                                 fill="#8884d8"
                                 dataKey="value"
-                                label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                                label={<CustomLabel />}
                             >
                                 {characterData.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} />

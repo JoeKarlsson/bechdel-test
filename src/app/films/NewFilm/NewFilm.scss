@@ -1,0 +1,193 @@
+// NewFilm Component Styles
+$purple: purple;
+$white: white;
+$light-gray: #f8f9fa;
+$dark-gray: #333;
+$border-color: #e1e5e9;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+
+.new-film {
+	padding: 2rem 0;
+	min-height: 80vh;
+	// Removed background color completely
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	&__header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0; // Removed horizontal padding, kept vertical
+		background: transparent; // Removed colored background
+		color: $dark-gray; // Changed from white to dark gray
+		border-radius: 0; // Removed border radius
+		box-shadow: none; // Removed box shadow
+	}
+
+	&__title {
+		font-size: 2.5rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+
+		@media (max-width: 768px) {
+			font-size: 2rem;
+		}
+	}
+
+	&__subtitle {
+		font-size: 1.2rem;
+		opacity: 0.8; // Slightly reduced opacity for better contrast on white
+		line-height: 1.6;
+		margin: 0;
+		color: #666; // Added explicit color for better contrast
+
+		@media (max-width: 768px) {
+			font-size: 1rem;
+		}
+	}
+
+	&__content {
+		margin-bottom: 3rem;
+		
+		// Override Uppy dashboard background to ensure white background
+		:global(.uppy-Dashboard) {
+			background-color: white !important;
+		}
+		
+		:global(.uppy-Dashboard-inner) {
+			background-color: white !important;
+		}
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+	}
+}
+
+.info-card {
+	background: $white;
+	border-radius: $border-radius;
+	padding: 2rem;
+	box-shadow: $shadow;
+	border: 1px solid $border-color;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	}
+
+	&__title {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: $dark-gray;
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		&::before {
+			content: 'ℹ️';
+			font-size: 1.2rem;
+		}
+	}
+
+	&__content {
+		p {
+			margin: 0;
+			line-height: 1.6;
+			color: #666;
+
+			strong {
+				color: $dark-gray;
+				font-weight: 600;
+			}
+
+			a {
+				color: $purple;
+				text-decoration: none;
+				font-weight: 500;
+				border-bottom: 1px solid transparent;
+				transition: border-color 0.2s ease;
+
+				&:hover {
+					border-bottom-color: $purple;
+				}
+
+				&:focus {
+					outline: 2px solid rgba($purple, 0.3);
+					outline-offset: 2px;
+					border-radius: 2px;
+				}
+			}
+		}
+	}
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+	.new-film {
+		// Removed background color completely from dark mode too
+
+		&__header {
+			background: transparent; // Removed colored background in dark mode too
+			color: #e0e0e0; // Light text for dark background
+		}
+
+		&__subtitle {
+			color: #b0b0b0; // Lighter text for dark background
+		}
+	}
+
+	.info-card {
+		background: #2d2d2d;
+		border-color: #404040;
+
+		&__title {
+			color: #e0e0e0;
+		}
+
+		&__content p {
+			color: #b0b0b0;
+
+			strong {
+				color: #e0e0e0;
+			}
+
+			a {
+				color: lighten($purple, 20%);
+
+				&:hover {
+					border-bottom-color: lighten($purple, 20%);
+				}
+			}
+		}
+	}
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+	.info-card {
+		transition: none;
+
+		&:hover {
+			transform: none;
+		}
+	}
+
+	.info-card__content a {
+		transition: none;
+	}
+}

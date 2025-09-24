@@ -18,4 +18,34 @@
 	margin-left: 10%;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 10px;
+
+	.bechdel-status {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		.status-icon {
+			font-size: 1.2em;
+			font-weight: bold;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			transition: all 0.3s ease;
+		}
+
+		&.pass-icon .status-icon {
+			background-color: #2ecc71;
+			color: white;
+			box-shadow: 0 2px 8px rgba(46, 204, 113, 0.4);
+		}
+
+		&.fail-icon .status-icon {
+			background-color: #e74c3c;
+			color: white;
+			box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+		}
+	}
 }
