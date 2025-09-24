@@ -1,7 +1,10 @@
 module.exports = {
 	testEnvironment: 'jsdom',
+	testEnvironmentOptions: {
+		url: 'http://localhost'
+	},
 	automock: false,
-	setupFiles: ['./jestsetup.js'],
+	setupFilesAfterEnv: ['./jestsetup.js'],
 	collectCoverageFrom: ['src/**/*.js'],
 	coveragePathIgnorePatterns: [
 		'<rootDir>/preview',
