@@ -160,7 +160,7 @@ class BechdelResults {
 			totalLinesMaleDialogue: this._totalLinesMaleDialogue,
 			characters: this._characters,
 			scenesThatPass: this._scenesThatPass,
-			// scenes: this._scenes,
+			scenes: this._scenes,
 		};
 	}
 
