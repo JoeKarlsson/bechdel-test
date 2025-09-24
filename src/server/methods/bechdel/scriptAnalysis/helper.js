@@ -50,7 +50,7 @@ const isCharFemale = (characters, name) => {
 		if (name === character.cleanCharName) {
 			if (character.gender === 1) {
 				return true;
-			} else if (character.gender === 2) {
+			} if (character.gender === 2) {
 				return false;
 			}
 			return false;

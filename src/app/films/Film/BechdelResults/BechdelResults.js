@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BechdelResults = ({ 
+const BechdelResults = ({
 	bechdelResults = {
 		bechdelScore: 0,
 		numScenesPass: 0,
@@ -32,42 +32,42 @@ const BechdelResults = ({
 			<span className="catName">Bechdel Score:</span>{' '}
 			{bechdelScore} of 3<br />
 			<span className="catName">
-			Number of Scenes that pass:
+				Number of Scenes that pass:
 			</span>{' '}
 			{numScenesPass}
 			<br />
 			<span className="catName">
-			Number of Scenes that dont pass:
+				Number of Scenes that dont pass:
 			</span>{' '}
 			{numScenesDontPass}
 			<br />
 			<span className="catName">
-			Number Of Females Characters:
+				Number Of Females Characters:
 			</span>{' '}
 			{numOfFemalesChars}
 			<br />
 			<span className="catName">
-			Number Of Male Characters:
+				Number Of Male Characters:
 			</span>{' '}
 			{numOfMaleChars}
 			<br />
 			<span className="catName">
-			Number of Females Characters With Dialogue:
+				Number of Females Characters With Dialogue:
 			</span>{' '}
 			{numOfFemalesCharsWithDialogue}
 			<br />
 			<span className="catName">
-			Number of Male Characters With Dialogue:
+				Number of Male Characters With Dialogue:
 			</span>{' '}
 			{numOfMaleCharsWithDialogue}
 			<br />
 			<span className="catName">
-			Total Lines of Female Dialogue:
+				Total Lines of Female Dialogue:
 			</span>{' '}
 			{totalLinesFemaleDialogue}
 			<br />
 			<span className="catName">
-			Total Lines of Male Dialogue:
+				Total Lines of Male Dialogue:
 			</span>{' '}
 			{totalLinesMaleDialogue}
 			<br />

@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
-		"airbnb",
-		"prettier",
-	],
+    "airbnb",
+    "prettier",
+  ],
   rules: {
     "import/no-named-as-default": 0,
     "no-underscore-dangle": "off",
@@ -18,7 +18,6 @@ module.exports = {
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "arrow-body-style": 0,
     "no-tabs": 0,
-    "no-tabs": 0,
     indent: ["error", "tab"],
     "react/jsx-indent": [2, "tab"],
     "react/jsx-indent-props": [2, "tab"],
@@ -31,16 +30,34 @@ module.exports = {
         aspects: ["noHref", "invalidHref", "preferButton"]
       }
     ],
+    // Modern React rules
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
   },
   env: {
     browser: true,
     node: true,
     jest: true,
     mocha: true,
-    mongo: true
+    mongo: true,
+    es2022: true
   },
   plugins: [
-		"import",
-		"prettier",
-	]
+    "import",
+    "prettier",
+  ],
+  parserOptions: {
+    ecmaVersion: 2022,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true
+    }
+  }
 };

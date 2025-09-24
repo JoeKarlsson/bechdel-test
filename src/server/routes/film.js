@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
 const Film = require('../model/Film');
 const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
 const processScript = require('../methods/processScript');
-const multer = require('multer');
 
 const router = express.Router();
 const upload = multer({ dest: 'uploads/' });

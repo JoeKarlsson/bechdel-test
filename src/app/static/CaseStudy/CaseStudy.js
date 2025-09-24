@@ -132,7 +132,7 @@ const CaseStudy = () => (
 			</p>
 		</div>
 		<Link to="/">
-			<button>all films</button>
+			<button type="button">all films</button>
 		</Link>
 	</div>
 );

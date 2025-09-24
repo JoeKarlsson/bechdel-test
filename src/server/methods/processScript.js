@@ -1,6 +1,6 @@
 const Film = require('../model/Film');
-const filmData = require('../methods/getFilmData/FilmData');
-const script = require('../methods/script');
+const filmData = require("./getFilmData/FilmData");
+const script = require("./script");
 const getBechdelResults = require('./bechdel/getBechdelResults');
 
 const resetAll = scriptPath => {

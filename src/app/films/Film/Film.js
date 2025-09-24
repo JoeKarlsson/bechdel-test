@@ -35,7 +35,7 @@ const isValidFilm = film => {
 	return film.title !== '';
 };
 
-const Film = ({ 
+const Film = ({
 	film = {
 		title: '',
 		images: {
@@ -61,8 +61,8 @@ const Film = ({
 			totalLinesFemaleDialogue: 0,
 			totalLinesMaleDialogue: 0,
 		},
-	}, 
-	loading = true 
+	},
+	loading = true
 }) => {
 	const renderFilm = () => {
 		const {
@@ -97,7 +97,7 @@ const Film = ({
 								<span className="catName">Rated:</span> {rated}
 								<br />
 								<span className="catName">IMDB:</span>{' '}
-								<a href={`http://www.imdb.com/title/${idIMDB}`} target="_blank">
+								<a href={`http://www.imdb.com/title/${idIMDB}`} target="_blank" rel="noreferrer">
 									{title}
 								</a>
 								<br />
@@ -105,7 +105,7 @@ const Film = ({
 							<BechdelResults bechdelResults={bechdelResults} />
 						</span>
 						<Link to="/">
-							<button>All Films</button>
+							<button type="button">All Films</button>
 						</Link>
 					</div>
 				</ErrorBoundary>
@@ -115,7 +115,7 @@ const Film = ({
 
 	if (loading) {
 		return <Loading />;
-	} else if (isValidFilm(film)) {
+	} if (isValidFilm(film)) {
 		return renderFilm();
 	}
 	return <Error />;
