@@ -5,7 +5,6 @@
 <h1 align="center">bechdel.io</h1>
 <h3 align="center">Find out if your favorite film passes the test</h3>
 
-[![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
 [![Build Status][tests]][tests-url]
 [![Maintainability][maintainability]][maintainability-url]
@@ -13,7 +12,6 @@
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
 [![twitter][twitter]][twitter-url]
-[![bch compliance][bchcompliance]][bchcompliance-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria
@@ -251,8 +249,6 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
 
 ### Resources
 
-[deps]: https://david-dm.org/JoeKarlsson/bechdel-test/status.svg
-[deps-url]: https://david-dm.org/JoeKarlsson/bechdel-test
 [tests]: https://travis-ci.org/JoeKarlsson/bechdel-test.svg?branch=develop
 [tests-url]: https://travis-ci.org/JoeKarlsson/bechdel-test
 [maintainability]: https://api.codeclimate.com/v1/badges/7d2a095c01bb88557a41/maintainability
@@ -267,5 +263,3 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
 [license-url]: https://github.com/JoeKarlsson/bechdel-test/blob/develop/LICENSE
 [twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/bechdel-test.svg?style=social&style=flat-square
 [twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbechdel-test
-[bchcompliance]: https://bettercodehub.com/edge/badge/JoeKarlsson/bechdel-test?branch=develop
-[bchcompliance-url]: https://bettercodehub.com/
