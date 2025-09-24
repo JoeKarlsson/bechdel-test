@@ -3,6 +3,7 @@ const {
 	isCharFemale,
 	countCharacterDialogue,
 	bechdelTestPass,
+	enhancedBechdelTestPass,
 } = require('./helper');
 
 const greaterThanZero = num => {
@@ -45,7 +46,7 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 	return bechdelResults.getBechdelResults();
 };
 
-const scriptAnalysis = (characters, scenes) => {
+const scriptAnalysis = (characters, scenes, useEnhancedTest = true) => {
 	for (let i = 0; i < scenes.length; i++) {
 		const scene = scenes[i];
 		const count = countCharacterDialogue(characters, scene);
@@ -54,7 +55,11 @@ const scriptAnalysis = (characters, scenes) => {
 			count,
 			scene,
 		};
-		if (bechdelTestPass(sceneData) === true) {
+
+		// Use enhanced test by default, fall back to original if needed
+		const testFunction = useEnhancedTest ? enhancedBechdelTestPass : bechdelTestPass;
+
+		if (testFunction(sceneData) === true) {
 			bechdelResults.bechdelPass = true;
 			bechdelResults.addBechdelPassingScene(scene);
 		}
