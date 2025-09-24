@@ -48,9 +48,26 @@ You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/) and
 * You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
   * Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
 
-### 3. Install MongoDB Locally
+### 3. Docker Setup (Recommended)
 
-Install MongoDB locally on your system:
+The easiest way to run the application is using Docker:
+
+```sh
+# Start MongoDB and the application
+docker compose up -d
+
+# The application will be available at http://localhost:8080
+# MongoDB will be available at localhost:27017
+```
+
+To stop the containers:
+```sh
+docker compose down
+```
+
+### 4. Manual MongoDB Installation (Alternative)
+
+If you prefer to install MongoDB locally:
 
 **macOS (using Homebrew):**
 
@@ -70,7 +87,7 @@ sudo systemctl start mongodb
 **Windows:**
 Download and install MongoDB Community Server from [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
 
-### 4. Connect Bechdel.io to MongoDB and the various other APIs
+### 5. Connect Bechdel.io to MongoDB and the various other APIs
 
 The project is now configured to use a local MongoDB instance. The configuration file `src/server/config/config.json` has been created with the provided API keys:
 
@@ -78,7 +95,7 @@ The project is now configured to use a local MongoDB instance. The configuration
 * MyAPIFilms API Key: `8b35b6b8-9faa-4719-a2ac-bc2735b14434`
 * MongoDB URI: `mongodb://localhost:27017/bechdelTest`
 
-### 5. Install dependencies & run locally
+### 6. Install dependencies & run locally (Manual setup only)
 
 ```sh
 npm install
