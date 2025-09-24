@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Hero from './Hero/Hero';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import BechdelResults from './BechdelResults/BechdelResults';
+import BechdelCharts from './BechdelCharts';
+import FilmInfoCard from './FilmInfoCard';
+import PlotSection from './PlotSection';
 import Loading from '../../shared/Loading/Loading';
 import Error from '../../shared/Error/Error';
 import hash from '../../helper/hash';
@@ -66,47 +69,39 @@ const Film = ({
 }) => {
 	const renderFilm = () => {
 		const {
-			directors,
-			writers,
-			genres,
 			title,
 			bechdelResults,
 			images,
 			plot,
-			idIMDB,
-			rated,
 		} = film;
-
-		const directorNode = nodeBuilder(directors);
-		const writerNode = nodeBuilder(writers);
-		const genreNode = genreNodeBuilder(genres);
 
 		return (
 			<div className="filmInfo">
 				<ErrorBoundary>
 					<Hero title={title} bechdelResults={bechdelResults} images={images} />
-					<div className="plot container">
-						<p>{plot}</p>
-						<span className="results container">
-							<div className="filmData">
-								<span className="catName">Directors:</span> {directorNode}
-								<br />
-								<span className="catName">Writers:</span> {writerNode} <br />
-								<span className="catName">Genre:</span> {genreNode}
-								<br />
-								<span className="catName">Rated:</span> {rated}
-								<br />
-								<span className="catName">IMDB:</span>{' '}
-								<a href={`http://www.imdb.com/title/${idIMDB}`} target="_blank" rel="noreferrer">
-									{title}
-								</a>
-								<br />
+					
+					<div className="film-content">
+						<div className="content-grid">
+							<div className="left-column">
+								<PlotSection plot={plot} />
+								<FilmInfoCard film={film} />
 							</div>
-							<BechdelResults bechdelResults={bechdelResults} />
-						</span>
-						<Link to="/">
-							<button type="button">All Films</button>
-						</Link>
+							
+							<div className="right-column">
+								<BechdelCharts bechdelResults={bechdelResults} />
+								<div className="detailed-results">
+									<h3>Detailed Bechdel Analysis</h3>
+									<BechdelResults bechdelResults={bechdelResults} />
+								</div>
+							</div>
+						</div>
+						
+						<div className="navigation-section">
+							<Link to="/" className="back-button">
+								<span className="button-icon">←</span>
+								Back to All Films
+							</Link>
+						</div>
 					</div>
 				</ErrorBoundary>
 			</div>

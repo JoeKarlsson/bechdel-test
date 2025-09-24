@@ -1,5 +1,95 @@
 .filmInfo {
+	.film-content {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 1rem;
 
+		.content-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+			margin-bottom: 2rem;
+
+			@media (max-width: 1024px) {
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+			}
+		}
+
+		.left-column {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.right-column {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.detailed-results {
+			background: #ffffff;
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			border: 1px solid #e1e5e9;
+
+			h3 {
+				margin: 0 0 1.5rem 0;
+				font-size: 1.3rem;
+				font-weight: 600;
+				color: #2c3e50;
+				border-bottom: 2px solid #ecf0f1;
+				padding-bottom: 0.75rem;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+
+				&::before {
+					content: "📊";
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		.navigation-section {
+			display: flex;
+			justify-content: center;
+			margin-top: 3rem;
+			padding: 2rem 0;
+			border-top: 1px solid #ecf0f1;
+
+			.back-button {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 1rem 2rem;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				text-decoration: none;
+				border-radius: 50px;
+				font-weight: 600;
+				font-size: 1.1rem;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+
+				&:hover {
+					transform: translateY(-2px);
+					box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+					text-decoration: none;
+					color: white;
+				}
+
+				.button-icon {
+					font-size: 1.2rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	// Legacy styles for backward compatibility
 	.results {
 		margin: 2%;
 		display: flex;
@@ -14,4 +104,66 @@
 .filmListContainer {
 	background: blue;
 	display: flex;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.filmInfo {
+		.film-content {
+			padding: 0 0.5rem;
+
+			.content-grid {
+				gap: 1rem;
+			}
+
+			.left-column,
+			.right-column {
+				gap: 1.5rem;
+			}
+
+			.detailed-results {
+				padding: 1.5rem;
+
+				h3 {
+					font-size: 1.2rem;
+				}
+			}
+
+			.navigation-section {
+				margin-top: 2rem;
+				padding: 1.5rem 0;
+
+				.back-button {
+					padding: 0.875rem 1.75rem;
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.filmInfo {
+		.film-content {
+			.detailed-results {
+				padding: 1rem;
+
+				h3 {
+					font-size: 1.1rem;
+				}
+			}
+
+			.navigation-section {
+				.back-button {
+					padding: 0.75rem 1.5rem;
+					font-size: 0.95rem;
+					gap: 0.5rem;
+
+					.button-icon {
+						font-size: 1.1rem;
+					}
+				}
+			}
+		}
+	}
 }
