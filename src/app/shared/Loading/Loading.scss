@@ -26,18 +26,24 @@
 
 // Main loader container
 .Loader {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 60vh;
 	padding: 2rem;
 	overflow: hidden;
+	z-index: 1000;
+	transition: opacity 0.3s ease-in-out;
 	
 	// Hidden state
 	&--hidden {
 		opacity: 0;
 		visibility: hidden;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 	}
 	
 	// Animated background particles

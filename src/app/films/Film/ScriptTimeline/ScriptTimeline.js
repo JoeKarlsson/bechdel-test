@@ -93,15 +93,10 @@ const ScriptTimeline = ({ bechdelResults, characters }) => {
         }).filter(Boolean);
     };
 
+    // This component should only be rendered when there are scenes that pass
+    // The parent component handles the conditional rendering
     if (!timelineData || timelineData.length === 0) {
-        return (
-            <div className="script-timeline">
-                <div className="timeline-header">
-                    <h3>📜 Script Timeline</h3>
-                    <p>No Bechdel-passing scenes found in this film.</p>
-                </div>
-            </div>
-        );
+        return null;
     }
 
     return (

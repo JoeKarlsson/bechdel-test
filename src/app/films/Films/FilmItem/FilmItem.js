@@ -32,6 +32,9 @@ const FilmItem = props => {
 									<span className={`test-icon ${passesTest ? 'pass' : 'fail'}`}>
 										{testIcon}
 									</span>
+									<span className={`test-text ${passesTest ? 'pass' : 'fail'}`}>
+										{passesTest ? 'pass' : 'fail'}
+									</span>
 								</div>
 							</div>
 						</div>

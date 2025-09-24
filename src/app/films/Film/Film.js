@@ -162,12 +162,15 @@ const Film = memo(({
 						</div>
 					</div>
 
-					<div className="timeline-section">
-						<ScriptTimeline
-							bechdelResults={bechdelResults}
-							characters={actors}
-						/>
-					</div>
+					{/* Only show timeline if there are scenes that pass the Bechdel test */}
+					{bechdelResults.scenesThatPass && bechdelResults.scenesThatPass.length > 0 && (
+						<div className="timeline-section">
+							<ScriptTimeline
+								bechdelResults={bechdelResults}
+								characters={actors}
+							/>
+						</div>
+					)}
 
 					{/* Detailed Bechdel Analysis Section */}
 					<div className="detailed-analysis-section">

@@ -4,12 +4,6 @@
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	border: 1px solid #e1e5e9;
 	margin-bottom: 2rem;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-	&:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-	}
 
 	.info-section {
 		display: grid;
@@ -43,18 +37,18 @@
 		gap: 0.5rem;
 		font-weight: 600;
 		color: #2c3e50;
-		font-size: 0.9rem;
+		font-size: 1.1rem;
 		text-transform: uppercase;
 		letter-spacing: 0.5px;
 
 		.info-icon {
-			font-size: 1.1rem;
+			font-size: 1.3rem;
 		}
 	}
 
 	.info-value {
 		color: #495057;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		line-height: 1.4;
 
 		.rating-badge {
@@ -106,13 +100,13 @@
 		.info-item {
 			padding: 0.75rem;
 
-			.info-label {
-				font-size: 0.85rem;
-			}
+		.info-label {
+			font-size: 1rem;
+		}
 
-			.info-value {
-				font-size: 0.9rem;
-			}
+		.info-value {
+			font-size: 1.1rem;
+		}
 		}
 	}
 }

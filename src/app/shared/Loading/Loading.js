@@ -8,7 +8,7 @@ const Loading = () => {
 	const fullText = 'Destroying the Patriarchy';
 	const typingSpeed = 150;
 	const pauseDuration = 2000;
-	const loaderDelay = 750; // 3/4 second delay
+	const loaderDelay = 2000; // 2 second delay
 
 	// Show loader after delay
 	useEffect(() => {
@@ -46,12 +46,8 @@ const Loading = () => {
 		return () => clearTimeout(timeout);
 	}, [currentText, isTyping, fullText, showLoader]);
 
-	if (!showLoader) {
-		return <div className="Loader Loader--hidden"></div>;
-	}
-
 	return (
-		<div className="Loader">
+		<div className={`Loader ${!showLoader ? 'Loader--hidden' : ''}`}>
 			{/* Animated background particles */}
 			<div className="Loader_particles">
 				{[...Array(20)].map((_, i) => (

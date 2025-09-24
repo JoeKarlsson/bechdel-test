@@ -41,7 +41,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.8);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -60,7 +60,7 @@
 
 .film-info {
 	text-align: center;
-	color: white;
+	color: #ffffff;
 	padding: 30px 25px;
 	max-width: 95%;
 	display: flex;
@@ -70,33 +70,54 @@
 }
 
 .film-title {
-	font-size: 1.6rem;
+	font-size: 2rem;
 	font-weight: 700;
 	margin: 0 0 20px 0;
-	line-height: 1.4;
-	text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+	line-height: 1.3;
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 2px 4px rgba(0, 0, 0, 0.8);
 	letter-spacing: 0.5px;
+	color: #ffffff;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
 }
 
 .test-result {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 8px;
 	margin-top: 12px;
 }
 
 .test-icon {
 	font-size: 3.5rem;
 	font-weight: bold;
-	text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 2px 4px rgba(0, 0, 0, 0.8);
 	line-height: 1;
 	
 	&.pass {
-		color: #4CAF50;
+		color: #66ff66;
 	}
 	
 	&.fail {
-		color: #F44336;
+		color: #ff6666;
+	}
+}
+
+.test-text {
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 2px 4px rgba(0, 0, 0, 0.8);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	
+	&.pass {
+		color: #66ff66;
+	}
+	
+	&.fail {
+		color: #ff6666;
 	}
 }
 
@@ -109,12 +130,16 @@
 	}
 	
 	.film-title {
-		font-size: 1.3rem;
+		font-size: 1.6rem;
 		margin-bottom: 16px;
 	}
 	
 	.test-icon {
 		font-size: 3rem;
+	}
+	
+	.test-text {
+		font-size: 1rem;
 	}
 	
 	.film-info {
@@ -134,7 +159,7 @@
 	}
 	
 	.film-title {
-		font-size: 1.1rem;
+		font-size: 1.4rem;
 		margin-bottom: 14px;
 	}
 	

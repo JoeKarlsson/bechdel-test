@@ -7,56 +7,58 @@ $text-muted: #6c757d;
 $accent-color: #1eaedb;
 
 .About {
-	padding: 2rem 0;
+	padding: var(--section-padding-y) 0;
 	min-height: 80vh;
 	background-color: $light-gray;
 
 	.container {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 0 1rem;
+		padding: 0 var(--container-padding-x);
 	}
 
 	.about-header {
 		text-align: center;
-		margin-bottom: 3rem;
-		padding: 2rem;
+		margin-bottom: var(--spacing-3xl);
+		padding: var(--card-padding);
 		background: linear-gradient(135deg, $purple 0%, darken($purple, 20%) 100%);
 		color: $white;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 		h1 {
 			font-size: 2.5rem;
-			margin-bottom: 1rem;
+			margin-bottom: var(--spacing-md);
 			font-weight: 600;
 			text-transform: lowercase;
+			color: $white !important;
 		}
 
 		.about-subtitle {
 			font-size: 1.2rem;
-			margin-bottom: 2rem;
+			margin-bottom: var(--spacing-xl);
 			opacity: 0.9;
 			line-height: 1.6;
+			color: $white !important;
 		}
 	}
 
 	.about-content {
 		background: $white;
-		padding: 2rem;
-		margin-bottom: 2rem;
+		padding: var(--card-padding);
+		margin-bottom: var(--spacing-xl);
 
 		h2 {
-			color: $dark-gray;
-			margin-bottom: 1rem;
-			font-size: 1.5rem;
+			color: #1a1a1a;
+			margin-bottom: var(--spacing-md);
+			font-size: 1.8rem;
 			font-weight: 600;
 		}
 
 		p {
-			line-height: 1.6;
-			color: $dark-gray;
-			margin-bottom: 1rem;
-			font-size: 1rem;
+			line-height: 1.7;
+			color: #1a1a1a;
+			margin-bottom: var(--text-margin-bottom);
+			font-size: 1.2rem;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -64,10 +66,10 @@ $accent-color: #1eaedb;
 		}
 
 		.bechdel-criteria {
-			margin: 1.5rem 0;
+			margin: var(--spacing-lg) 0;
 
 			p {
-				margin-bottom: 0.5rem;
+				margin-bottom: var(--spacing-sm);
 
 				&:last-child {
 					margin-bottom: 0;
@@ -79,7 +81,7 @@ $accent-color: #1eaedb;
 			text-align: right;
 			font-style: italic;
 			color: $text-muted;
-			margin-top: 1.5rem;
+			margin-top: var(--spacing-lg);
 		}
 
 		a {
@@ -94,13 +96,13 @@ $accent-color: #1eaedb;
 
 	.about-actions {
 		text-align: center;
-		padding: 1rem;
+		padding: var(--spacing-md);
 
 		button {
 			background: $purple;
 			color: $white;
 			border: none;
-			padding: 0.75rem 1.5rem;
+			padding: var(--spacing-sm) var(--spacing-lg);
 			font-size: 1rem;
 			font-weight: 500;
 			cursor: pointer;
@@ -113,15 +115,15 @@ $accent-color: #1eaedb;
 
 	// Responsive design
 	@media (max-width: 768px) {
-		padding: 1rem 0;
+		padding: var(--mobile-section-padding-y) 0;
 
 		.container {
-			padding: 0 0.5rem;
+			padding: 0 var(--mobile-container-padding-x);
 		}
 
 		.about-header {
-			padding: 1.5rem;
-			margin-bottom: 2rem;
+			padding: var(--mobile-card-padding);
+			margin-bottom: var(--spacing-xl);
 
 			h1 {
 				font-size: 2rem;
@@ -133,26 +135,26 @@ $accent-color: #1eaedb;
 		}
 
 		.about-content {
-			padding: 1.5rem;
+			padding: var(--mobile-card-padding);
 
 			h2 {
-				font-size: 1.3rem;
+				font-size: 1.6rem;
 			}
 
 			p {
-				font-size: 0.95rem;
+				font-size: 1.1rem;
 			}
 
 			.bechdel-criteria {
-				margin: 1rem 0;
+				margin: var(--spacing-md) 0;
 			}
 		}
 
 		.about-actions {
-			padding: 0.75rem;
+			padding: var(--spacing-sm);
 
 			button {
-				padding: 0.5rem 1rem;
+				padding: var(--spacing-sm) var(--spacing-md);
 				font-size: 0.9rem;
 			}
 		}
@@ -166,10 +168,10 @@ $accent-color: #1eaedb;
 		}
 
 		.about-content {
-			padding: 1rem;
+			padding: var(--spacing-md);
 
 			h2 {
-				font-size: 1.2rem;
+				font-size: 1.5rem;
 			}
 		}
 	}
