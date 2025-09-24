@@ -49,32 +49,35 @@ You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/) and
   * Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
 
 
-### 3. Log on to Atlas
+### 3. Install MongoDB Locally
 
-To use MongoDB Atlas, you must be logged into [Atlas](https://cloud.mongodb.com).
+Install MongoDB locally on your system:
 
-### 4. Create an Atlas Cluster
+**macOS (using Homebrew):**
+```sh
+brew tap mongodb/brew
+brew install mongodb-community
+brew services start mongodb/brew/mongodb-community
+```
 
-1. In the left navigation pane, click Clusters, and then click the Build New Cluster button. The Create New Cluster page opens.
-2. Choose your preferred provider and region, tier, and additional settings. As you build your cluster, Atlas displays the associated costs at the bottom of the page.
-3. The default cluster name is Cluster0. If you wish to change the name, do so now, as cluster names cannot be changed once configured.
-4. Click the Create Cluster button to save your changes.
+**Ubuntu/Debian:**
+```sh
+sudo apt-get install mongodb
+sudo systemctl start mongodb
+```
 
-### 5. Configure Your Atlas Cluster
+**Windows:**
+Download and install MongoDB Community Server from [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
 
-1. Go to Database Access and hit Add New User. Add a username and password, if you autogenerate a password make sure you copy it, we’ll need it later.
-2. Go to Network Access, hit Add IP Address, and hit Add Current IP Address, then confirm.
-3. Go to Clusters, if your cluster build is done then hit Connect, Connect Your Application, and copy the line of code it gives you
+### 4. Connect Bechdel.io to MongoDB and the various other APIs
 
-### 6. Connect Bechdel.io to MongoDB and the various other APIs
+The project is now configured to use a local MongoDB instance. The configuration file `src/server/config/config.json` has been created with the provided API keys:
 
-Change `src/server/config/config_example.json` to `src/server/config/config.json` and
+* TMDB API Key: `6ec9ddad40a319b47c562e0838f7eda3`
+* MyAPIFilms API Key: `8b35b6b8-9faa-4719-a2ac-bc2735b14434`
+* MongoDB URI: `mongodb://localhost:27017/bechdelTest`
 
-* Paste your MongoDB URI into the `MONGODB_URI` feild.
-* Paste your MovieDB API Key into the `THEMOVIEDB` feild.
-* Paste your My API Films API Key into the `MYAPIFILMS` feild.
-
-### 7. Install dependencies & run locally
+### 5. Install dependencies & run locally
 
 ```sh
 npm install
