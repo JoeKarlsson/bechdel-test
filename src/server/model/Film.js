@@ -93,12 +93,12 @@ filmSchema.static('insertFilm', filmMetaData => {
 		film.simplePlot = data.plot; // Use plot as simplePlot for OMDB
 		film.year = data.year;
 		film.releaseDate = data.released;
-		
+
 		// Parse comma-separated strings into arrays of objects
 		film.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
 		film.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
 		film.awards = data.awards ? [{ name: data.awards }] : [];
-		
+
 		film.rated = data.rated;
 		film.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
 		film.urlPoster = data.poster;
