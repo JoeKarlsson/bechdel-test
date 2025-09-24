@@ -1,16 +1,14 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import PrimaryLayout from './shared/PrimaryLayout/PrimaryLayout';
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 
-const container = document.getElementById('root');
-const root = createRoot(container);
-
-root.render(
+ReactDOM.render(
 	<ErrorBoundary>
 		<Router>
 			<PrimaryLayout />
 		</Router>
-	</ErrorBoundary>
+	</ErrorBoundary>,
+	document.getElementById('root')
 );
