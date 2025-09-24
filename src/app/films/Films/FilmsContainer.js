@@ -31,7 +31,7 @@ const EmptyFilmsState = () => (
 );
 
 // Error state component
-const FilmsError = ({ error, onRetry, retryCount }) => (
+const FilmsError = ({ error = null, onRetry, retryCount = 0 }) => (
 	<div className="films-error" role="alert" aria-live="polite">
 		<div className="films-error__container">
 			<div className="films-error__icon" aria-hidden="true">
@@ -66,24 +66,22 @@ FilmsError.propTypes = {
 	retryCount: PropTypes.number,
 };
 
-FilmsError.defaultProps = {
-	error: null,
-	retryCount: 0,
-};
-
 const FilmsContainer = () => {
 	const [films, setFilms] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [retryCount, setRetryCount] = useState(0);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [pageSize, setPageSize] = useState(10);
+	const [pagination, setPagination] = useState(null);
 	const { debouncedSearchQuery } = useSearch();
 
-	const fetchFilms = useCallback(async () => {
+	const fetchFilms = useCallback(async (page = 1, size = pageSize) => {
 		try {
 			setLoading(true);
 			setError(null);
 
-			const url = '/api/film';
+			const url = `/api/film?page=${page}&limit=${size}`;
 			const options = {
 				method: 'GET',
 			};
@@ -95,8 +93,9 @@ const FilmsContainer = () => {
 				throw new Error('Invalid films data received');
 			}
 
-			// Extract films array from paginated response
+			// Extract films array and pagination info from paginated response
 			const filmsArray = data.films || data;
+			const paginationData = data.pagination;
 
 			// Validate that we have an array of films
 			if (!Array.isArray(filmsArray)) {
@@ -104,6 +103,8 @@ const FilmsContainer = () => {
 			}
 
 			setFilms(filmsArray);
+			setPagination(paginationData);
+			setCurrentPage(page);
 		} catch (err) {
 			console.error('Error fetching films:', err);
 			setError(err.message || 'Failed to load films');
@@ -111,11 +112,29 @@ const FilmsContainer = () => {
 		} finally {
 			setLoading(false);
 		}
-	}, []);
+	}, [pageSize]);
 
 	const handleRetry = useCallback(() => {
 		setRetryCount(prev => prev + 1);
-		fetchFilms();
+		fetchFilms(currentPage);
+	}, [fetchFilms, currentPage]);
+
+	const handleNextPage = useCallback(() => {
+		if (pagination && pagination.hasNextPage) {
+			fetchFilms(currentPage + 1);
+		}
+	}, [fetchFilms, currentPage, pagination]);
+
+	const handlePrevPage = useCallback(() => {
+		if (pagination && pagination.hasPrevPage) {
+			fetchFilms(currentPage - 1);
+		}
+	}, [fetchFilms, currentPage, pagination]);
+
+	const handlePageSizeChange = useCallback((newSize) => {
+		setPageSize(newSize);
+		// Reset to page 1 when changing page size
+		fetchFilms(1, newSize);
 	}, [fetchFilms]);
 
 	useEffect(() => {
@@ -145,7 +164,13 @@ const FilmsContainer = () => {
 	const filmsProps = useMemo(() => ({
 		films: filteredFilms,
 		loading,
-	}), [filteredFilms, loading]);
+		pagination,
+		currentPage,
+		pageSize,
+		onNextPage: handleNextPage,
+		onPrevPage: handlePrevPage,
+		onPageSizeChange: handlePageSizeChange,
+	}), [filteredFilms, loading, pagination, currentPage, pageSize, handleNextPage, handlePrevPage, handlePageSizeChange]);
 
 	// Handle different states
 	if (loading) {
@@ -187,10 +212,6 @@ const FilmsContainer = () => {
 
 FilmsContainer.propTypes = {
 	// No props needed for this component
-};
-
-FilmsContainer.defaultProps = {
-	// No default props
 };
 
 export default FilmsContainer;

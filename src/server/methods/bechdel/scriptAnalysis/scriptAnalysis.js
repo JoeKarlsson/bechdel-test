@@ -66,6 +66,7 @@ const scriptAnalysis = (characters, scenes) => {
 		if (enhancedBechdelTestPass(sceneData) === true) {
 			bechdelResults.bechdelPass = true;
 			bechdelResults.bechdelScore = 3;
+			bechdelResults.numScenesPassIncrement();
 			bechdelResults.addBechdelPassingScene(scene);
 		} else {
 			// Count scenes that don't pass

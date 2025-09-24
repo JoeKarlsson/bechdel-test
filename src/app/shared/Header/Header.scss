@@ -3,6 +3,7 @@ $white: white;
 $mobile-breakpoint: 768px;
 
 /* Skip Link - Accessibility */
+
 .skip-link {
 	position: absolute !important;
 	top: -40px !important;
@@ -45,21 +46,21 @@ $mobile-breakpoint: 768px;
 	position: relative;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-		a {
-			color: $white;
-			text-decoration: none;
-			transition: color 0.3s ease;
+	a {
+		color: $white;
+		text-decoration: none;
+		transition: color 0.3s ease;
 
-			&:hover {
-				color: #ffd700; /* Gold color for better contrast on purple */
-			}
-
-			&:focus {
-				outline: 2px solid #ffffff;
-				outline-offset: 2px;
-				background-color: rgba(255, 255, 255, 0.1);
-			}
+		&:hover {
+			color: #ffd700; /* Gold color for better contrast on purple */
 		}
+
+		&:focus {
+			outline: 2px solid #ffffff;
+			outline-offset: 2px;
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+	}
 }
 
 .header_logo {
@@ -124,9 +125,26 @@ $mobile-breakpoint: 768px;
 			color: rgba(51, 51, 51, 0.6);
 			pointer-events: none;
 			transition: all 0.3s ease;
+			user-select: none;
 
 			&.searching {
 				animation: pulse 1.5s ease-in-out infinite;
+			}
+
+			&.clearable {
+				pointer-events: auto;
+				color: rgba(51, 51, 51, 0.8);
+				font-weight: bold;
+				font-size: 1.1rem;
+
+				&:hover {
+					color: #dc3545;
+					transform: translateY(-50%) scale(1.1);
+				}
+
+				&:active {
+					transform: translateY(-50%) scale(0.95);
+				}
 			}
 		}
 	}
@@ -138,7 +156,9 @@ $mobile-breakpoint: 768px;
 }
 
 // Mobile responsive styles
+
 @media (max-width: $mobile-breakpoint) {
+
 	.header_bar {
 		flex-direction: row;
 		gap: 0.5rem;
@@ -306,8 +326,11 @@ $mobile-breakpoint: 768px;
 }
 
 // Animation for hamburger menu
+
 .mobile_menu_button[aria-expanded="true"] {
+
 	.hamburger_line {
+
 		&:nth-child(1) {
 			transform: rotate(45deg) translate(4px, 4px);
 		}
@@ -324,11 +347,14 @@ $mobile-breakpoint: 768px;
 }
 
 // Animation keyframes
+
 @keyframes pulse {
+
 	0%, 100% {
 		opacity: 1;
 		transform: translateY(-50%) scale(1);
 	}
+
 	50% {
 		opacity: 0.6;
 		transform: translateY(-50%) scale(1.1);

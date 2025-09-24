@@ -122,7 +122,9 @@
 }
 
 /* Responsive design for smaller screens */
+
 @media (max-width: 768px) {
+
 	.filmItem {
 		width: 33.333%; /* 3 films per row on tablets */
 		margin: 0;
@@ -152,6 +154,7 @@
 }
 
 @media (max-width: 480px) {
+
 	.filmItem {
 		width: 50%; /* 2 films per row on mobile */
 		margin: 0;
@@ -177,6 +180,7 @@
 }
 
 // Search highlighting
+
 .search-highlight {
 	background-color: #ffeb3b;
 	color: #333;

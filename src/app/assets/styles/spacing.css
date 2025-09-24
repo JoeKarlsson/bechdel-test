@@ -6,68 +6,69 @@
  */
 
 :root {
-  /* Base spacing unit - all spacing should be multiples of this */
-  --spacing-unit: 0.25rem; /* 4px */
+	/* Base spacing unit - all spacing should be multiples of this */
+	--spacing-unit: 0.25rem; /* 4px */
   
-  /* Spacing scale - based on 4px grid system */
-  --spacing-xs: calc(var(--spacing-unit) * 1);   /* 4px */
-  --spacing-sm: calc(var(--spacing-unit) * 2);    /* 8px */
-  --spacing-md: calc(var(--spacing-unit) * 4);    /* 16px */
-  --spacing-lg: calc(var(--spacing-unit) * 6);    /* 24px */
-  --spacing-xl: calc(var(--spacing-unit) * 8);    /* 32px */
-  --spacing-2xl: calc(var(--spacing-unit) * 12);   /* 48px */
-  --spacing-3xl: calc(var(--spacing-unit) * 16);   /* 64px */
-  --spacing-4xl: calc(var(--spacing-unit) * 20);   /* 80px */
+	/* Spacing scale - based on 4px grid system */
+	--spacing-xs: calc(var(--spacing-unit) * 1);   /* 4px */
+	--spacing-sm: calc(var(--spacing-unit) * 2);    /* 8px */
+	--spacing-md: calc(var(--spacing-unit) * 4);    /* 16px */
+	--spacing-lg: calc(var(--spacing-unit) * 6);    /* 24px */
+	--spacing-xl: calc(var(--spacing-unit) * 8);    /* 32px */
+	--spacing-2xl: calc(var(--spacing-unit) * 12);   /* 48px */
+	--spacing-3xl: calc(var(--spacing-unit) * 16);   /* 64px */
+	--spacing-4xl: calc(var(--spacing-unit) * 20);   /* 80px */
   
-  /* Component-specific spacing */
-  --section-padding-y: var(--spacing-2xl);        /* 48px vertical */
-  --section-padding-x: var(--spacing-lg);         /* 24px horizontal */
-  --container-padding-x: var(--spacing-lg);        /* 24px horizontal */
-  --card-padding: var(--spacing-xl);              /* 32px all around */
-  --footer-padding: var(--spacing-xl);            /* 32px all around */
-  --header-padding-y: var(--spacing-md);          /* 16px vertical */
+	/* Component-specific spacing */
+	--section-padding-y: var(--spacing-2xl);        /* 48px vertical */
+	--section-padding-x: var(--spacing-lg);         /* 24px horizontal */
+	--container-padding-x: var(--spacing-lg);        /* 24px horizontal */
+	--card-padding: var(--spacing-xl);              /* 32px all around */
+	--footer-padding: var(--spacing-xl);            /* 32px all around */
+	--header-padding-y: var(--spacing-md);          /* 16px vertical */
   
-  /* Responsive spacing adjustments */
-  --mobile-section-padding-y: var(--spacing-xl);   /* 32px vertical on mobile */
-  --mobile-section-padding-x: var(--spacing-md);   /* 16px horizontal on mobile */
-  --mobile-container-padding-x: var(--spacing-md); /* 16px horizontal on mobile */
-  --mobile-card-padding: var(--spacing-lg);       /* 24px all around on mobile */
-  --mobile-footer-padding: var(--spacing-lg);     /* 24px all around on mobile */
+	/* Responsive spacing adjustments */
+	--mobile-section-padding-y: var(--spacing-xl);   /* 32px vertical on mobile */
+	--mobile-section-padding-x: var(--spacing-md);   /* 16px horizontal on mobile */
+	--mobile-container-padding-x: var(--spacing-md); /* 16px horizontal on mobile */
+	--mobile-card-padding: var(--spacing-lg);       /* 24px all around on mobile */
+	--mobile-footer-padding: var(--spacing-lg);     /* 24px all around on mobile */
   
-  /* Content spacing */
-  --content-gap: var(--spacing-lg);               /* 24px between content elements */
-  --text-margin-bottom: var(--spacing-md);        /* 16px bottom margin for text */
-  --heading-margin-bottom: var(--spacing-lg);     /* 24px bottom margin for headings */
+	/* Content spacing */
+	--content-gap: var(--spacing-lg);               /* 24px between content elements */
+	--text-margin-bottom: var(--spacing-md);        /* 16px bottom margin for text */
+	--heading-margin-bottom: var(--spacing-lg);     /* 24px bottom margin for headings */
   
-  /* Border radius */
-  --border-radius-sm: var(--spacing-xs);           /* 4px */
-  --border-radius-md: var(--spacing-sm);          /* 8px */
-  --border-radius-lg: var(--spacing-md);          /* 16px */
+	/* Border radius */
+	--border-radius-sm: var(--spacing-xs);           /* 4px */
+	--border-radius-md: var(--spacing-sm);          /* 8px */
+	--border-radius-lg: var(--spacing-md);          /* 16px */
 }
 
 /* Utility classes for consistent spacing */
+
 .spacing-section {
-  padding: var(--section-padding-y) var(--section-padding-x);
+	padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 .spacing-container {
-  padding: 0 var(--container-padding-x);
+	padding: 0 var(--container-padding-x);
 }
 
 .spacing-card {
-  padding: var(--card-padding);
+	padding: var(--card-padding);
 }
 
 .spacing-footer {
-  padding: var(--footer-padding);
+	padding: var(--footer-padding);
 }
 
 .spacing-content-gap > * + * {
-  margin-top: var(--content-gap);
+	margin-top: var(--content-gap);
 }
 
 .spacing-text > p {
-  margin-bottom: var(--text-margin-bottom);
+	margin-bottom: var(--text-margin-bottom);
 }
 
 .spacing-heading > h1,
@@ -76,22 +77,25 @@
 .spacing-heading > h4,
 .spacing-heading > h5,
 .spacing-heading > h6 {
-  margin-bottom: var(--heading-margin-bottom);
+	margin-bottom: var(--heading-margin-bottom);
 }
 
 /* Responsive adjustments */
+
 @media (max-width: 768px) {
-  :root {
-    --section-padding-y: var(--mobile-section-padding-y);
-    --section-padding-x: var(--mobile-section-padding-x);
-    --container-padding-x: var(--mobile-container-padding-x);
-    --card-padding: var(--mobile-card-padding);
-    --footer-padding: var(--mobile-footer-padding);
-  }
+
+	:root {
+		--section-padding-y: var(--mobile-section-padding-y);
+		--section-padding-x: var(--mobile-section-padding-x);
+		--container-padding-x: var(--mobile-container-padding-x);
+		--card-padding: var(--mobile-card-padding);
+		--footer-padding: var(--mobile-footer-padding);
+	}
 }
 
 /* Override skeleton.css inconsistent spacing */
+
 .container {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }

@@ -2,6 +2,7 @@ const Film = require('../model/Film');
 const filmData = require("./getFilmData/FilmData");
 const script = require("./script");
 const getBechdelResults = require('./bechdel/getBechdelResults');
+const cleanupManager = require('../helper/cleanupManager');
 
 const resetAll = scriptPath => {
 	filmData.clear();
@@ -14,7 +15,10 @@ const handleError = (err, scriptPath) => {
 		resetAll(scriptPath);
 	}
 	console.error(err);
-	return err;
+	return {
+		success: false,
+		error: err.message || 'Unknown error occurred during script processing'
+	};
 };
 
 const handleFilmFoundInDB = (film, scriptPath) => {
@@ -31,16 +35,29 @@ const filmFound = film => {
 	return film.length > 0;
 };
 
-const processScript = async (scriptPath, title) => {
-	try {
-		console.log('title', title);
+const processScript = async (scriptPath, title, processId = null) => {
+	// Generate processId if not provided (for backward compatibility)
+	if (!processId) {
+		processId = `process_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+		// Register this process with the cleanup manager
+		cleanupManager.registerProcess(processId, scriptPath, title);
+	}
 
-		const bechdelResults = await getBechdelResults(title, scriptPath);
+	try {
+		console.log(`Starting script processing: ${processId} for "${title}"`);
+
+		// Update stage to fetching film data
+		cleanupManager.updateProcessStage(processId, 'fetching_film_data');
+
+		const bechdelResults = await getBechdelResults(title, scriptPath, processId);
+
+		// Update stage to saving results
+		cleanupManager.updateProcessStage(processId, 'saving_results');
 
 		const { actors, images, metadata, bechdelData } = filmData.getAllData();
 
 		const filmMetaData = {
-			title,
+			title: metadata.title || title, // Use IMDb title if available, fallback to filename
 			bechdelResults,
 			bechdelData,
 			actors,
@@ -56,14 +73,24 @@ const processScript = async (scriptPath, title) => {
 
 		const response = {
 			...finalFilm[0].toObject(),
-			title,
+			title: metadata.title || title, // Use IMDb title if available, fallback to filename
 			success: true,
 			cacheHit: false,
+			processId, // Include processId in response
 		};
-		console.log('saved/updated film');
+
+		console.log(`Script processing completed successfully: ${processId}`);
+
+		// Mark process as completed
+		cleanupManager.completeProcess(processId, true);
+
 		return response;
 	} catch (err) {
-		console.error('Error processing script:', err);
+		console.error(`Error processing script ${processId}:`, err);
+
+		// Clean up failed process
+		await cleanupManager.cleanupFailedProcess(processId, err);
+
 		return handleError(err, scriptPath);
 	}
 };

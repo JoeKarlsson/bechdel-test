@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import toTitleCase from '../../../helper/titleCase';
 import './Hero.scss';
 
 const Hero = ({ title, bechdelResults, images }) => {
@@ -12,7 +11,7 @@ const Hero = ({ title, bechdelResults, images }) => {
 		<div className="film-hero">
 			<img className="film-image" src={images.backdrop} alt={title} />
 			<span className="film-hero-title">
-				<h4>{toTitleCase(title)}</h4>
+				<h4>{title}</h4>
 				<h3>
 					<span className={`bechdel-status ${iconClass}`}>
 						<span className="status-icon">{icon}</span>

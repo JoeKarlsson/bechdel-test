@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Uploader from './Uploader/Uploader';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
+import useDocumentTitle from '../../helper/useDocumentTitle';
 import './NewFilm.scss';
 
 const NewFilm = () => {
+	useDocumentTitle('Upload Script');
+
 	return (
 		<div className="new-film">
 			<div className="container">
@@ -67,10 +70,6 @@ const NewFilm = () => {
 
 NewFilm.propTypes = {
 	// No props needed for this component
-};
-
-NewFilm.defaultProps = {
-	// No default props
 };
 
 export default NewFilm;

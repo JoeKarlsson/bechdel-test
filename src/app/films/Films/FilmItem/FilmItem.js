@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { toTitleCase } from '../../../helper/titleCase';
 import { highlightSearchTerm } from '../../../helper/searchHighlight';
 import { useSearch } from '../../../shared/SearchContext/SearchContext';
 import './FilmItem.scss';
 
-const FilmItem = props => {
-	const { film } = props;
+const FilmItem = ({ film = {
+	title: 'Movie Title',
+	images: {
+		poster: 'Movie Poster URL',
+	},
+	id: '123456',
+} }) => {
 	const { debouncedSearchQuery } = useSearch();
 	const filmUrl = `/film/${film._id}`;
 	const passesTest = film.bechdelResults?.pass;
 	const testIcon = passesTest ? '✓' : '✗';
-	const displayTitle = film.title ? toTitleCase(film.title) : '';
+	const displayTitle = film.title || '';
 	const highlightedTitle = highlightSearchTerm(displayTitle, debouncedSearchQuery);
 
 	return (
@@ -47,16 +51,6 @@ const FilmItem = props => {
 
 FilmItem.propTypes = {
 	film: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-FilmItem.defaultProps = {
-	film: {
-		title: 'Movie Title',
-		images: {
-			poster: 'Movie Poster URL',
-		},
-		id: '123456',
-	},
 };
 
 export default FilmItem;

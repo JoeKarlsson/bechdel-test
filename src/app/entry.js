@@ -66,7 +66,7 @@ const AppErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportError
 // Render the app
 root.render(
 	<ErrorBoundary fallback={AppErrorFallback}>
-		<Router>
+		<Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
 			<PrimaryLayout />
 		</Router>
 	</ErrorBoundary>

@@ -35,6 +35,11 @@ const Header = () => {
 		setIsMobileMenuOpen(false);
 	};
 
+	const clearSearch = () => {
+		setSearchQuery('');
+		searchInputRef.current?.focus();
+	};
+
 	return (
 		<>
 			<a href="#main-content" className="skip-link">
@@ -92,8 +97,14 @@ const Header = () => {
 							<div id="search-help" className="sr-only">
 								Use Ctrl+K to quickly focus this search field
 							</div>
-							<div className={`search_icon ${isSearching ? 'searching' : ''}`} aria-hidden="true">
-								{isSearching ? '⏳' : '🔍'}
+							<div
+								className={`search_icon ${isSearching ? 'searching' : ''} ${searchQuery ? 'clearable' : ''}`}
+								aria-hidden="true"
+								onClick={searchQuery ? clearSearch : undefined}
+								style={{ cursor: searchQuery ? 'pointer' : 'default' }}
+								title={searchQuery ? 'Clear search' : 'Search'}
+							>
+								{isSearching ? '⏳' : (searchQuery ? '✕' : '🔍')}
 							</div>
 						</div>
 					</div>

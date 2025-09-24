@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification rendering renders correctly with all props 1`] = `
+<div
+  aria-live="polite"
+  className="notification notification--success "
+  role="alert"
+>
+  <div
+    className="notification__content"
+  >
+    <div
+      aria-hidden="true"
+      className="notification__icon"
+    >
+      ✅
+    </div>
+    <div
+      className="notification__text"
+    >
+      <h4
+        className="notification__title"
+      >
+        Test title
+      </h4>
+      <p
+        className="notification__message"
+      >
+        Test message
+      </p>
+    </div>
+    <div
+      className="notification__actions"
+    >
+      <button
+        className="notification__action"
+        onClick={[Function]}
+        type="button"
+      >
+        Action
+      </button>
+      <button
+        aria-label="Close notification"
+        className="notification__close"
+        onClick={[Function]}
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Notification rendering renders correctly with default props 1`] = `
+<div
+  aria-live="polite"
+  className="notification notification--info "
+  role="alert"
+>
+  <div
+    className="notification__content"
+  >
+    <div
+      aria-hidden="true"
+      className="notification__icon"
+    >
+      ℹ️
+    </div>
+    <div
+      className="notification__text"
+    >
+      <p
+        className="notification__message"
+      >
+        Test message
+      </p>
+    </div>
+    <div
+      className="notification__actions"
+    >
+      <button
+        aria-label="Close notification"
+        className="notification__close"
+        onClick={[Function]}
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+</div>
+`;

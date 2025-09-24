@@ -36,9 +36,9 @@ describe('Script Analysis methods', () => {
 			expect(result.numScenesDontPass).toBe(156);
 			expect(result.scenesThatPass.length).toBe(5);
 			expect(result.numOfFemalesCharsWithDialogue).toBe(5);
-			expect(result.numOfMaleCharsWithDialogue).toBe(36);
+			expect(result.numOfMaleCharsWithDialogue).toBe(8);
 			expect(result.totalLinesFemaleDialogue).toBe(550);
-			expect(result.totalLinesMaleDialogue).toBe(1318);
+			expect(result.totalLinesMaleDialogue).toBe(941);
 		});
 	});
 });

@@ -157,3 +157,237 @@ $border-radius: 0px;
 		transition: none;
 	}
 }
+
+// Dark Mode Styles for NewFilm Page
+
+body.dark-mode {
+
+	.new-film {
+		background-color: #1a1a1a;
+
+		&__header {
+			color: #e0e0e0 !important;
+		}
+
+		&__title {
+			color: #f0f0f0 !important;
+		}
+
+		&__subtitle {
+			color: #e0e0e0 !important;
+		}
+
+		&__content {
+			// Dark mode styling for Uppy Dashboard
+
+			:global(.uppy-Dashboard) {
+				background-color: #2d2d2d !important;
+				border-color: #444 !important;
+			}
+			
+			:global(.uppy-Dashboard-inner) {
+				background-color: #2d2d2d !important;
+			}
+
+			// Dark mode for Uppy Dashboard elements
+
+			:global(.uppy-Dashboard--modal) {
+				background-color: rgba(0, 0, 0, 0.8) !important;
+			}
+
+			:global(.uppy-Dashboard--modal .uppy-Dashboard-inner) {
+				background-color: #2d2d2d !important;
+				border-color: #444 !important;
+			}
+
+			// Dark mode for Uppy Dashboard header
+
+			:global(.uppy-Dashboard-header) {
+				background-color: #333 !important;
+				border-bottom-color: #444 !important;
+			}
+
+			:global(.uppy-Dashboard-header-title) {
+				color: #ffffff !important;
+			}
+
+			// Dark mode for Uppy Dashboard content
+
+			:global(.uppy-Dashboard-content) {
+				background-color: #2d2d2d !important;
+			}
+
+			// Dark mode for Uppy Dashboard drag and drop area
+
+			:global(.uppy-Dashboard-files) {
+				background-color: #2d2d2d !important;
+			}
+
+			:global(.uppy-Dashboard-files-list) {
+				background-color: #2d2d2d !important;
+			}
+
+			// Dark mode for Uppy Dashboard file items
+
+			:global(.uppy-DashboardItem) {
+				background-color: #333 !important;
+				border-color: #444 !important;
+			}
+
+			:global(.uppy-DashboardItem-name) {
+				color: #e0e0e0 !important;
+			}
+
+			:global(.uppy-DashboardItem-status) {
+				color: #b0b0b0 !important;
+			}
+
+			// Dark mode for Uppy Dashboard buttons
+
+			:global(.uppy-Dashboard-browse) {
+				background-color: #4a5568 !important;
+				color: #ffffff !important;
+				border-color: #555 !important;
+			}
+
+			:global(.uppy-Dashboard-browse:hover) {
+				background-color: #5a6578 !important;
+			}
+
+			:global(.uppy-Dashboard-upload) {
+				background-color: #667eea !important;
+				color: #ffffff !important;
+			}
+
+			:global(.uppy-Dashboard-upload:hover) {
+				background-color: #5a67d8 !important;
+			}
+
+			// Dark mode for Uppy Dashboard progress bars
+
+			:global(.uppy-Dashboard-progress) {
+				background-color: #444 !important;
+			}
+
+			:global(.uppy-Dashboard-progress-bar) {
+				background-color: #667eea !important;
+			}
+
+			// Dark mode for Uppy Dashboard status messages
+
+			:global(.uppy-Dashboard-status) {
+				color: #e0e0e0 !important;
+			}
+
+			// Dark mode for Uppy Dashboard drag and drop area
+
+			:global(.uppy-Dashboard-drag) {
+				background-color: #2d2d2d !important;
+				border-color: #444 !important;
+			}
+
+			:global(.uppy-Dashboard-dragText) {
+				color: #e0e0e0 !important;
+			}
+
+			:global(.uppy-Dashboard-dragText--isDragOver) {
+				color: #ffffff !important;
+			}
+
+			// Dark mode for drag and drop overlay
+
+			:global(.uppy-Dashboard--isDragOver) {
+				background-color: rgba(102, 126, 234, 0.1) !important;
+			}
+
+			:global(.uppy-Dashboard--isDragOver .uppy-Dashboard-drag) {
+				background-color: rgba(102, 126, 234, 0.2) !important;
+				border-color: #667eea !important;
+			}
+
+			// Dark mode for Uppy Dashboard file size and type info
+
+			:global(.uppy-Dashboard-fileInfo) {
+				color: #b0b0b0 !important;
+			}
+
+			// Dark mode for additional drag and drop text elements
+
+			:global(.uppy-Dashboard-dragTextLabel) {
+				color: #e0e0e0 !important;
+			}
+
+			:global(.uppy-Dashboard-dragTextLabel--isDragOver) {
+				color: #ffffff !important;
+			}
+
+			// Dark mode for drag and drop instructions
+
+			:global(.uppy-Dashboard-dragTextInstruction) {
+				color: #b0b0b0 !important;
+			}
+
+			:global(.uppy-Dashboard-dragTextInstruction--isDragOver) {
+				color: #e0e0e0 !important;
+			}
+
+			// Dark mode for drag and drop icon
+
+			:global(.uppy-Dashboard-dragIcon) {
+				color: #e0e0e0 !important;
+			}
+
+			:global(.uppy-Dashboard-dragIcon--isDragOver) {
+				color: #ffffff !important;
+			}
+
+			// Dark mode for Uppy Dashboard close button
+
+			:global(.uppy-Dashboard-close) {
+				color: #e0e0e0 !important;
+			}
+
+			:global(.uppy-Dashboard-close:hover) {
+				color: #ffffff !important;
+			}
+		}
+	}
+
+	.info-card {
+		background: #2d2d2d !important;
+		border-color: #444 !important;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+		&:hover {
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+		}
+
+		&__title {
+			color: #f0f0f0 !important;
+		}
+
+		&__content {
+
+			p {
+				color: #e0e0e0 !important;
+
+				strong {
+					color: #f0f0f0 !important;
+				}
+
+				a {
+					color: #90caf9 !important;
+
+					&:hover {
+						color: #bbdefb !important;
+						border-bottom-color: #90caf9 !important;
+					}
+
+					&:focus {
+						outline-color: rgba(144, 202, 249, 0.3) !important;
+					}
+				}
+			}
+		}
+	}
+}
