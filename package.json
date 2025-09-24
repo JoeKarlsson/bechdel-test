@@ -52,7 +52,7 @@
 		"processScript": "nodemon src/server/helper/processScript.js",
 		"build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --progress --profile --colors",
 		"postinstall": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --progress --profile --colors",
-		"runProd": "NODE_ENV=production MONGODB_URI=mongodb://localhost:27017/bechdelTest PORT=8081 MYAPIFILMS=8b35b6b8-9faa-4719-a2ac-bc2735b14434 THEMOVIEDB=6ec9ddad40a319b47c562e0838f7eda3 node src/server/server.js",
+		"runProd": "NODE_ENV=production node src/server/server.js",
 		"snyk-protect": "snyk protect",
 		"prepublish": "npm run snyk-protect"
 	},
