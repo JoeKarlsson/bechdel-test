@@ -21,7 +21,7 @@ const Footer = () => (
 					rel="noopener noreferrer"
 					href="https://github.com/JoeKarlsson/bechdel-test/issues"
 				>
-					help & support
+					help
 				</a>
 			</div>
 			<a
