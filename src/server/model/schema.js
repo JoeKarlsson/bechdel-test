@@ -74,6 +74,49 @@ const filmSchema = {
 		imdbid: Number,
 		title: String,
 	},
+	enhancedAnalytics: {
+		femaleAgency: Object,
+		stereotypes: Object,
+		intersectionality: Object,
+		sentiment: Object,
+		topics: Object,
+		powerDynamics: Object,
+		vocabulary: Object,
+		biasDetection: Object,
+		improvements: Object,
+		characterDevelopment: Object,
+		analysisTimestamp: String,
+		scriptOptimization: {
+			tokenReduction: {
+				original: Number,
+				cleaned: Number,
+				condensed: Number,
+				reductionPercentage: Number
+			}
+		},
+		characterDialogue: [Object],
+		keyScenes: [Object]
+	},
+	analyticsSummary: {
+		overallScore: Number,
+		keyMetrics: {
+			femaleAgencyScore: Number,
+			stereotypeScore: Number,
+			diversityScore: Number,
+			powerDynamicsScore: Number,
+			biasScore: Number
+		},
+		recommendations: [String],
+		tokenOptimization: Object
+	},
+	analysisMetadata: {
+		analysisTimestamp: String,
+		processId: String,
+		scriptPath: String,
+		characterCount: Number,
+		femaleCharacterCount: Number,
+		maleCharacterCount: Number
+	},
 };
 
 module.exports = filmSchema;
