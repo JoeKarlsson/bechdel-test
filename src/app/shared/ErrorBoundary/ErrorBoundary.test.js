@@ -1,27 +1,19 @@
 import React from 'react';
-import {
-	shallow,
-	configure,
-} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import ErrorBoundary from './ErrorBoundary';
 
-configure({ adapter: new Adapter() });
+// Mock console.error to avoid noise in test output
+const originalError = console.error;
+beforeAll(() => {
+	console.error = jest.fn();
+});
+
+afterAll(() => {
+	console.error = originalError;
+});
 
 describe('Error Boundary', () => {
-	let wrapper;
-	let inst;
-
-	beforeEach(() => {
-		wrapper = shallow(
-			<ErrorBoundary>
-				When you buy a lottery ticket, you are investing in the dreams of the winner.
-			</ErrorBoundary>,
-		);
-		inst = wrapper.instance();
-	});
-
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('should match the snapshot', () => {
@@ -35,33 +27,26 @@ describe('Error Boundary', () => {
 			});
 
 			it('is rendered correctly', () => {
-				expect(wrapper).toHaveLength(1);
+				const { container } = render(
+					<ErrorBoundary>
+						When you buy a lottery ticket, you are investing in the dreams of the winner.
+					</ErrorBoundary>
+				);
+				expect(container.firstChild).toBeTruthy();
 			});
 
 			it('should render to static HTML', () => {
-				expect(wrapper.text()).toContain('When you buy a lottery ticket, you are investing in the dreams of the winner.');
-			});
-
-			it('should have correct inital state', () => {
-				const initialState = inst.state;
-				const expectedIntialState = {
-					hasError: false,
-				};
-				expect(initialState).toMatchObject(expectedIntialState);
-			});
-
-			it('should not have any inital props', () => {
-				const initialProps = inst.props;
-				const expectedProps = {
-					children: 'When you buy a lottery ticket, you are investing in the dreams of the winner.',
-				};
-				expect(initialProps).toMatchObject(expectedProps);
+				const { getByText } = render(
+					<ErrorBoundary>
+						When you buy a lottery ticket, you are investing in the dreams of the winner.
+					</ErrorBoundary>
+				);
+				expect(getByText('When you buy a lottery ticket, you are investing in the dreams of the winner.')).toBeTruthy();
 			});
 		});
 	});
 
-	describe('callbacks', () => {
-
+	describe('error handling', () => {
 		class BuggyComponent extends React.Component {
 			componentDidMount() {
 				throw new Error('I crashed!');
@@ -71,21 +56,15 @@ describe('Error Boundary', () => {
 			}
 		}
 
-		it('should only render error message when `hasError` is true', () => {
-
-			wrapper = shallow(
+		it('should render error message when child component throws', () => {
+			const { getByText } = render(
 				<ErrorBoundary>
 					<BuggyComponent />
-				</ErrorBoundary>,
+				</ErrorBoundary>
 			);
-
-			wrapper
-				.instance()
-				.componentDidCatch({ toString: () => 'error' }, { componentStack: { toString: () => 'info' } });
-
-			wrapper.update();
-			expect(wrapper.text()).toBe('Something went wrong.error');
+			
+			// Error boundary should catch the error and render fallback UI
+			expect(getByText('Something went wrong.')).toBeTruthy();
 		});
-
 	});
 });

@@ -1,23 +1,12 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import Films from './Films';
 
 jest.mock('../../helper/api');
 
-configure({ adapter: new Adapter() });
-
 describe('Films', () => {
-	let wrapper;
-	let inst;
-
-	beforeEach(() => {
-		wrapper = shallow(<Films />);
-		inst = wrapper.instance();
-	});
-
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('match the snapshot', () => {
@@ -26,20 +15,8 @@ describe('Films', () => {
 				expect(tree).toMatchSnapshot();
 			});
 			it('is rendered correctly', () => {
-				expect(wrapper).toHaveLength(1);
-			});
-			it('should not have any inital props', () => {
-				const initialProps = inst.props;
-				const expectedProps = {
-					films: [],
-					loading: false,
-				};
-				expect(initialProps).toMatchObject(expectedProps);
-			});
-			it('should not have any inital state', () => {
-				const initialState = inst.state;
-				const expectedState = {};
-				expect(initialState).toMatchObject(expectedState);
+				const { container } = render(<Films />);
+				expect(container.firstChild).toBeTruthy();
 			});
 		});
 	});

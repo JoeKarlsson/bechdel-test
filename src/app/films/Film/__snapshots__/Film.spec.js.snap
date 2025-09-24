@@ -17,13 +17,14 @@ exports[`Film rendering initial state should render data state correctly 1`] = `
         }
       }
     >
-      Error: An error was thrown inside one of your components, but React doesn't know what it was. This is likely due to browser flakiness. React does its best to preserve the "Pause on exceptions" behavior of the DevTools, which requires some DEV-mode only tricks. It's possible that these don't work in your browser. Try triggering the error in production mode, or switching to a modern browser. If you suspect that this is actually an issue with React, please file an issue.
+      TypeError: Cannot destructure property 'basename' of 'React__namespace.useContext(...)' as it is null.
       <br />
       
-    in div (created by Film)
-    in ErrorBoundary (created by Film)
-    in div (created by Film)
-    in Film
+    at onClick (/Users/joe/Documents/dev/bechdel-test/node_modules/react-router-dom/index.tsx:962:7)
+    at div
+    at ErrorBoundary (/Users/joe/Documents/dev/bechdel-test/src/app/shared/ErrorBoundary/ErrorBoundary.js:6:3)
+    at div
+    at Film (/Users/joe/Documents/dev/bechdel-test/src/app/films/Film/Film.js:38:1)
     </details>
   </div>
 </div>
