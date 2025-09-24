@@ -26,9 +26,24 @@ The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 
 
 This program accepts a movie script and analyzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechdel Test?"
 
-#### Prerequisites
+## Tech Stack
 
-* Install [Node.js](https://nodejs.org/en/)
+This application has been modernized and now uses:
+
+- **Frontend**: React 18 with modern hooks and functional components
+- **Backend**: Node.js with Express
+- **Database**: MongoDB 7.0 with Mongoose ODM
+- **Build Tools**: Webpack 5 with modern configuration
+- **Styling**: SCSS with CSS modules support
+- **Testing**: Jest with React Testing Library
+- **Development**: Hot reload with nodemon and webpack-dev-middleware
+- **Containerization**: Docker with multi-stage builds
+- **Code Quality**: ESLint, Prettier, and Stylelint
+
+## Prerequisites
+
+* Install [Node.js](https://nodejs.org/en/) (version 16 or higher)
+* Install [Docker](https://www.docker.com/) (recommended)
 
 ## Quickstart
 
@@ -60,10 +75,24 @@ docker compose up -d
 # MongoDB will be available at localhost:27017
 ```
 
+**Docker Services:**
+- `mongodb` - MongoDB 7.0 with authentication
+- `app` - Production application (port 8080)
+- `app-dev` - Development application with hot reload (port 3000)
+
 To stop the containers:
 
 ```sh
 docker compose down
+```
+
+**Development with Docker:**
+```sh
+# Start only MongoDB for local development
+docker compose up mongodb -d
+
+# Then run the development server locally
+npm run start:dev
 ```
 
 ### 4. Manual MongoDB Installation (Alternative)
@@ -100,13 +129,65 @@ The project is now configured to use a local MongoDB instance. The configuration
 
 ```sh
 npm install
-npm start # open http://localhost:3000 in your browser
+npm run start:dev # Development server with hot reload at http://localhost:3000
 ```
+
+**Available Scripts:**
+
+- `npm run start:dev` - Start development server with nodemon and hot reload
+- `npm run start:local` - Start with local MongoDB connection
+- `npm start` - Start basic development server
+- `npm run build` - Build production assets
+- `npm run runProd` - Run production server
+- `npm test` - Run test suite with coverage
+- `npm run test:watch` - Run tests in watch mode
+- `npm run lint` - Run ESLint, CSS linting, and Markdown linting
+- `npm run lint:fix` - Fix auto-fixable linting issues
 
 ## Testing
 
-The `bechdel.io` test suite is run with `npm test`.
+The `bechdel.io` test suite uses Jest with React Testing Library for comprehensive testing:
+
+```sh
+npm test                    # Run all tests with coverage
+npm run test:watch         # Run tests in watch mode
+npm run test:coverage      # Run tests with coverage report
+npm run test:updateSnapshot # Update Jest snapshots
+```
+
+**Test Coverage:**
+- Unit tests for React components
+- Integration tests for API endpoints
+- Snapshot testing for UI consistency
+- Mock implementations for external services
+
 You can [read more about testing bechdel.io](test).
+
+## Development Workflow
+
+### Code Quality
+```sh
+npm run lint              # Check code quality
+npm run lint:fix          # Auto-fix linting issues
+npm run lint:css          # Check SCSS/CSS styles
+npm run lint:css:fix      # Auto-fix CSS issues
+npm run lint:md           # Check Markdown files
+```
+
+### Building for Production
+```sh
+npm run build             # Build production assets
+npm run build:analyze     # Build with bundle analysis
+npm run build:stats       # Generate webpack stats
+npm run runProd           # Run production server
+```
+
+### Development Tools
+```sh
+npm run processScript     # Process movie scripts
+npm run healthcheck       # Run linting and tests
+npm run snyk-protect      # Security vulnerability check
+```
 
 ## Where to Get Movie Scripts?
 
