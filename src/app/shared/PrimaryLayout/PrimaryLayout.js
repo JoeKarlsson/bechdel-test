@@ -6,8 +6,10 @@ import Footer from '../Footer/Footer';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Loading from '../Loading/Loading';
 import { SearchProvider } from '../SearchContext/SearchContext';
+import { DarkModeProvider } from '../DarkModeContext/DarkModeContext';
 import '../../assets/styles/skeleton.css';
 import '../../assets/styles/normalize.css';
+import '../../assets/styles/dark-mode.css';
 import './PrimaryLayout.scss';
 
 // Lazy load components for better performance
@@ -42,29 +44,31 @@ const RouteErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportErr
 
 export const PrimaryLayout = () => {
 	return (
-		<SearchProvider>
-			<div className="PrimaryLayout">
-				<Header />
-				<main className="content" role="main">
-					<ErrorBoundary fallback={RouteErrorFallback}>
-						<Suspense fallback={<PageLoading />}>
-							<Routes>
-								<Route path="/" element={<Home />} />
-								<Route path="/about" element={<About />} />
-								<Route path="/privacy" element={<Privacy />} />
-								<Route path="/api-docs" element={<ApiDocs />} />
-								<Route path="/case-study" element={<CaseStudy />} />
-								<Route path="/film/new" element={<NewFilm />} />
-								<Route path="/film/:id" element={<FilmContainer />} />
-								<Route path="/films" element={<FilmsContainer />} />
-								<Route path="*" element={<NoMatch />} />
-							</Routes>
-						</Suspense>
-					</ErrorBoundary>
-				</main>
-				<Footer />
-			</div>
-		</SearchProvider>
+		<DarkModeProvider>
+			<SearchProvider>
+				<div className="PrimaryLayout">
+					<Header />
+					<main className="content" role="main">
+						<ErrorBoundary fallback={RouteErrorFallback}>
+							<Suspense fallback={<PageLoading />}>
+								<Routes>
+									<Route path="/" element={<Home />} />
+									<Route path="/about" element={<About />} />
+									<Route path="/privacy" element={<Privacy />} />
+									<Route path="/api-docs" element={<ApiDocs />} />
+									<Route path="/case-study" element={<CaseStudy />} />
+									<Route path="/film/new" element={<NewFilm />} />
+									<Route path="/film/:id" element={<FilmContainer />} />
+									<Route path="/films" element={<FilmsContainer />} />
+									<Route path="*" element={<NoMatch />} />
+								</Routes>
+							</Suspense>
+						</ErrorBoundary>
+					</main>
+					<Footer />
+				</div>
+			</SearchProvider>
+		</DarkModeProvider>
 	);
 };
 

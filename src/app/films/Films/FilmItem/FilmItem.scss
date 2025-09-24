@@ -4,10 +4,15 @@
 	text-align: center;
 	width: 20%;
 	position: relative;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
 
 	li {
 		list-style-type: none;
-		margin-bottom: 0;
+		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -97,6 +102,12 @@
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
+	.filmItem {
+		width: 33.333%; /* 3 films per row on tablets */
+		margin: 0;
+		padding: 0;
+	}
+	
 	.film-title {
 		font-size: 1.3rem;
 		margin-bottom: 16px;
@@ -116,6 +127,12 @@
 }
 
 @media (max-width: 480px) {
+	.filmItem {
+		width: 50%; /* 2 films per row on mobile */
+		margin: 0;
+		padding: 0;
+	}
+	
 	.film-title {
 		font-size: 1.1rem;
 		margin-bottom: 14px;
@@ -132,4 +149,13 @@
 	.test-result {
 		margin-top: 8px;
 	}
+}
+
+// Search highlighting
+.search-highlight {
+	background-color: #ffeb3b;
+	color: #333;
+	padding: 0.1em 0.2em;
+	border-radius: 0.2em;
+	font-weight: 600;
 }

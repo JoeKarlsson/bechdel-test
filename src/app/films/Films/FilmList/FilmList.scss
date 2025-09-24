@@ -4,9 +4,30 @@
 	flex-flow: row wrap;
 	margin: 0;
 	padding: 0;
+	gap: 0;
 }
 
 .fillerNode {
-	width: 20%; /*the width of the images in this example */
+	width: 20%; /* Default: 5 films per row */
 	height: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+/* Responsive filler nodes */
+@media (max-width: 768px) {
+	.fillerNode {
+		width: 33.333%; /* 3 films per row on tablets */
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.fillerNode {
+		width: 50%; /* 2 films per row on mobile */
+		margin: 0;
+		padding: 0;
+	}
 }

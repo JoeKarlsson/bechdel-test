@@ -13,9 +13,22 @@ import {
     Legend,
     ResponsiveContainer,
 } from 'recharts';
+import { useDarkMode } from '../../../shared/DarkModeContext/DarkModeContext';
+import useIntersectionObserver from '../../../helper/useIntersectionObserver';
 import './BechdelCharts.scss';
 
 const BechdelCharts = ({ bechdelResults }) => {
+    const { isDarkMode } = useDarkMode();
+
+    // Intersection observers for different chart sections
+    const chartsGridRef = useIntersectionObserver({ threshold: 0.1 });
+    const scoreCardRef = useIntersectionObserver({ threshold: 0.1 });
+    const characterChartRef = useIntersectionObserver({ threshold: 0.1 });
+    const dialogueChartRef = useIntersectionObserver({ threshold: 0.1 });
+    const sceneChartRef = useIntersectionObserver({ threshold: 0.1 });
+    const charactersWithDialogueRef = useIntersectionObserver({ threshold: 0.1 });
+    const statsCardRef = useIntersectionObserver({ threshold: 0.1 });
+
     const {
         numOfFemalesChars,
         numOfMaleChars,
@@ -29,28 +42,34 @@ const BechdelCharts = ({ bechdelResults }) => {
         pass,
     } = bechdelResults;
 
+    // Chart colors - use darker colors for dark mode
+    const femaleColor = isDarkMode ? '#ff8fab' : '#ff6b9d';
+    const maleColor = isDarkMode ? '#7dd3fc' : '#4ecdc4';
+    const passColor = isDarkMode ? '#4ade80' : '#2ecc71';
+    const failColor = isDarkMode ? '#f87171' : '#e74c3c';
+
     // Character distribution data
     const characterData = [
-        { name: 'Female', value: numOfFemalesChars, color: '#ff6b9d' },
-        { name: 'Male', value: numOfMaleChars, color: '#4ecdc4' },
+        { name: 'Female', value: numOfFemalesChars, color: femaleColor },
+        { name: 'Male', value: numOfMaleChars, color: maleColor },
     ];
 
     // Dialogue data
     const dialogueData = [
-        { name: 'Female', lines: totalLinesFemaleDialogue, color: '#ff6b9d' },
-        { name: 'Male', lines: totalLinesMaleDialogue, color: '#4ecdc4' },
+        { name: 'Female', lines: totalLinesFemaleDialogue, color: femaleColor },
+        { name: 'Male', lines: totalLinesMaleDialogue, color: maleColor },
     ];
 
     // Scene analysis data
     const sceneData = [
-        { name: 'Pass', count: numScenesPass, color: '#2ecc71' },
-        { name: "Don't Pass", count: numScenesDontPass, color: '#e74c3c' },
+        { name: 'Pass', count: numScenesPass, color: passColor },
+        { name: "Don't Pass", count: numScenesDontPass, color: failColor },
     ];
 
     // Characters with dialogue data
     const charactersWithDialogueData = [
-        { name: 'Female', count: numOfFemalesCharsWithDialogue, color: '#ff6b9d' },
-        { name: 'Male', count: numOfMaleCharsWithDialogue, color: '#4ecdc4' },
+        { name: 'Female', count: numOfFemalesCharsWithDialogue, color: femaleColor },
+        { name: 'Male', count: numOfMaleCharsWithDialogue, color: maleColor },
     ];
 
     const CustomTooltip = ({ active, payload, label }) => {
@@ -75,12 +94,12 @@ const BechdelCharts = ({ bechdelResults }) => {
                 <text
                     x={x}
                     y={y - 8}
-                    fill="white"
+                    fill="#ffffff"
                     textAnchor="middle"
                     dominantBaseline="middle"
                     fontSize="14"
                     fontWeight="bold"
-                    stroke="black"
+                    stroke={isDarkMode ? "rgba(0,0,0,0.8)" : "black"}
                     strokeWidth="0.5"
                 >
                     {name}
@@ -88,12 +107,12 @@ const BechdelCharts = ({ bechdelResults }) => {
                 <text
                     x={x}
                     y={y + 8}
-                    fill="white"
+                    fill="#ffffff"
                     textAnchor="middle"
                     dominantBaseline="middle"
                     fontSize="12"
                     fontWeight="bold"
-                    stroke="black"
+                    stroke={isDarkMode ? "rgba(0,0,0,0.8)" : "black"}
                     strokeWidth="0.5"
                 >
                     {value}
@@ -104,9 +123,15 @@ const BechdelCharts = ({ bechdelResults }) => {
 
     return (
         <div className="bechdel-charts">
-            <div className="charts-grid">
+            <div
+                ref={chartsGridRef.ref}
+                className={`charts-grid ${chartsGridRef.isIntersecting ? 'animate-in' : ''}`}
+            >
                 {/* Bechdel Score Progress */}
-                <div className="chart-card score-card">
+                <div
+                    ref={scoreCardRef.ref}
+                    className={`chart-card score-card ${scoreCardRef.isIntersecting ? 'animate-in' : ''}`}
+                >
                     <h3>Bechdel Score</h3>
                     <div className="score-progress">
                         <div className={`score-circle ${pass ? 'passed' : 'failed'}`}>
@@ -131,7 +156,10 @@ const BechdelCharts = ({ bechdelResults }) => {
                 </div>
 
                 {/* Character Distribution */}
-                <div className="chart-card">
+                <div
+                    ref={characterChartRef.ref}
+                    className={`chart-card ${characterChartRef.isIntersecting ? 'animate-in' : ''}`}
+                >
                     <h3>Character Distribution</h3>
                     <ResponsiveContainer width="100%" height={200}>
                         <PieChart>
@@ -143,6 +171,9 @@ const BechdelCharts = ({ bechdelResults }) => {
                                 fill="#8884d8"
                                 dataKey="value"
                                 label={<CustomLabel />}
+                                animationBegin={characterChartRef.isIntersecting ? 0 : 1000}
+                                animationDuration={800}
+                                animationEasing="ease-out"
                             >
                                 {characterData.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -154,7 +185,10 @@ const BechdelCharts = ({ bechdelResults }) => {
                 </div>
 
                 {/* Dialogue Lines Comparison */}
-                <div className="chart-card">
+                <div
+                    ref={dialogueChartRef.ref}
+                    className={`chart-card ${dialogueChartRef.isIntersecting ? 'animate-in' : ''}`}
+                >
                     <h3>Dialogue Lines</h3>
                     <ResponsiveContainer width="100%" height={200}>
                         <BarChart data={dialogueData}>
@@ -162,9 +196,20 @@ const BechdelCharts = ({ bechdelResults }) => {
                             <XAxis dataKey="name" />
                             <YAxis />
                             <Tooltip />
-                            <Bar dataKey="lines" fill="#8884d8">
+                            <Bar
+                                dataKey="lines"
+                                fill="#8884d8"
+                                animationBegin={dialogueChartRef.isIntersecting ? 0 : 1000}
+                                animationDuration={600}
+                                animationEasing="ease-out"
+                            >
                                 {dialogueData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.color} />
+                                    <Cell
+                                        key={`cell-${index}`}
+                                        fill={entry.color}
+                                        animationBegin={dialogueChartRef.isIntersecting ? index * 200 : 1000}
+                                        animationDuration={600}
+                                    />
                                 ))}
                             </Bar>
                         </BarChart>
@@ -172,7 +217,10 @@ const BechdelCharts = ({ bechdelResults }) => {
                 </div>
 
                 {/* Scene Analysis */}
-                <div className="chart-card">
+                <div
+                    ref={sceneChartRef.ref}
+                    className={`chart-card ${sceneChartRef.isIntersecting ? 'animate-in' : ''}`}
+                >
                     <h3>Scene Analysis</h3>
                     <ResponsiveContainer width="100%" height={200}>
                         <BarChart data={sceneData}>
@@ -180,9 +228,20 @@ const BechdelCharts = ({ bechdelResults }) => {
                             <XAxis dataKey="name" />
                             <YAxis />
                             <Tooltip />
-                            <Bar dataKey="count" fill="#8884d8">
+                            <Bar
+                                dataKey="count"
+                                fill="#8884d8"
+                                animationBegin={sceneChartRef.isIntersecting ? 0 : 1000}
+                                animationDuration={600}
+                                animationEasing="ease-out"
+                            >
                                 {sceneData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.color} />
+                                    <Cell
+                                        key={`cell-${index}`}
+                                        fill={entry.color}
+                                        animationBegin={sceneChartRef.isIntersecting ? index * 200 : 1000}
+                                        animationDuration={600}
+                                    />
                                 ))}
                             </Bar>
                         </BarChart>
@@ -190,7 +249,10 @@ const BechdelCharts = ({ bechdelResults }) => {
                 </div>
 
                 {/* Characters with Dialogue */}
-                <div className="chart-card">
+                <div
+                    ref={charactersWithDialogueRef.ref}
+                    className={`chart-card ${charactersWithDialogueRef.isIntersecting ? 'animate-in' : ''}`}
+                >
                     <h3>Characters with Dialogue</h3>
                     <ResponsiveContainer width="100%" height={200}>
                         <BarChart data={charactersWithDialogueData}>
@@ -198,9 +260,20 @@ const BechdelCharts = ({ bechdelResults }) => {
                             <XAxis dataKey="name" />
                             <YAxis />
                             <Tooltip />
-                            <Bar dataKey="count" fill="#8884d8">
+                            <Bar
+                                dataKey="count"
+                                fill="#8884d8"
+                                animationBegin={charactersWithDialogueRef.isIntersecting ? 0 : 1000}
+                                animationDuration={600}
+                                animationEasing="ease-out"
+                            >
                                 {charactersWithDialogueData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.color} />
+                                    <Cell
+                                        key={`cell-${index}`}
+                                        fill={entry.color}
+                                        animationBegin={charactersWithDialogueRef.isIntersecting ? index * 200 : 1000}
+                                        animationDuration={600}
+                                    />
                                 ))}
                             </Bar>
                         </BarChart>
@@ -208,22 +281,25 @@ const BechdelCharts = ({ bechdelResults }) => {
                 </div>
 
                 {/* Summary Stats */}
-                <div className="chart-card stats-card">
+                <div
+                    ref={statsCardRef.ref}
+                    className={`chart-card stats-card ${statsCardRef.isIntersecting ? 'animate-in' : ''}`}
+                >
                     <h3>Quick Stats</h3>
                     <div className="stats-grid">
-                        <div className="stat-item">
+                        <div className={`stat-item ${statsCardRef.isIntersecting ? 'animate-in' : ''}`}>
                             <div className="stat-number">{numOfFemalesChars + numOfMaleChars}</div>
                             <div className="stat-label">Total Characters</div>
                         </div>
-                        <div className="stat-item">
+                        <div className={`stat-item ${statsCardRef.isIntersecting ? 'animate-in' : ''}`}>
                             <div className="stat-number">{totalLinesFemaleDialogue + totalLinesMaleDialogue}</div>
                             <div className="stat-label">Total Dialogue Lines</div>
                         </div>
-                        <div className="stat-item">
+                        <div className={`stat-item ${statsCardRef.isIntersecting ? 'animate-in' : ''}`}>
                             <div className="stat-number">{numScenesPass + numScenesDontPass}</div>
                             <div className="stat-label">Total Scenes</div>
                         </div>
-                        <div className="stat-item">
+                        <div className={`stat-item ${statsCardRef.isIntersecting ? 'animate-in' : ''}`}>
                             <div className="stat-number">
                                 {numScenesPass + numScenesDontPass > 0
                                     ? `${Math.round((numScenesPass / (numScenesPass + numScenesDontPass)) * 100)}%`

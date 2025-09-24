@@ -59,7 +59,6 @@ $mobile-breakpoint: 768px;
 			width: 100%;
 			padding: 0.5rem 2.5rem 0.5rem 1rem;
 			border: none;
-			border-radius: 0;
 			font-size: 0.9rem;
 			background: rgba(255, 255, 255, 0.9);
 			color: #333;
@@ -84,6 +83,11 @@ $mobile-breakpoint: 768px;
 			font-size: 1rem;
 			color: rgba(51, 51, 51, 0.6);
 			pointer-events: none;
+			transition: all 0.3s ease;
+
+			&.searching {
+				animation: pulse 1.5s ease-in-out infinite;
+			}
 		}
 	}
 }
@@ -199,7 +203,6 @@ $mobile-breakpoint: 768px;
 	color: $white;
 	text-decoration: none;
 	transition: all 0.3s ease;
-	border-radius: 4px;
 
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.1);
@@ -214,7 +217,6 @@ $mobile-breakpoint: 768px;
 
 	@media (max-width: $mobile-breakpoint) {
 		padding: 1rem 2rem;
-		border-radius: 0;
 		text-align: center;
 
 		&:hover {
@@ -254,7 +256,6 @@ $mobile-breakpoint: 768px;
 	height: 3px;
 	background-color: $white;
 	transition: all 0.3s ease;
-	border-radius: 2px;
 
 	.mobile_menu_button:hover & {
 		background-color: lighten($purple, 30%);
@@ -278,5 +279,17 @@ $mobile-breakpoint: 768px;
 		&:nth-child(3) {
 			transform: rotate(-45deg) translate(7px, -6px);
 		}
+	}
+}
+
+// Animation keyframes
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+		transform: translateY(-50%) scale(1);
+	}
+	50% {
+		opacity: 0.6;
+		transform: translateY(-50%) scale(1.1);
 	}
 }

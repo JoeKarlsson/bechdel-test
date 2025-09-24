@@ -1,10 +1,16 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import useIntersectionObserver from '../../../helper/useIntersectionObserver';
 import './ScriptTimeline.scss';
 
 const ScriptTimeline = ({ bechdelResults, characters }) => {
     const [selectedSceneIndex, setSelectedSceneIndex] = useState(null);
     const [expandedScenes, setExpandedScenes] = useState(new Set());
+
+    // Intersection observers for timeline sections
+    const timelineHeaderRef = useIntersectionObserver({ threshold: 0.1 });
+    const timelineContentRef = useIntersectionObserver({ threshold: 0.1 });
+    const timelineFooterRef = useIntersectionObserver({ threshold: 0.1 });
 
     const { scenesThatPass, numScenesPass, numScenesDontPass } = bechdelResults;
 
@@ -100,7 +106,10 @@ const ScriptTimeline = ({ bechdelResults, characters }) => {
 
     return (
         <div className="script-timeline">
-            <div className="timeline-header">
+            <div
+                ref={timelineHeaderRef.ref}
+                className={`timeline-header ${timelineHeaderRef.isIntersecting ? 'animate-in' : ''}`}
+            >
                 <h3>
                     <span className="timeline-icon">📜</span>
                     Script Timeline
@@ -126,12 +135,15 @@ const ScriptTimeline = ({ bechdelResults, characters }) => {
                 </div>
             </div>
 
-            <div className="timeline-content">
+            <div
+                ref={timelineContentRef.ref}
+                className={`timeline-content ${timelineContentRef.isIntersecting ? 'animate-in' : ''}`}
+            >
                 <div className="timeline-track">
                     {timelineData.map((sceneData, index) => (
                         <div
                             key={index}
-                            className={`timeline-item ${expandedScenes.has(index) ? 'expanded' : ''}`}
+                            className={`timeline-item ${expandedScenes.has(index) ? 'expanded' : ''} ${timelineContentRef.isIntersecting ? 'animate-in' : ''}`}
                         >
                             <div className="timeline-marker">
                                 <div className="marker-dot"></div>
@@ -182,7 +194,10 @@ const ScriptTimeline = ({ bechdelResults, characters }) => {
                 </div>
             </div>
 
-            <div className="timeline-footer">
+            <div
+                ref={timelineFooterRef.ref}
+                className={`timeline-footer ${timelineFooterRef.isIntersecting ? 'animate-in' : ''}`}
+            >
                 <div className="timeline-legend">
                     <div className="legend-item">
                         <div className="legend-dot pass"></div>

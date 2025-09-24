@@ -1,0 +1,1240 @@
+/* Dark Mode Styles */
+body.dark-mode {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+/* Ensure all pages have dark background */
+body.dark-mode .PrimaryLayout {
+	background-color: #1a1a1a;
+	min-height: 100vh;
+}
+
+body.dark-mode .content {
+	background-color: #1a1a1a;
+}
+
+/* Dark mode for Home page */
+body.dark-mode .Home {
+	background-color: #1a1a1a;
+}
+
+/* Dark mode for About page */
+body.dark-mode .About {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .About .about-content {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .About .about-content h2 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .About .about-content p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .About .about-content .signature {
+	color: #b0b0b0;
+}
+
+body.dark-mode .About .about-content a {
+	color: #90caf9;
+}
+
+body.dark-mode .About .about-content a:hover {
+	color: #bbdefb;
+}
+
+body.dark-mode .About .about-actions button {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border: 1px solid #666;
+}
+
+body.dark-mode .About .about-actions button:hover {
+	background-color: #5a5a5a;
+}
+
+/* Dark mode for Hero section */
+body.dark-mode .hero {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero.jpg');
+}
+
+/* Dark mode for Films page */
+body.dark-mode .films {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .FilmList {
+	background-color: #1a1a1a;
+}
+
+/* Dark mode for FilmItem */
+body.dark-mode .filmItem {
+	background-color: transparent;
+}
+
+body.dark-mode .film-poster-container:hover {
+	box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .film-overlay {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .film-info {
+	color: #e0e0e0;
+}
+
+body.dark-mode .film-title {
+	color: #f0f0f0;
+	text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Dark mode for individual Film page */
+body.dark-mode .Film {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .film-container {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .film-info-card {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+	border-color: #444;
+}
+
+body.dark-mode .film-info-card h1,
+body.dark-mode .film-info-card h2,
+body.dark-mode .film-info-card h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .film-info-card p {
+	color: #e0e0e0;
+}
+
+/* Dark mode for NewFilm page */
+body.dark-mode .NewFilm {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .upload-form {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+	border-color: #444;
+}
+
+body.dark-mode .upload-form h2 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .upload-form label {
+	color: #e0e0e0;
+}
+
+body.dark-mode .upload-form input,
+body.dark-mode .upload-form textarea {
+	background-color: #333;
+	border-color: #555;
+	color: #e0e0e0;
+}
+
+body.dark-mode .upload-form input:focus,
+body.dark-mode .upload-form textarea:focus {
+	border-color: #64b5f6;
+	background-color: #3a3a3a;
+}
+
+/* Dark mode for ApiDocs page */
+body.dark-mode .api-docs {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .api-docs-content {
+	background-color: transparent;
+}
+
+body.dark-mode .api-docs-nav {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+	border-color: #444;
+}
+
+body.dark-mode .api-docs-nav h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-nav .nav-item {
+	color: #e0e0e0;
+}
+
+body.dark-mode .api-docs-nav .nav-item:hover {
+	background-color: rgba(100, 181, 246, 0.1);
+}
+
+body.dark-mode .api-docs-nav .nav-item.active {
+	background-color: rgba(100, 181, 246, 0.15);
+	border-left-color: #64b5f6;
+}
+
+body.dark-mode .api-docs-header .api-info-item {
+	background: rgba(255, 255, 255, 0.2);
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-header .api-info-item strong {
+	color: #ffffff;
+}
+
+body.dark-mode .api-docs-header .api-info-item code {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-header .search-input {
+	background: rgba(255, 255, 255, 0.9);
+	color: #333;
+}
+
+body.dark-mode .api-docs-header .search-input::placeholder {
+	color: rgba(51, 51, 51, 0.6);
+}
+
+body.dark-mode .api-docs-header .search-icon {
+	color: rgba(51, 51, 51, 0.6);
+}
+
+body.dark-mode .api-docs-main {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+	border-color: #444;
+}
+
+body.dark-mode .api-docs-main h2,
+body.dark-mode .api-docs-main h3,
+body.dark-mode .api-docs-main h4 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-main p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .endpoint-details .endpoint-header {
+	border-bottom-color: #555;
+}
+
+body.dark-mode .endpoint-details .endpoint-title h2 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .endpoint-details .endpoint-url {
+	background-color: #333;
+	color: #e0e0e0;
+}
+
+body.dark-mode .endpoint-details .endpoint-description {
+	color: #e0e0e0;
+}
+
+body.dark-mode .code-block {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .code-block .code-header {
+	background-color: #2d2d2d;
+	border-bottom-color: #555;
+}
+
+body.dark-mode .code-block .code-label {
+	color: #f0f0f0;
+}
+
+body.dark-mode .code-block pre {
+	color: #e0e0e0;
+}
+
+body.dark-mode .status-codes .status-code {
+	background-color: #333;
+	border-left-color: #17a2b8;
+}
+
+body.dark-mode .status-codes .status-number {
+	color: #e0e0e0;
+}
+
+body.dark-mode .status-codes .status-description {
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-main h4 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-main .no-results-main h2 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .api-docs-main .no-results-main p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .api-docs-nav .no-results p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .data-models,
+body.dark-mode .error-handling,
+body.dark-mode .rate-limiting,
+body.dark-mode .support,
+body.dark-mode .detailed-bechdel-analysis {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+	border-color: #444;
+}
+
+body.dark-mode .data-models h2,
+body.dark-mode .error-handling h2,
+body.dark-mode .rate-limiting h2,
+body.dark-mode .support h2,
+body.dark-mode .detailed-bechdel-analysis h2 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .data-models h3,
+body.dark-mode .error-handling h3,
+body.dark-mode .rate-limiting h3,
+body.dark-mode .support h3,
+body.dark-mode .detailed-bechdel-analysis h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .data-models p,
+body.dark-mode .error-handling p,
+body.dark-mode .rate-limiting p,
+body.dark-mode .support p,
+body.dark-mode .detailed-bechdel-analysis p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .data-models li,
+body.dark-mode .error-handling li,
+body.dark-mode .rate-limiting li,
+body.dark-mode .support li,
+body.dark-mode .detailed-bechdel-analysis li {
+	color: #e0e0e0;
+}
+
+body.dark-mode .data-models a,
+body.dark-mode .error-handling a,
+body.dark-mode .rate-limiting a,
+body.dark-mode .support a,
+body.dark-mode .detailed-bechdel-analysis a {
+	color: #90caf9;
+}
+
+body.dark-mode .model-section {
+	border-bottom-color: #555;
+}
+
+body.dark-mode .bechdel-analysis-table {
+	background-color: #2d2d2d;
+}
+
+body.dark-mode .bechdel-analysis-table tbody tr:hover {
+	background-color: rgba(100, 181, 246, 0.05);
+}
+
+body.dark-mode .bechdel-analysis-table tbody td {
+	border-bottom-color: #555;
+}
+
+body.dark-mode .bechdel-analysis-table tbody td:first-child {
+	color: #90caf9;
+	background-color: rgba(100, 181, 246, 0.05);
+	border-right-color: #555;
+}
+
+body.dark-mode .bechdel-analysis-table tbody td:nth-child(2) {
+	color: #17a2b8;
+}
+
+body.dark-mode .bechdel-analysis-table tbody td:last-child {
+	color: #f0f0f0;
+}
+
+body.dark-mode .bechdel-analysis-table thead th {
+	color: #f0f0f0;
+	background-color: #333;
+}
+
+body.dark-mode .api-docs-main .model-description p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .api-docs-main .analysis-description p {
+	color: #e0e0e0;
+}
+
+/* Dark mode for Film detail pages */
+body.dark-mode .filmInfo {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .filmInfo .plot-details-container {
+	background-color: #2d2d2d;
+	border-bottom-color: #444;
+}
+
+body.dark-mode .filmInfo .charts-section {
+	background-color: #2d2d2d;
+}
+
+body.dark-mode .filmInfo .timeline-section {
+	border-top-color: #444;
+}
+
+body.dark-mode .filmInfo .detailed-analysis-section {
+	background-color: #2d2d2d;
+	border-top-color: #444;
+}
+
+body.dark-mode .filmInfo .navigation-section {
+	border-top-color: #444;
+}
+
+body.dark-mode .filmInfo .detailed-results {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .filmInfo .detailed-results h3 {
+	color: #f0f0f0;
+	border-bottom-color: #555;
+}
+
+body.dark-mode .filmInfo .detailed-results .BechdelResults .bechdel-results-table {
+	background-color: #333;
+}
+
+body.dark-mode .filmInfo .detailed-results .BechdelResults .bechdel-results-table tbody tr:hover {
+	background-color: rgba(100, 181, 246, 0.05);
+}
+
+body.dark-mode .filmInfo .detailed-results .BechdelResults .bechdel-results-table tbody td.metric-name {
+	color: #90caf9;
+	background-color: rgba(100, 181, 246, 0.05);
+	border-right-color: #555;
+}
+
+body.dark-mode .filmInfo .detailed-results .BechdelResults .bechdel-results-table tbody td.metric-value {
+	color: #e0e0e0;
+}
+
+/* Dark mode for FilmInfoCard */
+body.dark-mode .film-info-card {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .film-info-card .info-item {
+	background-color: #2d2d2d;
+	border-left-color: #64b5f6;
+}
+
+body.dark-mode .film-info-card .info-item:hover {
+	background-color: #3d3d3d;
+	border-left-color: #90caf9;
+}
+
+body.dark-mode .film-info-card .info-label {
+	color: #f0f0f0;
+}
+
+body.dark-mode .film-info-card .info-value {
+	color: #e0e0e0;
+}
+
+body.dark-mode .film-info-card .info-value .imdb-link {
+	color: #90caf9;
+}
+
+body.dark-mode .film-info-card .info-value .imdb-link:hover {
+	color: #bbdefb;
+}
+
+body.dark-mode .film-info-card .info-value .upload-date {
+	color: #b0b0b0;
+	background-color: #444;
+}
+
+/* Dark mode for PlotSection */
+body.dark-mode .plot-section {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .plot-section .plot-header {
+	border-bottom-color: #555;
+}
+
+body.dark-mode .plot-section .plot-header h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .plot-section .plot-content p {
+	color: #e0e0e0;
+}
+
+/* Dark mode for Film Error State */
+body.dark-mode .film-error__container {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .film-error__title {
+	color: #f0f0f0;
+}
+
+body.dark-mode .film-error__message {
+	color: #e0e0e0;
+}
+
+/* Dark mode for NewFilm page */
+body.dark-mode .new-film {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .new-film__header {
+	color: #f0f0f0 !important;
+}
+
+body.dark-mode .new-film__title {
+	color: #f0f0f0 !important;
+}
+
+body.dark-mode .new-film__subtitle {
+	color: #e0e0e0 !important;
+}
+
+body.dark-mode .new-film :global(.uppy-Dashboard) {
+	background-color: #2d2d2d !important;
+}
+
+body.dark-mode .new-film :global(.uppy-Dashboard-inner) {
+	background-color: #2d2d2d !important;
+}
+
+body.dark-mode .info-card {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .info-card h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .info-card p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .info-card ul li {
+	color: #e0e0e0;
+}
+
+body.dark-mode .info-card a {
+	color: #90caf9;
+}
+
+/* Dark mode for BechdelCharts */
+body.dark-mode .bechdel-charts .chart-card {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .bechdel-charts .chart-card h3 {
+	color: #ffffff;
+	border-bottom-color: #555;
+}
+
+body.dark-mode .bechdel-charts .score-description {
+	color: #ffffff;
+}
+
+body.dark-mode .bechdel-charts .stats-card .stats-grid .stat-item {
+	background-color: #2d2d2d;
+	border-color: #555;
+}
+
+body.dark-mode .bechdel-charts .stats-card .stats-grid .stat-item .stat-number {
+	color: #ffffff;
+}
+
+body.dark-mode .bechdel-charts .stats-card .stats-grid .stat-item .stat-label {
+	color: #ffffff;
+}
+
+/* Dark mode for Recharts components */
+body.dark-mode .recharts-wrapper {
+	color: #ffffff;
+}
+
+body.dark-mode .recharts-cartesian-axis-tick-value {
+	fill: #ffffff !important;
+}
+
+body.dark-mode .recharts-cartesian-axis-tick-line {
+	stroke: #ffffff !important;
+}
+
+body.dark-mode .recharts-cartesian-grid-horizontal line {
+	stroke: #555 !important;
+}
+
+body.dark-mode .recharts-cartesian-grid-vertical line {
+	stroke: #555 !important;
+}
+
+body.dark-mode .recharts-tooltip-wrapper {
+	color: #ffffff;
+}
+
+body.dark-mode .recharts-tooltip-content {
+	background-color: #333 !important;
+	border: 1px solid #555 !important;
+	color: #ffffff !important;
+}
+
+body.dark-mode .recharts-tooltip-label {
+	color: #ffffff !important;
+}
+
+body.dark-mode .recharts-legend-wrapper {
+	color: #ffffff;
+}
+
+body.dark-mode .recharts-legend-item-text {
+	color: #ffffff !important;
+}
+
+body.dark-mode .recharts-text {
+	fill: #ffffff !important;
+}
+
+body.dark-mode .recharts-label {
+	fill: #ffffff !important;
+}
+
+/* Specific chart text elements */
+body.dark-mode .recharts-pie-label-text {
+	fill: #ffffff !important;
+}
+
+body.dark-mode .recharts-bar-label-text {
+	fill: #ffffff !important;
+}
+
+body.dark-mode .recharts-line-label-text {
+	fill: #ffffff !important;
+}
+
+/* Dark mode for CaseStudy page */
+body.dark-mode .CaseStudy {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .CaseStudy .case-study-content {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .CaseStudy .case-study-content p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .CaseStudy .case-study-content .stat-highlight {
+	color: #90caf9;
+}
+
+body.dark-mode .CaseStudy .case-study-content .chart-description {
+	color: #b0b0b0;
+}
+
+body.dark-mode .CaseStudy .case-study-content .challenges-section p {
+	color: #b0b0b0;
+}
+
+body.dark-mode .CaseStudy .case-study-actions button {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border: 1px solid #666;
+}
+
+body.dark-mode .CaseStudy .case-study-actions button:hover {
+	background-color: #5a5a5a;
+}
+
+/* Dark mode for Privacy page */
+body.dark-mode .Privacy {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .Privacy .privacy-content {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .Privacy .privacy-content h2 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .Privacy .privacy-content p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .Privacy .privacy-content li {
+	color: #e0e0e0;
+}
+
+body.dark-mode .Privacy .privacy-content a {
+	color: #90caf9;
+}
+
+body.dark-mode .Privacy .privacy-content a:hover {
+	color: #bbdefb;
+}
+
+body.dark-mode .Privacy .privacy-actions button {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border: 1px solid #666;
+}
+
+body.dark-mode .Privacy .privacy-actions button:hover {
+	background-color: #5a5a5a;
+}
+
+/* Dark mode for NoMatch page */
+body.dark-mode .NoMatch {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .no-match-container {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .no-match-container h1 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .no-match-container p {
+	color: #e0e0e0;
+}
+
+/* Dark mode for Bechdel charts and results */
+body.dark-mode .bechdel-charts {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .bechdel-results {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .bechdel-results h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .bechdel-results p {
+	color: #e0e0e0;
+}
+
+/* Dark mode for plot section */
+body.dark-mode .plot-section {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .plot-section h3 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .plot-section p {
+	color: #e0e0e0;
+}
+
+/* Dark mode for script timeline */
+body.dark-mode .script-timeline {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .script-timeline h3 {
+	color: #f0f0f0;
+}
+
+/* Dark mode for loading states */
+body.dark-mode .loading {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+body.dark-mode .page-loading {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+body.dark-mode .page-loading__text {
+	color: #e0e0e0;
+}
+
+/* Dark mode for error states */
+body.dark-mode .error {
+	background-color: #4a1a1a;
+	color: #ffcdd2;
+	border-color: #d32f2f;
+}
+
+body.dark-mode .route-error {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+body.dark-mode .route-error__container {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .route-error__container h1 {
+	color: #f0f0f0;
+}
+
+body.dark-mode .route-error__container p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .route-error__container button {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border: 1px solid #666;
+}
+
+body.dark-mode .route-error__container button:hover {
+	background-color: #5a5a5a;
+}
+
+/* Dark mode for app error */
+body.dark-mode .app-error {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+body.dark-mode .app-error__container {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+body.dark-mode .app-error__title {
+	color: #f0f0f0;
+}
+
+body.dark-mode .app-error__message {
+	color: #e0e0e0;
+}
+
+body.dark-mode .app-error__button {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border: 1px solid #666;
+}
+
+body.dark-mode .app-error__button:hover {
+	background-color: #5a5a5a;
+}
+
+body.dark-mode .app-error__button--primary {
+	background-color: #64b5f6;
+	color: #1a1a1a;
+	border-color: #64b5f6;
+}
+
+body.dark-mode .app-error__button--primary:hover {
+	background-color: #90caf9;
+}
+
+body.dark-mode .app-error__button--secondary {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border-color: #666;
+}
+
+body.dark-mode .app-error__button--secondary:hover {
+	background-color: #5a5a5a;
+}
+
+body.dark-mode .app-error__details {
+	background-color: #333;
+	color: #e0e0e0;
+	border-color: #555;
+}
+
+body.dark-mode .app-error__summary {
+	color: #f0f0f0;
+}
+
+body.dark-mode .app-error__error-content {
+	color: #e0e0e0;
+}
+
+body.dark-mode .app-error__error-content pre {
+	background-color: #444;
+	color: #e0e0e0;
+}
+
+/* Dark mode overrides for skeleton.css elements */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+	color: #f0f0f0;
+}
+
+body.dark-mode a {
+	color: #64b5f6;
+}
+
+body.dark-mode a:hover {
+	color: #90caf9;
+}
+
+body.dark-mode .button,
+body.dark-mode button,
+body.dark-mode input[type='submit'],
+body.dark-mode input[type='reset'],
+body.dark-mode input[type='button'] {
+	color: #e0e0e0;
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .button:hover,
+body.dark-mode button:hover,
+body.dark-mode input[type='submit']:hover,
+body.dark-mode input[type='reset']:hover,
+body.dark-mode input[type='button']:hover,
+body.dark-mode .button:focus,
+body.dark-mode button:focus,
+body.dark-mode input[type='submit']:focus,
+body.dark-mode input[type='reset']:focus,
+body.dark-mode input[type='button']:focus {
+	color: #e0e0e0;
+	border-color: #777;
+}
+
+body.dark-mode .button.button-primary,
+body.dark-mode button.button-primary,
+body.dark-mode input[type='submit'].button-primary,
+body.dark-mode input[type='reset'].button-primary,
+body.dark-mode input[type='button'].button-primary {
+	color: #1a1a1a;
+	background-color: #64b5f6;
+	border-color: #64b5f6;
+}
+
+body.dark-mode .button.button-primary:hover,
+body.dark-mode button.button-primary:hover,
+body.dark-mode input[type='submit'].button-primary:hover,
+body.dark-mode input[type='reset'].button-primary:hover,
+body.dark-mode input[type='button'].button-primary:hover,
+body.dark-mode .button.button-primary:focus,
+body.dark-mode button.button-primary:focus,
+body.dark-mode input[type='submit'].button-primary:focus,
+body.dark-mode input[type='reset'].button-primary:focus,
+body.dark-mode input[type='button'].button-primary:focus {
+	color: #1a1a1a;
+	background-color: #90caf9;
+	border-color: #90caf9;
+}
+
+body.dark-mode input[type='email'],
+body.dark-mode input[type='number'],
+body.dark-mode input[type='search'],
+body.dark-mode input[type='text'],
+body.dark-mode input[type='tel'],
+body.dark-mode input[type='url'],
+body.dark-mode input[type='password'],
+body.dark-mode textarea,
+body.dark-mode select {
+	background-color: #333;
+	border-color: #555;
+	color: #e0e0e0;
+}
+
+body.dark-mode input[type='email']:focus,
+body.dark-mode input[type='number']:focus,
+body.dark-mode input[type='search']:focus,
+body.dark-mode input[type='text']:focus,
+body.dark-mode input[type='tel']:focus,
+body.dark-mode input[type='url']:focus,
+body.dark-mode input[type='password']:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+	border-color: #64b5f6;
+}
+
+body.dark-mode code {
+	background: #333;
+	border-color: #555;
+	color: #e0e0e0;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+	border-bottom-color: #555;
+	color: #e0e0e0;
+}
+
+body.dark-mode hr {
+	border-top-color: #555;
+}
+
+/* Dark mode for Header */
+body.dark-mode .header_bar {
+	background-color: #2d2d2d;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .header_search .search_input {
+	background: rgba(255, 255, 255, 0.1);
+	color: #e0e0e0;
+}
+
+body.dark-mode .header_search .search_input:focus {
+	background: rgba(255, 255, 255, 0.15);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .header_search .search_input::placeholder {
+	color: rgba(224, 224, 224, 0.6);
+}
+
+body.dark-mode .header_search .search_icon {
+	color: rgba(224, 224, 224, 0.6);
+}
+
+body.dark-mode .header_nav {
+	background-color: #2d2d2d;
+}
+
+body.dark-mode .nav_link:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav_link.active {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode for Footer */
+body.dark-mode .footer {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+/* Dark mode for content areas */
+body.dark-mode .container {
+	background-color: transparent;
+}
+
+/* Dark mode for film cards and other components */
+body.dark-mode .film-card,
+body.dark-mode .card,
+body.dark-mode .info-card {
+	background-color: #2d2d2d;
+	border-color: #444;
+	color: #e0e0e0;
+}
+
+/* Dark mode for forms */
+body.dark-mode .form-group,
+body.dark-mode .form-field {
+	background-color: transparent;
+}
+
+body.dark-mode label {
+	color: #e0e0e0;
+}
+
+/* Dark mode for tables */
+body.dark-mode table {
+	background-color: #2d2d2d;
+}
+
+body.dark-mode thead {
+	background-color: #333;
+}
+
+/* Dark mode for modals and overlays */
+body.dark-mode .modal,
+body.dark-mode .overlay {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .modal-content {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+}
+
+/* Dark mode for dropdowns */
+body.dark-mode .dropdown {
+	background-color: #2d2d2d;
+	border-color: #555;
+}
+
+body.dark-mode .dropdown-item {
+	color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover {
+	background-color: #444;
+}
+
+/* Dark mode for tooltips */
+body.dark-mode .tooltip {
+	background-color: #333;
+	color: #e0e0e0;
+	border-color: #555;
+}
+
+/* Dark mode for progress bars */
+body.dark-mode .progress-bar {
+	background-color: #333;
+}
+
+body.dark-mode .progress-fill {
+	background-color: #64b5f6;
+}
+
+/* Dark mode for badges and tags */
+body.dark-mode .badge,
+body.dark-mode .tag {
+	background-color: #444;
+	color: #e0e0e0;
+}
+
+/* Dark mode for Films Container states (No Films Found, Empty Films, Films Error) */
+body.dark-mode .no-search-results,
+body.dark-mode .empty-films,
+body.dark-mode .films-error {
+	background-color: #1a1a1a;
+}
+
+body.dark-mode .no-search-results__container,
+body.dark-mode .empty-films__container,
+body.dark-mode .films-error__container {
+	background-color: #2d2d2d;
+	border-color: #444;
+	color: #e0e0e0;
+}
+
+body.dark-mode .no-search-results__title,
+body.dark-mode .empty-films__title,
+body.dark-mode .films-error__title {
+	color: #f0f0f0;
+}
+
+body.dark-mode .no-search-results__message,
+body.dark-mode .empty-films__message,
+body.dark-mode .films-error__message {
+	color: #e0e0e0;
+}
+
+body.dark-mode .no-search-results__button,
+body.dark-mode .empty-films__button,
+body.dark-mode .films-error__button {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border: 1px solid #666;
+}
+
+body.dark-mode .no-search-results__button:hover,
+body.dark-mode .empty-films__button:hover,
+body.dark-mode .films-error__button:hover {
+	background-color: #5a5a5a;
+}
+
+body.dark-mode .no-search-results__button--primary,
+body.dark-mode .empty-films__button--primary,
+body.dark-mode .films-error__button--primary {
+	background-color: #64b5f6;
+	color: #1a1a1a;
+	border-color: #64b5f6;
+}
+
+body.dark-mode .no-search-results__button--primary:hover,
+body.dark-mode .empty-films__button--primary:hover,
+body.dark-mode .films-error__button--primary:hover {
+	background-color: #90caf9;
+}
+
+body.dark-mode .no-search-results__button--secondary,
+body.dark-mode .empty-films__button--secondary,
+body.dark-mode .films-error__button--secondary {
+	background-color: #4a4a4a;
+	color: #e0e0e0;
+	border-color: #666;
+}
+
+body.dark-mode .no-search-results__button--secondary:hover,
+body.dark-mode .empty-films__button--secondary:hover,
+body.dark-mode .films-error__button--secondary:hover {
+	background-color: #5a5a5a;
+}
+
+body.dark-mode .no-search-results__retry-count,
+body.dark-mode .empty-films__retry-count,
+body.dark-mode .films-error__retry-count {
+	color: #b0b0b0;
+}
+
+/* Dark mode for alerts */
+body.dark-mode .alert {
+	background-color: #2d2d2d;
+	border-color: #555;
+	color: #e0e0e0;
+}
+
+body.dark-mode .alert-info {
+	background-color: #1a3a4a;
+	border-color: #2196f3;
+	color: #90caf9;
+}
+
+body.dark-mode .alert-warning {
+	background-color: #4a3a1a;
+	border-color: #ff9800;
+	color: #ffcc02;
+}
+
+body.dark-mode .alert-danger {
+	background-color: #4a1a1a;
+	border-color: #f44336;
+	color: #ffcdd2;
+}
+
+body.dark-mode .alert-success {
+	background-color: #1a4a1a;
+	border-color: #4caf50;
+	color: #c8e6c9;
+}

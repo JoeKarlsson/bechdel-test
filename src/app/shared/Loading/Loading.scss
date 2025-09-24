@@ -55,7 +55,6 @@
 			width: 4px;
 			height: 4px;
 			background: rgba(255, 255, 255, 0.8);
-			border-radius: 50%;
 			animation: float 6s infinite ease-in-out;
 			
 			&--0 { top: 20%; left: 20%; animation-delay: 0s; }
@@ -120,14 +119,12 @@
 			width: 200px;
 			height: 4px;
 			background: rgba(0, 0, 0, 0.1);
-			border-radius: 2px;
 			margin: 2rem auto;
 			overflow: hidden;
 			
 			.Loader_progressBar {
 				height: 100%;
 				background: #2c3e50;
-				border-radius: 2px;
 				animation: progressFill 2s infinite ease-in-out;
 			}
 		}
