@@ -82,11 +82,24 @@
 				text-decoration: underline;
 			}
 		}
+
+		.upload-date {
+			color: #6c757d;
+			font-weight: 500;
+			font-size: 0.95rem;
+			font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+			background: #e9ecef;
+			padding: 0.25rem 0.5rem;
+			border-radius: 4px;
+			display: inline-block;
+		}
 	}
 }
 
 // Responsive adjustments
+
 @media (max-width: 480px) {
+
 	.film-info-card {
 		padding: 1.5rem;
 

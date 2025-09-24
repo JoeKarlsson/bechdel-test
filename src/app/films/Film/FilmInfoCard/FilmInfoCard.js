@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './FilmInfoCard.scss';
 
 const FilmInfoCard = ({ film }) => {
-    const { directors, writers, genres, rated, idIMDB, title } = film;
+    const { directors, writers, genres, rated, idIMDB, title, dateUploaded } = film;
 
     const nodeBuilder = array => {
         return array.map((item, index) => {
@@ -11,6 +11,18 @@ const FilmInfoCard = ({ film }) => {
                 return <span key={`${item.name || item}-${index}`}>{item.name || item}, </span>;
             }
             return <span key={`${item.name || item}-${index}`}>{item.name || item}</span>;
+        });
+    };
+
+    const formatDate = (dateString) => {
+        if (!dateString) return 'Unknown';
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
         });
     };
 
@@ -71,6 +83,16 @@ const FilmInfoCard = ({ film }) => {
                         </a>
                     </div>
                 </div>
+
+                <div className="info-item">
+                    <div className="info-label">
+                        <span className="info-icon">📅</span>
+                        Date Uploaded
+                    </div>
+                    <div className="info-value">
+                        <span className="upload-date">{formatDate(dateUploaded)}</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -92,6 +114,7 @@ FilmInfoCard.propTypes = {
         rated: PropTypes.string,
         idIMDB: PropTypes.string,
         title: PropTypes.string,
+        dateUploaded: PropTypes.string,
     }).isRequired,
 };
 

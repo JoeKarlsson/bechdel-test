@@ -65,6 +65,7 @@
 	}
 
 	.timeline-content {
+
 		.timeline-track {
 			position: relative;
 			padding-left: 2rem;
@@ -84,14 +85,6 @@
 		.timeline-item {
 			position: relative;
 			margin-bottom: 2rem;
-
-			&:last-child {
-				margin-bottom: 0;
-
-				.timeline-marker .marker-line {
-					display: none;
-				}
-			}
 
 			.timeline-marker {
 				position: absolute;
@@ -116,6 +109,14 @@
 					width: 2px;
 					height: calc(100% + 1rem);
 					background: linear-gradient(to bottom, #667eea, #764ba2);
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+
+				.timeline-marker .marker-line {
+					display: none;
 				}
 			}
 
@@ -253,6 +254,7 @@
 					}
 
 					.excerpt-footer {
+
 						.excerpt-note {
 							font-size: 0.8rem;
 							color: #6c757d;
@@ -306,6 +308,7 @@
 		}
 
 		.timeline-actions {
+
 			.expand-all-btn {
 				padding: 0.5rem 1rem;
 				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -328,11 +331,14 @@
 }
 
 // Responsive adjustments
+
 @media (max-width: 768px) {
+
 	.script-timeline {
 		padding: 1.5rem;
 
 		.timeline-header {
+
 			h3 {
 				font-size: 1.2rem;
 			}
@@ -356,6 +362,7 @@
 		}
 
 		.timeline-content {
+
 			.timeline-track {
 				padding-left: 1.5rem;
 
@@ -365,6 +372,7 @@
 			}
 
 			.timeline-item {
+
 				.timeline-marker {
 					left: -1.5rem;
 
@@ -379,10 +387,12 @@
 				}
 
 				.timeline-card {
+
 					.scene-header {
 						padding: 1rem;
 
 						.scene-info {
+
 							.scene-title {
 								font-size: 0.95rem;
 							}
@@ -431,11 +441,14 @@
 }
 
 @media (max-width: 480px) {
+
 	.script-timeline {
 		padding: 1rem;
 
 		.timeline-header {
+
 			.timeline-stats {
+
 				.stat-item {
 					padding: 0.4rem 0.6rem;
 					min-width: 60px;
@@ -452,6 +465,7 @@
 		}
 
 		.timeline-content {
+
 			.timeline-track {
 				padding-left: 1rem;
 
@@ -461,6 +475,7 @@
 			}
 
 			.timeline-item {
+
 				.timeline-marker {
 					left: -1rem;
 
@@ -475,10 +490,12 @@
 				}
 
 				.timeline-card {
+
 					.scene-header {
 						padding: 0.75rem;
 
 						.scene-info {
+
 							.scene-title {
 								font-size: 0.9rem;
 							}

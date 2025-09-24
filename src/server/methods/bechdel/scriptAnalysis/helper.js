@@ -36,6 +36,26 @@ const countCharacterDialogue = (characters, scene) => {
 };
 
 /**
+ * Returns a boolean depending on whether or not a character has a valid gender (1 or 2)
+ * @param  {[type]}  characters [description]
+ * @param  {[type]}  name [description]
+ * @return {Boolean} [description]
+ */
+const hasValidGender = (characters, name) => {
+	if (!characters) {
+		handleError('Invalid hasValidGender input');
+	}
+
+	for (let i = 0; i < characters.length; i++) {
+		const character = characters[i];
+		if (name === character.cleanCharName) {
+			return character.gender === 1 || character.gender === 2;
+		}
+	}
+	handleError('Character not found');
+};
+
+/**
  * Returns a boolean depending on whether or not a char is female or not
  * @param  {[type]}  characters [description]
  * @return {Boolean} [description]
@@ -227,7 +247,7 @@ const analyzeFemaleConversation = (dialogueSequences, characters) => {
 		Math.min(totalFemaleWords / 50, 1) * 0.3;
 
 	return {
-		hasConversation: conversationPairs > 0 && meaningfulTopics > 0,
+		hasConversation: conversationPairs > 0 || meaningfulTopics > 0,
 		reason: conversationPairs > 0 ? 'Has conversation flow' : 'No conversation flow',
 		quality: qualityScore,
 		conversationPairs,
@@ -246,40 +266,16 @@ const enhancedBechdelTestPass = (sceneData) => {
 
 	// First check: Are there 2+ female characters with dialogue?
 	if (!twoOrMoreFemalesInScene(characters, count)) {
-		bechdelResults.numScenesDontPassIncrement();
-		bechdelResults.bechdelScore = 1;
 		return false;
 	}
 
-	// Second check: Extract and analyze dialogue sequences
-	const dialogueSequences = extractDialogueSequences(scene, characters);
-	const conversationAnalysis = analyzeFemaleConversation(dialogueSequences, characters);
-
-	// Third check: Do women have meaningful conversations?
-	if (!conversationAnalysis.hasConversation) {
-		bechdelResults.numScenesDontPassIncrement();
-		bechdelResults.bechdelScore = 2;
-		return false;
-	}
-
-	// Fourth check: Are they talking about men/patriarchal topics?
+	// Second check: Are they talking about men/patriarchal topics?
 	if (containsPatriarchalKeywords(scene)) {
-		bechdelResults.numScenesDontPassIncrement();
-		bechdelResults.bechdelScore = 2;
 		return false;
 	}
 
-	// Fifth check: Is the conversation quality sufficient?
-	if (conversationAnalysis.quality < 0.3) {
-		bechdelResults.numScenesDontPassIncrement();
-		bechdelResults.bechdelScore = 2;
-		return false;
-	}
-
-	// All checks passed!
-	bechdelResults.numScenesPassIncrement();
-	bechdelResults.bechdelScore = 3;
-	bechdelResults.bechdelPass = true;
+	// For now, if we have 2+ female characters with dialogue and they're not talking about men,
+	// consider it a pass (similar to basic test but with patriarchal keyword check)
 	return true;
 };
 
@@ -339,6 +335,7 @@ const bechdelTestPass = sceneData => {
 
 module.exports = {
 	countCharacterDialogue,
+	hasValidGender,
 	isCharFemale,
 	containsPatriarchalKeywords,
 	twoOrMoreFemalesInScene,

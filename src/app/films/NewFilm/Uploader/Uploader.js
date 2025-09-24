@@ -1,16 +1,17 @@
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Uppy } from '@uppy/core';
-import { Dashboard, DragDrop, ProgressBar } from '@uppy/react';
+import { Dashboard } from '@uppy/react';
 import XHRUpload from '@uppy/xhr-upload';
 import ErrorBoundary from '../../../shared/ErrorBoundary/ErrorBoundary';
 
 const Uploader = () => {
 	const uppyRef = useRef(null);
+	const [uppy, setUppy] = useState(null);
 
 	useEffect(() => {
-		const uppy = new Uppy({
+		const uppyInstance = new Uppy({
 			id: 'uppy',
 			meta: { type: 'script' },
 			restrictions: {
@@ -39,7 +40,8 @@ const Uploader = () => {
 			},
 		});
 
-		uppyRef.current = uppy;
+		uppyRef.current = uppyInstance;
+		setUppy(uppyInstance);
 
 		return () => {
 			if (uppyRef.current) {
@@ -48,22 +50,27 @@ const Uploader = () => {
 		};
 	}, []);
 
+	// Don't render components until Uppy is initialized
+	if (!uppy) {
+		return <div>Loading uploader...</div>;
+	}
+
 	return (
 		<ErrorBoundary>
-			<Dashboard uppy={uppyRef.current} />
-
-			<DragDrop
-				uppy={uppyRef.current}
+			<Dashboard 
+				uppy={uppy}
 				locale={{
 					strings: {
 						chooseFile: 'Boop a file',
 						orDragDrop: 'or yoink it here',
 					},
 				}}
+				showProgressDetails={true}
+				hideUploadButton={false}
+				hideRetryButton={false}
+				hidePauseResumeButton={false}
+				hideCancelButton={false}
 			/>
-
-			<h2>Progress Bar</h2>
-			<ProgressBar uppy={uppyRef.current} hideAfterFinish={false} />
 		</ErrorBoundary>
 	);
 };

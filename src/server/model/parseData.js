@@ -19,8 +19,44 @@ const parseImageData = images => {
 		throw new Error('Cannot parseImageData');
 	}
 	const img = {};
-	img.backdrop = `https://image.tmdb.org/t/p/original${images.backdrops[0].file_path}`;
-	img.poster = `https://image.tmdb.org/t/p/w300${images.posters[0].file_path}`;
+
+	// Handle different image data structures
+	if (images.backdrops && Array.isArray(images.backdrops) && images.backdrops.length > 0) {
+		// If backdrops is an array of objects with file_path
+		if (typeof images.backdrops[0] === 'object' && images.backdrops[0].file_path) {
+			img.backdrop = `https://image.tmdb.org/t/p/original${images.backdrops[0].file_path}`;
+		}
+		// If backdrops is an array of URLs
+		else if (typeof images.backdrops[0] === 'string') {
+			img.backdrop = images.backdrops[0];
+		}
+	}
+	// If images already has backdrop URL
+	else if (images.backdrop) {
+		img.backdrop = images.backdrop;
+	}
+	else {
+		img.backdrop = ''; // Default empty string
+	}
+
+	if (images.posters && Array.isArray(images.posters) && images.posters.length > 0) {
+		// If posters is an array of objects with file_path
+		if (typeof images.posters[0] === 'object' && images.posters[0].file_path) {
+			img.poster = `https://image.tmdb.org/t/p/w300${images.posters[0].file_path}`;
+		}
+		// If posters is an array of URLs
+		else if (typeof images.posters[0] === 'string') {
+			img.poster = images.posters[0];
+		}
+	}
+	// If images already has poster URL
+	else if (images.poster) {
+		img.poster = images.poster;
+	}
+	else {
+		img.poster = ''; // Default empty string
+	}
+
 	return img;
 };
 

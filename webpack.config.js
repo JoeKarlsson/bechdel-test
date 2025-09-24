@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: [
@@ -48,6 +49,15 @@ module.exports = {
 			inject: 'body',
 			filename: 'index.html',
 			favicon: './src/app/assets/images/my_logo.png',
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: 'public',
+					to: '.',
+					noErrorOnMissing: true,
+				},
+			],
 		}),
 	],
 	module: {

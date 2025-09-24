@@ -4,6 +4,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: [path.join(__dirname, '/src/app/entry.js')],
@@ -80,6 +81,15 @@ module.exports = {
 		new StyleLintPlugin({
 			files: ['src/**/*.{css,scss}'],
 			fix: true,
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: 'public',
+					to: '.',
+					noErrorOnMissing: true,
+				},
+			],
 		}),
 		// Add bundle analyzer in development
 		...(process.env.ANALYZE === 'true' ? [new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)()] : []),
