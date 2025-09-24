@@ -9,7 +9,7 @@ const getBechdelResults = async (title, path) => {
 	try {
 		// Reset the bechdelResults singleton to ensure clean state
 		bechdelResults.reset();
-		
+
 		const data = await getFilmData(title);
 
 		bechdelResults.characters = data.actors;
