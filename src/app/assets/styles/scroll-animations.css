@@ -1,0 +1,204 @@
+/* Animation styles for scroll-triggered chart animations */
+
+/* Base animation classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chart-specific animations */
+.chart-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-card.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Staggered animation delays for multiple chart cards */
+.chart-card:nth-child(1) { transition-delay: 0.1s; }
+.chart-card:nth-child(2) { transition-delay: 0.2s; }
+.chart-card:nth-child(3) { transition-delay: 0.3s; }
+.chart-card:nth-child(4) { transition-delay: 0.4s; }
+.chart-card:nth-child(5) { transition-delay: 0.5s; }
+.chart-card:nth-child(6) { transition-delay: 0.6s; }
+
+/* Enhanced chart animations for Recharts */
+.recharts-wrapper {
+    transition: all 0.3s ease-out;
+}
+
+/* Bar chart animations - bars rise from bottom */
+.recharts-bar-rectangle {
+    transform-origin: bottom;
+    animation: barRiseUp 0.6s ease-out forwards;
+}
+
+@keyframes barRiseUp {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* Pie chart animations - segments animate in */
+.recharts-pie-sector {
+    animation: pieSegmentIn 0.8s ease-out forwards;
+}
+
+@keyframes pieSegmentIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Timeline-specific animations */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Staggered animation delays for timeline items */
+.timeline-item:nth-child(1) { transition-delay: 0.1s; }
+.timeline-item:nth-child(2) { transition-delay: 0.15s; }
+.timeline-item:nth-child(3) { transition-delay: 0.2s; }
+.timeline-item:nth-child(4) { transition-delay: 0.25s; }
+.timeline-item:nth-child(5) { transition-delay: 0.3s; }
+.timeline-item:nth-child(6) { transition-delay: 0.35s; }
+.timeline-item:nth-child(7) { transition-delay: 0.4s; }
+.timeline-item:nth-child(8) { transition-delay: 0.45s; }
+.timeline-item:nth-child(9) { transition-delay: 0.5s; }
+.timeline-item:nth-child(10) { transition-delay: 0.55s; }
+
+/* Timeline header animation */
+.timeline-header {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-header.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Timeline footer animation */
+.timeline-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-footer.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chart grid animation */
+.charts-grid {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.charts-grid.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Score card special animation */
+.score-card {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.score-card.animate-in {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* Stats card special animation */
+.stats-card {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-card.animate-in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Individual stat items animation */
+.stat-item {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays for stat items */
+.stat-item:nth-child(1) { transition-delay: 0.1s; }
+.stat-item:nth-child(2) { transition-delay: 0.2s; }
+.stat-item:nth-child(3) { transition-delay: 0.3s; }
+.stat-item:nth-child(4) { transition-delay: 0.4s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chart-card {
+        transform: translateY(20px) scale(0.98);
+    }
+    
+    .timeline-item {
+        transform: translateX(-20px);
+    }
+    
+    .score-card {
+        transform: scale(0.9) rotate(-3deg);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .animate-on-scroll,
+    .chart-card,
+    .timeline-item,
+    .timeline-header,
+    .timeline-footer,
+    .charts-grid,
+    .score-card,
+    .stats-card,
+    .stat-item {
+        /* Dark mode animations can have slightly different timing if needed */
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}

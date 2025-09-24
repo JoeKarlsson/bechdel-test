@@ -1,0 +1,50 @@
+$purple: purple;
+$white: white;
+$mobile-breakpoint: 768px;
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.5rem;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
+    }
+
+    .toggle-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    &.dark .toggle-icon {
+        transform: rotate(180deg);
+    }
+
+    &.light .toggle-icon {
+        transform: rotate(0deg);
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        width: 2rem;
+        height: 2rem;
+        margin-left: 0.25rem;
+
+        .toggle-icon {
+            font-size: 1rem;
+        }
+    }
+}

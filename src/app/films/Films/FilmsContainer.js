@@ -76,7 +76,7 @@ const FilmsContainer = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [retryCount, setRetryCount] = useState(0);
-	const { searchQuery } = useSearch();
+	const { debouncedSearchQuery } = useSearch();
 
 	const fetchFilms = useCallback(async () => {
 		try {
@@ -124,11 +124,11 @@ const FilmsContainer = () => {
 
 	// Filter films based on search query
 	const filteredFilms = useMemo(() => {
-		if (!searchQuery.trim()) {
+		if (!debouncedSearchQuery.trim()) {
 			return films;
 		}
 
-		const query = searchQuery.toLowerCase();
+		const query = debouncedSearchQuery.toLowerCase();
 		return films.filter(film => {
 			return (
 				film.title?.toLowerCase().includes(query) ||
@@ -139,7 +139,7 @@ const FilmsContainer = () => {
 				film.actors?.some(actor => actor.actorName?.toLowerCase().includes(query))
 			);
 		});
-	}, [films, searchQuery]);
+	}, [films, debouncedSearchQuery]);
 
 	// Memoize the films component props to prevent unnecessary re-renders
 	const filmsProps = useMemo(() => ({
@@ -166,7 +166,7 @@ const FilmsContainer = () => {
 		return <EmptyFilmsState />;
 	}
 
-	if (filteredFilms.length === 0 && searchQuery.trim()) {
+	if (filteredFilms.length === 0 && debouncedSearchQuery.trim()) {
 		return (
 			<div className="no-search-results" role="status" aria-live="polite">
 				<div className="no-search-results__container">
@@ -175,7 +175,7 @@ const FilmsContainer = () => {
 					</div>
 					<h2 className="no-search-results__title">No Films Found</h2>
 					<p className="no-search-results__message">
-						No films match your search for "{searchQuery}". Try adjusting your search terms.
+						No films match your search for "{debouncedSearchQuery}". Try adjusting your search terms.
 					</p>
 				</div>
 			</div>

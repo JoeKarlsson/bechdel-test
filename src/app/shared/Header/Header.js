@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSearch } from '../SearchContext/SearchContext';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import './Header.scss';
 
 const Header = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	const { searchQuery, setSearchQuery } = useSearch();
+	const { searchQuery, setSearchQuery, isSearching } = useSearch();
+	const searchInputRef = useRef(null);
+
+	// Keyboard shortcut to focus search (Ctrl/Cmd + K)
+	useEffect(() => {
+		const handleKeyDown = (event) => {
+			if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+				event.preventDefault();
+				searchInputRef.current?.focus();
+			}
+		};
+
+		document.addEventListener('keydown', handleKeyDown);
+		return () => document.removeEventListener('keydown', handleKeyDown);
+	}, []);
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -50,14 +65,20 @@ const Header = () => {
 					<div className="search_container">
 						<input
 							type="text"
-							placeholder="Search films..."
+							placeholder="Search films... (Ctrl+K)"
 							value={searchQuery}
 							onChange={(e) => setSearchQuery(e.target.value)}
 							className="search_input"
+							ref={searchInputRef}
 						/>
-						<div className="search_icon">🔍</div>
+						<div className={`search_icon ${isSearching ? 'searching' : ''}`}>
+							{isSearching ? '⏳' : '🔍'}
+						</div>
 					</div>
 				</div>
+
+				{/* Dark mode toggle */}
+				<DarkModeToggle />
 
 				{/* Mobile menu button */}
 				<button

@@ -26,7 +26,6 @@ $info-color: #17a2b8;
 	padding: 2rem;
 	background: linear-gradient(135deg, $purple 0%, darken($purple, 20%) 100%);
 	color: $white;
-	border-radius: 8px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 	h1 {
@@ -56,7 +55,6 @@ $info-color: #17a2b8;
 				width: 100%;
 				padding: 1rem 3rem 1rem 1rem;
 				border: none;
-				border-radius: 25px;
 				font-size: 1rem;
 				background: rgba(255, 255, 255, 0.9);
 				color: $dark-gray;
@@ -96,13 +94,11 @@ $info-color: #17a2b8;
 		.api-info-item {
 			background: rgba(255, 255, 255, 0.1);
 			padding: 0.75rem 1.5rem;
-			border-radius: 20px;
 			backdrop-filter: blur(10px);
 
 			code {
 				background: rgba(255, 255, 255, 0.2);
 				padding: 0.25rem 0.5rem;
-				border-radius: 4px;
 				font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 			}
 		}
@@ -134,7 +130,6 @@ $info-color: #17a2b8;
 
 .api-docs-nav {
 	background: $white;
-	border-radius: 8px;
 	padding: 1.5rem;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	height: fit-content;
@@ -164,7 +159,6 @@ $info-color: #17a2b8;
 				padding: 0.75rem;
 				border: none;
 				background: transparent;
-				border-radius: 6px;
 				cursor: pointer;
 				transition: all 0.2s ease;
 				text-align: left;
@@ -183,7 +177,6 @@ $info-color: #17a2b8;
 					font-weight: 600;
 					color: $white;
 					padding: 0.25rem 0.5rem;
-					border-radius: 4px;
 					min-width: 45px;
 					text-align: center;
 				}
@@ -200,7 +193,6 @@ $info-color: #17a2b8;
 
 .api-docs-main {
 	background: $white;
-	border-radius: 8px;
 	padding: 2rem;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -240,7 +232,6 @@ $info-color: #17a2b8;
 				font-weight: 600;
 				color: $white;
 				padding: 0.5rem 1rem;
-				border-radius: 6px;
 				min-width: 70px;
 				text-align: center;
 			}
@@ -257,7 +248,6 @@ $info-color: #17a2b8;
 			font-size: 1.1rem;
 			background: $light-gray;
 			padding: 0.5rem 1rem;
-			border-radius: 6px;
 			color: $dark-gray;
 		}
 	}
@@ -293,7 +283,6 @@ $info-color: #17a2b8;
 .code-block {
 	background: #f8f9fa;
 	border: 1px solid $border-color;
-	border-radius: 8px;
 	overflow: hidden;
 	margin-bottom: 1rem;
 
@@ -353,7 +342,6 @@ $info-color: #17a2b8;
 		gap: 1rem;
 		padding: 0.75rem 1rem;
 		background: $light-gray;
-		border-radius: 6px;
 		border-left: 4px solid $info-color;
 
 		.status-number {
@@ -380,7 +368,6 @@ $info-color: #17a2b8;
 	margin-bottom: 3rem;
 	padding: 2rem;
 	background: $white;
-	border-radius: 8px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 	h2 {
@@ -474,7 +461,6 @@ $info-color: #17a2b8;
 
 	.analysis-table-container {
 		overflow-x: auto;
-		border-radius: 8px;
 		border: 1px solid $border-color;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 	}
@@ -498,11 +484,9 @@ $info-color: #17a2b8;
 				border-bottom: 2px solid darken($purple, 15%);
 
 				&:first-child {
-					border-top-left-radius: 8px;
 				}
 
 				&:last-child {
-					border-top-right-radius: 8px;
 				}
 			}
 		}
