@@ -4,7 +4,7 @@
 */
 let CONFIG;
 let THEMOVIEDB;
-let MYAPIFILMS;
+let OMDB;
 let MONGODB_URI;
 
 const { PORT, NODE_ENV } = process.env;
@@ -18,17 +18,17 @@ const port = isDeveloping ? 3000 : PORT;
 if (isDeveloping) {
 	CONFIG = require('../config/config.json'); // eslint-disable-line global-require
 	THEMOVIEDB = CONFIG.THEMOVIEDB;
-	MYAPIFILMS = CONFIG.MYAPIFILMS;
+	OMDB = CONFIG.OMDB;
 	MONGODB_URI = CONFIG.MONGODB_URI;
 } else {
 	THEMOVIEDB = process.env.THEMOVIEDB;
-	MYAPIFILMS = process.env.MYAPIFILMS;
+	OMDB = process.env.OMDB;
 	MONGODB_URI = process.env.MONGODB_URI;
 }
 
 module.exports = {
 	THEMOVIEDB,
-	MYAPIFILMS,
+	OMDB,
 	MONGODB_URI,
 	isDeveloping,
 	isTest,
