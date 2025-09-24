@@ -1,7 +1,8 @@
 // Films Container Error and Empty States
 
 .films-error,
-.empty-films {
+.empty-films,
+.no-search-results {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -97,7 +98,8 @@
 @media (max-width: 768px) {
 
 	.films-error,
-	.empty-films {
+	.empty-films,
+	.no-search-results {
 		min-height: 50vh;
 		padding: 1rem;
 		
@@ -127,7 +129,8 @@
 @media (max-width: 480px) {
 
 	.films-error,
-	.empty-films {
+	.empty-films,
+	.no-search-results {
 
 		&__container {
 			padding: 1.5rem 1rem;

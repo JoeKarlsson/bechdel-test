@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Film from './Film';
 import api from '../../helper/api';
+import useDocumentTitle from '../../helper/useDocumentTitle';
 
 // Default film data structure
 const defaultFilmData = {
@@ -38,6 +39,9 @@ const FilmContainer = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [retryCount, setRetryCount] = useState(0);
+
+	// Set dynamic document title based on film data
+	useDocumentTitle(film.title, 'bechdel.io', true);
 
 	const fetchFilm = useCallback(async () => {
 		if (!id) {

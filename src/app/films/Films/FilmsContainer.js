@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Films from './Films';
 import Loading from '../../shared/Loading/Loading';
+import { useSearch } from '../../shared/SearchContext/SearchContext';
 import api from '../../helper/api';
 import './FilmsContainer.scss';
 
@@ -75,6 +76,7 @@ const FilmsContainer = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const [retryCount, setRetryCount] = useState(0);
+	const { searchQuery } = useSearch();
 
 	const fetchFilms = useCallback(async () => {
 		try {
@@ -120,11 +122,30 @@ const FilmsContainer = () => {
 		fetchFilms();
 	}, [fetchFilms]);
 
+	// Filter films based on search query
+	const filteredFilms = useMemo(() => {
+		if (!searchQuery.trim()) {
+			return films;
+		}
+
+		const query = searchQuery.toLowerCase();
+		return films.filter(film => {
+			return (
+				film.title?.toLowerCase().includes(query) ||
+				film.plot?.toLowerCase().includes(query) ||
+				film.directors?.some(director => director.name?.toLowerCase().includes(query)) ||
+				film.writers?.some(writer => writer.name?.toLowerCase().includes(query)) ||
+				film.genres?.some(genre => genre.toLowerCase().includes(query)) ||
+				film.actors?.some(actor => actor.actorName?.toLowerCase().includes(query))
+			);
+		});
+	}, [films, searchQuery]);
+
 	// Memoize the films component props to prevent unnecessary re-renders
 	const filmsProps = useMemo(() => ({
-		films,
+		films: filteredFilms,
 		loading,
-	}), [films, loading]);
+	}), [filteredFilms, loading]);
 
 	// Handle different states
 	if (loading) {
@@ -143,6 +164,22 @@ const FilmsContainer = () => {
 
 	if (films.length === 0) {
 		return <EmptyFilmsState />;
+	}
+
+	if (filteredFilms.length === 0 && searchQuery.trim()) {
+		return (
+			<div className="no-search-results" role="status" aria-live="polite">
+				<div className="no-search-results__container">
+					<div className="no-search-results__icon" aria-hidden="true">
+						🔍
+					</div>
+					<h2 className="no-search-results__title">No Films Found</h2>
+					<p className="no-search-results__message">
+						No films match your search for "{searchQuery}". Try adjusting your search terms.
+					</p>
+				</div>
+			</div>
+		);
 	}
 
 	return <Films {...filmsProps} />;

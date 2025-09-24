@@ -1,0 +1,169 @@
+$purple: purple;
+$white: white;
+$light-gray: #f8f9fa;
+$dark-gray: #333;
+$border-color: #e1e5e9;
+$text-muted: #6c757d;
+$accent-color: #1eaedb;
+
+.Privacy {
+	padding: 2rem 0;
+	min-height: 80vh;
+	background-color: $light-gray;
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.privacy-header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem;
+		background: linear-gradient(135deg, $purple 0%, darken($purple, 20%) 100%);
+		color: $white;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+		h1 {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+			font-weight: 600;
+			text-transform: lowercase;
+		}
+
+		.privacy-subtitle {
+			font-size: 1.2rem;
+			margin-bottom: 2rem;
+			opacity: 0.9;
+			line-height: 1.6;
+		}
+	}
+
+	.privacy-content {
+		background: $white;
+		padding: 2rem;
+		margin-bottom: 2rem;
+
+		h2 {
+			color: $dark-gray;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		p {
+			line-height: 1.6;
+			color: $dark-gray;
+			margin-bottom: 1rem;
+			font-size: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		ul {
+			margin-bottom: 1rem;
+			padding-left: 1.5rem;
+
+			li {
+				line-height: 1.6;
+				color: $dark-gray;
+				margin-bottom: 0.5rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		a {
+			color: $purple;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.privacy-actions {
+		text-align: center;
+		padding: 1rem;
+
+		button {
+			background: $purple;
+			color: $white;
+			border: none;
+			padding: 0.75rem 1.5rem;
+			font-size: 1rem;
+			font-weight: 500;
+			cursor: pointer;
+
+			&:hover {
+				background: darken($purple, 10%);
+			}
+		}
+	}
+
+	// Responsive design
+	@media (max-width: 768px) {
+		padding: 1rem 0;
+
+		.container {
+			padding: 0 0.5rem;
+		}
+
+		.privacy-header {
+			padding: 1.5rem;
+			margin-bottom: 2rem;
+
+			h1 {
+				font-size: 2rem;
+			}
+
+			.privacy-subtitle {
+				font-size: 1rem;
+			}
+		}
+
+		.privacy-content {
+			padding: 1.5rem;
+
+			h2 {
+				font-size: 1.3rem;
+			}
+
+			p {
+				font-size: 0.95rem;
+			}
+		}
+
+		.privacy-actions {
+			padding: 0.75rem;
+
+			button {
+				padding: 0.5rem 1rem;
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		.privacy-header {
+			h1 {
+				font-size: 1.8rem;
+			}
+		}
+
+		.privacy-content {
+			padding: 1rem;
+
+			h2 {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
