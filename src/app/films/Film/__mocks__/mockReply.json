@@ -1,0 +1,37 @@
+{
+	"0": {
+		"_id": "507f1f77bcf86cd799439011",
+		"title": "Test Movie",
+		"plot": "A test movie plot",
+		"directors": [
+			{
+				"name": "Test Director"
+			}
+		],
+		"writers": [
+			{
+				"name": "Test Writer"
+			}
+		],
+		"genres": ["Drama", "Comedy"],
+		"rated": "PG-13",
+		"idIMDB": "tt1234567",
+		"images": {
+			"poster": "https://example.com/poster.jpg",
+			"backdrop": "https://example.com/backdrop.jpg"
+		},
+		"bechdelResults": {
+			"pass": true,
+			"bechdelScore": 2,
+			"numScenesPass": 15,
+			"scenesThatPass": ["Scene 1", "Scene 2"],
+			"numScenesDontPass": 10,
+			"numOfFemalesChars": 5,
+			"numOfMaleChars": 8,
+			"numOfFemalesCharsWithDialogue": 3,
+			"numOfMaleCharsWithDialogue": 6,
+			"totalLinesFemaleDialogue": 150,
+			"totalLinesMaleDialogue": 200
+		}
+	}
+}
