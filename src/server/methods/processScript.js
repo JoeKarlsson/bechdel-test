@@ -65,7 +65,8 @@ const processScript = async (scriptPath, title) => {
 		console.log('saved film');
 		return response;
 	} catch (err) {
-		return handleError('Please try again', scriptPath);
+		console.error('Error processing script:', err);
+		return handleError('Please try again');
 	}
 };
 

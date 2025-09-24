@@ -72,7 +72,7 @@ const handleSimpleData = async title => {
 	try {
 		const simpleURL = createSimpleDataURL(title);
 		const data = await getDataFrom(simpleURL);
-		
+
 		// OMDB API returns data directly, not nested in data.movies array
 		const simpleMetaData = data;
 

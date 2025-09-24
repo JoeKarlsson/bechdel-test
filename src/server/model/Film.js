@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 
 const filmSchema = mongoose.Schema(schema);
 
-filmSchema.static('listAll', function() {
+filmSchema.static('listAll', function () {
 	const promise = new Promise((resolve, reject) => {
 		this.find()
 			.sort('-date')
@@ -27,7 +27,7 @@ filmSchema.static('listAll', function() {
 	return promise;
 });
 
-filmSchema.static('findByID', function(id) {
+filmSchema.static('findByID', function (id) {
 	const promise = new Promise((resolve, reject) => {
 		this.find({ _id: id })
 			.sort('-date')
@@ -45,7 +45,7 @@ filmSchema.static('findByID', function(id) {
 	return promise;
 });
 
-filmSchema.static('findByTitle', function(title) {
+filmSchema.static('findByTitle', function (title) {
 	const promise = new Promise((resolve, reject) => {
 		if (!title) {
 			reject(new Error('No film tile found'));
@@ -62,7 +62,7 @@ filmSchema.static('findByTitle', function(title) {
 	return promise;
 });
 
-filmSchema.static('deleteFilm', function(id) {
+filmSchema.static('deleteFilm', function (id) {
 	if (!id) {
 		return 'Invalid input on deleteFilm';
 	}
@@ -93,11 +93,14 @@ filmSchema.static('insertFilm', filmMetaData => {
 		film.simplePlot = data.plot; // Use plot as simplePlot for OMDB
 		film.year = data.year;
 		film.releaseDate = data.released;
-		film.directors = data.director;
-		film.writers = data.writer;
-		film.awards = data.awards;
+		
+		// Parse comma-separated strings into arrays of objects
+		film.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
+		film.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
+		film.awards = data.awards ? [{ name: data.awards }] : [];
+		
 		film.rated = data.rated;
-		film.genres = data.genre;
+		film.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
 		film.urlPoster = data.poster;
 		film.idIMDB = data.idIMDB;
 		film.rating = data.imdbRating;
