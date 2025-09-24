@@ -6,9 +6,9 @@ const parseActorArr = arr => {
 	let i;
 	for (i = 0; i < arr.length; i++) {
 		const actor = {};
-		actor.actorName = arr[i].actorName;
+		actor.actorName = arr[i].actorName || arr[i].name;
 		actor.character = arr[i].character;
-		actor.actorActress = arr[i].gender;
+		actor.actorActress = arr[i].gender || arr[i].actorActress;
 		actorsArr.push(actor);
 	}
 	return actorsArr;

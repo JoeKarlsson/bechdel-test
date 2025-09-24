@@ -25,7 +25,7 @@ const splitTitle = title => {
 
 const createSimpleDataURL = movieTitle => {
 	const title = splitTitle(movieTitle);
-	
+
 	return (
 		'http://www.omdbapi.com/?' +
 		`t=${title}&` +
