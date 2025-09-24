@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import About from '../../static/About/About';
@@ -21,16 +21,16 @@ export const PrimaryLayout = () => {
 			<Header />
 			<div className="content">
 				<ErrorBoundary>
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/about" component={About} />
-						<Route path="/privacy" component={Privacy} />
-						<Route path="/api-docs" component={ApiDocs} />
-						<Route path="/case-study" component={CaseStudy} />
-						<Route path="/film/new" component={NewFilm} />
-						<Route path="/film/:id" component={FilmContainer} />
-						<Route path="*" component={NoMatch} />
-					</Switch>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/privacy" element={<Privacy />} />
+						<Route path="/api-docs" element={<ApiDocs />} />
+						<Route path="/case-study" element={<CaseStudy />} />
+						<Route path="/film/new" element={<NewFilm />} />
+						<Route path="/film/:id" element={<FilmContainer />} />
+						<Route path="*" element={<NoMatch />} />
+					</Routes>
 				</ErrorBoundary>
 			</div>
 			<Footer />

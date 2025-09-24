@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StatsPlugin = require('stats-webpack-plugin');
+// const StatsPlugin = require('stats-webpack-plugin'); // Not compatible with Webpack 5
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -25,14 +25,11 @@ module.exports = {
 			filename: 'index.html',
 			favicon: './src/app/assets/images/my_logo.png',
 		}),
-		new webpack.NoEmitOnErrorsPlugin(),
+		// webpack.NoEmitOnErrorsPlugin is now built into Webpack 5
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development'),
+			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
-		new StatsPlugin('webpack.stats.json', {
-			source: false,
-			modules: false,
-		}),
+		// StatsPlugin removed - not compatible with Webpack 5
 		new StyleLintPlugin(),
 	],
 	module: {
@@ -50,16 +47,12 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.png$/,
-				use: 'url-loader?lmit=1000&mimetype=image/png',
-			},
-			{
-				test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
-				use: 'file-loader',
+				test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
+				type: 'asset/resource',
 			},
 			{
 				test: /\.(mp4|webm)$/,
-				use: 'url-loader?limit=10000',
+				type: 'asset/inline',
 			},
 			{
 				test: /(\.scss$|\.css$)/,

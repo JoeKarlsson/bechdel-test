@@ -1,3 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Page rendering match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Header Page rendering match the snapshot 1`] = `
+<header
+  class="header_bar"
+>
+  <a
+    aria-current="page"
+    class="header_logo active"
+    href="/"
+  >
+    bechdel.io
+  </a>
+  <ul
+    class="header_nav"
+  >
+    <li>
+      <a
+        activestyle="[object Object]"
+        class=""
+        href="/about"
+      >
+        about
+      </a>
+    </li>
+    <li>
+      <a
+        activestyle="[object Object]"
+        class=""
+        href="/case-study"
+      >
+        case study
+      </a>
+    </li>
+  </ul>
+</header>
+`;
