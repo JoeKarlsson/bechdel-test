@@ -27,7 +27,7 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 # Add build argument to force rebuild
-ARG CACHE_BUST=1
+ARG CACHE_BUST=2
 
 # Copy package files
 COPY package*.json ./
@@ -35,7 +35,7 @@ COPY package*.json ./
 # Clear npm cache and install all dependencies (including devDependencies for build)
 RUN npm cache clean --force && \
     rm -rf node_modules package-lock.json && \
-    npm install --legacy-peer-deps --ignore-scripts --force --no-cache
+    npm install --legacy-peer-deps --ignore-scripts --force --no-cache --prefer-offline=false
 
 # Copy source files
 COPY . .
