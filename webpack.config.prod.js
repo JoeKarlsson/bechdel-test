@@ -138,12 +138,14 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							sourceMap: false,
+							esModule: false,
 						},
 					},
 					{
 						loader: 'sass-loader',
 						options: {
 							sourceMap: false,
+							api: 'modern-compiler',
 						},
 					},
 				],

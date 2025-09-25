@@ -21,18 +21,18 @@ if (meta.isDeveloping) {
 
 const app = express();
 
-// Configure helmet with CSP that allows webpack development mode
-const helmetConfig = meta.isDeveloping ? {
+// Configure helmet with CSP that allows webpack development mode and external images
+const helmetConfig = {
 	contentSecurityPolicy: {
 		directives: {
 			defaultSrc: ["'self'"],
-			scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
+			scriptSrc: meta.isDeveloping ? ["'self'", "'unsafe-eval'", "'unsafe-inline'"] : ["'self'"],
 			styleSrc: ["'self'", "'unsafe-inline'"],
 			imgSrc: ["'self'", "data:", "https:"],
-			connectSrc: ["'self'", "ws:", "wss:"],
+			connectSrc: meta.isDeveloping ? ["'self'", "ws:", "wss:"] : ["'self'"],
 		},
 	},
-} : {};
+};
 
 app.use(helmet(helmetConfig));
 app.use(partials());

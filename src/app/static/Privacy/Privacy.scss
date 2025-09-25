@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $purple: purple;
 $white: white;
 $light-gray: #f8f9fa;
@@ -21,7 +23,7 @@ $accent-color: #1eaedb;
 		text-align: center;
 		margin-bottom: 3rem;
 		padding: 2rem;
-		background: linear-gradient(135deg, $purple 0%, darken($purple, 20%) 100%);
+		background: linear-gradient(135deg, $purple 0%, color.adjust($purple, $lightness: -20%) 100%);
 		color: $white;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -102,7 +104,7 @@ $accent-color: #1eaedb;
 			cursor: pointer;
 
 			&:hover {
-				background: darken($purple, 10%);
+				background: color.adjust($purple, $lightness: -10%);
 			}
 		}
 	}

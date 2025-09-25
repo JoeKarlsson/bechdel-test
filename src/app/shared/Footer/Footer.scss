@@ -16,6 +16,16 @@ $red: tomato;
 		gap: var(--spacing-md);
 		align-items: center;
 
+		// Direct child links (more specific)
+		> a {
+			color: $white;
+			text-decoration: none;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+
 		.footer_links {
 			display: flex;
 			gap: var(--spacing-xl);
@@ -35,15 +45,6 @@ $red: tomato;
 				&.active {
 					text-decoration: underline;
 				}
-			}
-		}
-
-		> a {
-			color: $white;
-			text-decoration: none;
-
-			&:hover {
-				opacity: 0.8;
 			}
 		}
 	}
