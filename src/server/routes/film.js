@@ -87,7 +87,7 @@ const handlePostFilm = async (req, res) => {
 
 	const title = extractTitle(file);
 	const scriptPath = file.path;
-	
+
 	// Extract Claude API key from request body or headers
 	const claudeApiKey = req.body.claudeApiKey || req.headers['x-claude-api-key'];
 

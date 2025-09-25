@@ -6,63 +6,63 @@
 const Anthropic = require('@anthropic-ai/sdk');
 
 class ClaudeAnalyzer {
-	constructor(apiKey) {
-		if (!apiKey) {
-			throw new Error('Claude API key is required');
-		}
-		
-		this.anthropic = new Anthropic({
-			apiKey: apiKey,
-		});
-	}
+    constructor(apiKey) {
+        if (!apiKey) {
+            throw new Error('Claude API key is required');
+        }
 
-	/**
-	 * Analyze script for advanced gender analytics
-	 * @param {Object} scriptData - Cleaned script data
-	 * @param {Array} characters - Character data with gender information
-	 * @returns {Object} Advanced analytics results
-	 */
-	async analyzeScript(scriptData, characters) {
-		try {
-			const analysisPromises = [
-				this.analyzeFemaleAgency(scriptData, characters),
-				this.detectStereotypes(scriptData, characters),
-				this.analyzeIntersectionality(scriptData, characters),
-				this.analyzeSentiment(scriptData, characters),
-				this.analyzeTopics(scriptData, characters),
-				this.analyzePowerDynamics(scriptData, characters),
-				this.analyzeVocabulary(scriptData, characters),
-				this.detectBias(scriptData, characters),
-				this.generateImprovements(scriptData, characters),
-				this.analyzeCharacterDevelopment(scriptData, characters)
-			];
+        this.anthropic = new Anthropic({
+            apiKey: apiKey,
+        });
+    }
 
-			const results = await Promise.all(analysisPromises);
-			
-			return {
-				femaleAgency: results[0],
-				stereotypes: results[1],
-				intersectionality: results[2],
-				sentiment: results[3],
-				topics: results[4],
-				powerDynamics: results[5],
-				vocabulary: results[6],
-				biasDetection: results[7],
-				improvements: results[8],
-				characterDevelopment: results[9],
-				analysisTimestamp: new Date().toISOString()
-			};
-		} catch (error) {
-			console.error('Error in Claude analysis:', error);
-			throw new Error(`Claude analysis failed: ${error.message}`);
-		}
-	}
+    /**
+     * Analyze script for advanced gender analytics
+     * @param {Object} scriptData - Cleaned script data
+     * @param {Array} characters - Character data with gender information
+     * @returns {Object} Advanced analytics results
+     */
+    async analyzeScript(scriptData, characters) {
+        try {
+            const analysisPromises = [
+                this.analyzeFemaleAgency(scriptData, characters),
+                this.detectStereotypes(scriptData, characters),
+                this.analyzeIntersectionality(scriptData, characters),
+                this.analyzeSentiment(scriptData, characters),
+                this.analyzeTopics(scriptData, characters),
+                this.analyzePowerDynamics(scriptData, characters),
+                this.analyzeVocabulary(scriptData, characters),
+                this.detectBias(scriptData, characters),
+                this.generateImprovements(scriptData, characters),
+                this.analyzeCharacterDevelopment(scriptData, characters)
+            ];
 
-	/**
-	 * Analyze female agency in the script
-	 */
-	async analyzeFemaleAgency(scriptData, characters) {
-		const prompt = `Analyze the following movie script for female agency. Focus on:
+            const results = await Promise.all(analysisPromises);
+
+            return {
+                femaleAgency: results[0],
+                stereotypes: results[1],
+                intersectionality: results[2],
+                sentiment: results[3],
+                topics: results[4],
+                powerDynamics: results[5],
+                vocabulary: results[6],
+                biasDetection: results[7],
+                improvements: results[8],
+                characterDevelopment: results[9],
+                analysisTimestamp: new Date().toISOString()
+            };
+        } catch (error) {
+            console.error('Error in Claude analysis:', error);
+            throw new Error(`Claude analysis failed: ${error.message}`);
+        }
+    }
+
+    /**
+     * Analyze female agency in the script
+     */
+    async analyzeFemaleAgency(scriptData, characters) {
+        const prompt = `Analyze the following movie script for female agency. Focus on:
 1. When female characters drive the plot vs. react to male characters
 2. Female characters making decisions that affect the story
 3. Female characters initiating actions vs. responding to others
@@ -82,14 +82,14 @@ Provide analysis in JSON format with:
 - goalPursuit: Analysis of female characters pursuing goals
 - recommendations: Suggestions for improving female agency`;
 
-		return await this.callClaude(prompt, 'female_agency');
-	}
+        return await this.callClaude(prompt, 'female_agency');
+    }
 
-	/**
-	 * Detect female character stereotypes
-	 */
-	async detectStereotypes(scriptData, characters) {
-		const prompt = `Analyze the following movie script for female character stereotypes and tropes. Look for:
+    /**
+     * Detect female character stereotypes
+     */
+    async detectStereotypes(scriptData, characters) {
+        const prompt = `Analyze the following movie script for female character stereotypes and tropes. Look for:
 1. Common stereotypes: damsel in distress, femme fatale, manic pixie dream girl, etc.
 2. Character archetypes: mother, wife, girlfriend, secretary, etc.
 3. Dialogue patterns that reinforce stereotypes
@@ -108,14 +108,14 @@ Provide analysis in JSON format with:
 - stereotypeScore: 1-10 rating (10 = most stereotypical)
 - recommendations: Suggestions for avoiding stereotypes`;
 
-		return await this.callClaude(prompt, 'stereotype_detection');
-	}
+        return await this.callClaude(prompt, 'stereotype_detection');
+    }
 
-	/**
-	 * Analyze intersectionality
-	 */
-	async analyzeIntersectionality(scriptData, characters) {
-		const prompt = `Analyze the following movie script for intersectionality in female character representation. Consider:
+    /**
+     * Analyze intersectionality
+     */
+    async analyzeIntersectionality(scriptData, characters) {
+        const prompt = `Analyze the following movie script for intersectionality in female character representation. Consider:
 1. Race, ethnicity, age, class, sexuality, disability representation
 2. How different identities intersect in female characters
 3. Representation diversity among female characters
@@ -134,14 +134,14 @@ Provide analysis in JSON format with:
 - tokenismDetection: Detection of token characters
 - recommendations: Suggestions for better intersectional representation`;
 
-		return await this.callClaude(prompt, 'intersectionality');
-	}
+        return await this.callClaude(prompt, 'intersectionality');
+    }
 
-	/**
-	 * Analyze sentiment of dialogue by gender
-	 */
-	async analyzeSentiment(scriptData, characters) {
-		const prompt = `Analyze the emotional tone and sentiment of dialogue by gender in this movie script. Focus on:
+    /**
+     * Analyze sentiment of dialogue by gender
+     */
+    async analyzeSentiment(scriptData, characters) {
+        const prompt = `Analyze the emotional tone and sentiment of dialogue by gender in this movie script. Focus on:
 1. Emotional range of male vs female characters
 2. Sentiment patterns in dialogue
 3. Emotional agency and expression
@@ -160,14 +160,14 @@ Provide analysis in JSON format with:
 - emotionalRange: Analysis of emotional range by gender
 - recommendations: Suggestions for balanced emotional representation`;
 
-		return await this.callClaude(prompt, 'sentiment_analysis');
-	}
+        return await this.callClaude(prompt, 'sentiment_analysis');
+    }
 
-	/**
-	 * Analyze topics discussed by gender
-	 */
-	async analyzeTopics(scriptData, characters) {
-		const prompt = `Analyze the topics and subjects discussed by male vs female characters in this movie script. Focus on:
+    /**
+     * Analyze topics discussed by gender
+     */
+    async analyzeTopics(scriptData, characters) {
+        const prompt = `Analyze the topics and subjects discussed by male vs female characters in this movie script. Focus on:
 1. What topics each gender discusses
 2. Subject matter expertise by gender
 3. Conversation themes and focus areas
@@ -186,14 +186,14 @@ Provide analysis in JSON format with:
 - expertiseAreas: Areas of expertise by gender
 - recommendations: Suggestions for balanced topic representation`;
 
-		return await this.callClaude(prompt, 'topic_analysis');
-	}
+        return await this.callClaude(prompt, 'topic_analysis');
+    }
 
-	/**
-	 * Analyze power dynamics
-	 */
-	async analyzePowerDynamics(scriptData, characters) {
-		const prompt = `Analyze power dynamics and conversational patterns in this movie script. Focus on:
+    /**
+     * Analyze power dynamics
+     */
+    async analyzePowerDynamics(scriptData, characters) {
+        const prompt = `Analyze power dynamics and conversational patterns in this movie script. Focus on:
 1. Who interrupts whom
 2. Who asks questions vs gives commands
 3. Speaking time and frequency
@@ -214,14 +214,14 @@ Provide analysis in JSON format with:
 - powerDynamicsScore: 1-10 rating of power balance
 - recommendations: Suggestions for balanced power dynamics`;
 
-		return await this.callClaude(prompt, 'power_dynamics');
-	}
+        return await this.callClaude(prompt, 'power_dynamics');
+    }
 
-	/**
-	 * Analyze vocabulary differences
-	 */
-	async analyzeVocabulary(scriptData, characters) {
-		const prompt = `Analyze vocabulary and language patterns by gender in this movie script. Focus on:
+    /**
+     * Analyze vocabulary differences
+     */
+    async analyzeVocabulary(scriptData, characters) {
+        const prompt = `Analyze vocabulary and language patterns by gender in this movie script. Focus on:
 1. Word choice differences between genders
 2. Language complexity and sophistication
 3. Emotional vocabulary usage
@@ -242,14 +242,14 @@ Provide analysis in JSON format with:
 - professionalLanguage: Analysis of professional/technical language
 - recommendations: Suggestions for balanced vocabulary representation`;
 
-		return await this.callClaude(prompt, 'vocabulary_analysis');
-	}
+        return await this.callClaude(prompt, 'vocabulary_analysis');
+    }
 
-	/**
-	 * Detect subtle gender biases
-	 */
-	async detectBias(scriptData, characters) {
-		const prompt = `Detect subtle gender biases in this movie script. Look for:
+    /**
+     * Detect subtle gender biases
+     */
+    async detectBias(scriptData, characters) {
+        const prompt = `Detect subtle gender biases in this movie script. Look for:
 1. Implicit biases in character descriptions
 2. Subtle language patterns that reinforce gender roles
 3. Unconscious bias in dialogue and actions
@@ -270,14 +270,14 @@ Provide analysis in JSON format with:
 - biasScore: 1-10 rating (10 = most biased)
 - recommendations: Suggestions for reducing bias`;
 
-		return await this.callClaude(prompt, 'bias_detection');
-	}
+        return await this.callClaude(prompt, 'bias_detection');
+    }
 
-	/**
-	 * Generate script improvement suggestions
-	 */
-	async generateImprovements(scriptData, characters) {
-		const prompt = `Generate specific suggestions for improving gender representation in this movie script. Focus on:
+    /**
+     * Generate script improvement suggestions
+     */
+    async generateImprovements(scriptData, characters) {
+        const prompt = `Generate specific suggestions for improving gender representation in this movie script. Focus on:
 1. Concrete ways to improve female character agency
 2. Suggestions for reducing stereotypes
 3. Ways to improve dialogue and character development
@@ -298,14 +298,14 @@ Provide analysis in JSON format with:
 - overallRecommendations: High-level recommendations
 - implementationPriority: Priority ranking of improvements`;
 
-		return await this.callClaude(prompt, 'improvements');
-	}
+        return await this.callClaude(prompt, 'improvements');
+    }
 
-	/**
-	 * Analyze character development over time
-	 */
-	async analyzeCharacterDevelopment(scriptData, characters) {
-		const prompt = `Analyze character development and growth over time in this movie script. Focus on:
+    /**
+     * Analyze character development over time
+     */
+    async analyzeCharacterDevelopment(scriptData, characters) {
+        const prompt = `Analyze character development and growth over time in this movie script. Focus on:
 1. Character arcs for female vs male characters
 2. Growth and change patterns
 3. Character agency development
@@ -326,16 +326,16 @@ Provide analysis in JSON format with:
 - complexityAnalysis: Analysis of character complexity
 - recommendations: Suggestions for improving character development`;
 
-		return await this.callClaude(prompt, 'character_development');
-	}
+        return await this.callClaude(prompt, 'character_development');
+    }
 
-	/**
-	 * Make API call to Claude
-	 */
-	async callClaude(prompt, analysisType) {
-		try {
+    /**
+     * Make API call to Claude
+     */
+    async callClaude(prompt, analysisType) {
+        try {
 			const response = await this.anthropic.messages.create({
-				model: 'claude-3-5-sonnet-20241022',
+				model: 'claude-3-5-haiku-20241022',
 				max_tokens: 4000,
 				temperature: 0.3,
 				messages: [{
@@ -344,28 +344,41 @@ Provide analysis in JSON format with:
 				}]
 			});
 
-			const content = response.content[0].text;
-			
+            const content = response.content[0].text;
+
 			// Try to parse as JSON, fallback to text if parsing fails
 			try {
-				return JSON.parse(content);
+				// Clean up the content to make it more JSON-friendly
+				let cleanedContent = content.trim();
+				
+				// Remove any markdown formatting
+				cleanedContent = cleanedContent.replace(/```json\n?/g, '').replace(/```\n?/g, '');
+				
+				// Try to extract JSON from the content if it's embedded in text
+				const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
+				if (jsonMatch) {
+					cleanedContent = jsonMatch[0];
+				}
+				
+				return JSON.parse(cleanedContent);
 			} catch (parseError) {
 				console.warn(`Failed to parse JSON for ${analysisType}, returning text:`, parseError);
 				return {
 					analysisType: analysisType,
 					rawResponse: content,
-					parseError: true
+					parseError: true,
+					summary: content.substring(0, 200) + '...' // Provide a summary
 				};
 			}
-		} catch (error) {
-			console.error(`Claude API error for ${analysisType}:`, error);
-			return {
-				analysisType: analysisType,
-				error: error.message,
-				failed: true
-			};
-		}
-	}
+        } catch (error) {
+            console.error(`Claude API error for ${analysisType}:`, error);
+            return {
+                analysisType: analysisType,
+                error: error.message,
+                failed: true
+            };
+        }
+    }
 }
 
 module.exports = ClaudeAnalyzer;
