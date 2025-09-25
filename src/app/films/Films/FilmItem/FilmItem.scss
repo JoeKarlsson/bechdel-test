@@ -37,10 +37,7 @@
 
 .film-overlay {
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0 0 0 0;
 	background: rgba(0, 0, 0, 0.8);
 	display: flex;
 	align-items: center;
@@ -77,7 +74,6 @@
 	text-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 2px 4px rgba(0, 0, 0, 0.8);
 	letter-spacing: 0.5px;
 	color: #ffffff;
-	word-wrap: break-word;
 	overflow-wrap: break-word;
 	hyphens: auto;
 }
