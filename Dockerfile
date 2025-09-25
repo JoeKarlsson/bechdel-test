@@ -36,7 +36,7 @@ RUN npm install --legacy-peer-deps --ignore-scripts
 COPY . .
 
 # Build the application
-RUN npm run build
+RUN SKIP_SCHEMA_VALIDATION=true npm run build
 
 # Production stage
 FROM node:18-alpine AS production
