@@ -30,6 +30,7 @@ const helmetConfig = {
 			styleSrc: ["'self'", "'unsafe-inline'"],
 			imgSrc: ["'self'", "data:", "https:"],
 			connectSrc: meta.isDeveloping ? ["'self'", "ws:", "wss:"] : ["'self'"],
+			upgradeInsecureRequests: null, // Disable HTTPS upgrade for local development
 		},
 	},
 };
