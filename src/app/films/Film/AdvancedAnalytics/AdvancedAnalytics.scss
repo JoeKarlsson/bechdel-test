@@ -1,4 +1,5 @@
 // Advanced Analytics Styles
+
 .advanced-analytics {
 	width: 100%;
 	background: #ffffff;
@@ -44,6 +45,7 @@
 		}
 
 		@media (max-width: 480px) {
+
 			h3 {
 				font-size: 1.4rem;
 			}
@@ -211,18 +213,20 @@
 				}
 
 				.raw-response-content {
+
 					.analysis-text {
 						font-size: 0.9rem;
 						line-height: 1.6;
 						color: #856404;
 						margin: 0;
 						white-space: pre-wrap;
-						word-wrap: break-word;
+						overflow-wrap: break-word;
 					}
 				}
 			}
 
 			// Specific component styles
+
 			.moment-list, .pattern-list, .gap-list, .tokenism-list, .bias-list, .microaggression-list {
 				list-style: none;
 				padding: 0;
@@ -275,6 +279,7 @@
 			}
 
 			.archetype-list {
+
 				.archetype-item {
 					display: flex;
 					justify-content: space-between;
@@ -302,6 +307,7 @@
 			}
 
 			// Comparison layouts
+
 			.sentiment-comparison, .topic-comparison, .vocabulary-comparison, .character-development-comparison {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
@@ -324,6 +330,7 @@
 					}
 
 					.sentiment-content, .topic-content, .vocabulary-content, .character-content {
+
 						.analysis-text {
 							font-size: 0.85rem;
 							line-height: 1.5;
@@ -335,11 +342,13 @@
 	}
 
 	// Dark mode styles
+
 	body.dark-mode & {
 		background: #1a1a1a;
 		border-top-color: #333;
 
 		.advanced-analytics-header {
+
 			h3 {
 				color: #f0f0f0;
 			}
@@ -365,17 +374,20 @@
 			}
 
 			.card-content {
+
 				.no-data {
 					color: #a0a0a0;
 				}
 
 				.score-section {
+
 					.score-label {
 						color: #e0e0e0;
 					}
 				}
 
 				.analysis-section {
+
 					h5 {
 						color: #f0f0f0;
 					}
@@ -416,6 +428,7 @@
 					}
 
 					.raw-response-content {
+
 						.analysis-text {
 							color: #fff3cd;
 						}
@@ -467,12 +480,16 @@
 }
 
 // Responsive adjustments
+
 @media (max-width: 768px) {
+
 	.advanced-analytics {
 		padding: 1.5rem 0;
 
 		.analytics-grid {
+
 			.analysis-card {
+
 				.card-header {
 					padding: 1rem 1.25rem;
 
@@ -489,7 +506,9 @@
 					padding: 1.25rem;
 
 					.score-section {
+
 						.score-display {
+
 							.score-circle {
 								width: 50px;
 								height: 50px;
@@ -532,11 +551,14 @@
 }
 
 @media (max-width: 480px) {
+
 	.advanced-analytics {
 		padding: 1rem 0;
 
 		.analytics-grid {
+
 			.analysis-card {
+
 				.card-header {
 					padding: 0.875rem 1rem;
 
@@ -553,7 +575,9 @@
 					padding: 1rem;
 
 					.score-section {
+
 						.score-display {
+
 							.score-circle {
 								width: 45px;
 								height: 45px;
