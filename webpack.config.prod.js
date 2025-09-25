@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StyleLoader = require('style-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -74,6 +74,10 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
+		new MiniCssExtractPlugin({
+			filename: '[name]-[contenthash].css',
+			chunkFilename: '[name]-[contenthash].chunk.css',
+		}),
 		new StyleLintPlugin({
 			files: ['src/**/*.{css,scss}'],
 			fix: true,
@@ -129,7 +133,7 @@ module.exports = {
 			{
 				test: /(\.scss$|\.css$)/,
 				use: [
-					'style-loader',
+					MiniCssExtractPlugin.loader,
 					{
 						loader: 'css-loader',
 						options: {
