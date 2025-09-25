@@ -57,6 +57,7 @@ module.exports = {
 			filename: '[name]-[contenthash].css',
 			chunkFilename: '[name]-[contenthash].chunk.css',
 			ignoreOrder: true, // Disable order warnings
+			experimentalUseImportModule: false, // Disable experimental features
 		}),
 		new HtmlWebpackPlugin({
 			template: 'src/app/index.tpl.html',

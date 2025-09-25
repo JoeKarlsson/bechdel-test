@@ -30,7 +30,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install all dependencies (including devDependencies for build)
-RUN npm install --legacy-peer-deps --ignore-scripts
+RUN npm install --legacy-peer-deps --ignore-scripts --force
 
 # Copy source files
 COPY . .
