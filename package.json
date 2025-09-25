@@ -119,7 +119,7 @@
 		"jest": "^28.1.3",
 		"jest-environment-jsdom": "^28.1.3",
 		"jest-fetch-mock": "^3.0.1",
-		"mini-css-extract-plugin": "^2.8.1",
+		"mini-css-extract-plugin": "^2.9.0",
 		"mockingoose": "^2.13.2",
 		"nock": "9.1.6",
 		"nodemon": "^3.1.10",
@@ -153,5 +153,11 @@
 	"optionalDependencies": {
 		"husky": "^0.14.3"
 	},
-	"snyk": false
+	"snyk": false,
+	"resolutions": {
+		"ajv-keywords": "^5.0.0"
+	},
+	"overrides": {
+		"ajv-keywords": "^5.0.0"
+	}
 }
