@@ -55,7 +55,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --legacy-peer-deps --only=production && npm cache clean --force
+RUN npm ci --legacy-peer-deps --only=production --ignore-scripts && npm cache clean --force
 
 # Copy built application from build stage
 COPY --from=build --chown=nextjs:nodejs /app/dist ./dist
