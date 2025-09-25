@@ -1,0 +1,315 @@
+<p align="center">
+ <img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
+
+</p>
+<h1 align="center">bechdel.io</h1>
+<h3 align="center">Find out if your favorite film passes the test</h3>
+
+[![Coverage Status][cover]][cover-url]
+[![Build Status][tests]][tests-url]
+[![Maintainability][maintainability]][maintainability-url]
+[![stars][stars]][stars-url]
+[![pr][pr]][pr-url]
+[![license][license]][license-url]
+[![twitter][twitter]][twitter-url]
+[![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
+
+## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria
+
+1. It includes at least two women
+2. who have at least one conversation
+3. about something other than a man or men.
+
+The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule. For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on [feministfrequency.com](http://feministfrequency.com/).
+
+This program accepts a movie script and analyzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechdel Test?"
+
+## Tech Stack
+
+This application has been modernized and now uses:
+
+- **Frontend**: React 18 with modern hooks and functional components
+- **Backend**: Node.js with Express
+- **Database**: MongoDB 7.0 with Mongoose ODM
+- **Build Tools**: Webpack 5 with modern configuration
+- **Styling**: SCSS with CSS modules support
+- **Testing**: Jest with React Testing Library
+- **Development**: Hot reload with nodemon and webpack-dev-middleware
+- **Containerization**: Docker with multi-stage builds
+- **Code Quality**: ESLint, Prettier, and Stylelint
+
+## Prerequisites
+
+- Install [Node.js](https://nodejs.org/en/) (version 16 or higher)
+- Install [Docker](https://www.docker.com/) (recommended)
+
+## Quickstart
+
+### 1. Clone The Repository
+
+```sh
+git clone https://github.com/JoeKarlsson/bechdel-test
+cd bechdel-test
+```
+
+### 2. Get API Keys For The MovieDB, My API Films, and Claude AI
+
+You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/), [My API Films](https://www.myapifilms.com/), and [Claude AI](https://www.anthropic.com/) for advanced analytics.
+
+- You can sign up for an API key for The MovieDB, here: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
+  - Additional Documentation about this API can be found here: [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
+- You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
+  - Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
+- You can sign up for a Claude API key here: [https://console.anthropic.com/](https://console.anthropic.com/).
+  - Claude AI is used for advanced gender analytics including female agency analysis, stereotype detection, and bias detection.
+
+### 3. Docker Setup (Recommended)
+
+The easiest way to run the application is using Docker:
+
+```sh
+# Start MongoDB and the application
+docker compose up -d
+
+# The application will be available at http://localhost:8080
+# MongoDB will be available at localhost:27017
+```
+
+**Docker Services:**
+
+- `mongodb` - MongoDB 7.0 with authentication
+- `app` - Production application (port 8080)
+- `app-dev` - Development application with hot reload (port 3000)
+
+To stop the containers:
+
+```sh
+docker compose down
+```
+
+**Development with Docker:**
+
+```sh
+# Start only MongoDB for local development
+docker compose up mongodb -d
+
+# Then run the development server locally
+npm run start:dev
+```
+
+### 4. Manual MongoDB Installation (Alternative)
+
+If you prefer to install MongoDB locally:
+
+**macOS (using Homebrew):**
+
+```sh
+brew tap mongodb/brew
+brew install mongodb-community
+brew services start mongodb/brew/mongodb-community
+```
+
+**Ubuntu/Debian:**
+
+```sh
+sudo apt-get install mongodb
+sudo systemctl start mongodb
+```
+
+**Windows:**
+Download and install MongoDB Community Server from [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
+
+### 5. Connect Bechdel.io to MongoDB and the various other APIs
+
+The project is now configured to use a local MongoDB instance. The configuration file `src/server/config/config.json` has been created with the provided API keys:
+
+- TMDB API Key: `YOUR_TMDB_API_KEY`
+- MyAPIFilms API Key: `YOUR_MYAPIFILMS_API_KEY`
+- Claude API Key: `YOUR_CLAUDE_API_KEY`
+- MongoDB URI: `mongodb://localhost:27017/bechdelTest`
+
+**Environment Variables:**
+
+For Docker deployments, the following environment variables are configured:
+
+- `THEMOVIEDB` - The MovieDB API key
+- `OMDB` - OMDB API key  
+- `CLAUDE_API_KEY` - Claude AI API key for advanced analytics
+- `MONGODB_URI` - MongoDB connection string
+- `NODE_ENV` - Environment (production/development)
+- `PORT` - Application port (default: 3000)
+
+### 6. Install dependencies & run locally (Manual setup only)
+
+```sh
+npm install
+npm run start:dev # Development server with hot reload at http://localhost:3000
+```
+
+**Available Scripts:**
+
+### Development Scripts
+
+- `npm start` - Start basic development server (NODE_ENV=development)
+- `npm run start:dev` - Start development server with nodemon and hot reload
+- `npm run start:local` - Start with local MongoDB connection (mongodb://localhost:27017/bechdelTest)
+- `npm run stop` - Kill all running Node.js processes
+
+### Production Scripts
+
+- `npm run build` - Build production assets with webpack
+- `npm run build:analyze` - Build with bundle analysis (ANALYZE=true)
+- `npm run build:stats` - Generate webpack stats JSON file
+- `npm run runProd` - Run production server (NODE_ENV=production)
+
+### Testing Scripts
+
+- `npm test` - Run test suite with coverage
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:updateSnapshot` - Update Jest snapshots
+- `npm run test:coverage` - Run tests with coverage report
+- `npm run coverage` - Generate coverage report for Coveralls
+
+### Linting Scripts
+
+- `npm run lint` - Run ESLint, CSS linting, and Markdown linting
+- `npm run lint:fix` - Fix auto-fixable linting issues
+- `npm run lint:out` - Output linting results to checkstyle XML
+- `npm run lint:css` - Check SCSS/CSS styles with Stylelint
+- `npm run lint:css:fix` - Auto-fix CSS linting issues
+- `npm run lint:md` - Check Markdown files with Remark
+
+### Quality Assurance Scripts
+
+- `npm run healthcheck` - Run linting and test coverage (CI/CD)
+
+### Script Processing Scripts
+
+- `npm run processScript` - Run script processor with nodemon
+- `npm run loadScript` - Load script directly via directScriptLoader
+- `npm run loadScript:dev` - Load script in development mode
+
+### Security Scripts
+
+- `npm run snyk-protect` - Run Snyk security audit
+- `npm run prepublish` - Pre-publish security check
+
+## Testing
+
+The `bechdel.io` test suite uses Jest with React Testing Library for comprehensive testing:
+
+```sh
+npm test                    # Run all tests with coverage
+npm run test:watch         # Run tests in watch mode
+npm run test:coverage      # Run tests with coverage report
+npm run test:updateSnapshot # Update Jest snapshots
+```
+
+**Test Coverage:**
+
+- Unit tests for React components
+- Integration tests for API endpoints
+- Snapshot testing for UI consistency
+- Mock implementations for external services
+
+You can [read more about testing bechdel.io](test).
+
+## Development Workflow
+
+### Code Quality
+
+```sh
+npm run lint              # Check code quality
+npm run lint:fix          # Auto-fix linting issues
+npm run lint:css          # Check SCSS/CSS styles
+npm run lint:css:fix      # Auto-fix CSS issues
+npm run lint:md           # Check Markdown files
+```
+
+### Building for Production
+
+```sh
+npm run build             # Build production assets
+npm run build:analyze     # Build with bundle analysis
+npm run build:stats       # Generate webpack stats
+npm run runProd           # Run production server
+```
+
+### Development Tools
+
+```sh
+npm run processScript     # Process movie scripts
+npm run healthcheck       # Run linting and tests
+npm run snyk-protect      # Security vulnerability check
+```
+
+## Where to Get Movie Scripts?
+
+If you are looking to get your hands on some movie scripts to test, you can check out my CLI Movie Script Grabber [https://github.com/JoeKarlsson/movie-script-scraper](https://github.com/JoeKarlsson/movie-script-scraper)
+
+## Introduction
+
+The Bechdel Test Script Parser was a collaborative digital humanities project between myself and my sister, Laurel Karlsson. It is the product of a shared passion for film, feminism, and the creative potential of technology. By combining the talents and interests of myself, a software engineer, we've been able to create an innovative data mining tool for film analysis that we hope to continue to work on and improve. You can check out the project on our [website](https://bechdel-test.herokuapp.com/).
+
+This project was born when my sister reached out to me for advice on a few ideas she had been mulling over for a digital humanities project. Hoping to do something related to feminist film analysis, she was feeling very limited by my lack of coding experience and hadn't been able to find an existing data mining tool to accomplish what she was looking to do. I immediately offered up my coding expertise, looking to gain experience by building a tool from scratch which would accomplish the specific needs of the project. After brainstorming several different project ideas, we settled on the one you see here.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/develop/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+### TLDR
+
+1. Fork it!
+1. Create your feature branch: `git checkout -b my-new-feature`
+1. Commit your changes: `git commit -am 'Add some feature'`
+1. Push to the branch: `git push origin my-new-feature`
+1. Submit a pull request :D
+
+### Maintainers
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="150 height="150"
+        src="https://avatars.githubusercontent.com/JoeKarlsson?v=3">
+        <br />
+        <a href="https://github.com/JoeKarlsson">Joe Karlsson</a>
+      </td>
+   <td align="center">
+        <img width="150 height="150"
+        src="https://avatars.githubusercontent.com/laurelcarlson?v=3">
+        <br />
+        <a href="https://github.com/laurelcarlson">Laurel Karlsson</a>
+      </td>
+    <tr>
+  <tbody>
+</table>
+
+### License
+
+#### [MIT](./LICENSE)
+
+## Related Links
+
+- [The Internet Movie Script Database (IMSDb)](http://www.imsdb.com/)
+- [The Open Movie Database](http://www.omdbapi.com/)
+- [Visualizing and Analyzing the Hollywood Screenplay with ScripThreads](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html)
+- [Check out our Trello board for next steps](https://trello.com/b/Ldg9sYtf/bechdel-test)
+
+### Resources
+
+[tests]: https://travis-ci.org/JoeKarlsson/bechdel-test.svg?branch=develop
+[tests-url]: https://travis-ci.org/JoeKarlsson/bechdel-test
+[maintainability]: https://api.codeclimate.com/v1/badges/7d2a095c01bb88557a41/maintainability
+[maintainability-url]: https://codeclimate.com/github/JoeKarlsson/bechdel-test/maintainability
+[pr]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[pr-url]: CONTRIBUTING.md
+[cover]: https://coveralls.io/repos/github/JoeKarlsson/bechdel-test/badge.svg?branch=develop
+[cover-url]: https://coveralls.io/github/JoeKarlsson/bechdel-test?branch=develop
+[stars]: https://img.shields.io/github/stars/JoeKarlsson/bechdel-test.svg?style=flat-square
+[stars-url]: https://github.com/JoeKarlsson/bechdel-test/stargazers
+[license]: https://img.shields.io/github/license/JoeKarlsson/bechdel-test.svg
+[license-url]: https://github.com/JoeKarlsson/bechdel-test/blob/develop/LICENSE
+[twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/bechdel-test.svg?style=social&style=flat-square
+[twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbechdel-test
