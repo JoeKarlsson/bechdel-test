@@ -29,8 +29,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install all dependencies (including devDependencies for build) but skip postinstall
-RUN npm ci --legacy-peer-deps --ignore-scripts
+# Install all dependencies (including devDependencies for build)
+RUN npm install --legacy-peer-deps --ignore-scripts
 
 # Copy source files
 COPY . .
@@ -55,11 +55,11 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --legacy-peer-deps --only=production --ignore-scripts && npm cache clean --force
+RUN npm install --legacy-peer-deps --omit=dev --ignore-scripts && npm cache clean --force
 
 # Copy built application from build stage
 COPY --from=build --chown=nextjs:nodejs /app/dist ./dist
-COPY --from=build --chown=nextjs:nodejs /app/src ./src
+COPY --from=build --chown=nextjs:nodejs /app/src/server ./src/server
 
 # Create uploads directory with proper permissions
 RUN mkdir -p uploads && chown -R nextjs:nodejs uploads

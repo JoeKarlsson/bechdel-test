@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $purple: purple;
 $white: white;
 $light-gray: #f8f9fa;
@@ -22,7 +24,7 @@ $chart-color: #8884d8;
 		text-align: center;
 		margin-bottom: var(--spacing-3xl);
 		padding: var(--card-padding);
-		background: linear-gradient(135deg, $purple 0%, darken($purple, 20%) 100%);
+		background: linear-gradient(135deg, $purple 0%, color.adjust($purple, $lightness: -20%) 100%);
 		color: $white;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -146,7 +148,7 @@ $chart-color: #8884d8;
 			cursor: pointer;
 
 			&:hover {
-				background: darken($purple, 10%);
+				background: color.adjust($purple, $lightness: -10%);
 			}
 		}
 	}

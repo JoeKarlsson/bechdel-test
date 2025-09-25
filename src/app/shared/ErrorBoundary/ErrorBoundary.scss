@@ -1,4 +1,6 @@
 // ErrorBoundary Styles
+@use 'sass:color';
+
 $error-color: #dc3545;
 $warning-color: #ffc107;
 $success-color: #28a745;
@@ -74,7 +76,7 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			color: white;
 
 			&:hover {
-				background: darken($error-color, 10%);
+				background: color.adjust($error-color, $lightness: -10%);
 				transform: translateY(-1px);
 			}
 
@@ -122,7 +124,7 @@ $shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		border-bottom: 1px solid $border-color;
 
 		&:hover {
-			background: darken($light-gray, 5%);
+			background: color.adjust($light-gray, $lightness: -5%);
 		}
 
 		&:focus {
