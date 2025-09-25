@@ -26,13 +26,16 @@ CMD ["npm", "run", "start:dev"]
 FROM node:18-alpine AS build
 WORKDIR /app
 
+# Add build argument to force rebuild
+ARG CACHE_BUST=1
+
 # Copy package files
 COPY package*.json ./
 
 # Clear npm cache and install all dependencies (including devDependencies for build)
 RUN npm cache clean --force && \
     rm -rf node_modules package-lock.json && \
-    npm install --legacy-peer-deps --ignore-scripts --force
+    npm install --legacy-peer-deps --ignore-scripts --force --no-cache
 
 # Copy source files
 COPY . .
