@@ -8,6 +8,7 @@ import BechdelCharts from './BechdelCharts';
 import FilmInfoCard from './FilmInfoCard';
 import PlotSection from './PlotSection';
 import ScriptTimeline from './ScriptTimeline';
+import AdvancedAnalytics from './AdvancedAnalytics';
 import Loading from '../../shared/Loading/Loading';
 import Error from '../../shared/Error/Error';
 import hash from '../../helper/hash';
@@ -131,6 +132,7 @@ const Film = memo(({
 			images,
 			plot,
 			actors,
+			enhancedAnalytics,
 		} = film;
 
 		return (
@@ -166,6 +168,16 @@ const Film = memo(({
 							/>
 						</div>
 					)}
+
+					{/* Advanced AI Analytics Section */}
+					<div className="advanced-analytics-section">
+						<div className="advanced-analytics-content">
+							<AdvancedAnalytics
+								enhancedAnalytics={enhancedAnalytics}
+								characters={actors}
+							/>
+						</div>
+					</div>
 
 					{/* Detailed Bechdel Analysis Section */}
 					<div className="detailed-analysis-section">
@@ -252,6 +264,19 @@ Film.propTypes = {
 			numOfMaleCharsWithDialogue: PropTypes.number,
 			totalLinesFemaleDialogue: PropTypes.number,
 			totalLinesMaleDialogue: PropTypes.number,
+		}),
+		enhancedAnalytics: PropTypes.shape({
+			femaleAgency: PropTypes.object,
+			stereotypes: PropTypes.object,
+			intersectionality: PropTypes.object,
+			sentiment: PropTypes.object,
+			topics: PropTypes.object,
+			powerDynamics: PropTypes.object,
+			vocabulary: PropTypes.object,
+			biasDetection: PropTypes.object,
+			improvements: PropTypes.object,
+			characterDevelopment: PropTypes.object,
+			analysisTimestamp: PropTypes.string,
 		}),
 	}),
 	loading: PropTypes.bool,

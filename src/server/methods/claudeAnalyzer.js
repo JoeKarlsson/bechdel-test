@@ -24,32 +24,40 @@ class ClaudeAnalyzer {
      */
     async analyzeScript(scriptData, characters) {
         try {
-            const analysisPromises = [
-                this.analyzeFemaleAgency(scriptData, characters),
-                this.detectStereotypes(scriptData, characters),
-                this.analyzeIntersectionality(scriptData, characters),
-                this.analyzeSentiment(scriptData, characters),
-                this.analyzeTopics(scriptData, characters),
-                this.analyzePowerDynamics(scriptData, characters),
-                this.analyzeVocabulary(scriptData, characters),
-                this.detectBias(scriptData, characters),
-                this.generateImprovements(scriptData, characters),
-                this.analyzeCharacterDevelopment(scriptData, characters)
+            // Run analyses sequentially to avoid rate limiting
+            const analyses = [
+                { name: 'femaleAgency', method: () => this.analyzeFemaleAgency(scriptData, characters) },
+                { name: 'stereotypes', method: () => this.detectStereotypes(scriptData, characters) },
+                { name: 'intersectionality', method: () => this.analyzeIntersectionality(scriptData, characters) },
+                { name: 'sentiment', method: () => this.analyzeSentiment(scriptData, characters) },
+                { name: 'topics', method: () => this.analyzeTopics(scriptData, characters) },
+                { name: 'powerDynamics', method: () => this.analyzePowerDynamics(scriptData, characters) },
+                { name: 'vocabulary', method: () => this.analyzeVocabulary(scriptData, characters) },
+                { name: 'biasDetection', method: () => this.detectBias(scriptData, characters) },
+                { name: 'characterDevelopment', method: () => this.analyzeCharacterDevelopment(scriptData, characters) }
             ];
 
-            const results = await Promise.all(analysisPromises);
+            const results = {};
+
+            for (let i = 0; i < analyses.length; i++) {
+                const analysis = analyses[i];
+                try {
+                    console.log(`Running ${analysis.name} analysis...`);
+                    results[analysis.name] = await analysis.method();
+
+                    // Add delay between requests to respect rate limits
+                    if (i < analyses.length - 1) {
+                        await new Promise(resolve => setTimeout(resolve, 2000)); // 2 second delay
+                    }
+                } catch (error) {
+                    console.error(`Error in ${analysis.name} analysis:`, error.message);
+                    // Continue with other analyses even if one fails
+                    results[analysis.name] = { failed: true, error: error.message };
+                }
+            }
 
             return {
-                femaleAgency: results[0],
-                stereotypes: results[1],
-                intersectionality: results[2],
-                sentiment: results[3],
-                topics: results[4],
-                powerDynamics: results[5],
-                vocabulary: results[6],
-                biasDetection: results[7],
-                improvements: results[8],
-                characterDevelopment: results[9],
+                ...results,
                 analysisTimestamp: new Date().toISOString()
             };
         } catch (error) {
@@ -74,13 +82,15 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters with gender info:
 ${JSON.stringify(characters.filter(c => c.gender === 2), null, 2)}
 
-Provide analysis in JSON format with:
-- agencyScore: 1-10 rating of female agency
-- plotDrivingMoments: Array of moments where females drive plot
-- reactiveMoments: Array of moments where females only react
-- decisionMaking: Analysis of female decision-making patterns
-- goalPursuit: Analysis of female characters pursuing goals
-- recommendations: Suggestions for improving female agency`;
+Provide a detailed analysis in plain text format covering:
+- Agency Score (1-10 rating where 10 = highest agency)
+- Plot-driving moments by female characters
+- Reactive moments where female characters respond to others
+- Decision-making patterns
+- Goal pursuit analysis
+- Recommendations for improving female agency
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'female_agency');
     }
@@ -101,12 +111,14 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Female characters:
 ${JSON.stringify(characters.filter(c => c.gender === 2), null, 2)}
 
-Provide analysis in JSON format with:
-- detectedStereotypes: Array of identified stereotypes
-- characterArchetypes: Mapping of characters to archetypes
-- problematicPatterns: Array of problematic patterns found
-- stereotypeScore: 1-10 rating (10 = most stereotypical)
-- recommendations: Suggestions for avoiding stereotypes`;
+Provide a detailed analysis in plain text format covering:
+- Detected stereotypes and tropes
+- Character archetypes and their implications
+- Problematic patterns in representation
+- Stereotype Score (1-10 rating where 10 = most stereotypical)
+- Recommendations for avoiding stereotypes
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'stereotype_detection');
     }
@@ -127,12 +139,14 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- diversityScore: 1-10 rating of representation diversity
-- intersectionalAnalysis: Analysis of intersecting identities
-- representationGaps: Identified gaps in representation
-- tokenismDetection: Detection of token characters
-- recommendations: Suggestions for better intersectional representation`;
+Provide a detailed analysis in plain text format covering:
+- Diversity Score (1-10 rating of representation diversity)
+- Intersectional analysis of female character identities
+- Representation gaps identified
+- Tokenism detection
+- Recommendations for better intersectional representation
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'intersectionality');
     }
@@ -153,12 +167,14 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- maleSentimentAnalysis: Analysis of male character emotional patterns
-- femaleSentimentAnalysis: Analysis of female character emotional patterns
-- sentimentComparison: Comparison between genders
-- emotionalRange: Analysis of emotional range by gender
-- recommendations: Suggestions for balanced emotional representation`;
+Provide a detailed analysis in plain text format covering:
+- Male character emotional patterns and sentiment
+- Female character emotional patterns and sentiment
+- Comparison between male and female emotional expression
+- Analysis of emotional range by gender
+- Recommendations for balanced emotional representation
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'sentiment_analysis');
     }
@@ -179,12 +195,14 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- maleTopics: Topics primarily discussed by male characters
-- femaleTopics: Topics primarily discussed by female characters
-- topicDiversity: Analysis of topic diversity by gender
-- expertiseAreas: Areas of expertise by gender
-- recommendations: Suggestions for balanced topic representation`;
+Provide a detailed analysis in plain text format covering:
+- Topics primarily discussed by male characters
+- Topics primarily discussed by female characters
+- Analysis of topic diversity by gender
+- Areas of expertise by gender
+- Recommendations for balanced topic representation
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'topic_analysis');
     }
@@ -206,13 +224,15 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- interruptionPatterns: Analysis of who interrupts whom
-- questionCommandAnalysis: Analysis of questions vs commands by gender
-- speakingTimeAnalysis: Analysis of speaking time distribution
-- authorityPatterns: Analysis of authority and leadership
-- powerDynamicsScore: 1-10 rating of power balance
-- recommendations: Suggestions for balanced power dynamics`;
+Provide a detailed analysis in plain text format covering:
+- Interruption patterns and who interrupts whom
+- Analysis of questions vs commands by gender
+- Speaking time distribution analysis
+- Authority and leadership patterns
+- Power Dynamics Score (1-10 rating of power balance)
+- Recommendations for balanced power dynamics
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'power_dynamics');
     }
@@ -234,13 +254,15 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- maleVocabulary: Analysis of male character vocabulary patterns
-- femaleVocabulary: Analysis of female character vocabulary patterns
-- vocabularyComparison: Comparison of language sophistication
-- emotionalLanguage: Analysis of emotional vocabulary usage
-- professionalLanguage: Analysis of professional/technical language
-- recommendations: Suggestions for balanced vocabulary representation`;
+Provide a detailed analysis in plain text format covering:
+- Male character vocabulary patterns and language use
+- Female character vocabulary patterns and language use
+- Comparison of language sophistication between genders
+- Analysis of emotional vocabulary usage
+- Analysis of professional/technical language usage
+- Recommendations for balanced vocabulary representation
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'vocabulary_analysis');
     }
@@ -262,44 +284,19 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- detectedBiases: Array of detected biases
-- biasPatterns: Analysis of recurring bias patterns
-- microaggressions: Detection of microaggressions
-- systemicBias: Analysis of systemic bias patterns
-- biasScore: 1-10 rating (10 = most biased)
-- recommendations: Suggestions for reducing bias`;
+Provide a detailed analysis in plain text format covering:
+- Detected biases and their manifestations
+- Analysis of recurring bias patterns
+- Detection of microaggressions
+- Analysis of systemic bias patterns
+- Bias Score (1-10 rating where 10 = most biased)
+- Recommendations for reducing bias
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'bias_detection');
     }
 
-    /**
-     * Generate script improvement suggestions
-     */
-    async generateImprovements(scriptData, characters) {
-        const prompt = `Generate specific suggestions for improving gender representation in this movie script. Focus on:
-1. Concrete ways to improve female character agency
-2. Suggestions for reducing stereotypes
-3. Ways to improve dialogue and character development
-4. Specific scene improvements
-5. Character arc improvements
-
-Script excerpt:
-${scriptData.condensedScript.substring(0, 8000)}
-
-Characters:
-${JSON.stringify(characters, null, 2)}
-
-Provide analysis in JSON format with:
-- characterImprovements: Specific character improvement suggestions
-- dialogueImprovements: Suggestions for improving dialogue
-- sceneImprovements: Suggestions for specific scene improvements
-- plotImprovements: Suggestions for plot-level improvements
-- overallRecommendations: High-level recommendations
-- implementationPriority: Priority ranking of improvements`;
-
-        return await this.callClaude(prompt, 'improvements');
-    }
 
     /**
      * Analyze character development over time
@@ -318,13 +315,15 @@ ${scriptData.condensedScript.substring(0, 8000)}
 Characters:
 ${JSON.stringify(characters, null, 2)}
 
-Provide analysis in JSON format with:
-- femaleCharacterArcs: Analysis of female character development
-- maleCharacterArcs: Analysis of male character development
-- developmentComparison: Comparison of character development by gender
-- growthPatterns: Analysis of character growth patterns
-- complexityAnalysis: Analysis of character complexity
-- recommendations: Suggestions for improving character development`;
+Provide a detailed analysis in plain text format covering:
+- Female character development and arcs
+- Male character development and arcs
+- Comparison of character development by gender
+- Analysis of character growth patterns
+- Analysis of character complexity and depth
+- Recommendations for improving character development
+
+Format your response as clear, readable text paragraphs. Do not use JSON format.`;
 
         return await this.callClaude(prompt, 'character_development');
     }
@@ -334,42 +333,20 @@ Provide analysis in JSON format with:
      */
     async callClaude(prompt, analysisType) {
         try {
-			const response = await this.anthropic.messages.create({
-				model: 'claude-3-5-haiku-20241022',
-				max_tokens: 4000,
-				temperature: 0.3,
-				messages: [{
-					role: 'user',
-					content: prompt
-				}]
-			});
+            const response = await this.anthropic.messages.create({
+                model: 'claude-3-5-haiku-20241022',
+                max_tokens: 4000,
+                temperature: 0.3,
+                messages: [{
+                    role: 'user',
+                    content: prompt
+                }]
+            });
 
             const content = response.content[0].text;
 
-			// Try to parse as JSON, fallback to text if parsing fails
-			try {
-				// Clean up the content to make it more JSON-friendly
-				let cleanedContent = content.trim();
-				
-				// Remove any markdown formatting
-				cleanedContent = cleanedContent.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-				
-				// Try to extract JSON from the content if it's embedded in text
-				const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
-				if (jsonMatch) {
-					cleanedContent = jsonMatch[0];
-				}
-				
-				return JSON.parse(cleanedContent);
-			} catch (parseError) {
-				console.warn(`Failed to parse JSON for ${analysisType}, returning text:`, parseError);
-				return {
-					analysisType: analysisType,
-					rawResponse: content,
-					parseError: true,
-					summary: content.substring(0, 200) + '...' // Provide a summary
-				};
-			}
+            // Return the plain text response directly
+            return content.trim();
         } catch (error) {
             console.error(`Claude API error for ${analysisType}:`, error);
             return {

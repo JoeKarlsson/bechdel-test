@@ -31,6 +31,7 @@ const defaultFilmData = {
 		totalLinesFemaleDialogue: 0,
 		totalLinesMaleDialogue: 0,
 	},
+	enhancedAnalytics: null,
 };
 
 const FilmContainer = () => {

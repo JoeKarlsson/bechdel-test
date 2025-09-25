@@ -67,7 +67,7 @@ const processScriptDirectly = async (scriptPath, title) => {
             throw new Error(`Script file not found: ${scriptPath}`);
         }
 
-        const result = await processScript(scriptPath, title, true); // Use enhanced test for direct loading
+        const result = await processScript(scriptPath, title, null, meta.CLAUDE_API_KEY);
         console.log('Script processed successfully!');
         console.log('Result:', JSON.stringify(result, null, 2));
         return result;

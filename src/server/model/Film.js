@@ -158,6 +158,66 @@ filmSchema.static('insertFilm', filmMetaData => {
 	return promise;
 });
 
+filmSchema.static('cleanupDuplicateTitles', function () {
+	const promise = new Promise((resolve, reject) => {
+		// Get all films and normalize their titles for comparison
+		this.find({})
+			.then(allFilms => {
+				// Group films by normalized title (lowercase, replace hyphens with spaces)
+				const normalizedGroups = {};
+				allFilms.forEach(film => {
+					const normalizedTitle = film.title.toLowerCase().replace(/-/g, ' ').trim();
+					if (!normalizedGroups[normalizedTitle]) {
+						normalizedGroups[normalizedTitle] = [];
+					}
+					normalizedGroups[normalizedTitle].push(film);
+				});
+
+				// Find groups with duplicates
+				const duplicates = Object.entries(normalizedGroups).filter(([normalizedTitle, films]) => films.length > 1);
+
+				if (duplicates.length === 0) {
+					return resolve({ message: 'No duplicates found', duplicatesRemoved: 0 });
+				}
+
+				// For each duplicate group, keep only the most recent one
+				const cleanupPromises = duplicates.map(([normalizedTitle, films]) => {
+					// Sort by dateUploaded descending to get the most recent
+					const sortedFilms = films.sort((a, b) => new Date(b.dateUploaded) - new Date(a.dateUploaded));
+					const keepFilm = sortedFilms[0];
+					const deleteFilms = sortedFilms.slice(1);
+
+					if (deleteFilms.length > 0) {
+						const deleteIds = deleteFilms.map(film => film._id);
+						return this.deleteMany({ _id: { $in: deleteIds } })
+							.then(() => ({
+								normalizedTitle,
+								kept: keepFilm._id,
+								keptTitle: keepFilm.title,
+								deleted: deleteFilms.length,
+								deletedTitles: deleteFilms.map(f => f.title)
+							}));
+					}
+					return { normalizedTitle, kept: null, deleted: 0 };
+				});
+
+				return Promise.all(cleanupPromises)
+					.then(results => {
+						const totalDeleted = results.reduce((sum, result) => sum + result.deleted, 0);
+						return resolve({
+							message: `Cleaned up ${duplicates.length} duplicate title groups`,
+							duplicatesRemoved: totalDeleted,
+							details: results
+						});
+					});
+			})
+			.catch(err => {
+				return reject(new Error(err));
+			});
+	});
+	return promise;
+});
+
 filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
 	const promise = new Promise((resolve, reject) => {
 		const {
@@ -172,80 +232,60 @@ filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
 			analysisMetadata,
 		} = filmMetaData;
 
-		// First, try to find existing film by title
-		this.findOne({ title })
-			.then(existingFilm => {
-				if (existingFilm) {
-					// Update existing film
-					existingFilm.bechdelResults = bechdelResults;
-					existingFilm.bechdelData = bechdelData;
-					existingFilm.plot = data.plot;
-					existingFilm.simplePlot = data.plot;
-					existingFilm.year = data.year;
-					existingFilm.releaseDate = data.released;
-					existingFilm.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
-					existingFilm.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
-					existingFilm.awards = data.awards ? [{ name: data.awards }] : [];
-					existingFilm.rated = data.rated;
-					existingFilm.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
-					existingFilm.urlPoster = data.poster;
-					existingFilm.idIMDB = data.idIMDB;
-					existingFilm.rating = data.imdbRating;
-					existingFilm.metascore = data.metascore && data.metascore !== 'N/A' ? parseInt(data.metascore, 10) : null;
-					existingFilm.urlIMDB = `https://www.imdb.com/title/${data.idIMDB}/`;
-					existingFilm.actors = parseData.parseActorArr(actors);
-					existingFilm.images = parseData.parseImageData(images);
-					existingFilm.dateUploaded = new Date(); // Update the upload date
+		// Normalize the title for comparison (lowercase, replace hyphens with spaces)
+		const normalizedTitle = title.toLowerCase().replace(/-/g, ' ').trim();
 
-					// Add enhanced analytics if provided
-					if (enhancedAnalytics) {
-						existingFilm.enhancedAnalytics = enhancedAnalytics;
-					}
-					if (analyticsSummary) {
-						existingFilm.analyticsSummary = analyticsSummary;
-					}
-					if (analysisMetadata) {
-						existingFilm.analysisMetadata = analysisMetadata;
-					}
+		// First, find all films and delete those with normalized titles that match
+		this.find({})
+			.then(allFilms => {
+				// Find films with matching normalized titles
+				const filmsToDelete = allFilms.filter(film => {
+					const filmNormalizedTitle = film.title.toLowerCase().replace(/-/g, ' ').trim();
+					return filmNormalizedTitle === normalizedTitle;
+				});
 
-					return existingFilm.save();
-				} else {
-					// Create new film
-					const film = new Film({ title: data.title });
-					film.title = data.title;
-					film.bechdelResults = bechdelResults;
-					film.bechdelData = bechdelData;
-					film.plot = data.plot;
-					film.simplePlot = data.plot;
-					film.year = data.year;
-					film.releaseDate = data.released;
-					film.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
-					film.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
-					film.awards = data.awards ? [{ name: data.awards }] : [];
-					film.rated = data.rated;
-					film.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
-					film.urlPoster = data.poster;
-					film.idIMDB = data.idIMDB;
-					film.rating = data.imdbRating;
-					film.metascore = data.metascore && data.metascore !== 'N/A' ? parseInt(data.metascore, 10) : null;
-					film.urlIMDB = `https://www.imdb.com/title/${data.idIMDB}/`;
-					film.actors = parseData.parseActorArr(actors);
-					film.images = parseData.parseImageData(images);
-					film.dateUploaded = new Date();
-
-					// Add enhanced analytics if provided
-					if (enhancedAnalytics) {
-						film.enhancedAnalytics = enhancedAnalytics;
-					}
-					if (analyticsSummary) {
-						film.analyticsSummary = analyticsSummary;
-					}
-					if (analysisMetadata) {
-						film.analysisMetadata = analysisMetadata;
-					}
-
-					return film.save();
+				if (filmsToDelete.length > 0) {
+					const deleteIds = filmsToDelete.map(film => film._id);
+					return this.deleteMany({ _id: { $in: deleteIds } });
 				}
+				return Promise.resolve();
+			})
+			.then(() => {
+				// Create new film after deleting duplicates
+				const film = new Film({ title: data.title });
+				film.title = data.title;
+				film.bechdelResults = bechdelResults;
+				film.bechdelData = bechdelData;
+				film.plot = data.plot;
+				film.simplePlot = data.plot;
+				film.year = data.year;
+				film.releaseDate = data.released;
+				film.directors = data.director ? data.director.split(',').map(name => ({ name: name.trim() })) : [];
+				film.writers = data.writer ? data.writer.split(',').map(name => ({ name: name.trim() })) : [];
+				film.awards = data.awards ? [{ name: data.awards }] : [];
+				film.rated = data.rated;
+				film.genres = data.genre ? data.genre.split(',').map(genre => genre.trim()) : [];
+				film.urlPoster = data.poster;
+				film.idIMDB = data.idIMDB;
+				film.rating = data.imdbRating;
+				film.metascore = data.metascore && data.metascore !== 'N/A' ? parseInt(data.metascore, 10) : null;
+				film.urlIMDB = `https://www.imdb.com/title/${data.idIMDB}/`;
+				film.actors = parseData.parseActorArr(actors);
+				film.images = parseData.parseImageData(images);
+				film.dateUploaded = new Date();
+
+				// Add enhanced analytics if provided
+				if (enhancedAnalytics) {
+					film.enhancedAnalytics = enhancedAnalytics;
+				}
+				if (analyticsSummary) {
+					film.analyticsSummary = analyticsSummary;
+				}
+				if (analysisMetadata) {
+					film.analysisMetadata = analysisMetadata;
+				}
+
+				return film.save();
 			})
 			.then(result => {
 				return resolve(result);
