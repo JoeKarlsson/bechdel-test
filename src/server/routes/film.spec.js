@@ -66,18 +66,27 @@ describe('Film Routes Test', () => {
 				});
 		});
 
-		it('should should throw an error if there are no films in the DB', done => {
+		it('should return empty result with pagination info when there are no films in the DB', done => {
 			const _doc = [];
 			mockingoose.Film.toReturn(_doc, 'find');
+			mockingoose.Film.toReturn(0, 'countDocuments');
 
 			const expectedResponse = {
-				success: false,
-				error: 'No list of films returned from film.listAll()',
+				films: [],
+				pagination: {
+					currentPage: 1,
+					totalPages: 0,
+					totalCount: 0,
+					limit: 10,
+					hasNextPage: false,
+					hasPrevPage: false
+				}
 			};
 
 			request(app)
 				.get('/api/film')
-				.expect(500)
+				.expect(200)
+				.expect('Content-Type', /json/)
 				.end((err, res) => {
 					if (err) {
 						return done(err);
