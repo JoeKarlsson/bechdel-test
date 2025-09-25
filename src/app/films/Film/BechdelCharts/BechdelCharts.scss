@@ -1,0 +1,196 @@
+.bechdel-charts {
+	margin: 2rem 0;
+
+	.charts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1rem;
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.chart-card {
+		background: #ffffff;
+		padding: 1.5rem;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		border: 1px solid #e1e5e9;
+
+		h3 {
+			margin: 0 0 1rem 0;
+			font-size: 1.2rem;
+			font-weight: 600;
+			color: #2c3e50;
+			text-align: center;
+			border-bottom: 2px solid #ecf0f1;
+			padding-bottom: 0.5rem;
+		}
+	}
+
+	.score-card {
+
+		.score-progress {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+
+			.score-circle {
+				position: relative;
+				width: 120px;
+				height: 120px;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+				transition: all 0.3s ease;
+
+				&.passed {
+					background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+					box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+				}
+
+				&.failed {
+					background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+					box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+				}
+
+				.score-number {
+					font-size: 2.5rem;
+					font-weight: bold;
+					line-height: 1;
+				}
+
+				.score-total {
+					font-size: 1rem;
+					opacity: 0.8;
+				}
+			}
+
+			.score-bars {
+				display: flex;
+				gap: 0.5rem;
+
+				.score-bar {
+					width: 30px;
+					height: 8px;
+					transition: all 0.3s ease;
+
+					&.passed {
+						background: linear-gradient(90deg, #2ecc71, #27ae60);
+						box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
+					}
+
+					&.not-passed {
+						background: #ecf0f1;
+					}
+				}
+			}
+		}
+
+		.score-description {
+			text-align: center;
+			margin-top: 1rem;
+			font-style: italic;
+			color: #7f8c8d;
+			font-size: 0.9rem;
+		}
+	}
+
+	.stats-card {
+
+		.stats-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+
+			.stat-item {
+				text-align: center;
+				padding: 1rem;
+				background: #f8f9fa;
+				border: 1px solid #e9ecef;
+
+				.stat-number {
+					font-size: 1.8rem;
+					font-weight: bold;
+					color: #2c3e50;
+					margin-bottom: 0.25rem;
+				}
+
+				.stat-label {
+					font-size: 0.85rem;
+					color: #6c757d;
+					text-transform: uppercase;
+					letter-spacing: 0.5px;
+				}
+			}
+		}
+	}
+
+	.custom-tooltip {
+		background: rgba(0, 0, 0, 0.8);
+		color: white;
+		padding: 0.5rem;
+		font-size: 0.9rem;
+
+		.label {
+			margin: 0;
+		}
+	}
+}
+
+// Responsive adjustments
+
+@media (max-width: 480px) {
+
+	.bechdel-charts {
+
+		.charts-grid {
+			gap: 1rem;
+		}
+
+		.chart-card {
+			padding: 1rem;
+
+			h3 {
+				font-size: 1.1rem;
+			}
+		}
+
+		.score-card {
+
+			.score-progress {
+
+				.score-circle {
+					width: 100px;
+					height: 100px;
+
+					.score-number {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+
+		.stats-card {
+
+			.stats-grid {
+				grid-template-columns: 1fr;
+				gap: 0.75rem;
+
+				.stat-item {
+					padding: 0.75rem;
+
+					.stat-number {
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}

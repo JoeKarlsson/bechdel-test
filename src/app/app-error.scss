@@ -1,0 +1,205 @@
+// App Error Fallback Styles
+$error-color: #dc3545;
+$warning-color: #ffc107;
+$success-color: #28a745;
+$info-color: #17a2b8;
+$light-gray: #f8f9fa;
+$dark-gray: #333;
+$border-color: #dee2e6;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.app-error {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	background: white;
+
+	&__container {
+		max-width: 600px;
+		width: 100%;
+		background: white;
+		padding: 3rem 2rem;
+		box-shadow: $shadow;
+		text-align: center;
+		border: 1px solid $border-color;
+	}
+
+	&__icon {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+		opacity: 0.8;
+	}
+
+	&__title {
+		font-size: 2rem;
+		font-weight: 600;
+		color: $dark-gray;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	&__message {
+		font-size: 1.1rem;
+		color: #666;
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	&__actions {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		margin-bottom: 2rem;
+		flex-wrap: wrap;
+
+		@media (max-width: 480px) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__button {
+		padding: 0.75rem 1.5rem;
+		border: none;
+		font-size: 1rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		min-width: 120px;
+
+		&--primary {
+			background: $error-color;
+			color: white;
+
+			&:hover {
+				background: darken($error-color, 10%);
+				transform: translateY(-1px);
+			}
+
+			&:focus {
+				outline: 2px solid rgba($error-color, 0.3);
+				outline-offset: 2px;
+			}
+		}
+
+		&--secondary {
+			background: transparent;
+			color: $error-color;
+			border: 2px solid $error-color;
+
+			&:hover {
+				background: $error-color;
+				color: white;
+				transform: translateY(-1px);
+			}
+
+			&:focus {
+				outline: 2px solid rgba($error-color, 0.3);
+				outline-offset: 2px;
+			}
+		}
+
+		&:active {
+			transform: translateY(0);
+		}
+	}
+
+	&__details {
+		margin-top: 2rem;
+		text-align: left;
+		border: 1px solid $border-color;
+		overflow: hidden;
+	}
+
+	&__summary {
+		padding: 1rem;
+		background: $light-gray;
+		cursor: pointer;
+		font-weight: 500;
+		color: $dark-gray;
+		border-bottom: 1px solid $border-color;
+
+		&:hover {
+			background: darken($light-gray, 5%);
+		}
+
+		&:focus {
+			outline: 2px solid rgba($info-color, 0.3);
+			outline-offset: -2px;
+		}
+	}
+
+	&__error-content {
+		padding: 1rem;
+		background: white;
+
+		pre {
+			background: #f8f9fa;
+			padding: 1rem;
+			overflow-x: auto;
+			font-size: 0.9rem;
+			line-height: 1.4;
+			color: $dark-gray;
+			border: 1px solid $border-color;
+			margin: 0;
+		}
+	}
+}
+
+// Dark mode support
+
+@media (prefers-color-scheme: dark) {
+
+	.app-error {
+		background: #1a1a1a;
+
+		&__container {
+			background: #2d2d2d;
+			border-color: #404040;
+			color: #e0e0e0;
+		}
+
+		&__title {
+			color: #e0e0e0;
+		}
+
+		&__message {
+			color: #b0b0b0;
+		}
+
+		&__summary {
+			background: #1a1a1a;
+			color: #e0e0e0;
+			border-color: #404040;
+
+			&:hover {
+				background: #333;
+			}
+		}
+
+		&__error-content {
+			background: #2d2d2d;
+
+			pre {
+				background: #1a1a1a;
+				color: #e0e0e0;
+				border-color: #404040;
+			}
+		}
+	}
+}
+
+// Reduced motion support
+
+@media (prefers-reduced-motion: reduce) {
+
+	.app-error__button {
+		transition: none;
+
+		&:hover {
+			transform: none;
+		}
+	}
+}

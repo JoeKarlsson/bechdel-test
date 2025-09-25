@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingAnimation rendering renders correctly when not visible 1`] = `null`;
+
+exports[`LoadingAnimation rendering renders correctly when visible 1`] = `
+<div
+  className="loading-animation"
+  data-testid="loading-animation"
+>
+  <div
+    className="loading-animation__container"
+  >
+    <div
+      className="loading-animation__spinner"
+    >
+      <div
+        className="film-reel"
+      >
+        <div
+          className="reel-hole"
+        />
+        <div
+          className="reel-hole"
+        />
+        <div
+          className="reel-hole"
+        />
+        <div
+          className="reel-hole"
+        />
+      </div>
+    </div>
+    <div
+      className="loading-animation__content"
+    >
+      <h3
+        className="loading-animation__title"
+      >
+        🎬 Analyzing Script...
+      </h3>
+      <p
+        className="loading-animation__message"
+      >
+        Counting female characters who actually talk to each other...
+      </p>
+      <p
+        className="loading-animation__subtext"
+      >
+        Spoiler: It's harder than finding a needle in a haystack
+      </p>
+    </div>
+    <div
+      className="loading-animation__progress"
+    >
+      <div
+        className="progress-bar"
+      >
+        <div
+          className="progress-fill"
+        />
+      </div>
+      <p
+        className="loading-animation__tip"
+      >
+        💡 
+        <strong>
+          Pro tip:
+        </strong>
+         The Bechdel Test isn't about quality, just representation!
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LoadingAnimation rendering renders with default props 1`] = `
+<div
+  className="loading-animation"
+  data-testid="loading-animation"
+>
+  <div
+    className="loading-animation__container"
+  >
+    <div
+      className="loading-animation__spinner"
+    >
+      <div
+        className="film-reel"
+      >
+        <div
+          className="reel-hole"
+        />
+        <div
+          className="reel-hole"
+        />
+        <div
+          className="reel-hole"
+        />
+        <div
+          className="reel-hole"
+        />
+      </div>
+    </div>
+    <div
+      className="loading-animation__content"
+    >
+      <h3
+        className="loading-animation__title"
+      >
+        🎬 Analyzing Script...
+      </h3>
+      <p
+        className="loading-animation__message"
+      >
+        Counting female characters who actually talk to each other...
+      </p>
+      <p
+        className="loading-animation__subtext"
+      >
+        Spoiler: It's harder than finding a needle in a haystack
+      </p>
+    </div>
+    <div
+      className="loading-animation__progress"
+    >
+      <div
+        className="progress-bar"
+      >
+        <div
+          className="progress-fill"
+        />
+      </div>
+      <p
+        className="loading-animation__tip"
+      >
+        💡 
+        <strong>
+          Pro tip:
+        </strong>
+         The Bechdel Test isn't about quality, just representation!
+      </p>
+    </div>
+  </div>
+</div>
+`;
