@@ -13,14 +13,14 @@ const EmptyFilmsState = () => (
 			<div className="empty-films__icon" aria-hidden="true">
 				🎬
 			</div>
-			<h2 className="empty-films__title">No Films Available</h2>
+			<h2 className="empty-films__title">No Movies Have Been Uploaded Yet</h2>
 			<p className="empty-films__message">
-				No films have been added yet. Be the first to upload a script and analyze it with the Bechdel Test!
+				Welcome to bechdel.io! No films have been analyzed yet. Be the first to upload a movie script and discover how it performs on the Bechdel Test.
 			</p>
 			<div className="empty-films__actions">
 				<a
 					href="/film/new"
-					className="empty-films__button"
+					className="empty-films__button empty-films__button--primary"
 					aria-label="Upload a new script to analyze"
 				>
 					Upload Your First Script

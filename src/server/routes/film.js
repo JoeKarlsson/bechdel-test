@@ -37,9 +37,6 @@ const handleError = (res, errMsg, scriptPath = null) => {
 	return res.status(500).json(response);
 };
 
-const filmFound = film => {
-	return film.length > 0;
-};
 
 const handleGetAllFilms = async (req, res) => {
 	try {
@@ -57,7 +54,8 @@ const handleGetAllFilms = async (req, res) => {
 
 		const result = await Film.listAllPaginated(page, limit);
 
-		if (!filmFound(result.films)) {
+		// Check if result is valid (not null/undefined) rather than checking if films array is empty
+		if (!result || !result.films) {
 			return handleError(res, 'No list of films returned from film.listAllPaginated()');
 		}
 		return handleResponse(res, result);

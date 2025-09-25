@@ -32,7 +32,7 @@ const FilmList = ({
 	}, []);
 
 	if (films.length === 0) {
-		return <div>No Films Have Been Added Yet</div>;
+		return null; // Let the parent component handle empty state
 	}
 	const filmListNode = films.map(filmData => {
 		return (
