@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies with legacy peer deps
-RUN npm ci --legacy-peer-deps --only=production && npm cache clean --force
+RUN npm ci --legacy-peer-deps --only=production --ignore-scripts && npm cache clean --force
 
 # Development stage
 FROM node:18-alpine AS development
