@@ -56,6 +56,7 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name]-[contenthash].css',
 			chunkFilename: '[name]-[contenthash].chunk.css',
+			ignoreOrder: true, // Disable order warnings
 		}),
 		new HtmlWebpackPlugin({
 			template: 'src/app/index.tpl.html',
@@ -133,12 +134,18 @@ module.exports = {
 			{
 				test: /(\.scss$|\.css$)/,
 				use: [
-					MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							esModule: false,
+						},
+					},
 					{
 						loader: 'css-loader',
 						options: {
 							sourceMap: false,
 							esModule: false,
+							modules: false,
 						},
 					},
 					{
