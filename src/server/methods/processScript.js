@@ -78,9 +78,16 @@ const processScript = async (scriptPath, title, processId = null, claudeApiKey =
 
 		// Use updateOrInsertFilm to replace existing films or create new ones
 		const savedFilm = await Film.updateOrInsertFilm(filmMetaData);
-		const finalFilm = await Film.findByTitle(title);
+		// Search for the film using the actual title that was saved (IMDb title if available, otherwise filename)
+		const searchTitle = metadata.title || title;
+		const finalFilm = await Film.findByTitle(searchTitle);
 
 		resetAll(scriptPath);
+
+		// Check if film was found
+		if (!finalFilm || finalFilm.length === 0) {
+			throw new Error(`Film "${searchTitle}" not found in database after saving. Searched for: "${searchTitle}", Original filename: "${title}"`);
+		}
 
 		const response = {
 			...finalFilm[0].toObject(),

@@ -2,6 +2,7 @@ const filmSchema = {
 	title: {
 		type: String,
 		required: true,
+		unique: true,
 	},
 	plot: String,
 	simplePlot: String,

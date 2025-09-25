@@ -1,0 +1,596 @@
+// Advanced Analytics Styles
+.advanced-analytics {
+	width: 100%;
+	background: #ffffff;
+	padding: var(--section-padding-y) 0;
+	border-top: 1px solid #ecf0f1;
+
+	.advanced-analytics-header {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 var(--container-padding-x);
+		margin-bottom: 2rem;
+
+		h3 {
+			font-size: 1.8rem;
+			font-weight: 600;
+			color: #2c3e50;
+			margin-bottom: 0.5rem;
+			line-height: 1.3;
+			letter-spacing: -0.02em;
+		}
+
+		.analysis-timestamp {
+			font-size: 0.9rem;
+			color: #6c757d;
+			font-style: italic;
+		}
+
+		.no-data-message {
+			font-size: 1rem;
+			color: #6c757d;
+			background: #f8f9fa;
+			padding: 1.5rem;
+			border-radius: 8px;
+			border: 1px solid #e1e5e9;
+		}
+
+		@media (max-width: 768px) {
+			padding: 0 var(--mobile-container-padding-x);
+
+			h3 {
+				font-size: 1.6rem;
+			}
+		}
+
+		@media (max-width: 480px) {
+			h3 {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.analytics-grid {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 var(--container-padding-x);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 1.5rem;
+
+		@media (max-width: 768px) {
+			padding: 0 var(--mobile-container-padding-x);
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+	}
+
+	.analysis-card {
+		background: #ffffff;
+		border: 1px solid #e1e5e9;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		overflow: hidden;
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		.card-header {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 1.25rem 1.5rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			h4 {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin: 0;
+				line-height: 1.3;
+			}
+
+			.card-icon {
+				font-size: 1.2rem;
+				opacity: 0.9;
+			}
+		}
+
+		.card-content {
+			padding: 1.5rem;
+
+			.no-data {
+				color: #6c757d;
+				font-style: italic;
+				text-align: center;
+				padding: 1rem;
+			}
+
+			.score-section {
+				margin-bottom: 1.5rem;
+				text-align: center;
+
+				.score-display {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 0.5rem;
+
+					.score-circle {
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: white;
+						font-weight: 600;
+						font-size: 1rem;
+						box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+					}
+
+					.score-label {
+						font-size: 0.9rem;
+						font-weight: 500;
+						color: #495057;
+					}
+				}
+			}
+
+			.analysis-section {
+				margin-bottom: 1.5rem;
+
+				h5 {
+					font-size: 1rem;
+					font-weight: 600;
+					color: #2c3e50;
+					margin-bottom: 0.75rem;
+					line-height: 1.4;
+				}
+
+				.analysis-text {
+					font-size: 0.9rem;
+					line-height: 1.6;
+					color: #495057;
+					margin: 0;
+				}
+			}
+
+			.recommendations-section {
+				background: #f8f9fa;
+				padding: 1rem;
+				border-radius: 8px;
+				border-left: 4px solid #667eea;
+
+				h5 {
+					font-size: 1rem;
+					font-weight: 600;
+					color: #2c3e50;
+					margin-bottom: 0.75rem;
+					line-height: 1.4;
+				}
+
+				.recommendations-text {
+					font-size: 0.9rem;
+					line-height: 1.6;
+					color: #495057;
+					margin: 0;
+				}
+			}
+
+			.error-section {
+				background: #f8d7da;
+				padding: 1rem;
+				border-radius: 8px;
+				border-left: 4px solid #dc3545;
+
+				.error-message {
+					font-size: 0.9rem;
+					line-height: 1.6;
+					color: #721c24;
+					margin: 0;
+					font-weight: 500;
+				}
+			}
+
+			.raw-response-section {
+				background: #fff3cd;
+				padding: 1rem;
+				border-radius: 8px;
+				border-left: 4px solid #ffc107;
+
+				h5 {
+					font-size: 1rem;
+					font-weight: 600;
+					color: #856404;
+					margin-bottom: 0.75rem;
+					line-height: 1.4;
+				}
+
+				.raw-response-content {
+					.analysis-text {
+						font-size: 0.9rem;
+						line-height: 1.6;
+						color: #856404;
+						margin: 0;
+						white-space: pre-wrap;
+						word-wrap: break-word;
+					}
+				}
+			}
+
+			// Specific component styles
+			.moment-list, .pattern-list, .gap-list, .tokenism-list, .bias-list, .microaggression-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+
+				.moment-item, .pattern-item, .gap-item, .tokenism-item, .bias-item, .microaggression-item {
+					display: flex;
+					align-items: flex-start;
+					gap: 0.5rem;
+					padding: 0.5rem 0;
+					font-size: 0.9rem;
+					line-height: 1.5;
+					color: #495057;
+
+					&.reactive {
+						opacity: 0.8;
+					}
+
+					.moment-icon, .pattern-icon, .gap-icon, .tokenism-icon, .bias-icon, .microaggression-icon {
+						font-size: 0.8rem;
+						margin-top: 0.1rem;
+						flex-shrink: 0;
+					}
+				}
+			}
+
+			.stereotype-tags, .topic-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+
+				.stereotype-tag, .topic-tag {
+					background: #e9ecef;
+					color: #495057;
+					padding: 0.25rem 0.75rem;
+					border-radius: 20px;
+					font-size: 0.8rem;
+					font-weight: 500;
+
+					&.male {
+						background: #d1ecf1;
+						color: #0c5460;
+					}
+
+					&.female {
+						background: #f8d7da;
+						color: #721c24;
+					}
+				}
+			}
+
+			.archetype-list {
+				.archetype-item {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0.5rem 0;
+					border-bottom: 1px solid #e1e5e9;
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+					.character-name {
+						font-weight: 500;
+						color: #2c3e50;
+					}
+
+					.archetype-type {
+						font-size: 0.8rem;
+						color: #6c757d;
+						background: #f8f9fa;
+						padding: 0.25rem 0.5rem;
+						border-radius: 4px;
+					}
+				}
+			}
+
+			// Comparison layouts
+			.sentiment-comparison, .topic-comparison, .vocabulary-comparison, .character-development-comparison {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+
+				@media (max-width: 768px) {
+					grid-template-columns: 1fr;
+				}
+
+				.sentiment-section, .topic-section, .vocabulary-section, .character-section {
+					background: #f8f9fa;
+					padding: 1rem;
+					border-radius: 8px;
+
+					h5 {
+						font-size: 0.9rem;
+						font-weight: 600;
+						color: #2c3e50;
+						margin-bottom: 0.5rem;
+					}
+
+					.sentiment-content, .topic-content, .vocabulary-content, .character-content {
+						.analysis-text {
+							font-size: 0.85rem;
+							line-height: 1.5;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Dark mode styles
+	body.dark-mode & {
+		background: #1a1a1a;
+		border-top-color: #333;
+
+		.advanced-analytics-header {
+			h3 {
+				color: #f0f0f0;
+			}
+
+			.analysis-timestamp {
+				color: #a0a0a0;
+			}
+
+			.no-data-message {
+				background: #2d2d2d;
+				color: #a0a0a0;
+				border-color: #444;
+			}
+		}
+
+		.analysis-card {
+			background: #2d2d2d;
+			border-color: #444;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+			.card-header {
+				background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+			}
+
+			.card-content {
+				.no-data {
+					color: #a0a0a0;
+				}
+
+				.score-section {
+					.score-label {
+						color: #e0e0e0;
+					}
+				}
+
+				.analysis-section {
+					h5 {
+						color: #f0f0f0;
+					}
+
+					.analysis-text {
+						color: #e0e0e0;
+					}
+				}
+
+				.recommendations-section {
+					background: #333;
+					border-left-color: #667eea;
+
+					h5 {
+						color: #f0f0f0;
+					}
+
+					.recommendations-text {
+						color: #e0e0e0;
+					}
+				}
+
+				.error-section {
+					background: #4a1a1a;
+					border-left-color: #dc3545;
+
+					.error-message {
+						color: #f8d7da;
+					}
+				}
+
+				.raw-response-section {
+					background: #4a3a1a;
+					border-left-color: #ffc107;
+
+					h5 {
+						color: #fff3cd;
+					}
+
+					.raw-response-content {
+						.analysis-text {
+							color: #fff3cd;
+						}
+					}
+				}
+
+				.moment-item, .pattern-item, .gap-item, .tokenism-item, .bias-item, .microaggression-item {
+					color: #e0e0e0;
+				}
+
+				.stereotype-tag, .topic-tag {
+					background: #444;
+					color: #e0e0e0;
+
+					&.male {
+						background: #1a365d;
+						color: #90cdf4;
+					}
+
+					&.female {
+						background: #742a2a;
+						color: #feb2b2;
+					}
+				}
+
+				.archetype-item {
+					border-bottom-color: #444;
+
+					.character-name {
+						color: #f0f0f0;
+					}
+
+					.archetype-type {
+						background: #333;
+						color: #a0a0a0;
+					}
+				}
+
+				.sentiment-section, .topic-section, .vocabulary-section, .character-section {
+					background: #333;
+
+					h5 {
+						color: #f0f0f0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.advanced-analytics {
+		padding: 1.5rem 0;
+
+		.analytics-grid {
+			.analysis-card {
+				.card-header {
+					padding: 1rem 1.25rem;
+
+					h4 {
+						font-size: 1rem;
+					}
+
+					.card-icon {
+						font-size: 1.1rem;
+					}
+				}
+
+				.card-content {
+					padding: 1.25rem;
+
+					.score-section {
+						.score-display {
+							.score-circle {
+								width: 50px;
+								height: 50px;
+								font-size: 0.9rem;
+							}
+
+							.score-label {
+								font-size: 0.8rem;
+							}
+						}
+					}
+
+					.analysis-section {
+						margin-bottom: 1.25rem;
+
+						h5 {
+							font-size: 0.95rem;
+						}
+
+						.analysis-text {
+							font-size: 0.85rem;
+						}
+					}
+
+					.recommendations-section {
+						padding: 0.875rem;
+
+						h5 {
+							font-size: 0.95rem;
+						}
+
+						.recommendations-text {
+							font-size: 0.85rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.advanced-analytics {
+		padding: 1rem 0;
+
+		.analytics-grid {
+			.analysis-card {
+				.card-header {
+					padding: 0.875rem 1rem;
+
+					h4 {
+						font-size: 0.95rem;
+					}
+
+					.card-icon {
+						font-size: 1rem;
+					}
+				}
+
+				.card-content {
+					padding: 1rem;
+
+					.score-section {
+						.score-display {
+							.score-circle {
+								width: 45px;
+								height: 45px;
+								font-size: 0.85rem;
+							}
+
+							.score-label {
+								font-size: 0.75rem;
+							}
+						}
+					}
+
+					.analysis-section {
+						margin-bottom: 1rem;
+
+						h5 {
+							font-size: 0.9rem;
+						}
+
+						.analysis-text {
+							font-size: 0.8rem;
+						}
+					}
+
+					.recommendations-section {
+						padding: 0.75rem;
+
+						h5 {
+							font-size: 0.9rem;
+						}
+
+						.recommendations-text {
+							font-size: 0.8rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -6,6 +6,7 @@ const filmData = require('../methods/getFilmData/FilmData');
 const script = require('../methods/script');
 const processScript = require('../methods/processScript');
 const cleanupManager = require('../helper/cleanupManager');
+const meta = require('../helper/meta');
 
 const router = express.Router();
 const upload = multer({ dest: 'uploads/' });
@@ -88,8 +89,8 @@ const handlePostFilm = async (req, res) => {
 	const title = extractTitle(file);
 	const scriptPath = file.path;
 
-	// Extract Claude API key from request body or headers
-	const claudeApiKey = req.body.claudeApiKey || req.headers['x-claude-api-key'];
+	// Extract Claude API key from request body, headers, or environment
+	const claudeApiKey = req.body.claudeApiKey || req.headers['x-claude-api-key'] || meta.CLAUDE_API_KEY;
 
 	try {
 		console.log(`Starting film processing for: "${title}"`);
@@ -164,6 +165,18 @@ const handleForceCleanup = async (req, res) => {
 	}
 };
 
+const handleCleanupDuplicateTitles = async (req, res) => {
+	try {
+		const result = await Film.cleanupDuplicateTitles();
+		return handleResponse(res, {
+			success: true,
+			...result
+		});
+	} catch (err) {
+		return handleError(res, err);
+	}
+};
+
 const handleGetProcessResult = async (req, res) => {
 	try {
 		const { processId } = req.params;
@@ -220,6 +233,10 @@ router
 router
 	.route('/cleanup/force')
 	.post(handleForceCleanup);
+
+router
+	.route('/cleanup/duplicates')
+	.post(handleCleanupDuplicateTitles);
 
 router
 	.route('/process/:processId')

@@ -4,6 +4,9 @@
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	border: 1px solid #e1e5e9;
 	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 
 	.info-section {
 		display: grid;
@@ -88,10 +91,18 @@
 
 // Responsive adjustments
 
+@media (max-width: 768px) {
+
+	.film-info-card {
+		height: auto;
+	}
+}
+
 @media (max-width: 480px) {
 
 	.film-info-card {
 		padding: 1.5rem;
+		height: auto;
 
 		.info-section {
 			gap: 0.75rem;
