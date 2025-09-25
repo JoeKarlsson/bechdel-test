@@ -9,7 +9,19 @@ const cleanupManager = require('../helper/cleanupManager');
 const meta = require('../helper/meta');
 
 const router = express.Router();
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({
+	dest: 'uploads/',
+	limits: {
+		fileSize: 10 * 1024 * 1024, // 10MB limit
+	},
+	fileFilter: (req, file, cb) => {
+		// Check file extension
+		if (path.extname(file.originalname) !== '.txt') {
+			return cb(new Error('Only .txt files are allowed'), false);
+		}
+		cb(null, true);
+	}
+});
 
 const isNotCorrectFileFormat = file => {
 	return path.extname(file.originalname) !== '.txt';
@@ -75,6 +87,11 @@ const extractTitle = file => {
 
 const handlePostFilm = async (req, res) => {
 	const { file } = req;
+
+	// Check for multer errors
+	if (req.fileValidationError) {
+		return handleError(res, req.fileValidationError);
+	}
 
 	if (fileWasNotUploadedCorrectly(file)) {
 		return handleError(res, 'No script submitted, please try again');
@@ -222,7 +239,18 @@ const handleGetProcessResult = async (req, res) => {
 router
 	.route('/')
 	.get(handleGetAllFilms)
-	.post(upload.single('script'), handlePostFilm);
+	.post(upload.single('script'), (err, req, res, next) => {
+		if (err instanceof multer.MulterError) {
+			if (err.code === 'LIMIT_FILE_SIZE') {
+				return handleError(res, 'File too large. Maximum size is 10MB.');
+			}
+			return handleError(res, `Upload error: ${err.message}`);
+		}
+		if (err) {
+			return handleError(res, err.message);
+		}
+		next();
+	}, handlePostFilm);
 
 router
 	.route('/cleanup/status')
