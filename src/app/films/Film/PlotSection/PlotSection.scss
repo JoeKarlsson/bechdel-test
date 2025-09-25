@@ -1,0 +1,103 @@
+.plot-section {
+	background: #ffffff;
+	padding: 2rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border: 1px solid #e1e5e9;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	.plot-header {
+		margin-bottom: 1.5rem;
+		border-bottom: 2px solid #ecf0f1;
+		padding-bottom: 1rem;
+
+		h3 {
+			margin: 0;
+			font-size: 1.6rem;
+			font-weight: 600;
+			color: #2c3e50;
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+
+			.plot-icon {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.plot-content {
+		flex: 1;
+		overflow-y: auto;
+
+		p {
+			margin: 0;
+			font-size: 1.4rem;
+			line-height: 1.7;
+			color: #495057;
+			text-align: justify;
+			font-family: 'Georgia', serif;
+		}
+	}
+}
+
+// Responsive adjustments
+
+@media (max-width: 768px) {
+
+	.plot-section {
+		padding: 1.5rem;
+		height: auto;
+
+		.plot-header {
+
+			h3 {
+				font-size: 1.5rem;
+			}
+		}
+
+		.plot-content {
+			flex: none;
+			overflow-y: visible;
+
+			p {
+				font-size: 1.3rem;
+				line-height: 1.6;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+
+	.plot-section {
+		padding: 1rem;
+		height: auto;
+
+		.plot-header {
+			margin-bottom: 1rem;
+			padding-bottom: 0.75rem;
+
+			h3 {
+				font-size: 1.4rem;
+				gap: 0.5rem;
+
+				.plot-icon {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		.plot-content {
+			flex: none;
+			overflow-y: visible;
+
+			p {
+				font-size: 1.2rem;
+				line-height: 1.5;
+			}
+		}
+	}
+}

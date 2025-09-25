@@ -1,0 +1,586 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Api Docs Page rendering match the snapshot 1`] = `
+<div
+  class="api-docs"
+>
+  <div
+    class="container"
+  >
+    <header
+      class="api-docs-header"
+    >
+      <h1>
+        bechdel.io API Documentation
+      </h1>
+      <p
+        class="api-docs-subtitle"
+      >
+        RESTful API for analyzing movie scripts with the Bechdel Test. Upload scripts, retrieve analysis results, and explore feminist film data.
+      </p>
+      <div
+        class="api-info"
+      >
+        <div
+          class="api-info-item"
+        >
+          <strong>
+            Base URL:
+          </strong>
+           
+          <code>
+            https://bechdel.io
+          </code>
+        </div>
+        <div
+          class="api-info-item"
+        >
+          <strong>
+            Content Type:
+          </strong>
+           
+          <code>
+            application/json
+          </code>
+        </div>
+        <div
+          class="api-info-item"
+        >
+          <strong>
+            Authentication:
+          </strong>
+           None required
+        </div>
+      </div>
+    </header>
+    <div
+      class="api-docs-content"
+    >
+      <nav
+        class="api-docs-nav"
+      >
+        <h3>
+          Endpoints
+        </h3>
+        <ul>
+          <li>
+            <button
+              class="nav-item active"
+            >
+              <span
+                class="method-badge"
+                style="background-color: rgb(97, 175, 254);"
+              >
+                GET
+              </span>
+              <span
+                class="endpoint-path"
+              >
+                /api/film
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="nav-item "
+            >
+              <span
+                class="method-badge"
+                style="background-color: rgb(97, 175, 254);"
+              >
+                GET
+              </span>
+              <span
+                class="endpoint-path"
+              >
+                /api/film/:id
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="nav-item "
+            >
+              <span
+                class="method-badge"
+                style="background-color: rgb(73, 204, 144);"
+              >
+                POST
+              </span>
+              <span
+                class="endpoint-path"
+              >
+                /api/film
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="nav-item "
+            >
+              <span
+                class="method-badge"
+                style="background-color: rgb(249, 62, 62);"
+              >
+                DELETE
+              </span>
+              <span
+                class="endpoint-path"
+              >
+                /api/film/:id
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="nav-item "
+            >
+              <span
+                class="method-badge"
+                style="background-color: rgb(97, 175, 254);"
+              >
+                GET
+              </span>
+              <span
+                class="endpoint-path"
+              >
+                /health
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <main
+        class="api-docs-main"
+      >
+        <div
+          class="endpoint-details"
+        >
+          <div
+            class="endpoint-header"
+          >
+            <div
+              class="endpoint-title"
+            >
+              <span
+                class="method-badge large"
+                style="background-color: rgb(97, 175, 254);"
+              >
+                GET
+              </span>
+              <h2>
+                Get All Films
+              </h2>
+            </div>
+            <code
+              class="endpoint-url"
+            >
+              /api/film
+            </code>
+          </div>
+          <div
+            class="endpoint-description"
+          >
+            <p>
+              Retrieve a list of all films in the database with their Bechdel Test results.
+            </p>
+          </div>
+          <section
+            class="request-section"
+          >
+            <h3>
+              Request
+            </h3>
+            <div
+              class="code-block"
+            >
+              <div
+                class="code-header"
+              >
+                <span
+                  class="code-label"
+                >
+                  Method
+                </span>
+                <code>
+                  GET
+                </code>
+              </div>
+              <div
+                class="code-header"
+              >
+                <span
+                  class="code-label"
+                >
+                  URL
+                </span>
+                <code>
+                  /api/film
+                </code>
+              </div>
+              <div
+                class="code-header"
+              >
+                <span
+                  class="code-label"
+                >
+                  Headers
+                </span>
+                <pre>
+                  <code>
+                    {
+  "Content-Type": "application/json"
+}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </section>
+          <section
+            class="response-section"
+          >
+            <h3>
+              Response
+            </h3>
+            <div
+              class="response-example"
+            >
+              <h4>
+                Success Response
+              </h4>
+              <div
+                class="code-block"
+              >
+                <pre>
+                  <code>
+                    [
+  {
+    "_id": "507f1f77bcf86cd799439011",
+    "title": "American Hustle",
+    "plot": "A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser...",
+    "year": 2013,
+    "actors": [
+      {
+        "actorName": "Christian Bale",
+        "character": "Irving Rosenfeld",
+        "actorActress": "male"
+      },
+      {
+        "actorName": "Amy Adams",
+        "character": "Sydney Prosser",
+        "actorActress": "female"
+      }
+    ],
+    "directors": [
+      {
+        "name": "David O. Russell",
+        "id": "nm0000756"
+      }
+    ],
+    "writers": [
+      {
+        "name": "Eric Warren Singer",
+        "id": "nm0801402"
+      }
+    ],
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Drama"
+    ],
+    "bechdelResults": {
+      "pass": true,
+      "bechdelScore": 3,
+      "numScenesPass": 5,
+      "numScenesDontPass": 2,
+      "numOfFemalesChars": 8,
+      "numOfMaleChars": 12,
+      "numOfFemalesCharsWithDialogue": 6,
+      "numOfMaleCharsWithDialogue": 10,
+      "totalLinesFemaleDialogue": 245,
+      "totalLinesMaleDialogue": 312,
+      "scenesThatPass": [
+        "Scene 1",
+        "Scene 3",
+        "Scene 5",
+        "Scene 7",
+        "Scene 9"
+      ]
+    },
+    "createdAt": "2023-01-15T10:30:00.000Z"
+  }
+]
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div
+              class="response-example"
+            >
+              <h4>
+                Error Response
+              </h4>
+              <div
+                class="code-block error"
+              >
+                <pre>
+                  <code>
+                    {
+  "success": false,
+  "error": "No list of films returned from film.listAll()"
+}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </section>
+          <section
+            class="status-codes-section"
+          >
+            <h3>
+              Status Codes
+            </h3>
+            <div
+              class="status-codes"
+            >
+              <div
+                class="status-code"
+              >
+                <span
+                  class="status-number"
+                >
+                  200
+                </span>
+                <span
+                  class="status-description"
+                >
+                  Success - Returns array of films
+                </span>
+              </div>
+              <div
+                class="status-code"
+              >
+                <span
+                  class="status-number"
+                >
+                  500
+                </span>
+                <span
+                  class="status-description"
+                >
+                  Server Error - Database connection issue
+                </span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <section
+      class="data-models"
+    >
+      <h2>
+        Data Models
+      </h2>
+      <div
+        class="model-section"
+      >
+        <h3>
+          Film Object
+        </h3>
+        <div
+          class="model-description"
+        >
+          <p>
+            Represents a movie with its metadata and Bechdel Test analysis results.
+          </p>
+        </div>
+        <div
+          class="code-block"
+        >
+          <pre>
+            <code>
+              {
+  "_id": "string (MongoDB ObjectId)",
+  "title": "string (required)",
+  "plot": "string",
+  "simplePlot": "string",
+  "year": "number",
+  "releaseDate": "string (ISO date)",
+  "actors": [
+    {
+      "actorName": "string",
+      "character": "string",
+      "actorActress": "string (male/female)"
+    }
+  ],
+  "directors": [
+    {
+      "name": "string",
+      "id": "string"
+    }
+  ],
+  "writers": [
+    {
+      "name": "string",
+      "id": "string"
+    }
+  ],
+  "genres": [
+    "string"
+  ],
+  "rated": "string",
+  "rating": "string",
+  "metascore": "number",
+  "urlPoster": "string (URL)",
+  "idIMDB": "string",
+  "urlIMDB": "string (URL)",
+  "bechdelResults": {
+    "pass": "boolean",
+    "bechdelScore": "number (0-3)",
+    "numScenesPass": "number",
+    "numScenesDontPass": "number",
+    "numOfFemalesChars": "number",
+    "numOfMaleChars": "number",
+    "numOfFemalesCharsWithDialogue": "number",
+    "numOfMaleCharsWithDialogue": "number",
+    "totalLinesFemaleDialogue": "number",
+    "totalLinesMaleDialogue": "number",
+    "scenesThatPass": [
+      "string"
+    ]
+  },
+  "images": {
+    "backdrop": "string (URL)",
+    "poster": "string (URL)"
+  },
+  "createdAt": "string (ISO date)",
+  "dateUploaded": "string (ISO date)"
+}
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div
+        class="model-section"
+      >
+        <h3>
+          Bechdel Test Results
+        </h3>
+        <div
+          class="model-description"
+        >
+          <p>
+            The Bechdel Test analysis results for a film. The test passes if:
+          </p>
+          <ol>
+            <li>
+              The film has at least two named female characters
+            </li>
+            <li>
+              These characters have at least one conversation
+            </li>
+            <li>
+              The conversation is about something other than a man
+            </li>
+          </ol>
+        </div>
+        <div
+          class="code-block"
+        >
+          <pre>
+            <code>
+              {
+  "pass": "boolean - Whether the film passes the Bechdel Test",
+  "bechdelScore": "number - Score from 0-3 based on criteria met",
+  "numScenesPass": "number - Number of scenes that pass the test",
+  "numScenesDontPass": "number - Number of scenes that fail the test",
+  "numOfFemalesChars": "number - Total female characters in the film",
+  "numOfMaleChars": "number - Total male characters in the film",
+  "numOfFemalesCharsWithDialogue": "number - Female characters with speaking roles",
+  "numOfMaleCharsWithDialogue": "number - Male characters with speaking roles",
+  "totalLinesFemaleDialogue": "number - Total lines spoken by female characters",
+  "totalLinesMaleDialogue": "number - Total lines spoken by male characters",
+  "scenesThatPass": "array - List of scene descriptions that pass the test"
+}
+            </code>
+          </pre>
+        </div>
+      </div>
+    </section>
+    <section
+      class="error-handling"
+    >
+      <h2>
+        Error Handling
+      </h2>
+      <p>
+        The API uses standard HTTP status codes to indicate success or failure. All error responses follow a consistent format:
+      </p>
+      <div
+        class="code-block error"
+      >
+        <pre>
+          <code>
+            {
+  "success": false,
+  "error": "Error message describing what went wrong"
+}
+          </code>
+        </pre>
+      </div>
+      <h3>
+        Common Error Scenarios
+      </h3>
+      <ul>
+        <li>
+          <strong>
+            500 Internal Server Error:
+          </strong>
+           Database connection issues, file processing errors
+        </li>
+        <li>
+          <strong>
+            400 Bad Request:
+          </strong>
+           Invalid file format (only .txt files accepted)
+        </li>
+        <li>
+          <strong>
+            404 Not Found:
+          </strong>
+           Film ID not found in database
+        </li>
+      </ul>
+    </section>
+    <section
+      class="rate-limiting"
+    >
+      <h2>
+        Rate Limiting
+      </h2>
+      <p>
+        Currently, there are no rate limits imposed on the API. However, we reserve the right to implement rate limiting in the future to ensure fair usage for all users.
+      </p>
+    </section>
+    <section
+      class="support"
+    >
+      <h2>
+        Support
+      </h2>
+      <p>
+        For questions, bug reports, or feature requests, please visit our
+        <a
+          href="https://github.com/JoeKarlsson/bechdel-test"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+           GitHub repository
+        </a>
+        .
+      </p>
+    </section>
+  </div>
+</div>
+`;

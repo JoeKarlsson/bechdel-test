@@ -1,0 +1,29 @@
+a {
+	text-decoration: none;
+}
+
+.PrimaryLayout {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1;
+}
+
+.page-loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	padding: 2rem;
+	text-align: center;
+	
+	.page-loading__text {
+		margin-top: 1rem;
+		font-size: 1.2rem;
+		color: #666;
+	}
+}

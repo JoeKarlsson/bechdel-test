@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 12.9.1
+notifications:
+  email: false
+after_success: npm run coverage
+deploy:
+  provider: heroku
+  app: bechdel-prod
+  api_key:
+    secure: Px66UeCWVXAtC3IDbjwZ77StPzfCyCfMu3qrwSFCEcZWnqzKeDibRltKj/oAGgbeZb+ELg+357v7XZy8FOMaPffg5t5nB/UbGuYm+XliG8/1ZCHb4wvbQoNHGMJiQVFw8w2EavtbdVLUL7QKur2NWwoJnCGALpjLZeQr78GHKxX7H7PATilw0xuOv77jNRdluqSsG3CsWNdRb1avzl+cQfvHf45ZNNdWP4Po2zBw9aUaYPzkNtP92qazTEFAGap1fgtve4Y1fNRAS2MHumUnx+kzX9MFPoKeyGCnivda0ky0KcgMfegXSovQDTYitV1LB0BIwc2wCnwljOd+h3wNXnb+cowly+p6rE7HbxAblN6WPY3E7S4GdMgXDZG/oD384Yaqe9h+NbfrB/QqBpkvJlxDnzcpDXIbQCj02zwJ6RXnCaVue9q1hXzcqstKBQxYJE2VyQPBvDKvcySwdKpyTvJl+lwTNXgo4wuVv2hdSgpOjhqeyGPa/qgtqYPEkwLIt+bm25zTCk8Je1cnjYk37WmCJL88GSDz/d8jywrXJwmFwnOwK1JA/M9LfoOZKgan0tWgxWLiJZI9WWXh1SE99cL9Z/JReSNIrQAg1AYlCkk2n6iIyIVeaBQZqb+QwbJEer2QRybsQ0AdlzjMn07qeLRTDqzYVE0z1XEXRlYMKNE=

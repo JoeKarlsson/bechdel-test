@@ -1,0 +1,123 @@
+.film-info-card {
+	background: #ffffff;
+	padding: 2rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border: 1px solid #e1e5e9;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	.info-section {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+	}
+
+	.info-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1rem;
+		background: #f8f9fa;
+		border-left: 4px solid #667eea;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background: #e9ecef;
+			border-left-color: #5a67d8;
+		}
+	}
+
+	.info-label {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-weight: 600;
+		color: #2c3e50;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+
+		.info-icon {
+			font-size: 1.3rem;
+		}
+	}
+
+	.info-value {
+		color: #495057;
+		font-size: 1.2rem;
+		line-height: 1.4;
+
+		.rating-badge {
+			display: inline-block;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 0.25rem 0.75rem;
+			font-weight: 600;
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.imdb-link {
+			color: #667eea;
+			text-decoration: none;
+			font-weight: 500;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: #5a67d8;
+				text-decoration: underline;
+			}
+		}
+
+		.upload-date {
+			color: #6c757d;
+			font-weight: 500;
+			font-size: 0.95rem;
+			font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+			background: #e9ecef;
+			padding: 0.25rem 0.5rem;
+			display: inline-block;
+		}
+	}
+}
+
+// Responsive adjustments
+
+@media (max-width: 768px) {
+
+	.film-info-card {
+		height: auto;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.film-info-card {
+		padding: 1.5rem;
+		height: auto;
+
+		.info-section {
+			gap: 0.75rem;
+		}
+
+		.info-item {
+			padding: 0.75rem;
+
+			.info-label {
+				font-size: 1rem;
+			}
+
+			.info-value {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}

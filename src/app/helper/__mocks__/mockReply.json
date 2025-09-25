@@ -1,0 +1,72 @@
+[
+	{
+		"_id": "507f1f77bcf86cd799439011",
+		"title": "Test Movie 1",
+		"plot": "A test movie plot",
+		"directors": [
+			{
+				"name": "Test Director"
+			}
+		],
+		"writers": [
+			{
+				"name": "Test Writer"
+			}
+		],
+		"genres": ["Drama", "Comedy"],
+		"rated": "PG-13",
+		"idIMDB": "tt1234567",
+		"images": {
+			"poster": "https://example.com/poster.jpg",
+			"backdrop": "https://example.com/backdrop.jpg"
+		},
+		"bechdelResults": {
+			"pass": true,
+			"bechdelScore": 2,
+			"numScenesPass": 15,
+			"scenesThatPass": ["Scene 1", "Scene 2"],
+			"numScenesDontPass": 10,
+			"numOfFemalesChars": 5,
+			"numOfMaleChars": 8,
+			"numOfFemalesCharsWithDialogue": 3,
+			"numOfMaleCharsWithDialogue": 6,
+			"totalLinesFemaleDialogue": 150,
+			"totalLinesMaleDialogue": 200
+		}
+	},
+	{
+		"_id": "507f1f77bcf86cd799439012",
+		"title": "Test Movie 2",
+		"plot": "Another test movie plot",
+		"directors": [
+			{
+				"name": "Another Director"
+			}
+		],
+		"writers": [
+			{
+				"name": "Another Writer"
+			}
+		],
+		"genres": ["Action", "Thriller"],
+		"rated": "R",
+		"idIMDB": "tt1234568",
+		"images": {
+			"poster": "https://example.com/poster2.jpg",
+			"backdrop": "https://example.com/backdrop2.jpg"
+		},
+		"bechdelResults": {
+			"pass": false,
+			"bechdelScore": 1,
+			"numScenesPass": 5,
+			"scenesThatPass": ["Scene 3"],
+			"numScenesDontPass": 20,
+			"numOfFemalesChars": 2,
+			"numOfMaleChars": 10,
+			"numOfFemalesCharsWithDialogue": 1,
+			"numOfMaleCharsWithDialogue": 8,
+			"totalLinesFemaleDialogue": 50,
+			"totalLinesMaleDialogue": 300
+		}
+	}
+]

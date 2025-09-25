@@ -1,0 +1,190 @@
+// Notification Component Styles
+$notification-bg-light: #ffffff;
+$notification-bg-dark: #2d3748;
+$notification-border-radius: 8px;
+$notification-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+$notification-transition: all 0.3s ease-in-out;
+
+// Color variants
+$success-color: #10b981;
+$error-color: #ef4444;
+$warning-color: #f59e0b;
+$info-color: #3b82f6;
+
+.notification {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	max-width: 400px;
+	min-width: 300px;
+	background: $notification-bg-light;
+	border-radius: $notification-border-radius;
+	box-shadow: $notification-shadow;
+	transform: translateX(0);
+	opacity: 1;
+	transition: $notification-transition;
+
+	&--exiting {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	&--success {
+		border-left: 4px solid $success-color;
+	}
+
+	&--error {
+		border-left: 4px solid $error-color;
+	}
+
+	&--warning {
+		border-left: 4px solid $warning-color;
+	}
+
+	&--info {
+		border-left: 4px solid $info-color;
+	}
+
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		padding: 16px;
+		gap: 12px;
+	}
+
+	&__icon {
+		font-size: 20px;
+		line-height: 1;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
+
+	&__text {
+		flex: 1;
+		min-width: 0;
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+		margin: 0 0 4px 0;
+		color: #1f2937;
+		line-height: 1.25;
+	}
+
+	&__message {
+		font-size: 14px;
+		margin: 0;
+		color: #6b7280;
+		line-height: 1.4;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-shrink: 0;
+	}
+
+	&__action {
+		background: none;
+		border: none;
+		color: #3b82f6;
+		font-size: 14px;
+		font-weight: 500;
+		cursor: pointer;
+		padding: 4px 8px;
+		border-radius: 4px;
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: #f3f4f6;
+		}
+
+		&:focus {
+			outline: 2px solid #3b82f6;
+			outline-offset: 2px;
+		}
+	}
+
+	&__close {
+		background: none;
+		border: none;
+		color: #9ca3af;
+		font-size: 20px;
+		line-height: 1;
+		cursor: pointer;
+		padding: 4px;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			background-color: #f3f4f6;
+			color: #6b7280;
+		}
+
+		&:focus {
+			outline: 2px solid #3b82f6;
+			outline-offset: 2px;
+		}
+	}
+
+	// Dark mode support
+
+	@media (prefers-color-scheme: dark) {
+		background: $notification-bg-dark;
+
+		&__title {
+			color: #f9fafb;
+		}
+
+		&__message {
+			color: #d1d5db;
+		}
+
+		&__action {
+			color: #60a5fa;
+
+			&:hover {
+				background-color: #374151;
+			}
+		}
+
+		&__close {
+			color: #9ca3af;
+
+			&:hover {
+				background-color: #374151;
+				color: #d1d5db;
+			}
+		}
+	}
+
+	// Responsive design
+
+	@media (max-width: 480px) {
+		top: 10px;
+		right: 10px;
+		left: 10px;
+		max-width: none;
+		min-width: auto;
+
+		&__content {
+			padding: 12px;
+		}
+
+		&__title {
+			font-size: 15px;
+		}
+
+		&__message {
+			font-size: 13px;
+		}
+	}
+}

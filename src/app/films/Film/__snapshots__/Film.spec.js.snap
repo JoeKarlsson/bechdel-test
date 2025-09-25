@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film rendering initial state should render data state correctly 1`] = `
+<div
+  className="filmInfo"
+>
+  <div
+    aria-live="polite"
+    className="error-boundary"
+    role="alert"
+  >
+    <div
+      className="error-boundary__container"
+    >
+      <div
+        aria-hidden="true"
+        className="error-boundary__icon"
+      >
+        ⚠️
+      </div>
+      <h1
+        className="error-boundary__title"
+      >
+        Oops! Something went wrong
+      </h1>
+      <p
+        className="error-boundary__message"
+      >
+        We're sorry, but something unexpected happened. This might be a temporary issue.
+      </p>
+      <div
+        className="error-boundary__actions"
+      >
+        <button
+          aria-label="Try again to reload the page"
+          className="error-boundary__button error-boundary__button--primary"
+          onClick={[Function]}
+          type="button"
+        >
+          Try Again
+        </button>
+        <button
+          aria-label="Report this error to help us improve"
+          className="error-boundary__button error-boundary__button--secondary"
+          onClick={[Function]}
+          type="button"
+        >
+          Report Error
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Film rendering initial state should render error state correctly 1`] = `
+<div>
+  Im sorry! Please try again.
+</div>
+`;
+
+exports[`Film rendering initial state should render zero state correctly 1`] = `
+<div>
+  <span
+    className="Loader"
+  >
+    <div
+      className="Loader_indicator"
+    >
+      <h1>
+        <span>
+          Destroying the Patriarchy
+        </span>
+        <span
+          className="Loader_ellipsis"
+        >
+          <span
+            className="Loader_ellipsisDot"
+          >
+            .
+          </span>
+          <span
+            className="Loader_ellipsisDot"
+          >
+            .
+          </span>
+          <span
+            className="Loader_ellipsisDot"
+          >
+            .
+          </span>
+        </span>
+      </h1>
+    </div>
+  </span>
+</div>
+`;
