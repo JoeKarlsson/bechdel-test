@@ -19,7 +19,13 @@ if (isDeveloping) {
 		connectTimeoutMS: 30000,
 		serverSelectionTimeoutMS: 30000,
 	};
-	mongoose.connect(process.env.MONGODB_URI, options);
+	mongoose
+		.connect(process.env.MONGODB_URI, options)
+		.then(() => console.log('Connected to MongoDB!'))
+		.catch(error => {
+			console.error('Database connection error:', error);
+			handleError(error);
+		});
 }
 const db = mongoose.connection;
 
