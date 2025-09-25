@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StyleLoader = require('style-loader');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -53,12 +53,6 @@ module.exports = {
 		runtimeChunk: 'single',
 	},
 	plugins: [
-		new MiniCssExtractPlugin({
-			filename: '[name]-[contenthash].css',
-			chunkFilename: '[name]-[contenthash].chunk.css',
-			ignoreOrder: true, // Disable order warnings
-			experimentalUseImportModule: false, // Disable experimental features
-		}),
 		new HtmlWebpackPlugin({
 			template: 'src/app/index.tpl.html',
 			inject: 'body',
@@ -135,12 +129,7 @@ module.exports = {
 			{
 				test: /(\.scss$|\.css$)/,
 				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							esModule: false,
-						},
-					},
+					'style-loader',
 					{
 						loader: 'css-loader',
 						options: {

@@ -29,8 +29,10 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install all dependencies (including devDependencies for build)
-RUN npm install --legacy-peer-deps --ignore-scripts --force
+# Clear npm cache and install all dependencies (including devDependencies for build)
+RUN npm cache clean --force && \
+    rm -rf node_modules package-lock.json && \
+    npm install --legacy-peer-deps --ignore-scripts --force
 
 # Copy source files
 COPY . .
