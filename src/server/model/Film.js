@@ -196,7 +196,7 @@ filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
 					existingFilm.actors = parseData.parseActorArr(actors);
 					existingFilm.images = parseData.parseImageData(images);
 					existingFilm.dateUploaded = new Date(); // Update the upload date
-					
+
 					// Add enhanced analytics if provided
 					if (enhancedAnalytics) {
 						existingFilm.enhancedAnalytics = enhancedAnalytics;
@@ -232,7 +232,7 @@ filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
 					film.actors = parseData.parseActorArr(actors);
 					film.images = parseData.parseImageData(images);
 					film.dateUploaded = new Date();
-					
+
 					// Add enhanced analytics if provided
 					if (enhancedAnalytics) {
 						film.enhancedAnalytics = enhancedAnalytics;

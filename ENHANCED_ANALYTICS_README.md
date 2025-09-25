@@ -5,6 +5,7 @@ This feature adds advanced AI-powered analytics to the Bechdel Test application 
 ## Features
 
 ### 1. Script Optimization
+
 - **Token Reduction**: Cleans and optimizes scripts to reduce token usage for AI analysis
 - **Character Dialogue Extraction**: Efficiently extracts character dialogue from scripts
 - **Scene Analysis**: Identifies key scenes for focused analysis
@@ -12,51 +13,61 @@ This feature adds advanced AI-powered analytics to the Bechdel Test application 
 ### 2. Advanced Analytics
 
 #### Female Agency Analysis
+
 - Tracks when female characters drive plot vs. react to male characters
 - Analyzes female decision-making patterns
 - Measures female character goal pursuit and agency
 
 #### Stereotype Detection
+
 - Identifies common female character tropes and stereotypes
 - Detects character archetypes (damsel in distress, femme fatale, etc.)
 - Analyzes problematic patterns in character representation
 
 #### Intersectionality Analysis
+
 - Considers race, age, class, sexuality, and other factors
 - Analyzes representation diversity among female characters
 - Detects tokenism vs. meaningful representation
 
 #### Sentiment Analysis
+
 - Analyzes emotional tone of male vs. female dialogue
 - Compares emotional range and expression by gender
 - Identifies stereotypical emotional patterns
 
 #### Topic Modeling
+
 - Analyzes what topics male vs. female characters discuss
 - Identifies subject matter expertise by gender
 - Measures topic diversity and conversation themes
 
 #### Power Dynamics Analysis
+
 - Tracks who interrupts whom
 - Analyzes who asks questions vs. gives commands
 - Measures speaking time and authority patterns
 
 #### Vocabulary Analysis
+
 - Compares word choices between genders
 - Analyzes language complexity and sophistication
 - Identifies emotional and professional vocabulary usage
 
 #### Bias Detection
+
 - AI-powered detection of subtle gender biases
 - Identifies implicit biases in character descriptions
 - Detects microaggressions and systemic bias patterns
 
 #### Script Improvement Suggestions
+
 - Provides specific recommendations for better gender representation
 - Suggests character and dialogue improvements
 - Offers scene and plot-level enhancement suggestions
 
 #### Character Development Analysis
+
 - Tracks character growth and agency over time
 - Analyzes character arcs for female vs. male characters
 - Measures character complexity and depth
@@ -64,11 +75,13 @@ This feature adds advanced AI-powered analytics to the Bechdel Test application 
 ## Installation
 
 1. Install the required dependency:
+
 ```bash
 npm install @anthropic-ai/sdk --legacy-peer-deps
 ```
 
 2. Set up your Claude API key as an environment variable:
+
 ```bash
 export CLAUDE_API_KEY="your-claude-api-key-here"
 ```
@@ -263,6 +276,7 @@ When contributing to this feature:
 ### Debug Mode
 
 Enable debug logging by setting:
+
 ```bash
 export DEBUG=enhanced-analytics
 ```
