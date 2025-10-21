@@ -1,0 +1,80 @@
+services:
+  dockge:
+    image: louislam/dockge:latest
+    container_name: dockge
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    environment:
+      DOCKGE_ENABLE_CONSOLE: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./dockge-data:/app/data
+    networks:
+      - bechdel-network
+
+  mongodb:
+    image: mongo:7.0
+    container_name: bechdel-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: bechdelTest
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - bechdel-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  app:
+    # Use pre-built image from GHCR if IMAGE_TAG is set, otherwise build locally
+    image: ${IMAGE_TAG:-bechdel-app:local}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      args:
+        CACHE_BUST: ${CACHE_BUST:-1}
+    container_name: bechdel-app
+    restart: unless-stopped
+    ports:
+      - "8080:3000"
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://admin:password@mongodb:27017/bechdelTest?authSource=admin
+      THEMOVIEDB: 6ec9ddad40a319b47c562e0838f7eda3
+      OMDB: ee57b776
+      CLAUDE_API_KEY: ${CLAUDE_API_KEY}
+      PORT: 3000
+    volumes:
+      - ./uploads:/app/uploads
+    working_dir: /app
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - bechdel-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    # Pull policy: prefer pre-built images but fall back to local build if needed
+    pull_policy: ${PULL_POLICY:-missing}
+
+volumes:
+  mongodb_data:
+
+networks:
+  bechdel-network:
+    driver: bridge
