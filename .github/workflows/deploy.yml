@@ -94,29 +94,33 @@ jobs:
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${BRANCH_NAME}"
 
-          # Deploy via SSH
+          # Deploy via SSH to Dockge container
           ssh -i ~/.ssh/deploy_key -p $SSH_PORT $SSH_USER@$SSH_HOST << 'ENDSSH'
             set -e
 
-            cd $DEPLOY_PATH
+            # Execute commands inside Dockge container (122)
+            pct exec 122 -- bash -c "
+              set -e
+              cd $DEPLOY_PATH
 
-            # Pull latest docker-compose configuration
-            git pull origin ${GITHUB_REF#refs/heads/}
+              # Pull latest docker-compose configuration
+              git pull origin ${GITHUB_REF#refs/heads/}
 
-            # Update .env file with secrets
-            cat > .env << EOF
+              # Update .env file with secrets
+              cat > .env << 'ENVEOF'
           CLAUDE_API_KEY=$CLAUDE_API_KEY
           IMAGE_TAG=$IMAGE_TAG
-          CACHE_BUST=$(date +%s)
-          EOF
+          CACHE_BUST=\$(date +%s)
+          ENVEOF
 
-            # Pull new image and restart services
-            docker compose -f docker-compose.dockge.yml pull app
-            docker compose -f docker-compose.dockge.yml up -d app
+              # Pull new image and restart services
+              docker compose -f docker-compose.dockge.yml pull app
+              docker compose -f docker-compose.dockge.yml up -d app
 
-            # Show status
-            echo "Deployment complete!"
-            docker compose -f docker-compose.dockge.yml ps
+              # Show status
+              echo 'Deployment complete!'
+              docker compose -f docker-compose.dockge.yml ps
+            "
           ENDSSH
 
       - name: Deployment Status
