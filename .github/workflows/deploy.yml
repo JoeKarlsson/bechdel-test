@@ -113,7 +113,7 @@ jobs:
               pct push 122 /tmp/bechdel.env /opt/stacks/bechdel-test/.env
 
               # Pull and restart services in container
-              pct exec 122 -- bash -c \"cd /opt/stacks/bechdel-test && docker compose -f docker-compose.dockge.yml pull app && docker compose -f docker-compose.dockge.yml up -d app && docker compose -f docker-compose.dockge.yml ps\"
+              pct exec 122 -- bash -c \"cd /opt/stacks/bechdel-test && docker compose -f compose.yaml pull app && docker compose -f compose.yaml up -d app && docker compose -f compose.yaml ps\"
 
               # Cleanup
               rm -f /tmp/bechdel.env
