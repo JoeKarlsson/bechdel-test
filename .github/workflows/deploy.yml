@@ -95,33 +95,31 @@ jobs:
           IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${BRANCH_NAME}"
 
           # Deploy via SSH to Dockge container
-          ssh -i ~/.ssh/deploy_key -p $SSH_PORT $SSH_USER@$SSH_HOST << ENDSSH
-            set -e
-
-            # Execute commands inside Dockge container (122)
-            pct exec 122 -- bash -c "
+          ssh -i ~/.ssh/deploy_key -p $SSH_PORT $SSH_USER@$SSH_HOST \
+            "CLAUDE_API_KEY='$CLAUDE_API_KEY' IMAGE_TAG='$IMAGE_TAG' bash -c '
               set -e
-              cd $DEPLOY_PATH
 
-              # Pull latest docker-compose configuration
-              git pull origin develop
+              # Pull latest code in container
+              pct exec 122 -- bash -c \"cd /opt/stacks/bechdel-test && git pull origin develop\"
 
-              # Update .env file with secrets
-              cat > .env << 'ENVEOF'
-          CLAUDE_API_KEY=$CLAUDE_API_KEY
-          IMAGE_TAG=$IMAGE_TAG
-          CACHE_BUST=\\\$(date +%s)
+              # Create .env file on host
+              cat > /tmp/bechdel.env << ENVEOF
+          CLAUDE_API_KEY=\$CLAUDE_API_KEY
+          IMAGE_TAG=\$IMAGE_TAG
+          CACHE_BUST=\$(date +%s)
           ENVEOF
 
-              # Pull new image and restart services
-              docker compose -f docker-compose.dockge.yml pull app
-              docker compose -f docker-compose.dockge.yml up -d app
+              # Copy .env into container
+              pct push 122 /tmp/bechdel.env /opt/stacks/bechdel-test/.env
 
-              # Show status
-              echo 'Deployment complete!'
-              docker compose -f docker-compose.dockge.yml ps
-            "
-          ENDSSH
+              # Pull and restart services in container
+              pct exec 122 -- bash -c \"cd /opt/stacks/bechdel-test && docker compose -f docker-compose.dockge.yml pull app && docker compose -f docker-compose.dockge.yml up -d app && docker compose -f docker-compose.dockge.yml ps\"
+
+              # Cleanup
+              rm -f /tmp/bechdel.env
+
+              echo \"✅ Deployment complete!\"
+            '"
 
       - name: Deployment Status
         if: success()
