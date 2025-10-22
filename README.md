@@ -313,3 +313,4 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/bechdel-test/blob/d
 [license-url]: https://github.com/JoeKarlsson/bechdel-test/blob/develop/LICENSE
 [twitter]: https://img.shields.io/twitter/url/https/github.com/JoeKarlsson/bechdel-test.svg?style=social&style=flat-square
 [twitter-url]: https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FJoeKarlsson%2Fbechdel-test
+
