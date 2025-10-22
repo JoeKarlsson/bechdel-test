@@ -84,20 +84,32 @@ jobs:
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
         run: |
+          set -x  # Enable verbose mode
+
           # Setup SSH
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p $SSH_PORT -H $SSH_HOST >> ~/.ssh/known_hosts
+          echo "Setting up SSH keys..."
+          mkdir -p ~/.ssh || { echo "Failed to create ~/.ssh"; exit 1; }
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key || { echo "Failed to write deploy_key"; exit 1; }
+          chmod 600 ~/.ssh/deploy_key || { echo "Failed to chmod deploy_key"; exit 1; }
+
+          echo "Scanning SSH host keys..."
+          ssh-keyscan -p $SSH_PORT -H $SSH_HOST >> ~/.ssh/known_hosts 2>&1 || { echo "SSH keyscan failed"; exit 1; }
+          echo "SSH setup complete"
 
           # Determine branch name for image tag
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${BRANCH_NAME}"
+          echo "Branch: $BRANCH_NAME"
+          echo "Image: $IMAGE_TAG"
+
+          # Test SSH connection first
+          echo "Testing SSH connection..."
+          ssh -v -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST "echo 'SSH connection successful'" || { echo "SSH connection test failed"; exit 1; }
 
           # Call deployment script on server
-          echo "Starting deployment..."
-          ssh -i ~/.ssh/deploy_key -p $SSH_PORT $SSH_USER@$SSH_HOST \
-            "CLAUDE_API_KEY='$CLAUDE_API_KEY' IMAGE_TAG='$IMAGE_TAG' /root/deploy-from-github.sh"
+          echo "Calling deployment script..."
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST \
+            "CLAUDE_API_KEY='$CLAUDE_API_KEY' IMAGE_TAG='$IMAGE_TAG' /root/deploy-from-github.sh" || { echo "Deployment script failed with exit code $?"; exit 1; }
 
       - name: Deployment Status
         if: success()
