@@ -95,7 +95,7 @@ jobs:
           IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${BRANCH_NAME}"
 
           # Deploy via SSH to Dockge container
-          ssh -i ~/.ssh/deploy_key -p $SSH_PORT $SSH_USER@$SSH_HOST << 'ENDSSH'
+          ssh -i ~/.ssh/deploy_key -p $SSH_PORT $SSH_USER@$SSH_HOST << ENDSSH
             set -e
 
             # Execute commands inside Dockge container (122)
@@ -104,13 +104,13 @@ jobs:
               cd $DEPLOY_PATH
 
               # Pull latest docker-compose configuration
-              git pull origin ${GITHUB_REF#refs/heads/}
+              git pull origin develop
 
               # Update .env file with secrets
               cat > .env << 'ENVEOF'
           CLAUDE_API_KEY=$CLAUDE_API_KEY
           IMAGE_TAG=$IMAGE_TAG
-          CACHE_BUST=\$(date +%s)
+          CACHE_BUST=\\\$(date +%s)
           ENVEOF
 
               # Pull new image and restart services
