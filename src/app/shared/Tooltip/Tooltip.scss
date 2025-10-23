@@ -1,0 +1,244 @@
+@use "sass:color";
+
+$purple: #800080;
+$suffragette-green: #2C8C3E;
+$white: #ffffff;
+$dark-gray: #333;
+$light-gray: #f8f9fa;
+$border-color: #e1e5e9;
+
+.tooltip-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip-trigger {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: $purple;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 2px;
+	cursor: help;
+	transition: all 0.2s ease;
+
+	&:hover,
+	&:focus {
+		color: color.adjust($purple, $lightness: -10%);
+		outline: none;
+		text-decoration-color: color.adjust($purple, $lightness: -10%);
+	}
+
+	&:focus-visible {
+		outline: 2px solid $purple;
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	.tooltip-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 16px;
+		height: 16px;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: $white;
+		background: $purple;
+		border-radius: 50%;
+		line-height: 1;
+		transition: all 0.2s ease;
+	}
+
+	&:hover .tooltip-icon,
+	&:focus .tooltip-icon {
+		background: color.adjust($purple, $lightness: -10%);
+		transform: scale(1.1);
+	}
+}
+
+.tooltip-content {
+	position: absolute;
+	z-index: 1000;
+	width: 320px;
+	max-width: 90vw;
+	padding: 1rem;
+	background: $white;
+	border: 2px solid $purple;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	font-size: 0.9rem;
+	line-height: 1.5;
+	color: $dark-gray;
+	animation: tooltipFadeIn 0.2s ease;
+
+	@media (max-width: 480px) {
+		width: 280px;
+		padding: 0.875rem;
+		font-size: 0.85rem;
+	}
+
+	// Positioning variants
+
+	&.tooltip-content--top {
+		bottom: calc(100% + 0.5rem);
+		left: 50%;
+		transform: translateX(-50%);
+
+		.tooltip-arrow {
+			bottom: -8px;
+			left: 50%;
+			transform: translateX(-50%) rotate(45deg);
+		}
+	}
+
+	&.tooltip-content--bottom {
+		top: calc(100% + 0.5rem);
+		left: 50%;
+		transform: translateX(-50%);
+
+		.tooltip-arrow {
+			top: -8px;
+			left: 50%;
+			transform: translateX(-50%) rotate(45deg);
+		}
+	}
+
+	&.tooltip-content--left {
+		right: calc(100% + 0.5rem);
+		top: 50%;
+		transform: translateY(-50%);
+
+		.tooltip-arrow {
+			right: -8px;
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+		}
+	}
+
+	&.tooltip-content--right {
+		left: calc(100% + 0.5rem);
+		top: 50%;
+		transform: translateY(-50%);
+
+		.tooltip-arrow {
+			left: -8px;
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+		}
+	}
+
+	.tooltip-term {
+		display: block;
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: $purple;
+		margin-bottom: 0.5rem;
+		border-bottom: 2px solid $suffragette-green;
+		padding-bottom: 0.25rem;
+	}
+
+	.tooltip-definition {
+		margin: 0 0 0.75rem 0;
+		color: $dark-gray;
+		text-align: left;
+	}
+
+	.tooltip-citation {
+		display: block;
+		font-size: 0.8rem;
+		font-style: italic;
+		color: #6c757d;
+		margin-top: 0.5rem;
+		padding-top: 0.5rem;
+		border-top: 1px solid $border-color;
+		text-align: left;
+	}
+
+	.tooltip-arrow {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		background: $white;
+		border-right: 2px solid $purple;
+		border-bottom: 2px solid $purple;
+	}
+}
+
+@keyframes tooltipFadeIn {
+
+	from {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+}
+
+// Dark mode support
+
+body.dark-mode {
+
+	.tooltip-trigger {
+		color: color.adjust($purple, $lightness: 20%);
+
+		&:hover,
+		&:focus {
+			color: color.adjust($purple, $lightness: 30%);
+		}
+
+		.tooltip-icon {
+			background: color.adjust($purple, $lightness: 15%);
+		}
+
+		&:hover .tooltip-icon,
+		&:focus .tooltip-icon {
+			background: color.adjust($purple, $lightness: 25%);
+		}
+	}
+
+	.tooltip-content {
+		background: #2d2d2d;
+		border-color: color.adjust($purple, $lightness: 15%);
+		color: #e0e0e0;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+		.tooltip-term {
+			color: color.adjust($purple, $lightness: 25%);
+			border-bottom-color: color.adjust($suffragette-green, $lightness: 15%);
+		}
+
+		.tooltip-definition {
+			color: #e0e0e0;
+		}
+
+		.tooltip-citation {
+			color: #a0a0a0;
+			border-top-color: #4a5568;
+		}
+
+		.tooltip-arrow {
+			background: #2d2d2d;
+			border-right-color: color.adjust($purple, $lightness: 15%);
+			border-bottom-color: color.adjust($purple, $lightness: 15%);
+		}
+	}
+}
+
+// Accessibility: Reduced motion
+
+@media (prefers-reduced-motion: reduce) {
+
+	.tooltip-content {
+		animation: none;
+	}
+
+	.tooltip-trigger .tooltip-icon {
+		transition: none;
+	}
+}
