@@ -1,0 +1,268 @@
+.no-match-page {
+	min-height: calc(100vh - 200px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	background: var(--color-bg-secondary, #f8f9fa);
+}
+
+.no-match-container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.no-match-content {
+	text-align: center;
+	padding: 60px 20px;
+	margin-bottom: 60px;
+}
+
+.error-code {
+	font-size: 120px;
+	font-weight: 800;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	line-height: 1;
+	margin-bottom: 20px;
+	animation: fadeInDown 0.6s ease-out;
+}
+
+.error-title {
+	font-size: 48px;
+	font-weight: 700;
+	color: var(--color-primary, #1a1a1a);
+	margin-bottom: 16px;
+	animation: fadeInDown 0.6s ease-out 0.1s both;
+}
+
+.error-description {
+	font-size: 20px;
+	color: var(--color-secondary, #4a4a4a);
+	margin-bottom: 40px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.6;
+	animation: fadeInDown 0.6s ease-out 0.2s both;
+}
+
+.error-actions {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	flex-wrap: wrap;
+	animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.btn-primary,
+.btn-secondary {
+	display: inline-block;
+	padding: 14px 32px;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+	}
+}
+
+.btn-secondary {
+	background: transparent;
+	color: var(--color-primary, #1a1a1a);
+	border: 2px solid var(--color-secondary, #4a4a4a);
+
+	&:hover {
+		background: var(--color-bg-secondary, #f8f9fa);
+		border-color: #667eea;
+		color: #667eea;
+		transform: translateY(-2px);
+	}
+}
+
+/* Popular Films Section */
+.popular-films-section {
+	margin-top: 60px;
+	animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.section-title {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--color-primary, #1a1a1a);
+	margin-bottom: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+.section-icon {
+	font-size: 36px;
+}
+
+.films-grid {
+	width: 100%;
+}
+
+.film-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 24px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.loading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 300px;
+}
+
+.error-message,
+.no-films-message {
+	text-align: center;
+	padding: 40px 20px;
+	color: var(--color-secondary, #4a4a4a);
+	font-size: 18px;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .no-match-page {
+	background: var(--color-bg-secondary, #2d2d2d);
+}
+
+[data-theme="dark"] .error-title {
+	color: var(--color-primary, #ffffff);
+}
+
+[data-theme="dark"] .error-description {
+	color: var(--color-secondary, #e0e0e0);
+}
+
+[data-theme="dark"] .btn-secondary {
+	color: var(--color-primary, #ffffff);
+	border-color: var(--color-secondary, #e0e0e0);
+
+	&:hover {
+		background: var(--color-bg-muted, #404040);
+	}
+}
+
+[data-theme="dark"] .section-title {
+	color: var(--color-primary, #ffffff);
+}
+
+[data-theme="dark"] .error-message,
+[data-theme="dark"] .no-films-message {
+	color: var(--color-secondary, #e0e0e0);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.error-code {
+		font-size: 80px;
+	}
+
+	.error-title {
+		font-size: 32px;
+	}
+
+	.error-description {
+		font-size: 16px;
+	}
+
+	.section-title {
+		font-size: 24px;
+	}
+
+	.film-list {
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		gap: 16px;
+	}
+
+	.error-actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.no-match-content {
+		padding: 40px 20px;
+	}
+
+	.error-code {
+		font-size: 64px;
+	}
+
+	.error-title {
+		font-size: 28px;
+	}
+
+	.section-title {
+		font-size: 20px;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.film-list {
+		grid-template-columns: 1fr;
+	}
+}
