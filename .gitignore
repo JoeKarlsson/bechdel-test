@@ -4,7 +4,6 @@ src/server/config/config.json
 #####################
 node_modules/
 npm-debug.log
-DOCKGE_DEPLOYMENT_GUIDE.md
 
 # OS generated files #
 ######################
@@ -44,8 +43,6 @@ yarn-error*.log
 uploads
 
 # Files with API keys (security)
-docker-compose.yml
-docker-compose.dockge.yml
 demo-enhanced-analytics.js
 
 # Deployment secrets and local environment files
@@ -53,5 +50,8 @@ demo-enhanced-analytics.js
 .env
 .env.*
 !.env.example
-setup-server-complete.sh
 screenshots/
+
+# Obsolete deployment tools
+dockge-data/
+Procfile
