@@ -11,7 +11,7 @@ services:
       MONGO_INITDB_DATABASE: bechdelTest
     volumes:
       - mongodb_data:/data/db
-      - /opt/appdata/bechdel-test/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
       - bechdel-network
     healthcheck:
@@ -22,10 +22,14 @@ services:
       start_period: 40s
 
   app:
+    # Use pre-built image from GHCR if IMAGE_TAG is set, otherwise build locally
+    image: ${IMAGE_TAG:-bechdel-test-app}
     build:
       context: .
       dockerfile: Dockerfile
       target: production
+      args:
+        CACHE_BUST: ${CACHE_BUST:-1}
     container_name: bechdel-app
     restart: unless-stopped
     ports:
@@ -38,7 +42,7 @@ services:
       CLAUDE_API_KEY: ${CLAUDE_API_KEY}
       PORT: 3000
     volumes:
-      - /opt/appdata/bechdel-test/uploads:/app/uploads
+      - ./uploads:/app/uploads
     working_dir: /app
     depends_on:
       mongodb:
