@@ -1,4 +1,4 @@
-const bechdelResults = require('../BechdelResults');
+// BechdelResults class is passed as a parameter to prevent race conditions
 const {
 	isCharFemale,
 	hasValidGender,
@@ -21,7 +21,7 @@ const greaterThanZero = num => {
  * @param  {[type]} movieScript     [description]
  * @return {[type]}                 [description]
  */
-const scriptGenderAnalytics = (characters, movieScript) => {
+const scriptGenderAnalytics = (characters, movieScript, bechdelResults) => {
 	const charCount = countCharacterDialogue(characters, movieScript);
 	const names = Object.keys(charCount);
 
@@ -52,7 +52,7 @@ const scriptGenderAnalytics = (characters, movieScript) => {
 	return bechdelResults.getBechdelResults();
 };
 
-const scriptAnalysis = (characters, scenes) => {
+const scriptAnalysis = (characters, scenes, bechdelResults) => {
 	for (let i = 0; i < scenes.length; i++) {
 		const scene = scenes[i];
 		const count = countCharacterDialogue(characters, scene);

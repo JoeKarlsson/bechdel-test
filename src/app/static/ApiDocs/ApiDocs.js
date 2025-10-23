@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import useDocumentTitle from '../../helper/useDocumentTitle';
 import './ApiDocs.scss';
 
@@ -8,6 +9,8 @@ const ApiDocs = () => {
 
 	const [activeEndpoint, setActiveEndpoint] = useState('get-all-films');
 	const [searchQuery, setSearchQuery] = useState('');
+
+	const metaDescription = 'RESTful API documentation for bechdel.io. Upload movie scripts, retrieve Bechdel Test analysis results, and explore feminist film data. Free to use, no authentication required.';
 
 	const endpoints = [
 		{
@@ -297,6 +300,44 @@ const ApiDocs = () => {
 
 	return (
 		<div className="api-docs">
+			<Helmet>
+				{/* Primary Meta Tags */}
+				<title>API Documentation | bechdel.io</title>
+				<meta name="title" content="API Documentation | bechdel.io" />
+				<meta name="description" content={metaDescription} />
+				<meta name="keywords" content="bechdel test API, film analysis API, REST API, feminist film data, movie script analysis" />
+
+				{/* Open Graph / Facebook */}
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://bechdel.io/api-docs" />
+				<meta property="og:title" content="API Documentation | bechdel.io" />
+				<meta property="og:description" content={metaDescription} />
+				<meta property="og:site_name" content="bechdel.io" />
+
+				{/* Twitter Card */}
+				<meta property="twitter:card" content="summary" />
+				<meta property="twitter:url" content="https://bechdel.io/api-docs" />
+				<meta property="twitter:title" content="API Documentation | bechdel.io" />
+				<meta property="twitter:description" content={metaDescription} />
+
+				{/* Structured Data */}
+				<script type="application/ld+json">
+					{JSON.stringify({
+						'@context': 'https://schema.org',
+						'@type': 'TechArticle',
+						name: 'bechdel.io API Documentation',
+						description: metaDescription,
+						url: 'https://bechdel.io/api-docs',
+						about: {
+							'@type': 'SoftwareApplication',
+							name: 'bechdel.io API',
+							applicationCategory: 'WebAPI',
+							operatingSystem: 'Any',
+						},
+					})}
+				</script>
+			</Helmet>
+
 			<div className="container">
 				<header className="api-docs-header">
 					<h1>bechdel.io API Documentation</h1>

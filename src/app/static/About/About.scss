@@ -86,6 +86,43 @@ $accent-color: #1eaedb;
 			margin-top: var(--spacing-lg);
 		}
 
+		.limitations-list {
+			background: $light-gray;
+			padding: var(--spacing-lg);
+			border-left: 4px solid $purple;
+			margin: var(--spacing-lg) 0;
+
+			p {
+				margin-top: var(--spacing-md);
+				margin-bottom: var(--spacing-sm);
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				strong {
+					color: $purple;
+					font-weight: 600;
+				}
+			}
+
+			ul {
+				margin: var(--spacing-sm) 0;
+				padding-left: var(--spacing-lg);
+
+				li {
+					margin-bottom: var(--spacing-xs);
+					line-height: 1.6;
+					color: $dark-gray;
+					font-size: 1.1rem;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
 		a {
 			color: $purple;
 			text-decoration: none;

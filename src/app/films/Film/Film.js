@@ -277,14 +277,14 @@ const Film = memo(({
 						</div>
 					</div>
 
-				{/* Enhanced Bechdel Validation Section */}
-				{enhancedAnalytics?.enhancedBechdelValidation && (
-					<div className="enhanced-validation-section">
-						<EnhancedBechdelValidation
-							validationData={enhancedAnalytics.enhancedBechdelValidation}
-						/>
-					</div>
-				)}
+					{/* Enhanced Bechdel Validation Section */}
+					{enhancedAnalytics?.enhancedBechdelValidation && (
+						<div className="enhanced-validation-section">
+							<EnhancedBechdelValidation
+								validationData={enhancedAnalytics.enhancedBechdelValidation}
+							/>
+						</div>
+					)}
 
 					{/* Detailed Bechdel Analysis Section */}
 					<div className="detailed-analysis-section">

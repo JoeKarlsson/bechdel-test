@@ -17,7 +17,7 @@
 		padding-bottom: 1rem;
 
 		h3 {
-			margin: 0 0 1rem 0;
+			margin: 0 0 0.75rem 0;
 			font-size: 1.3rem;
 			font-weight: 600;
 			color: #2c3e50;
@@ -28,6 +28,14 @@
 			.timeline-icon {
 				font-size: 1.5rem;
 			}
+		}
+
+		.timeline-description {
+			margin: 0 0 1.25rem 0;
+			font-size: 0.95rem;
+			line-height: 1.6;
+			color: #6c757d;
+			max-width: 800px;
 		}
 
 		.timeline-stats {
@@ -42,6 +50,7 @@
 				padding: 0.75rem 1rem;
 				background: #f8f9fa;
 				border: 1px solid #e9ecef;
+				border-radius: 6px;
 				min-width: 80px;
 
 				.stat-number {
@@ -66,16 +75,17 @@
 
 		.timeline-track {
 			position: relative;
-			padding-left: 2rem;
+			padding-left: 2.5rem;
 
 			&::before {
 				content: '';
 				position: absolute;
-				left: 1rem;
+				left: 7px;
 				top: 0;
 				bottom: 0;
-				width: 2px;
+				width: 3px;
 				background: linear-gradient(to bottom, #667eea, #764ba2);
+				border-radius: 2px;
 			}
 		}
 
@@ -85,26 +95,22 @@
 
 			.timeline-marker {
 				position: absolute;
-				left: -2rem;
+				left: -2.5rem;
 				top: 0.5rem;
 
 				.marker-dot {
-					width: 16px;
-					height: 16px;
+					width: 18px;
+					height: 18px;
 					background: linear-gradient(135deg, #2ecc71, #27ae60);
 					border: 3px solid #ffffff;
-					box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
+					border-radius: 50%;
+					box-shadow: 0 2px 6px rgba(46, 204, 113, 0.4);
 					position: relative;
 					z-index: 2;
 				}
 
 				.marker-line {
-					position: absolute;
-					left: 7px;
-					top: 16px;
-					width: 2px;
-					height: calc(100% + 1rem);
-					background: linear-gradient(to bottom, #667eea, #764ba2);
+					display: none;
 				}
 			}
 
@@ -119,6 +125,7 @@
 			.timeline-card {
 				background: #f8f9fa;
 				border: 1px solid #e9ecef;
+				border-radius: 8px;
 				overflow: hidden;
 				transition: all 0.3s ease;
 
@@ -192,7 +199,12 @@
 						align-items: center;
 						justify-content: center;
 						background: rgba(102, 126, 234, 0.1);
+						border-radius: 4px;
 						transition: all 0.2s ease;
+
+						&:hover {
+							background: rgba(102, 126, 234, 0.2);
+						}
 					}
 				}
 
@@ -221,6 +233,7 @@
 						background: #f8f9fa;
 						padding: 1rem;
 						border-left: 4px solid #667eea;
+						border-radius: 4px;
 						margin-bottom: 1rem;
 
 						.dialogue-line {
@@ -285,6 +298,7 @@
 					width: 12px;
 					height: 12px;
 					border: 2px solid #ffffff;
+					border-radius: 50%;
 
 					&.pass {
 						background: linear-gradient(135deg, #2ecc71, #27ae60);
@@ -306,6 +320,7 @@
 				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 				color: white;
 				border: none;
+				border-radius: 6px;
 				font-weight: 600;
 				font-size: 0.85rem;
 				cursor: pointer;
@@ -355,25 +370,21 @@
 		.timeline-content {
 
 			.timeline-track {
-				padding-left: 1.5rem;
+				padding-left: 2rem;
 
 				&::before {
-					left: 0.75rem;
+					left: 6px;
 				}
 			}
 
 			.timeline-item {
 
 				.timeline-marker {
-					left: -1.5rem;
+					left: -2rem;
 
 					.marker-dot {
-						width: 14px;
-						height: 14px;
-					}
-
-					.marker-line {
-						left: 6px;
+						width: 16px;
+						height: 16px;
 					}
 				}
 
@@ -458,25 +469,21 @@
 		.timeline-content {
 
 			.timeline-track {
-				padding-left: 1rem;
+				padding-left: 1.5rem;
 
 				&::before {
-					left: 0.5rem;
+					left: 5px;
 				}
 			}
 
 			.timeline-item {
 
 				.timeline-marker {
-					left: -1rem;
+					left: -1.5rem;
 
 					.marker-dot {
-						width: 12px;
-						height: 12px;
-					}
-
-					.marker-line {
-						left: 5px;
+						width: 14px;
+						height: 14px;
 					}
 				}
 

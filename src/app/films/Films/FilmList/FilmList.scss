@@ -23,13 +23,27 @@
 
 .FilmList__pagination-bar {
 	width: 100%;
-	background-color: purple;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	padding: var(--header-padding-y) 0;
 	font-size: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+	overflow: hidden;
+
+	// Decorative background pattern (matching film detail page)
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0 0 0 0;
+		background:
+			radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+		pointer-events: none;
+	}
 }
 
 .FilmList__pagination-controls {
@@ -40,11 +54,50 @@
 	max-width: 1400px;
 	width: 100%;
 	padding: 0 5%;
+	position: relative;
+	z-index: 1;
 
 	@media (min-width: 768px) {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+	}
+}
+
+.FilmList__sort-selector {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	label {
+		font-weight: 600;
+		color: white;
+		font-size: 0.9rem;
+	}
+}
+
+.FilmList__sort-select {
+	padding: 0.5rem 0.75rem;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-radius: 6px;
+	font-size: 0.9rem;
+	background: rgba(255, 255, 255, 0.95);
+	color: #1a1a1a;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	min-width: 150px;
+
+	&:hover {
+		border-color: rgba(255, 255, 255, 0.6);
+		background: white;
+	}
+
+	&:focus {
+		outline: 2px solid #ffffff;
+		outline-offset: 2px;
+		border-color: #ffffff;
+		background: white;
+		box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
 	}
 }
 

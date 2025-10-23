@@ -5,23 +5,23 @@
  * @returns {JSX.Element} - React element with highlighted text
  */
 export const highlightSearchTerm = (text, searchTerm) => {
-    if (!searchTerm || !text) {
-        return text;
-    }
+	if (!searchTerm || !text) {
+		return text;
+	}
 
-    const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    const parts = text.split(regex);
+	const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+	const parts = text.split(regex);
 
-    return parts.map((part, index) => {
-        if (regex.test(part)) {
-            return (
-                <mark key={index} className="search-highlight">
-                    {part}
-                </mark>
-            );
-        }
-        return part;
-    });
+	return parts.map((part, index) => {
+		if (regex.test(part)) {
+			return (
+				<mark key={index} className="search-highlight">
+					{part}
+				</mark>
+			);
+		}
+		return part;
+	});
 };
 
 /**
@@ -31,8 +31,8 @@ export const highlightSearchTerm = (text, searchTerm) => {
  * @returns {boolean} - Whether the field contains the search term
  */
 export const fieldContainsSearchTerm = (field, searchTerm) => {
-    if (!field || !searchTerm) return false;
-    return field.toLowerCase().includes(searchTerm.toLowerCase());
+	if (!field || !searchTerm) return false;
+	return field.toLowerCase().includes(searchTerm.toLowerCase());
 };
 
 /**
@@ -43,9 +43,8 @@ export const fieldContainsSearchTerm = (field, searchTerm) => {
  * @returns {boolean} - Whether any object contains the search term
  */
 export const arrayContainsSearchTerm = (array, property, searchTerm) => {
-    if (!array || !Array.isArray(array) || !searchTerm) return false;
-    return array.some(item =>
-        item && item[property] &&
-        item[property].toLowerCase().includes(searchTerm.toLowerCase())
-    );
+	if (!array || !Array.isArray(array) || !searchTerm) return false;
+	return array.some(item =>
+		item && item[property] &&
+        item[property].toLowerCase().includes(searchTerm.toLowerCase()));
 };

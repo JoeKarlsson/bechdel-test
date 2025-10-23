@@ -1,0 +1,127 @@
+.metrics-summary {
+	width: 100%;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	padding: 2.5rem 0;
+	margin-bottom: 0;
+	position: relative;
+	overflow: hidden;
+
+	// Decorative background pattern
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0 0 0 0;
+		background:
+			radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+			radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+		pointer-events: none;
+	}
+
+	.metrics-grid {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 var(--container-padding-x);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+		position: relative;
+		z-index: 1;
+
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 640px) {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		@media (max-width: 768px) {
+			padding: 0 var(--mobile-container-padding-x);
+		}
+	}
+
+	.metric-card {
+		background: rgba(255, 255, 255, 0.95);
+		border-radius: 12px;
+		padding: 1.5rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		border: 2px solid transparent;
+
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+			border-color: var(--metric-color, #667eea);
+		}
+
+		.metric-icon {
+			font-size: 2.5rem;
+			flex-shrink: 0;
+			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+
+			@media (max-width: 480px) {
+				font-size: 2rem;
+			}
+		}
+
+		.metric-content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 0.25rem;
+
+			.metric-value {
+				font-size: 1.8rem;
+				font-weight: 700;
+				color: var(--metric-color, #2c3e50);
+				line-height: 1.2;
+				letter-spacing: -0.02em;
+
+				@media (max-width: 480px) {
+					font-size: 1.5rem;
+				}
+			}
+
+			.metric-label {
+				font-size: 0.9rem;
+				color: #6c757d;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+
+				@media (max-width: 480px) {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
+
+// Dark mode support
+
+body.dark-mode {
+
+	.metrics-summary {
+		background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+
+		.metric-card {
+			background: rgba(45, 55, 72, 0.95);
+
+			.metric-content {
+
+				.metric-value {
+					color: #f0f0f0;
+				}
+
+				.metric-label {
+					color: #a0a0a0;
+				}
+			}
+		}
+	}
+}

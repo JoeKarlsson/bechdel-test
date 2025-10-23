@@ -4,7 +4,8 @@ import api from './api';
 
 describe('api', () => {
 	beforeEach(() => {
-		fetchMock.reset();
+		fetchMock.clearHistory();
+		fetchMock.removeRoutes();
 	});
 
 	it('should call callback after success', async () => {

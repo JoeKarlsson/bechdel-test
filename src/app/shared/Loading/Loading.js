@@ -75,7 +75,7 @@ const Loading = () => {
 
 				{/* Progress bar */}
 				<div className="Loader_progress">
-					<div className="Loader_progressBar"></div>
+					<div className="Loader_progressBar" />
 				</div>
 
 				{/* Animated icons */}

@@ -12,6 +12,22 @@ mongoose.Promise = global.Promise;
 
 const filmSchema = mongoose.Schema(schema);
 
+// Add indexes for commonly queried fields to improve performance
+// Single field indexes
+filmSchema.index({ title: 1 }); // For findByTitle and text search
+filmSchema.index({ year: 1 }); // For year range filters and sorting
+filmSchema.index({ dateUploaded: -1 }); // For sorting by newest/oldest
+filmSchema.index({ rating: -1 }); // For sorting by rating
+filmSchema.index({ 'bechdelResults.pass': 1 }); // For pass/fail filtering
+filmSchema.index({ 'bechdelResults.bechdelScore': -1 }); // For Bechdel score sorting
+filmSchema.index({ genres: 1 }); // For genre filtering
+filmSchema.index({ idIMDB: 1 }); // For IMDB lookups
+
+// Compound indexes for common query patterns
+filmSchema.index({ rating: -1, metascore: -1 }); // For popularity sorting
+filmSchema.index({ 'bechdelResults.pass': 1, year: -1 }); // For filtering by pass + year
+filmSchema.index({ year: -1, rating: -1 }); // For year + rating sorting
+
 filmSchema.static('listAll', function () {
 	const promise = new Promise((resolve, reject) => {
 		this.find()
@@ -27,17 +43,95 @@ filmSchema.static('listAll', function () {
 	return promise;
 });
 
-filmSchema.static('listAllPaginated', function (page = 1, limit = 10) {
+filmSchema.static('listAllPaginated', function (page = 1, limit = 10, sortBy = 'popularity', filters = {}) {
 	const promise = new Promise((resolve, reject) => {
 		const skip = (page - 1) * limit;
 
+		// Build filter query
+		const query = {};
+
+		// Bechdel pass/fail filter
+		if (filters.pass !== undefined && filters.pass !== null && filters.pass !== '') {
+			query['bechdelResults.pass'] = filters.pass === 'true' || filters.pass === true;
+		}
+
+		// Genre filter (array of genres)
+		if (filters.genres && Array.isArray(filters.genres) && filters.genres.length > 0) {
+			query.genres = { $in: filters.genres };
+		}
+
+		// Year range filter
+		if (filters.yearMin || filters.yearMax) {
+			query.year = {};
+			if (filters.yearMin) {
+				query.year.$gte = parseInt(filters.yearMin, 10);
+			}
+			if (filters.yearMax) {
+				query.year.$lte = parseInt(filters.yearMax, 10);
+			}
+		}
+
+		// Rating filter (minimum IMDb rating)
+		if (filters.minRating) {
+			query.rating = { $gte: parseFloat(filters.minRating) };
+		}
+
+		// MPAA rating filter
+		if (filters.rated && filters.rated.length > 0) {
+			query.rated = { $in: filters.rated };
+		}
+
+		// Determine sort order based on sortBy parameter
+		let sortOption;
+		switch (sortBy) {
+		case 'popularity':
+			// Sort by rating (descending), then metascore (descending)
+			sortOption = { rating: -1, metascore: -1 };
+			break;
+		case 'rating':
+			// Sort by rating only (descending)
+			sortOption = { rating: -1 };
+			break;
+		case 'newest':
+			// Sort by date uploaded (descending)
+			sortOption = { dateUploaded: -1 };
+			break;
+		case 'oldest':
+			// Sort by date uploaded (ascending)
+			sortOption = { dateUploaded: 1 };
+			break;
+		case 'title-asc':
+			// Sort by title alphabetically (ascending)
+			sortOption = { title: 1 };
+			break;
+		case 'title-desc':
+			// Sort by title alphabetically (descending)
+			sortOption = { title: -1 };
+			break;
+		case 'year-desc':
+			// Sort by year (newest first)
+			sortOption = { year: -1 };
+			break;
+		case 'year-asc':
+			// Sort by year (oldest first)
+			sortOption = { year: 1 };
+			break;
+		case 'bechdel-score':
+			// Sort by Bechdel score (descending)
+			sortOption = { 'bechdelResults.bechdelScore': -1 };
+			break;
+		default:
+			// Default to popularity (rating + metascore)
+			sortOption = { rating: -1, metascore: -1 };
+		}
+
 		Promise.all([
-			this.find()
-				.sort('-dateUploaded')
+			this.find(query)
+				.sort(sortOption)
 				.skip(skip)
 				.limit(limit)
 				.exec(),
-			this.countDocuments()
+			this.countDocuments(query)
 		])
 			.then(([films, totalCount]) => {
 				const totalPages = Math.ceil(totalCount / limit);

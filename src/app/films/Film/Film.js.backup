@@ -1,0 +1,394 @@
+import React, { memo, useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import Hero from './Hero/Hero';
+import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
+import BechdelResults from './BechdelResults/BechdelResults';
+import BechdelCharts from './BechdelCharts';
+import FilmInfoCard from './FilmInfoCard';
+import PlotSection from './PlotSection';
+import ScriptTimeline from './ScriptTimeline';
+import AdvancedAnalytics from './AdvancedAnalytics';
+import MetricsSummary from './MetricsSummary';
+import EnhancedBechdelValidation from './EnhancedBechdelValidation';
+import SectionHeader from './SectionHeader/SectionHeader';
+import Loading from '../../shared/Loading/Loading';
+import Error from '../../shared/Error/Error';
+import hash from '../../helper/hash';
+import './Film.scss';
+
+// Utility functions
+const isLastItem = (item, array) => {
+	return item !== array[array.length - 1];
+};
+
+const genreNodeBuilder = array => {
+	return array.map(item => {
+		if (isLastItem(item, array)) {
+			return <span key={hash(item.toString())}>{item} | </span>;
+		}
+		return <span key={hash(item)}>{item}</span>;
+	});
+};
+
+const nodeBuilder = array => {
+	return array.map(item => {
+		if (isLastItem(item, array)) {
+			return <span key={hash(item.toString())}>{item.name} | </span>;
+		}
+		return <span key={hash(item)}>{item.name}</span>;
+	});
+};
+
+const isValidFilm = film => {
+	return film && film.title && film.title.trim() !== '';
+};
+
+// Default film data structure
+const defaultFilmData = {
+	title: '',
+	images: {
+		poster: '',
+		backdrop: '',
+	},
+	plot: '',
+	idIMDB: '',
+	rated: '',
+	directors: [],
+	writers: [],
+	genres: [],
+	actors: [],
+	bechdelResults: {
+		pass: false,
+		bechdelScore: 0,
+		numScenesPass: 0,
+		scenesThatPass: [],
+		numScenesDontPass: 0,
+		numOfFemalesChars: 0,
+		numOfMaleChars: 0,
+		numOfFemalesCharsWithDialogue: 0,
+		numOfMaleCharsWithDialogue: 0,
+		totalLinesFemaleDialogue: 0,
+		totalLinesMaleDialogue: 0,
+	},
+};
+
+// Error component for film loading errors
+const FilmError = ({ error = null, onRetry, retryCount = 0 }) => (
+	<div className="film-error" role="alert" aria-live="polite">
+		<div className="film-error__container">
+			<div className="film-error__icon" aria-hidden="true">
+				🎬
+			</div>
+			<h2 className="film-error__title">Unable to Load Film</h2>
+			<p className="film-error__message">
+				{error || 'There was a problem loading this film. Please try again.'}
+			</p>
+			<div className="film-error__actions">
+				<button
+					type="button"
+					className="film-error__button film-error__button--primary"
+					onClick={onRetry}
+					aria-label="Try loading the film again"
+				>
+					Try Again
+				</button>
+				<Link
+					to="/"
+					className="film-error__button film-error__button--secondary"
+					aria-label="Go back to all films"
+				>
+					Back to Films
+				</Link>
+			</div>
+			{retryCount > 0 && (
+				<p className="film-error__retry-count">
+					Retry attempt: {retryCount}
+				</p>
+			)}
+		</div>
+	</div>
+);
+
+FilmError.propTypes = {
+	error: PropTypes.string,
+	onRetry: PropTypes.func.isRequired,
+	retryCount: PropTypes.number,
+};
+
+const Film = memo(({
+	film = defaultFilmData,
+	loading = true,
+	error = null,
+	onRetry,
+	retryCount = 0,
+}) => {
+	// Memoize the film content to prevent unnecessary re-renders
+	const filmContent = useMemo(() => {
+		if (!isValidFilm(film)) {
+			return null;
+		}
+
+		const {
+			title,
+			bechdelResults,
+			images,
+			plot,
+			actors,
+			enhancedAnalytics,
+			directors,
+			writers,
+			genres,
+			rated,
+		} = film;
+
+		// Calculate stats for meta description
+		const totalLines = bechdelResults.totalLinesFemaleDialogue + bechdelResults.totalLinesMaleDialogue;
+		const femaleDialoguePercent = totalLines > 0
+			? Math.round((bechdelResults.totalLinesFemaleDialogue / totalLines) * 100)
+			: 0;
+
+		const passStatus = bechdelResults.pass ? 'PASSES' : 'FAILS';
+		const metaDescription = `${title} ${passStatus} the Bechdel Test with a score of ${bechdelResults.bechdelScore}/3. ${femaleDialoguePercent}% female dialogue. ${bechdelResults.numOfFemalesCharsWithDialogue} female characters with dialogue. Detailed feminist film analysis with AI-powered insights.`;
+
+		// Structured data for rich search results
+		const structuredData = {
+			'@context': 'https://schema.org',
+			'@type': 'Movie',
+			name: title,
+			description: plot || metaDescription,
+			image: images.poster || images.backdrop,
+			aggregateRating: {
+				'@type': 'AggregateRating',
+				ratingValue: bechdelResults.bechdelScore,
+				bestRating: 3,
+				ratingCount: 1,
+			},
+		};
+
+		if (directors && directors.length > 0) {
+			structuredData.director = directors.map(d => ({
+				'@type': 'Person',
+				name: d.name,
+			}));
+		}
+
+		if (actors && actors.length > 0) {
+			structuredData.actor = actors.slice(0, 5).map(a => ({
+				'@type': 'Person',
+				name: a.actorName,
+			}));
+		}
+
+		if (genres && genres.length > 0) {
+			structuredData.genre = genres;
+		}
+
+		return (
+			<div className="filmInfo">
+				<Helmet>
+					{/* Primary Meta Tags */}
+					<title>{title} - Bechdel Test Analysis | bechdel.io</title>
+					<meta name="title" content={`${title} - Bechdel Test Analysis | bechdel.io`} />
+					<meta name="description" content={metaDescription} />
+
+					{/* Open Graph / Facebook */}
+					<meta property="og:type" content="video.movie" />
+					<meta property="og:url" content={`https://bechdel.io/film/${film.idIMDB}`} />
+					<meta property="og:title" content={`${title} - Bechdel Test Analysis`} />
+					<meta property="og:description" content={metaDescription} />
+					<meta property="og:image" content={images.backdrop || images.poster} />
+					<meta property="og:site_name" content="bechdel.io" />
+
+					{/* Twitter Card */}
+					<meta property="twitter:card" content="summary_large_image" />
+					<meta property="twitter:url" content={`https://bechdel.io/film/${film.idIMDB}`} />
+					<meta property="twitter:title" content={`${title} - Bechdel Test Analysis`} />
+					<meta property="twitter:description" content={metaDescription} />
+					<meta property="twitter:image" content={images.backdrop || images.poster} />
+
+					{/* Structured Data */}
+					<script type="application/ld+json">
+						{JSON.stringify(structuredData)}
+					</script>
+				</Helmet>
+
+				<ErrorBoundary>
+					<Hero
+						title={title}
+						bechdelResults={bechdelResults}
+						images={images}
+					/>
+
+					{/* Metrics Summary */}
+					<MetricsSummary
+						bechdelResults={bechdelResults}
+						enhancedAnalytics={enhancedAnalytics}
+					/>
+
+					{/* Plot Summary and Details Container */}
+					<div className="plot-details-container">
+						<div className="plot-details-content">
+							<PlotSection plot={plot} />
+							<FilmInfoCard film={film} />
+						</div>
+					</div>
+
+					{/* Charts Section */}
+					<div className="charts-section">
+						<SectionHeader
+							icon="📊"
+							title="Visual Analysis"
+							subtitle="Interactive charts showing gender representation, dialogue distribution, and scene-by-scene analysis"
+						/>
+						<div className="charts-content">
+							<BechdelCharts bechdelResults={bechdelResults} />
+						</div>
+					</div>
+
+					{/* Only show timeline if there are scenes that pass the Bechdel test */}
+					{bechdelResults.scenesThatPass && bechdelResults.scenesThatPass.length > 0 && (
+						<div className="timeline-section">
+							<SectionHeader
+								icon="⏱️"
+								title="Script Timeline"
+								subtitle="Chronological view of scenes where women have meaningful conversations about topics other than men"
+							/>
+							<ScriptTimeline
+								bechdelResults={bechdelResults}
+								characters={actors}
+							/>
+						</div>
+					)}
+
+					{/* Advanced AI Analytics Section */}
+					<div className="advanced-analytics-section">
+						<SectionHeader
+							icon="🤖"
+							title="AI-Powered Analysis"
+							subtitle="Deep learning insights on female agency, stereotypes, power dynamics, and character development"
+						/>
+						<div className="advanced-analytics-content">
+							<AdvancedAnalytics
+								enhancedAnalytics={enhancedAnalytics}
+								characters={actors}
+							/>
+						</div>
+					</div>
+
+					{/* Detailed Bechdel Analysis Section */}
+					<div className="detailed-analysis-section">
+						<SectionHeader
+							icon="🔍"
+							title="Detailed Bechdel Analysis"
+							subtitle="Complete breakdown of character counts, dialogue lines, and scene-level test results"
+						/>
+						<div className="detailed-analysis-content">
+							<BechdelResults bechdelResults={bechdelResults} />
+						</div>
+					</div>
+
+					<div className="navigation-section">
+						<Link
+							to="/"
+							className="back-button"
+							aria-label="Go back to all films"
+						>
+							<span className="button-icon" aria-hidden="true">←</span>
+							Back to All Films
+						</Link>
+					</div>
+				</ErrorBoundary>
+			</div>
+		);
+	}, [film]);
+
+	// Handle different states
+	if (loading) {
+		return <Loading />;
+	}
+
+	if (error) {
+		return (
+			<FilmError
+				error={error}
+				onRetry={onRetry}
+				retryCount={retryCount}
+			/>
+		);
+	}
+
+	if (!isValidFilm(film)) {
+		return <Error />;
+	}
+
+	return filmContent;
+});
+
+Film.propTypes = {
+	film: PropTypes.shape({
+		title: PropTypes.string,
+		images: PropTypes.shape({
+			poster: PropTypes.string,
+			backdrop: PropTypes.string,
+		}),
+		plot: PropTypes.string,
+		idIMDB: PropTypes.string,
+		rated: PropTypes.string,
+		directors: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+			})
+		),
+		writers: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+			})
+		),
+		genres: PropTypes.arrayOf(PropTypes.string),
+		actors: PropTypes.arrayOf(
+			PropTypes.shape({
+				actorName: PropTypes.string,
+				character: PropTypes.string,
+				actorActress: PropTypes.string,
+			})
+		),
+		bechdelResults: PropTypes.shape({
+			pass: PropTypes.bool,
+			bechdelScore: PropTypes.number,
+			numScenesPass: PropTypes.number,
+			scenesThatPass: PropTypes.arrayOf(PropTypes.string),
+			numScenesDontPass: PropTypes.number,
+			numOfFemalesChars: PropTypes.number,
+			numOfMaleChars: PropTypes.number,
+			numOfFemalesCharsWithDialogue: PropTypes.number,
+			numOfMaleCharsWithDialogue: PropTypes.number,
+			totalLinesFemaleDialogue: PropTypes.number,
+			totalLinesMaleDialogue: PropTypes.number,
+		}),
+		enhancedAnalytics: PropTypes.shape({
+			femaleAgency: PropTypes.object,
+			stereotypes: PropTypes.object,
+			intersectionality: PropTypes.object,
+			sentiment: PropTypes.object,
+			topics: PropTypes.object,
+			powerDynamics: PropTypes.object,
+			vocabulary: PropTypes.object,
+			biasDetection: PropTypes.object,
+			improvements: PropTypes.object,
+			characterDevelopment: PropTypes.object,
+			analysisTimestamp: PropTypes.string,
+		}),
+	}),
+	loading: PropTypes.bool,
+	error: PropTypes.string,
+	onRetry: PropTypes.func,
+	retryCount: PropTypes.number,
+};
+
+
+// Add display name for debugging
+Film.displayName = 'Film';
+
+export default Film;

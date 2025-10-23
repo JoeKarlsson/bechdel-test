@@ -1,9 +1,10 @@
-const bechdelResults = require('./BechdelResults');
+const BechdelResults = require('./BechdelResults');
 
 describe('Bechdel Results', () => {
+	let bechdelResults;
 
 	beforeEach(() => {
-		bechdelResults.reset();
+		bechdelResults = new BechdelResults();
 	});
 
 	describe('inital state', () => {

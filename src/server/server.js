@@ -13,7 +13,7 @@ const log = require('./helper/log');
 const meta = require('./helper/meta');
 
 // Only import webpack-related modules in development
-let webpackHotMiddleware, webpackDevConfig;
+let webpackHotMiddleware; let webpackDevConfig;
 if (meta.isDeveloping) {
 	webpackHotMiddleware = require('webpack-hot-middleware');
 	webpackDevConfig = require('./helper/webpackDevConfig');

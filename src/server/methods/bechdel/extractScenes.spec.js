@@ -1,11 +1,7 @@
 const extractScenes = require('./extractScenes');
-const bechdelResults = require('./BechdelResults');
 const movieScript = require('../__mocks__/mock-boyhood');
 
 describe('extractScenes', () => {
-	beforeEach(() => {
-		bechdelResults.reset();
-	});
 	it('should return a function', () => {
 		expect(typeof extractScenes).toBe('function');
 	});

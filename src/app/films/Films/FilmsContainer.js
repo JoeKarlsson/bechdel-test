@@ -72,16 +72,47 @@ const FilmsContainer = () => {
 	const [error, setError] = useState(null);
 	const [retryCount, setRetryCount] = useState(0);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pageSize, setPageSize] = useState(10);
+	const [pageSize, setPageSize] = useState(20);
+	const [sortBy, setSortBy] = useState('popularity');
+	const [filters, setFilters] = useState({
+		pass: '',
+		genres: [],
+		yearMin: '',
+		yearMax: '',
+		minRating: '',
+	});
 	const [pagination, setPagination] = useState(null);
 	const { debouncedSearchQuery } = useSearch();
 
-	const fetchFilms = useCallback(async (page = 1, size = pageSize) => {
+	const fetchFilms = useCallback(async (page = 1, size = pageSize, sort = sortBy, filterParams = filters) => {
 		try {
 			setLoading(true);
 			setError(null);
 
-			const url = `/api/film?page=${page}&limit=${size}`;
+			// Build query string with filters
+			const params = new URLSearchParams();
+			params.append('page', page);
+			params.append('limit', size);
+			params.append('sort', sort);
+
+			// Add filter parameters
+			if (filterParams.pass !== '') {
+				params.append('pass', filterParams.pass);
+			}
+			if (filterParams.genres && filterParams.genres.length > 0) {
+				params.append('genres', filterParams.genres.join(','));
+			}
+			if (filterParams.yearMin) {
+				params.append('yearMin', filterParams.yearMin);
+			}
+			if (filterParams.yearMax) {
+				params.append('yearMax', filterParams.yearMax);
+			}
+			if (filterParams.minRating && parseFloat(filterParams.minRating) > 0) {
+				params.append('minRating', filterParams.minRating);
+			}
+
+			const url = `/api/film?${params.toString()}`;
 			const options = {
 				method: 'GET',
 			};
@@ -112,7 +143,7 @@ const FilmsContainer = () => {
 		} finally {
 			setLoading(false);
 		}
-	}, [pageSize]);
+	}, [pageSize, sortBy, filters]);
 
 	const handleRetry = useCallback(() => {
 		setRetryCount(prev => prev + 1);
@@ -134,8 +165,20 @@ const FilmsContainer = () => {
 	const handlePageSizeChange = useCallback((newSize) => {
 		setPageSize(newSize);
 		// Reset to page 1 when changing page size
-		fetchFilms(1, newSize);
-	}, [fetchFilms]);
+		fetchFilms(1, newSize, sortBy, filters);
+	}, [fetchFilms, sortBy, filters]);
+
+	const handleSortChange = useCallback((newSort) => {
+		setSortBy(newSort);
+		// Reset to page 1 when changing sort
+		fetchFilms(1, pageSize, newSort, filters);
+	}, [fetchFilms, pageSize, filters]);
+
+	const handleFilterChange = useCallback((newFilters) => {
+		setFilters(newFilters);
+		// Reset to page 1 when changing filters
+		fetchFilms(1, pageSize, sortBy, newFilters);
+	}, [fetchFilms, pageSize, sortBy]);
 
 	useEffect(() => {
 		fetchFilms();
@@ -167,10 +210,14 @@ const FilmsContainer = () => {
 		pagination,
 		currentPage,
 		pageSize,
+		sortBy,
+		filters,
 		onNextPage: handleNextPage,
 		onPrevPage: handlePrevPage,
 		onPageSizeChange: handlePageSizeChange,
-	}), [filteredFilms, loading, pagination, currentPage, pageSize, handleNextPage, handlePrevPage, handlePageSizeChange]);
+		onSortChange: handleSortChange,
+		onFilterChange: handleFilterChange,
+	}), [filteredFilms, loading, pagination, currentPage, pageSize, sortBy, filters, handleNextPage, handlePrevPage, handlePageSizeChange, handleSortChange, handleFilterChange]);
 
 	// Handle different states
 	if (loading) {
