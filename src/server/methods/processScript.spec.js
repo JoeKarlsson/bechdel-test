@@ -21,7 +21,8 @@ jest.mock('../methods/script');
 describe('Film Routes Test', () => {
 	beforeEach(() => {
 		mockingoose.resetAll();
-		fetchMock.reset();
+		fetchMock.clearHistory();
+		fetchMock.removeRoutes();
 	});
 
 	describe('POST /api/film/', () => {

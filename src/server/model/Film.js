@@ -13,20 +13,23 @@ mongoose.Promise = global.Promise;
 const filmSchema = mongoose.Schema(schema);
 
 // Add indexes for commonly queried fields to improve performance
-// Single field indexes
-filmSchema.index({ title: 1 }); // For findByTitle and text search
-filmSchema.index({ year: 1 }); // For year range filters and sorting
-filmSchema.index({ dateUploaded: -1 }); // For sorting by newest/oldest
-filmSchema.index({ rating: -1 }); // For sorting by rating
-filmSchema.index({ 'bechdelResults.pass': 1 }); // For pass/fail filtering
-filmSchema.index({ 'bechdelResults.bechdelScore': -1 }); // For Bechdel score sorting
-filmSchema.index({ genres: 1 }); // For genre filtering
-filmSchema.index({ idIMDB: 1 }); // For IMDB lookups
+// Only add indexes if the method exists (not in test environment)
+if (typeof filmSchema.index === 'function') {
+	// Single field indexes
+	filmSchema.index({ title: 1 }); // For findByTitle and text search
+	filmSchema.index({ year: 1 }); // For year range filters and sorting
+	filmSchema.index({ dateUploaded: -1 }); // For sorting by newest/oldest
+	filmSchema.index({ rating: -1 }); // For sorting by rating
+	filmSchema.index({ 'bechdelResults.pass': 1 }); // For pass/fail filtering
+	filmSchema.index({ 'bechdelResults.bechdelScore': -1 }); // For Bechdel score sorting
+	filmSchema.index({ genres: 1 }); // For genre filtering
+	filmSchema.index({ idIMDB: 1 }); // For IMDB lookups
 
-// Compound indexes for common query patterns
-filmSchema.index({ rating: -1, metascore: -1 }); // For popularity sorting
-filmSchema.index({ 'bechdelResults.pass': 1, year: -1 }); // For filtering by pass + year
-filmSchema.index({ year: -1, rating: -1 }); // For year + rating sorting
+	// Compound indexes for common query patterns
+	filmSchema.index({ rating: -1, metascore: -1 }); // For popularity sorting
+	filmSchema.index({ 'bechdelResults.pass': 1, year: -1 }); // For filtering by pass + year
+	filmSchema.index({ year: -1, rating: -1 }); // For year + rating sorting
+}
 
 filmSchema.static('listAll', function () {
 	const promise = new Promise((resolve, reject) => {

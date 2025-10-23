@@ -15,14 +15,52 @@ exports[`Hero rendering initial state match the snapshot 1`] = `
       Boyhood
     </h4>
     <h3>
-      Bechdel Pass: 
-      TRUE
+      <span
+        class="bechdel-status pass-icon"
+      >
+        <span
+          class="status-icon"
+        >
+          ✓
+        </span>
+        Bechdel Pass: 
+        TRUE
+      </span>
     </h3>
-    <p>
-      Bechdel Score: 
-      3
-       of 3
-    </p>
+    <div
+      class="hero-quick-stats"
+    >
+      <div
+        class="stat-badge stat-badge--score"
+      >
+        <span
+          class="stat-label"
+        >
+          Bechdel Score
+        </span>
+        <span
+          class="stat-value"
+        >
+          3
+          /3
+        </span>
+      </div>
+      <div
+        class="stat-badge stat-badge--dialogue"
+      >
+        <span
+          class="stat-label"
+        >
+          Female Dialogue
+        </span>
+        <span
+          class="stat-value"
+        >
+          0
+          %
+        </span>
+      </div>
+    </div>
   </span>
 </div>
 `;
