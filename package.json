@@ -56,6 +56,7 @@
 		"build:analyze": "ANALYZE=true npm run build",
 		"build:stats": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --profile --json > webpack-stats.json",
 		"runProd": "NODE_ENV=production node src/server/server.js",
+		"deploy": "./deploy-local.sh",
 		"install:prod": "npm install --legacy-peer-deps --only=production",
 		"install:all": "npm install --legacy-peer-deps",
 		"prepublish": "echo 'Skipping deprecated snyk-protect'"
