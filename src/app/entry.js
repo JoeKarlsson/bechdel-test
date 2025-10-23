@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -19,7 +20,7 @@ if (!container) {
 const root = createRoot(container);
 
 // App-level error fallback component
-const AppErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportError }) => (
+const AppErrorFallback = ({ error, errorInfo, onReportError }) => (
 	<div className="app-error" role="alert" aria-live="polite">
 		<div className="app-error__container">
 			<div className="app-error__icon" aria-hidden="true">
@@ -38,14 +39,16 @@ const AppErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportError
 				>
 					Refresh Page
 				</button>
-				<button
-					type="button"
-					className="app-error__button app-error__button--secondary"
-					onClick={onReportError}
-					aria-label="Report this error to help us improve"
-				>
-					Report Error
-				</button>
+				{onReportError && (
+					<button
+						type="button"
+						className="app-error__button app-error__button--secondary"
+						onClick={onReportError}
+						aria-label="Report this error to help us improve"
+					>
+						Report Error
+					</button>
+				)}
 			</div>
 			{process.env.NODE_ENV === 'development' && error && (
 				<details className="app-error__details">
@@ -63,6 +66,22 @@ const AppErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportError
 		</div>
 	</div>
 );
+
+AppErrorFallback.propTypes = {
+	error: PropTypes.shape({
+		toString: PropTypes.func,
+	}),
+	errorInfo: PropTypes.shape({
+		componentStack: PropTypes.string,
+	}),
+	onReportError: PropTypes.func,
+};
+
+AppErrorFallback.defaultProps = {
+	error: null,
+	errorInfo: null,
+	onReportError: null,
+};
 
 // Render the app
 root.render(
