@@ -13,7 +13,8 @@ const {
 
 describe('getDataFrom', () => {
 	beforeEach(() => {
-		fetchMock.reset();
+		fetchMock.clearHistory();
+		fetchMock.removeRoutes();
 	});
 
 	it('should return data from simple data endpoint', () => {

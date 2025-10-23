@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import PrimaryLayout from './shared/PrimaryLayout/PrimaryLayout';
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';
 import './app-error.scss';
@@ -65,9 +66,11 @@ const AppErrorFallback = ({ error, errorInfo, retryCount, onRetry, onReportError
 
 // Render the app
 root.render(
-	<ErrorBoundary fallback={AppErrorFallback}>
-		<Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-			<PrimaryLayout />
-		</Router>
-	</ErrorBoundary>
+	<HelmetProvider>
+		<ErrorBoundary fallback={AppErrorFallback}>
+			<Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+				<PrimaryLayout />
+			</Router>
+		</ErrorBoundary>
+	</HelmetProvider>
 );

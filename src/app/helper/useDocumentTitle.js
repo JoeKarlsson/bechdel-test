@@ -7,25 +7,25 @@ import { useEffect } from 'react';
  * @param {boolean} includeSuffix - Whether to include the suffix (defaults to true)
  */
 const useDocumentTitle = (title, suffix = 'bechdel.io', includeSuffix = true) => {
-    useEffect(() => {
-        const previousTitle = document.title;
+	useEffect(() => {
+		const previousTitle = document.title;
 
-        // Set the new title
-        if (title && title.trim() !== '') {
-            if (includeSuffix && suffix) {
-                document.title = `${title} | ${suffix}`;
-            } else {
-                document.title = title;
-            }
-        } else {
-            document.title = suffix || 'bechdel.io';
-        }
+		// Set the new title
+		if (title && title.trim() !== '') {
+			if (includeSuffix && suffix) {
+				document.title = `${title} | ${suffix}`;
+			} else {
+				document.title = title;
+			}
+		} else {
+			document.title = suffix || 'bechdel.io';
+		}
 
-        // Cleanup function to restore previous title when component unmounts
-        return () => {
-            document.title = previousTitle;
-        };
-    }, [title, suffix, includeSuffix]);
+		// Cleanup function to restore previous title when component unmounts
+		return () => {
+			document.title = previousTitle;
+		};
+	}, [title, suffix, includeSuffix]);
 };
 
 export default useDocumentTitle;

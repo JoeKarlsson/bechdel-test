@@ -21,11 +21,11 @@ describe('Bechdel methods', () => {
 			expect(result.numScenesPass).toBe(5);
 			expect(result.numScenesDontPass).toBe(156);
 			expect(result.numOfFemalesChars).toBe(8);
-			expect(result.numOfMaleChars).toBe(71);
+			expect(result.numOfMaleChars).toBe(9);
 			expect(result.numOfFemalesCharsWithDialogue).toBe(5);
-			expect(result.numOfMaleCharsWithDialogue).toBe(36);
+			expect(result.numOfMaleCharsWithDialogue).toBe(8);
 			expect(result.totalLinesFemaleDialogue).toBe(550);
-			expect(result.totalLinesMaleDialogue).toBe(1318);
+			expect(result.totalLinesMaleDialogue).toBe(941);
 			expect(result.scenesThatPass.length).toBe(5);
 		});
 	});

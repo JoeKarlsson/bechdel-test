@@ -86,6 +86,18 @@ const filmSchema = {
 		biasDetection: Object,
 		improvements: Object,
 		characterDevelopment: Object,
+		enhancedBechdelValidation: {
+			scenesAnalyzed: Number,
+			scenes: [Object],
+			overallAssessment: {
+				keywordTestScore: Number,
+				llmRecommendedScore: Number,
+				llmPass: Boolean,
+				falsePositivesDetected: Number,
+				reasoning: String
+			},
+			recommendations: String
+		},
 		analysisTimestamp: String,
 		scriptOptimization: {
 			tokenReduction: {

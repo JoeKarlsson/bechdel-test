@@ -1,6 +1,6 @@
 const script = require('../script');
 const scriptAnalysis = require('./scriptAnalysis/scriptAnalysis');
-const bechdelResults = require('./BechdelResults');
+const BechdelResults = require('./BechdelResults');
 const extractScenes = require('./extractScenes');
 const getFilmData = require('../getFilmData/getFilmData');
 const handleError = require('../../helper/handleError');
@@ -8,8 +8,8 @@ const EnhancedAnalytics = require('../enhancedAnalytics');
 
 const getBechdelResults = async (title, path, processId = null, claudeApiKey = null) => {
 	try {
-		// Reset the bechdelResults singleton to ensure clean state
-		bechdelResults.reset();
+		// Create a new BechdelResults instance for this request (prevents race conditions)
+		const bechdelResults = new BechdelResults();
 
 		const data = await getFilmData(title, processId);
 
@@ -38,7 +38,8 @@ const getBechdelResults = async (title, path, processId = null, claudeApiKey = n
 		// First, get gender analytics for the entire script
 		const genderAnalytics = scriptAnalysis.scriptGenderAnalytics(
 			bechdelResults.characters,
-			movieScript
+			movieScript,
+			bechdelResults
 		);
 
 		// Update progress after character analysis
@@ -68,7 +69,16 @@ const getBechdelResults = async (title, path, processId = null, claudeApiKey = n
 			cleanupManager.updateProcessStage(processId, 'running_bechdel_test');
 		}
 
-		const sceneAnalysis = scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes);
+		const sceneAnalysis = scriptAnalysis.scriptAnalysis(bechdelResults.characters, scenes, bechdelResults);
+
+		// Prepare preliminary Bechdel results for enhanced validation
+		const preliminaryBechdelResults = {
+			pass: bechdelResults.bechdelPass,
+			bechdelScore: bechdelResults.bechdelScore,
+			numScenesPass: bechdelResults.numScenesPass,
+			numScenesDontPass: bechdelResults.numScenesDontPass,
+			scenesThatPass: bechdelResults.scenesThatPassBechdel,
+		};
 
 		// Run enhanced analytics if Claude API key is provided
 		let enhancedAnalyticsData = null;
@@ -77,11 +87,17 @@ const getBechdelResults = async (title, path, processId = null, claudeApiKey = n
 				if (processId) {
 					const cleanupManager = require('../../helper/cleanupManager');
 					cleanupManager.updateProcessStage(processId, 'running_enhanced_analytics');
-					cleanupManager.setProcessMessage(processId, 'Running advanced AI analytics...');
+					cleanupManager.setProcessMessage(processId, 'Running advanced AI analytics (including Bechdel validation)...');
 				}
 
 				const enhancedAnalytics = new EnhancedAnalytics(claudeApiKey);
-				enhancedAnalyticsData = await enhancedAnalytics.analyzeScript(path, bechdelResults.characters, processId);
+				// Pass preliminary Bechdel results for validation
+				enhancedAnalyticsData = await enhancedAnalytics.analyzeScript(
+					path,
+					bechdelResults.characters,
+					processId,
+					preliminaryBechdelResults
+				);
 			} catch (error) {
 				console.error('Enhanced analytics failed:', error);
 				// Continue without enhanced analytics rather than failing completely

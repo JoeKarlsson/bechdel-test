@@ -4,78 +4,204 @@ exports[`BechdelResults rendering initial state is rendered 1`] = `
 <div
   className="BechdelResults"
 >
-  <span
-    className="catName"
+  <table
+    className="bechdel-results-table"
   >
-    Bechdel Score:
-  </span>
-   
-  0
-   of 3
-  <br />
-  <span
-    className="catName"
-  >
-    Number of Scenes that pass:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Number of Scenes that dont pass:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Number Of Females Characters:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Number Of Male Characters:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Number of Females Characters With Dialogue:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Number of Male Characters With Dialogue:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Total Lines of Female Dialogue:
-  </span>
-   
-  0
-  <br />
-  <span
-    className="catName"
-  >
-    Total Lines of Male Dialogue:
-  </span>
-   
-  0
-  <br />
+    <thead>
+      <tr>
+        <th>
+          Metric
+        </th>
+        <th>
+          Value
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Bechdel Score
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+           of 3
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Total Scenes
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Scenes that Pass
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Scenes that Don't Pass
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Scene Pass Rate
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+          %
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Female Characters
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Male Characters
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Female Characters with Dialogue
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Male Characters with Dialogue
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Total Lines of Female Dialogue
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Total Lines of Male Dialogue
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Total Dialogue Lines
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Female Dialogue Percentage
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+          %
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Avg Lines per Female Character
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+      <tr>
+        <td
+          className="metric-name"
+        >
+          Avg Lines per Male Character
+        </td>
+        <td
+          className="metric-value"
+        >
+          0
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

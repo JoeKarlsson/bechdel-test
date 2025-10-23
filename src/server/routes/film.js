@@ -55,6 +55,42 @@ const handleGetAllFilms = async (req, res) => {
 		// Parse pagination parameters from query string
 		const page = parseInt(req.query.page, 10) || 1;
 		const limit = parseInt(req.query.limit, 10) || 10;
+		const sortBy = req.query.sort || 'popularity';
+
+		// Parse filter parameters
+		const filters = {};
+
+		// Bechdel pass/fail filter
+		if (req.query.pass !== undefined && req.query.pass !== '') {
+			filters.pass = req.query.pass;
+		}
+
+		// Genre filter (can be comma-separated or array)
+		if (req.query.genres) {
+			filters.genres = Array.isArray(req.query.genres)
+				? req.query.genres
+				: req.query.genres.split(',').map(g => g.trim());
+		}
+
+		// Year range filter
+		if (req.query.yearMin) {
+			filters.yearMin = req.query.yearMin;
+		}
+		if (req.query.yearMax) {
+			filters.yearMax = req.query.yearMax;
+		}
+
+		// Minimum rating filter
+		if (req.query.minRating) {
+			filters.minRating = req.query.minRating;
+		}
+
+		// MPAA rating filter
+		if (req.query.rated) {
+			filters.rated = Array.isArray(req.query.rated)
+				? req.query.rated
+				: req.query.rated.split(',').map(r => r.trim());
+		}
 
 		// Validate pagination parameters
 		if (page < 1) {
@@ -64,7 +100,16 @@ const handleGetAllFilms = async (req, res) => {
 			return handleError(res, 'Limit parameter must be between 1 and 100');
 		}
 
-		const result = await Film.listAllPaginated(page, limit);
+		// Validate sort parameter
+		const validSortOptions = [
+			'popularity', 'rating', 'newest', 'oldest',
+			'title-asc', 'title-desc', 'year-desc', 'year-asc', 'bechdel-score'
+		];
+		if (!validSortOptions.includes(sortBy)) {
+			return handleError(res, `Invalid sort parameter. Must be one of: ${validSortOptions.join(', ')}`);
+		}
+
+		const result = await Film.listAllPaginated(page, limit, sortBy, filters);
 
 		// Check if result is valid (not null/undefined) rather than checking if films array is empty
 		if (!result || !result.films) {
@@ -123,8 +168,8 @@ const handlePostFilm = async (req, res) => {
 		// Return processId immediately so client can connect to SSE
 		res.json({
 			success: true,
-			processId: processId,
-			title: title,
+			processId,
+			title,
 			message: 'Processing started. Connect to SSE for real-time updates.',
 			enhancedAnalytics: !!claudeApiKey
 		});
@@ -211,23 +256,23 @@ const handleGetProcessResult = async (req, res) => {
 					title: processInfo.title,
 					success: true,
 					cacheHit: false,
-					processId: processId
+					processId
 				});
-			} else {
-				return handleError(res, 'Film not found after processing');
-			}
-		} else if (processInfo.status === 'failed') {
+			} 
+			return handleError(res, 'Film not found after processing');
+			
+		} if (processInfo.status === 'failed') {
 			return handleError(res, processInfo.error || 'Processing failed');
-		} else {
-			// Still processing
-			return handleResponse(res, {
-				success: false,
-				status: 'processing',
-				stage: processInfo.stage,
-				progress: processInfo.progress,
-				message: processInfo.message
-			});
-		}
+		} 
+		// Still processing
+		return handleResponse(res, {
+			success: false,
+			status: 'processing',
+			stage: processInfo.stage,
+			progress: processInfo.progress,
+			message: processInfo.message
+		});
+		
 	} catch (err) {
 		return handleError(res, err);
 	}

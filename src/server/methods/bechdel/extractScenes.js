@@ -1,4 +1,3 @@
-const bechdelResults = require('./BechdelResults');
 const handleError = require('../../helper/handleError');
 
 const keywords = ['EXT', 'INT', 'EXTERIOR', 'INTERIOR', 'INT/EXT', 'I/E'];
@@ -12,13 +11,14 @@ const isKeywordOnLine = (keyword, line) => {
 };
 
 const extractScenes = movieScript => {
+	const scenes = [];
 	let subScene = '';
 
 	movieScript.split('\n').forEach(line => {
 		for (let i = 0; i < keywords.length; i++) {
 			const keyword = keywords[i];
 			if (isKeywordOnLine(keyword, line)) {
-				bechdelResults.addScene(subScene);
+				scenes.push(subScene);
 				subScene = '';
 				break;
 			}
@@ -26,12 +26,12 @@ const extractScenes = movieScript => {
 		subScene += `${line}\n`;
 	});
 
-	bechdelResults.addScene(subScene);
+	scenes.push(subScene);
 
-	if (isArrayEmpty(bechdelResults.scenes)) {
+	if (isArrayEmpty(scenes)) {
 		handleError('Error while exctracting scenes');
 	}
-	return bechdelResults.scenes;
+	return scenes;
 };
 
 module.exports = extractScenes;

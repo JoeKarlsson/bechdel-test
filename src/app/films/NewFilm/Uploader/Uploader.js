@@ -208,7 +208,7 @@ const Uploader = () => {
 					console.log('xhr.responseXML:', xhr.responseXML);
 
 					// Uppy might pass response data differently
-					let responseData = xhr.response || xhr.responseText;
+					const responseData = xhr.response || xhr.responseText;
 
 					if (!responseData) {
 						console.error('No response data received from server');
@@ -429,7 +429,7 @@ const Uploader = () => {
 							uploadXFiles: 'Upload %{smart_count} script',
 						},
 					}}
-					showProgressDetails={true}
+					showProgressDetails
 					hideUploadButton={false}
 					hideRetryButton={false}
 					hidePauseResumeButton={false}

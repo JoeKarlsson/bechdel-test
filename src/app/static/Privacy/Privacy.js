@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import useDocumentTitle from '../../helper/useDocumentTitle';
 import './Privacy.scss';
 
@@ -7,8 +8,31 @@ const Privacy = () => {
 	// Set document title
 	useDocumentTitle('privacy');
 
+	const metaDescription = 'Privacy policy for bechdel.io. We respect your privacy - no cookies, no tracking, no third-party analytics. Learn about our data collection and usage policies.';
+
 	return (
 		<div className="Privacy">
+			<Helmet>
+				{/* Primary Meta Tags */}
+				<title>Privacy Policy | bechdel.io</title>
+				<meta name="title" content="Privacy Policy | bechdel.io" />
+				<meta name="description" content={metaDescription} />
+				<meta name="robots" content="index, follow" />
+
+				{/* Open Graph / Facebook */}
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://bechdel.io/privacy" />
+				<meta property="og:title" content="Privacy Policy | bechdel.io" />
+				<meta property="og:description" content={metaDescription} />
+				<meta property="og:site_name" content="bechdel.io" />
+
+				{/* Twitter Card */}
+				<meta property="twitter:card" content="summary" />
+				<meta property="twitter:url" content="https://bechdel.io/privacy" />
+				<meta property="twitter:title" content="Privacy Policy | bechdel.io" />
+				<meta property="twitter:description" content={metaDescription} />
+			</Helmet>
+
 			<div className="container">
 				<header className="privacy-header">
 					<h1>privacy policy</h1>

@@ -95,6 +95,7 @@
 }
 
 /* Popular Films Section */
+
 .popular-films-section {
 	margin-top: 60px;
 	animation: fadeIn 0.6s ease-out 0.4s both;
@@ -145,6 +146,7 @@
 }
 
 /* Dark mode support */
+
 [data-theme="dark"] .no-match-page {
 	background: var(--color-bg-secondary, #2d2d2d);
 }
@@ -176,11 +178,14 @@
 }
 
 /* Animations */
+
 @keyframes fadeInDown {
+
 	from {
 		opacity: 0;
 		transform: translateY(-20px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -188,10 +193,12 @@
 }
 
 @keyframes fadeInUp {
+
 	from {
 		opacity: 0;
 		transform: translateY(20px);
 	}
+
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -199,16 +206,20 @@
 }
 
 @keyframes fadeIn {
+
 	from {
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}
 }
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
+
 	.error-code {
 		font-size: 80px;
 	}
@@ -244,6 +255,7 @@
 }
 
 @media (max-width: 480px) {
+
 	.no-match-content {
 		padding: 40px 20px;
 	}

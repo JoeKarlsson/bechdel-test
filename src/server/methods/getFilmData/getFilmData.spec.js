@@ -16,7 +16,8 @@ const {
 
 describe('Film methods', () => {
 	beforeEach(() => {
-		fetchMock.reset();
+		fetchMock.clearHistory();
+		fetchMock.removeRoutes();
 		filmData.clear();
 	});
 

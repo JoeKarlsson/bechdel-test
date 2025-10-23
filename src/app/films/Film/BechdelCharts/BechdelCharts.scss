@@ -133,13 +133,93 @@
 	}
 
 	.custom-tooltip {
-		background: rgba(0, 0, 0, 0.8);
+		background: rgba(0, 0, 0, 0.9);
 		color: white;
-		padding: 0.5rem;
+		padding: 0.75rem;
 		font-size: 0.9rem;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
 		.label {
+			margin: 0 0 0.25rem 0;
+			font-weight: 600;
+			font-size: 0.95rem;
+		}
+
+		.value {
 			margin: 0;
+			color: #e0e0e0;
+			font-size: 0.85rem;
+		}
+	}
+
+	.chart-annotation {
+		margin-top: 1rem;
+		padding: 0.75rem 1rem;
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		border-left: 4px solid #800080;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: #2c3e50;
+		text-align: left;
+
+		strong {
+			color: #800080;
+			font-weight: 600;
+		}
+	}
+}
+
+// Dark mode support
+
+body.dark-mode {
+
+	.bechdel-charts {
+
+		.chart-card {
+			background: #1a1a1a;
+			border-color: #333;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+			h3 {
+				color: #e0e0e0;
+				border-bottom-color: #333;
+			}
+		}
+
+		.score-card {
+
+			.score-description {
+				color: #a0a0a0;
+			}
+		}
+
+		.stats-card {
+
+			.stats-grid {
+
+				.stat-item {
+					background: #252525;
+					border-color: #333;
+
+					.stat-number {
+						color: #e0e0e0;
+					}
+
+					.stat-label {
+						color: #a0a0a0;
+					}
+				}
+			}
+		}
+
+		.chart-annotation {
+			background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+			border-left-color: #b19cd9;
+			color: #e0e0e0;
+
+			strong {
+				color: #d4a5ff;
+			}
 		}
 	}
 }

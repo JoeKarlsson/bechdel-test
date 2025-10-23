@@ -1,6 +1,6 @@
 /* eslint-disable no-cond-assign */
 
-const bechdelResults = require('../BechdelResults');
+// BechdelResults instance is passed as a parameter to prevent race conditions
 const handleError = require('../../../helper/handleError');
 
 const greaterThanZero = num => {
@@ -161,7 +161,7 @@ const extractDialogueSequences = (scene, characters) => {
 				// Collect dialogue until we hit another character name or empty line
 				while (k < lines.length && lines[k].trim() !== '' &&
 					!characters.some(char => lines[k].trim() === char.cleanCharName)) {
-					dialogueText += lines[k].trim() + ' ';
+					dialogueText += `${lines[k].trim()  } `;
 					k++;
 				}
 
@@ -209,8 +209,7 @@ const analyzeFemaleConversation = (dialogueSequences, characters) => {
 
 		// Check if they're responding to each other (not just sequential dialogue)
 		const wordsBetween = dialogueSequences.filter(d =>
-			d.position > current.position && d.position < next.position
-		);
+			d.position > current.position && d.position < next.position);
 
 		// If there are few or no male characters speaking between female dialogue,
 		// it's likely a conversation
@@ -312,7 +311,8 @@ const twoOrMoreFemalesInScene = (characters, count) => {
 };
 
 // Keep the original function for backward compatibility
-const bechdelTestPass = sceneData => {
+// Note: This function requires bechdelResults instance to be passed
+const bechdelTestPass = (sceneData, bechdelResults) => {
 	const { characters, count, scene } = sceneData;
 
 	if (twoOrMoreFemalesInScene(characters, count) === true) {

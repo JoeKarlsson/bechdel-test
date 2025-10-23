@@ -138,3 +138,138 @@
 		padding-right: 5%;
 	}
 }
+
+.hero-quick-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1.5rem;
+
+	@media (max-width: 768px) {
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+
+	@media (max-width: 480px) {
+		gap: 0.5rem;
+	}
+}
+
+.stat-badge {
+	display: flex;
+	flex-direction: column;
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-radius: 12px;
+	padding: 0.75rem 1.25rem;
+	min-width: 120px;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.25);
+		border-color: rgba(255, 255, 255, 0.5);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	@media (max-width: 768px) {
+		padding: 0.6rem 1rem;
+		min-width: 100px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 0.5rem 0.75rem;
+		min-width: 85px;
+	}
+
+	.stat-label {
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: rgba(255, 255, 255, 0.85);
+		margin-bottom: 0.25rem;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+
+		@media (max-width: 768px) {
+			font-size: 1rem;
+		}
+
+		@media (max-width: 480px) {
+			font-size: 0.9rem;
+		}
+	}
+
+	.stat-value {
+		font-size: 2rem;
+		font-weight: 700;
+		color: #fff;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+		line-height: 1;
+
+		@media (max-width: 768px) {
+			font-size: 1.8rem;
+		}
+
+		@media (max-width: 480px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	// Color accents for different stat types
+
+	&.stat-badge--score {
+		border-color: rgba(128, 0, 128, 0.6);
+		background: rgba(128, 0, 128, 0.2);
+
+		&:hover {
+			border-color: rgba(128, 0, 128, 0.8);
+			background: rgba(128, 0, 128, 0.3);
+		}
+
+		.stat-value {
+			color: #e0b3ff;
+		}
+	}
+
+	&.stat-badge--dialogue {
+		border-color: rgba(44, 140, 62, 0.6);
+		background: rgba(44, 140, 62, 0.2);
+
+		&:hover {
+			border-color: rgba(44, 140, 62, 0.8);
+			background: rgba(44, 140, 62, 0.3);
+		}
+
+		.stat-value {
+			color: #b3ffb3;
+		}
+	}
+
+	&.stat-badge--scenes {
+		border-color: rgba(255, 193, 7, 0.6);
+		background: rgba(255, 193, 7, 0.2);
+
+		&:hover {
+			border-color: rgba(255, 193, 7, 0.8);
+			background: rgba(255, 193, 7, 0.3);
+		}
+
+		.stat-value {
+			color: #fff4b3;
+		}
+	}
+
+	&.stat-badge--characters {
+		border-color: rgba(30, 174, 219, 0.6);
+		background: rgba(30, 174, 219, 0.2);
+
+		&:hover {
+			border-color: rgba(30, 174, 219, 0.8);
+			background: rgba(30, 174, 219, 0.3);
+		}
+
+		.stat-value {
+			color: #b3e5ff;
+		}
+	}
+}

@@ -183,6 +183,6 @@ class BechdelResults {
 	}
 }
 
-const bechdelResults = new BechdelResults();
-
-module.exports = bechdelResults;
+// Export the class instead of a singleton instance to prevent race conditions
+// Each request should create its own instance
+module.exports = BechdelResults;
