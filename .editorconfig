@@ -1,0 +1,32 @@
+# EditorConfig helps maintain consistent coding styles across different editors
+# See https://editorconfig.org
+
+root = true
+
+# Apply to all files
+[*]
+indent_style = tab
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Package files
+[{package.json,package-lock.json}]
+indent_style = space
+indent_size = 2
