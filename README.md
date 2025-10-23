@@ -148,6 +148,15 @@ npm run start:dev # Development server with hot reload at http://localhost:3000
 
 **Available Scripts:**
 
+### Quick Commands (Recommended)
+
+- `npm run dev` - Start development server (alias for start:dev)
+- `npm run prod` - Build and run production server
+- `npm test` - Run test suite with coverage
+- `npm run lint` - Run all linters
+- `npm run deploy` - Deploy to production server
+- `make help` - Show all available Make commands
+
 ### Development Scripts
 
 - `npm start` - Start basic development server (NODE_ENV=development)
@@ -161,6 +170,7 @@ npm run start:dev # Development server with hot reload at http://localhost:3000
 - `npm run build:analyze` - Build with bundle analysis (ANALYZE=true)
 - `npm run build:stats` - Generate webpack stats JSON file
 - `npm run runProd` - Run production server (NODE_ENV=production)
+- `npm run deploy` - Deploy to production (Proxmox)
 
 ### Testing Scripts
 
@@ -183,16 +193,32 @@ npm run start:dev # Development server with hot reload at http://localhost:3000
 
 - `npm run healthcheck` - Run linting and test coverage (CI/CD)
 
+### Maintenance Scripts
+
+- `npm run clean` - Clean build artifacts and coverage
+- `npm run fresh` - Fresh install (clean + reinstall dependencies)
+- `npm run reset-db` - Reset database (destroy and recreate)
+
 ### Script Processing Scripts
 
 - `npm run processScript` - Run script processor with nodemon
 - `npm run loadScript` - Load script directly via directScriptLoader
 - `npm run loadScript:dev` - Load script in development mode
 
-### Security Scripts
+### Make Commands (Alternative)
 
-- `npm run snyk-protect` - Run Snyk security audit
-- `npm run prepublish` - Pre-publish security check
+If you prefer Make, all common commands are available:
+
+```sh
+make dev          # Start development server
+make test         # Run tests
+make lint         # Run linters
+make build        # Build production assets
+make deploy       # Deploy to production
+make docker-up    # Start Docker services
+make clean        # Clean build artifacts
+make help         # Show all available commands
+```
 
 ## Testing
 
@@ -241,6 +267,68 @@ npm run runProd           # Run production server
 npm run processScript     # Process movie scripts
 npm run healthcheck       # Run linting and tests
 npm run snyk-protect      # Security vulnerability check
+```
+
+## Deployment
+
+For production deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+**Quick deployment:**
+
+```sh
+npm run deploy  # Deploy to production server
+```
+
+The deployment script:
+- Pulls latest code from GitHub
+- Builds Docker images on the server
+- Restarts services with zero downtime
+- Runs health checks to verify deployment
+
+## Troubleshooting
+
+### Common Issues
+
+**MongoDB Connection Errors**
+```sh
+# Check if MongoDB is running
+docker compose ps
+
+# Restart MongoDB
+make reset-db
+# or
+npm run reset-db
+```
+
+**Port Already in Use**
+```sh
+# Kill all Node processes
+npm run stop
+
+# Or find and kill specific port
+lsof -ti:3000 | xargs kill -9
+```
+
+**API Key Issues**
+- Verify your `.env` file exists and contains valid API keys
+- Copy `.env.example` to `.env` and fill in your keys
+- For deployment, ensure `.env.deployment.local` has your Claude API key
+
+**Docker Issues**
+```sh
+# Clean Docker resources
+docker compose down -v
+docker system prune -a
+
+# Fresh start
+make docker-up
+```
+
+**Build Errors**
+```sh
+# Clean and rebuild
+npm run fresh
+npm run build
 ```
 
 ## Where to Get Movie Scripts?

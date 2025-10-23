@@ -37,6 +37,8 @@
 		"start:dev": "NODE_ENV=development nodemon src/server/server.js",
 		"start:local": "NODE_ENV=development MONGODB_URI=mongodb://localhost:27017/bechdelTest node src/server/server.js",
 		"stop": "killall -s KILL node",
+		"dev": "npm run start:dev",
+		"prod": "npm run build && npm run runProd",
 		"test": "jest --coverage",
 		"coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
 		"test:watch": "jest --watch",
@@ -57,6 +59,9 @@
 		"build:stats": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --profile --json > webpack-stats.json",
 		"runProd": "NODE_ENV=production node src/server/server.js",
 		"deploy": "./deploy-local.sh",
+		"clean": "rimraf dist coverage node_modules/.cache",
+		"fresh": "npm run clean && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
+		"reset-db": "docker compose down -v && docker compose up mongodb -d",
 		"install:prod": "npm install --legacy-peer-deps --only=production",
 		"install:all": "npm install --legacy-peer-deps",
 		"prepublish": "echo 'Skipping deprecated snyk-protect'"

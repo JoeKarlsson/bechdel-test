@@ -25,7 +25,6 @@ Temporary Items
 
 # IDE generated content
 .idea/
-.editorconfig
 .vscode/
 
 
@@ -45,12 +44,13 @@ yarn-error*.log
 uploads
 
 # Files with API keys (security)
-env.example
 docker-compose.yml
 docker-compose.dockge.yml
 demo-enhanced-analytics.js
 
 # Deployment secrets and local environment files
 *.local
-.env*
+.env
+.env.*
+!.env.example
 setup-server-complete.sh
