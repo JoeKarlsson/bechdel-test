@@ -1,6 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Hero from './Hero/Hero';
 import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import BechdelResults from './BechdelResults/BechdelResults';
@@ -9,6 +10,9 @@ import FilmInfoCard from './FilmInfoCard';
 import PlotSection from './PlotSection';
 import ScriptTimeline from './ScriptTimeline';
 import AdvancedAnalytics from './AdvancedAnalytics';
+import MetricsSummary from './MetricsSummary';
+import EnhancedBechdelValidation from './EnhancedBechdelValidation';
+import SectionHeader from './SectionHeader/SectionHeader';
 import Loading from '../../shared/Loading/Loading';
 import Error from '../../shared/Error/Error';
 import hash from '../../helper/hash';
@@ -133,15 +137,94 @@ const Film = memo(({
 			plot,
 			actors,
 			enhancedAnalytics,
+			directors,
+			writers,
+			genres,
+			rated,
 		} = film;
+
+		// Calculate stats for meta description
+		const totalLines = bechdelResults.totalLinesFemaleDialogue + bechdelResults.totalLinesMaleDialogue;
+		const femaleDialoguePercent = totalLines > 0
+			? Math.round((bechdelResults.totalLinesFemaleDialogue / totalLines) * 100)
+			: 0;
+
+		const passStatus = bechdelResults.pass ? 'PASSES' : 'FAILS';
+		const metaDescription = `${title} ${passStatus} the Bechdel Test with a score of ${bechdelResults.bechdelScore}/3. ${femaleDialoguePercent}% female dialogue. ${bechdelResults.numOfFemalesCharsWithDialogue} female characters with dialogue. Detailed feminist film analysis with AI-powered insights.`;
+
+		// Structured data for rich search results
+		const structuredData = {
+			'@context': 'https://schema.org',
+			'@type': 'Movie',
+			name: title,
+			description: plot || metaDescription,
+			image: images.poster || images.backdrop,
+			aggregateRating: {
+				'@type': 'AggregateRating',
+				ratingValue: bechdelResults.bechdelScore,
+				bestRating: 3,
+				ratingCount: 1,
+			},
+		};
+
+		if (directors && directors.length > 0) {
+			structuredData.director = directors.map(d => ({
+				'@type': 'Person',
+				name: d.name,
+			}));
+		}
+
+		if (actors && actors.length > 0) {
+			structuredData.actor = actors.slice(0, 5).map(a => ({
+				'@type': 'Person',
+				name: a.actorName,
+			}));
+		}
+
+		if (genres && genres.length > 0) {
+			structuredData.genre = genres;
+		}
 
 		return (
 			<div className="filmInfo">
+				<Helmet>
+					{/* Primary Meta Tags */}
+					<title>{title} - Bechdel Test Analysis | bechdel.io</title>
+					<meta name="title" content={`${title} - Bechdel Test Analysis | bechdel.io`} />
+					<meta name="description" content={metaDescription} />
+
+					{/* Open Graph / Facebook */}
+					<meta property="og:type" content="video.movie" />
+					<meta property="og:url" content={`https://bechdel.io/film/${film.idIMDB}`} />
+					<meta property="og:title" content={`${title} - Bechdel Test Analysis`} />
+					<meta property="og:description" content={metaDescription} />
+					<meta property="og:image" content={images.backdrop || images.poster} />
+					<meta property="og:site_name" content="bechdel.io" />
+
+					{/* Twitter Card */}
+					<meta property="twitter:card" content="summary_large_image" />
+					<meta property="twitter:url" content={`https://bechdel.io/film/${film.idIMDB}`} />
+					<meta property="twitter:title" content={`${title} - Bechdel Test Analysis`} />
+					<meta property="twitter:description" content={metaDescription} />
+					<meta property="twitter:image" content={images.backdrop || images.poster} />
+
+					{/* Structured Data */}
+					<script type="application/ld+json">
+						{JSON.stringify(structuredData)}
+					</script>
+				</Helmet>
+
 				<ErrorBoundary>
 					<Hero
 						title={title}
 						bechdelResults={bechdelResults}
 						images={images}
+					/>
+
+					{/* Metrics Summary */}
+					<MetricsSummary
+						bechdelResults={bechdelResults}
+						enhancedAnalytics={enhancedAnalytics}
 					/>
 
 					{/* Plot Summary and Details Container */}
@@ -154,6 +237,11 @@ const Film = memo(({
 
 					{/* Charts Section */}
 					<div className="charts-section">
+						<SectionHeader
+							icon="📊"
+							title="Visual Analysis"
+							subtitle="Interactive charts showing gender representation, dialogue distribution, and scene-by-scene analysis"
+						/>
 						<div className="charts-content">
 							<BechdelCharts bechdelResults={bechdelResults} />
 						</div>
@@ -162,6 +250,11 @@ const Film = memo(({
 					{/* Only show timeline if there are scenes that pass the Bechdel test */}
 					{bechdelResults.scenesThatPass && bechdelResults.scenesThatPass.length > 0 && (
 						<div className="timeline-section">
+							<SectionHeader
+								icon="⏱️"
+								title="Script Timeline"
+								subtitle="Chronological view of scenes where women have meaningful conversations about topics other than men"
+							/>
 							<ScriptTimeline
 								bechdelResults={bechdelResults}
 								characters={actors}
@@ -171,6 +264,11 @@ const Film = memo(({
 
 					{/* Advanced AI Analytics Section */}
 					<div className="advanced-analytics-section">
+						<SectionHeader
+							icon="🤖"
+							title="AI-Powered Analysis"
+							subtitle="Deep learning insights on female agency, stereotypes, power dynamics, and character development"
+						/>
 						<div className="advanced-analytics-content">
 							<AdvancedAnalytics
 								enhancedAnalytics={enhancedAnalytics}
@@ -179,10 +277,23 @@ const Film = memo(({
 						</div>
 					</div>
 
+				{/* Enhanced Bechdel Validation Section */}
+				{enhancedAnalytics?.enhancedBechdelValidation && (
+					<div className="enhanced-validation-section">
+						<EnhancedBechdelValidation
+							validationData={enhancedAnalytics.enhancedBechdelValidation}
+						/>
+					</div>
+				)}
+
 					{/* Detailed Bechdel Analysis Section */}
 					<div className="detailed-analysis-section">
+						<SectionHeader
+							icon="🔍"
+							title="Detailed Bechdel Analysis"
+							subtitle="Complete breakdown of character counts, dialogue lines, and scene-level test results"
+						/>
 						<div className="detailed-analysis-content">
-							<h3>Detailed Bechdel Analysis</h3>
 							<BechdelResults bechdelResults={bechdelResults} />
 						</div>
 					</div>
@@ -277,6 +388,25 @@ Film.propTypes = {
 			improvements: PropTypes.object,
 			characterDevelopment: PropTypes.object,
 			analysisTimestamp: PropTypes.string,
+			enhancedBechdelValidation: PropTypes.shape({
+				scenesAnalyzed: PropTypes.number,
+				scenes: PropTypes.arrayOf(PropTypes.shape({
+					sceneNumber: PropTypes.number,
+					llmResult: PropTypes.string,
+					confidence: PropTypes.number,
+					reasoning: PropTypes.string,
+					femaleCharactersIdentified: PropTypes.arrayOf(PropTypes.string),
+					conversationSubject: PropTypes.string,
+					falsePositive: PropTypes.bool,
+				})),
+				overallAssessment: PropTypes.shape({
+					keywordTestScore: PropTypes.number,
+					llmRecommendedScore: PropTypes.number,
+					llmPass: PropTypes.bool,
+					falsePositivesDetected: PropTypes.number,
+					reasoning: PropTypes.string,
+				}),
+			}),
 		}),
 	}),
 	loading: PropTypes.bool,
