@@ -26,10 +26,10 @@ const helmetConfig = {
 	contentSecurityPolicy: {
 		directives: {
 			defaultSrc: ["'self'"],
-			scriptSrc: meta.isDeveloping ? ["'self'", "'unsafe-eval'", "'unsafe-inline'"] : ["'self'", "'unsafe-inline'"],
+			scriptSrc: meta.isDeveloping ? ["'self'", "'unsafe-eval'", "'unsafe-inline'"] : ["'self'", "'unsafe-inline'", "https://static.cloudflareinsights.com"],
 			styleSrc: ["'self'", "'unsafe-inline'"],
 			imgSrc: ["'self'", "data:", "https:"],
-			connectSrc: meta.isDeveloping ? ["'self'", "ws:", "wss:"] : ["'self'"],
+			connectSrc: meta.isDeveloping ? ["'self'", "ws:", "wss:"] : ["'self'", "https://cloudflareinsights.com"],
 			upgradeInsecureRequests: null, // Disable HTTPS upgrade for local development
 		},
 	},
