@@ -26,7 +26,7 @@ const helmetConfig = {
 	contentSecurityPolicy: {
 		directives: {
 			defaultSrc: ["'self'"],
-			scriptSrc: meta.isDeveloping ? ["'self'", "'unsafe-eval'", "'unsafe-inline'"] : ["'self'"],
+			scriptSrc: meta.isDeveloping ? ["'self'", "'unsafe-eval'", "'unsafe-inline'"] : ["'self'", "'unsafe-inline'"],
 			styleSrc: ["'self'", "'unsafe-inline'"],
 			imgSrc: ["'self'", "data:", "https:"],
 			connectSrc: meta.isDeveloping ? ["'self'", "ws:", "wss:"] : ["'self'"],
