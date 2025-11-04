@@ -158,7 +158,7 @@ const Film = memo(({
 			'@type': 'Movie',
 			name: title,
 			description: plot || metaDescription,
-			image: images.poster || images.backdrop,
+			image: images?.poster || images?.backdrop || '/default-poster.webp',
 			aggregateRating: {
 				'@type': 'AggregateRating',
 				ratingValue: bechdelResults.bechdelScore,
@@ -198,7 +198,7 @@ const Film = memo(({
 					<meta property="og:url" content={`https://bechdel.io/film/${film.idIMDB}`} />
 					<meta property="og:title" content={`${title} - Bechdel Test Analysis`} />
 					<meta property="og:description" content={metaDescription} />
-					<meta property="og:image" content={images.backdrop || images.poster} />
+					<meta property="og:image" content={images?.backdrop || images?.poster || '/default-poster.webp'} />
 					<meta property="og:site_name" content="bechdel.io" />
 
 					{/* Twitter Card */}
@@ -206,7 +206,7 @@ const Film = memo(({
 					<meta property="twitter:url" content={`https://bechdel.io/film/${film.idIMDB}`} />
 					<meta property="twitter:title" content={`${title} - Bechdel Test Analysis`} />
 					<meta property="twitter:description" content={metaDescription} />
-					<meta property="twitter:image" content={images.backdrop || images.poster} />
+					<meta property="twitter:image" content={images?.backdrop || images?.poster || '/default-poster.webp'} />
 
 					{/* Structured Data */}
 					<script type="application/ld+json">

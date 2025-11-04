@@ -48,7 +48,7 @@ const FilmItem = ({ film = {
 					<Link to={filmUrl}>
 						<img
 							className="film-poster"
-							src={film.images.poster}
+							src={film.images?.poster || '/default-poster.webp'}
 							alt={displayTitle}
 							loading="lazy"
 							decoding="async"

@@ -20,7 +20,7 @@ const Hero = ({ title, bechdelResults, images }) => {
 
 	return (
 		<div className="film-hero">
-			<img className="film-image" src={images.backdrop} alt={title} />
+			<img className="film-image" src={images?.backdrop || '/default-poster.webp'} alt={title} />
 			<span className="film-hero-title">
 				<h4>{title}</h4>
 				<h3>
