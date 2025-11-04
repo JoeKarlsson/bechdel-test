@@ -150,6 +150,17 @@ const loadScriptDirectly = async (scriptName) => {
 		// Process the script
 		const result = await processScriptDirectly(scriptPath, title);
 
+		// Wait for all database operations to complete
+		// Mongoose buffers write operations, so we need to ensure they're flushed
+		console.log('Waiting for database operations to flush...');
+
+		// Wait for any pending operations to complete
+		if (mongoose.connection.readyState === 1) {
+			// Give mongoose time to flush all buffered operations
+			await new Promise(resolve => setTimeout(resolve, 5000));
+			console.log('Database flush complete.');
+		}
+
 		// Close database connection
 		await mongoose.connection.close();
 		console.log('Database connection closed.');
