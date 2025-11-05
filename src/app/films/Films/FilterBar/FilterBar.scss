@@ -376,6 +376,30 @@ body.dark-mode {
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 	}
 
+	.filter-bar__header {
+		background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+	}
+
+	.filter-bar__toggle {
+		color: #f0f0f0;
+
+		.filter-badge {
+			background: rgba(102, 126, 234, 0.4);
+			color: white;
+		}
+	}
+
+	.filter-bar__clear {
+		background: rgba(102, 126, 234, 0.2);
+		border-color: rgba(102, 126, 234, 0.4);
+		color: #e0e0e0;
+
+		&:hover {
+			background: rgba(102, 126, 234, 0.3);
+			border-color: rgba(102, 126, 234, 0.6);
+		}
+	}
+
 	.filter-bar__controls {
 		background: #1a202c;
 		border-top-color: #4a5568;
