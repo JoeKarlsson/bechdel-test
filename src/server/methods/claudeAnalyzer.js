@@ -3,7 +3,7 @@
  * Handles advanced analytics using Claude AI for film script analysis
  */
 
-const Anthropic = require('@anthropic-ai/sdk');
+const { Anthropic, RateLimitError, APIError, APIConnectionError, APIConnectionTimeoutError } = require('@anthropic-ai/sdk');
 
 class ClaudeAnalyzer {
 	constructor(apiKey) {
@@ -618,12 +618,60 @@ Respond only with the JSON object, no additional text.`;
 				};
 			}
 		} catch (error) {
-			console.error(`Claude API error for ${analysisType}:`, error);
-			return {
-				analysisType,
-				error: error.message,
-				failed: true
-			};
+			// Enhanced error handling with specific error types
+			if (error instanceof RateLimitError) {
+				console.error(`⚠️  RATE LIMIT ERROR for ${analysisType}:`, {
+					message: error.message,
+					status: error.status,
+					headers: error.headers
+				});
+				return {
+					analysisType,
+					errorType: 'rate_limit',
+					error: error.message,
+					status: error.status,
+					retryAfter: error.headers?.['retry-after'],
+					failed: true
+				};
+			} else if (error instanceof APIConnectionTimeoutError) {
+				console.error(`⏱️  TIMEOUT ERROR for ${analysisType}:`, error.message);
+				return {
+					analysisType,
+					errorType: 'timeout',
+					error: error.message,
+					failed: true
+				};
+			} else if (error instanceof APIConnectionError) {
+				console.error(`🌐 CONNECTION ERROR for ${analysisType}:`, error.message);
+				return {
+					analysisType,
+					errorType: 'connection',
+					error: error.message,
+					failed: true
+				};
+			} else if (error instanceof APIError) {
+				console.error(`❌ API ERROR for ${analysisType}:`, {
+					message: error.message,
+					status: error.status,
+					type: error.type
+				});
+				return {
+					analysisType,
+					errorType: 'api_error',
+					error: error.message,
+					status: error.status,
+					type: error.type,
+					failed: true
+				};
+			} else {
+				console.error(`🔥 UNEXPECTED ERROR for ${analysisType}:`, error);
+				return {
+					analysisType,
+					errorType: 'unknown',
+					error: error.message,
+					failed: true
+				};
+			}
 		}
 	}
 }
