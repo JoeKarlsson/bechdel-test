@@ -218,8 +218,10 @@ filmSchema.static('insertFilm', filmMetaData => {
 			images,
 			data,
 		} = filmMetaData;
-		const film = new Film({ title: data.title });
-		film.title = data.title;
+		// Use title from OMDB if available, otherwise fall back to the provided title (filename)
+		const filmTitle = data.title || title;
+		const film = new Film({ title: filmTitle });
+		film.title = filmTitle;
 		film.bechdelResults = bechdelResults;
 		film.bechdelData = bechdelData;
 		film.plot = data.plot;
@@ -349,8 +351,10 @@ filmSchema.static('updateOrInsertFilm', function (filmMetaData) {
 			})
 			.then(() => {
 				// Create new film after deleting duplicates
-				const film = new Film({ title: data.title });
-				film.title = data.title;
+				// Use title from OMDB if available, otherwise fall back to the provided title (filename)
+				const filmTitle = data.title || title;
+				const film = new Film({ title: filmTitle });
+				film.title = filmTitle;
 				film.bechdelResults = bechdelResults;
 				film.bechdelData = bechdelData;
 				film.plot = data.plot;
