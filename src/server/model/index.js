@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const meta = require('../helper/meta');
 const handleError = require('../helper/handleError');
 
+// Suppress Mongoose 7 deprecation warning for strictQuery
+mongoose.set('strictQuery', false);
+
 const { isDeveloping, MONGODB_URI } = meta;
 
 if (isDeveloping) {
