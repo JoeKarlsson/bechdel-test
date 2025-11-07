@@ -529,6 +529,26 @@ Respond only with the JSON object, no additional text.`;
 		// Limit to analyzing up to 10 scenes that passed (for cost/time)
 		const scenesToAnalyze = bechdelData.scenesThatPass.slice(0, 10);
 
+		// If no scenes passed the keyword test, return a helpful message instead of calling the LLM
+		if (scenesToAnalyze.length === 0) {
+			return {
+				scenesAnalyzed: 0,
+				scenes: [],
+				overallAssessment: {
+					keywordTestScore: bechdelData.bechdelScore,
+					llmRecommendedScore: bechdelData.bechdelScore,
+					llmPass: false,
+					falsePositivesDetected: 0,
+					reasoning: `This film scored ${bechdelData.bechdelScore}/3 on the keyword-based Bechdel test with zero scenes passing all three criteria. The LLM validation feature is designed to re-evaluate scenes that passed the keyword test to detect false positives. Since no scenes passed the initial test, LLM validation is not applicable for this film.`
+				},
+				recommendations: bechdelData.bechdelScore === 0
+					? 'This film has no named female characters. Consider adding female characters with speaking roles.'
+					: bechdelData.bechdelScore === 1
+					? 'This film has named female characters but they do not have conversations with each other. Consider adding dialogue between female characters.'
+					: 'This film has conversations between female characters, but they only discuss men. Consider adding conversations between female characters about topics other than men (their work, goals, interests, etc.).'
+			};
+		}
+
 		const prompt = `You are analyzing film scenes for the Bechdel Test. I've run a keyword-based analysis that marked these scenes as PASSING. Please re-evaluate each scene to identify false positives.
 
 THE BECHDEL TEST CRITERIA:

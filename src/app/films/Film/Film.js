@@ -277,8 +277,8 @@ const Film = memo(({
 						</div>
 					</div>
 
-					{/* Enhanced Bechdel Validation Section */}
-					{enhancedAnalytics?.enhancedBechdelValidation && (
+					{/* Enhanced Bechdel Validation Section - only show if scenes were actually analyzed */}
+					{enhancedAnalytics?.enhancedBechdelValidation && enhancedAnalytics.enhancedBechdelValidation.scenesAnalyzed > 0 && (
 						<div className="enhanced-validation-section">
 							<EnhancedBechdelValidation
 								validationData={enhancedAnalytics.enhancedBechdelValidation}

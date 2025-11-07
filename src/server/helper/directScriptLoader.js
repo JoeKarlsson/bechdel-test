@@ -5,6 +5,9 @@ const processScript = require('../methods/processScript');
 const meta = require('./meta');
 const handleError = require('./handleError');
 
+// Suppress Mongoose 7 deprecation warning for strictQuery
+mongoose.set('strictQuery', false);
+
 // Database connection setup
 const connectToDatabase = async () => {
 	const { isDeveloping, MONGODB_URI } = meta;
