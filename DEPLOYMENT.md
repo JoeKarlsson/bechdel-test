@@ -2,274 +2,267 @@
 
 ## Overview
 
-This application uses a local deployment approach where deployments are triggered manually from your local machine to a Proxmox LXC container. The deployment script builds Docker images on the server and deploys them using Docker Compose.
+This application supports two deployment modes:
 
-## Architecture
+1. **Full-Stack Server** - For adding new films (Express + MongoDB)
+2. **Static Site** - For public viewing (GitHub Pages)
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed architecture documentation.
+
+## Quick Reference
+
+| Mode | URL | Branch | Use Case |
+|------|-----|--------|----------|
+| Full-Stack | http://192.168.0.50:8080 | `develop` | Adding films |
+| Full-Stack (external) | https://bechdel.joekarlsson.io | `develop` | Adding films (public) |
+| Static Site | https://joekarlsson.github.io/bechdel-test/ | `gh-pages` | Public viewing |
+
+---
+
+## Full-Stack Deployment
+
+### Architecture
 
 ```
 Local Machine (macOS)
     ↓ SSH
-Proxmox Host (192.168.0.247)
+Proxmox Host prxbox1 (192.168.0.236)
     ↓ pct exec
-LXC Container 122 (192.168.0.48)
-    └── Docker Compose
-        ├── App Container (Node.js)
-        └── MongoDB Container
+LXC Container 111 (Dockge)
+    └── Docker Compose at /opt/stacks/bechdel-test
+        ├── App Container (Node.js) → 192.168.0.50:8080
+        └── MongoDB Container (internal)
 ```
 
-## Prerequisites
+### Prerequisites
 
-### 1. Local Machine Setup
+1. **Local Machine Setup**
+   - SSH access to Proxmox host configured
+   - `.env.deployment.local` file in project root:
+     ```bash
+     CLAUDE_API_KEY=sk-ant-api03-xxxxx
+     ```
 
-- SSH access to Proxmox host configured
-- `.env.deployment.local` file in project root with your Claude API key:
-  ```bash
-  CLAUDE_API_KEY=sk-ant-api03-xxxxx
-  ```
+2. **Container Setup**
+   - Container ID: 111 (Dockge)
+   - App IP: 192.168.0.50
+   - Port: 8080
+   - Stack location: `/opt/stacks/bechdel-test`
 
-### 2. Proxmox Container Setup
-
-- Container ID: 122
-- IP Address: 192.168.0.48
-- Port: 8080 (mapped from container port 3000)
-- Git repository cloned at `/opt/stacks/bechdel-test`
-- Docker and Docker Compose installed in container
-- SSH key authentication configured for root@192.168.0.247
-
-### 3. Network Configuration
-
-The container's network interface (eth0) is configured during deployment:
-- IP: 192.168.0.48/24
-- Gateway: 192.168.0.1
-- DNS: Configured at Proxmox level (1.1.1.1, 8.8.8.8)
-
-## Deployment Process
-
-### Quick Deploy
+### Deploy Commands
 
 ```bash
+# Quick deploy from local machine
 npm run deploy
-```
 
-This single command handles everything:
-1. Configures container networking
-2. Pulls latest code from GitHub (develop branch)
-3. Creates .env file with API keys
-4. Builds Docker images locally on the server
-5. Starts/restarts services with Docker Compose
-6. Shows deployment status
-
-### Manual Deploy
-
-If you need to run the script directly:
-
-```bash
+# Or run directly
 ./deploy-local.sh
 ```
 
 ### What Happens During Deployment
 
-1. **Network Setup** [1/5]
-   - Ensures container's eth0 interface is up
-   - Configures IP address if missing
-   - Adds default route if needed
+1. **Network Setup** - Ensures container networking is configured
+2. **Code Pull** - Pulls latest from `develop` branch
+3. **Environment** - Creates `.env` with API keys
+4. **Build & Deploy** - Builds Docker image, starts services
+5. **Status Check** - Verifies services are running
 
-2. **Code Pull** [2/5]
-   - Pulls latest changes from `develop` branch
-   - Updates code in `/opt/stacks/bechdel-test`
+### Access Points
 
-3. **Environment Configuration** [3/5]
-   - Creates `.env` file in container
-   - Sets `CLAUDE_API_KEY` from local env file
-   - Sets `CACHE_BUST` timestamp for asset cache busting
+- **Local Network:** http://192.168.0.50:8080
+- **Public Domain:** https://bechdel.joekarlsson.io
+- **MongoDB:** Internal to container (not exposed)
 
-4. **Build & Deploy** [4/5]
-   - Builds Docker image locally (using Webpack, takes ~15-20 seconds)
-   - Creates fresh container image
-   - Starts services with `docker compose up -d`
+---
 
-5. **Status Check** [5/5]
-   - Shows running containers
-   - Displays service health status
+## Static Site Deployment
 
-## Deployment Logs
+### Architecture
 
-Each deployment shows progress through 5 steps with clear indicators:
 ```
-[1/5] Ensuring container network is up...
-✓ Network configured
-
-[2/5] Pulling latest code...
-✓ Code pulled
-
-[3/5] Creating .env file...
-✓ .env created
-
-[4/5] Building and starting services...
-✓ Services started
-
-[5/5] Checking container status...
+Push to gh-pages branch
+    ↓
+GitHub Actions workflow
+    ↓
+Build static site (webpack)
+    ↓
+Deploy to GitHub Pages
+    ↓
+https://joekarlsson.github.io/bechdel-test/
 ```
 
-## Access Points
+### Update Static Site (After Adding Films)
 
-After successful deployment:
+```bash
+# Automated workflow (recommended)
+./scripts/update-static-site.sh
 
-- **Local Network**: http://192.168.0.48:8080
-- **Public Domain**: http://bechdel.joekarlsson.io
-- **MongoDB**: localhost:27017 (from within container)
+# This script:
+# 1. Exports MongoDB data to films.json
+# 2. Commits to gh-pages branch
+# 3. Pushes to trigger GitHub Actions deploy
+```
+
+### Manual Update Steps
+
+```bash
+# 1. Export data from MongoDB
+npm run export-data
+
+# 2. Switch to gh-pages branch
+git checkout gh-pages
+
+# 3. Commit the updated data
+git add src/app/data/films.json
+git commit -m "chore: update films data"
+
+# 4. Push to trigger deploy
+git push origin gh-pages
+
+# 5. Return to develop branch
+git checkout develop
+```
+
+### Verify Deployment
+
+1. Check Actions: https://github.com/JoeKarlsson/bechdel-test/actions
+2. Visit site: https://joekarlsson.github.io/bechdel-test/
+
+---
 
 ## Troubleshooting
 
-### Network Issues
+### Full-Stack Issues
 
-If the container can't reach the internet:
+#### Container not responding
 
 ```bash
 # SSH into Proxmox host
-ssh root@192.168.0.247
+ssh root@192.168.0.236
 
-# Check container network status
-pct exec 122 -- ip addr show eth0
-pct exec 122 -- ip route show
-pct exec 122 -- ping -c 2 8.8.8.8
+# Check container status
+pct exec 111 -- docker compose -f /opt/stacks/bechdel-test/compose.yaml ps
 
-# Fix network if needed (deployment script does this automatically)
-pct exec 122 -- ip link set eth0 up
-pct exec 122 -- ip addr add 192.168.0.48/24 dev eth0
-pct exec 122 -- ip route add default via 192.168.0.1
-```
-
-### Container Issues
-
-```bash
-# SSH into container
-ssh root@192.168.0.247
-pct enter 122
-
-# Check Docker services
-cd /opt/stacks/bechdel-test
-docker compose ps
-docker compose logs app
-docker compose logs mongodb
+# View logs
+pct exec 111 -- docker compose -f /opt/stacks/bechdel-test/compose.yaml logs app
 
 # Restart services
-docker compose restart app
-
-# Rebuild from scratch
-docker compose down
-docker compose build --no-cache app
-docker compose up -d
+pct exec 111 -- docker compose -f /opt/stacks/bechdel-test/compose.yaml restart
 ```
 
-### Git Issues
+#### Network issues
 
-If git operations fail in container:
+```bash
+# Check container network
+pct exec 111 -- ip addr show
+pct exec 111 -- ping -c 2 8.8.8.8
+```
+
+#### Git issues in container
 
 ```bash
 # Remove lock file
-pct exec 122 -- rm -f /opt/stacks/bechdel-test/.git/index.lock
+pct exec 111 -- rm -f /opt/stacks/bechdel-test/.git/index.lock
 
 # Reset to clean state
-pct exec 122 -- bash -c "cd /opt/stacks/bechdel-test && git reset --hard origin/develop"
+pct exec 111 -- bash -c "cd /opt/stacks/bechdel-test && git reset --hard origin/develop"
 ```
 
-### API Key Issues
+### Static Site Issues
 
-Verify API key is set correctly:
+#### Export fails (can't connect to MongoDB)
 
 ```bash
-# Check .env file in container (careful - shows secrets!)
-ssh root@192.168.0.247 "pct exec 122 -- cat /opt/stacks/bechdel-test/.env"
+# Option 1: Run export from within container
+ssh root@192.168.0.236 "pct exec 111 -- bash -c 'cd /opt/stacks/bechdel-test && npm run export-data'"
+
+# Option 2: SSH tunnel to MongoDB
+ssh -L 27017:192.168.0.50:27017 root@192.168.0.236 -N &
+MONGODB_URI=mongodb://localhost:27017/bechdelTest npm run export-data
 ```
+
+#### GitHub Actions failing
+
+1. Check workflow logs: https://github.com/JoeKarlsson/bechdel-test/actions
+2. Verify `gh-pages` branch exists
+3. Check GitHub Pages settings in repo
+
+---
 
 ## Configuration Files
 
 ### deploy-local.sh
 
-Main deployment script that orchestrates the entire deployment process. Located at project root.
+Main deployment script for full-stack server.
 
-**Configuration variables:**
-- `PROXMOX_HOST`: 192.168.0.247
-- `PROXMOX_USER`: root
-- `CONTAINER_ID`: 122
+**Variables:**
+- `PROXMOX_HOST`: 192.168.0.236 (prxbox1)
+- `CONTAINER_ID`: 111 (Dockge)
 
 ### .env.deployment.local
 
-Local file (gitignored) containing deployment secrets:
+Local secrets (gitignored):
 ```bash
 CLAUDE_API_KEY=sk-ant-api03-xxxxx
 ```
 
 ### compose.yaml
 
-Docker Compose configuration in the repository defining:
-- App service (Node.js application)
-- MongoDB service (database)
-- Volume mounts
-- Port mappings
-- Health checks
+Docker Compose configuration:
+- App service (Node.js on port 8080)
+- MongoDB service (internal)
+- Persistent volumes for data
+
+### .github/workflows/deploy-gh-pages.yml
+
+GitHub Actions workflow for static site deployment.
+
+---
 
 ## Security Notes
 
-1. **API Keys**: Never commit `.env.deployment.local` to git (already in .gitignore)
-2. **SSH Keys**: Use key-based authentication for Proxmox SSH access
-3. **Container Access**: Root access to container - secure your Proxmox host
-4. **Network Security**: Application accessible on local network (192.168.0.48:8080)
+1. **API Keys** - Never commit `.env.deployment.local`
+2. **SSH Keys** - Use key-based auth for Proxmox
+3. **MongoDB** - Not exposed externally, internal to Docker network
+4. **HTTPS** - Public access via Nginx Proxy Manager with SSL
+
+---
 
 ## Deployment Checklist
 
-Before deploying:
-- [ ] Local `.env.deployment.local` file exists with valid Claude API key
-- [ ] SSH access to Proxmox host works (`ssh root@192.168.0.247`)
-- [ ] Changes committed and pushed to develop branch on GitHub
-- [ ] No other deployments running
+### Full-Stack Deploy
 
-During deployment:
-- [ ] Watch for errors in each step
-- [ ] Verify "✓" checkmarks for all 5 steps
-- [ ] Check final container status shows both services running
+- [ ] `.env.deployment.local` exists with valid API keys
+- [ ] SSH access to Proxmox works
+- [ ] Changes pushed to `develop` branch
+- [ ] Run `npm run deploy`
+- [ ] Verify at http://192.168.0.50:8080
 
-After deployment:
-- [ ] Test application at http://192.168.0.48:8080
-- [ ] Verify public URL works: http://bechdel.joekarlsson.io
-- [ ] Check application logs if issues occur
+### Static Site Update
+
+- [ ] New films added via full-stack
+- [ ] Run `./scripts/update-static-site.sh`
+- [ ] Check GitHub Actions completed
+- [ ] Verify at https://joekarlsson.github.io/bechdel-test/
+
+---
 
 ## Rollback
 
-If deployment fails or causes issues:
+### Full-Stack
 
-1. **Quick rollback to previous container**:
-   ```bash
-   ssh root@192.168.0.247 "pct exec 122 -- bash -c 'cd /opt/stacks/bechdel-test && docker compose down && docker compose up -d'"
-   ```
-
-2. **Rollback code to previous commit**:
-   ```bash
-   ssh root@192.168.0.247 "pct exec 122 -- bash -c 'cd /opt/stacks/bechdel-test && git reset --hard HEAD~1'"
-   npm run deploy
-   ```
-
-## Development vs Production
-
-This deployment setup is for:
-- **Environment**: Production/Home Server
-- **Branch**: develop
-- **Build**: Production Docker builds with optimized Webpack
-- **Domain**: bechdel.joekarlsson.io
-
-For local development, use:
 ```bash
-npm run start:dev
+# Rollback to previous commit
+ssh root@192.168.0.236 "pct exec 111 -- bash -c 'cd /opt/stacks/bechdel-test && git reset --hard HEAD~1'"
+npm run deploy
 ```
 
-## Migration Notes
+### Static Site
 
-This deployment approach replaced the previous GitHub Actions CI/CD pipeline because:
-- Simpler to maintain for single-user deployments
-- No Tailscale VPN coordination needed
-- Direct SSH access available on local network
-- Faster feedback loop
-- Easier debugging
-
-Previous GitHub Actions workflow is preserved as `.github/workflows/deploy.yml.disabled` for reference.
+```bash
+# Revert last commit on gh-pages
+git checkout gh-pages
+git revert HEAD
+git push origin gh-pages
+git checkout develop
+```
