@@ -12,9 +12,9 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROXMOX_HOST="192.168.0.247"
+PROXMOX_HOST="192.168.0.236"
 PROXMOX_USER="root"
-CONTAINER_ID="122"
+CONTAINER_ID="111"
 APP_PATH="/opt/stacks/bechdel-test"
 HEALTH_CHECK_RETRIES=12
 HEALTH_CHECK_INTERVAL=5
@@ -73,7 +73,7 @@ if ssh ${PROXMOX_USER}@${PROXMOX_HOST} "pct exec ${CONTAINER_ID} -- bash -c 'pin
     echo -e "${GREEN}✓${NC} Network already working, skipping configuration"
 else
     echo -e "${YELLOW}⚠${NC}  Network not responding, configuring..."
-    ssh ${PROXMOX_USER}@${PROXMOX_HOST} "pct exec ${CONTAINER_ID} -- bash -c 'ip link set eth0 up 2>/dev/null || true; ip addr show eth0 | grep -q \"192.168.0.48\" || ip addr add 192.168.0.48/24 dev eth0; ip route show | grep -q default || ip route add default via 192.168.0.1'" || {
+    ssh ${PROXMOX_USER}@${PROXMOX_HOST} "pct exec ${CONTAINER_ID} -- bash -c 'ip link set eth0 up 2>/dev/null || true; ip addr show eth0 | grep -q \"192.168.0.50\" || ip addr add 192.168.0.50/24 dev eth0; ip route show | grep -q default || ip route add default via 192.168.0.1'" || {
         echo -e "${YELLOW}⚠${NC}  Network setup had issues, but continuing..."
     }
 
@@ -139,7 +139,7 @@ echo ""
 echo -e "${YELLOW}Waiting for application health check...${NC}"
 HEALTHY=false
 for i in $(seq 1 $HEALTH_CHECK_RETRIES); do
-    if curl -sf http://192.168.0.48:8080/health > /dev/null 2>&1; then
+    if curl -sf http://192.168.0.50:8080/health > /dev/null 2>&1; then
         HEALTHY=true
         break
     fi
@@ -152,7 +152,7 @@ if [ "$HEALTHY" = true ]; then
     echo -e "${GREEN}✓${NC} Application health check passed"
 
     # Get HTTP status
-    HTTP_STATUS=$(curl -sI http://192.168.0.48:8080 | head -1)
+    HTTP_STATUS=$(curl -sI http://192.168.0.50:8080 | head -1)
     echo -e "${GREEN}✓${NC} HTTP Response: ${HTTP_STATUS}"
 else
     echo -e "${YELLOW}⚠${NC}  Warning: Application health check timed out"
@@ -166,7 +166,7 @@ echo "✅ Deployment Complete!"
 echo -e "==================================================${NC}"
 echo ""
 echo -e "${BLUE}Access Points:${NC}"
-echo "  Local:  http://192.168.0.48:8080"
+echo "  Local:  http://192.168.0.50:8080"
 echo "  Public: http://bechdel.joekarlsson.io"
 echo ""
 echo -e "${BLUE}Deployment Info:${NC}"
@@ -174,7 +174,7 @@ echo "  Commit:  ${COMMIT_HASH}"
 echo "  Time:    $(date '+%Y-%m-%d %H:%M:%S')"
 echo ""
 echo -e "${BLUE}Useful Commands:${NC}"
-echo "  View logs:    ssh root@192.168.0.247 'pct exec 122 -- bash -c \"cd ${APP_PATH} && docker compose logs -f app\"'"
-echo "  Restart app:  ssh root@192.168.0.247 'pct exec 122 -- bash -c \"cd ${APP_PATH} && docker compose restart app\"'"
-echo "  Check status: curl http://192.168.0.48:8080/health"
+echo "  View logs:    ssh root@192.168.0.236 'pct exec 111 -- bash -c \"cd ${APP_PATH} && docker compose logs -f app\"'"
+echo "  Restart app:  ssh root@192.168.0.236 'pct exec 111 -- bash -c \"cd ${APP_PATH} && docker compose restart app\"'"
+echo "  Check status: curl http://192.168.0.50:8080/health"
 echo ""
