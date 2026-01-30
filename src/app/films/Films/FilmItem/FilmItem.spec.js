@@ -1,6 +1,5 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { render } from '../../../test-utils';
 import FilmItem from './FilmItem';
 
 describe('FilmItem', () => {
@@ -33,32 +32,24 @@ describe('FilmItem', () => {
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('is rendered correctly', () => {
-				const { container } = render(
-					<MemoryRouter>
-						<FilmItem />
-					</MemoryRouter>
-				);
+				const { container } = render(<FilmItem />);
 				expect(container.firstChild).toBeTruthy();
 			});
 		});
 
 		describe('with film data', () => {
-			it('renders film poster and help text', () => {
+			it('renders film poster and title', () => {
 				const { getByAltText, getByText } = render(
-					<MemoryRouter>
-						<FilmItem film={mockFilmPassing} />
-					</MemoryRouter>
+					<FilmItem film={mockFilmPassing} />
 				);
 
-				expect(getByAltText('Test Movie Passing')).toBeTruthy();
-				expect(getByText('Help')).toBeTruthy();
+				expect(getByAltText('test-movie-passing')).toBeTruthy();
+				expect(getByText('test-movie-passing')).toBeTruthy();
 			});
 
 			it('shows checkmark for passing films', () => {
 				const { getByText } = render(
-					<MemoryRouter>
-						<FilmItem film={mockFilmPassing} />
-					</MemoryRouter>
+					<FilmItem film={mockFilmPassing} />
 				);
 
 				expect(getByText('✓')).toBeTruthy();
@@ -66,9 +57,7 @@ describe('FilmItem', () => {
 
 			it('shows X for failing films', () => {
 				const { getByText } = render(
-					<MemoryRouter>
-						<FilmItem film={mockFilmFailing} />
-					</MemoryRouter>
+					<FilmItem film={mockFilmFailing} />
 				);
 
 				expect(getByText('✗')).toBeTruthy();

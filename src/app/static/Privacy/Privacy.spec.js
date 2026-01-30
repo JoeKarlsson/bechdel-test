@@ -1,16 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render } from '../../test-utils';
 import Privacy from './Privacy';
 
 describe('Privacy Page', () => {
 	describe('rendering', () => {
 		it('match the snapshot', () => {
-			const { container } = render(
-				<MemoryRouter>
-					<Privacy />
-				</MemoryRouter>
-			);
+			const { container } = render(<Privacy />);
 			expect(container.firstChild).toMatchSnapshot();
 		});
 	});

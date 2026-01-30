@@ -1,15 +1,17 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, AllTheProviders } from '../../test-utils';
 import renderer from 'react-test-renderer';
 import Films from './Films';
-
-jest.mock('../../helper/api');
 
 describe('Films', () => {
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('match the snapshot', () => {
-				const component = renderer.create(<Films />);
+				const component = renderer.create(
+					<AllTheProviders>
+						<Films />
+					</AllTheProviders>
+				);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});

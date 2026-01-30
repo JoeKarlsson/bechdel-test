@@ -1,6 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render } from '../../../test-utils';
 import FilmList from './FilmList';
 
 describe('FilmList', () => {
@@ -8,17 +7,34 @@ describe('FilmList', () => {
 		setTimeout(callback, 0);
 	};
 
-	describe('rendering', () => {
-		describe('initial state', () => {
-			it('is rendered', () => {
-				const component = renderer.create(<FilmList />);
-				const tree = component.toJSON();
-				expect(tree).toMatchSnapshot();
-			});
+	const mockFilms = [
+		{
+			_id: '1',
+			title: 'Test Film 1',
+			images: { poster: 'https://example.com/poster1.jpg' },
+			bechdelResults: { pass: true },
+		},
+		{
+			_id: '2',
+			title: 'Test Film 2',
+			images: { poster: 'https://example.com/poster2.jpg' },
+			bechdelResults: { pass: false },
+		},
+	];
 
-			it('is rendered correctly', () => {
-				const { container } = render(<FilmList />);
+	describe('rendering', () => {
+		describe('with no films', () => {
+			it('renders null when films array is empty', () => {
+				const { container } = render(<FilmList films={[]} />);
+				expect(container.firstChild).toBeNull();
+			});
+		});
+
+		describe('with films', () => {
+			it('renders film items', () => {
+				const { container } = render(<FilmList films={mockFilms} />);
 				expect(container.firstChild).toBeTruthy();
+				expect(container.querySelector('.FilmList')).toBeInTheDocument();
 			});
 		});
 	});

@@ -5,14 +5,17 @@ import ScriptTimeline from './ScriptTimeline';
 describe('ScriptTimeline', () => {
 	const mockBechdelResults = {
 		scenesThatPass: [
-			{ sceneNumber: 1, dialogue: 'Test dialogue 1' },
-			{ sceneNumber: 2, dialogue: 'Test dialogue 2' },
+			'INT. COFFEE SHOP - DAY\nALICE: Hello there!\nBOB: Hi Alice!',
+			'EXT. PARK - AFTERNOON\nALICE: Beautiful weather today.\nCAROL: Indeed it is.',
 		],
+		numScenesPass: 2,
+		numScenesDontPass: 5,
 	};
 
 	const mockCharacters = [
-		{ cleanCharName: 'CHARACTER1', gender: 1 },
-		{ cleanCharName: 'CHARACTER2', gender: 1 },
+		{ cleanCharName: 'ALICE', gender: 1 },
+		{ cleanCharName: 'CAROL', gender: 1 },
+		{ cleanCharName: 'BOB', gender: 0 },
 	];
 
 	it('should render without crashing', () => {
@@ -28,7 +31,7 @@ describe('ScriptTimeline', () => {
 	it('should render with empty scenes', () => {
 		const { container } = render(
 			<ScriptTimeline
-				bechdelResults={{ scenesThatPass: [] }}
+				bechdelResults={{ scenesThatPass: [], numScenesPass: 0, numScenesDontPass: 0 }}
 				characters={[]}
 			/>
 		);
