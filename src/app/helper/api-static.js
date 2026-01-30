@@ -1,12 +1,20 @@
 /**
  * Static API service for GitHub Pages deployment
  *
- * Replaces the dynamic API calls with static JSON data
- * loaded at build time. Supports client-side filtering,
- * sorting, and pagination.
+ * Uses lightweight summary data for list views (fast initial load)
+ * and fetches full detail files on demand for individual films.
+ *
+ * Initial load: ~93KB (summary)
+ * Detail files: ~600KB each (loaded on demand)
  */
 
-import filmsData from '../data/films.json';
+import filmsSummary from '../data/films-summary.json';
+
+// Cache for fetched film details
+const filmDetailCache = new Map();
+
+// Base path for GitHub Pages deployment
+const BASE_PATH = '/bechdel-test';
 
 /**
  * Filter and sort films based on query parameters
@@ -25,7 +33,7 @@ export const getFilms = (params = {}) => {
     minRating,
   } = params;
 
-  let filtered = [...filmsData];
+  let filtered = [...filmsSummary];
 
   // Apply filters
   if (pass !== undefined && pass !== null && pass !== '') {
@@ -109,16 +117,39 @@ export const getFilms = (params = {}) => {
 };
 
 /**
- * Get a single film by ID
+ * Get a single film by ID (lazy loads full detail)
  * @param {string} id - Film MongoDB ObjectId
- * @returns {Object|null} - Film object or null
+ * @returns {Promise<Object>} - Film object with full details
  */
-export const getFilm = (id) => {
-  const film = filmsData.find(f => f._id === id);
-  if (!film) {
-    return Promise.reject(new Error('Film not found'));
+export const getFilm = async (id) => {
+  // Check cache first
+  if (filmDetailCache.has(id)) {
+    return filmDetailCache.get(id);
   }
-  return Promise.resolve(film);
+
+  // Verify film exists in summary
+  const summaryFilm = filmsSummary.find(f => f._id === id);
+  if (!summaryFilm) {
+    throw new Error('Film not found');
+  }
+
+  try {
+    // Fetch full detail file
+    const response = await fetch(`${BASE_PATH}/data/films/${id}.json`);
+    if (!response.ok) {
+      throw new Error('Failed to load film details');
+    }
+    const film = await response.json();
+
+    // Cache the result
+    filmDetailCache.set(id, film);
+
+    return film;
+  } catch (error) {
+    // Fall back to summary data if detail fetch fails
+    console.warn(`Failed to load detail for film ${id}, using summary:`, error);
+    return summaryFilm;
+  }
 };
 
 /**
@@ -126,7 +157,7 @@ export const getFilm = (id) => {
  * @returns {number}
  */
 export const getFilmCount = () => {
-  return Promise.resolve(filmsData.length);
+  return Promise.resolve(filmsSummary.length);
 };
 
 /**
@@ -135,7 +166,7 @@ export const getFilmCount = () => {
  */
 export const getGenres = () => {
   const genreSet = new Set();
-  filmsData.forEach(film => {
+  filmsSummary.forEach(film => {
     if (film.genres) {
       film.genres.forEach(genre => genreSet.add(genre));
     }
@@ -148,7 +179,7 @@ export const getGenres = () => {
  * @returns {Object} - { min, max }
  */
 export const getYearRange = () => {
-  const years = filmsData
+  const years = filmsSummary
     .filter(f => f.year)
     .map(f => f.year);
   return Promise.resolve({

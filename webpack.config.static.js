@@ -120,6 +120,12 @@ module.exports = {
 					to: '.',
 					noErrorOnMissing: true,
 				},
+				// Copy individual film detail JSON files for lazy loading
+				{
+					from: 'src/app/data/films',
+					to: 'data/films',
+					noErrorOnMissing: false,
+				},
 			],
 		}),
 	],
