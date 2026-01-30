@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
+// Use HashRouter for GitHub Pages static site (no server-side routing)
+import { HashRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import PrimaryLayout from './shared/PrimaryLayout/PrimaryLayout';
 import ErrorBoundary from './shared/ErrorBoundary/ErrorBoundary';

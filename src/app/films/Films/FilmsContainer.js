@@ -3,29 +3,20 @@ import PropTypes from 'prop-types';
 import Films from './Films';
 import Loading from '../../shared/Loading/Loading';
 import { useSearch } from '../../shared/SearchContext/SearchContext';
-import api from '../../helper/api';
+import { getFilms } from '../../helper/api-static';
 import './FilmsContainer.scss';
 
-// Empty state component
+// Empty state component (static site version - no upload functionality)
 const EmptyFilmsState = () => (
 	<div className="empty-films" role="status" aria-live="polite">
 		<div className="empty-films__container">
 			<div className="empty-films__icon" aria-hidden="true">
 				🎬
 			</div>
-			<h2 className="empty-films__title">No Movies Have Been Uploaded Yet</h2>
+			<h2 className="empty-films__title">No Films Available</h2>
 			<p className="empty-films__message">
-				Welcome to bechdel.io! No films have been analyzed yet. Be the first to upload a movie script and discover how it performs on the Bechdel Test.
+				Welcome to bechdel.io! The film database is currently empty. Please check back later for analyzed films.
 			</p>
-			<div className="empty-films__actions">
-				<a
-					href="/film/new"
-					className="empty-films__button empty-films__button--primary"
-					aria-label="Upload a new script to analyze"
-				>
-					Upload Your First Script
-				</a>
-			</div>
 		</div>
 	</div>
 );
@@ -89,35 +80,32 @@ const FilmsContainer = () => {
 			setLoading(true);
 			setError(null);
 
-			// Build query string with filters
-			const params = new URLSearchParams();
-			params.append('page', page);
-			params.append('limit', size);
-			params.append('sort', sort);
+			// Build params object for static API
+			const params = {
+				page,
+				limit: size,
+				sort,
+			};
 
 			// Add filter parameters
 			if (filterParams.pass !== '') {
-				params.append('pass', filterParams.pass);
+				params.pass = filterParams.pass;
 			}
 			if (filterParams.genres && filterParams.genres.length > 0) {
-				params.append('genres', filterParams.genres.join(','));
+				params.genres = filterParams.genres;
 			}
 			if (filterParams.yearMin) {
-				params.append('yearMin', filterParams.yearMin);
+				params.yearMin = filterParams.yearMin;
 			}
 			if (filterParams.yearMax) {
-				params.append('yearMax', filterParams.yearMax);
+				params.yearMax = filterParams.yearMax;
 			}
 			if (filterParams.minRating && parseFloat(filterParams.minRating) > 0) {
-				params.append('minRating', filterParams.minRating);
+				params.minRating = filterParams.minRating;
 			}
 
-			const url = `/api/film?${params.toString()}`;
-			const options = {
-				method: 'GET',
-			};
-
-			const data = await api(url, options);
+			// Use static API
+			const data = await getFilms(params);
 
 			// Validate the response data - handle paginated response
 			if (!data || typeof data !== 'object') {

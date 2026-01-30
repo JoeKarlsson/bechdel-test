@@ -20,7 +20,7 @@ const CaseStudy = lazy(() => import('../../static/CaseStudy/CaseStudy'));
 const ApiDocs = lazy(() => import('../../static/ApiDocs/ApiDocs'));
 const Home = lazy(() => import('../../static/Home/Home'));
 const FilmContainer = lazy(() => import('../../films/Film/FilmContainer'));
-const NewFilm = lazy(() => import('../../films/NewFilm/NewFilm'));
+// NewFilm component removed for static site - upload not supported
 const FilmsContainer = lazy(() => import('../../films/Films/FilmsContainer'));
 const NoMatch = lazy(() => import('../../static/NoMatch/NoMatch'));
 
@@ -58,7 +58,7 @@ export const PrimaryLayout = () => {
 									<Route path="/privacy" element={<Privacy />} />
 									<Route path="/api-docs" element={<ApiDocs />} />
 									<Route path="/case-study" element={<CaseStudy />} />
-									<Route path="/film/new" element={<NewFilm />} />
+									{/* NewFilm route removed for static site */}
 									<Route path="/film/:id" element={<FilmContainer />} />
 									<Route path="/films" element={<FilmsContainer />} />
 									<Route path="*" element={<NoMatch />} />

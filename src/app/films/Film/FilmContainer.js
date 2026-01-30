@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Film from './Film';
-import api from '../../helper/api';
+import { getFilm } from '../../helper/api-static';
 import useDocumentTitle from '../../helper/useDocumentTitle';
 
 // Default film data structure
@@ -55,12 +55,8 @@ const FilmContainer = () => {
 			setLoading(true);
 			setError(null);
 
-			const url = `/api/film/${id}`;
-			const options = {
-				method: 'GET',
-			};
-
-			const data = await api(url, options);
+			// Use static API
+			const data = await getFilm(id);
 
 			// Validate the response data
 			if (!data || typeof data !== 'object') {
