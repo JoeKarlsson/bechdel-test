@@ -54,6 +54,7 @@
 		"processScript": "nodemon src/server/helper/processScript.js",
 		"loadScript": "node src/server/helper/directScriptLoader.js",
 		"loadScript:dev": "NODE_ENV=development node src/server/helper/directScriptLoader.js",
+		"export-data": "node scripts/export-to-json.js",
 		"build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --progress --profile",
 		"build:analyze": "ANALYZE=true npm run build",
 		"build:stats": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --profile --json > webpack-stats.json",
