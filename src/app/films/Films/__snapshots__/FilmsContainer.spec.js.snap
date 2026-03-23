@@ -1,38 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FilmsContainer rendering initial state match the snapshot 1`] = `
-<div>
-  <span
-    className="Loader"
+<div
+  className="Loader Loader--hidden"
+>
+  <div
+    className="Loader_particles"
   >
     <div
-      className="Loader_indicator"
+      className="Loader_particle Loader_particle--0"
+    />
+    <div
+      className="Loader_particle Loader_particle--1"
+    />
+    <div
+      className="Loader_particle Loader_particle--2"
+    />
+    <div
+      className="Loader_particle Loader_particle--3"
+    />
+    <div
+      className="Loader_particle Loader_particle--0"
+    />
+    <div
+      className="Loader_particle Loader_particle--1"
+    />
+    <div
+      className="Loader_particle Loader_particle--2"
+    />
+    <div
+      className="Loader_particle Loader_particle--3"
+    />
+    <div
+      className="Loader_particle Loader_particle--0"
+    />
+    <div
+      className="Loader_particle Loader_particle--1"
+    />
+    <div
+      className="Loader_particle Loader_particle--2"
+    />
+    <div
+      className="Loader_particle Loader_particle--3"
+    />
+    <div
+      className="Loader_particle Loader_particle--0"
+    />
+    <div
+      className="Loader_particle Loader_particle--1"
+    />
+    <div
+      className="Loader_particle Loader_particle--2"
+    />
+    <div
+      className="Loader_particle Loader_particle--3"
+    />
+    <div
+      className="Loader_particle Loader_particle--0"
+    />
+    <div
+      className="Loader_particle Loader_particle--1"
+    />
+    <div
+      className="Loader_particle Loader_particle--2"
+    />
+    <div
+      className="Loader_particle Loader_particle--3"
+    />
+  </div>
+  <div
+    className="Loader_indicator"
+  >
+    <div
+      className="Loader_textContainer"
     >
-      <h1>
-        <span>
-          Destroying the Patriarchy
-        </span>
+      <h1
+        className="Loader_title"
+      >
         <span
-          className="Loader_ellipsis"
+          className="Loader_typingText"
         >
           <span
-            className="Loader_ellipsisDot"
+            className="Loader_cursor"
           >
-            .
-          </span>
-          <span
-            className="Loader_ellipsisDot"
-          >
-            .
-          </span>
-          <span
-            className="Loader_ellipsisDot"
-          >
-            .
+            |
           </span>
         </span>
       </h1>
+      <div
+        className="Loader_ellipsis"
+      >
+        <span
+          className="Loader_ellipsisDot Loader_ellipsisDot--1"
+        >
+          .
+        </span>
+        <span
+          className="Loader_ellipsisDot Loader_ellipsisDot--2"
+        >
+          .
+        </span>
+        <span
+          className="Loader_ellipsisDot Loader_ellipsisDot--3"
+        >
+          .
+        </span>
+      </div>
     </div>
-  </span>
+    <div
+      className="Loader_progress"
+    >
+      <div
+        className="Loader_progressBar"
+      />
+    </div>
+    <div
+      className="Loader_icons"
+    >
+      <div
+        className="Loader_icon Loader_icon--hammer"
+      >
+        🔨
+      </div>
+      <div
+        className="Loader_icon Loader_icon--fist"
+      >
+        ✊
+      </div>
+      <div
+        className="Loader_icon Loader_icon--star"
+      >
+        ⭐
+      </div>
+    </div>
+  </div>
 </div>
 `;

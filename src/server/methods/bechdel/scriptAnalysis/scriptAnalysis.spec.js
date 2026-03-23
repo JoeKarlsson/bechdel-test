@@ -1,5 +1,6 @@
 const scriptAnalysis = require('./scriptAnalysis');
 const extractScenes = require('../extractScenes');
+const BechdelResults = require('../BechdelResults');
 const mockMovieScript = require('../../__mocks__/mock-boyhood');
 const mockData = require('../../getFilmData/__mocks__/mock-film-data');
 
@@ -12,7 +13,8 @@ describe('Script Analysis methods', () => {
 		it('should return the bechdel result for a script', async () => {
 			const characters = mockData.actors;
 			const scenes = extractScenes(mockMovieScript);
-			const result = await scriptAnalysis.scriptAnalysis(characters, scenes);
+			const bechdelResults = new BechdelResults();
+			const result = await scriptAnalysis.scriptAnalysis(characters, scenes, bechdelResults);
 
 			expect(result.pass).toBe(true);
 			expect(result.bechdelScore).toBe(3);
@@ -25,9 +27,15 @@ describe('Script Analysis methods', () => {
 	describe('#scriptGenderAnalytics', () => {
 		it('should return the bechdel result for a script', async () => {
 			const characters = mockData.actors;
+			const bechdelResults = new BechdelResults();
+			// First run scriptAnalysis to set pass/score/scenes
+			const scenes = extractScenes(mockMovieScript);
+			scriptAnalysis.scriptAnalysis(characters, scenes, bechdelResults);
+			// Then run scriptGenderAnalytics with same bechdelResults
 			const result = await scriptAnalysis.scriptGenderAnalytics(
 				characters,
-				mockMovieScript
+				mockMovieScript,
+				bechdelResults
 			);
 
 			expect(result.pass).toBe(true);

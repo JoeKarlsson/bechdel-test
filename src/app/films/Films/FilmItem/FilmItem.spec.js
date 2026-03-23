@@ -43,15 +43,15 @@ describe('FilmItem', () => {
 		});
 
 		describe('with film data', () => {
-			it('renders film poster and help text', () => {
+			it('renders film poster and pass indicator', () => {
 				const { getByAltText, getByText } = render(
 					<MemoryRouter>
 						<FilmItem film={mockFilmPassing} />
 					</MemoryRouter>
 				);
 
-				expect(getByAltText('Test Movie Passing')).toBeTruthy();
-				expect(getByText('Help')).toBeTruthy();
+				expect(getByAltText('test-movie-passing')).toBeTruthy();
+				expect(getByText('Pass')).toBeTruthy();
 			});
 
 			it('shows checkmark for passing films', () => {

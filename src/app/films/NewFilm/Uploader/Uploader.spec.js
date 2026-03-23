@@ -74,7 +74,7 @@ describe('Uploader', () => {
 			render(<Uploader />);
 
 			expect(screen.getByTestId('uppy-dashboard')).toBeInTheDocument();
-			expect(screen.getByText('Boop a file')).toBeInTheDocument();
+			expect(screen.getByText('Choose a script file')).toBeInTheDocument();
 		});
 	});
 

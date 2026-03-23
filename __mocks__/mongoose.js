@@ -2,6 +2,7 @@
 const mongoose = {
     connect: jest.fn(() => Promise.resolve()),
     disconnect: jest.fn(() => Promise.resolve()),
+    set: jest.fn(),
     connection: {
         on: jest.fn(),
         once: jest.fn(),

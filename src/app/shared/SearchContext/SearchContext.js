@@ -11,6 +11,8 @@ export const useSearch = () => {
 		return {
 			searchQuery: '',
 			setSearchQuery: () => { },
+			debouncedSearchQuery: '',
+			isSearching: false,
 		};
 	}
 	return context;

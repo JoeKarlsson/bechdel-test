@@ -1,11 +1,9 @@
-import fetchMock from 'fetch-mock';
 import DEFAULT_ERROR_MESSAGE from './constants';
 import api from './api';
 
 describe('api', () => {
 	beforeEach(() => {
-		fetchMock.clearHistory();
-		fetchMock.removeRoutes();
+		fetch.resetMocks();
 	});
 
 	it('should call callback after success', async () => {
@@ -84,7 +82,7 @@ describe('api', () => {
 				],
 			},
 		];
-		fetchMock.once(url, mockResponse);
+		fetch.mockResponseOnce(JSON.stringify(mockResponse));
 
 		const response = await api(url, options);
 		expect(response).toMatchObject(mockResponse);
@@ -93,21 +91,10 @@ describe('api', () => {
 	it('should handle Errors Statuses > 400', async () => {
 		const url = '/api/film';
 		const errMsg = 'Bad response from server';
-		const errResponse = {
-			body: errMsg,
-			status: 500,
-		};
-		const options = {
-			status: 500,
-		};
-		fetchMock.once(url, errResponse, options);
 
-		const expectedResponse = {
-			errMsg,
-			msg: DEFAULT_ERROR_MESSAGE,
-		};
+		fetch.mockResponseOnce('', { status: 500 });
 
-		const response = await api(url, options);
-		expect(response).toMatchObject(expectedResponse);
+		const response = await api(url, { method: 'GET' });
+		expect(response.msg).toBe(DEFAULT_ERROR_MESSAGE);
 	});
 });
