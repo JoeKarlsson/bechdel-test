@@ -5,50 +5,1239 @@ exports[`Film rendering initial state should render data state correctly 1`] = `
   className="filmInfo"
 >
   <div
-    aria-live="polite"
-    className="error-boundary"
-    role="alert"
+    className="film-hero"
+  >
+    <img
+      alt="Boyhood"
+      className="film-image"
+      src="https://image.tmdb.org/t/p/w1000/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg"
+    />
+    <span
+      className="film-hero-title"
+    >
+      <h4>
+        Boyhood
+      </h4>
+      <h3>
+        <span
+          className="bechdel-status pass-icon"
+        >
+          <span
+            className="status-icon"
+          >
+            ✓
+          </span>
+          Bechdel Pass: 
+          TRUE
+        </span>
+      </h3>
+      <div
+        className="hero-quick-stats"
+      >
+        <div
+          className="stat-badge stat-badge--score"
+        >
+          <span
+            className="stat-label"
+          >
+            Bechdel Score
+          </span>
+          <span
+            className="stat-value"
+          >
+            1
+            /3
+          </span>
+        </div>
+        <div
+          className="stat-badge stat-badge--dialogue"
+        >
+          <span
+            className="stat-label"
+          >
+            Female Dialogue
+          </span>
+          <span
+            className="stat-value"
+          >
+            46
+            %
+          </span>
+        </div>
+        <div
+          className="stat-badge stat-badge--scenes"
+        >
+          <span
+            className="stat-label"
+          >
+            Scenes Passing
+          </span>
+          <span
+            className="stat-value"
+          >
+            27
+            %
+          </span>
+        </div>
+        <div
+          className="stat-badge stat-badge--characters"
+        >
+          <span
+            className="stat-label"
+          >
+            Female Characters
+          </span>
+          <span
+            className="stat-value"
+          >
+            12
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <div
+    className="metrics-summary"
   >
     <div
-      className="error-boundary__container"
+      className="metrics-grid"
     >
       <div
-        aria-hidden="true"
-        className="error-boundary__icon"
+        className="metric-card"
+        style={
+          Object {
+            "--metric-color": "#2ecc71",
+          }
+        }
       >
-        ⚠️
+        <div
+          aria-hidden="true"
+          className="metric-icon"
+        >
+          ✅
+        </div>
+        <div
+          className="metric-content"
+        >
+          <div
+            className="metric-value"
+          >
+            Pass
+          </div>
+          <div
+            className="metric-label"
+          >
+            Bechdel Test
+          </div>
+        </div>
       </div>
-      <h1
-        className="error-boundary__title"
-      >
-        Oops! Something went wrong
-      </h1>
-      <p
-        className="error-boundary__message"
-      >
-        We're sorry, but something unexpected happened. This might be a temporary issue.
-      </p>
       <div
-        className="error-boundary__actions"
+        className="metric-card"
+        style={
+          Object {
+            "--metric-color": "#667eea",
+          }
+        }
       >
-        <button
-          aria-label="Try again to reload the page"
-          className="error-boundary__button error-boundary__button--primary"
-          onClick={[Function]}
-          type="button"
+        <div
+          aria-hidden="true"
+          className="metric-icon"
         >
-          Try Again
-        </button>
-        <button
-          aria-label="Report this error to help us improve"
-          className="error-boundary__button error-boundary__button--secondary"
-          onClick={[Function]}
-          type="button"
+          📊
+        </div>
+        <div
+          className="metric-content"
         >
-          Report Error
-        </button>
+          <div
+            className="metric-value"
+          >
+            27%
+          </div>
+          <div
+            className="metric-label"
+          >
+            Scene Pass Rate
+          </div>
+        </div>
+      </div>
+      <div
+        className="metric-card"
+        style={
+          Object {
+            "--metric-color": "#3498db",
+          }
+        }
+      >
+        <div
+          aria-hidden="true"
+          className="metric-icon"
+        >
+          👥
+        </div>
+        <div
+          className="metric-content"
+        >
+          <div
+            className="metric-value"
+          >
+            12/23
+          </div>
+          <div
+            className="metric-label"
+          >
+            Female/Male Chars
+          </div>
+        </div>
+      </div>
+      <div
+        className="metric-card"
+        style={
+          Object {
+            "--metric-color": "#9b59b6",
+          }
+        }
+      >
+        <div
+          aria-hidden="true"
+          className="metric-icon"
+        >
+          💬
+        </div>
+        <div
+          className="metric-content"
+        >
+          <div
+            className="metric-value"
+          >
+            46%
+          </div>
+          <div
+            className="metric-label"
+          >
+            Female Dialogue
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <div
+    className="plot-details-container"
+  >
+    <div
+      className="plot-details-content"
+    >
+      <div
+        className="plot-section"
+      >
+        <div
+          className="plot-header"
+        >
+          <h3>
+            <span
+              className="plot-icon"
+            >
+              📖
+            </span>
+            Plot Summary
+          </h3>
+        </div>
+        <div
+          className="plot-content"
+        >
+          <p>
+            The life of Mason, from early childhood to his arrival at college.
+          </p>
+        </div>
+      </div>
+      <div
+        className="film-info-card"
+      >
+        <div
+          className="info-section"
+        >
+          <div
+            className="info-item"
+          >
+            <div
+              className="info-label"
+            >
+              <span
+                className="info-icon"
+              >
+                🎬
+              </span>
+              Directors
+            </div>
+            <div
+              className="info-value"
+            >
+              <span>
+                Richard Linklater
+                , 
+              </span>
+              <span>
+                John Doe
+              </span>
+            </div>
+          </div>
+          <div
+            className="info-item"
+          >
+            <div
+              className="info-label"
+            >
+              <span
+                className="info-icon"
+              >
+                ✍️
+              </span>
+              Writers
+            </div>
+            <div
+              className="info-value"
+            >
+              <span>
+                Richard Linklater
+                , 
+              </span>
+              <span>
+                John Doe
+              </span>
+            </div>
+          </div>
+          <div
+            className="info-item"
+          >
+            <div
+              className="info-label"
+            >
+              <span
+                className="info-icon"
+              >
+                🏷️
+              </span>
+              Genres
+            </div>
+            <div
+              className="info-value"
+            >
+              <span>
+                Comedy
+                , 
+              </span>
+              <span>
+                Drama
+              </span>
+            </div>
+          </div>
+          <div
+            className="info-item"
+          >
+            <div
+              className="info-label"
+            >
+              <span
+                className="info-icon"
+              >
+                📺
+              </span>
+              Rating
+            </div>
+            <div
+              className="info-value"
+            >
+              <span
+                className="rating-badge"
+              >
+                97
+              </span>
+            </div>
+          </div>
+          <div
+            className="info-item"
+          >
+            <div
+              className="info-label"
+            >
+              <span
+                className="info-icon"
+              >
+                🔗
+              </span>
+              IMDB
+            </div>
+            <div
+              className="info-value"
+            >
+              <a
+                className="imdb-link"
+                href="http://www.imdb.com/title/undefined"
+                rel="noreferrer"
+                target="_blank"
+              >
+                View on IMDB
+              </a>
+            </div>
+          </div>
+          <div
+            className="info-item"
+          >
+            <div
+              className="info-label"
+            >
+              <span
+                className="info-icon"
+              >
+                📅
+              </span>
+              Date Uploaded
+            </div>
+            <div
+              className="info-value"
+            >
+              <span
+                className="upload-date"
+              >
+                Unknown
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="charts-section"
+  >
+    <div
+      className="section-header"
+    >
+      <span
+        aria-hidden="true"
+        className="section-icon"
+      >
+        📊
+      </span>
+      <div
+        className="section-header-content"
+      >
+        <h2
+          className="section-title"
+        >
+          Visual Analysis
+        </h2>
+        <p
+          className="section-subtitle"
+        >
+          Interactive charts showing gender representation, dialogue distribution, and scene-by-scene analysis
+        </p>
+      </div>
+    </div>
+    <div
+      className="charts-content"
+    >
+      <div
+        className="bechdel-charts"
+      >
+        <div
+          className="charts-grid "
+        >
+          <div
+            className="chart-card score-card "
+          >
+            <h3>
+              Bechdel Score
+            </h3>
+            <div
+              className="score-progress"
+            >
+              <div
+                className="score-circle passed"
+              >
+                <div
+                  className="score-number"
+                >
+                  1
+                </div>
+                <div
+                  className="score-total"
+                >
+                  / 3
+                </div>
+              </div>
+              <div
+                className="score-bars"
+              >
+                <div
+                  className="score-bar passed"
+                />
+                <div
+                  className="score-bar not-passed"
+                />
+                <div
+                  className="score-bar not-passed"
+                />
+              </div>
+            </div>
+            <p
+              className="score-description"
+            >
+              Female characters present
+            </p>
+          </div>
+          <div
+            className="chart-card "
+          >
+            <h3>
+              Character Distribution
+            </h3>
+            <div
+              className="recharts-responsive-container"
+              style={
+                Object {
+                  "height": 200,
+                  "maxHeight": undefined,
+                  "minHeight": undefined,
+                  "minWidth": 0,
+                  "width": "100%",
+                }
+              }
+            />
+            <p
+              className="chart-annotation"
+            >
+              👥 
+              <strong>
+                Representation Matters:
+              </strong>
+               The ratio of male to female characters reflects broader patterns in media representation and influences how audiences perceive gender roles.
+            </p>
+          </div>
+          <div
+            className="chart-card "
+          >
+            <h3>
+              Dialogue Lines
+            </h3>
+            <div
+              className="recharts-responsive-container"
+              style={
+                Object {
+                  "height": 250,
+                  "maxHeight": undefined,
+                  "minHeight": undefined,
+                  "minWidth": 0,
+                  "width": "100%",
+                }
+              }
+            />
+            <p
+              className="chart-annotation"
+            >
+              📊 
+              <strong>
+                Feminist Analysis:
+              </strong>
+               Research shows women receive approximately 30-35% of dialogue in Hollywood films. Equal representation (50%) remains rare, reflecting systemic inequality in narrative cinema.
+            </p>
+          </div>
+          <div
+            className="chart-card "
+          >
+            <h3>
+              Scene Analysis
+            </h3>
+            <div
+              className="recharts-responsive-container"
+              style={
+                Object {
+                  "height": 250,
+                  "maxHeight": undefined,
+                  "minHeight": undefined,
+                  "minWidth": 0,
+                  "width": "100%",
+                }
+              }
+            />
+            <p
+              className="chart-annotation"
+            >
+              🎬 
+              <strong>
+                The Test in Action:
+              </strong>
+               A scene passes when at least two named women have a conversation about something other than a man. Even one passing scene represents progress in female representation.
+            </p>
+          </div>
+          <div
+            className="chart-card "
+          >
+            <h3>
+              Characters with Dialogue
+            </h3>
+            <div
+              className="recharts-responsive-container"
+              style={
+                Object {
+                  "height": 250,
+                  "maxHeight": undefined,
+                  "minHeight": undefined,
+                  "minWidth": 0,
+                  "width": "100%",
+                }
+              }
+            />
+            <p
+              className="chart-annotation"
+            >
+              💬 
+              <strong>
+                Voice & Agency:
+              </strong>
+               Having dialogue is the first step toward female agency in narrative cinema. Characters who speak can influence the plot and express independent perspectives.
+            </p>
+          </div>
+          <div
+            className="chart-card stats-card "
+          >
+            <h3>
+              Quick Stats
+            </h3>
+            <div
+              className="stats-grid"
+            >
+              <div
+                className="stat-item "
+              >
+                <div
+                  className="stat-number"
+                >
+                  77
+                </div>
+                <div
+                  className="stat-label"
+                >
+                  Total Characters
+                </div>
+              </div>
+              <div
+                className="stat-item "
+              >
+                <div
+                  className="stat-number"
+                >
+                  2214
+                </div>
+                <div
+                  className="stat-label"
+                >
+                  Total Dialogue Lines
+                </div>
+              </div>
+              <div
+                className="stat-item "
+              >
+                <div
+                  className="stat-number"
+                >
+                  168
+                </div>
+                <div
+                  className="stat-label"
+                >
+                  Total Scenes
+                </div>
+              </div>
+              <div
+                className="stat-item "
+              >
+                <div
+                  className="stat-number"
+                >
+                  27%
+                </div>
+                <div
+                  className="stat-label"
+                >
+                  Scenes Pass Rate
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="timeline-section"
+  >
+    <div
+      className="section-header"
+    >
+      <span
+        aria-hidden="true"
+        className="section-icon"
+      >
+        ⏱️
+      </span>
+      <div
+        className="section-header-content"
+      >
+        <h2
+          className="section-title"
+        >
+          Script Timeline
+        </h2>
+        <p
+          className="section-subtitle"
+        >
+          Chronological view of scenes where women have meaningful conversations about topics other than men
+        </p>
+      </div>
+    </div>
+    <div
+      className="script-timeline"
+    >
+      <div
+        className="timeline-header "
+      >
+        <h3>
+          <span
+            className="timeline-icon"
+          >
+            📜
+          </span>
+          Script Timeline
+        </h3>
+        <p
+          className="timeline-description"
+        >
+          This timeline shows all scenes where female characters have meaningful conversations with each other about topics other than men, satisfying the Bechdel Test criteria. Click any scene to view an excerpt of the dialogue.
+        </p>
+        <div
+          className="timeline-stats"
+        >
+          <span
+            className="stat-item"
+          >
+            <span
+              className="stat-number"
+            >
+              45
+            </span>
+            <span
+              className="stat-label"
+            >
+              Scenes Pass
+            </span>
+          </span>
+          <span
+            className="stat-item"
+          >
+            <span
+              className="stat-number"
+            >
+              123
+            </span>
+            <span
+              className="stat-label"
+            >
+              Scenes Don't Pass
+            </span>
+          </span>
+          <span
+            className="stat-item"
+          >
+            <span
+              className="stat-number"
+            >
+              27%
+            </span>
+            <span
+              className="stat-label"
+            >
+              Pass Rate
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        className="timeline-content "
+      >
+        <div
+          className="timeline-track"
+        >
+          <div
+            className="timeline-item  "
+          >
+            <div
+              className="timeline-marker"
+            >
+              <div
+                className="marker-dot"
+              />
+              <div
+                className="marker-line"
+              />
+            </div>
+            <div
+              className="timeline-card"
+            >
+              <div
+                className="scene-header"
+                onClick={[Function]}
+              >
+                <div
+                  className="scene-info"
+                >
+                  <div
+                    className="scene-number"
+                  >
+                    Scene 
+                    1
+                  </div>
+                  <div
+                    className="scene-title"
+                  >
+                    Scene1
+                  </div>
+                </div>
+                <div
+                  className="expand-indicator"
+                >
+                  +
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="timeline-item  "
+          >
+            <div
+              className="timeline-marker"
+            >
+              <div
+                className="marker-dot"
+              />
+              <div
+                className="marker-line"
+              />
+            </div>
+            <div
+              className="timeline-card"
+            >
+              <div
+                className="scene-header"
+                onClick={[Function]}
+              >
+                <div
+                  className="scene-info"
+                >
+                  <div
+                    className="scene-number"
+                  >
+                    Scene 
+                    2
+                  </div>
+                  <div
+                    className="scene-title"
+                  >
+                    Scene2
+                  </div>
+                </div>
+                <div
+                  className="expand-indicator"
+                >
+                  +
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="timeline-item  "
+          >
+            <div
+              className="timeline-marker"
+            >
+              <div
+                className="marker-dot"
+              />
+              <div
+                className="marker-line"
+              />
+            </div>
+            <div
+              className="timeline-card"
+            >
+              <div
+                className="scene-header"
+                onClick={[Function]}
+              >
+                <div
+                  className="scene-info"
+                >
+                  <div
+                    className="scene-number"
+                  >
+                    Scene 
+                    3
+                  </div>
+                  <div
+                    className="scene-title"
+                  >
+                    Scene3
+                  </div>
+                </div>
+                <div
+                  className="expand-indicator"
+                >
+                  +
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="timeline-footer "
+      >
+        <div
+          className="timeline-legend"
+        >
+          <div
+            className="legend-item"
+          >
+            <div
+              className="legend-dot pass"
+            />
+            <span>
+              Bechdel-passing scene
+            </span>
+          </div>
+          <div
+            className="legend-item"
+          >
+            <div
+              className="legend-dot fail"
+            />
+            <span>
+              Scene that doesn't pass
+            </span>
+          </div>
+        </div>
+        <div
+          className="timeline-actions"
+        >
+          <button
+            className="expand-all-btn"
+            onClick={[Function]}
+          >
+            Expand All
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="advanced-analytics-section"
+  >
+    <div
+      className="section-header"
+    >
+      <span
+        aria-hidden="true"
+        className="section-icon"
+      >
+        🤖
+      </span>
+      <div
+        className="section-header-content"
+      >
+        <h2
+          className="section-title"
+        >
+          AI-Powered Analysis
+        </h2>
+        <p
+          className="section-subtitle"
+        >
+          Deep learning insights on female agency, stereotypes, power dynamics, and character development
+        </p>
+      </div>
+    </div>
+    <div
+      className="advanced-analytics-content"
+    >
+      <div
+        className="advanced-analytics"
+      >
+        <div
+          className="advanced-analytics-header"
+        >
+          <h3>
+            Advanced AI Analysis
+          </h3>
+          <p
+            className="no-data-message"
+          >
+            Advanced AI analysis is not available for this film. This feature requires enhanced analytics processing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="detailed-analysis-section"
+  >
+    <div
+      className="section-header"
+    >
+      <span
+        aria-hidden="true"
+        className="section-icon"
+      >
+        🔍
+      </span>
+      <div
+        className="section-header-content"
+      >
+        <h2
+          className="section-title"
+        >
+          Detailed Bechdel Analysis
+        </h2>
+        <p
+          className="section-subtitle"
+        >
+          Complete breakdown of character counts, dialogue lines, and scene-level test results
+        </p>
+      </div>
+    </div>
+    <div
+      className="detailed-analysis-content"
+    >
+      <div
+        className="BechdelResults"
+      >
+        <table
+          className="bechdel-results-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Metric
+              </th>
+              <th>
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Bechdel Score
+              </td>
+              <td
+                className="metric-value"
+              >
+                1
+                 of 3
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Total Scenes
+              </td>
+              <td
+                className="metric-value"
+              >
+                168
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Scenes that Pass
+              </td>
+              <td
+                className="metric-value"
+              >
+                45
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Scenes that Don't Pass
+              </td>
+              <td
+                className="metric-value"
+              >
+                123
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Scene Pass Rate
+              </td>
+              <td
+                className="metric-value"
+              >
+                27
+                %
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Female Characters
+              </td>
+              <td
+                className="metric-value"
+              >
+                23
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Male Characters
+              </td>
+              <td
+                className="metric-value"
+              >
+                54
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Female Characters with Dialogue
+              </td>
+              <td
+                className="metric-value"
+              >
+                12
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Male Characters with Dialogue
+              </td>
+              <td
+                className="metric-value"
+              >
+                23
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Total Lines of Female Dialogue
+              </td>
+              <td
+                className="metric-value"
+              >
+                1012
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Total Lines of Male Dialogue
+              </td>
+              <td
+                className="metric-value"
+              >
+                1202
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Total Dialogue Lines
+              </td>
+              <td
+                className="metric-value"
+              >
+                2214
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Female Dialogue Percentage
+              </td>
+              <td
+                className="metric-value"
+              >
+                46
+                %
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Avg Lines per Female Character
+              </td>
+              <td
+                className="metric-value"
+              >
+                84
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="metric-name"
+              >
+                Avg Lines per Male Character
+              </td>
+              <td
+                className="metric-value"
+              >
+                52
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div
+    className="navigation-section"
+  >
+    <a
+      aria-label="Go back to all films"
+      className="back-button"
+      href="/"
+      onClick={[Function]}
+    >
+      <span
+        aria-hidden="true"
+        className="button-icon"
+      >
+        ←
+      </span>
+      Back to All Films
+    </a>
   </div>
 </div>
 `;

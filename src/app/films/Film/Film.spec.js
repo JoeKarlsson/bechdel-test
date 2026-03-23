@@ -2,9 +2,18 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
+import { HelmetProvider } from 'react-helmet-async';
 import Film from './Film';
 
 jest.mock('../../helper/api');
+
+const Wrapper = ({ children }) => (
+	<HelmetProvider>
+		<MemoryRouter>
+			{children}
+		</MemoryRouter>
+	</HelmetProvider>
+);
 
 describe('Film', () => {
 	const zeroState = {
@@ -79,9 +88,9 @@ describe('Film', () => {
 		describe('initial state', () => {
 			it('should render zero state correctly', () => {
 				const component = renderer.create(
-					<MemoryRouter>
+					<Wrapper>
 						<Film {...zeroState} />
-					</MemoryRouter>
+					</Wrapper>
 				);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
@@ -89,18 +98,18 @@ describe('Film', () => {
 
 			it('should render data state correctly', () => {
 				const tree = renderer.create(
-					<MemoryRouter>
+					<Wrapper>
 						<Film {...filmData} />
-					</MemoryRouter>
+					</Wrapper>
 				).toJSON();
 				expect(tree).toMatchSnapshot();
 			});
 
 			it('should render error state correctly', () => {
 				const component = renderer.create(
-					<MemoryRouter>
+					<Wrapper>
 						<Film {...errorData} />
-					</MemoryRouter>
+					</Wrapper>
 				);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
@@ -108,9 +117,9 @@ describe('Film', () => {
 
 			it('is rendered correctly', () => {
 				const { container } = render(
-					<MemoryRouter>
+					<Wrapper>
 						<Film {...zeroState} />
-					</MemoryRouter>
+					</Wrapper>
 				);
 				expect(container.firstChild).toBeTruthy();
 			});
