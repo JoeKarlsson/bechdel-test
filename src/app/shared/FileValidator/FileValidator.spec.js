@@ -1,6 +1,5 @@
-import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import FileValidator from ".";
+import { FileValidator } from ".";
 
 describe('FileValidator', () => {
 	let validator;

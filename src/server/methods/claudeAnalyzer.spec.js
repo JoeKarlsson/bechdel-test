@@ -1,17 +1,22 @@
 const ClaudeAnalyzer = require('./claudeAnalyzer');
 
-// Mock the Anthropic SDK
+// Mock the Anthropic SDK - it uses named exports
 jest.mock('@anthropic-ai/sdk', () => {
-	return jest.fn().mockImplementation(() => {
-		return {
+	const mockCreate = jest.fn();
+	return {
+		Anthropic: jest.fn().mockImplementation(() => ({
 			messages: {
-				create: jest.fn(),
+				create: mockCreate,
 			},
-		};
-	});
+		})),
+		RateLimitError: class RateLimitError extends Error {},
+		APIError: class APIError extends Error {},
+		APIConnectionError: class APIConnectionError extends Error {},
+		APIConnectionTimeoutError: class APIConnectionTimeoutError extends Error {},
+	};
 });
 
-const Anthropic = require('@anthropic-ai/sdk');
+const { Anthropic } = require('@anthropic-ai/sdk');
 
 describe('ClaudeAnalyzer', () => {
 	let analyzer;
