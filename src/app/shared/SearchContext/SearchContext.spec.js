@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { SearchProvider, useSearch } from './SearchContext';
 
 describe('SearchContext', () => {
@@ -10,9 +11,11 @@ describe('SearchContext', () => {
 		};
 
 		const { getByText } = render(
-			<SearchProvider>
-				<TestComponent />
-			</SearchProvider>
+			<MemoryRouter>
+				<SearchProvider>
+					<TestComponent />
+				</SearchProvider>
+			</MemoryRouter>
 		);
 
 		expect(getByText('No query')).toBeInTheDocument();

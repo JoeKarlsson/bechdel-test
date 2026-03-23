@@ -19,6 +19,25 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
         RESTful API for analyzing movie scripts with the Bechdel Test. Upload scripts, retrieve analysis results, and explore feminist film data.
       </p>
       <div
+        class="search-container"
+      >
+        <div
+          class="search-bar"
+        >
+          <input
+            class="search-input"
+            placeholder="Search endpoints..."
+            type="text"
+            value=""
+          />
+          <div
+            class="search-icon"
+          >
+            🔍
+          </div>
+        </div>
+      </div>
+      <div
         class="api-info"
       >
         <div
@@ -60,7 +79,7 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
         class="api-docs-nav"
       >
         <h3>
-          Endpoints
+          Endpoints 
         </h3>
         <ul>
           <li>
@@ -120,23 +139,6 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
             >
               <span
                 class="method-badge"
-                style="background-color: rgb(249, 62, 62);"
-              >
-                DELETE
-              </span>
-              <span
-                class="endpoint-path"
-              >
-                /api/film/:id
-              </span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="nav-item "
-            >
-              <span
-                class="method-badge"
                 style="background-color: rgb(97, 175, 254);"
               >
                 GET
@@ -182,7 +184,7 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
             class="endpoint-description"
           >
             <p>
-              Retrieve a list of all films in the database with their Bechdel Test results.
+              Retrieve a paginated list of films in the database with their Bechdel Test results.
             </p>
           </div>
           <section
@@ -215,7 +217,7 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
                   URL
                 </span>
                 <code>
-                  /api/film
+                  /api/film?page=1&limit=10
                 </code>
               </div>
               <div
@@ -253,63 +255,73 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
               >
                 <pre>
                   <code>
-                    [
-  {
-    "_id": "507f1f77bcf86cd799439011",
-    "title": "American Hustle",
-    "plot": "A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser...",
-    "year": 2013,
-    "actors": [
-      {
-        "actorName": "Christian Bale",
-        "character": "Irving Rosenfeld",
-        "actorActress": "male"
+                    {
+  "films": [
+    {
+      "_id": "507f1f77bcf86cd799439011",
+      "title": "American Hustle",
+      "plot": "A con man, Irving Rosenfeld, along with his seductive partner Sydney Prosser...",
+      "year": 2013,
+      "actors": [
+        {
+          "actorName": "Christian Bale",
+          "character": "Irving Rosenfeld",
+          "actorActress": "male"
+        },
+        {
+          "actorName": "Amy Adams",
+          "character": "Sydney Prosser",
+          "actorActress": "female"
+        }
+      ],
+      "directors": [
+        {
+          "name": "David O. Russell",
+          "id": "nm0000756"
+        }
+      ],
+      "writers": [
+        {
+          "name": "Eric Warren Singer",
+          "id": "nm0801402"
+        }
+      ],
+      "genres": [
+        "Comedy",
+        "Crime",
+        "Drama"
+      ],
+      "bechdelResults": {
+        "pass": true,
+        "bechdelScore": 3,
+        "numScenesPass": 5,
+        "numScenesDontPass": 2,
+        "numOfFemalesChars": 8,
+        "numOfMaleChars": 12,
+        "numOfFemalesCharsWithDialogue": 6,
+        "numOfMaleCharsWithDialogue": 10,
+        "totalLinesFemaleDialogue": 245,
+        "totalLinesMaleDialogue": 312,
+        "scenesThatPass": [
+          "Scene 1",
+          "Scene 3",
+          "Scene 5",
+          "Scene 7",
+          "Scene 9"
+        ]
       },
-      {
-        "actorName": "Amy Adams",
-        "character": "Sydney Prosser",
-        "actorActress": "female"
-      }
-    ],
-    "directors": [
-      {
-        "name": "David O. Russell",
-        "id": "nm0000756"
-      }
-    ],
-    "writers": [
-      {
-        "name": "Eric Warren Singer",
-        "id": "nm0801402"
-      }
-    ],
-    "genres": [
-      "Comedy",
-      "Crime",
-      "Drama"
-    ],
-    "bechdelResults": {
-      "pass": true,
-      "bechdelScore": 3,
-      "numScenesPass": 5,
-      "numScenesDontPass": 2,
-      "numOfFemalesChars": 8,
-      "numOfMaleChars": 12,
-      "numOfFemalesCharsWithDialogue": 6,
-      "numOfMaleCharsWithDialogue": 10,
-      "totalLinesFemaleDialogue": 245,
-      "totalLinesMaleDialogue": 312,
-      "scenesThatPass": [
-        "Scene 1",
-        "Scene 3",
-        "Scene 5",
-        "Scene 7",
-        "Scene 9"
-      ]
-    },
-    "createdAt": "2023-01-15T10:30:00.000Z"
+      "createdAt": "2023-01-15T10:30:00.000Z"
+    }
+  ],
+  "pagination": {
+    "currentPage": 1,
+    "totalPages": 5,
+    "totalCount": 47,
+    "limit": 10,
+    "hasNextPage": true,
+    "hasPrevPage": false
   }
-]
+}
                   </code>
                 </pre>
               </div>
@@ -327,7 +339,7 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
                   <code>
                     {
   "success": false,
-  "error": "No list of films returned from film.listAll()"
+  "error": "No list of films returned from film.listAllPaginated()"
 }
                   </code>
                 </pre>
@@ -354,7 +366,21 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
                 <span
                   class="status-description"
                 >
-                  Success - Returns array of films
+                  Success - Returns paginated array of films
+                </span>
+              </div>
+              <div
+                class="status-code"
+              >
+                <span
+                  class="status-number"
+                >
+                  400
+                </span>
+                <span
+                  class="status-description"
+                >
+                  Bad Request - Invalid pagination parameters
                 </span>
               </div>
               <div
@@ -461,52 +487,6 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
           </pre>
         </div>
       </div>
-      <div
-        class="model-section"
-      >
-        <h3>
-          Bechdel Test Results
-        </h3>
-        <div
-          class="model-description"
-        >
-          <p>
-            The Bechdel Test analysis results for a film. The test passes if:
-          </p>
-          <ol>
-            <li>
-              The film has at least two named female characters
-            </li>
-            <li>
-              These characters have at least one conversation
-            </li>
-            <li>
-              The conversation is about something other than a man
-            </li>
-          </ol>
-        </div>
-        <div
-          class="code-block"
-        >
-          <pre>
-            <code>
-              {
-  "pass": "boolean - Whether the film passes the Bechdel Test",
-  "bechdelScore": "number - Score from 0-3 based on criteria met",
-  "numScenesPass": "number - Number of scenes that pass the test",
-  "numScenesDontPass": "number - Number of scenes that fail the test",
-  "numOfFemalesChars": "number - Total female characters in the film",
-  "numOfMaleChars": "number - Total male characters in the film",
-  "numOfFemalesCharsWithDialogue": "number - Female characters with speaking roles",
-  "numOfMaleCharsWithDialogue": "number - Male characters with speaking roles",
-  "totalLinesFemaleDialogue": "number - Total lines spoken by female characters",
-  "totalLinesMaleDialogue": "number - Total lines spoken by male characters",
-  "scenesThatPass": "array - List of scene descriptions that pass the test"
-}
-            </code>
-          </pre>
-        </div>
-      </div>
     </section>
     <section
       class="error-handling"
@@ -543,7 +523,7 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
           <strong>
             400 Bad Request:
           </strong>
-           Invalid file format (only .txt files accepted)
+           Invalid file format (only .txt files accepted), invalid pagination parameters
         </li>
         <li>
           <strong>
@@ -552,6 +532,55 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
            Film ID not found in database
         </li>
       </ul>
+    </section>
+    <section
+      class="pagination"
+    >
+      <h2>
+        Pagination
+      </h2>
+      <p>
+        The GET /api/film endpoint supports pagination to efficiently retrieve large datasets. Use the following query parameters to control pagination:
+      </p>
+      <ul>
+        <li>
+          <strong>
+            page
+          </strong>
+           (optional): Page number to retrieve (default: 1)
+        </li>
+        <li>
+          <strong>
+            limit
+          </strong>
+           (optional): Number of films per page (default: 10, maximum: 100)
+        </li>
+      </ul>
+      <p>
+        The response includes a 
+        <code>
+          pagination
+        </code>
+         object with metadata about the current page, total pages, total count, and navigation flags.
+      </p>
+      <div
+        class="code-block"
+      >
+        <pre>
+          <code>
+            {
+  "pagination": {
+    "currentPage": 1,
+    "totalPages": 5,
+    "totalCount": 47,
+    "limit": 10,
+    "hasNextPage": true,
+    "hasPrevPage": false
+  }
+}
+          </code>
+        </pre>
+      </div>
     </section>
     <section
       class="rate-limiting"
@@ -580,6 +609,197 @@ exports[`Api Docs Page rendering match the snapshot 1`] = `
         </a>
         .
       </p>
+    </section>
+    <section
+      class="detailed-bechdel-analysis"
+    >
+      <h2>
+        Detailed Bechdel Analysis
+      </h2>
+      <div
+        class="analysis-description"
+      >
+        <p>
+          The Bechdel Test analysis results for a film. The test passes if:
+        </p>
+        <ol>
+          <li>
+            The film has at least two named female characters
+          </li>
+          <li>
+            These characters have at least one conversation
+          </li>
+          <li>
+            The conversation is about something other than a man
+          </li>
+        </ol>
+      </div>
+      <div
+        class="analysis-table-container"
+      >
+        <table
+          class="bechdel-analysis-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Field
+              </th>
+              <th>
+                Type
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>
+                  pass
+                </code>
+              </td>
+              <td>
+                boolean
+              </td>
+              <td>
+                Whether the film passes the Bechdel Test
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  bechdelScore
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Score from 0-3 based on criteria met
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  numScenesPass
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Number of scenes that pass the test
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  numScenesDontPass
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Number of scenes that fail the test
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  numOfFemalesChars
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Total female characters in the film
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  numOfMaleChars
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Total male characters in the film
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  numOfFemalesCharsWithDialogue
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Female characters with speaking roles
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  numOfMaleCharsWithDialogue
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Male characters with speaking roles
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  totalLinesFemaleDialogue
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Total lines spoken by female characters
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  totalLinesMaleDialogue
+                </code>
+              </td>
+              <td>
+                number
+              </td>
+              <td>
+                Total lines spoken by male characters
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>
+                  scenesThatPass
+                </code>
+              </td>
+              <td>
+                array
+              </td>
+              <td>
+                List of scene descriptions that pass the test
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </div>
 </div>
