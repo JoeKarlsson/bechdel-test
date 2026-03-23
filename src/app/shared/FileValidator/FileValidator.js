@@ -15,14 +15,17 @@ const ALLOWED_EXTENSIONS = ['.txt'];
 const ALLOWED_MIME_TYPES = ['text/plain'];
 
 // Malicious patterns to detect
+// Note: These patterns provide defense-in-depth but should not be the sole security measure.
+// Server-side validation is the primary security control.
 const MALICIOUS_PATTERNS = [
-	// Script injection patterns
-	/<script[^>]*>.*?<\/script>/gi,
-	/javascript:/gi,
-	/vbscript:/gi,
-	/onload\s*=/gi,
-	/onerror\s*=/gi,
-	/onclick\s*=/gi,
+	// Script injection patterns - improved to catch more variations
+	/<\s*script/gi, // Catches <script, < script, etc.
+	/<\s*\/\s*script/gi, // Catches </script variations
+	/javascript\s*:/gi,
+	/vbscript\s*:/gi,
+	/data\s*:\s*text\/html/gi, // Data URI with HTML
+	// Event handlers (common XSS vectors)
+	/\bon\w+\s*=/gi, // Catches onclick=, onerror=, onload=, etc.
 
 	// Command injection patterns - more specific to avoid false positives
 	/;\s*(rm|del|format|shutdown|reboot)/gi,
@@ -38,6 +41,7 @@ const MALICIOUS_PATTERNS = [
 	/\.\.\/\.\.\/\.\./g, // Multiple ../ patterns
 	/\.\.\\\.\.\\\.\./g, // Multiple ..\ patterns
 	/%2e%2e%2f%2e%2e%2f/gi, // URL encoded path traversal
+	/%252e%252e%252f/gi, // Double URL encoded
 
 	// SQL injection patterns
 	/union\s+select/gi,

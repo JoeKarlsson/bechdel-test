@@ -153,9 +153,9 @@ const handlePostFilm = async (req, res) => {
 	const claudeApiKey = req.body.claudeApiKey || req.headers['x-claude-api-key'] || meta.CLAUDE_API_KEY;
 
 	try {
-		console.log(`Starting film processing for: "${title}"`);
-		console.log('Request body:', req.body);
-		console.log('Request file:', req.file);
+		console.log('Starting film processing for:', String(title).substring(0, 100));
+		console.log('Request body:', JSON.stringify(req.body));
+		console.log('Request file path:', req.file ? req.file.path : 'none');
 
 		// Generate processId immediately
 		const processId = `process_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
@@ -176,13 +176,13 @@ const handlePostFilm = async (req, res) => {
 
 		// Process asynchronously
 		processScript(scriptPath, title, processId, claudeApiKey).then(response => {
-			console.log(`Film processing completed successfully for: "${title}"`);
+			console.log('Film processing completed successfully for:', String(title).substring(0, 100));
 		}).catch(error => {
-			console.error(`Unexpected error during film processing for "${title}":`, error);
+			console.error('Unexpected error during film processing for:', String(title).substring(0, 100), error);
 		});
 
 	} catch (error) {
-		console.error(`Unexpected error during film processing setup for "${title}":`, error);
+		console.error('Unexpected error during film processing setup for:', String(title).substring(0, 100), error);
 		return handleError(res, `Failed to setup script processing: ${error.message}`, scriptPath);
 	}
 };
