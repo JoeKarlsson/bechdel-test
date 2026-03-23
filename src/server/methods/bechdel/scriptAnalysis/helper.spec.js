@@ -237,6 +237,14 @@ describe('Script Analysis Helper Methods', () => {
 	});
 
 	describe('#bechdelTestPass', () => {
+		// Mock bechdelResults object with required methods
+		const createMockBechdelResults = () => ({
+			bechdelScore: 0,
+			bechdelPass: false,
+			numScenesPassIncrement: jest.fn(),
+			numScenesDontPassIncrement: jest.fn(),
+		});
+
 		it('should return false if a given scene does not pass the bechdel test', () => {
 			const characters = mockData.actors;
 			const sceneData = {
@@ -244,18 +252,20 @@ describe('Script Analysis Helper Methods', () => {
 				count: sceneBechdelFailCount,
 				scene: sceneBechdelFail,
 			};
-			const result = bechdelTestPass(sceneData);
+			const mockBechdelResults = createMockBechdelResults();
+			const result = bechdelTestPass(sceneData, mockBechdelResults);
 			expect(result).toBe(false);
 		});
 
-		it('should return true if a given scene does not pass the bechdel test', () => {
+		it('should return true if a given scene does pass the bechdel test', () => {
 			const characters = mockData.actors;
 			const sceneData = {
 				characters,
 				count: sceneBechdelPassCount,
 				scene: sceneBechdelPass,
 			};
-			const result = bechdelTestPass(sceneData);
+			const mockBechdelResults = createMockBechdelResults();
+			const result = bechdelTestPass(sceneData, mockBechdelResults);
 			expect(result).toBe(true);
 		});
 	});
