@@ -7,6 +7,15 @@ import Film from './Film';
 
 jest.mock('../../helper/api');
 
+// Mock recharts ResponsiveContainer which requires DOM measurements
+jest.mock('recharts', () => {
+	const OriginalModule = jest.requireActual('recharts');
+	return {
+		...OriginalModule,
+		ResponsiveContainer: ({ children }) => <div style={{ width: 400, height: 300 }}>{children}</div>,
+	};
+});
+
 const Wrapper = ({ children }) => (
 	<HelmetProvider>
 		<MemoryRouter>

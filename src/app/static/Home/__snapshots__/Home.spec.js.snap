@@ -6,6 +6,7 @@ exports[`Home Page rendering match the snapshot 1`] = `
 >
   <div
     class="section hero"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(\\"test-file-stub\\");"
   >
     <div
       class="container"
@@ -16,30 +17,153 @@ exports[`Home Page rendering match the snapshot 1`] = `
         <div
           class="u-max-full-width "
         >
-          <h4
+          <h1
             class="hero-heading"
           >
             bechdel.io
-          </h4>
-          <h5>
-            find out if your favorite film passes the test.
-          </h5>
-          <a
-            class=""
-            href="/film/new"
+          </h1>
+          <h2
+            class="hero-tagline"
           >
-            <button
-              class="button"
-            >
-              upload script
-            </button>
-          </a>
+            discover which movies pass the bechdel test and explore feminist film data.
+          </h2>
         </div>
       </div>
     </div>
   </div>
-  <div>
-    No Films Have Been Added Yet
+  <div
+    class="Loader Loader--hidden"
+  >
+    <div
+      class="Loader_particles"
+    >
+      <div
+        class="Loader_particle Loader_particle--0"
+      />
+      <div
+        class="Loader_particle Loader_particle--1"
+      />
+      <div
+        class="Loader_particle Loader_particle--2"
+      />
+      <div
+        class="Loader_particle Loader_particle--3"
+      />
+      <div
+        class="Loader_particle Loader_particle--0"
+      />
+      <div
+        class="Loader_particle Loader_particle--1"
+      />
+      <div
+        class="Loader_particle Loader_particle--2"
+      />
+      <div
+        class="Loader_particle Loader_particle--3"
+      />
+      <div
+        class="Loader_particle Loader_particle--0"
+      />
+      <div
+        class="Loader_particle Loader_particle--1"
+      />
+      <div
+        class="Loader_particle Loader_particle--2"
+      />
+      <div
+        class="Loader_particle Loader_particle--3"
+      />
+      <div
+        class="Loader_particle Loader_particle--0"
+      />
+      <div
+        class="Loader_particle Loader_particle--1"
+      />
+      <div
+        class="Loader_particle Loader_particle--2"
+      />
+      <div
+        class="Loader_particle Loader_particle--3"
+      />
+      <div
+        class="Loader_particle Loader_particle--0"
+      />
+      <div
+        class="Loader_particle Loader_particle--1"
+      />
+      <div
+        class="Loader_particle Loader_particle--2"
+      />
+      <div
+        class="Loader_particle Loader_particle--3"
+      />
+    </div>
+    <div
+      class="Loader_indicator"
+    >
+      <div
+        class="Loader_textContainer"
+      >
+        <h1
+          class="Loader_title"
+        >
+          <span
+            class="Loader_typingText"
+          >
+            <span
+              class="Loader_cursor"
+            >
+              |
+            </span>
+          </span>
+        </h1>
+        <div
+          class="Loader_ellipsis"
+        >
+          <span
+            class="Loader_ellipsisDot Loader_ellipsisDot--1"
+          >
+            .
+          </span>
+          <span
+            class="Loader_ellipsisDot Loader_ellipsisDot--2"
+          >
+            .
+          </span>
+          <span
+            class="Loader_ellipsisDot Loader_ellipsisDot--3"
+          >
+            .
+          </span>
+        </div>
+      </div>
+      <div
+        class="Loader_progress"
+      >
+        <div
+          class="Loader_progressBar"
+        />
+      </div>
+      <div
+        class="Loader_icons"
+      >
+        <div
+          class="Loader_icon Loader_icon--hammer"
+        >
+          🔨
+        </div>
+        <div
+          class="Loader_icon Loader_icon--fist"
+        >
+          ✊
+        </div>
+        <div
+          class="Loader_icon Loader_icon--star"
+        >
+          ⭐
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
