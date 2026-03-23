@@ -3,9 +3,36 @@
  * Integrates script cleaning, Claude AI analysis, and data storage
  */
 
+const path = require('path');
 const scriptCleaner = require('./scriptCleaner');
 const ClaudeAnalyzer = require('./claudeAnalyzer');
 const handleError = require('../helper/handleError');
+
+// Allowed directories for script file operations
+const ALLOWED_DIRECTORIES = [
+	path.resolve(process.cwd(), 'uploads'),
+	path.resolve(process.cwd(), 'scripts'),
+];
+
+/**
+ * Validates that a file path is within allowed directories to prevent path traversal attacks
+ * @param {string} filePath - The file path to validate
+ * @returns {boolean} True if path is safe, false otherwise
+ */
+const isPathSafe = (filePath) => {
+	if (!filePath || typeof filePath !== 'string') {
+		return false;
+	}
+
+	// Resolve to absolute path and normalize
+	const resolvedPath = path.resolve(filePath);
+
+	// Check if path is within any allowed directory
+	return ALLOWED_DIRECTORIES.some(allowedDir => {
+		const normalizedAllowed = path.resolve(allowedDir);
+		return resolvedPath.startsWith(normalizedAllowed + path.sep) || resolvedPath === normalizedAllowed;
+	});
+};
 
 class EnhancedAnalytics {
 	constructor(claudeApiKey) {
@@ -22,6 +49,11 @@ class EnhancedAnalytics {
      */
 	async analyzeScript(scriptPath, characters, processId = null, bechdelData = null) {
 		try {
+			// Validate path is within allowed directories
+			if (!isPathSafe(scriptPath)) {
+				throw new Error('Access denied: script path is outside allowed directories');
+			}
+
 			// Update progress
 			if (processId) {
 				const cleanupManager = require('../helper/cleanupManager');

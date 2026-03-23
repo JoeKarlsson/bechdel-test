@@ -52,7 +52,7 @@ const handleStatusStream = (req, res) => {
 	// Send current status if process exists
 	const processInfo = cleanupManager.getProcessInfo(processId);
 	if (processInfo) {
-		console.log(`Sending initial status for process ${processId}:`, {
+		console.log('Sending initial status for process:', String(processId).substring(0, 50), {
 			stage: processInfo.stage,
 			progress: processInfo.progress,
 			message: processInfo.message
@@ -67,7 +67,7 @@ const handleStatusStream = (req, res) => {
 			timestamp: Date.now()
 		})}\n\n`);
 	} else {
-		console.log(`No process info found for processId: ${processId}`);
+		console.log('No process info found for processId:', String(processId).substring(0, 50));
 	}
 
 	// Handle client disconnect
@@ -92,7 +92,8 @@ const handleStatusStream = (req, res) => {
  * Send status update to specific process
  */
 const sendStatusUpdate = (processId, update) => {
-	console.log(`sendStatusUpdate called for processId ${processId}:`, update);
+	const safeProcessId = String(processId).substring(0, 50);
+	console.log('sendStatusUpdate called for processId:', safeProcessId, update);
 	const connection = activeConnections.get(processId);
 	if (connection) {
 		connection.lastActivity = Date.now();
@@ -102,9 +103,9 @@ const sendStatusUpdate = (processId, update) => {
 			...update,
 			timestamp: Date.now()
 		})}\n\n`);
-		console.log(`Status update sent to client for processId ${processId}`);
+		console.log('Status update sent to client for processId:', safeProcessId);
 	} else {
-		console.log(`No active connection found for processId ${processId}`);
+		console.log('No active connection found for processId:', safeProcessId);
 	}
 };
 
