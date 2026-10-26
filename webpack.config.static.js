@@ -2,7 +2,7 @@
  * Webpack config for static GitHub Pages deployment
  *
  * Key differences from production config:
- * - publicPath set to /bechdel-test/ for GitHub Pages
+ * - publicPath set to / (custom domain bechdel.joekarlsson.com)
  * - HashRouter-compatible (adds 404.html redirect)
  */
 
@@ -14,16 +14,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-// GitHub Pages repository name (used for publicPath)
-const REPO_NAME = 'bechdel-test';
-
 module.exports = {
 	entry: [path.join(__dirname, '/src/app/entry.js')],
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: '[name]-[contenthash].min.js',
 		chunkFilename: '[name]-[contenthash].chunk.js',
-		publicPath: `/${REPO_NAME}/`,
+		publicPath: '/',
 		clean: true,
 	},
 	mode: 'production',
@@ -103,7 +100,7 @@ module.exports = {
 		}),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production'),
-			'process.env.PUBLIC_URL': JSON.stringify(`/${REPO_NAME}`),
+			'process.env.PUBLIC_URL': JSON.stringify(''),
 		}),
 		new MiniCssExtractPlugin({
 			filename: '[name]-[contenthash].css',

@@ -13,8 +13,8 @@ import filmsSummary from '../data/films-summary.json';
 // Cache for fetched film details
 const filmDetailCache = new Map();
 
-// Base path for GitHub Pages deployment
-const BASE_PATH = '/bechdel-test';
+// Base path for the static site (served from the domain root)
+const BASE_PATH = '';
 
 /**
  * Filter and sort films based on query parameters
