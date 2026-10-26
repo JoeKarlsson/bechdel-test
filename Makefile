@@ -1,4 +1,4 @@
-.PHONY: help install dev prod test lint clean deploy docker-up docker-down reset-db fresh
+.PHONY: help install dev prod test lint clean docker-up docker-down reset-db fresh
 
 # Default target
 help:
@@ -15,7 +15,6 @@ help:
 	@echo "Production:"
 	@echo "  make build        - Build production assets"
 	@echo "  make prod         - Build and run production server"
-	@echo "  make deploy       - Deploy to production (Proxmox)"
 	@echo ""
 	@echo "Docker:"
 	@echo "  make docker-up    - Start all Docker services"
@@ -49,9 +48,6 @@ build:
 
 prod: build
 	npm run runProd
-
-deploy:
-	npm run deploy
 
 # Docker commands
 docker-up:

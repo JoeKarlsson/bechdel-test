@@ -5,7 +5,7 @@
  *
  * Usage:
  *   npm run export-data
- *   MONGODB_URI=mongodb://192.168.0.50:27017/bechdelTest npm run export-data
+ *   MONGODB_URI="mongodb://admin:password@localhost:27017/bechdelTest?authSource=admin" npm run export-data
  */
 
 const mongoose = require('mongoose');

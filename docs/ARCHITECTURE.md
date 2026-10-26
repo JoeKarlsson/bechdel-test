@@ -22,9 +22,8 @@ This project uses a **dual-branch architecture** to support both active developm
 │   └──────────────┘                  └──────────────┘            │
 │         │                                  │                     │
 │         ▼                                  ▼                     │
-│   192.168.0.50:8080              joekarlsson.github.io          │
-│   bechdel.joekarlsson.io         /bechdel-test/                 │
-│   (via NPM proxy)                (GitHub Pages)                  │
+│   localhost:8080                 bechdel.joekarlsson.com        │
+│   (docker compose, local)        (GitHub Pages)                  │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -33,8 +32,8 @@ This project uses a **dual-branch architecture** to support both active developm
 
 | Branch | Purpose | Deployment | URL |
 |--------|---------|------------|-----|
-| `develop` | Full-stack with Express + MongoDB | LXC 111 (Dockge) | http://192.168.0.50:8080 |
-| `gh-pages` | Static site with bundled JSON | GitHub Pages | https://joekarlsson.github.io/bechdel-test/ |
+| `develop` | Full-stack with Express + MongoDB | Local Docker Compose | http://localhost:8080 |
+| `gh-pages` | Static site with bundled JSON | GitHub Pages | https://bechdel.joekarlsson.com/ |
 
 ## Workflow: Adding a New Film
 
@@ -44,10 +43,10 @@ This project uses a **dual-branch architecture** to support both active developm
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  1. Start full-stack server (if not running)                    │
-│     └─► npm run deploy  OR  access http://192.168.0.50:8080     │
+│     └─► docker compose up -d --build                            │
 │                                                                  │
 │  2. Upload script via web UI                                    │
-│     └─► https://bechdel.joekarlsson.io → Upload                 │
+│     └─► http://localhost:8080 → Upload                          │
 │                                                                  │
 │  3. Export data to static site                                  │
 │     └─► ./scripts/update-static-site.sh                         │
@@ -56,7 +55,7 @@ This project uses a **dual-branch architecture** to support both active developm
 │         - Pushes (triggers GitHub Actions deploy)               │
 │                                                                  │
 │  4. Verify deployment                                           │
-│     └─► https://joekarlsson.github.io/bechdel-test/             │
+│     └─► https://bechdel.joekarlsson.com/                        │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -80,18 +79,16 @@ git checkout develop                   # Return to develop
 
 ### Full-Stack Server (develop branch)
 
-- **Host:** Proxmox LXC 111 (Dockge) on prxbox1
-- **Internal URL:** http://192.168.0.50:8080
-- **External URL:** https://bechdel.joekarlsson.io (via Nginx Proxy Manager)
-- **Stack Location:** `/opt/stacks/bechdel-test`
+- **Host:** Not hosted. Run it locally with `docker compose up -d --build` when adding films
+- **URL:** http://localhost:8080
 - **Services:**
   - Node.js/Express application (port 8080)
-  - MongoDB 7.0 (internal, persistent volume)
+  - MongoDB 7.0 (port 27017, persistent volume)
 
 ### Static Site (gh-pages branch)
 
 - **Host:** GitHub Pages
-- **URL:** https://joekarlsson.github.io/bechdel-test/
+- **URL:** https://bechdel.joekarlsson.com/ (custom domain; Cloudflare DNS-only CNAME to `joekarlsson.github.io`)
 - **Deploy:** Automatic via GitHub Actions on push to `gh-pages`
 - **Data:** Pre-bundled `films.json` (no runtime database)
 
@@ -149,12 +146,11 @@ No environment variables needed - all data is pre-bundled.
 ### Can't connect to MongoDB for export
 
 ```bash
-# Check if Dockge container is running
-ssh root@192.168.0.236 "pct exec 111 -- docker ps"
+# Make sure the local stack is running
+docker compose ps
 
-# SSH tunnel if needed (run from local machine)
-ssh -L 27017:192.168.0.50:27017 root@192.168.0.236 -N &
-MONGODB_URI=mongodb://localhost:27017/bechdelTest npm run export-data
+# Point the export at it
+MONGODB_URI="mongodb://admin:password@localhost:27017/bechdelTest?authSource=admin" npm run export-data
 ```
 
 ### Static site not updating after push
@@ -167,13 +163,13 @@ MONGODB_URI=mongodb://localhost:27017/bechdelTest npm run export-data
 
 ```bash
 # Check container status
-ssh root@192.168.0.236 "pct exec 111 -- docker compose -f /opt/stacks/bechdel-test/compose.yaml ps"
+docker compose ps
 
 # View logs
-ssh root@192.168.0.236 "pct exec 111 -- docker compose -f /opt/stacks/bechdel-test/compose.yaml logs app"
+docker compose logs app
 
 # Restart services
-ssh root@192.168.0.236 "pct exec 111 -- docker compose -f /opt/stacks/bechdel-test/compose.yaml restart"
+docker compose restart
 ```
 
 ## Related Documentation

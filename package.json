@@ -60,7 +60,6 @@
 		"build:analyze": "ANALYZE=true npm run build",
 		"build:stats": "rimraf dist && NODE_ENV=production webpack --config ./webpack.config.prod.js --profile --json > webpack-stats.json",
 		"runProd": "NODE_ENV=production node src/server/server.js",
-		"deploy": "./deploy-local.sh",
 		"clean": "rimraf dist coverage node_modules/.cache",
 		"fresh": "npm run clean && rm -rf node_modules package-lock.json && npm install --legacy-peer-deps",
 		"reset-db": "docker compose down -v && docker compose up mongodb -d",

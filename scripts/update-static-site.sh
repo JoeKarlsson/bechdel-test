@@ -10,9 +10,8 @@
 #   - MongoDB accessible (either local or via SSH tunnel)
 #   - MONGODB_URI environment variable set (or uses default localhost)
 #
-# Example with SSH tunnel to homelab:
-#   ssh -L 27017:localhost:27017 root@192.168.0.x -N &
-#   MONGODB_URI=mongodb://localhost:27017/bechdelTest ./scripts/update-static-site.sh
+# Example against the local Docker Compose stack:
+#   MONGODB_URI="mongodb://admin:password@localhost:27017/bechdelTest?authSource=admin" ./scripts/update-static-site.sh
 
 set -e
 
