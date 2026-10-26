@@ -154,7 +154,6 @@ npm run start:dev # Development server with hot reload at http://localhost:3000
 - `npm run prod` - Build and run production server
 - `npm test` - Run test suite with coverage
 - `npm run lint` - Run all linters
-- `npm run deploy` - Deploy to production server
 - `make help` - Show all available Make commands
 
 ### Development Scripts
@@ -170,7 +169,6 @@ npm run start:dev # Development server with hot reload at http://localhost:3000
 - `npm run build:analyze` - Build with bundle analysis (ANALYZE=true)
 - `npm run build:stats` - Generate webpack stats JSON file
 - `npm run runProd` - Run production server (NODE_ENV=production)
-- `npm run deploy` - Deploy to production (Proxmox)
 
 ### Testing Scripts
 
@@ -214,7 +212,6 @@ make dev          # Start development server
 make test         # Run tests
 make lint         # Run linters
 make build        # Build production assets
-make deploy       # Deploy to production
 make docker-up    # Start Docker services
 make clean        # Clean build artifacts
 make help         # Show all available commands
@@ -271,19 +268,7 @@ npm run snyk-protect      # Security vulnerability check
 
 ## Deployment
 
-For production deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
-
-**Quick deployment:**
-
-```sh
-npm run deploy  # Deploy to production server
-```
-
-The deployment script:
-- Pulls latest code from GitHub
-- Builds Docker images on the server
-- Restarts services with zero downtime
-- Runs health checks to verify deployment
+The public site is a static build on GitHub Pages at https://bechdel.joekarlsson.com/. The full-stack server (for adding films) runs locally with `docker compose up -d --build`. See [DEPLOYMENT.md](DEPLOYMENT.md) for both.
 
 ## Troubleshooting
 
