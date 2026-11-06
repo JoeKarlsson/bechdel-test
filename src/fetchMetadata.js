@@ -85,6 +85,19 @@ const fetchTmdb = (imdbId, resource, query = '') =>
 // The top-billed actors whose ages at release are looked up (one TMDB call each)
 const AGED_CAST = 10;
 
+const fetchTmdbDetails = imdbId =>
+	fetchJsonCached(`https://api.themoviedb.org/3/movie/${imdbId}?api_key=${requireKey('THEMOVIEDB')}`);
+
+/** TMDB's cast, with genders: all the eval needs, and no OMDB call (OMDB's free tier allows 1,000 a day) */
+const fetchCast = async imdbId => {
+	const credits = await fetchTmdb(imdbId, 'credits');
+	if (!Array.isArray(credits.cast) || credits.cast.length === 0) throw new Error(`TMDB has no cast for ${imdbId}`);
+	return credits.cast;
+};
+
+/** The release year, from TMDB */
+const fetchReleaseYear = async imdbId => parseInt((await fetchTmdbDetails(imdbId)).release_date, 10) || null;
+
 const fetchTmdbPerson = personId =>
 	fetchJsonCached(`https://api.themoviedb.org/3/person/${personId}?api_key=${requireKey('THEMOVIEDB')}`);
 
@@ -99,7 +112,7 @@ const fetchMetadata = async imdbId => {
 		fetchOmdb({ i: imdbId }),
 		fetchTmdb(imdbId, 'credits'),
 		fetchTmdb(imdbId, 'images', '&language=en&include_image_language=en,null'),
-		fetchJsonCached(`https://api.themoviedb.org/3/movie/${imdbId}?api_key=${requireKey('THEMOVIEDB')}`),
+		fetchTmdbDetails(imdbId),
 	]);
 	if (!Array.isArray(credits.cast) || credits.cast.length === 0) {
 		throw new Error(`TMDB has no cast for ${omdb.Title} (${imdbId})`);
@@ -109,4 +122,4 @@ const fetchMetadata = async imdbId => {
 	return { omdb, cast: credits.cast, crew: credits.crew || [], images, details, birthdays };
 };
 
-module.exports = { fetchMetadata, matchScriptByTitle, titleFromScriptName, comparableTitle };
+module.exports = { fetchMetadata, fetchCast, fetchReleaseYear, matchScriptByTitle, titleFromScriptName, comparableTitle };

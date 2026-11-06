@@ -9,7 +9,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { fetchMetadata } = require('../src/fetchMetadata');
+const { fetchCast } = require('../src/fetchMetadata');
 const { loadManifest, scriptPathFor } = require('../src/manifest');
 const { charactersFromCast, analyzeScriptText } = require('../src/analyzeFilm');
 
@@ -32,7 +32,7 @@ const main = async () => {
 			unscored.push(`${file}: not on this machine (a scripts/local/ script)`);
 			continue;
 		}
-		const { cast } = await fetchMetadata(imdbId);
+		const cast = await fetchCast(imdbId);
 		const scriptText = fs.readFileSync(scriptPath, 'utf8');
 		try {
 			const { bechdelResults } = analyzeScriptText(scriptText, charactersFromCast(cast), GENDER_OVERRIDES[file]);
