@@ -1,0 +1,218 @@
+/* bechdel.io: dark only, hot pink on black, Anton for posters, Fraunces to read.
+   Every color, font, size and space comes from these tokens. */
+
+@font-face {
+	font-family: 'Anton';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/anton-latin-ext.woff2) format('woff2');
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: 'Anton';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/anton-latin.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'Fraunces';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url(/fonts/fraunces-latin-ext.woff2) format('woff2');
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+	font-family: 'Fraunces';
+	font-style: normal;
+	font-weight: 400 700;
+	font-display: swap;
+	src: url(/fonts/fraunces-latin.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+	color-scheme: only dark;
+
+	/* Color */
+	--ink: #000000;
+	--shelf: #111111;
+	--panel: #1c1c1c;
+	--plank: #3a3a3a;
+	--chalk: #ece6da;
+	--muted: #a3a3a3;
+	--pink: #ff4fd8;
+	--pink-on-chalk: #b3007f; /* pink text dark enough for 4.5:1 on chalk */
+	--tangerine: #ff8a1f;
+	--tangerine-on-chalk: #b34400;
+
+	/* Type */
+	--poster: 'Anton', Impact, 'Arial Narrow', sans-serif;
+	--book: 'Fraunces', Georgia, serif;
+	--text: 1.1875rem; /* 19px body */
+	--text-small: 1.0625rem; /* 17px, the smallest size used */
+	--text-lead: 1.3125rem;
+
+	/* Space: one scale for every margin and gap */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 1rem;
+	--space-4: 1.5rem;
+	--space-5: 2rem;
+	--space-6: 3rem;
+	--space-7: 4rem;
+	--space-8: 6rem;
+	--section: clamp(4.5rem, 9vw, 7rem); /* space before every page section */
+
+	--gutter: clamp(16px, 4vw, 40px);
+	--page: 1240px;
+	--tilt: -0.5deg;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--ink);
+	color: var(--chalk);
+	font-family: var(--book);
+	font-size: var(--text);
+	line-height: 1.5;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: var(--pink);
+	text-underline-offset: 0.15em;
+}
+a:hover {
+	color: var(--chalk);
+}
+:focus-visible {
+	outline: 3px solid var(--pink);
+	outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--poster);
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.page {
+	max-width: var(--page);
+	margin: 0 auto;
+	padding: 0 var(--gutter);
+}
+
+.section {
+	margin-top: var(--section);
+}
+
+.section-title {
+	font-size: clamp(2.25rem, 5vw, 3rem);
+	margin-bottom: var(--space-4);
+}
+
+.note {
+	color: var(--muted);
+	font-size: var(--text-small);
+	margin: 0;
+}
+
+/* Paper: chalk-colored cards with black text */
+.paper {
+	background: var(--chalk);
+	color: var(--ink);
+}
+.paper a {
+	color: var(--pink-on-chalk);
+}
+.paper a:hover {
+	color: var(--ink);
+}
+
+/* Visually hidden, still read aloud */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	left: var(--gutter);
+	top: -100px;
+	z-index: 10;
+	background: var(--pink);
+	color: var(--ink);
+	padding: var(--space-2) var(--space-3);
+	font-family: var(--poster);
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.skip-link:focus {
+	top: var(--space-2);
+}
+
+/* A label and swatch, for every chart legend */
+.legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2) var(--space-4);
+	font-size: var(--text-small);
+	margin: 0 0 var(--space-4);
+	padding: 0;
+	list-style: none;
+}
+.legend li {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2);
+}
+.swatch {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+}
+.swatch-w {
+	background: var(--pink);
+}
+.swatch-m {
+	background: var(--chalk);
+}
+.swatch-unknown {
+	background: var(--plank);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}

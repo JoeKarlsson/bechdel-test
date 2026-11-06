@@ -1,0 +1,196 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+	/** Absolute path to a 1200x630 share image */
+	image?: string;
+	imageAlt?: string;
+	noindex?: boolean;
+	structuredData?: Record<string, unknown>;
+	/** Which nav link is the current page */
+	nav?: 'shelf' | 'about' | 'case-study' | 'privacy';
+}
+
+const {
+	title,
+	description,
+	image = '/og.png',
+	imageAlt = 'bechdel.io: do two women talk to each other about something other than a man?',
+	noindex = false,
+	structuredData,
+	nav,
+} = Astro.props;
+
+const SITE_NAME = 'bechdel.io';
+const pageTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const imageUrl = new URL(image, Astro.site).href;
+
+// GitHub Pages can't send headers, so the policy rides in a meta tag. It can't
+// carry frame-ancestors or report-uri; see DEPLOYMENT.md.
+const CSP = [
+	"default-src 'self'",
+	"script-src 'self' https://plausible.joekarlsson.io",
+	"style-src 'self'",
+	// Chart bars set their own width and height in a style attribute
+	"style-src-attr 'unsafe-inline'",
+	"img-src 'self' data:",
+	"font-src 'self'",
+	"connect-src 'self' https://plausible.joekarlsson.io",
+	"base-uri 'self'",
+	"form-action 'self'",
+	"object-src 'none'",
+	'upgrade-insecure-requests',
+].join('; ');
+
+const jsonLD = structuredData
+	? JSON.stringify({ '@context': 'https://schema.org', ...structuredData }).replace(/</g, '\\u003c')
+	: null;
+
+const NAV = [
+	{ key: 'shelf', href: '/', label: 'The shelf' },
+	{ key: 'about', href: '/about/', label: 'About' },
+	{ key: 'case-study', href: '/case-study/', label: 'Case study' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Security-Policy" content={CSP} />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		{noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+		<meta name="author" content="Joe Karlsson and Laurel Karlsson" />
+		<meta name="color-scheme" content="only dark" />
+		<meta name="darkreader-lock" />
+		<meta name="theme-color" content="#000000" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="sitemap" href="/sitemap.xml" />
+		<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageUrl} />
+		<meta name="twitter:image:alt" content={imageAlt} />
+		<meta name="twitter:site" content="@joekarlsson1" />
+		<meta name="twitter:creator" content="@joekarlsson1" />
+		{jsonLD && <script type="application/ld+json" set:html={jsonLD} />}
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to the page</a>
+		<header class="site-header page">
+			<a class="wordmark" href="/">bechdel.io</a>
+			<nav aria-label="Main">
+				{NAV.map((n) => (
+					<a href={n.href} aria-current={n.key === nav ? 'page' : undefined}>
+						{n.label}
+					</a>
+				))}
+			</nav>
+		</header>
+
+		<main id="main" tabindex="-1">
+			<slot />
+		</main>
+
+		<footer class="site-footer page">
+			<slot name="footer-lead" />
+			<div class="footer-row">
+				<nav aria-label="Footer">
+					<a href="/about/">About</a>
+					<a href="/case-study/">Case study</a>
+					<a href="/privacy/">Privacy</a>
+					<a href="https://github.com/JoeKarlsson/bechdel-test" rel="noopener noreferrer" target="_blank">Code on GitHub</a>
+				</nav>
+				<p class="note">A Karlsson production, by Joe and Laurel Karlsson</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style>
+	.site-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-3);
+		padding-top: var(--space-5);
+		padding-bottom: var(--space-5);
+	}
+	.wordmark {
+		font-family: var(--poster);
+		font-size: 3rem;
+		line-height: 1;
+		color: var(--pink);
+		text-decoration: none;
+	}
+	.site-header nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-5);
+	}
+	.site-header nav a {
+		font-family: var(--poster);
+		font-size: 1.375rem;
+		text-transform: uppercase;
+		color: var(--chalk);
+		text-decoration: none;
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+	.site-header nav a[aria-current='page'] {
+		color: var(--pink);
+		text-decoration: underline;
+		text-decoration-thickness: 3px;
+		text-underline-offset: 6px;
+	}
+	main:focus {
+		outline: none;
+	}
+	.site-footer {
+		margin-top: var(--section);
+		padding-top: var(--space-6);
+		padding-bottom: var(--space-7);
+	}
+	.footer-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3) var(--space-6);
+		justify-content: space-between;
+		align-items: center;
+		margin-top: var(--space-7);
+	}
+	.footer-row nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-4);
+	}
+	.footer-row nav a {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+</style>

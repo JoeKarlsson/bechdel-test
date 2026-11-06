@@ -1,0 +1,50 @@
+---
+// Hand-drawn crayon marks in hot pink. Decoration only, hidden from screen readers.
+interface Props {
+	kind: 'underline' | 'arrow';
+	class?: string;
+}
+const { kind, class: className } = Astro.props;
+const id = `crayon-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+{
+	kind === 'underline' ? (
+		<svg class:list={['scribble', 'underline', className]} aria-hidden="true" viewBox="0 0 600 40" preserveAspectRatio="none">
+			<defs>
+				<filter id={id}>
+					<feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="n" />
+					<feDisplacementMap in="SourceGraphic" in2="n" scale="4" />
+				</filter>
+			</defs>
+			<path d="M6 26 C 90 12, 170 34, 260 20 S 420 30, 520 16 S 580 22, 594 18" filter={`url(#${id})`} />
+		</svg>
+	) : (
+		<svg class:list={['scribble', 'arrow', className]} aria-hidden="true" width="40" height="40" viewBox="0 0 40 40">
+			<path d="M30 2 C 22 14, 12 22, 4 36 M4 36 L 3 26 M4 36 L 13 31" />
+		</svg>
+	)
+}
+
+<style>
+	.scribble {
+		display: block;
+		overflow: visible;
+	}
+	.scribble path {
+		fill: none;
+		stroke: var(--pink);
+		stroke-linecap: round;
+	}
+	.underline {
+		width: min(100%, 620px);
+		height: 32px;
+		margin-top: var(--space-2);
+	}
+	.underline path {
+		stroke-width: 7;
+	}
+	.arrow path {
+		stroke-width: 3;
+	}
+</style>

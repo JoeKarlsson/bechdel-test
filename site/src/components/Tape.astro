@@ -1,0 +1,148 @@
+---
+// One film on the shelf: its poster in a tape box, a PASSES or FAILS sticker,
+// and a label with the year and Bechdel score.
+import { Picture } from 'astro:assets';
+import { posterFor } from '../lib/images';
+
+interface Props {
+	film: {
+		id: string;
+		slug: string;
+		title: string;
+		year: number | null;
+		directors: string[];
+		popularity: number;
+		bechdel: { score: number; pass: boolean };
+	};
+	/** The first row loads right away; the rest wait until scrolled to */
+	eager?: boolean;
+}
+
+const { film, eager = false } = Astro.props;
+const poster = posterFor(film.id);
+const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
+---
+
+<li
+	class="tape"
+	data-title={film.title.toLowerCase()}
+	data-director={film.directors.join(' ').toLowerCase()}
+	data-score={film.bechdel.score}
+	data-year={film.year ?? 0}
+	data-popularity={film.popularity}
+>
+	<a href={`/films/${film.slug}/`}>
+		<div class="box">
+			{
+				poster ? (
+					<Picture
+						src={poster}
+						alt=""
+						widths={[180, 360]}
+						sizes="(max-width: 600px) 45vw, 180px"
+						formats={['avif', 'webp']}
+						loading={eager ? 'eager' : 'lazy'}
+						decoding="async"
+						class="poster"
+					/>
+				) : (
+					<span class="blank" aria-hidden="true">
+						<span>{film.title}</span>
+					</span>
+				)
+			}
+			<span class="label">
+				<span class="title">{film.title}</span>
+				<span class="meta">{film.year}, {film.bechdel.score} of 3 rules</span>
+			</span>
+			<span class:list={['sticker', film.bechdel.pass ? 'pass' : 'fail']}>{verdict}</span>
+		</div>
+		<span class="plank" aria-hidden="true"></span>
+	</a>
+</li>
+
+<style>
+	.tape a {
+		display: block;
+		color: var(--chalk);
+		text-decoration: none;
+	}
+	.box {
+		position: relative;
+		background: var(--shelf);
+		padding: var(--space-2) var(--space-2) 0;
+	}
+	.poster,
+	.blank {
+		display: block;
+		width: 100%;
+		aspect-ratio: 2 / 3;
+		object-fit: cover;
+	}
+	.blank {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--panel);
+		padding: var(--space-3);
+	}
+	.blank span {
+		background: var(--chalk);
+		color: var(--ink);
+		padding: var(--space-2) var(--space-3);
+		font-family: var(--poster);
+		font-size: 1.375rem;
+		line-height: 1.1;
+		text-transform: uppercase;
+		text-align: center;
+		transform: rotate(-3deg);
+	}
+	.label {
+		display: block;
+		background: var(--chalk);
+		color: var(--ink);
+		padding: var(--space-2);
+		margin: 0 calc(-1 * var(--space-2));
+	}
+	.title {
+		display: block;
+		font-family: var(--poster);
+		font-size: 1.1875rem;
+		line-height: 1.1;
+		text-transform: uppercase;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.meta {
+		display: block;
+		font-size: var(--text-small);
+	}
+	.sticker {
+		position: absolute;
+		top: var(--space-3);
+		right: calc(-1 * var(--space-2));
+		font-family: var(--poster);
+		font-size: 1.0625rem;
+		line-height: 1;
+		text-transform: uppercase;
+		padding: 0.45rem 0.6rem;
+		color: var(--ink);
+		transform: rotate(6deg);
+	}
+	.sticker.pass {
+		background: var(--pink);
+	}
+	.sticker.fail {
+		background: var(--tangerine);
+	}
+	.plank {
+		display: block;
+		height: 10px;
+		background: var(--plank);
+	}
+	a:hover .title,
+	a:focus-visible .title {
+		text-decoration: underline;
+	}
+</style>
