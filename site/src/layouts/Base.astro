@@ -110,7 +110,7 @@ const NAV = [
 	<body data-not-found={notFound ? 'true' : undefined}>
 		<a class="skip-link" href="#main">Skip to the page</a>
 		<header class="site-header page">
-			<a class="wordmark" href="/">bechdel.io</a>
+			<a class="wordmark" href="/"><span class="wordmark-question">Does it pass?</span> bechdel.io</a>
 			<nav aria-label="Main">
 				{NAV.map((n) => (
 					<a href={n.href} aria-current={n.key === nav ? 'page' : undefined}>
@@ -163,6 +163,12 @@ const NAV = [
 		line-height: 1;
 		color: var(--pink);
 		text-decoration: none;
+	}
+	.wordmark-question {
+		display: block;
+		font-size: 0.45em;
+		color: var(--chalk);
+		margin-bottom: var(--space-1);
 	}
 	@media (max-width: 600px) {
 		.wordmark {
