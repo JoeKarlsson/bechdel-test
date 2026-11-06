@@ -1,0 +1,25 @@
+{
+	"name": "bechdel-site",
+	"private": true,
+	"type": "module",
+	"description": "The public bechdel.io site: a static Astro build of the analyzed films",
+	"engines": {
+		"node": ">=22.23.4"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"images": "node scripts/fetch-images.mjs",
+		"test": "node --test test/*.test.mjs",
+		"e2e": "playwright test"
+	},
+	"dependencies": {
+		"astro": "7.4.7",
+		"sharp": "0.35.5"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "4.14.0",
+		"@playwright/test": "1.65.0"
+	}
+}

@@ -1,0 +1,218 @@
+---
+import Base from '../layouts/Base.astro';
+import Tape from '../components/Tape.astro';
+import Scribble from '../components/Scribble.astro';
+import { loadFilms } from '../lib/films.mjs';
+
+const films = loadFilms();
+const passing = films.filter((f) => f.bechdel.pass).length;
+const description = `Do two women talk to each other about something other than a man? We checked the scripts of ${films.length} films against the Bechdel test. ${passing} pass.`;
+---
+
+<Base
+	title="bechdel.io"
+	description={description}
+	nav="shelf"
+	structuredData={{ '@type': 'WebSite', name: 'bechdel.io', url: 'https://bechdel.joekarlsson.com/', description }}
+>
+	<div class="page">
+		<section class="hero">
+			<div class="question">
+				<h1>Do two women talk to each other about <span class="pink">something other than a man?</span></h1>
+				<Scribble kind="underline" />
+				<p class="lead">
+					We read the scripts of {films.length} films and checked each one against the three rules from Alison Bechdel's
+					1985 comic. Browse the whole shelf below.
+				</p>
+			</div>
+			<aside class="rules paper" aria-labelledby="rules-title">
+				<h2 id="rules-title">House rules</h2>
+				<ol>
+					<li>It has at least two women in it,</li>
+					<li>who talk to each other,</li>
+					<li>about something besides a man.</li>
+				</ol>
+				<p class="tally"><span class="tally-n">{passing}</span> of {films.length} pass</p>
+			</aside>
+		</section>
+
+		<section class="section" aria-labelledby="shelf-title">
+			<h2 id="shelf-title" class="section-title">The shelf</h2>
+
+			<form class="controls" role="search" hidden data-shelf-controls>
+				<label class="field grow">
+					<span>Search</span>
+					<input type="search" name="q" placeholder="Title or director" autocomplete="off" />
+				</label>
+				<label class="field">
+					<span>Show</span>
+					<select name="show">
+						<option value="all">Every film</option>
+						<option value="pass">Passes</option>
+						<option value="fail">Fails</option>
+					</select>
+				</label>
+				<label class="field">
+					<span>Sort</span>
+					<select name="sort">
+						<option value="popularity">Most popular</option>
+						<option value="score">Highest score</option>
+						<option value="new">Newest</option>
+						<option value="old">Oldest</option>
+						<option value="az">A to Z</option>
+					</select>
+				</label>
+			</form>
+			<p class="note count" aria-live="polite" data-shelf-count>All {films.length} films, {passing} pass</p>
+			<div class="empty" hidden data-shelf-empty>
+				<p class="empty-title">Nothing on the shelf matches</p>
+				<p><button type="button" class="link-button" data-shelf-clear>Clear the search</button></p>
+			</div>
+
+			<ul class="shelf" data-shelf>
+				{films.map((film, i) => <Tape film={film} eager={i < 6} />)}
+			</ul>
+		</section>
+	</div>
+
+	<blockquote slot="footer-lead" class="bechdel-quote">
+		<p>The last movie I was able to see was Alien.</p>
+		<footer>Alison Bechdel, <cite>The Rule</cite>, 1985</footer>
+	</blockquote>
+</Base>
+
+<script>
+	import { setUpShelf } from '../scripts/shelf';
+	setUpShelf();
+</script>
+
+<style>
+	.hero {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-6);
+		align-items: flex-start;
+		padding-top: var(--space-5);
+	}
+	.question {
+		flex: 999 1 560px;
+		min-width: 0;
+	}
+	h1 {
+		font-size: clamp(3.25rem, 8vw, 6.5rem);
+		line-height: 0.95;
+	}
+	.pink {
+		color: var(--pink);
+	}
+	.lead {
+		margin: var(--space-5) 0 0;
+		max-width: 34em;
+		font-size: var(--text-lead);
+	}
+	.rules {
+		flex: 1 1 300px;
+		max-width: 360px;
+		padding: var(--space-5);
+		transform: rotate(2deg);
+	}
+	.rules h2 {
+		font-size: 1.375rem;
+	}
+	.rules ol {
+		margin: var(--space-3) 0 0;
+		padding-left: var(--space-4);
+	}
+	.rules li + li {
+		margin-top: var(--space-2);
+	}
+	.tally {
+		margin: var(--space-5) 0 0;
+		font-family: var(--poster);
+		font-size: 4rem;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+	.tally-n {
+		color: var(--pink-on-chalk);
+	}
+	.controls {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-4) var(--space-5);
+		align-items: flex-end;
+		margin-bottom: var(--space-3);
+	}
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		flex: 1 1 170px;
+	}
+	.field.grow {
+		flex: 2 1 260px;
+	}
+	.field span {
+		font-family: var(--poster);
+		font-size: 1.125rem;
+		text-transform: uppercase;
+	}
+	.field input,
+	.field select {
+		background: var(--ink);
+		color: var(--chalk);
+		border: 0;
+		border-bottom: 3px solid var(--pink);
+		border-radius: 0;
+		padding: var(--space-2) 2px;
+		font: inherit;
+		font-size: 1.1875rem;
+		min-height: 44px;
+	}
+	.count {
+		margin-bottom: var(--space-6);
+	}
+	.empty {
+		padding: var(--space-7) 0 var(--space-8);
+	}
+	.empty-title {
+		margin: 0;
+		font-family: var(--poster);
+		font-size: 3rem;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+	.link-button {
+		background: none;
+		border: 0;
+		padding: 0;
+		color: var(--pink);
+		font: inherit;
+		text-decoration: underline;
+		cursor: pointer;
+		min-height: 44px;
+	}
+	.shelf {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		gap: var(--space-6) var(--space-4);
+	}
+	.bechdel-quote {
+		margin: 0;
+		max-width: 18em;
+	}
+	.bechdel-quote p {
+		margin: 0;
+		font-family: var(--poster);
+		font-size: clamp(3rem, 7vw, 5.5rem);
+		line-height: 1;
+		text-transform: uppercase;
+		color: var(--pink);
+	}
+	.bechdel-quote footer {
+		margin-top: var(--space-3);
+	}
+</style>
