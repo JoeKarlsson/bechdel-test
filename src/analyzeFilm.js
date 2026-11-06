@@ -11,6 +11,16 @@ const AiAnalyzer = require('./aiAnalyzer');
 // Below this many lines of dialogue the script didn't parse (a layout the
 // parser can't read), and any score would be noise
 const MIN_DIALOGUE_LINES = 150;
+// Below this share of real words the text is a bad scan (undecodable PDF
+// fonts, poor OCR): it may still yield "dialogue", but quotes would be noise
+const MIN_TEXT_QUALITY = 0.75;
+
+/** Share of tokens that are words ("Hello," "MARY" "don't"), not OCR debris ("a,1.d" "~7") */
+const textQuality = text => {
+	const tokens = text.split(/\s+/).filter(Boolean);
+	const words = tokens.filter(t => /^["“‘'(]?(?:[A-Za-z][a-z'’]*|[A-Z][A-Z'’]+)[.,!?;:"”’)]*$/.test(t));
+	return words.length / Math.max(1, tokens.length);
+};
 
 // enhancedAnalytics keys that held parsed script text before the parsed
 // script moved to its own `script` section; every other key is the AI's
@@ -89,6 +99,10 @@ const measureDialogue = (dialogue, resolved) => {
  * Throws if the script didn't parse.
  */
 const analyzeScriptText = (scriptText, characters, genderOverrides = {}) => {
+	const quality = textQuality(scriptText);
+	if (quality < MIN_TEXT_QUALITY) {
+		throw new Error(`script text is garbled: ${Math.round(quality * 100)}% real words, likely a bad scan`);
+	}
 	const screenplay = parseScreenplay(scriptText);
 	const blocks = screenplay.scenes.flatMap(scene => scene.blocks);
 	const dialogue = blocks.filter(block => block.kind === 'dialogue');
@@ -234,6 +248,7 @@ const buildFilmRecord = ({
 });
 
 module.exports = {
+	textQuality,
 	charactersFromCast,
 	analyzeScriptText,
 	runAiAnalysis,

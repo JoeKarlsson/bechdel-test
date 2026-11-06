@@ -1,4 +1,4 @@
-const { charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord } = require('./analyzeFilm');
+const { textQuality, charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord } = require('./analyzeFilm');
 const { titleFromScriptName, comparableTitle } = require('./fetchMetadata');
 
 const cast = [
@@ -27,6 +27,13 @@ describe('analyzeScriptText', () => {
 		const { script } = analyzeScriptText(longScript(['RIPLEY', 'MOTHER']), characters, { MOTHER: 'm' });
 		expect(script.speakers.find(s => s.name === 'MOTHER').gender).toBe('m');
 		expect(() => analyzeScriptText(longScript(['RIPLEY']), characters, { ASH: 'm' })).toThrow('never speaks');
+	});
+
+	it('refuses a badly scanned script', () => {
+		const scan = Array.from({ length: 400 }, () => 'a,1.d ~7 Ju:l: MARY Hello, there').join('\n');
+		expect(textQuality(scan)).toBeLessThan(0.75);
+		expect(() => analyzeScriptText(scan, charactersFromCast(cast))).toThrow('script text is garbled');
+		expect(textQuality("MARY\nDon't go. He said “fine.”")).toBe(1);
 	});
 
 	it("refuses a script it can't find enough dialogue in, instead of scoring noise", () => {

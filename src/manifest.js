@@ -1,7 +1,7 @@
 // scripts/manifest.json maps each script file to its film's IMDb id, so a
 // film is matched once, by a person checking `npm run match`, not guessed on
-// every run. null marks a script with no released film to match (an
-// unproduced draft, say), which analyze skips.
+// every run. null marks a script analyze skips: no released feature film to
+// match (an unproduced draft, a short, a web series).
 //
 // Scripts live in scripts/ (committed) or scripts/local/ (gitignored: text we
 // may analyze but not republish, such as Script Slug's). The manifest lists

@@ -10,7 +10,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { fetchMetadata } = require('../src/fetchMetadata');
+const { fetchReleaseYear } = require('../src/fetchMetadata');
 const { loadManifest } = require('../src/manifest');
 
 const OUT = path.resolve(__dirname, '../data/eval/bechdeltest-ratings.json');
@@ -50,15 +50,16 @@ const main = async () => {
 	const ids = Object.values(loadManifest()).filter(Boolean);
 	const yearOf = {};
 	for (const id of ids) {
-		const { omdb } = await fetchMetadata(id);
-		yearOf[id] = parseInt(omdb.Year, 10);
+		yearOf[id] = await fetchReleaseYear(id);
 	}
-	const ratings = {};
-	for (const year of [...new Set(Object.values(yearOf))].sort()) {
-		const listed = await fetchYear(year);
-		for (const id of ids.filter(i => yearOf[i] === year && listed[i])) ratings[id] = listed[id];
+	// Match by IMDb id across every year fetched: bechdeltest.com sometimes
+	// lists a film a year off from TMDB's release year
+	const listed = {};
+	for (const year of [...new Set(Object.values(yearOf).filter(Boolean))].sort()) {
+		Object.assign(listed, await fetchYear(year));
 		process.stdout.write(`${year} `);
 	}
+	const ratings = Object.fromEntries(ids.filter(id => listed[id]).map(id => [id, listed[id]]));
 	fs.mkdirSync(path.dirname(OUT), { recursive: true });
 	const sorted = Object.fromEntries(Object.entries(ratings).sort(([a], [b]) => a.localeCompare(b)));
 	fs.writeFileSync(OUT, `${JSON.stringify(sorted, null, '\t')}\n`);
