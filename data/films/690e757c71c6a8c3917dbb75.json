@@ -1315,7 +1315,19 @@
           "14": 6
         }
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 3,
+      "longestWithoutWoman": 152,
+      "words": {
+        "w": 2481,
+        "m": 5821,
+        "unknown": 2856
+      },
+      "womenConversations": 10,
+      "menConversations": 38,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/6VYDyNEjejW8KvYeTuZTLkQLKnv.jpg",
@@ -1473,52 +1485,62 @@
     {
       "actorName": "Sam Worthington",
       "character": "Perseus",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 33
     },
     {
       "actorName": "Gemma Arterton",
       "character": "Io",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 24
     },
     {
       "actorName": "Mads Mikkelsen",
       "character": "Draco",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 44
     },
     {
       "actorName": "Alexa Davalos",
       "character": "Andromeda",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 27
     },
     {
       "actorName": "Jason Flemyng",
       "character": "Calibos / Acrisius",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 43
     },
     {
       "actorName": "Ralph Fiennes",
       "character": "Hades",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 47
     },
     {
       "actorName": "Liam Neeson",
       "character": "Zeus",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 57
     },
     {
       "actorName": "Pete Postlethwaite",
       "character": "Spyros",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 64
     },
     {
       "actorName": "Polly Walker",
       "character": "Cassiopeia",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 43
     },
     {
       "actorName": "Ashraf Barhom",
       "character": "Ozal",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 31
     },
     {
       "actorName": "Elizabeth McGovern",
@@ -1715,6 +1737,162 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Louis Leterrier",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Travis Beacham",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Phil Hay",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Matt Manfredi",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Basil Iwanyk",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Karl McMillan",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Kevin De La Noy",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Peter Menzies Jr.",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "David Freeman",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Vincent Tabaillon",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Martin Walsh",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Ramin Djawadi",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Martin Laing",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Lindy Hemming",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Elaine Grainger",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Lucinda Syson",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 5,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Costume & Make-Up": {
+        "w": 29,
+        "m": 9,
+        "nb": 0,
+        "unknown": 41
+      },
+      "Production": {
+        "w": 3,
+        "m": 11,
+        "nb": 0,
+        "unknown": 8
+      },
+      "Camera": {
+        "w": 1,
+        "m": 16,
+        "nb": 0,
+        "unknown": 20
+      },
+      "Art": {
+        "w": 4,
+        "m": 17,
+        "nb": 0,
+        "unknown": 48
+      },
+      "Visual Effects": {
+        "w": 4,
+        "m": 20,
+        "nb": 0,
+        "unknown": 96
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 6,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Crew": {
+        "w": 2,
+        "m": 11,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Editing": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 13,
+        "nb": 0,
+        "unknown": 3
+      }
+    }
+  },
+  "money": {
+    "budget": 125000000,
+    "revenue": 493214993
+  },
   "directors": [
     {
       "name": "Louis Leterrier"

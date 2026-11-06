@@ -1174,7 +1174,19 @@
           "7": 1
         }
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 30,
+      "words": {
+        "w": 2331,
+        "m": 4825,
+        "unknown": 212
+      },
+      "womenConversations": 9,
+      "menConversations": 29,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/vmMC9rC2Z3iptDj2K5AiK0wlVAF.jpg",
@@ -1329,47 +1341,56 @@
     {
       "actorName": "Warren Beatty",
       "character": "Clyde Barrow",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 30
     },
     {
       "actorName": "Faye Dunaway",
       "character": "Bonnie Parker",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 26
     },
     {
       "actorName": "Michael J. Pollard",
       "character": "C. W. Moss",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 28
     },
     {
       "actorName": "Gene Hackman",
       "character": "Buck Barrow",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 37
     },
     {
       "actorName": "Estelle Parsons",
       "character": "Blanche",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 39
     },
     {
       "actorName": "Denver Pyle",
       "character": "Frank Hamer",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 47
     },
     {
       "actorName": "Dub Taylor",
       "character": "Ivan Moss",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 60
     },
     {
       "actorName": "Evans Evans",
       "character": "Velma Davis",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 34
     },
     {
       "actorName": "Gene Wilder",
       "character": "Eugene Grizzard",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 34
     },
     {
       "actorName": "Mabel Cavitt",
@@ -1406,6 +1427,110 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Arthur Penn",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Robert Benton",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "David Newman",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Warren Beatty",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Burnett Guffey",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Dede Allen",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Charles Strouse",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Theadora Van Runkle",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Production": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Art": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Directing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Crew": {
+        "w": 1,
+        "m": 11,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 2500000,
+    "revenue": 70000000
+  },
   "directors": [
     {
       "name": "Arthur Penn"

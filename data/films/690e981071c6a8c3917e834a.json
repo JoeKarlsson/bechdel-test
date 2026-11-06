@@ -975,7 +975,19 @@
           "3": 1
         }
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 3,
+      "longestWithoutWoman": 22,
+      "words": {
+        "w": 4989,
+        "m": 4049,
+        "unknown": 680
+      },
+      "womenConversations": 19,
+      "menConversations": 1,
+      "reverseScore": 2
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/bR54Rc8r3voUdxX5RkzBOpQGtFc.jpg",
@@ -1131,52 +1143,62 @@
     {
       "actorName": "Uma Thurman",
       "character": "Sissy Hankshaw",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 24
     },
     {
       "actorName": "Lorraine Bracco",
       "character": "Delores Del Ruby",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 39
     },
     {
       "actorName": "Pat Morita",
       "character": "The Chink",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 61
     },
     {
       "actorName": "Angie Dickinson",
       "character": "Miss Adrian",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 62
     },
     {
       "actorName": "Keanu Reeves",
       "character": "Julian Gitche",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 29
     },
     {
       "actorName": "John Hurt",
       "character": "The Countess",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 54
     },
     {
       "actorName": "Rain Phoenix",
       "character": "Bonanza Jellybean",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 21
     },
     {
       "actorName": "Ed Begley Jr.",
       "character": "Rupert",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 44
     },
     {
       "actorName": "Carol Kane",
       "character": "Carla",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 41
     },
     {
       "actorName": "Sean Young",
       "character": "Marie Barth",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 34
     },
     {
       "actorName": "Crispin Glover",
@@ -1357,6 +1379,156 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Gus Van Sant",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Gus Van Sant",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "Tom Robbins",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Lucy Phillips",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Laurie Parker",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "John J. Campbell",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Eric Alan Edwards",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Gus Van Sant",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Curtiss Clayton",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "K.D. Lang",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Ben Mink",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Missy Stewart",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Beatrix Aruna Pasztor",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Richard Pagano",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Debi Manwiller",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Sharon Bialy",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 2,
+        "m": 4,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Editing": {
+        "w": 1,
+        "m": 3,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Sound": {
+        "w": 3,
+        "m": 9,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Art": {
+        "w": 2,
+        "m": 2,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Production": {
+        "w": 7,
+        "m": 4,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Costume & Make-Up": {
+        "w": 4,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 8000000,
+    "revenue": null
+  },
   "directors": [
     {
       "name": "Gus Van Sant"

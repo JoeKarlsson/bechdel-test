@@ -1042,7 +1042,19 @@
         "place": "Hillside",
         "lines": {}
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 2,
+      "longestWithoutWoman": 88,
+      "words": {
+        "w": 1336,
+        "m": 3453,
+        "unknown": 308
+      },
+      "womenConversations": 2,
+      "menConversations": 33,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/wzC2p07FfCsOTLo2aUeGBUQhsHX.jpg",
@@ -1198,52 +1210,62 @@
     {
       "actorName": "Kurt Russell",
       "character": "Snake Plissken",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 45
     },
     {
       "actorName": "Stacy Keach",
       "character": "Malloy",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 55
     },
     {
       "actorName": "Steve Buscemi",
       "character": "Eddie",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 38
     },
     {
       "actorName": "A. J. Langer",
       "character": "Utopia",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 22
     },
     {
       "actorName": "Cliff Robertson",
       "character": "President",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 72
     },
     {
       "actorName": "Bruce Campbell",
       "character": "Surgeon General of Beverly Hills",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 38
     },
     {
       "actorName": "Pam Grier",
       "character": "Hershe Las Palamas",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 47
     },
     {
       "actorName": "Peter Fonda",
       "character": "Pipeline",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 56
     },
     {
       "actorName": "Georges Corraface",
       "character": "Cuervo Jones",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 43
     },
     {
       "actorName": "Robert Carradine",
       "character": "Skinhead",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 42
     },
     {
       "actorName": "Michelle Forbes",
@@ -1346,6 +1368,135 @@
       "actorActress": "1"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "John Carpenter",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "John Carpenter",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Debra Hill",
+        "gender": "w"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Kurt Russell",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Debra Hill",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Kurt Russell",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Gary B. Kibbe",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Edward A. Warschilka",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "John Carpenter",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Shirley Walker",
+        "gender": "w"
+      },
+      {
+        "job": "Production Design",
+        "name": "Lawrence G. Paull",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Robin Michel Bush",
+        "gender": null
+      },
+      {
+        "job": "Casting",
+        "name": "Carrie Frazier",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Sound": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 1,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 2,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 2,
+        "m": 8,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Crew": {
+        "w": 12,
+        "m": 61,
+        "nb": 0,
+        "unknown": 12
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 3,
+        "nb": 0,
+        "unknown": 2
+      }
+    }
+  },
+  "money": {
+    "budget": 50000000,
+    "revenue": 42277365
+  },
   "directors": [
     {
       "name": "John Carpenter"

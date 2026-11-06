@@ -67,20 +67,31 @@ const matchScriptByTitle = async scriptName => {
 const fetchTmdb = (imdbId, resource, query = '') =>
 	fetchJsonCached(`https://api.themoviedb.org/3/movie/${imdbId}/${resource}?api_key=${requireKey('THEMOVIEDB')}${query}`);
 
+// The top-billed actors whose ages at release are looked up (one TMDB call each)
+const AGED_CAST = 10;
+
+const fetchTmdbPerson = personId =>
+	fetchJsonCached(`https://api.themoviedb.org/3/person/${personId}?api_key=${requireKey('THEMOVIEDB')}`);
+
 /**
- * Everything the analysis and the film page need about one film. Throws if
- * TMDB has no cast: without genders the Bechdel analysis is meaningless.
+ * Everything the analysis and the film page need about one film: OMDB's
+ * record, TMDB's cast and crew (with genders), images, details (budget,
+ * revenue) and the top-billed actors' birthdays. Throws if TMDB has no cast:
+ * without genders the Bechdel analysis is meaningless.
  */
 const fetchMetadata = async imdbId => {
-	const [omdb, credits, images] = await Promise.all([
+	const [omdb, credits, images, details] = await Promise.all([
 		fetchOmdb({ i: imdbId }),
 		fetchTmdb(imdbId, 'credits'),
 		fetchTmdb(imdbId, 'images', '&language=en&include_image_language=en,null'),
+		fetchJsonCached(`https://api.themoviedb.org/3/movie/${imdbId}?api_key=${requireKey('THEMOVIEDB')}`),
 	]);
 	if (!Array.isArray(credits.cast) || credits.cast.length === 0) {
 		throw new Error(`TMDB has no cast for ${omdb.Title} (${imdbId})`);
 	}
-	return { omdb, cast: credits.cast, images };
+	const people = await Promise.all(credits.cast.slice(0, AGED_CAST).map(member => fetchTmdbPerson(member.id)));
+	const birthdays = new Map(people.filter(p => p.birthday).map(p => [p.id, p.birthday]));
+	return { omdb, cast: credits.cast, crew: credits.crew || [], images, details, birthdays };
 };
 
 module.exports = { fetchMetadata, matchScriptByTitle, titleFromScriptName };

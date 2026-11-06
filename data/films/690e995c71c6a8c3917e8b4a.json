@@ -1244,7 +1244,19 @@
           "21": 1
         }
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 16,
+      "longestWithoutWoman": 17,
+      "words": {
+        "w": 521,
+        "m": 964,
+        "unknown": 284
+      },
+      "womenConversations": 3,
+      "menConversations": 16,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/j1CqN4ypo3lFJJA5C7mYJzBaXoL.jpg",
@@ -1394,27 +1406,32 @@
     {
       "actorName": "Bruce Campbell",
       "character": "Ash",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 28
     },
     {
       "actorName": "Sarah Berry",
       "character": "Annie",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 17
     },
     {
       "actorName": "Dan Hicks",
       "character": "Jake",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 35
     },
     {
       "actorName": "Kassie DePaiva",
       "character": "Bobby Joe",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 25
     },
     {
       "actorName": "Ted Raimi",
       "character": "Possessed Henrietta",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 21
     },
     {
       "actorName": "Denise Bixler",
@@ -1429,12 +1446,14 @@
     {
       "actorName": "John Peakes",
       "character": "Professor Knowby",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 53
     },
     {
       "actorName": "Lou Hancock",
       "character": "Henrietta",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 63
     },
     {
       "actorName": "Snowy Winters",
@@ -1514,6 +1533,105 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Sam Raimi",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Scott Spiegel",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Sam Raimi",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Robert Tapert",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Peter Deming",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Kaye Davis",
+        "gender": null
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Joseph LoDuca",
+        "gender": "m"
+      }
+    ],
+    "departments": {
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 3,
+        "m": 6,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Production": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Art": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Editing": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Costume & Make-Up": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Sound": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 3500000,
+    "revenue": 5932279
+  },
   "directors": [
     {
       "name": "Sam Raimi"

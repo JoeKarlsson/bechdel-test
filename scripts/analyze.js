@@ -23,6 +23,8 @@ const ROOT = path.resolve(__dirname, '..');
 const FILMS_DIR = path.join(ROOT, 'data/films');
 const SCRIPTS_DIR = path.join(ROOT, 'scripts');
 const READER_RATINGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/bechdeltest-ratings.json'), 'utf8'));
+// Speaker genders corrected by hand, per script: { "inception.txt": { "ARIADNE": "w" } }
+const GENDER_OVERRIDES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/gender-overrides.json'), 'utf8'));
 // Films analyzed at once; the AI step makes ~3 large requests per film
 const CONCURRENCY = 3;
 
@@ -72,12 +74,12 @@ const analyzeOne = async (scriptPath, context) => {
 	if (existing && !force) {
 		return { script, film: `${existing.title} (${existing.year})`, status: 'skipped (on site; --force to redo)' };
 	}
-	const { omdb, cast, images } = await fetchMetadata(imdbId);
+	const { omdb, cast, crew, images, details, birthdays } = await fetchMetadata(imdbId);
 	const film = `${omdb.Title} (${omdb.Year})`;
 
 	const scriptText = fs.readFileSync(scriptPath, 'utf8');
 	const characters = charactersFromCast(cast);
-	const { bechdelResults, script: summary, cleaned } = analyzeScriptText(scriptText, characters);
+	const { bechdelResults, script: summary, cleaned } = analyzeScriptText(scriptText, characters, GENDER_OVERRIDES[script]);
 	// Without a new AI run, keep the old one's whole-script reads, but not its
 	// review of the passing scenes: those were the old analysis's scenes
 	const ai = withAi
@@ -93,6 +95,9 @@ const analyzeOne = async (scriptPath, context) => {
 		year: keepYear,
 		omdb,
 		cast,
+		crew,
+		details,
+		birthdays,
 		images,
 		bechdelResults,
 		script: { file: script, ...summary },
