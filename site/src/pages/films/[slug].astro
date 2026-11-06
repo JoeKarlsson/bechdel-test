@@ -195,34 +195,25 @@ const credit = [
 							)
 						}
 					</p>
-					<p>
-						{
-							review ? (
-								<>
-									<strong class:list={['tag', aiAgrees ? 'agree' : 'disagree']}>{aiAgrees ? 'Agree' : 'Disagree'}</strong> An AI re-read the
-									{review.scenes.length === 1 ? ' passing scene' : ` ${review.scenes.length} passing scenes`} and scores the film {review.score ?? 0} out of 3
-									{review.reasoning ? <>: "{review.reasoning.replace(/\.?$/, '.')}"</> : '.'}
-									{confidence !== null && <> It's {confidence}% sure.</>}
-								</>
-							) : (
-								<>
-									<strong class="tag none">Not reviewed</strong> The AI only re-checks scenes our parser passes, so it had nothing to review here.
-								</>
-							)
-						}
-					</p>
+					{/* Only films the AI reviewed: it re-checks just the scenes our parser passes */}
+					{
+						review && (
+							<p>
+								<strong class:list={['tag', aiAgrees ? 'agree' : 'disagree']}>{aiAgrees ? 'Agree' : 'Disagree'}</strong> An AI re-read the
+								{review.scenes.length === 1 ? ' passing scene' : ` ${review.scenes.length} passing scenes`} and scores the film {review.score ?? 0} out of 3
+								{review.reasoning ? <>: "{review.reasoning.replace(/\.?$/, '.')}"</> : '.'}
+								{confidence !== null && <> It's {confidence}% sure.</>}
+							</p>
+						)
+					}
 				</div>
 			</div>
 		</section>
 
-		<div class="share-row">
-			<ShareLinks url={pageUrl} title={`${film.title} ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test`} />
-		</div>
-
 		<section class="section film-info" aria-labelledby="film-title">
 			{
 				poster && (
-					<Picture src={poster} alt={`Poster for ${film.title}`} widths={[240, 480]} sizes="240px" formats={['avif', 'webp']} loading="lazy" decoding="async" class="info-poster" />
+					<Picture src={poster} alt={`Poster for ${film.title}`} widths={[240, 480]} sizes="240px" formats={['avif', 'webp']} loading="lazy" decoding="async" class:list={['info-poster', { 'has-hero': !!backdrop }]} />
 				)
 			}
 			<div class="info-text">
@@ -618,6 +609,10 @@ const credit = [
 			</ul>
 			<p class="back"><a href="/">Back to the whole shelf</a></p>
 		</section>
+
+		<div class="share-row">
+			<ShareLinks url={pageUrl} title={`${film.title} ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test`} />
+		</div>
 	</div>
 </Base>
 
@@ -822,6 +817,12 @@ const credit = [
 		flex: 0 0 auto;
 		width: 240px;
 		height: auto;
+	}
+	/* On phones the hero already shows the film; the poster only repeats it */
+	@media (max-width: 600px) {
+		.info-poster.has-hero {
+			display: none;
+		}
 	}
 	.info-text {
 		flex: 999 1 480px;
@@ -1219,7 +1220,7 @@ const credit = [
 		margin-bottom: var(--space-2);
 	}
 	.share-row {
-		margin-top: var(--space-5);
+		margin-top: var(--space-6);
 	}
 	.related {
 		list-style: none;

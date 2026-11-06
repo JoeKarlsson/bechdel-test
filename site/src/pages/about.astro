@@ -1,10 +1,15 @@
 ---
+import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import theRule from '../assets/about/the-rule-excerpt.jpg';
+import alisonBechdel from '../assets/about/alison-bechdel.jpg';
+
+const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 ---
 
 <Base
 	title="About the Bechdel test"
-	description="Where the Bechdel test comes from, what it can and can't tell you about a film, and why Laurel and Joe Karlsson built bechdel.io."
+	description="Where the Bechdel test comes from, what it can and can't tell you about a film, why Laurel and Joe Karlsson built bechdel.io, and who helped."
 	nav="about"
 	structuredData={{
 		'@type': 'AboutPage',
@@ -22,11 +27,26 @@ import Base from '../layouts/Base.astro';
 
 		<div class="prose">
 			<h2>Where it comes from</h2>
+			<figure class="strip paper">
+				<Picture src={theRule} alt="A panel from the comic: one woman tells another the three rules a movie has to meet before she'll see it." formats={['avif', 'webp']} width={390} height={260} />
+				<figcaption>
+					A panel from <cite>The Rule</cite>, <cite>Dykes to Watch Out For</cite>, 1985. © Alison Bechdel, shown here for
+					commentary. <a href="https://dykestowatchoutfor.com/the-rule/" {...ext}>Read the whole strip on her site</a>.
+				</figcaption>
+			</figure>
 			<p>
 				The test comes from Alison Bechdel's 1985 comic strip <cite>Dykes to Watch Out For</cite>, in the strip called
 				<cite>The Rule</cite>. One character explains that she only watches movies that meet three requirements. Bechdel credits
 				the idea to her friend Liz Wallace, who was inspired by Virginia Woolf's essay <cite>A Room of One's Own</cite> (1929).
 			</p>
+			<figure class="portrait">
+				<Picture src={alisonBechdel} alt="Alison Bechdel smiling, at the Boston Book Festival" widths={[300, 600]} sizes="(max-width: 600px) 60vw, 300px" formats={['avif', 'webp']} loading="lazy" />
+				<figcaption>
+					Alison Bechdel at the Boston Book Festival. Photo by
+					<a href="https://www.flickr.com/photos/chasblackman/6247651679/" {...ext}>Chase Elliott Clark</a>,
+					<a href="https://creativecommons.org/licenses/by/4.0/" {...ext}>CC BY 4.0</a>, cropped.
+				</figcaption>
+			</figure>
 			<p>
 				What began as a joke in an independent comic became one of the best-known measures of how films represent women. It took
 				off in the 2010s, when Swedish cinemas began using it to rate films and the press started tracking how Hollywood did. By
@@ -70,8 +90,8 @@ import Base from '../layouts/Base.astro';
 				re-reads any scene the parser passed, and reads the whole script for the rest of the analysis.
 			</p>
 			<p>
-				Scripts are formatted in many ways, so some counts are off. When we can't tell who a line belongs to, or a script didn't parse, the film's
-				page says so.
+				Scripts are formatted in many ways, so some counts are off. When we can't tell who a line belongs to, or a script didn't
+				parse, the film's page says so.
 			</p>
 
 			<h2>Why we built it</h2>
@@ -96,14 +116,90 @@ import Base from '../layouts/Base.astro';
 			</p>
 			<p>
 				We see this tool as a form of feminist activism, so it's open source and free for anyone to use.
-				<a href="https://github.com/JoeKarlsson/bechdel-test" rel="noopener noreferrer" target="_blank">The code is on GitHub</a>.
+				<a href="https://github.com/JoeKarlsson/bechdel-test" {...ext}>The code is on GitHub</a>.
 			</p>
 			<p>Laurel and Joe</p>
 			<p>
 				P.S. If you have ideas for where this should go next,
-				<a href="https://github.com/JoeKarlsson/bechdel-test/issues" rel="noopener noreferrer" target="_blank">we'd love to hear them</a>.
+				<a href="https://github.com/JoeKarlsson/bechdel-test/issues" {...ext}>we'd love to hear them</a>.
+			</p>
+
+			<h2>Read more</h2>
+			<ul class="links">
+				<li><a href="https://dykestowatchoutfor.com/the-rule/" {...ext}><cite>The Rule</cite></a>, the 1985 strip where the test began, on Alison Bechdel's site</li>
+				<li><a href="https://alisonbechdel.com/" {...ext}>Alison Bechdel</a>, her books and comics</li>
+				<li><a href="https://bechdeltest.com/" {...ext}>Bechdel Test Movie List</a>, readers rating thousands of films against the test</li>
+				<li><a href="https://en.wikipedia.org/wiki/Bechdel_test" {...ext}>The Bechdel test on Wikipedia</a>, its history, variants and critics</li>
+				<li><a href="https://en.wikipedia.org/wiki/A_Room_of_One%27s_Own" {...ext}><cite>A Room of One's Own</cite></a>, Virginia Woolf's 1929 essay behind the idea</li>
+				<li><a href="https://feministfrequency.com/video/the-bechdel-test-for-women-in-movies/" {...ext}><cite>The Bechdel Test for Women in Movies</cite></a>, a short video from Feminist Frequency</li>
+				<li><a href="https://dhq.digitalhumanities.org/vol/8/4/000190/000190.html" {...ext}><cite>Visualizing and Analyzing the Hollywood Screenplay with ScripThreads</cite></a>, Digital Humanities Quarterly</li>
+			</ul>
+
+			<h2>Thanks</h2>
+			<p>bechdel.io stands on other people's work. Thank you to:</p>
+			<ul class="links">
+				<li>
+					<a href="https://bechdeltest.com/" {...ext}>The Bechdel Test Movie List</a> and its readers, whose ratings are the
+					second opinion on every film page
+				</li>
+				<li>
+					<a href="https://imsdb.com/" {...ext}>The Internet Movie Script Database</a>, where the scripts come from, gathered with
+					<a href="https://github.com/JoeKarlsson/movie-script-scraper" {...ext}>movie-script-scraper</a>
+				</li>
+				<li><a href="https://www.themoviedb.org/" {...ext}>The Movie Database (TMDB)</a>, for posters, backdrops and cast lists</li>
+				<li><a href="https://www.omdbapi.com/" {...ext}>The Open Movie Database (OMDb)</a>, for plots, ratings and awards</li>
+				<li><a href="https://www.anthropic.com/claude" {...ext}>Anthropic's Claude</a>, the AI that reads each script for the analysis</li>
+				<li>Chase Elliott Clark, for the photo of Alison Bechdel</li>
+			</ul>
+			<p class="tmdb">
+				<img src="/tmdb-logo.svg" alt="The Movie Database (TMDB)" width="155" height="20" loading="lazy" />
+				<span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
 			</p>
 			<p><a href="/">Browse the films</a></p>
 		</div>
 	</div>
 </Base>
+
+<style>
+	figure {
+		margin: 0 0 var(--space-5);
+	}
+	figure img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	figcaption {
+		margin-top: var(--space-2);
+		font-size: var(--text-small);
+	}
+	.strip {
+		max-width: 430px;
+		padding: var(--space-3) var(--space-3) var(--space-4);
+		transform: rotate(-1.5deg);
+	}
+	.portrait {
+		max-width: 300px;
+	}
+	.portrait figcaption {
+		color: var(--muted);
+	}
+	@media (min-width: 1180px) {
+		.portrait {
+			float: right;
+			width: 300px;
+			margin: 0 calc(-1 * (300px + var(--space-6))) var(--space-4) 0;
+		}
+	}
+	.links li + li {
+		margin-top: var(--space-3);
+	}
+	.tmdb {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-4);
+		font-size: var(--text-small);
+		color: var(--muted);
+	}
+</style>

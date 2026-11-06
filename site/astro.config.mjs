@@ -4,6 +4,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	site: 'https://bechdel.joekarlsson.com',
 	trailingSlash: 'always',
+	// Astro's compressor drops the line break between text and a following link
+	// or <cite> ("Share it onBluesky") instead of leaving a space; browsers
+	// collapse whitespace correctly on their own
+	compressHTML: false,
 	build: {
 		format: 'directory',
 		// Every stylesheet is a hashed file, so the CSP can allow styles from 'self'

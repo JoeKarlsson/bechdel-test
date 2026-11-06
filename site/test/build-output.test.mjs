@@ -123,3 +123,9 @@ test('the site ships under 20 KB of JavaScript in total', () => {
 		.reduce((sum, f) => sum + statSync(join(dir, f)).size, 0);
 	assert.ok(bytes < 20_000, `${bytes} bytes of JavaScript`);
 });
+
+test('no words run into a following link or citation', () => {
+	// HTML compression once turned "Share it on\n<a>Bluesky" into "Share it onBluesky"
+	const jammed = pages.flatMap((p) => (p.html.match(/[A-Za-z,]<(a|cite|button)[\s>]/g) ?? []).map((m) => `${p.path}: ${m}`));
+	assert.deepEqual(jammed, []);
+});
