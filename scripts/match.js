@@ -7,17 +7,14 @@
  *
  *   npm run match
  */
-const fs = require('fs');
 const path = require('path');
 const { matchScriptByTitle } = require('../src/fetchMetadata');
-const { loadManifest, saveManifest } = require('../src/manifest');
-
-const SCRIPTS_DIR = path.resolve(__dirname, '../scripts');
+const { loadManifest, saveManifest, listScriptPaths } = require('../src/manifest');
 
 const main = async () => {
 	process.loadEnvFile(path.resolve(__dirname, '../.env'));
 	const manifest = loadManifest();
-	const unmatched = fs.readdirSync(SCRIPTS_DIR).filter(f => f.endsWith('.txt') && !(f in manifest)).sort();
+	const unmatched = listScriptPaths().map(scriptPath => path.basename(scriptPath)).filter(file => !(file in manifest));
 	const idsInUse = new Map(Object.entries(manifest).filter(([, id]) => id).map(([file, id]) => [id, file]));
 	let failures = 0;
 	for (const file of unmatched) {

@@ -4,7 +4,8 @@
  * yet, as text in scripts/local/ (gitignored: Script Slug's scripts belong to
  * their writers, so we analyze them but don't republish them). Each page
  * names its film's IMDb id, so the manifest entry is written here too and
- * `npm run match` isn't needed. Needs pdftotext (brew install poppler).
+ * `npm run match` isn't needed. Scanned PDFs are OCRed. Needs pdftotext
+ * and pdftoppm (brew install poppler) and tesseract (brew install tesseract).
  *
  *   npm run fetch-script-slug
  */
@@ -15,7 +16,7 @@ const { loadManifest, saveManifest, scriptPathFor, LOCAL_SCRIPTS_DIR } = require
 
 // Pages fetched at once, to stay gentle on Script Slug
 const CONCURRENCY = 4;
-// Shorter than this, the PDF is a scan with no text layer, or an excerpt
+// Shorter than this, even after OCR, the PDF is an excerpt or unreadable
 const MIN_SCRIPT_CHARACTERS = 20000;
 
 const fetchOk = async url => {
@@ -46,7 +47,7 @@ const main = async () => {
 					continue;
 				}
 				filmsWeHave.add(film.imdbId);
-				const text = pdfToText(Buffer.from(await (await fetchOk(film.pdfUrl)).arrayBuffer()));
+				const text = await pdfToText(Buffer.from(await (await fetchOk(film.pdfUrl)).arrayBuffer()));
 				if (text.trim().length < MIN_SCRIPT_CHARACTERS) {
 					throw new Error(`only ${text.trim().length} characters of text in the PDF`);
 				}
