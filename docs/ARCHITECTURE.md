@@ -1,13 +1,13 @@
 # Architecture
 
 ```
-  Full-stack app (repo root, local only)        Public site (site/, GitHub Pages)
-  ─────────────────────────────────────        ─────────────────────────────────
-  Upload a script                              data/films/*.json
-    → parser: Bechdel score, scenes,  ──export──▶   → src/lib/films.mjs (build time)
-      characters, dialogue                         → one static page per film
-    → AI: scene review + analysis                  → bechdel.joekarlsson.com
-    → MongoDB
+  Analyzer (repo root, local only)              Public site (site/, GitHub Pages)
+  ────────────────────────────────              ─────────────────────────────────
+  npm run analyze scripts/*.txt                 data/films/*.json
+    → OMDB: title, year, plot                     → src/lib/films.mjs (build time)
+    → TMDB: cast with genders, images   ──writes──▶ → one static page per film
+    → parser: Bechdel score, scenes, dialogue     → bechdel.joekarlsson.com
+    → AI: scene review + analysis (optional)
 ```
 
 ## The public site (`site/`)
@@ -19,8 +19,15 @@
 - **Design:** dark only, hot pink on black, Anton and Fraunces (self-hosted), tokens in `src/styles/global.css`.
 - **Tests:** `test/` (node:test: data layer and every built page), `e2e/` (Playwright on desktop, Pixel and iPhone: smoke, shelf, axe, layout), `lighthouserc.json`. All run in CI before a deploy.
 
-## The full-stack app (repo root)
+## The analyzer (repo root)
 
-Express, MongoDB and the React upload UI under `src/`. It runs only on your machine through Docker Compose and is never deployed. `npm run export-data` writes its films to `data/films/`.
+`scripts/analyze.js` is the command line; the pipeline is in `src/`:
+
+- `fetchMetadata.js`: OMDB lookup by the script's file name (a trailing year pins the match), then TMDB credits and images. Responses are cached in `.cache/http/`.
+- `analyzeFilm.js`: runs the parser on the script text and builds the film record in the shape `site/src/lib/films.mjs` reads. A redone film keeps its id, upload date and stored readers' score.
+- `bechdel/`: scene splitting, dialogue counting and the Bechdel score. `scriptCleaner.js`: per-character dialogue and key scenes for the site's charts.
+- `claudeAnalyzer.js`: the AI second opinion (three batches of prompts). Any failed section fails the film, so nothing ships half-analyzed.
+
+bechdeltest.com's API is gone (HTTP 410), so new films have no readers' score.
 
 See [DEPLOYMENT.md](../DEPLOYMENT.md) for the workflow.

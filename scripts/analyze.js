@@ -12,10 +12,10 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { fetchMetadata } = require('../src/server/pipeline/fetchMetadata');
+const { fetchMetadata } = require('../src/fetchMetadata');
 const {
 	charactersFromCast, analyzeScriptText, runAiAnalysis, aiSectionsOf, buildFilmRecord,
-} = require('../src/server/pipeline/analyzeFilm');
+} = require('../src/analyzeFilm');
 
 const ROOT = path.resolve(__dirname, '..');
 const FILMS_DIR = path.join(ROOT, 'data/films');

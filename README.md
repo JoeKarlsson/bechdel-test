@@ -22,298 +22,41 @@
 
 The test was popularized by Alison Bechdel's comic Dykes to Watch Out For, in a 1985 strip called The Rule. For a nice video introduction to the subject please check out The Bechdel Test for Women in Movies on [feministfrequency.com](http://feministfrequency.com/).
 
-This program accepts a movie script and analyzes whether or not it passes the Bechdel Test, as well as analyzing several other feminist components to a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechdel Test?"
+This project analyzes movie scripts to see whether each film passes the Bechdel Test, and looks at several other feminist components of a film. It can answer questions like "How many females are in this film," "By what factor does this pass the Bechdel Test?"
 
-## Tech Stack
+## How it works
 
-This application has been modernized and now uses:
+The site at https://bechdel.joekarlsson.com/ is fully static: an Astro build in `site/`, deployed to GitHub Pages. There is no server or database. Films are added by running the analyzer locally and committing what it writes.
 
-- **Frontend**: React 18 with modern hooks and functional components
-- **Backend**: Node.js with Express
-- **Database**: MongoDB 7.0 with Mongoose ODM
-- **Build Tools**: Webpack 5 with modern configuration
-- **Styling**: SCSS with CSS modules support
-- **Testing**: Jest with React Testing Library
-- **Development**: Hot reload with nodemon and webpack-dev-middleware
-- **Containerization**: Docker with multi-stage builds
-- **Code Quality**: ESLint, Prettier, and Stylelint
+```
+scripts/<title>.txt ──npm run analyze──▶ data/films/<id>.json ──site/ build──▶ GitHub Pages
+```
 
-## Prerequisites
+For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and (optionally) asks Claude for a second opinion and a deeper read. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-- Install [Node.js](https://nodejs.org/en/) (version 16 or higher)
-- Install [Docker](https://www.docker.com/) (recommended)
+## Add films
 
-## Quickstart
-
-### 1. Clone The Repository
+Needs Node 22 or later, and API keys for [OMDB](https://www.omdbapi.com/apikey.aspx), [TMDB](https://www.themoviedb.org/settings/api) and, for the AI read, [Anthropic](https://console.anthropic.com/).
 
 ```sh
 git clone https://github.com/JoeKarlsson/bechdel-test
 cd bechdel-test
-```
-
-### 2. Get API Keys For The MovieDB, My API Films, and Claude AI
-
-You will need to get API Keys for [The MovieDB](https://www.themoviedb.org/), [My API Films](https://www.myapifilms.com/), and [Claude AI](https://www.anthropic.com/) for advanced analytics.
-
-- You can sign up for an API key for The MovieDB, here: [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
-  - Additional Documentation about this API can be found here: [https://developers.themoviedb.org/3/getting-started/introduction](https://developers.themoviedb.org/3/getting-started/introduction).
-- You can sign up for an API key for My API Films, here: [https://www.myapifilms.com/token.do](https://www.myapifilms.com/token.do).
-  - Additional Documentation about this API can be found here: [https://www.myapimovies.com/api/v1/swagger-ui.html](https://www.myapimovies.com/api/v1/swagger-ui.html).
-- You can sign up for a Claude API key here: [https://console.anthropic.com/](https://console.anthropic.com/).
-  - Claude AI is used for advanced gender analytics including female agency analysis, stereotype detection, and bias detection.
-
-### 3. Docker Setup (Recommended)
-
-The easiest way to run the application is using Docker:
-
-```sh
-# Start MongoDB and the application
-docker compose up -d
-
-# The application will be available at http://localhost:8080
-# MongoDB will be available at localhost:27017
-```
-
-**Docker Services:**
-
-- `mongodb` - MongoDB 7.0 with authentication
-- `app` - Production application (port 8080)
-- `app-dev` - Development application with hot reload (port 3000)
-
-To stop the containers:
-
-```sh
-docker compose down
-```
-
-**Development with Docker:**
-
-```sh
-# Start only MongoDB for local development
-docker compose up mongodb -d
-
-# Then run the development server locally
-npm run start:dev
-```
-
-### 4. Manual MongoDB Installation (Alternative)
-
-If you prefer to install MongoDB locally:
-
-**macOS (using Homebrew):**
-
-```sh
-brew tap mongodb/brew
-brew install mongodb-community
-brew services start mongodb/brew/mongodb-community
-```
-
-**Ubuntu/Debian:**
-
-```sh
-sudo apt-get install mongodb
-sudo systemctl start mongodb
-```
-
-**Windows:**
-Download and install MongoDB Community Server from [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
-
-### 5. Connect Bechdel.io to MongoDB and the various other APIs
-
-The project is now configured to use a local MongoDB instance. The configuration file `src/server/config/config.json` has been created with the provided API keys:
-
-- TMDB API Key: `YOUR_TMDB_API_KEY`
-- MyAPIFilms API Key: `YOUR_MYAPIFILMS_API_KEY`
-- Claude API Key: `YOUR_CLAUDE_API_KEY`
-- MongoDB URI: `mongodb://localhost:27017/bechdelTest`
-
-**Environment Variables:**
-
-For Docker deployments, the following environment variables are configured:
-
-- `THEMOVIEDB` - The MovieDB API key
-- `OMDB` - OMDB API key  
-- `CLAUDE_API_KEY` - Claude AI API key for advanced analytics
-- `MONGODB_URI` - MongoDB connection string
-- `NODE_ENV` - Environment (production/development)
-- `PORT` - Application port (default: 3000)
-
-### 6. Install dependencies & run locally (Manual setup only)
-
-```sh
 npm install
-npm run start:dev # Development server with hot reload at http://localhost:3000
+cp .env.example .env    # then fill in the keys
+
+npm run analyze                              # every scripts/*.txt not already on the site
+npm run analyze -- scripts/heat.txt          # one film
+npm run analyze -- --force scripts/heat.txt  # redo a film that's already on the site
+npm run analyze -- --no-ai ...               # skip the AI read (a redone film keeps its old one)
 ```
 
-**Available Scripts:**
+It ends with a table of every script's film and score, so you can check each match before committing. If a title matches the wrong film, put the year in the file name (`deep-cover-1992.txt`). OMDB and TMDB responses are cached in `.cache/`; delete it to refetch.
 
-### Quick Commands (Recommended)
-
-- `npm run dev` - Start development server (alias for start:dev)
-- `npm run prod` - Build and run production server
-- `npm test` - Run test suite with coverage
-- `npm run lint` - Run all linters
-- `make help` - Show all available Make commands
-
-### Development Scripts
-
-- `npm start` - Start basic development server (NODE_ENV=development)
-- `npm run start:dev` - Start development server with nodemon and hot reload
-- `npm run start:local` - Start with local MongoDB connection (mongodb://localhost:27017/bechdelTest)
-- `npm run stop` - Kill all running Node.js processes
-
-### Production Scripts
-
-- `npm run build` - Build production assets with webpack
-- `npm run build:analyze` - Build with bundle analysis (ANALYZE=true)
-- `npm run build:stats` - Generate webpack stats JSON file
-- `npm run runProd` - Run production server (NODE_ENV=production)
-
-### Testing Scripts
-
-- `npm test` - Run test suite with coverage
-- `npm run test:watch` - Run tests in watch mode
-- `npm run test:updateSnapshot` - Update Jest snapshots
-- `npm run test:coverage` - Run tests with coverage report
-- `npm run coverage` - Generate coverage report for Coveralls
-
-### Linting Scripts
-
-- `npm run lint` - Run ESLint, CSS linting, and Markdown linting
-- `npm run lint:fix` - Fix auto-fixable linting issues
-- `npm run lint:out` - Output linting results to checkstyle XML
-- `npm run lint:css` - Check SCSS/CSS styles with Stylelint
-- `npm run lint:css:fix` - Auto-fix CSS linting issues
-- `npm run lint:md` - Check Markdown files with Remark
-
-### Quality Assurance Scripts
-
-- `npm run healthcheck` - Run linting and test coverage (CI/CD)
-
-### Maintenance Scripts
-
-- `npm run clean` - Clean build artifacts and coverage
-- `npm run fresh` - Fresh install (clean + reinstall dependencies)
-- `npm run reset-db` - Reset database (destroy and recreate)
-
-### Script Processing Scripts
-
-- `npm run processScript` - Run script processor with nodemon
-- `npm run loadScript` - Load script directly via directScriptLoader
-- `npm run loadScript:dev` - Load script in development mode
-
-### Make Commands (Alternative)
-
-If you prefer Make, all common commands are available:
+Then publish: see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ```sh
-make dev          # Start development server
-make test         # Run tests
-make lint         # Run linters
-make build        # Build production assets
-make docker-up    # Start Docker services
-make clean        # Clean build artifacts
-make help         # Show all available commands
-```
-
-## Testing
-
-The `bechdel.io` test suite uses Jest with React Testing Library for comprehensive testing:
-
-```sh
-npm test                    # Run all tests with coverage
-npm run test:watch         # Run tests in watch mode
-npm run test:coverage      # Run tests with coverage report
-npm run test:updateSnapshot # Update Jest snapshots
-```
-
-**Test Coverage:**
-
-- Unit tests for React components
-- Integration tests for API endpoints
-- Snapshot testing for UI consistency
-- Mock implementations for external services
-
-You can [read more about testing bechdel.io](test).
-
-## Development Workflow
-
-### Code Quality
-
-```sh
-npm run lint              # Check code quality
-npm run lint:fix          # Auto-fix linting issues
-npm run lint:css          # Check SCSS/CSS styles
-npm run lint:css:fix      # Auto-fix CSS issues
-npm run lint:md           # Check Markdown files
-```
-
-### Building for Production
-
-```sh
-npm run build             # Build production assets
-npm run build:analyze     # Build with bundle analysis
-npm run build:stats       # Generate webpack stats
-npm run runProd           # Run production server
-```
-
-### Development Tools
-
-```sh
-npm run processScript     # Process movie scripts
-npm run healthcheck       # Run linting and tests
-npm run snyk-protect      # Security vulnerability check
-```
-
-## Deployment
-
-The public site at https://bechdel.joekarlsson.com/ is the Astro project in `site/`, built from the film export in `data/films/` and deployed to GitHub Pages by CI. The full-stack server (for adding films) runs locally with `docker compose up -d --build`. See [DEPLOYMENT.md](DEPLOYMENT.md) for both, and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they fit together.
-
-## Troubleshooting
-
-### Common Issues
-
-**MongoDB Connection Errors**
-```sh
-# Check if MongoDB is running
-docker compose ps
-
-# Restart MongoDB
-make reset-db
-# or
-npm run reset-db
-```
-
-**Port Already in Use**
-```sh
-# Kill all Node processes
-npm run stop
-
-# Or find and kill specific port
-lsof -ti:3000 | xargs kill -9
-```
-
-**API Key Issues**
-- Verify your `.env` file exists and contains valid API keys
-- Copy `.env.example` to `.env` and fill in your keys
-- For deployment, ensure `.env.deployment.local` has your Claude API key
-
-**Docker Issues**
-```sh
-# Clean Docker resources
-docker compose down -v
-docker system prune -a
-
-# Fresh start
-make docker-up
-```
-
-**Build Errors**
-```sh
-# Clean and rebuild
-npm run fresh
-npm run build
+npm test       # the parser and analysis
+npm run lint
 ```
 
 ## Where to Get Movie Scripts?
@@ -322,7 +65,7 @@ If you are looking to get your hands on some movie scripts to test, you can chec
 
 ## Introduction
 
-The Bechdel Test Script Parser was a collaborative digital humanities project between myself and my sister, Laurel Karlsson. It is the product of a shared passion for film, feminism, and the creative potential of technology. By combining the talents and interests of myself, a software engineer, we've been able to create an innovative data mining tool for film analysis that we hope to continue to work on and improve. You can check out the project on our [website](https://bechdel-test.herokuapp.com/).
+The Bechdel Test Script Parser was a collaborative digital humanities project between myself and my sister, Laurel Karlsson. It is the product of a shared passion for film, feminism, and the creative potential of technology. By combining the talents and interests of myself, a software engineer, we've been able to create an innovative data mining tool for film analysis that we hope to continue to work on and improve. You can check out the project on our [website](https://bechdel.joekarlsson.com/).
 
 This project was born when my sister reached out to me for advice on a few ideas she had been mulling over for a digital humanities project. Hoping to do something related to feminist film analysis, she was feeling very limited by my lack of coding experience and hadn't been able to find an existing data mining tool to accomplish what she was looking to do. I immediately offered up my coding expertise, looking to gain experience by building a tool from scratch which would accomplish the specific needs of the project. After brainstorming several different project ideas, we settled on the one you see here.
 
