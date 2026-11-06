@@ -9,10 +9,10 @@ test.skip(({ browserName }) => browserName !== 'chromium', 'Baselines come from 
 async function ready(page: Page, path: string) {
 	await page.goto(path);
 	await page.evaluate(() => document.fonts.ready);
-	await page.addStyleTag({ content: '*, *::before, *::after { animation: none !important; transition: none !important; caret-color: transparent !important; }' });
 }
 
-const opts = { maxDiffPixelRatio: 0.01 };
+// Playwright's own options, not an injected stylesheet: the site's CSP blocks those
+const opts = { maxDiffPixelRatio: 0.01, animations: 'disabled', caret: 'hide' } as const;
 
 test('header', async ({ page }) => {
 	await ready(page, '/about/');
