@@ -14,14 +14,13 @@
 const fs = require('fs');
 const path = require('path');
 const { fetchMetadata } = require('../src/fetchMetadata');
-const { loadManifest } = require('../src/manifest');
+const { loadManifest, listScriptPaths } = require('../src/manifest');
 const {
 	charactersFromCast, analyzeScriptText, runAiAnalysis, aiSectionsOf, buildFilmRecord,
 } = require('../src/analyzeFilm');
 
 const ROOT = path.resolve(__dirname, '..');
 const FILMS_DIR = path.join(ROOT, 'data/films');
-const SCRIPTS_DIR = path.join(ROOT, 'scripts');
 const READER_RATINGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/bechdeltest-ratings.json'), 'utf8'));
 // Speaker genders corrected by hand, per script: { "inception.txt": { "ARIADNE": "w" } }
 const GENDER_OVERRIDES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/gender-overrides.json'), 'utf8'));
@@ -40,7 +39,7 @@ const parseArgs = argv => {
 		withAi: !flags.has('--no-ai'),
 		scriptPaths: files.length > 0
 			? files.map(file => path.resolve(file))
-			: fs.readdirSync(SCRIPTS_DIR).filter(file => file.endsWith('.txt')).sort().map(file => path.join(SCRIPTS_DIR, file)),
+			: listScriptPaths(),
 	};
 };
 
