@@ -4,7 +4,8 @@
 	"type": "module",
 	"description": "The public bechdel.io site: a static Astro build of the analyzed films",
 	"engines": {
-		"node": ">=22.23.4"
+		"node": ">=22.23.4",
+		"npm": ">=12.2.1"
 	},
 	"scripts": {
 		"dev": "astro dev",
@@ -25,5 +26,6 @@
 		"@axe-core/playwright": "4.14.0",
 		"@lhci/cli": "0.16.0",
 		"@playwright/test": "1.65.0"
-	}
+	},
+	"packageManager": "npm@12.2.1"
 }

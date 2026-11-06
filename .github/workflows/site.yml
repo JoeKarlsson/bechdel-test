@@ -29,6 +29,10 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
 
+      # The lockfile is written by npm 12; Node 22's bundled npm 10 reads it differently
+      - name: Use npm 12
+        run: npm install -g npm@12.2.1
+
       - run: npm ci
 
       - name: Audit what ships
