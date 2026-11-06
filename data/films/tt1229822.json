@@ -1,0 +1,1531 @@
+{
+  "_id": "tt1229822",
+  "title": "Jane Eyre",
+  "genres": [
+    "Drama",
+    "Mystery",
+    "Romance"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 19,
+    "numScenesDontPass": 127,
+    "numOfFemalesChars": 25,
+    "numOfMaleChars": 11,
+    "numOfFemalesCharsWithDialogue": 16,
+    "numOfMaleCharsWithDialogue": 9,
+    "totalLinesFemaleDialogue": 591,
+    "totalLinesMaleDialogue": 388,
+    "scenesThatPass": [
+      "BESSIE: For shame, hitting your master.\nMISS ABBOT: If you don't sit still you must be tied down!\nBESSIE: What we do is for your own good. If you are passionate and rude like this, your Aunt Reed will send you away.\nMISS ABBOT: You're worse than us servants. We work for our keep; you do nothing. Pray for forgiveness Miss Eyre or something bad will come down that chi…",
+      "BESSIE: Miss Eyre what is it?\nJANE: Bessie!\nBESSIE: Have you seen something?\nJANE: There was a light.",
+      "MARY: Look at the suffering in her eyes. They're like dark pools -\nDIANA: She has a peculiar face; I rather like it.",
+      "JANE: I must keep in good health and not die.\nMRS REED: I've been her sole benefactress and her kindest friend. But she shows no gratitude and brings nothing but discord into my house.",
+      "BESSIE: You're such a queer, solitary little thing. If only you could make yourself more appealing. Perhaps if you tried smiling from time to time, …\nJANE: Don't scold me Bessie. I know you dislike me -\nBESSIE: I don't dislike you Miss; I'm fonder of you than of anyone.\nJANE: You don't show it."
+    ]
+  },
+  "script": {
+    "file": "jane-eyre.txt",
+    "layout": "indented",
+    "dialogueLines": 997,
+    "speakers": [
+      {
+        "name": "JANE",
+        "lines": 375,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ROCHESTER",
+        "lines": 264,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ST JOHN",
+        "lines": 83,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MRS FAIRFAX",
+        "lines": 55,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HELEN",
+        "lines": 21,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MRS REED",
+        "lines": 21,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DIANA",
+        "lines": 20,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MARY",
+        "lines": 20,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ADELE",
+        "lines": 17,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BLANCHE",
+        "lines": 17,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BROCKLEHURST",
+        "lines": 13,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BESSIE",
+        "lines": 12,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BRIGGS",
+        "lines": 10,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MASON",
+        "lines": 8,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "GRACE",
+        "lines": 7,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HANNAH",
+        "lines": 6,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "JOHN REED",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LADY INGRAM",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MISS TEMPLE",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JOHN",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WOOD",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LEAH",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LORD INGRAM",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "UNDER COOK",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MISS ABBOT",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DR CARTER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HER -",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "JANE -",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LOUISA ESHTON",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MADAME PIERROT",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MATTRESSES -",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MISS SCATCHERD",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "OH -",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SOPHIE",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "STOP -",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TAKE -",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TYPHUS -",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WEALTH -",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "A midsummer dawn. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. a roadside/coach",
+        "lines": {}
+      },
+      {
+        "place": "Evening. whitcross",
+        "lines": {}
+      },
+      {
+        "place": "Night. the moor",
+        "lines": {}
+      },
+      {
+        "place": "Day. the moor",
+        "lines": {}
+      },
+      {
+        "place": "Twilight. the moor",
+        "lines": {}
+      },
+      {
+        "place": "Dawn. the moor",
+        "lines": {}
+      },
+      {
+        "place": "Day. by a river",
+        "lines": {}
+      },
+      {
+        "place": "Twilight. a farm by a wood",
+        "lines": {}
+      },
+      {
+        "place": "Next day. a wood",
+        "lines": {}
+      },
+      {
+        "place": "Day. the edge of the wood",
+        "lines": {}
+      },
+      {
+        "place": "Evening. the moor",
+        "lines": {}
+      },
+      {
+        "place": "Night. the moor/moor house",
+        "lines": {
+          "0": 4,
+          "2": 1,
+          "15": 3
+        }
+      },
+      {
+        "place": "Night. moor house",
+        "lines": {
+          "0": 1,
+          "2": 5,
+          "6": 4,
+          "7": 2,
+          "15": 3,
+          "16": 1
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "16": 1
+        }
+      },
+      {
+        "place": "Day. an arctic coast",
+        "lines": {}
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 5,
+          "16": 4,
+          "19": 2
+        }
+      },
+      {
+        "place": "Night. moor house",
+        "lines": {}
+      },
+      {
+        "place": "Dusk. gateshead",
+        "lines": {
+          "11": 2,
+          "24": 2
+        }
+      },
+      {
+        "place": "Dusk. gateshead",
+        "lines": {}
+      },
+      {
+        "place": "Dusk. gateshead",
+        "lines": {}
+      },
+      {
+        "place": "Dusk. gateshead",
+        "lines": {
+          "0": 6,
+          "5": 5,
+          "11": 3
+        }
+      },
+      {
+        "place": "Dusk. gateshead",
+        "lines": {}
+      },
+      {
+        "place": "Day. moor house",
+        "lines": {
+          "2": 3,
+          "6": 2,
+          "7": 2
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 4,
+          "5": 4,
+          "10": 8
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 5,
+          "5": 4
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 2,
+          "11": 4
+        }
+      },
+      {
+        "place": "Night. lowood",
+        "lines": {
+          "0": 1,
+          "18": 2
+        }
+      },
+      {
+        "place": "Day. moor house",
+        "lines": {
+          "0": 13,
+          "2": 8,
+          "6": 6,
+          "7": 5
+        }
+      },
+      {
+        "place": "Evening. moor house",
+        "lines": {}
+      },
+      {
+        "place": "Evening. moor house",
+        "lines": {}
+      },
+      {
+        "place": "Evening. moor house",
+        "lines": {
+          "0": 5,
+          "2": 4,
+          "6": 3,
+          "7": 1
+        }
+      },
+      {
+        "place": "Day. lowood",
+        "lines": {
+          "10": 4,
+          "31": 1
+        }
+      },
+      {
+        "place": "Day. lowood",
+        "lines": {
+          "0": 11,
+          "4": 11,
+          "18": 1
+        }
+      },
+      {
+        "place": "Day. moor house",
+        "lines": {
+          "0": 5,
+          "6": 3,
+          "7": 6
+        }
+      },
+      {
+        "place": "Day. lowood",
+        "lines": {}
+      },
+      {
+        "place": "Night. lowood",
+        "lines": {
+          "18": 1,
+          "29": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "Night. lowood",
+        "lines": {
+          "0": 8,
+          "4": 9
+        }
+      },
+      {
+        "place": "Day. lowood",
+        "lines": {
+          "0": 1,
+          "18": 1
+        }
+      },
+      {
+        "place": "Day. moor house",
+        "lines": {
+          "0": 7,
+          "2": 5,
+          "6": 1,
+          "7": 4
+        }
+      },
+      {
+        "place": "Day. morton",
+        "lines": {}
+      },
+      {
+        "place": "Night. morton",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Day. a churchyard",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Night. morton",
+        "lines": {}
+      },
+      {
+        "place": "Day. a roadside",
+        "lines": {}
+      },
+      {
+        "place": "Day. morton",
+        "lines": {}
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 6,
+          "3": 8
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 1,
+          "3": 2,
+          "32": 1
+        }
+      },
+      {
+        "place": "Next morning. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 3,
+          "3": 2,
+          "8": 3
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "3": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 4,
+          "3": 3
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "Day. a frozen meadow",
+        "lines": {}
+      },
+      {
+        "place": "Day. a frozen wood",
+        "lines": {
+          "0": 8,
+          "1": 19
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 14,
+          "1": 19,
+          "3": 3
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 2,
+          "3": 3,
+          "8": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "1": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 21,
+          "1": 31,
+          "3": 2,
+          "8": 4
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 8,
+          "1": 12,
+          "8": 2
+        }
+      },
+      {
+        "place": "Dusk. thornfield / the red room",
+        "lines": {}
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 7,
+          "1": 6
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 9,
+          "1": 12
+        }
+      },
+      {
+        "place": "Dawn. thornfield. jane's room",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 3,
+          "14": 5
+        }
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {
+          "0": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Day. morton",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Evening. morton",
+        "lines": {
+          "0": 9,
+          "2": 8
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "30": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "3": 1,
+          "8": 1,
+          "21": 3,
+          "23": 3,
+          "26": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 2,
+          "3": 3
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 9,
+          "1": 19,
+          "3": 3,
+          "8": 1,
+          "9": 13,
+          "13": 1,
+          "17": 4,
+          "22": 2,
+          "28": 1
+        }
+      },
+      {
+        "place": "Day. lowood",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "1": 5,
+          "9": 3,
+          "17": 1,
+          "22": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "1": 9,
+          "13": 4
+        }
+      },
+      {
+        "place": "Dawn. thornfield",
+        "lines": {
+          "1": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "13": 1
+        }
+      },
+      {
+        "place": "Dawn. thornfield",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "19": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 12,
+          "1": 12
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 2,
+          "11": 3
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 11,
+          "5": 8
+        }
+      },
+      {
+        "place": "Day. gateshead",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Day. a roadside",
+        "lines": {}
+      },
+      {
+        "place": "Evening. a summer wood",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Twilight. thornfield",
+        "lines": {
+          "0": 22,
+          "1": 23
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 3,
+          "3": 3
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Day. a haberdasher's shop",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {
+          "0": 3,
+          "1": 5
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "8": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. the church",
+        "lines": {
+          "1": 9,
+          "12": 6,
+          "13": 2,
+          "20": 3,
+          "35": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "1": 3,
+          "14": 1,
+          "20": 1
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 1,
+          "12": 4
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. a dry river bed",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {
+          "0": 2,
+          "1": 4,
+          "27": 1
+        }
+      },
+      {
+        "place": "Night. thornfield",
+        "lines": {
+          "0": 23,
+          "1": 33,
+          "34": 1
+        }
+      },
+      {
+        "place": "Dawn. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Night. jane's cottage",
+        "lines": {
+          "0": 27,
+          "1": 1,
+          "2": 25,
+          "37": 1
+        }
+      },
+      {
+        "place": "Day. spring",
+        "lines": {}
+      },
+      {
+        "place": "Day. moor house",
+        "lines": {}
+      },
+      {
+        "place": "Night. moor house",
+        "lines": {
+          "0": 1,
+          "2": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "Night. moor house",
+        "lines": {}
+      },
+      {
+        "place": "Evening. moor house",
+        "lines": {
+          "0": 5,
+          "2": 6
+        }
+      },
+      {
+        "place": "Night. moor house",
+        "lines": {
+          "0": 18,
+          "2": 16
+        }
+      },
+      {
+        "place": "Night. the moor",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Day. whitcross moor",
+        "lines": {}
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Day. mrs fairfax's cottage",
+        "lines": {
+          "0": 3,
+          "3": 3
+        }
+      },
+      {
+        "place": "Day. mrs fairfax's cottage",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Day. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {}
+      },
+      {
+        "place": "Evening. thornfield",
+        "lines": {
+          "14": 1
+        }
+      },
+      {
+        "place": "Day. mrs fairfax's cottage",
+        "lines": {
+          "0": 3,
+          "3": 2
+        }
+      },
+      {
+        "place": "Day. ferndean",
+        "lines": {}
+      },
+      {
+        "place": "Day. ferndean",
+        "lines": {}
+      },
+      {
+        "place": "Evening. ferndean",
+        "lines": {
+          "0": 12,
+          "1": 12
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 23,
+      "longestWithoutWomanStart": 757,
+      "words": {
+        "w": 6086,
+        "m": 5308,
+        "unknown": 162
+      },
+      "womenConversations": 51,
+      "menConversations": 5,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/hNO5wNF2OFI2TSfexjJsFvuI9Cb.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/3Cn7D0wEaxnvm8kTta1osNu3QJv.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 2376
+  },
+  "actors": [
+    {
+      "actorName": "Mia Wasikowska",
+      "character": "Jane Eyre",
+      "actorActress": "1",
+      "age": 21
+    },
+    {
+      "actorName": "Michael Fassbender",
+      "character": "Edward Rochester",
+      "actorActress": "2",
+      "age": 33
+    },
+    {
+      "actorName": "Jamie Bell",
+      "character": "St. John",
+      "actorActress": "2",
+      "age": 24
+    },
+    {
+      "actorName": "Sally Hawkins",
+      "character": "Mrs. Reed",
+      "actorActress": "1",
+      "age": 34
+    },
+    {
+      "actorName": "Simon McBurney",
+      "character": "Mr. Brocklehurst",
+      "actorActress": "2",
+      "age": 53
+    },
+    {
+      "actorName": "Valentina Cervi",
+      "character": "Bertha Mason",
+      "actorActress": "1",
+      "age": 34
+    },
+    {
+      "actorName": "Judi Dench",
+      "character": "Mrs. Fairfax",
+      "actorActress": "1",
+      "age": 76
+    },
+    {
+      "actorName": "Su Elliot",
+      "character": "Hannah",
+      "actorActress": "1",
+      "age": 60
+    },
+    {
+      "actorName": "Holliday Grainger",
+      "character": "Diana Rivers",
+      "actorActress": "1",
+      "age": 22
+    },
+    {
+      "actorName": "Tamzin Merchant",
+      "character": "Mary Rivers",
+      "actorActress": "1",
+      "age": 24
+    },
+    {
+      "actorName": "Amelia Clarkson",
+      "character": "Young Jane",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Craig Roberts",
+      "character": "John Reed",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lizzie Hopley",
+      "character": "Miss Abbot",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jayne Wisener",
+      "character": "Bessie",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Freya Wilson",
+      "character": "Eliza Reed",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Emily Haigh",
+      "character": "Georgiana Reed",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sandy McDade",
+      "character": "Miss Scatcherd",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Freya Parks",
+      "character": "Helen Burns",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Edwina Elek",
+      "character": "Miss Temple",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ewart James Walters",
+      "character": "John",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Georgia Bourke",
+      "character": "Leah",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sally Reeve",
+      "character": "Martha",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Romy Settbon Moore",
+      "character": "Adèle Varens",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Eglantine Rembauville-Nicolle",
+      "character": "Sophie",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rosie Cavaliero",
+      "character": "Grace Poole",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Angela Curran",
+      "character": "Undercook",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Imogen Poots",
+      "character": "Blanche Ingram",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sophie Ward",
+      "character": "Lady Ingram",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Joe Van Moyland",
+      "character": "Lord Ingram",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Hayden Phillips",
+      "character": "Colonel Dent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Laura Phillips",
+      "character": "Mrs. Dent",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Harry Lloyd",
+      "character": "Richard Mason",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ned Dennehy",
+      "character": "Dr. Carter",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joseph Kloska",
+      "character": "Clergyman Wood",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ben Roberts",
+      "character": "Briggs",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sarah Jane Close",
+      "character": "Thornfield's Maid (uncredited)",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Cary Joji Fukunaga",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Moira Buffini",
+        "gender": "w"
+      },
+      {
+        "job": "Novel",
+        "name": "Charlotte Brontë",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Alison Owen",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Paul Trijbits",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Adriano Goldman",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Melanie Oliver",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Dario Marianelli",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Will Hughes-Jones",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Michael O'Connor",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Nina Gold",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Writing": {
+        "w": 2,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 8,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Crew": {
+        "w": 3,
+        "m": 6,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Costume & Make-Up": {
+        "w": 4,
+        "m": 1,
+        "nb": 0,
+        "unknown": 7
+      },
+      "Editing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Art": {
+        "w": 2,
+        "m": 4,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Sound": {
+        "w": 1,
+        "m": 10,
+        "nb": 0,
+        "unknown": 7
+      },
+      "Production": {
+        "w": 10,
+        "m": 4,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 13000000,
+    "revenue": 34710627
+  },
+  "directors": [
+    {
+      "name": "Cary Joji Fukunaga"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Moira Buffini"
+    },
+    {
+      "name": "Charlotte Brontë"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 1 Oscar. 10 wins & 16 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-06T21:56:17.488Z",
+  "plot": "After a bleak childhood, Jane Eyre (Mia Wasikowska) goes out into the world to become a governess. As she lives happily in her new position at Thornfield Hall, she meets the dark, cold, and abrupt master of the house, Mr. Edward Rochester (Michael Fassbender). Jane and her employer grow close in friendship and she soon finds herself falling in love with him. Happiness seems to have found Jane at last, but could Mr. Rochester's terrible secret be about to destroy it forever?",
+  "simplePlot": "After a bleak childhood, Jane Eyre (Mia Wasikowska) goes out into the world to become a governess. As she lives happily in her new position at Thornfield Hall, she meets the dark, cold, and abrupt master of the house, Mr. Edward Rochester (Michael Fassbender). Jane and her employer grow close in friendship and she soon finds herself falling in love with him. Happiness seems to have found Jane at last, but could Mr. Rochester's terrible secret be about to destroy it forever?",
+  "year": 2011,
+  "releaseDate": "22 Apr 2011",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BNjU0Mjc0NzU3NF5BMl5BanBnXkFtZTcwMTU4OTkwNA@@._V1_QL75_UX380_CR0,1,380,562_.jpg",
+  "idIMDB": "tt1229822",
+  "rating": "7.3",
+  "metascore": 76,
+  "urlIMDB": "https://www.imdb.com/title/tt1229822/"
+}
