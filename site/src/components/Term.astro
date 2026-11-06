@@ -1,0 +1,65 @@
+---
+// A term the reader can tap for a one-line definition. Uses the browser's
+// popover (no script); the definition also stays readable as the button's
+// accessible description.
+interface Props {
+	term: keyof typeof DEFINITIONS;
+	/** Makes ids unique when a term appears more than once on a page */
+	id?: string;
+}
+
+const DEFINITIONS = {
+	agency: 'Whether a woman’s own choices drive what happens, rather than things happening to her.',
+	stereotyping: 'Characters reduced to a familiar type, like the nagging wife or the damsel, instead of a person. Higher is worse.',
+	bias: 'A slant in how the story treats women and men: who gets the benefit of the doubt, whose feelings count. Higher is worse.',
+	diversity: 'How many kinds of people the film includes: race, class, sexuality, disability and age.',
+	power: 'Who gives the orders, holds the official roles and controls the conversation. Higher is more balanced.',
+	tokenism: 'Including someone from an underrepresented group without giving them a real part.',
+	microaggression: 'A small, often casual remark or moment that belittles a group.',
+} as const;
+
+const { term, id = term } = Astro.props;
+const popId = `def-${id}`;
+---
+
+<button type="button" class="term" popovertarget={popId} aria-describedby={popId}><slot /></button>
+<span id={popId} popover class="definition paper" role="note">
+	<strong><slot /></strong>
+	{DEFINITIONS[term]}
+</span>
+
+<style>
+	.term {
+		background: none;
+		border: 0;
+		padding: 0;
+		font: inherit;
+		color: inherit;
+		text-transform: inherit;
+		text-decoration: underline dotted;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.2em;
+		cursor: help;
+		min-height: 24px;
+	}
+	.term:hover {
+		color: var(--pink);
+	}
+	.definition {
+		max-width: min(24rem, calc(100vw - 2 * var(--gutter)));
+		padding: var(--space-4);
+		border: 0;
+		font-family: var(--book);
+		font-size: var(--text);
+		text-transform: none;
+		line-height: 1.45;
+	}
+	.definition strong {
+		display: block;
+		font-family: var(--poster);
+		font-weight: 400;
+		font-size: 1.375rem;
+		text-transform: uppercase;
+		margin-bottom: var(--space-1);
+	}
+</style>

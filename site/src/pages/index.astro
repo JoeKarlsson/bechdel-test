@@ -201,6 +201,31 @@ const description = `Do two women talk to each other about something other than 
 		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 		gap: var(--space-6) var(--space-4);
 	}
+	/* Phones: a shorter question and a compact rules card, so the shelf shows sooner */
+	@media (max-width: 600px) {
+		h1 {
+			font-size: clamp(2.25rem, 10vw, 3rem);
+		}
+		.hero {
+			gap: var(--space-5);
+		}
+		.lead {
+			font-size: var(--text);
+			margin-top: var(--space-3);
+		}
+		.rules {
+			max-width: none;
+			padding: var(--space-4);
+			transform: rotate(1deg);
+		}
+		.rules li + li {
+			margin-top: 0;
+		}
+		.tally {
+			margin-top: var(--space-3);
+			font-size: 2.5rem;
+		}
+	}
 	/* Three tapes across on phones, so the whole shelf is a third shorter */
 	@media (max-width: 560px) {
 		.shelf {

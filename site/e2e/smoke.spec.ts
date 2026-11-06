@@ -61,3 +61,20 @@ test('the scene timeline explains a group of scenes on focus, and the arrow keys
 	await expect(bars.nth(1)).toHaveAttribute('aria-pressed', 'true');
 	await expect(bars.first()).toHaveAttribute('tabindex', '-1');
 });
+
+test('exhibits fold on phones, the Her/His switch works, and terms explain themselves', async ({ page }, info) => {
+	await page.goto('/films/gone-girl-2014/');
+	const firstFold = page.locator('details[data-fold]').first();
+	const phone = info.project.name !== 'desktop';
+	await expect(firstFold).toHaveJSProperty('open', !phone);
+	if (phone) {
+		await page.locator('#ex-compare').click();
+		await page.getByRole('button', { name: 'His side' }).click();
+		await expect(page.locator('.split-cell.m').first()).toBeVisible();
+		await expect(page.locator('.split-cell.w').first()).toBeHidden();
+	}
+	if (phone) await page.locator('#ex-scores').click();
+	await page.getByRole('button', { name: 'Agency', exact: true }).click();
+	await expect(page.locator('#def-agency')).toBeVisible();
+	await expect(page.locator('#def-agency')).toContainText('choices drive what happens');
+});
