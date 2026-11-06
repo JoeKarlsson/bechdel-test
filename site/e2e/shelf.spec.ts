@@ -40,3 +40,27 @@ test('without JavaScript, every film is listed and the controls stay hidden', as
 	await expect(page.locator('[data-shelf-controls]')).toBeHidden();
 	await context.close();
 });
+
+test('a big shelf shows a page at a time, and search still covers every film', async ({ page }) => {
+	// The real shelf has 50 films and a page of 60; serve it with a page of 20 to see paging
+	await page.route('**/', async (route) => {
+		const res = await route.fetch();
+		const body = (await res.text()).replace('data-page-size="60"', 'data-page-size="20"');
+		await route.fulfill({ response: res, body });
+	});
+	await page.goto('/');
+	const visible = page.locator('[data-shelf] li:not([hidden])');
+	await expect(visible).toHaveCount(20);
+	await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 20 of 50, 8 pass in all');
+	await page.getByRole('button', { name: 'Show 20 more' }).click();
+	await expect(visible).toHaveCount(40);
+	await expect(visible.nth(20).locator('a')).toBeFocused();
+	await page.getByRole('button', { name: 'Show 10 more' }).click();
+	await expect(visible).toHaveCount(50);
+	await expect(page.locator('[data-shelf-more-wrap]')).toBeHidden();
+	// Searching looks past the page: Catwoman is last by popularity
+	await page.getByLabel('Search').fill('catwoman');
+	await expect(visible).toHaveCount(1);
+	await page.getByLabel('Search').fill('');
+	await expect(visible).toHaveCount(20);
+});
