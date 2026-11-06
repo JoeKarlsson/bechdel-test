@@ -61,6 +61,14 @@ jobs:
       - name: Lighthouse (mobile, every category 90 or above)
         run: npm run lighthouse
 
+      - name: Lighthouse reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse
+          path: site/.lighthouseci
+          if-no-files-found: ignore
+
       - name: Outside links
         run: npm run check-links
 
