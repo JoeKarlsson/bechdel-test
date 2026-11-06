@@ -94,6 +94,44 @@ export function timelineFrom(script, bars = TIMELINE_BARS) {
 	return out;
 }
 
+// Key crew jobs as the film page names them, in order; jobs with the same
+// label (Screenplay, Writer) are listed together
+const CREW_LABELS = {
+	Director: 'Directed by',
+	Screenplay: 'Written by',
+	Writer: 'Written by',
+	Story: 'Story by',
+	Novel: 'From the novel by',
+	Producer: 'Produced by',
+	'Director of Photography': 'Shot by',
+	Editor: 'Edited by',
+	'Original Music Composer': 'Music by',
+	'Production Design': 'Production design by',
+	'Costume Design': 'Costumes by',
+	Casting: 'Cast by',
+};
+
+/**
+ * Key crew grouped by what they did, and each department's head count by
+ * gender, biggest first. Gender is "w", "m", "nb" (non-binary) or null.
+ */
+export function crewFrom(crew) {
+	if (!crew) return null;
+	const roles = [];
+	for (const r of crew.roles) {
+		const label = CREW_LABELS[r.job] ?? r.job;
+		let group = roles.find((g) => g.label === label);
+		if (!group) roles.push((group = { label, people: [] }));
+		if (!group.people.some((p) => p.name === r.name)) group.people.push({ name: r.name, gender: r.gender });
+	}
+	const departments = Object.entries(crew.departments)
+		.map(([name, c]) => ({ name, ...c, total: c.w + c.m + c.nb + c.unknown }))
+		.sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
+	const all = departments.reduce((acc, d) => ({ w: acc.w + d.w, m: acc.m + d.m, nb: acc.nb + d.nb, unknown: acc.unknown + d.unknown }), { w: 0, m: 0, nb: 0, unknown: 0 });
+	const people = roles.flatMap((g) => g.people);
+	return { roles, departments, all, keyWomen: people.filter((p) => p.gender === 'w').length, keyPeople: people.length };
+}
+
 /**
  * Films most like this one: shared genres count most, then the same director,
  * then how close the years are. Verdict doesn't matter; each tape shows its own.
@@ -267,6 +305,13 @@ export function normalizeFilm(raw) {
 		timeline: timelineFrom(raw.script),
 		sceneCount: raw.script.scenes.length,
 		dialogueCount: raw.script.dialogueLines,
+		measures: raw.script.measures ?? null,
+		crew: crewFrom(raw.crew),
+		money: raw.money && (raw.money.budget || raw.money.revenue) ? { budget: raw.money.budget, revenue: raw.money.revenue } : null,
+		// Top-billed actors with a known age at release, women and men
+		ages: actors
+			.filter((a) => Number.isFinite(a.age) && (a.actorActress === '1' || a.actorActress === '2'))
+			.map((a) => ({ actor: a.actorName, role: a.character || null, age: a.age, gender: a.actorActress === '1' ? 'w' : 'm' })),
 		ai: aiFrom(ea),
 	};
 }

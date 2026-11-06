@@ -64,14 +64,23 @@ const measureDialogue = (dialogue, resolved) => {
 	const genderOf = block => resolved.get(block.speaker).gender;
 	const firstWoman = dialogue.findIndex(block => genderOf(block) === 'w');
 	let longest = 0;
+	let longestStart = null;
 	let run = 0;
 	const words = { w: 0, m: 0, unknown: 0 };
-	for (const block of dialogue) {
+	dialogue.forEach((block, i) => {
 		run = genderOf(block) === 'w' ? 0 : run + 1;
-		longest = Math.max(longest, run);
+		if (run > longest) {
+			longest = run;
+			longestStart = i - run + 2; // 1-based line the stretch starts on
+		}
 		words[genderOf(block) ?? 'unknown'] += block.text.split(/\s+/).filter(Boolean).length;
-	}
-	return { firstWomanLine: firstWoman === -1 ? null : firstWoman + 1, longestWithoutWoman: longest, words };
+	});
+	return {
+		firstWomanLine: firstWoman === -1 ? null : firstWoman + 1,
+		longestWithoutWoman: longest,
+		longestWithoutWomanStart: longestStart,
+		words,
+	};
 };
 
 /**
