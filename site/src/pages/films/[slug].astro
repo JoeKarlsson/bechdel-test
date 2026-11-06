@@ -122,11 +122,46 @@ const topSpeakers = film.speakers.slice(0, 10);
 const maxLines = topSpeakers[0]?.lines ?? 1;
 const timelineMax = Math.max(1, ...film.timeline.map((b) => Math.max(b.w, b.m)));
 
+// Who gets heard
+const m = film.measures;
+const wordsKnown = m ? m.words.w + m.words.m : 0;
+const womenWordShare = wordsKnown > 0 ? Math.round((m!.words.w / wordsKnown) * 100) : null;
+const at = (line: number) => `${((Math.max(0, line - 1) / Math.max(1, film.dialogueCount)) * 100).toFixed(2)}%`;
+const conversationMax = m ? Math.max(1, m.womenConversations, m.menConversations) : 1;
+
+// Behind the camera: producers can run long, so show a few and count the rest
+const crew = film.crew;
+const SHOWN_PER_JOB = 6;
+const crewKnown = crew ? crew.all.w + crew.all.m + crew.all.nb : 0;
+const crewWomenShare = crewKnown > 0 ? Math.round((crew!.all.w / crewKnown) * 100) : null;
+const departments = crew ? crew.departments.slice(0, 8) : [];
+const genderWord = { w: 'woman', m: 'man', nb: 'non-binary' } as const;
+
+// Ages of the top-billed cast at release
+const agesBy = (g: 'w' | 'm') => film.ages.filter((a) => a.gender === g).sort((a, b) => a.age - b.age);
+const ageRows = [
+	{ key: 'w', label: 'Women', people: agesBy('w') },
+	{ key: 'm', label: 'Men', people: agesBy('m') },
+].filter((r) => r.people.length > 0);
+const mean = (xs: number[]) => Math.round(xs.reduce((a, b) => a + b, 0) / xs.length);
+const ageMax = Math.max(80, ...film.ages.map((a) => a.age));
+
+// Money: "$61 million", "$1.2 billion"
+const dollars = (n: number) =>
+	n >= 1e9 ? `$${(n / 1e9).toFixed(1).replace(/\.0$/, '')} billion` : n >= 1e6 ? `$${(n / 1e6).toFixed(n >= 1e8 ? 0 : 1).replace(/\.0$/, '')} million` : `$${n.toLocaleString('en-US')}`;
+const money = film.money;
+const multiple = money?.budget && money?.revenue ? money.revenue / money.budget : null;
+
 // Exhibits only appear when the film has the data; letters follow what's shown
 const has = {
 	scene: bechdel.passingScenes.length > 0,
 	waffle: womenShare !== null,
 	cast: bechdel.womenChars !== null && bechdel.menChars !== null,
+	heard: !!m && film.dialogueCount > 0,
+	reverse: !!m,
+	crew: !!crew && crew.roles.length > 0,
+	ages: ageRows.length > 0,
+	money: !!money,
 	scores: scoreRows.length > 0,
 	agency: !!ai && (ai.agency.drives.length > 0 || ai.agency.reacts.length > 0 || !!ai.agency.decisions),
 	power: !!ai && (ai.power.interruptions.length > 0 || !!ai.power.questions || !!ai.power.speakingTime || ai.power.authority.length > 0),
@@ -403,7 +438,7 @@ const credit = [
 					<h2 id="evidence-title" class="section-title evidence-title">The evidence</h2>
 					<ul class="legend">
 						<li><span class="swatch paper-swatch" />Straight from the script</li>
-						<li><span class="swatch panel-swatch" />Counted from the script, or the AI's read of it</li>
+						<li><span class="swatch panel-swatch" />Counted from the script and the credits, or the AI's read of it</li>
 						<li><span class="swatch flag-swatch" />Problems the AI flagged</li>
 					</ul>
 					<p class="note fold-hint">Tap an exhibit to open it.</p>
@@ -478,7 +513,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-cast">Exhibit {letter('cast')}: who's in it</h3>
-										<p class="gist">{bechdel.womenChars} women and {bechdel.menChars} men in the script. {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men get lines.</p>
+										<p class="gist">{bechdel.womenChars} women and {bechdel.menChars} men in the cast. {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men from it get lines.</p>
 									</summary>
 									<div role="img" aria-label={`Characters: ${bechdel.womenChars} women and ${bechdel.menChars} men. With lines: ${bechdel.womenSpeaking} women and ${bechdel.menSpeaking} men.`}>
 										<p class="note">Characters</p>
@@ -496,6 +531,178 @@ const credit = [
 										<li><span class="swatch swatch-w" />Women</li>
 										<li><span class="swatch swatch-m" />Men</li>
 									</ul>
+								</details>
+							</section>
+						)}
+
+						{has.heard && m && (
+							<section class="exhibit panel wide tilt-r" aria-labelledby="ex-heard">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-heard">Exhibit {letter('heard')}: who gets heard</h3>
+										<p class="gist">
+											{m.firstWomanLine === null
+												? 'No woman speaks.'
+												: m.firstWomanLine === 1
+													? 'A woman speaks the first line.'
+													: `The first woman speaks at line ${m.firstWomanLine.toLocaleString('en-US')} of ${film.dialogueCount.toLocaleString('en-US')}.`}
+											{` The longest stretch with no woman speaking runs ${plural(m.longestWithoutWoman, 'line')}.`}
+										</p>
+									</summary>
+									<p class="note">Every line of dialogue, first to last</p>
+									<div
+										class="strip"
+										role="img"
+										aria-label={`${film.dialogueCount} lines of dialogue. ${m.firstWomanLine === null ? 'No woman speaks.' : `The first woman speaks at line ${m.firstWomanLine}.`} The longest stretch with no woman speaking is ${m.longestWithoutWoman} lines${m.longestWithoutWomanStart ? `, from line ${m.longestWithoutWomanStart}` : ''}.`}
+									>
+										{m.longestWithoutWomanStart && (
+											<span class="stretch" style={`left: ${at(m.longestWithoutWomanStart)}; width: ${((m.longestWithoutWoman / film.dialogueCount) * 100).toFixed(2)}%`} />
+										)}
+										{m.firstWomanLine !== null && <span class="first" style={`left: ${at(m.firstWomanLine)}`} />}
+									</div>
+									<ul class="legend small">
+										{m.firstWomanLine !== null && <li><span class="swatch swatch-w" />First line by a woman</li>}
+										<li><span class="swatch swatch-m" />Longest stretch with no woman speaking</li>
+									</ul>
+									{womenWordShare !== null && (
+										<>
+											<p class="note">Words spoken</p>
+											<div class="share-bar" role="img" aria-label={`Women speak ${womenWordShare}% of the words, men ${100 - womenWordShare}%`}>
+												<span class="part w" style={`flex-grow: ${m.words.w}`} />
+												<span class="part m" style={`flex-grow: ${m.words.m}`} />
+											</div>
+											<p>
+												Women speak {womenWordShare}% of the words ({m.words.w.toLocaleString('en-US')}), men {100 - womenWordShare}% ({m.words.m.toLocaleString('en-US')}).
+												{womenShare !== null && womenWordShare !== womenShare && ` Women have ${womenShare}% of the lines, so their lines run ${womenWordShare > womenShare ? 'longer' : 'shorter'} than men's.`}
+											</p>
+										</>
+									)}
+								</details>
+							</section>
+						)}
+
+						{has.reverse && m && (
+							<section class="exhibit panel narrow tilt-l" aria-labelledby="ex-reverse">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-reverse">Exhibit {letter('reverse')}: the test the other way</h3>
+										<p class="gist">
+											{m.reverseScore === 3
+												? 'Two named men talk to each other about something besides a woman. It passes the reverse test.'
+												: `Run the other way, for men, the film scores ${m.reverseScore} out of 3.`}
+										</p>
+									</summary>
+									<p class="note">Conversations between two named characters</p>
+									<div class="pairs" role="img" aria-label={`Women talk with each other ${plural(m.womenConversations, 'time')}; men talk with each other ${plural(m.menConversations, 'time')}.`}>
+										<p class="pair-label">Two women</p>
+										<span class="pair-bar w" style={`width: ${((m.womenConversations / conversationMax) * 100).toFixed(1)}%`} />
+										<p class="pair-n">{m.womenConversations}</p>
+										<p class="pair-label">Two men</p>
+										<span class="pair-bar m" style={`width: ${((m.menConversations / conversationMax) * 100).toFixed(1)}%`} />
+										<p class="pair-n">{m.menConversations}</p>
+									</div>
+								</details>
+							</section>
+						)}
+
+						{has.crew && crew && (
+							<section class="exhibit panel full tilt-r" aria-labelledby="ex-crew">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-crew">Exhibit {letter('crew')}: behind the camera</h3>
+										<p class="gist">
+											{`${crew.keyWomen === 0 ? 'None' : crew.keyWomen} of the ${crew.keyPeople} people in these jobs ${crew.keyWomen === 1 ? 'is a woman' : 'are women'}.`}
+											{crewWomenShare !== null && ` Across the whole crew, ${crewWomenShare}% of the people whose gender is listed are women.`}
+										</p>
+									</summary>
+									<div class="crew">
+										<dl class="roles">
+											{crew.roles.map((g) => (
+												<>
+													<dt>{g.label}</dt>
+													<dd>
+														{g.people.slice(0, SHOWN_PER_JOB).map((p, i) => (
+															<span class="person"><span class:list={['sq', p.gender ?? 'unknown']} aria-hidden="true" />{p.name}<span class="sr-only">{p.gender ? ` (${genderWord[p.gender]})` : ' (gender not listed)'}</span>{p.gender === 'nb' && <span class="note"> (non-binary)</span>}{i < Math.min(g.people.length, SHOWN_PER_JOB) - 1 && ', '}</span>
+														))}
+														{g.people.length > SHOWN_PER_JOB && <span class="note">{` and ${g.people.length - SHOWN_PER_JOB} more`}</span>}
+													</dd>
+												</>
+											))}
+										</dl>
+										<div>
+											<p class="note">The crew, department by department</p>
+											<ul class="depts">
+												{departments.map((d) => (
+													<li>
+														<p class="dept-name">{d.name === 'Crew' ? 'Other crew' : d.name}</p>
+														<div
+															class="share-bar"
+															role="img"
+															aria-label={`${d.name}: ${plural(d.w, 'woman', 'women')}, ${plural(d.m, 'man', 'men')}${d.nb ? `, ${d.nb} non-binary` : ''}, ${d.unknown} not listed`}
+														>
+															{d.w > 0 && <span class="part w" style={`flex-grow: ${d.w}`} />}
+															{d.m > 0 && <span class="part m" style={`flex-grow: ${d.m}`} />}
+															{d.nb > 0 && <span class="part nb" style={`flex-grow: ${d.nb}`} />}
+															{d.unknown > 0 && <span class="part unknown" style={`flex-grow: ${d.unknown}`} />}
+														</div>
+														<p class="dept-n note">{d.w} women, {d.m} men{d.nb ? `, ${d.nb} non-binary` : ''}{d.unknown ? `, ${d.unknown} not listed` : ''}</p>
+													</li>
+												))}
+											</ul>
+										</div>
+									</div>
+									<ul class="legend small">
+										<li><span class="swatch swatch-w" />Women</li>
+										<li><span class="swatch swatch-m" />Men</li>
+										{crew.all.nb > 0 && <li><span class="swatch swatch-nb" />Non-binary</li>}
+										<li><span class="swatch swatch-unknown" />Gender not listed on TMDB</li>
+									</ul>
+								</details>
+							</section>
+						)}
+
+						{has.ages && (
+							<section class="exhibit panel wide tilt-l" aria-labelledby="ex-ages">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-ages">Exhibit {letter('ages')}: how old the stars were</h3>
+										<p class="gist">
+											{ageRows.map((r) => `${r.label}: ${mean(r.people.map((p) => p.age))} on average.`).join(' ')}
+											{' '}The top-billed cast, at the film's release.
+										</p>
+									</summary>
+									{ageRows.map((r) => (
+										<div class="age-row">
+											<p class="age-label">{r.label}</p>
+											<div class="age-line" role="img" aria-label={`${r.label}: ${r.people.map((p) => `${p.actor}, ${p.age}`).join('; ')}`}>
+												{r.people.map((p) => <span class:list={['dot', r.key]} style={`left: ${((p.age / ageMax) * 100).toFixed(1)}%`} />)}
+											</div>
+											<p class="note">{r.people.map((p) => `${p.actor} ${p.age}`).join(', ')}</p>
+										</div>
+									))}
+									<div class="axis-ends note" aria-hidden="true"><span>0</span><span>{ageMax}</span></div>
+								</details>
+							</section>
+						)}
+
+						{has.money && money && (
+							<section class="exhibit panel narrow tilt-r" aria-labelledby="ex-money">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-money">Exhibit {letter('money')}: the money</h3>
+										<p class="gist">
+											{multiple !== null
+												? `It made ${multiple >= 1 ? `${multiple.toFixed(1)} times` : `${Math.round(multiple * 100)}% of`} what it cost.`
+												: 'What it cost and made, where TMDB lists it.'}
+										</p>
+									</summary>
+									<dl class="stats">
+										<dt>Budget</dt>
+										<dd>{money.budget ? dollars(money.budget) : 'Not listed'}</dd>
+										<dt>Box office</dt>
+										<dd>{money.revenue ? dollars(money.revenue) : 'Not listed'}</dd>
+									</dl>
+									<p class="note">From TMDB, not adjusted for inflation.</p>
 								</details>
 							</section>
 						)}
@@ -1599,6 +1806,189 @@ const credit = [
 	.sq {
 		width: 16px;
 		height: 16px;
+	}
+	.sq.unknown {
+		background: var(--muted);
+	}
+	/* Non-binary: an outlined square, always named in words beside it */
+	.sq.nb,
+	.part.nb {
+		background: transparent;
+		outline: 2px solid var(--chalk);
+		outline-offset: -2px;
+	}
+
+	/* Who gets heard: the whole dialogue as one strip */
+	.strip {
+		position: relative;
+		height: 2.5rem;
+		background: var(--plank);
+		border-radius: 4px;
+		margin: var(--space-2) 0 var(--space-3);
+	}
+	.strip .stretch {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		min-width: 3px;
+		background: var(--chalk);
+	}
+	.strip .first {
+		position: absolute;
+		top: -6px;
+		bottom: -6px;
+		width: 4px;
+		margin-left: -2px;
+		background: var(--pink);
+		border-radius: 2px;
+	}
+	/* One bar split into parts: words by gender, a crew department */
+	.share-bar {
+		display: flex;
+		gap: var(--mark-gap);
+		height: 1.25rem;
+		margin: var(--space-2) 0 var(--space-2);
+	}
+	.part {
+		display: block;
+		min-width: 3px;
+	}
+	.part:first-child {
+		border-radius: 4px 0 0 4px;
+	}
+	.part:last-child {
+		border-radius: 0 4px 4px 0;
+	}
+	.part:only-child {
+		border-radius: 4px;
+	}
+	.part.w {
+		background: var(--pink);
+	}
+	.part.m {
+		background: var(--chalk);
+	}
+	.part.unknown {
+		background: var(--muted);
+	}
+
+	/* The test the other way: two bars */
+	.pairs {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: var(--space-2) var(--space-3);
+		margin-top: var(--space-2);
+	}
+	.pairs p {
+		margin: 0;
+	}
+	.pair-bar {
+		display: block;
+		height: 1.25rem;
+		min-width: 3px;
+		border-radius: 0 4px 4px 0;
+	}
+	.pair-bar.w {
+		background: var(--pink);
+	}
+	.pair-bar.m {
+		background: var(--chalk);
+	}
+	.pair-n {
+		font-family: var(--poster);
+		font-size: 1.5rem;
+	}
+
+	/* Behind the camera */
+	.crew {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+		gap: var(--space-5);
+		margin-bottom: var(--space-4);
+	}
+	.roles {
+		margin: 0;
+	}
+	.roles dt {
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		margin-top: var(--space-3);
+	}
+	.roles dt:first-child {
+		margin-top: 0;
+	}
+	.roles dd {
+		margin: var(--space-1) 0 0;
+	}
+	.person .sq {
+		display: inline-block;
+		width: 0.8em;
+		height: 0.8em;
+		margin-right: 0.35em;
+		vertical-align: baseline;
+	}
+	.person .sq.w {
+		background: var(--pink);
+	}
+	.person .sq.m {
+		background: var(--chalk);
+	}
+	.depts {
+		list-style: none;
+		padding: 0 !important;
+	}
+	.depts li + li {
+		margin-top: var(--space-3);
+	}
+	.dept-name,
+	.dept-n {
+		margin: 0;
+	}
+
+	/* How old the stars were */
+	.age-row + .age-row {
+		margin-top: var(--space-4);
+	}
+	.age-label {
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		margin: 0;
+	}
+	.age-line {
+		position: relative;
+		height: 1.5rem;
+		margin: var(--space-2) 0;
+		border-bottom: 2px solid var(--plank);
+	}
+	.dot {
+		position: absolute;
+		bottom: -7px;
+		width: 12px;
+		height: 12px;
+		margin-left: -6px;
+		border-radius: 50%;
+		outline: 2px solid var(--panel); /* a ring, so touching dots stay apart */
+	}
+	.dot.w {
+		background: var(--pink);
+	}
+	.dot.m {
+		background: var(--chalk);
+	}
+
+	/* The money */
+	.stats {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: baseline;
+		gap: var(--space-2) var(--space-4);
+		margin: 0 0 var(--space-3);
+	}
+	.stats dd {
+		margin: 0;
+		font-family: var(--poster);
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
 	}
 	.legend.small {
 		margin: 0;

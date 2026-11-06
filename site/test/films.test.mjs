@@ -10,6 +10,7 @@ import {
 	relatedFilms,
 	loadFilms,
 	aiModelOf,
+	crewFrom,
 } from '../src/lib/films.mjs';
 
 test('cleanTitle drops a trailing year', () => {
@@ -58,6 +59,27 @@ test('timelineFrom groups scenes into at most the requested bars', () => {
 	]);
 	assert.deepEqual({ ...bars.at(-1), speakers: undefined }, { from: 10, to: 10, w: 1, m: 0, places: [], speakers: undefined });
 	assert.deepEqual(timelineFrom({ scenes: scenes.slice(0, 1), speakers }), []);
+});
+
+test('crewFrom groups key jobs by label and sorts departments by size', () => {
+	const crew = crewFrom({
+		roles: [
+			{ job: 'Director', name: 'Ridley Scott', gender: 'm' },
+			{ job: 'Screenplay', name: "Dan O'Bannon", gender: 'm' },
+			{ job: 'Writer', name: "Dan O'Bannon", gender: 'm' },
+			{ job: 'Casting', name: 'Mary Selway', gender: 'w' },
+		],
+		departments: { Sound: { w: 0, m: 2, nb: 0, unknown: 1 }, Writing: { w: 1, m: 1, nb: 1, unknown: 0 }, Art: { w: 1, m: 0, nb: 0, unknown: 0 } },
+	});
+	assert.deepEqual(crew.roles.map((g) => `${g.label} ${g.people.map((p) => p.name).join(', ')}`), [
+		'Directed by Ridley Scott',
+		"Written by Dan O'Bannon",
+		'Cast by Mary Selway',
+	]);
+	assert.deepEqual(crew.departments.map((d) => d.name), ['Sound', 'Writing', 'Art']);
+	assert.deepEqual(crew.all, { w: 2, m: 3, nb: 1, unknown: 1 });
+	assert.equal(crew.keyWomen, 1);
+	assert.equal(crewFrom(undefined), null);
 });
 
 test('aiModelOf names the model that wrote an analysis', () => {

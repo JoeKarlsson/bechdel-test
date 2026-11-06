@@ -17,6 +17,7 @@ describe('analyzeScriptText', () => {
 		const { script } = analyzeScriptText(longScript(['DALLAS', 'DALLAS', 'RIPLEY', 'LAMBERT']), charactersFromCast(cast));
 		expect(script.measures.firstWomanLine).toBe(3);
 		expect(script.measures.longestWithoutWoman).toBe(2);
+		expect(script.measures.longestWithoutWomanStart).toBe(1);
 		expect(script.measures.words.m).toBe(80 * 6);
 		expect(script.measures.reverseScore).toBe(0);
 	});
