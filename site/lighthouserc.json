@@ -8,7 +8,7 @@
 				"/films/fight-club-1999/",
 				"/about/"
 			],
-			"numberOfRuns": 1
+			"numberOfRuns": 3
 		},
 		"assert": {
 			"assertions": {
@@ -36,7 +36,8 @@
 						"minScore": 0.9
 					}
 				]
-			}
+			},
+			"aggregationMethod": "median-run"
 		},
 		"upload": {
 			"target": "filesystem",
