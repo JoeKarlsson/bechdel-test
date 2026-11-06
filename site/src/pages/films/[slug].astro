@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
 import Term from '../../components/Term.astro';
-import { loadFilms, relatedFilms, AI_MODEL } from '../../lib/films.mjs';
+import { loadFilms, relatedFilms } from '../../lib/films.mjs';
 import { posterFor, backdropFor } from '../../lib/images';
 
 export function getStaticPaths() {
@@ -701,7 +701,7 @@ const credit = [
 			<h2 id="how-title" class="section-title">About this analysis</h2>
 			<p>
 				Our parser read the script{film.sceneCount > 0 && `: ${film.sceneCount} scenes and ${film.dialogueCount.toLocaleString('en-US')} lines of dialogue`}.
-				{ai && ` ${AI_MODEL.maker}'s ${AI_MODEL.name} read the same script${analyzed ? ` on ${analyzed}` : ''}.`}
+				{ai && ` ${ai.model.maker}'s ${ai.model.name} read the same script${analyzed ? ` on ${analyzed}` : ''}.`}
 				{readers && ' The bechdeltest.com rating comes from that site’s readers.'}
 				{' '}<a href="/about/">How the test works</a>
 			</p>

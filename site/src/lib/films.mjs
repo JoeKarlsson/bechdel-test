@@ -8,10 +8,22 @@ import { join, resolve } from 'node:path';
 // from this file: Astro bundles it into a different directory at build time.
 const DATA_DIR = resolve(process.cwd(), '../data/films');
 
-// The model that wrote the AI analysis of the films on the site today. Films
-// analyzed from 2026-11-06 on record theirs as enhancedAnalytics.aiModel
-// (src/aiAnalyzer.js); this label is only right while none of those ship.
-export const AI_MODEL = { name: 'Claude 3.5 Haiku', id: 'claude-3-5-haiku-20241022', maker: 'Anthropic' };
+// Every model that has written a film's AI analysis, keyed by the id the
+// analyzer stores as enhancedAnalytics.aiModel (src/aiAnalyzer.js). Analyses
+// from before 2026-11-06 store none: Claude 3.5 Haiku wrote all of those.
+export const AI_MODELS = {
+	'claude-3-5-haiku-20241022': { name: 'Claude 3.5 Haiku', maker: 'Anthropic' },
+	'openrouter/deepseek/deepseek-v4.1-flash': { name: 'DeepSeek V4.1 Flash', maker: 'DeepSeek' },
+};
+const MODEL_BEFORE_IDS_WERE_STORED = 'claude-3-5-haiku-20241022';
+
+/** The model that wrote an analysis; an id missing from AI_MODELS fails the build */
+export function aiModelOf(aiModelId) {
+	const id = text(aiModelId) ?? MODEL_BEFORE_IDS_WERE_STORED;
+	const model = AI_MODELS[id];
+	if (!model) throw new Error(`Unknown AI model "${id}": add it to AI_MODELS in site/src/lib/films.mjs`);
+	return { id, ...model };
+}
 
 // How many bars the scene-by-scene timeline gets, whatever the film's length
 export const TIMELINE_BARS = 48;
@@ -171,7 +183,8 @@ const text = (x) => (typeof x === 'string' && x.trim() ? x.trim() : null);
 
 /** The AI's read of the script, with every section the analysis stores */
 function aiFrom(ea) {
-	if (!ea) return null;
+	// Only an AI run stamps analysisTimestamp; films analyzed with --no-ai have just the parsed dialogue
+	if (!text(ea?.analysisTimestamp)) return null;
 	const v = ea.enhancedBechdelValidation;
 	return {
 		review: v
@@ -248,6 +261,7 @@ function aiFrom(ea) {
 			.map(([area, t]) => ({ area, text: text(t) }))
 			.filter((r) => r.text),
 		analyzedAt: text(ea.analysisTimestamp),
+		model: aiModelOf(ea.aiModel),
 	};
 }
 

@@ -12,6 +12,7 @@ import {
 	scenePlace,
 	relatedFilms,
 	loadFilms,
+	aiModelOf,
 } from '../src/lib/films.mjs';
 
 test('cleanTitle drops a trailing year', () => {
@@ -90,6 +91,13 @@ test('timelineFrom groups scenes into at most the requested bars', () => {
 	assert.deepEqual(timelineFrom([], genderOf), []);
 });
 
+test('aiModelOf names the model that wrote an analysis', () => {
+	assert.equal(aiModelOf('openrouter/deepseek/deepseek-v4.1-flash').name, 'DeepSeek V4.1 Flash');
+	// Analyses from before models were stored were all Claude 3.5 Haiku
+	assert.equal(aiModelOf(undefined).id, 'claude-3-5-haiku-20241022');
+	assert.throws(() => aiModelOf('some/new-model'), /add it to AI_MODELS/);
+});
+
 test('the real export loads with unique slugs and sane numbers', () => {
 	const films = loadFilms();
 	assert.equal(films.length, 50);
@@ -99,6 +107,7 @@ test('the real export loads with unique slugs and sane numbers', () => {
 	assert.equal(gone.bechdel.scenesTotal, 290);
 	assert.equal(gone.readers.score, 3);
 	assert.equal(gone.ai.review.scenes.length, 1);
+	assert.equal(gone.ai.model.name, 'Claude 3.5 Haiku');
 	assert.equal(gone.speakers[0].name, 'Nick');
 	assert.ok(films.filter((f) => f.bechdel.pass).length === 8);
 	for (const f of films) assert.ok(f.popularity >= 1);
