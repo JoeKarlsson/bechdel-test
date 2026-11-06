@@ -49,3 +49,15 @@ test('old hash links from the previous site forward to the new pages', async ({ 
 	await page.goto('/#/film/000000000000000000000000');
 	await expect(page.locator('[data-shelf]')).toBeVisible();
 });
+
+test('the scene timeline explains a group of scenes on focus, and the arrow keys move along it', async ({ page }) => {
+	await page.goto('/films/gone-girl-2014/');
+	const bars = page.locator('[data-timeline] button');
+	await bars.first().focus();
+	await expect(page.locator('[data-readout] .readout-title')).toHaveText(/^Scenes? 1/);
+	await expect(page.locator('[data-readout]')).toContainText('Women');
+	await page.keyboard.press('ArrowRight');
+	await expect(bars.nth(1)).toBeFocused();
+	await expect(bars.nth(1)).toHaveAttribute('aria-pressed', 'true');
+	await expect(bars.first()).toHaveAttribute('tabindex', '-1');
+});

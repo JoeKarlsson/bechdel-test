@@ -9,6 +9,8 @@ import {
 	buildGenderLookup,
 	speakersFrom,
 	timelineFrom,
+	scenePlace,
+	relatedFilms,
 	loadFilms,
 } from '../src/lib/films.mjs';
 
@@ -79,8 +81,12 @@ test('timelineFrom groups scenes into at most the requested bars', () => {
 	const scenes = Array.from({ length: 10 }, (_, i) => ({ dialogue: i % 2 ? [{ character: 'AMY' }] : [{ character: 'NICK' }, { character: 'NICK' }] }));
 	const bars = timelineFrom(scenes, genderOf, 4);
 	assert.equal(bars.length, 4);
-	assert.deepEqual(bars[0], { from: 1, to: 3, w: 1, m: 4 });
-	assert.deepEqual(bars.at(-1), { from: 10, to: 10, w: 1, m: 0 });
+	assert.deepEqual({ ...bars[0], speakers: undefined }, { from: 1, to: 3, w: 1, m: 4, places: [], speakers: undefined });
+	assert.deepEqual(bars[0].speakers, [
+		{ name: 'Nick', gender: 'm', lines: 4 },
+		{ name: 'Amy', gender: 'w', lines: 1 },
+	]);
+	assert.deepEqual({ ...bars.at(-1), speakers: undefined }, { from: 10, to: 10, w: 1, m: 0, places: [], speakers: undefined });
 	assert.deepEqual(timelineFrom([], genderOf), []);
 });
 
@@ -101,4 +107,18 @@ test('the real export loads with unique slugs and sane numbers', () => {
 	assert.equal(dawn.lines, null);
 	assert.deepEqual(dawn.timeline, []);
 	assert.ok(gone.lines.w > 0 && gone.timeline.length > 0);
+});
+
+test('scenePlace reads the place out of a scene heading', () => {
+	assert.equal(scenePlace('THE BAR - DAY 5\nGo is washing mugs.'), 'The bar');
+	assert.equal(scenePlace('INT. POLICE STATION HALLWAY - DAY'), 'Police station hallway');
+	assert.equal(scenePlace('GONE GIRL\nAugust 29, 2013'), null);
+	assert.equal(scenePlace(''), null);
+});
+
+test('related films share genres first, then director, then era', () => {
+	const f = (id, genres, directors, year, popularity) => ({ id, genres, directors, year, popularity });
+	const me = f('me', ['Drama', 'Thriller'], ['Fincher'], 2014, 1);
+	const films = [me, f('a', ['Comedy'], [], 2014, 2), f('b', ['Drama', 'Thriller'], [], 1980, 3), f('c', ['Crime'], ['Fincher'], 1999, 4), f('d', ['Drama'], [], 2013, 5)];
+	assert.deepEqual(relatedFilms(me, films, 4).map((x) => x.id), ['b', 'd', 'c', 'a']);
 });

@@ -3,7 +3,7 @@ import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
-import { loadFilms } from '../../lib/films.mjs';
+import { loadFilms, relatedFilms, AI_MODEL } from '../../lib/films.mjs';
 import { posterFor, backdropFor } from '../../lib/images';
 
 export function getStaticPaths() {
@@ -11,11 +11,8 @@ export function getStaticPaths() {
 }
 
 const { film } = Astro.props;
-// Six films with the same verdict, nearest in popularity: somewhere to go next
-const related = loadFilms()
-	.filter((f) => f.id !== film.id && f.bechdel.pass === film.bechdel.pass)
-	.sort((a, b) => Math.abs(a.popularity - film.popularity) - Math.abs(b.popularity - film.popularity))
-	.slice(0, 6);
+// Films most like this one, by genre, director and year
+const related = relatedFilms(film, loadFilms());
 const pageUrl = `https://bechdel.joekarlsson.com/films/${film.slug}/`;
 const { bechdel, readers, ai } = film;
 const poster = posterFor(film.id);
@@ -98,7 +95,7 @@ const verdictWord = bechdel.pass ? 'Passes' : 'Fails';
 const verdictSentence = `${film.title} (${film.year}) ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test with a score of ${bechdel.score} out of 3.`;
 const descriptionTail = ' See who talks, scene by scene, and what an AI found in the script.';
 const description = verdictSentence.length + descriptionTail.length <= 160 ? verdictSentence + descriptionTail : verdictSentence;
-const analyzed = ai?.analyzedAt ? new Date(ai.analyzedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
+const analyzed = ai?.analyzedAt ? new Date(ai.analyzedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : null;
 const facts = [
 	['Released', film.released],
 	['Genres', film.genres.join(', ') || null],
@@ -295,27 +292,39 @@ const credit = [
 						Lines of dialogue in every {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below.
 						{unknownShare > 0 && ` ${unknownShare}% of lines come from characters we couldn't match to the cast list and aren't shown.`}
 					</p>
-					<div class="timeline">
-						<span class="axis-label top">Women</span>
-						<span class="axis-label bottom">Men</span>
-						<div class="bars" role="img" aria-label={`Lines by women and men across ${film.sceneCount} scenes. Women ${lines?.w ?? 0} lines, men ${lines?.m ?? 0}.`}>
-							<div class="half up">
-								{film.timeline.map((b) => (
-									<span class="bar w" style={`height: ${((b.w / timelineMax) * 100).toFixed(1)}%`} title={`Scenes ${b.from} to ${b.to}: women ${b.w} lines, men ${b.m}`} />
-								))}
-							</div>
-							<div class="baseline" />
-							<div class="half down">
-								{film.timeline.map((b) => (
-									<span class="bar m" style={`height: ${((b.m / timelineMax) * 100).toFixed(1)}%`} title={`Scenes ${b.from} to ${b.to}: women ${b.w} lines, men ${b.m}`} />
-								))}
-							</div>
-						</div>
+					<p class="axis-label women">Women</p>
+					<div
+						class="timeline"
+						role="group"
+						aria-label={`Lines by women and men across ${film.sceneCount} scenes. Use the arrow keys to move between groups of scenes.`}
+						data-timeline
+					>
+						{film.timeline.map((b, i) => (
+							<button
+								type="button"
+								class="col"
+								tabindex={i === 0 ? 0 : -1}
+								aria-label={`Scenes ${b.from} to ${b.to}: women ${b.w} lines, men ${b.m}`}
+								data-from={b.from}
+								data-to={b.to}
+								data-w={b.w}
+								data-m={b.m}
+								data-places={b.places.join(', ')}
+								data-speakers={JSON.stringify(b.speakers)}
+							>
+								<span class="half up"><span class="bar w" style={`height: ${((b.w / timelineMax) * 100).toFixed(1)}%`} /></span>
+								<span class="half down"><span class="bar m" style={`height: ${((b.m / timelineMax) * 100).toFixed(1)}%`} /></span>
+							</button>
+						))}
 					</div>
+					<p class="axis-label men">Men</p>
 					<p class="note axis-ends">
 						<span>Scene 1</span>
 						<span>Scene {film.sceneCount}</span>
 					</p>
+					<div class="readout" aria-live="polite" data-readout>
+						<p class="note">Hover, tap or tab to a bar to see those scenes: where they happen and who's talking.</p>
+					</div>
 					<details class="data-table">
 						<summary>Show the numbers</summary>
 						<table>
@@ -513,7 +522,7 @@ const credit = [
 										</thead>
 										<tbody>
 											{ai.compare.map(([k, w, m]) => (
-												<tr><th scope="row">{k}</th><td>{w ?? 'Not noted'}</td><td>{m ?? 'Not noted'}</td></tr>
+												<tr><th scope="row">{k}</th><td class="women" data-label="Women">{w ?? 'Not noted'}</td><td data-label="Men">{m ?? 'Not noted'}</td></tr>
 											))}
 										</tbody>
 									</table>
@@ -596,14 +605,14 @@ const credit = [
 			<h2 id="how-title" class="section-title">About this analysis</h2>
 			<p>
 				Our parser read the script{film.sceneCount > 0 && `: ${film.sceneCount} scenes and ${film.dialogueCount.toLocaleString('en-US')} lines of dialogue`}.
-				{ai && (analyzed ? ` An AI read the same script on ${analyzed}.` : ' An AI read the same script.')}
+				{ai && ` ${AI_MODEL.maker}'s ${AI_MODEL.name} read the same script${analyzed ? ` on ${analyzed}` : ''}.`}
 				{readers && ' The bechdeltest.com rating comes from that site’s readers.'}
 				{' '}<a href="/about/">How the test works</a>
 			</p>
 		</section>
 
 		<section class="section" aria-labelledby="more-title">
-			<h2 id="more-title" class="section-title">More {bechdel.pass ? 'films that pass' : 'films that fail'}</h2>
+			<h2 id="more-title" class="section-title">Related films</h2>
 			<ul class="related">
 				{related.map((f) => <Tape film={f} />)}
 			</ul>
@@ -615,6 +624,11 @@ const credit = [
 		</div>
 	</div>
 </Base>
+
+<script>
+	import { setUpTimeline } from '../../scripts/timeline';
+	setUpTimeline();
+</script>
 
 <style>
 	/* Hero: the backdrop in pink duotone, verdict and title on top */
@@ -916,38 +930,64 @@ const credit = [
 		margin-bottom: var(--space-6);
 		max-width: 48em;
 	}
-	.timeline {
-		position: relative;
-		padding-left: 4.5rem;
-	}
 	.axis-label {
-		position: absolute;
-		left: 0;
+		margin: 0;
 		font-family: var(--poster);
 		font-size: 1.25rem;
 		text-transform: uppercase;
 	}
-	.axis-label.top {
-		top: 0;
+	.axis-label.women {
 		color: var(--pink);
+		margin-bottom: var(--space-2);
 	}
-	.axis-label.bottom {
-		bottom: 0;
+	.axis-label.men {
+		margin-top: var(--space-2);
+	}
+	.timeline {
+		display: flex;
+		gap: var(--mark-gap);
+	}
+	.col {
+		flex: 1;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		/* the top half ends at the baseline, the bottom half starts there */
+		background-image: linear-gradient(var(--muted), var(--muted));
+		background-size: 100% 2px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.col:focus-visible {
+		outline-offset: 1px;
+	}
+	.col[aria-pressed='true'] .bar,
+	.col:hover .bar {
+		filter: brightness(1.25);
+	}
+	.col[aria-pressed='true'] {
+		outline: 2px solid var(--chalk);
+		outline-offset: -2px;
 	}
 	.half {
 		display: flex;
-		gap: var(--mark-gap);
 		height: 180px;
 	}
 	.half.up {
 		align-items: flex-end;
+		padding-bottom: 1px;
 	}
 	.half.down {
 		align-items: flex-start;
+		padding-top: 1px;
 	}
 	.bar {
-		flex: 1;
-		min-width: 0;
+		display: block;
+		width: 100%;
 	}
 	.bar.w {
 		background: var(--pink);
@@ -957,15 +997,27 @@ const credit = [
 		background: var(--chalk);
 		border-radius: 0 0 3px 3px;
 	}
-	.baseline {
-		height: 2px;
-		background: var(--muted);
-	}
 	.axis-ends {
 		display: flex;
 		justify-content: space-between;
-		padding-left: 4.5rem;
 		margin-top: var(--space-2);
+	}
+	.readout {
+		margin-top: var(--space-4);
+		min-height: 6.5rem;
+		padding: var(--space-3) var(--space-4);
+		background: var(--panel);
+	}
+	.readout :global(p) {
+		margin: 0;
+	}
+	.readout :global(.readout-title) {
+		font-family: var(--poster);
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+	.readout :global(.w) {
+		color: var(--pink);
 	}
 	.data-table {
 		margin-top: var(--space-4);
@@ -1251,13 +1303,32 @@ const credit = [
 			grid-template-columns: minmax(0, 1fr);
 			gap: var(--space-1);
 		}
-		.timeline,
-		.axis-ends {
-			padding-left: 0;
+		.half {
+			height: 120px;
 		}
-		.axis-label {
-			position: static;
+		/* The comparison table stacks: each row becomes a block, women then men */
+		.compare,
+		.compare tbody,
+		.compare tr,
+		.compare th,
+		.compare td {
 			display: block;
+			min-width: 0;
+			width: auto;
+		}
+		.compare thead {
+			display: none;
+		}
+		.compare tr {
+			padding: var(--space-3) 0;
+		}
+		.compare td::before {
+			content: attr(data-label) ': ';
+			font-family: var(--poster);
+			text-transform: uppercase;
+		}
+		.compare td.women::before {
+			color: var(--pink);
 		}
 		.tilt-l,
 		.tilt-r {
