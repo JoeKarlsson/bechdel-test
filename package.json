@@ -28,7 +28,10 @@
 	"scripts": {
 		"analyze": "node scripts/analyze.js",
 		"test": "jest",
-		"lint": "eslint src scripts"
+		"lint": "eslint src scripts",
+		"match": "node scripts/match.js",
+		"eval": "node scripts/eval.js",
+		"ratings": "node scripts/fetch-ratings.js"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.2",

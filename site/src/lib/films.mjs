@@ -27,8 +27,6 @@ export function aiModelOf(aiModelId) {
 
 // How many bars the scene-by-scene timeline gets, whatever the film's length
 export const TIMELINE_BARS = 48;
-// Below this many attributed lines, a film's dialogue data is treated as unusable
-export const MIN_USABLE_LINES = 50;
 
 /** "Evil Dead II: Dead by Dawn (1987)" -> "Evil Dead II: Dead by Dawn" */
 export function cleanTitle(title) {
@@ -59,75 +57,19 @@ export function toNumber(value) {
 	return Number.isFinite(n) ? n : null;
 }
 
-// Script parsing leaves noise in the speaker field: scene headings ("POLICE
-// STATION - DAY 52"), page marks ("* *"), and extensions like "(V.O.)".
-const SCENE_HEADING = /^(INT|EXT)\b|\s-\s|\b(DAY|NIGHT|MORNING|EVENING|LATER|CONTINUOUS)\b(\s\d+)?$/;
-
-/** A clean speaker name, or null when the field isn't a person */
-export function cleanSpeaker(raw) {
-	const name = String(raw ?? '')
-		.replace(/\(.*?\)/g, '')
-		.replace(/\s+/g, ' ')
-		.trim();
-	if (!/[A-Za-z]{2}/.test(name)) return null;
-	if (SCENE_HEADING.test(name.toUpperCase())) return null;
-	// Page furniture ("CONTINUED:") and dialogue that the parser mistook for a name
-	// ("ALRIGHT, NOW ARE YOU STRAIGHT?") are not speakers
-	if (/CONTINUED|[!?,:;]/i.test(name) || name.split(' ').length > 4) return null;
-	return name;
-}
-
-/**
- * Looks up a speaker's gender from the cast list, matching any word of the
- * character's name ("BONEY" matches "Detective Rhonda Boney"). The cast list
- * uses TMDB codes: "1" woman, "2" man. Returns "w", "m" or null when unknown.
- */
-export function buildGenderLookup(actors = []) {
-	const byWord = new Map();
-	for (const a of actors) {
-		if (!a?.character || (a.actorActress !== '1' && a.actorActress !== '2')) continue;
-		const g = a.actorActress === '1' ? 'w' : 'm';
-		for (const word of a.character.toUpperCase().replace(/[^A-Z ]/g, ' ').split(/\s+/)) {
-			// Skip short words and titles that many characters share
-			if (word.length < 3 || ['THE', 'MRS', 'MISS', 'OFFICER', 'DETECTIVE', 'DOCTOR', 'AGENT'].includes(word)) continue;
-			if (!byWord.has(word)) byWord.set(word, g);
-		}
-	}
-	return (speaker) => {
-		const words = String(speaker).toUpperCase().replace(/[^A-Z ]/g, ' ').split(/\s+/).filter(Boolean);
-		for (const w of words) if (byWord.has(w)) return byWord.get(w);
-		return null;
-	};
-}
-
-/** Lines per speaker, most first, with gender where the cast list knows it */
-export function speakersFrom(dialogue = [], genderOf) {
-	const counts = new Map();
-	for (const line of dialogue) {
-		const name = cleanSpeaker(line?.character);
-		if (!name) continue;
-		counts.set(name, (counts.get(name) ?? 0) + 1);
-	}
-	return [...counts]
-		.map(([name, lines]) => ({ name: titleCase(name), lines, gender: genderOf(name) }))
-		.sort((a, b) => b.lines - a.lines || a.name.localeCompare(b.name));
-}
-
-/** "THE BAR - DAY 5" -> "The bar"; null for title pages and lines that aren't headings */
-export function scenePlace(content) {
-	const first = String(content ?? '').split('\n')[0].trim();
-	const match = first.match(/^(?:(?:INT|EXT)\.?\s*)?(.+?)\s+-\s+.+$/i);
-	if (!match) return null;
-	const place = match[1].replace(/^[-\s.]+/, '').trim();
-	return place ? place.charAt(0) + place.slice(1).toLowerCase() : null;
+/** Lines per speaker, most first, from the parsed script `npm run analyze` stores */
+export function speakersFrom(script) {
+	return script.speakers.map((s) => ({ name: titleCase(s.name), lines: s.lines, gender: s.gender }));
 }
 
 /**
  * Women's and men's lines across the film, in `bars` even groups of scenes,
  * with where each group takes place and who speaks most in it
  */
-export function timelineFrom(scenes = [], genderOf, bars = TIMELINE_BARS) {
-	if (!scenes.length) return [];
+export function timelineFrom(script, bars = TIMELINE_BARS) {
+	const { scenes, speakers } = script;
+	// A script with no scene headings parses as one scene: nothing to plot
+	if (scenes.length < 2) return [];
 	const per = Math.max(1, Math.ceil(scenes.length / bars));
 	const out = [];
 	for (let i = 0; i < scenes.length; i += per) {
@@ -137,20 +79,17 @@ export function timelineFrom(scenes = [], genderOf, bars = TIMELINE_BARS) {
 		const voices = new Map();
 		const places = [];
 		for (const scene of group) {
-			const place = scenePlace(scene?.content);
-			if (place && !places.includes(place)) places.push(place);
-			for (const line of scene?.dialogue ?? []) {
-				const name = cleanSpeaker(line?.character);
-				if (!name) continue;
-				const g = genderOf(name);
-				if (g === 'w') w++;
-				else if (g === 'm') m++;
-				const key = titleCase(name);
-				voices.set(key, { name: key, gender: g, lines: (voices.get(key)?.lines ?? 0) + 1 });
+			if (scene.place && !places.includes(scene.place)) places.push(scene.place);
+			for (const [index, lines] of Object.entries(scene.lines)) {
+				const speaker = speakers[index];
+				if (speaker.gender === 'w') w += lines;
+				else if (speaker.gender === 'm') m += lines;
+				const name = titleCase(speaker.name);
+				voices.set(name, { name, gender: speaker.gender, lines: (voices.get(name)?.lines ?? 0) + lines });
 			}
 		}
-		const speakers = [...voices.values()].sort((a, b) => b.lines - a.lines).slice(0, 4);
-		out.push({ from: i + 1, to: i + group.length, w, m, places: places.slice(0, 3), speakers });
+		const top = [...voices.values()].sort((a, b) => b.lines - a.lines).slice(0, 4);
+		out.push({ from: i + 1, to: i + group.length, w, m, places: places.slice(0, 3), speakers: top });
 	}
 	return out;
 }
@@ -271,11 +210,11 @@ export function normalizeFilm(raw) {
 	const score = toNumber(b.bechdelScore) ?? 0;
 	const year = toNumber(raw.year);
 	const actors = list(raw.actors);
-	const genderOf = buildGenderLookup(actors);
 	const ea = raw.enhancedAnalytics;
-	const speakers = speakersFrom(ea?.characterDialogue, genderOf);
-	// Lines by gender; "unknown" are speakers the cast list can't place (nicknames,
-	// minor parts, parsing mistakes). Pages show that share instead of hiding it.
+	if (!raw.script) throw new Error(`${raw.title} has no parsed script: run npm run analyze -- --force --no-ai on it`);
+	const speakers = speakersFrom(raw.script);
+	// Lines by gender; "unknown" are speakers the analysis couldn't place
+	// (crowds, minor parts). Pages show that share instead of hiding it.
 	const knownLines = speakers.reduce(
 		(acc, s) => {
 			acc[s.gender ?? 'unknown'] += s.lines;
@@ -283,9 +222,6 @@ export function normalizeFilm(raw) {
 		},
 		{ w: 0, m: 0, unknown: 0 },
 	);
-	// Fewer lines than this means the script didn't parse (Dawn of the Dead's
-	// export has dialogue in the speaker field), so the dialogue charts are skipped
-	const dialogueUsable = knownLines.w + knownLines.m + knownLines.unknown >= MIN_USABLE_LINES;
 	const castWithGender = actors.filter((a) => a.actorActress === '1' || a.actorActress === '2');
 	const readers = raw.bechdelData && toNumber(raw.bechdelData.rating) !== null
 		? { score: toNumber(raw.bechdelData.rating), dubious: raw.bechdelData.dubious === 1, id: raw.bechdelData.id ?? null }
@@ -326,11 +262,11 @@ export function normalizeFilm(raw) {
 		castCounts: castWithGender.length
 			? { w: castWithGender.filter((a) => a.actorActress === '1').length, m: castWithGender.filter((a) => a.actorActress === '2').length }
 			: null,
-		speakers: dialogueUsable ? speakers : [],
-		lines: dialogueUsable ? knownLines : null,
-		timeline: dialogueUsable ? timelineFrom(ea?.keyScenes, genderOf) : [],
-		sceneCount: list(ea?.keyScenes).length,
-		dialogueCount: list(ea?.characterDialogue).length,
+		speakers,
+		lines: knownLines,
+		timeline: timelineFrom(raw.script),
+		sceneCount: raw.script.scenes.length,
+		dialogueCount: raw.script.dialogueLines,
 		ai: aiFrom(ea),
 	};
 }

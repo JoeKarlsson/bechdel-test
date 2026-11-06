@@ -160,35 +160,8 @@ const createCondensedScript = (characterDialogue) => {
 	return condensed.trim();
 };
 
-/**
- * Extract key scenes for focused analysis
- * @param {string} script - Original script
- * @returns {Array} Array of key scenes
- */
-const extractKeyScenes = (script) => {
-	const scenes = script.split(/(?:INT\.|EXT\.|INTERIOR|EXTERIOR)/i);
-	const keyScenes = [];
-
-	scenes.forEach((scene, index) => {
-		if (scene.trim().length > 100) { // Only include substantial scenes
-			const dialogue = extractCharacterDialogue(scene);
-			if (dialogue.length > 0) {
-				keyScenes.push({
-					sceneNumber: index,
-					content: scene.trim(),
-					dialogue,
-					characterCount: new Set(dialogue.map(d => d.character)).size
-				});
-			}
-		}
-	});
-
-	return keyScenes;
-};
-
 module.exports = {
 	cleanScript,
 	extractCharacterDialogue,
-	extractKeyScenes,
 	createCondensedScript
 };

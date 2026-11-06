@@ -5,11 +5,8 @@ import {
 	slugify,
 	rulesFromScore,
 	toNumber,
-	cleanSpeaker,
-	buildGenderLookup,
 	speakersFrom,
 	timelineFrom,
-	scenePlace,
 	relatedFilms,
 	loadFilms,
 	aiModelOf,
@@ -41,54 +38,26 @@ test('toNumber handles N/A and strings', () => {
 	assert.equal(toNumber(null), null);
 });
 
-test('cleanSpeaker drops noise and extensions', () => {
-	assert.equal(cleanSpeaker('NICK (V.O.)'), 'NICK');
-	assert.equal(cleanSpeaker("AMY (CONT'D)"), 'AMY');
-	assert.equal(cleanSpeaker('* *'), null);
-	assert.equal(cleanSpeaker('POLICE STATION - DAY 52'), null);
-	assert.equal(cleanSpeaker('INT. BAR'), null);
-	assert.equal(cleanSpeaker('EARNEST GIRL'), 'EARNEST GIRL');
-	assert.equal(cleanSpeaker('CONTINUED:'), null);
-	assert.equal(cleanSpeaker('ALRIGHT, NOW ARE YOU STRAIGHT?'), null);
-	assert.equal(cleanSpeaker('BETTER WITH FOLK KNOCKIN EACH OTHER OFF THE'), null);
-});
-
-test('gender lookup matches any word of a character name, skipping titles', () => {
-	const genderOf = buildGenderLookup([
-		{ character: 'Detective Rhonda Boney', actorActress: '1' },
-		{ character: 'Officer James Gilpin', actorActress: '2' },
-		{ character: 'Nobody', actorActress: undefined },
-	]);
-	assert.equal(genderOf('BONEY'), 'w');
-	assert.equal(genderOf('GILPIN'), 'm');
-	assert.equal(genderOf('OFFICER'), null);
-	assert.equal(genderOf('NOBODY'), null);
-});
-
-test('speakersFrom counts lines per cleaned speaker', () => {
-	const genderOf = buildGenderLookup([{ character: 'Amy Dunne', actorActress: '1' }]);
-	const speakers = speakersFrom(
-		[{ character: 'AMY' }, { character: 'AMY (V.O.)' }, { character: 'NICK' }, { character: '* *' }],
-		genderOf,
-	);
-	assert.deepEqual(speakers, [
+test('speakersFrom title-cases the stored speakers, most lines first', () => {
+	const script = { speakers: [{ name: 'AMY', lines: 2, gender: 'w' }, { name: 'MRS. ELLIOTT', lines: 1, gender: null }] };
+	assert.deepEqual(speakersFrom(script), [
 		{ name: 'Amy', lines: 2, gender: 'w' },
-		{ name: 'Nick', lines: 1, gender: null },
+		{ name: 'Mrs. Elliott', lines: 1, gender: null },
 	]);
 });
 
 test('timelineFrom groups scenes into at most the requested bars', () => {
-	const genderOf = (n) => (n === 'AMY' ? 'w' : n === 'NICK' ? 'm' : null);
-	const scenes = Array.from({ length: 10 }, (_, i) => ({ dialogue: i % 2 ? [{ character: 'AMY' }] : [{ character: 'NICK' }, { character: 'NICK' }] }));
-	const bars = timelineFrom(scenes, genderOf, 4);
+	const speakers = [{ name: 'NICK', gender: 'm' }, { name: 'AMY', gender: 'w' }];
+	const scenes = Array.from({ length: 10 }, (_, i) => ({ place: i === 0 ? 'The bar' : null, lines: i % 2 ? { 1: 1 } : { 0: 2 } }));
+	const bars = timelineFrom({ scenes, speakers }, 4);
 	assert.equal(bars.length, 4);
-	assert.deepEqual({ ...bars[0], speakers: undefined }, { from: 1, to: 3, w: 1, m: 4, places: [], speakers: undefined });
+	assert.deepEqual({ ...bars[0], speakers: undefined }, { from: 1, to: 3, w: 1, m: 4, places: ['The bar'], speakers: undefined });
 	assert.deepEqual(bars[0].speakers, [
 		{ name: 'Nick', gender: 'm', lines: 4 },
 		{ name: 'Amy', gender: 'w', lines: 1 },
 	]);
 	assert.deepEqual({ ...bars.at(-1), speakers: undefined }, { from: 10, to: 10, w: 1, m: 0, places: [], speakers: undefined });
-	assert.deepEqual(timelineFrom([], genderOf), []);
+	assert.deepEqual(timelineFrom({ scenes: scenes.slice(0, 1), speakers }), []);
 });
 
 test('aiModelOf names the model that wrote an analysis', () => {
@@ -104,26 +73,21 @@ test('the real export loads with unique slugs and sane numbers', () => {
 	const gone = films.find((f) => f.slug === 'gone-girl-2014');
 	assert.ok(gone, 'Gone Girl is in the export');
 	assert.equal(gone.bechdel.score, 3);
-	assert.equal(gone.bechdel.scenesTotal, 290);
+	assert.equal(gone.bechdel.scenesTotal, 231);
 	assert.equal(gone.readers.score, 3);
-	assert.equal(gone.ai.review.scenes.length, 1);
+	// Its AI review of the old analysis's passing scenes was dropped on re-scoring
+	assert.equal(gone.ai.review, null);
 	assert.equal(gone.ai.model.name, 'Claude 3.5 Haiku');
 	assert.equal(gone.speakers[0].name, 'Nick');
-	assert.ok(films.filter((f) => f.bechdel.pass).length === 8);
+	assert.equal(films.filter((f) => f.bechdel.pass).length, 23);
 	for (const f of films) assert.ok(f.popularity >= 1);
-	// Its script didn't parse: the speaker field holds dialogue, so no charts
-	const dawn = films.find((f) => f.slug === 'dawn-of-the-dead-2004');
-	assert.equal(dawn.lines, null);
+	// Its script has no scene headings: one scene, so no timeline to draw
+	const dawn = films.find((f) => f.slug === 'dawn-of-the-dead-1978');
+	assert.ok(dawn.lines.w > 0);
 	assert.deepEqual(dawn.timeline, []);
 	assert.ok(gone.lines.w > 0 && gone.timeline.length > 0);
 });
 
-test('scenePlace reads the place out of a scene heading', () => {
-	assert.equal(scenePlace('THE BAR - DAY 5\nGo is washing mugs.'), 'The bar');
-	assert.equal(scenePlace('INT. POLICE STATION HALLWAY - DAY'), 'Police station hallway');
-	assert.equal(scenePlace('GONE GIRL\nAugust 29, 2013'), null);
-	assert.equal(scenePlace(''), null);
-});
 
 test('related films share genres first, then director, then era', () => {
 	const f = (id, genres, directors, year, popularity) => ({ id, genres, directors, year, popularity });

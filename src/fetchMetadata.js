@@ -1,5 +1,5 @@
-// Film metadata for one script: OMDB (title, year, plot, IMDb id) then TMDB
-// (cast with genders, poster and backdrop). Responses are cached on disk under
+// Film metadata by IMDb id: OMDB (title, year, plot, ratings) and TMDB (cast
+// with genders, poster and backdrop). Responses are cached on disk under
 // .cache/http/, so re-running a film doesn't call the APIs again; delete that
 // folder to refetch. bechdeltest.com's API is gone (HTTP 410), so readers'
 // scores are no longer fetched; films that already have one keep it.
@@ -45,35 +45,42 @@ const titleFromScriptName = scriptName => {
 	return match ? { title: match[1], year: match[2] } : { title: words, year: null };
 };
 
-const fetchOmdb = async (title, year) => {
-	const params = new URLSearchParams({ t: title, plot: 'full', r: 'json', apikey: requireKey('OMDB') });
-	if (year) params.set('y', year);
-	const omdb = await fetchJsonCached(`https://www.omdbapi.com/?${params}`);
+const fetchOmdb = async params => {
+	const query = new URLSearchParams({ ...params, plot: 'full', r: 'json', apikey: requireKey('OMDB') });
+	const omdb = await fetchJsonCached(`https://www.omdbapi.com/?${query}`);
 	if (omdb.Response === 'False') {
-		throw new Error(`OMDB has no match for "${title}"${year ? ` (${year})` : ''}: ${omdb.Error}`);
+		throw new Error(`OMDB has no match for ${JSON.stringify(params)}: ${omdb.Error}`);
 	}
 	return omdb;
+};
+
+/**
+ * Best guess at a script's film from its file name (a trailing year pins it).
+ * Only for scripts not yet in scripts/manifest.json; check the guess there.
+ */
+const matchScriptByTitle = async scriptName => {
+	const { title, year } = titleFromScriptName(scriptName);
+	const omdb = await fetchOmdb(year ? { t: title, y: year } : { t: title });
+	return { imdbId: omdb.imdbID, title: omdb.Title, year: omdb.Year };
 };
 
 const fetchTmdb = (imdbId, resource, query = '') =>
 	fetchJsonCached(`https://api.themoviedb.org/3/movie/${imdbId}/${resource}?api_key=${requireKey('THEMOVIEDB')}${query}`);
 
 /**
- * Everything the analysis and the film page need about one film.
- * Throws if OMDB has no match or TMDB has no cast: without genders the
- * Bechdel analysis is meaningless.
+ * Everything the analysis and the film page need about one film. Throws if
+ * TMDB has no cast: without genders the Bechdel analysis is meaningless.
  */
-const fetchMetadata = async scriptName => {
-	const { title, year } = titleFromScriptName(scriptName);
-	const omdb = await fetchOmdb(title, year);
-	const [credits, images] = await Promise.all([
-		fetchTmdb(omdb.imdbID, 'credits'),
-		fetchTmdb(omdb.imdbID, 'images', '&language=en&include_image_language=en,null'),
+const fetchMetadata = async imdbId => {
+	const [omdb, credits, images] = await Promise.all([
+		fetchOmdb({ i: imdbId }),
+		fetchTmdb(imdbId, 'credits'),
+		fetchTmdb(imdbId, 'images', '&language=en&include_image_language=en,null'),
 	]);
 	if (!Array.isArray(credits.cast) || credits.cast.length === 0) {
-		throw new Error(`TMDB has no cast for ${omdb.Title} (${omdb.imdbID})`);
+		throw new Error(`TMDB has no cast for ${omdb.Title} (${imdbId})`);
 	}
 	return { omdb, cast: credits.cast, images };
 };
 
-module.exports = { fetchMetadata, titleFromScriptName };
+module.exports = { fetchMetadata, matchScriptByTitle, titleFromScriptName };

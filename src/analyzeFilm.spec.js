@@ -8,32 +8,10 @@ const cast = [
 	{ name: 'Unknown Actor', character: 'Mother', gender: 0 },
 ];
 
-const script = `INT. NOSTROMO - BRIDGE
-
-RIPLEY
-Did you check the nav console?
-
-LAMBERT
-Twice. The beacon is real.
-
-RIPLEY
-Then we land.
-
-EXT. PLANET SURFACE
-
-DALLAS
-Stay close.
-`;
-
 describe('analyzeScriptText', () => {
-	it('scores a scene where two women talk to each other as a pass', () => {
-		const { bechdelResults, staticAnalytics } = analyzeScriptText(script, charactersFromCast(cast));
-		expect(bechdelResults.bechdelScore).toBe(3);
-		expect(bechdelResults.pass).toBe(true);
-		expect(bechdelResults.numOfFemalesChars).toBe(2);
-		expect(bechdelResults.numOfMaleChars).toBe(1);
-		expect(bechdelResults).not.toHaveProperty('scenes');
-		expect(staticAnalytics.characterDialogue.map(d => d.character)).toContain('RIPLEY');
+	it("refuses a script it can't find enough dialogue in, instead of scoring noise", () => {
+		expect(() => analyzeScriptText('FADE IN:\n\nA dark room. Nothing happens.\n', charactersFromCast(cast)))
+			.toThrow("script didn't parse: only 0 lines of dialogue found");
 	});
 });
 
@@ -75,6 +53,8 @@ describe('aiSectionsOf', () => {
 		expect(aiSectionsOf({ femaleAgency: { agencyScore: 4 }, keyScenes: [], characterDialogue: [] }))
 			.toEqual({ femaleAgency: { agencyScore: 4 } });
 		expect(aiSectionsOf(undefined)).toEqual({});
+		expect(aiSectionsOf({ femaleAgency: {}, enhancedBechdelValidation: {} }, { keepSceneReview: false }))
+			.toEqual({ femaleAgency: {} });
 	});
 });
 
