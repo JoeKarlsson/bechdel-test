@@ -8,6 +8,10 @@ import { join, resolve } from 'node:path';
 // from this file: Astro bundles it into a different directory at build time.
 const DATA_DIR = resolve(process.cwd(), '../data/films');
 
+// The model the full-stack app's analysis calls (src/server/methods/claudeAnalyzer.js).
+// The export doesn't record it per film, so update this when that changes.
+export const AI_MODEL = { name: 'Claude 3.5 Haiku', id: 'claude-3-5-haiku-20241022', maker: 'Anthropic' };
+
 // How many bars the scene-by-scene timeline gets, whatever the film's length
 export const TIMELINE_BARS = 48;
 // Below this many attributed lines, a film's dialogue data is treated as unusable
@@ -96,7 +100,19 @@ export function speakersFrom(dialogue = [], genderOf) {
 		.sort((a, b) => b.lines - a.lines || a.name.localeCompare(b.name));
 }
 
-/** Women's and men's lines across the film, in `bars` even groups of scenes */
+/** "THE BAR - DAY 5" -> "The bar"; null for title pages and lines that aren't headings */
+export function scenePlace(content) {
+	const first = String(content ?? '').split('\n')[0].trim();
+	const match = first.match(/^(?:(?:INT|EXT)\.?\s*)?(.+?)\s+-\s+.+$/i);
+	if (!match) return null;
+	const place = match[1].replace(/^[-\s.]+/, '').trim();
+	return place ? place.charAt(0) + place.slice(1).toLowerCase() : null;
+}
+
+/**
+ * Women's and men's lines across the film, in `bars` even groups of scenes,
+ * with where each group takes place and who speaks most in it
+ */
 export function timelineFrom(scenes = [], genderOf, bars = TIMELINE_BARS) {
 	if (!scenes.length) return [];
 	const per = Math.max(1, Math.ceil(scenes.length / bars));
@@ -105,17 +121,44 @@ export function timelineFrom(scenes = [], genderOf, bars = TIMELINE_BARS) {
 		const group = scenes.slice(i, i + per);
 		let w = 0;
 		let m = 0;
+		const voices = new Map();
+		const places = [];
 		for (const scene of group) {
+			const place = scenePlace(scene?.content);
+			if (place && !places.includes(place)) places.push(place);
 			for (const line of scene?.dialogue ?? []) {
 				const name = cleanSpeaker(line?.character);
-				const g = name && genderOf(name);
+				if (!name) continue;
+				const g = genderOf(name);
 				if (g === 'w') w++;
 				else if (g === 'm') m++;
+				const key = titleCase(name);
+				voices.set(key, { name: key, gender: g, lines: (voices.get(key)?.lines ?? 0) + 1 });
 			}
 		}
-		out.push({ from: i + 1, to: i + group.length, w, m });
+		const speakers = [...voices.values()].sort((a, b) => b.lines - a.lines).slice(0, 4);
+		out.push({ from: i + 1, to: i + group.length, w, m, places: places.slice(0, 3), speakers });
 	}
 	return out;
+}
+
+/**
+ * Films most like this one: shared genres count most, then the same director,
+ * then how close the years are. Verdict doesn't matter; each tape shows its own.
+ */
+export function relatedFilms(film, films, n = 6) {
+	const score = (other) => {
+		const genres = other.genres.filter((g) => film.genres.includes(g)).length;
+		const director = other.directors.some((d) => film.directors.includes(d)) ? 1 : 0;
+		const years = film.year && other.year ? Math.abs(film.year - other.year) : 50;
+		return genres * 10 + director * 15 + Math.max(0, 10 - years / 2);
+	};
+	return films
+		.filter((f) => f.id !== film.id)
+		.map((f) => ({ f, s: score(f) }))
+		.sort((a, b) => b.s - a.s || a.f.popularity - b.f.popularity)
+		.slice(0, n)
+		.map(({ f }) => f);
 }
 
 function titleCase(name) {

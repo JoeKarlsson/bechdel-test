@@ -1,10 +1,29 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Scribble from '../components/Scribble.astro';
+import { loadFilms, AI_MODEL } from '../lib/films.mjs';
 import theRule from '../assets/about/the-rule-excerpt.jpg';
 import alisonBechdel from '../assets/about/alison-bechdel.jpg';
 
 const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
+const films = loadFilms();
+const runs = films.map((f) => f.ai?.analyzedAt).filter((d): d is string => !!d).sort();
+const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const firstRun = runs.length ? new Date(runs[0]) : null;
+const lastRun = runs.length ? new Date(runs.at(-1)!) : null;
+// "on 7 November 2025", "on 7 and 8 November 2025", "between 3 and 9 November 2025",
+// or "between 30 October 2025 and 2 November 2025"
+const runDates = (() => {
+	if (!firstRun || !lastRun) return null;
+	const a = day(firstRun.toISOString());
+	const b = day(lastRun.toISOString());
+	if (a === b) return `on ${a}`;
+	const sameMonth = firstRun.getUTCMonth() === lastRun.getUTCMonth() && firstRun.getUTCFullYear() === lastRun.getUTCFullYear();
+	if (!sameMonth) return `between ${a} and ${b}`;
+	const days = lastRun.getUTCDate() - firstRun.getUTCDate();
+	return days === 1 ? `on ${firstRun.getUTCDate()} and ${b}` : `between ${firstRun.getUTCDate()} and ${b}`;
+})();
 ---
 
 <Base
@@ -94,6 +113,63 @@ const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 				parse, the film's page says so.
 			</p>
 
+			<figure class="how" aria-labelledby="how-caption">
+				<figcaption id="how-caption" class="sr-only">How bechdel.io checks a film, step by step</figcaption>
+				<ol class="steps">
+					<li class="step paper">
+						<span class="step-n">1</span>
+						<h3>The script</h3>
+						<p>We start from the film's shooting script, from the Internet Movie Script Database.</p>
+					</li>
+					<li class="arrow" aria-hidden="true"><Scribble kind="arrow" class="down" /></li>
+					<li class="step paper">
+						<span class="step-n">2</span>
+						<h3>Scenes</h3>
+						<p>Every scene heading, like <span class="slug">INT. THE BAR - DAY</span>, starts a new scene.</p>
+					</li>
+					<li class="arrow" aria-hidden="true"><Scribble kind="arrow" class="down" /></li>
+					<li class="step paper">
+						<span class="step-n">3</span>
+						<h3>Who's talking</h3>
+						<p>Each line goes to the character who says it. The cast list tells us which characters are women.</p>
+					</li>
+					<li class="arrow" aria-hidden="true"><Scribble kind="arrow" class="down" /></li>
+					<li class="step paper rules-step">
+						<span class="step-n">4</span>
+						<h3>The three rules, in order</h3>
+						<ol class="rule-chain">
+							<li>Two women?</li>
+							<li>Talking to each other in a scene?</li>
+							<li>With no man named?</li>
+						</ol>
+						<p>Each rule met adds a point. A film that fails one rule isn't checked against the next.</p>
+						<p class="result"><span class="stamp-small">Bechdel score, 0 to 3</span></p>
+					</li>
+				</ol>
+				<div class="alongside">
+					<div class="side">
+						<h3>Second opinions</h3>
+						<p>An AI re-reads every scene the parser passed. bechdeltest.com readers rate the film too.</p>
+					</div>
+					<div class="side">
+						<h3>The deeper read</h3>
+						<p>The AI reads the whole script for agency, stereotypes, bias, diversity, power, and how women and men are written.</p>
+					</div>
+					<div class="side">
+						<h3>The film</h3>
+						<p>Posters, cast, plot, ratings and awards come from TMDB and OMDb.</p>
+					</div>
+				</div>
+			</figure>
+
+			<h3>The AI</h3>
+			<p>
+				The AI analysis uses {AI_MODEL.maker}'s {AI_MODEL.name} (<code>{AI_MODEL.id}</code>).
+				{runDates && ` It read all ${runs.length} films ${runDates}.`}
+				Each film's page says when its analysis ran. AI readings can be wrong, which is why the film pages show the second
+				opinions next to our own score.
+			</p>
+
 			<h2>Why we built it</h2>
 			<p>
 				This digital humanities project, by Joe and me, comes from a shared love of film, feminism and what technology can do. It
@@ -136,7 +212,7 @@ const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 			</ul>
 
 			<h2>Thanks</h2>
-			<p>bechdel.io stands on other people's work. Thank you to:</p>
+			<p>Thank you to:</p>
 			<ul class="links">
 				<li>
 					<a href="https://bechdeltest.com/" {...ext}>The Bechdel Test Movie List</a> and its readers, whose ratings are the
@@ -190,6 +266,108 @@ const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 			width: 300px;
 			margin: 0 calc(-1 * (300px + var(--space-6))) var(--space-4) 0;
 		}
+	}
+	/* How it works: four steps down the left, what runs alongside on the right */
+	.how {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--space-5);
+		margin: var(--space-6) 0;
+	}
+	@media (min-width: 900px) {
+		.how {
+			grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+			width: min(1100px, calc(100vw - 2 * var(--gutter)));
+		}
+	}
+	.steps {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.step {
+		position: relative;
+		padding: var(--space-4) var(--space-4) var(--space-4) 4.5rem;
+	}
+	.step:nth-child(4n + 1) {
+		transform: rotate(-0.8deg);
+	}
+	.step:nth-child(4n + 3) {
+		transform: rotate(0.8deg);
+	}
+	.step h3 {
+		margin: 0 0 var(--space-1);
+		font-size: 1.5rem;
+	}
+	.step p {
+		margin: 0;
+	}
+	.step-n {
+		position: absolute;
+		left: var(--space-3);
+		top: var(--space-3);
+		font-family: var(--poster);
+		font-size: 2.75rem;
+		line-height: 1;
+		color: var(--pink-on-chalk);
+	}
+	.slug {
+		font-family: var(--poster);
+		letter-spacing: normal;
+	}
+	.arrow {
+		display: flex;
+		justify-content: center;
+		height: 3rem;
+		align-items: center;
+	}
+	/* The crayon arrow is drawn heading down and to the left; turn it to point straight down */
+	.arrow :global(.down) {
+		transform: rotate(-37deg) scale(1.3);
+	}
+	.rule-chain {
+		margin: var(--space-2) 0 var(--space-3);
+		padding-left: var(--space-4);
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		text-transform: uppercase;
+	}
+	.rule-chain li + li {
+		margin-top: var(--space-1);
+	}
+	.result {
+		margin-top: var(--space-3) !important;
+	}
+	.stamp-small {
+		display: inline-block;
+		background: var(--pink);
+		color: var(--ink);
+		font-family: var(--poster);
+		font-size: 1.375rem;
+		text-transform: uppercase;
+		padding: var(--space-1) var(--space-3);
+		transform: rotate(-2deg);
+	}
+	.alongside {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		align-self: center;
+	}
+	.side {
+		background: var(--panel);
+		padding: var(--space-4);
+	}
+	.side h3 {
+		margin: 0 0 var(--space-2);
+		font-size: 1.375rem;
+		color: var(--pink);
+	}
+	.side p {
+		margin: 0;
+	}
+	code {
+		font-size: 0.9em;
 	}
 	.links li + li {
 		margin-top: var(--space-3);
