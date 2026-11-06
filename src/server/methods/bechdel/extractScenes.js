@@ -17,7 +17,8 @@ const extractScenes = movieScript => {
 	movieScript.split('\n').forEach(line => {
 		for (let i = 0; i < keywords.length; i++) {
 			const keyword = keywords[i];
-			if (isKeywordOnLine(keyword, line)) {
+			// A script that opens on a scene heading has no text before it
+			if (isKeywordOnLine(keyword, line) && subScene !== '') {
 				scenes.push(subScene);
 				subScene = '';
 				break;
