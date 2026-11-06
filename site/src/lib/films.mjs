@@ -8,8 +8,9 @@ import { join, resolve } from 'node:path';
 // from this file: Astro bundles it into a different directory at build time.
 const DATA_DIR = resolve(process.cwd(), '../data/films');
 
-// The model the AI analysis calls (src/claudeAnalyzer.js).
-// The export doesn't record it per film, so update this when that changes.
+// The model that wrote the AI analysis of the films on the site today. Films
+// analyzed from 2026-11-06 on record theirs as enhancedAnalytics.aiModel
+// (src/aiAnalyzer.js); this label is only right while none of those ship.
 export const AI_MODEL = { name: 'Claude 3.5 Haiku', id: 'claude-3-5-haiku-20241022', maker: 'Anthropic' };
 
 // How many bars the scene-by-scene timeline gets, whatever the film's length

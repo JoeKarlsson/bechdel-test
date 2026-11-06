@@ -8,7 +8,8 @@
  *   npm run analyze -- --no-ai ...               skip the AI second opinion (a redone film keeps its old one)
  *
  * Name a script "deep-cover-1992.txt" to pin the year when the title alone
- * matches the wrong film. Keys come from .env: OMDB, THEMOVIEDB, CLAUDE_API_KEY.
+ * matches the wrong film. Settings come from .env: OMDB, THEMOVIEDB, and for the
+ * AI read LITELLM_BASE_URL, LITELLM_API_KEY, AI_MODEL (a LiteLLM alias).
  */
 const fs = require('fs');
 const path = require('path');
@@ -48,7 +49,8 @@ const loadExistingFilms = () => {
 	return byImdbId;
 };
 
-const analyzeOne = async (scriptPath, { force, withAi, existingFilms, claimedBy }) => {
+const analyzeOne = async (scriptPath, context) => {
+	const { force, withAi, existingFilms, claimedBy } = context;
 	const script = path.basename(scriptPath);
 	const { omdb, cast, images } = await fetchMetadata(path.basename(scriptPath, '.txt'));
 	const film = `${omdb.Title} (${omdb.Year})`;
@@ -68,7 +70,7 @@ const analyzeOne = async (scriptPath, { force, withAi, existingFilms, claimedBy 
 	const characters = charactersFromCast(cast);
 	const { bechdelResults, staticAnalytics, cleaned } = analyzeScriptText(scriptText, characters);
 	const ai = withAi
-		? await runAiAnalysis({ apiKey: process.env.CLAUDE_API_KEY, cleaned, characters, bechdelResults })
+		? await runAiAnalysis({ gateway: context.gateway, cleaned, characters, bechdelResults })
 		: aiSectionsOf(existing?.enhancedAnalytics);
 
 	const record = buildFilmRecord({
@@ -109,10 +111,13 @@ const main = async () => {
 		process.loadEnvFile(path.join(ROOT, '.env'));
 	}
 	const options = parseArgs(process.argv.slice(2));
-	if (options.withAi && !process.env.CLAUDE_API_KEY) {
-		throw new Error('CLAUDE_API_KEY is not set. Add it to .env, or pass --no-ai.');
+	const gateway = { baseUrl: process.env.LITELLM_BASE_URL, apiKey: process.env.LITELLM_API_KEY, model: process.env.AI_MODEL };
+	const missing = Object.entries({ LITELLM_BASE_URL: gateway.baseUrl, LITELLM_API_KEY: gateway.apiKey, AI_MODEL: gateway.model })
+		.filter(([, value]) => !value).map(([name]) => name);
+	if (options.withAi && missing.length > 0) {
+		throw new Error(`${missing.join(', ')} not set. Add to .env (see .env.example), or pass --no-ai.`);
 	}
-	const context = { ...options, existingFilms: loadExistingFilms(), claimedBy: new Map() };
+	const context = { ...options, gateway, existingFilms: loadExistingFilms(), claimedBy: new Map() };
 
 	const results = new Array(options.scriptPaths.length);
 	let next = 0;

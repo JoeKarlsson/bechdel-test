@@ -32,11 +32,11 @@ The site at https://bechdel.joekarlsson.com/ is fully static: an Astro build in 
 scripts/<title>.txt ──npm run analyze──▶ data/films/<id>.json ──site/ build──▶ GitHub Pages
 ```
 
-For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and (optionally) asks Claude for a second opinion and a deeper read. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and (optionally) asks an AI model, through the homelab LiteLLM gateway, for a second opinion and a deeper read. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Add films
 
-Needs Node 22 or later, and API keys for [OMDB](https://www.omdbapi.com/apikey.aspx), [TMDB](https://www.themoviedb.org/settings/api) and, for the AI read, [Anthropic](https://console.anthropic.com/).
+Needs Node 22 or later, API keys for [OMDB](https://www.omdbapi.com/apikey.aspx) and [TMDB](https://www.themoviedb.org/settings/api), and for the AI read a LiteLLM virtual key (on the LAN or over Tailscale).
 
 ```sh
 git clone https://github.com/JoeKarlsson/bechdel-test

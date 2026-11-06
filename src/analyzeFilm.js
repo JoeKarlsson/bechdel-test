@@ -6,7 +6,7 @@ const extractScenes = require('./bechdel/extractScenes');
 const { scriptAnalysis, scriptGenderAnalytics } = require('./bechdel/scriptAnalysis/scriptAnalysis');
 const castParser = require('./castParser');
 const scriptCleaner = require('./scriptCleaner');
-const ClaudeAnalyzer = require('./claudeAnalyzer');
+const AiAnalyzer = require('./aiAnalyzer');
 
 // The fields of the Bechdel analysis the site reads; the analysis object also
 // carries every scene's full text, which would bloat the JSON.
@@ -43,18 +43,20 @@ const analyzeScriptText = (scriptText, characters) => {
 };
 
 /**
- * The AI second opinion. Throws if any section failed, so a film never ships
- * with a half-empty AI read.
+ * The AI second opinion, through the LiteLLM gateway (`gateway` is
+ * { baseUrl, apiKey, model }). Throws if any section failed, so a film never
+ * ships with a half-empty AI read. Records the model that answered as aiModel.
  */
-const runAiAnalysis = async ({ apiKey, cleaned, characters, bechdelResults }) => {
-	const ai = await new ClaudeAnalyzer(apiKey).analyzeScript(cleaned, characters, bechdelResults);
+const runAiAnalysis = async ({ gateway, cleaned, characters, bechdelResults }) => {
+	const analyzer = new AiAnalyzer(gateway);
+	const ai = await analyzer.analyzeScript(cleaned, characters, bechdelResults);
 	const failed = Object.entries(ai)
 		.filter(([, section]) => section && (section.failed || section.parseError))
 		.map(([name, section]) => `${name}: ${section.error || 'unparseable reply'}`);
 	if (failed.length > 0) {
 		throw new Error(`AI analysis failed (${failed.join('; ')})`);
 	}
-	return ai;
+	return { ...ai, aiModel: analyzer.servedModel };
 };
 
 /** The AI's sections of a stored enhancedAnalytics, without the parsed-script data */

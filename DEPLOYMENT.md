@@ -5,7 +5,7 @@ Everything lives on `develop`. The public site (`site/`) is a static Astro build
 ## Add a film and publish it
 
 ```bash
-# 1. Analyze (needs OMDB, THEMOVIEDB and CLAUDE_API_KEY in .env, see .env.example)
+# 1. Analyze (needs OMDB, THEMOVIEDB and the LITELLM_* settings in .env, see .env.example)
 npm run analyze -- scripts/<title>.txt     # or no arguments for every new script
 
 # 2. In site/: download new posters and backdrops, and render the share cards
