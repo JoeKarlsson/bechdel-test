@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const { fetchMetadata } = require('../src/fetchMetadata');
-const { loadManifest } = require('../src/manifest');
+const { loadManifest, scriptPathFor } = require('../src/manifest');
 const { charactersFromCast, analyzeScriptText } = require('../src/analyzeFilm');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -27,8 +27,13 @@ const main = async () => {
 	for (const [file, imdbId] of Object.entries(loadManifest())) {
 		const truth = imdbId && RATINGS[imdbId];
 		if (!truth) continue;
+		const scriptPath = scriptPathFor(file);
+		if (!scriptPath) {
+			unscored.push(`${file}: not on this machine (a scripts/local/ script)`);
+			continue;
+		}
 		const { cast } = await fetchMetadata(imdbId);
-		const scriptText = fs.readFileSync(path.join(ROOT, 'scripts', file), 'utf8');
+		const scriptText = fs.readFileSync(scriptPath, 'utf8');
 		try {
 			const { bechdelResults } = analyzeScriptText(scriptText, charactersFromCast(cast), GENDER_OVERRIDES[file]);
 			rows.push({ file, title: truth.title, truth: truth.rating, ours: bechdelResults.bechdelScore });
