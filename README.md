@@ -268,7 +268,7 @@ npm run snyk-protect      # Security vulnerability check
 
 ## Deployment
 
-The public site is a static build on GitHub Pages at https://bechdel.joekarlsson.com/. The full-stack server (for adding films) runs locally with `docker compose up -d --build`. See [DEPLOYMENT.md](DEPLOYMENT.md) for both.
+The public site at https://bechdel.joekarlsson.com/ is the Astro project in `site/`, built from the film export in `data/films/` and deployed to GitHub Pages by CI. The full-stack server (for adding films) runs locally with `docker compose up -d --build`. See [DEPLOYMENT.md](DEPLOYMENT.md) for both, and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how they fit together.
 
 ## Troubleshooting
 

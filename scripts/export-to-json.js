@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Export MongoDB film data to static JSON file
+ * Export MongoDB film data for the public site: one file per film in
+ * data/films/<id>.json, which site/ builds from. Films no longer in the
+ * database have their files removed.
  *
  * Usage:
  *   npm run export-data
@@ -17,7 +19,7 @@ const filmSchema = require('../src/server/model/schema');
 
 // Default MongoDB URI
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bechdelTest';
-const OUTPUT_PATH = path.join(__dirname, '../src/app/data/films.json');
+const OUTPUT_DIR = path.join(__dirname, '../data/films');
 
 async function exportFilms() {
   console.log('Connecting to MongoDB...');
@@ -45,19 +47,25 @@ async function exportFilms() {
       console.warn('Warning: No films found in database');
     }
 
-    // Ensure the output directory exists
-    const outputDir = path.dirname(OUTPUT_PATH);
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-      console.log(`Created directory: ${outputDir}`);
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+
+    // One file per film, named by its database id
+    const written = new Set();
+    let bytes = 0;
+    for (const film of films) {
+      const name = `${film._id}.json`;
+      const json = JSON.stringify(film, null, 2);
+      fs.writeFileSync(path.join(OUTPUT_DIR, name), json, 'utf8');
+      written.add(name);
+      bytes += Buffer.byteLength(json, 'utf8');
     }
 
-    // Write to JSON file
-    const jsonContent = JSON.stringify(films, null, 2);
-    fs.writeFileSync(OUTPUT_PATH, jsonContent, 'utf8');
+    // Drop files for films that are no longer in the database
+    const removed = fs.readdirSync(OUTPUT_DIR).filter((f) => f.endsWith('.json') && !written.has(f));
+    for (const f of removed) fs.unlinkSync(path.join(OUTPUT_DIR, f));
 
-    console.log(`Successfully exported ${films.length} films to ${OUTPUT_PATH}`);
-    console.log(`File size: ${(Buffer.byteLength(jsonContent, 'utf8') / 1024).toFixed(2)} KB`);
+    console.log(`Exported ${films.length} films to ${OUTPUT_DIR} (${(bytes / 1024 / 1024).toFixed(1)} MB)`);
+    if (removed.length) console.log(`Removed ${removed.length} films no longer in the database`);
 
     // Print a sample of film titles
     if (films.length > 0) {
