@@ -73,9 +73,12 @@ const description = `Do two women talk to each other about something other than 
 
 			<!-- Old /#/film/<id> links forward to the film's page (scripts/legacy-redirect.ts) -->
 			<script type="application/json" id="legacy-film-slugs" set:html={JSON.stringify(Object.fromEntries(films.map((f) => [f.id, f.slug])))} />
-			<ul class="shelf" data-shelf>
+			<ul class="shelf" data-shelf data-page-size="60">
 				{films.map((film, i) => <Tape film={film} eager={i < 6} />)}
 			</ul>
+			<p class="more" hidden data-shelf-more-wrap>
+				<button type="button" class="more-button" data-shelf-more>Show more</button>
+			</p>
 		</section>
 	</div>
 
@@ -232,5 +235,23 @@ const description = `Do two women talk to each other about something other than 
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 			gap: var(--space-5) var(--space-2);
 		}
+	}
+	.more {
+		margin: var(--space-6) 0 0;
+		text-align: center;
+	}
+	.more-button {
+		font-family: var(--poster);
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		background: var(--pink);
+		color: var(--ink);
+		border: 0;
+		padding: var(--space-3) var(--space-5);
+		min-height: 44px;
+		cursor: pointer;
+	}
+	.more-button:hover {
+		background: var(--chalk);
 	}
 </style>
