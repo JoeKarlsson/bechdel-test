@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-const CACHE_DIR = path.resolve(__dirname, '../../../.cache/http');
+const CACHE_DIR = path.resolve(__dirname, '../.cache/http');
 
 const requireKey = name => {
 	const value = process.env[name];
