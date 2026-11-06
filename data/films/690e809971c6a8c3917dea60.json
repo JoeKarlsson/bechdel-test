@@ -1235,7 +1235,19 @@
           "41": 1
         }
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 18,
+      "words": {
+        "w": 5291,
+        "m": 3623,
+        "unknown": 190
+      },
+      "womenConversations": 37,
+      "menConversations": 11,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/g8nREMC4EYTegZoEGzdmKvpPwXe.jpg",
@@ -1379,52 +1391,62 @@
     {
       "actorName": "Reiko Aylesworth",
       "character": "Letty Mayer",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 32
     },
     {
       "actorName": "Meat Loaf",
       "character": "John (as Meat Loaf Aday)",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 58
     },
     {
       "actorName": "JoBeth Williams",
       "character": "Mrs. Mayer",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 56
     },
     {
       "actorName": "Greg Germann",
       "character": "Dr. Emlee",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 47
     },
     {
       "actorName": "Bruno Campos",
       "character": "Michael",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 31
     },
     {
       "actorName": "Marla Sokoloff",
       "character": "Ruth Mayer",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 24
     },
     {
       "actorName": "Paul Schulze",
       "character": "Thomas",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 43
     },
     {
       "actorName": "David Alan Basche",
       "character": "Paul Lascher",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 37
     },
     {
       "actorName": "Lizette Carrión",
       "character": "Maria",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 33
     },
     {
       "actorName": "Michael Hyatt",
       "character": "Nurse Gates",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 35
     },
     {
       "actorName": "K Callan",
@@ -1542,6 +1564,110 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Ellie Kanner",
+        "gender": "w"
+      },
+      {
+        "job": "Writer",
+        "name": "Carol Watson",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Hal Schwartz",
+        "gender": null
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Matthew Heckerling",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Adam Stein",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Brad Segal",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Amy Lee Wheeler",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Glenn Gregory Krah",
+        "gender": "m"
+      }
+    ],
+    "departments": {
+      "Production": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 450000,
+    "revenue": null
+  },
   "directors": [
     {
       "name": "Ellie Kanner"

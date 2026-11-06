@@ -699,7 +699,19 @@
           "1": 1
         }
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 5,
+      "longestWithoutWoman": 17,
+      "words": {
+        "w": 1245,
+        "m": 1642,
+        "unknown": 338
+      },
+      "womenConversations": 1,
+      "menConversations": 10,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/vQNknPEVSAui6IL6eUlDBPfUzcW.jpg",
@@ -859,32 +871,38 @@
     {
       "actorName": "James Spader",
       "character": "James Ballard",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 36
     },
     {
       "actorName": "Holly Hunter",
       "character": "Helen Remington",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 38
     },
     {
       "actorName": "Elias Koteas",
       "character": "Vaughan",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 35
     },
     {
       "actorName": "Deborah Kara Unger",
       "character": "Catherine Ballard",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 30
     },
     {
       "actorName": "Rosanna Arquette",
       "character": "Gabrielle",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 36
     },
     {
       "actorName": "Peter MacNeill",
       "character": "Colin Seagrave",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 44
     },
     {
       "actorName": "Cheryl Swarts",
@@ -898,7 +916,8 @@
     {
       "actorName": "Nicky Guadagni",
       "character": "Tattooist",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 43
     },
     {
       "actorName": "Ronn Sarosiak",
@@ -936,6 +955,126 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "David Cronenberg",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "David Cronenberg",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "J.G. Ballard",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "David Cronenberg",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Peter Suschitzky",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Ronald Sanders",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Howard Shore",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Carol Spier",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Denise Cronenberg",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Deirdre Bowen",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Production": {
+        "w": 3,
+        "m": 5,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Directing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Costume & Make-Up": {
+        "w": 2,
+        "m": 1,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Sound": {
+        "w": 1,
+        "m": 9,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Art": {
+        "w": 3,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Crew": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 9000000,
+    "revenue": 2671855
+  },
   "directors": [
     {
       "name": "David Cronenberg"

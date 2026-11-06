@@ -1044,7 +1044,19 @@
         "place": "Cliff top",
         "lines": {}
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 30,
+      "longestWithoutWoman": 83,
+      "words": {
+        "w": 845,
+        "m": 3964,
+        "unknown": 49
+      },
+      "womenConversations": 0,
+      "menConversations": 38,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/yPWZ8F3cJsrY4GFJpzocH9O8j37.jpg",
@@ -1200,52 +1212,62 @@
     {
       "actorName": "Michael Caine",
       "character": "Jack Carter",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 37
     },
     {
       "actorName": "Ian Hendry",
       "character": "Eric",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 40
     },
     {
       "actorName": "Britt Ekland",
       "character": "Anna",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 28
     },
     {
       "actorName": "John Osborne",
       "character": "Kinnear",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 41
     },
     {
       "actorName": "Tony Beckley",
       "character": "Peter",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 41
     },
     {
       "actorName": "George Sewell",
       "character": "Con",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 46
     },
     {
       "actorName": "Geraldine Moffat",
       "character": "Glenda",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 31
     },
     {
       "actorName": "Rosemarie Dunham",
       "character": "Edna",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 35
     },
     {
       "actorName": "Petra Markham",
       "character": "Doreen",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 23
     },
     {
       "actorName": "Alun Armstrong",
       "character": "Keith",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 24
     },
     {
       "actorName": "Bryan Mosley",
@@ -1371,6 +1393,120 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Mike Hodges",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Mike Hodges",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Ted Lewis",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Michael Klinger",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Michael Caine",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Wolfgang Suschitzky",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "John Trumper",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Roy Budd",
+        "gender": null
+      },
+      {
+        "job": "Production Design",
+        "name": "Assheton Gorton",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Evangeline Harrison",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Production": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 1814462,
+    "revenue": null
+  },
   "directors": [
     {
       "name": "Mike Hodges"

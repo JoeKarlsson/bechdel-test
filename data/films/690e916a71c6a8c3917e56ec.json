@@ -914,7 +914,19 @@
         "place": "The penderghast house",
         "lines": {}
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 2,
+      "longestWithoutWoman": 6,
+      "words": {
+        "w": 7988,
+        "m": 1536,
+        "unknown": 111
+      },
+      "womenConversations": 32,
+      "menConversations": 1,
+      "reverseScore": 2
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/30rvmoEBqovm723agDJ3QddWXcY.jpg",
@@ -1072,52 +1084,62 @@
     {
       "actorName": "Emma Stone",
       "character": "Olive",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 21
     },
     {
       "actorName": "Penn Badgley",
       "character": "Woodchuck Todd",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 23
     },
     {
       "actorName": "Amanda Bynes",
       "character": "Marianne",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 24
     },
     {
       "actorName": "Dan Byrd",
       "character": "Brandon",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 24
     },
     {
       "actorName": "Thomas Haden Church",
       "character": "Mr. Griffith",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 50
     },
     {
       "actorName": "Patricia Clarkson",
       "character": "Rosemary",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 50
     },
     {
       "actorName": "Cam Gigandet",
       "character": "Micah",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 28
     },
     {
       "actorName": "Lisa Kudrow",
       "character": "Mrs. Griffith",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 47
     },
     {
       "actorName": "Malcolm McDowell",
       "character": "Principal Gibbons",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 67
     },
     {
       "actorName": "Aly Michalka",
       "character": "Rhiannon",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 21
     },
     {
       "actorName": "Stanley Tucci",
@@ -1330,6 +1352,132 @@
       "actorActress": "1"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Will Gluck",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Bert V. Royal",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Zanne Devine",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Will Gluck",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Michael Grady",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Susan Littenberg",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Brad Segal",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Marcia Hinds",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Mynka Draper",
+        "gender": null
+      },
+      {
+        "job": "Casting",
+        "name": "Lisa Miller Katz",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Production": {
+        "w": 2,
+        "m": 3,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Costume & Make-Up": {
+        "w": 3,
+        "m": 1,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Art": {
+        "w": 3,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Camera": {
+        "w": 0,
+        "m": 9,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Crew": {
+        "w": 2,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Sound": {
+        "w": 5,
+        "m": 10,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Editing": {
+        "w": 2,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 2
+      }
+    }
+  },
+  "money": {
+    "budget": 8000000,
+    "revenue": 75026327
+  },
   "directors": [
     {
       "name": "Will Gluck"

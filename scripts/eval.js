@@ -15,6 +15,7 @@ const { charactersFromCast, analyzeScriptText } = require('../src/analyzeFilm');
 
 const ROOT = path.resolve(__dirname, '..');
 const RATINGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/bechdeltest-ratings.json'), 'utf8'));
+const GENDER_OVERRIDES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/gender-overrides.json'), 'utf8'));
 
 const pct = (n, d) => `${n}/${d} (${Math.round((100 * n) / d)}%)`;
 
@@ -29,7 +30,7 @@ const main = async () => {
 		const { cast } = await fetchMetadata(imdbId);
 		const scriptText = fs.readFileSync(path.join(ROOT, 'scripts', file), 'utf8');
 		try {
-			const { bechdelResults } = analyzeScriptText(scriptText, charactersFromCast(cast));
+			const { bechdelResults } = analyzeScriptText(scriptText, charactersFromCast(cast), GENDER_OVERRIDES[file]);
 			rows.push({ file, title: truth.title, truth: truth.rating, ours: bechdelResults.bechdelScore });
 		} catch (error) {
 			unscored.push(`${file}: ${error.message}`);

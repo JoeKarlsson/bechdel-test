@@ -1303,7 +1303,19 @@
         "place": "Vincent's car",
         "lines": {}
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 8,
+      "longestWithoutWoman": 305,
+      "words": {
+        "w": 805,
+        "m": 7349,
+        "unknown": 100
+      },
+      "womenConversations": 0,
+      "menConversations": 57,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/6PA1Amg4E5ZMK8kfNCl42fkToWg.jpg",
@@ -1456,52 +1468,62 @@
     {
       "actorName": "Tom Cruise",
       "character": "Vincent",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 42
     },
     {
       "actorName": "Jamie Foxx",
       "character": "Max Durocher",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 36
     },
     {
       "actorName": "Jada Pinkett Smith",
       "character": "Annie Farrell",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 32
     },
     {
       "actorName": "Mark Ruffalo",
       "character": "Det. Ray Fanning",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 36
     },
     {
       "actorName": "Peter Berg",
       "character": "Richard Weidner",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 40
     },
     {
       "actorName": "Javier Bardem",
       "character": "Felix Reyes-Torrena",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 35
     },
     {
       "actorName": "Bruce McGill",
       "character": "Frank Pedrosa",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 54
     },
     {
       "actorName": "Klea Scott",
       "character": "Zee",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 35
     },
     {
       "actorName": "Barry Shabaka Henley",
       "character": "Daniel Baker",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 49
     },
     {
       "actorName": "Irma P. Hall",
       "character": "Ida Durocher",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 69
     },
     {
       "actorName": "Richard T. Jones",
@@ -1925,6 +1947,152 @@
       "actorActress": "1"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Michael Mann",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Stuart Beattie",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Frank Darabont",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Michael Mann",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Michael Mann",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Julie Richardson",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Paul Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Dion Beebe",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Jim Miller",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Paul Rubell",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "António Pinto",
+        "gender": null
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "James Newton Howard",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "David Wasco",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Francine Maisler",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Editing": {
+        "w": 2,
+        "m": 3,
+        "nb": 0,
+        "unknown": 15
+      },
+      "Production": {
+        "w": 10,
+        "m": 14,
+        "nb": 0,
+        "unknown": 19
+      },
+      "Directing": {
+        "w": 1,
+        "m": 5,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Camera": {
+        "w": 0,
+        "m": 23,
+        "nb": 0,
+        "unknown": 8
+      },
+      "Art": {
+        "w": 2,
+        "m": 11,
+        "nb": 0,
+        "unknown": 15
+      },
+      "Lighting": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 12
+      },
+      "Sound": {
+        "w": 6,
+        "m": 21,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Costume & Make-Up": {
+        "w": 7,
+        "m": 8,
+        "nb": 0,
+        "unknown": 14
+      },
+      "Crew": {
+        "w": 15,
+        "m": 36,
+        "nb": 0,
+        "unknown": 15
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 8,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 65000000,
+    "revenue": 220239925
+  },
   "directors": [
     {
       "name": "Michael Mann"

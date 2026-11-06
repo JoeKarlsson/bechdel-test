@@ -1060,7 +1060,19 @@
         "place": "White camaro/ large parking lot",
         "lines": {}
       }
-    ]
+    ],
+    "measures": {
+      "firstWomanLine": 68,
+      "longestWithoutWoman": 92,
+      "words": {
+        "w": 593,
+        "m": 4722,
+        "unknown": 219
+      },
+      "womenConversations": 0,
+      "menConversations": 35,
+      "reverseScore": 3
+    }
   },
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/hoyAALgfmjMEK7O1wZ4r8wT91RP.jpg",
@@ -1216,37 +1228,44 @@
     {
       "actorName": "Ryan Gosling",
       "character": "Driver",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 30
     },
     {
       "actorName": "Carey Mulligan",
       "character": "Irene",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 26
     },
     {
       "actorName": "Bryan Cranston",
       "character": "Shannon",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 55
     },
     {
       "actorName": "Albert Brooks",
       "character": "Bernie Rose",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 64
     },
     {
       "actorName": "Oscar Isaac",
       "character": "Standard",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 32
     },
     {
       "actorName": "Christina Hendricks",
       "character": "Blanche",
-      "actorActress": "1"
+      "actorActress": "1",
+      "age": 36
     },
     {
       "actorName": "Ron Perlman",
       "character": "Nino",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 61
     },
     {
       "actorName": "Kaden Leos",
@@ -1256,12 +1275,14 @@
     {
       "actorName": "Jeff Wolfe",
       "character": "Tan Suit",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 41
     },
     {
       "actorName": "James Biberi",
       "character": "Cook",
-      "actorActress": "2"
+      "actorActress": "2",
+      "age": 46
     },
     {
       "actorName": "Russ Tamblyn",
@@ -1398,6 +1419,152 @@
       "actorActress": "2"
     }
   ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Nicolas Winding Refn",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Hossein Amini",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "James Sallis",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Marc Platt",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Adam Siegel",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "John Palermo",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Michel Litvak",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Gigi Pritzker",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Newton Thomas Sigel",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Matthew Newman",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Cliff Martinez",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Beth Mickle",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Erin Benach",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mindy Marin",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 5,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Camera": {
+        "w": 0,
+        "m": 15,
+        "nb": 0,
+        "unknown": 19
+      },
+      "Production": {
+        "w": 5,
+        "m": 20,
+        "nb": 0,
+        "unknown": 8
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Costume & Make-Up": {
+        "w": 7,
+        "m": 4,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Crew": {
+        "w": 5,
+        "m": 28,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Art": {
+        "w": 2,
+        "m": 4,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Sound": {
+        "w": 2,
+        "m": 25,
+        "nb": 0,
+        "unknown": 9
+      },
+      "Editing": {
+        "w": 0,
+        "m": 5,
+        "nb": 0,
+        "unknown": 7
+      },
+      "Visual Effects": {
+        "w": 2,
+        "m": 0,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 12
+      }
+    }
+  },
+  "money": {
+    "budget": 15000000,
+    "revenue": 79713640
+  },
   "directors": [
     {
       "name": "Nicolas Winding Refn"

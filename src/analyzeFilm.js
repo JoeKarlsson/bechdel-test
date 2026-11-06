@@ -57,11 +57,29 @@ const summarizeScript = (screenplay, resolved) => {
 const charactersFromCast = cast => castParser(cast);
 
 /**
+ * Who gets heard, beyond the score: when the first woman speaks, the longest
+ * run of lines with no woman speaking, and words spoken by gender
+ */
+const measureDialogue = (dialogue, resolved) => {
+	const genderOf = block => resolved.get(block.speaker).gender;
+	const firstWoman = dialogue.findIndex(block => genderOf(block) === 'w');
+	let longest = 0;
+	let run = 0;
+	const words = { w: 0, m: 0, unknown: 0 };
+	for (const block of dialogue) {
+		run = genderOf(block) === 'w' ? 0 : run + 1;
+		longest = Math.max(longest, run);
+		words[genderOf(block) ?? 'unknown'] += block.text.split(/\s+/).filter(Boolean).length;
+	}
+	return { firstWomanLine: firstWoman === -1 ? null : firstWoman + 1, longestWithoutWoman: longest, words };
+};
+
+/**
  * Bechdel score, speaker genders and who-talks data, from the script text and
  * the TMDB cast (from charactersFromCast; gender 1 = woman, 2 = man).
  * Throws if the script didn't parse.
  */
-const analyzeScriptText = (scriptText, characters) => {
+const analyzeScriptText = (scriptText, characters, genderOverrides = {}) => {
 	const screenplay = parseScreenplay(scriptText);
 	const blocks = screenplay.scenes.flatMap(scene => scene.blocks);
 	const dialogue = blocks.filter(block => block.kind === 'dialogue');
@@ -70,11 +88,23 @@ const analyzeScriptText = (scriptText, characters) => {
 	}
 	const actionText = blocks.filter(block => block.kind === 'action').map(block => block.text).join('\n');
 	const resolved = resolveSpeakers([...new Set(dialogue.map(block => block.speaker))], characters, actionText);
-	const { namedWomen, exchanges, ...bechdelResults } = scoreBechdel(screenplay, resolved, characters);
+	// Corrections by hand (data/gender-overrides.json): { "ARIADNE": "w" }
+	for (const [speaker, gender] of Object.entries(genderOverrides)) {
+		if (!resolved.has(speaker)) throw new Error(`gender override for ${speaker}, who never speaks in this script`);
+		resolved.set(speaker, { ...resolved.get(speaker), gender, source: 'override' });
+	}
+	const { namedWomen, exchanges, reverse, ...bechdelResults } = scoreBechdel(screenplay, resolved, characters);
+	const summary = summarizeScript(screenplay, resolved);
+	summary.measures = {
+		...measureDialogue(dialogue, resolved),
+		womenConversations: exchanges,
+		menConversations: reverse.exchanges,
+		reverseScore: reverse.score,
+	};
 
 	return {
 		bechdelResults,
-		script: summarizeScript(screenplay, resolved),
+		script: summary,
 		// The condensed script the AI reads
 		cleaned: scriptCleaner.cleanScript(scriptText),
 		screenplay,
@@ -114,6 +144,39 @@ const imageUrls = images => ({
 	poster: images.posters?.[0] ? `https://image.tmdb.org/t/p/w300${images.posters[0].file_path}` : '',
 });
 
+// Crew jobs shown on the film page, in this order
+const KEY_JOBS = [
+	'Director', 'Screenplay', 'Writer', 'Story', 'Novel', 'Producer', 'Director of Photography', 'Editor',
+	'Original Music Composer', 'Production Design', 'Costume Design', 'Casting',
+];
+// TMDB genders: 1 woman, 2 man, 3 non-binary, 0 not set
+const tmdbGender = g => ({ 1: 'w', 2: 'm', 3: 'nb' }[g] ?? null);
+
+/** Key crew by job, and every department's head count by gender */
+const crewSummary = crew => {
+	const seen = new Set();
+	const roles = crew
+		.filter(p => KEY_JOBS.includes(p.job) && !seen.has(`${p.job}|${p.name}`) && seen.add(`${p.job}|${p.name}`))
+		.sort((a, b) => KEY_JOBS.indexOf(a.job) - KEY_JOBS.indexOf(b.job))
+		.map(p => ({ job: p.job, name: p.name, gender: tmdbGender(p.gender) }));
+	const departments = {};
+	for (const p of crew) {
+		const counts = (departments[p.department] ??= { w: 0, m: 0, nb: 0, unknown: 0 });
+		counts[tmdbGender(p.gender) ?? 'unknown']++;
+	}
+	return { roles, departments };
+};
+
+/** Whole years between a birthday and a date, both "YYYY-MM-DD" */
+const ageOn = (birthday, date) => {
+	const b = new Date(birthday);
+	const d = new Date(date);
+	if (Number.isNaN(b.getTime()) || Number.isNaN(d.getTime())) return undefined;
+	let age = d.getUTCFullYear() - b.getUTCFullYear();
+	if (d.getUTCMonth() < b.getUTCMonth() || (d.getUTCMonth() === b.getUTCMonth() && d.getUTCDate() < b.getUTCDate())) age--;
+	return age >= 0 ? age : undefined;
+};
+
 // OMDB says "N/A" for missing values
 const omdbValue = value => (value && value !== 'N/A' ? value : null);
 const omdbList = value => (omdbValue(value) ? value.split(',').map(name => ({ name: name.trim() })) : []);
@@ -123,7 +186,10 @@ const omdbInt = value => {
 };
 
 /** The film record in the shape site/src/lib/films.mjs reads */
-const buildFilmRecord = ({ id, dateUploaded, year, omdb, cast, images, bechdelResults, script, enhancedAnalytics, bechdelData }) => ({
+const buildFilmRecord = ({
+	id, dateUploaded, year, omdb, cast, crew = [], details = {}, birthdays = new Map(), images, bechdelResults, script,
+	enhancedAnalytics, bechdelData,
+}) => ({
 	_id: id,
 	title: omdb.Title,
 	genres: omdbValue(omdb.Genre) ? omdb.Genre.split(',').map(genre => genre.trim()) : [],
@@ -136,7 +202,12 @@ const buildFilmRecord = ({ id, dateUploaded, year, omdb, cast, images, bechdelRe
 		actorName: member.name,
 		character: member.character,
 		...(member.gender ? { actorActress: String(member.gender) } : {}),
+		// Age when the film came out, for the top-billed actors with a known birthday
+		...(birthdays.has(member.id) ? { age: ageOn(birthdays.get(member.id), details.release_date || omdb.Released) } : {}),
 	})),
+	crew: crewSummary(crew),
+	// TMDB uses 0 for an unknown budget or revenue
+	money: { budget: details.budget || null, revenue: details.revenue || null },
 	directors: omdbList(omdb.Director),
 	writers: omdbList(omdb.Writer),
 	awards: omdbValue(omdb.Awards) ? [{ name: omdb.Awards }] : [],
