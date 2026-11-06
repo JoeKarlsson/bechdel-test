@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadFilms } from '../lib/films.mjs';
+
+// The 2015 Oscar films Laurel and Joe tested (87th Academy Awards). Scores are
+// from that study; two of the films are also on today's shelf.
+const STUDY = [
+	['Boyhood', 3],
+	['Gone Girl', 3],
+	['The Imitation Game', 3],
+	['Into the Woods', 3],
+	['Wild', 3],
+	['American Sniper', 2],
+	['Birdman', 1],
+	['Foxcatcher', 1],
+	['The Grand Budapest Hotel', 1],
+	['Still Alice', 1],
+	['The Theory of Everything', 1],
+	['The Judge', 1],
+	['Whiplash', 1],
+] as const;
+
+const onShelf = new Map(loadFilms().map((f) => [f.title, f.slug]));
+const rows = STUDY.map(([title, score]) => ({ title, score, slug: onShelf.get(title) ?? null }));
+const passing = rows.filter((r) => r.score === 3).length;
+---
+
+<Base
+	title="Case study: the 2015 Oscar films"
+	description="How the films nominated at the 2015 Oscars score on the Bechdel test: 5 of the 13 we could test pass, and only 2 of the 7 Best Picture nominees."
+	nav="case-study"
+>
+	<div class="page">
+		<h1 class="page-title">Case study: the 2015 Oscar films</h1>
+		<p class="page-lead">{passing} of the {rows.length} films we could test pass. Only 2 of the 7 Best Picture nominees do.</p>
+
+		<section class="section" aria-labelledby="scores-title">
+			<h2 id="scores-title" class="section-title">The scores</h2>
+			<ul class="legend">
+				<li><span class="swatch swatch-w"></span>A rule the film meets</li>
+				<li><span class="swatch empty"></span>A rule it misses</li>
+			</ul>
+			<table class="scores">
+				<caption class="sr-only">Bechdel scores of 13 films nominated at the 2015 Oscars, out of 3</caption>
+				<thead class="sr-only">
+					<tr><th scope="col">Film</th><th scope="col">Score</th><th scope="col">Verdict</th></tr>
+				</thead>
+				<tbody>
+					{
+						rows.map((r) => (
+							<tr>
+								<th scope="row">{r.slug ? <a href={`/films/${r.slug}/`}>{r.title}</a> : r.title}</th>
+								<td>
+									<span class="marks" aria-hidden="true">
+										{[0, 1, 2].map((i) => (
+											<span class:list={['mark', { on: i < r.score }]} />
+										))}
+									</span>
+									<span class="sr-only">{r.score} of 3</span>
+								</td>
+								<td class:list={['verdict', r.score === 3 ? 'pass' : 'fail']}>{r.score === 3 ? 'Passes' : 'Fails'}</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
+		</section>
+
+		<div class="prose">
+			<h2>What we found</h2>
+			<p>
+				The Bechdel test, popularized by cartoonist Alison Bechdel, asks whether a film has a scene with two women talking to each
+				other about something other than a man. It's often used to show the sexism in the film industry, because so many films fail
+				such a low bar. Feminism is far more accepted than it used to be, but men still hold most speaking roles on screen, and most
+				of the directing and writing jobs behind it.
+			</p>
+			<p>
+				To see where the industry stands, we tested 13 films nominated at the 87th Academy Awards (February 22, 2015) for Best
+				Picture, Best Actor, Best Actress, Best Supporting Actor and Best Supporting Actress.
+			</p>
+			<ul>
+				<li>5 of the 13 films pass, about 38%.</li>
+				<li>Only 2 of the 7 Best Picture nominees we tested pass, about 29%.</li>
+				<li>Every Best Picture nominee has a man in the lead.</li>
+				<li>Half the films with a Best Actress nominee pass, against 1 in 5 films with a Best Actor nominee.</li>
+			</ul>
+			<p>
+				Best Picture is the best overview of the year's acclaimed films, because it isn't tied to the gender of the lead the way
+				Best Actor and Best Actress are. When the Academy is free to pick the best films of the year, its picks are about men.
+			</p>
+			<p>
+				Only one film with a Best Actress nominee was also up for Best Picture: <cite>The Theory of Everything</cite>. Four films
+				with a Best Actor nominee were: <cite>The Theory of Everything</cite>, <cite>American Sniper</cite>,
+				<cite>The Imitation Game</cite> and <cite>Birdman</cite>. When every Best Picture nominee is led by a man, the Academy has
+				to look outside that list to find lead actresses.
+			</p>
+			<p>
+				The same imbalance holds for the supporting roles. 1 in 5 films with a Best Supporting Actor nominee pass, against 3 in 5
+				with a Best Supporting Actress nominee. When a story is about men, women rarely share a scene.
+			</p>
+			<p>
+				When most of a year's most acclaimed films fail the test, the problem runs through the whole industry. Lead roles go to men
+				far more often, and few women write or direct Oscar-nominated films. To get better roles for women, women need to be making
+				the films.
+			</p>
+
+			<h2>How we tested</h2>
+			<p>
+				Two nominees are missing. The script for <cite>Selma</cite>, a Best Picture nominee, wasn't publicly available. <cite>Two
+				Days, One Night</cite>, with Best Actress nominee Marion Cotillard, is in French, and its script was only available in
+				French, which our parser can't read.
+			</p>
+			<p><a href="/">Browse every film we've tested</a></p>
+		</div>
+	</div>
+</Base>
+
+<style>
+	.scores {
+		border-collapse: collapse;
+		width: 100%;
+		max-width: 760px;
+	}
+	.scores th,
+	.scores td {
+		padding: var(--space-2) var(--space-3) var(--space-2) 0;
+		text-align: left;
+	}
+	.scores tbody th {
+		font-family: var(--poster);
+		font-weight: 400;
+		font-size: clamp(1.25rem, 3vw, 1.75rem);
+		text-transform: uppercase;
+	}
+	.scores tbody th a {
+		color: var(--chalk);
+	}
+	.marks {
+		display: inline-flex;
+		gap: 4px;
+	}
+	.mark {
+		width: 22px;
+		height: 22px;
+		border: 2px solid var(--muted);
+	}
+	.mark.on {
+		background: var(--pink);
+		border-color: var(--pink);
+	}
+	.swatch.empty {
+		border: 2px solid var(--muted);
+	}
+	.verdict {
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		text-transform: uppercase;
+	}
+	.verdict.pass {
+		color: var(--pink);
+	}
+	.verdict.fail {
+		color: var(--tangerine);
+	}
+</style>

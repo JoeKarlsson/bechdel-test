@@ -11,6 +11,8 @@ interface Props {
 	structuredData?: Record<string, unknown>;
 	/** Which nav link is the current page */
 	nav?: 'shelf' | 'about' | 'case-study' | 'privacy';
+	/** The 404 page: reported to analytics as a 404 event */
+	notFound?: boolean;
 }
 
 const {
@@ -21,6 +23,7 @@ const {
 	noindex = false,
 	structuredData,
 	nav,
+	notFound = false,
 } = Astro.props;
 
 const SITE_NAME = 'bechdel.io';
@@ -97,7 +100,7 @@ const NAV = [
 		<meta name="twitter:creator" content="@joekarlsson1" />
 		{jsonLD && <script type="application/ld+json" set:html={jsonLD} />}
 	</head>
-	<body>
+	<body data-not-found={notFound ? 'true' : undefined}>
 		<a class="skip-link" href="#main">Skip to the page</a>
 		<header class="site-header page">
 			<a class="wordmark" href="/">bechdel.io</a>
@@ -126,6 +129,9 @@ const NAV = [
 				<p class="note">A Karlsson production, by Joe and Laurel Karlsson</p>
 			</div>
 		</footer>
+		<script>
+			import '../scripts/analytics';
+		</script>
 	</body>
 </html>
 

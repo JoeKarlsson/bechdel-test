@@ -216,3 +216,36 @@ h4 {
 		transition: none !important;
 	}
 }
+
+/* One header for every text page: same size, same distance from the nav */
+.page-title {
+	font-size: clamp(3.25rem, 8vw, 6.5rem);
+	line-height: 0.95;
+	padding-top: var(--space-5);
+}
+.page-lead {
+	margin: var(--space-4) 0 0;
+	max-width: 34em;
+	font-size: var(--text-lead);
+}
+
+/* Long-form text pages */
+.prose {
+	max-width: 40em;
+}
+.prose h2 {
+	font-size: clamp(2rem, 4vw, 2.75rem);
+	margin: var(--section) 0 var(--space-4);
+}
+.prose h3 {
+	font-size: 1.5rem;
+	margin: var(--space-6) 0 var(--space-3);
+}
+.prose p,
+.prose ul,
+.prose ol {
+	margin: 0 0 var(--space-4);
+}
+.prose li + li {
+	margin-top: var(--space-2);
+}

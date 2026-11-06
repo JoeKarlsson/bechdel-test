@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Not on the shelf" description="That page isn't on the shelf." noindex notFound>
+	<div class="page">
+		<h1 class="page-title">Not on the shelf</h1>
+		<p class="page-lead">We couldn't find that page. It may have moved when the site was rebuilt.</p>
+		<p class="links">
+			<a href="/">Browse all the films</a>
+			<a href="/about/">Read about the test</a>
+		</p>
+	</div>
+</Base>
+
+<style>
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3) var(--space-5);
+		margin-top: var(--space-6);
+		font-size: var(--text-lead);
+	}
+</style>
