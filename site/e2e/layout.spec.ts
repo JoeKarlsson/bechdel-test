@@ -33,7 +33,7 @@ test('every page shares one header: same nav position, and text pages put the ti
 	const home = await measure('/');
 	const film = await measure('/films/gone-girl-2014/');
 	const text: (readonly [string, Awaited<ReturnType<typeof measure>>])[] = [];
-	for (const p of ['/about/', '/case-study/', '/privacy/', '/no-such-page/']) text.push([p, await measure(p)] as const);
+	for (const p of ['/numbers/', '/about/', '/case-study/', '/privacy/', '/no-such-page/']) text.push([p, await measure(p)] as const);
 
 	for (const m of [film, ...text.map(([, m]) => m)]) expect(m.nav).toEqual(home.nav);
 	const [, first] = text[0];

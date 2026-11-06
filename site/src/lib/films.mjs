@@ -316,6 +316,95 @@ export function normalizeFilm(raw) {
 	};
 }
 
+const median = (xs) => {
+	if (!xs.length) return null;
+	const s = [...xs].sort((a, b) => a - b);
+	const mid = Math.floor(s.length / 2);
+	return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+};
+const average = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
+const rate = (films) => ({ films: films.length, pass: films.filter((f) => f.bechdel.pass).length });
+const womenLineShare = (f) => (f.lines && f.lines.w + f.lines.m > 0 ? f.lines.w / (f.lines.w + f.lines.m) : null);
+const hasWomanIn = (f, label) => !!f.crew?.roles.find((g) => g.label === label)?.people.some((p) => p.gender === 'w');
+
+// Crew jobs compared across the shelf, as crewFrom labels them
+export const SHELF_JOBS = ['Directed by', 'Written by', 'Produced by', 'Shot by', 'Edited by', 'Music by', 'Production design by', 'Costumes by', 'Cast by'];
+
+/**
+ * The whole shelf in numbers: pass rates by decade and genre, who gets heard,
+ * who made the films, the cast's ages and the money. Groups smaller than
+ * `minGroup` films are left out of the by-decade and by-genre lists.
+ */
+export function shelfStats(films, { minGroup = 5 } = {}) {
+	const decades = new Map();
+	for (const f of films) {
+		if (!f.year) continue;
+		const d = Math.floor(f.year / 10) * 10;
+		if (!decades.has(d)) decades.set(d, []);
+		decades.get(d).push(f);
+	}
+	const byDecade = [...decades]
+		.sort((a, b) => a[0] - b[0])
+		.filter(([, fs]) => fs.length >= minGroup)
+		.map(([d, fs]) => ({
+			label: `${d}s`,
+			...rate(fs),
+			womenLines: median(fs.map(womenLineShare).filter((x) => x !== null)),
+		}));
+
+	const genres = new Map();
+	for (const f of films) for (const g of f.genres) genres.set(g, [...(genres.get(g) ?? []), f]);
+	const byGenre = [...genres]
+		.filter(([, fs]) => fs.length >= minGroup)
+		.map(([label, fs]) => ({ label, ...rate(fs) }))
+		.sort((a, b) => b.pass / b.films - a.pass / a.films || b.films - a.films);
+
+	const rated = films.filter((f) => f.readers);
+	const withMeasures = films.filter((f) => f.measures && f.dialogueCount > 0);
+	const firstShares = withMeasures.filter((f) => f.measures.firstWomanLine !== null).map((f) => (f.measures.firstWomanLine - 1) / f.dialogueCount);
+
+	const jobs = SHELF_JOBS.map((label) => {
+		const people = films.flatMap((f) => f.crew?.roles.find((g) => g.label === label)?.people ?? []);
+		const count = (g) => people.filter((p) => p.gender === g).length;
+		return { label, w: count('w'), m: count('m'), nb: count('nb'), unknown: count(null), films: films.filter((f) => f.crew?.roles.some((g) => g.label === label)).length };
+	}).filter((j) => j.w + j.m + j.nb > 0);
+	const split = (test) => ({ yes: rate(films.filter(test)), no: rate(films.filter((f) => !test(f))) });
+
+	const withAges = films.filter((f) => f.ages.some((a) => a.gender === 'w') && f.ages.some((a) => a.gender === 'm'));
+	const meanAge = (f, g) => average(f.ages.filter((a) => a.gender === g).map((a) => a.age));
+	const multiple = (f) => (f.money?.budget && f.money?.revenue ? f.money.revenue / f.money.budget : null);
+	const multiples = (fs) => fs.map(multiple).filter((x) => x !== null);
+
+	return {
+		...rate(films),
+		readers: { films: rated.length, agree: rated.filter((f) => f.bechdel.pass === (f.readers.score === 3)).length },
+		byDecade,
+		byGenre,
+		heard: {
+			films: withMeasures.length,
+			firstWomanShare: median(firstShares),
+			noWomanSpeaks: withMeasures.filter((f) => f.measures.firstWomanLine === null).length,
+			womenWordShare: median(withMeasures.map((f) => (f.measures.words.w + f.measures.words.m > 0 ? f.measures.words.w / (f.measures.words.w + f.measures.words.m) : null)).filter((x) => x !== null)),
+			womenConversations: withMeasures.reduce((n, f) => n + f.measures.womenConversations, 0),
+			menConversations: withMeasures.reduce((n, f) => n + f.measures.menConversations, 0),
+			reversePass: withMeasures.filter((f) => f.measures.reverseScore === 3).length,
+		},
+		jobs,
+		womanDirector: split((f) => hasWomanIn(f, 'Directed by')),
+		womanWriter: split((f) => hasWomanIn(f, 'Written by')),
+		ages: {
+			films: withAges.length,
+			women: average(withAges.map((f) => meanAge(f, 'w'))),
+			men: average(withAges.map((f) => meanAge(f, 'm'))),
+			womenYounger: withAges.filter((f) => meanAge(f, 'w') < meanAge(f, 'm')).length,
+		},
+		money: {
+			pass: { films: multiples(films.filter((f) => f.bechdel.pass)).length, multiple: median(multiples(films.filter((f) => f.bechdel.pass))) },
+			fail: { films: multiples(films.filter((f) => !f.bechdel.pass)).length, multiple: median(multiples(films.filter((f) => !f.bechdel.pass))) },
+		},
+	};
+}
+
 /**
  * Every film, most popular first (IMDb rating, then Metascore; films with
  * neither go last). Reads the export once per build.
