@@ -1,0 +1,2239 @@
+{
+  "_id": "tt0120201",
+  "title": "Starship Troopers",
+  "genres": [
+    "Action",
+    "Adventure",
+    "Sci-Fi"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 11,
+    "numScenesDontPass": 151,
+    "numOfFemalesChars": 19,
+    "numOfMaleChars": 46,
+    "numOfFemalesCharsWithDialogue": 8,
+    "numOfMaleCharsWithDialogue": 26,
+    "totalLinesFemaleDialogue": 275,
+    "totalLinesMaleDialogue": 678,
+    "scenesThatPass": [
+      "KATRINA: Improper Attitude ! They'll kick you out for talking like that...\nDJANA'D: They can kick you out for anything. Improper Conduct, Unsatisfactory Performance...",
+      "KATRINA: Hey, what's going on ?\nDIZZY: I bet it's that girl I was talking about... Her name's Carmen, I think.",
+      "CARMEN: Pilot Trainee Ibanez reporting for duty, ma'am.\nDELADIER: Take the number one chair, Ibanez. Follow all instructions of you supervisor.\nCARMEN: Yes, ma'am !\nCARMEN: Hey ! What are you doing here ?",
+      "DELADIER: Prepare for departure.\nCARMEN: It's amazing, us running into each other like this. Maybe it's fate.",
+      "DELADIER: Alright, take her out, Ibanez.\nCARMEN: Yes, ma'am.\nCARMEN: In simulation, my supervisors could never keep up."
+    ]
+  },
+  "script": {
+    "file": "starship-troopers.txt",
+    "layout": "indented",
+    "dialogueLines": 1030,
+    "speakers": [
+      {
+        "name": "JOHNNY",
+        "lines": 286,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CARMEN",
+        "lines": 141,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "RASCZAK",
+        "lines": 76,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ZANDER",
+        "lines": 67,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DIZZY",
+        "lines": 64,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ACE",
+        "lines": 50,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ZIM",
+        "lines": 42,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CARL",
+        "lines": 37,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OFFICIAL VOICE",
+        "lines": 27,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DELADIER",
+        "lines": 22,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "KITTEN SMITH",
+        "lines": 19,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FATHER",
+        "lines": 18,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MOTHER",
+        "lines": 15,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "SUGAR WATKINS",
+        "lines": 10,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DJANA'D",
+        "lines": 9,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "GILLESPIE",
+        "lines": 9,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "GENERAL OWEN",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "KATRINA",
+        "lines": 8,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BIRDIE",
+        "lines": 7,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BRONSKI",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RECRUITING SERGEANT",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BRECKINRIDGE",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MAJOR",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NET CORRESPONDENT",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BIOLOGY TEACHER",
+        "lines": 5,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "JOHNNY ET AL",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LT. WILLY",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ROUGHNECKS",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "INTELLIGENCE OFFICER",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "PSYCH OFFICER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CARMEN'S DAD",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GENERAL",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GUIDANCE COMPUTER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "RODGER YOUNG",
+        "lines": 3,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SHUJUMI",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VETERAN",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ACE AND THE OTHERS",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BALD CADET",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "DON",
+        "lines": 2,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "LT. RASCZAK",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STUDENT",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ANGRY PERSON",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BAND LEADER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CAMERAMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "COLONEL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COMMUNICATIONS OFFICER",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ENGINEERING OFFICER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FED NET CENTRAL",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FIRE CONTROL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FLEET OFFICER",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "KITTEN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LANNY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LATE CADET",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LIEUTENANT WILLY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MEDIC",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MOM",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "NEW NUMBER 2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "OTHER ROUGHNECKS",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "POLICEMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "RECRUITS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SKY MARSHALL DIENES",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SKY MARSHALL MERU",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SUGAR",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TICONDEROGA C&C",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VU-PHONE VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "YOUNG PEOPLE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "8": 6,
+          "66": 1
+        }
+      },
+      {
+        "place": "Klendathu -- night -- the camera",
+        "lines": {
+          "0": 5,
+          "23": 1,
+          "44": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "New uni high",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "2": 12,
+          "4": 1,
+          "7": 1,
+          "52": 1
+        }
+      },
+      {
+        "place": "New uni high",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "40": 2
+        }
+      },
+      {
+        "place": "Quad",
+        "lines": {
+          "0": 6,
+          "1": 6,
+          "7": 5
+        }
+      },
+      {
+        "place": "Biology lab  -- day",
+        "lines": {
+          "0": 3,
+          "1": 3,
+          "24": 5
+        }
+      },
+      {
+        "place": "Civic park",
+        "lines": {
+          "0": 5,
+          "1": 4
+        }
+      },
+      {
+        "place": "Puplic transportation",
+        "lines": {
+          "0": 4,
+          "1": 5
+        }
+      },
+      {
+        "place": "Carl's house",
+        "lines": {
+          "0": 12,
+          "7": 13,
+          "56": 1
+        }
+      },
+      {
+        "place": "Athletic field",
+        "lines": {}
+      },
+      {
+        "place": "Locker room",
+        "lines": {
+          "0": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Athletic field",
+        "lines": {}
+      },
+      {
+        "place": "Stands",
+        "lines": {}
+      },
+      {
+        "place": "Huddle",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Scrimmage line",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Sidelines",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Athletic field",
+        "lines": {}
+      },
+      {
+        "place": "Sideline",
+        "lines": {
+          "1": 3,
+          "3": 3
+        }
+      },
+      {
+        "place": "Scrimmage line",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Huddle -- day -- dizzy",
+        "lines": {
+          "0": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Scrimmage line -- day -- johnny",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Athletic field",
+        "lines": {}
+      },
+      {
+        "place": "Johnny's house",
+        "lines": {
+          "0": 11,
+          "11": 9,
+          "12": 7
+        }
+      },
+      {
+        "place": "Uni high gymnasium",
+        "lines": {
+          "0": 6,
+          "4": 7,
+          "43": 1
+        }
+      },
+      {
+        "place": "Gymnasium",
+        "lines": {
+          "0": 8,
+          "1": 3,
+          "2": 4,
+          "7": 1
+        }
+      },
+      {
+        "place": "Uni high gymnasium",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Promenade",
+        "lines": {
+          "0": 6,
+          "1": 7
+        }
+      },
+      {
+        "place": "Public transportation",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "59": 1
+        }
+      },
+      {
+        "place": "Federal housing",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "30": 3
+        }
+      },
+      {
+        "place": "Federal building",
+        "lines": {}
+      },
+      {
+        "place": "Lobby",
+        "lines": {
+          "7": 1,
+          "20": 3
+        }
+      },
+      {
+        "place": "Processing hall",
+        "lines": {
+          "45": 1
+        }
+      },
+      {
+        "place": "Changing room -- day -- johnny",
+        "lines": {
+          "38": 1
+        }
+      },
+      {
+        "place": "Testing facility -- day -- johnny",
+        "lines": {
+          "0": 1,
+          "29": 1,
+          "38": 1
+        }
+      },
+      {
+        "place": "Various testing stations",
+        "lines": {
+          "0": 3,
+          "29": 3
+        }
+      },
+      {
+        "place": "Debrief",
+        "lines": {
+          "0": 2,
+          "22": 6
+        }
+      },
+      {
+        "place": "Auditorium",
+        "lines": {
+          "25": 1
+        }
+      },
+      {
+        "place": "Federal building",
+        "lines": {
+          "0": 3,
+          "1": 4,
+          "7": 1,
+          "20": 2
+        }
+      },
+      {
+        "place": "Federal building",
+        "lines": {
+          "0": 5,
+          "1": 3,
+          "7": 2,
+          "20": 2
+        }
+      },
+      {
+        "place": "Johnny's house",
+        "lines": {
+          "0": 2,
+          "11": 3
+        }
+      },
+      {
+        "place": "Johnny's house",
+        "lines": {
+          "0": 2,
+          "11": 1,
+          "12": 2
+        }
+      },
+      {
+        "place": "Federal transportation hub",
+        "lines": {
+          "0": 8,
+          "1": 8,
+          "8": 6
+        }
+      },
+      {
+        "place": "Camp currie",
+        "lines": {
+          "0": 1,
+          "5": 1,
+          "6": 13,
+          "10": 3,
+          "14": 1,
+          "17": 1,
+          "21": 2,
+          "25": 2,
+          "55": 1
+        }
+      },
+      {
+        "place": "Obstacle course",
+        "lines": {
+          "6": 3
+        }
+      },
+      {
+        "place": "Zero gravity combat",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Hyperphysical training environments",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Combat knife practice",
+        "lines": {
+          "4": 2,
+          "5": 2,
+          "6": 5
+        }
+      },
+      {
+        "place": "Mess hall",
+        "lines": {
+          "0": 5,
+          "4": 3,
+          "5": 5,
+          "10": 1,
+          "14": 2,
+          "17": 1,
+          "21": 1
+        }
+      },
+      {
+        "place": "Obstacle course",
+        "lines": {
+          "0": 2,
+          "4": 1,
+          "5": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "Showers",
+        "lines": {
+          "0": 3,
+          "4": 1,
+          "5": 2,
+          "10": 5,
+          "14": 1,
+          "17": 1,
+          "21": 2,
+          "34": 1
+        }
+      },
+      {
+        "place": "Barracks",
+        "lines": {
+          "0": 2,
+          "4": 1,
+          "17": 2,
+          "36": 2
+        }
+      },
+      {
+        "place": "Barracks",
+        "lines": {
+          "0": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "Tereshkova flight academy",
+        "lines": {
+          "0": 1,
+          "5": 1,
+          "37": 1
+        }
+      },
+      {
+        "place": "Boarding corridor",
+        "lines": {}
+      },
+      {
+        "place": "Boat",
+        "lines": {
+          "1": 2,
+          "53": 1
+        }
+      },
+      {
+        "place": "Lunar orbit",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Boat",
+        "lines": {
+          "1": 1,
+          "37": 1
+        }
+      },
+      {
+        "place": "Athena",
+        "lines": {
+          "1": 10,
+          "3": 7,
+          "9": 4
+        }
+      },
+      {
+        "place": "Luna",
+        "lines": {}
+      },
+      {
+        "place": "War games course",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "War games course",
+        "lines": {
+          "10": 1,
+          "14": 2
+        }
+      },
+      {
+        "place": "Red team flag",
+        "lines": {
+          "0": 4,
+          "4": 3,
+          "10": 1
+        }
+      },
+      {
+        "place": "Observation tower",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Airborne skimmer",
+        "lines": {
+          "0": 2,
+          "6": 2
+        }
+      },
+      {
+        "place": "Barracks",
+        "lines": {
+          "0": 8,
+          "1": 4,
+          "4": 1,
+          "5": 5,
+          "10": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "Live fire combat range",
+        "lines": {
+          "0": 1,
+          "6": 4,
+          "60": 1
+        }
+      },
+      {
+        "place": "Live fire combat range",
+        "lines": {
+          "0": 5,
+          "6": 1,
+          "14": 3,
+          "21": 1
+        }
+      },
+      {
+        "place": "C.o.'s office",
+        "lines": {
+          "0": 5
+        }
+      },
+      {
+        "place": "Barracks",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Parade ground",
+        "lines": {
+          "6": 1,
+          "19": 5
+        }
+      },
+      {
+        "place": "Outer system",
+        "lines": {}
+      },
+      {
+        "place": "Athena",
+        "lines": {
+          "1": 10,
+          "3": 11,
+          "9": 2
+        }
+      },
+      {
+        "place": "Outer system",
+        "lines": {}
+      },
+      {
+        "place": "Command and control",
+        "lines": {}
+      },
+      {
+        "place": "Athena",
+        "lines": {}
+      },
+      {
+        "place": "Athena -various",
+        "lines": {}
+      },
+      {
+        "place": "Command and control",
+        "lines": {
+          "1": 1,
+          "3": 1,
+          "9": 4,
+          "46": 1,
+          "47": 1
+        }
+      },
+      {
+        "place": "Barrack's",
+        "lines": {
+          "0": 7,
+          "4": 4,
+          "11": 5,
+          "12": 6,
+          "19": 1,
+          "65": 1
+        }
+      },
+      {
+        "place": "The c.o.'s office",
+        "lines": {}
+      },
+      {
+        "place": "Parade ground",
+        "lines": {}
+      },
+      {
+        "place": "Washout lane -- day",
+        "lines": {
+          "0": 1,
+          "51": 1
+        }
+      },
+      {
+        "place": "Communication",
+        "lines": {
+          "0": 1,
+          "4": 1,
+          "8": 3,
+          "17": 1
+        }
+      },
+      {
+        "place": "C.o.'s office -day",
+        "lines": {
+          "0": 3,
+          "6": 5,
+          "8": 7,
+          "42": 1,
+          "61": 1
+        }
+      },
+      {
+        "place": "Battle station",
+        "lines": {
+          "0": 1,
+          "4": 1,
+          "5": 1,
+          "10": 1,
+          "23": 4
+        }
+      },
+      {
+        "place": "Recreation deck",
+        "lines": {
+          "0": 12,
+          "1": 10,
+          "3": 6,
+          "4": 3,
+          "5": 3,
+          "10": 3,
+          "35": 3
+        }
+      },
+      {
+        "place": "Laser parlor",
+        "lines": {
+          "0": 3,
+          "4": 1,
+          "5": 2,
+          "10": 1
+        }
+      },
+      {
+        "place": "Klendathu",
+        "lines": {}
+      },
+      {
+        "place": "Bull run",
+        "lines": {
+          "5": 1,
+          "7": 3,
+          "8": 1,
+          "26": 4
+        }
+      },
+      {
+        "place": "Capsule",
+        "lines": {
+          "25": 1,
+          "26": 1,
+          "49": 1
+        }
+      },
+      {
+        "place": "Space",
+        "lines": {}
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 1,
+          "3": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Klendathu",
+        "lines": {}
+      },
+      {
+        "place": "Capsule",
+        "lines": {
+          "32": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "3": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Klendathu",
+        "lines": {
+          "32": 1
+        }
+      },
+      {
+        "place": "Klendathu",
+        "lines": {
+          "32": 1
+        }
+      },
+      {
+        "place": "Klendathu",
+        "lines": {
+          "0": 3,
+          "4": 2,
+          "5": 3,
+          "10": 1,
+          "17": 2,
+          "34": 2,
+          "54": 1
+        }
+      },
+      {
+        "place": "Klendathu",
+        "lines": {
+          "0": 6,
+          "4": 1,
+          "5": 1,
+          "8": 4,
+          "10": 1,
+          "23": 1,
+          "41": 1,
+          "62": 1
+        }
+      },
+      {
+        "place": "Fleet battle station ticonderoga",
+        "lines": {
+          "1": 1,
+          "64": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "Battle station ticonderoga",
+        "lines": {
+          "1": 4,
+          "3": 4
+        }
+      },
+      {
+        "place": "Ticonderoga",
+        "lines": {
+          "1": 3,
+          "3": 2
+        }
+      },
+      {
+        "place": "Stasis tank",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Space",
+        "lines": {}
+      },
+      {
+        "place": "Troop transport",
+        "lines": {
+          "0": 4,
+          "2": 3,
+          "4": 2,
+          "5": 4,
+          "13": 3,
+          "15": 1,
+          "18": 4,
+          "58": 1
+        }
+      },
+      {
+        "place": "Tango urilla",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Tango urilla",
+        "lines": {
+          "0": 1,
+          "5": 1,
+          "18": 1
+        }
+      },
+      {
+        "place": "Tango urilla",
+        "lines": {
+          "0": 5,
+          "2": 6,
+          "4": 2,
+          "5": 1,
+          "18": 2
+        }
+      },
+      {
+        "place": "Tango urilla",
+        "lines": {
+          "0": 2,
+          "2": 7,
+          "4": 2,
+          "5": 1,
+          "13": 2,
+          "15": 5
+        }
+      },
+      {
+        "place": "Tunnels",
+        "lines": {
+          "0": 2,
+          "13": 2
+        }
+      },
+      {
+        "place": "Bug nursery",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Tango urilla",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Base camp",
+        "lines": {
+          "0": 5,
+          "2": 2,
+          "4": 4,
+          "15": 1
+        }
+      },
+      {
+        "place": "Communications",
+        "lines": {
+          "2": 4,
+          "7": 1,
+          "28": 4,
+          "41": 1
+        }
+      },
+      {
+        "place": "Pre-fab sleeping unit",
+        "lines": {
+          "0": 2,
+          "2": 3,
+          "4": 1
+        }
+      },
+      {
+        "place": "Planet p",
+        "lines": {
+          "2": 1,
+          "15": 1
+        }
+      },
+      {
+        "place": "Canyon floor",
+        "lines": {}
+      },
+      {
+        "place": "Canyon floor",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Flat lands",
+        "lines": {
+          "2": 7,
+          "15": 1
+        }
+      },
+      {
+        "place": "4th brigade hq",
+        "lines": {
+          "0": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "4th brigade hq",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Comminications",
+        "lines": {
+          "0": 2,
+          "2": 1,
+          "4": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Mess hall",
+        "lines": {
+          "2": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Kitchen",
+        "lines": {
+          "2": 2,
+          "5": 1,
+          "16": 2
+        }
+      },
+      {
+        "place": "Communications",
+        "lines": {
+          "0": 1,
+          "2": 2,
+          "4": 1,
+          "13": 1,
+          "16": 4
+        }
+      },
+      {
+        "place": "Office complex",
+        "lines": {
+          "5": 1,
+          "16": 2,
+          "39": 2
+        }
+      },
+      {
+        "place": "Ramparts",
+        "lines": {
+          "0": 2,
+          "2": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Communications",
+        "lines": {
+          "0": 4,
+          "4": 2,
+          "33": 3
+        }
+      },
+      {
+        "place": "4th brigade hq",
+        "lines": {
+          "0": 8,
+          "2": 13,
+          "4": 2,
+          "5": 2,
+          "13": 1,
+          "25": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Cargo bay",
+        "lines": {
+          "0": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Boat",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Boat",
+        "lines": {
+          "0": 4,
+          "1": 6,
+          "4": 1
+        }
+      },
+      {
+        "place": "Battle group",
+        "lines": {}
+      },
+      {
+        "place": "Officers quarters",
+        "lines": {
+          "1": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "0": 10,
+          "1": 4,
+          "7": 8,
+          "27": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "0": 3,
+          "5": 2,
+          "27": 1
+        }
+      },
+      {
+        "place": "Planet p",
+        "lines": {
+          "0": 7,
+          "3": 2,
+          "5": 1,
+          "50": 1
+        }
+      },
+      {
+        "place": "Space",
+        "lines": {}
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 1,
+          "9": 1,
+          "57": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {}
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {
+          "1": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Rodger young",
+        "lines": {}
+      },
+      {
+        "place": "Rodger young",
+        "lines": {}
+      },
+      {
+        "place": "Lifepod",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Planet p",
+        "lines": {
+          "0": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Lifepod",
+        "lines": {}
+      },
+      {
+        "place": "Planet p",
+        "lines": {}
+      },
+      {
+        "place": "Bug city tunnels",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Base camp",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Bug city tunnels",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Planet p",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "3": 2,
+          "13": 1
+        }
+      },
+      {
+        "place": "New canyon",
+        "lines": {
+          "0": 8,
+          "3": 5,
+          "5": 2,
+          "27": 2
+        }
+      },
+      {
+        "place": "Tunnel",
+        "lines": {
+          "0": 2,
+          "5": 1,
+          "63": 1
+        }
+      },
+      {
+        "place": "Bug city",
+        "lines": {}
+      },
+      {
+        "place": "Bug city",
+        "lines": {
+          "0": 10,
+          "1": 5,
+          "3": 3,
+          "5": 1,
+          "9": 3
+        }
+      },
+      {
+        "place": "Bug city tunnels",
+        "lines": {
+          "0": 5,
+          "1": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "Bug city",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Planet p",
+        "lines": {}
+      },
+      {
+        "place": "Planet p",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "7": 1,
+          "31": 3
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 24,
+      "longestWithoutWoman": 26,
+      "longestWithoutWomanStart": 292,
+      "words": {
+        "w": 2533,
+        "m": 6938,
+        "unknown": 1173
+      },
+      "womenConversations": 19,
+      "menConversations": 90,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/7iEfnj3rfyunky6BzvnlwqfoEF0.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/cxCmv23O7p3hyHwqoktHYkZcGsY.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 107
+  },
+  "actors": [
+    {
+      "actorName": "Casper Van Dien",
+      "character": "Johnny D. Rico",
+      "actorActress": "2",
+      "age": 28
+    },
+    {
+      "actorName": "Dina Meyer",
+      "character": "Dizzy Flores",
+      "actorActress": "1",
+      "age": 28
+    },
+    {
+      "actorName": "Denise Richards",
+      "character": "Carmen Ibañez",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Jake Busey",
+      "character": "Private Ace Levy",
+      "actorActress": "2",
+      "age": 26
+    },
+    {
+      "actorName": "Neil Patrick Harris",
+      "character": "Colonel Carl Jenkins",
+      "actorActress": "2",
+      "age": 24
+    },
+    {
+      "actorName": "Clancy Brown",
+      "character": "Career Sergeant Zim",
+      "actorActress": "2",
+      "age": 38
+    },
+    {
+      "actorName": "Michael Ironside",
+      "character": "Lieutenant Jean Rasczak",
+      "actorActress": "2",
+      "age": 47
+    },
+    {
+      "actorName": "Patrick Muldoon",
+      "character": "Zander Barcalow",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Seth Gilliam",
+      "character": "Private Sugar Watkins",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Rue McClanahan",
+      "character": "Biology Teacher",
+      "actorActress": "1",
+      "age": 63
+    },
+    {
+      "actorName": "Blake Lindsley",
+      "character": "Katrina McIntire",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Steven Ford",
+      "character": "Lieutenant Willy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ungela Brockman",
+      "character": "Corporal Birdie",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Bruce Gray",
+      "character": "Sky Marshal Dienes",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Denise Dowse",
+      "character": "Sky Marshal Tehat Meru",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Amy Smart",
+      "character": "Cadet Lumbreiser",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tami-Adrian George",
+      "character": "Djana'D",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Julianna McCarthy",
+      "character": "Expert",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dale Dye",
+      "character": "General",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dean Norris",
+      "character": "Commanding Officer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Marshall Bell",
+      "character": "General Owen",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Eric Bruskotter",
+      "character": "Breckinridge",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Matt Levin",
+      "character": "Kitten Smith",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anthony Ruivivar",
+      "character": "Shujimi",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brenda Strong",
+      "character": "Captain Deladier",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Christopher Curry",
+      "character": "Mr. Bill Rico",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lenore Kasdorf",
+      "character": "Mrs. Rico",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Teo",
+      "character": "Corporal Bronski",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Curnal Achilles Aulisio",
+      "character": "Sgt. Gillespie"
+    },
+    {
+      "actorName": "Greg Travis",
+      "character": "Net Correspondent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Cunningham",
+      "character": "Fed Net Announcer (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Timothy McNeil",
+      "character": "Expert",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Robert David Hall",
+      "character": "Recruiting Sergeant",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brad Caleb Kane",
+      "character": "Lanny",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Timothy Omundson",
+      "character": "Psychic",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Patrick Bishop",
+      "character": "Engineering Officer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Hunter Bodine",
+      "character": "Young Cap Trooper",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Travis Lowen",
+      "character": "Little Boy Trooper"
+    },
+    {
+      "actorName": "Patrick Wolff",
+      "character": "Late Cadet",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mara Duronslet",
+      "character": "Communications Officer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tyrone Tann",
+      "character": "Student",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Matt Entriken",
+      "character": "Marco"
+    },
+    {
+      "actorName": "Eric DaRe",
+      "character": "Medic",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ronald L. Botchan",
+      "character": "Jumpball Referee"
+    },
+    {
+      "actorName": "Walter Adrian",
+      "character": "Judge"
+    },
+    {
+      "actorName": "Stephanie Erb",
+      "character": "Young Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alexi Lakatos",
+      "character": "Stomping Kid"
+    },
+    {
+      "actorName": "Nathaniel Marshall",
+      "character": "Stomping Kid"
+    },
+    {
+      "actorName": "Austin Sanderford",
+      "character": "Stomping Kid"
+    },
+    {
+      "actorName": "Rhiannon Vigil",
+      "character": "Stomping Kid"
+    },
+    {
+      "actorName": "Mylin Brooks",
+      "character": "Female Trooper"
+    },
+    {
+      "actorName": "Julie Pinson",
+      "character": "Female Trooper",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Armand Darrius",
+      "character": "Male Trooper",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kai Lennox",
+      "character": "Male Trooper",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brooke Morales",
+      "character": "Cheerleader",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Mike Stokey",
+      "character": "Officer with Morita",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mary Ann Schmidt",
+      "character": "Female Trooper (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Aaron Stielstra",
+      "character": "Trooper (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Edward Neumeier",
+      "character": "Defendant (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Papajohn",
+      "character": "Dead Trooper (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael A. Valenzano",
+      "character": "Trooper (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mo Faisal",
+      "character": "Trooper (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "R. Lee Ermey",
+      "character": "Voice heard on speaker (voice) (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Matt Duggan",
+      "character": "Wounded Soldier on Gurney (uncredited)"
+    },
+    {
+      "actorName": "Whitney Hall",
+      "character": "Judge (uncredited)"
+    },
+    {
+      "actorName": "Betty Hankins",
+      "character": "Sky Marshal (uncredited)"
+    },
+    {
+      "actorName": "Kaius Harrison",
+      "character": "Cpl. Allen (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Bruce Holman",
+      "character": "Jump Ball Referee (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Gerald",
+      "character": "Football Quarterback (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jon Davison",
+      "character": "Buenos Aires Survivor (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dawn E. Anderson",
+      "character": "Female Trooper (uncredited)"
+    },
+    {
+      "actorName": "Tony Nichols",
+      "character": "Cadet 'Flipper' (uncredited)"
+    },
+    {
+      "actorName": "Dan Olivo",
+      "character": "Academy Soilder (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Zoë Poledouris",
+      "character": "School Prom Lead Singer (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ashley Prendergast",
+      "character": "Hot Female Trooper (uncredited)"
+    },
+    {
+      "actorName": "Ray Quiroga",
+      "character": "Male Trooper Leader (uncredited)"
+    },
+    {
+      "actorName": "David Rey",
+      "character": "Trooper (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dennis Collins",
+      "character": "Soldier (uncredited)"
+    },
+    {
+      "actorName": "Farnaz Samiinia",
+      "character": "Female Trooper (uncredited)"
+    },
+    {
+      "actorName": "Joleen Sanders",
+      "character": "Female Trooper (uncredited)"
+    },
+    {
+      "actorName": "Julia Self",
+      "character": "Female Trooper (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Claude Stuart",
+      "character": "Student / Male Trooper (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Parry Shen",
+      "character": "Student (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Cari Vega",
+      "character": "Student / Female Trooper (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jim Temple",
+      "character": "Male Trooper (uncredited)"
+    },
+    {
+      "actorName": "Justin Ward",
+      "character": "Medic (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sam P. Whitehead",
+      "character": "Trooper (uncredited)"
+    },
+    {
+      "actorName": "Melissa J. Ward",
+      "character": "Trooper (uncredited)"
+    },
+    {
+      "actorName": "Johnny Mansbach",
+      "character": "Marine (uncredited)"
+    },
+    {
+      "actorName": "David Beckett",
+      "character": "Businessman (uncredited)"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Paul Verhoeven",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Edward Neumeier",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "Robert A. Heinlein",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Jon Davison",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Alan Marshall",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Jost Vacano",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Caroline Ross",
+        "gender": "w"
+      },
+      {
+        "job": "Editor",
+        "name": "Mark Goldblatt",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Basil Poledouris",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Allan Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Ellen Mirojnick",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Johanna Ray",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Elaine J. Huzzar",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Art": {
+        "w": 0,
+        "m": 10,
+        "nb": 0,
+        "unknown": 17
+      },
+      "Costume & Make-Up": {
+        "w": 6,
+        "m": 6,
+        "nb": 0,
+        "unknown": 7
+      },
+      "Camera": {
+        "w": 1,
+        "m": 18,
+        "nb": 0,
+        "unknown": 21
+      },
+      "Editing": {
+        "w": 2,
+        "m": 3,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Production": {
+        "w": 4,
+        "m": 14,
+        "nb": 0,
+        "unknown": 28
+      },
+      "Sound": {
+        "w": 4,
+        "m": 27,
+        "nb": 0,
+        "unknown": 17
+      },
+      "Directing": {
+        "w": 1,
+        "m": 5,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Visual Effects": {
+        "w": 4,
+        "m": 29,
+        "nb": 0,
+        "unknown": 110
+      },
+      "Crew": {
+        "w": 9,
+        "m": 43,
+        "nb": 0,
+        "unknown": 41
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 5,
+        "nb": 0,
+        "unknown": 10
+      }
+    }
+  },
+  "money": {
+    "budget": 105000000,
+    "revenue": 121214377
+  },
+  "directors": [
+    {
+      "name": "Paul Verhoeven"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Edward Neumeier"
+    },
+    {
+      "name": "Robert A. Heinlein"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 1 Oscar. 3 wins & 16 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-06T21:56:21.821Z",
+  "plot": "In a not-so-distant future, with the Earth governed by the militaristic United Citizen Federation and multitudes of highly evolved Klendathu Arachnids threatening the safety of our solar system, high-school athlete Johnny Rico and three of his hometown friends join up to do their part. And to ensure humankind's future, an all-out invasion has begun; however, in this far-off exoplanet hostile to life as we know it, brute force alone and conventional strategies won't cut it. Now, the unstoppable Bug Army is at the gates. Will Rico and his fellow Starship Troopers end up serving as cannon fodder?",
+  "simplePlot": "In a not-so-distant future, with the Earth governed by the militaristic United Citizen Federation and multitudes of highly evolved Klendathu Arachnids threatening the safety of our solar system, high-school athlete Johnny Rico and three of his hometown friends join up to do their part. And to ensure humankind's future, an all-out invasion has begun; however, in this far-off exoplanet hostile to life as we know it, brute force alone and conventional strategies won't cut it. Now, the unstoppable Bug Army is at the gates. Will Rico and his fellow Starship Troopers end up serving as cannon fodder?",
+  "year": 1997,
+  "releaseDate": "07 Nov 1997",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BZTNiOGM1ZWUtZTZjZC00OWJmLWE2YzUtZjQ4ODZjZmVlMDU3XkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+  "idIMDB": "tt0120201",
+  "rating": "7.3",
+  "metascore": 52,
+  "urlIMDB": "https://www.imdb.com/title/tt0120201/"
+}

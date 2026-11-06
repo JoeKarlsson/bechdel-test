@@ -91,7 +91,7 @@ test('aiModelOf names the model that wrote an analysis', () => {
 
 test('the real export loads with unique slugs and sane numbers', () => {
 	const films = loadFilms();
-	assert.equal(films.length, 50);
+	assert.equal(films.length, 218);
 	const gone = films.find((f) => f.slug === 'gone-girl-2014');
 	assert.ok(gone, 'Gone Girl is in the export');
 	assert.equal(gone.bechdel.score, 3);
@@ -101,7 +101,7 @@ test('the real export loads with unique slugs and sane numbers', () => {
 	assert.equal(gone.ai.review, null);
 	assert.equal(gone.ai.model.name, 'Claude 3.5 Haiku');
 	assert.equal(gone.speakers[0].name, 'Nick');
-	assert.equal(films.filter((f) => f.bechdel.pass).length, 23);
+	assert.equal(films.filter((f) => f.bechdel.pass).length, 111);
 	for (const f of films) assert.ok(f.popularity >= 1);
 	// Its script has no scene headings: one scene, so no timeline to draw
 	const dawn = films.find((f) => f.slug === 'dawn-of-the-dead-1978');

@@ -1,0 +1,2578 @@
+{
+  "_id": "tt0120812",
+  "title": "Rush Hour",
+  "genres": [
+    "Action",
+    "Comedy",
+    "Crime"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 304,
+    "numOfFemalesChars": 13,
+    "numOfMaleChars": 43,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 5,
+    "totalLinesFemaleDialogue": 36,
+    "totalLinesMaleDialogue": 373,
+    "scenesThatPass": [
+      "SECRETARY OF STATE: ...North Koreans have gone ballistic, accusing us of botching the ransom drop on purpose.\nSECRETARY OF DEFENSE: They're still harping on that \"American plot\" nonsense.",
+      "SECRETARY OF STATE: That's the problem: we can't. We're the last superpower. Our hands are tied by politics, alliances, goddamn stacks of treaties... most we co…\nSECRETARY OF DEFENSE: Damn, I miss the Cold War. Russians wouldn't have dreamt of pulling a stunt like this.",
+      "SECRETARY OF STATE: The North Koreans insist the missile carries a conventional payload. They say we're trying to trick them into aborting the attack.\nSECRETARY OF DEFENSE: Especially since the uplink from our Op in P'y�ngyang was unencrypted."
+    ]
+  },
+  "script": {
+    "file": "rush-hour.txt",
+    "layout": "indented",
+    "dialogueLines": 646,
+    "speakers": [
+      {
+        "name": "CARSON",
+        "lines": 205,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MIRANDA",
+        "lines": 94,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "DAVE",
+        "lines": 41,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WALTHER",
+        "lines": 25,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PRESIDENT",
+        "lines": 24,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "AMBASSADOR HAN",
+        "lines": 23,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BOBBI",
+        "lines": 23,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SABATINI",
+        "lines": 23,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "JAVAL",
+        "lines": 18,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COLONEL LEE",
+        "lines": 16,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ROBBINS",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MRS. HAN",
+        "lines": 11,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CIA CHIEF",
+        "lines": 10,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "JOY",
+        "lines": 8,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SECRETARY OF DEFENSE",
+        "lines": 8,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SECRETARY OF STATE",
+        "lines": 8,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "INSTALLER #1",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "INTELLIGENCE OFFICER",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FBI CHIEF",
+        "lines": 5,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "LISA",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SAM",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OPERATIVE",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STATION MANAGER",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "VREELAND",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "YOUNG COP",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CAMERAMAN",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "EDWARDS",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "INSTALLER #2",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PILOT",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "REPORTER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SUPER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SWAT TEAM #1",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CO-WORKER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MILTON",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MORNING ANCHOR",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VICE PRESIDENT",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ALL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ANGRY VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BIKER",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "COMMENTATOR #1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DRIVER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ESPIONAGE AGENT",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "FINGERPRINT TECH",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FM NEWSCASTER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GOVERNESS",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "INSTALLER #3",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "INSTALLER #4",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NEIGHBOR",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "NEWS PILOT",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RECORDING OF BOBBI",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "RUSH HOUR",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SECRETARY",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "VOICE THRU PA",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WESTEC GUARD",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WESTEC GUARDS",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "WOMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "50": 1
+        }
+      },
+      {
+        "place": "Los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Lax",
+        "lines": {}
+      },
+      {
+        "place": "Lax",
+        "lines": {
+          "29": 3
+        }
+      },
+      {
+        "place": "Fremont place",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Utility pole",
+        "lines": {}
+      },
+      {
+        "place": "Wilshire blvd",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {
+          "20": 1
+        }
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Santa monica freeway",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Santa monica freeway",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {
+          "40": 1
+        }
+      },
+      {
+        "place": "Freeway overpass",
+        "lines": {}
+      },
+      {
+        "place": "Ext.  javal's van & roadway",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Freeway overpass",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Sierra bonita avenue",
+        "lines": {}
+      },
+      {
+        "place": "Carson's house",
+        "lines": {}
+      },
+      {
+        "place": "Beverly drive",
+        "lines": {}
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 3,
+          "47": 1,
+          "53": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "13": 1,
+          "20": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "5": 2,
+          "11": 1,
+          "44": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Javal's van",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "4": 1,
+          "6": 1,
+          "34": 2
+        }
+      },
+      {
+        "place": "Ext.  carson's house",
+        "lines": {
+          "0": 8,
+          "1": 8
+        }
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "13": 1,
+          "37": 1
+        }
+      },
+      {
+        "place": "Ext.  mercedes",
+        "lines": {
+          "19": 3,
+          "20": 1
+        }
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Fbi guardhouse",
+        "lines": {
+          "2": 7,
+          "7": 4,
+          "10": 4
+        }
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Fbi guardhouse",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "5": 3,
+          "7": 3,
+          "9": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Dave's dodge",
+        "lines": {
+          "2": 2,
+          "10": 2
+        }
+      },
+      {
+        "place": "Fremont place",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Federal building",
+        "lines": {
+          "3": 3,
+          "32": 2,
+          "51": 1
+        }
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Federal building",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Washington blvd",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 3,
+          "7": 2
+        }
+      },
+      {
+        "place": "Colonel lee's car",
+        "lines": {}
+      },
+      {
+        "place": "Dave's dodge",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "Washington blvd",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Washington blvd",
+        "lines": {}
+      },
+      {
+        "place": "La cienega blvd / side streets",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Alleyway garage / javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Duplicate van",
+        "lines": {}
+      },
+      {
+        "place": "Alleyways",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Alleyways",
+        "lines": {
+          "0": 2,
+          "9": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Alleyway garage",
+        "lines": {}
+      },
+      {
+        "place": "Alleyways",
+        "lines": {}
+      },
+      {
+        "place": "Beverly drive",
+        "lines": {}
+      },
+      {
+        "place": "Alleyways",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "8": 7,
+          "11": 2,
+          "19": 1,
+          "39": 1
+        }
+      },
+      {
+        "place": "Government helicopter",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 3,
+          "3": 4,
+          "5": 3,
+          "9": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "8": 1,
+          "11": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 1,
+          "5": 2,
+          "8": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Fbi guardhouse",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 2,
+          "3": 3,
+          "5": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Fbi guardhouse",
+        "lines": {
+          "0": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 8,
+          "1": 6,
+          "3": 4,
+          "5": 1,
+          "9": 3
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "P�y�ngyang, north korea",
+        "lines": {
+          "30": 1
+        }
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {}
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {
+          "21": 2
+        }
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Fbi guardhouse",
+        "lines": {
+          "0": 3,
+          "1": 5,
+          "2": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Fbi guardhouse",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "White house",
+        "lines": {
+          "4": 5,
+          "12": 2,
+          "15": 3,
+          "17": 1,
+          "18": 2
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Highland avenue",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "1": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Mercedes",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Highland avenue",
+        "lines": {}
+      },
+      {
+        "place": "Demille barn",
+        "lines": {}
+      },
+      {
+        "place": "Ext.  javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Mercedes",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Dave's dodge",
+        "lines": {}
+      },
+      {
+        "place": "Demille barn",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Odin street",
+        "lines": {}
+      },
+      {
+        "place": "Javal's van",
+        "lines": {}
+      },
+      {
+        "place": "Dave's dodge",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Mercedes",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Highland avenue",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Mercedes",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hollywood freeway",
+        "lines": {
+          "0": 1,
+          "9": 1,
+          "38": 1
+        }
+      },
+      {
+        "place": "Highland avenue",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Highland avenue",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Alta loma terrace",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "High tower drive",
+        "lines": {}
+      },
+      {
+        "place": "Alta loma terrace",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Highland avenue",
+        "lines": {}
+      },
+      {
+        "place": "Vine street",
+        "lines": {}
+      },
+      {
+        "place": "Pursuit copter",
+        "lines": {}
+      },
+      {
+        "place": "Vine street",
+        "lines": {}
+      },
+      {
+        "place": "Pursuit copter",
+        "lines": {}
+      },
+      {
+        "place": "Vine street",
+        "lines": {}
+      },
+      {
+        "place": "Javal's geo",
+        "lines": {}
+      },
+      {
+        "place": "Sunset vine tower",
+        "lines": {}
+      },
+      {
+        "place": "Vine and sunset",
+        "lines": {
+          "0": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 5,
+          "1": 3,
+          "3": 2,
+          "5": 2,
+          "7": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 5,
+          "1": 1,
+          "2": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Hoover building, washington, dc",
+        "lines": {}
+      },
+      {
+        "place": "Hoover building",
+        "lines": {
+          "0": 1,
+          "42": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 11,
+          "1": 9,
+          "2": 5,
+          "7": 2
+        }
+      },
+      {
+        "place": "White house",
+        "lines": {
+          "4": 10,
+          "12": 4,
+          "14": 6,
+          "15": 3,
+          "17": 2,
+          "18": 2,
+          "35": 2
+        }
+      },
+      {
+        "place": "Hollywood freeway",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Parker center",
+        "lines": {}
+      },
+      {
+        "place": "Parker center",
+        "lines": {}
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 6,
+          "25": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "11": 2,
+          "13": 2
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 2,
+          "7": 2
+        }
+      },
+      {
+        "place": "Pacific ocean",
+        "lines": {
+          "30": 1
+        }
+      },
+      {
+        "place": "Ext.  fishing trawler",
+        "lines": {}
+      },
+      {
+        "place": "Hollywood freeway",
+        "lines": {
+          "0": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Crenshaw blvd",
+        "lines": {
+          "0": 5,
+          "1": 2,
+          "9": 1,
+          "24": 4
+        }
+      },
+      {
+        "place": "Ext.  fishing trawler",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 5,
+          "1": 2,
+          "2": 1,
+          "5": 1,
+          "7": 2,
+          "9": 1
+        }
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {}
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {}
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {
+          "21": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Apartment building",
+        "lines": {}
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "13": 1
+        }
+      },
+      {
+        "place": "White house",
+        "lines": {
+          "4": 8,
+          "12": 4,
+          "14": 2,
+          "15": 2,
+          "17": 4,
+          "18": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 5,
+          "1": 2,
+          "3": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Sky over pacific ocean",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "10": 1,
+          "16": 1
+        }
+      },
+      {
+        "place": "Auto security shop",
+        "lines": {
+          "16": 2,
+          "27": 2,
+          "45": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 5,
+          "16": 4,
+          "27": 1,
+          "41": 1,
+          "46": 1
+        }
+      },
+      {
+        "place": "Federal building, westwood",
+        "lines": {
+          "26": 1
+        }
+      },
+      {
+        "place": "Fbi sound lab",
+        "lines": {
+          "0": 2,
+          "26": 2
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 10,
+          "1": 6,
+          "2": 4,
+          "5": 1,
+          "7": 2
+        }
+      },
+      {
+        "place": "Osaka, japan",
+        "lines": {
+          "30": 1
+        }
+      },
+      {
+        "place": "Osaka apartment",
+        "lines": {
+          "21": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {}
+      },
+      {
+        "place": "K-eye studios",
+        "lines": {
+          "0": 3,
+          "1": 3,
+          "6": 4,
+          "22": 2
+        }
+      },
+      {
+        "place": "Sky over pacific ocean",
+        "lines": {}
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {}
+      },
+      {
+        "place": "U.s. air base",
+        "lines": {}
+      },
+      {
+        "place": "Fountain avenue",
+        "lines": {
+          "0": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {}
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "0": 4,
+          "31": 2
+        }
+      },
+      {
+        "place": "Adjacent apartments",
+        "lines": {
+          "31": 1
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {}
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {}
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "55": 1
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {}
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "7": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {}
+      },
+      {
+        "place": "Mimosa apartments",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 2,
+          "22": 2
+        }
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Government helicopter",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "10": 1
+        }
+      },
+      {
+        "place": "Ext.  beverly thrift",
+        "lines": {}
+      },
+      {
+        "place": "Government helicopter",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {}
+      },
+      {
+        "place": "Hallway just outside apartment",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 2,
+          "25": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 4,
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Wilshire blvd",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Fremont place",
+        "lines": {}
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "43": 1,
+          "49": 1
+        }
+      },
+      {
+        "place": "Government helicopter",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Sky over los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Western avenue",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Western avenue",
+        "lines": {}
+      },
+      {
+        "place": "Apache helicopter",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 1,
+          "23": 2
+        }
+      },
+      {
+        "place": "Colonel lee's mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Apache helicopter",
+        "lines": {
+          "23": 1
+        }
+      },
+      {
+        "place": "Colonel lee's mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Sky above western avenue",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Western avenue",
+        "lines": {}
+      },
+      {
+        "place": "Helicopters",
+        "lines": {
+          "23": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "13": 1
+        }
+      },
+      {
+        "place": "Santa monica freeway",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 3,
+          "5": 2
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Police cruiser",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Santa monica freeway",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Streets of los angeles",
+        "lines": {}
+      },
+      {
+        "place": "Colonel lee's mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Santa monica freeway",
+        "lines": {}
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {}
+      },
+      {
+        "place": "Carson's volvo",
+        "lines": {
+          "0": 3,
+          "2": 1,
+          "5": 2
+        }
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {
+          "0": 4,
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ambulance",
+        "lines": {}
+      },
+      {
+        "place": "Santa monica freeway",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Helicopters",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Police cruiser",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "0": 2,
+          "6": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Sky above ocean",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Colonel lee's mercedes",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Police cruiser",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "News copter",
+        "lines": {
+          "28": 1
+        }
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {}
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {}
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {}
+      },
+      {
+        "place": "News copter",
+        "lines": {}
+      },
+      {
+        "place": "Harbor freeway",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ambulance",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "Hollywood freeway",
+        "lines": {}
+      },
+      {
+        "place": "Colonel lee's mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Glendale blvd",
+        "lines": {}
+      },
+      {
+        "place": "Ext.  colonel lee's mercedes",
+        "lines": {}
+      },
+      {
+        "place": "Echo lake",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Echo lake",
+        "lines": {
+          "5": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Sky above ocean",
+        "lines": {}
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {}
+      },
+      {
+        "place": "Echo lake",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "0": 3,
+          "2": 2
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Echo lake",
+        "lines": {}
+      },
+      {
+        "place": "Apache helicopter",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "North korean consulate",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Park la brea office",
+        "lines": {
+          "33": 1,
+          "54": 1
+        }
+      },
+      {
+        "place": "Apache helicopter",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "13": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "Park la brea",
+        "lines": {
+          "52": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "11": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Park la brea office",
+        "lines": {
+          "33": 1
+        }
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {}
+      },
+      {
+        "place": "Apache helicopter",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Sky above ocean",
+        "lines": {}
+      },
+      {
+        "place": "Park la brea",
+        "lines": {}
+      },
+      {
+        "place": "Bachelor apartment",
+        "lines": {
+          "0": 11,
+          "1": 1,
+          "11": 2,
+          "19": 1,
+          "20": 2
+        }
+      },
+      {
+        "place": "Sky above ocean",
+        "lines": {}
+      },
+      {
+        "place": "U.s. fighter bombers",
+        "lines": {}
+      },
+      {
+        "place": "Ext.  bachelor apartment",
+        "lines": {
+          "0": 3,
+          "1": 1
+        }
+      },
+      {
+        "place": "Apache helicopter",
+        "lines": {
+          "1": 2,
+          "28": 1
+        }
+      },
+      {
+        "place": "Ext.  bachelor apartment",
+        "lines": {}
+      },
+      {
+        "place": "Park la brea",
+        "lines": {}
+      },
+      {
+        "place": "Ext.  apache helicopter",
+        "lines": {}
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {}
+      },
+      {
+        "place": "Sky above santa monica",
+        "lines": {}
+      },
+      {
+        "place": "U.s. fighter bombers",
+        "lines": {}
+      },
+      {
+        "place": "Park la brea",
+        "lines": {}
+      },
+      {
+        "place": "Workers' paradise hall",
+        "lines": {}
+      },
+      {
+        "place": "Pastoral scene",
+        "lines": {}
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Carson's house",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 21,
+      "longestWithoutWoman": 130,
+      "longestWithoutWomanStart": 481,
+      "words": {
+        "w": 447,
+        "m": 4311,
+        "unknown": 2774
+      },
+      "womenConversations": 3,
+      "menConversations": 45,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/9FrpAtF87VKblKkDEiIZzYgO40K.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/nwPhAsfnb7f46bZkWLG7IRP5HXr.jpg"
+  },
+  "bechdelData": {
+    "rating": 1,
+    "dubious": 0,
+    "id": 1392
+  },
+  "actors": [
+    {
+      "actorName": "Jackie Chan",
+      "character": "Lee",
+      "actorActress": "2",
+      "age": 44
+    },
+    {
+      "actorName": "Chris Tucker",
+      "character": "Carter",
+      "actorActress": "2",
+      "age": 27
+    },
+    {
+      "actorName": "Tom Wilkinson",
+      "character": "Griffin",
+      "actorActress": "2",
+      "age": 50
+    },
+    {
+      "actorName": "Philip Baker Hall",
+      "character": "Captain Diel",
+      "actorActress": "2",
+      "age": 67
+    },
+    {
+      "actorName": "Elizabeth Peña",
+      "character": "Johnson",
+      "actorActress": "1",
+      "age": 38
+    },
+    {
+      "actorName": "Chris Penn",
+      "character": "Clive",
+      "actorActress": "2",
+      "age": 32
+    },
+    {
+      "actorName": "Mark Rolston",
+      "character": "Agent Russ",
+      "actorActress": "2",
+      "age": 41
+    },
+    {
+      "actorName": "Tzi Ma",
+      "character": "Consul Han",
+      "actorActress": "2",
+      "age": 36
+    },
+    {
+      "actorName": "Rex Linn",
+      "character": "Agent Whitney",
+      "actorActress": "2",
+      "age": 41
+    },
+    {
+      "actorName": "Ken Leung",
+      "character": "Sang",
+      "actorActress": "2",
+      "age": 28
+    },
+    {
+      "actorName": "Robert Littman",
+      "character": "First Caucasien",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Chow",
+      "character": "Diner Guest",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Julia Hsu",
+      "character": "Soo Yung",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kai Lennox",
+      "character": "Cop at Diner",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Larry Sullivan",
+      "character": "Cop at Diner",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Yang Lin",
+      "character": "Consul Secretary",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Roger Fan",
+      "character": "Soo Yung's Bodyguard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "George Cheung",
+      "character": "Soo Yung's Driver",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lucy Lin",
+      "character": "Exposition Official",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jason Davis",
+      "character": "Kid at Theatre",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Hawkes",
+      "character": "Stucky",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gene LeBell",
+      "character": "Taxi Driver",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Wayne A. King",
+      "character": "Cigaweed Man"
+    },
+    {
+      "actorName": "Kevin L. Jackson",
+      "character": "Pool Player",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Manny Perry",
+      "character": "Bartender",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ronald D. Brown",
+      "character": "Pool Hall Doorman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Clifton Powell",
+      "character": "Luke",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Matthew Barry",
+      "character": "Market Clerk",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Stanley DeSantis",
+      "character": "FBI Gate Guard #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dan Martin",
+      "character": "FBI Gate Guard #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kevin Lowe",
+      "character": "Another Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Billy Devlin",
+      "character": "FBI Agent at Building",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tommy Bush",
+      "character": "Bomb Practice Sergeant",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Barry Shabaka Henley",
+      "character": "Bobby",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Albert Wong",
+      "character": "Chin",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ai Wan",
+      "character": "Foo Chow Hostess",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Lydia Look",
+      "character": "Foo CHow Waitress",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Chan Man-ching",
+      "character": "Japanese Tourist / Juntao's Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sumiko Chan",
+      "character": "Japanese Tourist",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ken Lo Wai-kwong",
+      "character": "Juntao's Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Stuart W. Yee",
+      "character": "Juntao's Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nicky Li Chung-Chi",
+      "character": "Juntao's Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Andy Cheng",
+      "character": "Juntao's Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Christine Ng Wing-mei",
+      "character": "Flight Attendant #1",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Frances Fong",
+      "character": "Socialite",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Robert Kotecki",
+      "character": "Convention Center Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mike Ashley",
+      "character": "Male Flight Attendant"
+    },
+    {
+      "actorName": "Ada Tai",
+      "character": "Flight Attendant #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Arlene Tai",
+      "character": "Flight Attendant #3",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Nina Ameri",
+      "character": "FBI Agent (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Stephen Blackehart",
+      "character": "SWAT Captain (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Finuoli",
+      "character": "Ticket Giver (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Victoria Genisce",
+      "character": "Police Officer (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "James Lew",
+      "character": "Juntao's Man in Los Angeles (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mars",
+      "character": "Juntao's Man in Hong Kong (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jody Millard",
+      "character": "Police Officer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Norman D. Wilson",
+      "character": "Card Player (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kwan Yung",
+      "character": "Juntao's Man in Hong Kong (uncredited)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Brett Ratner",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Ross LaManna",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Jim Kouf",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Ross LaManna",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Arthur M. Sarkissian",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Roger Birnbaum",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Jonathan Glickman",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Adam Greenberg",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Mark Helfrich",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Lalo Schifrin",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Robb Wilson King",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Sharen Davis",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Matthew Barry",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Nancy Green-Keyes",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 5,
+        "m": 10,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Sound": {
+        "w": 2,
+        "m": 17,
+        "nb": 0,
+        "unknown": 11
+      },
+      "Camera": {
+        "w": 1,
+        "m": 11,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Costume & Make-Up": {
+        "w": 2,
+        "m": 2,
+        "nb": 0,
+        "unknown": 7
+      },
+      "Editing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Art": {
+        "w": 2,
+        "m": 6,
+        "nb": 0,
+        "unknown": 11
+      },
+      "Directing": {
+        "w": 1,
+        "m": 4,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Crew": {
+        "w": 2,
+        "m": 39,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 3
+      }
+    }
+  },
+  "money": {
+    "budget": 33000000,
+    "revenue": 244721064
+  },
+  "directors": [
+    {
+      "name": "Brett Ratner"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Ross LaManna"
+    },
+    {
+      "name": "Jim Kouf"
+    }
+  ],
+  "awards": [
+    {
+      "name": "6 wins & 9 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-06T21:56:20.953Z",
+  "plot": "Cultures clash and tempers flares as the two cops named Detective Inspector Lee a Hong Kong Detective and Detective James Carter LAPD, a big-mouthed work-alone Los Angeles cop who are from different worlds discovers one thing in common: they can't stand each other. With time running out, they must join forces to catch the criminals and save the eleven-year-old Chinese girl of the Chinese consul named Soo Yung.",
+  "simplePlot": "Cultures clash and tempers flares as the two cops named Detective Inspector Lee a Hong Kong Detective and Detective James Carter LAPD, a big-mouthed work-alone Los Angeles cop who are from different worlds discovers one thing in common: they can't stand each other. With time running out, they must join forces to catch the criminals and save the eleven-year-old Chinese girl of the Chinese consul named Soo Yung.",
+  "year": 1998,
+  "releaseDate": "18 Sep 1998",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMGZiMzViNmEtNTNlZi00MzFmLTk5NTEtNDE2OTUzNmNlMTY4XkEyXkFqcGc@._V1_QL75_UY562_CR1,0,380,562_.jpg",
+  "idIMDB": "tt0120812",
+  "rating": "7.1",
+  "metascore": 61,
+  "urlIMDB": "https://www.imdb.com/title/tt0120812/"
+}

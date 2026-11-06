@@ -1,0 +1,2756 @@
+{
+  "_id": "tt0120338",
+  "title": "Titanic",
+  "genres": [
+    "Drama",
+    "Romance"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 7,
+    "numScenesDontPass": 188,
+    "numOfFemalesChars": 27,
+    "numOfMaleChars": 74,
+    "numOfFemalesCharsWithDialogue": 15,
+    "numOfMaleCharsWithDialogue": 41,
+    "totalLinesFemaleDialogue": 300,
+    "totalLinesMaleDialogue": 554,
+    "scenesThatPass": [
+      "ROSE: Yes. Very nice. Have you met my granddaughter, Lizzy? She takes care of me.\nLIZZY: Yes. We met just a few minutes ago, grandma. Remember, up on deck?\nROSE: Oh, yes.\nROSE: There, that's nice. I have to have my pictures when I travel. And Freddy of course.",
+      "ROSE: It was a dreadful, heavy thing.\nLIZZY: You actually believe this is you, grandma?\nROSE: It is me, dear. Wasn't I a hot number?",
+      "OLD ROSE: After all these years, feel it closing around my throat like a dog collar.\nROSE: I can still feel its weight. If you could have felt it, not just seen it...",
+      "RUTH: Oh no, that vulgar Brown woman is coming this way. Get up, quickly before she sits with us.\nMOLLY: Hello girls, I was hoping I'd catch you at tea.\nRUTH: We're awfully sorry you missed it. The Countess and I are just off to take the air on the boat deck.\nMOLLY: That sounds great. Let's go. I need to catch up on the gossip.",
+      "RUTH: Of course the invitations had to be sent back to the printers twice. And the bridesmaids dresses! Let me tell you what an odyssey that has b…\nROSE: Oh, look what I've done."
+    ]
+  },
+  "script": {
+    "file": "titanic.txt",
+    "layout": "indented",
+    "dialogueLines": 880,
+    "speakers": [
+      {
+        "name": "ROSE",
+        "lines": 193,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JACK",
+        "lines": 160,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CAL",
+        "lines": 71,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOVETT",
+        "lines": 51,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MOLLY",
+        "lines": 28,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BODINE",
+        "lines": 25,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RUTH",
+        "lines": 25,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SMITH",
+        "lines": 25,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ANDREWS",
+        "lines": 21,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OLD ROSE",
+        "lines": 18,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LIGHTOLLER",
+        "lines": 16,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOVEJOY",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FABRIZIO",
+        "lines": 14,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ISMAY",
+        "lines": 13,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LIZZY",
+        "lines": 12,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "STEWARD",
+        "lines": 12,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TOMMY",
+        "lines": 11,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FLEET",
+        "lines": 10,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MURDOCH",
+        "lines": 9,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BUELL",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BROCK",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MAN",
+        "lines": 6,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "BRIDE",
+        "lines": 5,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "HITCHINS",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOWE",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WOMAN",
+        "lines": 5,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "STEWARD #2",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "STEWARD BARNES",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FATHER BYLES",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FIRST OFFICER MURDOCH",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GRACIE",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HARTLEY",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LEE",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MASTER AT ARMS",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MOODY",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PHILLIPS",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ANATOLY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BARRETT",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BELL",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COLONEL GRACIE",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "EVANS",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HUSBAND",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HUTCHINSON",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "IDA",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MARVIN",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "PORTER",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PUBKEEPER",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ROWE",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SIR COSMO",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "A CNN NEWS STORY",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "ANNOUNCER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CAL'S POV",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CAMERAMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CAPTAIN SMITH",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CARDPLAYER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CARPATHIA STEWARD",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CHIEF ENGINEER BELL",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CNN REPORTER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "CREWMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "DANIEL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FABRIZIO'S POV",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FABRIZIO/JACK",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FIREMAN HENDRICKSON",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FLASHBACK",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FLEET'S POV",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GENTLEMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GROVES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GUGGENHEIM",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HELGA",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "IMMIGRATION OFFICER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IN BOAT 14",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IN BOAT 6",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IN COLLAPSIBLE C",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "INSERT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IRISHMAN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IRISHWOMAN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ISADOR",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "JACK/ROSE",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "JOUGHIN",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "LITTLE BOY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "LUCILE",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MADELEINE",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MCCAULEY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MOLLY BROWN",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MOTHER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "NOTE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "OPERATOR",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "REPORTER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "REVERSE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ROSE'S POV",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ROSE'S POV... SLOW MOTION",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SEAMAN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SEVERAL PEOPLE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STEWARD #1",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TOMMMY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TRUDY",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "WIDER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WOMAN IN CROWD",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "YALEY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "YOUNG STEWARD",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "YURI",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Int. mir one / north atlantic deep",
+        "lines": {}
+      },
+      {
+        "place": "The bottom of the sea",
+        "lines": {}
+      },
+      {
+        "place": "Mir one",
+        "lines": {}
+      },
+      {
+        "place": "Int. mir one and two",
+        "lines": {
+          "3": 9,
+          "5": 7,
+          "36": 2
+        }
+      },
+      {
+        "place": "Stern of deck of kedysh",
+        "lines": {
+          "3": 3,
+          "5": 2,
+          "52": 1
+        }
+      },
+      {
+        "place": "Lab deck, preservation room",
+        "lines": {
+          "3": 5,
+          "19": 1,
+          "49": 1,
+          "50": 1
+        }
+      },
+      {
+        "place": "House / ceramics studio",
+        "lines": {
+          "0": 2,
+          "3": 4,
+          "57": 1,
+          "87": 1
+        }
+      },
+      {
+        "place": "Keldysh deck",
+        "lines": {
+          "3": 1,
+          "19": 2
+        }
+      },
+      {
+        "place": "Lab deck / keldysh",
+        "lines": {
+          "0": 2,
+          "3": 2,
+          "19": 2
+        }
+      },
+      {
+        "place": "Ocean",
+        "lines": {}
+      },
+      {
+        "place": "Keldysh",
+        "lines": {
+          "3": 2,
+          "5": 3,
+          "19": 1
+        }
+      },
+      {
+        "place": "Keldysh helipad",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Rose's stateroom / keldysh",
+        "lines": {
+          "0": 4,
+          "3": 2,
+          "14": 1
+        }
+      },
+      {
+        "place": "Lab deck, preservation area",
+        "lines": {
+          "0": 7,
+          "3": 6,
+          "14": 2
+        }
+      },
+      {
+        "place": "Imaging shack / keldysh",
+        "lines": {
+          "0": 5,
+          "3": 4,
+          "5": 6
+        }
+      },
+      {
+        "place": "Southampton dock",
+        "lines": {
+          "0": 3,
+          "2": 10,
+          "6": 1,
+          "9": 2,
+          "21": 1,
+          "45": 2,
+          "59": 1
+        }
+      },
+      {
+        "place": "Southampton docks / titanic",
+        "lines": {
+          "1": 5,
+          "12": 3,
+          "46": 2,
+          "61": 1
+        }
+      },
+      {
+        "place": "Terminal",
+        "lines": {
+          "1": 2,
+          "34": 1,
+          "47": 1
+        }
+      },
+      {
+        "place": "Titanic and dock",
+        "lines": {}
+      },
+      {
+        "place": "Aft well deck / poop deck",
+        "lines": {
+          "1": 1,
+          "12": 2
+        }
+      },
+      {
+        "place": "Southampton dock",
+        "lines": {}
+      },
+      {
+        "place": "River test",
+        "lines": {}
+      },
+      {
+        "place": "Third class berthing / g-deck forward",
+        "lines": {}
+      },
+      {
+        "place": "Suite b-52-",
+        "lines": {
+          "2": 3,
+          "95": 1
+        }
+      },
+      {
+        "place": "Cherbourg harbor, france",
+        "lines": {}
+      },
+      {
+        "place": "First class reception/ d-deck",
+        "lines": {
+          "9": 2,
+          "25": 1
+        }
+      },
+      {
+        "place": "Bow",
+        "lines": {}
+      },
+      {
+        "place": "Ext. titanic",
+        "lines": {
+          "7": 1,
+          "12": 1,
+          "13": 1,
+          "29": 1,
+          "53": 1,
+          "56": 1
+        }
+      },
+      {
+        "place": "Palm court restaurant",
+        "lines": {
+          "0": 2,
+          "2": 1,
+          "4": 3,
+          "6": 2,
+          "13": 2
+        }
+      },
+      {
+        "place": "Poop deck / after decks",
+        "lines": {
+          "1": 1,
+          "16": 3
+        }
+      },
+      {
+        "place": "First class dining saloon",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Corridor / b deck",
+        "lines": {}
+      },
+      {
+        "place": "Rose's bedroom",
+        "lines": {}
+      },
+      {
+        "place": "A deck promenade, aft",
+        "lines": {}
+      },
+      {
+        "place": "Poop deck",
+        "lines": {
+          "0": 11,
+          "1": 14,
+          "47": 1
+        }
+      },
+      {
+        "place": "Poop deck",
+        "lines": {
+          "0": 4,
+          "1": 1,
+          "2": 8,
+          "11": 1,
+          "39": 1
+        }
+      },
+      {
+        "place": "Rose's bedroom",
+        "lines": {
+          "0": 2,
+          "2": 5,
+          "9": 1
+        }
+      },
+      {
+        "place": "Keldysh imaging shack",
+        "lines": {
+          "0": 2,
+          "3": 3,
+          "5": 1,
+          "9": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Launch area/keldysh deck",
+        "lines": {
+          "3": 3,
+          "14": 6,
+          "19": 2,
+          "20": 5
+        }
+      },
+      {
+        "place": "Imaging shack",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "B deck titanic",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Third class general room",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "12": 1,
+          "68": 1
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {
+          "0": 18,
+          "1": 22
+        }
+      },
+      {
+        "place": "Reception room / d-deck",
+        "lines": {
+          "4": 2,
+          "6": 2,
+          "7": 2,
+          "13": 2
+        }
+      },
+      {
+        "place": "A deck promenade",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "44": 1
+        }
+      },
+      {
+        "place": "A deck promenade / aft",
+        "lines": {
+          "0": 5,
+          "1": 8,
+          "4": 5,
+          "6": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Molly brown's stateroom",
+        "lines": {
+          "4": 3,
+          "15": 1
+        }
+      },
+      {
+        "place": "Upper landing / grand staircase and a-deck",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "D-deck reception room",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "2": 1,
+          "4": 2,
+          "6": 1,
+          "30": 1,
+          "48": 1,
+          "81": 1
+        }
+      },
+      {
+        "place": "Dining saloon",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Dining saloon",
+        "lines": {
+          "0": 4,
+          "1": 6,
+          "2": 3,
+          "4": 1,
+          "6": 4,
+          "8": 2,
+          "13": 2,
+          "30": 2,
+          "73": 1,
+          "96": 1
+        }
+      },
+      {
+        "place": "A-deck foyer-night",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Third class general room",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Third class general room",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "12": 1,
+          "16": 1
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {
+          "0": 5,
+          "1": 5,
+          "77": 1
+        }
+      },
+      {
+        "place": "Orse and cal's suite / private promenade",
+        "lines": {
+          "0": 3,
+          "2": 4
+        }
+      },
+      {
+        "place": "Ruth's suite",
+        "lines": {
+          "0": 3,
+          "6": 5
+        }
+      },
+      {
+        "place": "First class dining saloon",
+        "lines": {
+          "1": 3,
+          "11": 3,
+          "15": 2
+        }
+      },
+      {
+        "place": "Gymnasium",
+        "lines": {
+          "2": 1,
+          "6": 1,
+          "8": 1,
+          "82": 1
+        }
+      },
+      {
+        "place": "Aft well deck, b-deck and a-deck",
+        "lines": {
+          "1": 1,
+          "12": 1,
+          "16": 2
+        }
+      },
+      {
+        "place": "A-deck / aft",
+        "lines": {}
+      },
+      {
+        "place": "Bridge / chartroom",
+        "lines": {
+          "7": 2,
+          "10": 1,
+          "22": 1,
+          "29": 1
+        }
+      },
+      {
+        "place": "Boat deck / starboard side",
+        "lines": {
+          "0": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Gymnasium",
+        "lines": {
+          "0": 5,
+          "1": 4
+        }
+      },
+      {
+        "place": "First class loung",
+        "lines": {
+          "0": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "Titanic",
+        "lines": {
+          "0": 4,
+          "1": 3,
+          "17": 1
+        }
+      },
+      {
+        "place": "Keldysh imaging shack",
+        "lines": {
+          "0": 1,
+          "5": 1,
+          "20": 2
+        }
+      },
+      {
+        "place": "Rose's suite",
+        "lines": {
+          "0": 8,
+          "1": 4
+        }
+      },
+      {
+        "place": "Keldysh / imaging shack",
+        "lines": {
+          "5": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Rose and cal's suite",
+        "lines": {
+          "0": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "First class smoking room",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Atlantic",
+        "lines": {
+          "7": 3,
+          "10": 3
+        }
+      },
+      {
+        "place": "Rose and cal's suite",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Corridor outside suite",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "E-deck foyer / elevators",
+        "lines": {}
+      },
+      {
+        "place": "F-deck corridors / fan room",
+        "lines": {
+          "0": 1,
+          "1": 3
+        }
+      },
+      {
+        "place": "Boiler room five and six",
+        "lines": {}
+      },
+      {
+        "place": "First class smoking room",
+        "lines": {
+          "39": 1
+        }
+      },
+      {
+        "place": "Boiler room six",
+        "lines": {}
+      },
+      {
+        "place": "Hold #",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Wireless room",
+        "lines": {
+          "22": 1,
+          "35": 1
+        }
+      },
+      {
+        "place": "Ext. wireless shak / freighter californian",
+        "lines": {
+          "40": 2,
+          "66": 1
+        }
+      },
+      {
+        "place": "Ocean / titanic",
+        "lines": {}
+      },
+      {
+        "place": "Hold #",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "9": 1
+        }
+      },
+      {
+        "place": "Atlantic / titanic",
+        "lines": {
+          "17": 2,
+          "32": 1
+        }
+      },
+      {
+        "place": "Boiler room six",
+        "lines": {}
+      },
+      {
+        "place": "Cal and rose's suite",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Hold #",
+        "lines": {
+          "15": 1,
+          "88": 1
+        }
+      },
+      {
+        "place": "Forward well deck and crow's nest",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "17": 4,
+          "32": 1,
+          "64": 1
+        }
+      },
+      {
+        "place": "Ext. bridge",
+        "lines": {
+          "4": 1,
+          "17": 3,
+          "18": 2,
+          "32": 1,
+          "34": 2,
+          "37": 2,
+          "38": 1
+        }
+      },
+      {
+        "place": "Ext. bridge",
+        "lines": {
+          "7": 3,
+          "18": 2
+        }
+      },
+      {
+        "place": "G-deck forward",
+        "lines": {
+          "12": 1,
+          "94": 1
+        }
+      },
+      {
+        "place": "First class corridor / a-deck",
+        "lines": {
+          "25": 1,
+          "93": 1
+        }
+      },
+      {
+        "place": "Forward well deck",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Steerage forward",
+        "lines": {
+          "16": 1
+        }
+      },
+      {
+        "place": "Corridor on b deck",
+        "lines": {
+          "2": 1,
+          "27": 2
+        }
+      },
+      {
+        "place": "Bridge / chartroom",
+        "lines": {
+          "7": 2,
+          "13": 2,
+          "42": 1
+        }
+      },
+      {
+        "place": "Boiler room",
+        "lines": {
+          "38": 1
+        }
+      },
+      {
+        "place": "B-deck forward / well deck",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "7": 1,
+          "42": 1,
+          "65": 1,
+          "98": 1
+        }
+      },
+      {
+        "place": "B-deck foyer / corridor",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Rose and cal's suite",
+        "lines": {
+          "0": 3,
+          "1": 5,
+          "2": 3,
+          "6": 1,
+          "27": 1,
+          "33": 3,
+          "63": 1
+        }
+      },
+      {
+        "place": "Mail sorting room / hold",
+        "lines": {}
+      },
+      {
+        "place": "Bride / chartroom",
+        "lines": {
+          "7": 5,
+          "8": 5,
+          "13": 2,
+          "18": 1
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {
+          "8": 1,
+          "91": 1
+        }
+      },
+      {
+        "place": "Rose and cal's suite",
+        "lines": {
+          "2": 4,
+          "6": 1,
+          "15": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Steerage berthing aft",
+        "lines": {
+          "26": 2
+        }
+      },
+      {
+        "place": "Wireless room",
+        "lines": {
+          "7": 1,
+          "22": 1,
+          "35": 2
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {
+          "8": 1,
+          "18": 1
+        }
+      },
+      {
+        "place": "A-deck foyer",
+        "lines": {
+          "0": 3,
+          "2": 2,
+          "4": 1,
+          "6": 1,
+          "8": 3,
+          "99": 1
+        }
+      },
+      {
+        "place": "Master at arms office",
+        "lines": {
+          "11": 1,
+          "58": 1
+        }
+      },
+      {
+        "place": "Bridge",
+        "lines": {
+          "7": 3,
+          "22": 2
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {
+          "2": 1,
+          "6": 1,
+          "10": 2,
+          "31": 1,
+          "97": 1
+        }
+      },
+      {
+        "place": "Steerage berthing aft / corridors and stairwell",
+        "lines": {
+          "15": 1,
+          "25": 1,
+          "79": 1
+        }
+      },
+      {
+        "place": "Starboard side",
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "Int. titanic hull and master at arms office",
+        "lines": {
+          "11": 2
+        }
+      },
+      {
+        "place": "Boat deck / starboard side, forward",
+        "lines": {
+          "13": 2,
+          "24": 2
+        }
+      },
+      {
+        "place": "Boat deck / port side",
+        "lines": {
+          "0": 5,
+          "2": 2,
+          "4": 4,
+          "6": 3,
+          "10": 2,
+          "44": 1
+        }
+      },
+      {
+        "place": "Boat deck foyer / staircase / a-deck foyer",
+        "lines": {}
+      },
+      {
+        "place": "Ocean / titanic / boat",
+        "lines": {
+          "4": 1,
+          "23": 1
+        }
+      },
+      {
+        "place": "Master at arms office / corridor",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "First class corridor",
+        "lines": {
+          "0": 3,
+          "8": 3
+        }
+      },
+      {
+        "place": "Foyer / elevators",
+        "lines": {
+          "0": 1,
+          "86": 1
+        }
+      },
+      {
+        "place": "Ocean / boat",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "First class elevator / corridors",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Master at arms office / corridor",
+        "lines": {
+          "0": 3,
+          "1": 4
+        }
+      },
+      {
+        "place": "Titanic / boat one",
+        "lines": {
+          "80": 1
+        }
+      },
+      {
+        "place": "Master at arms office",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Stairwell and corridors",
+        "lines": {
+          "0": 5,
+          "15": 3
+        }
+      },
+      {
+        "place": "Master at arms office",
+        "lines": {
+          "0": 1,
+          "1": 7
+        }
+      },
+      {
+        "place": "Boat 6 and titanic",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Scotland road / e-deck",
+        "lines": {
+          "15": 1,
+          "74": 1,
+          "75": 1
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {
+          "2": 2,
+          "8": 2,
+          "10": 3,
+          "11": 2,
+          "25": 1,
+          "43": 2,
+          "76": 1
+        }
+      },
+      {
+        "place": "Bridge / forward well deck / foc'sle",
+        "lines": {}
+      },
+      {
+        "place": "E-deck corridors and stairwell",
+        "lines": {
+          "1": 3,
+          "12": 3,
+          "16": 2,
+          "26": 2
+        }
+      },
+      {
+        "place": "Cal and rose's suite",
+        "lines": {}
+      },
+      {
+        "place": "Steerage, aft",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "15": 1
+        }
+      },
+      {
+        "place": "Boat 6 / titanic",
+        "lines": {
+          "4": 1,
+          "7": 2,
+          "23": 2
+        }
+      },
+      {
+        "place": "A-deck foyer",
+        "lines": {
+          "2": 2,
+          "67": 1
+        }
+      },
+      {
+        "place": "First class smoking room",
+        "lines": {
+          "54": 1
+        }
+      },
+      {
+        "place": "Int. a-deck promenade",
+        "lines": {}
+      },
+      {
+        "place": "Boat deck and a-deck, aft",
+        "lines": {
+          "10": 1,
+          "24": 1
+        }
+      },
+      {
+        "place": "Boat deck, starboard side, aft",
+        "lines": {
+          "2": 1,
+          "11": 1
+        }
+      },
+      {
+        "place": "Boat deck / a-deck, port, aft",
+        "lines": {
+          "24": 1
+        }
+      },
+      {
+        "place": "Boat deck, starboard, aft",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Boat deck, port",
+        "lines": {
+          "0": 2,
+          "16": 1
+        }
+      },
+      {
+        "place": "Boat deck, starboard, forward",
+        "lines": {
+          "2": 2,
+          "11": 1,
+          "18": 1,
+          "85": 1
+        }
+      },
+      {
+        "place": "Boat deck / port side",
+        "lines": {
+          "0": 2,
+          "1": 5,
+          "2": 4,
+          "10": 3,
+          "21": 1,
+          "41": 2
+        }
+      },
+      {
+        "place": "Grand staircase",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "D-deck reception room",
+        "lines": {
+          "2": 2,
+          "11": 1
+        }
+      },
+      {
+        "place": "Dining saloon",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Galley / stairwell",
+        "lines": {}
+      },
+      {
+        "place": "E-deck corridors",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "15": 1
+        }
+      },
+      {
+        "place": "Boat deck, starboard side",
+        "lines": {
+          "51": 1
+        }
+      },
+      {
+        "place": "Boat deck, port side / roof of officers' quarters",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {}
+      },
+      {
+        "place": "Boat deck, starboard side",
+        "lines": {
+          "2": 2,
+          "16": 1,
+          "18": 2
+        }
+      },
+      {
+        "place": "First class smoke room",
+        "lines": {
+          "0": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Boat deck and various locations",
+        "lines": {
+          "31": 1
+        }
+      },
+      {
+        "place": "Boat deck / bridge",
+        "lines": {
+          "2": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "A-deck aft, port side",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Forward funnel",
+        "lines": {}
+      },
+      {
+        "place": "A-deck / b-deck / well deck, aft",
+        "lines": {
+          "1": 1,
+          "21": 1
+        }
+      },
+      {
+        "place": "Forward funnel",
+        "lines": {}
+      },
+      {
+        "place": "Boat deck foyer / grand staircase",
+        "lines": {}
+      },
+      {
+        "place": "Belowdecks",
+        "lines": {}
+      },
+      {
+        "place": "Stern",
+        "lines": {
+          "78": 1
+        }
+      },
+      {
+        "place": "Stern",
+        "lines": {
+          "1": 1,
+          "28": 3,
+          "84": 1
+        }
+      },
+      {
+        "place": "Ship-- various",
+        "lines": {}
+      },
+      {
+        "place": "Titanic / boat",
+        "lines": {
+          "83": 1
+        }
+      },
+      {
+        "place": "Engine room",
+        "lines": {}
+      },
+      {
+        "place": "Titanic",
+        "lines": {
+          "72": 1
+        }
+      },
+      {
+        "place": "Boat deck",
+        "lines": {}
+      },
+      {
+        "place": "Engine room",
+        "lines": {}
+      },
+      {
+        "place": "Titanic",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "92": 1
+        }
+      },
+      {
+        "place": "Ocean / underwater and surface",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Ocean",
+        "lines": {
+          "0": 2,
+          "1": 4,
+          "21": 2
+        }
+      },
+      {
+        "place": "Collapsible a / ocean",
+        "lines": {
+          "2": 1,
+          "12": 1,
+          "60": 1
+        }
+      },
+      {
+        "place": "Ocean",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "21": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Lifeboats / ocean",
+        "lines": {
+          "4": 2,
+          "23": 2,
+          "48": 1,
+          "62": 1,
+          "71": 1
+        }
+      },
+      {
+        "place": "Ocean",
+        "lines": {
+          "0": 6,
+          "1": 8
+        }
+      },
+      {
+        "place": "Lifeboats / ocean",
+        "lines": {
+          "24": 1
+        }
+      },
+      {
+        "place": "Ocean / boat",
+        "lines": {}
+      },
+      {
+        "place": "Ocean",
+        "lines": {
+          "0": 3,
+          "89": 1,
+          "90": 1
+        }
+      },
+      {
+        "place": "Imaging shack / keldysh",
+        "lines": {
+          "9": 2
+        }
+      },
+      {
+        "place": "Lifeboats / open sea",
+        "lines": {
+          "70": 1
+        }
+      },
+      {
+        "place": "Lifeboats / open sea",
+        "lines": {}
+      },
+      {
+        "place": "Lifeboats / ocean / carpathia montage",
+        "lines": {}
+      },
+      {
+        "place": "Deck / carpathia",
+        "lines": {
+          "0": 6,
+          "2": 2,
+          "9": 2,
+          "55": 1,
+          "69": 1
+        }
+      },
+      {
+        "place": "Imaging shack / keldysh",
+        "lines": {
+          "5": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Ocean floor / titanic wreck",
+        "lines": {
+          "100": 1
+        }
+      },
+      {
+        "place": "Keldysh deck",
+        "lines": {
+          "3": 2,
+          "14": 1
+        }
+      },
+      {
+        "place": "Keldysh stern deck",
+        "lines": {
+          "0": 4,
+          "3": 5,
+          "5": 2,
+          "14": 1
+        }
+      },
+      {
+        "place": "Rose's cabin / keldysh",
+        "lines": {}
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 30,
+      "longestWithoutWoman": 29,
+      "longestWithoutWomanStart": 1,
+      "words": {
+        "w": 3449,
+        "m": 6040,
+        "unknown": 414
+      },
+      "womenConversations": 22,
+      "menConversations": 67,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/sCzcYW9h55WcesOqA12cgEr9Exw.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 345
+  },
+  "actors": [
+    {
+      "actorName": "Leonardo DiCaprio",
+      "character": "Jack Dawson",
+      "actorActress": "2",
+      "age": 23
+    },
+    {
+      "actorName": "Kate Winslet",
+      "character": "Rose DeWitt Bukater",
+      "actorActress": "1",
+      "age": 22
+    },
+    {
+      "actorName": "Billy Zane",
+      "character": "Cal Hockley",
+      "actorActress": "2",
+      "age": 31
+    },
+    {
+      "actorName": "Kathy Bates",
+      "character": "Molly Brown",
+      "actorActress": "1",
+      "age": 49
+    },
+    {
+      "actorName": "Frances Fisher",
+      "character": "Ruth DeWitt Bukater",
+      "actorActress": "1",
+      "age": 45
+    },
+    {
+      "actorName": "Gloria Stuart",
+      "character": "Old Rose",
+      "actorActress": "1",
+      "age": 87
+    },
+    {
+      "actorName": "Bill Paxton",
+      "character": "Brock Lovett",
+      "actorActress": "2",
+      "age": 42
+    },
+    {
+      "actorName": "Bernard Hill",
+      "character": "Captain Smith",
+      "actorActress": "2",
+      "age": 53
+    },
+    {
+      "actorName": "David Warner",
+      "character": "Spicer Lovejoy",
+      "actorActress": "2",
+      "age": 56
+    },
+    {
+      "actorName": "Victor Garber",
+      "character": "Thomas Andrews",
+      "actorActress": "2",
+      "age": 48
+    },
+    {
+      "actorName": "Jonathan Hyde",
+      "character": "Bruce Ismay",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Suzy Amis",
+      "character": "Lizzy Calvert",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Lewis Abernathy",
+      "character": "Lewis Bodine",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nicholas Cascone",
+      "character": "Bobby Buell",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anatoly M. Sagalevitch",
+      "character": "Anatoly Milkailavich",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Danny Nucci",
+      "character": "Fabrizio",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jason Barry",
+      "character": "Tommy Ryan",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ewan Stewart",
+      "character": "1st Officer Murdoch",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ioan Gruffudd",
+      "character": "Fifth Officer Lowe",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jonny Phillips",
+      "character": "2nd Officer Lightoller",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mark Lindsay Chapman",
+      "character": "Chief Officer Wilde",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Graham",
+      "character": "Quartermaster Rowe",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paul Brightwell",
+      "character": "Quartermaster Hichens",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ron Donachie",
+      "character": "Master at Arms",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Eric Braeden",
+      "character": "John Jacob Astor",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Charlotte Chatton",
+      "character": "Madeleine Astor",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Bernard Fox",
+      "character": "Col. Archibald Gracie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Ensign",
+      "character": "Benjamin Guggenheim",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Fannie Brett",
+      "character": "Madame Aubert",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jenette Goldstein",
+      "character": "Irish Mommy",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Camilla Overbye Roos",
+      "character": "Helga Dahl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Linda Kerns",
+      "character": "3rd Class Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Amy Gaipa",
+      "character": "Trudy Bolt",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Martin Jarvis",
+      "character": "Sir Duff Gordon",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rosalind Ayres",
+      "character": "Lady Duff Gordon",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rochelle Rose",
+      "character": "Countess of Rothes",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jonathan Evans-Jones",
+      "character": "Wallace Hartley",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brian Walsh",
+      "character": "Irish Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rocky Taylor",
+      "character": "Bert Cartmell",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alexandrea Owens",
+      "character": "Cora Cartmell",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Simon Crane",
+      "character": "4th Officer Boxhall",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Edward Fletcher",
+      "character": "6th Officer Moody",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Scott G. Anderson",
+      "character": "Frederick Fleet",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Martin East",
+      "character": "Lookout Lee",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Craig Kelly",
+      "character": "Harold Bride",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gregory Cooke",
+      "character": "Jack Phillips",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Liam Tuohy",
+      "character": "Chief Baker Joughin"
+    },
+    {
+      "actorName": "James Lancaster",
+      "character": "Father Byles",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Elsa Raven",
+      "character": "Ida Strauss",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Lew Palter",
+      "character": "Isidor Straus",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Reece P. Thompson III",
+      "character": "Irish Little Boy"
+    },
+    {
+      "actorName": "Laramie Landis",
+      "character": "Irish Little Girl"
+    },
+    {
+      "actorName": "Amber Waddell",
+      "character": "Cal's Crying Girl"
+    },
+    {
+      "actorName": "Alison Waddell",
+      "character": "Cal's Crying Girl"
+    },
+    {
+      "actorName": "Mark Rafael Truitt",
+      "character": "Yaley",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Walcutt",
+      "character": "1st Class Husband",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Terry Forrestal",
+      "character": "Chief Engineer Bell",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Derek Lea",
+      "character": "Leading Stoker Barrett",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Ashton",
+      "character": "Carpenter John Hutchinson",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sean Nepita",
+      "character": "Elevator Operator",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brendan Connolly",
+      "character": "Scotland Road Steward",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Cronnelly",
+      "character": "Crewman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Garth Wilton",
+      "character": "1st Class Waiter",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Martin Laing",
+      "character": "Promenade Deck Steward",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Fox",
+      "character": "Steward #1"
+    },
+    {
+      "actorName": "Nick Meaney",
+      "character": "Steward #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kevin Owers",
+      "character": "Steward #3",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mark Capri",
+      "character": "Steward #4",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Marc Cass",
+      "character": "Hold Steward #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paul Herbert",
+      "character": "Hold Steward #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Emmett James",
+      "character": "1st Class Steward"
+    },
+    {
+      "actorName": "Chris Byrne",
+      "character": "Stairwell Steward",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Oliver Page",
+      "character": "Steward Barnes",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "James Garrett",
+      "character": "Titanic Porter",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Erik Holland",
+      "character": "Olaf Dahl",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jari Kinnunen",
+      "character": "Bjorn Gunderson"
+    },
+    {
+      "actorName": "Anders Falk",
+      "character": "Olaus Gunderson"
+    },
+    {
+      "actorName": "Martin Hub",
+      "character": "Slovakian Father",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Seth Adkins",
+      "character": "Slovakian 3 Year Old Boy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Barry Dennen",
+      "character": "Praying Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Vern Urich",
+      "character": "Man in Water",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rebecca Klingler",
+      "character": "Mother at Stern",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tricia O'Neil",
+      "character": "Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kathleen S. Dunn",
+      "character": "Woman in Water",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Romeo Francis",
+      "character": "Syrian Man"
+    },
+    {
+      "actorName": "Mandana Marino",
+      "character": "Syrian Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Van Ling",
+      "character": "Chinese Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Bjørn Olsen",
+      "character": "Olaf"
+    },
+    {
+      "actorName": "Dan Pettersson",
+      "character": "Sven"
+    },
+    {
+      "actorName": "Shay Duffin",
+      "character": "Pubkeeper",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Greg Ellis",
+      "character": "Carpathia Steward",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Diana Morgan",
+      "character": "News Reporter",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kris Andersson",
+      "character": "Dancer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Bobbie Bates",
+      "character": "Dancer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Aaron James Cash",
+      "character": "Dancer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anne Fletcher",
+      "character": "Dancer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Edmond Alan Forsyth",
+      "character": "Dancer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Andie Hicks",
+      "character": "Dancer"
+    },
+    {
+      "actorName": "Scott Hislop",
+      "character": "Dancer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Stan Mazin",
+      "character": "Dancer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lisa Ratzin",
+      "character": "Dancer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Julene Renee",
+      "character": "Dancer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alexandra Boyd",
+      "character": "First Class Woman (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "James Cameron",
+      "character": "Steerage Dancer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mike Butters",
+      "character": "Musician / Baker (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kevin De La Noy",
+      "character": "Third Officer Pitman (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tony Kenny",
+      "character": "Deckhand (uncredited)"
+    },
+    {
+      "actorName": "Sean Lawlor",
+      "character": "Charles Hendrickson (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Don Lynch",
+      "character": "Frederick Spedden (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Johnny Martin",
+      "character": "Rescue Boat Crewman (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Meghan McLeod",
+      "character": "First Class Passenger (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Steven Quale",
+      "character": "Engine Room Crewman (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "R. Gern Trowbridge",
+      "character": "Drowning Man (uncredited)"
+    },
+    {
+      "actorName": "Olivia Rosewood",
+      "character": "Mary Marvin (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "John Slade",
+      "character": "Ohio Man (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brian McDermott",
+      "character": "Titanic Gym Instructor Thomas McCawley (uncredited)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Jon Landau",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Russell Carpenter",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Conrad Buff IV",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Richard A. Harris",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "James Horner",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Peter Lamont",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Deborah L. Scott",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mali Finn",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Emily Schweber",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Sound": {
+        "w": 9,
+        "m": 24,
+        "nb": 0,
+        "unknown": 8
+      },
+      "Camera": {
+        "w": 1,
+        "m": 13,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Editing": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 8,
+        "m": 6,
+        "nb": 0,
+        "unknown": 7
+      },
+      "Art": {
+        "w": 0,
+        "m": 7,
+        "nb": 0,
+        "unknown": 9
+      },
+      "Costume & Make-Up": {
+        "w": 7,
+        "m": 5,
+        "nb": 0,
+        "unknown": 15
+      },
+      "Crew": {
+        "w": 28,
+        "m": 71,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Visual Effects": {
+        "w": 2,
+        "m": 10,
+        "nb": 0,
+        "unknown": 11
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 5,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 200000000,
+    "revenue": 2264162353
+  },
+  "directors": [
+    {
+      "name": "James Cameron"
+    }
+  ],
+  "writers": [
+    {
+      "name": "James Cameron"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Won 11 Oscars. 126 wins & 84 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-06T21:56:06.514Z",
+  "plot": "84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912, on a ship called Titanic when young Rose boards the departing ship with the upper-class passengers and her mother, Ruth DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist named Jack Dawson and his best friend Fabrizio De Rossi win third-class tickets to the ship in a game. And she explains the whole story from departure until the death of Titanic on its first and last voyage April 15th, 1912 at 2:20 in the morning.",
+  "simplePlot": "84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912, on a ship called Titanic when young Rose boards the departing ship with the upper-class passengers and her mother, Ruth DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist named Jack Dawson and his best friend Fabrizio De Rossi win third-class tickets to the ship in a game. And she explains the whole story from departure until the death of Titanic on its first and last voyage April 15th, 1912 at 2:20 in the morning.",
+  "year": 1997,
+  "releaseDate": "19 Dec 1997",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BYzYyN2FiZmUtYWYzMy00MzViLWJkZTMtOGY1ZjgzNWMwN2YxXkEyXkFqcGc@._V1_QL75_UX380_CR0,2,380,562_.jpg",
+  "idIMDB": "tt0120338",
+  "rating": "8.0",
+  "metascore": 75,
+  "urlIMDB": "https://www.imdb.com/title/tt0120338/"
+}
