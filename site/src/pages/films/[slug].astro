@@ -85,7 +85,10 @@ const letter = (key: string) => String.fromCharCode(65 + order.indexOf(key));
 
 const waffle = womenShare !== null ? Array.from({ length: 100 }, (_, i) => i < womenShare) : [];
 const verdictWord = bechdel.pass ? 'Passes' : 'Fails';
-const description = `${film.title} (${film.year}) ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test with a score of ${bechdel.score} out of 3. See who talks, scene by scene, and what an AI found in the script.`;
+// Under 160 characters: long titles drop the second sentence
+const verdictSentence = `${film.title} (${film.year}) ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test with a score of ${bechdel.score} out of 3.`;
+const descriptionTail = ' See who talks, scene by scene, and what an AI found in the script.';
+const description = verdictSentence.length + descriptionTail.length <= 160 ? verdictSentence + descriptionTail : verdictSentence;
 const analyzed = ai?.analyzedAt ? new Date(ai.analyzedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
 const facts = [
 	['Released', film.released],
@@ -108,6 +111,8 @@ const credit = [
 <Base
 	title={`${film.title} (${film.year}): ${verdictWord.toLowerCase()} the Bechdel test`}
 	description={description}
+	image={`/og/${film.slug}.jpg`}
+	imageAlt={`${film.title}: ${verdictWord.toLowerCase()} the Bechdel test, score ${bechdel.score} out of 3`}
 	structuredData={{
 		'@type': 'Movie',
 		name: film.title,
@@ -497,7 +502,7 @@ const credit = [
 						{has.compare && ai && (
 							<section class="exhibit panel wide tilt-l" aria-labelledby="ex-compare">
 								<h3 id="ex-compare">Exhibit {letter('compare')}: her side, his side</h3>
-								<div class="table-scroll">
+								<div class="table-scroll" tabindex="0" role="region" aria-label="Women and men compared; scrolls sideways">
 									<table class="compare">
 										<thead>
 											<tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col" class="pink">Women</th><th scope="col">Men</th></tr>
