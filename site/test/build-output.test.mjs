@@ -39,7 +39,7 @@ const indexable = pages.filter((p) => !p.noindex);
 test('every page has the head the launch checklist asks for', () => {
 	for (const p of pages) {
 		const where = `on ${p.path}`;
-		assert.match(p.html, /^<!DOCTYPE html><html lang="en"[\s>]/i, `lang ${where}`);
+		assert.match(p.html, /^<!DOCTYPE html>\s*<html lang="en"[\s>]/i, `lang ${where}`);
 		assert.ok(p.title, `title ${where}`);
 		assert.ok(p.description && p.description.length <= 160, `description under 160 chars ${where} (${p.description.length})`);
 		assert.match(p.html, /<meta http-equiv="Content-Security-Policy"/, `CSP ${where}`);
