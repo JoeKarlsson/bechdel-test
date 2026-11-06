@@ -16,7 +16,9 @@
 		"e2e": "playwright test",
 		"og": "node scripts/render-share-images.mjs",
 		"icons": "node scripts/make-icons.mjs",
-		"lighthouse": "lhci autorun"
+		"lighthouse": "lhci autorun",
+		"check-links": "node scripts/check-external-links.mjs",
+		"test:coverage": "node --test --experimental-test-coverage --test-coverage-include=src/lib/** test/*.test.mjs"
 	},
 	"dependencies": {
 		"astro": "7.4.7",

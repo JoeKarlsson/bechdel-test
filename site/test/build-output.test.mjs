@@ -107,3 +107,19 @@ test('security.txt has a contact and won’t expire in the next 30 days', () => 
 	const days = (expires - Date.now()) / 86_400_000;
 	assert.ok(days > 30, `security.txt expires in ${Math.round(days)} days: renew it`);
 });
+
+test('the RSS feed lists every film and every page points to it', () => {
+	const xml = readFileSync(join(DIST, 'rss.xml'), 'utf8');
+	assert.match(xml, /^<\?xml version="1.0" encoding="UTF-8"\?>\s*<rss version="2.0"/);
+	const films = pages.filter((p) => p.path.startsWith('/films/'));
+	assert.equal((xml.match(/<item>/g) ?? []).length, films.length);
+	for (const p of pages) assert.match(p.html, /<link rel="alternate" type="application\/rss\+xml"[^>]*href="\/rss\.xml"/, `feed link on ${p.path}`);
+});
+
+test('the site ships under 20 KB of JavaScript in total', () => {
+	const dir = join(DIST, '_astro');
+	const bytes = readdirSync(dir)
+		.filter((f) => f.endsWith('.js'))
+		.reduce((sum, f) => sum + statSync(join(dir, f)).size, 0);
+	assert.ok(bytes < 20_000, `${bytes} bytes of JavaScript`);
+});

@@ -239,6 +239,7 @@ export function normalizeFilm(raw) {
 		title: cleanTitle(raw.title),
 		year,
 		released: text(raw.releaseDate),
+		added: text(raw.dateUploaded),
 		genres: list(raw.genres),
 		rated: text(raw.rated) && raw.rated !== 'N/A' ? raw.rated : null,
 		imdbRating: toNumber(raw.rating),

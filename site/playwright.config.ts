@@ -11,6 +11,11 @@ export default defineConfig({
 	forbidOnly: !!process.env.CI,
 	retries: process.env.CI ? 1 : 0,
 	reporter: process.env.CI ? 'github' : 'list',
+	// Screenshot baselines are per device, not per OS: they're only made on Linux (CI)
+	snapshotPathTemplate: '{testDir}/__screenshots__/{projectName}/{arg}{ext}',
+	// A new baseline is written on its first CI run (and uploaded as an artifact
+	// to commit); after that, any difference fails
+	updateSnapshots: 'missing',
 	use: {
 		baseURL: `http://localhost:${port}`,
 		trace: 'on-first-retry',
