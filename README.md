@@ -44,18 +44,21 @@ cd bechdel-test
 npm install
 cp .env.example .env    # then fill in the keys
 
+npm run match                                # find the film for any new script (check the guesses)
 npm run analyze                              # every scripts/*.txt not already on the site
 npm run analyze -- scripts/heat.txt          # one film
 npm run analyze -- --force scripts/heat.txt  # redo a film that's already on the site
 npm run analyze -- --no-ai ...               # skip the AI read (a redone film keeps its old one)
 ```
 
-It ends with a table of every script's film and score, so you can check each match before committing. If a title matches the wrong film, put the year in the file name (`deep-cover-1992.txt`). OMDB and TMDB responses are cached in `.cache/`; delete it to refetch.
+Each script's film comes from `scripts/manifest.json` (file name to IMDb id). `npm run match` adds guesses for new scripts by title; check them, fix a wrong id by hand, and set `null` for a script with no released film. `analyze` ends with a table of every film's score next to the bechdeltest.com readers' rating. OMDB and TMDB responses are cached in `.cache/`; delete it to refetch.
 
 Then publish: see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ```sh
-npm test       # the parser and analysis
+npm test         # the parser and analysis
+npm run eval     # score the analysis against bechdeltest.com readers (add -- --list for every miss)
+npm run ratings  # refresh those ratings after adding scripts
 npm run lint
 ```
 

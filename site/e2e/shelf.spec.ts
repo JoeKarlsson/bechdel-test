@@ -7,7 +7,7 @@ test.describe('the shelf', () => {
 
 	test('shows every film', async ({ page }) => {
 		await expect(page.locator('[data-shelf] li')).toHaveCount(50);
-		await expect(page.locator('[data-shelf-count]')).toHaveText('All 50 films, 8 pass');
+		await expect(page.locator('[data-shelf-count]')).toHaveText('All 50 films, 23 pass');
 	});
 
 	test('searches titles and directors', async ({ page }) => {
@@ -20,8 +20,8 @@ test.describe('the shelf', () => {
 		await page.getByLabel('Show').selectOption('pass');
 		await page.getByLabel('Sort').selectOption('old');
 		const titles = page.locator('[data-shelf] li:not([hidden]) .title');
-		await expect(titles).toHaveCount(8);
-		await expect(titles.first()).toHaveText('Even Cowgirls Get the Blues');
+		await expect(titles).toHaveCount(23);
+		await expect(titles.first()).toHaveText('Bonnie and Clyde');
 	});
 
 	test('says so when nothing matches, and clears', async ({ page }) => {
@@ -51,7 +51,7 @@ test('a big shelf shows a page at a time, and search still covers every film', a
 	await page.goto('/');
 	const visible = page.locator('[data-shelf] li:not([hidden])');
 	await expect(visible).toHaveCount(20);
-	await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 20 of 50, 8 pass in all');
+	await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 20 of 50, 23 pass in all');
 	await page.getByRole('button', { name: 'Show 20 more' }).click();
 	await expect(visible).toHaveCount(40);
 	await expect(visible.nth(20).locator('a')).toBeFocused();

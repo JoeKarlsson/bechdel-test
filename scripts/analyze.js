@@ -7,13 +7,14 @@
  *   npm run analyze -- --force scripts/heat.txt  redo a film that's already on the site
  *   npm run analyze -- --no-ai ...               skip the AI second opinion (a redone film keeps its old one)
  *
- * Name a script "deep-cover-1992.txt" to pin the year when the title alone
- * matches the wrong film. Settings come from .env: OMDB, THEMOVIEDB, and for the
+ * Each script's film comes from scripts/manifest.json (add new scripts with
+ * `npm run match`). Settings come from .env: OMDB, THEMOVIEDB, and for the
  * AI read LITELLM_BASE_URL, LITELLM_API_KEY, AI_MODEL (a LiteLLM alias).
  */
 const fs = require('fs');
 const path = require('path');
 const { fetchMetadata } = require('../src/fetchMetadata');
+const { loadManifest } = require('../src/manifest');
 const {
 	charactersFromCast, analyzeScriptText, runAiAnalysis, aiSectionsOf, buildFilmRecord,
 } = require('../src/analyzeFilm');
@@ -21,6 +22,7 @@ const {
 const ROOT = path.resolve(__dirname, '..');
 const FILMS_DIR = path.join(ROOT, 'data/films');
 const SCRIPTS_DIR = path.join(ROOT, 'scripts');
+const READER_RATINGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/bechdeltest-ratings.json'), 'utf8'));
 // Films analyzed at once; the AI step makes ~3 large requests per film
 const CONCURRENCY = 3;
 
@@ -40,54 +42,69 @@ const parseArgs = argv => {
 	};
 };
 
+/** Films on the site, findable by the script they came from and by IMDb id */
 const loadExistingFilms = () => {
+	const byScript = new Map();
 	const byImdbId = new Map();
 	for (const file of fs.readdirSync(FILMS_DIR).filter(name => name.endsWith('.json'))) {
 		const film = JSON.parse(fs.readFileSync(path.join(FILMS_DIR, file), 'utf8'));
+		if (film.script?.file) byScript.set(film.script.file, film);
 		byImdbId.set(film.idIMDB, film);
 	}
-	return byImdbId;
+	return { byScript, byImdbId };
+};
+
+/** bechdeltest.com's reader rating, in the shape the site reads, if the film has one */
+const readersRating = imdbId => {
+	const rating = READER_RATINGS[imdbId];
+	if (!rating) return undefined;
+	return { rating: rating.rating, dubious: rating.dubious ? 1 : 0, id: Number(rating.url.match(/\/view\/(\d+)/)?.[1]) || undefined };
 };
 
 const analyzeOne = async (scriptPath, context) => {
-	const { force, withAi, existingFilms, claimedBy } = context;
+	const { force, withAi, existingFilms, manifest } = context;
 	const script = path.basename(scriptPath);
-	const { omdb, cast, images } = await fetchMetadata(path.basename(scriptPath, '.txt'));
-	const film = `${omdb.Title} (${omdb.Year})`;
+	if (!(script in manifest)) throw new Error('not in scripts/manifest.json; run npm run match');
+	const imdbId = manifest[script];
+	if (imdbId === null) return { script, film: '', status: 'skipped (no film in the manifest)' };
 
-	// Two scripts resolving to one film means a title matched the wrong film
-	if (claimedBy.has(omdb.imdbID)) {
-		throw new Error(`matched ${film}, same as ${claimedBy.get(omdb.imdbID)}; add the year to the file name`);
-	}
-	claimedBy.set(omdb.imdbID, script);
-
-	const existing = existingFilms.get(omdb.imdbID);
+	const existing = existingFilms.byScript.get(script) ?? existingFilms.byImdbId.get(imdbId);
 	if (existing && !force) {
-		return { script, film, status: 'skipped (on site; --force to redo)' };
+		return { script, film: `${existing.title} (${existing.year})`, status: 'skipped (on site; --force to redo)' };
 	}
+	const { omdb, cast, images } = await fetchMetadata(imdbId);
+	const film = `${omdb.Title} (${omdb.Year})`;
 
 	const scriptText = fs.readFileSync(scriptPath, 'utf8');
 	const characters = charactersFromCast(cast);
-	const { bechdelResults, staticAnalytics, cleaned } = analyzeScriptText(scriptText, characters);
+	const { bechdelResults, script: summary, cleaned } = analyzeScriptText(scriptText, characters);
+	// Without a new AI run, keep the old one's whole-script reads, but not its
+	// review of the passing scenes: those were the old analysis's scenes
 	const ai = withAi
 		? await runAiAnalysis({ gateway: context.gateway, cleaned, characters, bechdelResults })
-		: aiSectionsOf(existing?.enhancedAnalytics);
+		: aiSectionsOf(existing?.enhancedAnalytics, { keepSceneReview: false });
 
+	// OMDB sometimes changes a film's year (premiere vs. US release), and the
+	// year is in the film's URL: a redone film keeps its stored year
+	const keepYear = existing && existing.idIMDB === imdbId ? existing.year : undefined;
 	const record = buildFilmRecord({
-		id: existing ? existing._id : omdb.imdbID,
+		id: existing ? existing._id : imdbId,
 		dateUploaded: existing ? existing.dateUploaded : new Date().toISOString(),
+		year: keepYear,
 		omdb,
 		cast,
 		images,
 		bechdelResults,
-		enhancedAnalytics: { ...ai, ...staticAnalytics },
-		bechdelData: existing?.bechdelData,
+		script: { file: script, ...summary },
+		enhancedAnalytics: Object.keys(ai).length ? ai : undefined,
+		bechdelData: readersRating(imdbId) ?? existing?.bechdelData,
 	});
 	fs.writeFileSync(path.join(FILMS_DIR, `${record._id}.json`), `${JSON.stringify(record, null, 2)}\n`);
 	return {
 		script,
 		film,
 		score: bechdelResults.bechdelScore,
+		readers: record.bechdelData?.rating,
 		status: `${existing ? 'updated' : 'added'}${withAi ? '' : ', no new AI'}`,
 	};
 };
@@ -97,9 +114,10 @@ const printSummary = results => {
 		r.script,
 		r.film || '',
 		r.score === undefined ? '' : `${r.score}/3 ${r.score === 3 ? 'PASS' : 'fail'}`,
+		r.readers === undefined ? '' : `${r.readers}/3`,
 		r.error ? `FAILED: ${r.error}` : r.status,
 	]);
-	const header = ['script', 'film', 'bechdel', 'result'];
+	const header = ['script', 'film', 'bechdel', 'readers', 'result'];
 	const widths = header.map((h, i) => Math.max(h.length, ...rows.map(row => row[i].length)));
 	const line = row => row.map((cell, i) => cell.padEnd(widths[i])).join('  ').trimEnd();
 	console.log(`\n${line(header)}\n${line(widths.map(w => '-'.repeat(w)))}`);
@@ -117,7 +135,7 @@ const main = async () => {
 	if (options.withAi && missing.length > 0) {
 		throw new Error(`${missing.join(', ')} not set. Add to .env (see .env.example), or pass --no-ai.`);
 	}
-	const context = { ...options, gateway, existingFilms: loadExistingFilms(), claimedBy: new Map() };
+	const context = { ...options, gateway, existingFilms: loadExistingFilms(), manifest: loadManifest() };
 
 	const results = new Array(options.scriptPaths.length);
 	let next = 0;
