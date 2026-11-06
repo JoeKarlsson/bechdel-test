@@ -18,7 +18,7 @@ interface Props {
 const {
 	title,
 	description,
-	image = '/og.png',
+	image = '/og.jpg',
 	imageAlt = 'bechdel.io: do two women talk to each other about something other than a man?',
 	noindex = false,
 	structuredData,
@@ -45,7 +45,8 @@ const CSP = [
 	"base-uri 'self'",
 	"form-action 'self'",
 	"object-src 'none'",
-	'upgrade-insecure-requests',
+	// No upgrade-insecure-requests: every asset is same-origin on an HTTPS-only
+	// host, and Safari applies it to http://localhost, which breaks local tests
 ].join('; ');
 
 const jsonLD = structuredData
@@ -88,6 +89,7 @@ const NAV = [
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={imageUrl} />
+		<meta property="og:image:type" content="image/jpeg" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={imageAlt} />

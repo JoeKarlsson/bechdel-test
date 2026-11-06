@@ -1,0 +1,71 @@
+name: Site
+
+# Builds and tests the public site on every change to it. Deploys to GitHub
+# Pages only when run by hand, until the switch-over from the old gh-pages site.
+on:
+  push:
+    branches: [develop]
+    paths: ['site/**', 'data/**', '.github/workflows/site.yml']
+  pull_request:
+    paths: ['site/**', 'data/**', '.github/workflows/site.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: site
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - run: npm ci
+
+      - name: Audit what ships
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Build
+        run: npm run build
+
+      - name: Unit and build-output tests
+        run: npm test
+
+      - name: Install browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: End-to-end, accessibility and layout tests (desktop, Pixel, iPhone)
+        run: npm run e2e
+
+      - name: Lighthouse (mobile, every category 90 or above)
+        run: npm run lighthouse
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

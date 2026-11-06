@@ -91,6 +91,11 @@ body {
 	line-height: 1.5;
 }
 
+/* `hidden` always wins over a component's display rule */
+[hidden] {
+	display: none !important;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
