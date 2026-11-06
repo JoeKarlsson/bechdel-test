@@ -1,0 +1,73 @@
+---
+// Share targets, as under joekarlsson.com posts and Punc books. Each click is a
+// Plausible event (tagged-events script), named by network.
+interface Props {
+	url: string;
+	title: string;
+}
+const { url, title } = Astro.props;
+const u = encodeURIComponent(url);
+const t = encodeURIComponent(title.slice(0, 80));
+const both = encodeURIComponent(`${title} ${url}`);
+const NETWORKS = [
+	['Bluesky', `https://bsky.app/intent/compose?text=${both}`],
+	['Threads', `https://www.threads.net/intent/post?text=${both}`],
+	['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`],
+	['Reddit', `https://www.reddit.com/submit?url=${u}&title=${t}`],
+	['Hacker News', `https://news.ycombinator.com/submitlink?u=${u}&t=${t}`],
+	['X', `https://x.com/intent/post?text=${t}&url=${u}`],
+];
+---
+
+<p class="share">
+	Share it on
+	{
+		NETWORKS.map(([label, href], i) => (
+			<>
+				<a href={href} target="_blank" rel="noopener noreferrer" class={`plausible-event-name=Share+Click plausible-event-network=${label.replace(/ /g, '+')}`}>
+					{label}
+				</a>
+				{i < NETWORKS.length - 1 ? ', ' : ''}
+			</>
+		))
+	}, or <button type="button" class="copy plausible-event-name=Copy+Link" data-copy-link={url}>copy the link</button>.
+</p>
+
+<script>
+	// Copies the page link and says so; leaves the button as a plain link otherwise
+	for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy-link]')) {
+		button.addEventListener('click', async () => {
+			const label = button.textContent;
+			try {
+				await navigator.clipboard.writeText(button.dataset.copyLink ?? location.href);
+				button.textContent = 'copied';
+			} catch {
+				button.textContent = 'press and hold the address bar to copy';
+			}
+			setTimeout(() => (button.textContent = label), 2500);
+		});
+	}
+</script>
+
+<style>
+	.share {
+		margin: 0;
+		line-height: 2;
+	}
+	.share a {
+		padding: var(--space-1) 0;
+	}
+	.copy {
+		background: none;
+		border: 0;
+		padding: var(--space-1) 0;
+		color: var(--pink);
+		font: inherit;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+		cursor: pointer;
+	}
+	.copy:hover {
+		color: var(--chalk);
+	}
+</style>

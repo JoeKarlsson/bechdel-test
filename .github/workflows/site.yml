@@ -50,8 +50,19 @@ jobs:
       - name: End-to-end, accessibility and layout tests (desktop, Pixel, iPhone)
         run: npm run e2e
 
+      - name: Screenshot baselines (commit any new ones from this artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: site/e2e/__screenshots__
+          if-no-files-found: ignore
+
       - name: Lighthouse (mobile, every category 90 or above)
         run: npm run lighthouse
+
+      - name: Outside links
+        run: npm run check-links
 
       - uses: actions/upload-pages-artifact@v3
         with:

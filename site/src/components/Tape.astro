@@ -39,7 +39,7 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 						src={poster}
 						alt=""
 						widths={[180, 360]}
-						sizes="(max-width: 600px) 45vw, 180px"
+						sizes="(max-width: 560px) 31vw, 180px"
 						formats={['avif', 'webp']}
 						loading={eager ? 'eager' : 'lazy'}
 						decoding="async"
@@ -53,7 +53,7 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 			}
 			<span class="label">
 				<span class="title">{film.title}</span>
-				<span class="meta">{film.year}, {film.bechdel.score} of 3 rules</span>
+				<span class="meta">{film.year}, {film.bechdel.score} of 3<span class="rules-word"> rules</span></span>
 			</span>
 			<span class:list={['sticker', film.bechdel.pass ? 'pass' : 'fail']}>{verdict}</span>
 		</div>
@@ -140,6 +140,28 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 		display: block;
 		height: 10px;
 		background: var(--plank);
+	}
+	@media (max-width: 560px) {
+		.box {
+			padding: var(--space-1) var(--space-1) 0;
+		}
+		.label {
+			margin: 0 calc(-1 * var(--space-1));
+			padding: var(--space-1);
+		}
+		.title,
+		.meta {
+			font-size: 1rem;
+		}
+		.meta .rules-word {
+			display: none;
+		}
+		.sticker {
+			font-size: 1rem;
+			padding: 0.3rem 0.4rem;
+			top: var(--space-2);
+			right: calc(-1 * var(--space-1));
+		}
 	}
 	a:hover .title,
 	a:focus-visible .title {

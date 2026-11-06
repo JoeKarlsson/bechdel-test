@@ -58,6 +58,18 @@ await shoot(
 	'public/og.jpg',
 );
 
+// GitHub's repo social preview is 1280x640 and has no API: upload this one by
+// hand in the repo's Settings > General > Social preview
+await tab.setViewportSize({ width: 1280, height: 640 });
+await tab.setContent(
+	page(`<div class="home"><h1>Do two women talk to each other about <span>something other than a man?</span></h1>
+	<p>${passing} of ${films.length} films pass. bechdel.io</p></div>`).replace('width: 1200px; height: 630px', 'width: 1280px; height: 640px'),
+	{ waitUntil: 'load' },
+);
+await tab.evaluate(() => document.fonts.ready);
+await tab.screenshot({ path: new URL('../docs/github-social-preview.png', root).pathname });
+await tab.setViewportSize({ width: 1200, height: 630 });
+
 for (const f of films) {
 	const posterPath = `src/assets/films/${f.id}-poster.jpg`;
 	const art = existsSync(file(posterPath))

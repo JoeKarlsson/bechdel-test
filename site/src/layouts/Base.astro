@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { loadFilms } from '../lib/films.mjs';
 
 interface Props {
 	title: string;
@@ -27,6 +28,8 @@ const {
 } = Astro.props;
 
 const SITE_NAME = 'bechdel.io';
+const allFilms = loadFilms();
+const failing = allFilms.filter((f) => !f.bechdel.pass).length;
 const pageTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const imageUrl = new URL(image, Astro.site).href;
@@ -79,6 +82,7 @@ const NAV = [
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="sitemap" href="/sitemap.xml" />
+		<link rel="alternate" type="application/rss+xml" title="bechdel.io: new films" href="/rss.xml" />
 		<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -121,6 +125,11 @@ const NAV = [
 
 		<footer class="site-footer page">
 			<slot name="footer-lead" />
+			<p class="overdue"><span class="pink">Overdue</span><br />since 1985</p>
+			<p class="overdue-note">
+				Alison Bechdel drew the rule in <cite>Dykes to Watch Out For</cite> in 1985. {failing} of the {allFilms.length} films we've
+				checked fail it.
+			</p>
 			<div class="footer-row">
 				<nav aria-label="Footer">
 					<a href="/about/">About</a>
@@ -182,6 +191,20 @@ const NAV = [
 		margin-top: var(--section);
 		padding-top: var(--space-6);
 		padding-bottom: var(--space-7);
+	}
+	.overdue {
+		margin: var(--space-7) 0 0;
+		font-family: var(--poster);
+		font-size: clamp(3.5rem, 9vw, 7.5rem);
+		line-height: 0.9;
+		text-transform: uppercase;
+	}
+	.overdue .pink {
+		color: var(--pink);
+	}
+	.overdue-note {
+		margin: var(--space-4) 0 0;
+		max-width: 32em;
 	}
 	.footer-row {
 		display: flex;

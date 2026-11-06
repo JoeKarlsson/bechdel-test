@@ -1,6 +1,8 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
+import ShareLinks from '../../components/ShareLinks.astro';
+import Tape from '../../components/Tape.astro';
 import { loadFilms } from '../../lib/films.mjs';
 import { posterFor, backdropFor } from '../../lib/images';
 
@@ -9,6 +11,12 @@ export function getStaticPaths() {
 }
 
 const { film } = Astro.props;
+// Six films with the same verdict, nearest in popularity: somewhere to go next
+const related = loadFilms()
+	.filter((f) => f.id !== film.id && f.bechdel.pass === film.bechdel.pass)
+	.sort((a, b) => Math.abs(a.popularity - film.popularity) - Math.abs(b.popularity - film.popularity))
+	.slice(0, 6);
+const pageUrl = `https://bechdel.joekarlsson.com/films/${film.slug}/`;
 const { bechdel, readers, ai } = film;
 const poster = posterFor(film.id);
 const backdrop = backdropFor(film.id);
@@ -18,7 +26,8 @@ const yes = (ok: boolean) => (ok ? 'Yes' : 'No');
 // What each rule's yes or no rests on, in plain words
 const ruleEvidence = [
 	bechdel.rules[0]
-		? bechdel.womenChars !== null && bechdel.womenSpeaking !== null
+		? // Only quote the counts when they back the result (some exports have none)
+			(bechdel.womenChars ?? 0) >= 2 && bechdel.womenSpeaking !== null
 			? `${plural(bechdel.womenChars, 'woman character', 'women characters')}. ${bechdel.womenSpeaking} of them speak.`
 			: 'The film has at least two women characters.'
 		: 'Fewer than two women characters.',
@@ -129,7 +138,7 @@ const credit = [
 		}
 		<div class="hero-text page">
 			<p class:list={['verdict-stamp', bechdel.pass ? 'pass' : 'fail']}>{verdictWord} the Bechdel test</p>
-			<h1><span>{film.title}</span></h1>
+			<h1 class:list={{ long: film.title.length > 22 }}><span>{film.title}</span></h1>
 			{credit && <p class="credit">{credit}.</p>}
 		</div>
 	</section>
@@ -205,6 +214,10 @@ const credit = [
 				</div>
 			</div>
 		</section>
+
+		<div class="share-row">
+			<ShareLinks url={pageUrl} title={`${film.title} ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test`} />
+		</div>
 
 		<section class="section film-info" aria-labelledby="film-title">
 			{
@@ -598,7 +611,13 @@ const credit = [
 			</p>
 		</section>
 
-		<p class="back"><a href="/">Back to the shelf</a></p>
+		<section class="section" aria-labelledby="more-title">
+			<h2 id="more-title" class="section-title">More {bechdel.pass ? 'films that pass' : 'films that fail'}</h2>
+			<ul class="related">
+				{related.map((f) => <Tape film={f} />)}
+			</ul>
+			<p class="back"><a href="/">Back to the whole shelf</a></p>
+		</section>
 	</div>
 </Base>
 
@@ -650,6 +669,12 @@ const credit = [
 	.hero h1 {
 		font-size: clamp(3.5rem, 11vw, 10rem);
 		line-height: 1.05;
+	}
+	.hero h1.long {
+		font-size: clamp(2.75rem, 7vw, 6.5rem);
+	}
+	.hero h1 {
+		line-height: 1.15;
 	}
 	.hero h1 span {
 		background: var(--ink);
@@ -743,7 +768,7 @@ const credit = [
 		text-transform: uppercase;
 		text-align: center;
 		background: var(--ink);
-		padding: 2px 0;
+		padding: var(--mark-gap) 0;
 	}
 	.mark.yes {
 		color: var(--pink);
@@ -910,7 +935,7 @@ const credit = [
 	}
 	.half {
 		display: flex;
-		gap: 2px;
+		gap: var(--mark-gap);
 		height: 180px;
 	}
 	.half.up {
@@ -1060,7 +1085,7 @@ const credit = [
 	.waffle {
 		display: grid;
 		grid-template-columns: repeat(10, minmax(0, 1fr));
-		gap: 3px;
+		gap: var(--mark-gap);
 		max-width: 340px;
 		margin-bottom: var(--space-3);
 	}
@@ -1078,7 +1103,7 @@ const credit = [
 	.squares {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 3px;
+		gap: var(--mark-gap);
 		margin: var(--space-1) 0 var(--space-3);
 	}
 	.sq {
@@ -1193,11 +1218,28 @@ const credit = [
 		break-inside: avoid;
 		margin-bottom: var(--space-2);
 	}
+	.share-row {
+		margin-top: var(--space-5);
+	}
+	.related {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		gap: var(--space-6) var(--space-4);
+	}
+	@media (max-width: 560px) {
+		.related {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: var(--space-5) var(--space-2);
+		}
+	}
 	.about p {
 		max-width: 46em;
 	}
 	.back {
-		margin-top: var(--space-7);
+		margin-top: var(--space-6);
 		font-size: var(--text-lead);
 	}
 	@media (max-width: 600px) {
