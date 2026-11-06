@@ -3,6 +3,7 @@ import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
+import Term from '../../components/Term.astro';
 import { loadFilms, relatedFilms, AI_MODEL } from '../../lib/films.mjs';
 import { posterFor, backdropFor } from '../../lib/images';
 
@@ -11,8 +12,9 @@ export function getStaticPaths() {
 }
 
 const { film } = Astro.props;
+const allFilms = loadFilms();
 // Films most like this one, by genre, director and year
-const related = relatedFilms(film, loadFilms());
+const related = relatedFilms(film, allFilms);
 const pageUrl = `https://bechdel.joekarlsson.com/films/${film.slug}/`;
 const { bechdel, readers, ai } = film;
 const poster = posterFor(film.id);
@@ -48,21 +50,67 @@ const confidences = review?.scenes.map((s) => s.confidence).filter((c): c is num
 const confidence = confidences.length ? Math.round((confidences.reduce((a, b) => a + b, 0) / confidences.length) * 100) : null;
 const aiAgrees = review ? review.pass === bechdel.pass : null;
 
-// The AI's five scores, turned so a longer bar is always better for women
-const scoreRows = ai
+// The AI's five scores, turned so higher is always better for women, each
+// placed among every film on the shelf
+const DIMENSIONS = [
+	{ key: 'agency', name: 'Agency', term: 'agency', flip: false, more: 'more agency than' },
+	{ key: 'stereotyping', name: 'Free of stereotypes', term: 'stereotyping', flip: true, more: 'fewer stereotypes than' },
+	{ key: 'bias', name: 'Free of bias', term: 'bias', flip: true, more: 'less bias than' },
+	{ key: 'diversity', name: 'Diversity', term: 'diversity', flip: false, more: 'more diverse than' },
+	{ key: 'power', name: 'Power balance', term: 'power', flip: false, more: 'a better power balance than' },
+] as const;
+type Dim = (typeof DIMENSIONS)[number];
+const goodScore = (f: typeof film, d: Dim) => {
+	const v = f.ai?.scores[d.key];
+	return v === null || v === undefined ? null : d.flip ? 10 - v : v;
+};
+const scoreRows = DIMENSIONS.flatMap((d) => {
+	const mine = goodScore(film, d);
+	if (mine === null) return [];
+	const others = allFilms.filter((f) => f.id !== film.id).map((f) => goodScore(f, d)).filter((v): v is number => v !== null);
+	const counts = Array.from({ length: 11 }, (_, v) => others.filter((o) => o === v).length + (v === mine ? 1 : 0));
+	const below = others.filter((o) => o < mine).length;
+	const ties = others.filter((o) => o === mine).length;
+	const above = others.length - below - ties;
+	// "More agency than 39 of the other 49 films", and plain words at the ends of the scale
+	const sentence =
+		below === 0 && above === 0
+			? `The same as every other film on the shelf.`
+			: below === 0
+				? ties
+					? `Tied for the lowest on the shelf, with ${plural(ties, 'other film')}.`
+					: `The lowest of all ${others.length + 1} films.`
+				: above === 0
+					? ties
+						? `Tied for the highest on the shelf, with ${plural(ties, 'other film')}.`
+						: `The highest of all ${others.length + 1} films.`
+					: `${d.more.charAt(0).toUpperCase() + d.more.slice(1)} ${below} of the other ${others.length} films.`;
+	return [{ ...d, mine, raw: ai!.scores[d.key] as number, counts, max: Math.max(...counts), below, others: others.length, sentence }];
+});
+
+// The AI's flags, worst first; severity comes from the matching score
+const flagGroups = ai
 	? [
-			['Agency', ai.scores.agency, false],
-			['Free of stereotypes', ai.scores.stereotyping, true],
-			['Free of bias', ai.scores.bias, true],
-			['Diversity', ai.scores.diversity, false],
-			['Power balance', ai.scores.power, false],
+			{ name: 'Stereotypes', severity: ai.scores.stereotyping, lists: [['Found', ai.flags.stereotypes.found], ['Patterns', ai.flags.stereotypes.patterns]], notes: [] as [string, string][] },
+			{
+				name: 'Bias',
+				severity: ai.scores.bias,
+				lists: [['Found', ai.flags.bias.found], ['Patterns', ai.flags.bias.patterns], ['Microaggressions', ai.flags.bias.microaggressions]],
+				notes: (ai.flags.bias.systemic ? [['Overall', ai.flags.bias.systemic]] : []) as [string, string][],
+			},
+			{
+				name: 'Diversity gaps',
+				severity: ai.scores.diversity === null ? null : 10 - ai.scores.diversity,
+				lists: [["Who's missing", ai.flags.diversity.gaps]],
+				notes: [
+					...(ai.flags.diversity.identity ? [['Overall', ai.flags.diversity.identity]] : []),
+					...(ai.flags.diversity.tokenism ? [['Tokenism', ai.flags.diversity.tokenism]] : []),
+				] as [string, string][],
+			},
 		]
-			.filter(([, v]) => v !== null)
-			.map(([name, raw, flip]) => ({
-				name: name as string,
-				good: flip ? 10 - (raw as number) : (raw as number),
-				raw: `${(name as string).replace('Free of stereotypes', 'Stereotyping').replace('Free of bias', 'Bias')} ${raw}/10`,
-			}))
+			.map((g) => ({ ...g, lists: g.lists.filter(([, items]) => (items as string[]).length > 0) as [string, string[]][], found: g.lists.reduce((n, [, items]) => n + (items as string[]).length, 0) }))
+			.filter((g) => g.found > 0)
+			.sort((a, b) => (b.severity ?? 0) - (a.severity ?? 0))
 	: [];
 
 // Dialogue
@@ -83,7 +131,7 @@ const has = {
 	agency: !!ai && (ai.agency.drives.length > 0 || ai.agency.reacts.length > 0 || !!ai.agency.decisions),
 	power: !!ai && (ai.power.interruptions.length > 0 || !!ai.power.questions || !!ai.power.speakingTime || ai.power.authority.length > 0),
 	compare: !!ai && ai.compare.length > 0,
-	flags: !!ai && (ai.flags.stereotypes.found.length > 0 || ai.flags.bias.found.length > 0 || ai.flags.diversity.gaps.length > 0),
+	flags: flagGroups.length > 0,
 	recs: !!ai && ai.recommendations.length > 0,
 };
 const order = Object.entries(has).filter(([, v]) => v).map(([k]) => k);
@@ -358,242 +406,290 @@ const credit = [
 						<li><span class="swatch panel-swatch" />Counted from the script, or the AI's read of it</li>
 						<li><span class="swatch flag-swatch" />Problems the AI flagged</li>
 					</ul>
+					<p class="note fold-hint">Tap an exhibit to open it.</p>
 
 					<div class="wall">
 						{has.scene && (
 							<section id="exhibit-scene" class="exhibit paper wide tilt-l" aria-labelledby="ex-scene">
 								<span class="tape-strip" aria-hidden="true" />
-								<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}</h3>
-								{bechdel.passingScenes.map((scene, i) => (
-									<figure class="script">
-										<blockquote>{scene.trim()}</blockquote>
-										{review?.scenes[i] && (
-											<figcaption>
-												<dl>
-													{review.scenes[i].women.length > 0 && (
-														<>
-															<dt>Women in it</dt>
-															<dd>{review.scenes[i].women.join(', ')}</dd>
-														</>
-													)}
-													{review.scenes[i].subject && review.scenes[i].subject !== 'None' && (
-														<>
-															<dt>Talking about</dt>
-															<dd>{review.scenes[i].subject}</dd>
-														</>
-													)}
-													{review.scenes[i].reasoning && (
-														<>
-															<dt>The AI says</dt>
-															<dd>
-																"{review.scenes[i].reasoning}"
-																{review.scenes[i].result && ` ${review.scenes[i].result === 'pass' ? 'Passes' : 'Fails'}`}
-																{review.scenes[i].confidence !== null && `, ${Math.round(review.scenes[i].confidence * 100)}% sure`}.
-															</dd>
-														</>
-													)}
-												</dl>
-											</figcaption>
-										)}
-									</figure>
-								))}
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}</h3>
+										<p class="gist">The scene our parser counted as passing, word for word, with what the AI made of it.</p>
+									</summary>
+									{bechdel.passingScenes.map((scene, i) => (
+										<figure class="script">
+											<blockquote>{scene.trim()}</blockquote>
+											{review?.scenes[i] && (
+												<figcaption>
+													<dl>
+														{review.scenes[i].women.length > 0 && (
+															<>
+																<dt>Women in it</dt>
+																<dd>{review.scenes[i].women.join(', ')}</dd>
+															</>
+														)}
+														{review.scenes[i].subject && review.scenes[i].subject !== 'None' && (
+															<>
+																<dt>Talking about</dt>
+																<dd>{review.scenes[i].subject}</dd>
+															</>
+														)}
+														{review.scenes[i].reasoning && (
+															<>
+																<dt>The AI says</dt>
+																<dd>
+																	"{review.scenes[i].reasoning}"
+																	{review.scenes[i].result && ` ${review.scenes[i].result === 'pass' ? 'Passes' : 'Fails'}`}
+																	{review.scenes[i].confidence !== null && `, ${Math.round(review.scenes[i].confidence * 100)}% sure`}.
+																</dd>
+															</>
+														)}
+													</dl>
+												</figcaption>
+											)}
+										</figure>
+									))}
+								</details>
 							</section>
 						)}
 
 						{has.waffle && (
 							<section class="exhibit panel narrow tilt-r" aria-labelledby="ex-waffle">
-								<h3 id="ex-waffle">Exhibit {letter('waffle')}: every 100 lines</h3>
-								<div class="waffle" role="img" aria-label={`${womenShare} of every 100 lines are spoken by women`}>
-									{waffle.map((w) => <span class:list={['cell', w ? 'w' : 'm']} />)}
-								</div>
-								<p>
-									{womenShare} spoken by women, {100 - (womenShare ?? 0)} by men: {lines?.w} lines to {lines?.m}.
-								</p>
-								<ul class="legend small">
-									<li><span class="swatch swatch-w" />Women</li>
-									<li><span class="swatch swatch-m" />Men</li>
-								</ul>
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-waffle">Exhibit {letter('waffle')}: every 100 lines</h3>
+										<p class="gist">Out of every 100 lines with a known speaker, {womenShare} are women's.</p>
+									</summary>
+									<div class="waffle" role="img" aria-label={`${womenShare} of every 100 lines are spoken by women`}>
+										{waffle.map((w) => <span class:list={['cell', w ? 'w' : 'm']} />)}
+									</div>
+									<p>{lines?.w} lines from women, {lines?.m} from men.</p>
+									<ul class="legend small">
+										<li><span class="swatch swatch-w" />Women</li>
+										<li><span class="swatch swatch-m" />Men</li>
+									</ul>
+								</details>
 							</section>
 						)}
 
 						{has.cast && (
 							<section class="exhibit panel narrow tilt-l" aria-labelledby="ex-cast">
-								<h3 id="ex-cast">Exhibit {letter('cast')}: who's in it</h3>
-								<div role="img" aria-label={`Characters: ${bechdel.womenChars} women and ${bechdel.menChars} men. With lines: ${bechdel.womenSpeaking} women and ${bechdel.menSpeaking} men.`}>
-									<p class="note">Characters</p>
-									<div class="squares">
-										{Array.from({ length: bechdel.womenChars ?? 0 }, () => <span class="sq w" />)}
-										{Array.from({ length: bechdel.menChars ?? 0 }, () => <span class="sq m" />)}
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-cast">Exhibit {letter('cast')}: who's in it</h3>
+										<p class="gist">{bechdel.womenChars} women and {bechdel.menChars} men in the script. {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men get lines.</p>
+									</summary>
+									<div role="img" aria-label={`Characters: ${bechdel.womenChars} women and ${bechdel.menChars} men. With lines: ${bechdel.womenSpeaking} women and ${bechdel.menSpeaking} men.`}>
+										<p class="note">Characters</p>
+										<div class="squares">
+											{Array.from({ length: bechdel.womenChars ?? 0 }, () => <span class="sq w" />)}
+											{Array.from({ length: bechdel.menChars ?? 0 }, () => <span class="sq m" />)}
+										</div>
+										<p class="note">With lines</p>
+										<div class="squares">
+											{Array.from({ length: bechdel.womenSpeaking ?? 0 }, () => <span class="sq w" />)}
+											{Array.from({ length: bechdel.menSpeaking ?? 0 }, () => <span class="sq m" />)}
+										</div>
 									</div>
-									<p class="note">With lines</p>
-									<div class="squares">
-										{Array.from({ length: bechdel.womenSpeaking ?? 0 }, () => <span class="sq w" />)}
-										{Array.from({ length: bechdel.menSpeaking ?? 0 }, () => <span class="sq m" />)}
-									</div>
-								</div>
-								<p>
-									{plural(bechdel.womenChars ?? 0, 'woman', 'women')} and {plural(bechdel.menChars ?? 0, 'man', 'men')}. {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men have lines.
-								</p>
+									<ul class="legend small">
+										<li><span class="swatch swatch-w" />Women</li>
+										<li><span class="swatch swatch-m" />Men</li>
+									</ul>
+								</details>
 							</section>
 						)}
 
 						{has.scores && (
-							<section class="exhibit panel wide tilt-r" aria-labelledby="ex-scores">
-								<h3 id="ex-scores">Exhibit {letter('scores')}: how the film treats women</h3>
-								<p class="note">The AI's five scores, turned so a longer bar is always better for women. Its raw score is on the right.</p>
-								<ul class="score-bars">
-									{scoreRows.map((s) => (
-										<li>
-											<span class="sb-name">{s.name}</span>
-											<span class="sb-track" role="img" aria-label={`${s.name}: ${s.good} out of 10`}>
-												<span class="sb-bar" style={`width: ${s.good * 10}%`} />
-											</span>
-											<span class="note">{s.raw}</span>
-										</li>
-									))}
-								</ul>
+							<section class="exhibit panel full tilt-r" aria-labelledby="ex-scores">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-scores">Exhibit {letter('scores')}: how the film treats women, against the shelf</h3>
+										<p class="gist">The AI's five scores, turned so higher is always better for women, next to every film we've checked.</p>
+									</summary>
+									<ul class="legend small">
+										<li><span class="swatch shelf-swatch" />Other films on the shelf</li>
+										<li><span class="ramp-steps" aria-hidden="true"><span style="--t: 0" /><span style="--t: 0.33" /><span style="--t: 0.66" /><span style="--t: 1" /></span>{film.title}, gray for worse, pink for better</li>
+										<li class="note">Tap a name for what it means</li>
+									</ul>
+									<ul class="vs-shelf">
+										{scoreRows.map((s) => (
+											<li>
+												<p class="vs-name"><Term term={s.term}>{s.name}</Term></p>
+												<div class="hist" role="img" aria-label={`${s.name}: ${film.title} scores ${s.mine} out of 10. ${s.sentence}`}>
+													{s.counts.map((n, v) => (
+														<span class:list={['hcol', { mine: v === s.mine }]} style={v === s.mine ? `--t: ${v / 10}` : undefined}>
+															<span class="hbar" style={`height: ${n === 0 ? 0 : Math.max(8, (n / s.max) * 100)}%`} />
+															<span class="hval">{v}</span>
+														</span>
+													))}
+												</div>
+												<p class="vs-line">
+													<strong class="vs-score">{s.mine}/10</strong> {s.sentence}
+													<span class="note"> The AI's own number: {DIMENSIONS.find((d) => d.key === s.key)!.flip ? `${s.name.replace('Free of ', '').replace(/^./, (c) => c.toUpperCase())} ${s.raw}/10, where higher is worse` : `${s.raw}/10`}.</span>
+												</p>
+											</li>
+										))}
+									</ul>
+								</details>
 							</section>
 						)}
 
 						{has.agency && ai && (
 							<section class="exhibit panel full tilt-l" aria-labelledby="ex-agency">
-								<h3 id="ex-agency">Exhibit {letter('agency')}: do the women drive the story?</h3>
-								{ai.scores.agency !== null && <p class="note">The AI's agency score: {ai.scores.agency} out of 10.</p>}
-								<div class="three">
-									{ai.agency.drives.length > 0 && (
-										<div>
-											<h4 class="pink">They drive it</h4>
-											<ul>{ai.agency.drives.map((t) => <li>{t}</li>)}</ul>
-										</div>
-									)}
-									{ai.agency.reacts.length > 0 && (
-										<div>
-											<h4>They react</h4>
-											<ul>{ai.agency.reacts.map((t) => <li>{t}</li>)}</ul>
-										</div>
-									)}
-									{(ai.agency.decisions || ai.agency.goals) && (
-										<div>
-											<h4>How they decide</h4>
-											{ai.agency.decisions && <p>{ai.agency.decisions}.</p>}
-											{ai.agency.goals && <p>Goals: {ai.agency.goals}.</p>}
-										</div>
-									)}
-								</div>
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-agency">Exhibit {letter('agency')}: do the women drive the story?</h3>
+										<p class="gist">Agency is whether women's choices move the story, or the story happens to them. The AI found {plural(ai.agency.drives.length, 'moment')} where they drive it and {ai.agency.reacts.length} where they react.</p>
+									</summary>
+									<div class="tug" role="img" aria-label={`${ai.agency.drives.length} moments driving the story, ${ai.agency.reacts.length} reacting`}>
+										<span class="tug-drive" style={`flex: ${Math.max(ai.agency.drives.length, 0.2)}`}>Drive {ai.agency.drives.length}</span>
+										<span class="tug-react" style={`flex: ${Math.max(ai.agency.reacts.length, 0.2)}`}>React {ai.agency.reacts.length}</span>
+									</div>
+									<div class="three">
+										{ai.agency.drives.length > 0 && (
+											<div>
+												<h4 class="pink">They drive it</h4>
+												<ul>{ai.agency.drives.map((t) => <li>{t}</li>)}</ul>
+											</div>
+										)}
+										{ai.agency.reacts.length > 0 && (
+											<div>
+												<h4>They react</h4>
+												<ul>{ai.agency.reacts.map((t) => <li>{t}</li>)}</ul>
+											</div>
+										)}
+										{(ai.agency.decisions || ai.agency.goals) && (
+											<div>
+												<h4>How they decide</h4>
+												{ai.agency.decisions && <p>{ai.agency.decisions}.</p>}
+												{ai.agency.goals && <p>Goals: {ai.agency.goals}.</p>}
+											</div>
+										)}
+									</div>
+								</details>
 							</section>
 						)}
 
 						{has.power && ai && (
-							<section class="exhibit paper narrow tilt-r" aria-labelledby="ex-power">
+							<section class="exhibit paper wide tilt-r" aria-labelledby="ex-power">
 								<span class="tape-strip" aria-hidden="true" />
-								<h3 id="ex-power">Exhibit {letter('power')}: who holds the power</h3>
-								{ai.scores.power !== null && <p class="power-score">Power balance {ai.scores.power} / 10</p>}
-								<dl class="stack">
-									{ai.power.interruptions.length > 0 && (
-										<div><dt>Interrupting</dt><dd>{ai.power.interruptions.join('. ')}.</dd></div>
-									)}
-									{ai.power.questions && (
-										<div><dt>Questions and commands</dt><dd>{ai.power.questions}.</dd></div>
-									)}
-									{ai.power.speakingTime && (
-										<div>
-											<dt>Speaking time</dt>
-											<dd>
-												{ai.power.speakingTime}.
-												{womenShare !== null && ` The line count says women have ${womenShare}% of the lines.`}
-											</dd>
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-power">Exhibit {letter('power')}: who holds the power</h3>
+										<p class="gist">Who gives orders, who gets interrupted, who holds the official roles. Where we can count it, the count sits next to the AI's claim.</p>
+									</summary>
+									{ai.power.speakingTime && womenShare !== null && (
+										<div class="claim-count">
+											<div class="claim">
+												<p class="cc-label">The AI says</p>
+												<p>"{ai.power.speakingTime}."</p>
+											</div>
+											<div class="count">
+												<p class="cc-label">The count says</p>
+												<p class="cc-big"><span class="pink-on-chalk">{womenShare}%</span> of lines are women's</p>
+												<div class="cc-bar" role="img" aria-label={`Women ${lines?.w} lines, men ${lines?.m}`}>
+													<span class="cc-w" style={`flex: ${lines?.w}`} />
+													<span class="cc-m" style={`flex: ${lines?.m}`} />
+												</div>
+												<p class="note-dark">{lines?.w} lines to {lines?.m}</p>
+											</div>
 										</div>
 									)}
-									{ai.power.authority.length > 0 && (
-										<div><dt>Authority</dt><dd>{ai.power.authority.join('. ')}.</dd></div>
-									)}
-								</dl>
-								<p class="source">The AI's read</p>
+									<dl class="stack">
+										{ai.power.interruptions.length > 0 && <div><dt>Interrupting</dt><dd>{ai.power.interruptions.join('. ')}.</dd></div>}
+										{ai.power.questions && <div><dt>Questions and commands</dt><dd>{ai.power.questions}.</dd></div>}
+										{ai.power.authority.length > 0 && <div><dt>Authority</dt><dd>{ai.power.authority.join('. ')}.</dd></div>}
+										{ai.power.speakingTime && womenShare === null && <div><dt>Speaking time</dt><dd>{ai.power.speakingTime}.</dd></div>}
+									</dl>
+								</details>
 							</section>
 						)}
 
 						{has.compare && ai && (
-							<section class="exhibit panel wide tilt-l" aria-labelledby="ex-compare">
-								<h3 id="ex-compare">Exhibit {letter('compare')}: her side, his side</h3>
-								<div class="table-scroll" tabindex="0" role="region" aria-label="Women and men compared; scrolls sideways">
-									<table class="compare">
-										<thead>
-											<tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col" class="pink">Women</th><th scope="col">Men</th></tr>
-										</thead>
-										<tbody>
-											{ai.compare.map(([k, w, m]) => (
-												<tr><th scope="row">{k}</th><td class="women" data-label="Women">{w ?? 'Not noted'}</td><td data-label="Men">{m ?? 'Not noted'}</td></tr>
-											))}
-										</tbody>
-									</table>
-								</div>
-								{ai.archetypes.length > 0 && (
-									<p class="note">Archetypes: {ai.archetypes.map((a) => `${a.name}, ${a.kind.toLowerCase()}`).join('; ')}.</p>
-								)}
-								{ai.compareNotes.map((n) => <p class="note">{n}.</p>)}
+							<section class="exhibit panel full tilt-l" aria-labelledby="ex-compare">
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-compare">Exhibit {letter('compare')}: her side, his side</h3>
+										<p class="gist">How the AI describes the women and the men in this film, row by row.</p>
+									</summary>
+									<div class="side-switch" role="group" aria-label="Show" hidden data-side-switch>
+										<button type="button" aria-pressed="true" data-side="w">Her side</button>
+										<button type="button" aria-pressed="false" data-side="m">His side</button>
+									</div>
+									<div class="split" data-split>
+										<p class="split-head w">Women</p>
+										<p class="split-spine-head" aria-hidden="true" />
+										<p class="split-head m">Men</p>
+										{ai.compare.map(([k, w, m]) => (
+											<>
+												<p class="split-label">{k}</p>
+												<p class="split-cell w">{w ?? 'Not noted'}</p>
+												<p class="split-cell m">{m ?? 'Not noted'}</p>
+											</>
+										))}
+									</div>
+									{ai.archetypes.length > 0 && (
+										<p class="note">Archetypes: {ai.archetypes.map((a) => `${a.name}, ${a.kind.toLowerCase()}`).join('; ')}.</p>
+									)}
+									{ai.compareNotes.map((n) => <p class="note">{n}.</p>)}
+								</details>
 							</section>
 						)}
 
-						{has.flags && ai && (
+						{has.flags && (
 							<section class="exhibit flag full tilt-r" aria-labelledby="ex-flags">
 								<span class="tape-strip" aria-hidden="true" />
-								<h3 id="ex-flags">Exhibit {letter('flags')}: what the AI flagged</h3>
-								<div class="three">
-									{ai.flags.stereotypes.found.length > 0 && (
-										<div>
-											<h4>Stereotypes{ai.scores.stereotyping !== null && `, ${ai.scores.stereotyping}/10`}</h4>
-											<p class="group">Found</p>
-											<ul>{ai.flags.stereotypes.found.map((t) => <li>{t}</li>)}</ul>
-											{ai.flags.stereotypes.patterns.length > 0 && (
-												<>
-													<p class="group">Patterns</p>
-													<ul>{ai.flags.stereotypes.patterns.map((t) => <li>{t}</li>)}</ul>
-												</>
-											)}
-										</div>
-									)}
-									{ai.flags.bias.found.length > 0 && (
-										<div>
-											<h4>Bias{ai.scores.bias !== null && `, ${ai.scores.bias}/10`}</h4>
-											<p class="group">Found</p>
-											<ul>{ai.flags.bias.found.map((t) => <li>{t}</li>)}</ul>
-											{ai.flags.bias.patterns.length > 0 && (
-												<>
-													<p class="group">Patterns</p>
-													<ul>{ai.flags.bias.patterns.map((t) => <li>{t}</li>)}</ul>
-												</>
-											)}
-											{ai.flags.bias.microaggressions.length > 0 && (
-												<>
-													<p class="group">Microaggressions</p>
-													<ul>{ai.flags.bias.microaggressions.map((t) => <li>{t}</li>)}</ul>
-												</>
-											)}
-											{ai.flags.bias.systemic && <p><strong>Overall:</strong> {ai.flags.bias.systemic}.</p>}
-										</div>
-									)}
-									{ai.flags.diversity.gaps.length > 0 && (
-										<div>
-											<h4>Diversity{ai.scores.diversity !== null && `, ${ai.scores.diversity}/10`}</h4>
-											<p class="group">Who's missing</p>
-											<ul>{ai.flags.diversity.gaps.map((t) => <li>{t}</li>)}</ul>
-											{ai.flags.diversity.identity && <p>{ai.flags.diversity.identity}.</p>}
-											{ai.flags.diversity.tokenism && <p><strong>Tokenism:</strong> {ai.flags.diversity.tokenism}.</p>}
-										</div>
-									)}
-								</div>
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-flags">Exhibit {letter('flags')}: what the AI flagged</h3>
+										<p class="gist">Problems the AI found, worst first. Open one for the details.</p>
+									</summary>
+									<ul class="charges">
+										{flagGroups.map((g) => (
+											<li>
+												<details class="charge">
+													<summary>
+														<span class="charge-name">{g.name}</span>
+														<span class="charge-found">{g.found} found</span>
+														{g.severity !== null && (
+															<span class="charge-sev" role="img" aria-label={`Severity ${g.severity} out of 10`}>
+																<span style={`width: ${g.severity * 10}%`} />
+															</span>
+														)}
+														{g.severity !== null && <span class="charge-n">{g.severity}/10</span>}
+													</summary>
+													{g.lists.map(([label, items]) => (
+														<>
+															<p class="group">{label === 'Microaggressions' ? <Term term="microaggression" id={`micro-${film.slug}`}>Microaggressions</Term> : label}</p>
+															<ul>{items.map((t) => <li>{t}</li>)}</ul>
+														</>
+													))}
+													{g.notes.map(([label, text]) => (
+														<p><strong>{label === 'Tokenism' ? <Term term="tokenism" id={`tokenism-${film.slug}`}>Tokenism</Term> : label}:</strong> {text}.</p>
+													))}
+												</details>
+											</li>
+										))}
+									</ul>
+								</details>
 							</section>
 						)}
 
 						{has.recs && ai && (
 							<section class="exhibit paper full tilt-l" aria-labelledby="ex-recs">
 								<span class="tape-strip" aria-hidden="true" />
-								<h3 id="ex-recs">Exhibit {letter('recs')}: what the AI would change</h3>
-								<ol class="recs">
-									{ai.recommendations.map((r) => (
-										<li><strong>{r.area}:</strong> {r.text}.</li>
-									))}
-								</ol>
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-recs">Exhibit {letter('recs')}: what the AI would change</h3>
+										<p class="gist">The AI's suggestions for making this story better for women.</p>
+									</summary>
+									<ol class="recs">
+										{ai.recommendations.map((r) => (
+											<li><strong>{r.area}:</strong> {r.text}.</li>
+										))}
+									</ol>
+								</details>
 							</section>
 						)}
 					</div>
@@ -627,7 +723,9 @@ const credit = [
 
 <script>
 	import { setUpTimeline } from '../../scripts/timeline';
+	import { setUpExhibits } from '../../scripts/exhibits';
 	setUpTimeline();
+	setUpExhibits();
 </script>
 
 <style>
@@ -673,7 +771,7 @@ const credit = [
 		color: var(--pink);
 	}
 	.verdict-stamp.fail {
-		color: var(--tangerine);
+		color: var(--fail);
 	}
 	.hero h1 {
 		font-size: clamp(3.5rem, 11vw, 10rem);
@@ -748,7 +846,7 @@ const credit = [
 		background: var(--pink);
 	}
 	.stamp.fail {
-		background: var(--tangerine);
+		background: var(--fail);
 	}
 	.rules {
 		flex: 1 1 420px;
@@ -783,7 +881,7 @@ const credit = [
 		color: var(--pink);
 	}
 	.mark.no {
-		color: var(--tangerine);
+		color: var(--fail);
 	}
 	.opinions {
 		margin-top: var(--space-6);
@@ -833,6 +931,335 @@ const credit = [
 		height: auto;
 	}
 	/* On phones the hero already shows the film; the poster only repeats it */
+	/* Folding exhibits: open on wide screens, closed on phones (scripts/fold.ts) */
+	.fold > summary {
+		display: block;
+		list-style: none;
+		cursor: pointer;
+	}
+	.fold > summary::-webkit-details-marker {
+		display: none;
+	}
+	.fold > summary h3 {
+		display: inline;
+	}
+	.fold > summary h3::after {
+		content: ' +';
+		color: var(--pink);
+	}
+	.fold[open] > summary h3::after {
+		content: ' \2212';
+	}
+	.paper .fold > summary h3::after,
+	.flag .fold > summary h3::after {
+		color: var(--ink);
+	}
+	.gist {
+		margin: var(--space-2) 0 var(--space-4);
+		max-width: 46em;
+	}
+	.fold-hint {
+		display: none;
+	}
+	:global(html.folded) .fold-hint {
+		display: block;
+	}
+
+	/* Exhibit: scores against the shelf */
+	.shelf-swatch {
+		background: var(--plank);
+	}
+	.ramp-steps {
+		display: inline-flex;
+		gap: 2px;
+	}
+	.ramp-steps span {
+		width: 0.75rem;
+		height: 1rem;
+		background: var(--tone);
+	}
+	.vs-shelf {
+		list-style: none;
+		padding: 0 !important;
+		margin: 0 !important;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+		gap: var(--space-6) var(--space-6);
+	}
+	.vs-shelf > li + li {
+		margin-top: 0;
+	}
+	.vs-name {
+		margin: 0 0 var(--space-2);
+		font-family: var(--poster);
+		font-size: 1.375rem;
+		text-transform: uppercase;
+	}
+	.hist {
+		display: flex;
+		align-items: flex-end;
+		gap: var(--mark-gap);
+		height: 96px;
+		padding-bottom: 1.5rem;
+		position: relative;
+	}
+	.hcol {
+		flex: 1;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: relative;
+	}
+	.hbar {
+		display: block;
+		background: var(--plank);
+		border-radius: 3px 3px 0 0;
+	}
+	.hcol.mine .hbar {
+		background: var(--tone);
+	}
+	.hval {
+		position: absolute;
+		bottom: -1.5rem;
+		width: 100%;
+		text-align: center;
+		font-size: 0.875rem;
+		color: var(--muted);
+	}
+	.hcol.mine .hval {
+		color: var(--chalk);
+		font-weight: 700;
+	}
+	.vs-line {
+		margin: var(--space-3) 0 0;
+	}
+	.vs-score {
+		font-family: var(--poster);
+		font-weight: 400;
+		font-size: 1.5rem;
+	}
+
+	/* Exhibit: drive or react */
+	.tug {
+		display: flex;
+		gap: var(--mark-gap);
+		margin-bottom: var(--space-5);
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		text-transform: uppercase;
+	}
+	.tug span {
+		padding: var(--space-2) var(--space-3);
+		white-space: nowrap;
+		min-width: 0;
+	}
+	.tug-drive {
+		background: var(--pink);
+		color: var(--ink);
+	}
+	.tug-react {
+		background: var(--plank);
+		color: var(--chalk);
+		text-align: right;
+	}
+
+	/* Exhibit: claim against count */
+	.claim-count {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+		gap: var(--space-4);
+		margin-bottom: var(--space-5);
+	}
+	.claim-count > div {
+		padding: var(--space-3) var(--space-4);
+	}
+	.claim {
+		background: var(--chalk);
+		outline: 3px solid var(--ink);
+	}
+	.count {
+		background: var(--ink);
+		color: var(--chalk);
+	}
+	.claim-count p {
+		margin: 0;
+	}
+	.cc-label {
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		text-transform: uppercase;
+		margin-bottom: var(--space-2) !important;
+	}
+	.cc-big {
+		font-family: var(--poster);
+		font-size: 1.75rem;
+		line-height: 1.1;
+		text-transform: uppercase;
+	}
+	.pink-on-chalk {
+		color: var(--pink);
+	}
+	.cc-bar {
+		display: flex;
+		gap: var(--mark-gap);
+		height: 16px;
+		margin: var(--space-3) 0 var(--space-2);
+	}
+	.cc-w {
+		background: var(--pink);
+	}
+	.cc-m {
+		background: var(--chalk);
+	}
+	.note-dark {
+		color: var(--muted);
+		font-size: var(--text-small);
+	}
+
+	/* Exhibit: her side, his side as a split screen */
+	.side-switch {
+		display: none;
+		gap: var(--space-2);
+		margin-bottom: var(--space-4);
+	}
+	.side-switch button {
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		text-transform: uppercase;
+		background: var(--ink);
+		color: var(--chalk);
+		border: 2px solid var(--chalk);
+		padding: var(--space-2) var(--space-4);
+		min-height: 44px;
+		cursor: pointer;
+	}
+	.side-switch button[aria-pressed='true'] {
+		background: var(--chalk);
+		color: var(--ink);
+	}
+	.side-switch button[data-side='w'][aria-pressed='true'] {
+		background: var(--pink);
+		border-color: var(--pink);
+	}
+	/* Each row is label, women, men in the markup (so phones read it in that
+	   order); on wide screens the label sits in the middle column */
+	.split {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(7rem, auto) minmax(0, 1fr);
+		grid-auto-flow: dense;
+		gap: var(--space-3) var(--space-4);
+		align-items: start;
+	}
+	.split-head.w,
+	.split-cell.w {
+		grid-column: 1;
+	}
+	.split-spine-head,
+	.split-label {
+		grid-column: 2;
+	}
+	.split-head.m,
+	.split-cell.m {
+		grid-column: 3;
+	}
+	.split p {
+		margin: 0;
+	}
+	.split-head {
+		font-family: var(--poster);
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+	.split-head.w,
+	.split-cell.w {
+		text-align: right;
+	}
+	.split-head.w {
+		color: var(--pink);
+	}
+	.split-cell.w {
+		color: var(--pink);
+	}
+	.split-label {
+		text-align: center;
+		font-family: var(--poster);
+		font-size: 1rem;
+		text-transform: uppercase;
+		color: var(--muted);
+		padding-top: 0.2rem;
+		border-left: 2px solid var(--plank);
+		border-right: 2px solid var(--plank);
+	}
+
+	/* Exhibit: the charge sheet */
+	.charges {
+		list-style: none;
+		padding: 0 !important;
+		margin: 0 !important;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+	.charge {
+		background: var(--ink);
+		color: var(--chalk);
+		padding: var(--space-3) var(--space-4);
+	}
+	.charge > summary {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas: 'name found' 'sev n';
+		gap: var(--space-1) var(--space-3);
+		align-items: center;
+		cursor: pointer;
+		list-style: none;
+		min-height: 44px;
+	}
+	.charge > summary::-webkit-details-marker {
+		display: none;
+	}
+	.charge-name {
+		grid-area: name;
+		font-family: var(--poster);
+		font-size: 1.5rem;
+		text-transform: uppercase;
+	}
+	.charge-name::after {
+		content: ' +';
+		color: var(--tangerine);
+	}
+	.charge[open] .charge-name::after {
+		content: ' \2212';
+	}
+	.charge-found {
+		grid-area: found;
+		font-size: var(--text-small);
+	}
+	.charge-sev {
+		grid-area: sev;
+		display: block;
+		height: 10px;
+		background: var(--plank);
+	}
+	.charge-sev span {
+		display: block;
+		height: 100%;
+		background: var(--tangerine);
+	}
+	.charge-n {
+		grid-area: n;
+		font-family: var(--poster);
+		font-size: 1.125rem;
+		color: var(--tangerine);
+	}
+	.charge ul {
+		margin-top: var(--space-1);
+	}
+	.charge p {
+		margin: var(--space-2) 0;
+	}
+
 	@media (max-width: 600px) {
 		.info-poster.has-hero {
 			display: none;
@@ -899,7 +1326,9 @@ const credit = [
 	.cast {
 		margin-top: var(--space-5);
 	}
-	summary {
+	/* The two plain dropdowns: the full cast and the timeline's numbers */
+	.cast > summary,
+	.data-table > summary {
 		font-family: var(--poster);
 		font-size: 1.375rem;
 		text-transform: uppercase;
@@ -946,6 +1375,19 @@ const credit = [
 	.timeline {
 		display: flex;
 		gap: var(--mark-gap);
+		position: relative;
+	}
+	/* The baseline between women's bars above and men's below */
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		height: 2px;
+		margin-top: -1px;
+		background: var(--muted);
+		pointer-events: none;
 	}
 	.col {
 		flex: 1;
@@ -956,11 +1398,6 @@ const credit = [
 		border: 0;
 		background: none;
 		cursor: pointer;
-		/* the top half ends at the baseline, the bottom half starts there */
-		background-image: linear-gradient(var(--muted), var(--muted));
-		background-size: 100% 2px;
-		background-position: center;
-		background-repeat: no-repeat;
 	}
 	.col:focus-visible {
 		outline-offset: 1px;
@@ -1166,36 +1603,6 @@ const credit = [
 	.legend.small {
 		margin: 0;
 	}
-	.score-bars {
-		list-style: none;
-		padding: 0 !important;
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-3);
-		margin-top: var(--space-4) !important;
-	}
-	.score-bars li {
-		display: grid;
-		grid-template-columns: minmax(0, 11rem) minmax(0, 1fr) minmax(0, 9rem);
-		gap: var(--space-3);
-		align-items: center;
-	}
-	.sb-name {
-		font-family: var(--poster);
-		font-size: 1.25rem;
-		text-transform: uppercase;
-	}
-	.sb-track {
-		display: block;
-		height: 24px;
-		background: var(--ink);
-	}
-	.sb-bar {
-		display: block;
-		height: 100%;
-		background: var(--pink);
-		border-radius: 0 4px 4px 0;
-	}
 	.three {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
@@ -1228,35 +1635,6 @@ const credit = [
 	.source {
 		margin: var(--space-4) 0 0;
 		font-size: var(--text-small);
-	}
-	.table-scroll {
-		overflow-x: auto;
-	}
-	.compare {
-		width: 100%;
-		min-width: 600px;
-		border-collapse: collapse;
-		font-size: var(--text-small);
-	}
-	.compare th,
-	.compare td {
-		text-align: left;
-		vertical-align: top;
-		padding: var(--space-2);
-	}
-	.compare thead th {
-		font-family: var(--poster);
-		font-weight: 400;
-		font-size: 1.375rem;
-		text-transform: uppercase;
-	}
-	.compare tbody th {
-		font-family: var(--poster);
-		font-weight: 400;
-		font-size: 1.0625rem;
-		text-transform: uppercase;
-		color: var(--muted);
-		width: 20%;
 	}
 	.group {
 		font-weight: 700;
@@ -1296,39 +1674,67 @@ const credit = [
 		font-size: var(--text-lead);
 	}
 	@media (max-width: 600px) {
-		.score-n {
-			font-size: 7rem;
+		/* Score and its stamp side by side */
+		.score {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 0 var(--space-4);
 		}
-		.score-bars li {
-			grid-template-columns: minmax(0, 1fr);
-			gap: var(--space-1);
+		.score-label {
+			flex-basis: 100%;
+		}
+		.score-n {
+			font-size: 5.5rem;
+		}
+		.score-n span {
+			font-size: 2.5rem;
+		}
+		.stamp {
+			margin-top: 0 !important;
 		}
 		.half {
 			height: 120px;
 		}
-		/* The comparison table stacks: each row becomes a block, women then men */
-		.compare,
-		.compare tbody,
-		.compare tr,
-		.compare th,
-		.compare td {
-			display: block;
-			min-width: 0;
-			width: auto;
+		/* Split screen on a phone: label, then one side, chosen by the switch */
+		.split {
+			grid-template-columns: minmax(0, 1fr);
+			grid-auto-flow: row;
+			gap: var(--space-1);
 		}
-		.compare thead {
+		.split .split-label,
+		.split .split-cell {
+			grid-column: 1;
+		}
+		.split-spine-head,
+		.split-head {
 			display: none;
 		}
-		.compare tr {
-			padding: var(--space-3) 0;
+		.split-label {
+			text-align: left;
+			border: 0;
+			padding-top: var(--space-3);
 		}
-		.compare td::before {
-			content: attr(data-label) ': ';
+		.split-cell.w {
+			text-align: left;
+		}
+		.split[data-show='w'] .split-cell.m,
+		.split[data-show='m'] .split-cell.w {
+			display: none;
+		}
+		/* Without the script, both sides show, each labeled */
+		.split:not([data-show]) .split-cell.w::before {
+			content: 'Women: ';
 			font-family: var(--poster);
 			text-transform: uppercase;
 		}
-		.compare td.women::before {
-			color: var(--pink);
+		.split:not([data-show]) .split-cell.m::before {
+			content: 'Men: ';
+			font-family: var(--poster);
+			text-transform: uppercase;
+		}
+		.side-switch:not([hidden]) {
+			display: flex;
 		}
 		.tilt-l,
 		.tilt-r {

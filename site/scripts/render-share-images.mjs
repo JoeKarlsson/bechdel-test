@@ -26,7 +26,7 @@ body { width: 1200px; height: 630px; background: #000; color: #ece6da; font-fami
 .blank span { background: #ece6da; color: #000; font-family: Anton; font-size: 34px; text-transform: uppercase; padding: 12px 16px; text-align: center; }
 .text { flex: 1; min-width: 0; }
 .stamp { display: inline-block; font-family: Anton; font-size: 40px; line-height: 1; text-transform: uppercase; color: #000; padding: 10px 18px; transform: rotate(-2deg); }
-.pass { background: #ff4fd8; } .fail { background: #ff8a1f; }
+.pass { background: #ff4fd8; } .fail { background: #8f8f8f; }
 h1 { font-family: Anton; font-weight: 400; text-transform: uppercase; line-height: 0.95; margin-top: 28px; }
 .score { margin-top: 28px; font-family: Anton; font-size: 44px; text-transform: uppercase; }
 .score b { color: #ff4fd8; font-weight: 400; }

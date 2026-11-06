@@ -46,8 +46,14 @@
 	--muted: #a3a3a3;
 	--pink: #ff4fd8;
 	--pink-on-chalk: #b3007f; /* pink text dark enough for 4.5:1 on chalk */
-	--tangerine: #ff8a1f;
+	--tangerine: #ff8a1f; /* only for "disputed" and the AI's flags */
 	--tangerine-on-chalk: #b34400;
+
+	/* Meaning: pink passes, gray fails, and every score runs gray to pink */
+	--pass: var(--pink);
+	--fail: #8f8f8f; /* 6.9:1 against black text, 7.3:1 on the black page */
+	--fail-on-chalk: #5c5c5c;
+	--score-low: #4a4a4a;
 
 	/* Type */
 	--poster: 'Anton', Impact, 'Arial Narrow', sans-serif;
@@ -182,6 +188,12 @@ h4 {
 }
 .skip-link:focus {
 	top: var(--space-2);
+}
+
+/* The score ramp: set --t from 0 (worst for women) to 1 (best) on any element,
+   and use var(--tone) for its color. Same ramp for Bechdel 0-3 and the AI's 0-10. */
+[style*='--t'] {
+	--tone: color-mix(in oklab, var(--pink) calc(var(--t) * 100%), var(--score-low));
 }
 
 /* A label and swatch, for every chart legend */

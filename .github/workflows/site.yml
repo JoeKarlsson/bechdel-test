@@ -1,7 +1,7 @@
 name: Site
 
-# Builds and tests the public site on every change to it. Deploys to GitHub
-# Pages only when run by hand, until the switch-over from the old gh-pages site.
+# Builds and tests the public site on every change to it, and deploys it to
+# GitHub Pages from develop when every check passes.
 on:
   push:
     branches: [develop]
@@ -77,7 +77,7 @@ jobs:
           path: site/dist
 
   deploy:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/develop'
     needs: test
     runs-on: ubuntu-latest
     permissions:

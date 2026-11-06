@@ -32,11 +32,7 @@ npm run build && npm test && npm run e2e
 
 Pushing `develop` runs the **Site** workflow (`.github/workflows/site.yml`): it audits dependencies, builds, runs the unit, build-output, Playwright (desktop, Pixel, iPhone) and Lighthouse checks, and deploys to GitHub Pages only if they all pass.
 
-Until the switch-over from the old `gh-pages` site, the deploy job runs only when started by hand:
-
-```bash
-gh workflow run site.yml --ref develop
-```
+To redeploy without a change, run it by hand: `gh workflow run site.yml --ref develop`.
 
 ## The site
 
