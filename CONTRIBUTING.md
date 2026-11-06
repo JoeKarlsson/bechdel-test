@@ -8,7 +8,7 @@ the developers managing and developing this open source project. In return,
 they should reciprocate that respect in addressing your issue, assessing
 changes, and helping you finalize your pull requests.
 
-As for everything else in the project, the contributions to bechel.io are governed by our [Code of Conduct](https://github.com/JoeKarlsson/bechdel-test/blob/develop/CODE_OF_CONDUCT.md).
+As for everything else in the project, the contributions to bechel.io are governed by our [Code of Conduct](https://github.com/JoeKarlsson/bechdel-test/blob/main/CODE_OF_CONDUCT.md).
 
 ## Using the issue tracker
 
@@ -32,7 +32,7 @@ Guidelines for bug reports:
    reported.
 
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
-   latest `master` or `next` branch in the repository.
+   latest `main` branch in the repository.
 
 3. **Isolate the problem** &mdash; ideally create a reduced test case.
 
@@ -98,8 +98,8 @@ on how to send one :)
 2. If you cloned a while ago, get the latest changes from upstream:
 
    ```bash
-   git checkout master
-   git pull upstream master
+   git checkout main
+   git pull upstream main
    ```
 
 3. Create a new topic branch (off the main project development branch) to
@@ -155,11 +155,11 @@ on how to send one :)
 Optionally, you can help us with these things. But don’t worry if they are too
 complicated, we can help you out and teach you as we go :)
 
-1. Update your branch to the latest changes in the upstream master branch. You
+1. Update your branch to the latest changes in the upstream main branch. You
    can do that locally with
 
    ```bash
-   git pull --rebase upstream master
+   git pull --rebase upstream main
    ```
 
    Afterwards force push your changes to your remote feature branch.
@@ -237,11 +237,11 @@ looks like this:
 ### Reviewing and merging changes locally
 
 ```
-git checkout master # or the main branch configured on github
+git checkout main
 git pull # get latest changes
 git checkout feature-branch # replace name with your branch
-git rebase master
-git checkout master
+git rebase main
+git checkout main
 git merge feature-branch # replace name with your branch
 git push
 ```
