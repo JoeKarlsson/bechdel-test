@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 /**
- * Download every movie script on IMSDb that isn't in scripts/ yet, as
- * scripts/<title>.txt. Then run `npm run match` to give each one its film.
+ * Download every movie script on IMSDb that we don't have yet, as
+ * scripts/local/<title>.txt (gitignored: the scripts belong to their writers,
+ * so we analyze them but don't republish them). Then run `npm run match` to
+ * give each one its film.
  *
  *   npm run fetch-scripts
  */
 const fs = require('fs');
 const path = require('path');
 const { IMSDB, scriptFileName, parseScriptIndex, parseScriptPageUrl, parseScriptText } = require('../src/imsdb');
+const { listScriptPaths, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
 
-const SCRIPTS_DIR = path.resolve(__dirname, '../scripts');
 // Pages fetched at once, to stay gentle on IMSDb
 const CONCURRENCY = 4;
 // Shorter than this, the page holds a stub or an excerpt, not a screenplay
@@ -30,12 +32,13 @@ const downloadScript = async ({ title, moviePageUrl }, file) => {
 	if (text.trim().length < MIN_SCRIPT_CHARACTERS) {
 		throw new Error(`only ${text.trim().length} characters on ${scriptPageUrl}`);
 	}
-	fs.writeFileSync(path.join(SCRIPTS_DIR, file), text);
+	fs.writeFileSync(path.join(LOCAL_SCRIPTS_DIR, file), text);
 	console.log(`${file.padEnd(60)} ${title}`);
 };
 
 const main = async () => {
-	const existing = new Set(fs.readdirSync(SCRIPTS_DIR));
+	fs.mkdirSync(LOCAL_SCRIPTS_DIR, { recursive: true });
+	const existing = new Set(listScriptPaths().map(scriptPath => path.basename(scriptPath)));
 	const queue = [];
 	for (const movie of parseScriptIndex(await fetchPage(`${IMSDB}/all-scripts.html`))) {
 		const file = scriptFileName(movie.title);
