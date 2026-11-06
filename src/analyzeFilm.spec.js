@@ -1,5 +1,5 @@
 const { charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord } = require('./analyzeFilm');
-const { titleFromScriptName } = require('./fetchMetadata');
+const { titleFromScriptName, comparableTitle } = require('./fetchMetadata');
 
 const cast = [
 	{ name: 'Ann Actor', character: 'Ripley', gender: 1 },
@@ -105,5 +105,12 @@ describe('titleFromScriptName', () => {
 	it('reads a trailing year as a year, not part of the title', () => {
 		expect(titleFromScriptName('deep-cover-1992')).toEqual({ title: 'deep cover', year: '1992' });
 		expect(titleFromScriptName('blade-runner')).toEqual({ title: 'blade runner', year: null });
+	});
+});
+
+describe('comparableTitle', () => {
+	it('matches an OMDB title to its file name, and only that', () => {
+		expect(comparableTitle("The King's Speech")).toBe(comparableTitle('kings speech'));
+		expect(comparableTitle('Birds of Prey')).not.toBe(comparableTitle('the birds'));
 	});
 });

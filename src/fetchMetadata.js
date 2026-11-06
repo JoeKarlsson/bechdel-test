@@ -54,13 +54,28 @@ const fetchOmdb = async params => {
 	return omdb;
 };
 
+/** A title as file-name words, for comparing: "The King's Speech" -> "kings speech" */
+const comparableTitle = title => title
+	.toLowerCase()
+	.normalize('NFD').replace(/[̀-ͯ]/g, '')
+	.replace(/&/g, ' and ')
+	.replace(/['’]/g, '')
+	.replace(/[^a-z0-9]+/g, ' ')
+	.trim()
+	.replace(/^(the|a|an) /, '');
+
 /**
  * Best guess at a script's film from its file name (a trailing year pins it).
  * Only for scripts not yet in scripts/manifest.json; check the guess there.
+ * Throws when OMDB's film has another title ("birds" -> Birds of Prey): OMDB
+ * answers a title search with its closest film, not only an exact one.
  */
 const matchScriptByTitle = async scriptName => {
 	const { title, year } = titleFromScriptName(scriptName);
 	const omdb = await fetchOmdb(year ? { t: title, y: year } : { t: title });
+	if (comparableTitle(omdb.Title) !== comparableTitle(title)) {
+		throw new Error(`OMDB's closest film is ${omdb.Title} (${omdb.Year}, ${omdb.imdbID}); set the id by hand if that's it`);
+	}
 	return { imdbId: omdb.imdbID, title: omdb.Title, year: omdb.Year };
 };
 
@@ -94,4 +109,4 @@ const fetchMetadata = async imdbId => {
 	return { omdb, cast: credits.cast, crew: credits.crew || [], images, details, birthdays };
 };
 
-module.exports = { fetchMetadata, matchScriptByTitle, titleFromScriptName };
+module.exports = { fetchMetadata, matchScriptByTitle, titleFromScriptName, comparableTitle };
