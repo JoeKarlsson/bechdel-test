@@ -6,7 +6,9 @@ import { loadFilms } from '../lib/films.mjs';
 
 const films = loadFilms();
 const passing = films.filter((f) => f.bechdel.pass).length;
-const description = `Do two women talk to each other about something other than a man? We checked the scripts of ${films.length} films against the Bechdel test. ${passing} pass.`;
+// A share, not a count: it reads the same however many films are on the shelf
+const passShare = Math.round((passing / films.length) * 100);
+const description = `Do two women talk to each other about something other than a man? We check film scripts against the Bechdel test. ${passShare}% pass.`;
 ---
 
 <Base
@@ -21,8 +23,8 @@ const description = `Do two women talk to each other about something other than 
 				<h1>Do two women talk to each other about <span class="pink">something other than a man?</span></h1>
 				<Scribble kind="underline" />
 				<p class="lead">
-					We read the scripts of {films.length} films and checked each one against the three rules from Alison Bechdel's
-					1985 comic. Browse the whole shelf below.
+					We read each film's script and check it against the three rules from Alison Bechdel's 1985 comic. Browse the
+					whole shelf below.
 				</p>
 			</div>
 			<aside class="rules paper" aria-labelledby="rules-title">
@@ -32,7 +34,7 @@ const description = `Do two women talk to each other about something other than 
 					<li>who talk to each other,</li>
 					<li>about something besides a man.</li>
 				</ol>
-				<p class="tally"><span class="tally-n">{passing}</span> of {films.length} pass</p>
+				<p class="tally"><span class="tally-n">{passShare}%</span> pass</p>
 			</aside>
 		</section>
 

@@ -29,7 +29,7 @@ const {
 
 const SITE_NAME = 'bechdel.io';
 const allFilms = loadFilms();
-const failing = allFilms.filter((f) => !f.bechdel.pass).length;
+const failShare = Math.round((allFilms.filter((f) => !f.bechdel.pass).length / allFilms.length) * 100);
 const pageTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const imageUrl = new URL(image, Astro.site).href;
@@ -127,8 +127,8 @@ const NAV = [
 			<slot name="footer-lead" />
 			<p class="overdue"><span class="pink">Overdue</span><br />since 1985</p>
 			<p class="overdue-note">
-				Alison Bechdel drew the rule in <cite>Dykes to Watch Out For</cite> in 1985. {failing} of the {allFilms.length} films we've
-				checked fail it.
+				Alison Bechdel drew the rule in <cite>Dykes to Watch Out For</cite> in 1985. {failShare}% of the films we've checked
+				fail it.
 			</p>
 			<div class="footer-row">
 				<nav aria-label="Footer">

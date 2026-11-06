@@ -54,7 +54,7 @@ const shoot = async (html, out) => {
 
 await shoot(
 	page(`<div class="home"><h1>Do two women talk to each other about <span>something other than a man?</span></h1>
-	<p>${passing} of ${films.length} films pass. bechdel.io</p></div>`),
+	<p>${Math.round((passing / films.length) * 100)}% of films pass. bechdel.io</p></div>`),
 	'public/og.jpg',
 );
 
@@ -63,7 +63,7 @@ await shoot(
 await tab.setViewportSize({ width: 1280, height: 640 });
 await tab.setContent(
 	page(`<div class="home"><h1>Do two women talk to each other about <span>something other than a man?</span></h1>
-	<p>${passing} of ${films.length} films pass. bechdel.io</p></div>`).replace('width: 1200px; height: 630px', 'width: 1280px; height: 640px'),
+	<p>${Math.round((passing / films.length) * 100)}% of films pass. bechdel.io</p></div>`).replace('width: 1200px; height: 630px', 'width: 1280px; height: 640px'),
 	{ waitUntil: 'load' },
 );
 await tab.evaluate(() => document.fonts.ready);
