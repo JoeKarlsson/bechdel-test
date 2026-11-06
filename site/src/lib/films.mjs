@@ -1,5 +1,5 @@
-// Turns the raw film export (data/films/<id>.json, ~600 KB each, written by the
-// local full-stack app) into the small shape the pages render. Everything here
+// Turns the raw film export (data/films/<id>.json, ~600 KB each, written by
+// npm run analyze) into the small shape the pages render. Everything here
 // runs at build time; no film JSON ships to the browser.
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
@@ -8,7 +8,7 @@ import { join, resolve } from 'node:path';
 // from this file: Astro bundles it into a different directory at build time.
 const DATA_DIR = resolve(process.cwd(), '../data/films');
 
-// The model the full-stack app's analysis calls (src/server/methods/claudeAnalyzer.js).
+// The model the AI analysis calls (src/claudeAnalyzer.js).
 // The export doesn't record it per film, so update this when that changes.
 export const AI_MODEL = { name: 'Claude 3.5 Haiku', id: 'claude-3-5-haiku-20241022', maker: 'Anthropic' };
 
