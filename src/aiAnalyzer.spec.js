@@ -1,38 +1,76 @@
-const ClaudeAnalyzer = require('./claudeAnalyzer');
+const AiAnalyzer = require('./aiAnalyzer');
 
-// Mock the Anthropic SDK - it uses named exports
-jest.mock('@anthropic-ai/sdk', () => {
-	const mockCreate = jest.fn();
-	return {
-		Anthropic: jest.fn().mockImplementation(() => ({
-			messages: {
-				create: mockCreate,
-			},
-		})),
-		RateLimitError: class RateLimitError extends Error {},
-		APIError: class APIError extends Error {},
-		APIConnectionError: class APIConnectionError extends Error {},
-		APIConnectionTimeoutError: class APIConnectionTimeoutError extends Error {},
-	};
+const gateway = { baseUrl: 'http://gateway.test:4000/', apiKey: 'test-key', model: 'cloud-coder' };
+
+// Stands in for the LiteLLM gateway. Tests set what the model "says" with
+// mockCreate.mockResolvedValue({ content: [{ text }] }) and read the request
+// body it was called with from mockCreate.mock.calls.
+const mockCreate = jest.fn();
+
+const chatCompletion = (text, finishReason = 'stop') => ({
+	ok: true,
+	status: 200,
+	headers: new Headers({ 'x-litellm-model-name': 'openrouter/deepseek/deepseek-v4.1-flash' }),
+	json: async () => ({ model: 'cloud-coder', choices: [{ message: { content: text }, finish_reason: finishReason }] }),
 });
 
-describe('ClaudeAnalyzer', () => {
+describe('AiAnalyzer', () => {
 	let analyzer;
-	let mockCreate;
 
 	beforeEach(() => {
 		jest.clearAllMocks();
-		analyzer = new ClaudeAnalyzer('test-api-key');
-		mockCreate = analyzer.anthropic.messages.create;
+		global.fetch = jest.fn(async (url, init) => {
+			const reply = await mockCreate(JSON.parse(init.body));
+			return chatCompletion(reply.content[0].text);
+		});
+		analyzer = new AiAnalyzer(gateway);
 	});
 
 	describe('constructor', () => {
-		it('should throw error if API key is not provided', () => {
-			expect(() => new ClaudeAnalyzer()).toThrow('Claude API key is required');
+		it('needs the gateway URL, key and model', () => {
+			expect(() => new AiAnalyzer()).toThrow('AiAnalyzer needs baseUrl, apiKey and model');
+			expect(() => new AiAnalyzer({ ...gateway, model: '' })).toThrow();
+		});
+	});
+
+	describe('callModel', () => {
+		it('posts to the gateway with the key and alias, and records the model that answered', async () => {
+			mockCreate.mockResolvedValue({ content: [{ text: '{"ok": true}' }] });
+			await expect(analyzer.callModel('prompt', 'test')).resolves.toEqual({ ok: true });
+			const [url, init] = global.fetch.mock.calls[0];
+			expect(url).toBe('http://gateway.test:4000/v1/chat/completions');
+			expect(init.headers.Authorization).toBe('Bearer test-key');
+			expect(JSON.parse(init.body).model).toBe('cloud-coder');
+			expect(analyzer.servedModel).toBe('openrouter/deepseek/deepseek-v4.1-flash');
 		});
 
-		it('should initialize with API key', () => {
-			expect(analyzer.anthropic).toBeDefined();
+		it('fails on an HTTP error, such as the key not being allowed the model', async () => {
+			global.fetch = jest.fn(async () => ({
+				ok: false, status: 403, headers: new Headers(),
+				json: async () => ({ error: { message: 'key not allowed to access model' } }),
+			}));
+			await expect(analyzer.callModel('prompt', 'test'))
+				.resolves.toMatchObject({ failed: true, status: 403, error: 'key not allowed to access model' });
+		});
+
+		it('fails when the reply was cut off by the token limit', async () => {
+			global.fetch = jest.fn(async () => chatCompletion('{"partial": ', 'length'));
+			await expect(analyzer.callModel('prompt', 'test')).resolves.toMatchObject({ failed: true });
+		});
+	});
+
+	describe('prompts', () => {
+		it('list the women in the cast as female characters (TMDB gender 1)', async () => {
+			mockCreate.mockResolvedValue({ content: [{ text: '{}' }] });
+			const characters = [
+				{ cleanCharName: 'ALICE', gender: 1 },
+				{ cleanCharName: 'BOB', gender: 2 },
+			];
+			await analyzer.analyzeBatch1_CharacterNarrative({ condensedScript: 'ALICE: Hi.' }, characters);
+			const prompt = mockCreate.mock.calls[0][0].messages[0].content;
+			const femaleSection = prompt.slice(prompt.indexOf('Female characters:'), prompt.indexOf('You must respond'));
+			expect(femaleSection).toContain('ALICE');
+			expect(femaleSection).not.toContain('BOB');
 		});
 	});
 
@@ -62,10 +100,10 @@ describe('ClaudeAnalyzer', () => {
 		};
 
 		it('should return a module', () => {
-			expect(typeof ClaudeAnalyzer).toBe('function');
+			expect(typeof AiAnalyzer).toBe('function');
 		});
 
-		it('should call Claude API with correct prompt structure', async () => {
+		it('should call the model with correct prompt structure', async () => {
 			const mockResponse = {
 				content: [{
 					text: JSON.stringify({
@@ -120,15 +158,13 @@ describe('ClaudeAnalyzer', () => {
 			);
 
 			expect(mockCreate).toHaveBeenCalledTimes(1);
-			expect(mockCreate).toHaveBeenCalledWith({
-				model: 'claude-3-5-haiku-20241022',
-				max_tokens: 4000,
-				temperature: 0.3,
+			expect(mockCreate).toHaveBeenCalledWith(expect.objectContaining({
+				model: 'cloud-coder',
 				messages: [{
 					role: 'user',
 					content: expect.stringContaining('Bechdel Test'),
 				}],
-			});
+			}));
 
 			expect(result.scenesAnalyzed).toBe(3);
 			expect(result.overallAssessment.falsePositivesDetected).toBe(2);
@@ -270,7 +306,7 @@ describe('ClaudeAnalyzer', () => {
 			expect(result.overallAssessment.falsePositivesDetected).toBe(1);
 		});
 
-		it('should handle Claude API errors gracefully', async () => {
+		it('should handle gateway errors gracefully', async () => {
 			mockCreate.mockRejectedValue(new Error('API rate limit exceeded'));
 
 			const result = await analyzer.validateBechdelScenes(

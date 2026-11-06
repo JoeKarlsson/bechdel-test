@@ -26,7 +26,7 @@
 - `fetchMetadata.js`: OMDB lookup by the script's file name (a trailing year pins the match), then TMDB credits and images. Responses are cached in `.cache/http/`.
 - `analyzeFilm.js`: runs the parser on the script text and builds the film record in the shape `site/src/lib/films.mjs` reads. A redone film keeps its id, upload date and stored readers' score.
 - `bechdel/`: scene splitting, dialogue counting and the Bechdel score. `scriptCleaner.js`: per-character dialogue and key scenes for the site's charts.
-- `claudeAnalyzer.js`: the AI second opinion (three batches of prompts). Any failed section fails the film, so nothing ships half-analyzed.
+- `aiAnalyzer.js`: the AI second opinion (three prompts per film), sent to the homelab LiteLLM gateway's OpenAI-compatible endpoint as the alias in `AI_MODEL` (`cloud-coder`, DeepSeek V4.1 Flash via OpenRouter, since 2026-11-06). The model that answered is stored per film as `enhancedAnalytics.aiModel`; films without it were analyzed by Claude 3.5 Haiku. Any failed section fails the film, so nothing ships half-analyzed.
 
 bechdeltest.com's API is gone (HTTP 410), so new films have no readers' score.
 
