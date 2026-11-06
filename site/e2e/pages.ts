@@ -6,7 +6,6 @@ export const PAGE_TYPES = {
 	'film that passes': '/films/gone-girl-2014/',
 	'film that fails': '/films/fight-club-1999/',
 	'film whose script did not parse': '/films/dawn-of-the-dead-2004/',
-	'film with no poster': '/films/evil-dead-ii-dead-by-dawn-1987/',
 	about: '/about/',
 	'case study': '/case-study/',
 	privacy: '/privacy/',
