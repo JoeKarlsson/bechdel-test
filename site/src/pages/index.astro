@@ -69,6 +69,8 @@ const description = `Do two women talk to each other about something other than 
 				<p><button type="button" class="link-button" data-shelf-clear>Clear the search</button></p>
 			</div>
 
+			<!-- Old /#/film/<id> links forward to the film's page (scripts/legacy-redirect.ts) -->
+			<script type="application/json" id="legacy-film-slugs" set:html={JSON.stringify(Object.fromEntries(films.map((f) => [f.id, f.slug])))} />
 			<ul class="shelf" data-shelf>
 				{films.map((film, i) => <Tape film={film} eager={i < 6} />)}
 			</ul>
@@ -83,6 +85,7 @@ const description = `Do two women talk to each other about something other than 
 
 <script>
 	import { setUpShelf } from '../scripts/shelf';
+	import '../scripts/legacy-redirect';
 	setUpShelf();
 </script>
 

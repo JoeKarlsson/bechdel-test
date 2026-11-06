@@ -1,179 +1,26 @@
-# Bechdel Test Architecture
-
-## Overview
-
-This project uses a **dual-branch architecture** to support both active development (adding new films) and a lightweight static site for public viewing.
+# Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                      BRANCH ARCHITECTURE                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   develop branch                    gh-pages branch              │
-│   ══════════════                    ═══════════════              │
-│   Full-stack app                    Static site                  │
-│   Express + MongoDB                 JSON data only               │
-│   For adding films                  For public viewing           │
-│                                                                  │
-│   ┌──────────────┐                  ┌──────────────┐            │
-│   │   React UI   │                  │   React UI   │            │
-│   │   Express    │    export        │   (no server)│            │
-│   │   MongoDB    │ ──────────────►  │   films.json │            │
-│   └──────────────┘                  └──────────────┘            │
-│         │                                  │                     │
-│         ▼                                  ▼                     │
-│   localhost:8080                 bechdel.joekarlsson.com        │
-│   (docker compose, local)        (GitHub Pages)                  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+  Full-stack app (repo root, local only)        Public site (site/, GitHub Pages)
+  ─────────────────────────────────────        ─────────────────────────────────
+  Upload a script                              data/films/*.json
+    → parser: Bechdel score, scenes,  ──export──▶   → src/lib/films.mjs (build time)
+      characters, dialogue                         → one static page per film
+    → AI: scene review + analysis                  → bechdel.joekarlsson.com
+    → MongoDB
 ```
 
-## Branches
+## The public site (`site/`)
 
-| Branch | Purpose | Deployment | URL |
-|--------|---------|------------|-----|
-| `develop` | Full-stack with Express + MongoDB | Local Docker Compose | http://localhost:8080 |
-| `gh-pages` | Static site with bundled JSON | GitHub Pages | https://bechdel.joekarlsson.com/ |
+- **Astro**, static output, almost no client JavaScript: the home page's search, show and sort (`src/scripts/shelf.ts`), the old-link redirect (`src/scripts/legacy-redirect.ts`) and Plausible (`src/scripts/analytics.ts`).
+- **Data:** `src/lib/films.mjs` reads `../data/films/*.json` once per build and returns what the pages need: the Bechdel score and rules, the bechdeltest.com and AI second opinions, cleaned speakers with gender from the cast list, a scene-by-scene timeline, and every AI section. Nothing from the raw export ships to the browser.
+- **Pages:** `/` (the shelf), `/films/<title>-<year>/`, `/about/`, `/case-study/`, `/privacy/`, `404.html`, `sitemap.xml`.
+- **Images:** posters and backdrops are downloaded once (`npm run images`) into `src/assets/films/` and served as AVIF/WebP; share cards are rendered by Playwright (`npm run og`) into `public/og/`.
+- **Design:** dark only, hot pink on black, Anton and Fraunces (self-hosted), tokens in `src/styles/global.css`.
+- **Tests:** `test/` (node:test: data layer and every built page), `e2e/` (Playwright on desktop, Pixel and iPhone: smoke, shelf, axe, layout), `lighthouserc.json`. All run in CI before a deploy.
 
-## Workflow: Adding a New Film
+## The full-stack app (repo root)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     ADD NEW FILM WORKFLOW                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  1. Start full-stack server (if not running)                    │
-│     └─► docker compose up -d --build                            │
-│                                                                  │
-│  2. Upload script via web UI                                    │
-│     └─► http://localhost:8080 → Upload                          │
-│                                                                  │
-│  3. Export data to static site                                  │
-│     └─► ./scripts/update-static-site.sh                         │
-│         - Exports MongoDB → films.json                          │
-│         - Commits to gh-pages branch                            │
-│         - Pushes (triggers GitHub Actions deploy)               │
-│                                                                  │
-│  4. Verify deployment                                           │
-│     └─► https://bechdel.joekarlsson.com/                        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+Express, MongoDB and the React upload UI under `src/`. It runs only on your machine through Docker Compose and is never deployed. `npm run export-data` writes its films to `data/films/`.
 
-### Quick Commands
-
-```bash
-# Option 1: Use the automated script (recommended)
-./scripts/update-static-site.sh
-
-# Option 2: Manual steps
-npm run export-data                    # Export MongoDB → films.json
-git checkout gh-pages                  # Switch to static branch
-git add src/app/data/films.json        # Stage the data
-git commit -m "chore: update films"    # Commit
-git push origin gh-pages               # Deploy via GitHub Actions
-git checkout develop                   # Return to develop
-```
-
-## Infrastructure Details
-
-### Full-Stack Server (develop branch)
-
-- **Host:** Not hosted. Run it locally with `docker compose up -d --build` when adding films
-- **URL:** http://localhost:8080
-- **Services:**
-  - Node.js/Express application (port 8080)
-  - MongoDB 7.0 (port 27017, persistent volume)
-
-### Static Site (gh-pages branch)
-
-- **Host:** GitHub Pages
-- **URL:** https://bechdel.joekarlsson.com/ (custom domain; Cloudflare DNS-only CNAME to `joekarlsson.github.io`)
-- **Deploy:** Automatic via GitHub Actions on push to `gh-pages`
-- **Data:** Pre-bundled `films.json` (no runtime database)
-
-## File Structure
-
-```
-bechdel-test/
-├── src/
-│   ├── app/                    # React frontend (both branches)
-│   │   ├── data/
-│   │   │   └── films.json      # Static film data (gh-pages only)
-│   │   └── helper/
-│   │       ├── api.js          # Full-stack API client (develop)
-│   │       └── api-static.js   # Static JSON loader (gh-pages)
-│   └── server/                 # Express backend (develop only)
-├── scripts/
-│   ├── export-to-json.js       # MongoDB → JSON exporter
-│   └── update-static-site.sh   # Full export + deploy workflow
-├── .github/
-│   └── workflows/
-│       └── deploy-gh-pages.yml # GitHub Pages deployment
-└── webpack.config.static.js    # Static build config (gh-pages)
-```
-
-## Environment Variables
-
-### Full-Stack (develop)
-
-Required in `.env` or `.env.deployment.local`:
-
-```bash
-MONGODB_URI=mongodb://localhost:27017/bechdelTest
-CLAUDE_API_KEY=sk-ant-api03-xxxxx      # For AI analysis
-TMDB_API_KEY=xxxxx                      # For movie metadata
-MYAPIFILMS_API_KEY=xxxxx               # For additional data
-```
-
-### Static Site (gh-pages)
-
-No environment variables needed - all data is pre-bundled.
-
-## When to Use Each Branch
-
-| Task | Branch | Notes |
-|------|--------|-------|
-| View films | Either | Static site preferred for speed |
-| Add new film | `develop` | Requires MongoDB + API keys |
-| Update static site | `develop` → `gh-pages` | Run update script |
-| Fix frontend bugs | `gh-pages` | Then merge to `develop` |
-| Fix backend/API | `develop` | Then export to `gh-pages` |
-| Update dependencies | Both | Keep in sync |
-
-## Troubleshooting
-
-### Can't connect to MongoDB for export
-
-```bash
-# Make sure the local stack is running
-docker compose ps
-
-# Point the export at it
-MONGODB_URI="mongodb://admin:password@localhost:27017/bechdelTest?authSource=admin" npm run export-data
-```
-
-### Static site not updating after push
-
-1. Check GitHub Actions: https://github.com/JoeKarlsson/bechdel-test/actions
-2. Verify push was to `gh-pages` branch
-3. Check for build errors in Actions logs
-
-### Full-stack server not responding
-
-```bash
-# Check container status
-docker compose ps
-
-# View logs
-docker compose logs app
-
-# Restart services
-docker compose restart
-```
-
-## Related Documentation
-
-- [DEPLOYMENT.md](../DEPLOYMENT.md) - Deployment procedures
-- [README.md](../README.md) - General project info
-- [CONTRIBUTING.md](../CONTRIBUTING.md) - Development guidelines
+See [DEPLOYMENT.md](../DEPLOYMENT.md) for the workflow.

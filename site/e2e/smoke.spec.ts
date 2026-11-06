@@ -40,3 +40,12 @@ test('a film from the shelf opens its page', async ({ page }) => {
 	await expect(page).toHaveURL(/\/films\/[a-z0-9-]+\/$/);
 	await expect(page.locator('.verdict-stamp')).toBeVisible();
 });
+
+test('old hash links from the previous site forward to the new pages', async ({ page }) => {
+	await page.goto('/#/film/690e3cd1ce1ff7c7d64a74f6');
+	await expect(page).toHaveURL(/\/films\/gone-girl-2014\/$/);
+	await page.goto('/#/about');
+	await expect(page).toHaveURL(/\/about\/$/);
+	await page.goto('/#/film/000000000000000000000000');
+	await expect(page.locator('[data-shelf]')).toBeVisible();
+});

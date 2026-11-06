@@ -1,150 +1,75 @@
-# Deployment Guide
+# Deployment
 
-## Overview
+Everything lives on `develop`, in two parts:
 
-This application has two modes:
+| Part | Where | What it's for |
+|------|-------|---------------|
+| `site/` | GitHub Pages, https://bechdel.joekarlsson.com/ | The public site: a static Astro build of every analyzed film |
+| The full-stack app (repo root) | Your machine, http://localhost:8080 | Adding films: upload a script, run the parser and the AI analysis, store it in MongoDB |
 
-1. **Full-Stack Server** - For adding new films (Express + MongoDB). Runs locally with Docker Compose.
-2. **Static Site** - For public viewing (GitHub Pages)
+The site never talks to the app. The app exports its films to `data/films/<id>.json`, and the site builds from those files.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed architecture documentation.
-
-## Quick Reference
-
-| Mode | URL | Branch | Use Case |
-|------|-----|--------|----------|
-| Full-Stack | http://localhost:8080 | `develop` | Adding films |
-| Static Site | https://bechdel.joekarlsson.com/ | `gh-pages` | Public viewing |
-
----
-
-## Full-Stack Server
-
-The full-stack server is not hosted anywhere. Run it locally when you want to add films.
+## Add a film and publish it
 
 ```bash
-# Put your Claude API key in .env (see .env.example)
-echo "CLAUDE_API_KEY=sk-ant-api03-xxxxx" > .env
-
-# Build and start the app and MongoDB
+# 1. Start the app and MongoDB (needs CLAUDE_API_KEY in .env, see .env.example)
 docker compose up -d --build
+# Upload the script at http://localhost:8080
 
-# Check it's up
-curl http://localhost:8080/health
-```
-
-The app listens on http://localhost:8080. MongoDB is exposed on `localhost:27017` so the export script can reach it.
-
-```bash
-docker compose logs -f app   # View logs
-docker compose restart app   # Restart the app
-docker compose down          # Stop everything (data stays in the mongodb_data volume)
-```
-
----
-
-## Static Site Deployment
-
-### Architecture
-
-```
-Push to gh-pages branch
-    ↓
-GitHub Actions workflow
-    ↓
-Build static site (webpack)
-    ↓
-Deploy to GitHub Pages
-    ↓
-https://bechdel.joekarlsson.com/
-```
-
-The custom domain is set in the repo's GitHub Pages settings. The DNS record is a `CNAME` from `bechdel.joekarlsson.com` to `joekarlsson.github.io` in Cloudflare (DNS only, not proxied).
-
-### Update Static Site (After Adding Films)
-
-```bash
-# Automated workflow (recommended)
-./scripts/update-static-site.sh
-
-# This script:
-# 1. Exports MongoDB data to films.json
-# 2. Commits to gh-pages branch
-# 3. Pushes to trigger GitHub Actions deploy
-```
-
-### Manual Update Steps
-
-```bash
-# 1. Export data from MongoDB
-npm run export-data
-
-# 2. Switch to gh-pages branch
-git checkout gh-pages
-
-# 3. Commit the updated data
-git add src/app/data/films.json
-git commit -m "chore: update films data"
-
-# 4. Push to trigger deploy
-git push origin gh-pages
-
-# 5. Return to develop branch
-git checkout develop
-```
-
-### Verify Deployment
-
-1. Check Actions: https://github.com/JoeKarlsson/bechdel-test/actions
-2. Visit site: https://bechdel.joekarlsson.com/
-
----
-
-## Troubleshooting
-
-### Export fails (can't connect to MongoDB)
-
-Start the full-stack server first (`docker compose up -d`), then point the export at it:
-
-```bash
+# 2. Export every film to data/films/
 MONGODB_URI="mongodb://admin:password@localhost:27017/bechdelTest?authSource=admin" npm run export-data
+
+# 3. In site/: download new posters and backdrops, and render the share cards
+cd site
+npm run images
+npm run og
+
+# 4. Build and test
+npm run build && npm test && npm run e2e
+
+# 5. Commit data/films, site/src/assets/films and site/public/og, then push develop
 ```
 
-### GitHub Actions failing
+Pushing `develop` runs the **Site** workflow (`.github/workflows/site.yml`): it audits dependencies, builds, runs the unit, build-output, Playwright (desktop, Pixel, iPhone) and Lighthouse checks, and deploys to GitHub Pages only if they all pass.
 
-1. Check workflow logs: https://github.com/JoeKarlsson/bechdel-test/actions
-2. Verify `gh-pages` branch exists
-3. Check GitHub Pages settings in repo (source: GitHub Actions, custom domain: `bechdel.joekarlsson.com`)
-
----
-
-## Configuration Files
-
-### compose.yaml
-
-Docker Compose configuration:
-- App service (Node.js, published on port 8080)
-- MongoDB service
-- Persistent volume for data
-
-### .env
-
-Local secrets (gitignored). Copy `.env.example` and set `CLAUDE_API_KEY`.
-
-### .github/workflows/deploy-gh-pages.yml
-
-GitHub Actions workflow for static site deployment.
-
----
-
-## Rollback
-
-### Static Site
+Until the switch-over from the old `gh-pages` site, the deploy job runs only when started by hand:
 
 ```bash
-# Revert last commit on gh-pages
-git checkout gh-pages
-git revert HEAD
-git push origin gh-pages
-git checkout develop
+gh workflow run site.yml --ref develop
 ```
+
+## The site
+
+```bash
+cd site
+npm install          # npm 12 (see packageManager in package.json)
+npm run dev          # http://localhost:4321
+npm run build        # dist/
+npm test             # node:test: the data layer and every built page
+npm run e2e          # Playwright; set CHROME to a Chromium binary if needed
+npm run lighthouse   # Lighthouse CI, mobile, every category 90 or above
+```
+
+`site/src/lib/films.mjs` turns each raw export into what the pages show. Films whose script didn't parse, films without a poster, and films bechdeltest.com or the AI didn't rate all have their own handling there and on the film page.
+
+### What GitHub Pages can't do
+
+GitHub Pages can't set response headers. The Content-Security-Policy is a `<meta>` tag in `site/src/layouts/Base.astro`, which covers scripts, styles, images and connections but can't carry `frame-ancestors`, `report-uri` or `Permissions-Policy`. The site has no clickjacking protection beyond that; it needs a CDN or worker in front if that ever matters.
+
+### Yearly
+
+`site/public/.well-known/security.txt` expires on 6 November 2027. `npm test` fails 30 days before that: bump the `Expires` date.
+
+## The full-stack app
+
+```bash
+docker compose up -d --build   # app on :8080, MongoDB on :27017
+docker compose logs -f app
+docker compose down            # data stays in the mongodb_data volume
+```
+
+## Rolling back the site
+
+Revert the bad commit on `develop` and push; the Site workflow rebuilds and redeploys the previous state.
+
+DNS: `bechdel.joekarlsson.com` is a Cloudflare DNS-only CNAME to `joekarlsson.github.io`; the custom domain is set in the repo's Pages settings.
