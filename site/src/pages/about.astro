@@ -2,13 +2,18 @@
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Scribble from '../components/Scribble.astro';
-import { loadFilms, AI_MODEL } from '../lib/films.mjs';
+import { loadFilms } from '../lib/films.mjs';
 import theRule from '../assets/about/the-rule-excerpt.jpg';
 import alisonBechdel from '../assets/about/alison-bechdel.jpg';
 
 const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 const films = loadFilms();
 const runs = films.map((f) => f.ai?.analyzedAt).filter((d): d is string => !!d).sort();
+// Each model that wrote an analysis, with how many films it wrote, most first
+const modelsUsed = [...films.reduce((acc, f) => {
+	if (f.ai) acc.set(f.ai.model.id, { ...f.ai.model, films: (acc.get(f.ai.model.id)?.films ?? 0) + 1 });
+	return acc;
+}, new Map<string, { id: string; name: string; maker: string; films: number }>()).values()].sort((a, b) => b.films - a.films);
 const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const firstRun = runs.length ? new Date(runs[0]) : null;
 const lastRun = runs.length ? new Date(runs.at(-1)!) : null;
@@ -164,8 +169,21 @@ const runDates = (() => {
 
 			<h3>The AI</h3>
 			<p>
-				The AI analysis uses {AI_MODEL.maker}'s {AI_MODEL.name} (<code>{AI_MODEL.id}</code>).
-				{runDates && ` It read all ${runs.length} films ${runDates}.`}
+				{modelsUsed.length === 1 ? (
+					<>
+						The AI analysis uses {modelsUsed[0].maker}'s {modelsUsed[0].name} (<code>{modelsUsed[0].id}</code>).
+						{runDates && ` It read all ${runs.length} films ${runDates}.`}
+					</>
+				) : (
+					<>
+						The AI analysis was written by{' '}
+						{modelsUsed.map((m, i) => (
+							<>
+								{i > 0 && (i === modelsUsed.length - 1 ? ' and ' : ', ')}
+								{m.maker}'s {m.name} (<code>{m.id}</code>, {m.films} {m.films === 1 ? 'film' : 'films'})</>
+						))}.{runDates && ` The analyses ran ${runDates}.`}
+					</>
+				)}
 				Each film's page says when its analysis ran. AI readings can be wrong, which is why the film pages show the second
 				opinions next to our own score.
 			</p>
