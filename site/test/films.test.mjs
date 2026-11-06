@@ -11,6 +11,7 @@ import {
 	loadFilms,
 	aiModelOf,
 	crewFrom,
+	shelfStats,
 } from '../src/lib/films.mjs';
 
 test('cleanTitle drops a trailing year', () => {
@@ -80,6 +81,26 @@ test('crewFrom groups key jobs by label and sorts departments by size', () => {
 	assert.deepEqual(crew.all, { w: 2, m: 3, nb: 1, unknown: 1 });
 	assert.equal(crew.keyWomen, 1);
 	assert.equal(crewFrom(undefined), null);
+});
+
+test('shelfStats groups by decade and genre, and compares films with and without women in key jobs', () => {
+	const film = (year, pass, genres, extra = {}) => ({
+		year, genres, bechdel: { pass }, readers: null, lines: { w: 1, m: 3, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0, ...extra,
+	});
+	const directedBy = (gender) => ({ crew: { roles: [{ label: 'Directed by', people: [{ name: 'X', gender }] }] } });
+	const films = [
+		film(1991, true, ['Drama'], directedBy('w')),
+		film(1995, false, ['Drama'], directedBy('m')),
+		film(1999, false, ['Action'], { ...directedBy('m'), money: { budget: 10, revenue: 30 } }),
+		film(2004, true, ['Drama'], { money: { budget: 10, revenue: 50 } }),
+	];
+	const stats = shelfStats(films, { minGroup: 2 });
+	assert.equal(stats.pass, 2);
+	assert.deepEqual(stats.byDecade, [{ label: '1990s', films: 3, pass: 1, womenLines: 0.25 }]);
+	assert.deepEqual(stats.byGenre, [{ label: 'Drama', films: 3, pass: 2 }]);
+	assert.deepEqual(stats.womanDirector, { yes: { films: 1, pass: 1 }, no: { films: 3, pass: 1 } });
+	assert.deepEqual(stats.jobs, [{ label: 'Directed by', w: 1, m: 2, nb: 0, unknown: 0, films: 3 }]);
+	assert.deepEqual(stats.money, { pass: { films: 1, multiple: 5 }, fail: { films: 1, multiple: 3 } });
 });
 
 test('aiModelOf names the model that wrote an analysis', () => {

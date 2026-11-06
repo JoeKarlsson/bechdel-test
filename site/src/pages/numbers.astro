@@ -1,0 +1,285 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadFilms, shelfStats } from '../lib/films.mjs';
+
+const films = loadFilms();
+const s = shelfStats(films);
+
+const pct = (n: number, d: number) => Math.round((n / d) * 100);
+const percent = (x: number | null) => (x === null ? '?' : `${Math.round(x * 100)}%`);
+const times = (x: number | null) => (x === null ? '?' : `${x.toFixed(1)} times`);
+
+// Every chart on the page is one bar per row on a 0-100% track
+type Row = { label: string; share: number; value: string; aria: string };
+const decadeRows: Row[] = s.byDecade.map((d) => ({
+	label: d.label,
+	share: d.pass / d.films,
+	value: `${d.pass} of ${d.films}`,
+	aria: `${d.label}: ${d.pass} of ${d.films} films pass`,
+}));
+const linesRows: Row[] = s.byDecade
+	.filter((d) => d.womenLines !== null)
+	.map((d) => ({ label: d.label, share: d.womenLines!, value: percent(d.womenLines), aria: `${d.label}: women have ${percent(d.womenLines)} of the lines in the median film` }));
+const genreRows: Row[] = s.byGenre.map((g) => ({
+	label: g.label,
+	share: g.pass / g.films,
+	value: `${g.pass} of ${g.films}`,
+	aria: `${g.label}: ${g.pass} of ${g.films} films pass`,
+}));
+const JOB_NAMES: Record<string, string> = {
+	'Directed by': 'Directors',
+	'Written by': 'Writers',
+	'Produced by': 'Producers',
+	'Shot by': 'Cinematographers',
+	'Edited by': 'Editors',
+	'Music by': 'Composers',
+	'Production design by': 'Production designers',
+	'Costumes by': 'Costume designers',
+	'Cast by': 'Casting directors',
+};
+const jobRows: Row[] = s.jobs.map((j) => {
+	const known = j.w + j.m + j.nb;
+	return {
+		label: JOB_NAMES[j.label] ?? j.label,
+		share: j.w / known,
+		value: `${j.w} of ${known}`,
+		aria: `${JOB_NAMES[j.label] ?? j.label}: ${j.w} of ${known} credits with a listed gender are women`,
+	};
+});
+const directors = s.jobs.find((j) => j.label === 'Directed by');
+const shooters = s.jobs.find((j) => j.label === 'Shot by');
+const h = s.heard;
+---
+
+<Base
+	title="The shelf in numbers"
+	description={`All ${s.films} films on the shelf, counted: pass rates by decade and genre, who gets heard, who made the films, how old the stars were, and what they earned.`}
+	nav="numbers"
+>
+	<div class="page">
+		<h1 class="page-title">The shelf in numbers</h1>
+		<p class="page-lead">{s.films} films. {s.pass} of them pass the Bechdel test, {pct(s.pass, s.films)}%.</p>
+
+		<section class="section" aria-labelledby="trust-title">
+			<h2 id="trust-title" class="section-title">How far to trust these</h2>
+			<div class="prose">
+				<p>
+					The scores come from our script parser. Where bechdeltest.com's readers have rated a film, the parser agrees with them on
+					pass or fail for {s.readers.agree} of {s.readers.films} films ({pct(s.readers.agree, s.readers.films)}%). Each film's page
+					shows the readers' score next to ours.
+				</p>
+				<p>
+					The shelf is the scripts we could find online: mostly Hollywood films from the 1980s to the 2010s, many of them action
+					films. It isn't a sample of all films, so read the numbers below as describing this shelf.
+				</p>
+			</div>
+		</section>
+
+		<section class="section" aria-labelledby="decade-title">
+			<h2 id="decade-title" class="section-title">By decade</h2>
+			<div class="two">
+				<div>
+					<h3>Films that pass</h3>
+					<ul class="hbars">
+						{decadeRows.map((r) => (
+							<li>
+								<div class="hb-row" role="img" aria-label={r.aria}>
+								<span class="hb-label">{r.label}</span>
+								<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+								<span class="hb-value">{r.value}</span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+				<div>
+					<h3>Women's share of the lines</h3>
+					<ul class="hbars">
+						{linesRows.map((r) => (
+							<li>
+								<div class="hb-row" role="img" aria-label={r.aria}>
+								<span class="hb-label">{r.label}</span>
+								<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+								<span class="hb-value">{r.value}</span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+			<p class="note">The share of lines is for the median film of each decade, counting lines whose speaker we could place. Decades with fewer than five films on the shelf are left out.</p>
+		</section>
+
+		<section class="section" aria-labelledby="genre-title">
+			<h2 id="genre-title" class="section-title">By genre</h2>
+			<ul class="hbars wide-labels">
+				{genreRows.map((r) => (
+					<li>
+								<div class="hb-row" role="img" aria-label={r.aria}>
+						<span class="hb-label">{r.label}</span>
+						<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+						<span class="hb-value">{r.value}</span>
+						</div>
+					</li>
+				))}
+			</ul>
+			<p class="note">Most films have more than one genre, so they count in each. Genres with fewer than five films are left out.</p>
+		</section>
+
+		<section class="section" aria-labelledby="heard-title">
+			<h2 id="heard-title" class="section-title">Who gets heard</h2>
+			<dl class="tiles">
+				<div>
+					<dt>{percent(h.womenWordShare)}</dt>
+					<dd>of the words are spoken by women, in the median film.</dd>
+				</div>
+				<div>
+					<dt>{h.menConversations.toLocaleString('en-US')}</dt>
+					<dd>conversations between two named men, against {h.womenConversations.toLocaleString('en-US')} between two named women.</dd>
+				</div>
+				<div>
+					<dt>{pct(h.reversePass, h.films)}%</dt>
+					<dd>
+						of films pass the test run the other way: two named men who talk about something besides a woman. {pct(s.pass, s.films)}%
+						pass the Bechdel test.
+					</dd>
+				</div>
+			</dl>
+		</section>
+
+		<section class="section" aria-labelledby="crew-title">
+			<h2 id="crew-title" class="section-title">Behind the camera</h2>
+			<h3>Women in each job</h3>
+			<ul class="hbars wide-labels">
+				{jobRows.map((r) => (
+					<li>
+								<div class="hb-row" role="img" aria-label={r.aria}>
+						<span class="hb-label">{r.label}</span>
+						<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+						<span class="hb-value">{r.value}</span>
+						</div>
+					</li>
+				))}
+			</ul>
+			<div class="prose">
+				<p>
+					{directors && `Women directed ${directors.w} of the ${directors.w + directors.m + directors.nb} director credits.`}
+					{shooters && shooters.w === 0 && ' None of the films was shot by a woman.'}
+					{` Films with a woman director pass ${s.womanDirector.yes.pass} of ${s.womanDirector.yes.films} times (${pct(s.womanDirector.yes.pass, s.womanDirector.yes.films)}%), the rest ${s.womanDirector.no.pass} of ${s.womanDirector.no.films} (${pct(s.womanDirector.no.pass, s.womanDirector.no.films)}%).`}
+					{` With a woman among the writers, ${s.womanWriter.yes.pass} of ${s.womanWriter.yes.films} pass (${pct(s.womanWriter.yes.pass, s.womanWriter.yes.films)}%), against ${s.womanWriter.no.pass} of ${s.womanWriter.no.films} (${pct(s.womanWriter.no.pass, s.womanWriter.no.films)}%) without.`}
+				</p>
+				<p class="note">
+					Credits come from TMDB, which lists a gender for almost everyone in these jobs but not for much of the wider crew. A person
+					who did a job on several films counts once per film. With only {s.womanDirector.yes.films} films directed by a woman on the
+					shelf, that gap could be chance.
+				</p>
+			</div>
+		</section>
+
+		<section class="section" aria-labelledby="ages-title">
+			<h2 id="ages-title" class="section-title">How old the stars were</h2>
+			<dl class="tiles">
+				<div>
+					<dt>{Math.round(s.ages.women!)}</dt>
+					<dd>the average age of the top-billed women when their film came out.</dd>
+				</div>
+				<div>
+					<dt>{Math.round(s.ages.men!)}</dt>
+					<dd>the same for the top-billed men.</dd>
+				</div>
+				<div>
+					<dt>{pct(s.ages.womenYounger, s.ages.films)}%</dt>
+					<dd>of films cast women who are younger on average than the men ({s.ages.womenYounger} of {s.ages.films}).</dd>
+				</div>
+			</dl>
+			<p class="note">The ten top-billed actors of each film, from TMDB birthdays, for the {s.ages.films} films with at least one woman and one man among them.</p>
+		</section>
+
+		<section class="section" aria-labelledby="money-title">
+			<h2 id="money-title" class="section-title">The money</h2>
+			<div class="prose">
+				<p>
+					The median film that passes made {times(s.money.pass.multiple)} its budget at the box office. The median film that fails
+					made {times(s.money.fail.multiple)} its budget.
+				</p>
+				<p class="note">
+					Budgets and worldwide box office from TMDB, not adjusted for inflation, for the {s.money.pass.films + s.money.fail.films}
+					films that have both numbers.
+				</p>
+			</div>
+		</section>
+	</div>
+</Base>
+
+<style>
+	.two {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+		gap: var(--space-5) var(--space-6);
+	}
+	h3 {
+		font-size: clamp(1.5rem, 3vw, 1.875rem);
+		margin-bottom: var(--space-3);
+	}
+	.hbars {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-4);
+		max-width: 760px;
+	}
+	.hb-row {
+		display: grid;
+		grid-template-columns: 4.5rem 1fr 5.5rem;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.hbars.wide-labels .hb-row {
+		grid-template-columns: minmax(7rem, 13rem) 1fr 5.5rem;
+	}
+	.hbars li + li {
+		margin-top: var(--space-2);
+	}
+	.hb-track {
+		display: block;
+		height: 1.25rem;
+		background: var(--plank);
+		border-radius: 4px;
+	}
+	.hb-bar {
+		display: block;
+		height: 100%;
+		min-width: 3px;
+		background: var(--pink);
+		border-radius: 4px;
+	}
+	.hb-value {
+		font-variant-numeric: tabular-nums;
+		text-align: right;
+		white-space: nowrap;
+	}
+	.tiles {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+		gap: var(--space-5);
+		margin: 0 0 var(--space-4);
+	}
+	.tiles dt {
+		font-family: var(--poster);
+		font-size: clamp(2.75rem, 7vw, 4.5rem);
+		line-height: 1;
+		color: var(--pink);
+	}
+	.tiles dd {
+		margin: var(--space-2) 0 0;
+		max-width: 28ch;
+	}
+	@media (max-width: 480px) {
+		.hbars li,
+		.hbars.wide-labels .hb-row {
+			grid-template-columns: 1fr auto;
+		}
+		.hb-label {
+			grid-column: 1 / -1;
+		}
+	}
+</style>
