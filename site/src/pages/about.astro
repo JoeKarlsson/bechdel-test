@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+	title="About the Bechdel test"
+	description="Where the Bechdel test comes from, what it can and can't tell you about a film, and why Laurel and Joe Karlsson built bechdel.io."
+	nav="about"
+	structuredData={{
+		'@type': 'AboutPage',
+		name: 'About bechdel.io',
+		url: 'https://bechdel.joekarlsson.com/about/',
+		author: [
+			{ '@type': 'Person', name: 'Laurel Karlsson' },
+			{ '@type': 'Person', name: 'Joe Karlsson' },
+		],
+	}}
+>
+	<div class="page">
+		<h1 class="page-title">About the Bechdel test</h1>
+		<p class="page-lead">A film passes if it has at least two women in it, who talk to each other, about something besides a man.</p>
+
+		<div class="prose">
+			<h2>Where it comes from</h2>
+			<p>
+				The test comes from Alison Bechdel's 1985 comic strip <cite>Dykes to Watch Out For</cite>, in the strip called
+				<cite>The Rule</cite>. One character explains that she only watches movies that meet three requirements. Bechdel credits
+				the idea to her friend Liz Wallace, who was inspired by Virginia Woolf's essay <cite>A Room of One's Own</cite> (1929).
+			</p>
+			<p>
+				What began as a joke in an independent comic became one of the best-known measures of how films represent women. It took
+				off in the 2010s, when Swedish cinemas began using it to rate films and the press started tracking how Hollywood did. By
+				showing how few films have even one conversation between women about something other than a man, it became a tool for
+				feminist film criticism.
+			</p>
+
+			<h2>What it can't tell you</h2>
+			<p>
+				The test is simple on purpose, and that's its power. It also means it can't capture everything about how a film treats
+				women.
+			</p>
+			<h3>What it measures</h3>
+			<ul>
+				<li>Whether women have speaking roles</li>
+				<li>Whether women talk to each other</li>
+				<li>Whether those conversations go beyond men</li>
+			</ul>
+			<h3>What it doesn't</h3>
+			<ul>
+				<li>How well the women are written, or how they grow</li>
+				<li>Whether they have agency</li>
+				<li>Race, class, sexuality and disability</li>
+				<li>What the conversation means to the film</li>
+				<li>Who made the film: director, writer, cinematographer</li>
+			</ul>
+			<p>
+				A film can pass while leaning on harmful stereotypes, and a film can fail while giving us a powerful woman.
+				<cite>Gravity</cite> (2013) fails because it has only one woman, yet she carries the whole film. Some films pass on one
+				throwaway line between background characters.
+			</p>
+			<p>
+				That's why each film page goes past pass or fail. An AI reads the script for agency, stereotypes, power and who's missing,
+				and bechdeltest.com readers give a second opinion. Use the test to start a conversation, not to end one.
+			</p>
+
+			<h2>How we check a film</h2>
+			<p>
+				A parser reads the film's script scene by scene. It counts the women and men, finds the scenes where two women speak to
+				each other, and checks whether those scenes name a man. That gives each film its Bechdel score, from 0 to 3. Then an AI
+				re-reads any scene the parser passed, and reads the whole script for the rest of the analysis.
+			</p>
+			<p>
+				Scripts are messy, so the counts are too. When we can't tell who a line belongs to, or a script didn't parse, the film's
+				page says so.
+			</p>
+
+			<h2>Why we built it</h2>
+			<p>
+				This digital humanities project, by Joe and me, comes from a shared love of film, feminism and what technology can do. It
+				brings together my work as an English scholar and Joe's as a software engineer.
+			</p>
+			<p>
+				It started when I asked Joe for advice on a few ideas for a digital humanities project. I wanted to do something with
+				feminist film analysis, but my lack of coding experience held me back, and I couldn't find a data mining tool that did what
+				I needed. Joe offered to build one from scratch. After brainstorming several ideas, we settled on this one.
+			</p>
+			<p>
+				We also chose it because so few digital humanities projects look at film. Data mining tools are often used on literature
+				and other texts, but rarely on film. Anyone can sit through a film with a notebook and pencil to see if it passes the
+				Bechdel test, but it's slow. Automating it means we can look at a director's whole filmography, an actress's body of work,
+				or every film from one year.
+			</p>
+			<p>
+				It was an experiment in collaboration, too. We built it without ever sharing a room: I was in Boulder, Colorado, and Joe
+				was in Honolulu, Hawaii. We relied on FaceTime, iMessage and Google Docs, and it worked.
+			</p>
+			<p>
+				We see this tool as a form of feminist activism, so it's open source and free for anyone to use.
+				<a href="https://github.com/JoeKarlsson/bechdel-test" rel="noopener noreferrer" target="_blank">The code is on GitHub</a>.
+			</p>
+			<p>Laurel and Joe</p>
+			<p>
+				P.S. If you have ideas for where this should go next,
+				<a href="https://github.com/JoeKarlsson/bechdel-test/issues" rel="noopener noreferrer" target="_blank">we'd love to hear them</a>.
+			</p>
+			<p><a href="/">Browse the films</a></p>
+		</div>
+	</div>
+</Base>

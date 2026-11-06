@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+	title="Privacy"
+	description="bechdel.io counts visits with Plausible: no cookies, no personal data, nothing sold or shared. Here's exactly what's collected."
+	nav="privacy"
+>
+	<div class="page">
+		<h1 class="page-title">Privacy</h1>
+		<p class="page-lead">We count visits so we know which films people read about. We don't track you.</p>
+
+		<div class="prose">
+			<h2>What we collect</h2>
+			<p>
+				We use <a href="https://plausible.io/data-policy" rel="noopener noreferrer" target="_blank">Plausible</a>, an analytics tool
+				that doesn't use cookies and doesn't collect personal data. We run our own copy of it, so the numbers stay with us. For each
+				visit it records:
+			</p>
+			<ul>
+				<li>the page you opened and the page that sent you here</li>
+				<li>your country, browser, operating system and whether you're on a phone</li>
+				<li>which outside links you follow, like IMDb or GitHub</li>
+				<li>broken links and errors on the site, so we can fix them</li>
+			</ul>
+			<p>
+				Plausible doesn't store your IP address. It can't follow you across sites or link one visit to the next day's. Nothing is
+				sold or shared. Visits from bots aren't counted.
+			</p>
+
+			<h2>Hosting</h2>
+			<p>
+				The site is hosted on GitHub Pages. GitHub may log your IP address when it serves a page, for security; see
+				<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer" target="_blank">GitHub's privacy statement</a>.
+			</p>
+
+			<h2>What we don't do</h2>
+			<ul>
+				<li>No cookies, no accounts, no forms</li>
+				<li>No ads and no ad trackers</li>
+				<li>No fonts, images or scripts loaded from other companies. Everything comes from this site, except the analytics, which come from our own server.</li>
+			</ul>
+
+			<h2>Questions</h2>
+			<p>
+				<a href="https://github.com/JoeKarlsson/bechdel-test/issues" rel="noopener noreferrer" target="_blank">Open an issue on GitHub</a>
+				and we'll answer.
+			</p>
+			<p class="note">Last updated 6 November 2026</p>
+		</div>
+	</div>
+</Base>
