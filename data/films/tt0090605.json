@@ -1,0 +1,1843 @@
+{
+  "_id": "tt0090605",
+  "title": "Aliens",
+  "genres": [
+    "Action",
+    "Adventure",
+    "Sci-Fi"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 19,
+    "numScenesDontPass": 173,
+    "numOfFemalesChars": 8,
+    "numOfMaleChars": 19,
+    "numOfFemalesCharsWithDialogue": 7,
+    "numOfMaleCharsWithDialogue": 15,
+    "totalLinesFemaleDialogue": 329,
+    "totalLinesMaleDialogue": 363,
+    "scenesThatPass": [
+      "MED-TECH: Why don't I open the viewport? Watch your eyes.\nMED-TECH: And how are we today?\nRIPLEY: Terrible.\nMED-TECH: Just terrible? That's better than yesterday at least.",
+      "MED-TECH: Code Blue! 415. Code Blue! 4-1-5!\nRIPLEY: No...noooo!",
+      "MED-TECH: Bad dreams again? Do you want something to help you sleep?\nRIPLEY: No.. I've slept enough.\nRIPLEY: We made it, Jones. We made it.",
+      "RIPLEY: Then somebody's gotten to it... doctored the recorder. Who had access to it?\nECA REP: Would you just listen to yourself for one minute.",
+      "ECA REP: No. It's a rock. No indigenous life larger than a simple virus.\nRIPLEY: I told you, it wasn't indigenous. There was an alien spacecraft there. A derelict ship. We homed on its beacon...\nECA REP: To be perfectly frank, we've surveyed over three hundred worlds and no one's ever reported a creature which, using your words... ...'gestate…\nRIPLEY: Look, I can see where this is going. But I'm telling you those things exist. Back on that planetoid is an alien ship and on that ship are th…"
+    ]
+  },
+  "script": {
+    "file": "aliens.txt",
+    "layout": "indented",
+    "dialogueLines": 727,
+    "speakers": [
+      {
+        "name": "RIPLEY",
+        "lines": 224,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HICKS",
+        "lines": 76,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HUDSON",
+        "lines": 73,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BURKE",
+        "lines": 60,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GORMAN",
+        "lines": 56,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "NEWT",
+        "lines": 51,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BISHOP",
+        "lines": 32,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "VASQUEZ",
+        "lines": 29,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "APONE",
+        "lines": 27,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VAN LEUWEN",
+        "lines": 11,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FERRO",
+        "lines": 9,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "WIERZBOWSKI",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SPUNKMEYER",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ANNE",
+        "lines": 6,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "DIETRICH",
+        "lines": 6,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JORDEN",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MED-TECH",
+        "lines": 6,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "FROST",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TIM",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DRAKE",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ECA REP",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LYDECKER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SIMPSON",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LEADER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BIO-MONITORS",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "BON",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CROWE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "DOCTOR",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ELEVATOR PASSENGER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FEMALE VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FIRST DRAFT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FRONT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "INSURANCE INVESTIGATOR",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "INSURANCE MAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "VOICE FROM VIDEO",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WOMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "31": 1
+        }
+      },
+      {
+        "place": "Narcissus",
+        "lines": {
+          "24": 2
+        }
+      },
+      {
+        "place": "Hospital room",
+        "lines": {
+          "0": 10,
+          "3": 3,
+          "16": 6,
+          "28": 1,
+          "35": 1
+        }
+      },
+      {
+        "place": "Park",
+        "lines": {
+          "0": 6,
+          "3": 5
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Conference room",
+        "lines": {
+          "0": 8,
+          "9": 6,
+          "21": 3,
+          "33": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Conference room",
+        "lines": {
+          "9": 2
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 4,
+          "9": 3,
+          "29": 1
+        }
+      },
+      {
+        "place": "Alien landscape",
+        "lines": {}
+      },
+      {
+        "place": "Colony complex",
+        "lines": {}
+      },
+      {
+        "place": "Main concourse",
+        "lines": {}
+      },
+      {
+        "place": "Operations room",
+        "lines": {
+          "22": 3,
+          "23": 3
+        }
+      },
+      {
+        "place": "Tractor",
+        "lines": {}
+      },
+      {
+        "place": "Tractor",
+        "lines": {
+          "5": 6,
+          "13": 2,
+          "15": 5,
+          "18": 2
+        }
+      },
+      {
+        "place": "Tractor",
+        "lines": {
+          "13": 3,
+          "15": 1
+        }
+      },
+      {
+        "place": "Ext. tractor",
+        "lines": {
+          "18": 1
+        }
+      },
+      {
+        "place": "Landscape",
+        "lines": {
+          "5": 1,
+          "13": 1,
+          "18": 1
+        }
+      },
+      {
+        "place": "Ripley's apartment",
+        "lines": {
+          "26": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "3": 2
+        }
+      },
+      {
+        "place": "Ripley's apartment",
+        "lines": {
+          "0": 9,
+          "3": 10,
+          "4": 2
+        }
+      },
+      {
+        "place": "Acheron landscape",
+        "lines": {}
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "0": 3,
+          "3": 2
+        }
+      },
+      {
+        "place": "Deep space",
+        "lines": {}
+      },
+      {
+        "place": "Corridor to cargo lock",
+        "lines": {}
+      },
+      {
+        "place": "Cargo lock",
+        "lines": {}
+      },
+      {
+        "place": "Bridge",
+        "lines": {}
+      },
+      {
+        "place": "Hypersleep vault",
+        "lines": {}
+      },
+      {
+        "place": "Hypersleep vault",
+        "lines": {
+          "1": 1,
+          "2": 3,
+          "7": 1,
+          "8": 2,
+          "12": 3,
+          "14": 2,
+          "17": 1,
+          "20": 2
+        }
+      },
+      {
+        "place": "Showers",
+        "lines": {
+          "2": 1,
+          "7": 1,
+          "8": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Mess hall",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 1,
+          "3": 3,
+          "6": 4,
+          "8": 1,
+          "11": 3,
+          "12": 1
+        }
+      },
+      {
+        "place": "Ready room",
+        "lines": {
+          "0": 6,
+          "1": 1,
+          "2": 7,
+          "3": 1,
+          "4": 6,
+          "7": 4,
+          "8": 2,
+          "11": 1,
+          "12": 1,
+          "20": 1
+        }
+      },
+      {
+        "place": "Space",
+        "lines": {}
+      },
+      {
+        "place": "Bridge",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Loading bay",
+        "lines": {}
+      },
+      {
+        "place": "Ready room",
+        "lines": {}
+      },
+      {
+        "place": "Loading bay",
+        "lines": {
+          "0": 3,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "8": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Ready room",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {
+          "1": 1,
+          "2": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "Sulaco",
+        "lines": {}
+      },
+      {
+        "place": "Cockpit",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Sulaco",
+        "lines": {}
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {}
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {}
+      },
+      {
+        "place": "Cockpit",
+        "lines": {
+          "10": 2,
+          "12": 1
+        }
+      },
+      {
+        "place": "Hold",
+        "lines": {
+          "0": 1,
+          "4": 2,
+          "7": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Cockpit",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {}
+      },
+      {
+        "place": "Hold",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "4": 2,
+          "8": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Ship",
+        "lines": {}
+      },
+      {
+        "place": "Hold",
+        "lines": {
+          "0": 2,
+          "4": 3,
+          "7": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Colony complex",
+        "lines": {
+          "4": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Colony building",
+        "lines": {
+          "4": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Colony",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Main concourse",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Second level",
+        "lines": {}
+      },
+      {
+        "place": "Lower level",
+        "lines": {}
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "First level",
+        "lines": {
+          "1": 1,
+          "2": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "First level",
+        "lines": {
+          "2": 1,
+          "4": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Colony complex",
+        "lines": {
+          "2": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 2,
+          "11": 2
+        }
+      },
+      {
+        "place": "Control block corridor",
+        "lines": {
+          "3": 1,
+          "4": 1,
+          "32": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "Medical wing",
+        "lines": {
+          "0": 4,
+          "1": 3,
+          "3": 2,
+          "4": 2,
+          "8": 1,
+          "11": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Kitchens",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "7": 2
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 5,
+          "4": 5,
+          "14": 2
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "2": 1,
+          "3": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Office",
+        "lines": {
+          "0": 11,
+          "5": 8
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "1": 1,
+          "2": 2,
+          "4": 2,
+          "8": 1
+        }
+      },
+      {
+        "place": "Acheron",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 2,
+          "5": 2
+        }
+      },
+      {
+        "place": "Apc/station",
+        "lines": {
+          "4": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "2": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Complex",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Alien structure",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 2,
+          "4": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Alien structure",
+        "lines": {
+          "2": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 3,
+          "3": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Alien structure",
+        "lines": {
+          "1": 1,
+          "2": 1,
+          "4": 1,
+          "8": 2,
+          "11": 1
+        }
+      },
+      {
+        "place": "Larger chamber",
+        "lines": {
+          "2": 1,
+          "4": 1,
+          "14": 1,
+          "37": 1
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Cocoon chamber",
+        "lines": {
+          "2": 3,
+          "8": 3
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Cocoon chamber",
+        "lines": {
+          "2": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Cocoon chamber",
+        "lines": {
+          "4": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "4": 3,
+          "8": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Cocoon chamber",
+        "lines": {
+          "2": 1,
+          "4": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Alien structure",
+        "lines": {}
+      },
+      {
+        "place": "Cocoon chamber",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "1": 3,
+          "7": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Ext. apc                                           104-",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "2": 5,
+          "7": 2
+        }
+      },
+      {
+        "place": "Med lab",
+        "lines": {
+          "12": 1
+        }
+      },
+      {
+        "place": "Colony",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 9,
+          "1": 3,
+          "2": 2,
+          "3": 8,
+          "7": 2,
+          "10": 1
+        }
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {}
+      },
+      {
+        "place": "Apc",
+        "lines": {}
+      },
+      {
+        "place": "Drop-shop cockpit",
+        "lines": {
+          "10": 2
+        }
+      },
+      {
+        "place": "Apc",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 2,
+          "3": 1,
+          "5": 3
+        }
+      },
+      {
+        "place": "Control block",
+        "lines": {}
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "2": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "2": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "Service tunnel",
+        "lines": {
+          "2": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Second level corridor",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "2": 1
+        }
+      },
+      {
+        "place": "Control block",
+        "lines": {}
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Med lab annex",
+        "lines": {
+          "0": 13,
+          "5": 11
+        }
+      },
+      {
+        "place": "Med lab",
+        "lines": {
+          "0": 8,
+          "6": 6
+        }
+      },
+      {
+        "place": "Med lab annex",
+        "lines": {
+          "0": 6,
+          "3": 6
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "1": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Service tunnel",
+        "lines": {}
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "2": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 8,
+          "1": 2,
+          "2": 5,
+          "6": 6,
+          "7": 2
+        }
+      },
+      {
+        "place": "Med lab",
+        "lines": {
+          "0": 1,
+          "6": 2
+        }
+      },
+      {
+        "place": "Conduit",
+        "lines": {}
+      },
+      {
+        "place": "Med lab",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 6,
+          "1": 9,
+          "2": 1
+        }
+      },
+      {
+        "place": "Conduit",
+        "lines": {}
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 2,
+          "1": 5
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 2,
+          "4": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Med lab",
+        "lines": {}
+      },
+      {
+        "place": "Med lab",
+        "lines": {
+          "0": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "Sulaco cargo lock",
+        "lines": {
+          "30": 1
+        }
+      },
+      {
+        "place": "Operating room",
+        "lines": {
+          "0": 4,
+          "5": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Operating room",
+        "lines": {
+          "0": 1,
+          "5": 2
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Operating room",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 6,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 2,
+          "2": 3,
+          "7": 2
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "0": 6,
+          "1": 3,
+          "2": 8
+        }
+      },
+      {
+        "place": "Med lab corridor",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Operations",
+        "lines": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "4": 1,
+          "7": 2
+        }
+      },
+      {
+        "place": "Med lab annex",
+        "lines": {}
+      },
+      {
+        "place": "Med lab",
+        "lines": {}
+      },
+      {
+        "place": "Med lab annex",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "5": 4,
+          "6": 1
+        }
+      },
+      {
+        "place": "Up-link relay",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Air duct",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "7": 2
+        }
+      },
+      {
+        "place": "Service way",
+        "lines": {
+          "0": 1,
+          "5": 2
+        }
+      },
+      {
+        "place": "Chute",
+        "lines": {
+          "0": 2,
+          "5": 4
+        }
+      },
+      {
+        "place": "Subbasement",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Service tunnel",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Subbasement",
+        "lines": {}
+      },
+      {
+        "place": "Service tunnel",
+        "lines": {
+          "0": 4,
+          "1": 2
+        }
+      },
+      {
+        "place": "Landing field",
+        "lines": {
+          "0": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "Processing station",
+        "lines": {}
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {
+          "0": 4,
+          "1": 3,
+          "6": 2
+        }
+      },
+      {
+        "place": "Freight elevator",
+        "lines": {}
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "19": 1
+        }
+      },
+      {
+        "place": "Catacomb",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "Egg chamber",
+        "lines": {}
+      },
+      {
+        "place": "Catacombs",
+        "lines": {}
+      },
+      {
+        "place": "Egg chamber",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Catacombs",
+        "lines": {}
+      },
+      {
+        "place": "Egg chamber",
+        "lines": {}
+      },
+      {
+        "place": "Catacombs",
+        "lines": {}
+      },
+      {
+        "place": "Second level",
+        "lines": {}
+      },
+      {
+        "place": "Stairwell",
+        "lines": {
+          "19": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Stairwell",
+        "lines": {}
+      },
+      {
+        "place": "Landing platform",
+        "lines": {
+          "0": 3,
+          "19": 1
+        }
+      },
+      {
+        "place": "Ext. drop-ship",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Stratosphere",
+        "lines": {}
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Sulaco cargo lock",
+        "lines": {}
+      },
+      {
+        "place": "Drop-ship",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Cargo lock",
+        "lines": {
+          "0": 3,
+          "6": 2
+        }
+      },
+      {
+        "place": "Dark chamber",
+        "lines": {}
+      },
+      {
+        "place": "Cargo lock",
+        "lines": {}
+      },
+      {
+        "place": "Channel",
+        "lines": {}
+      },
+      {
+        "place": "Cargo lock",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Loading lock",
+        "lines": {}
+      },
+      {
+        "place": "Cargo bay",
+        "lines": {}
+      },
+      {
+        "place": "Loading lock",
+        "lines": {
+          "0": 1,
+          "5": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 2,
+          "5": 2
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 4,
+      "longestWithoutWoman": 11,
+      "longestWithoutWomanStart": 165,
+      "words": {
+        "w": 2763,
+        "m": 3683,
+        "unknown": 376
+      },
+      "womenConversations": 30,
+      "menConversations": 56,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/4kix6fAblJIH6eMs0Ku2loyZJXK.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/r1x5JGpyqZU8PYhbs4UcrO1Xb6x.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 283
+  },
+  "actors": [
+    {
+      "actorName": "Sigourney Weaver",
+      "character": "Ripley",
+      "actorActress": "1",
+      "age": 36
+    },
+    {
+      "actorName": "Carrie Henn",
+      "character": "Newt",
+      "actorActress": "1",
+      "age": 10
+    },
+    {
+      "actorName": "Michael Biehn",
+      "character": "Corporal Hicks",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Paul Reiser",
+      "character": "Burke",
+      "actorActress": "2",
+      "age": 30
+    },
+    {
+      "actorName": "Lance Henriksen",
+      "character": "Bishop",
+      "actorActress": "2",
+      "age": 46
+    },
+    {
+      "actorName": "Bill Paxton",
+      "character": "Private Hudson",
+      "actorActress": "2",
+      "age": 31
+    },
+    {
+      "actorName": "William Hope",
+      "character": "Lieutenant Gorman",
+      "actorActress": "2",
+      "age": 31
+    },
+    {
+      "actorName": "Jenette Goldstein",
+      "character": "Private Vasquez",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Al Matthews",
+      "character": "Sergeant Apone",
+      "actorActress": "2",
+      "age": 43
+    },
+    {
+      "actorName": "Mark Rolston",
+      "character": "Private Drake",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Ricco Ross",
+      "character": "Private Frost",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Colette Hiller",
+      "character": "Corporal Ferro",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Daniel Kash",
+      "character": "Private Spunkmeyer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Cynthia Dale Scott",
+      "character": "Corporal Dietrich",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tip Tipping",
+      "character": "Private Crowe",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Trevor Steedman",
+      "character": "Private Wierzbowski",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paul Maxwell",
+      "character": "Van Leuwen",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Valerie Colgan",
+      "character": "ECA Rep",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alan Polonsky",
+      "character": "Insurance Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alibe Parsons",
+      "character": "Med Tech",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Blain Fairman",
+      "character": "Doctor",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Barbara Coles",
+      "character": "Cocooned Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Carl Toop",
+      "character": "Alien Warrior",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Lees",
+      "character": "Power Loader Operator",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Eddie Powell",
+      "character": "Alien Warrior (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Chris Webb",
+      "character": "Alien Warrior (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alec Gillis",
+      "character": "Alien (uncredited)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "David Giler",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Walter Hill",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "James Cameron",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Gale Anne Hurd",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Adrian Biddle",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Ray Lovejoy",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "James Horner",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Peter Lamont",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Emma Porteous",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mary Selway",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mike Fenton",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Judy Taylor",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Jane Feinberg",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Art": {
+        "w": 0,
+        "m": 11,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Editing": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 4,
+        "m": 5,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Directing": {
+        "w": 1,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Sound": {
+        "w": 0,
+        "m": 6,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Crew": {
+        "w": 1,
+        "m": 18,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Writing": {
+        "w": 0,
+        "m": 6,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      }
+    }
+  },
+  "money": {
+    "budget": 18500000,
+    "revenue": 183316455
+  },
+  "directors": [
+    {
+      "name": "James Cameron"
+    }
+  ],
+  "writers": [
+    {
+      "name": "James Cameron"
+    },
+    {
+      "name": "David Giler"
+    },
+    {
+      "name": "Walter Hill"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Won 2 Oscars. 21 wins & 29 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:12:30.373Z",
+  "plot": "57 years after Ellen Ripley had a close encounter with the terrifying alien creature from the first movie, she is called upon to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. It's either fight or die as the space marines battle against the aliens.",
+  "simplePlot": "57 years after Ellen Ripley had a close encounter with the terrifying alien creature from the first movie, she is called upon to help a group of highly trained colonial marines fight off against the sinister extraterrestrials. But this time, the aliens have taken over a space colony on the moon LV-426. When the colonial marines are called upon to search the deserted space colony, they later find out that they are up against more than what they bargained for. It's either fight or die as the space marines battle against the aliens.",
+  "year": 1986,
+  "releaseDate": "18 Jul 1986",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BN2ZiMmQ0YWItN2IwZS00Y2NhLWE0NzQtNGNiOGFjN2U4MWNmXkEyXkFqcGc@._V1_QL75_UX380_CR0,15,380,562_.jpg",
+  "idIMDB": "tt0090605",
+  "rating": "8.4",
+  "metascore": 84,
+  "urlIMDB": "https://www.imdb.com/title/tt0090605/"
+}
