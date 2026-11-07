@@ -9,17 +9,20 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 2,
-    "numScenesDontPass": 111,
+    "numScenesPass": 4,
+    "numScenesDontPass": 109,
     "numOfFemalesChars": 12,
     "numOfMaleChars": 9,
     "numOfFemalesCharsWithDialogue": 9,
     "numOfMaleCharsWithDialogue": 7,
-    "totalLinesFemaleDialogue": 439,
+    "totalLinesFemaleDialogue": 537,
     "totalLinesMaleDialogue": 461,
     "scenesThatPass": [
       "CINDERELLA: rises and shyly retreats, but the STEPSISTERS sweep around her menacingly.\nFLORINDA: LOOK AT YOUR NAILS!\nLUCINDA: LOOK AT YOUR DRESS!",
-      "FLORINDA: HURRY UP AND DO MY HAIR, CINDERELLA!\nFLORINDA: pulls at one of LUCINDA’S bows.\nFLORINDA: ARE YOU REALLY WEARING THAT?\nLUCINDA: grabs CINDERELLA."
+      "FLORINDA: HURRY UP AND DO MY HAIR, CINDERELLA!\nFLORINDA: pulls at one of LUCINDA’S bows.\nFLORINDA: ARE YOU REALLY WEARING THAT?\nLUCINDA: grabs CINDERELLA.",
+      "LRRH: She wouldn’t get lost.\nCINDERELLA: I’m sure she’ll return.",
+      "LRRH: SO IT’S HER FAULT--! NO, IT ISN’T!\nCINDERELLA: THEN WHOSE IS IT?",
+      "LRRH: Maybe I shouldn’t have strayed from the path...\nCINDERELLA: Maybe I shouldn’t have attended the Ball..."
     ]
   },
   "script": {
@@ -54,7 +57,7 @@
       {
         "name": "LRRH",
         "lines": 98,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1364,11 +1367,11 @@
       "longestWithoutWoman": 33,
       "longestWithoutWomanStart": 366,
       "words": {
-        "w": 7046,
+        "w": 8499,
         "m": 7186,
-        "unknown": 2583
+        "unknown": 1130
       },
-      "womenConversations": 5,
+      "womenConversations": 19,
       "menConversations": 30,
       "reverseScore": 3
     }

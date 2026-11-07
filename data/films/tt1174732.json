@@ -7,20 +7,20 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 14,
-    "numScenesDontPass": 108,
+    "numScenesPass": 22,
+    "numScenesDontPass": 100,
     "numOfFemalesChars": 10,
     "numOfMaleChars": 12,
     "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 5,
-    "totalLinesFemaleDialogue": 528,
+    "totalLinesFemaleDialogue": 588,
     "totalLinesMaleDialogue": 412,
     "scenesThatPass": [
+      "MARJORIE: Objection noted. Jenny?\nJENNY: Noted.",
+      "JENNY: I don't know. I'm sure we could find out.\nMARJORIE: It's in Westminster. Just around the corner from the Abbey.",
+      "MARJORIE: Have a nice time.\nJENNY: Bye.",
       "JENNY: I've only got....Well, I think it's just called `Juliette Greco'. The one with the eyes on the sleeve. I saved up and got my French conversa…\nHELEN: You've got a French conversation teacher?\nJENNY: Yes.\nHELEN: Is that why you suddenly speak French for no reason?",
-      "HELEN: Certainly not me.\nJENNY: It's beautiful. Do you play?",
-      "DAVID/HELEN: Yes!\nJENNY: A weekend away? I wouldn't be allowed to do that.",
-      "JENNY: Mon dieu! You must take me back to school. And I've got to change back into my uniform.\nHELEN: Oh, behave yourselves.",
-      "TINA: You could always go to secretarial college with Hattie.\nJENNY: Oh, thanks.\nHATTIE: Charming!\nJENNY: Oh, no."
+      "HELEN: Certainly not me.\nJENNY: It's beautiful. Do you play?"
     ]
   },
   "script": {
@@ -49,7 +49,7 @@
       {
         "name": "MARJORIE",
         "lines": 60,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -990,11 +990,11 @@
       "longestWithoutWoman": 18,
       "longestWithoutWomanStart": 279,
       "words": {
-        "w": 5388,
+        "w": 5851,
         "m": 4711,
-        "unknown": 512
+        "unknown": 49
       },
-      "womenConversations": 30,
+      "womenConversations": 52,
       "menConversations": 43,
       "reverseScore": 3
     }

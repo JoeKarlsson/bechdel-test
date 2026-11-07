@@ -6,17 +6,20 @@
     "Thriller"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 2,
-    "numScenesPass": 0,
-    "numScenesDontPass": 170,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 168,
     "numOfFemalesChars": 4,
     "numOfMaleChars": 26,
     "numOfFemalesCharsWithDialogue": 1,
     "numOfMaleCharsWithDialogue": 6,
-    "totalLinesFemaleDialogue": 116,
+    "totalLinesFemaleDialogue": 202,
     "totalLinesMaleDialogue": 448,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "JULIE: has calmed herself down. Now she feels angry, betrayed. She looks at MARY accusingly.\nJULIE: Did you know? About the de-caps?\nMARY: I'd never seen it before.\nJULIE: But you knew.",
+      "MARY: HENRIED enters the room, spots JULIE, and rushes towards her.\nMARY: Where the hell have you been?\nJULIE: doesn't respond. She buttons her coat never looking up.\nMARY: Julie. Are you alright? You were missed this morning. I need you. I don't want you getting your ass in hot water. I won't be able to help yo…"
+    ]
   },
   "script": {
     "file": "day-of-the-dead.txt",
@@ -32,7 +35,7 @@
       {
         "name": "MARY",
         "lines": 86,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1334,14 +1337,14 @@
     ],
     "measures": {
       "firstWomanLine": 14,
-      "longestWithoutWoman": 55,
-      "longestWithoutWomanStart": 408,
+      "longestWithoutWoman": 54,
+      "longestWithoutWomanStart": 138,
       "words": {
-        "w": 1821,
+        "w": 3326,
         "m": 8341,
-        "unknown": 2469
+        "unknown": 964
       },
-      "womenConversations": 2,
+      "womenConversations": 7,
       "menConversations": 37,
       "reverseScore": 3
     }

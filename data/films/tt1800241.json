@@ -8,16 +8,18 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 143,
+    "numScenesPass": 3,
+    "numScenesDontPass": 141,
     "numOfFemalesChars": 13,
     "numOfMaleChars": 28,
     "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 20,
-    "totalLinesFemaleDialogue": 228,
-    "totalLinesMaleDialogue": 812,
+    "totalLinesFemaleDialogue": 318,
+    "totalLinesMaleDialogue": 918,
     "scenesThatPass": [
-      "COSMO INTERVIEWER GIRL: Well you're obviously here for a reason. Let's get to it.\nSYDNEY PROSSER: Alright.\nCOSMO INTERVIEWER GIRL: Our cover story right now is on cunnilingus. What do you think about that?\nSYDNEY PROSSER: I like it."
+      "COSMO INTERVIEWER GIRL: Well you're obviously here for a reason. Let's get to it.\nSYDNEY PROSSER: Alright.\nCOSMO INTERVIEWER GIRL: Our cover story right now is on cunnilingus. What do you think about that?\nSYDNEY PROSSER: I like it.",
+      "EDITH GREENSLY: NO!\nSYDNEY PROSSER: It was almost scary how easy it could be to take money from desperate people.",
+      "EDITH GREENSLY: Rosalyn, you need to come with me alright?\nROSALYN ROSENFELD: I don't need to come with you.\nEDITH GREENSLY: You need to come with me. This needs to stop. Come on.\nROSALYN ROSENFELD: Oh, you think I should come with you?"
     ]
   },
   "script": {
@@ -40,7 +42,7 @@
       {
         "name": "CARMINE POLITO",
         "lines": 106,
-        "gender": null,
+        "gender": "m",
         "named": true
       },
       {
@@ -52,7 +54,7 @@
       {
         "name": "EDITH GREENSLY",
         "lines": 90,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1375,16 +1377,16 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 72,
-      "longestWithoutWoman": 81,
-      "longestWithoutWomanStart": 394,
+      "firstWomanLine": 8,
+      "longestWithoutWoman": 48,
+      "longestWithoutWomanStart": 911,
       "words": {
-        "w": 3407,
-        "m": 11027,
-        "unknown": 2760
+        "w": 4228,
+        "m": 12716,
+        "unknown": 250
       },
-      "womenConversations": 4,
-      "menConversations": 68,
+      "womenConversations": 8,
+      "menConversations": 79,
       "reverseScore": 3
     }
   },

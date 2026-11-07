@@ -7,17 +7,20 @@
     "Sci-Fi"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 214,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 212,
     "numOfFemalesChars": 26,
     "numOfMaleChars": 56,
     "numOfFemalesCharsWithDialogue": 2,
     "numOfMaleCharsWithDialogue": 16,
-    "totalLinesFemaleDialogue": 64,
+    "totalLinesFemaleDialogue": 184,
     "totalLinesMaleDialogue": 753,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "KIM: Liz, get a load of this outfit! I wish I had it for the Halloween party... it's quite sexy.\nLIZ: Will you two shush. I'm trying to work.",
+      "KIM: I'm pooped.\nLIZ: I'm not..."
+    ]
   },
   "script": {
     "file": "spider-man.txt",
@@ -39,7 +42,7 @@
       {
         "name": "LIZ",
         "lines": 120,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1644,15 +1647,15 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 105,
-      "longestWithoutWoman": 130,
-      "longestWithoutWomanStart": 550,
+      "firstWomanLine": 5,
+      "longestWithoutWoman": 71,
+      "longestWithoutWomanStart": 411,
       "words": {
-        "w": 551,
+        "w": 1436,
         "m": 7388,
-        "unknown": 1192
+        "unknown": 307
       },
-      "womenConversations": 0,
+      "womenConversations": 7,
       "menConversations": 84,
       "reverseScore": 3
     }

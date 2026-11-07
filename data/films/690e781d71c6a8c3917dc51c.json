@@ -7,17 +7,19 @@
     "Drama"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 279,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 1,
+    "numScenesDontPass": 278,
     "numOfFemalesChars": 9,
     "numOfMaleChars": 29,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 21,
-    "totalLinesFemaleDialogue": 32,
+    "totalLinesFemaleDialogue": 200,
     "totalLinesMaleDialogue": 511,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "SHERRI: I'm Sherri. And you are?\nCAT: Very tired.\nSHERRI: Well, 'very tired', I'm sure you want to lay down and rest your little head?\nCAT: I do."
+    ]
   },
   "script": {
     "file": "colombiana.txt",
@@ -27,7 +29,7 @@
       {
         "name": "CAT",
         "lines": 168,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1843,14 +1845,14 @@
     ],
     "measures": {
       "firstWomanLine": 3,
-      "longestWithoutWoman": 177,
-      "longestWithoutWomanStart": 646,
+      "longestWithoutWoman": 51,
+      "longestWithoutWomanStart": 101,
       "words": {
-        "w": 265,
+        "w": 1275,
         "m": 4887,
-        "unknown": 2304
+        "unknown": 1294
       },
-      "womenConversations": 0,
+      "womenConversations": 1,
       "menConversations": 24,
       "reverseScore": 3
     }
