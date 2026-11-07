@@ -32,6 +32,15 @@ const placeOf = heading => {
 	return place ? place.charAt(0).toUpperCase() + place.slice(1).toLowerCase() : null;
 };
 
+// A speaker with this many lines is a main character: one with no gender skews
+// the film's counts and can change its verdict
+const MAIN_SPEAKER_LINES = 60;
+
+/** Main speakers neither the cast nor data/gender-overrides.json gave a gender */
+const unresolvedMainSpeakers = speakers => speakers
+	.filter(speaker => speaker.gender == null && speaker.lines >= MAIN_SPEAKER_LINES)
+	.map(speaker => speaker.name);
+
 /**
  * What the site draws from the script: every speaker with their gender and
  * line count, and each scene's place and lines per speaker (by index into
@@ -247,6 +256,7 @@ module.exports = {
 	runAiAnalysis,
 	aiSectionsOf,
 	buildFilmRecord,
+	unresolvedMainSpeakers,
 	MIN_DIALOGUE_LINES,
 	MIN_DIALOGUE_ENGLISH,
 };
