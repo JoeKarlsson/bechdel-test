@@ -11,6 +11,7 @@ const fs = require('fs');
 const path = require('path');
 const { IMSDB, scriptFileName, parseScriptIndex, parseScriptPageUrl, parseScriptText } = require('../src/imsdb');
 const { listScriptPaths, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
+const { cleanScriptText } = require('../src/scriptText');
 
 // Pages fetched at once, to stay gentle on IMSDb
 const CONCURRENCY = 4;
@@ -32,7 +33,7 @@ const downloadScript = async ({ title, moviePageUrl }, file) => {
 	if (text.trim().length < MIN_SCRIPT_CHARACTERS) {
 		throw new Error(`only ${text.trim().length} characters on ${scriptPageUrl}`);
 	}
-	fs.writeFileSync(path.join(LOCAL_SCRIPTS_DIR, file), text);
+	fs.writeFileSync(path.join(LOCAL_SCRIPTS_DIR, file), cleanScriptText(text));
 	console.log(`${file.padEnd(60)} ${title}`);
 };
 

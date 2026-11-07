@@ -7,20 +7,15 @@ const { scoreBechdel } = require('./bechdel/score');
 const castParser = require('./castParser');
 const scriptCleaner = require('./scriptCleaner');
 const AiAnalyzer = require('./aiAnalyzer');
+const { dialogueEnglishShare } = require('./scriptText');
 
 // Below this many lines of dialogue the script didn't parse (a layout the
 // parser can't read), and any score would be noise
 const MIN_DIALOGUE_LINES = 150;
-// Below this share of real words the text is a bad scan (undecodable PDF
-// fonts, poor OCR): it may still yield "dialogue", but quotes would be noise
-const MIN_TEXT_QUALITY = 0.75;
+// Below this share of English words the dialogue is a bad scan (undecodable
+// PDF fonts, poor OCR): the score would rest on noise and quotes would be garbage
+const MIN_DIALOGUE_ENGLISH = 0.9;
 
-/** Share of tokens that are words ("Hello," "MARY" "don't"), not OCR debris ("a,1.d" "~7") */
-const textQuality = text => {
-	const tokens = text.split(/\s+/).filter(Boolean);
-	const words = tokens.filter(t => /^["“‘'(]?(?:[A-Za-z][a-z'’]*|[A-Z][A-Z'’]+)[.,!?;:"”’)]*$/.test(t));
-	return words.length / Math.max(1, tokens.length);
-};
 
 // enhancedAnalytics keys that held parsed script text before the parsed
 // script moved to its own `script` section; every other key is the AI's
@@ -99,15 +94,15 @@ const measureDialogue = (dialogue, resolved) => {
  * Throws if the script didn't parse.
  */
 const analyzeScriptText = (scriptText, characters, genderOverrides = {}) => {
-	const quality = textQuality(scriptText);
-	if (quality < MIN_TEXT_QUALITY) {
-		throw new Error(`script text is garbled: ${Math.round(quality * 100)}% real words, likely a bad scan`);
-	}
 	const screenplay = parseScreenplay(scriptText);
 	const blocks = screenplay.scenes.flatMap(scene => scene.blocks);
 	const dialogue = blocks.filter(block => block.kind === 'dialogue');
 	if (dialogue.length < MIN_DIALOGUE_LINES) {
 		throw new Error(`script didn't parse: only ${dialogue.length} lines of dialogue found (${screenplay.layout} layout)`);
+	}
+	const english = dialogueEnglishShare(dialogue.map(block => block.text));
+	if (english < MIN_DIALOGUE_ENGLISH) {
+		throw new Error(`script dialogue is garbled: ${Math.round(english * 100)}% English words, likely a bad scan; npm run recover-scripts looks for a clean copy`);
 	}
 	const actionText = blocks.filter(block => block.kind === 'action').map(block => block.text).join('\n');
 	const resolved = resolveSpeakers([...new Set(dialogue.map(block => block.speaker))], characters, actionText);
@@ -248,10 +243,11 @@ const buildFilmRecord = ({
 });
 
 module.exports = {
-	textQuality,
 	charactersFromCast,
 	analyzeScriptText,
 	runAiAnalysis,
 	aiSectionsOf,
 	buildFilmRecord,
+	MIN_DIALOGUE_LINES,
+	MIN_DIALOGUE_ENGLISH,
 };

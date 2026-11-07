@@ -1,4 +1,5 @@
-const { textQuality, charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord } = require('./analyzeFilm');
+const { charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord } = require('./analyzeFilm');
+const { dialogueEnglishShare } = require('./scriptText');
 const { titleFromScriptName, comparableTitle } = require('./fetchMetadata');
 
 const cast = [
@@ -29,11 +30,11 @@ describe('analyzeScriptText', () => {
 		expect(() => analyzeScriptText(longScript(['RIPLEY']), characters, { ASH: 'm' })).toThrow('never speaks');
 	});
 
-	it('refuses a badly scanned script', () => {
-		const scan = Array.from({ length: 400 }, () => 'a,1.d ~7 Ju:l: MARY Hello, there').join('\n');
-		expect(textQuality(scan)).toBeLessThan(0.75);
-		expect(() => analyzeScriptText(scan, charactersFromCast(cast))).toThrow('script text is garbled');
-		expect(textQuality("MARY\nDon't go. He said “fine.”")).toBe(1);
+	it('refuses a script whose dialogue is badly scanned', () => {
+		// Parses fine, but the speech is OCR noise (from Casablanca's old scan)
+		const exchange = '                    RICK\n          And we have a evxtew here ia Casaclanca.\n\n                    ILSA\n          zt would never do tor the Chict.\n\n';
+		expect(() => analyzeScriptText(exchange.repeat(100), charactersFromCast(cast))).toThrow('script dialogue is garbled');
+		expect(dialogueEnglishShare(["Don't go. He said fine, nothin' doin'."])).toBe(1);
 	});
 
 	it("refuses a script it can't find enough dialogue in, instead of scoring noise", () => {

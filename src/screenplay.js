@@ -43,7 +43,41 @@ const looksLikeCue = text => {
 	return /^[A-Z0-9][A-Z0-9 .'’&#/-]*$/.test(name);
 };
 
+/**
+ * A line that could be a speaker's name in any case ("Man  (off)", "tyler",
+ * "Mrs. Banks"): a few words, no sentence punctuation. Only trusted where
+ * the script's names sit (see cueColumnOf).
+ */
+const looksLikeName = text => {
+	const t = text.trim();
+	if (t.length < 1 || t.length > 40 || !/^[A-Za-z][A-Za-z0-9.'’&-]*(?:\s+[A-Za-z0-9.'’&-]+){0,3}(?:\s*\([^)]*\))*$/.test(t)) return false;
+	const upper = t.toUpperCase();
+	if (/[.,!?;:]$/.test(t.replace(/\s*\([^)]*\)$/, '')) && !/\b(?:MR|MRS|MS|DR|ST)\.$/.test(upper)) return false;
+	return !isHeading(upper) && !TRANSITION.test(upper) && !NOT_A_SPEAKER.has(normalizeSpeaker(t));
+};
+
 const indentOf = line => line.match(/^ */)[0].length;
+
+// Lines at a script's name column that must be seen before it's trusted
+const MIN_CUE_COLUMN_LINES = 30;
+
+/**
+ * The indent a script's speaker names sit at, learned from short name-like
+ * lines followed by a shallower, still-indented line (the dialogue). Lets the
+ * parser read names that aren't all caps: Coen-style "Tom", small-caps "tyler".
+ */
+const cueColumnOf = (lines, layout) => {
+	if (!layout) return null;
+	const counts = {};
+	lines.forEach((l, i) => {
+		const next = lines[i + 1] ?? '';
+		if (!next.trim() || !looksLikeName(l)) return;
+		const indent = indentOf(l);
+		if (indent > layout.action + 8 && indentOf(next) >= layout.action && indentOf(next) < indent) counts[indent] = (counts[indent] || 0) + 1;
+	});
+	const [column, count] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] ?? [];
+	return count >= MIN_CUE_COLUMN_LINES ? Number(column) : null;
+};
 
 /**
  * The indentation dialogue sits at: the most common indent of lines right
@@ -115,14 +149,24 @@ const parseScreenplay = rawText => {
 		});
 	}
 
-	// Older scripts write "Fran:<tab>LINE". Count each "Name:" opener; a name
-	// that recurs is a speaker, a one-off ("Note:") isn't
-	const TITLE_COLON = /^([A-Z][a-z]+(?: [A-Z0-9][a-z0-9]*){0,2}):\s+(\S.*)$/;
+	// Names that aren't all caps, read only at the column the script's names sit at
+	const cueColumn = cueColumnOf(lines, layout);
+	const atCueColumn = l => cueColumn !== null && Math.abs(indentOf(l) - cueColumn) <= 2 && looksLikeName(l);
+
+	// Older scripts write "Fran:<tab>LINE", small-caps ones "bono:   LINE".
+	// Count each "Name:" opener; a name that recurs is a speaker, a one-off ("Note:") isn't
+	const TITLE_COLON = /^([A-Za-z][a-z]+(?: [A-Za-z0-9][a-z0-9]*){0,2}):\s+(\S.*)$/;
+	// Transcripts put "Bert:" or "Withnail [pouring some wine]:" alone, the speech below
+	const NAME_ALONE = /^([A-Z][A-Za-z.'’-]*(?: [A-Z][A-Za-z.'’-]*){0,2})\s*(?:\[[^\]]*\]|\([^)]*\))?\s*:$/;
 	const titleColonCount = {};
+	const nameAloneCount = {};
 	for (const l of lines) {
 		const m = l.trim().match(TITLE_COLON);
 		if (m) titleColonCount[m[1]] = (titleColonCount[m[1]] || 0) + 1;
+		const alone = l.trim().match(NAME_ALONE);
+		if (alone) nameAloneCount[alone[1]] = (nameAloneCount[alone[1]] || 0) + 1;
 	}
+	const isNameAlone = t => (nameAloneCount[t.match(NAME_ALONE)?.[1]] || 0) >= 3;
 
 	const scenes = [{ heading: null, blocks: [] }];
 	const scene = () => scenes[scenes.length - 1];
@@ -169,6 +213,17 @@ const parseScreenplay = rawText => {
 			continue;
 		}
 
+		if (isNameAlone(trimmed)) {
+			flushAction();
+			// The speech runs to a blank line, the next name, or a [stage direction]
+			const said = [];
+			let j = i + 1;
+			while (j < lines.length && lines[j].trim() && !isNameAlone(lines[j].trim()) && !lines[j].trim().startsWith('[') && !isHeading(lines[j].trim())) said.push(lines[j++].trim());
+			addDialogue(normalizeSpeaker(trimmed.match(NAME_ALONE)[1]), said);
+			i = j - 1;
+			continue;
+		}
+
 		// "BONNIE: Bull." or "NICK (CONT'D) Whose beer am I drinking?"
 		const colonCue = trimmed.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)\s*(\([^)]*\))?\s*:\s+(\S.*)$/);
 		const inlineCue = !layout && trimmed.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)(\s*\([^)]*\))?\s*\*?\s+(?=\S)(.*[a-z].*)$/);
@@ -186,7 +241,7 @@ const parseScreenplay = rawText => {
 			if (gapAllowed) first++;
 		}
 		const nextLine = lines[first] ?? '';
-		const isCue = looksLikeCue(trimmed) && nextLine.trim() && !isHeading(nextLine.trim())
+		const isCue = (looksLikeCue(trimmed) || atCueColumn(line)) && nextLine.trim() && !isHeading(nextLine.trim())
 			&& (layout ? indentOf(line) > layout.action + 8 && indentOf(nextLine) >= layout.action : !looksLikeCue(nextLine));
 
 		if (!isCue && !inline) {
@@ -208,7 +263,7 @@ const parseScreenplay = rawText => {
 			const t = l.trim();
 			if (!t || isHeading(t) || TRANSITION.test(t)) break;
 			if (layout && !inline && indentOf(l) < dialogueIndent && indentOf(l) <= layout.action) break;
-			if (looksLikeCue(t) && (layout ? indentOf(l) > layout.action + 8 : true)) break;
+			if ((looksLikeCue(t) || atCueColumn(l)) && (layout ? indentOf(l) > layout.action + 8 : true)) break;
 			if (!layout && (/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)\s*(\([^)]*\))?\s*:\s+\S/.test(t))) break;
 			if (!layout) {
 				const m = t.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)(\s*\([^)]*\))?\s*\*?\s+\S/);

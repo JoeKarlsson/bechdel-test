@@ -11,8 +11,10 @@
  */
 const fs = require('fs');
 const path = require('path');
-const { SITEMAP_URL, parseSitemap, parseScriptPage, scriptFileName, pdfToText } = require('../src/scriptSlug');
+const { SITEMAP_URL, parseSitemap, parseScriptPage, scriptFileName } = require('../src/scriptSlug');
+const { pdfToText } = require('../src/pdfText');
 const { loadManifest, saveManifest, scriptPathFor, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
+const { cleanScriptText } = require('../src/scriptText');
 
 // Pages fetched at once, to stay gentle on Script Slug
 const CONCURRENCY = 4;
@@ -52,7 +54,7 @@ const main = async () => {
 					throw new Error(`only ${text.trim().length} characters of text in the PDF`);
 				}
 				const file = scriptFileName(pageUrl);
-				fs.writeFileSync(path.join(LOCAL_SCRIPTS_DIR, file), text);
+				fs.writeFileSync(path.join(LOCAL_SCRIPTS_DIR, file), cleanScriptText(text));
 				manifest[file] = film.imdbId;
 				added++;
 				console.log(`${file.padEnd(60)} ${film.imdbId.padEnd(11)} ${film.title} (${film.year})`);

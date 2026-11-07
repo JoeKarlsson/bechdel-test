@@ -56,6 +56,24 @@ describe('parseScreenplay', () => {
 		expect(parseScreenplay(text).scenes).toHaveLength(1);
 	});
 
+	it("reads names that aren't all caps where the script's names sit", () => {
+		// Coen-style "Tom" and small-caps "verna", repeated so the name column can be learned
+		const exchange = '     Tom pours a drink and sits down across from her.\n\n                           Tom\n          What do you want?\n\n                           verna  (off)\n          Nothing from you.\n\n';
+		const speakers = dialogueOf(parseScreenplay(exchange.repeat(20))).map(d => d.speaker);
+		expect(new Set(speakers)).toEqual(new Set(['TOM', 'VERNA']));
+		expect(speakers).toHaveLength(40);
+	});
+
+	it('reads transcripts that put "Name:" alone on a line, and small-caps "name:" inline', () => {
+		const transcript = 'Bert:\nNumber 17.\nAdmiral Boom:\nEnter that in the log.\n[He salutes.]\n'.repeat(3);
+		expect(dialogueOf(parseScreenplay(transcript)).slice(0, 2)).toEqual([
+			{ kind: 'dialogue', speaker: 'BERT', text: 'Number 17.' },
+			{ kind: 'dialogue', speaker: 'ADMIRAL BOOM', text: 'Enter that in the log.' },
+		]);
+		const inline = '            bono:   I’m like you.\n            troy:   You ain’t.\n'.repeat(3);
+		expect(dialogueOf(parseScreenplay(inline)).map(d => d.speaker)).toEqual(['BONO', 'TROY', 'BONO', 'TROY', 'BONO', 'TROY']);
+	});
+
 	it('cleans speaker extensions', () => {
 		expect(normalizeSpeaker('JAKE (V.O.)')).toBe('JAKE');
 		expect(normalizeSpeaker("BONNIE'S VOICE")).toBe('BONNIE');
