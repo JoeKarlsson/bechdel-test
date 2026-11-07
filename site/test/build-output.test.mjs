@@ -111,7 +111,8 @@ test('security.txt has a contact and won’t expire in the next 30 days', () => 
 test('the RSS feed lists every film and every page points to it', () => {
 	const xml = readFileSync(join(DIST, 'rss.xml'), 'utf8');
 	assert.match(xml, /^<\?xml version="1.0" encoding="UTF-8"\?>\s*<rss version="2.0"/);
-	const films = pages.filter((p) => p.path.startsWith('/films/'));
+	// Film pages, not the A-to-Z list at /films/
+	const films = pages.filter((p) => p.path.startsWith('/films/') && p.path !== '/films/');
 	assert.equal((xml.match(/<item>/g) ?? []).length, films.length);
 	for (const p of pages) assert.match(p.html, /<link rel="alternate" type="application\/rss\+xml"[^>]*href="\/rss\.xml"/, `feed link on ${p.path}`);
 });

@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadFilms } from '../../lib/films.mjs';
+
+// Every film as a plain list: the shelf without JavaScript, and a page that
+// links to every film for search engines
+const films = [...loadFilms()].sort((a, b) => a.title.localeCompare(b.title));
+const passing = films.filter((f) => f.bechdel.pass).length;
+---
+
+<Base
+	title="Every film, A to Z"
+	description={`All ${films.length} films we've checked against the Bechdel test, A to Z, with each one's score.`}
+	nav="shelf"
+>
+	<div class="page">
+		<h1 class="page-title">Every film, A to Z</h1>
+		<p class="page-lead">{films.length} films. {passing} pass the Bechdel test.</p>
+		<ol class="all">
+			{
+				films.map((f) => (
+					<li>
+						<a href={`/films/${f.slug}/`}>{f.title}</a>
+						{f.year && ` (${f.year})`}, {f.bechdel.score} of 3, <span class:list={['verdict', f.bechdel.pass ? 'pass' : 'fail']}>{f.bechdel.pass ? 'passes' : 'fails'}</span>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</Base>
+
+<style>
+	.all {
+		list-style: none;
+		padding: 0;
+		columns: 3 300px;
+		column-gap: var(--space-6);
+	}
+	.all li {
+		break-inside: avoid;
+		padding: var(--space-1) 0;
+	}
+	.all a {
+		color: var(--chalk);
+	}
+	.verdict.pass {
+		color: var(--pink);
+	}
+	.verdict.fail {
+		color: var(--fail);
+	}
+</style>

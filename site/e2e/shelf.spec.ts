@@ -5,8 +5,8 @@ test.describe('the shelf', () => {
 		await page.goto('/');
 	});
 
-	test('lists every film, showing the first page', async ({ page }) => {
-		await expect(page.locator('[data-shelf] li')).toHaveCount(218);
+	test('arrives with the first page of films', async ({ page }) => {
+		await expect(page.locator('[data-shelf] li')).toHaveCount(60);
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(60);
 		await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 60 of 218, 111 pass in all');
 	});
@@ -34,12 +34,14 @@ test.describe('the shelf', () => {
 	});
 });
 
-test('without JavaScript, every film is listed and the controls stay hidden', async ({ browser }) => {
+test('without JavaScript, the first page shows and every film is a link away', async ({ browser }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false });
 	const page = await context.newPage();
 	await page.goto('/');
-	await expect(page.locator('[data-shelf] li')).toHaveCount(218);
+	await expect(page.locator('[data-shelf] li')).toHaveCount(60);
 	await expect(page.locator('[data-shelf-controls]')).toBeHidden();
+	await page.getByRole('link', { name: 'Every film, A to Z' }).click();
+	await expect(page.locator('ol.all li')).toHaveCount(218);
 	await context.close();
 });
 
