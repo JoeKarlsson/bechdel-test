@@ -17,7 +17,7 @@ const path = require('path');
 const { fetchMetadata } = require('../src/fetchMetadata');
 const { loadManifest, listScriptPaths } = require('../src/manifest');
 const {
-	charactersFromCast, analyzeScriptText, runAiAnalysis, aiSectionsOf, buildFilmRecord,
+	charactersFromCast, analyzeScriptText, runAiAnalysis, aiSectionsOf, buildFilmRecord, unresolvedMainSpeakers,
 } = require('../src/analyzeFilm');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -116,6 +116,7 @@ const analyzeOne = async (scriptPath, context) => {
 		film,
 		score: bechdelResults.bechdelScore,
 		readers: record.bechdelData?.rating,
+		unresolved: unresolvedMainSpeakers(summary.speakers),
 		status: `${existing ? 'updated' : 'added'}${withAi ? ', new AI read' : ''}`,
 	};
 };
@@ -133,6 +134,12 @@ const printSummary = results => {
 	const line = row => row.map((cell, i) => cell.padEnd(widths[i])).join('  ').trimEnd();
 	console.log(`\n${line(header)}\n${line(widths.map(w => '-'.repeat(w)))}`);
 	rows.forEach(row => console.log(line(row)));
+
+	const unresolved = results.filter(r => r.unresolved?.length);
+	if (unresolved.length > 0) {
+		console.log(`\nMain speakers with no gender (set them in data/gender-overrides.json, then rerun with --force):`);
+		unresolved.forEach(r => console.log(`  ${r.script}: ${r.unresolved.join(', ')}`));
+	}
 };
 
 const main = async () => {

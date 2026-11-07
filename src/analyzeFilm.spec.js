@@ -1,4 +1,4 @@
-const { charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord } = require('./analyzeFilm');
+const { charactersFromCast, analyzeScriptText, aiSectionsOf, buildFilmRecord, unresolvedMainSpeakers } = require('./analyzeFilm');
 const { dialogueEnglishShare } = require('./scriptText');
 const { titleFromScriptName, comparableTitle } = require('./fetchMetadata');
 
@@ -106,6 +106,16 @@ describe('aiSectionsOf', () => {
 		expect(aiSectionsOf(undefined)).toEqual({});
 		expect(aiSectionsOf({ femaleAgency: {}, enhancedBechdelValidation: {} }, { keepSceneReview: false }))
 			.toEqual({ femaleAgency: {} });
+	});
+});
+
+describe('unresolvedMainSpeakers', () => {
+	it('lists main speakers with no gender, not minor ones or resolved ones', () => {
+		expect(unresolvedMainSpeakers([
+			{ name: 'REGGIE', lines: 491, gender: null },
+			{ name: 'PETER', lines: 300, gender: 'm' },
+			{ name: 'WAITER', lines: 59, gender: null },
+		])).toEqual(['REGGIE']);
 	});
 });
 
