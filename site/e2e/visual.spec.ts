@@ -28,7 +28,9 @@ test('a tape on the shelf', async ({ page }) => {
 	await ready(page, '/');
 	const tape = page.locator('.tape').filter({ hasText: 'Gone Girl' });
 	await tape.scrollIntoViewIfNeeded();
-	await page.waitForFunction(() => [...document.images].filter((i) => i.closest('.tape')).slice(0, 6).every((i) => i.complete));
+	// Its poster may be lazy-loaded, depending on where it sits on the shelf
+	await expect(tape.locator('img')).toHaveJSProperty('complete', true);
+	await expect(tape.locator('img')).not.toHaveJSProperty('naturalWidth', 0);
 	await expect(tape).toHaveScreenshot('tape.png', opts);
 });
 
