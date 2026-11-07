@@ -26,9 +26,10 @@ test('house rules card', async ({ page }) => {
 
 test('a tape on the shelf', async ({ page }) => {
 	await ready(page, '/');
+	// Searched for, so the test doesn't depend on where it sits on the shelf
+	await page.getByLabel('Search').fill('gone girl');
 	const tape = page.locator('.tape').filter({ hasText: 'Gone Girl' });
 	await tape.scrollIntoViewIfNeeded();
-	// Its poster may be lazy-loaded, depending on where it sits on the shelf
 	await expect(tape.locator('img')).toHaveJSProperty('complete', true);
 	await expect(tape.locator('img')).not.toHaveJSProperty('naturalWidth', 0);
 	await expect(tape).toHaveScreenshot('tape.png', opts);

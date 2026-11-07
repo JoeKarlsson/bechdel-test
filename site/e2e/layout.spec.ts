@@ -1,20 +1,22 @@
 import { test, expect } from '@playwright/test';
 import { allPages } from './pages';
 
-test('no page scrolls sideways at 390px or 320px', async ({ page }, info) => {
-	test.skip(info.project.name !== 'desktop', 'Runs once; it sets its own phone widths');
-	test.setTimeout(180_000);
-	const wide: string[] = [];
-	for (const width of [390, 320]) {
+// One test per width, so they run in parallel; the time limit grows with the shelf
+for (const width of [390, 320]) {
+	test(`no page scrolls sideways at ${width}px`, async ({ page }, info) => {
+		test.skip(info.project.name !== 'desktop', 'Runs once; it sets its own phone widths');
+		const paths = allPages();
+		test.setTimeout(Math.max(60_000, paths.length * 200));
 		await page.setViewportSize({ width, height: 800 });
-		for (const path of allPages()) {
+		const wide: string[] = [];
+		for (const path of paths) {
 			await page.goto(path);
 			const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-			if (overflow > 0) wide.push(`${width}px ${path} (+${overflow})`);
+			if (overflow > 0) wide.push(`${path} (+${overflow})`);
 		}
-	}
-	expect(wide).toEqual([]);
-});
+		expect(wide).toEqual([]);
+	});
+}
 
 test('every page shares one header: same nav position, and text pages put the title in the same place', async ({ page }, info) => {
 	test.skip(info.project.name !== 'desktop', 'Measured at one viewport');
