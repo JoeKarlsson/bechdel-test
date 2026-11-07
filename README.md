@@ -14,6 +14,12 @@
 [![twitter][twitter]][twitter-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
+## Recording (November 2026)
+
+[![Bechdel.io: the headline "Do two women talk to each other about something other than a man?", the shelf of movie posters marked passes or fails, filtering to films that pass, then the Gone Girl page scoring 3 of 3 and its cast sized by lines spoken](.github/readme/2026-11-recording.webp)](.github/readme/2026-11-recording.mp4)
+
+What Bechdel.io looked like in November 2026, recorded for [its page on joekarlsson.com](https://www.joekarlsson.com/work/bechdel-io/). Click the picture to play the video.
+
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria
 
 1. It includes at least two women
