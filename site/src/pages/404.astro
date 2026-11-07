@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Not on the shelf" description="That page isn't on the shelf." noindex notFound>
 	<div class="page">
+		<p class="stamp" aria-hidden="true">Fail</p>
 		<h1 class="page-title">Not on the shelf</h1>
 		<p class="page-lead">We couldn't find that page. It may have moved when the site was rebuilt.</p>
 		<p class="links">
@@ -14,6 +15,19 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
+	/* The gray FAIL label from the favicon and the film pages */
+	.stamp {
+		display: inline-block;
+		margin: 0 0 var(--space-4);
+		font-family: var(--poster);
+		font-size: 2.75rem;
+		line-height: 1;
+		text-transform: uppercase;
+		color: var(--ink);
+		background: var(--fail);
+		padding: var(--space-1) var(--space-3);
+		transform: rotate(-3deg);
+	}
 	.links {
 		display: flex;
 		flex-wrap: wrap;

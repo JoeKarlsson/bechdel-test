@@ -29,12 +29,19 @@ body { width: 1200px; height: 630px; background: #000; color: #ece6da; font-fami
 h1 { font-family: Anton; font-weight: 400; text-transform: uppercase; line-height: 0.95; margin-top: 28px; }
 .score { margin-top: 28px; font-family: Anton; font-size: 44px; text-transform: uppercase; }
 .score b { color: #ff4fd8; font-weight: 400; }
-.site { position: absolute; right: 64px; bottom: 40px; font-family: Anton; font-size: 40px; color: #ff4fd8; }
+.logo { font-family: Anton; line-height: 1; color: #ff4fd8; }
+.logo span { display: block; color: #ece6da; font-size: 0.45em; margin-bottom: 0.1em; }
+body > .logo { position: absolute; right: 64px; bottom: 40px; font-size: 56px; text-align: right; }
 .home { padding: 64px; height: 100%; display: flex; flex-direction: column; justify-content: center; }
 .home h1 { font-size: 92px; margin: 0; }
 .home h1 span { color: #ff4fd8; }
-.home p { margin-top: 28px; font-family: Anton; font-size: 48px; text-transform: uppercase; }
+.home .foot { margin-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+.home p { font-family: Anton; font-size: 48px; text-transform: uppercase; }
+.home .logo { font-size: 80px; }
 </style></head><body>${body}</body></html>`;
+
+// The site's logo: the question over the pink name, as in the header
+const logo = '<div class="logo"><span>Does it pass?</span>bechdel.io</div>';
 
 // Long titles step down so they fit in three lines
 const titleSize = (t) => (t.length > 40 ? 64 : t.length > 24 ? 80 : t.length > 14 ? 104 : 128);
@@ -42,6 +49,8 @@ const titleSize = (t) => (t.length > 40 ? 64 : t.length > 24 ? 80 : t.length > 1
 const films = loadFilms();
 const passing = films.filter((f) => f.bechdel.pass).length;
 await mkdir(file('public/og/'), { recursive: true });
+const homeCard = page(`<div class="home"><h1>Do two women talk to each other about <span>something other than a man?</span></h1>
+	<div class="foot"><p>${Math.round((passing / films.length) * 100)}% of films pass</p>${logo}</div></div>`);
 
 const browser = await chromium.launch({ executablePath: process.env.CHROME || undefined });
 const tab = await browser.newPage({ viewport: { width: 1200, height: 630 } });
@@ -52,8 +61,7 @@ const shoot = async (html, out) => {
 };
 
 await shoot(
-	page(`<div class="home"><h1>Do two women talk to each other about <span>something other than a man?</span></h1>
-	<p>${Math.round((passing / films.length) * 100)}% of films pass. bechdel.io</p></div>`),
+	homeCard,
 	'public/og.jpg',
 );
 
@@ -61,8 +69,7 @@ await shoot(
 // hand in the repo's Settings > General > Social preview
 await tab.setViewportSize({ width: 1280, height: 640 });
 await tab.setContent(
-	page(`<div class="home"><h1>Do two women talk to each other about <span>something other than a man?</span></h1>
-	<p>${Math.round((passing / films.length) * 100)}% of films pass. bechdel.io</p></div>`).replace('width: 1200px; height: 630px', 'width: 1280px; height: 640px'),
+	homeCard.replace('width: 1200px; height: 630px', 'width: 1280px; height: 640px'),
 	{ waitUntil: 'load' },
 );
 await tab.evaluate(() => document.fonts.ready);
@@ -82,7 +89,7 @@ for (const f of films) {
 		<span class="stamp ${f.bechdel.pass ? 'pass' : 'fail'}">${f.bechdel.pass ? 'Passes' : 'Fails'} the Bechdel test</span>
 		<h1 style="font-size:${titleSize(f.title)}px">${esc(f.title)}</h1>
 		<p class="score">Bechdel score <b>${f.bechdel.score}</b> / 3</p>
-		</div></div><div class="site">bechdel.io</div>`),
+		</div></div>${logo}`),
 		`public/og/${f.slug}.jpg`,
 	);
 }

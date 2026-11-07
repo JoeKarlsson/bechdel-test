@@ -27,6 +27,13 @@ export const GET: APIRoute = ({ site }) => {
     <link>${new URL('/', site).href}</link>
     <atom:link href="${new URL('/rss.xml', site).href}" rel="self" type="application/rss+xml" />
     <description>Films checked against the Bechdel test, newest first.</description>
+    <image>
+      <url>${new URL('/icon-144.png', site).href}</url>
+      <title>bechdel.io</title>
+      <link>${new URL('/', site).href}</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
     <language>en</language>
     ${newest ? `<lastBuildDate>${new Date(newest).toUTCString()}</lastBuildDate>` : ''}
 ${items}

@@ -7,6 +7,7 @@ const out = (name) => new URL(`../public/${name}`, import.meta.url).pathname;
 
 for (const [name, size] of [
 	['favicon-32.png', 32],
+	['icon-144.png', 144], // the RSS feed's image, whose spec caps it at 144px wide
 	['apple-touch-icon.png', 180],
 	['icon-192.png', 192],
 	['icon-512.png', 512],
