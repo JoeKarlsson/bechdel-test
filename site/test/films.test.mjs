@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readdirSync, readFileSync } from 'node:fs';
 import {
 	cleanTitle,
 	slugify,
@@ -112,14 +113,16 @@ test('aiModelOf names the model that wrote an analysis', () => {
 
 test('the real export loads with unique slugs and sane numbers', () => {
 	const films = loadFilms();
-	assert.equal(films.length, 1189);
+	// Every film file loads, and the pass count matches the raw scores: no hard-coded totals to bump each batch
+	const raw = readdirSync('../data/films').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(`../data/films/${f}`, 'utf8')));
+	assert.equal(films.length, raw.length);
 	const gone = films.find((f) => f.slug === 'gone-girl-2014');
 	assert.ok(gone, 'Gone Girl is in the export');
 	assert.equal(gone.bechdel.score, 3);
 	assert.equal(gone.bechdel.scenesTotal, 231);
 	assert.equal(gone.readers.score, 3);
 	assert.equal(gone.speakers[0].name, 'Nick');
-	assert.equal(films.filter((f) => f.bechdel.pass).length, 713);
+	assert.equal(films.filter((f) => f.bechdel.pass).length, raw.filter((f) => f.bechdelResults.bechdelScore === 3).length);
 	for (const f of films) assert.ok(f.popularity >= 1);
 	// Its script has no scene headings: one scene, so no timeline to draw
 	const dawn = films.find((f) => f.slug === 'dawn-of-the-dead-1978');

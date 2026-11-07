@@ -21,7 +21,8 @@ test('header', async ({ page }) => {
 
 test('house rules card', async ({ page }) => {
 	await ready(page, '/');
-	await expect(page.locator('.rules')).toHaveScreenshot('house-rules.png', opts);
+	// The pass share moves with every batch of films; the card's look is what's tested
+	await expect(page.locator('.rules')).toHaveScreenshot('house-rules.png', { ...opts, mask: [page.locator('.tally-n')] });
 });
 
 test('a tape on the shelf', async ({ page }) => {
