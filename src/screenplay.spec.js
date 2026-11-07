@@ -87,6 +87,20 @@ describe('parseScreenplay', () => {
 		expect([...new Set(dialogueOf(screenplay).map(d => d.speaker))]).toEqual(['RIPLEY']);
 	});
 
+	it('drops running page headers and camera directions however they are written', () => {
+		const page = n => [
+			`HTTYD: The Hidden World - 12/05/18 - Final (DeBlois)      ${n}.`,
+			'          ANGLES ON: Hiccup at the cliff edge.',
+			'          A',
+			'           NGLE ON: Astrid watching.',
+			'                              ASTRID',
+			'                    Are you coming?',
+			'',
+		].join('\n');
+		const screenplay = parseScreenplay(`INT. CAVE - DAY\n\n${[1, 2, 3, 4, 5, 6].map(page).join('\n')}`);
+		expect([...new Set(dialogueOf(screenplay).map(d => d.speaker))]).toEqual(['ASTRID']);
+	});
+
 	it('cleans speaker extensions', () => {
 		expect(normalizeSpeaker('JAKE (V.O.)')).toBe('JAKE');
 		expect(normalizeSpeaker("BONNIE'S VOICE")).toBe('BONNIE');
