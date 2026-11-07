@@ -1,5 +1,5 @@
 <p align="center">
- <img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
+ <img width=100% src="docs/github-social-preview.png" alt="Does it pass? bechdel.io: do two women talk to each other about something other than a man?" />
 
 </p>
 <h1 align="center">bechdel.io</h1>
