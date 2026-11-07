@@ -4,7 +4,6 @@
 // (set CHROME to a Chromium binary if Playwright's own isn't installed).
 import { chromium } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
 import { loadFilms } from '../src/lib/films.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -71,9 +70,12 @@ await tab.screenshot({ path: new URL('../docs/github-social-preview.png', root).
 await tab.setViewportSize({ width: 1200, height: 630 });
 
 for (const f of films) {
-	const posterPath = `src/assets/films/${f.id}-poster.jpg`;
-	const art = existsSync(file(posterPath))
-		? `<img class="poster" src="${await dataUrl(posterPath, 'image/jpeg')}">`
+	// The poster from TMDB's CDN at the card's 2x width; a film without one gets a blank box
+	const posterUrl = f.images.poster?.replace(/\/t\/p\/[^/]+\//, '/t/p/w500/');
+	const poster = posterUrl ? await fetch(posterUrl) : null;
+	if (poster && !poster.ok) throw new Error(`HTTP ${poster.status} for ${f.title}'s poster`);
+	const art = poster
+		? `<img class="poster" src="data:image/jpeg;base64,${Buffer.from(await poster.arrayBuffer()).toString('base64')}">`
 		: `<div class="blank"><span>${esc(f.title)}</span></div>`;
 	await shoot(
 		page(`<div class="card">${art}<div class="text">

@@ -1,6 +1,6 @@
 # Deployment
 
-Everything lives on `develop`. The public site (`site/`) is a static Astro build on GitHub Pages, https://bechdel.joekarlsson.com/, built from the film files in `data/films/`. Those files are written by `npm run analyze` at the repo root, which runs only on your machine. There is no server.
+Everything lives on `main`. The public site (`site/`) is a static Astro build on GitHub Pages, https://bechdel.joekarlsson.com/, built from the film files in `data/films/`. Those files are written by `npm run analyze` at the repo root, which runs only on your machine. There is no server.
 
 ## Add a film and publish it
 
@@ -8,20 +8,19 @@ Everything lives on `develop`. The public site (`site/`) is a static Astro build
 # 1. Analyze (needs OMDB, THEMOVIEDB and the LITELLM_* settings in .env, see .env.example)
 npm run analyze -- scripts/<title>.txt     # or no arguments for every new script
 
-# 2. In site/: download new posters and backdrops, and render the share cards
+# 2. In site/: render the share cards (posters come from TMDB's CDN, nothing to download)
 cd site
-npm run images
 npm run og
 
 # 3. Build and test
 npm run build && npm test && npm run e2e
 
-# 4. Commit data/films, site/src/assets/films and site/public/og, then push develop
+# 4. Commit data/films and site/public/og, then push main
 ```
 
-Pushing `develop` runs the **Site** workflow (`.github/workflows/site.yml`): it audits dependencies, builds, runs the unit, build-output, Playwright (desktop, Pixel, iPhone) and Lighthouse checks, and deploys to GitHub Pages only if they all pass.
+Pushing `main` runs the **Site** workflow (`.github/workflows/site.yml`): it audits dependencies, builds, runs the unit, build-output, Playwright (desktop, Pixel, iPhone) and Lighthouse checks, and deploys to GitHub Pages only if they all pass.
 
-To redeploy without a change, run it by hand: `gh workflow run site.yml --ref develop`.
+To redeploy without a change, run it by hand: `gh workflow run site.yml --ref main`.
 
 ## The site
 
@@ -47,6 +46,6 @@ GitHub Pages can't set response headers. The Content-Security-Policy is a `<meta
 
 ## Rolling back the site
 
-Revert the bad commit on `develop` and push; the Site workflow rebuilds and redeploys the previous state.
+Revert the bad commit on `main` and push; the Site workflow rebuilds and redeploys the previous state.
 
 DNS: `bechdel.joekarlsson.com` is a Cloudflare DNS-only CNAME to `joekarlsson.github.io`; the custom domain is set in the repo's Pages settings.

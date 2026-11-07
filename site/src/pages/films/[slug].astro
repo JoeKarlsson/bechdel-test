@@ -1,5 +1,4 @@
 ---
-import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
@@ -17,8 +16,8 @@ const allFilms = loadFilms();
 const related = relatedFilms(film, allFilms);
 const pageUrl = `https://bechdel.joekarlsson.com/films/${film.slug}/`;
 const { bechdel, readers, ai } = film;
-const poster = posterFor(film.id);
-const backdrop = backdropFor(film.id);
+const poster = posterFor(film.images.poster, [342, 500]);
+const backdrop = backdropFor(film.images.backdrop);
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
 const yes = (ok: boolean) => (ok ? 'Yes' : 'No');
 
@@ -213,7 +212,7 @@ const credit = [
 	<section class:list={['hero', { 'no-image': !backdrop }]}>
 		{
 			backdrop && (
-				<Picture src={backdrop} alt="" widths={[640, 1280]} sizes="100vw" formats={['avif', 'webp']} loading="eager" fetchpriority="high" class="hero-image" />
+				<img src={backdrop.src} srcset={backdrop.srcset} sizes="100vw" width={backdrop.width} height={backdrop.height} alt="" loading="eager" fetchpriority="high" class="hero-image" />
 			)
 		}
 		<div class="hero-text page">
@@ -293,7 +292,7 @@ const credit = [
 		<section class="section film-info" aria-labelledby="film-title">
 			{
 				poster && (
-					<Picture src={poster} alt={`Poster for ${film.title}`} widths={[240, 480]} sizes="240px" formats={['avif', 'webp']} loading="lazy" decoding="async" class:list={['info-poster', { 'has-hero': !!backdrop }]} />
+					<img src={poster.src} srcset={poster.srcset} sizes="240px" width={poster.width} height={poster.height} alt={`Poster for ${film.title}`} loading="lazy" decoding="async" class:list={['info-poster', { 'has-hero': !!backdrop }]} />
 				)
 			}
 			<div class="info-text">

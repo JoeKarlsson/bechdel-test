@@ -15,7 +15,7 @@
 - **Astro**, static output, almost no client JavaScript: the home page's search, show and sort (`src/scripts/shelf.ts`), the old-link redirect (`src/scripts/legacy-redirect.ts`) and Plausible (`src/scripts/analytics.ts`).
 - **Data:** `src/lib/films.mjs` reads `../data/films/*.json` once per build and returns what the pages need: the Bechdel score and rules, the bechdeltest.com and AI second opinions, cleaned speakers with gender from the cast list, a scene-by-scene timeline, and every AI section. Nothing from the raw export ships to the browser.
 - **Pages:** `/` (the shelf), `/films/<title>-<year>/`, `/numbers/` (the whole shelf counted, from `shelfStats` in `src/lib/films.mjs`), `/about/`, `/case-study/`, `/privacy/`, `404.html`, `sitemap.xml`.
-- **Images:** posters and backdrops are downloaded once (`npm run images`) into `src/assets/films/` and served as AVIF/WebP; share cards are rendered by Playwright (`npm run og`) into `public/og/`.
+- **Images:** posters and backdrops load from TMDB's image CDN (`src/lib/images.ts`), in TMDB's standard widths with `srcset`; the site keeps no image files of its own, since 2,000+ films' worth would pass GitHub Pages' 1 GB limit. Share cards are rendered by Playwright (`npm run og`) into `public/og/`, with each poster fetched from TMDB.
 - **Design:** dark only, hot pink on black, Anton and Fraunces (self-hosted), tokens in `src/styles/global.css`.
 - **Tests:** `test/` (node:test: data layer and every built page), `e2e/` (Playwright on desktop, Pixel and iPhone: smoke, shelf, axe, layout), `lighthouserc.json`. All run in CI before a deploy.
 
