@@ -45,8 +45,6 @@ const ruleNames = ['At least two women', 'Who talk to each other', 'About someth
 // Second opinions
 const readersAgree = readers ? (readers.score === 3) === bechdel.pass : null;
 const review = ai?.review && ai.review.scenes.length ? ai.review : null;
-const confidences = review?.scenes.map((s) => s.confidence).filter((c): c is number => c !== null) ?? [];
-const confidence = confidences.length ? Math.round((confidences.reduce((a, b) => a + b, 0) / confidences.length) * 100) : null;
 const aiAgrees = review ? review.pass === bechdel.pass : null;
 
 // The AI's five scores, turned so higher is always better for women, each
@@ -175,9 +173,8 @@ const waffle = womenShare !== null ? Array.from({ length: 100 }, (_, i) => i < w
 const verdictWord = bechdel.pass ? 'Passes' : 'Fails';
 // Under 160 characters: long titles drop the second sentence
 const verdictSentence = `${film.title} (${film.year}) ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test with a score of ${bechdel.score} out of 3.`;
-const descriptionTail = ' See who talks, scene by scene, and what an AI found in the script.';
+const descriptionTail = ' See who talks, scene by scene, and how the script treats women.';
 const description = verdictSentence.length + descriptionTail.length <= 160 ? verdictSentence + descriptionTail : verdictSentence;
-const analyzed = ai?.analyzedAt ? new Date(ai.analyzedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : null;
 const facts = [
 	['Released', film.released],
 	['Genres', film.genres.join(', ') || null],
@@ -278,10 +275,9 @@ const credit = [
 					{
 						review && (
 							<p>
-								<strong class:list={['tag', aiAgrees ? 'agree' : 'disagree']}>{aiAgrees ? 'Agree' : 'Disagree'}</strong> An AI re-read the
+								<strong class:list={['tag', aiAgrees ? 'agree' : 'disagree']}>{aiAgrees ? 'Agree' : 'Disagree'}</strong> A second read of the
 								{review.scenes.length === 1 ? ' passing scene' : ` ${review.scenes.length} passing scenes`} and scores the film {review.score ?? 0} out of 3
 								{review.reasoning ? <>: "{review.reasoning.replace(/\.?$/, '.')}"</> : '.'}
-								{confidence !== null && <> It's {confidence}% sure.</>}
 							</p>
 						)
 					}
@@ -437,8 +433,8 @@ const credit = [
 					<h2 id="evidence-title" class="section-title evidence-title">The evidence</h2>
 					<ul class="legend">
 						<li><span class="swatch paper-swatch" />Straight from the script</li>
-						<li><span class="swatch panel-swatch" />Counted from the script and the credits, or the AI's read of it</li>
-						<li><span class="swatch flag-swatch" />Problems the AI flagged</li>
+						<li><span class="swatch panel-swatch" />Counted or read from the script and the credits</li>
+						<li><span class="swatch flag-swatch" />Red flags in the script</li>
 					</ul>
 					<p class="note fold-hint">Tap an exhibit to open it.</p>
 
@@ -449,7 +445,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}</h3>
-										<p class="gist">The scene our parser counted as passing, word for word, with what the AI made of it.</p>
+										<p class="gist">The scene our parser counted as passing, word for word, with what it's about.</p>
 									</summary>
 									{bechdel.passingScenes.map((scene, i) => (
 										<figure class="script">
@@ -471,11 +467,11 @@ const credit = [
 														)}
 														{review.scenes[i].reasoning && (
 															<>
-																<dt>The AI says</dt>
+																<dt>Why</dt>
 																<dd>
 																	"{review.scenes[i].reasoning}"
 																	{review.scenes[i].result && ` ${review.scenes[i].result === 'pass' ? 'Passes' : 'Fails'}`}
-																	{review.scenes[i].confidence !== null && `, ${Math.round(review.scenes[i].confidence * 100)}% sure`}.
+																	.
 																</dd>
 															</>
 														)}
@@ -711,7 +707,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-scores">Exhibit {letter('scores')}: how the film treats women, against the shelf</h3>
-										<p class="gist">The AI's five scores, turned so higher is always better for women, next to every film we've checked.</p>
+										<p class="gist">Five scores, turned so higher is always better for women, next to every film we've checked.</p>
 									</summary>
 									<ul class="legend small">
 										<li><span class="swatch shelf-swatch" />Other films on the shelf</li>
@@ -732,7 +728,7 @@ const credit = [
 												</div>
 												<p class="vs-line">
 													<strong class="vs-score">{s.mine}/10</strong> {s.sentence}
-													<span class="note"> The AI's own number: {DIMENSIONS.find((d) => d.key === s.key)!.flip ? `${s.name.replace('Free of ', '').replace(/^./, (c) => c.toUpperCase())} ${s.raw}/10, where higher is worse` : `${s.raw}/10`}.</span>
+													<span class="note"> Raw score: {DIMENSIONS.find((d) => d.key === s.key)!.flip ? `${s.name.replace('Free of ', '').replace(/^./, (c) => c.toUpperCase())} ${s.raw}/10, where higher is worse` : `${s.raw}/10`}.</span>
 												</p>
 											</li>
 										))}
@@ -746,7 +742,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-agency">Exhibit {letter('agency')}: do the women drive the story?</h3>
-										<p class="gist">Agency is whether women's choices move the story, or the story happens to them. The AI found {plural(ai.agency.drives.length, 'moment')} where they drive it and {ai.agency.reacts.length} where they react.</p>
+										<p class="gist">Agency is whether women's choices move the story, or the story happens to them. There are {plural(ai.agency.drives.length, 'moment')} where they drive it and {ai.agency.reacts.length} where they react.</p>
 									</summary>
 									<div class="tug" role="img" aria-label={`${ai.agency.drives.length} moments driving the story, ${ai.agency.reacts.length} reacting`}>
 										<span class="tug-drive" style={`flex: ${Math.max(ai.agency.drives.length, 0.2)}`}>Drive {ai.agency.drives.length}</span>
@@ -783,12 +779,12 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-power">Exhibit {letter('power')}: who holds the power</h3>
-										<p class="gist">Who gives orders, who gets interrupted, who holds the official roles. Where we can count it, the count sits next to the AI's claim.</p>
+										<p class="gist">Who gives orders, who gets interrupted, who holds the official roles. Where we can count it, the count sits next to the reading.</p>
 									</summary>
 									{ai.power.speakingTime && womenShare !== null && (
 										<div class="claim-count">
 											<div class="claim">
-												<p class="cc-label">The AI says</p>
+												<p class="cc-label">The reading</p>
 												<p>"{ai.power.speakingTime}."</p>
 											</div>
 											<div class="count">
@@ -817,7 +813,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-compare">Exhibit {letter('compare')}: her side, his side</h3>
-										<p class="gist">How the AI describes the women and the men in this film, row by row.</p>
+										<p class="gist">How the women and the men in this film are written, row by row.</p>
 									</summary>
 									<div class="side-switch" role="group" aria-label="Show" hidden data-side-switch>
 										<button type="button" aria-pressed="true" data-side="w">Her side</button>
@@ -848,8 +844,8 @@ const credit = [
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-flags">Exhibit {letter('flags')}: what the AI flagged</h3>
-										<p class="gist">Problems the AI found, worst first. Open one for the details.</p>
+										<h3 id="ex-flags">Exhibit {letter('flags')}: red flags</h3>
+										<p class="gist">Problems in the script, worst first. Open one for the details.</p>
 									</summary>
 									<ul class="charges">
 										{flagGroups.map((g) => (
@@ -887,8 +883,8 @@ const credit = [
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-recs">Exhibit {letter('recs')}: what the AI would change</h3>
-										<p class="gist">The AI's suggestions for making this story better for women.</p>
+										<h3 id="ex-recs">Exhibit {letter('recs')}: what would make it better</h3>
+										<p class="gist">Suggestions for making this story better for women.</p>
 									</summary>
 									<ol class="recs">
 										{ai.recommendations.map((r) => (
@@ -907,7 +903,6 @@ const credit = [
 			<h2 id="how-title" class="section-title">About this analysis</h2>
 			<p>
 				Our parser read the script{film.sceneCount > 0 && `: ${film.sceneCount} scenes and ${film.dialogueCount.toLocaleString('en-US')} lines of dialogue`}.
-				{ai && ` ${ai.model.maker}'s ${ai.model.name} read the same script${analyzed ? ` on ${analyzed}` : ''}.`}
 				{readers && ' The bechdeltest.com rating comes from that site’s readers.'}
 				{' '}<a href="/about/">How the test works</a>
 			</p>

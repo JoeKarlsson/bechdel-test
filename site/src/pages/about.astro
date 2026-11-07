@@ -2,33 +2,10 @@
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Scribble from '../components/Scribble.astro';
-import { loadFilms } from '../lib/films.mjs';
 import theRule from '../assets/about/the-rule-excerpt.jpg';
 import alisonBechdel from '../assets/about/alison-bechdel.jpg';
 
 const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
-const films = loadFilms();
-const runs = films.map((f) => f.ai?.analyzedAt).filter((d): d is string => !!d).sort();
-// Each model that wrote an analysis, with how many films it wrote, most first
-const modelsUsed = [...films.reduce((acc, f) => {
-	if (f.ai) acc.set(f.ai.model.id, { ...f.ai.model, films: (acc.get(f.ai.model.id)?.films ?? 0) + 1 });
-	return acc;
-}, new Map<string, { id: string; name: string; maker: string; films: number }>()).values()].sort((a, b) => b.films - a.films);
-const day = (iso: string) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-const firstRun = runs.length ? new Date(runs[0]) : null;
-const lastRun = runs.length ? new Date(runs.at(-1)!) : null;
-// "on 7 November 2025", "on 7 and 8 November 2025", "between 3 and 9 November 2025",
-// or "between 30 October 2025 and 2 November 2025"
-const runDates = (() => {
-	if (!firstRun || !lastRun) return null;
-	const a = day(firstRun.toISOString());
-	const b = day(lastRun.toISOString());
-	if (a === b) return `on ${a}`;
-	const sameMonth = firstRun.getUTCMonth() === lastRun.getUTCMonth() && firstRun.getUTCFullYear() === lastRun.getUTCFullYear();
-	if (!sameMonth) return `between ${a} and ${b}`;
-	const days = lastRun.getUTCDate() - firstRun.getUTCDate();
-	return days === 1 ? `on ${firstRun.getUTCDate()} and ${b}` : `between ${firstRun.getUTCDate()} and ${b}`;
-})();
 ---
 
 <Base
@@ -103,15 +80,15 @@ const runDates = (() => {
 				throwaway line between background characters.
 			</p>
 			<p>
-				That's why each film page goes past pass or fail. An AI reads the script for agency, stereotypes, power and who's missing,
-				and bechdeltest.com readers give a second opinion. Use the test to start a conversation, not to end one.
+				That's why each film page goes past pass or fail, into agency, stereotypes, power and who's missing, and bechdeltest.com
+				readers give a second opinion. Use the test to start a conversation, not to end one.
 			</p>
 
 			<h2>How we check a film</h2>
 			<p>
 				A parser reads the film's script scene by scene. It counts the women and men, finds the scenes where two women speak to
-				each other, and checks whether those scenes name a man. That gives each film its Bechdel score, from 0 to 3. Then an AI
-				re-reads any scene the parser passed, and reads the whole script for the rest of the analysis.
+				each other, and checks whether those scenes name a man. That gives each film its Bechdel score, from 0 to 3. Then any scene
+				the parser passed gets a second read, and the whole script gets a closer read for the rest of the analysis.
 			</p>
 			<p>
 				Scripts are formatted in many ways, so some counts are off. When we can't tell who a line belongs to, or a script didn't
@@ -154,11 +131,11 @@ const runDates = (() => {
 				<div class="alongside">
 					<div class="side">
 						<h3>Second opinions</h3>
-						<p>An AI re-reads every scene the parser passed. bechdeltest.com readers rate the film too.</p>
+						<p>Every scene the parser passed gets a second read. bechdeltest.com readers rate the film too.</p>
 					</div>
 					<div class="side">
 						<h3>The deeper read</h3>
-						<p>The AI reads the whole script for agency, stereotypes, bias, diversity, power, and how women and men are written.</p>
+						<p>The whole script gets read for agency, stereotypes, bias, diversity, power, and how women and men are written.</p>
 					</div>
 					<div class="side">
 						<h3>The film</h3>
@@ -166,27 +143,6 @@ const runDates = (() => {
 					</div>
 				</div>
 			</figure>
-
-			<h3>The AI</h3>
-			<p>
-				{modelsUsed.length === 1 ? (
-					<>
-						The AI analysis uses {modelsUsed[0].maker}'s {modelsUsed[0].name} (<code>{modelsUsed[0].id}</code>).
-						{runDates && ` It read all ${runs.length} films ${runDates}.`}
-					</>
-				) : (
-					<>
-						The AI analysis was written by{' '}
-						{modelsUsed.map((m, i) => (
-							<>
-								{i > 0 && (i === modelsUsed.length - 1 ? ' and ' : ', ')}
-								{m.maker}'s {m.name} (<code>{m.id}</code>, {m.films} {m.films === 1 ? 'film' : 'films'})</>
-						))}.{runDates && ` The analyses ran ${runDates}.`}
-					</>
-				)}
-				Each film's page says when its analysis ran. AI readings can be wrong, which is why the film pages show the second
-				opinions next to our own score.
-			</p>
 
 			<h2>Why we built it</h2>
 			<p>
@@ -242,7 +198,6 @@ const runDates = (() => {
 				</li>
 				<li><a href="https://www.themoviedb.org/" {...ext}>The Movie Database (TMDB)</a>, for posters, backdrops and cast lists</li>
 				<li><a href="https://www.omdbapi.com/" {...ext}>The Open Movie Database (OMDb)</a>, for plots, ratings and awards</li>
-				<li><a href="https://www.anthropic.com/claude" {...ext}>Anthropic's Claude</a>, the AI that reads each script for the analysis</li>
 				<li>Chase Elliott Clark, for the photo of Alison Bechdel</li>
 			</ul>
 			<p class="tmdb">
