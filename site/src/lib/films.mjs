@@ -267,6 +267,7 @@ export function normalizeFilm(raw) {
 	const scenesPass = toNumber(b.numScenesPass) ?? 0;
 	return {
 		id: String(raw._id),
+		images: { poster: text(raw.images?.poster), backdrop: text(raw.images?.backdrop) },
 		slug: slugify(raw.title, year),
 		title: cleanTitle(raw.title),
 		year,

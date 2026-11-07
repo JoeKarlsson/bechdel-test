@@ -1,7 +1,6 @@
 ---
 // One film on the shelf: its poster in a tape box, a PASSES or FAILS sticker,
 // and a label with the year and Bechdel score.
-import { Picture } from 'astro:assets';
 import { posterFor } from '../lib/images';
 
 interface Props {
@@ -13,13 +12,14 @@ interface Props {
 		directors: string[];
 		popularity: number;
 		bechdel: { score: number; pass: boolean };
+		images: { poster: string | null };
 	};
 	/** The first row loads right away; the rest wait until scrolled to */
 	eager?: boolean;
 }
 
 const { film, eager = false } = Astro.props;
-const poster = posterFor(film.id);
+const poster = posterFor(film.images.poster);
 const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 ---
 
@@ -35,12 +35,13 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 		<div class="box">
 			{
 				poster ? (
-					<Picture
-						src={poster}
-						alt=""
-						widths={[180, 360]}
+					<img
+						src={poster.src}
+						srcset={poster.srcset}
 						sizes="(max-width: 560px) 31vw, 180px"
-						formats={['avif', 'webp']}
+						width={poster.width}
+						height={poster.height}
+						alt=""
 						loading={eager ? 'eager' : 'lazy'}
 						decoding="async"
 						class="poster"

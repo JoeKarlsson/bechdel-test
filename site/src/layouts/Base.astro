@@ -42,7 +42,7 @@ const CSP = [
 	"style-src 'self'",
 	// Chart bars set their own width and height in a style attribute
 	"style-src-attr 'unsafe-inline'",
-	"img-src 'self' data:",
+	"img-src 'self' data: https://image.tmdb.org",
 	"font-src 'self'",
 	"connect-src 'self' https://plausible.joekarlsson.io",
 	"base-uri 'self'",
@@ -84,6 +84,8 @@ const NAV = [
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="sitemap" href="/sitemap.xml" />
 		<link rel="alternate" type="application/rss+xml" title="bechdel.io: new films" href="/rss.xml" />
+		<!-- Posters and backdrops come from TMDB's image CDN -->
+		<link rel="preconnect" href="https://image.tmdb.org" />
 		<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
 
