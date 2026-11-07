@@ -38,7 +38,7 @@ The site at https://bechdel.joekarlsson.com/ is fully static: an Astro build in 
 scripts/<title>.txt ──npm run analyze──▶ data/films/<id>.json ──site/ build──▶ GitHub Pages
 ```
 
-For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and (optionally) asks an AI model, through the homelab LiteLLM gateway, for a second opinion and a deeper read. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and (optionally) asks an AI model, through the homelab LiteLLM gateway, for a second opinion and a deeper read. The AI read is stored with each film but isn't shown on the site (`showAiReadings` in `site/src/pages/films/[slug].astro`). See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Add films
 
