@@ -9,19 +9,20 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 4,
-    "numScenesDontPass": 106,
+    "numScenesPass": 14,
+    "numScenesDontPass": 96,
     "numOfFemalesChars": 11,
     "numOfMaleChars": 23,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 12,
-    "totalLinesFemaleDialogue": 219,
+    "totalLinesFemaleDialogue": 438,
     "totalLinesMaleDialogue": 532,
     "scenesThatPass": [
       "BIANCA: Did you change your hair?\nCHASTITY: No.\nBIANCA: You might wanna think about it",
-      "BIANCA: I have to be home in twenty minutes.\nCHASTITY: I don't have to be home 'til two.",
-      "BIANCA: No! I just wanted\nMISS PERKY: Ladies? Shall we take a trip to my office?",
-      "MISS PERKY: Just smack her now.\nBIANCA: We'll be getting back to you.\nMISS PERKY: What, no hug?"
+      "KAT: The people at this school are so incredibly foul.\nMANDELLA: You could always go with me. I'm sure William has some friends.",
+      "MANDELLA: That's a charming new development\nKAT: Remove head from sphincter! Then pedal!",
+      "KAT: You decided.\nBIANCA: Is there even a question that we want her to stay?\nKAT: Ask Bianca who drove her home",
+      "BIANCA: Have you ever considered a new look? I mean, seriously, you could have some potential buried under all this hostility.\nKAT: I have the potential to smack the crap out of you if you don't get out of my way.\nBIANCA: Can you at least start wearing a bra?"
     ]
   },
   "script": {
@@ -32,7 +33,7 @@
       {
         "name": "KAT",
         "lines": 219,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1018,15 +1019,15 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 4,
-      "longestWithoutWoman": 96,
-      "longestWithoutWomanStart": 715,
+      "firstWomanLine": 2,
+      "longestWithoutWoman": 42,
+      "longestWithoutWomanStart": 163,
       "words": {
-        "w": 2043,
+        "w": 3866,
         "m": 4213,
-        "unknown": 2098
+        "unknown": 275
       },
-      "womenConversations": 10,
+      "womenConversations": 33,
       "menConversations": 32,
       "reverseScore": 3
     }

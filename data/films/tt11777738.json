@@ -13,10 +13,13 @@
     "numOfMaleChars": 4,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 3,
-    "totalLinesFemaleDialogue": 185,
+    "totalLinesFemaleDialogue": 245,
     "totalLinesMaleDialogue": 573,
     "scenesThatPass": [
-      "AFSANEH: OK, don’t call. In any case, we don’t have the right to speak in this house!\nMARVASTI: What week day was it?"
+      "FARKHONDEH: You’ve only got two days' leave. You’re excused from washing duty.\nMALIHEH: Can you open it, darling?",
+      "AFSANEH: OK, don’t call. In any case, we don’t have the right to speak in this house!\nMARVASTI: What week day was it?",
+      "FARKHONDEH: Sorry I’m late.\nMALIHEH: We're sorry to disturb you.\nFARKHONDEH: Not at all.",
+      "MALIHEH: Thank you.\nFARKHONDEH: Thank you, goodbye."
     ]
   },
   "script": {
@@ -45,7 +48,7 @@
       {
         "name": "MALIHEH",
         "lines": 60,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -370,14 +373,14 @@
     ],
     "measures": {
       "firstWomanLine": 37,
-      "longestWithoutWoman": 102,
-      "longestWithoutWomanStart": 403,
+      "longestWithoutWoman": 71,
+      "longestWithoutWomanStart": 434,
       "words": {
-        "w": 2290,
+        "w": 2912,
         "m": 5582,
-        "unknown": 2069
+        "unknown": 1447
       },
-      "womenConversations": 11,
+      "womenConversations": 14,
       "menConversations": 27,
       "reverseScore": 3
     }

@@ -9,16 +9,19 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 96,
+    "numScenesPass": 3,
+    "numScenesDontPass": 94,
     "numOfFemalesChars": 19,
     "numOfMaleChars": 22,
     "numOfFemalesCharsWithDialogue": 4,
     "numOfMaleCharsWithDialogue": 11,
-    "totalLinesFemaleDialogue": 225,
+    "totalLinesFemaleDialogue": 289,
     "totalLinesMaleDialogue": 650,
     "scenesThatPass": [
-      "RACHEL: This is your therapist?\nKATIE: Please, call me Katie.\nRACHEL: OK. Katie. What are you doing here?"
+      "EDITH: But it's not meat.\nRACHEL: No, but it has a texture just like meat.\nEDITH: Mmmmm. It's Good.\nEDITH: Art, take your pills.",
+      "EDITH: And now Rachel. I know we haven't discussed this, but are you going to convert?\nRACHEL: She thinks we're getting married.",
+      "RACHEL: This is your therapist?\nKATIE: Please, call me Katie.\nRACHEL: OK. Katie. What are you doing here?",
+      "EDITH: Alright. Come on Art, let's go to the waiting room.\nEDITH: Hmmm.\nKATIE: I brought you flowers. Not sure why, I didn't know what else-"
     ]
   },
   "script": {
@@ -53,7 +56,7 @@
       {
         "name": "EDITH",
         "lines": 64,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -944,11 +947,11 @@
       "longestWithoutWoman": 92,
       "longestWithoutWomanStart": 35,
       "words": {
-        "w": 1795,
+        "w": 2467,
         "m": 5829,
-        "unknown": 1165
+        "unknown": 493
       },
-      "womenConversations": 4,
+      "womenConversations": 11,
       "menConversations": 30,
       "reverseScore": 3
     }

@@ -5,17 +5,23 @@
     "Horror"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 131,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 11,
+    "numScenesDontPass": 120,
     "numOfFemalesChars": 14,
     "numOfMaleChars": 24,
     "numOfFemalesCharsWithDialogue": 2,
     "numOfMaleCharsWithDialogue": 2,
-    "totalLinesFemaleDialogue": 67,
+    "totalLinesFemaleDialogue": 333,
     "totalLinesMaleDialogue": 231,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "MEAGAN: Wake up, sleepy head. Time to wake up.\nLIZZY: I had a bad dream.\nMEAGAN: Me, too.\nLIZZY: I was scared.",
+      "MEAGAN: Mom! Don't call it that!\nLIZZY: I hate that school. The other kids are mean... and they're all re- tard-ed!",
+      "MISS KREPPS: Meagan!?\nMEAGAN: Yes, ma'am?\nMISS KREPPS: I asked if you were ready to give your oral report?\nMEAGAN: Yes... I'm ready.",
+      "MISS KREPPS: Meagan? Meagan?!\nMISS KREPPS: I asked if you were ready to give your report?\nMEAGAN: Sure...",
+      "STORMIE: What she's subtly trying to tell you is that this needs a woman's gentle touch... butthead.\nMEAGAN: Just stay here... okay?"
+    ]
   },
   "script": {
     "file": "freddy-vs-jason.txt",
@@ -25,7 +31,7 @@
       {
         "name": "MEAGAN",
         "lines": 180,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -37,7 +43,7 @@
       {
         "name": "STORMIE",
         "lines": 86,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1229,15 +1235,15 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 7,
-      "longestWithoutWoman": 176,
-      "longestWithoutWomanStart": 318,
+      "firstWomanLine": 5,
+      "longestWithoutWoman": 21,
+      "longestWithoutWomanStart": 662,
       "words": {
-        "w": 875,
+        "w": 3518,
         "m": 2686,
-        "unknown": 4202
+        "unknown": 1559
       },
-      "womenConversations": 0,
+      "womenConversations": 33,
       "menConversations": 4,
       "reverseScore": 3
     }

@@ -9,20 +9,20 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 5,
-    "numScenesDontPass": 107,
+    "numScenesPass": 12,
+    "numScenesDontPass": 100,
     "numOfFemalesChars": 10,
     "numOfMaleChars": 9,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 5,
-    "totalLinesFemaleDialogue": 191,
+    "totalLinesFemaleDialogue": 253,
     "totalLinesMaleDialogue": 308,
     "scenesThatPass": [
       "SONYA: Princess Anastasia - you're late and it's all my fault!\nANASTASIA: Don't worry, Sonya, no one'll notice. . .\nANASTASIA: . . . owwwwwwwww!",
-      "ANYA: About as bad as you smell!\nPHLEGMENKOF: No, no, Comrade - you don't want her . . .",
-      "GREGOR: Anya?\nGREGOR: Are you running away?\nANYA: No. I'm running to.",
-      "ANYA: No. This isn't a home - it's just a building. Home is where you belong and none of us belong here.\nGREGOR: Where is your home, Anya?\nANYA: I'm not sure but look. . .\nANYA: It says \"Together in Paris\". I was wearing this when I came here ten years ago - it's the only way that I know . . .",
-      "ANYA: It might be. I have to go and find out.\nANYA: I have to go now, before it gets light.\nGREGOR: But what if we can't ever find where we came from?!\nANYA: Then you'll have to make your own home. Lots of people do."
+      "TATIANA: Why were you so late tonight\nANASTASIA: I was showing Sonya something . . .\nTATIANA: What were you showing her?\nANASTASIA: How to read.",
+      "ANASTASIA: My music mox!\nTATIANA: Anastasia, no!",
+      "ANASTASIA: Hurry, Grandmama!\nTATIANA: Get on! Anastasia, get on!\nTATIANA: Grab my hand!\nANASTASIA: Don't let go!",
+      "ANYA: About as bad as you smell!\nPHLEGMENKOF: No, no, Comrade - you don't want her . . ."
     ]
   },
   "script": {
@@ -51,7 +51,7 @@
       {
         "name": "TATIANA",
         "lines": 62,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1149,15 +1149,15 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 6,
-      "longestWithoutWoman": 41,
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 38,
       "longestWithoutWomanStart": 215,
       "words": {
-        "w": 1820,
+        "w": 2424,
         "m": 3165,
-        "unknown": 1132
+        "unknown": 528
       },
-      "womenConversations": 10,
+      "womenConversations": 21,
       "menConversations": 38,
       "reverseScore": 3
     }

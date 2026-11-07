@@ -6,17 +6,22 @@
     "Fantasy"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 48,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 3,
+    "numScenesDontPass": 45,
     "numOfFemalesChars": 1,
     "numOfMaleChars": 1,
     "numOfFemalesCharsWithDialogue": 1,
     "numOfMaleCharsWithDialogue": 1,
-    "totalLinesFemaleDialogue": 75,
+    "totalLinesFemaleDialogue": 293,
     "totalLinesMaleDialogue": 166,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "ZOEY: Anna, you going to call the guard dog off?\nANNA: David Smith's Candytakers is on tonight. I'm relaxing and not getting in the middle.",
+      "ANNA: What about tomorrow? Or never is good.\nZOEY: What's going on??\nZOEY: Quinn? What's wrong?",
+      "ZOEY: Likewise.\nJENNIFER: We better get going. We're going to grab something to eat.\nZOEY: I didn't catch your name.",
+      "JENNIFER: You OK?\nZOEY: Yeah I'm fine. Enjoy dinner.\nJENNIFER: See you later on."
+    ]
   },
   "script": {
     "file": "christ-complex.txt",
@@ -26,7 +31,7 @@
       {
         "name": "ZOEY",
         "lines": 218,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -449,15 +454,15 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 67,
-      "longestWithoutWoman": 99,
-      "longestWithoutWomanStart": 271,
+      "firstWomanLine": 22,
+      "longestWithoutWoman": 40,
+      "longestWithoutWomanStart": 480,
       "words": {
-        "w": 772,
+        "w": 2823,
         "m": 1604,
-        "unknown": 4006
+        "unknown": 1955
       },
-      "womenConversations": 0,
+      "womenConversations": 11,
       "menConversations": 9,
       "reverseScore": 3
     }

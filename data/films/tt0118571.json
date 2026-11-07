@@ -7,17 +7,23 @@
     "Drama"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 345,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 5,
+    "numScenesDontPass": 340,
     "numOfFemalesChars": 9,
     "numOfMaleChars": 53,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 40,
-    "totalLinesFemaleDialogue": 50,
+    "totalLinesFemaleDialogue": 115,
     "totalLinesMaleDialogue": 658,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "ALICE: Sure.\nROSE: May I speak to you for a moment?",
+      "ROSE: Come on, Alice.\nALICE: I'm scared.",
+      "ALICE: No, thank you. The gunfire did that.\nROSE: Leave my daughter alone.",
+      "ALICE: Yeah. Do you know what the word \"asshole\" means.\nROSE: Alice!",
+      "ALICE: Mom?\nROSE: Yes dear?\nALICE: I'm sorry I was so mean to you earlier.\nROSE: I know, sweetie. I know. You're being very brave."
+    ]
   },
   "script": {
     "file": "air-force-one.txt",
@@ -39,7 +45,7 @@
       {
         "name": "ROSE",
         "lines": 65,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -2631,15 +2637,15 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 94,
-      "longestWithoutWoman": 124,
-      "longestWithoutWomanStart": 212,
+      "firstWomanLine": 93,
+      "longestWithoutWoman": 92,
+      "longestWithoutWomanStart": 1,
       "words": {
-        "w": 439,
+        "w": 936,
         "m": 6032,
-        "unknown": 1884
+        "unknown": 1387
       },
-      "womenConversations": 0,
+      "womenConversations": 9,
       "menConversations": 83,
       "reverseScore": 3
     }
