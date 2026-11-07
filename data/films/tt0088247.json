@@ -13,9 +13,9 @@
     "numScenesDontPass": 245,
     "numOfFemalesChars": 8,
     "numOfMaleChars": 25,
-    "numOfFemalesCharsWithDialogue": 5,
+    "numOfFemalesCharsWithDialogue": 6,
     "numOfMaleCharsWithDialogue": 13,
-    "totalLinesFemaleDialogue": 207,
+    "totalLinesFemaleDialogue": 208,
     "totalLinesMaleDialogue": 253,
     "scenesThatPass": [
       "SARAH: Oh, sorry. That's not real leather, is it?\nNANCY: Look at it this way: in a hundred years, who's gonna care?",
@@ -28,7 +28,7 @@
   "script": {
     "file": "terminator.txt",
     "layout": "indented",
-    "dialogueLines": 502,
+    "dialogueLines": 503,
     "speakers": [
       {
         "name": "SARAH",
@@ -235,6 +235,12 @@
         "named": false
       },
       {
+        "name": "BY",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
         "name": "CUSTOMER AT NEXT TABLE",
         "lines": 1,
         "gender": null,
@@ -328,7 +334,9 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "34": 1
+        }
       },
       {
         "place": "Schoolyard",
@@ -357,13 +365,13 @@
       {
         "place": "Fire escape",
         "lines": {
-          "38": 1
+          "39": 1
         }
       },
       {
         "place": "Alley/same",
         "lines": {
-          "39": 1
+          "40": 1
         }
       },
       {
@@ -471,10 +479,10 @@
           "0": 4,
           "19": 1,
           "24": 1,
-          "34": 1,
           "35": 1,
           "36": 1,
-          "37": 1
+          "37": 1,
+          "38": 1
         }
       },
       {
@@ -493,7 +501,7 @@
       {
         "place": "Bedroom                                           33b",
         "lines": {
-          "48": 1
+          "49": 1
         }
       },
       {
@@ -517,7 +525,7 @@
         "lines": {
           "1": 1,
           "23": 2,
-          "45": 1
+          "46": 1
         }
       },
       {
@@ -543,7 +551,7 @@
         "lines": {
           "19": 1,
           "32": 1,
-          "46": 1
+          "47": 1
         }
       },
       {
@@ -571,7 +579,7 @@
           "0": 1,
           "3": 4,
           "9": 3,
-          "47": 1
+          "48": 1
         }
       },
       {
@@ -604,7 +612,7 @@
         "place": "Grey sedan",
         "lines": {
           "22": 1,
-          "44": 1
+          "45": 1
         }
       },
       {
@@ -668,7 +676,7 @@
         "lines": {
           "2": 7,
           "4": 5,
-          "41": 1
+          "42": 1
         }
       },
       {
@@ -1275,7 +1283,7 @@
       {
         "place": "Parking structure",
         "lines": {
-          "43": 1
+          "44": 1
         }
       },
       {
@@ -1448,7 +1456,7 @@
       {
         "place": "Motel",
         "lines": {
-          "42": 1
+          "43": 1
         }
       },
       {
@@ -1517,7 +1525,7 @@
         "place": "Tanker cab",
         "lines": {
           "10": 1,
-          "40": 1
+          "41": 1
         }
       },
       {
@@ -1631,11 +1639,11 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 15,
+      "firstWomanLine": 1,
       "longestWithoutWoman": 37,
-      "longestWithoutWomanStart": 250,
+      "longestWithoutWomanStart": 251,
       "words": {
-        "w": 1902,
+        "w": 1904,
         "m": 2399,
         "unknown": 353
       },

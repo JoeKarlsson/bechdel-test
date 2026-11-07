@@ -15,8 +15,8 @@
     "numOfMaleChars": 32,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 13,
-    "totalLinesFemaleDialogue": 249,
-    "totalLinesMaleDialogue": 979,
+    "totalLinesFemaleDialogue": 251,
+    "totalLinesMaleDialogue": 985,
     "scenesThatPass": [
       "MAL: What are you doing here?\nARIADNE: My name is-\nMAL: I know who you are. What are you doing here?\nARIADNE: I don't know. Trying to understand."
     ]
@@ -24,11 +24,11 @@
   "script": {
     "file": "inception.txt",
     "layout": "indented",
-    "dialogueLines": 1248,
+    "dialogueLines": 1257,
     "speakers": [
       {
         "name": "COBB",
-        "lines": 470,
+        "lines": 471,
         "gender": "m",
         "named": true
       },
@@ -111,6 +111,12 @@
         "named": true
       },
       {
+        "name": "JAMES",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "ELDERLY BALD MAN",
         "lines": 3,
         "gender": "m",
@@ -127,6 +133,12 @@
         "lines": 3,
         "gender": "w",
         "named": true
+      },
+      {
+        "name": "CHILDREN'S VOICES",
+        "lines": 2,
+        "gender": null,
+        "named": false
       },
       {
         "name": "SECURITY GUARD",
@@ -159,19 +171,25 @@
         "named": true
       },
       {
-        "name": "CUT",
+        "name": "GRANDMA",
         "lines": 1,
-        "gender": null,
+        "gender": "w",
         "named": false
       },
       {
-        "name": "JAMES",
+        "name": "LAWYER",
         "lines": 1,
         "gender": "m",
         "named": true
       },
       {
-        "name": "LAWYER",
+        "name": "LITTLE GIRL",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "PHILIPPA",
         "lines": 1,
         "gender": "m",
         "named": true
@@ -204,8 +222,8 @@
         "place": "Elegant dining room, japanese castle",
         "lines": {
           "11": 1,
-          "17": 2,
-          "20": 1
+          "19": 2,
+          "22": 1
         }
       },
       {
@@ -337,7 +355,7 @@
         "place": "Dilapidated hotel room-continuous",
         "lines": {
           "2": 1,
-          "19": 1
+          "21": 1
         }
       },
       {
@@ -405,7 +423,7 @@
         "place": "Bullet train compartment",
         "lines": {
           "2": 1,
-          "27": 1
+          "30": 1
         }
       },
       {
@@ -452,8 +470,11 @@
           "0": 13,
           "2": 5,
           "10": 1,
-          "22": 1,
-          "23": 1
+          "14": 5,
+          "18": 2,
+          "24": 1,
+          "26": 1,
+          "27": 1
         }
       },
       {
@@ -495,7 +516,7 @@
         }
       },
       {
-        "place": "Great hall, �cole d'architecture",
+        "place": "Great hall, école d'architecture",
         "lines": {}
       },
       {
@@ -514,7 +535,7 @@
         }
       },
       {
-        "place": "Rooftop, �cole d'architecture",
+        "place": "Rooftop, école d'architecture",
         "lines": {
           "0": 10,
           "1": 2
@@ -625,7 +646,7 @@
         "lines": {
           "0": 2,
           "4": 2,
-          "25": 1
+          "28": 1
         }
       },
       {
@@ -680,7 +701,7 @@
           "3": 2,
           "4": 1,
           "7": 6,
-          "14": 3
+          "15": 3
         }
       },
       {
@@ -719,7 +740,7 @@
       {
         "place": "Workshop",
         "lines": {
-          "0": 9,
+          "0": 10,
           "2": 5,
           "3": 3
         }
@@ -739,7 +760,7 @@
         "lines": {
           "4": 1,
           "8": 2,
-          "24": 1
+          "25": 1
         }
       },
       {
@@ -748,7 +769,7 @@
           "3": 1,
           "5": 2,
           "8": 4,
-          "15": 1
+          "16": 1
         }
       },
       {
@@ -874,7 +895,7 @@
         "lines": {
           "0": 8,
           "1": 2,
-          "18": 1
+          "20": 1
         }
       },
       {
@@ -926,7 +947,7 @@
         "lines": {
           "0": 7,
           "5": 4,
-          "16": 1
+          "17": 1
         }
       },
       {
@@ -958,7 +979,7 @@
         "place": "Ext. sedan on rainy new york streets",
         "lines": {
           "0": 2,
-          "21": 1
+          "23": 1
         }
       },
       {
@@ -1094,7 +1115,7 @@
         "place": "Cobb and mal's kitchen",
         "lines": {
           "0": 3,
-          "18": 1
+          "20": 1
         }
       },
       {
@@ -1194,7 +1215,7 @@
         "place": "Elevator",
         "lines": {
           "3": 1,
-          "26": 1
+          "29": 1
         }
       },
       {
@@ -1771,7 +1792,7 @@
         "place": "Strongroom",
         "lines": {
           "5": 1,
-          "15": 2
+          "16": 2
         }
       },
       {
@@ -1863,7 +1884,7 @@
       {
         "place": "First class cabin,",
         "lines": {
-          "16": 2
+          "17": 2
         }
       },
       {
@@ -1877,15 +1898,15 @@
     ],
     "measures": {
       "firstWomanLine": 32,
-      "longestWithoutWoman": 162,
-      "longestWithoutWomanStart": 59,
+      "longestWithoutWoman": 101,
+      "longestWithoutWomanStart": 128,
       "words": {
-        "w": 2029,
-        "m": 9415,
-        "unknown": 305
+        "w": 2041,
+        "m": 9438,
+        "unknown": 293
       },
       "womenConversations": 5,
-      "menConversations": 86,
+      "menConversations": 89,
       "reverseScore": 3
     }
   },

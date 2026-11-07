@@ -16,7 +16,7 @@
     "numOfFemalesCharsWithDialogue": 10,
     "numOfMaleCharsWithDialogue": 21,
     "totalLinesFemaleDialogue": 172,
-    "totalLinesMaleDialogue": 497,
+    "totalLinesMaleDialogue": 498,
     "scenesThatPass": [
       "JAMIE: Like you'd ever fucking believe me!\nEVE: Well, you tried. You failed miserably, but you tried.",
       "EVE: Wanda -- I need to talk to you.\nWANDA: Sure... what's wrong?\nEVE: Never mind --",
@@ -26,7 +26,7 @@
   "script": {
     "file": "face-off.txt",
     "layout": "indented",
-    "dialogueLines": 699,
+    "dialogueLines": 701,
     "speakers": [
       {
         "name": "ARCHER",
@@ -36,7 +36,7 @@
       },
       {
         "name": "CASTOR",
-        "lines": 155,
+        "lines": 156,
         "gender": "m",
         "named": true
       },
@@ -339,12 +339,20 @@
         "lines": 1,
         "gender": "w",
         "named": true
+      },
+      {
+        "name": "WRITTEN BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
       }
     ],
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "52": 1
+        }
       },
       {
         "place": "Griffith park carousel",
@@ -1136,7 +1144,7 @@
       {
         "place": "Study",
         "lines": {
-          "1": 7,
+          "1": 8,
           "2": 5
         }
       },
@@ -1339,13 +1347,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 4,
+      "firstWomanLine": 5,
       "longestWithoutWoman": 78,
-      "longestWithoutWomanStart": 197,
+      "longestWithoutWomanStart": 198,
       "words": {
         "w": 1580,
-        "m": 5687,
-        "unknown": 320
+        "m": 5710,
+        "unknown": 325
       },
       "womenConversations": 4,
       "menConversations": 50,

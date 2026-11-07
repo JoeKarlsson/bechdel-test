@@ -25,7 +25,7 @@
   "script": {
     "file": "tmnt.txt",
     "layout": "indented",
-    "dialogueLines": 654,
+    "dialogueLines": 658,
     "speakers": [
       {
         "name": "RAPHAEL",
@@ -220,6 +220,12 @@
         "named": false
       },
       {
+        "name": "M",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "NYPD #1",
         "lines": 2,
         "gender": null,
@@ -278,6 +284,12 @@
         "lines": 1,
         "gender": null,
         "named": true
+      },
+      {
+        "name": "CREATED BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
       },
       {
         "name": "DRIVER SOLDIER",
@@ -352,6 +364,12 @@
         "named": false
       },
       {
+        "name": "R",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "RECEPTIONIST",
         "lines": 1,
         "gender": null,
@@ -391,7 +409,9 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "43": 1
+        }
       },
       {
         "place": "Star-filled sky",
@@ -404,14 +424,14 @@
         "lines": {
           "7": 1,
           "22": 1,
-          "57": 1
+          "60": 1
         }
       },
       {
         "place": "Jungle village",
         "lines": {
           "13": 2,
-          "34": 1
+          "35": 1
         }
       },
       {
@@ -419,24 +439,24 @@
         "lines": {
           "13": 6,
           "19": 4,
-          "40": 1,
-          "42": 1,
-          "59": 1
+          "41": 1,
+          "44": 1,
+          "62": 1
         }
       },
       {
         "place": "Jungle clearing",
         "lines": {
           "13": 1,
-          "35": 1,
-          "58": 1
+          "36": 1,
+          "61": 1
         }
       },
       {
         "place": "Jungle village",
         "lines": {
-          "34": 1,
-          "53": 1
+          "35": 1,
+          "55": 1
         }
       },
       {
@@ -453,15 +473,15 @@
         "place": "New york city street",
         "lines": {
           "16": 4,
-          "32": 1
+          "33": 1
         }
       },
       {
         "place": "Dead end alleyway",
         "lines": {
           "16": 3,
-          "32": 1,
-          "51": 1
+          "33": 1,
+          "53": 1
         }
       },
       {
@@ -476,14 +496,14 @@
         "place": "Uptown apartment",
         "lines": {
           "2": 2,
-          "48": 1,
-          "55": 1
+          "50": 1,
+          "58": 1
         }
       },
       {
         "place": "Uptown apartment",
         "lines": {
-          "52": 1
+          "54": 1
         }
       },
       {
@@ -491,7 +511,7 @@
         "lines": {
           "2": 4,
           "31": 1,
-          "56": 1
+          "59": 1
         }
       },
       {
@@ -518,7 +538,8 @@
         "lines": {
           "2": 2,
           "6": 3,
-          "11": 2
+          "11": 2,
+          "32": 1
         }
       },
       {
@@ -599,7 +620,7 @@
         "place": "Winters bedroom",
         "lines": {
           "28": 1,
-          "46": 1
+          "48": 1
         }
       },
       {
@@ -648,15 +669,15 @@
           "27": 1,
           "30": 2,
           "31": 1,
-          "33": 2,
-          "37": 1,
-          "44": 1
+          "34": 2,
+          "38": 1,
+          "46": 1
         }
       },
       {
         "place": "Winters lobby",
         "lines": {
-          "54": 1
+          "57": 1
         }
       },
       {
@@ -698,7 +719,7 @@
       {
         "place": "New york city streets",
         "lines": {
-          "49": 1
+          "51": 1
         }
       },
       {
@@ -723,7 +744,7 @@
           "3": 7,
           "6": 4,
           "11": 2,
-          "47": 1
+          "49": 1
         }
       },
       {
@@ -750,7 +771,7 @@
           "8": 5,
           "9": 1,
           "15": 3,
-          "36": 1
+          "37": 1
         }
       },
       {
@@ -774,7 +795,7 @@
           "3": 3,
           "7": 4,
           "11": 1,
-          "50": 1
+          "52": 1
         }
       },
       {
@@ -808,8 +829,8 @@
           "0": 3,
           "1": 5,
           "12": 1,
-          "39": 1,
-          "45": 1
+          "40": 1,
+          "47": 1
         }
       },
       {
@@ -830,7 +851,7 @@
           "10": 1,
           "12": 1,
           "29": 1,
-          "43": 1
+          "45": 1
         }
       },
       {
@@ -861,7 +882,7 @@
         "lines": {
           "2": 1,
           "11": 1,
-          "41": 1
+          "42": 1
         }
       },
       {
@@ -876,7 +897,8 @@
           "10": 1,
           "11": 1,
           "17": 2,
-          "21": 1
+          "21": 1,
+          "32": 1
         }
       },
       {
@@ -1023,7 +1045,8 @@
           "7": 1,
           "10": 1,
           "11": 1,
-          "38": 1
+          "39": 1,
+          "56": 1
         }
       },
       {
@@ -1156,13 +1179,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 6,
+      "firstWomanLine": 7,
       "longestWithoutWoman": 71,
-      "longestWithoutWomanStart": 93,
+      "longestWithoutWomanStart": 95,
       "words": {
         "w": 768,
         "m": 4016,
-        "unknown": 1433
+        "unknown": 1452
       },
       "womenConversations": 2,
       "menConversations": 63,

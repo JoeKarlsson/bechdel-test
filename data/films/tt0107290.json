@@ -14,7 +14,7 @@
     "numOfMaleChars": 18,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 13,
-    "totalLinesFemaleDialogue": 158,
+    "totalLinesFemaleDialogue": 159,
     "totalLinesMaleDialogue": 510,
     "scenesThatPass": [
       "LEX: That's a million year old mosquito?\nELLIE: Put in a piece of amber, find a mosquito, drill it out. Right?",
@@ -25,7 +25,7 @@
   "script": {
     "file": "jurassic-park.txt",
     "layout": "indented",
-    "dialogueLines": 769,
+    "dialogueLines": 771,
     "speakers": [
       {
         "name": "GRANT",
@@ -41,7 +41,7 @@
       },
       {
         "name": "ELLIE",
-        "lines": 79,
+        "lines": 80,
         "gender": "w",
         "named": true
       },
@@ -266,6 +266,12 @@
         "lines": 1,
         "gender": null,
         "named": false
+      },
+      {
+        "name": "Y",
+        "lines": 1,
+        "gender": null,
+        "named": false
       }
     ],
     "scenes": [
@@ -279,7 +285,7 @@
         "place": "Badlands",
         "lines": {
           "0": 13,
-          "2": 7,
+          "2": 8,
           "35": 1
         }
       },
@@ -760,7 +766,8 @@
         "lines": {
           "1": 4,
           "2": 3,
-          "7": 6
+          "7": 6,
+          "40": 1
         }
       },
       {
@@ -986,13 +993,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 6,
+      "firstWomanLine": 4,
       "longestWithoutWoman": 34,
-      "longestWithoutWomanStart": 19,
+      "longestWithoutWomanStart": 20,
       "words": {
-        "w": 1164,
+        "w": 1168,
         "m": 6644,
-        "unknown": 963
+        "unknown": 976
       },
       "womenConversations": 4,
       "menConversations": 69,

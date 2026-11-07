@@ -14,19 +14,19 @@
     "numOfFemalesChars": 1,
     "numOfMaleChars": 16,
     "numOfFemalesCharsWithDialogue": 1,
-    "numOfMaleCharsWithDialogue": 13,
+    "numOfMaleCharsWithDialogue": 14,
     "totalLinesFemaleDialogue": 11,
-    "totalLinesMaleDialogue": 289,
+    "totalLinesMaleDialogue": 291,
     "scenesThatPass": []
   },
   "script": {
     "file": "predator.txt",
     "layout": "indented",
-    "dialogueLines": 304,
+    "dialogueLines": 306,
     "speakers": [
       {
         "name": "SCHAEFER",
-        "lines": 108,
+        "lines": 109,
         "gender": "m",
         "named": true
       },
@@ -137,12 +137,20 @@
         "lines": 1,
         "gender": "m",
         "named": true
+      },
+      {
+        "name": "WRITTEN BY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
       }
     ],
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "19": 1
+        }
       },
       {
         "place": "Outer space",
@@ -243,7 +251,7 @@
       {
         "place": "Helicopter",
         "lines": {
-          "0": 6,
+          "0": 7,
           "1": 3,
           "3": 4,
           "4": 2
@@ -970,12 +978,12 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 134,
-      "longestWithoutWoman": 133,
+      "firstWomanLine": 136,
+      "longestWithoutWoman": 135,
       "longestWithoutWomanStart": 1,
       "words": {
         "w": 140,
-        "m": 3051,
+        "m": 3061,
         "unknown": 40
       },
       "womenConversations": 0,

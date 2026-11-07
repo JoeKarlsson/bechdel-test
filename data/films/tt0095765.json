@@ -15,17 +15,17 @@
     "numOfFemalesCharsWithDialogue": 6,
     "numOfMaleCharsWithDialogue": 8,
     "totalLinesFemaleDialogue": 89,
-    "totalLinesMaleDialogue": 293,
+    "totalLinesMaleDialogue": 295,
     "scenesThatPass": []
   },
   "script": {
     "file": "cinema-paradiso.txt",
     "layout": "indented",
-    "dialogueLines": 459,
+    "dialogueLines": 463,
     "speakers": [
       {
         "name": "SALVATORE",
-        "lines": 155,
+        "lines": 156,
         "gender": "m",
         "named": true
       },
@@ -102,6 +102,12 @@
         "named": false
       },
       {
+        "name": "TERESA",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "USHER",
         "lines": 4,
         "gender": "m",
@@ -130,12 +136,6 @@
         "lines": 3,
         "gender": "m",
         "named": false
-      },
-      {
-        "name": "TERESA",
-        "lines": 3,
-        "gender": "m",
-        "named": true
       },
       {
         "name": "VILLAGE IDIOT",
@@ -414,6 +414,12 @@
         "named": false
       },
       {
+        "name": "TEACHER AND CLASS",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
         "name": "TICKET-SELLER",
         "lines": 1,
         "gender": null,
@@ -421,6 +427,12 @@
       },
       {
         "name": "URCHIN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE AND AUDIENCE",
         "lines": 1,
         "gender": null,
         "named": false
@@ -454,7 +466,7 @@
       {
         "place": null,
         "lines": {
-          "0": 155,
+          "0": 156,
           "1": 77,
           "2": 40,
           "3": 27,
@@ -468,7 +480,7 @@
           "11": 4,
           "12": 4,
           "13": 4,
-          "14": 3,
+          "14": 4,
           "15": 3,
           "16": 3,
           "17": 3,
@@ -524,18 +536,20 @@
           "67": 1,
           "68": 1,
           "69": 1,
-          "70": 1
+          "70": 1,
+          "71": 1,
+          "72": 1
         }
       }
     ],
     "measures": {
       "firstWomanLine": 1,
       "longestWithoutWoman": 76,
-      "longestWithoutWomanStart": 88,
+      "longestWithoutWomanStart": 90,
       "words": {
         "w": 1861,
-        "m": 5138,
-        "unknown": 792
+        "m": 5163,
+        "unknown": 807
       },
       "womenConversations": 7,
       "menConversations": 27,
@@ -545,6 +559,11 @@
   "images": {
     "backdrop": "https://image.tmdb.org/t/p/original/zoVeIgKzGJzpdG6Gwnr7iOYfIMU.jpg",
     "poster": "https://image.tmdb.org/t/p/w300/aRgPnx4aPS96f7CnhJH7IG5dN1A.jpg"
+  },
+  "bechdelData": {
+    "rating": 1,
+    "dubious": 0,
+    "id": 4998
   },
   "actors": [
     {

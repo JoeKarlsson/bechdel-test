@@ -9,78 +9,142 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 4,
-    "numScenesDontPass": 22,
+    "numScenesPass": 2,
+    "numScenesDontPass": 24,
     "numOfFemalesChars": 9,
     "numOfMaleChars": 25,
-    "numOfFemalesCharsWithDialogue": 3,
-    "numOfMaleCharsWithDialogue": 9,
-    "totalLinesFemaleDialogue": 286,
-    "totalLinesMaleDialogue": 390,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 10,
+    "totalLinesFemaleDialogue": 394,
+    "totalLinesMaleDialogue": 515,
     "scenesThatPass": [
-      "LIZ: Well, you're not leaving till it's fixed, I'll tell you that.\nLIZ: As long as it's done right.\nFERRIS: This one first.",
-      "LIZ: Nothing.\nFERRIS: But silently, right?",
-      "FERRIS: What's she waiting for?\nLIZ: Then why do I feel like a traitor?",
+      "FERRIS: And then these.\nLIZ: And what was the main staple of their diet?",
       "LIZ: Can't you just leave us alone?\nFERRIS: God, you're remarkable.\nFERRIS: I wish you had a little more sense of duty."
     ]
   },
   "script": {
     "file": "next.txt",
     "layout": "indented",
-    "dialogueLines": 683,
+    "dialogueLines": 951,
     "speakers": [
       {
         "name": "CRIS",
-        "lines": 233,
+        "lines": 276,
         "gender": "m",
         "named": true
       },
       {
-        "name": "LIZ",
-        "lines": 157,
+        "name": "FERRIS",
+        "lines": 199,
         "gender": "w",
         "named": true
       },
       {
-        "name": "FERRIS",
-        "lines": 124,
+        "name": "LIZ",
+        "lines": 176,
         "gender": "w",
         "named": true
       },
       {
         "name": "WISDOM",
-        "lines": 53,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "IRV",
-        "lines": 27,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "CAVANAUGH",
-        "lines": 26,
+        "lines": 72,
         "gender": "m",
         "named": true
       },
       {
         "name": "BAINES",
-        "lines": 21,
+        "lines": 41,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CAVANAUGH",
+        "lines": 39,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "IRV",
+        "lines": 30,
         "gender": "m",
         "named": true
       },
       {
         "name": "GUY",
-        "lines": 13,
+        "lines": 20,
         "gender": "m",
         "named": false
       },
       {
-        "name": "SOLDIER",
-        "lines": 3,
+        "name": "FERRIS ON MONITOR",
+        "lines": 10,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "RANDY",
+        "lines": 10,
         "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DAVIS",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HAWKEYE",
+        "lines": 6,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "POLICEMAN RICK",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LEO",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "AMANDA",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SOLDIER",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BARTENDER",
+        "lines": 3,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "CASINO BOSS",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JEANNIE",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "RICK",
+        "lines": 3,
+        "gender": null,
         "named": true
       },
       {
@@ -96,33 +160,45 @@
         "named": true
       },
       {
-        "name": "JEANNIE",
+        "name": "JANICE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NEAL",
         "lines": 2,
         "gender": null,
         "named": true
       },
       {
-        "name": "POLICEMAN RICK",
+        "name": "PAUL",
         "lines": 2,
-        "gender": "m",
-        "named": true
+        "gender": null,
+        "named": false
       },
       {
-        "name": "RANDY",
+        "name": "SHY GIRL",
         "lines": 2,
-        "gender": "m",
-        "named": true
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "TROOPER 1",
+        "lines": 2,
+        "gender": null,
+        "named": false
       },
       {
         "name": "ALTERNATE CHOICES AND OUTCOMES",
         "lines": 1,
         "gender": null,
-        "named": true
+        "named": false
       },
       {
-        "name": "AMANDA",
+        "name": "BLACK SUIT",
         "lines": 1,
-        "gender": null,
+        "gender": "m",
         "named": true
       },
       {
@@ -132,33 +208,45 @@
         "named": false
       },
       {
+        "name": "CAVANAUGH'S WIFE",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
         "name": "CRIS' VISIONS",
         "lines": 1,
         "gender": "m",
         "named": true
       },
       {
-        "name": "DAVIS",
+        "name": "EXPERT 1",
         "lines": 1,
-        "gender": "m",
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EXPERT 2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EXPERT 3",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GAMBLER",
+        "lines": 1,
+        "gender": null,
         "named": true
       },
       {
-        "name": "DRIVER'S POV",
+        "name": "MALE VOICE",
         "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "FERRIS ON MONITOR",
-        "lines": 1,
-        "gender": "w",
-        "named": true
-      },
-      {
-        "name": "LEO",
-        "lines": 1,
-        "gender": "m",
+        "gender": null,
         "named": false
       },
       {
@@ -168,27 +256,15 @@
         "named": false
       },
       {
-        "name": "NEAL",
-        "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "PATROL LEADER",
         "lines": 1,
         "gender": "m",
         "named": true
       },
       {
-        "name": "RICK",
+        "name": "SERGEANT",
         "lines": 1,
         "gender": null,
-        "named": true
-      },
-      {
-        "name": "SHY GIRL",
-        "lines": 1,
-        "gender": "w",
         "named": false
       },
       {
@@ -198,7 +274,25 @@
         "named": false
       },
       {
-        "name": "TROOPER 1",
+        "name": "TEAM LEADER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TROOPER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TROOPER 2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TV NEWSCASTER",
         "lines": 1,
         "gender": null,
         "named": false
@@ -208,135 +302,161 @@
       {
         "place": null,
         "lines": {
-          "0": 1,
-          "20": 1
+          "0": 3,
+          "1": 3,
+          "8": 4
         }
       },
       {
         "place": "Vegas hotel coffee shop",
         "lines": {
-          "0": 11,
-          "9": 1
+          "0": 16,
+          "20": 1,
+          "35": 1
         }
       },
       {
         "place": "Surveillance room",
         "lines": {
           "0": 1,
-          "2": 1,
-          "9": 1
+          "1": 9,
+          "10": 4,
+          "11": 3,
+          "17": 3,
+          "20": 1
         }
       },
       {
         "place": "Casino/blackjack table",
         "lines": {
           "0": 1,
-          "2": 3,
-          "9": 1,
-          "11": 2,
-          "18": 1
+          "1": 9,
+          "10": 4,
+          "11": 3,
+          "18": 3,
+          "20": 1,
+          "28": 1
         }
       },
       {
         "place": "Laundry truck",
         "lines": {
-          "0": 6,
-          "2": 8,
-          "3": 7,
-          "6": 2,
-          "15": 1,
-          "19": 1,
-          "22": 1
+          "0": 9,
+          "1": 12,
+          "3": 8,
+          "4": 2,
+          "14": 1,
+          "36": 1,
+          "37": 1
         }
       },
       {
         "place": "Back room at the finish line",
         "lines": {
           "0": 3,
-          "5": 1,
-          "7": 1
+          "1": 1,
+          "5": 2,
+          "7": 3
         }
       },
       {
         "place": "Back room at the finish line",
         "lines": {
-          "0": 15,
-          "2": 2,
-          "4": 5,
-          "5": 6,
-          "7": 10
+          "0": 16,
+          "1": 7,
+          "5": 7,
+          "6": 5,
+          "7": 13
         }
       },
       {
         "place": "Finish line",
         "lines": {
-          "0": 76,
-          "1": 61,
-          "2": 21,
-          "3": 5,
-          "4": 22,
-          "5": 6,
+          "0": 85,
+          "1": 27,
+          "2": 71,
+          "3": 7,
+          "5": 7,
+          "6": 25,
           "7": 2,
-          "13": 2,
-          "16": 1
+          "9": 7,
+          "16": 3,
+          "29": 1,
+          "32": 1,
+          "33": 1,
+          "34": 1
         }
       },
       {
         "place": "Liz's kitchen",
         "lines": {
-          "0": 22,
-          "1": 26,
-          "2": 3,
-          "5": 1,
-          "6": 2,
-          "10": 2,
-          "26": 1
+          "0": 28,
+          "1": 4,
+          "2": 30,
+          "4": 3,
+          "5": 3,
+          "9": 3,
+          "12": 2,
+          "21": 2,
+          "22": 2,
+          "24": 2,
+          "25": 2,
+          "30": 1
         }
       },
       {
         "place": "Park",
         "lines": {
-          "0": 17,
-          "1": 20,
-          "2": 4,
-          "5": 3,
-          "12": 2
+          "0": 19,
+          "1": 11,
+          "2": 22,
+          "5": 5,
+          "12": 3,
+          "19": 2
         }
       },
       {
         "place": "Grocery store parking lot",
         "lines": {
-          "0": 13,
-          "1": 12,
-          "2": 5,
-          "5": 3,
-          "6": 1,
-          "25": 1
+          "0": 14,
+          "1": 8,
+          "2": 12,
+          "4": 4,
+          "5": 5,
+          "12": 1,
+          "19": 1
         }
       },
       {
         "place": "Around the mountain",
         "lines": {
-          "0": 15,
-          "1": 13,
-          "2": 18,
-          "5": 5,
-          "6": 3,
-          "28": 1
+          "0": 16,
+          "1": 27,
+          "2": 13,
+          "4": 10,
+          "5": 8,
+          "26": 2,
+          "41": 1,
+          "42": 1,
+          "43": 1
         }
       },
       {
         "place": "Maxwell gorge",
         "lines": {
-          "0": 22,
-          "1": 12,
-          "2": 33,
-          "3": 23,
-          "5": 1,
-          "6": 7,
-          "14": 1,
-          "17": 1,
-          "27": 1
+          "0": 29,
+          "1": 47,
+          "2": 13,
+          "3": 33,
+          "4": 12,
+          "5": 2,
+          "7": 2,
+          "8": 6,
+          "23": 1,
+          "27": 1,
+          "31": 1,
+          "39": 1,
+          "40": 1
         }
       },
       {
@@ -346,10 +466,13 @@
       {
         "place": "Elevator",
         "lines": {
-          "2": 6,
-          "3": 4,
-          "6": 1,
-          "8": 2
+          "0": 2,
+          "1": 8,
+          "3": 5,
+          "4": 3,
+          "13": 1,
+          "14": 3,
+          "15": 2
         }
       },
       {
@@ -358,28 +481,32 @@
       },
       {
         "place": "Handyman's storeroom",
-        "lines": {}
+        "lines": {
+          "4": 1,
+          "13": 2
+        }
       },
       {
         "place": "West stairwell",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 2,
-          "21": 1
+          "4": 1,
+          "13": 2
         }
       },
       {
         "place": "Corridor outside interrogation room",
         "lines": {
-          "6": 1
+          "4": 1
         }
       },
       {
         "place": "Interrogation room",
         "lines": {
-          "2": 4,
+          "1": 5,
           "3": 3,
-          "8": 1
+          "15": 1
         }
       },
       {
@@ -392,53 +519,56 @@
           "0": 2,
           "1": 3,
           "2": 3,
-          "3": 8,
-          "6": 4,
-          "24": 1
+          "3": 10,
+          "4": 4,
+          "38": 1
         }
       },
       {
         "place": "Homeland security bulding",
         "lines": {
           "0": 11,
-          "2": 8,
-          "3": 1
+          "1": 10,
+          "3": 4,
+          "15": 1
         }
       },
       {
         "place": "Forensic lab",
         "lines": {
-          "0": 1
+          "0": 1,
+          "1": 1
         }
       },
       {
         "place": "Jet",
         "lines": {
-          "0": 3,
-          "1": 2,
-          "23": 1
+          "0": 4,
+          "2": 3,
+          "23": 1,
+          "44": 1
         }
       },
       {
         "place": "Liz's house",
         "lines": {
-          "0": 13,
-          "1": 8,
-          "2": 4
+          "0": 16,
+          "1": 6,
+          "2": 9
         }
       }
     ],
     "measures": {
       "firstWomanLine": 1,
-      "longestWithoutWoman": 42,
-      "longestWithoutWomanStart": 51,
+      "longestWithoutWoman": 34,
+      "longestWithoutWomanStart": 165,
       "words": {
-        "w": 2422,
-        "m": 3230,
-        "unknown": 101
+        "w": 3427,
+        "m": 4322,
+        "unknown": 452
       },
-      "womenConversations": 9,
-      "menConversations": 24,
+      "womenConversations": 11,
+      "menConversations": 34,
       "reverseScore": 3
     }
   },

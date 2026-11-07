@@ -15,10 +15,10 @@
     "numOfMaleChars": 49,
     "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 10,
-    "totalLinesFemaleDialogue": 91,
-    "totalLinesMaleDialogue": 309,
+    "totalLinesFemaleDialogue": 101,
+    "totalLinesMaleDialogue": 359,
     "scenesThatPass": [
-      "STORM: Rogue.\nROGUE: Iím sorry. Iím not like the rest of you -- Iím tired of hurting people.\nSTORM: Itís okay.\nROGUE: Why did I have to be like this? What purpose does it serve?",
+      "STORM: Rogue.\nSTORM: You donít have to run.\nROGUE: Iím sorry. Iím not like the rest of you -- Iím tired of hurting people.\nSTORM: Itís okay.",
       "MYSTIQUE: And people like you are the reason I was afraid to go to school as a child.\nJEAN: The mutant gene tells the body when it needs to change.",
       "MYSTIQUE: This is.\nJEAN: ROGUE, DESTROY THE MACHINE!"
     ]
@@ -26,59 +26,53 @@
   "script": {
     "file": "x-men.txt",
     "layout": "indented",
-    "dialogueLines": 428,
+    "dialogueLines": 491,
     "speakers": [
       {
-        "name": "LOGAN",
-        "lines": 62,
+        "name": "MAGNETO",
+        "lines": 83,
         "gender": "m",
         "named": true
       },
       {
-        "name": "MAGNETO",
-        "lines": 54,
+        "name": "LOGAN",
+        "lines": 70,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "XAVIER",
+        "lines": 60,
         "gender": "m",
         "named": true
       },
       {
         "name": "JEAN",
-        "lines": 52,
+        "lines": 59,
         "gender": "w",
         "named": true
       },
       {
-        "name": "XAVIER",
-        "lines": 48,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "CYCLOPS",
-        "lines": 42,
+        "lines": 49,
         "gender": "m",
         "named": true
       },
       {
         "name": "KELLY",
-        "lines": 34,
+        "lines": 39,
         "gender": "m",
         "named": true
       },
       {
-        "name": "ANGLE ON",
-        "lines": 18,
-        "gender": "m",
-        "named": false
-      },
-      {
         "name": "STORM",
-        "lines": 17,
+        "lines": 19,
         "gender": "w",
         "named": true
       },
       {
         "name": "BEAST",
-        "lines": 15,
+        "lines": 16,
         "gender": "m",
         "named": true
       },
@@ -96,13 +90,13 @@
       },
       {
         "name": "BRAD 1",
-        "lines": 6,
+        "lines": 7,
         "gender": null,
         "named": false
       },
       {
         "name": "GUYRICH",
-        "lines": 6,
+        "lines": 7,
         "gender": "m",
         "named": true
       },
@@ -113,13 +107,25 @@
         "named": true
       },
       {
+        "name": "NEWSCASTER",
+        "lines": 6,
+        "gender": "m",
+        "named": false
+      },
+      {
         "name": "OPERATION COMMANDER",
         "lines": 5,
         "gender": null,
         "named": false
       },
       {
-        "name": "NEWSCASTER",
+        "name": "BRAD 4",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FRECKLED KID",
         "lines": 4,
         "gender": "m",
         "named": false
@@ -131,10 +137,16 @@
         "named": true
       },
       {
-        "name": "FRECKLED KID",
+        "name": "PYRO",
         "lines": 3,
         "gender": "m",
-        "named": false
+        "named": true
+      },
+      {
+        "name": "TOAD",
+        "lines": 3,
+        "gender": "m",
+        "named": true
       },
       {
         "name": "ANCHORMAN",
@@ -149,16 +161,10 @@
         "named": false
       },
       {
-        "name": "PYRO",
+        "name": "SMALL GIRL",
         "lines": 2,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "TOAD",
-        "lines": 2,
-        "gender": "m",
-        "named": true
+        "gender": "w",
+        "named": false
       },
       {
         "name": "TRANSIT COP",
@@ -185,19 +191,7 @@
         "named": true
       },
       {
-        "name": "ANGLE TIGHT",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "BRAD 2",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "BRAD 4",
         "lines": 1,
         "gender": null,
         "named": false
@@ -239,12 +233,6 @@
         "named": false
       },
       {
-        "name": "SMALL GIRL",
-        "lines": 1,
-        "gender": "w",
-        "named": false
-      },
-      {
         "name": "SUDDENLY",
         "lines": 1,
         "gender": null,
@@ -282,7 +270,7 @@
         "place": "Boys bathroom",
         "lines": {
           "16": 4,
-          "17": 3
+          "17": 4
         }
       },
       {
@@ -296,17 +284,17 @@
       {
         "place": "Senate hearing room",
         "lines": {
-          "2": 6,
-          "5": 5,
-          "31": 1,
-          "34": 1
+          "3": 11,
+          "5": 7,
+          "30": 1,
+          "33": 1
         }
       },
       {
         "place": "Capitol building",
         "lines": {
-          "2": 1,
-          "32": 1
+          "3": 1,
+          "31": 1
         }
       },
       {
@@ -328,23 +316,23 @@
       {
         "place": "Above ice",
         "lines": {
-          "10": 1
+          "9": 1
         }
       },
       {
         "place": "Cavernous room",
         "lines": {
-          "15": 1,
-          "20": 1
+          "13": 2,
+          "18": 2
         }
       },
       {
         "place": "Corridor/office",
         "lines": {
-          "1": 6,
+          "0": 8,
           "5": 1,
-          "10": 4,
-          "30": 1
+          "9": 4,
+          "29": 1
         }
       },
       {
@@ -357,13 +345,13 @@
         "place": "Limousine",
         "lines": {
           "5": 2,
-          "12": 3
+          "11": 3
         }
       },
       {
         "place": "Laboratory",
         "lines": {
-          "0": 1
+          "1": 1
         }
       },
       {
@@ -381,21 +369,21 @@
       {
         "place": "Hallway",
         "lines": {
-          "23": 1
+          "24": 1
         }
       },
       {
         "place": "Classroom",
         "lines": {
-          "8": 1
+          "7": 2
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "0": 4,
-          "3": 4,
-          "23": 1
+          "1": 4,
+          "2": 5,
+          "24": 1
         }
       },
       {
@@ -418,15 +406,15 @@
         "place": "Helicopter",
         "lines": {
           "5": 1,
-          "12": 1
+          "11": 2
         }
       },
       {
         "place": "Island helipad",
         "lines": {
-          "1": 5,
-          "5": 7,
-          "13": 1
+          "0": 13,
+          "5": 8,
+          "12": 1
         }
       },
       {
@@ -436,9 +424,9 @@
       {
         "place": "Machine room",
         "lines": {
-          "1": 2,
+          "0": 3,
           "5": 1,
-          "10": 1
+          "9": 1
         }
       },
       {
@@ -448,14 +436,13 @@
       {
         "place": "Train",
         "lines": {
-          "0": 3,
-          "6": 4,
-          "9": 1,
-          "11": 6,
-          "19": 2,
-          "22": 1,
-          "27": 1,
-          "28": 1
+          "1": 3,
+          "8": 1,
+          "10": 7,
+          "15": 4,
+          "21": 2,
+          "23": 1,
+          "27": 1
         }
       },
       {
@@ -469,16 +456,15 @@
       {
         "place": "Train",
         "lines": {
-          "0": 3,
-          "1": 12,
-          "3": 13,
+          "0": 14,
+          "1": 3,
+          "2": 15,
           "5": 1,
-          "6": 1,
-          "13": 1,
-          "15": 1,
-          "20": 1,
-          "21": 1,
-          "22": 1
+          "12": 1,
+          "13": 2,
+          "18": 1,
+          "19": 2,
+          "23": 1
         }
       },
       {
@@ -500,21 +486,20 @@
       {
         "place": "Cell",
         "lines": {
-          "0": 6,
-          "1": 1,
-          "2": 7,
-          "10": 1
+          "0": 2,
+          "1": 6,
+          "3": 7,
+          "9": 1
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "2": 4,
-          "3": 3,
+          "2": 3,
+          "3": 5,
           "4": 4,
           "6": 1,
-          "7": 1,
-          "8": 2
+          "7": 2
         }
       },
       {
@@ -524,7 +509,7 @@
       {
         "place": "Military lab",
         "lines": {
-          "7": 1
+          "6": 1
         }
       },
       {
@@ -534,32 +519,32 @@
       {
         "place": "Hallway",
         "lines": {
-          "0": 5,
-          "4": 2,
-          "7": 5
+          "1": 5,
+          "4": 3,
+          "6": 5
         }
       },
       {
         "place": "Gymnasium",
         "lines": {
-          "0": 7,
-          "2": 2,
-          "3": 6,
+          "1": 9,
+          "2": 7,
+          "3": 2,
           "4": 3
         }
       },
       {
         "place": "Corridor",
         "lines": {
-          "0": 2,
-          "3": 2
+          "1": 2,
+          "2": 4
         }
       },
       {
         "place": "Cerebro",
         "lines": {
-          "0": 2,
-          "3": 2
+          "1": 2,
+          "2": 2
         }
       },
       {
@@ -569,22 +554,22 @@
       {
         "place": "Sky",
         "lines": {
-          "9": 1
+          "8": 1
         }
       },
       {
         "place": "Cerebro",
         "lines": {
-          "0": 2,
-          "3": 1,
+          "1": 2,
+          "2": 1,
           "4": 1
         }
       },
       {
         "place": "Westchester mall",
         "lines": {
-          "7": 2,
-          "9": 2
+          "6": 3,
+          "8": 2
         }
       },
       {
@@ -594,8 +579,8 @@
       {
         "place": "Mall",
         "lines": {
-          "3": 1,
-          "10": 1
+          "2": 1,
+          "9": 1
         }
       },
       {
@@ -615,14 +600,14 @@
       {
         "place": "Mall",
         "lines": {
-          "9": 1
+          "8": 1
         }
       },
       {
         "place": "Mall",
         "lines": {
           "4": 2,
-          "9": 1
+          "8": 1
         }
       },
       {
@@ -633,13 +618,13 @@
         "place": "Mall",
         "lines": {
           "4": 1,
-          "9": 1
+          "8": 1
         }
       },
       {
         "place": "Mall",
         "lines": {
-          "3": 1
+          "2": 1
         }
       },
       {
@@ -661,8 +646,8 @@
       {
         "place": "Gymnasium",
         "lines": {
-          "0": 4,
-          "2": 4
+          "1": 4,
+          "3": 4
         }
       },
       {
@@ -671,24 +656,19 @@
       },
       {
         "place": "Corridor",
-        "lines": {
-          "6": 1
-        }
+        "lines": {}
       },
       {
         "place": "Hallway",
-        "lines": {
-          "6": 1
-        }
+        "lines": {}
       },
       {
         "place": "Gymnasium",
         "lines": {
-          "0": 10,
-          "1": 4,
-          "2": 7,
-          "9": 3,
-          "26": 1
+          "0": 8,
+          "1": 11,
+          "3": 7,
+          "8": 3
         }
       },
       {
@@ -698,81 +678,78 @@
       {
         "place": "Mansion hallway",
         "lines": {
-          "3": 1
+          "2": 1
         }
+      },
+      {
+        "place": "Laboratory",
+        "lines": {
+          "2": 3,
+          "6": 1
+        }
+      },
+      {
+        "place": "Cerebro",
+        "lines": {}
       },
       {
         "place": "Laboratory",
         "lines": {
           "3": 1,
-          "7": 1
-        }
-      },
-      {
-        "place": "Cerebro",
-        "lines": {
-          "6": 1
-        }
-      },
-      {
-        "place": "Laboratory",
-        "lines": {
-          "2": 1,
           "4": 1,
-          "8": 2,
-          "9": 1
+          "7": 2,
+          "8": 1
         }
       },
       {
         "place": "Front hall",
         "lines": {
-          "6": 1,
-          "29": 1
+          "28": 1
         }
       },
       {
         "place": "Cerebro",
         "lines": {
-          "2": 1,
+          "3": 1,
           "4": 2,
-          "7": 1,
-          "8": 3
+          "6": 1,
+          "7": 3
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "2": 3,
+          "3": 3,
           "4": 2,
-          "5": 3,
-          "8": 1,
-          "35": 1
+          "5": 5,
+          "7": 1,
+          "22": 2
         }
       },
       {
         "place": "Laboratory",
         "lines": {
-          "2": 2,
+          "3": 2,
           "5": 2
         }
       },
       {
         "place": "Laboratory",
         "lines": {
-          "3": 3,
+          "2": 4,
           "5": 2,
-          "9": 1
+          "8": 1
         }
       },
       {
         "place": "Ext. various flashback",
         "lines": {
-          "1": 4,
-          "2": 3,
+          "0": 4,
+          "3": 3,
           "5": 6,
-          "12": 2,
-          "13": 1,
-          "15": 1
+          "11": 2,
+          "12": 1,
+          "13": 1
         }
       },
       {
@@ -782,31 +759,30 @@
       {
         "place": "Lab",
         "lines": {
-          "3": 1,
+          "2": 1,
           "4": 3,
           "6": 1,
-          "7": 1,
-          "8": 4
+          "7": 4
         }
       },
       {
         "place": "Ready room",
         "lines": {
-          "7": 2,
-          "8": 2
+          "6": 3,
+          "7": 2
         }
       },
       {
         "place": "Lab",
         "lines": {
-          "4": 1
+          "4": 3
         }
       },
       {
         "place": "Ready room",
         "lines": {
-          "2": 2,
-          "4": 3
+          "3": 2,
+          "4": 4
         }
       },
       {
@@ -828,7 +804,7 @@
       {
         "place": "Basketball court",
         "lines": {
-          "37": 1
+          "35": 1
         }
       },
       {
@@ -838,7 +814,7 @@
       {
         "place": "Ellis island",
         "lines": {
-          "15": 1
+          "13": 1
         }
       },
       {
@@ -900,7 +876,7 @@
       {
         "place": "X-jet",
         "lines": {
-          "2": 1,
+          "3": 1,
           "4": 2
         }
       },
@@ -925,20 +901,20 @@
       {
         "place": "Hudson river",
         "lines": {
-          "24": 1
+          "25": 1
         }
       },
       {
         "place": "Small room",
         "lines": {
-          "0": 2,
+          "0": 3,
           "1": 2
         }
       },
       {
         "place": "Liberty island",
         "lines": {
-          "1": 1
+          "0": 3
         }
       },
       {
@@ -956,9 +932,9 @@
       {
         "place": "X-jet",
         "lines": {
-          "2": 1,
-          "4": 1,
-          "7": 1
+          "3": 1,
+          "4": 2,
+          "6": 1
         }
       },
       {
@@ -982,7 +958,7 @@
       {
         "place": "Liberty island",
         "lines": {
-          "13": 1,
+          "12": 1,
           "14": 1
         }
       },
@@ -1001,14 +977,14 @@
       {
         "place": "Statue",
         "lines": {
-          "2": 1,
-          "4": 3
+          "3": 1,
+          "4": 4
         }
       },
       {
         "place": "Torch",
         "lines": {
-          "1": 1
+          "0": 1
         }
       },
       {
@@ -1018,7 +994,7 @@
       {
         "place": "Museum",
         "lines": {
-          "7": 1
+          "6": 1
         }
       },
       {
@@ -1046,8 +1022,7 @@
       {
         "place": "Old torch room",
         "lines": {
-          "4": 1,
-          "6": 1
+          "4": 1
         }
       },
       {
@@ -1076,9 +1051,7 @@
       },
       {
         "place": "Elevator shaft",
-        "lines": {
-          "6": 1
-        }
+        "lines": {}
       },
       {
         "place": "Old torch room",
@@ -1087,7 +1060,7 @@
       {
         "place": "Torch",
         "lines": {
-          "1": 1
+          "0": 1
         }
       },
       {
@@ -1119,7 +1092,7 @@
       {
         "place": "Observation deck",
         "lines": {
-          "21": 1
+          "19": 1
         }
       },
       {
@@ -1141,45 +1114,46 @@
       {
         "place": "Statue",
         "lines": {
-          "4": 1
+          "4": 2
         }
       },
       {
         "place": "Hallway outside the museum",
         "lines": {
-          "0": 2,
-          "6": 1,
-          "9": 1
+          "1": 4,
+          "8": 1
         }
       },
       {
         "place": "Statue",
         "lines": {
-          "1": 2,
-          "2": 1,
+          "0": 4,
+          "3": 1,
           "4": 1
         }
       },
       {
         "place": "Seawall",
         "lines": {
-          "1": 1
+          "0": 1
         }
       },
       {
         "place": "Statue",
-        "lines": {}
+        "lines": {
+          "0": 1
+        }
       },
       {
         "place": "Seawall",
         "lines": {
-          "1": 1
+          "0": 1
         }
       },
       {
         "place": "Statue",
         "lines": {
-          "1": 1
+          "0": 3
         }
       },
       {
@@ -1189,12 +1163,11 @@
       {
         "place": "Statue",
         "lines": {
-          "1": 3,
-          "2": 3,
+          "0": 5,
+          "3": 3,
           "4": 1,
           "6": 1,
-          "7": 1,
-          "36": 1
+          "34": 1
         }
       },
       {
@@ -1224,9 +1197,9 @@
       {
         "place": "Statue",
         "lines": {
-          "1": 2,
-          "2": 2,
-          "13": 2
+          "0": 2,
+          "3": 3,
+          "12": 2
         }
       },
       {
@@ -1257,14 +1230,12 @@
       },
       {
         "place": "Manhattan harbor",
-        "lines": {
-          "6": 1
-        }
+        "lines": {}
       },
       {
         "place": "Torch",
         "lines": {
-          "10": 1
+          "9": 1
         }
       },
       {
@@ -1273,16 +1244,14 @@
       },
       {
         "place": "Statue",
-        "lines": {
-          "6": 1
-        }
+        "lines": {}
       },
       {
         "place": "Statue",
         "lines": {
-          "0": 2,
+          "1": 4,
           "4": 1,
-          "10": 3
+          "9": 3
         }
       },
       {
@@ -1296,9 +1265,9 @@
       {
         "place": "Statue",
         "lines": {
-          "0": 2,
+          "1": 2,
           "4": 2,
-          "9": 1
+          "8": 1
         }
       },
       {
@@ -1316,13 +1285,13 @@
       {
         "place": "Museum",
         "lines": {
-          "25": 1
+          "26": 1
         }
       },
       {
         "place": "Seawall",
         "lines": {
-          "33": 1
+          "32": 1
         }
       },
       {
@@ -1334,44 +1303,43 @@
         "lines": {
           "4": 1,
           "5": 1,
-          "18": 2
+          "20": 2
         }
       },
       {
         "place": "Capitol building",
         "lines": {
-          "0": 4,
-          "3": 4,
-          "5": 1,
-          "6": 1
+          "1": 5,
+          "2": 4,
+          "5": 1
         }
       },
       {
         "place": "Mansion",
         "lines": {
-          "0": 1,
-          "3": 1
+          "1": 1,
+          "2": 3
         }
       },
       {
         "place": "Plastic prison",
         "lines": {
-          "1": 5,
-          "3": 4
+          "0": 6,
+          "2": 5
         }
       }
     ],
     "measures": {
-      "firstWomanLine": 8,
-      "longestWithoutWoman": 42,
-      "longestWithoutWomanStart": 23,
+      "firstWomanLine": 9,
+      "longestWithoutWoman": 50,
+      "longestWithoutWomanStart": 31,
       "words": {
-        "w": 795,
-        "m": 3390,
-        "unknown": 411
+        "w": 930,
+        "m": 3848,
+        "unknown": 406
       },
       "womenConversations": 6,
-      "menConversations": 34,
+      "menConversations": 33,
       "reverseScore": 3
     }
   },

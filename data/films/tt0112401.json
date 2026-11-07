@@ -25,7 +25,7 @@
   "script": {
     "file": "assassins.txt",
     "layout": "indented",
-    "dialogueLines": 877,
+    "dialogueLines": 878,
     "speakers": [
       {
         "name": "RATH",
@@ -154,6 +154,12 @@
         "named": true
       },
       {
+        "name": "WRITTEN BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "YOUNG MAN",
         "lines": 1,
         "gender": "m",
@@ -163,7 +169,9 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "21": 1
+        }
       },
       {
         "place": "Marsh",
@@ -487,7 +495,7 @@
       {
         "place": "Room service kitchen",
         "lines": {
-          "21": 1
+          "22": 1
         }
       },
       {
@@ -1152,13 +1160,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 233,
-      "longestWithoutWoman": 232,
+      "firstWomanLine": 234,
+      "longestWithoutWoman": 233,
       "longestWithoutWomanStart": 1,
       "words": {
         "w": 1832,
         "m": 5393,
-        "unknown": 427
+        "unknown": 431
       },
       "womenConversations": 3,
       "menConversations": 16,

@@ -22,7 +22,7 @@
   "script": {
     "file": "sherlock-holmes.txt",
     "layout": "indented",
-    "dialogueLines": 797,
+    "dialogueLines": 798,
     "speakers": [
       {
         "name": "HOLMES",
@@ -269,12 +269,20 @@
         "lines": 1,
         "gender": "m",
         "named": false
+      },
+      {
+        "name": "WRITTEN BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
       }
     ],
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "41": 1
+        }
       },
       {
         "place": "Streets of london",
@@ -1113,13 +1121,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 50,
+      "firstWomanLine": 51,
       "longestWithoutWoman": 89,
-      "longestWithoutWomanStart": 455,
+      "longestWithoutWomanStart": 456,
       "words": {
         "w": 1088,
         "m": 8160,
-        "unknown": 161
+        "unknown": 169
       },
       "womenConversations": 0,
       "menConversations": 69,

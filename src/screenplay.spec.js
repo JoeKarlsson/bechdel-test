@@ -74,6 +74,19 @@ describe('parseScreenplay', () => {
 		expect(dialogueOf(parseScreenplay(inline)).map(d => d.speaker)).toEqual(['BONO', 'TROY', 'BONO', 'TROY', 'BONO', 'TROY']);
 	});
 
+	it('reads "ANGLE ON:", "DRAFT:" and "Continued:" lines as directions, not speakers', () => {
+		const directions = [
+			'ANGLE ON: SMEAGOL leaning over the boat.',
+			'DRAFT: 01.05.16',
+			'     Continued: 3',
+			'                              RIPLEY',
+			'                    Did you check the beacon?',
+			'',
+		].join('\n');
+		const screenplay = parseScreenplay(`INT. SHIP - DAY\n\n${directions.repeat(3)}`);
+		expect([...new Set(dialogueOf(screenplay).map(d => d.speaker))]).toEqual(['RIPLEY']);
+	});
+
 	it('cleans speaker extensions', () => {
 		expect(normalizeSpeaker('JAKE (V.O.)')).toBe('JAKE');
 		expect(normalizeSpeaker("BONNIE'S VOICE")).toBe('BONNIE');

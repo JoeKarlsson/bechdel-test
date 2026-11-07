@@ -16,7 +16,7 @@
     "numOfFemalesCharsWithDialogue": 6,
     "numOfMaleCharsWithDialogue": 56,
     "totalLinesFemaleDialogue": 139,
-    "totalLinesMaleDialogue": 595,
+    "totalLinesMaleDialogue": 615,
     "scenesThatPass": [
       "JASMINE: I can't believe I even came in tonight. What was I thinking?\nTIFFANY: Isn't this cool? And you thought I was nuts. Oh, look, I brought mine with me.\nJASMINE: You're not thinking of joining those idiots?\nTIFFANY: I'm going over there soon as I'm off. Wanna come?",
       "MARGARET: Hiya Munchkin.\nPATRICIA: Mommy, we were worried. We didn't know where you were.\nMARGARET: I'm right here, baby."
@@ -25,13 +25,19 @@
   "script": {
     "file": "independence-day.txt",
     "layout": "indented",
-    "dialogueLines": 887,
+    "dialogueLines": 908,
     "speakers": [
       {
         "name": "DAVID",
-        "lines": 111,
+        "lines": 117,
         "gender": "m",
         "named": true
+      },
+      {
+        "name": "PRESIDENT",
+        "lines": 83,
+        "gender": null,
+        "named": false
       },
       {
         "name": "STEVE",
@@ -40,14 +46,8 @@
         "named": true
       },
       {
-        "name": "PRESIDENT",
-        "lines": 80,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "GENERAL GREY",
-        "lines": 60,
+        "lines": 62,
         "gender": "m",
         "named": true
       },
@@ -59,7 +59,7 @@
       },
       {
         "name": "MOISHE",
-        "lines": 51,
+        "lines": 53,
         "gender": "m",
         "named": true
       },
@@ -89,13 +89,13 @@
       },
       {
         "name": "MARTY",
-        "lines": 22,
+        "lines": 23,
         "gender": "m",
         "named": true
       },
       {
         "name": "OKUN",
-        "lines": 19,
+        "lines": 23,
         "gender": "m",
         "named": true
       },
@@ -107,8 +107,20 @@
       },
       {
         "name": "JIMMY",
+        "lines": 13,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MITCHELL",
         "lines": 12,
         "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PRESIDENT WHITMORE",
+        "lines": 12,
+        "gender": null,
         "named": true
       },
       {
@@ -124,18 +136,6 @@
         "named": true
       },
       {
-        "name": "MITCHELL",
-        "lines": 11,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "PRESIDENT WHITMORE",
-        "lines": 11,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "TROY",
         "lines": 11,
         "gender": "m",
@@ -143,7 +143,7 @@
       },
       {
         "name": "OFFICER",
-        "lines": 8,
+        "lines": 9,
         "gender": null,
         "named": false
       },
@@ -178,16 +178,28 @@
         "named": true
       },
       {
+        "name": "REDNECK",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "REGINALD",
         "lines": 5,
         "gender": "m",
         "named": true
       },
       {
-        "name": "SUPER",
+        "name": "SUPERVISOR",
         "lines": 5,
-        "gender": null,
-        "named": false
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LUCAS",
+        "lines": 4,
+        "gender": "m",
+        "named": true
       },
       {
         "name": "MALE VOICE",
@@ -205,18 +217,6 @@
         "name": "PATRICIA",
         "lines": 4,
         "gender": "w",
-        "named": true
-      },
-      {
-        "name": "REDNECK",
-        "lines": 4,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "SUPERVISOR",
-        "lines": 4,
-        "gender": "m",
         "named": true
       },
       {
@@ -248,12 +248,6 @@
         "lines": 3,
         "gender": "m",
         "named": false
-      },
-      {
-        "name": "LUCAS",
-        "lines": 3,
-        "gender": "m",
-        "named": true
       },
       {
         "name": "MED ASSIST #2",
@@ -331,6 +325,12 @@
         "name": "MECHANIC #2",
         "lines": 2,
         "gender": "m",
+        "named": false
+      },
+      {
+        "name": "NEWSCASTERS",
+        "lines": 2,
+        "gender": null,
         "named": false
       },
       {
@@ -488,12 +488,6 @@
         "lines": 1,
         "gender": "w",
         "named": true
-      },
-      {
-        "name": "NEWSCASTERS",
-        "lines": 1,
-        "gender": null,
-        "named": false
       },
       {
         "name": "OLDER BOY",
@@ -672,7 +666,7 @@
       {
         "place": "Sleeping quarters",
         "lines": {
-          "31": 1
+          "27": 1
         }
       },
       {
@@ -688,71 +682,70 @@
       {
         "place": "Control center",
         "lines": {
-          "31": 3,
-          "41": 3,
+          "27": 4,
+          "40": 3,
           "55": 1,
-          "98": 1
+          "97": 1
         }
       },
       {
         "place": "Hallway",
         "lines": {
           "3": 1,
-          "15": 2
+          "17": 2
         }
       },
       {
         "place": "Space command",
         "lines": {
           "3": 5,
-          "15": 2,
-          "26": 1,
-          "40": 3
+          "17": 2,
+          "39": 3
         }
       },
       {
         "place": "Whitmore's bedroom",
         "lines": {
-          "14": 1,
-          "103": 1
+          "16": 1,
+          "102": 1
         }
       },
       {
         "place": "Hotel room",
         "lines": {
           "12": 2,
-          "14": 1
+          "16": 1
         }
       },
       {
         "place": "Whitmore bedroom",
         "lines": {
           "12": 1,
-          "14": 4,
-          "29": 2,
-          "81": 1,
-          "82": 1
+          "16": 4,
+          "31": 2,
+          "80": 1,
+          "81": 1
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "14": 1,
-          "94": 1
+          "16": 1,
+          "93": 1
         }
       },
       {
         "place": "Breakfast table",
         "lines": {
           "4": 4,
-          "14": 5
+          "16": 5
         }
       },
       {
         "place": "Cliffside park",
         "lines": {
           "0": 6,
-          "5": 8
+          "5": 9
         }
       },
       {
@@ -788,7 +781,7 @@
         "place": "Brennon mobile home",
         "lines": {
           "8": 4,
-          "37": 3
+          "28": 4
         }
       },
       {
@@ -800,7 +793,7 @@
         "lines": {
           "4": 3,
           "35": 2,
-          "45": 2,
+          "44": 2,
           "58": 1
         }
       },
@@ -810,10 +803,10 @@
           "3": 2,
           "4": 2,
           "7": 6,
-          "15": 5,
-          "17": 2,
-          "91": 1,
-          "92": 1
+          "15": 2,
+          "17": 5,
+          "90": 1,
+          "91": 1
         }
       },
       {
@@ -838,15 +831,11 @@
       },
       {
         "place": "Iraqi desert",
-        "lines": {
-          "26": 1
-        }
+        "lines": {}
       },
       {
         "place": "Uss eisenhower",
-        "lines": {
-          "26": 1
-        }
+        "lines": {}
       },
       {
         "place": "Uss eisenhower",
@@ -858,31 +847,30 @@
       {
         "place": "Pentagon",
         "lines": {
-          "15": 2,
+          "17": 2,
           "19": 2
         }
       },
       {
         "place": "Oval office",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 2,
-          "39": 1
+          "38": 1,
+          "50": 1
         }
       },
       {
         "place": "Awac airplane",
         "lines": {
           "22": 1,
-          "83": 1,
-          "84": 1
+          "82": 1,
+          "83": 1
         }
       },
       {
         "place": "Awac airplane",
-        "lines": {
-          "26": 1
-        }
+        "lines": {}
       },
       {
         "place": "Oval office",
@@ -909,12 +897,12 @@
       {
         "place": "Oval office",
         "lines": {
-          "2": 6,
+          "1": 6,
           "3": 4,
           "4": 1,
           "7": 4,
           "35": 1,
-          "44": 2,
+          "43": 2,
           "62": 1
         }
       },
@@ -966,14 +954,14 @@
         "place": "Airport diner",
         "lines": {
           "9": 1,
-          "28": 3,
-          "50": 2
+          "30": 3,
+          "49": 2
         }
       },
       {
         "place": "Small airport",
         "lines": {
-          "28": 1
+          "30": 1
         }
       },
       {
@@ -1011,8 +999,8 @@
         "place": "White house",
         "lines": {
           "4": 1,
-          "17": 2,
-          "93": 1
+          "15": 2,
+          "92": 1
         }
       },
       {
@@ -1075,7 +1063,7 @@
         "place": "Oval office",
         "lines": {
           "4": 2,
-          "17": 1
+          "15": 1
         }
       },
       {
@@ -1085,23 +1073,23 @@
       {
         "place": "Jasmine's debrow's bedroom",
         "lines": {
-          "1": 1,
+          "2": 1,
           "6": 1
         }
       },
       {
         "place": "Bathroom",
         "lines": {
-          "1": 1
+          "2": 1
         }
       },
       {
         "place": "Living room",
         "lines": {
-          "1": 2,
+          "2": 2,
           "6": 2,
           "21": 1,
-          "39": 1
+          "38": 1
         }
       },
       {
@@ -1118,9 +1106,9 @@
         "place": "Compact cable office",
         "lines": {
           "0": 7,
-          "10": 7,
+          "10": 8,
           "61": 1,
-          "102": 1
+          "101": 1
         }
       },
       {
@@ -1128,8 +1116,8 @@
         "lines": {
           "0": 1,
           "4": 2,
-          "17": 1,
-          "80": 1
+          "15": 1,
+          "79": 1
         }
       },
       {
@@ -1148,7 +1136,7 @@
       {
         "place": "Compact cable offices",
         "lines": {
-          "17": 1
+          "15": 2
         }
       },
       {
@@ -1169,14 +1157,14 @@
       {
         "place": "Jasmine's house",
         "lines": {
-          "1": 2,
+          "2": 2,
           "6": 3
         }
       },
       {
         "place": "Debrow house",
         "lines": {
-          "1": 6,
+          "2": 6,
           "6": 6,
           "21": 2
         }
@@ -1196,7 +1184,7 @@
         "place": "Hotel lounge, los angeles",
         "lines": {
           "12": 1,
-          "17": 1
+          "15": 1
         }
       },
       {
@@ -1205,7 +1193,7 @@
           "3": 2,
           "7": 1,
           "12": 1,
-          "17": 3
+          "15": 3
         }
       },
       {
@@ -1216,8 +1204,8 @@
           "18": 4,
           "23": 2,
           "76": 1,
-          "78": 1,
-          "88": 1
+          "77": 1,
+          "87": 1
         }
       },
       {
@@ -1228,14 +1216,14 @@
         "place": "Moishe's olds",
         "lines": {
           "0": 3,
-          "5": 3,
-          "27": 1
+          "5": 4,
+          "29": 1
         }
       },
       {
         "place": "Strip club",
         "lines": {
-          "77": 1
+          "50": 1
         }
       },
       {
@@ -1243,7 +1231,7 @@
         "lines": {
           "6": 6,
           "34": 3,
-          "49": 2
+          "48": 2
         }
       },
       {
@@ -1260,9 +1248,9 @@
       {
         "place": "Locker room",
         "lines": {
-          "1": 4,
-          "13": 4,
-          "27": 1
+          "2": 4,
+          "13": 5,
+          "29": 1
         }
       },
       {
@@ -1298,14 +1286,14 @@
       {
         "place": "Andrews air force base",
         "lines": {
-          "47": 1
+          "46": 1
         }
       },
       {
         "place": "Briefing room",
         "lines": {
-          "2": 1,
-          "47": 1,
+          "1": 1,
+          "46": 1,
           "69": 1
         }
       },
@@ -1343,17 +1331,17 @@
       {
         "place": "Briefing room",
         "lines": {
-          "2": 1,
+          "1": 1,
           "4": 2,
           "7": 1,
-          "39": 1
+          "38": 1
         }
       },
       {
         "place": "Oval office",
         "lines": {
-          "0": 3,
-          "2": 2,
+          "0": 5,
+          "1": 2,
           "4": 1,
           "5": 1,
           "59": 1
@@ -1366,7 +1354,7 @@
       {
         "place": "Briefing room",
         "lines": {
-          "2": 3,
+          "1": 3,
           "3": 1,
           "7": 1,
           "57": 1
@@ -1386,7 +1374,7 @@
         "place": "Rooftop",
         "lines": {
           "34": 1,
-          "79": 1
+          "78": 1
         }
       },
       {
@@ -1397,19 +1385,19 @@
         "place": "Jasmine's car",
         "lines": {
           "6": 1,
-          "87": 1
+          "86": 1
         }
       },
       {
         "place": "White house",
         "lines": {
-          "2": 1
+          "1": 1
         }
       },
       {
         "place": "Helicopter",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 1
         }
       },
@@ -1476,7 +1464,7 @@
       {
         "place": "Pasadena freeway",
         "lines": {
-          "86": 1
+          "85": 1
         }
       },
       {
@@ -1495,7 +1483,7 @@
           "8": 1,
           "9": 1,
           "18": 3,
-          "85": 1
+          "84": 1
         }
       },
       {
@@ -1507,8 +1495,8 @@
       {
         "place": "El toro",
         "lines": {
-          "1": 2,
-          "43": 2
+          "2": 2,
+          "42": 2
         }
       },
       {
@@ -1518,8 +1506,8 @@
       {
         "place": "Air force one",
         "lines": {
-          "2": 3,
-          "3": 3,
+          "1": 3,
+          "3": 4,
           "4": 1
         }
       },
@@ -1530,13 +1518,13 @@
       {
         "place": "Steve's fighter",
         "lines": {
-          "1": 1
+          "2": 1
         }
       },
       {
         "place": "Jimmy's fighter",
         "lines": {
-          "1": 1,
+          "2": 1,
           "13": 2
         }
       },
@@ -1555,7 +1543,7 @@
       {
         "place": "Steve's fighter",
         "lines": {
-          "1": 2,
+          "2": 2,
           "13": 1
         }
       },
@@ -1564,7 +1552,7 @@
         "lines": {
           "3": 1,
           "33": 1,
-          "99": 1
+          "98": 1
         }
       },
       {
@@ -1578,7 +1566,7 @@
       {
         "place": "Steve's fighter",
         "lines": {
-          "1": 2,
+          "2": 2,
           "13": 1
         }
       },
@@ -1589,20 +1577,20 @@
       {
         "place": "Steve's fighter",
         "lines": {
-          "1": 1
+          "2": 1
         }
       },
       {
         "place": "Skies",
         "lines": {
-          "1": 2,
+          "2": 2,
           "13": 2
         }
       },
       {
         "place": "Air force one",
         "lines": {
-          "2": 1,
+          "1": 1,
           "4": 1,
           "33": 1
         }
@@ -1610,21 +1598,21 @@
       {
         "place": "Los angeles",
         "lines": {
-          "1": 3,
+          "2": 3,
           "13": 1
         }
       },
       {
         "place": "Jimmy's fighter",
         "lines": {
-          "1": 3,
+          "2": 3,
           "13": 1
         }
       },
       {
         "place": "El toro",
         "lines": {
-          "43": 1,
+          "42": 1,
           "51": 2
         }
       },
@@ -1643,13 +1631,13 @@
       {
         "place": "Steve's pov",
         "lines": {
-          "1": 3
+          "2": 3
         }
       },
       {
         "place": "Top of canyon",
         "lines": {
-          "1": 1
+          "2": 1
         }
       },
       {
@@ -1681,7 +1669,7 @@
         "place": "Air force one",
         "lines": {
           "0": 4,
-          "2": 3,
+          "1": 3,
           "3": 5,
           "4": 2,
           "5": 3,
@@ -1698,24 +1686,22 @@
         "place": "Maintenance truck",
         "lines": {
           "6": 5,
-          "27": 1,
-          "30": 4,
+          "25": 5,
+          "29": 1,
           "32": 4,
-          "101": 1
+          "100": 1
         }
       },
       {
         "place": "Dry lake",
         "lines": {
-          "1": 2,
+          "2": 2,
           "8": 2
         }
       },
       {
         "place": "Air force one",
-        "lines": {
-          "26": 1
-        }
+        "lines": {}
       },
       {
         "place": "Runway",
@@ -1728,49 +1714,49 @@
       {
         "place": "Hallway",
         "lines": {
-          "2": 1,
+          "1": 1,
           "7": 1
         }
       },
       {
         "place": "Research facilities",
         "lines": {
-          "2": 2,
+          "1": 2,
           "5": 1,
           "11": 2,
-          "16": 1
+          "14": 1
         }
       },
       {
         "place": "Storage lab",
         "lines": {
-          "2": 3,
+          "1": 3,
           "5": 1,
-          "11": 3
+          "11": 4
         }
       },
       {
         "place": "Medical research vault",
         "lines": {
           "0": 2,
-          "2": 3,
+          "1": 3,
           "11": 4
         }
       },
       {
         "place": "Security gate",
         "lines": {
-          "0": 3,
-          "1": 1,
-          "11": 3,
+          "0": 4,
+          "2": 1,
+          "11": 6,
           "71": 1,
-          "100": 1
+          "99": 1
         }
       },
       {
         "place": "Hallway off main hangar",
         "lines": {
-          "1": 1,
+          "2": 1,
           "9": 3,
           "11": 3,
           "66": 1
@@ -1787,11 +1773,11 @@
       {
         "place": "Area 51 command center",
         "lines": {
-          "1": 2,
-          "2": 6,
-          "3": 5,
+          "1": 6,
+          "2": 2,
+          "3": 6,
           "7": 1,
-          "16": 3
+          "14": 3
         }
       },
       {
@@ -1805,7 +1791,7 @@
         "place": "Containment lab",
         "lines": {
           "11": 4,
-          "38": 3,
+          "37": 3,
           "75": 1
         }
       },
@@ -1817,7 +1803,7 @@
         "place": "Containment lab",
         "lines": {
           "3": 1,
-          "16": 1,
+          "14": 1,
           "20": 2
         }
       },
@@ -1828,20 +1814,20 @@
       {
         "place": "Transport helicopter",
         "lines": {
-          "1": 2,
+          "2": 2,
           "54": 2,
-          "95": 1
+          "94": 1
         }
       },
       {
         "place": "Medical lab",
         "lines": {
-          "2": 7,
+          "1": 7,
           "3": 2,
           "7": 1,
-          "16": 1,
+          "14": 1,
           "20": 6,
-          "96": 1
+          "95": 1
         }
       },
       {
@@ -1872,7 +1858,7 @@
       {
         "place": "Command center",
         "lines": {
-          "2": 2,
+          "1": 2,
           "3": 1,
           "65": 1
         }
@@ -1898,7 +1884,7 @@
       {
         "place": "Command center",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 1,
           "7": 1,
           "56": 1
@@ -1917,7 +1903,7 @@
       {
         "place": "Command center",
         "lines": {
-          "2": 1
+          "1": 1
         }
       },
       {
@@ -1953,7 +1939,7 @@
       {
         "place": "Command center",
         "lines": {
-          "2": 1,
+          "1": 1,
           "7": 1
         }
       },
@@ -1964,13 +1950,13 @@
       {
         "place": "Armored tank",
         "lines": {
-          "97": 1
+          "96": 1
         }
       },
       {
         "place": "Command center",
         "lines": {
-          "2": 2,
+          "1": 2,
           "7": 1
         }
       },
@@ -1981,25 +1967,25 @@
       {
         "place": "Jasmine's pov",
         "lines": {
-          "1": 1,
+          "2": 1,
           "6": 1
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "2": 3,
+          "1": 3,
           "12": 4,
-          "29": 1,
-          "48": 2
+          "31": 1,
+          "47": 2
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "2": 2,
+          "1": 2,
           "6": 1,
-          "29": 1
+          "31": 1
         }
       },
       {
@@ -2012,20 +1998,20 @@
       {
         "place": "Storage lab",
         "lines": {
-          "0": 12,
-          "1": 3,
-          "2": 1,
+          "0": 15,
+          "1": 1,
+          "2": 3,
           "3": 4,
           "4": 1,
           "7": 7,
-          "16": 1,
+          "14": 1,
           "21": 1
         }
       },
       {
         "place": "Hallway",
         "lines": {
-          "2": 1,
+          "1": 3,
           "3": 1,
           "4": 1,
           "7": 2
@@ -2034,22 +2020,22 @@
       {
         "place": "Military tent",
         "lines": {
-          "25": 2,
-          "42": 1
+          "26": 2,
+          "41": 1
         }
       },
       {
         "place": "Dry lake",
         "lines": {
-          "25": 3,
-          "42": 2
+          "26": 3,
+          "41": 2
         }
       },
       {
         "place": "Ice plateau",
         "lines": {
-          "89": 1,
-          "90": 1
+          "88": 1,
+          "89": 1
         }
       },
       {
@@ -2061,7 +2047,7 @@
       {
         "place": "Area",
         "lines": {
-          "2": 4,
+          "1": 4,
           "3": 3,
           "70": 1
         }
@@ -2077,33 +2063,33 @@
         "place": "Area",
         "lines": {
           "9": 2,
-          "19": 3
+          "19": 4
         }
       },
       {
         "place": "Storage lab",
         "lines": {
           "0": 6,
-          "1": 2,
+          "2": 2,
           "4": 3,
-          "16": 2,
+          "14": 3,
           "33": 1
         }
       },
       {
         "place": "Small gathering hall",
         "lines": {
-          "1": 4,
+          "2": 4,
           "6": 6,
           "21": 1,
-          "27": 1,
-          "46": 2
+          "29": 1,
+          "45": 2
         }
       },
       {
         "place": "Area",
         "lines": {
-          "2": 2,
+          "1": 3,
           "3": 2
         }
       },
@@ -2111,7 +2097,7 @@
         "place": "Storage lab",
         "lines": {
           "0": 1,
-          "1": 3,
+          "2": 3,
           "4": 1,
           "5": 3
         }
@@ -2120,7 +2106,7 @@
         "place": "Alien attacker",
         "lines": {
           "0": 1,
-          "1": 2
+          "2": 2
         }
       },
       {
@@ -2130,7 +2116,7 @@
       {
         "place": "Steve and david's alien attacker",
         "lines": {
-          "1": 1
+          "2": 1
         }
       },
       {
@@ -2140,7 +2126,7 @@
       {
         "place": "Steve and david's alien attacker",
         "lines": {
-          "1": 2
+          "2": 2
         }
       },
       {
@@ -2155,7 +2141,7 @@
         "place": "Steve and david's alien attacker",
         "lines": {
           "0": 1,
-          "1": 1
+          "2": 1
         }
       },
       {
@@ -2165,14 +2151,14 @@
       {
         "place": "Area",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 1
         }
       },
       {
         "place": "War room",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 1
         }
       },
@@ -2189,7 +2175,7 @@
       {
         "place": "Steve and david's attacker",
         "lines": {
-          "1": 2
+          "2": 2
         }
       },
       {
@@ -2200,13 +2186,13 @@
         "place": "Steve and david's attacker",
         "lines": {
           "0": 2,
-          "1": 1
+          "2": 1
         }
       },
       {
         "place": "Blue skies",
         "lines": {
-          "2": 2,
+          "1": 2,
           "3": 1
         }
       },
@@ -2214,7 +2200,7 @@
         "place": "War room",
         "lines": {
           "4": 2,
-          "16": 1
+          "14": 1
         }
       },
       {
@@ -2229,27 +2215,27 @@
         "place": "Steve and david's attacker",
         "lines": {
           "0": 1,
-          "1": 1
+          "2": 1
         }
       },
       {
         "place": "Docking stations",
         "lines": {
           "0": 2,
-          "1": 1
+          "2": 1
         }
       },
       {
         "place": "War room",
         "lines": {
           "3": 1,
-          "16": 1
+          "14": 1
         }
       },
       {
         "place": "Blue skies",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 1
         }
       },
@@ -2270,7 +2256,7 @@
       {
         "place": "Blue skies",
         "lines": {
-          "2": 1,
+          "1": 1,
           "3": 1
         }
       },
@@ -2283,7 +2269,7 @@
       {
         "place": "American fighters",
         "lines": {
-          "2": 1
+          "1": 1
         }
       },
       {
@@ -2295,7 +2281,7 @@
       {
         "place": "President's plane",
         "lines": {
-          "2": 1
+          "1": 1
         }
       },
       {
@@ -2307,7 +2293,7 @@
       {
         "place": "Blue skies",
         "lines": {
-          "2": 1
+          "1": 1
         }
       },
       {
@@ -2324,7 +2310,7 @@
         "place": "Steve and david's attacker",
         "lines": {
           "0": 1,
-          "1": 1
+          "2": 1
         }
       },
       {
@@ -2335,7 +2321,7 @@
         "place": "Steve and david's attacker",
         "lines": {
           "0": 2,
-          "1": 2
+          "2": 2
         }
       },
       {
@@ -2360,7 +2346,7 @@
       {
         "place": "President's plane",
         "lines": {
-          "2": 3,
+          "1": 3,
           "3": 1,
           "67": 1
         }
@@ -2378,7 +2364,7 @@
       {
         "place": "President's fighter",
         "lines": {
-          "2": 2,
+          "1": 2,
           "9": 2
         }
       },
@@ -2425,7 +2411,7 @@
         "place": "Steve and david's alien attacker",
         "lines": {
           "0": 2,
-          "1": 3
+          "2": 3
         }
       },
       {
@@ -2436,7 +2422,7 @@
         "place": "Steve and david's attacker",
         "lines": {
           "0": 1,
-          "1": 1
+          "2": 1
         }
       },
       {
@@ -2455,7 +2441,7 @@
         "place": "Steve and david's attacker",
         "lines": {
           "0": 1,
-          "1": 2
+          "2": 2
         }
       },
       {
@@ -2492,8 +2478,8 @@
         "place": "Dry lake",
         "lines": {
           "0": 1,
-          "1": 3,
-          "2": 1,
+          "1": 1,
+          "2": 3,
           "4": 2,
           "6": 2
         }
@@ -2501,12 +2487,12 @@
     ],
     "measures": {
       "firstWomanLine": 25,
-      "longestWithoutWoman": 63,
-      "longestWithoutWomanStart": 523,
+      "longestWithoutWoman": 68,
+      "longestWithoutWomanStart": 531,
       "words": {
         "w": 1067,
-        "m": 5408,
-        "unknown": 1407
+        "m": 5737,
+        "unknown": 1571
       },
       "womenConversations": 3,
       "menConversations": 87,

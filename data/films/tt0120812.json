@@ -10,33 +10,33 @@
     "pass": true,
     "bechdelScore": 3,
     "numScenesPass": 2,
-    "numScenesDontPass": 304,
+    "numScenesDontPass": 303,
     "numOfFemalesChars": 13,
     "numOfMaleChars": 43,
     "numOfFemalesCharsWithDialogue": 4,
     "numOfMaleCharsWithDialogue": 5,
     "totalLinesFemaleDialogue": 36,
-    "totalLinesMaleDialogue": 373,
+    "totalLinesMaleDialogue": 375,
     "scenesThatPass": [
       "SECRETARY OF STATE: ...North Koreans have gone ballistic, accusing us of botching the ransom drop on purpose.\nSECRETARY OF DEFENSE: They're still harping on that \"American plot\" nonsense.",
       "SECRETARY OF STATE: That's the problem: we can't. We're the last superpower. Our hands are tied by politics, alliances, goddamn stacks of treaties... most we co…\nSECRETARY OF DEFENSE: Damn, I miss the Cold War. Russians wouldn't have dreamt of pulling a stunt like this.",
-      "SECRETARY OF STATE: The North Koreans insist the missile carries a conventional payload. They say we're trying to trick them into aborting the attack.\nSECRETARY OF DEFENSE: Especially since the uplink from our Op in P'y�ngyang was unencrypted."
+      "SECRETARY OF STATE: The North Koreans insist the missile carries a conventional payload. They say we're trying to trick them into aborting the attack.\nSECRETARY OF DEFENSE: Especially since the uplink from our Op in P'yÚngyang was unencrypted."
     ]
   },
   "script": {
     "file": "rush-hour.txt",
     "layout": "indented",
-    "dialogueLines": 646,
+    "dialogueLines": 649,
     "speakers": [
       {
         "name": "CARSON",
-        "lines": 205,
+        "lines": 207,
         "gender": "m",
         "named": true
       },
       {
         "name": "MIRANDA",
-        "lines": 94,
+        "lines": 96,
         "gender": null,
         "named": true
       },
@@ -95,15 +95,15 @@
         "named": true
       },
       {
-        "name": "MRS. HAN",
+        "name": "CIA CHIEF",
         "lines": 11,
-        "gender": "w",
+        "gender": null,
         "named": true
       },
       {
-        "name": "CIA CHIEF",
-        "lines": 10,
-        "gender": null,
+        "name": "MRS. HAN",
+        "lines": 11,
+        "gender": "w",
         "named": true
       },
       {
@@ -204,12 +204,6 @@
       },
       {
         "name": "REPORTER",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "SUPER",
         "lines": 3,
         "gender": null,
         "named": false
@@ -323,6 +317,12 @@
         "named": true
       },
       {
+        "name": "OF THE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "RECORDING OF BOBBI",
         "lines": 1,
         "gender": null,
@@ -332,7 +332,7 @@
         "name": "RUSH HOUR",
         "lines": 1,
         "gender": null,
-        "named": true
+        "named": false
       },
       {
         "name": "SECRETARY",
@@ -392,7 +392,9 @@
       },
       {
         "place": "North korean consulate",
-        "lines": {}
+        "lines": {
+          "48": 1
+        }
       },
       {
         "place": "North korean consulate",
@@ -439,7 +441,7 @@
       {
         "place": "Mercedes",
         "lines": {
-          "40": 1
+          "39": 1
         }
       },
       {
@@ -489,7 +491,7 @@
         "place": "Carson's house",
         "lines": {
           "0": 3,
-          "47": 1,
+          "46": 1,
           "53": 1
         }
       },
@@ -508,14 +510,14 @@
         "place": "North korean consulate",
         "lines": {
           "5": 2,
-          "11": 1,
-          "44": 1
+          "12": 1,
+          "43": 1
         }
       },
       {
         "place": "North korean consulate",
         "lines": {
-          "11": 1
+          "12": 1
         }
       },
       {
@@ -531,7 +533,7 @@
           "1": 2,
           "4": 1,
           "6": 1,
-          "34": 2
+          "33": 2
         }
       },
       {
@@ -551,7 +553,7 @@
         "place": "North korean consulate",
         "lines": {
           "13": 1,
-          "37": 1
+          "36": 1
         }
       },
       {
@@ -654,7 +656,7 @@
         "place": "Federal building",
         "lines": {
           "3": 3,
-          "32": 2,
+          "31": 2,
           "51": 1
         }
       },
@@ -775,9 +777,9 @@
         "place": "Bachelor apartment",
         "lines": {
           "8": 7,
-          "11": 2,
+          "12": 2,
           "19": 1,
-          "39": 1
+          "38": 1
         }
       },
       {
@@ -804,7 +806,7 @@
         "place": "Bachelor apartment",
         "lines": {
           "8": 1,
-          "11": 1
+          "12": 1
         }
       },
       {
@@ -871,12 +873,6 @@
         }
       },
       {
-        "place": "P�y�ngyang, north korea",
-        "lines": {
-          "30": 1
-        }
-      },
-      {
         "place": "Workers' paradise hall",
         "lines": {}
       },
@@ -918,7 +914,7 @@
         "place": "White house",
         "lines": {
           "4": 5,
-          "12": 2,
+          "11": 3,
           "15": 3,
           "17": 1,
           "18": 2
@@ -942,7 +938,7 @@
       {
         "place": "Mercedes",
         "lines": {
-          "0": 2,
+          "0": 3,
           "1": 2
         }
       },
@@ -1017,7 +1013,7 @@
         "lines": {
           "0": 1,
           "9": 1,
-          "38": 1
+          "37": 1
         }
       },
       {
@@ -1089,7 +1085,7 @@
       {
         "place": "Vine and sunset",
         "lines": {
-          "0": 3,
+          "0": 4,
           "3": 1
         }
       },
@@ -1097,7 +1093,7 @@
         "place": "North korean consulate",
         "lines": {
           "0": 5,
-          "1": 3,
+          "1": 4,
           "3": 2,
           "5": 2,
           "7": 1,
@@ -1121,7 +1117,7 @@
         "place": "Hoover building",
         "lines": {
           "0": 1,
-          "42": 1
+          "41": 1
         }
       },
       {
@@ -1137,12 +1133,12 @@
         "place": "White house",
         "lines": {
           "4": 10,
-          "12": 4,
+          "11": 4,
           "14": 6,
           "15": 3,
           "17": 2,
           "18": 2,
-          "35": 2
+          "34": 2
         }
       },
       {
@@ -1155,7 +1151,7 @@
         "place": "North korean consulate",
         "lines": {
           "0": 2,
-          "1": 1,
+          "1": 2,
           "2": 1
         }
       },
@@ -1178,13 +1174,13 @@
         "lines": {
           "6": 6,
           "25": 1,
-          "48": 1
+          "47": 1
         }
       },
       {
         "place": "Bachelor apartment",
         "lines": {
-          "11": 2,
+          "12": 2,
           "13": 2
         }
       },
@@ -1199,9 +1195,7 @@
       },
       {
         "place": "Pacific ocean",
-        "lines": {
-          "30": 1
-        }
+        "lines": {}
       },
       {
         "place": "Ext.  fishing trawler",
@@ -1259,7 +1253,7 @@
       {
         "place": "Bachelor apartment",
         "lines": {
-          "11": 1
+          "12": 1
         }
       },
       {
@@ -1276,7 +1270,7 @@
         "place": "White house",
         "lines": {
           "4": 8,
-          "12": 4,
+          "11": 4,
           "14": 2,
           "15": 2,
           "17": 4,
@@ -1312,7 +1306,7 @@
         "lines": {
           "16": 2,
           "27": 2,
-          "45": 1
+          "44": 1
         }
       },
       {
@@ -1321,8 +1315,8 @@
           "0": 5,
           "16": 4,
           "27": 1,
-          "41": 1,
-          "46": 1
+          "40": 1,
+          "45": 1
         }
       },
       {
@@ -1350,9 +1344,7 @@
       },
       {
         "place": "Osaka, japan",
-        "lines": {
-          "30": 1
-        }
+        "lines": {}
       },
       {
         "place": "Osaka apartment",
@@ -1400,13 +1392,13 @@
         "place": "Mimosa apartments",
         "lines": {
           "0": 4,
-          "31": 2
+          "30": 2
         }
       },
       {
         "place": "Adjacent apartments",
         "lines": {
-          "31": 1
+          "30": 1
         }
       },
       {
@@ -1559,7 +1551,7 @@
         "lines": {
           "0": 3,
           "1": 1,
-          "43": 1,
+          "42": 1,
           "49": 1
         }
       },
@@ -1933,7 +1925,7 @@
       {
         "place": "Park la brea office",
         "lines": {
-          "33": 1,
+          "32": 1,
           "54": 1
         }
       },
@@ -1947,7 +1939,7 @@
         "place": "Bachelor apartment",
         "lines": {
           "13": 1,
-          "36": 1
+          "35": 1
         }
       },
       {
@@ -1959,14 +1951,14 @@
       {
         "place": "Bachelor apartment",
         "lines": {
-          "11": 1,
+          "12": 1,
           "13": 1
         }
       },
       {
         "place": "Park la brea office",
         "lines": {
-          "33": 1
+          "32": 1
         }
       },
       {
@@ -1993,7 +1985,7 @@
         "lines": {
           "0": 11,
           "1": 1,
-          "11": 2,
+          "12": 2,
           "19": 1,
           "20": 2
         }
@@ -2078,13 +2070,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 21,
+      "firstWomanLine": 22,
       "longestWithoutWoman": 130,
-      "longestWithoutWomanStart": 481,
+      "longestWithoutWomanStart": 484,
       "words": {
         "w": 447,
-        "m": 4311,
-        "unknown": 2774
+        "m": 4339,
+        "unknown": 2819
       },
       "womenConversations": 3,
       "menConversations": 45,

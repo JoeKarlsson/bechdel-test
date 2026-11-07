@@ -12,15 +12,15 @@
     "numOfFemalesChars": 4,
     "numOfMaleChars": 10,
     "numOfFemalesCharsWithDialogue": 2,
-    "numOfMaleCharsWithDialogue": 13,
+    "numOfMaleCharsWithDialogue": 12,
     "totalLinesFemaleDialogue": 229,
-    "totalLinesMaleDialogue": 1197,
+    "totalLinesMaleDialogue": 1196,
     "scenesThatPass": []
   },
   "script": {
     "file": "clerks.txt",
     "layout": "indented",
-    "dialogueLines": 1523,
+    "dialogueLines": 1517,
     "speakers": [
       {
         "name": "DANTE",
@@ -197,12 +197,6 @@
         "named": false
       },
       {
-        "name": "POV",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "SECOND",
         "lines": 3,
         "gender": null,
@@ -275,12 +269,6 @@
         "named": false
       },
       {
-        "name": "INSERT",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "KID",
         "lines": 1,
         "gender": null,
@@ -291,18 +279,6 @@
         "lines": 1,
         "gender": "w",
         "named": false
-      },
-      {
-        "name": "POV JOHN",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "POV RANDAL",
-        "lines": 1,
-        "gender": "m",
-        "named": true
       },
       {
         "name": "REDDING",
@@ -365,9 +341,7 @@
       },
       {
         "place": "Convenience store. morning",
-        "lines": {
-          "29": 1
-        }
+        "lines": {}
       },
       {
         "place": "Convenience store. morning",
@@ -407,7 +381,7 @@
         "place": "Convenience store. day",
         "lines": {
           "4": 7,
-          "41": 1
+          "40": 1
         }
       },
       {
@@ -417,10 +391,10 @@
           "2": 26,
           "6": 13,
           "23": 1,
+          "31": 2,
           "32": 2,
           "33": 2,
-          "34": 2,
-          "38": 1
+          "37": 1
         }
       },
       {
@@ -470,9 +444,7 @@
       },
       {
         "place": "Back room. day",
-        "lines": {
-          "29": 2
-        }
+        "lines": {}
       },
       {
         "place": "Convenience store. day",
@@ -502,7 +474,7 @@
           "18": 8,
           "20": 5,
           "25": 4,
-          "35": 1
+          "34": 1
         }
       },
       {
@@ -522,7 +494,7 @@
           "1": 28,
           "17": 8,
           "22": 5,
-          "36": 1
+          "35": 1
         }
       },
       {
@@ -548,11 +520,9 @@
           "2": 13,
           "5": 3,
           "28": 3,
+          "29": 3,
           "30": 3,
-          "31": 3,
-          "42": 1,
-          "44": 1,
-          "46": 1
+          "42": 1
         }
       },
       {
@@ -587,9 +557,9 @@
           "5": 11,
           "12": 4,
           "23": 4,
-          "36": 1,
-          "39": 1,
-          "47": 1
+          "35": 1,
+          "38": 1,
+          "43": 1
         }
       },
       {
@@ -629,7 +599,7 @@
           "1": 5,
           "4": 4,
           "14": 1,
-          "43": 1
+          "41": 1
         }
       },
       {
@@ -638,7 +608,7 @@
           "0": 22,
           "1": 20,
           "5": 11,
-          "40": 1
+          "39": 1
         }
       },
       {
@@ -648,7 +618,7 @@
           "7": 32,
           "8": 22,
           "13": 11,
-          "48": 1
+          "44": 1
         }
       },
       {
@@ -714,7 +684,7 @@
           "0": 12,
           "1": 5,
           "11": 13,
-          "37": 1
+          "36": 1
         }
       },
       {
@@ -736,7 +706,7 @@
         "lines": {
           "0": 24,
           "4": 24,
-          "35": 1
+          "34": 1
         }
       },
       {
@@ -763,22 +733,21 @@
         "lines": {
           "0": 21,
           "1": 24,
-          "5": 1,
-          "45": 1
+          "5": 1
         }
       }
     ],
     "measures": {
-      "firstWomanLine": 86,
+      "firstWomanLine": 85,
       "longestWithoutWoman": 329,
-      "longestWithoutWomanStart": 743,
+      "longestWithoutWomanStart": 738,
       "words": {
         "w": 2624,
-        "m": 12119,
-        "unknown": 773
+        "m": 12116,
+        "unknown": 759
       },
       "womenConversations": 0,
-      "menConversations": 59,
+      "menConversations": 57,
       "reverseScore": 3
     }
   },
