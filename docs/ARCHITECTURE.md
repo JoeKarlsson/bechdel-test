@@ -7,13 +7,12 @@
     → OMDB: title, year, plot                     → src/lib/films.mjs (build time)
     → TMDB: cast with genders, images   ──writes──▶ → one static page per film
     → parser: Bechdel score, scenes, dialogue     → bechdel.joekarlsson.com
-    → AI: scene review + analysis (optional)
 ```
 
 ## The public site (`site/`)
 
 - **Astro**, static output, almost no client JavaScript: the home page's search, show and sort (`src/scripts/shelf.ts`), the old-link redirect (`src/scripts/legacy-redirect.ts`) and Plausible (`src/scripts/analytics.ts`).
-- **Data:** `src/lib/films.mjs` reads `../data/films/*.json` once per build and returns what the pages need: the Bechdel score and rules, the bechdeltest.com and AI second opinions, cleaned speakers with gender from the cast list, a scene-by-scene timeline, and every AI section. Nothing from the raw export ships to the browser.
+- **Data:** `src/lib/films.mjs` reads `../data/films/*.json` once per build and returns what the pages need: the Bechdel score and rules, the bechdeltest.com second opinion, cleaned speakers with gender from the cast list, and a scene-by-scene timeline. Nothing from the raw export ships to the browser.
 - **Pages:** `/` (the shelf: the first 60 films in the HTML, the rest from `/shelf.json` the first time someone searches, filters, sorts or asks for more, so the page stays light at thousands of films), `/films/` (every film A to Z, for no-JavaScript visitors and crawlers), `/films/<title>-<year>/`, `/numbers/` (the whole shelf counted, from `shelfStats` in `src/lib/films.mjs`), `/about/`, `/case-study/`, `/privacy/`, `404.html`, `sitemap.xml`.
 - **Images:** posters and backdrops load from TMDB's image CDN (`src/lib/images.ts`), in TMDB's standard widths with `srcset`; the site keeps no image files of its own, since 2,000+ films' worth would pass GitHub Pages' 1 GB limit. Share cards are rendered by Playwright (`npm run og`) into `public/og/`, with each poster fetched from TMDB.
 - **Design:** dark only, hot pink on black, Anton and Fraunces (self-hosted), tokens in `src/styles/global.css`.
@@ -30,8 +29,6 @@
 - `genders.js`: each speaker's gender and whether they're a named character, from the TMDB cast (first or last name), gendered words in the name (MRS., MOTHER, KING), then pronouns near the name in the stage directions.
 - `bechdel/score.js`: the three rules on that: two named women speak; two of them say consecutive lines in a scene; none of those lines mention a man (he/him/his and the like as whole words, or this film's men's names). The same test run the other way (two named men, not about a woman) is the reverse test.
 - `analyzeFilm.js`: puts it together and builds the film record in the shape `site/src/lib/films.mjs` reads, with a compact `script` section (speakers with gender and lines, each scene's place and lines per speaker, and `measures`: when the first woman speaks, the longest stretch without one, words by gender, conversations between women and between men, the reverse test score; no script text), `crew` (key jobs with gender, and every department's head count by gender; TMDB has no gender for about 40% of crew credits, mostly in big departments), `money` (TMDB budget and revenue, null when unknown) and each top-billed actor's `age` at release. A redone film keeps its id, upload date and year (which is in its URL).
-- `scriptCleaner.js`: the condensed script the AI reads.
-- `aiAnalyzer.js`: the AI second opinion (three prompts per film), sent to the homelab LiteLLM gateway's OpenAI-compatible endpoint as the alias in `AI_MODEL` (`cloud-coder`, DeepSeek V4.1 Flash via OpenRouter, since 2026-11-06). The model that answered is stored per film as `enhancedAnalytics.aiModel`; films without it were analyzed by Claude 3.5 Haiku. Any failed section fails the film, so nothing ships half-analyzed.
 
 ## Measuring accuracy
 

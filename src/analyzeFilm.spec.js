@@ -52,7 +52,7 @@ describe('buildFilmRecord', () => {
 	const record = buildFilmRecord({
 		id: 'tt0078748', dateUploaded: '2026-11-06T00:00:00.000Z', omdb, cast,
 		images: { backdrops: [{ file_path: '/b.jpg' }], posters: [] },
-		bechdelResults: { bechdelScore: 3 }, enhancedAnalytics: {},
+		bechdelResults: { bechdelScore: 3 },
 	});
 
 	it('maps OMDB values and drops its "N/A" placeholders', () => {
@@ -84,7 +84,7 @@ describe('buildFilmRecord', () => {
 			],
 			details: { release_date: '1979-05-25', budget: 11000000, revenue: 0 },
 			birthdays: new Map([[7, '1949-10-08']]),
-			images: {}, bechdelResults: {}, enhancedAnalytics: {},
+			images: {}, bechdelResults: {},
 		});
 		expect(withCrew.crew.roles.map(r => `${r.job}: ${r.name} (${r.gender})`)).toEqual([
 			'Director: Ridley Scott (m)', 'Writer: Pat Doe (nb)', 'Editor: Terry Rawlings (m)', 'Casting: Mary Selway (w)',
