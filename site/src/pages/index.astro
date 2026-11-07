@@ -8,6 +8,12 @@ const films = loadFilms();
 const passing = films.filter((f) => f.bechdel.pass).length;
 // A share, not a count: it reads the same however many films are on the shelf
 const passShare = Math.round((passing / films.length) * 100);
+// The HTML holds the first page of tapes; the rest load from /shelf.json when
+// someone searches, filters, sorts or asks for more (scripts/shelf.ts)
+const PAGE_SIZE = 60;
+const firstPage = films.slice(0, PAGE_SIZE);
+// Old /#/film/<id> links: only the first films had these database ids
+const legacySlugs = Object.fromEntries(films.filter((f) => /^[a-f0-9]{24}$/.test(f.id)).map((f) => [f.id, f.slug]));
 const description = `Do two women talk to each other about something other than a man? We check film scripts against the Bechdel test. ${passShare}% pass.`;
 ---
 
@@ -65,20 +71,25 @@ const description = `Do two women talk to each other about something other than 
 					</select>
 				</label>
 			</form>
-			<p class="note count" aria-live="polite" data-shelf-count>All {films.length} films, {passing} pass</p>
+			<p class="note count" aria-live="polite" data-shelf-count>
+				{films.length > PAGE_SIZE ? `Showing ${PAGE_SIZE} of ${films.length}, ${passing} pass in all` : `All ${films.length} films, ${passing} pass`}
+			</p>
 			<div class="empty" hidden data-shelf-empty>
 				<p class="empty-title">Nothing on the shelf matches</p>
 				<p><button type="button" class="link-button" data-shelf-clear>Clear the search</button></p>
 			</div>
 
 			<!-- Old /#/film/<id> links forward to the film's page (scripts/legacy-redirect.ts) -->
-			<script type="application/json" id="legacy-film-slugs" set:html={JSON.stringify(Object.fromEntries(films.map((f) => [f.id, f.slug])))} />
-			<ul class="shelf" data-shelf data-page-size="60">
-				{films.map((film, i) => <Tape film={film} eager={i < 6} />)}
+			<script type="application/json" id="legacy-film-slugs" set:html={JSON.stringify(legacySlugs)} />
+			<ul class="shelf" data-shelf data-page-size={PAGE_SIZE} data-total={films.length}>
+				{firstPage.map((film, i) => <Tape film={film} eager={i < 6} />)}
 			</ul>
+			<!-- One tape for scripts/shelf.ts to copy for each film it adds -->
+			<template data-tape-template><Tape film={films.find((f) => f.images.poster) ?? films[0]} /></template>
 			<p class="more" hidden data-shelf-more-wrap>
 				<button type="button" class="more-button" data-shelf-more>Show more</button>
 			</p>
+			<p><a href="/films/">Every film, A to Z</a></p>
 		</section>
 	</div>
 

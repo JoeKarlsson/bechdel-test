@@ -25,6 +25,7 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 
 <li
 	class="tape"
+	data-slug={film.slug}
 	data-title={film.title.toLowerCase()}
 	data-director={film.directors.join(' ').toLowerCase()}
 	data-score={film.bechdel.score}
