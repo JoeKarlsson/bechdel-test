@@ -5,11 +5,12 @@
  *   npm run analyze                              every scripts/*.txt not already on the site
  *   npm run analyze -- scripts/heat.txt          one film
  *   npm run analyze -- --force scripts/heat.txt  redo a film that's already on the site
- *   npm run analyze -- --no-ai ...               skip the AI second opinion (a redone film keeps its old one)
+ *   npm run analyze -- --ai ...                  also run the AI read (off by default; a redone film keeps its old one)
  *
  * Each script's film comes from scripts/manifest.json (add new scripts with
- * `npm run match`). Settings come from .env: OMDB, THEMOVIEDB, and for the
- * AI read LITELLM_BASE_URL, LITELLM_API_KEY, AI_MODEL (a LiteLLM alias).
+ * `npm run match`). Settings come from .env: OMDB, THEMOVIEDB, and for --ai
+ * LITELLM_BASE_URL, LITELLM_API_KEY, AI_MODEL (a LiteLLM alias). AI reads are
+ * kept out of the repo, in data/local/ai/<id>.json.
  */
 const fs = require('fs');
 const path = require('path');
@@ -21,6 +22,7 @@ const {
 
 const ROOT = path.resolve(__dirname, '..');
 const FILMS_DIR = path.join(ROOT, 'data/films');
+const AI_DIR = path.join(ROOT, 'data/local/ai');
 const READER_RATINGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/bechdeltest-ratings.json'), 'utf8'));
 // Speaker genders corrected by hand, per script: { "inception.txt": { "ARIADNE": "w" } }
 const GENDER_OVERRIDES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/gender-overrides.json'), 'utf8'));
@@ -29,14 +31,14 @@ const CONCURRENCY = 3;
 
 const parseArgs = argv => {
 	const flags = new Set(argv.filter(arg => arg.startsWith('--')));
-	const unknown = [...flags].filter(flag => !['--force', '--no-ai'].includes(flag));
+	const unknown = [...flags].filter(flag => !['--force', '--ai'].includes(flag));
 	if (unknown.length > 0) {
 		throw new Error(`Unknown option ${unknown.join(', ')}`);
 	}
 	const files = argv.filter(arg => !arg.startsWith('--'));
 	return {
 		force: flags.has('--force'),
-		withAi: !flags.has('--no-ai'),
+		withAi: flags.has('--ai'),
 		scriptPaths: files.length > 0
 			? files.map(file => path.resolve(file))
 			: listScriptPaths(),
@@ -81,9 +83,11 @@ const analyzeOne = async (scriptPath, context) => {
 	const { bechdelResults, script: summary, cleaned } = analyzeScriptText(scriptText, characters, GENDER_OVERRIDES[script]);
 	// Without a new AI run, keep the old one's whole-script reads, but not its
 	// review of the passing scenes: those were the old analysis's scenes
+	const existingAiPath = existing && path.join(AI_DIR, `${existing._id}.json`);
+	const existingAi = existingAiPath && fs.existsSync(existingAiPath) ? JSON.parse(fs.readFileSync(existingAiPath, 'utf8')) : undefined;
 	const ai = withAi
 		? await runAiAnalysis({ gateway: context.gateway, cleaned, characters, bechdelResults })
-		: aiSectionsOf(existing?.enhancedAnalytics, { keepSceneReview: false });
+		: aiSectionsOf(existingAi, { keepSceneReview: false });
 
 	// OMDB sometimes changes a film's year (premiere vs. US release), and the
 	// year is in the film's URL: a redone film keeps its stored year
@@ -100,16 +104,19 @@ const analyzeOne = async (scriptPath, context) => {
 		images,
 		bechdelResults,
 		script: { file: script, ...summary },
-		enhancedAnalytics: Object.keys(ai).length ? ai : undefined,
 		bechdelData: readersRating(imdbId) ?? existing?.bechdelData,
 	});
 	fs.writeFileSync(path.join(FILMS_DIR, `${record._id}.json`), `${JSON.stringify(record, null, 2)}\n`);
+	if (Object.keys(ai).length) {
+		fs.mkdirSync(AI_DIR, { recursive: true });
+		fs.writeFileSync(path.join(AI_DIR, `${record._id}.json`), `${JSON.stringify(ai, null, 2)}\n`);
+	}
 	return {
 		script,
 		film,
 		score: bechdelResults.bechdelScore,
 		readers: record.bechdelData?.rating,
-		status: `${existing ? 'updated' : 'added'}${withAi ? '' : ', no new AI'}`,
+		status: `${existing ? 'updated' : 'added'}${withAi ? ', new AI read' : ''}`,
 	};
 };
 
@@ -137,7 +144,7 @@ const main = async () => {
 	const missing = Object.entries({ LITELLM_BASE_URL: gateway.baseUrl, LITELLM_API_KEY: gateway.apiKey, AI_MODEL: gateway.model })
 		.filter(([, value]) => !value).map(([name]) => name);
 	if (options.withAi && missing.length > 0) {
-		throw new Error(`${missing.join(', ')} not set. Add to .env (see .env.example), or pass --no-ai.`);
+		throw new Error(`${missing.join(', ')} not set. Add to .env (see .env.example), or drop --ai.`);
 	}
 	const context = { ...options, gateway, existingFilms: loadExistingFilms(), manifest: loadManifest() };
 

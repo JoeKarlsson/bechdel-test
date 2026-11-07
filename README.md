@@ -38,11 +38,11 @@ The site at https://bechdel.joekarlsson.com/ is fully static: an Astro build in 
 scripts/<title>.txt ──npm run analyze──▶ data/films/<id>.json ──site/ build──▶ GitHub Pages
 ```
 
-For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and (optionally) asks an AI model, through the homelab LiteLLM gateway, for a second opinion and a deeper read. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+For each script, `npm run analyze` looks the film up on OMDB, gets the cast and their genders from TMDB, scores the Bechdel Test from the script text, and counts who speaks, how much and when. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Add films
 
-Needs Node 22 or later, API keys for [OMDB](https://www.omdbapi.com/apikey.aspx) and [TMDB](https://www.themoviedb.org/settings/api), and for the AI read a LiteLLM virtual key (on the LAN or over Tailscale).
+Needs Node 22 or later, API keys for [OMDB](https://www.omdbapi.com/apikey.aspx) and [TMDB](https://www.themoviedb.org/settings/api).
 
 ```sh
 git clone https://github.com/JoeKarlsson/bechdel-test
@@ -57,7 +57,6 @@ npm run match                                # find the film for any new script 
 npm run analyze                              # every scripts/*.txt not already on the site
 npm run analyze -- scripts/heat.txt          # one film
 npm run analyze -- --force scripts/heat.txt  # redo a film that's already on the site
-npm run analyze -- --no-ai ...               # skip the AI read (a redone film keeps its old one)
 ```
 
 Each script's film comes from `scripts/manifest.json` (file name to IMDb id). `npm run match` adds guesses for new scripts by title, and refuses any whose OMDB title differs from the file name; check the rest (a remake can share its title), fix a wrong id by hand, and set `null` for a script with no released film. Downloaded scripts belong to their writers, so they stay in the gitignored `scripts/local/`: the repo keeps only their manifest entries and analyses. `fetch-script-slug` writes its entries itself from the IMDb id on each page, and OCRs scanned or garbled PDFs (needs tesseract). Both fetchers strip watermarks and page breaks and repair mangled quotes. `analyze` refuses a script whose dialogue is under 90% English words (checked against `/usr/share/dict/words`): a bad scan whose score would be noise. `recover-scripts` looks for a clean copy of each such script on The Daily Script and lists those it can't fix. `analyze` ends with a table of every film's score next to the bechdeltest.com readers' rating. OMDB and TMDB responses are cached in `.cache/`; delete it to refetch.

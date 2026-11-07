@@ -5,7 +5,7 @@ Everything lives on `main`. The public site (`site/`) is a static Astro build on
 ## Add a film and publish it
 
 ```bash
-# 1. Analyze (needs OMDB, THEMOVIEDB and the LITELLM_* settings in .env, see .env.example)
+# 1. Analyze (needs OMDB and THEMOVIEDB in .env, see .env.example)
 npm run analyze -- scripts/<title>.txt     # or no arguments for every new script
 
 # 2. In site/: render the share cards (posters come from TMDB's CDN, nothing to download)
@@ -34,7 +34,7 @@ npm run e2e          # Playwright; set CHROME to a Chromium binary if needed
 npm run lighthouse   # Lighthouse CI, mobile, every category 90 or above
 ```
 
-`site/src/lib/films.mjs` turns each raw export into what the pages show. Films whose script didn't parse, films without a poster, and films bechdeltest.com or the AI didn't rate all have their own handling there and on the film page.
+`site/src/lib/films.mjs` turns each raw export into what the pages show. Films whose script didn't parse, films without a poster, and films bechdeltest.com didn't rate all have their own handling there and on the film page.
 
 ### What GitHub Pages can't do
 

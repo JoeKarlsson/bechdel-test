@@ -206,7 +206,7 @@ const omdbInt = value => {
 /** The film record in the shape site/src/lib/films.mjs reads */
 const buildFilmRecord = ({
 	id, dateUploaded, year, omdb, cast, crew = [], details = {}, birthdays = new Map(), images, bechdelResults, script,
-	enhancedAnalytics, bechdelData,
+	bechdelData,
 }) => ({
 	_id: id,
 	title: omdb.Title,
@@ -215,7 +215,6 @@ const buildFilmRecord = ({
 	script,
 	images: imageUrls(images),
 	...(bechdelData ? { bechdelData } : {}),
-	enhancedAnalytics,
 	actors: cast.map(member => ({
 		actorName: member.name,
 		character: member.character,

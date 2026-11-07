@@ -1,12 +1,15 @@
 // Turns the raw film export (data/films/<id>.json, ~600 KB each, written by
 // npm run analyze) into the small shape the pages render. Everything here
 // runs at build time; no film JSON ships to the browser.
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 // Resolved from the site folder (where `astro build` and the tests run), not
 // from this file: Astro bundles it into a different directory at build time.
 const DATA_DIR = resolve(process.cwd(), '../data/films');
+// AI reads stay out of the repo (npm run analyze -- --ai writes them here), so
+// only a local build has them
+const AI_DIR = resolve(process.cwd(), '../data/local/ai');
 
 // Every model that has written a film's AI analysis, keyed by the id the
 // analyzer stores as enhancedAnalytics.aiModel (src/aiAnalyzer.js). Analyses
@@ -160,7 +163,7 @@ const text = (x) => (typeof x === 'string' && x.trim() ? x.trim() : null);
 
 /** The AI's read of the script, with every section the analysis stores */
 function aiFrom(ea) {
-	// Only an AI run stamps analysisTimestamp; films analyzed with --no-ai have just the parsed dialogue
+	// Only an AI run stamps analysisTimestamp; films analyzed without --ai have none
 	if (!text(ea?.analysisTimestamp)) return null;
 	const v = ea.enhancedBechdelValidation;
 	return {
@@ -249,7 +252,7 @@ export function normalizeFilm(raw) {
 	const year = toNumber(raw.year);
 	const actors = list(raw.actors);
 	const ea = raw.enhancedAnalytics;
-	if (!raw.script) throw new Error(`${raw.title} has no parsed script: run npm run analyze -- --force --no-ai on it`);
+	if (!raw.script) throw new Error(`${raw.title} has no parsed script: run npm run analyze -- --force on it`);
 	const speakers = speakersFrom(raw.script);
 	// Lines by gender; "unknown" are speakers the analysis couldn't place
 	// (crowds, minor parts). Pages show that share instead of hiding it.
@@ -411,11 +414,17 @@ export function shelfStats(films, { minGroup = 5 } = {}) {
  * neither go last). Reads the export once per build.
  */
 let cache;
+/** A film record with its AI read from data/local/ai, when this machine has one */
+function withLocalAiRead(raw) {
+	const file = join(AI_DIR, `${raw._id}.json`);
+	return existsSync(file) ? { ...raw, enhancedAnalytics: JSON.parse(readFileSync(file, 'utf8')) } : raw;
+}
+
 export function loadFilms(dir = DATA_DIR) {
 	if (cache && dir === DATA_DIR) return cache;
 	const films = readdirSync(dir)
 		.filter((f) => f.endsWith('.json'))
-		.map((f) => normalizeFilm(JSON.parse(readFileSync(join(dir, f), 'utf8'))))
+		.map((f) => normalizeFilm(withLocalAiRead(JSON.parse(readFileSync(join(dir, f), 'utf8')))))
 		.sort((a, b) => (b.imdbRating ?? -1) - (a.imdbRating ?? -1) || (b.metascore ?? -1) - (a.metascore ?? -1) || a.title.localeCompare(b.title));
 	const slugs = new Set();
 	for (const f of films) {
