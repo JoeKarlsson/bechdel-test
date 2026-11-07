@@ -1,0 +1,4890 @@
+{
+  "_id": "tt0112641",
+  "title": "Casino",
+  "genres": [
+    "Crime",
+    "Drama"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 4,
+    "numScenesDontPass": 438,
+    "numOfFemalesChars": 30,
+    "numOfMaleChars": 114,
+    "numOfFemalesCharsWithDialogue": 16,
+    "numOfMaleCharsWithDialogue": 79,
+    "totalLinesFemaleDialogue": 453,
+    "totalLinesMaleDialogue": 1954,
+    "scenesThatPass": [
+      "JENNIFER: Good to meet you.\nGINGER: Hi, Jennifer.",
+      "JENNIFER: Great.\nGINGER: You know, I've got to do some shopping afterwards. Do you want to go?",
+      "JENNIFER: ...same outfit.\nGINGER: But I saw something...",
+      "GINGER: The line's busy. There's nobody there.\nJENNIFER: Hello."
+    ]
+  },
+  "script": {
+    "file": "casino.txt",
+    "layout": "indented",
+    "dialogueLines": 2500,
+    "speakers": [
+      {
+        "name": "ACE",
+        "lines": 751,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "NICKY",
+        "lines": 504,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GINGER",
+        "lines": 338,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MARINO",
+        "lines": 84,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LESTER",
+        "lines": 57,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GAGGI",
+        "lines": 48,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PISCANO",
+        "lines": 37,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COP #1",
+        "lines": 36,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SHERBERT",
+        "lines": 33,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JENNIFER",
+        "lines": 24,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CHARLIE CLARK",
+        "lines": 20,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GREEN",
+        "lines": 20,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STONE",
+        "lines": 20,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PISCANO'S MOTHER",
+        "lines": 19,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "WEBB",
+        "lines": 19,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SENATOR",
+        "lines": 17,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WARD",
+        "lines": 17,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BORELLI",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COP #2",
+        "lines": 14,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HIGH ROLLER",
+        "lines": 14,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COWBOY",
+        "lines": 12,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "DOMINICK",
+        "lines": 12,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WINNER",
+        "lines": 12,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "AMY",
+        "lines": 11,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CASHIER",
+        "lines": 10,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "SECURITY GUARD #1",
+        "lines": 10,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SIGNALER",
+        "lines": 9,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TITLE IN",
+        "lines": 9,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "AUSTIN",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "NANCE",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OSCAR",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STAGE MANAGER",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TONY",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "EDDY",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FBI AGENT #1",
+        "lines": 7,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FEMALE NEWSCASTER",
+        "lines": 7,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JERRY",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LITTLE NICKY",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TRUDY",
+        "lines": 7,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "AL",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DEALER",
+        "lines": 6,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "FBI AGENT #10",
+        "lines": 6,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "JOE",
+        "lines": 6,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "NEWSCASTER",
+        "lines": 6,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "PISCANO'S WIFE",
+        "lines": 6,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "BANKER",
+        "lines": 5,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "DETECTIVE JOHNSON",
+        "lines": 5,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SCOTT",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SECRETARY",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DUPREY",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "EXECUTIVE",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FAT SALLY",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FBI AGENT #2",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FBI AGENT #9",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FORLANO",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FRANKIE AVALON",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HOTEL RECEPTIONIST",
+        "lines": 4,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LAWYER",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "MAITRE D'",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MAN #1",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TONY DOGS",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VALET PARKER",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COUNT ROOM EXEC",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COUNTER #1",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "COUNTRY-CLUB WOMAN #3",
+        "lines": 3,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "DOCTOR DAN",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FBI AGENT",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FBI AGENT #4",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FLASHBACK",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HARDY",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HOTEL OPERATOR",
+        "lines": 3,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "ICHIKAWA",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JUDGE",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PEN WRITES",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REPORTER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REPORTER #1",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "RUDY",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STEVE ALLEN",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STILL PHOTOS",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SUPER SUBTITLE",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BLUE",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CLASSROOM NUN",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "CREDIT CLERK",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CURLY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FBI AGENT #5",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GAMBLER #1",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GAMBLER #2",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "IRANIAN #1",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IRANIAN #2",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LAWYER #2",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MAN #2",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PHOTOGRAPHER #1",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REPORTER #2",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ROCKY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SECURITY GUARD #2",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "VALET PARKER #3",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "AGENT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "AMBULANCE DRIVER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ANDY STONE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BAKER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BARTENDER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BELLMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "BLONDE",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BROTHER-IN-LAW",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CAPELLI",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "CARD SHARK",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CASINO",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CONTROL BOARD MEMBER #1",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CONTROL BOARD MEMBER #2",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CONTROL BOARD MEMBER #3",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CONTROL BOARD MEMBER #4",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "COOK",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COUNTER #2",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "COUNTRY-CLUB MAN #1",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "COUNTRY-CLUB WOMAN #1",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "COUNTRY-CLUB WOMAN #2",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "DEALER #1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FBI AGENT #3",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FBI AGENT #6",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FBI AGENT #8",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FREEZE FRAME",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FUSCO",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HIGH ROLLER #2",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HOOD #1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HOOD #2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "JAYNE MEADOWS",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JERRY/EDDY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LAWYER #1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LIP-READER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "LUCKY LARRY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MIKE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MOOSH",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "NICKY/GINGER",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "OLD MAN CAPO",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OPERATOR",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PHOTOGRAPHER #2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PHOTOGRAPHER #3",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PIT BOSS",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RACE ANNOUNCER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "REPORTER #3",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SHELLY",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SHIFT BOSS",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STACY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STORE OWNER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TITLE CARD",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "UNFREEZE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WAITRESSES",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "WOMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "106": 1
+        }
+      },
+      {
+        "place": "Restaurant parking lot, las vegas,",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers casino floor",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery/back room, kansas city -",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Bar, las vegas",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Nightclub",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers sportsbook/ace's office",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Las vegas",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Desert",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Las vegas strip,",
+        "lines": {
+          "0": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 2,
+          "8": 1
+        }
+      },
+      {
+        "place": "Tangiers/hard count room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers/floor/soft count room",
+        "lines": {
+          "0": 3,
+          "1": 6,
+          "62": 1,
+          "63": 3,
+          "112": 1
+        }
+      },
+      {
+        "place": "Kansas city airport",
+        "lines": {
+          "1": 1,
+          "6": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery, kansas city",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery, kansas city",
+        "lines": {
+          "1": 8,
+          "5": 3,
+          "6": 1,
+          "13": 2,
+          "17": 3,
+          "29": 3,
+          "54": 1,
+          "98": 1
+        }
+      },
+      {
+        "place": "Tangiers executive office press conference/banquet room -",
+        "lines": {
+          "0": 5,
+          "1": 1,
+          "11": 2,
+          "12": 5
+        }
+      },
+      {
+        "place": "Cheap motel off highway",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers executive office press conference/banquet room -",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers swimming pool",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers swimming pool/poolside",
+        "lines": {
+          "0": 4,
+          "1": 1,
+          "12": 4
+        }
+      },
+      {
+        "place": "Tangiers craps pit",
+        "lines": {
+          "0": 2,
+          "1": 9,
+          "40": 1
+        }
+      },
+      {
+        "place": "Gym/bookie joint, back home, pre-seventies",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "27": 1,
+          "129": 1
+        }
+      },
+      {
+        "place": "Gym/bookie joint public phones",
+        "lines": {
+          "1": 1,
+          "85": 1,
+          "86": 1
+        }
+      },
+      {
+        "place": "Gym/bookie joint, several days later",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Mob social club back room",
+        "lines": {
+          "0": 4,
+          "1": 14,
+          "5": 15,
+          "133": 1
+        }
+      },
+      {
+        "place": "Back home bar",
+        "lines": {
+          "0": 11,
+          "1": 7,
+          "3": 3,
+          "42": 6,
+          "59": 2,
+          "100": 1,
+          "102": 1
+        }
+      },
+      {
+        "place": "Tangiers casino floor,",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers casino floor",
+        "lines": {}
+      },
+      {
+        "place": "Tangiers casino slot-machine area",
+        "lines": {
+          "0": 8,
+          "8": 2,
+          "16": 1
+        }
+      },
+      {
+        "place": "Tangiers baccarat tables",
+        "lines": {
+          "0": 7,
+          "8": 3,
+          "15": 2,
+          "116": 1
+        }
+      },
+      {
+        "place": "Tangiers presidential suite",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers baccarat tables",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers presidential suite",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers, ichikawa luxury suite",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Tangiers jet, las vegas airport",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Tangiers jet, still in the same spot",
+        "lines": {
+          "8": 2,
+          "71": 1
+        }
+      },
+      {
+        "place": "Las vegas airport reservation desk",
+        "lines": {
+          "0": 1,
+          "8": 1,
+          "71": 1,
+          "96": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 3,
+          "71": 1
+        }
+      },
+      {
+        "place": "Tangiers baccarat tables",
+        "lines": {
+          "0": 6,
+          "40": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 10,
+          "40": 3,
+          "147": 1
+        }
+      },
+      {
+        "place": "Tangiers-eye-in-the sky monitor room",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Tangiers craps table",
+        "lines": {
+          "2": 2,
+          "19": 2
+        }
+      },
+      {
+        "place": "Tangiers eye-in-the-sky monitor room",
+        "lines": {}
+      },
+      {
+        "place": "Tangiers craps table",
+        "lines": {
+          "19": 1,
+          "85": 1,
+          "86": 1
+        }
+      },
+      {
+        "place": "Tangiers eye-in-the-sky monitor room",
+        "lines": {}
+      },
+      {
+        "place": "Tangiers craps table",
+        "lines": {
+          "0": 1,
+          "2": 10,
+          "19": 11,
+          "40": 1
+        }
+      },
+      {
+        "place": "Cocktail lounge",
+        "lines": {
+          "0": 3,
+          "2": 2
+        }
+      },
+      {
+        "place": "Flashback",
+        "lines": {
+          "0": 1,
+          "2": 4,
+          "61": 3
+        }
+      },
+      {
+        "place": "Flashback",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "122": 1
+        }
+      },
+      {
+        "place": "Cocktail lounge",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Flashback",
+        "lines": {
+          "0": 6,
+          "2": 7,
+          "24": 6
+        }
+      },
+      {
+        "place": "Tangiers entrance",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "141": 1
+        }
+      },
+      {
+        "place": "Tangiers entrance",
+        "lines": {
+          "0": 2,
+          "2": 2,
+          "95": 2
+        }
+      },
+      {
+        "place": "Ginger's apartment",
+        "lines": {
+          "0": 4,
+          "2": 7,
+          "4": 6
+        }
+      },
+      {
+        "place": "Back home airport/customs",
+        "lines": {
+          "0": 5,
+          "1": 2,
+          "7": 1,
+          "9": 2,
+          "27": 1
+        }
+      },
+      {
+        "place": "Flash forward",
+        "lines": {
+          "0": 3,
+          "1": 5,
+          "3": 1,
+          "9": 6
+        }
+      },
+      {
+        "place": "Back home airport/customs",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery/back room, kansas city -",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's tangiers penthouse, las vegas",
+        "lines": {
+          "0": 6,
+          "1": 9,
+          "2": 2,
+          "9": 4
+        }
+      },
+      {
+        "place": "Ace's car, las vegas strip",
+        "lines": {
+          "0": 4,
+          "1": 4
+        }
+      },
+      {
+        "place": "Int. las vegas sportsbook",
+        "lines": {
+          "0": 1,
+          "1": 13,
+          "3": 2,
+          "32": 8,
+          "81": 1
+        }
+      },
+      {
+        "place": "Catholic school classroom",
+        "lines": {
+          "0": 1,
+          "37": 2,
+          "81": 1
+        }
+      },
+      {
+        "place": "Little league field",
+        "lines": {
+          "0": 1,
+          "1": 6,
+          "46": 5
+        }
+      },
+      {
+        "place": "Tangiers cashier's cage credit window",
+        "lines": {
+          "0": 3,
+          "1": 12,
+          "33": 7,
+          "36": 7,
+          "82": 2,
+          "126": 1
+        }
+      },
+      {
+        "place": "Tangiers casino/blackjack tables",
+        "lines": {
+          "0": 9
+        }
+      },
+      {
+        "place": "Tangiers blackjack tables/telephone",
+        "lines": {
+          "0": 7,
+          "25": 3,
+          "94": 1,
+          "146": 1
+        }
+      },
+      {
+        "place": "Basement maintenance room",
+        "lines": {
+          "0": 7,
+          "22": 1,
+          "25": 2,
+          "26": 8,
+          "94": 1
+        }
+      },
+      {
+        "place": "Casino cashier's cage area",
+        "lines": {
+          "8": 6,
+          "22": 7,
+          "24": 4
+        }
+      },
+      {
+        "place": "Basement maintenance room",
+        "lines": {
+          "0": 5,
+          "22": 4,
+          "26": 1
+        }
+      },
+      {
+        "place": "Ace's tangiers penthouse",
+        "lines": {
+          "0": 10,
+          "2": 8
+        }
+      },
+      {
+        "place": "Riviera ballroom marriage",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "2": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Lester diamond's los angeles apartment",
+        "lines": {
+          "2": 2,
+          "4": 3
+        }
+      },
+      {
+        "place": "Riviera ballroom corridor",
+        "lines": {
+          "2": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Lester diamond's los angeles apartment",
+        "lines": {
+          "2": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Riviera ballroom corridor",
+        "lines": {
+          "0": 8,
+          "2": 10,
+          "4": 3
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "2": 3
+        }
+      },
+      {
+        "place": "Ace's bedroom closet",
+        "lines": {
+          "0": 3,
+          "2": 6
+        }
+      },
+      {
+        "place": "Ace's house/bedroom",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house/bedroom",
+        "lines": {
+          "0": 4,
+          "2": 4
+        }
+      },
+      {
+        "place": "Burbank private airport",
+        "lines": {
+          "0": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Beverley hills bank",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Beverley hills bank/vault",
+        "lines": {
+          "0": 4,
+          "2": 1
+        }
+      },
+      {
+        "place": "Bank president's office",
+        "lines": {
+          "0": 3,
+          "45": 5
+        }
+      },
+      {
+        "place": "Tangiers lounge",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "3": 1,
+          "130": 1
+        }
+      },
+      {
+        "place": "Tangiers poker table",
+        "lines": {
+          "0": 9,
+          "1": 5,
+          "65": 3,
+          "93": 2,
+          "105": 1,
+          "131": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers casino poker table",
+        "lines": {
+          "0": 6,
+          "8": 2,
+          "20": 9,
+          "25": 5
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "20": 2
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Vegas bar",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "20": 1
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Backstage tangiers theater",
+        "lines": {
+          "0": 10,
+          "1": 1,
+          "8": 1,
+          "31": 8
+        }
+      },
+      {
+        "place": "Tangiers casino sportsbook",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Back alley",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Tangiers casino floor",
+        "lines": {
+          "0": 4,
+          "1": 4
+        }
+      },
+      {
+        "place": "Vegas valley country club,",
+        "lines": {
+          "0": 2,
+          "11": 2,
+          "91": 2,
+          "135": 1,
+          "136": 1
+        }
+      },
+      {
+        "place": "Vegas valley country-club banquet room",
+        "lines": {
+          "0": 4,
+          "2": 5,
+          "64": 3,
+          "113": 1,
+          "114": 1,
+          "115": 1
+        }
+      },
+      {
+        "place": "Vegas valley country-club banquet room",
+        "lines": {
+          "0": 3,
+          "2": 2,
+          "50": 4
+        }
+      },
+      {
+        "place": "Vegas bank viewing room",
+        "lines": {
+          "0": 3,
+          "2": 4
+        }
+      },
+      {
+        "place": "Tangiers casino, slot-machines",
+        "lines": {
+          "0": 6,
+          "16": 7
+        }
+      },
+      {
+        "place": "Classy restaurant",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "9": 2,
+          "58": 1
+        }
+      },
+      {
+        "place": "Idle spurs desert diner",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Idle spurs desert diner",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Gold rush jeweler's",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Bedroom of luxury home",
+        "lines": {
+          "1": 3,
+          "3": 1,
+          "69": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "1": 3,
+          "56": 1
+        }
+      },
+      {
+        "place": "Tangiers receptionist's desk",
+        "lines": {
+          "56": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers receptionist's desk",
+        "lines": {
+          "56": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers receptionist's desk",
+        "lines": {
+          "1": 1,
+          "56": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Casino hotel bell station",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "101": 1
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Casino",
+        "lines": {
+          "0": 1,
+          "61": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "121": 1
+        }
+      },
+      {
+        "place": "Casino floor",
+        "lines": {
+          "0": 1,
+          "137": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Office",
+        "lines": {
+          "0": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "0": 1,
+          "69": 1
+        }
+      },
+      {
+        "place": "Warehouse/jewelry store",
+        "lines": {
+          "0": 2,
+          "69": 1
+        }
+      },
+      {
+        "place": "Jewelry store wall",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jewelry store",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "143": 1
+        }
+      },
+      {
+        "place": "Palm springs jewelry store",
+        "lines": {
+          "1": 1,
+          "3": 5,
+          "87": 2,
+          "88": 2
+        }
+      },
+      {
+        "place": "Nicky's house",
+        "lines": {
+          "1": 4,
+          "3": 1
+        }
+      },
+      {
+        "place": "Nicky's bedroom/closet",
+        "lines": {
+          "1": 5,
+          "3": 1
+        }
+      },
+      {
+        "place": "Nicky's house",
+        "lines": {
+          "1": 6,
+          "10": 3
+        }
+      },
+      {
+        "place": "Leaning tower restaurant, kitchen",
+        "lines": {
+          "1": 2,
+          "21": 2,
+          "111": 1
+        }
+      },
+      {
+        "place": "Leaning tower restaurant",
+        "lines": {
+          "0": 3,
+          "1": 11,
+          "3": 4,
+          "7": 1,
+          "18": 1,
+          "21": 4,
+          "59": 1,
+          "77": 3,
+          "125": 1,
+          "140": 1,
+          "142": 1
+        }
+      },
+      {
+        "place": "Leaning tower restaurant, parking lot",
+        "lines": {
+          "1": 3
+        }
+      },
+      {
+        "place": "Leaning tower restaurant",
+        "lines": {
+          "1": 11,
+          "39": 6
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "0": 2,
+          "1": 6,
+          "37": 4
+        }
+      },
+      {
+        "place": "All-american gas station, back home",
+        "lines": {
+          "1": 2,
+          "27": 1
+        }
+      },
+      {
+        "place": "All-american gas station, back home",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "All-american gas station, gaggi's back office",
+        "lines": {
+          "1": 4,
+          "3": 4,
+          "5": 4
+        }
+      },
+      {
+        "place": "Outskirts of vegas bar",
+        "lines": {
+          "1": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "All-american gas station, gaggi's back office",
+        "lines": {
+          "3": 1,
+          "5": 2
+        }
+      },
+      {
+        "place": "Slot-machine shop, las vegas",
+        "lines": {
+          "0": 2,
+          "1": 19,
+          "3": 1,
+          "60": 4
+        }
+      },
+      {
+        "place": "Tangiers casino",
+        "lines": {
+          "0": 11,
+          "16": 9
+        }
+      },
+      {
+        "place": "Tangiers casino, aku-aku lounge",
+        "lines": {
+          "0": 6,
+          "11": 5
+        }
+      },
+      {
+        "place": "Tangiers kitchen",
+        "lines": {
+          "0": 2,
+          "99": 1
+        }
+      },
+      {
+        "place": "Ace's house, kitchen",
+        "lines": {
+          "0": 14,
+          "2": 9
+        }
+      },
+      {
+        "place": "Vegas bank vault",
+        "lines": {}
+      },
+      {
+        "place": "Vegas/bank/public phone",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Salvadoran diner booth",
+        "lines": {
+          "0": 10,
+          "2": 2,
+          "4": 5
+        }
+      },
+      {
+        "place": "Rear of salvadoran diner, parking lot",
+        "lines": {
+          "2": 3,
+          "4": 3,
+          "123": 1,
+          "124": 1
+        }
+      },
+      {
+        "place": "Gold rush back room",
+        "lines": {
+          "1": 21,
+          "2": 23
+        }
+      },
+      {
+        "place": "Ace's office",
+        "lines": {}
+      },
+      {
+        "place": "Ace's outer office, secretary's desk",
+        "lines": {
+          "0": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Ace's office",
+        "lines": {
+          "0": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Ace's outer office, secretary's desk",
+        "lines": {
+          "48": 1
+        }
+      },
+      {
+        "place": "Ace's office",
+        "lines": {}
+      },
+      {
+        "place": "Ace's outer office",
+        "lines": {
+          "14": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Ace's office",
+        "lines": {
+          "0": 12,
+          "14": 12
+        }
+      },
+      {
+        "place": "Ace's house, bathroom/bedroom",
+        "lines": {
+          "0": 13,
+          "2": 14
+        }
+      },
+      {
+        "place": "Tangiers hard count room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Casino rear loading platform",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Tangiers soft count room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery/back room, kansas city",
+        "lines": {
+          "5": 1,
+          "17": 2,
+          "29": 1
+        }
+      },
+      {
+        "place": "Tangiers hard count room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery/back room, kansas city",
+        "lines": {
+          "1": 1,
+          "5": 1,
+          "17": 1,
+          "29": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery/back room, kansas city",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "6": 7,
+          "17": 8
+        }
+      },
+      {
+        "place": "Tangiers, green's office",
+        "lines": {
+          "0": 4,
+          "11": 5,
+          "47": 4
+        }
+      },
+      {
+        "place": "Court-room",
+        "lines": {
+          "0": 1,
+          "72": 2,
+          "89": 2,
+          "127": 1
+        }
+      },
+      {
+        "place": "Court-house corridor",
+        "lines": {
+          "29": 1,
+          "47": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "Court-house corridor",
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "1": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Anna scott's home, kitchen, las vegas",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Las vegas private airport",
+        "lines": {
+          "0": 1,
+          "11": 3,
+          "75": 3,
+          "92": 2,
+          "139": 1
+        }
+      },
+      {
+        "place": "Ace's office",
+        "lines": {
+          "0": 3,
+          "8": 1,
+          "74": 3
+        }
+      },
+      {
+        "place": "Gaming control board office",
+        "lines": {
+          "14": 5,
+          "28": 1,
+          "49": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "43": 1
+        }
+      },
+      {
+        "place": "Strip mall public phone booth",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "79": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "79": 1
+        }
+      },
+      {
+        "place": "Strip mall public phone booth",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "79": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 1,
+          "43": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 37,
+          "1": 40,
+          "10": 9,
+          "43": 4
+        }
+      },
+      {
+        "place": "Vegas street",
+        "lines": {}
+      },
+      {
+        "place": "Vegas house",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Parking lot",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Underground garage",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Lawyer's house",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "House doorway",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Street outside court-house",
+        "lines": {
+          "0": 1,
+          "1": 4
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "1": 2,
+          "3": 5,
+          "5": 5
+        }
+      },
+      {
+        "place": "Vegas strip bus stop bench",
+        "lines": {
+          "1": 6,
+          "3": 2
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "0": 2,
+          "1": 4
+        }
+      },
+      {
+        "place": "Golf course",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's patio",
+        "lines": {
+          "0": 6,
+          "28": 4,
+          "49": 1
+        }
+      },
+      {
+        "place": "Golf course",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's patio",
+        "lines": {}
+      },
+      {
+        "place": "Golf course",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's patio",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Golf course",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's patio",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery, kansas city",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "San marino grocery, kansas city",
+        "lines": {
+          "0": 3,
+          "6": 9,
+          "13": 6,
+          "103": 1
+        }
+      },
+      {
+        "place": "Post office across the street, kansas city",
+        "lines": {}
+      },
+      {
+        "place": "San marino italian grocery, kansas city",
+        "lines": {
+          "6": 3
+        }
+      },
+      {
+        "place": "Post office across the street, kansas city",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "San marino italian grocery, kansas city",
+        "lines": {
+          "0": 2,
+          "6": 7,
+          "13": 5
+        }
+      },
+      {
+        "place": "Post office small room, kansas city",
+        "lines": {
+          "6": 2,
+          "13": 2
+        }
+      },
+      {
+        "place": "Washington fbi office",
+        "lines": {
+          "0": 5,
+          "6": 4,
+          "13": 4,
+          "27": 1,
+          "73": 3
+        }
+      },
+      {
+        "place": "Gaming control board hearing room, las vegas",
+        "lines": {
+          "0": 22,
+          "15": 15,
+          "30": 7,
+          "35": 4,
+          "107": 1,
+          "108": 1,
+          "109": 1,
+          "110": 1
+        }
+      },
+      {
+        "place": "Control board lobby",
+        "lines": {
+          "0": 3,
+          "35": 3
+        }
+      },
+      {
+        "place": "Ext. gaggi's car, back home alley",
+        "lines": {
+          "0": 1,
+          "5": 3,
+          "12": 2
+        }
+      },
+      {
+        "place": "Tangiers sportsbook/aces high! the sam rothstein show -",
+        "lines": {
+          "0": 5,
+          "14": 1,
+          "38": 7,
+          "55": 4,
+          "144": 1
+        }
+      },
+      {
+        "place": "Tangiers, green's office",
+        "lines": {
+          "0": 1,
+          "11": 2
+        }
+      },
+      {
+        "place": "Tangiers sportsbook/aces high",
+        "lines": {
+          "0": 1,
+          "12": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "0": 1,
+          "12": 1
+        }
+      },
+      {
+        "place": "Tangiers sportsbook/aces high",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Vegas",
+        "lines": {}
+      },
+      {
+        "place": "Stone's car",
+        "lines": {
+          "0": 7,
+          "12": 5
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "0": 2,
+          "2": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "2": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "0": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Fbi phone tap room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ace's house, living room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Fbi phone tap room",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's house, living room",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {}
+      },
+      {
+        "place": "Nicky's house, kitchen",
+        "lines": {
+          "1": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Fbi phone tap room",
+        "lines": {
+          "2": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Fbi stakeout post, motel across the from the gold rush -",
+        "lines": {
+          "0": 4,
+          "66": 3
+        }
+      },
+      {
+        "place": "Underground parking garage #",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Underground parking garage #",
+        "lines": {}
+      },
+      {
+        "place": "Underground parking garage #",
+        "lines": {}
+      },
+      {
+        "place": "Underground parking garage #",
+        "lines": {}
+      },
+      {
+        "place": "Underground parking garage #",
+        "lines": {}
+      },
+      {
+        "place": "Desert scene",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Desert road",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Desert",
+        "lines": {
+          "0": 12,
+          "1": 13
+        }
+      },
+      {
+        "place": "Jubilation nightclub",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "3": 3,
+          "8": 2,
+          "21": 2
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers casino sportsbook",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "0": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Tangiers casino sportsbook",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Tangiers blackjack table",
+        "lines": {
+          "8": 2
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers sportsbook",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Tangiers blackjack table",
+        "lines": {
+          "0": 4,
+          "1": 21,
+          "3": 2,
+          "8": 3
+        }
+      },
+      {
+        "place": "Oscar, the lawyer's office",
+        "lines": {
+          "0": 4,
+          "2": 2,
+          "30": 1
+        }
+      },
+      {
+        "place": "Aces high backstage corridor/showgirls' dressing-room -",
+        "lines": {
+          "0": 4,
+          "134": 1
+        }
+      },
+      {
+        "place": "Los angeles. beverly hotel",
+        "lines": {
+          "0": 1,
+          "4": 1,
+          "70": 2
+        }
+      },
+      {
+        "place": "Showgirls' dressing-room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Beverly hotel",
+        "lines": {
+          "4": 1,
+          "70": 1
+        }
+      },
+      {
+        "place": "Showgirls' dressing-room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Warehouse",
+        "lines": {
+          "0": 2,
+          "54": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Warehouse",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "54": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "62": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "Lester diamond's los angeles apartment",
+        "lines": {
+          "0": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Lester diamond's los angeles apartment",
+        "lines": {
+          "0": 2,
+          "2": 1,
+          "4": 3
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Lester diamond's los angeles apartment",
+        "lines": {
+          "0": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Lester diamond's los angeles apartment",
+        "lines": {
+          "2": 10,
+          "4": 17,
+          "23": 3
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "1": 2,
+          "2": 2
+        }
+      },
+      {
+        "place": "Los angeles street, pay phone",
+        "lines": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Los angeles street. pay phone",
+        "lines": {
+          "2": 4,
+          "4": 4
+        }
+      },
+      {
+        "place": "Ace's patio",
+        "lines": {}
+      },
+      {
+        "place": "Ace's garage",
+        "lines": {
+          "0": 6,
+          "1": 7,
+          "2": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Los angeles highway. phone booth",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Las vegas private airport",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's car",
+        "lines": {
+          "0": 5,
+          "2": 4,
+          "58": 1
+        }
+      },
+      {
+        "place": "Vegas restaurant",
+        "lines": {
+          "0": 11,
+          "2": 6,
+          "58": 2
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "2": 3
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 3,
+          "2": 4
+        }
+      },
+      {
+        "place": "Ace's house, bedroom",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, bedroom closet",
+        "lines": {
+          "0": 8,
+          "2": 8
+        }
+      },
+      {
+        "place": "Ace's house, bedroom/foyer",
+        "lines": {
+          "0": 5,
+          "2": 5
+        }
+      },
+      {
+        "place": "Ace's house, front yard",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ace's house, kitchen",
+        "lines": {
+          "0": 5,
+          "23": 1
+        }
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {
+          "1": 26,
+          "2": 27,
+          "132": 1
+        }
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {}
+      },
+      {
+        "place": "Fbi surveillance camper",
+        "lines": {}
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {
+          "34": 1
+        }
+      },
+      {
+        "place": "Fbi surveillance camper",
+        "lines": {
+          "34": 2,
+          "78": 2
+        }
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {}
+      },
+      {
+        "place": "Fbi surveillance camper",
+        "lines": {
+          "34": 1
+        }
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {
+          "78": 1
+        }
+      },
+      {
+        "place": "Construction trailer",
+        "lines": {}
+      },
+      {
+        "place": "Ace's kitchen",
+        "lines": {
+          "0": 3,
+          "2": 4
+        }
+      },
+      {
+        "place": "Ace's house, bathroom",
+        "lines": {
+          "0": 7,
+          "2": 7
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 4,
+          "2": 3,
+          "9": 1
+        }
+      },
+      {
+        "place": "Ace's bedroom",
+        "lines": {
+          "0": 4,
+          "2": 1
+        }
+      },
+      {
+        "place": "La concha motel",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "La concha motel",
+        "lines": {}
+      },
+      {
+        "place": "La concha motel",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "All-american gas station, back home",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "All-american gas station, office and garage",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "All-american gas station, gaggi's back office",
+        "lines": {
+          "0": 2,
+          "3": 12,
+          "5": 10
+        }
+      },
+      {
+        "place": "Bar parking lot, las vegas",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Bar parking lot",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Bernie blue's house, residential street",
+        "lines": {
+          "0": 8,
+          "7": 8,
+          "18": 4,
+          "80": 2
+        }
+      },
+      {
+        "place": "Detective's house",
+        "lines": {}
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Fbi stakeout post: motel across from the gold rush -",
+        "lines": {
+          "0": 2,
+          "128": 1
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "0": 1,
+          "1": 13,
+          "3": 14
+        }
+      },
+      {
+        "place": "Jubilation nightclub",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house",
+        "lines": {}
+      },
+      {
+        "place": "Jubilation nightclub",
+        "lines": {
+          "0": 3,
+          "76": 2
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "1": 1,
+          "76": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 3,
+          "23": 2
+        }
+      },
+      {
+        "place": "Ace's house, amy's bedroom",
+        "lines": {
+          "0": 6,
+          "23": 5
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "1": 2,
+          "21": 1
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {}
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "0": 19,
+          "1": 3,
+          "2": 16
+        }
+      },
+      {
+        "place": "Ace's house, foyer",
+        "lines": {
+          "0": 2,
+          "2": 2
+        }
+      },
+      {
+        "place": "Ace's house kitchen",
+        "lines": {
+          "0": 2,
+          "8": 1
+        }
+      },
+      {
+        "place": "Jubilation nightclub",
+        "lines": {
+          "0": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Ace's kitchen",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Leaning tower",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Leaning tower, foyer",
+        "lines": {
+          "1": 1,
+          "2": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Leaning tower, upstairs storage room",
+        "lines": {
+          "1": 10,
+          "2": 5,
+          "3": 3
+        }
+      },
+      {
+        "place": "Leaning tower, back door/rear parking lot",
+        "lines": {
+          "1": 4,
+          "2": 3
+        }
+      },
+      {
+        "place": "Leaning tower, back door",
+        "lines": {
+          "1": 4,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ace's house, kitchen",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house, living-room",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {}
+      },
+      {
+        "place": "Neighborhood street, ace's house",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 2,
+          "2": 2
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 3,
+          "2": 7
+        }
+      },
+      {
+        "place": "Neighbor's house across the street",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "2": 7,
+          "7": 3,
+          "18": 2
+        }
+      },
+      {
+        "place": "Fbi surveillance camper",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Fbi surveillance camper",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 8,
+          "2": 12,
+          "7": 8,
+          "18": 3,
+          "120": 1,
+          "145": 1
+        }
+      },
+      {
+        "place": "Fbi surveillance camper",
+        "lines": {}
+      },
+      {
+        "place": "Neighbor's windows",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "2": 5
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 4,
+          "7": 4
+        }
+      },
+      {
+        "place": "Ace's house, bedroom closet",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "7": 2,
+          "18": 1
+        }
+      },
+      {
+        "place": "Ace's house, kitchen windows",
+        "lines": {}
+      },
+      {
+        "place": "Neighborhood street",
+        "lines": {}
+      },
+      {
+        "place": "Ginger's car",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Vegas bank",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Fbi surveillance car, across the street",
+        "lines": {}
+      },
+      {
+        "place": "Vegas bank vault",
+        "lines": {}
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 3,
+          "10": 3
+        }
+      },
+      {
+        "place": "Vegas bank",
+        "lines": {
+          "2": 1,
+          "10": 2
+        }
+      },
+      {
+        "place": "Ace's house, upstairs den",
+        "lines": {
+          "0": 3,
+          "10": 3
+        }
+      },
+      {
+        "place": "Ace's house, driveway",
+        "lines": {}
+      },
+      {
+        "place": "Vegas bank",
+        "lines": {
+          "2": 4,
+          "7": 3
+        }
+      },
+      {
+        "place": "Vegas bank",
+        "lines": {
+          "2": 1,
+          "18": 1
+        }
+      },
+      {
+        "place": "Fbi surveillance car, across the street",
+        "lines": {}
+      },
+      {
+        "place": "Vegas bank",
+        "lines": {
+          "0": 3,
+          "2": 2,
+          "7": 6,
+          "18": 2
+        }
+      },
+      {
+        "place": "Fbi surveillance car",
+        "lines": {
+          "34": 1,
+          "52": 1
+        }
+      },
+      {
+        "place": "Vegas street, citgo station",
+        "lines": {}
+      },
+      {
+        "place": "Vegas bank",
+        "lines": {}
+      },
+      {
+        "place": "Citgo station",
+        "lines": {
+          "0": 3,
+          "2": 5,
+          "34": 1,
+          "52": 3
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "0": 2,
+          "117": 1
+        }
+      },
+      {
+        "place": "Gold rush",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Nicky's house",
+        "lines": {
+          "1": 1,
+          "9": 3,
+          "37": 1,
+          "67": 3
+        }
+      },
+      {
+        "place": "Tangiers cashier's cage",
+        "lines": {
+          "1": 1,
+          "28": 2,
+          "49": 2,
+          "84": 2,
+          "118": 1
+        }
+      },
+      {
+        "place": "Tangiers soft count room",
+        "lines": {
+          "0": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "Green's malibu house",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "11": 1,
+          "119": 1
+        }
+      },
+      {
+        "place": "Piscano's house, living-room, kansas city",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "6": 2,
+          "41": 6,
+          "44": 6,
+          "53": 4
+        }
+      },
+      {
+        "place": "Ace's house",
+        "lines": {
+          "0": 2,
+          "34": 1
+        }
+      },
+      {
+        "place": "Federal court-house",
+        "lines": {
+          "1": 3,
+          "57": 2,
+          "72": 1
+        }
+      },
+      {
+        "place": "Court-house conference room",
+        "lines": {
+          "1": 1,
+          "5": 1,
+          "17": 1,
+          "54": 1,
+          "104": 1
+        }
+      },
+      {
+        "place": "Back home restaurant, strip mall parking lot",
+        "lines": {
+          "1": 1,
+          "12": 2,
+          "57": 2
+        }
+      },
+      {
+        "place": "Nance's costa rican house",
+        "lines": {
+          "1": 3,
+          "27": 1,
+          "83": 1
+        }
+      },
+      {
+        "place": "Hole in the desert",
+        "lines": {
+          "1": 2,
+          "62": 1,
+          "83": 1
+        }
+      },
+      {
+        "place": "Parking lot",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Beverly sunset motel",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Tony roma's restaurant parking lot",
+        "lines": {
+          "0": 2,
+          "68": 1
+        }
+      },
+      {
+        "place": "Ace's car, tony roma's restaurant parking lot",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Midwest cornfield",
+        "lines": {
+          "0": 1,
+          "1": 9,
+          "3": 8,
+          "21": 3,
+          "51": 4,
+          "68": 1
+        }
+      },
+      {
+        "place": "Midwest cornfield, grave site",
+        "lines": {
+          "1": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "Midwest cornfield, grave site",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ace's car, tony roma's restaurant parking lot",
+        "lines": {
+          "0": 2,
+          "59": 1,
+          "90": 2
+        }
+      },
+      {
+        "place": "Tony roma's restaurant parking lot",
+        "lines": {
+          "68": 1,
+          "97": 1
+        }
+      },
+      {
+        "place": "The dunes hotel and casino",
+        "lines": {}
+      },
+      {
+        "place": "The mgm grand hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The dunes hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Treasure island hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The dunes hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The excalibur hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The dunes hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The dunes hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The mirage hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The luxor hotel and casino",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ace's san diego luxury home",
+        "lines": {
+          "0": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Ace's san diego luxury home",
+        "lines": {
+          "0": 2,
+          "138": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 45,
+      "longestWithoutWoman": 144,
+      "longestWithoutWomanStart": 1283,
+      "words": {
+        "w": 3704,
+        "m": 24064,
+        "unknown": 587
+      },
+      "womenConversations": 5,
+      "menConversations": 173,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/iZGiMD0p1M2AOmzKknFo5bkuz94.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/gziIkUSnYuj9ChCi8qOu2ZunpSC.jpg"
+  },
+  "bechdelData": {
+    "rating": 2,
+    "dubious": 0,
+    "id": 2220
+  },
+  "actors": [
+    {
+      "actorName": "Robert De Niro",
+      "character": "Sam 'Ace' Rothstein",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "Sharon Stone",
+      "character": "Ginger McKenna",
+      "actorActress": "1",
+      "age": 37
+    },
+    {
+      "actorName": "Joe Pesci",
+      "character": "Nicky Santoro",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "James Woods",
+      "character": "Lester Diamond",
+      "actorActress": "2",
+      "age": 48
+    },
+    {
+      "actorName": "Don Rickles",
+      "character": "Billy Sherbert",
+      "actorActress": "2",
+      "age": 69
+    },
+    {
+      "actorName": "Alan King",
+      "character": "Andy Stone",
+      "actorActress": "2",
+      "age": 67
+    },
+    {
+      "actorName": "Kevin Pollak",
+      "character": "Phillip Green",
+      "actorActress": "2",
+      "age": 38
+    },
+    {
+      "actorName": "L.Q. Jones",
+      "character": "Pat Webb",
+      "actorActress": "2",
+      "age": 68
+    },
+    {
+      "actorName": "Dick Smothers",
+      "character": "Senator",
+      "actorActress": "2",
+      "age": 56
+    },
+    {
+      "actorName": "Frank Vincent",
+      "character": "Frank Marino",
+      "actorActress": "2",
+      "age": 58
+    },
+    {
+      "actorName": "John Bloom",
+      "character": "Don Ward",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Pasquale Cajano",
+      "character": "Remo Gaggi",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Melissa Prophet",
+      "character": "Jennifer Santoro",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Bill Allison",
+      "character": "John Nance",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Vinny Vella",
+      "character": "Artie Piscano",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Oscar Goodman",
+      "character": "Oscar Goodman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Catherine Scorsese",
+      "character": "Piscano's Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Philip Suriano",
+      "character": "Dominick Santoro",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Erika von Tagen",
+      "character": "Older Amy",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Frankie Avalon",
+      "character": "Frankie Avalon",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Steve Allen",
+      "character": "Steve Allen",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jayne Meadows",
+      "character": "Jayne Meadows",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jerry Vale",
+      "character": "Jerry Vale",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joseph Rigano",
+      "character": "Vincent Borelli",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gene Ruffini",
+      "character": "Vinny Forlano",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dominick Grieco",
+      "character": "Americo Capelli"
+    },
+    {
+      "actorName": "Richard Amalfitano",
+      "character": "Casino Executive",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard F. Strafella",
+      "character": "Casino Executive",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Casper Molee",
+      "character": "Counter",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Leavitt",
+      "character": "Counter",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Conti",
+      "character": "Arthur Capp",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Cathy Scorsese",
+      "character": "Piscano's Daughter",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Steve Vignari",
+      "character": "Beeper",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rick Crachy",
+      "character": "Chastised Dealer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Larry E. Nadler",
+      "character": "Lucky Larry",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paul Herman",
+      "character": "Gambler in Phone Booth",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Salvatore Petrillo",
+      "character": "Old Man Capo",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joey DePinto",
+      "character": "Stabbed Gambler",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Heidi Keller",
+      "character": "Blonde at Bar",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Millicent Sheridan",
+      "character": "Senator's Hooker",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Nobu Matsuhisa",
+      "character": "Ichikawa",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Toru Nagai",
+      "character": "Ichikawa's Associate",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Charlene Hunter",
+      "character": "Ticket Agent",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dom Angelo",
+      "character": "Craps Dealer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joe Molinaro",
+      "character": "Shift Manager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ali Pirouzkar",
+      "character": "High Roller",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Frankie J. Allison",
+      "character": "Craps Dealer"
+    },
+    {
+      "actorName": "Jeff Scott Anderson",
+      "character": "Parking Valet",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jennifer M. Abbott",
+      "character": "Cashier",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Frank Washko Jr.",
+      "character": "Parking Valet",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Christian A. Azzinaro",
+      "character": "Little Nicky (7 yrs)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Robert C. Tetzlaff",
+      "character": "Custom's Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anthony Russell",
+      "character": "Bookie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Carol Wilson",
+      "character": "Classroom Nun",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Joe Lacoco",
+      "character": "Detective Bob Johnson",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Manca",
+      "character": "Wiseguy Eddie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ronald Maccone",
+      "character": "Wiseguy Jerry",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Buck Stephens",
+      "character": "Credit Clerk",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joseph P. Reidy",
+      "character": "Winner",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joe La Due",
+      "character": "Signaller",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Fred Smith",
+      "character": "Security Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sonny D'Angelo",
+      "character": "Security Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Greg Anderson",
+      "character": "Security Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Stuart Nisbet",
+      "character": "L.A. Banker",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tommy DeVito",
+      "character": "Crooked Poker Dealer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Frank Adonis",
+      "character": "Rocky",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joseph Bono",
+      "character": "Moosh",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Craig Vincent",
+      "character": "Cowboy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Daniel P. Conte",
+      "character": "Doctor Dan",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paul Dottore",
+      "character": "Slim",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard T. Smith",
+      "character": "Security Guard / Cowboy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Rose",
+      "character": "David",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jonathan Kraft",
+      "character": "Jonathan",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael McKensie Pratt",
+      "character": "Showgirls Stage Manager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Patti James",
+      "character": "Country Club Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ruth Gillis",
+      "character": "Country Club Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Carol Cardwell",
+      "character": "Country Club Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dean Casper",
+      "character": "Elderly Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nan Brennan",
+      "character": "Wife",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Karyn Amalfitano",
+      "character": "Wife",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "C.C. Carr",
+      "character": "Wife",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "David Varriale",
+      "character": "Flirting Executive",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Darla House",
+      "character": "Baby Amy",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Carol Krolick",
+      "character": "Slapping Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Frank Regich",
+      "character": "Slapped Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Herb Schwartz",
+      "character": "Maitre d'",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Bret McCormick",
+      "character": "Bernie Blue",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Clem Caserta",
+      "character": "Sal Fusco",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jed Mills",
+      "character": "Jack Hardy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Janet Denti",
+      "character": "Receptionist",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Cameron Milzer",
+      "character": "Secretary",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Leain Vashon",
+      "character": "Bellman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jim Morgan Williams",
+      "character": "Pit Boss",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brian Le Baron",
+      "character": "Valet Parker",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mortiki Yerushalmi",
+      "character": "Jewelry Store Owner",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mufid M. Khoury",
+      "character": "Jeweler Fence",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Khosrow Abrishami",
+      "character": "Jeweler Fence",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Riehle",
+      "character": "Charlie Clark",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mike Maines",
+      "character": "Cop in Restaurant",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Bobby Hitt",
+      "character": "Cop in Restaurant",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Shellee Renee",
+      "character": "Showgirl in Parking Lot",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alfred Nittoli",
+      "character": "Chastised Gambler",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Carl Ciarfalio",
+      "character": "Tony Dogs",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jack Orend",
+      "character": "Baker",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Linda Perri",
+      "character": "Ace's Secretary",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ffolliott Le Coque",
+      "character": "Anna Scott",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "J. Charles Thompson",
+      "character": "Judge",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Paskevich",
+      "character": "Reporter at Airport",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mike Weatherford",
+      "character": "Reporter at Airport",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Eric Randall",
+      "character": "Reporter at Airport",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gwen Castaldi",
+      "character": "Business Week Reporter",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Brian Reddy",
+      "character": "Board Investigator",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Roy Conrad",
+      "character": "Board Investigator",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mike Bradley",
+      "character": "TV Newsman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dave Courvoisier",
+      "character": "TV Newsman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "George Comando",
+      "character": "Piscano's Brother-in-Law",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Andy Jarrell",
+      "character": "Commissioner Bales",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Robert Sidell",
+      "character": "Control Board Member",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tyde Kierney",
+      "character": "Control Board Member",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paige Novodor",
+      "character": "Female Newscaster",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Claudia Haro",
+      "character": "Trudy / Announcer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sasha Semenoff",
+      "character": "Orchestra Leader",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gil Dova",
+      "character": "Juggler",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "George W. Allf",
+      "character": "FBI Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Madeline Parquette",
+      "character": "Woman Black Jack Dealer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Nick Mazzola",
+      "character": "Male Black Jack Dealer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jed L. Hansen",
+      "character": "Pit Boss"
+    },
+    {
+      "actorName": "Gino Bertin",
+      "character": "Maitre d'"
+    },
+    {
+      "actorName": "Mitch Kolpan",
+      "character": "Detective",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Csaba Maczala",
+      "character": "Detective",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Sugden",
+      "character": "Lip Reader",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rudy Guerrero",
+      "character": "Maitre d' at Disco",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Randy Sutton",
+      "character": "Cop at Ace's House",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jeff Corbin",
+      "character": "Cop at Ace's House",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sly Smith",
+      "character": "FBI Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joe Anastasi",
+      "character": "FBI Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "F. Marcus Casper",
+      "character": "FBI Agent"
+    },
+    {
+      "actorName": "Jeffrey Azzinaro",
+      "character": "Nicky Jr. (10 yrs)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Wagner",
+      "character": "FBI Agent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Carrie Cipollini",
+      "character": "Piscano's Wife",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Loren Stevens",
+      "character": "Agent - Piscano Raid",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gary C. Rainey",
+      "character": "Agent - Piscano Raid",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Arcerio",
+      "character": "FBI Agent"
+    },
+    {
+      "actorName": "Haven Earle Haley",
+      "character": "Judge",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sam Wilson",
+      "character": "Ambulance Driver",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Toney",
+      "character": "Fat Sally",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dick Warlock",
+      "character": "Security Guard (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Steve Schirripa",
+      "character": "Man in Bar (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Andrea Nittoli",
+      "character": "Cocktail Waitress (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Peter Eastman",
+      "character": "Guest (uncredited)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Martin Scorsese",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Nicholas Pileggi",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Martin Scorsese",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "Nicholas Pileggi",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Barbara De Fina",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Robert Richardson",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Thelma Schoonmaker",
+        "gender": "w"
+      },
+      {
+        "job": "Production Design",
+        "name": "Dante Ferretti",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "John Dunn",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Rita Ryack",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Ellen Lewis",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Art": {
+        "w": 2,
+        "m": 7,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Production": {
+        "w": 5,
+        "m": 2,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Directing": {
+        "w": 1,
+        "m": 3,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 2,
+        "m": 3,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Camera": {
+        "w": 0,
+        "m": 12,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Costume & Make-Up": {
+        "w": 3,
+        "m": 5,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Sound": {
+        "w": 2,
+        "m": 17,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Crew": {
+        "w": 3,
+        "m": 32,
+        "nb": 0,
+        "unknown": 20
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      }
+    }
+  },
+  "money": {
+    "budget": 50000000,
+    "revenue": 116112375
+  },
+  "directors": [
+    {
+      "name": "Martin Scorsese"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Nicholas Pileggi"
+    },
+    {
+      "name": "Martin Scorsese"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 1 Oscar. 4 wins & 11 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:56:41.217Z",
+  "plot": "This Martin Scorsese film depicts the Janus-like quality of Las Vegas: it has a glittering, glamorous face, as well as a brutal, cruel one. Ace Rothstein and Nicky Santoro, mobsters who move to Las Vegas to make their mark, live and work in this paradoxical world. Seen through their eyes, each as a foil to the other, the details of mob involvement in the casinos of the 1970s and '80s are revealed. Ace is the smooth operator of the Tangiers casino, while Nicky is his boyhood friend and tough strongman, robbing and shaking down the locals. However, they each have a tragic flaw: Ace falls in love with hustler Ginger, and Nicky falls into an ever-deepening spiral of drugs and violence.",
+  "simplePlot": "This Martin Scorsese film depicts the Janus-like quality of Las Vegas: it has a glittering, glamorous face, as well as a brutal, cruel one. Ace Rothstein and Nicky Santoro, mobsters who move to Las Vegas to make their mark, live and work in this paradoxical world. Seen through their eyes, each as a foil to the other, the details of mob involvement in the casinos of the 1970s and '80s are revealed. Ace is the smooth operator of the Tangiers casino, while Nicky is his boyhood friend and tough strongman, robbing and shaking down the locals. However, they each have a tragic flaw: Ace falls in love with hustler Ginger, and Nicky falls into an ever-deepening spiral of drugs and violence.",
+  "year": 1995,
+  "releaseDate": "22 Nov 1995",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMDRlZWZjZjYtYzY2NS00ZWVjLTkwYzAtZTA2ZDAzMGRiYmYwXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
+  "idIMDB": "tt0112641",
+  "rating": "8.2",
+  "metascore": 73,
+  "urlIMDB": "https://www.imdb.com/title/tt0112641/"
+}

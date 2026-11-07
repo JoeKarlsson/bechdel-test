@@ -1,0 +1,2144 @@
+{
+  "_id": "tt2771200",
+  "title": "Beauty and the Beast",
+  "genres": [
+    "Adventure",
+    "Family",
+    "Fantasy"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 4,
+    "numScenesDontPass": 129,
+    "numOfFemalesChars": 65,
+    "numOfMaleChars": 41,
+    "numOfFemalesCharsWithDialogue": 10,
+    "numOfMaleCharsWithDialogue": 21,
+    "totalLinesFemaleDialogue": 265,
+    "totalLinesMaleDialogue": 390,
+    "scenesThatPass": [
+      "PRETTY FISHMONGER'S WIFE: Bonjour, good day, how is your wife?\nCLOTHILDE: I need six eggs\nCLOTHILDE: That's too expensive\nBELLE: There must be more than this provincial life",
+      "VILLAGE LASSES' MOTHER: Very different from the rest of us\nVILLAGE LASSES: She's nothing like the rest of us Yes, different from the rest of us",
+      "BELLE: It's... beautiful.\nPLUMETTE: Enchanté, Mademoiselle! Don't worry, I'll have this room spotless in no time!\nPLUMETTE: This plan of yours is... dangerous.\nPLUMETTE: No, my love. I've been burned by you before. We must be strong.",
+      "BELLE: And I told you no!\nGARDEROBE: WHAT!? WHAT TIME IS IT!?\nBELLE: I'd starve before I ever ate with you!"
+    ]
+  },
+  "script": {
+    "file": "beauty-and-the-beast.txt",
+    "layout": "indented",
+    "dialogueLines": 700,
+    "speakers": [
+      {
+        "name": "BELLE",
+        "lines": 147,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "THE BEAST",
+        "lines": 80,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GASTON",
+        "lines": 78,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MAURICE",
+        "lines": 72,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MRS. POTTS",
+        "lines": 62,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "COGSWORTH",
+        "lines": 55,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LEFOU",
+        "lines": 41,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GARDEROBE",
+        "lines": 18,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "PLUMETTE",
+        "lines": 15,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NARRATOR",
+        "lines": 14,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CHIP",
+        "lines": 13,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CADENZA",
+        "lines": 11,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JEAN",
+        "lines": 11,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ALL",
+        "lines": 10,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CLOTHILDE",
+        "lines": 8,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MOB",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VILLAGERS",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BEAST",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DIVA",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NASTY HEADMASTER",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PERE ROBERT",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TAVERN KEEPER",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "VILLAGE LASSES",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "VILLAGE LASSES' MOTHER",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "WASHER GIRL",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "YOUNG PRINCE",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "AGATHE",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "APOTHECARY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BELLE'S MOTHER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "BOY'S MOTHER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "CASTLE STAFF",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CHANDELIER CANDLESTICKS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CHEESE SELLERS",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "DICK",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DOCTOR",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FARMER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FOOTMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LEFOU/VILLAGERS",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LITTLE GIRLS",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MAESTRO",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MAID",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MAJORDOMO",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MONSIEUR D'ARQUE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "NEVER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PRETTY FISHMONGER'S WIFE",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "PRINCE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SCHOOL BOYS",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "THE PRINCE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TOM",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TOM/DICK/STANLEY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VAGRANT",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VILLAGE LASS #1",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "VILLAGE MEN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WASHER WOMEN",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {
+          "9": 2
+        }
+      },
+      {
+        "place": "Ballroom entrance",
+        "lines": {
+          "9": 2,
+          "36": 1,
+          "40": 1,
+          "41": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "18": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "9": 7,
+          "18": 1,
+          "29": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {}
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Int. beast's lair",
+        "lines": {
+          "9": 2
+        }
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "0": 5,
+          "12": 4,
+          "14": 2,
+          "16": 1,
+          "19": 1,
+          "35": 1,
+          "38": 1,
+          "44": 1,
+          "46": 1,
+          "50": 1,
+          "53": 1
+        }
+      },
+      {
+        "place": "Church vestry",
+        "lines": {
+          "0": 3,
+          "20": 3
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "0": 1,
+          "16": 1,
+          "22": 1,
+          "23": 2,
+          "27": 1,
+          "32": 1,
+          "51": 1
+        }
+      },
+      {
+        "place": "Village promontory",
+        "lines": {
+          "2": 4,
+          "6": 3
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "0": 3,
+          "2": 7,
+          "6": 3,
+          "13": 2,
+          "22": 2,
+          "52": 1
+        }
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {}
+      },
+      {
+        "place": "Cellar work room",
+        "lines": {
+          "0": 3,
+          "3": 9
+        }
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {
+          "0": 4,
+          "3": 4
+        }
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {}
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "0": 2,
+          "24": 1
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "0": 1,
+          "14": 1,
+          "19": 2,
+          "24": 1
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {}
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "2": 3,
+          "6": 3
+        }
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {
+          "0": 5,
+          "2": 6
+        }
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Village promontory",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "3": 4
+        }
+      },
+      {
+        "place": "Enchanted woods",
+        "lines": {
+          "3": 3
+        }
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {
+          "3": 3
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "3": 4,
+          "5": 2
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "3": 2
+        }
+      },
+      {
+        "place": "Dining room",
+        "lines": {
+          "3": 2,
+          "10": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {
+          "3": 3
+        }
+      },
+      {
+        "place": "Village promontory",
+        "lines": {}
+      },
+      {
+        "place": "Belle's cottage",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {}
+      },
+      {
+        "place": "Enchanted woods",
+        "lines": {}
+      },
+      {
+        "place": "Terrace",
+        "lines": {}
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Prison tower",
+        "lines": {
+          "0": 11,
+          "1": 6,
+          "3": 4
+        }
+      },
+      {
+        "place": "Prison cell",
+        "lines": {
+          "0": 6,
+          "1": 2,
+          "3": 4
+        }
+      },
+      {
+        "place": "Cell",
+        "lines": {
+          "0": 4,
+          "5": 1
+        }
+      },
+      {
+        "place": "Rooftop walkway",
+        "lines": {
+          "0": 2,
+          "5": 3
+        }
+      },
+      {
+        "place": "Corridor/belle's bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Belle's bedroom",
+        "lines": {
+          "0": 3,
+          "5": 2,
+          "7": 7,
+          "8": 3
+        }
+      },
+      {
+        "place": "Country inn",
+        "lines": {}
+      },
+      {
+        "place": "Country inn",
+        "lines": {
+          "2": 16,
+          "3": 6,
+          "6": 14,
+          "12": 1,
+          "13": 1,
+          "14": 1,
+          "16": 3,
+          "21": 2,
+          "37": 1,
+          "49": 1
+        }
+      },
+      {
+        "place": "Kitchen",
+        "lines": {
+          "4": 2,
+          "10": 2
+        }
+      },
+      {
+        "place": "Dining room",
+        "lines": {}
+      },
+      {
+        "place": "Kitchen",
+        "lines": {
+          "1": 5,
+          "4": 1,
+          "5": 3
+        }
+      },
+      {
+        "place": "Corridor outside belle's bedroom",
+        "lines": {
+          "1": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Belle's castle bedroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Corridor outside belle's bedroom",
+        "lines": {
+          "1": 1,
+          "4": 1,
+          "5": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Belle's bedroom/ int. corridor",
+        "lines": {
+          "0": 3,
+          "1": 3,
+          "5": 2,
+          "7": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "4": 2,
+          "5": 1,
+          "8": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Belle's bedroom",
+        "lines": {
+          "0": 3,
+          "4": 7,
+          "7": 2,
+          "10": 1
+        }
+      },
+      {
+        "place": "Kitchen",
+        "lines": {
+          "5": 4
+        }
+      },
+      {
+        "place": "Dining room",
+        "lines": {
+          "4": 1,
+          "5": 2,
+          "11": 4,
+          "31": 1
+        }
+      },
+      {
+        "place": "Kitchen",
+        "lines": {
+          "4": 4
+        }
+      },
+      {
+        "place": "Dining room",
+        "lines": {
+          "4": 2,
+          "13": 3
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "0": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Staircase",
+        "lines": {}
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "4": 4,
+          "5": 5
+        }
+      },
+      {
+        "place": "Enchanted woods",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "2": 8,
+          "3": 8,
+          "6": 5
+        }
+      },
+      {
+        "place": "Remote forest road",
+        "lines": {
+          "2": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "0": 6,
+          "1": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "25": 2
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "4": 1,
+          "11": 1
+        }
+      },
+      {
+        "place": "Belle's bedroom",
+        "lines": {
+          "0": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "0": 2,
+          "4": 2,
+          "5": 2,
+          "8": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Remote forest road",
+        "lines": {}
+      },
+      {
+        "place": "Agathe's shelter",
+        "lines": {
+          "3": 1,
+          "26": 1
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "0": 5,
+          "1": 4
+        }
+      },
+      {
+        "place": "Library",
+        "lines": {
+          "0": 3,
+          "1": 4
+        }
+      },
+      {
+        "place": "Dining room",
+        "lines": {}
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {
+          "0": 3,
+          "17": 2
+        }
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Dining room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Library",
+        "lines": {
+          "4": 5,
+          "5": 2,
+          "8": 1,
+          "10": 3,
+          "13": 2
+        }
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {
+          "0": 7,
+          "1": 7
+        }
+      },
+      {
+        "place": "Library",
+        "lines": {
+          "0": 1,
+          "1": 4
+        }
+      },
+      {
+        "place": "Artist's garret",
+        "lines": {
+          "0": 6,
+          "1": 5,
+          "28": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "Country inn",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Country inn",
+        "lines": {
+          "2": 7,
+          "3": 3,
+          "6": 3,
+          "12": 1,
+          "21": 1
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "1": 4,
+          "4": 2,
+          "5": 2,
+          "8": 3,
+          "17": 1
+        }
+      },
+      {
+        "place": "Belle's bedroom",
+        "lines": {
+          "7": 2
+        }
+      },
+      {
+        "place": "Grand staircase",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "4": 4
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "0": 4,
+          "1": 5
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "0": 4,
+          "1": 3
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {}
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "1": 5,
+          "4": 1,
+          "5": 4,
+          "8": 1
+        }
+      },
+      {
+        "place": "Ext. turrets",
+        "lines": {
+          "1": 4
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "0": 9,
+          "2": 15,
+          "3": 2,
+          "6": 1,
+          "12": 2,
+          "14": 1,
+          "15": 2,
+          "16": 1,
+          "33": 1,
+          "42": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "2": 2,
+          "6": 1,
+          "15": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "4": 2,
+          "5": 2,
+          "10": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "11": 1,
+          "30": 1
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "15": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Asylum wagon",
+        "lines": {
+          "0": 6,
+          "3": 6
+        }
+      },
+      {
+        "place": "Highest turret",
+        "lines": {
+          "1": 2,
+          "5": 2
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "15": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "15": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {}
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "15": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "2": 2,
+          "4": 1,
+          "6": 4,
+          "12": 1
+        }
+      },
+      {
+        "place": "Village of villeneuve",
+        "lines": {
+          "3": 2
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Turret staircase",
+        "lines": {}
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "5": 5,
+          "7": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {}
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "4": 6,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "10": 1,
+          "11": 3,
+          "14": 1
+        }
+      },
+      {
+        "place": "Castle grounds",
+        "lines": {}
+      },
+      {
+        "place": "Highest turret",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Turret staircase",
+        "lines": {}
+      },
+      {
+        "place": "Highest turret",
+        "lines": {
+          "0": 1,
+          "2": 3,
+          "43": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "0": 3,
+          "1": 5,
+          "2": 2
+        }
+      },
+      {
+        "place": "Balcony",
+        "lines": {}
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "0": 4,
+          "1": 3
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "4": 1,
+          "5": 3,
+          "7": 1,
+          "10": 1,
+          "11": 1
+        }
+      },
+      {
+        "place": "Beast's lair",
+        "lines": {
+          "0": 2,
+          "45": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "4": 2,
+          "5": 2,
+          "12": 2,
+          "18": 1,
+          "39": 1
+        }
+      },
+      {
+        "place": "Terrace",
+        "lines": {
+          "5": 2,
+          "8": 2,
+          "10": 1,
+          "14": 2,
+          "47": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "0": 1,
+          "4": 1,
+          "7": 1,
+          "13": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 4,
+      "longestWithoutWoman": 38,
+      "longestWithoutWomanStart": 219,
+      "words": {
+        "w": 2323,
+        "m": 3966,
+        "unknown": 749
+      },
+      "womenConversations": 12,
+      "menConversations": 39,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/uU1Mt4JWhDvl4vKb3AfxNsorkoM.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/hKegSKIDep2ewJWPUQD7u0KqFIp.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 1,
+    "id": 7523
+  },
+  "actors": [
+    {
+      "actorName": "Emma Watson",
+      "character": "Belle",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Dan Stevens",
+      "character": "Beast",
+      "actorActress": "2",
+      "age": 34
+    },
+    {
+      "actorName": "Luke Evans",
+      "character": "Gaston",
+      "actorActress": "2",
+      "age": 37
+    },
+    {
+      "actorName": "Josh Gad",
+      "character": "LeFou",
+      "actorActress": "2",
+      "age": 36
+    },
+    {
+      "actorName": "Kevin Kline",
+      "character": "Maurice",
+      "actorActress": "2",
+      "age": 69
+    },
+    {
+      "actorName": "Hattie Morahan",
+      "character": "Agathe / Enchantress",
+      "actorActress": "1",
+      "age": 38
+    },
+    {
+      "actorName": "Haydn Gwynne",
+      "character": "Clothilde",
+      "actorActress": "1",
+      "age": 59
+    },
+    {
+      "actorName": "Gerard Horan",
+      "character": "Jean the Potter",
+      "actorActress": "2",
+      "age": 54
+    },
+    {
+      "actorName": "Ray Fearon",
+      "character": "Père Robert",
+      "actorActress": "2",
+      "age": 49
+    },
+    {
+      "actorName": "Ewan McGregor",
+      "character": "Lumière",
+      "actorActress": "2",
+      "age": 45
+    },
+    {
+      "actorName": "Ian McKellen",
+      "character": "Cogsworth",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Emma Thompson",
+      "character": "Mrs. Potts",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Nathan Mack",
+      "character": "Chip",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Audra McDonald",
+      "character": "Madame Garderobe",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Stanley Tucci",
+      "character": "Maestro Cadenza",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gugu Mbatha-Raw",
+      "character": "Plumette",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Clive Rowe",
+      "character": "Cuisinier",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Thomas Padden",
+      "character": "Chapeau",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rita Davies",
+      "character": "Old Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "D.J. Bailey",
+      "character": "Vagrant",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Adrian Schiller",
+      "character": "Monsieur D'arque",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Harriet Jones",
+      "character": "Queen"
+    },
+    {
+      "actorName": "Adam Mitchell",
+      "character": "Young Prince"
+    },
+    {
+      "actorName": "Tom Turner",
+      "character": "King",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Jibson",
+      "character": "Tavern Keeper",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Zoe Rainey",
+      "character": "Belle's Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Daisy Duczmal",
+      "character": "Baby Belle",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jolyon Coy",
+      "character": "Young Maurice",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jimmy Johnston",
+      "character": "Tom",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dean Street",
+      "character": "Dick",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alexis Loizon",
+      "character": "Stanley",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sophie Reid",
+      "character": "Village Lass",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rafaëlle Cohen",
+      "character": "Village Lass",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Carla Nella",
+      "character": "Village Lass",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Obioma Ugoala",
+      "character": "Flirtatious Farmer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lynne Wilmot",
+      "character": "Barmaid",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jane Fowler",
+      "character": "Pretty Female Fishmonger",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alison Harding",
+      "character": "Head Washer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Chris Andrew Mellon",
+      "character": "Nasty Headmaster",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jemma Alexander",
+      "character": "Housewife",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sandy Strallen",
+      "character": "Cobbler",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dale Branston",
+      "character": "Baker",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Daniel Ioannou",
+      "character": "Barber",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Challis",
+      "character": "Butcher",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Wendy Baldock",
+      "character": "Washer Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Norma Atallah",
+      "character": "Washer Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Leo Andrew",
+      "character": "Apothecary",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Steven Butler",
+      "character": "Cheese Maker",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sharon Gomez",
+      "character": "Cheese Maker",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jacqui Jameson",
+      "character": "Cheese Maker",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Vivien Parry",
+      "character": "Village Lass's Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Simone Sault",
+      "character": "Wood Carrier",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Beth Willetts",
+      "character": "Jam Seller",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Mandy Montanez",
+      "character": "Bread Buyer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tom Oakley",
+      "character": "Fishmonger",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "William Bozier",
+      "character": "Stable Boy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jak Allen-Anderson",
+      "character": "Apothecary's Patient",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Phil Grannel",
+      "character": "Fiddler"
+    },
+    {
+      "actorName": "Freddie August",
+      "character": "Fiddler",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nicola Keen",
+      "character": "Female Villager / Celebration Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ebony Molina",
+      "character": "Female Villager / Celebration Woman"
+    },
+    {
+      "actorName": "Alison Jenkins",
+      "character": "Female Villager / Celebration Woman"
+    },
+    {
+      "actorName": "Ellen O'Grady",
+      "character": "Female Villager",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dawn Buckland",
+      "character": "Female Villager",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rebecca Mckinnis",
+      "character": "Female Villager",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jody Hall",
+      "character": "Male Villager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ben Fox",
+      "character": "Male Villager"
+    },
+    {
+      "actorName": "Nathan Vaughan Harris",
+      "character": "Male Villager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tim Stanley",
+      "character": "Male Villager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ben Clare",
+      "character": "Male Villager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Marina Abdeen",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Danielle Acors",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Hayley Ainsley",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rhianne Alleyn",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Gabby Antrobus",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Sophie Atkins",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Koko Basigara",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Holly Bluett",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Daisy Boyles",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ava Brennan",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sophia Brown",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sophie Carmen-Jones",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Cassie Clare",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tanya Cumberland",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Natalie Davis",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Paige Drury-Lawrence",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Stephanie Elstob",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Cordelia Farnworth",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Cj Field",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Lily Frazer",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Lucy Alexa Gilbert",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Helen Gulstan",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Selina Hamilton",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Leah Hill",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Abigayle Honeywill",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Chelsea Inez",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Blythe Jandoo",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Shireen Jathoonia",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Billie Kay-Piper",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Hannah Kenna-Thomas",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ella Kora",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Jennifer Leung",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Emily Loumba",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Cassie Macmillian",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Fiona McDonald",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Samira Mighty",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Sonoya Mizuno",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Anna Momcilovic",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Nicola Mooi",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Nicole O'Neill",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Abiona Omonua",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Jazz Peters",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Courtney Pruce",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Kayla Radam",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Katie Singh",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Lucy St. Louis",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ruth Steele",
+      "character": "Debutante"
+    },
+    {
+      "actorName": "Jasmine Takacs",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Naomi Weijand",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Leah West",
+      "character": "Debutante",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Skye Lucia Degruttola",
+      "character": "Washer Girl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Timia Julien-Box",
+      "character": "Little Girl"
+    },
+    {
+      "actorName": "Adelaide Morgan",
+      "character": "Little Girl"
+    },
+    {
+      "actorName": "Gemma Fray",
+      "character": "Little Girl"
+    },
+    {
+      "actorName": "Lara Decaro",
+      "character": "Little Girl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Max Brophy",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Samuel Brown",
+      "character": "School Boy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Daniel Daszek-Green",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Freddie Hunter",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Joey Brown",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Tom Burgering",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Nate Leung",
+      "character": "School Boy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kai Gordon",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Oscar Francisco",
+      "character": "School Boy"
+    },
+    {
+      "actorName": "Harry Marcus",
+      "character": "School Boy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Johanna Smitz",
+      "character": "Village Woman (uncredited)"
+    },
+    {
+      "actorName": "Rudi Goodman",
+      "character": "Young Prince in Portrait (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Isobel Hamilton",
+      "character": "Fishmonger Villagewoman (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Karl Farrer",
+      "character": "Villager (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Emmylou Homs",
+      "character": "Belle (french voice)",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Bill Condon",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Stephen Chbosky",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Evan Spiliotopoulos",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "Jeanne-Marie Leprince de Beaumont",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Todd Lieberman",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "David Hoberman",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Tobias A. Schliessler",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Virginia Katz",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Alan Menken",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Sarah Greenwood",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Jacqueline Durran",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Lucy Bevan",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Sound": {
+        "w": 1,
+        "m": 10,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Crew": {
+        "w": 2,
+        "m": 12,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Camera": {
+        "w": 2,
+        "m": 6,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Editing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 8,
+        "m": 9,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Writing": {
+        "w": 2,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 1,
+        "m": 6,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Production": {
+        "w": 3,
+        "m": 14,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Visual Effects": {
+        "w": 2,
+        "m": 12,
+        "nb": 0,
+        "unknown": 18
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Costume & Make-Up": {
+        "w": 7,
+        "m": 1,
+        "nb": 0,
+        "unknown": 10
+      }
+    }
+  },
+  "money": {
+    "budget": 160000000,
+    "revenue": 1266115964
+  },
+  "directors": [
+    {
+      "name": "Bill Condon"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Stephen Chbosky"
+    },
+    {
+      "name": "Evan Spiliotopoulos"
+    },
+    {
+      "name": "Linda Woolverton"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 2 Oscars. 16 wins & 83 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:56:10.398Z",
+  "plot": "Disney's animated classic takes on a new form, with a widened mythology and an all-star cast. A young Prince, imprisoned in the form of a Beast (Dan Stevens), can be freed only by true love. What may be his only opportunity arrives when he meets Belle (Emma Watson), the only human girl to ever visit the castle since it was enchanted.",
+  "simplePlot": "Disney's animated classic takes on a new form, with a widened mythology and an all-star cast. A young Prince, imprisoned in the form of a Beast (Dan Stevens), can be freed only by true love. What may be his only opportunity arrives when he meets Belle (Emma Watson), the only human girl to ever visit the castle since it was enchanted.",
+  "year": 2017,
+  "releaseDate": "17 Mar 2017",
+  "rated": "PG",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMTUwNjUxMTM4NV5BMl5BanBnXkFtZTgwODExMDQzMTI@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt2771200",
+  "rating": "7.1",
+  "metascore": 65,
+  "urlIMDB": "https://www.imdb.com/title/tt2771200/"
+}

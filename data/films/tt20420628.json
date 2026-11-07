@@ -1,0 +1,1442 @@
+{
+  "_id": "tt20420628",
+  "title": "Freud's Last Session",
+  "genres": [
+    "Drama"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 4,
+    "numScenesDontPass": 129,
+    "numOfFemalesChars": 5,
+    "numOfMaleChars": 8,
+    "numOfFemalesCharsWithDialogue": 6,
+    "numOfMaleCharsWithDialogue": 9,
+    "totalLinesFemaleDialogue": 168,
+    "totalLinesMaleDialogue": 567,
+    "scenesThatPass": [
+      "ANNA: The talks broke down.\nDOROTHY: God help us.",
+      "DOROTHY: Chemists are closing early like every other business. Let's make some calls first.\nANNA: I'll find one on the way home.\nDOROTHY: Then we'll go together.\nANNA: Absolutely not!",
+      "DOROTHY: Don't.\nANNA: What could I possibly ask?\nDOROTHY: My therapy session are mine alone. Find your own therapist.\nANNA: I just might... You do look like a bit flushed. I wonder what you could have talked about that would have caused that.",
+      "ANNA: I suppose you need great faith to believe in either. Good bye.\nDOROTHY: ANNA!\nDOROTHY: Are you certain we should do this?\nANNA: I always looked to someone else for answers. But I've never been more certain."
+    ]
+  },
+  "script": {
+    "file": "freuds-last-session.txt",
+    "layout": "indented",
+    "dialogueLines": 790,
+    "speakers": [
+      {
+        "name": "FREUD",
+        "lines": 252,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LEWIS",
+        "lines": 240,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ANNA",
+        "lines": 80,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JANIE MOORE",
+        "lines": 42,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DOROTHY",
+        "lines": 30,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JONES",
+        "lines": 19,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TOLKIEN",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DR. BERBRIDGE",
+        "lines": 10,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WARREN",
+        "lines": 10,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DOROTHY BURLINGHAM",
+        "lines": 7,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DR. ERNEST JONES",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BBC ANNOUNCER",
+        "lines": 5,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "CHAMBERLAIN",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "JACOB",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PADDY MOORE",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BARFIELD",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COMMANDER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "JACK",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "KING GEORGE",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "OPERATOR",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BLONDE YOUNG MAN",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FATHER BRENNAN",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ILSA",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MAYOR",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WELDON",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "AIR RAID WARDEN",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ANNA'S VOICE ON PHONE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CHEMIST",
+        "lines": 2,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "JACOB FREUD",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SOUND",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STUDENT",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FATHER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FREUD CONT",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "FREUD'S VOICE ON PHONE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "INSERT TITLE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "J.R. TOLKIEN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PRIEST",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "REVEALED AS HUMAN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SCREENPLAY BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SECRETARY",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SOPHIE",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WOMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "38": 1
+        }
+      },
+      {
+        "place": "Freud's study, hampstead, london (night)",
+        "lines": {}
+      },
+      {
+        "place": "The kilns, c.s. lewis' bedroom (oxford)",
+        "lines": {}
+      },
+      {
+        "place": "Freud's study",
+        "lines": {}
+      },
+      {
+        "place": "C.s. lewis' bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Freud's study (morning)",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "The kilns, c.s. lewis' home (oxford, day)",
+        "lines": {}
+      },
+      {
+        "place": "Lewis' bedroom",
+        "lines": {
+          "1": 3,
+          "3": 3
+        }
+      },
+      {
+        "place": "Kilns ­ moments later",
+        "lines": {
+          "1": 2,
+          "3": 3
+        }
+      },
+      {
+        "place": "Oxford train station  (minutes later)",
+        "lines": {
+          "11": 1,
+          "42": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 12,
+          "2": 10,
+          "11": 1
+        }
+      },
+      {
+        "place": "Tube station, london  (day)",
+        "lines": {}
+      },
+      {
+        "place": "Maresfield court  (later)",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Front door",
+        "lines": {
+          "0": 6,
+          "1": 6
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 8,
+          "1": 6
+        }
+      },
+      {
+        "place": "Rathaus (town hall) gardens, vienna ­",
+        "lines": {}
+      },
+      {
+        "place": "Freud's garden, england",
+        "lines": {}
+      },
+      {
+        "place": "Gardens, vienna",
+        "lines": {
+          "10": 1,
+          "23": 3
+        }
+      },
+      {
+        "place": "Garden, england",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Garden, vienna",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Garden, england",
+        "lines": {
+          "0": 7,
+          "1": 5,
+          "32": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 7,
+          "1": 6
+        }
+      },
+      {
+        "place": "Study of the london psychoanalytic society ­ same",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hallway of the psychoanalytic society",
+        "lines": {
+          "2": 7,
+          "7": 5,
+          "9": 7,
+          "30": 2
+        }
+      },
+      {
+        "place": "Lecture hall",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 7,
+          "1": 5
+        }
+      },
+      {
+        "place": "Lewis home",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ferry",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Boarding school",
+        "lines": {
+          "1": 4
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Vienna city street 1862 ­ freud's flashback ­ day",
+        "lines": {
+          "0": 1,
+          "20": 3,
+          "28": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Maresfield court ­ moments later",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "St. thomas more church ­ maresfield court",
+        "lines": {
+          "0": 1,
+          "21": 1
+        }
+      },
+      {
+        "place": "Church",
+        "lines": {}
+      },
+      {
+        "place": "Church basement",
+        "lines": {
+          "0": 4,
+          "1": 1
+        }
+      },
+      {
+        "place": "Church ­ continuous",
+        "lines": {
+          "25": 1
+        }
+      },
+      {
+        "place": "Church basement",
+        "lines": {
+          "21": 1
+        }
+      },
+      {
+        "place": "Church ­ later",
+        "lines": {
+          "0": 3,
+          "1": 3,
+          "21": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "Maresfield court",
+        "lines": {
+          "0": 9,
+          "1": 9,
+          "25": 1
+        }
+      },
+      {
+        "place": "Freud's study ­ moments later",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "11": 1
+        }
+      },
+      {
+        "place": "The eagle and child pub, oxford ­ flashback",
+        "lines": {
+          "1": 2,
+          "6": 1,
+          "8": 3,
+          "15": 3,
+          "35": 1
+        }
+      },
+      {
+        "place": "Pub",
+        "lines": {
+          "1": 2,
+          "6": 6,
+          "8": 2,
+          "15": 1
+        }
+      },
+      {
+        "place": "Oxford",
+        "lines": {
+          "1": 4,
+          "6": 4
+        }
+      },
+      {
+        "place": "Lewis' chamber ­ flashback ­ the previous evening",
+        "lines": {
+          "1": 2,
+          "24": 3
+        }
+      },
+      {
+        "place": "Addison's walk",
+        "lines": {
+          "1": 4,
+          "6": 4
+        }
+      },
+      {
+        "place": "Oxford",
+        "lines": {}
+      },
+      {
+        "place": "Rare book room",
+        "lines": {
+          "1": 3
+        }
+      },
+      {
+        "place": "Lewis' bedroom",
+        "lines": {
+          "1": 1,
+          "3": 6,
+          "17": 4
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "Freud's bathroom /freud's study",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Bathroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "London streets",
+        "lines": {
+          "1": 3,
+          "8": 3,
+          "29": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "The kilns ­ kitchen",
+        "lines": {
+          "1": 3,
+          "3": 4,
+          "8": 2
+        }
+      },
+      {
+        "place": "Back yard",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 3
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 1,
+          "12": 2
+        }
+      },
+      {
+        "place": "Institute",
+        "lines": {
+          "2": 1,
+          "4": 1,
+          "12": 3
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "2": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 3,
+          "1": 3,
+          "11": 1
+        }
+      },
+      {
+        "place": "Freud's vienna apartment ­ flash back",
+        "lines": {
+          "0": 7,
+          "2": 6,
+          "4": 6,
+          "10": 4,
+          "16": 4
+        }
+      },
+      {
+        "place": "Freud's study ­ cont",
+        "lines": {
+          "0": 4,
+          "1": 3
+        }
+      },
+      {
+        "place": "Sacred heart catholic church ­ vienna",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Church",
+        "lines": {
+          "22": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "Freud famiy home",
+        "lines": {
+          "13": 2
+        }
+      },
+      {
+        "place": "Freud family home ­ moments later",
+        "lines": {
+          "13": 3,
+          "22": 2
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 8,
+          "1": 4
+        }
+      },
+      {
+        "place": "Vienna hospital ­ flashback",
+        "lines": {
+          "0": 1,
+          "37": 1
+        }
+      },
+      {
+        "place": "Small recovery room ­ flashback cont",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Freud's study ­ cont",
+        "lines": {
+          "0": 4,
+          "1": 1
+        }
+      },
+      {
+        "place": "Institute lecture hall",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Institute's office",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 3,
+          "26": 2
+        }
+      },
+      {
+        "place": "Institute office",
+        "lines": {
+          "2": 6,
+          "4": 1,
+          "7": 5,
+          "33": 1,
+          "39": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 9,
+          "1": 9
+        }
+      },
+      {
+        "place": "School coatroom",
+        "lines": {
+          "41": 1
+        }
+      },
+      {
+        "place": "Gestapo headquarters",
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "School coatroom",
+        "lines": {
+          "2": 4,
+          "4": 4
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "2": 3,
+          "4": 5
+        }
+      },
+      {
+        "place": "Institute",
+        "lines": {
+          "2": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Freud's study ­",
+        "lines": {
+          "0": 14,
+          "1": 12
+        }
+      },
+      {
+        "place": "The somme, france",
+        "lines": {
+          "14": 1
+        }
+      },
+      {
+        "place": "Trench",
+        "lines": {
+          "1": 2,
+          "14": 3
+        }
+      },
+      {
+        "place": "Freud's study ­",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "No man's land",
+        "lines": {
+          "14": 1
+        }
+      },
+      {
+        "place": "Endleigh palace hospital ­ later",
+        "lines": {
+          "1": 8,
+          "3": 10
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 8,
+          "1": 7
+        }
+      },
+      {
+        "place": "Freud's home",
+        "lines": {
+          "0": 4,
+          "1": 4,
+          "5": 3,
+          "10": 1
+        }
+      },
+      {
+        "place": "Freud's front door ­ moments later",
+        "lines": {}
+      },
+      {
+        "place": "Freud's parlor",
+        "lines": {
+          "0": 5,
+          "5": 8
+        }
+      },
+      {
+        "place": "London street ­ apothecary shop",
+        "lines": {
+          "2": 3,
+          "19": 4
+        }
+      },
+      {
+        "place": "Freud's parlor",
+        "lines": {
+          "0": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "London street",
+        "lines": {
+          "2": 2,
+          "27": 2
+        }
+      },
+      {
+        "place": "Freud's parlor",
+        "lines": {
+          "0": 8,
+          "5": 7
+        }
+      },
+      {
+        "place": "Street",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Freud apartment, vienna",
+        "lines": {
+          "2": 2,
+          "4": 3
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {
+          "2": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Taxi",
+        "lines": {}
+      },
+      {
+        "place": "A dark room",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "London street",
+        "lines": {}
+      },
+      {
+        "place": "The kilns",
+        "lines": {
+          "1": 7,
+          "3": 6
+        }
+      },
+      {
+        "place": "Kilns",
+        "lines": {
+          "1": 6,
+          "3": 7
+        }
+      },
+      {
+        "place": "Book shop",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {}
+      },
+      {
+        "place": "Vienna garden ­ flashback",
+        "lines": {
+          "2": 1,
+          "40": 1
+        }
+      },
+      {
+        "place": "Freud's study ­ the present",
+        "lines": {
+          "0": 28,
+          "1": 21
+        }
+      },
+      {
+        "place": "London street",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Freud's study- cont",
+        "lines": {
+          "0": 8,
+          "1": 9
+        }
+      },
+      {
+        "place": "London street",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Room",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "London street",
+        "lines": {}
+      },
+      {
+        "place": "Office",
+        "lines": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Study",
+        "lines": {
+          "0": 4,
+          "2": 3
+        }
+      },
+      {
+        "place": "Freud's study ­",
+        "lines": {
+          "0": 7,
+          "1": 9
+        }
+      },
+      {
+        "place": "Water closet",
+        "lines": {}
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 8,
+          "1": 4
+        }
+      },
+      {
+        "place": "Garden terrace",
+        "lines": {}
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "0": 12,
+          "1": 14
+        }
+      },
+      {
+        "place": "Freud's home ­ moments later",
+        "lines": {
+          "1": 8,
+          "2": 10,
+          "4": 2
+        }
+      },
+      {
+        "place": "Freud's study",
+        "lines": {
+          "18": 1
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {}
+      },
+      {
+        "place": "Train/freud's study",
+        "lines": {
+          "11": 1,
+          "18": 3
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 4,
+      "longestWithoutWoman": 133,
+      "longestWithoutWomanStart": 132,
+      "words": {
+        "w": 1558,
+        "m": 5908,
+        "unknown": 644
+      },
+      "womenConversations": 11,
+      "menConversations": 49,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/pg01mUOLX6bmkmQyQownrPDXbm.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/fXRG9LYbJN2NYqXteGunWyloAcG.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Anthony Hopkins",
+      "character": "Sigmund Freud",
+      "actorActress": "2",
+      "age": 85
+    },
+    {
+      "actorName": "Matthew Goode",
+      "character": "C. S. Lewis",
+      "actorActress": "2",
+      "age": 45
+    },
+    {
+      "actorName": "Liv Lisa Fries",
+      "character": "Anna Freud",
+      "actorActress": "1",
+      "age": 33
+    },
+    {
+      "actorName": "Jodi Balfour",
+      "character": "Dorothy Burlingham",
+      "actorActress": "1",
+      "age": 36
+    },
+    {
+      "actorName": "Jeremy Northam",
+      "character": "Ernest Jones",
+      "actorActress": "2",
+      "age": 62
+    },
+    {
+      "actorName": "Stephen Campbell Moore",
+      "character": "J. R. R. Tolkien",
+      "actorActress": "2",
+      "age": 44
+    },
+    {
+      "actorName": "Orla Brady",
+      "character": "Janie Moore",
+      "actorActress": "1",
+      "age": 62
+    },
+    {
+      "actorName": "David Shields",
+      "character": "Weldon",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tarek Bishara",
+      "character": "Jacob Freud",
+      "actorActress": "2",
+      "age": 45
+    },
+    {
+      "actorName": "George Andrew-Clarke",
+      "character": "Paddy Moore"
+    },
+    {
+      "actorName": "Gary Buckley",
+      "character": "Albert Lewis"
+    },
+    {
+      "actorName": "Pádraic Delaney",
+      "character": "Warren Lewis",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rhys Mannion",
+      "character": "Young C. S. Lewis"
+    },
+    {
+      "actorName": "Anna Amalie Blomeyer",
+      "character": "Ilsa",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Cara Christie",
+      "character": "Clerk",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ian Dillon",
+      "character": "Inkling (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Hayes",
+      "character": "Priest"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Matt Brown",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Matt Brown",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Mark St. Germain",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Meg Thomson",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Alan Greisman",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Rick Nicita",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Hannah Leader",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Matt Brown",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Tristan Lynch",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Robert Stillman",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Ben Smithard",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Paul Tothill",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Coby Brown",
+        "gender": null
+      },
+      {
+        "job": "Production Design",
+        "name": "Luciana Arrighi",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Lillie Jeffrey",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Reg Poerscout-Edgerton",
+        "gender": "m"
+      }
+    ],
+    "departments": {
+      "Art": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Production": {
+        "w": 11,
+        "m": 24,
+        "nb": 0,
+        "unknown": 28
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 10000000,
+    "revenue": 1697993
+  },
+  "directors": [
+    {
+      "name": "Matt Brown"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Mark St. Germain"
+    },
+    {
+      "name": "Matt Brown"
+    },
+    {
+      "name": "Armand M. Nicholi Jr."
+    }
+  ],
+  "awards": [
+    {
+      "name": "1 nomination total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:58:04.630Z",
+  "plot": "Set on the eve of WWII and towards the end of his life, Freud's Last Session sees Freud (Hopkins) invite iconic author C.S. Lewis for a debate over the existence of God. Exploring Freud's unique relationship with his lesbian daughter Anna and Lewis' unconventional romance with his best friend's mother, the film interweaves past, present and fantasy, bursting from the confines of Freud's study on a dynamic journey.",
+  "simplePlot": "Set on the eve of WWII and towards the end of his life, Freud's Last Session sees Freud (Hopkins) invite iconic author C.S. Lewis for a debate over the existence of God. Exploring Freud's unique relationship with his lesbian daughter Anna and Lewis' unconventional romance with his best friend's mother, the film interweaves past, present and fantasy, bursting from the confines of Freud's study on a dynamic journey.",
+  "year": 2024,
+  "releaseDate": "14 Jun 2024",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BNTZiNzRhYzMtNjYxYS00ZTAzLWI3OGQtYzU0MWYyYzJiZmE4XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt20420628",
+  "rating": "6.1",
+  "metascore": 48,
+  "urlIMDB": "https://www.imdb.com/title/tt20420628/"
+}
