@@ -1,0 +1,991 @@
+{
+  "_id": "tt0106302",
+  "title": "Arcade",
+  "genres": [
+    "Sci-Fi"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 68,
+    "numOfFemalesChars": 4,
+    "numOfMaleChars": 11,
+    "numOfFemalesCharsWithDialogue": 5,
+    "numOfMaleCharsWithDialogue": 12,
+    "totalLinesFemaleDialogue": 225,
+    "totalLinesMaleDialogue": 297,
+    "scenesThatPass": [
+      "ALEX: Laurie...wake up...\nLAURIE: I am awake. Don't you see them?",
+      "LAURIE: Angels. There are angels inside.\nALEX: We have to turn it off, Laurie. I'm turning it off...",
+      "ALEX: Fuck you.\nALEX REFLECTION: ANY TIME, BITCH."
+    ]
+  },
+  "script": {
+    "file": "arcade.txt",
+    "layout": "indented",
+    "dialogueLines": 553,
+    "speakers": [
+      {
+        "name": "ALEX",
+        "lines": 200,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NICK",
+        "lines": 154,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DIFFORD",
+        "lines": 28,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GREG",
+        "lines": 25,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STILTS",
+        "lines": 22,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ALBERT",
+        "lines": 21,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ARCADE",
+        "lines": 18,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LAURIE",
+        "lines": 16,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BENZ",
+        "lines": 12,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "BOY",
+        "lines": 8,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ALEX'S MOTHER",
+        "lines": 6,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "RECEPTIONIST",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DELOACH",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MAN",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MR. WEAVER",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ARCADE/BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FINSTER",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JIM",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THE BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ALEX REFLECTION",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ALEX'S MOM",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "ANOTHER VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DAVID S. GOYER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GOD",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GUARD #1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "I AM ARCADE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "KID",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "KISS REALITY GOODBYE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NICK. KISS REALITY GOODBYE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OTHER ALEX",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "THANK-YOU SO MUCH",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THAT HAPPENS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WRONG MACHINE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "23": 1
+        }
+      },
+      {
+        "place": "Arcade world -- electronic darkness",
+        "lines": {}
+      },
+      {
+        "place": "Counselor's office -- day",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Manning house, hallway -- day",
+        "lines": {
+          "0": 2,
+          "13": 1
+        }
+      },
+      {
+        "place": "Manning house, bedroom -- day",
+        "lines": {}
+      },
+      {
+        "place": "Counselor's office -- day",
+        "lines": {
+          "0": 4,
+          "15": 3
+        }
+      },
+      {
+        "place": "High-school hallway",
+        "lines": {}
+      },
+      {
+        "place": "High-school cafeteria",
+        "lines": {
+          "0": 4,
+          "1": 5,
+          "3": 13,
+          "4": 7,
+          "7": 4,
+          "8": 8
+        }
+      },
+      {
+        "place": "Dante's inferno -- day",
+        "lines": {}
+      },
+      {
+        "place": "Dante's inferno -- day",
+        "lines": {
+          "0": 2,
+          "1": 9,
+          "2": 12,
+          "3": 5,
+          "4": 3,
+          "6": 2,
+          "7": 2,
+          "8": 3,
+          "12": 4,
+          "14": 1,
+          "17": 2,
+          "22": 1,
+          "26": 1,
+          "29": 1,
+          "32": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "Dante's inferno",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "2": 3,
+          "4": 1,
+          "6": 1,
+          "7": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Dante's inferno -- day",
+        "lines": {
+          "0": 4,
+          "1": 5
+        }
+      },
+      {
+        "place": "Manning house -- night",
+        "lines": {}
+      },
+      {
+        "place": "Manning house -- night",
+        "lines": {
+          "0": 4,
+          "18": 2
+        }
+      },
+      {
+        "place": "Alex's room -- night",
+        "lines": {
+          "0": 2,
+          "6": 2
+        }
+      },
+      {
+        "place": "Level one, the plains -- day",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Alex's room",
+        "lines": {
+          "0": 9,
+          "1": 6
+        }
+      },
+      {
+        "place": "Manning house, living room -- night",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Manning house",
+        "lines": {}
+      },
+      {
+        "place": "Nick drake's house",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Nick's room -- night",
+        "lines": {
+          "0": 19,
+          "1": 19
+        }
+      },
+      {
+        "place": "High-school library -- day",
+        "lines": {
+          "0": 8,
+          "1": 7,
+          "4": 6
+        }
+      },
+      {
+        "place": "Benz' house -- day",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Laurie's house -- day",
+        "lines": {
+          "0": 5,
+          "1": 1
+        }
+      },
+      {
+        "place": "Laurie's house, back porch -- day",
+        "lines": {
+          "0": 5,
+          "1": 1
+        }
+      },
+      {
+        "place": "Laurie's house, living room",
+        "lines": {
+          "0": 7,
+          "1": 10,
+          "3": 1,
+          "6": 4,
+          "7": 2,
+          "24": 1
+        }
+      },
+      {
+        "place": "Nick's house -- day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Nick's backyard -- day",
+        "lines": {}
+      },
+      {
+        "place": "Nick's cellar -- day",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Nick's house -- day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Shopping mall, pay-phone -- day",
+        "lines": {
+          "0": 10,
+          "1": 11
+        }
+      },
+      {
+        "place": "Slip-stream, inc. -- day",
+        "lines": {}
+      },
+      {
+        "place": "Slip-stream lobby -- day",
+        "lines": {
+          "0": 6,
+          "1": 4,
+          "2": 6,
+          "11": 5
+        }
+      },
+      {
+        "place": "Difford's office -- day",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "2": 3
+        }
+      },
+      {
+        "place": "Research and development -- day",
+        "lines": {
+          "0": 9,
+          "1": 11,
+          "2": 4,
+          "5": 19,
+          "13": 2
+        }
+      },
+      {
+        "place": "Slip-stream hallway",
+        "lines": {}
+      },
+      {
+        "place": "R&d lab",
+        "lines": {
+          "1": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Slip-stream hallway",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Another hallway",
+        "lines": {
+          "14": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Stairwell -- day",
+        "lines": {}
+      },
+      {
+        "place": "Ground floor hallway",
+        "lines": {}
+      },
+      {
+        "place": "Loading area -- day",
+        "lines": {}
+      },
+      {
+        "place": "Loading dock -- day",
+        "lines": {}
+      },
+      {
+        "place": "Country road -- day",
+        "lines": {
+          "0": 4,
+          "1": 4
+        }
+      },
+      {
+        "place": "Dante's inferno -- night",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Dante's inferno roof",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Dante's inferno -- night",
+        "lines": {
+          "0": 16,
+          "1": 18,
+          "6": 3,
+          "28": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "Level one, the plains -- day",
+        "lines": {
+          "0": 7,
+          "1": 12
+        }
+      },
+      {
+        "place": "Level one, plains -- later",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Level two, salt flats -- day",
+        "lines": {
+          "0": 8,
+          "1": 8
+        }
+      },
+      {
+        "place": "Level three, desert -- day",
+        "lines": {
+          "0": 4,
+          "1": 4
+        }
+      },
+      {
+        "place": "Level three, desert -- later",
+        "lines": {
+          "0": 6,
+          "1": 1,
+          "6": 1,
+          "8": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Level four, volcano -- day",
+        "lines": {}
+      },
+      {
+        "place": "Level four, volcano rim -- day",
+        "lines": {}
+      },
+      {
+        "place": "Level five, arctic wastes -- day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Level five, arctic wastes -- later",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Level six, shock corridor -- night",
+        "lines": {
+          "0": 1,
+          "20": 1
+        }
+      },
+      {
+        "place": "Level seven, pier -- day",
+        "lines": {
+          "0": 10,
+          "4": 3,
+          "7": 5
+        }
+      },
+      {
+        "place": "Level seven, open sea -- later",
+        "lines": {
+          "0": 1,
+          "7": 1,
+          "9": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Level eight, concrete wasteland -- night",
+        "lines": {
+          "0": 9,
+          "9": 5
+        }
+      },
+      {
+        "place": "Level nine, crumbling hong kong ghetto -- night",
+        "lines": {
+          "0": 2,
+          "9": 1,
+          "19": 2
+        }
+      },
+      {
+        "place": "Level ten, techno-skyscraper -- night",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Level ten, arcade's brain -- night",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Level ten, the night room --",
+        "lines": {
+          "0": 4,
+          "6": 4,
+          "16": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "Manning house, hallway -- day",
+        "lines": {
+          "0": 2,
+          "13": 1,
+          "30": 1
+        }
+      },
+      {
+        "place": "Manning house, bedroom -- day",
+        "lines": {
+          "0": 4,
+          "10": 6,
+          "21": 1
+        }
+      },
+      {
+        "place": "Level nine, the night room --",
+        "lines": {
+          "0": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "Dante's inferno -- night",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Dante's inferno -- dawn",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "3": 3,
+          "4": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Dante's inferno -- day",
+        "lines": {
+          "16": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 2,
+      "longestWithoutWoman": 24,
+      "longestWithoutWomanStart": 68,
+      "words": {
+        "w": 1508,
+        "m": 3057,
+        "unknown": 244
+      },
+      "womenConversations": 5,
+      "menConversations": 32,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/8rKJ1apU6VEzEoqRqMmDnpU1mnb.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/9v7WilZRca6qMPsABhCoWlHBEMO.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Megan Ward",
+      "character": "Alex Manning",
+      "actorActress": "1",
+      "age": 23
+    },
+    {
+      "actorName": "Peter Billingsley",
+      "character": "Nick",
+      "actorActress": "2",
+      "age": 22
+    },
+    {
+      "actorName": "John de Lancie",
+      "character": "Difford",
+      "actorActress": "2",
+      "age": 45
+    },
+    {
+      "actorName": "Seth Green",
+      "character": "Stilts",
+      "actorActress": "2",
+      "age": 19
+    },
+    {
+      "actorName": "Sharon Farrell",
+      "character": "Alex's Mom",
+      "actorActress": "1",
+      "age": 52
+    },
+    {
+      "actorName": "A. J. Langer",
+      "character": "Laurie",
+      "actorActress": "1",
+      "age": 19
+    },
+    {
+      "actorName": "Bryan Dattilo",
+      "character": "Greg",
+      "actorActress": "2",
+      "age": 21
+    },
+    {
+      "actorName": "Brandon Rane",
+      "character": "Benz"
+    },
+    {
+      "actorName": "B.J. Barie",
+      "character": "DeLoache",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Humberto Ortiz",
+      "character": "Boy",
+      "actorActress": "2",
+      "age": 13
+    },
+    {
+      "actorName": "Norbert Weisser",
+      "character": "Albert",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Don Stark",
+      "character": "Finster",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dorothy Dells",
+      "character": "Mrs. Weaver",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Todd Starks",
+      "character": "Burt Manning"
+    },
+    {
+      "actorName": "Alexandria Byrne",
+      "character": "Kid at arcade parlour"
+    },
+    {
+      "actorName": "David Sederholm",
+      "character": "Receptionist",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tom Stoviak",
+      "character": "Waches",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jonathan Fuller",
+      "character": "Arcade",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Albert Pyun",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "David S. Goyer",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Charles Band",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Cathy Gesualdo",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "George Mooradian",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Miles Wynton",
+        "gender": null
+      },
+      {
+        "job": "Production Design",
+        "name": "Don Day",
+        "gender": null
+      },
+      {
+        "job": "Costume Design",
+        "name": "Cindy Rosenthal",
+        "gender": null
+      },
+      {
+        "job": "Casting",
+        "name": "Tom McSweeney",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Cathy Henderson",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Art": {
+        "w": 2,
+        "m": 1,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Production": {
+        "w": 6,
+        "m": 4,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Sound": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Camera": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Editing": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      }
+    }
+  },
+  "money": {
+    "budget": null,
+    "revenue": null
+  },
+  "directors": [
+    {
+      "name": "Albert Pyun"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Charles Band (story)"
+    },
+    {
+      "name": "David S. Goyer (screenplay)"
+    }
+  ],
+  "awards": [],
+  "dateUploaded": "2026-11-07T15:12:50.096Z",
+  "plot": "Alex Manning is a troubled suburban teenager. Her mother committed suicide and the school counselor feels that she has not dealt with her feelings properly. Manning and her friends decide to visit the local video arcade known as \"Dante's Inferno\" where a new virtual reality arcade game called \"Arcade\" is being test marketed by a computer company CEO who is more than willing to hand out free samples of the home console version and hype up the game as if his job is depending on it, and it is. However, it soon becomes clear that the teenagers who play the game and lose are being imprisoned inside the virtual reality world by the central villain \"Arcade\". And it gets worse when a virtual reality game begins to take over the minds of teenagers. The computer company felt it would be a good idea to use a boy's brain cells in order to make the game's villain more realistic. Instead, it made the game deadly. And so now Nick and Alex must enlist the help of the game's programmer and head to the video arcade for a final showdown with \"Arcade\" and his deadly virtual world.",
+  "simplePlot": "Alex Manning is a troubled suburban teenager. Her mother committed suicide and the school counselor feels that she has not dealt with her feelings properly. Manning and her friends decide to visit the local video arcade known as \"Dante's Inferno\" where a new virtual reality arcade game called \"Arcade\" is being test marketed by a computer company CEO who is more than willing to hand out free samples of the home console version and hype up the game as if his job is depending on it, and it is. However, it soon becomes clear that the teenagers who play the game and lose are being imprisoned inside the virtual reality world by the central villain \"Arcade\". And it gets worse when a virtual reality game begins to take over the minds of teenagers. The computer company felt it would be a good idea to use a boy's brain cells in order to make the game's villain more realistic. Instead, it made the game deadly. And so now Nick and Alex must enlist the help of the game's programmer and head to the video arcade for a final showdown with \"Arcade\" and his deadly virtual world.",
+  "year": 1993,
+  "releaseDate": "30 Mar 1994",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMjBiZTdlZDktYmE0MS00ZDAyLWI2NzEtNGZlNWRlYzJkMzI5XkEyXkFqcGdeQXVyMjAxMjEzNzU@._V1_SX300.jpg",
+  "idIMDB": "tt0106302",
+  "rating": "4.7",
+  "metascore": null,
+  "urlIMDB": "https://www.imdb.com/title/tt0106302/"
+}
