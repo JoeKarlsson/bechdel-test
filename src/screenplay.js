@@ -19,8 +19,27 @@ const PAGE_NUMBER = /^\s*\d+\.?\s*$/;
 // A heading without INT./EXT.: "ANNIE'S KITCHEN - SEVERAL DAYS LATER"
 const PLACE_HEADING = /^[A-Z0-9][A-Z0-9 .,'’&/()#-]{2,60}\s[-–—]\s*(?:DAY|NIGHT|MORNING|EVENING|AFTERNOON|DAWN|DUSK|SUNSET|SUNRISE|LATER|CONTINUOUS|SAME(?: TIME)?|MOMENTS LATER|(?:A )?(?:FEW|SEVERAL) (?:MINUTES|HOURS|DAYS|WEEKS|MONTHS) LATER)\.?$/;
 const isHeading = t => t === t.toUpperCase() && (SCENE_HEADING.test(t) || PLACE_HEADING.test(t));
-/** A normalized name that isn't a camera or structure note ("ANGLE ON", "CONTINUED", "DRAFT") */
-const isSpeakerName = name => !NOT_A_SPEAKER.has(name) && !/\bPOV\b|\bANGLE\b|\bSHOT\b/.test(name);
+/**
+ * A normalized name that isn't a camera or structure note: "ANGLE ON",
+ * "CONTINUED", "DRAFT", or any "<something> ON" ("ANGLES ON", "PAN ON", and
+ * "NGLE ON" from a scan that split off the A)
+ */
+const isSpeakerName = name => !NOT_A_SPEAKER.has(name) && !/\bPOV\b|\bANGLES?\b|\bSHOT\b|\sON$/.test(name);
+
+// A running page header: a label and colon, repeated on most pages with only
+// its numbers changed ("HTTYD: The Hidden World - 12/05/18 - Final  12.",
+// "ANTHROPOID V20: 3"). The colon keeps repeated dialogue with numbers in it.
+const RUNNING_HEADER_MIN_PAGES = 5;
+const RUNNING_HEADER = /^\s*[A-Za-z][^:]{0,40}:.*\d/;
+const dropRunningHeaders = lines => {
+	const keyOf = line => (RUNNING_HEADER.test(line) && !isHeading(line.trim()) ? line.replace(/\d+/g, '#').replace(/\s+/g, ' ').trim() : null);
+	const counts = {};
+	for (const line of lines) {
+		const key = keyOf(line);
+		if (key) counts[key] = (counts[key] || 0) + 1;
+	}
+	return lines.filter(line => (counts[keyOf(line)] ?? 0) < RUNNING_HEADER_MIN_PAGES);
+};
 
 /** "JAKE (V.O.)" -> "JAKE"; "NICK (CONT’D) *" -> "NICK"; "Mrs. Smith" -> "MRS. SMITH" */
 const normalizeSpeaker = raw => raw
@@ -129,12 +148,12 @@ const undoDoubleSpacing = lines => {
  *   blocks: Array<{ kind: 'action', text: string } | { kind: 'dialogue', speaker: string, text: string }> }> }}
  */
 const parseScreenplay = rawText => {
-	const lines = undoDoubleSpacing(restoreLineBreaks(rawText.replace(/\r\n?/g, '\n'))
+	const lines = dropRunningHeaders(undoDoubleSpacing(restoreLineBreaks(rawText.replace(/\r\n?/g, '\n'))
 		.replace(/\t/g, '        ')
 		.replace(/\f/g, '\n')
 		.split('\n')
 		.map(l => l.replace(/\s+$/, ''))
-		.filter(l => !PAGE_NUMBER.test(l)));
+		.filter(l => !PAGE_NUMBER.test(l))));
 	const layout = layoutOf(lines);
 
 	// Flattened scripts: names seen as standalone cues, used to spot inline

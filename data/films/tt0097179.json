@@ -9,8 +9,8 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 186,
+    "numScenesPass": 2,
+    "numScenesDontPass": 185,
     "numOfFemalesChars": 3,
     "numOfMaleChars": 9,
     "numOfFemalesCharsWithDialogue": 3,
@@ -18,25 +18,20 @@
     "totalLinesFemaleDialogue": 97,
     "totalLinesMaleDialogue": 268,
     "scenesThatPass": [
+      "NORRIS: How long can we last?\nCOLLINS: There's enough ambient air in the station for a couple of hours.",
       "NORRIS: How much air do we have left?\nCOLLINS: Not much ... whatever air is left in the station, enough for an hour or so, no more."
     ]
   },
   "script": {
     "file": "deepstar-six-1989.txt",
     "layout": "indented",
-    "dialogueLines": 513,
+    "dialogueLines": 415,
     "speakers": [
       {
         "name": "PIERCE",
         "lines": 120,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "DEEP SIX",
-        "lines": 98,
-        "gender": null,
-        "named": false
       },
       {
         "name": "LAIDLAW",
@@ -173,19 +168,18 @@
       {
         "place": "The ocean",
         "lines": {
-          "11": 1,
-          "14": 1,
-          "17": 1
+          "10": 1,
+          "13": 1,
+          "16": 1
         }
       },
       {
         "place": "Galley",
         "lines": {
           "0": 6,
-          "1": 3,
-          "4": 5,
-          "6": 6,
-          "7": 6
+          "3": 5,
+          "5": 6,
+          "6": 6
         }
       },
       {
@@ -193,18 +187,16 @@
         "lines": {
           "0": 1,
           "1": 1,
-          "2": 1,
-          "3": 2,
-          "19": 1
+          "2": 2,
+          "18": 1
         }
       },
       {
         "place": "Medical bay",
         "lines": {
           "0": 1,
-          "1": 2,
-          "2": 10,
-          "3": 10
+          "1": 10,
+          "2": 10
         }
       },
       {
@@ -215,8 +207,7 @@
         "place": "Dsrv",
         "lines": {
           "0": 3,
-          "1": 1,
-          "2": 1
+          "1": 1
         }
       },
       {
@@ -226,8 +217,7 @@
       {
         "place": "Dsrv",
         "lines": {
-          "1": 1,
-          "2": 2
+          "1": 2
         }
       },
       {
@@ -237,14 +227,12 @@
       {
         "place": "Dsrv",
         "lines": {
-          "2": 2
+          "1": 2
         }
       },
       {
         "place": "Bio-lab",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Dsrv",
@@ -269,29 +257,26 @@
       {
         "place": "Control room",
         "lines": {
-          "1": 1,
-          "2": 4,
-          "5": 3
+          "1": 4,
+          "4": 3
         }
       },
       {
         "place": "Bio lab",
         "lines": {
           "0": 6,
-          "1": 2,
-          "2": 8,
-          "9": 1
+          "1": 8,
+          "8": 1
         }
       },
       {
         "place": "Controlroom- momentslater",
         "lines": {
-          "1": 3,
-          "2": 13,
-          "4": 1,
-          "5": 2,
-          "8": 8,
-          "10": 4
+          "1": 13,
+          "3": 1,
+          "4": 2,
+          "7": 8,
+          "9": 4
         }
       },
       {
@@ -301,25 +286,21 @@
       {
         "place": "Deepstar",
         "lines": {
-          "1": 1,
-          "2": 3,
-          "5": 3,
-          "8": 3
+          "1": 3,
+          "4": 3,
+          "7": 3
         }
       },
       {
         "place": "Bio lab",
         "lines": {
-          "1": 1,
-          "5": 4,
-          "8": 7
+          "4": 4,
+          "7": 7
         }
       },
       {
         "place": "Bio lab",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Control room",
@@ -346,20 +327,18 @@
       {
         "place": "Contol room",
         "lines": {
-          "2": 1
-        }
-      },
-      {
-        "place": "Bio lab",
-        "lines": {
           "1": 1
         }
       },
       {
         "place": "Bio lab",
+        "lines": {}
+      },
+      {
+        "place": "Bio lab",
         "lines": {
           "0": 1,
-          "2": 1
+          "1": 1
         }
       },
       {
@@ -369,22 +348,21 @@
       {
         "place": "Control room",
         "lines": {
-          "2": 1
+          "1": 1
         }
       },
       {
         "place": "Hot box",
         "lines": {
-          "1": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
         "place": "Controlroom",
         "lines": {
           "0": 1,
-          "2": 3,
-          "9": 1
+          "1": 3,
+          "8": 1
         }
       },
       {
@@ -397,21 +375,18 @@
       },
       {
         "place": "Controlroom",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Bio lab",
         "lines": {
-          "5": 1
+          "4": 1
         }
       },
       {
         "place": "Docking bay",
         "lines": {
-          "0": 1,
-          "1": 1
+          "0": 1
         }
       },
       {
@@ -419,31 +394,28 @@
         "lines": {
           "0": 3,
           "1": 1,
-          "2": 1,
-          "5": 1,
-          "9": 2
+          "4": 1,
+          "8": 2
         }
       },
       {
         "place": "Bio-lab",
         "lines": {
           "0": 11,
-          "1": 4,
-          "2": 9,
-          "4": 1,
-          "5": 4
+          "1": 9,
+          "3": 1,
+          "4": 4
         }
       },
       {
         "place": "Bio-lab",
         "lines": {
           "0": 6,
-          "1": 3,
-          "2": 2,
-          "4": 5,
-          "5": 1,
-          "15": 1,
-          "16": 1
+          "1": 2,
+          "3": 5,
+          "4": 1,
+          "14": 1,
+          "15": 1
         }
       },
       {
@@ -454,9 +426,8 @@
         "place": "Control room",
         "lines": {
           "0": 2,
-          "1": 3,
-          "2": 5,
-          "5": 1
+          "1": 5,
+          "4": 1
         }
       },
       {
@@ -464,15 +435,13 @@
         "lines": {
           "0": 5,
           "1": 2,
-          "2": 2,
-          "4": 3
+          "3": 3
         }
       },
       {
         "place": "Dsrv",
         "lines": {
-          "1": 1,
-          "4": 2
+          "3": 2
         }
       },
       {
@@ -483,26 +452,23 @@
         "place": "Dsrv",
         "lines": {
           "0": 2,
-          "4": 1
+          "3": 1
         }
       },
       {
         "place": "Dsrv",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Deepstar",
         "lines": {
           "0": 9,
-          "1": 3,
+          "2": 3,
           "3": 3,
-          "4": 3,
-          "5": 1,
-          "6": 9,
-          "7": 1,
-          "9": 1
+          "4": 1,
+          "5": 9,
+          "6": 1,
+          "8": 1
         }
       },
       {
@@ -511,22 +477,19 @@
       },
       {
         "place": "Commandcenter",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Sick bay",
         "lines": {
-          "3": 1
+          "2": 1
         }
       },
       {
         "place": "Commandcenter",
         "lines": {
           "0": 2,
-          "1": 1,
-          "7": 1
+          "6": 1
         }
       },
       {
@@ -548,8 +511,7 @@
       {
         "place": "Docking bay",
         "lines": {
-          "0": 2,
-          "1": 1
+          "0": 2
         }
       },
       {
@@ -560,8 +522,7 @@
         "place": "Commandcenter",
         "lines": {
           "0": 1,
-          "1": 1,
-          "3": 1
+          "2": 1
         }
       },
       {
@@ -572,7 +533,7 @@
         "place": "Commandcenter",
         "lines": {
           "0": 1,
-          "3": 1
+          "2": 1
         }
       },
       {
@@ -586,8 +547,7 @@
       {
         "place": "Commandcenter",
         "lines": {
-          "0": 2,
-          "1": 1
+          "0": 2
         }
       },
       {
@@ -601,8 +561,7 @@
       {
         "place": "Commandcenter",
         "lines": {
-          "0": 1,
-          "1": 1
+          "0": 1
         }
       },
       {
@@ -613,19 +572,17 @@
         "place": "Commandcenter",
         "lines": {
           "0": 7,
-          "1": 2,
-          "3": 2,
-          "4": 1,
-          "6": 3,
-          "7": 4
+          "2": 2,
+          "3": 1,
+          "5": 3,
+          "6": 4
         }
       },
       {
         "place": "The basement",
         "lines": {
-          "1": 1,
-          "3": 1,
-          "7": 2
+          "2": 1,
+          "6": 2
         }
       },
       {
@@ -635,8 +592,7 @@
       {
         "place": "Basement",
         "lines": {
-          "0": 2,
-          "1": 2
+          "0": 2
         }
       },
       {
@@ -646,8 +602,8 @@
       {
         "place": "Basement/            ext. airlock",
         "lines": {
-          "4": 1,
-          "7": 1
+          "3": 1,
+          "6": 1
         }
       },
       {
@@ -661,8 +617,7 @@
       {
         "place": "Basement",
         "lines": {
-          "1": 1,
-          "7": 1
+          "6": 1
         }
       },
       {
@@ -672,104 +627,97 @@
       {
         "place": "Basement",
         "lines": {
-          "7": 1
+          "6": 1
         }
       },
       {
         "place": "Ocean floor",
         "lines": {
-          "7": 1
+          "6": 1
         }
       },
       {
         "place": "Basement",
         "lines": {
           "0": 1,
-          "1": 1,
-          "7": 1
+          "6": 1
         }
       },
       {
         "place": "Oxygen exchanger",
         "lines": {
           "0": 1,
-          "7": 1
+          "6": 1
         }
       },
       {
         "place": "Basement- on monitor",
         "lines": {
           "0": 1,
-          "6": 1
+          "5": 1
         }
       },
       {
         "place": "Oxygen exchanger",
         "lines": {
-          "7": 1
+          "6": 1
         }
       },
       {
         "place": "Basement",
         "lines": {
           "0": 1,
-          "1": 1,
-          "7": 1
+          "6": 1
         }
       },
       {
         "place": "Oxygen exchanger",
         "lines": {
-          "7": 1
-        }
-      },
-      {
-        "place": "Basement",
-        "lines": {
-          "3": 1
-        }
-      },
-      {
-        "place": "Oxygen exchanger",
-        "lines": {
-          "1": 1,
-          "7": 2,
-          "22": 1
-        }
-      },
-      {
-        "place": "Basement",
-        "lines": {
-          "0": 6,
-          "1": 4,
-          "3": 3,
-          "4": 1,
-          "9": 1,
-          "18": 1
-        }
-      },
-      {
-        "place": "Commandcenter",
-        "lines": {
-          "1": 1,
           "6": 1
         }
       },
       {
         "place": "Basement",
         "lines": {
-          "0": 2,
-          "1": 1,
-          "4": 3,
-          "9": 2
+          "2": 1
+        }
+      },
+      {
+        "place": "Oxygen exchanger",
+        "lines": {
+          "6": 2,
+          "21": 1
+        }
+      },
+      {
+        "place": "Basement",
+        "lines": {
+          "0": 6,
+          "2": 3,
+          "3": 1,
+          "8": 1,
+          "17": 1
         }
       },
       {
         "place": "Commandcenter",
         "lines": {
-          "1": 1,
-          "3": 1,
-          "6": 2
+          "5": 1
+        }
+      },
+      {
+        "place": "Basement",
+        "lines": {
+          "0": 2,
+          "3": 3,
+          "8": 2
+        }
+      },
+      {
+        "place": "Commandcenter",
+        "lines": {
+          "2": 1,
+          "5": 2
         }
       },
       {
@@ -780,30 +728,27 @@
         "place": "Commandcenter",
         "lines": {
           "0": 2,
-          "1": 1,
-          "4": 1,
-          "6": 1
+          "3": 1,
+          "5": 1
         }
       },
       {
         "place": "Sick bay",
         "lines": {
           "0": 5,
-          "1": 3,
-          "3": 8,
-          "4": 3,
-          "5": 7,
-          "6": 1
+          "2": 8,
+          "3": 3,
+          "4": 7,
+          "5": 1
         }
       },
       {
         "place": "Galley",
         "lines": {
           "0": 2,
-          "1": 2,
-          "3": 6,
-          "5": 3,
-          "6": 3
+          "2": 6,
+          "4": 3,
+          "5": 3
         }
       },
       {
@@ -816,19 +761,17 @@
         "place": "Commandcenter",
         "lines": {
           "0": 2,
-          "1": 1,
-          "3": 1,
-          "6": 1
+          "2": 1,
+          "5": 1
         }
       },
       {
         "place": "The basement",
         "lines": {
           "0": 3,
-          "1": 2,
-          "3": 1,
-          "5": 1,
-          "6": 2
+          "2": 1,
+          "4": 1,
+          "5": 2
         }
       },
       {
@@ -847,7 +790,7 @@
         "place": "Basement/            on surface",
         "lines": {
           "0": 1,
-          "6": 1
+          "5": 1
         }
       },
       {
@@ -858,22 +801,20 @@
         "place": "Basement/            surface",
         "lines": {
           "0": 2,
-          "1": 2,
-          "4": 1,
-          "21": 1
+          "3": 1,
+          "20": 1
         }
       },
       {
         "place": "Commandcenter",
         "lines": {
-          "1": 1,
-          "3": 2
+          "2": 2
         }
       },
       {
         "place": "Escape pod",
         "lines": {
-          "3": 1
+          "2": 1
         }
       },
       {
@@ -882,9 +823,7 @@
       },
       {
         "place": "Commandcenter",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Escape pod",
@@ -906,8 +845,7 @@
         "place": "Galley",
         "lines": {
           "0": 1,
-          "1": 1,
-          "3": 1
+          "2": 1
         }
       },
       {
@@ -916,9 +854,7 @@
       },
       {
         "place": "The pod",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Escape pod",
@@ -930,9 +866,7 @@
       },
       {
         "place": "Galley",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Galley",
@@ -946,9 +880,7 @@
       },
       {
         "place": "Command",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Commandcenter",
@@ -964,9 +896,7 @@
       },
       {
         "place": "The docking bay",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Dsrv-",
@@ -975,7 +905,7 @@
       {
         "place": "Galley",
         "lines": {
-          "3": 2
+          "2": 2
         }
       },
       {
@@ -984,9 +914,7 @@
       },
       {
         "place": "Commandcenter",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Medical bay",
@@ -1001,8 +929,7 @@
       {
         "place": "The medical bay",
         "lines": {
-          "1": 3,
-          "3": 2
+          "2": 2
         }
       },
       {
@@ -1011,9 +938,7 @@
       },
       {
         "place": "Medical bay",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Decompression chamber- ds",
@@ -1026,26 +951,23 @@
       {
         "place": "Decompression",
         "lines": {
-          "1": 1,
-          "4": 1,
-          "12": 1,
-          "20": 1
+          "3": 1,
+          "11": 1,
+          "19": 1
         }
       },
       {
         "place": "Decompressionchamber",
         "lines": {
-          "1": 1,
-          "4": 1,
-          "13": 1
+          "3": 1,
+          "12": 1
         }
       },
       {
         "place": "Dsrv-1                     momentslater",
         "lines": {
           "0": 1,
-          "1": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1063,7 +985,7 @@
       {
         "place": "Dsrv-",
         "lines": {
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1073,8 +995,7 @@
       {
         "place": "Dsrv-",
         "lines": {
-          "1": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1101,8 +1022,7 @@
         "place": "Dsrv-",
         "lines": {
           "0": 1,
-          "1": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1112,7 +1032,7 @@
       {
         "place": "Dsrv-",
         "lines": {
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1122,8 +1042,7 @@
       {
         "place": "Dsrv-",
         "lines": {
-          "0": 1,
-          "1": 1
+          "0": 1
         }
       },
       {
@@ -1141,8 +1060,7 @@
       {
         "place": "Dsrv-",
         "lines": {
-          "0": 1,
-          "1": 1
+          "0": 1
         }
       },
       {
@@ -1167,9 +1085,7 @@
       },
       {
         "place": "Dsrv-",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Ext.     dsrv-",
@@ -1195,8 +1111,7 @@
         "place": "Dsrv-",
         "lines": {
           "0": 1,
-          "1": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1205,9 +1120,7 @@
       },
       {
         "place": "The ocean",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Dsrv-",
@@ -1221,7 +1134,7 @@
         "place": "Dsrv-",
         "lines": {
           "0": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1230,29 +1143,24 @@
       },
       {
         "place": "Dsrv-",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Dsrv-",
         "lines": {
           "0": 2,
-          "1": 1,
-          "4": 3
+          "3": 3
         }
       },
       {
         "place": "The raft",
-        "lines": {
-          "1": 1
-        }
+        "lines": {}
       },
       {
         "place": "Dsrv-",
         "lines": {
           "0": 1,
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -1261,16 +1169,16 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 6,
-      "longestWithoutWoman": 56,
-      "longestWithoutWomanStart": 99,
+      "firstWomanLine": 5,
+      "longestWithoutWoman": 49,
+      "longestWithoutWomanStart": 87,
       "words": {
         "w": 733,
         "m": 2321,
-        "unknown": 626
+        "unknown": 528
       },
-      "womenConversations": 2,
-      "menConversations": 41,
+      "womenConversations": 3,
+      "menConversations": 35,
       "reverseScore": 3
     }
   },

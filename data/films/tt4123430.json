@@ -14,12 +14,12 @@
     "numOfFemalesChars": 28,
     "numOfMaleChars": 45,
     "numOfFemalesCharsWithDialogue": 16,
-    "numOfMaleCharsWithDialogue": 22,
+    "numOfMaleCharsWithDialogue": 21,
     "totalLinesFemaleDialogue": 194,
-    "totalLinesMaleDialogue": 478,
+    "totalLinesMaleDialogue": 477,
     "scenesThatPass": [
       "RECEPTIONIST: Bienvenue au Ministère des Affaires Magiques.\nQUEENIE: I'm sorry, I don't know what you just said at all --\nRECEPTIONIST: Welcome to the French Ministry of Magic. What is your business, please?\nQUEENIE: I need to speak to Tina Goldstein, she's an American Auror working on a case here --",
-      "IRMA: Qui est là?\nNAGINI: C'est votre fils, madame.",
+      "IRMA: Qui est là?\nNAGINI: C'est votre fils, madame.\nIRMA: Qui êtes-vous?",
       "QUEENIE: Oh, no, thank you. You've been real kind, but my sister Tina's probably worried sick about me, you know. Banging on all the doors and things…\nROSIER: But you haven't met your host.\nQUEENIE: Oh, are you married?\nROSIER: Let's say... deeply committed.",
       "TINA: Fiancé.\nMELUSINE: Allez-y.\nTINA: Merci."
     ]
@@ -27,7 +27,7 @@
   "script": {
     "file": "fantastic-beasts-the-crimes-of-grindelwald.txt",
     "layout": "indented",
-    "dialogueLines": 767,
+    "dialogueLines": 734,
     "speakers": [
       {
         "name": "NEWT",
@@ -76,12 +76,6 @@
         "lines": 34,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "FANTASTIC BEASTS",
-        "lines": 33,
-        "gender": null,
-        "named": false
       },
       {
         "name": "THESEUS",
@@ -288,6 +282,12 @@
         "named": false
       },
       {
+        "name": "FANTASTIC BEASTS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "GRYFFINDOR GIRL 2",
         "lines": 1,
         "gender": "w",
@@ -325,12 +325,6 @@
       },
       {
         "name": "WE CLOSE IN",
-        "lines": 1,
-        "gender": "m",
-        "named": false
-      },
-      {
-        "name": "WE CLOSE IN ON",
         "lines": 1,
         "gender": "m",
         "named": false
@@ -388,7 +382,7 @@
       {
         "place": null,
         "lines": {
-          "8": 1
+          "42": 1
         }
       },
       {
@@ -402,9 +396,9 @@
       {
         "place": "Macusa, corridor between cells",
         "lines": {
-          "16": 3,
-          "23": 2,
-          "28": 1
+          "15": 3,
+          "22": 2,
+          "27": 1
         }
       },
       {
@@ -416,10 +410,10 @@
       {
         "place": "Macusa rooftop",
         "lines": {
-          "16": 1,
-          "23": 2,
-          "28": 2,
-          "38": 1
+          "15": 1,
+          "22": 2,
+          "27": 2,
+          "37": 1
         }
       },
       {
@@ -429,7 +423,7 @@
       {
         "place": "Thestral-drawn carriage  (night)",
         "lines": {
-          "16": 1
+          "15": 1
         }
       },
       {
@@ -439,7 +433,7 @@
       {
         "place": "Thestral-drawn carriage  (night)",
         "lines": {
-          "16": 1
+          "15": 1
         }
       },
       {
@@ -481,31 +475,31 @@
         "lines": {
           "0": 9,
           "5": 8,
-          "9": 3
+          "8": 3
         }
       },
       {
         "place": "Ministry of magic, hearing room",
         "lines": {
           "0": 8,
-          "9": 3,
-          "10": 5,
-          "15": 3,
-          "16": 2,
-          "30": 3
+          "8": 3,
+          "9": 5,
+          "14": 3,
+          "15": 2,
+          "29": 3
         }
       },
       {
         "place": "Ministry of magic, corridor",
         "lines": {
           "0": 3,
-          "9": 7
+          "8": 7
         }
       },
       {
         "place": "Ministry of magic, hearing room",
         "lines": {
-          "15": 1
+          "14": 1
         }
       },
       {
@@ -523,13 +517,13 @@
         "place": "Grindelwald's hideout, drawing room",
         "lines": {
           "3": 3,
-          "20": 2
+          "19": 2
         }
       },
       {
         "place": "Grindelwald's hideout, nursery",
         "lines": {
-          "25": 1
+          "24": 1
         }
       },
       {
@@ -578,7 +572,7 @@
         "place": "Newt's basement menagerie",
         "lines": {
           "0": 12,
-          "14": 7
+          "13": 7
         }
       },
       {
@@ -620,8 +614,7 @@
         "lines": {
           "0": 4,
           "1": 4,
-          "8": 1,
-          "14": 1
+          "13": 1
         }
       },
       {
@@ -631,31 +624,28 @@
       {
         "place": "Place cachée, circus arcanus  (night)",
         "lines": {
-          "8": 1,
-          "40": 1
+          "39": 1
         }
       },
       {
         "place": "Circus arcanus, freaks' tent",
         "lines": {
-          "12": 3,
-          "13": 2,
-          "19": 1
+          "11": 3,
+          "12": 2,
+          "18": 1
         }
       },
       {
         "place": "Circus arcanus, big top  (night)",
         "lines": {
-          "8": 1,
-          "13": 6
+          "12": 6
         }
       },
       {
         "place": "Circus arcanus, big top  (night)",
         "lines": {
           "2": 2,
-          "8": 1,
-          "13": 2
+          "12": 2
         }
       },
       {
@@ -669,8 +659,7 @@
         "place": "Grindelwald's hideout, drawing room  (night)",
         "lines": {
           "3": 6,
-          "8": 1,
-          "22": 4
+          "21": 4
         }
       },
       {
@@ -678,8 +667,7 @@
         "lines": {
           "0": 9,
           "1": 8,
-          "8": 1,
-          "24": 4
+          "23": 4
         }
       },
       {
@@ -701,7 +689,7 @@
         "place": "Ministère des affaires magiques, main level",
         "lines": {
           "6": 4,
-          "33": 3
+          "32": 3
         }
       },
       {
@@ -710,8 +698,7 @@
           "0": 3,
           "1": 3,
           "6": 1,
-          "8": 1,
-          "20": 1
+          "19": 1
         }
       },
       {
@@ -721,7 +708,7 @@
       {
         "place": "Rue philippe lorand",
         "lines": {
-          "12": 1
+          "11": 1
         }
       },
       {
@@ -731,17 +718,16 @@
       {
         "place": "18 rue philippe lorand, landing outside maid's room",
         "lines": {
-          "8": 1,
-          "12": 3,
-          "18": 4,
-          "19": 1
+          "11": 3,
+          "17": 4,
+          "18": 1
         }
       },
       {
         "place": "Alleyway",
         "lines": {
           "3": 2,
-          "15": 4
+          "14": 4
         }
       },
       {
@@ -762,8 +748,7 @@
         "lines": {
           "0": 8,
           "1": 4,
-          "7": 4,
-          "8": 1
+          "7": 4
         }
       },
       {
@@ -772,15 +757,13 @@
           "0": 5,
           "1": 1,
           "2": 4,
-          "7": 4,
-          "8": 1
+          "7": 4
         }
       },
       {
         "place": "Parisian bridge  (night)",
         "lines": {
-          "1": 1,
-          "8": 1
+          "1": 1
         }
       },
       {
@@ -791,10 +774,9 @@
         "place": "Defense against the dark arts classroom",
         "lines": {
           "4": 16,
-          "8": 2,
-          "10": 16,
-          "31": 3,
-          "32": 2
+          "9": 16,
+          "30": 3,
+          "31": 2
         }
       },
       {
@@ -808,41 +790,40 @@
       {
         "place": "Empty hogwarts classroom",
         "lines": {
-          "17": 1,
-          "21": 3,
-          "32": 1,
+          "16": 1,
+          "20": 3,
+          "31": 1,
           "43": 1
         }
       },
       {
         "place": "Hogwarts cupboard",
         "lines": {
-          "17": 4,
-          "26": 3
+          "16": 4,
+          "25": 3
         }
       },
       {
         "place": "Previously",
         "lines": {
           "4": 5,
-          "21": 1,
-          "27": 2
+          "20": 1,
+          "26": 2
         }
       },
       {
         "place": "Previously",
         "lines": {
           "4": 1,
-          "27": 1,
-          "35": 1
+          "26": 1,
+          "34": 1
         }
       },
       {
         "place": "Empty hogwarts classroom",
         "lines": {
           "4": 8,
-          "5": 5,
-          "8": 1
+          "5": 5
         }
       },
       {
@@ -850,13 +831,13 @@
         "lines": {
           "3": 3,
           "6": 5,
-          "20": 2
+          "19": 2
         }
       },
       {
         "place": "Hogwarts, room of requirement  (night)",
         "lines": {
-          "25": 1
+          "24": 1
         }
       },
       {
@@ -865,9 +846,7 @@
       },
       {
         "place": "Flamel house",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Newt's case, zouwu enclosure",
@@ -892,8 +871,7 @@
           "0": 9,
           "1": 4,
           "2": 6,
-          "7": 1,
-          "8": 2
+          "7": 1
         }
       },
       {
@@ -916,9 +894,7 @@
       },
       {
         "place": "Parisian street",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Place de furstemberg",
@@ -931,9 +907,9 @@
         "place": "Derelict building, rooftop",
         "lines": {
           "3": 4,
-          "12": 2,
-          "19": 1,
-          "55": 1
+          "11": 2,
+          "18": 1,
+          "54": 1
         }
       },
       {
@@ -941,29 +917,25 @@
         "lines": {
           "1": 13,
           "7": 1,
-          "8": 3,
-          "11": 13,
-          "29": 3,
-          "39": 1,
-          "41": 1,
-          "50": 1
+          "10": 13,
+          "28": 3,
+          "38": 1,
+          "40": 1
         }
       },
       {
         "place": "Place de furstemberg",
         "lines": {
           "0": 3,
-          "2": 2,
-          "8": 1
+          "2": 2
         }
       },
       {
         "place": "Ministère des affaires magiques, main level  (night)",
         "lines": {
           "5": 4,
-          "8": 1,
-          "9": 5,
-          "10": 3
+          "8": 5,
+          "9": 3
         }
       },
       {
@@ -971,9 +943,8 @@
         "lines": {
           "0": 4,
           "2": 3,
-          "8": 1,
-          "9": 2,
-          "36": 1
+          "8": 2,
+          "35": 1
         }
       },
       {
@@ -981,7 +952,7 @@
         "lines": {
           "0": 2,
           "2": 2,
-          "9": 1
+          "8": 1
         }
       },
       {
@@ -1010,8 +981,7 @@
         "lines": {
           "0": 3,
           "2": 3,
-          "8": 1,
-          "34": 2
+          "33": 2
         }
       },
       {
@@ -1020,8 +990,7 @@
           "0": 17,
           "2": 10,
           "5": 8,
-          "8": 4,
-          "37": 1
+          "36": 1
         }
       },
       {
@@ -1039,7 +1008,7 @@
         "lines": {
           "5": 4,
           "7": 4,
-          "12": 2
+          "11": 2
         }
       },
       {
@@ -1051,8 +1020,7 @@
       {
         "place": "Kama mansion",
         "lines": {
-          "7": 1,
-          "8": 1
+          "7": 1
         }
       },
       {
@@ -1066,7 +1034,7 @@
         "place": "Lestrange manor, bedroom",
         "lines": {
           "7": 2,
-          "58": 1
+          "57": 1
         }
       },
       {
@@ -1074,7 +1042,7 @@
         "lines": {
           "5": 6,
           "7": 6,
-          "12": 1
+          "11": 1
         }
       },
       {
@@ -1098,8 +1066,8 @@
       {
         "place": "Ship's cabin",
         "lines": {
-          "18": 1,
-          "42": 1
+          "17": 1,
+          "41": 1
         }
       },
       {
@@ -1112,8 +1080,7 @@
           "0": 1,
           "1": 1,
           "2": 1,
-          "5": 2,
-          "8": 1
+          "5": 2
         }
       },
       {
@@ -1123,26 +1090,25 @@
           "1": 4,
           "2": 3,
           "6": 4,
-          "8": 1,
-          "19": 1
+          "18": 1
         }
       },
       {
         "place": "Underground amphitheater  (night)",
         "lines": {
           "3": 6,
-          "25": 1,
-          "51": 1,
-          "54": 1,
-          "57": 1
+          "24": 1,
+          "50": 1,
+          "53": 1,
+          "56": 1
         }
       },
       {
         "place": "Père lachaise cemetery  (night)",
         "lines": {
-          "9": 1,
-          "25": 1,
-          "52": 1
+          "8": 1,
+          "24": 1,
+          "51": 1
         }
       },
       {
@@ -1154,30 +1120,30 @@
           "3": 17,
           "5": 3,
           "6": 4,
-          "9": 3,
-          "12": 1,
-          "19": 1,
-          "53": 1
+          "8": 3,
+          "11": 1,
+          "18": 1,
+          "52": 1
         }
       },
       {
         "place": "Père lachaise cemetery",
         "lines": {
           "0": 2,
-          "11": 1,
+          "10": 1,
           "44": 1
         }
       },
       {
         "place": "The viaduct at hogwarts",
         "lines": {
-          "9": 1
+          "8": 1
         }
       },
       {
         "place": "Austria, nurmengard castle window",
         "lines": {
-          "56": 1
+          "55": 1
         }
       },
       {
@@ -1203,15 +1169,15 @@
     ],
     "measures": {
       "firstWomanLine": 3,
-      "longestWithoutWoman": 57,
-      "longestWithoutWomanStart": 231,
+      "longestWithoutWoman": 55,
+      "longestWithoutWomanStart": 227,
       "words": {
         "w": 1554,
-        "m": 4977,
-        "unknown": 1038
+        "m": 4959,
+        "unknown": 750
       },
       "womenConversations": 7,
-      "menConversations": 49,
+      "menConversations": 45,
       "reverseScore": 3
     }
   },

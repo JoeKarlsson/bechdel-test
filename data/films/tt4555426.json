@@ -7,24 +7,22 @@
     "History"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 127,
+    "pass": false,
+    "bechdelScore": 2,
+    "numScenesPass": 0,
+    "numScenesDontPass": 128,
     "numOfFemalesChars": 16,
     "numOfMaleChars": 41,
-    "numOfFemalesCharsWithDialogue": 11,
+    "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 40,
-    "totalLinesFemaleDialogue": 119,
+    "totalLinesFemaleDialogue": 114,
     "totalLinesMaleDialogue": 621,
-    "scenesThatPass": [
-      "ECU ON: A MILITARY DISPATCH, that reads:\nCLEMMIE: Go to bed, Pig.\nCLEMMIE: You must sleep."
-    ]
+    "scenesThatPass": []
   },
   "script": {
     "file": "darkest-hour-2017.txt",
     "layout": "indented",
-    "dialogueLines": 782,
+    "dialogueLines": 777,
     "speakers": [
       {
         "name": "WINSTON",
@@ -187,12 +185,6 @@
         "lines": 3,
         "gender": "m",
         "named": false
-      },
-      {
-        "name": "CLOSE-UP ON",
-        "lines": 3,
-        "gender": "w",
-        "named": true
       },
       {
         "name": "EQUERRY",
@@ -369,18 +361,6 @@
         "named": true
       },
       {
-        "name": "ECU ON",
-        "lines": 1,
-        "gender": "w",
-        "named": true
-      },
-      {
-        "name": "EXTREME CLOSE ON",
-        "lines": 1,
-        "gender": "w",
-        "named": true
-      },
-      {
         "name": "FAMILY",
         "lines": 1,
         "gender": null,
@@ -505,7 +485,7 @@
       {
         "place": null,
         "lines": {
-          "64": 1
+          "61": 1
         }
       },
       {
@@ -514,8 +494,8 @@
           "8": 1,
           "9": 6,
           "15": 1,
-          "30": 1,
-          "32": 3
+          "29": 1,
+          "31": 3
         }
       },
       {
@@ -525,7 +505,7 @@
           "5": 4,
           "16": 2,
           "21": 2,
-          "61": 1
+          "58": 1
         }
       },
       {
@@ -534,8 +514,8 @@
           "6": 2,
           "15": 1,
           "25": 2,
-          "56": 1,
-          "62": 1
+          "55": 1,
+          "59": 1
         }
       },
       {
@@ -575,7 +555,7 @@
           "0": 1,
           "4": 3,
           "6": 1,
-          "37": 2
+          "36": 2
         }
       },
       {
@@ -600,7 +580,7 @@
         "place": "Palace entrance",
         "lines": {
           "0": 1,
-          "29": 1
+          "28": 1
         }
       },
       {
@@ -609,14 +589,14 @@
           "0": 9,
           "3": 17,
           "5": 6,
-          "28": 2
+          "27": 2
         }
       },
       {
         "place": "10 downing street",
         "lines": {
           "0": 1,
-          "69": 1
+          "66": 1
         }
       },
       {
@@ -631,7 +611,7 @@
         "lines": {
           "0": 6,
           "8": 5,
-          "63": 1
+          "60": 1
         }
       },
       {
@@ -641,12 +621,12 @@
           "2": 2,
           "12": 2,
           "16": 1,
-          "38": 2,
-          "40": 2,
-          "59": 1,
-          "68": 1,
-          "70": 1,
-          "71": 1
+          "37": 2,
+          "39": 2,
+          "56": 1,
+          "65": 1,
+          "67": 1,
+          "68": 1
         }
       },
       {
@@ -670,7 +650,7 @@
         "place": "Commons/ parliament",
         "lines": {
           "0": 3,
-          "46": 1
+          "45": 1
         }
       },
       {
@@ -710,7 +690,7 @@
         "place": "Commons/ parliament",
         "lines": {
           "0": 2,
-          "30": 1
+          "29": 1
         }
       },
       {
@@ -728,8 +708,7 @@
       {
         "place": "Ext. winstons car, parliament",
         "lines": {
-          "0": 1,
-          "58": 1
+          "0": 1
         }
       },
       {
@@ -759,8 +738,8 @@
           "4": 3,
           "6": 8,
           "10": 1,
-          "29": 2,
-          "74": 1
+          "28": 2,
+          "71": 1
         }
       },
       {
@@ -770,8 +749,8 @@
           "1": 1,
           "18": 6,
           "19": 2,
-          "52": 1,
-          "67": 1
+          "51": 1,
+          "64": 1
         }
       },
       {
@@ -782,7 +761,7 @@
         "place": "Flamingo/ civilian passenger plane",
         "lines": {
           "0": 1,
-          "75": 1
+          "72": 1
         }
       },
       {
@@ -790,7 +769,7 @@
         "lines": {
           "0": 6,
           "20": 4,
-          "39": 1
+          "38": 1
         }
       },
       {
@@ -801,22 +780,22 @@
         "place": "French staff-car/ french airfield",
         "lines": {
           "20": 1,
-          "39": 1
+          "38": 1
         }
       },
       {
         "place": "Parliamentary library",
         "lines": {
           "21": 3,
-          "42": 2,
-          "46": 1,
-          "48": 1
+          "41": 2,
+          "45": 1,
+          "47": 1
         }
       },
       {
         "place": "Treasury toilets",
         "lines": {
-          "30": 1
+          "29": 1
         }
       },
       {
@@ -868,7 +847,7 @@
       {
         "place": "10 downing street / treasury",
         "lines": {
-          "73": 1
+          "70": 1
         }
       },
       {
@@ -901,8 +880,7 @@
         "place": "Winston’s office/ war rooms",
         "lines": {
           "0": 1,
-          "10": 1,
-          "27": 3
+          "10": 1
         }
       },
       {
@@ -965,8 +943,8 @@
           "19": 2,
           "22": 2,
           "24": 1,
-          "45": 1,
-          "55": 1
+          "44": 1,
+          "54": 1
         }
       },
       {
@@ -990,7 +968,7 @@
         "lines": {
           "0": 10,
           "11": 11,
-          "77": 1
+          "74": 1
         }
       },
       {
@@ -1007,7 +985,7 @@
         "place": "Admiral ramsay’s bedroom/ tunnels/ beneath dover castle",
         "lines": {
           "14": 1,
-          "47": 2
+          "46": 2
         }
       },
       {
@@ -1052,7 +1030,7 @@
       {
         "place": "Hallway/ 10 downing street",
         "lines": {
-          "41": 1
+          "40": 1
         }
       },
       {
@@ -1065,7 +1043,7 @@
       {
         "place": "Westminster/ london",
         "lines": {
-          "43": 1
+          "42": 1
         }
       },
       {
@@ -1073,7 +1051,7 @@
         "lines": {
           "10": 3,
           "12": 6,
-          "43": 1
+          "42": 1
         }
       },
       {
@@ -1121,8 +1099,7 @@
         "place": "Winston’s study / 10 downing street",
         "lines": {
           "0": 1,
-          "2": 3,
-          "57": 1
+          "2": 3
         }
       },
       {
@@ -1136,7 +1113,7 @@
         "lines": {
           "0": 2,
           "15": 1,
-          "36": 2
+          "35": 2
         }
       },
       {
@@ -1156,7 +1133,7 @@
           "0": 6,
           "6": 2,
           "10": 3,
-          "72": 1
+          "69": 1
         }
       },
       {
@@ -1172,7 +1149,7 @@
       {
         "place": "Treasury drum",
         "lines": {
-          "66": 1
+          "63": 1
         }
       },
       {
@@ -1183,7 +1160,7 @@
         "place": "Ext. buckingham palace",
         "lines": {
           "3": 2,
-          "28": 1
+          "27": 1
         }
       },
       {
@@ -1240,14 +1217,14 @@
       {
         "place": "War cabinet room/ war rooms",
         "lines": {
-          "54": 1
+          "53": 1
         }
       },
       {
         "place": "St james park underground",
         "lines": {
           "0": 3,
-          "33": 3
+          "32": 3
         }
       },
       {
@@ -1262,16 +1239,16 @@
           "0": 22,
           "16": 2,
           "23": 4,
-          "31": 3,
+          "30": 3,
+          "33": 3,
           "34": 3,
-          "35": 3,
+          "48": 2,
           "49": 2,
           "50": 2,
-          "51": 2,
-          "60": 1,
-          "65": 1,
-          "76": 1,
-          "78": 1
+          "57": 1,
+          "62": 1,
+          "73": 1,
+          "75": 1
         }
       },
       {
@@ -1306,9 +1283,9 @@
         "lines": {
           "0": 11,
           "16": 1,
-          "41": 1,
-          "44": 1,
-          "53": 1
+          "40": 1,
+          "43": 1,
+          "52": 1
         }
       },
       {
@@ -1316,7 +1293,7 @@
         "lines": {
           "0": 3,
           "7": 1,
-          "44": 1
+          "43": 1
         }
       },
       {
@@ -1363,21 +1340,21 @@
           "0": 3,
           "1": 1,
           "8": 1,
-          "45": 1,
-          "48": 1
+          "44": 1,
+          "47": 1
         }
       }
     ],
     "measures": {
       "firstWomanLine": 28,
       "longestWithoutWoman": 160,
-      "longestWithoutWomanStart": 369,
+      "longestWithoutWomanStart": 365,
       "words": {
-        "w": 941,
+        "w": 916,
         "m": 7676,
         "unknown": 396
       },
-      "womenConversations": 5,
+      "womenConversations": 3,
       "menConversations": 50,
       "reverseScore": 3
     }
