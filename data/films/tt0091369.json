@@ -1,0 +1,1468 @@
+{
+  "_id": "tt0091369",
+  "title": "Labyrinth",
+  "genres": [
+    "Adventure",
+    "Family",
+    "Fantasy"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 93,
+    "numOfFemalesChars": 9,
+    "numOfMaleChars": 43,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 13,
+    "totalLinesFemaleDialogue": 279,
+    "totalLinesMaleDialogue": 269,
+    "scenesThatPass": [
+      "OLD SARAH: Best to stay in here where it's safe. Don't know what might happen to you out there.\nSARAH: Help! Somebody help me!",
+      "JUNK WOMAN: Wait, Dearie! Look at this!\nSARAH: Keep it!"
+    ]
+  },
+  "script": {
+    "file": "labyrinth.txt",
+    "layout": "flat",
+    "dialogueLines": 621,
+    "speakers": [
+      {
+        "name": "SARAH",
+        "lines": 256,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HOGGLE",
+        "lines": 117,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JARETH",
+        "lines": 48,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DIDYMUS",
+        "lines": 33,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LUDO",
+        "lines": 29,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ZAKAR",
+        "lines": 18,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "WISE ONE",
+        "lines": 15,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "HAT",
+        "lines": 13,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JUNK WOMAN",
+        "lines": 10,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "KNOCKER 2",
+        "lines": 8,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WILD THING 1",
+        "lines": 8,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WILD THING 2",
+        "lines": 8,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WORM",
+        "lines": 7,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "KNOCKER 1",
+        "lines": 5,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WILD THING 3",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FACE 3",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FATHER",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GIRL",
+        "lines": 4,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "STEPMOTHER",
+        "lines": 4,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MOTHER",
+        "lines": 3,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "STUPID GOBLIN",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BARTENDER",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FACE 2",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MAN",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ARMED GOBLIN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BLINDED GOBLIN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BRICKKEEPER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FACE",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "FACE 1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FEMALE GOBLIN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GOBLIN 1",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GOBLIN 2",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GUARD",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GUARD 2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "OLD SARAH",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SARAH & FATHER",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Sky",
+        "lines": {}
+      },
+      {
+        "place": "Labyrinth",
+        "lines": {}
+      },
+      {
+        "place": "Glade",
+        "lines": {
+          "0": 4,
+          "17": 4
+        }
+      },
+      {
+        "place": "The other side of the trees",
+        "lines": {}
+      },
+      {
+        "place": "An old rambling house",
+        "lines": {}
+      },
+      {
+        "place": "Inside the rouse",
+        "lines": {
+          "0": 3,
+          "16": 1,
+          "19": 3
+        }
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 2,
+          "16": 1,
+          "18": 1
+        }
+      },
+      {
+        "place": "Upstairs hallway",
+        "lines": {
+          "16": 2,
+          "18": 3
+        }
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 3,
+          "35": 1
+        }
+      },
+      {
+        "place": "The hallway",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Nursery",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Sarah 's room",
+        "lines": {
+          "0": 4
+        }
+      },
+      {
+        "place": "Nursery",
+        "lines": {
+          "0": 7
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {}
+      },
+      {
+        "place": "House",
+        "lines": {
+          "0": 3,
+          "23": 2
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "0": 4,
+          "5": 3
+        }
+      },
+      {
+        "place": "Nursery",
+        "lines": {
+          "0": 2,
+          "5": 2
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 6,
+          "5": 4
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "0": 10,
+          "5": 9
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Labyrinth",
+        "lines": {
+          "0": 26,
+          "1": 30
+        }
+      },
+      {
+        "place": "Labyrinth",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Labyrinth",
+        "lines": {
+          "0": 1,
+          "1": 3
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 1,
+          "22": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Labyrinth",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "15": 4,
+          "22": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 5,
+          "1": 4,
+          "26": 1
+        }
+      },
+      {
+        "place": "Aerial shot",
+        "lines": {}
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 10,
+          "1": 2,
+          "2": 11,
+          "12": 3
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 12,
+          "1": 8,
+          "6": 7,
+          "7": 7,
+          "12": 4
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "2": 4,
+          "20": 3,
+          "24": 1,
+          "29": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 3,
+          "1": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Maze montage",
+        "lines": {}
+      },
+      {
+        "place": "Arched corridor",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "30": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 10,
+          "1": 7
+        }
+      },
+      {
+        "place": "Picture gallery",
+        "lines": {
+          "0": 3,
+          "1": 1
+        }
+      },
+      {
+        "place": "Hedge maze",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Hedge maze",
+        "lines": {
+          "0": 4,
+          "1": 3
+        }
+      },
+      {
+        "place": "Clearing",
+        "lines": {
+          "0": 7,
+          "1": 4,
+          "4": 5,
+          "25": 1
+        }
+      },
+      {
+        "place": "Forest gate",
+        "lines": {
+          "0": 13,
+          "1": 9,
+          "4": 4,
+          "9": 8,
+          "13": 5
+        }
+      },
+      {
+        "place": "Forbidden forest",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Forest gate",
+        "lines": {
+          "1": 2,
+          "4": 3,
+          "6": 3,
+          "7": 2
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Hole",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "0": 5,
+          "10": 6,
+          "11": 6,
+          "14": 3
+        }
+      },
+      {
+        "place": "Hole",
+        "lines": {
+          "1": 8,
+          "2": 12
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "0": 7,
+          "4": 4,
+          "6": 1,
+          "7": 1,
+          "10": 2,
+          "11": 2,
+          "14": 2
+        }
+      },
+      {
+        "place": "Hole",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {}
+      },
+      {
+        "place": "Clearing",
+        "lines": {
+          "0": 15,
+          "1": 8,
+          "3": 19,
+          "4": 6,
+          "36": 1
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "0": 12,
+          "1": 4,
+          "3": 3,
+          "4": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ballroom",
+        "lines": {}
+      },
+      {
+        "place": "Ballroom",
+        "lines": {
+          "0": 2,
+          "2": 4
+        }
+      },
+      {
+        "place": "Ball",
+        "lines": {}
+      },
+      {
+        "place": "Junk city",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Junk city",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Junk city",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "Junk city",
+        "lines": {}
+      },
+      {
+        "place": "Tavern tent",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Junk city",
+        "lines": {
+          "3": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 5,
+          "8": 4
+        }
+      },
+      {
+        "place": "Junk city",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Castle gate",
+        "lines": {
+          "0": 2,
+          "3": 3,
+          "4": 2
+        }
+      },
+      {
+        "place": "Goblin town",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Tavern",
+        "lines": {
+          "1": 1,
+          "6": 4,
+          "7": 3,
+          "21": 2
+        }
+      },
+      {
+        "place": "Goblin town",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Goblin town",
+        "lines": {}
+      },
+      {
+        "place": "Street",
+        "lines": {
+          "0": 2,
+          "3": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Goblin town",
+        "lines": {}
+      },
+      {
+        "place": "Courtyard",
+        "lines": {}
+      },
+      {
+        "place": "Castle",
+        "lines": {}
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "1": 2,
+          "32": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "0": 2,
+          "3": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Inner courtyard",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jareth's quarters",
+        "lines": {
+          "0": 9,
+          "1": 4,
+          "3": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "Escher rotunda",
+        "lines": {
+          "0": 3,
+          "2": 2
+        }
+      },
+      {
+        "place": "Jareth's chambers",
+        "lines": {
+          "0": 12,
+          "2": 11
+        }
+      },
+      {
+        "place": "Castle",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Jareth's chambers",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Sky",
+        "lines": {}
+      },
+      {
+        "place": "Nursery",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Railway",
+        "lines": {}
+      },
+      {
+        "place": "Sarah's room",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "House",
+        "lines": {}
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 23,
+      "longestWithoutWomanStart": 386,
+      "words": {
+        "w": 2239,
+        "m": 2404,
+        "unknown": 798
+      },
+      "womenConversations": 4,
+      "menConversations": 24,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/mGkleIuPO2flRyvP8yBcUykSQsp.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/pejayhTVBEL4w8YKSfrhOjjWVlH.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 253
+  },
+  "actors": [
+    {
+      "actorName": "David Bowie",
+      "character": "Jareth",
+      "actorActress": "2",
+      "age": 39
+    },
+    {
+      "actorName": "Jennifer Connelly",
+      "character": "Sarah",
+      "actorActress": "1",
+      "age": 15
+    },
+    {
+      "actorName": "Toby Froud",
+      "character": "Toby",
+      "actorActress": "2",
+      "age": 2
+    },
+    {
+      "actorName": "Shelley Thompson",
+      "character": "Stepmother",
+      "actorActress": "1",
+      "age": 27
+    },
+    {
+      "actorName": "Christopher Malcolm",
+      "character": "Father",
+      "actorActress": "2",
+      "age": 39
+    },
+    {
+      "actorName": "Brian Henson",
+      "character": "Hoggle / Goblin (voice)",
+      "actorActress": "2",
+      "age": 22
+    },
+    {
+      "actorName": "David Shaughnessy",
+      "character": "Didymus / The Hat",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Ron Mueck",
+      "character": "Ludo / Firey 2 / Goblin (voice)",
+      "actorActress": "2",
+      "age": 28
+    },
+    {
+      "actorName": "Timothy Bateson",
+      "character": "The Worm / Goblin (voice)",
+      "actorActress": "2",
+      "age": 60
+    },
+    {
+      "actorName": "Denise Bryer",
+      "character": "The Junk Lady (voice)",
+      "actorActress": "1",
+      "age": 58
+    },
+    {
+      "actorName": "Dave Goelz",
+      "character": "Didymus / The Hat / The Four Guards / Left Door Knocker / Firey 3 (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Karen Prell",
+      "character": "The Worm / The Junk Lady / Firey 2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "David Alan Barclay",
+      "character": "Didymus / Firey 1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Frank Oz",
+      "character": "The Wiseman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Hordern",
+      "character": "The Wiseman (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Steve Whitmire",
+      "character": "The Four Guards / Firey 4 / Ambrosius (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kevin Clash",
+      "character": "The Four Guards / Firey 1 / Ambrosius (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Natalie Finland",
+      "character": "Fairy"
+    },
+    {
+      "actorName": "Shari Weiser",
+      "character": "Hoggle",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rob Mills",
+      "character": "Ludo / Firey 3",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anthony Asbury",
+      "character": "The Four Guards / Right Door Knocker / Firey 5",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anthony Jackson",
+      "character": "The Four Guards / Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Douglas Blackwell",
+      "character": "The Four Guards / Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Healy",
+      "character": "Right Door Knocker (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Robert Beatty",
+      "character": "Left Door Knocker (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Toby Philpott",
+      "character": "Firey 1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ian Thom",
+      "character": "Firey 2"
+    },
+    {
+      "actorName": "Charles Augins",
+      "character": "Firey 2 (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sherry Amott",
+      "character": "Firey 3"
+    },
+    {
+      "actorName": "Danny John-Jules",
+      "character": "Firey 3 / Firey 4 (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Cheryl Henson",
+      "character": "Firey 4",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kaefan Shaw",
+      "character": "Firey 4",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alistair Fullarton",
+      "character": "Firey 5"
+    },
+    {
+      "actorName": "Rollie Krewson",
+      "character": "Firey 5",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Richard Bodkin",
+      "character": "Firey 5 (voice)"
+    },
+    {
+      "actorName": "Percy Edwards",
+      "character": "Ambrosius (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Attwell",
+      "character": "Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sean Barrett",
+      "character": "Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Bluthal",
+      "character": "Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Marinker",
+      "character": "Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kerry Shale",
+      "character": "Goblin (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Marc Antona",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Kenny Baker",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Danny Blackner",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Burroughs",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Toby Denver Clark",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Tessa Crockett",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Warwick Davis",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Malcolm Dixon",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anthony Georghiou",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paul Grant",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John Key",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Andrew Herd",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Jones",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Jack Purvis",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mark Lisle",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Peter Mandell",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Linda Spriggs",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Katie Purvis",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Nicholas Read",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Albert Wilkinson",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Penny Stead",
+      "character": "Goblin Corps"
+    },
+    {
+      "actorName": "Michael Henbury Ballan",
+      "character": "Goblin Corps",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Elfrida Ashworth",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Margaret Foyer",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Elizabeth A. Gilbert",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Louise Gold",
+      "character": "Ballroom Dancer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Moira Grant",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "San Lee",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Janis Mackintosh",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Penny Marsden",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Kim Mendez",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Wendy Millward",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Leonie Palette",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Caroline Pope",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Sharon White",
+      "character": "Ballroom Dancer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "John Aron",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Terry Dane",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Derek Hartley",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Douglas Howes",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Christopher Preston",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Peter Salmon",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Peter Sim",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Graeme Sneddon",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Graham Tudor-Phillips",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "David Turner",
+      "character": "Ballroom Dancer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Barrie J. Wilkinson",
+      "character": "Ballroom Dancer"
+    },
+    {
+      "actorName": "Jim Henson",
+      "character": "Goblins (uncredited)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Jim Henson",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Terry Jones",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Elaine May",
+        "gender": "w"
+      },
+      {
+        "job": "Story",
+        "name": "Jim Henson",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Dennis Lee",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Eric Rattray",
+        "gender": null
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Alex Thomson",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "John Grover",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Trevor Jones",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Elliot Scott",
+        "gender": "m"
+      }
+    ],
+    "departments": {
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 1,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Costume & Make-Up": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 25000000,
+    "revenue": 12729917
+  },
+  "directors": [
+    {
+      "name": "Jim Henson"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Dennis Lee"
+    },
+    {
+      "name": "Jim Henson"
+    },
+    {
+      "name": "Terry Jones"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 1 BAFTA Award. 4 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:59:10.727Z",
+  "plot": "Sarah is forced by her father and her stepmother to babysit her baby stepbrother, Toby, while they are out. He does not stop crying and she wishes that he would be taken away. Out of the blue, he stops crying and when she looks for him in his crib, she learns that her wish was granted, and the Goblin King Jareth has taken him to his castle in the Goblin City in the middle of a labyrinth. Sarah repents and asks Jareth to give him back, but Jareth tells her that she has to rescue him before midnight. Soon she teams up with some allies. Will they rescue Toby in time?",
+  "simplePlot": "Sarah is forced by her father and her stepmother to babysit her baby stepbrother, Toby, while they are out. He does not stop crying and she wishes that he would be taken away. Out of the blue, he stops crying and when she looks for him in his crib, she learns that her wish was granted, and the Goblin King Jareth has taken him to his castle in the Goblin City in the middle of a labyrinth. Sarah repents and asks Jareth to give him back, but Jareth tells her that she has to rescue him before midnight. Soon she teams up with some allies. Will they rescue Toby in time?",
+  "year": 1986,
+  "releaseDate": "27 Jun 1986",
+  "rated": "PG",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMjM2MDE4OTQwOV5BMl5BanBnXkFtZTgwNjgxMTg2NzE@._V1_QL75_UX380_CR0,12,380,562_.jpg",
+  "idIMDB": "tt0091369",
+  "rating": "7.3",
+  "metascore": 50,
+  "urlIMDB": "https://www.imdb.com/title/tt0091369/"
+}

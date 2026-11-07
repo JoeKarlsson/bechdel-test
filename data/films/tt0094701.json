@@ -1,0 +1,1708 @@
+{
+  "_id": "tt0094701",
+  "title": "Bad Dreams",
+  "genres": [
+    "Horror",
+    "Thriller"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 7,
+    "numScenesDontPass": 128,
+    "numOfFemalesChars": 16,
+    "numOfMaleChars": 25,
+    "numOfFemalesCharsWithDialogue": 6,
+    "numOfMaleCharsWithDialogue": 15,
+    "totalLinesFemaleDialogue": 283,
+    "totalLinesMaleDialogue": 396,
+    "scenesThatPass": [
+      "LANA: They're not finished, Dr. Goldman, they won't be finished until they have her feeling as miserable and pathetic and confused as they are.\nCYNTHIA: I am confused--\nLANA: See? I hope you're all happy--\nCYNTHIA: Dr. Goldman, I... I don't really know what I'm doing here. I mean... I don't think I meet your description of a Borderline Personality--",
+      "GILDA: No.\nGILDA: It's beautiful. It didn't matter if it worked. All that mattered was... you tried.\nCYNTHIA: Exactly!",
+      "CYNTHIA: This one's new.\nHETTIE: It'll help you sleep. Sort of a post-elevator cocktail?",
+      "MIRIAM: Nothing like a hot shower, huh?\nLANA: Cynthia? Cynthia? Are you okay?\nCYNTHIA: What?\nLANA: Are you all right? After that session today, I--",
+      "MIRIAM: I think I know a way to make a phone call. We'll have you out of here tonight.\nMIRIAM: Cynthia. This is the right thing to do.\nCYNTHIA: Of course it is.\nMIRIAM: Uh oh. Mum's the word."
+    ]
+  },
+  "script": {
+    "file": "bad-dreams.txt",
+    "layout": "indented",
+    "dialogueLines": 730,
+    "speakers": [
+      {
+        "name": "CYNTHIA",
+        "lines": 200,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ALAN",
+        "lines": 127,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BERRISFORD",
+        "lines": 54,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VICTOR",
+        "lines": 48,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HARRIS",
+        "lines": 41,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RALPH",
+        "lines": 39,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WASSERMAN",
+        "lines": 31,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MIRIAM",
+        "lines": 28,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HETTIE",
+        "lines": 19,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CONNIE",
+        "lines": 11,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "RON",
+        "lines": 11,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GILDA",
+        "lines": 10,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ED",
+        "lines": 9,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LANA",
+        "lines": 9,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NURSE",
+        "lines": 8,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MANAGER",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICES",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EDGAR",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FIRST REPORTER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HARRIS' VOICE",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SPOKESMAN",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GUARD",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "POLICEMAN",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "RALPH'S POLICEMAN",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GIRL",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "LAWYER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NEWSCASTERS",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ORDERLY",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "PASSENGER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SECOND REPORTER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SECURITY GUARD",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SOMEONE ELSE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "YOUNG NURSE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "A PASSENGER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "A VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ANOTHER VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COP",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CYNTHIA'S POLICEMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "DISTANT VOICES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DOCTOR",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EVERYONE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FEMALE UNITY MEMBER",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "FEMALE UNITY MEMBER 2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FEMALE VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FIGURE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GILDA'S POLICEMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HEAD NURSE",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "NEWSCASTER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "OFFICER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REPORTERS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SOMEONE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THERAPIST",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "THIRD REPORTER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VARIOUS NEWSCASTERS' VOICES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WOMAN 1",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Countryside",
+        "lines": {}
+      },
+      {
+        "place": "Unity house",
+        "lines": {}
+      },
+      {
+        "place": "Common room",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "4": 5,
+          "16": 2
+        }
+      },
+      {
+        "place": "House",
+        "lines": {
+          "0": 1,
+          "20": 1
+        }
+      },
+      {
+        "place": "Unity house",
+        "lines": {
+          "6": 3,
+          "16": 1,
+          "23": 1,
+          "36": 1,
+          "49": 1,
+          "50": 1
+        }
+      },
+      {
+        "place": "Hospital emergency room",
+        "lines": {
+          "16": 2,
+          "28": 2,
+          "55": 1
+        }
+      },
+      {
+        "place": "Hospital nurse's station",
+        "lines": {
+          "0": 1,
+          "34": 2,
+          "48": 1
+        }
+      },
+      {
+        "place": "Hospital press conference",
+        "lines": {
+          "19": 1,
+          "21": 4,
+          "31": 1,
+          "54": 1
+        }
+      },
+      {
+        "place": "Therapy room",
+        "lines": {
+          "0": 5,
+          "2": 7,
+          "53": 1
+        }
+      },
+      {
+        "place": "Ext. sun deck or day room",
+        "lines": {
+          "0": 12,
+          "2": 10,
+          "6": 12
+        }
+      },
+      {
+        "place": "Meeting room",
+        "lines": {
+          "0": 10,
+          "1": 7,
+          "5": 6,
+          "7": 5,
+          "9": 1,
+          "11": 2,
+          "12": 1,
+          "13": 3
+        }
+      },
+      {
+        "place": "Berrisford's office",
+        "lines": {
+          "1": 4,
+          "2": 4
+        }
+      },
+      {
+        "place": "Physical therapy room",
+        "lines": {
+          "0": 9,
+          "1": 3,
+          "5": 6,
+          "8": 5
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "0": 4,
+          "1": 5
+        }
+      },
+      {
+        "place": "Elevator",
+        "lines": {
+          "0": 5,
+          "1": 4,
+          "4": 2,
+          "30": 2,
+          "35": 1
+        }
+      },
+      {
+        "place": "First floor corridor",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Berrisford's office",
+        "lines": {
+          "1": 4,
+          "2": 5
+        }
+      },
+      {
+        "place": "Entrance",
+        "lines": {}
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Hospital hallway",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 6,
+          "3": 5,
+          "46": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Parking lot",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Victor's apartment",
+        "lines": {}
+      },
+      {
+        "place": "Victor's apartment",
+        "lines": {
+          "0": 4,
+          "3": 9
+        }
+      },
+      {
+        "place": "Bedroom",
+        "lines": {
+          "0": 14,
+          "3": 18
+        }
+      },
+      {
+        "place": "Bedroom",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "0": 8,
+          "3": 13
+        }
+      },
+      {
+        "place": "Street",
+        "lines": {}
+      },
+      {
+        "place": "Highway",
+        "lines": {}
+      },
+      {
+        "place": "Car",
+        "lines": {}
+      },
+      {
+        "place": "Parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Hospital hallway",
+        "lines": {}
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {}
+      },
+      {
+        "place": "Hospital hallway",
+        "lines": {}
+      },
+      {
+        "place": "Alan's car",
+        "lines": {}
+      },
+      {
+        "place": "Victor's apartment",
+        "lines": {}
+      },
+      {
+        "place": "Apartment corridor",
+        "lines": {
+          "0": 1,
+          "15": 2
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "15": 2
+        }
+      },
+      {
+        "place": "Bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "15": 3
+        }
+      },
+      {
+        "place": "Berrisford's office",
+        "lines": {
+          "0": 8,
+          "1": 2,
+          "2": 3,
+          "6": 6
+        }
+      },
+      {
+        "place": "Therapy room",
+        "lines": {
+          "1": 9,
+          "5": 2,
+          "7": 1,
+          "9": 1,
+          "12": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Unity house common room",
+        "lines": {
+          "0": 1,
+          "4": 8
+        }
+      },
+      {
+        "place": "Therapy room",
+        "lines": {}
+      },
+      {
+        "place": "Alan's office",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "2": 2,
+          "6": 4,
+          "8": 1
+        }
+      },
+      {
+        "place": "Locker room",
+        "lines": {
+          "0": 4,
+          "4": 7,
+          "7": 3,
+          "13": 4,
+          "17": 1,
+          "40": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "2": 2,
+          "8": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "5": 1,
+          "7": 1,
+          "8": 1,
+          "9": 1,
+          "12": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 11,
+          "7": 10
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 5,
+          "1": 4,
+          "7": 4
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {}
+      },
+      {
+        "place": "Hallway, one flight down",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Hillside",
+        "lines": {
+          "0": 1,
+          "4": 1,
+          "17": 2,
+          "29": 1,
+          "37": 1,
+          "45": 1
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "Tenth floor corridor",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Sky",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "Therapy room",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "2": 4,
+          "5": 1,
+          "9": 1,
+          "19": 3,
+          "31": 1,
+          "51": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "1": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Connie's room",
+        "lines": {
+          "8": 1,
+          "9": 1,
+          "12": 3
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 1,
+          "1": 5
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Utility room",
+        "lines": {
+          "9": 1,
+          "12": 1
+        }
+      },
+      {
+        "place": "Turbine room",
+        "lines": {
+          "12": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Turbine room",
+        "lines": {}
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "1": 4
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "14": 2,
+          "18": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "18": 1
+        }
+      },
+      {
+        "place": "Utility tunnel",
+        "lines": {
+          "18": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "4": 1,
+          "9": 4,
+          "12": 1,
+          "18": 1,
+          "20": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "1": 2,
+          "5": 3,
+          "11": 2
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "5": 2,
+          "38": 1
+        }
+      },
+      {
+        "place": "Cynthia's hospital room",
+        "lines": {}
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1,
+          "1": 4
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Ralph's room",
+        "lines": {
+          "5": 1,
+          "24": 2
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 4,
+          "5": 3
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Dark, quiet hallway",
+        "lines": {
+          "24": 1
+        }
+      },
+      {
+        "place": "Hallway in closed section or hospital",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "39": 1
+        }
+      },
+      {
+        "place": "Freight elevator",
+        "lines": {}
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Freight elevator",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Basement",
+        "lines": {
+          "0": 10,
+          "4": 1,
+          "5": 13,
+          "16": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "23": 1
+        }
+      },
+      {
+        "place": "Basement",
+        "lines": {
+          "0": 1,
+          "1": 5,
+          "2": 5,
+          "6": 3
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Unity house",
+        "lines": {
+          "0": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Isolation room",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Berrisford clinic",
+        "lines": {
+          "1": 1,
+          "32": 2
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 3,
+          "7": 1,
+          "9": 1,
+          "13": 1,
+          "20": 1,
+          "43": 1,
+          "44": 1
+        }
+      },
+      {
+        "place": "Nurse's station",
+        "lines": {
+          "0": 1,
+          "47": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 1,
+          "4": 2,
+          "11": 2,
+          "14": 4
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "23": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Gilda's room",
+        "lines": {
+          "11": 2
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 2,
+          "20": 1
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "1": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Clinic pharmacy",
+        "lines": {
+          "1": 9,
+          "10": 11
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {}
+      },
+      {
+        "place": "Nurse's station, isolation ward",
+        "lines": {
+          "1": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "1": 1,
+          "8": 2,
+          "14": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "0": 4,
+          "1": 3,
+          "2": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Cynthia's room",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "1": 2,
+          "8": 3
+        }
+      },
+      {
+        "place": "Stairway",
+        "lines": {
+          "0": 1,
+          "1": 3
+        }
+      },
+      {
+        "place": "Unity house",
+        "lines": {}
+      },
+      {
+        "place": "Unity house entrance",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Hospital building",
+        "lines": {
+          "0": 7,
+          "1": 12,
+          "2": 5,
+          "22": 3
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1,
+          "41": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Country road",
+        "lines": {}
+      },
+      {
+        "place": "Station wagon",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Unity house",
+        "lines": {}
+      },
+      {
+        "place": "Front room",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Unity house",
+        "lines": {}
+      },
+      {
+        "place": "Hospital corridor",
+        "lines": {}
+      },
+      {
+        "place": "Berrisford's hospital room",
+        "lines": {
+          "2": 6,
+          "6": 3,
+          "27": 2
+        }
+      },
+      {
+        "place": "Unity house",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "3": 1,
+          "56": 1
+        }
+      },
+      {
+        "place": "Front room",
+        "lines": {
+          "0": 10,
+          "1": 2,
+          "3": 1,
+          "4": 7,
+          "7": 2,
+          "11": 2,
+          "33": 2,
+          "42": 1,
+          "52": 1
+        }
+      },
+      {
+        "place": "Unity house",
+        "lines": {}
+      },
+      {
+        "place": "Station wagon",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Road",
+        "lines": {}
+      },
+      {
+        "place": "Unity house",
+        "lines": {}
+      },
+      {
+        "place": "Unity house",
+        "lines": {
+          "4": 2,
+          "25": 2,
+          "26": 2
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 3,
+      "longestWithoutWoman": 24,
+      "longestWithoutWomanStart": 589,
+      "words": {
+        "w": 2717,
+        "m": 4584,
+        "unknown": 857
+      },
+      "womenConversations": 20,
+      "menConversations": 34,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/4t8EZWc2Qeq8GnIpyjpaVhCg2I3.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/bBAIkVp6fPqnO7PqPdlQzhK0YHZ.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Jennifer Rubin",
+      "character": "Cynthia",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Bruce Abbott",
+      "character": "Dr. Alex Karmen",
+      "actorActress": "2",
+      "age": 33
+    },
+    {
+      "actorName": "Richard Lynch",
+      "character": "Harris",
+      "actorActress": "2",
+      "age": 48
+    },
+    {
+      "actorName": "Dean Cameron",
+      "character": "Ralph",
+      "actorActress": "2",
+      "age": 25
+    },
+    {
+      "actorName": "Harris Yulin",
+      "character": "Dr. Berrisford",
+      "actorActress": "2",
+      "age": 50
+    },
+    {
+      "actorName": "Susan Barnes",
+      "character": "Connie",
+      "actorActress": "1",
+      "age": 41
+    },
+    {
+      "actorName": "John Scott Clough",
+      "character": "Victor",
+      "actorActress": "2",
+      "age": 27
+    },
+    {
+      "actorName": "E. G. Daily",
+      "character": "Lana",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Damita Jo Freeman",
+      "character": "Gilda",
+      "actorActress": "1",
+      "age": 35
+    },
+    {
+      "actorName": "Louis Giambalvo",
+      "character": "Ed",
+      "actorActress": "2",
+      "age": 43
+    },
+    {
+      "actorName": "Susan Ruttan",
+      "character": "Miriam",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sy Richardson",
+      "character": "Detective Wasserman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Melissa Francis",
+      "character": "Young Cynthia",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sheila Scott-Wilkenson",
+      "character": "Hettie",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ben Kronen",
+      "character": "Edgar",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jon Menick",
+      "character": "Night Guard Anthony",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Charles Fleischer",
+      "character": "Ron the Pharmacist",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Brian Katkin",
+      "character": "Physical Therapist",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Steven Anderson",
+      "character": "Reporter #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ellaraino",
+      "character": "Reporter #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Maria Melendez",
+      "character": "Reporter #4",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Harry Johnson",
+      "character": "Reporter #5",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Diane Zolten Wiltse",
+      "character": "Reporter #6"
+    },
+    {
+      "actorName": "Steve Whiteford",
+      "character": "Reporter #7",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Coleen Maloney",
+      "character": "Unity House Nurse",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Annie Waterman",
+      "character": "Unity House Nurse",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Lee Waddell",
+      "character": "Unity Member #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tim Trella",
+      "character": "Unity Member #3",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Philip Granger",
+      "character": "Unity Member #4",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kristina Loggia",
+      "character": "Unity Member #5",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Patricia Veselich",
+      "character": "Unity Member #6",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Elizabeth DuNah",
+      "character": "Unity Member #7"
+    },
+    {
+      "actorName": "Julianne Dallara",
+      "character": "Unity Member #8"
+    },
+    {
+      "actorName": "James Bolt",
+      "character": "Unity Member #9",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Evan MacKenzie",
+      "character": "Unity Member #10",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Darnell Gregorio",
+      "character": "Unity Member #11"
+    },
+    {
+      "actorName": "Caroline Walter",
+      "character": "Unity Member #12"
+    },
+    {
+      "actorName": "Anthony Cecere",
+      "character": "Fireman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "James Purcell",
+      "character": "Paramedic",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Don Sparks",
+      "character": "Policeman at Fire",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Julianna McCarthy",
+      "character": "Nurse #1",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sarina C. Grant",
+      "character": "Nurse #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Romy Rosemont",
+      "character": "Nurse #3",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Randy Oglesby",
+      "character": "Cynthia's Policeman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Charles Bouvier",
+      "character": "Ralph's Policeman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Lindström",
+      "character": "Nurse",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Andrew Fleming",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Andrew Fleming",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Steven E. de Souza",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Yuri Zeltser",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "P.J. Pettiette",
+        "gender": null
+      },
+      {
+        "job": "Story",
+        "name": "Michael Dick",
+        "gender": null
+      },
+      {
+        "job": "Story",
+        "name": "Andrew Fleming",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Gale Anne Hurd",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Alexander Gruszynski",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Jeff Freeman",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Jay Ferguson",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Ivo Cristante",
+        "gender": null
+      },
+      {
+        "job": "Costume Design",
+        "name": "Patricia Norris",
+        "gender": "w"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Ronald Leamon",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Deborah Everton",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mindy Marin",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Costume & Make-Up": {
+        "w": 5,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Crew": {
+        "w": 7,
+        "m": 12,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Sound": {
+        "w": 2,
+        "m": 17,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Directing": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Art": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Production": {
+        "w": 3,
+        "m": 1,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Camera": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Editing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Writing": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 2
+      }
+    }
+  },
+  "money": {
+    "budget": 4000000,
+    "revenue": 9797098
+  },
+  "directors": [
+    {
+      "name": "Andrew Fleming"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Andrew Fleming"
+    },
+    {
+      "name": "Michael Dick"
+    },
+    {
+      "name": "P.J. Pettiette"
+    }
+  ],
+  "awards": [],
+  "dateUploaded": "2026-11-07T15:56:00.204Z",
+  "plot": "In the mid-'70s, a cult group called Unity Field commits mass suicide, but a young girl survives. After being in a coma for thirteen years she wakes up in a psyche ward, not remembering the incident. The psychiatrist tries to help her remember, but she begins seeing the leader of the cult talking to her from the grave, and the other members of her therapy group begin to commit suicide around her. Or is it suicide?",
+  "simplePlot": "In the mid-'70s, a cult group called Unity Field commits mass suicide, but a young girl survives. After being in a coma for thirteen years she wakes up in a psyche ward, not remembering the incident. The psychiatrist tries to help her remember, but she begins seeing the leader of the cult talking to her from the grave, and the other members of her therapy group begin to commit suicide around her. Or is it suicide?",
+  "year": 1988,
+  "releaseDate": "08 Apr 1988",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMTIwM2I0OTgtOTU2Yi00MGVlLWE2MWMtYWY0ZDg3N2E1Y2M3XkEyXkFqcGc@._V1_SX300.jpg",
+  "idIMDB": "tt0094701",
+  "rating": "5.6",
+  "metascore": null,
+  "urlIMDB": "https://www.imdb.com/title/tt0094701/"
+}

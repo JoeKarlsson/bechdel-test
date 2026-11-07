@@ -1,0 +1,1753 @@
+{
+  "_id": "tt1126590",
+  "title": "Big Eyes",
+  "genres": [
+    "Biography",
+    "Crime",
+    "Drama"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 11,
+    "numScenesDontPass": 112,
+    "numOfFemalesChars": 29,
+    "numOfMaleChars": 36,
+    "numOfFemalesCharsWithDialogue": 10,
+    "numOfMaleCharsWithDialogue": 21,
+    "totalLinesFemaleDialogue": 316,
+    "totalLinesMaleDialogue": 419,
+    "scenesThatPass": [
+      "DEE-ANN: Sugar, you made it! You're in North Beach!\nMARGARET: Deirdre, look at you!\nDEE-ANN: \"Dee-Ann.\"\nMARGARET: \"Dee-Ann\"?!",
+      "MARGARET: Sweetie, could you stop fidgeting?\nJANE: Mother, after all this time, you MUST know what my face looks like.\nJANE: Hey! Your canvas is blank!",
+      "JANE: I remember when Momma painted that.\nMARGARET: Are you -- sure? That was a long time ago.\nJANE: Sure I'm sure! It was in our old apartment, and you had me sit on a stool in the kitchen --",
+      "JANE: No, Mother did! Look! I'm wearing my blue dress.\nMARGARET: L-lots of girls have that dress...",
+      "MARGARET: Rembrandt, shush!\nDEE-ANN: My God! I thought I misread the address.\nMARGARET: Yeah. That driveway is long. Honestly, I can't believe I live here.\nDEE-ANN: Whoa."
+    ]
+  },
+  "script": {
+    "file": "big-eyes.txt",
+    "layout": "indented",
+    "dialogueLines": 770,
+    "speakers": [
+      {
+        "name": "WALTER",
+        "lines": 293,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MARGARET",
+        "lines": 212,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JANE",
+        "lines": 36,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DEE-ANN",
+        "lines": 31,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JUDGE",
+        "lines": 18,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "RUBEN",
+        "lines": 17,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DICK",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BANDUCCI",
+        "lines": 11,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LILY",
+        "lines": 10,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CANADAY",
+        "lines": 9,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ASIAN LADY #2",
+        "lines": 8,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "PRIEST",
+        "lines": 6,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "REDHEAD CLERK",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ASIAN LADY #1",
+        "lines": 5,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "GANNETT LAWYER",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TIPSY LADY",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NOSY GUY",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TIPSY MAN",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BOSS",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FANCY LADY",
+        "lines": 3,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "FRIENDLY GUY",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MAN",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "REPORTER #1",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "REPORTER #2",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "RICH MAN",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SNOBBY ARTIST #1",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SOCIETY MAN",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BAILIFF",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BLONDE CLERK",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MAITRE'D",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ON MARGARET",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ON WALTER",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OUTSIDE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PHOTO",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SNOBBY ARTIST #2",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "THE JUDGE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THE JURORS",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TOURIST GUY",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ABSTRACT EXPRESSIONISM",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "AT WALTER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BEDROOMS --",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CIVIC LEADER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CLOSING CARDS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DOWN FRONT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EUROPEAN BLONDE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GROUPIE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HER POV",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HIPPIE CHICK",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HIPSTER LADY",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HIPSTER MAN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JEHOVAH'S WITNESSES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MARGARET --",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MINUTES LATER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NEW TACTIC",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ONSTAGE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PAINTING --",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "PORTLY LADY",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "STOCK FOOTAGE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STORAGE ROOM",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "THE CLOCK'S",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THE KEANES",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "TITLE SEQUENCE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WATCHING THIS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "55": 1,
+          "61": 1
+        }
+      },
+      {
+        "place": "Suburbia",
+        "lines": {}
+      },
+      {
+        "place": "House",
+        "lines": {
+          "33": 1
+        }
+      },
+      {
+        "place": "Highway",
+        "lines": {}
+      },
+      {
+        "place": "Packard",
+        "lines": {}
+      },
+      {
+        "place": "Est. san francisco",
+        "lines": {}
+      },
+      {
+        "place": "Furniture factory",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Furniture factory",
+        "lines": {
+          "1": 3,
+          "18": 3
+        }
+      },
+      {
+        "place": "Factory floor",
+        "lines": {}
+      },
+      {
+        "place": "San francisco north beach",
+        "lines": {
+          "1": 6,
+          "3": 9
+        }
+      },
+      {
+        "place": "Art show",
+        "lines": {
+          "0": 10,
+          "1": 6,
+          "2": 2,
+          "21": 2,
+          "30": 1,
+          "31": 1,
+          "37": 2,
+          "46": 1
+        }
+      },
+      {
+        "place": "Bistro",
+        "lines": {
+          "0": 10,
+          "1": 6,
+          "29": 1
+        }
+      },
+      {
+        "place": "Palace of fine arts",
+        "lines": {
+          "0": 10,
+          "1": 7,
+          "2": 2,
+          "20": 3,
+          "62": 1
+        }
+      },
+      {
+        "place": "Margaret's apartment",
+        "lines": {
+          "0": 7,
+          "1": 4,
+          "2": 1,
+          "30": 1
+        }
+      },
+      {
+        "place": "Stock footage",
+        "lines": {}
+      },
+      {
+        "place": "Hawaii",
+        "lines": {}
+      },
+      {
+        "place": "Beach",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Hotel grounds",
+        "lines": {}
+      },
+      {
+        "place": "Chinese restaurant",
+        "lines": {
+          "1": 5,
+          "3": 3
+        }
+      },
+      {
+        "place": "Art gallery",
+        "lines": {
+          "0": 11,
+          "5": 15,
+          "19": 3,
+          "32": 1,
+          "38": 1
+        }
+      },
+      {
+        "place": "Hungry i marquee",
+        "lines": {}
+      },
+      {
+        "place": "Hungry i showroom",
+        "lines": {
+          "0": 6,
+          "1": 1,
+          "7": 4,
+          "54": 1
+        }
+      },
+      {
+        "place": "Berkeley apartment",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hungry i",
+        "lines": {
+          "0": 4,
+          "15": 5,
+          "17": 2,
+          "21": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "Hungry i",
+        "lines": {
+          "0": 3,
+          "7": 3
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "0": 3,
+          "1": 4
+        }
+      },
+      {
+        "place": "Hungry i",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Club kitchen",
+        "lines": {
+          "7": 2
+        }
+      },
+      {
+        "place": "Club",
+        "lines": {
+          "0": 5,
+          "6": 5
+        }
+      },
+      {
+        "place": "Berkeley apartment",
+        "lines": {
+          "0": 4,
+          "1": 2
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {}
+      },
+      {
+        "place": "Hungry i",
+        "lines": {}
+      },
+      {
+        "place": "Apartment",
+        "lines": {}
+      },
+      {
+        "place": "Tailor's",
+        "lines": {}
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Taxi",
+        "lines": {}
+      },
+      {
+        "place": "Hungry i",
+        "lines": {
+          "0": 18,
+          "1": 9,
+          "7": 2,
+          "44": 1,
+          "45": 1,
+          "52": 1
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {}
+      },
+      {
+        "place": "City hall",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Public building",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Phonebooth",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Purple onion",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "0": 3,
+          "1": 1
+        }
+      },
+      {
+        "place": "City streets",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "2": 4
+        }
+      },
+      {
+        "place": "San francisco north beach",
+        "lines": {}
+      },
+      {
+        "place": "Church confession booth",
+        "lines": {
+          "1": 6,
+          "11": 6
+        }
+      },
+      {
+        "place": "Keane gallery",
+        "lines": {
+          "0": 8,
+          "1": 4,
+          "3": 4,
+          "16": 4,
+          "17": 2,
+          "39": 1,
+          "48": 1,
+          "49": 1
+        }
+      },
+      {
+        "place": "Berkeley apartment",
+        "lines": {
+          "0": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Apartment painting room",
+        "lines": {
+          "0": 15,
+          "1": 11
+        }
+      },
+      {
+        "place": "San francisco",
+        "lines": {}
+      },
+      {
+        "place": "Keane gallery",
+        "lines": {}
+      },
+      {
+        "place": "Keane gallery",
+        "lines": {
+          "0": 1,
+          "28": 2
+        }
+      },
+      {
+        "place": "Storage room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Supermarket",
+        "lines": {}
+      },
+      {
+        "place": "Apartment painting room",
+        "lines": {
+          "0": 16,
+          "1": 13
+        }
+      },
+      {
+        "place": "Apartment living room",
+        "lines": {
+          "0": 12,
+          "1": 3,
+          "2": 1,
+          "6": 5,
+          "8": 3
+        }
+      },
+      {
+        "place": "Kitchen",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Jane's bedroom",
+        "lines": {
+          "2": 9,
+          "8": 7
+        }
+      },
+      {
+        "place": "Keane gallery",
+        "lines": {}
+      },
+      {
+        "place": "Keane gallery",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "24": 3,
+          "25": 3,
+          "34": 2,
+          "63": 1
+        }
+      },
+      {
+        "place": "Store window",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {}
+      },
+      {
+        "place": "Woodside house",
+        "lines": {
+          "1": 12,
+          "3": 11,
+          "40": 1
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {}
+      },
+      {
+        "place": "Foyer",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "3": 2,
+          "32": 1
+        }
+      },
+      {
+        "place": "Master bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Woodside house",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Woodside house",
+        "lines": {}
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "1": 6
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {}
+      },
+      {
+        "place": "Woodside house",
+        "lines": {
+          "0": 10,
+          "1": 10,
+          "31": 1
+        }
+      },
+      {
+        "place": "Kitchen",
+        "lines": {}
+      },
+      {
+        "place": "Master bedroom",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "House",
+        "lines": {}
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "0": 10,
+          "1": 10
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "51": 1,
+          "53": 1
+        }
+      },
+      {
+        "place": "Keane gallery",
+        "lines": {
+          "0": 9,
+          "12": 6,
+          "58": 1
+        }
+      },
+      {
+        "place": "Bistro",
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "At the table",
+        "lines": {
+          "0": 11,
+          "1": 9,
+          "57": 1
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "House",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "1": 2,
+          "2": 2
+        }
+      },
+      {
+        "place": "New york times",
+        "lines": {
+          "9": 2
+        }
+      },
+      {
+        "place": "World's fair hall of education",
+        "lines": {
+          "9": 1,
+          "41": 1
+        }
+      },
+      {
+        "place": "New york mansion",
+        "lines": {
+          "0": 6,
+          "1": 2,
+          "26": 2
+        }
+      },
+      {
+        "place": "Den",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "26": 1,
+          "60": 1
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "0": 6,
+          "1": 1,
+          "9": 5
+        }
+      },
+      {
+        "place": "World's fair hall of education",
+        "lines": {}
+      },
+      {
+        "place": "Keane house",
+        "lines": {
+          "0": 5,
+          "1": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {}
+      },
+      {
+        "place": "Car",
+        "lines": {
+          "1": 3,
+          "2": 2
+        }
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {}
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {
+          "0": 8,
+          "1": 6
+        }
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {
+          "1": 3,
+          "2": 3
+        }
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {
+          "1": 10,
+          "10": 7,
+          "13": 4
+        }
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {
+          "1": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Woodside house",
+        "lines": {
+          "0": 2,
+          "47": 1
+        }
+      },
+      {
+        "place": "Painting room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Hawaiian kingdom hall",
+        "lines": {
+          "50": 1
+        }
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {}
+      },
+      {
+        "place": "Radio booth",
+        "lines": {
+          "1": 3
+        }
+      },
+      {
+        "place": "Radio station hallway",
+        "lines": {}
+      },
+      {
+        "place": "New york times",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Chinese restaurant",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "San francisco examiner",
+        "lines": {}
+      },
+      {
+        "place": "Hungry i",
+        "lines": {}
+      },
+      {
+        "place": "Art gallery",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Coffee shop",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Bar",
+        "lines": {
+          "0": 6,
+          "6": 4
+        }
+      },
+      {
+        "place": "Hawaiian house",
+        "lines": {
+          "1": 3,
+          "2": 1,
+          "10": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Honolulu federal courthouse",
+        "lines": {
+          "0": 1,
+          "22": 2,
+          "23": 1
+        }
+      },
+      {
+        "place": "Federal courtroom",
+        "lines": {
+          "0": 2,
+          "4": 4,
+          "14": 5
+        }
+      },
+      {
+        "place": "Dick nolan's office",
+        "lines": {}
+      },
+      {
+        "place": "Courtroom",
+        "lines": {
+          "0": 10,
+          "1": 5,
+          "4": 5
+        }
+      },
+      {
+        "place": "Courtroom",
+        "lines": {
+          "0": 15,
+          "4": 4,
+          "27": 1
+        }
+      },
+      {
+        "place": "Courtroom",
+        "lines": {
+          "0": 8,
+          "1": 4,
+          "4": 5,
+          "27": 1,
+          "35": 2,
+          "36": 2,
+          "43": 1,
+          "59": 1
+        }
+      },
+      {
+        "place": "Federal courthouse",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "22": 1,
+          "23": 2,
+          "56": 1
+        }
+      },
+      {
+        "place": "Margaret keane gallery",
+        "lines": {
+          "42": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 4,
+      "longestWithoutWoman": 29,
+      "longestWithoutWomanStart": 713,
+      "words": {
+        "w": 3116,
+        "m": 4947,
+        "unknown": 692
+      },
+      "womenConversations": 19,
+      "menConversations": 22,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/qis71iUABx2eTxN9FzOnLbnJ2OA.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/203HAjJcLMl7xThcTqZx4zmEGcV.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 6159
+  },
+  "actors": [
+    {
+      "actorName": "Amy Adams",
+      "character": "Margaret Keane",
+      "actorActress": "1",
+      "age": 40
+    },
+    {
+      "actorName": "Christoph Waltz",
+      "character": "Walter Keane",
+      "actorActress": "2",
+      "age": 58
+    },
+    {
+      "actorName": "Danny Huston",
+      "character": "Dick Nolan",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "Jon Polito",
+      "character": "Enrico Banducci",
+      "actorActress": "2",
+      "age": 63
+    },
+    {
+      "actorName": "Krysten Ritter",
+      "character": "Dee-Ann",
+      "actorActress": "1",
+      "age": 33
+    },
+    {
+      "actorName": "Jason Schwartzman",
+      "character": "Ruben",
+      "actorActress": "2",
+      "age": 34
+    },
+    {
+      "actorName": "Terence Stamp",
+      "character": "John Canaday",
+      "actorActress": "2",
+      "age": 76
+    },
+    {
+      "actorName": "Madeleine Arthur",
+      "character": "Older Jane",
+      "actorActress": "1",
+      "age": 17
+    },
+    {
+      "actorName": "Delaney Raye",
+      "character": "Young Jane",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "James Saito",
+      "character": "Judge",
+      "actorActress": "2",
+      "age": 59
+    },
+    {
+      "actorName": "Farryn VanHumbeck",
+      "character": "Lily",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Guido Furlani",
+      "character": "Dino Olivetti",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Elisabetta Fantone",
+      "character": "Olivetti Girl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Emily Maddison",
+      "character": "2nd Olivetti Girl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Brent Chapman",
+      "character": "Factory Boss",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gabe Khouth",
+      "character": "Dad at Art Show",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dylan Kingwell",
+      "character": "Boy at Art Show",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Kelamis",
+      "character": "Real Estate Guy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Deni DeLory",
+      "character": "Fancy Lady",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Desiree Zurowski",
+      "character": "Tipsy Lady",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Vincent Gale",
+      "character": "Tipsy Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Fred Keating",
+      "character": "Priest",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Byron Bertram",
+      "character": "Bathroom Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Heather Doerksen",
+      "character": "Gossipy Woman #1",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Eliza Norbury",
+      "character": "Gossipy Woman #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ryan Beil",
+      "character": "Nosy Gallery Guy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Frenchy Gagne",
+      "character": "Henri the Maitre'd",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Fiona Vroom",
+      "character": "Gallery Assistant",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jill Morrison",
+      "character": "Gallery Patron",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Leela Savasta",
+      "character": "Hippie Chick",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Linda Sato",
+      "character": "Jehovah's Witness #1",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Traci Toguchi",
+      "character": "Jehovah's Witness #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Stephanie Bennett",
+      "character": "Coed #1",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Andrea Bucko",
+      "character": "Coed #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Emily Fonda",
+      "character": "Sexy Girl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Aaron Craven",
+      "character": "Early Buyer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lear Howard",
+      "character": "Proper Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Heather Ireland",
+      "character": "Proper Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Linda Marr",
+      "character": "Proper Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Doreen McKenzie",
+      "character": "Proper Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Elizabeth Urrea",
+      "character": "Proper Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kari-Ann Wood",
+      "character": "Female Art Gallery Attendee"
+    },
+    {
+      "actorName": "Dale Wolfe",
+      "character": "TV Host",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Patricia Mayen-Salazar",
+      "character": "Fan #1",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tony Alcantar",
+      "character": "Fan #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Darren Dolynski",
+      "character": "Snobby Artist #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Milchard",
+      "character": "Snobby Artist #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Andrew Airlie",
+      "character": "Rich Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Forbes Angus",
+      "character": "Civic Leader",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Kopsa",
+      "character": "NY Society Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alan MacFarlane",
+      "character": "Society Man #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Thomas Potter",
+      "character": "Society Man #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Colleen Winton",
+      "character": "Mrs. Teasdale",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Pomaika'i Brown",
+      "character": "Radio DJ",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dan Cooke",
+      "character": "Reporter #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "L.G. Michael Brown",
+      "character": "Reporter #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Barclay Hope",
+      "character": "Gannett Lawyer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mia Adams",
+      "character": "Autograph Seeker",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Michael St. John Smith",
+      "character": "Margaret's Lawyer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Timothy Van Cleave",
+      "character": "Cal Tjader",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Eric Keenleyside",
+      "character": "Gannett Lawyer #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Greg Kean",
+      "character": "Gannett Lawyer #3",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sean Campbell",
+      "character": "Bailiff",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Julie Johnson",
+      "character": "Hungry i Patron",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Britt Irvin",
+      "character": "Hipster Lady",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Matthew Kevin Anderson",
+      "character": "Hipster Man",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Tim Burton",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Larry Karaszewski",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "Scott Alexander",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Lynette Howell Taylor",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "Scott Alexander",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Larry Karaszewski",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Tim Burton",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Bruno Delbonnel",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Joseph C. Bond IV",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Danny Elfman",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Rick Heinrichs",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Colleen Atwood",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Nicole Abellera Hallman",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Jeanne McCarthy",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Camera": {
+        "w": 0,
+        "m": 6,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Production": {
+        "w": 6,
+        "m": 10,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Directing": {
+        "w": 2,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 2,
+        "m": 15,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Costume & Make-Up": {
+        "w": 9,
+        "m": 0,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Art": {
+        "w": 6,
+        "m": 3,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Editing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Crew": {
+        "w": 7,
+        "m": 6,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 10000000,
+    "revenue": 28900000
+  },
+  "directors": [
+    {
+      "name": "Tim Burton"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Scott Alexander"
+    },
+    {
+      "name": "Larry Karaszewski"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 2 BAFTA Awards. 3 wins & 18 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:56:14.346Z",
+  "plot": "In San Francisco in the 1950s, Margaret was a woman trying to make it on her own after leaving her husband with only her daughter and her paintings. While struggling to make an impact with her drawings of children with big eyes, she meets gregarious ladies' man and fellow painter Walter Keane in a park. The two quickly become a pair with outgoing Walter selling their paintings and quiet Margaret holed up at home painting even more children with big eyes, but Walter's actually selling her paintings as his own. A clash of financial success and critical failure soon sends Margaret reeling in her life of lies. With Walter still living the high life, Margaret's going to have to try making it on her own again and reclaiming her name and her paintings.",
+  "simplePlot": "In San Francisco in the 1950s, Margaret was a woman trying to make it on her own after leaving her husband with only her daughter and her paintings. While struggling to make an impact with her drawings of children with big eyes, she meets gregarious ladies' man and fellow painter Walter Keane in a park. The two quickly become a pair with outgoing Walter selling their paintings and quiet Margaret holed up at home painting even more children with big eyes, but Walter's actually selling her paintings as his own. A clash of financial success and critical failure soon sends Margaret reeling in her life of lies. With Walter still living the high life, Margaret's going to have to try making it on her own again and reclaiming her name and her paintings.",
+  "year": 2014,
+  "releaseDate": "25 Dec 2014",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMjA2ODM5MDE3N15BMl5BanBnXkFtZTgwOTIxNjc1MzE@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt1126590",
+  "rating": "6.9",
+  "metascore": 62,
+  "urlIMDB": "https://www.imdb.com/title/tt1126590/"
+}

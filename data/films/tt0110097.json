@@ -1,0 +1,1803 @@
+{
+  "_id": "tt0110097",
+  "title": "I'll Do Anything",
+  "genres": [
+    "Comedy",
+    "Drama"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 10,
+    "numScenesDontPass": 103,
+    "numOfFemalesChars": 25,
+    "numOfMaleChars": 31,
+    "numOfFemalesCharsWithDialogue": 11,
+    "numOfMaleCharsWithDialogue": 17,
+    "totalLinesFemaleDialogue": 419,
+    "totalLinesMaleDialogue": 523,
+    "scenesThatPass": [
+      "FEMALE D PERSON: Story, story, story, story, story. You loved it, right?\nCATHY: I had some problems.\nFEMALE D PERSON: Like what?\nCATHY: Well, you know, it's a little garbagey.",
+      "BETH: Okay, listen carefully, Jeannie. Be still. Now, what's the most important thing in life to know?\nJEANNIE: No one will ever love me as much as you do.\nBETH: Good. Now, concentrate with all your muscles and remember everything I'm about to say to you...\nBETH: Don't talk to strangers. They may be killers. Take your vitamins so the poison in the food can't hurt you. What else now?",
+      "JEANNIE: I want to go with you.\nBETH: Can't, pretty-heart. I'm sorry.\nJEANNIE: Not even a compromise?\nBETH: The compromise will be that you don't have to ride in back; you can ride up front with the driver... okay?",
+      "JEANNIE: Noooooo. Let go of me. Noooo. The yellow dress... let go... let go.\nFLIGHT ATTENDANT: You'll have to sit down.",
+      "LUCY: Listen to me, Jeannie...\nJEANNIE: I want to live here with these people. God, let me live here."
+    ]
+  },
+  "script": {
+    "file": "ill-do-anything.txt",
+    "layout": "indented",
+    "dialogueLines": 970,
+    "speakers": [
+      {
+        "name": "MATT",
+        "lines": 304,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BURKE",
+        "lines": 149,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JEANNIE",
+        "lines": 123,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CATHY",
+        "lines": 118,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NAN",
+        "lines": 82,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BETH",
+        "lines": 41,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LUCY",
+        "lines": 14,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MALE D PERSON",
+        "lines": 14,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DIRECTOR",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GROUP CAPTAIN",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MAN",
+        "lines": 8,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FEMALE D PERSON",
+        "lines": 7,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BLACK LEAD ACTRESS",
+        "lines": 6,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ACTRESS",
+        "lines": 5,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "HANDSOME CONTEMPORARY",
+        "lines": 5,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "PHONE VOICE",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CLAIRE",
+        "lines": 4,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "FLIGHT ATTENDANT",
+        "lines": 4,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MARTIN",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MILLIE",
+        "lines": 4,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "PASSING VOICE",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MARSHAL",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FLOOR MANAGER",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JOHN EARL",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MAKE-UP PERSON",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MIDDLE-AGED ACTOR",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "OLD LADY",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "STUDIO HEAD",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "WARM-UP MAN",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WORKER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BOY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "BURKE ADLER. SUBJECT",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CAPTAIN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CASTING PERSON",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CATHY'S VOICE ON SPEAKER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COUPLES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FEMALE STUDIO EXEC",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "FIRST VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FRANTIC ACTRESS",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "GIRL COUNTER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "HAIR PERSON",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "HERO",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MALE CASTING PERSON",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MALE D PERSON VOICE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MCALPINE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "OLDER ACTRESS",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "OLDER WOMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "OTHER ACTOR",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SECOND GIRL CARD COUNTER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "SHORT WHITE MAN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SINGING ACTRESSES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THIRD VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TORTURED MALE DANCER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TV CRITIC",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TV VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VARIOUS WORKERS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VARIOUS YOUNG ACTORS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VARIOUS YOUNG HYSTERICAL ACTRESSES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOICE NUMBER TWO",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WHOLE AUDIENCE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WOMEN IN ROW",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "YOUNG MAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "YOUNGER MALE VOICE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Passageway",
+        "lines": {}
+      },
+      {
+        "place": "New york club",
+        "lines": {
+          "0": 2,
+          "8": 1,
+          "14": 3,
+          "38": 1,
+          "52": 1,
+          "53": 1
+        }
+      },
+      {
+        "place": "On matt and fellow cast members",
+        "lines": {
+          "0": 9,
+          "5": 4,
+          "8": 5,
+          "14": 2,
+          "47": 1
+        }
+      },
+      {
+        "place": "Another room",
+        "lines": {
+          "0": 11,
+          "5": 10,
+          "54": 1
+        }
+      },
+      {
+        "place": "Hospital waiting area",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {}
+      },
+      {
+        "place": "Beth's hospital room",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Modest one-bedroom apartment",
+        "lines": {
+          "0": 2,
+          "5": 2
+        }
+      },
+      {
+        "place": "Baby's room",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Matt's apartment",
+        "lines": {
+          "0": 5,
+          "5": 1
+        }
+      },
+      {
+        "place": "Side street",
+        "lines": {
+          "25": 1,
+          "56": 1
+        }
+      },
+      {
+        "place": "Popcorn pictures",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "25": 1,
+          "45": 1,
+          "50": 1,
+          "57": 1
+        }
+      },
+      {
+        "place": "Popcorn pictures",
+        "lines": {
+          "0": 2,
+          "3": 3,
+          "16": 2
+        }
+      },
+      {
+        "place": "Burke's office",
+        "lines": {
+          "0": 13,
+          "1": 13,
+          "18": 4,
+          "23": 2,
+          "44": 1
+        }
+      },
+      {
+        "place": "Cathy's office",
+        "lines": {
+          "3": 1,
+          "11": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "Outer office",
+        "lines": {
+          "0": 6,
+          "3": 11,
+          "7": 4,
+          "11": 3
+        }
+      },
+      {
+        "place": "Parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Ext. matt's car",
+        "lines": {
+          "0": 5,
+          "1": 8,
+          "62": 1
+        }
+      },
+      {
+        "place": "Burke's car",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Golden state freeway",
+        "lines": {}
+      },
+      {
+        "place": "Burke's car",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Mall",
+        "lines": {}
+      },
+      {
+        "place": "Burke's car",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Car",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Movie theatre",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "4": 3
+        }
+      },
+      {
+        "place": "Movie theater",
+        "lines": {
+          "1": 4,
+          "4": 3,
+          "27": 1
+        }
+      },
+      {
+        "place": "Movie theater",
+        "lines": {}
+      },
+      {
+        "place": "Wholesale butcher's (the film)",
+        "lines": {
+          "4": 2,
+          "41": 1
+        }
+      },
+      {
+        "place": "Theater manager's office",
+        "lines": {
+          "9": 3
+        }
+      },
+      {
+        "place": "Theater lobby",
+        "lines": {
+          "0": 2,
+          "1": 5,
+          "4": 5,
+          "26": 2,
+          "27": 1,
+          "46": 1
+        }
+      },
+      {
+        "place": "Theater",
+        "lines": {
+          "0": 6,
+          "1": 7,
+          "3": 5,
+          "4": 4,
+          "9": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "1": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Tracking room",
+        "lines": {
+          "1": 9,
+          "4": 9,
+          "29": 2,
+          "55": 1
+        }
+      },
+      {
+        "place": "Plane",
+        "lines": {}
+      },
+      {
+        "place": "Mid-western house",
+        "lines": {
+          "0": 1,
+          "10": 3
+        }
+      },
+      {
+        "place": "House",
+        "lines": {
+          "0": 7,
+          "5": 7,
+          "10": 3
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "0": 2,
+          "2": 2,
+          "5": 10,
+          "21": 3
+        }
+      },
+      {
+        "place": "Sitting room",
+        "lines": {
+          "0": 2,
+          "2": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Beth's house",
+        "lines": {
+          "0": 3,
+          "2": 3,
+          "5": 4,
+          "10": 2
+        }
+      },
+      {
+        "place": "Sidewalk area",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Plane",
+        "lines": {
+          "0": 9,
+          "2": 5,
+          "17": 4,
+          "32": 1,
+          "61": 1
+        }
+      },
+      {
+        "place": "Parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Matt's apartment",
+        "lines": {
+          "0": 2,
+          "2": 5
+        }
+      },
+      {
+        "place": "Bathroom",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Burke's master bedroom",
+        "lines": {
+          "1": 4,
+          "4": 3
+        }
+      },
+      {
+        "place": "Matt's hallway",
+        "lines": {
+          "0": 8,
+          "6": 9
+        }
+      },
+      {
+        "place": "Lucy's apartment",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Matt's apt",
+        "lines": {}
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 4,
+          "6": 2
+        }
+      },
+      {
+        "place": "Movie theater",
+        "lines": {
+          "1": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Counting room",
+        "lines": {
+          "0": 2,
+          "4": 4,
+          "9": 4,
+          "39": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Full shot",
+        "lines": {
+          "0": 1,
+          "1": 6,
+          "3": 3,
+          "4": 6,
+          "8": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "Matt's hallway",
+        "lines": {
+          "0": 4,
+          "2": 5,
+          "6": 2
+        }
+      },
+      {
+        "place": "Matt's apartment",
+        "lines": {}
+      },
+      {
+        "place": "Bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Rooftop",
+        "lines": {
+          "0": 13,
+          "3": 2,
+          "7": 9,
+          "11": 1,
+          "19": 3
+        }
+      },
+      {
+        "place": "Stairwell",
+        "lines": {
+          "1": 9,
+          "3": 9
+        }
+      },
+      {
+        "place": "Matt's apartment",
+        "lines": {}
+      },
+      {
+        "place": "Apartment building",
+        "lines": {
+          "0": 8,
+          "2": 5
+        }
+      },
+      {
+        "place": "Matt's street",
+        "lines": {}
+      },
+      {
+        "place": "Matt's apt. entrance",
+        "lines": {
+          "0": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Matt's hallway",
+        "lines": {
+          "0": 12,
+          "2": 5,
+          "3": 10
+        }
+      },
+      {
+        "place": "Burke's bedroom",
+        "lines": {
+          "1": 9,
+          "4": 10
+        }
+      },
+      {
+        "place": "Cathy's house",
+        "lines": {}
+      },
+      {
+        "place": "Cathy's house",
+        "lines": {
+          "0": 8,
+          "3": 9
+        }
+      },
+      {
+        "place": "Cathy's bedroom",
+        "lines": {
+          "0": 9,
+          "1": 1,
+          "2": 1,
+          "3": 8,
+          "6": 1,
+          "43": 1,
+          "63": 1
+        }
+      },
+      {
+        "place": "Burke's car",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Matt's apartment",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Make-up room",
+        "lines": {
+          "0": 5,
+          "3": 3,
+          "24": 2,
+          "40": 1
+        }
+      },
+      {
+        "place": "Popcorn movies",
+        "lines": {
+          "2": 2,
+          "3": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "Popcorn pictures hallway",
+        "lines": {
+          "0": 2,
+          "2": 3,
+          "3": 4
+        }
+      },
+      {
+        "place": "Cathy's office",
+        "lines": {
+          "0": 1,
+          "2": 3
+        }
+      },
+      {
+        "place": "Cathy's outer office",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Popcorn pictures",
+        "lines": {
+          "0": 6,
+          "3": 6
+        }
+      },
+      {
+        "place": "Matt's apt",
+        "lines": {
+          "0": 6,
+          "2": 5
+        }
+      },
+      {
+        "place": "Burke's office",
+        "lines": {
+          "0": 5,
+          "1": 5,
+          "3": 1,
+          "4": 1,
+          "13": 5
+        }
+      },
+      {
+        "place": "Screening room",
+        "lines": {
+          "1": 11,
+          "3": 4,
+          "7": 1,
+          "11": 2,
+          "16": 2,
+          "42": 1
+        }
+      },
+      {
+        "place": "Cathy's office",
+        "lines": {
+          "3": 3
+        }
+      },
+      {
+        "place": "Matt's apt",
+        "lines": {
+          "0": 1,
+          "2": 5
+        }
+      },
+      {
+        "place": "Burke's bedroom",
+        "lines": {
+          "1": 1,
+          "15": 5,
+          "58": 1
+        }
+      },
+      {
+        "place": "Burke's car",
+        "lines": {
+          "0": 2,
+          "1": 5,
+          "4": 5
+        }
+      },
+      {
+        "place": "Popcorn pictures",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Tv studio",
+        "lines": {
+          "0": 15,
+          "2": 13,
+          "3": 8,
+          "8": 1,
+          "20": 4
+        }
+      },
+      {
+        "place": "Matt's apt",
+        "lines": {
+          "0": 11,
+          "2": 10
+        }
+      },
+      {
+        "place": "Cathy's house",
+        "lines": {
+          "2": 4,
+          "3": 3
+        }
+      },
+      {
+        "place": "Matt's apt",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Restaurant",
+        "lines": {
+          "1": 13,
+          "4": 11,
+          "35": 1
+        }
+      },
+      {
+        "place": "Restaurant",
+        "lines": {
+          "1": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Matt's apt",
+        "lines": {
+          "0": 12,
+          "2": 12
+        }
+      },
+      {
+        "place": "Tv stage",
+        "lines": {
+          "0": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Roof garden",
+        "lines": {
+          "0": 7,
+          "2": 6
+        }
+      },
+      {
+        "place": "Cathy's office",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Streets",
+        "lines": {}
+      },
+      {
+        "place": "Cathy's car",
+        "lines": {}
+      },
+      {
+        "place": "Matt/burke's car",
+        "lines": {
+          "0": 2,
+          "34": 1
+        }
+      },
+      {
+        "place": "Matt/burke's car",
+        "lines": {
+          "0": 6,
+          "3": 8
+        }
+      },
+      {
+        "place": "Narrow canyon road",
+        "lines": {}
+      },
+      {
+        "place": "Cathy's car",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Burke's home",
+        "lines": {
+          "1": 1,
+          "37": 1,
+          "51": 1,
+          "59": 1
+        }
+      },
+      {
+        "place": "Nan's kitchen",
+        "lines": {
+          "1": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Matt's apartment",
+        "lines": {
+          "0": 5,
+          "1": 4
+        }
+      },
+      {
+        "place": "Burke's apartment",
+        "lines": {}
+      },
+      {
+        "place": "Tv studio",
+        "lines": {}
+      },
+      {
+        "place": "Make-up room",
+        "lines": {
+          "28": 1
+        }
+      },
+      {
+        "place": "Green room",
+        "lines": {}
+      },
+      {
+        "place": "Backstage area",
+        "lines": {
+          "0": 6,
+          "2": 5
+        }
+      },
+      {
+        "place": "Backstage",
+        "lines": {
+          "0": 8,
+          "1": 1,
+          "3": 9,
+          "28": 1
+        }
+      },
+      {
+        "place": "Studio floor",
+        "lines": {
+          "0": 9,
+          "1": 2,
+          "2": 9,
+          "12": 4,
+          "22": 2,
+          "49": 1,
+          "60": 1
+        }
+      },
+      {
+        "place": "Dressing room",
+        "lines": {
+          "2": 1,
+          "12": 2
+        }
+      },
+      {
+        "place": "Backstage area",
+        "lines": {
+          "0": 5,
+          "2": 6,
+          "4": 5
+        }
+      },
+      {
+        "place": "Roof garden",
+        "lines": {
+          "0": 7,
+          "1": 13,
+          "2": 1,
+          "4": 5,
+          "19": 1,
+          "30": 1
+        }
+      },
+      {
+        "place": "Deserted popcorn pictures room",
+        "lines": {
+          "0": 2,
+          "2": 2
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 33,
+      "longestWithoutWomanStart": 83,
+      "words": {
+        "w": 4851,
+        "m": 6578,
+        "unknown": 422
+      },
+      "womenConversations": 23,
+      "menConversations": 27,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/4OA6xrToD64FaeUcEdKeoysz6Mw.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/oroT4oMzldeKglEAnMT94o3KN66.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Nick Nolte",
+      "character": "Matt Hobbs",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "Whittni Wright",
+      "character": "Jeannie Hobbs",
+      "actorActress": "1",
+      "age": 6
+    },
+    {
+      "actorName": "Albert Brooks",
+      "character": "Burke Adler",
+      "actorActress": "2",
+      "age": 46
+    },
+    {
+      "actorName": "Julie Kavner",
+      "character": "Nan Mulhanney",
+      "actorActress": "1",
+      "age": 43
+    },
+    {
+      "actorName": "Joely Richardson",
+      "character": "Cathy Breslow",
+      "actorActress": "1",
+      "age": 29
+    },
+    {
+      "actorName": "Tracey Ullman",
+      "character": "Beth Hobbs",
+      "actorActress": "1",
+      "age": 34
+    },
+    {
+      "actorName": "Jeb Brown",
+      "character": "Male D Person",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joely Fisher",
+      "character": "Female D Person",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Vicki Lewis",
+      "character": "Millie",
+      "actorActress": "1",
+      "age": 33
+    },
+    {
+      "actorName": "Anne Heche",
+      "character": "Claire",
+      "actorActress": "1",
+      "age": 24
+    },
+    {
+      "actorName": "Ian McKellen",
+      "character": "John Earl McAlpine",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joel Thurm",
+      "character": "Martin",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Angela Alvarado",
+      "character": "Lucy",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dominik Lukas-Espeleta",
+      "character": "Ricky"
+    },
+    {
+      "actorName": "Justina Hardesty",
+      "character": "Essa"
+    },
+    {
+      "actorName": "Robert Joy",
+      "character": "U.S. Marshal",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Maria Pitillo",
+      "character": "Flight Attendant",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Suzzanne Douglas",
+      "character": "Rainbow House Star",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Joseph Malone",
+      "character": "Assistant Director",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jake Busey",
+      "character": "Burke's Fired Driver",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Harry Shearer",
+      "character": "Audience Research Captain",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rosie O'Donnell",
+      "character": "Makeup",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ken Page",
+      "character": "Hair Person",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Chelsea Field",
+      "character": "Screentest Actress",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Justine Shapiro",
+      "character": "Studio Executive",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Amy Brooks",
+      "character": "Shannon",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ian Deitchman",
+      "character": "Popcorn Pictures P.A.",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Maria Kavanaugh",
+      "character": "Secretary on Telephone"
+    },
+    {
+      "actorName": "Peter Kwong",
+      "character": "Popcorn Pictures Intern",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Roz Baker",
+      "character": "Taxi Driver"
+    },
+    {
+      "actorName": "Courtney Perry",
+      "character": "Audition Child"
+    },
+    {
+      "actorName": "Perry Anzilotti",
+      "character": "Rainbow House Supporting Actor",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Wren T. Brown",
+      "character": "Floor Manager",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "John D. Schofield",
+      "character": "Screentest Director",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Steve Vinovich",
+      "character": "Rainbow House Director",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "D.J. Dellos",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Arvie Lowe, Jr.",
+      "character": "Rainbow House Child",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dale Anthony Phillips Jr.",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Alex Dent",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Amish Desai",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Alissa Dowdy",
+      "character": "Rainbow House Child",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Danielle Dowdy",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Heather DeLoach",
+      "character": "Rainbow House Child",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Mayah McCoy",
+      "character": "Rainbow House Child",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Brittany Johnson",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Jennifer Cabrera",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Tricia Joe",
+      "character": "Rainbow House Child"
+    },
+    {
+      "actorName": "Chloe Brooks",
+      "character": "Child Actress in the Street",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Andrew David DeAngelo",
+      "character": "Rainbow House Parent",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Doris Dowdy",
+      "character": "Rainbow House Parent"
+    },
+    {
+      "actorName": "Susan DeLoach",
+      "character": "Rainbow House Parent"
+    },
+    {
+      "actorName": "Annalouise Paul",
+      "character": "Rainbow House Parent"
+    },
+    {
+      "actorName": "Trixie Flynn",
+      "character": "Rainbow House Parent"
+    },
+    {
+      "actorName": "Andy Milder",
+      "character": "Warm-Up Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ron Perkins",
+      "character": "Victor",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Aaron Lustig",
+      "character": "Jack",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Elisabeth Boyd",
+      "character": "Elisabeth"
+    },
+    {
+      "actorName": "Kate McNeil",
+      "character": "Stacy",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Patrick Cassidy",
+      "character": "Ground Zero Villain",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Woody Harrelson",
+      "character": "Ground Zero Hero",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Norris J. Bishton III",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Allison J. Brown",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Stacey Renee Caddell",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Alan James Luzietti",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Jodi Ellen Melnick",
+      "character": "Restaurant Patron",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Shawn Marie Stevens",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Michael George Whaites",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Keith Harden Young",
+      "character": "Restaurant Patron"
+    },
+    {
+      "actorName": "Joan Giammarco",
+      "character": "Airplane Passenger"
+    },
+    {
+      "actorName": "Tricia Leigh Fisher",
+      "character": "Airplane Passenger",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jerry Hauck",
+      "character": "Airplane Passenger",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jose Payo",
+      "character": "Airplane Passenger"
+    },
+    {
+      "actorName": "Hannah Nielsen",
+      "character": "Baby Jeannie"
+    },
+    {
+      "actorName": "Ingrid Nielsen",
+      "character": "Baby Jeannie"
+    },
+    {
+      "actorName": "Lena Banks",
+      "character": "Airplane Passenger (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Chris Finch",
+      "character": "Auditioning Actor / Dancer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sandy Helberg",
+      "character": "Theater Critic (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gregory Hinton",
+      "character": "Bouncer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Scott Krinsky",
+      "character": "Focus Group Member (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Lear",
+      "character": "Principal Dancer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alex Magno",
+      "character": "Dancer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nichole McAuley",
+      "character": "Extra (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Bubba Dean Rambo",
+      "character": "Dancer (uncredited)"
+    },
+    {
+      "actorName": "Jonathan Romley",
+      "character": "Rainbow House Child (uncredited)"
+    },
+    {
+      "actorName": "Maggie Roswell",
+      "character": "Woman (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Vern Urich",
+      "character": "Theatre Patron (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Viviane Vives",
+      "character": "Auditioning Actress (uncredited)",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "James L. Brooks",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "James L. Brooks",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "James L. Brooks",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Polly Platt",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Michael Ballhaus",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Richard Marks",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Hans Zimmer",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Prince",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Stephen J. Lineweaver",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Marlene Stewart",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Paula Herold",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Writing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 3,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 1,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 3,
+        "m": 5,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Costume & Make-Up": {
+        "w": 2,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 40000000,
+    "revenue": null
+  },
+  "directors": [
+    {
+      "name": "James L. Brooks"
+    }
+  ],
+  "writers": [
+    {
+      "name": "James L. Brooks"
+    }
+  ],
+  "awards": [
+    {
+      "name": "1 win & 2 nominations"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:58:48.656Z",
+  "plot": "Matt Hobbs is a talented but unsuccessful actor. When estranged (and strange) ex-wife Beth dumps their daughter Jeannie on him, father and daughter have a lot of adjusting to do. His budding relationship with attractive production assistant Cathy Breslow is made complicated, while the precocious child is overly accustomed to getting her own way. Matt eventually faces the choice of family versus career in a particularly difficult way.",
+  "simplePlot": "Matt Hobbs is a talented but unsuccessful actor. When estranged (and strange) ex-wife Beth dumps their daughter Jeannie on him, father and daughter have a lot of adjusting to do. His budding relationship with attractive production assistant Cathy Breslow is made complicated, while the precocious child is overly accustomed to getting her own way. Matt eventually faces the choice of family versus career in a particularly difficult way.",
+  "year": 1994,
+  "releaseDate": "04 Feb 1994",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BZjY1Y2IwZjEtMzA0Yy00MzAwLThkNjMtODM0YTNiN2QzYmJiXkEyXkFqcGdeQXVyMTUzMDUzNTI3._V1_SX300.jpg",
+  "idIMDB": "tt0110097",
+  "rating": "5.5",
+  "metascore": null,
+  "urlIMDB": "https://www.imdb.com/title/tt0110097/"
+}

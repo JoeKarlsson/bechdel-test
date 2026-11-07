@@ -1,0 +1,783 @@
+{
+  "_id": "tt23472210",
+  "title": "Bookworm",
+  "genres": [
+    "Adventure",
+    "Comedy",
+    "Drama"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 65,
+    "numOfFemalesChars": 4,
+    "numOfMaleChars": 4,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 3,
+    "totalLinesFemaleDialogue": 400,
+    "totalLinesMaleDialogue": 484,
+    "scenesThatPass": [
+      "MILDRED: Shhhh. Listen.\nANGELINA: Look. I'm knackered. Tiring business, kidnapping and extortion. I need to sleep. Can we iron this out in the morning?",
+      "MILDRED: Not yet. Wait a minute.\nMILDRED: Let's make sure we've still got the proof.\nMILDRED: Please... please... please...\nANGELINA: This is a pukka little camera. Crisp HD visuals. You look handsome, pet."
+    ]
+  },
+  "script": {
+    "file": "bookworm.txt",
+    "layout": "indented",
+    "dialogueLines": 891,
+    "speakers": [
+      {
+        "name": "STRAWN",
+        "lines": 384,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MILDRED",
+        "lines": 345,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ARNOLD",
+        "lines": 73,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ANGELINA",
+        "lines": 22,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DOTTY",
+        "lines": 20,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ANNE",
+        "lines": 19,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ZO",
+        "lines": 11,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DOCTOR",
+        "lines": 8,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "ANCHORWOMAN",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MOTHER",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "VOICE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FARMER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FROM ABOVE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REPORTER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Suburban back yard -- night",
+        "lines": {
+          "1": 15,
+          "6": 10,
+          "8": 2,
+          "9": 2,
+          "11": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Corridor",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Stairway",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Hospital corridor",
+        "lines": {
+          "1": 4,
+          "7": 8
+        }
+      },
+      {
+        "place": "Hallway -- day",
+        "lines": {
+          "0": 7,
+          "4": 8
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "0": 11,
+          "4": 12
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "0": 29,
+          "1": 22
+        }
+      },
+      {
+        "place": "Bedroom",
+        "lines": {
+          "0": 13,
+          "1": 14
+        }
+      },
+      {
+        "place": "Remote bus stop -- dawn",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Hiking trail",
+        "lines": {
+          "0": 12,
+          "1": 6,
+          "5": 19,
+          "10": 1
+        }
+      },
+      {
+        "place": "Hiking trail",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Hillside",
+        "lines": {
+          "0": 4,
+          "1": 7
+        }
+      },
+      {
+        "place": "Valley",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Hilltop",
+        "lines": {
+          "0": 5,
+          "1": 5
+        }
+      },
+      {
+        "place": "Hillside",
+        "lines": {
+          "0": 4,
+          "1": 5
+        }
+      },
+      {
+        "place": "Woods -- dusk",
+        "lines": {
+          "0": 4,
+          "1": 4
+        }
+      },
+      {
+        "place": "Lakeside -- dusk",
+        "lines": {
+          "0": 4,
+          "1": 6
+        }
+      },
+      {
+        "place": "Stream -- night",
+        "lines": {
+          "0": 10,
+          "1": 15
+        }
+      },
+      {
+        "place": "Tent -- night",
+        "lines": {
+          "0": 4,
+          "1": 1
+        }
+      },
+      {
+        "place": "Campsite -- night",
+        "lines": {}
+      },
+      {
+        "place": "Tent",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "Stream -- dawn",
+        "lines": {}
+      },
+      {
+        "place": "Tent",
+        "lines": {}
+      },
+      {
+        "place": "Campsite -- dawn",
+        "lines": {
+          "0": 5,
+          "1": 7
+        }
+      },
+      {
+        "place": "Mountain range -- day",
+        "lines": {
+          "0": 7,
+          "1": 6
+        }
+      },
+      {
+        "place": "Cave opening",
+        "lines": {}
+      },
+      {
+        "place": "Cave",
+        "lines": {
+          "0": 8,
+          "1": 9
+        }
+      },
+      {
+        "place": "Woods -- day",
+        "lines": {
+          "0": 22,
+          "1": 21
+        }
+      },
+      {
+        "place": "River",
+        "lines": {
+          "0": 10,
+          "1": 10
+        }
+      },
+      {
+        "place": "Campsite -- night",
+        "lines": {
+          "0": 13,
+          "1": 8
+        }
+      },
+      {
+        "place": "Tent",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Tent",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Tent",
+        "lines": {}
+      },
+      {
+        "place": "Campsite -- morning",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Scree hill",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Waterfall -- day",
+        "lines": {
+          "0": 5,
+          "1": 1,
+          "2": 6,
+          "3": 4,
+          "10": 1
+        }
+      },
+      {
+        "place": "Trail",
+        "lines": {
+          "0": 4,
+          "1": 4,
+          "2": 5,
+          "3": 4
+        }
+      },
+      {
+        "place": "Lake",
+        "lines": {
+          "0": 65,
+          "1": 23,
+          "2": 49,
+          "3": 6
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "0": 6
+        }
+      },
+      {
+        "place": "Clearing",
+        "lines": {
+          "0": 8,
+          "1": 8
+        }
+      },
+      {
+        "place": "Lake -- later",
+        "lines": {
+          "0": 9,
+          "1": 15
+        }
+      },
+      {
+        "place": "Campsite -- night",
+        "lines": {
+          "0": 9,
+          "1": 11
+        }
+      },
+      {
+        "place": "Tent",
+        "lines": {}
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "0": 6,
+          "1": 7
+        }
+      },
+      {
+        "place": "Field -- dusk",
+        "lines": {
+          "0": 7,
+          "1": 5
+        }
+      },
+      {
+        "place": "Hospital room -- night",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Tent -- night",
+        "lines": {
+          "0": 4,
+          "1": 2
+        }
+      },
+      {
+        "place": "Tent -- dawn",
+        "lines": {}
+      },
+      {
+        "place": "Hillside",
+        "lines": {}
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "0": 6,
+          "1": 6
+        }
+      },
+      {
+        "place": "Tent",
+        "lines": {
+          "0": 7,
+          "1": 11,
+          "2": 5,
+          "3": 4
+        }
+      },
+      {
+        "place": "Field",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "2": 1
+        }
+      },
+      {
+        "place": "Cliff",
+        "lines": {
+          "0": 2,
+          "1": 5,
+          "2": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Cliff",
+        "lines": {
+          "0": 9,
+          "1": 14
+        }
+      },
+      {
+        "place": "Rope bridge",
+        "lines": {
+          "0": 14,
+          "1": 11
+        }
+      },
+      {
+        "place": "Ravine",
+        "lines": {
+          "0": 6,
+          "1": 7
+        }
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "0": 5
+        }
+      },
+      {
+        "place": "Ravine",
+        "lines": {
+          "0": 17,
+          "1": 19
+        }
+      },
+      {
+        "place": "Meadow -- day",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Parking area",
+        "lines": {}
+      },
+      {
+        "place": "Parking lot",
+        "lines": {
+          "2": 5,
+          "3": 2
+        }
+      },
+      {
+        "place": "Jeep",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Mountain road",
+        "lines": {
+          "12": 1
+        }
+      },
+      {
+        "place": "Jeep",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Hospital room",
+        "lines": {
+          "1": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 89,
+      "longestWithoutWomanStart": 468,
+      "words": {
+        "w": 4468,
+        "m": 4358,
+        "unknown": 123
+      },
+      "womenConversations": 4,
+      "menConversations": 11,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/babAVM411GTyghl3ZozXKsHNgYM.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/260GDjmYf2A9W09RRo5FwUueQ3Y.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Nell Fisher",
+      "character": "Mildred",
+      "actorActress": "1",
+      "age": 12
+    },
+    {
+      "actorName": "Elijah Wood",
+      "character": "Strawn Wise",
+      "actorActress": "2",
+      "age": 43
+    },
+    {
+      "actorName": "Michael Smiley",
+      "character": "Arnold",
+      "actorActress": "2",
+      "age": 61
+    },
+    {
+      "actorName": "Vanessa Stacey",
+      "character": "Angelina",
+      "actorActress": "1",
+      "age": 44
+    },
+    {
+      "actorName": "Morgana O'Reilly",
+      "character": "Zo",
+      "actorActress": "1",
+      "age": 38
+    },
+    {
+      "actorName": "Millen Baird",
+      "character": "Doctor",
+      "actorActress": "2",
+      "age": 51
+    },
+    {
+      "actorName": "Nikki Si'ulepa",
+      "character": "Dotty",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Theo Shakes",
+      "character": "Reginald",
+      "actorActress": "2",
+      "age": 22
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Ant Timpson",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Toby Harvard",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Ant Timpson",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Toby Harvard",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Laura Tunstall",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Victoria Dabbs",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Mette-Marie Kongsved",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Roxi Bull",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Emma Slade",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Daniel Katz",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Dan Kircher",
+        "gender": null
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Karl Sölve Steven",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "John Allan",
+        "gender": null
+      }
+    ],
+    "departments": {
+      "Costume & Make-Up": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Production": {
+        "w": 3,
+        "m": 7,
+        "nb": 0,
+        "unknown": 9
+      },
+      "Art": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Sound": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": null,
+    "revenue": null
+  },
+  "directors": [
+    {
+      "name": "Ant Timpson"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Toby Harvard"
+    },
+    {
+      "name": "Ant Timpson"
+    }
+  ],
+  "awards": [
+    {
+      "name": "1 win & 4 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-07T15:56:25.849Z",
+  "plot": "11-year-old Mildred's world is turned upside down when her estranged father, the washed-up magician Strawn Wise, comes to look after her and agrees to take her camping to find a mythological beast known as the Canterbury Panther.",
+  "simplePlot": "11-year-old Mildred's world is turned upside down when her estranged father, the washed-up magician Strawn Wise, comes to look after her and agrees to take her camping to find a mythological beast known as the Canterbury Panther.",
+  "year": 2024,
+  "releaseDate": "29 Aug 2024",
+  "rated": "13+",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BZTJlMmU5NjQtN2EwZC00ZDYyLTkzY2YtMGY1MTM0OTM1ZDQ5XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt23472210",
+  "rating": "6.1",
+  "metascore": 64,
+  "urlIMDB": "https://www.imdb.com/title/tt23472210/"
+}

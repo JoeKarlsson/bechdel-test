@@ -8,13 +8,13 @@ test.describe('the shelf', () => {
 	test('arrives with the first page of films', async ({ page }) => {
 		await expect(page.locator('[data-shelf] li')).toHaveCount(60);
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(60);
-		await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 60 of 407, 233 pass in all');
+		await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 60 of 1189, 713 pass in all');
 	});
 
 	test('searches titles and directors', async ({ page }) => {
 		await page.getByLabel('Search').fill('fincher');
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(3);
-		await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 3 of 407, 1 pass');
+		await expect(page.locator('[data-shelf-count]')).toHaveText('Showing 3 of 1189, 1 pass');
 	});
 
 	test('filters to passing films and sorts them', async ({ page }) => {
@@ -22,7 +22,7 @@ test.describe('the shelf', () => {
 		await page.getByLabel('Sort').selectOption('old');
 		const titles = page.locator('[data-shelf] li:not([hidden]) .title');
 		// Filtering shows every match, not a page of them
-		await expect(titles).toHaveCount(233);
+		await expect(titles).toHaveCount(713);
 		await expect(titles.first()).toHaveText('Grand Hotel');
 	});
 
@@ -41,7 +41,7 @@ test('without JavaScript, the first page shows and every film is a link away', a
 	await expect(page.locator('[data-shelf] li')).toHaveCount(60);
 	await expect(page.locator('[data-shelf-controls]')).toBeHidden();
 	await page.getByRole('link', { name: 'Every film, A to Z' }).click();
-	await expect(page.locator('ol.all li')).toHaveCount(407);
+	await expect(page.locator('ol.all li')).toHaveCount(1189);
 	await context.close();
 });
 
@@ -52,13 +52,13 @@ test('the shelf shows a page at a time, and search still covers every film', asy
 	await page.getByRole('button', { name: 'Show 60 more' }).click();
 	await expect(visible).toHaveCount(120);
 	await expect(visible.nth(60).locator('a')).toBeFocused();
-	for (let shown = 120; shown < 360; shown += 60) {
+	for (let shown = 120; shown < 1140; shown += 60) {
 		await page.getByRole('button', { name: 'Show 60 more' }).click();
 	}
-	await page.getByRole('button', { name: 'Show 47 more' }).click();
-	await expect(visible).toHaveCount(407);
+	await page.getByRole('button', { name: 'Show 49 more' }).click();
+	await expect(visible).toHaveCount(1189);
 	await expect(page.locator('[data-shelf-more-wrap]')).toBeHidden();
-	// Searching looks past the page: Ticker is last by popularity
+	// Searching looks past the page: Ticker is far down by popularity
 	await page.getByLabel('Search').fill('ticker');
 	await expect(visible).toHaveCount(1);
 	await page.getByLabel('Search').fill('');
