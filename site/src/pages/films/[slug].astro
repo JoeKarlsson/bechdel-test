@@ -15,7 +15,11 @@ const allFilms = loadFilms();
 // Films most like this one, by genre, director and year
 const related = relatedFilms(film, allFilms);
 const pageUrl = `https://bechdel.joekarlsson.com/films/${film.slug}/`;
-const { bechdel, readers, ai } = film;
+const { bechdel, readers } = film;
+// The AI readings stay in the data but are off the site. Set this to true to show
+// the second read, the scores against the shelf, and the reading exhibits again.
+const showAiReadings: boolean = false;
+const ai = showAiReadings ? film.ai : null;
 const poster = posterFor(film.images.poster, [342, 500]);
 const backdrop = backdropFor(film.images.backdrop);
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
@@ -62,6 +66,7 @@ const goodScore = (f: typeof film, d: Dim) => {
 	return v === null || v === undefined ? null : d.flip ? 10 - v : v;
 };
 const scoreRows = DIMENSIONS.flatMap((d) => {
+	if (!ai) return [];
 	const mine = goodScore(film, d);
 	if (mine === null) return [];
 	const others = allFilms.filter((f) => f.id !== film.id).map((f) => goodScore(f, d)).filter((v): v is number => v !== null);
@@ -173,7 +178,7 @@ const waffle = womenShare !== null ? Array.from({ length: 100 }, (_, i) => i < w
 const verdictWord = bechdel.pass ? 'Passes' : 'Fails';
 // Under 160 characters: long titles drop the second sentence
 const verdictSentence = `${film.title} (${film.year}) ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test with a score of ${bechdel.score} out of 3.`;
-const descriptionTail = ' See who talks, scene by scene, and how the script treats women.';
+const descriptionTail = ' See who talks, scene by scene.';
 const description = verdictSentence.length + descriptionTail.length <= 160 ? verdictSentence + descriptionTail : verdictSentence;
 const facts = [
 	['Released', film.released],
@@ -252,7 +257,7 @@ const credit = [
 				</ol>
 			</div>
 			<div class="opinions">
-				<h3>Second opinions</h3>
+				<h3>{review ? 'Second opinions' : 'Second opinion'}</h3>
 				<div class="opinion-grid">
 					<p>
 						{
@@ -433,8 +438,8 @@ const credit = [
 					<h2 id="evidence-title" class="section-title evidence-title">The evidence</h2>
 					<ul class="legend">
 						<li><span class="swatch paper-swatch" />Straight from the script</li>
-						<li><span class="swatch panel-swatch" />Counted or read from the script and the credits</li>
-						<li><span class="swatch flag-swatch" />Red flags in the script</li>
+						<li><span class="swatch panel-swatch" />Counted from the script and the credits{ai && ', or read from the script'}</li>
+						{has.flags && <li><span class="swatch flag-swatch" />Red flags in the script</li>}
 					</ul>
 					<p class="note fold-hint">Tap an exhibit to open it.</p>
 
@@ -445,7 +450,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}</h3>
-										<p class="gist">The scene our parser counted as passing, word for word, with what it's about.</p>
+										<p class="gist">The scene our parser counted as passing, word for word{review && ", with what it's about"}.</p>
 									</summary>
 									{bechdel.passingScenes.map((scene, i) => (
 										<figure class="script">
