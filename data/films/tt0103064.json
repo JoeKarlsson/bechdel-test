@@ -14,9 +14,9 @@
     "numOfFemalesChars": 10,
     "numOfMaleChars": 38,
     "numOfFemalesCharsWithDialogue": 6,
-    "numOfMaleCharsWithDialogue": 21,
+    "numOfMaleCharsWithDialogue": 22,
     "totalLinesFemaleDialogue": 125,
-    "totalLinesMaleDialogue": 364,
+    "totalLinesMaleDialogue": 367,
     "scenesThatPass": [
       "TARISSA: Miles, I'm scared. Okay. But the only thing that scares me more than you going... is you not going.\nSARAH: Is it safe for them here?"
     ]
@@ -24,7 +24,7 @@
   "script": {
     "file": "terminator-2-judgement-day.txt",
     "layout": "indented",
-    "dialogueLines": 523,
+    "dialogueLines": 528,
     "speakers": [
       {
         "name": "JOHN",
@@ -141,6 +141,12 @@
         "named": true
       },
       {
+        "name": "T-1000",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
         "name": "T-1000/GUARD",
         "lines": 3,
         "gender": null,
@@ -180,6 +186,12 @@
         "name": "2ND ATTENDANT",
         "lines": 1,
         "gender": "m",
+        "named": false
+      },
+      {
+        "name": "A SCREENPLAY",
+        "lines": 1,
+        "gender": null,
         "named": false
       },
       {
@@ -234,6 +246,12 @@
         "name": "GIRL",
         "lines": 1,
         "gender": "w",
+        "named": false
+      },
+      {
+        "name": "JAMES CAMERON",
+        "lines": 1,
+        "gender": null,
         "named": false
       },
       {
@@ -294,7 +312,10 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "27": 1,
+          "37": 1
+        }
       },
       {
         "place": "City street",
@@ -303,13 +324,13 @@
       {
         "place": "City ruins",
         "lines": {
-          "24": 1
+          "25": 1
         }
       },
       {
         "place": "Battlefield",
         "lines": {
-          "24": 1
+          "25": 1
         }
       },
       {
@@ -319,7 +340,7 @@
       {
         "place": "Truck stop diner",
         "lines": {
-          "28": 1
+          "30": 1
         }
       },
       {
@@ -329,13 +350,13 @@
       {
         "place": "Truck stop",
         "lines": {
-          "40": 1
+          "43": 1
         }
       },
       {
         "place": "Truck stop",
         "lines": {
-          "35": 1
+          "38": 1
         }
       },
       {
@@ -351,7 +372,7 @@
         "lines": {
           "0": 1,
           "8": 1,
-          "43": 1
+          "46": 1
         }
       },
       {
@@ -496,7 +517,7 @@
         "place": "7-eleven store",
         "lines": {
           "12": 1,
-          "33": 1
+          "35": 1
         }
       },
       {
@@ -594,13 +615,13 @@
         "lines": {
           "0": 21,
           "1": 8,
-          "20": 2
+          "21": 2
         }
       },
       {
         "place": "Voight house/bedroom",
         "lines": {
-          "30": 1
+          "32": 1
         }
       },
       {
@@ -608,7 +629,7 @@
         "lines": {
           "4": 1,
           "18": 3,
-          "41": 1
+          "44": 1
         }
       },
       {
@@ -636,14 +657,15 @@
         "lines": {
           "4": 1,
           "15": 3,
-          "19": 1
+          "19": 1,
+          "20": 1
         }
       },
       {
         "place": "Corridor/night receiving desk",
         "lines": {
           "15": 1,
-          "19": 2
+          "20": 2
         }
       },
       {
@@ -668,7 +690,7 @@
           "1": 4,
           "2": 7,
           "4": 4,
-          "25": 1
+          "26": 1
         }
       },
       {
@@ -725,7 +747,7 @@
           "0": 8,
           "1": 1,
           "2": 2,
-          "42": 1
+          "45": 1
         }
       },
       {
@@ -734,8 +756,8 @@
           "0": 2,
           "1": 8,
           "2": 8,
-          "21": 2,
-          "37": 1
+          "22": 2,
+          "40": 1
         }
       },
       {
@@ -761,7 +783,8 @@
           "1": 2,
           "2": 1,
           "5": 1,
-          "26": 1
+          "19": 1,
+          "28": 1
         }
       },
       {
@@ -796,7 +819,7 @@
         "lines": {
           "3": 1,
           "6": 1,
-          "36": 1
+          "39": 1
         }
       },
       {
@@ -813,8 +836,8 @@
           "2": 5,
           "3": 4,
           "6": 1,
-          "27": 1,
-          "29": 1
+          "29": 1,
+          "31": 1
         }
       },
       {
@@ -848,20 +871,20 @@
           "1": 1,
           "2": 1,
           "3": 1,
-          "22": 1
+          "23": 1
         }
       },
       {
         "place": "Second floor corridor",
         "lines": {
           "3": 1,
-          "38": 1
+          "41": 1
         }
       },
       {
         "place": "First floor corridor/lobby",
         "lines": {
-          "23": 2
+          "24": 2
         }
       },
       {
@@ -874,7 +897,7 @@
       {
         "place": "Lobby",
         "lines": {
-          "22": 1
+          "23": 1
         }
       },
       {
@@ -889,7 +912,7 @@
       {
         "place": "Dyson house",
         "lines": {
-          "31": 1
+          "33": 1
         }
       },
       {
@@ -993,7 +1016,7 @@
           "0": 1,
           "1": 1,
           "14": 3,
-          "39": 1
+          "42": 1
         }
       },
       {
@@ -1017,7 +1040,7 @@
         "lines": {
           "1": 1,
           "2": 1,
-          "32": 1
+          "34": 1
         }
       },
       {
@@ -1069,7 +1092,9 @@
       },
       {
         "place": "Aisle between furnaces",
-        "lines": {}
+        "lines": {
+          "19": 1
+        }
       },
       {
         "place": "Maze of machinery",
@@ -1077,18 +1102,18 @@
           "0": 7,
           "1": 11,
           "2": 10,
-          "34": 1
+          "36": 1
         }
       }
     ],
     "measures": {
-      "firstWomanLine": 6,
-      "longestWithoutWoman": 44,
-      "longestWithoutWomanStart": 131,
+      "firstWomanLine": 8,
+      "longestWithoutWoman": 45,
+      "longestWithoutWomanStart": 133,
       "words": {
         "w": 1568,
-        "m": 3410,
-        "unknown": 334
+        "m": 3436,
+        "unknown": 336
       },
       "womenConversations": 2,
       "menConversations": 45,

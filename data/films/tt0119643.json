@@ -15,90 +15,96 @@
     "numOfMaleChars": 16,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 5,
-    "totalLinesFemaleDialogue": 289,
-    "totalLinesMaleDialogue": 984,
+    "totalLinesFemaleDialogue": 337,
+    "totalLinesMaleDialogue": 1103,
     "scenesThatPass": [
       "ALLISON: I'm Allison, you're 'honey'.\nSUSAN: Drew called from the AStar, they're still two minutes away.",
       "ALLISON: No.\nSUSAN: Will you relax? I know it is a big deal day --",
       "SUSAN: That's your name?\nALLISON: And isn't it a lovely one? So sturdy, so straight --",
-      "SUSAN: So, what are you doing here?\nALLISON: Now, I'm getting interested. I want to know more ---",
+      "SUSAN: So, what are you doing here?\nSUSAN: Cat got your tongue? You weren't so silent this morning.\nALLISON: Now, I'm getting interested. I want to know more ---",
       "SUSAN: Look who's talking.\nALLISON: Yeah, speak for yourself."
     ]
   },
   "script": {
     "file": "meet-joe-black.txt",
     "layout": "indented",
-    "dialogueLines": 1361,
+    "dialogueLines": 1544,
     "speakers": [
       {
         "name": "PARRISH",
-        "lines": 369,
+        "lines": 418,
         "gender": "m",
         "named": true
       },
       {
         "name": "JOE",
-        "lines": 307,
+        "lines": 334,
         "gender": "m",
         "named": true
       },
       {
         "name": "SUSAN",
-        "lines": 218,
+        "lines": 256,
         "gender": "w",
         "named": true
       },
       {
         "name": "DREW",
-        "lines": 139,
+        "lines": 168,
         "gender": "m",
         "named": true
       },
       {
         "name": "QUINCE",
-        "lines": 80,
+        "lines": 85,
         "gender": "m",
         "named": true
       },
       {
         "name": "ALLISON",
-        "lines": 69,
+        "lines": 79,
         "gender": "w",
         "named": true
       },
       {
         "name": "YOUNG MAN",
-        "lines": 46,
+        "lines": 55,
         "gender": "m",
         "named": false
       },
       {
         "name": "VOICE",
-        "lines": 33,
+        "lines": 39,
         "gender": null,
         "named": false
       },
       {
         "name": "EASTER",
-        "lines": 25,
+        "lines": 27,
         "gender": null,
         "named": true
       },
       {
         "name": "SLOANE",
-        "lines": 19,
+        "lines": 20,
         "gender": "m",
         "named": true
       },
       {
         "name": "JENIFER",
-        "lines": 9,
+        "lines": 11,
         "gender": null,
         "named": false
       },
       {
+        "name": "COYLE",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "LUISA",
-        "lines": 7,
+        "lines": 8,
         "gender": "m",
         "named": true
       },
@@ -106,12 +112,6 @@
         "name": "TEENA",
         "lines": 7,
         "gender": null,
-        "named": true
-      },
-      {
-        "name": "COYLE",
-        "lines": 6,
-        "gender": "m",
         "named": true
       },
       {
@@ -123,8 +123,8 @@
       {
         "name": "BONTECOU",
         "lines": 4,
-        "gender": "m",
-        "named": true
+        "gender": null,
+        "named": false
       },
       {
         "name": "MAY",
@@ -139,16 +139,16 @@
         "named": true
       },
       {
+        "name": "JAIME",
+        "lines": 3,
+        "gender": null,
+        "named": true
+      },
+      {
         "name": "FLORIST",
         "lines": 2,
         "gender": "w",
         "named": false
-      },
-      {
-        "name": "JAIME",
-        "lines": 2,
-        "gender": null,
-        "named": true
       },
       {
         "name": "RECEPTIONIST",
@@ -179,6 +179,12 @@
         "lines": 1,
         "gender": null,
         "named": false
+      },
+      {
+        "name": "QUICNCE",
+        "lines": 1,
+        "gender": null,
+        "named": false
       }
     ],
     "scenes": [
@@ -204,7 +210,7 @@
         "place": "Rear terrace, parrish country estate",
         "lines": {
           "5": 3,
-          "18": 2,
+          "19": 2,
           "23": 1
         }
       },
@@ -212,7 +218,7 @@
         "place": "Great hall, country estate",
         "lines": {
           "0": 13,
-          "2": 8,
+          "2": 10,
           "5": 8,
           "16": 2
         }
@@ -231,7 +237,7 @@
       {
         "place": "Astar helicopter",
         "lines": {
-          "0": 18,
+          "0": 20,
           "2": 18
         }
       },
@@ -242,7 +248,7 @@
       {
         "place": "Elevator, new york city",
         "lines": {
-          "0": 6,
+          "0": 7,
           "2": 2,
           "3": 3,
           "4": 2,
@@ -279,7 +285,7 @@
         "place": "Corinth coffee shop, new york avenue",
         "lines": {
           "2": 13,
-          "6": 15
+          "6": 18
         }
       },
       {
@@ -297,23 +303,23 @@
         "place": "Executive offices, parrish communications",
         "lines": {
           "0": 2,
-          "3": 2,
+          "3": 3,
           "10": 1
         }
       },
       {
         "place": "Parrish's office",
         "lines": {
-          "0": 14,
-          "7": 11,
-          "10": 3
+          "0": 16,
+          "7": 12,
+          "10": 4
         }
       },
       {
         "place": "Corinth coffee shop, york avenue, day",
         "lines": {
           "2": 3,
-          "6": 4
+          "6": 5
         }
       },
       {
@@ -327,9 +333,9 @@
         "place": "Salon, parrish townhouse, new york city",
         "lines": {
           "0": 4,
-          "5": 6,
-          "7": 1,
-          "11": 1
+          "5": 8,
+          "7": 2,
+          "12": 1
         }
       },
       {
@@ -338,9 +344,9 @@
           "0": 4,
           "3": 4,
           "4": 3,
-          "5": 5,
-          "7": 2,
-          "11": 2
+          "5": 6,
+          "7": 4,
+          "12": 2
         }
       },
       {
@@ -350,21 +356,21 @@
       {
         "place": "Library, parrish townhouse",
         "lines": {
-          "0": 28,
-          "6": 13,
-          "7": 14,
-          "11": 1
+          "0": 32,
+          "6": 16,
+          "7": 16,
+          "12": 2
         }
       },
       {
         "place": "Dining room",
         "lines": {
-          "0": 18,
+          "0": 20,
           "1": 12,
-          "2": 10,
-          "3": 18,
+          "2": 12,
+          "3": 19,
           "4": 10,
-          "5": 13,
+          "5": 14,
           "6": 2
         }
       },
@@ -372,21 +378,21 @@
         "place": "Hallway, parrish townhouse",
         "lines": {
           "0": 5,
-          "1": 4
+          "1": 5
         }
       },
       {
         "place": "Master guest suite, parrish townhouse",
         "lines": {
-          "0": 10,
-          "1": 9
+          "0": 12,
+          "1": 11
         }
       },
       {
         "place": "Hallway, parrish townhouse",
         "lines": {
-          "0": 2,
-          "11": 3
+          "0": 3,
+          "12": 3
         }
       },
       {
@@ -404,15 +410,15 @@
       {
         "place": "Kitchen, parrish townhouse",
         "lines": {
-          "1": 4,
-          "13": 4
+          "1": 5,
+          "11": 6
         }
       },
       {
         "place": "Swimming pool, parrish townhouse",
         "lines": {
-          "1": 19,
-          "2": 19
+          "1": 20,
+          "2": 21
         }
       },
       {
@@ -422,22 +428,22 @@
       {
         "place": "Guest suite, parrish townhouse",
         "lines": {
-          "0": 9,
-          "1": 8
+          "0": 10,
+          "1": 10
         }
       },
       {
         "place": "5th avenue, new york city",
         "lines": {
           "0": 13,
-          "1": 13
+          "1": 14
         }
       },
       {
         "place": "Lobby, parrish communications",
         "lines": {
-          "0": 2,
-          "19": 2
+          "0": 3,
+          "18": 3
         }
       },
       {
@@ -451,9 +457,9 @@
       {
         "place": "Board room, parrish communications",
         "lines": {
-          "0": 7,
-          "1": 11,
-          "3": 17,
+          "0": 8,
+          "1": 12,
+          "3": 18,
           "9": 1,
           "22": 1
         }
@@ -461,25 +467,25 @@
       {
         "place": "Parrish's office",
         "lines": {
-          "0": 7,
+          "0": 8,
           "1": 7
         }
       },
       {
         "place": "Emergency room area, new york hospital",
         "lines": {
-          "1": 24,
-          "2": 17,
-          "8": 12,
-          "12": 7
+          "1": 29,
+          "2": 20,
+          "8": 13,
+          "13": 7
         }
       },
       {
         "place": "Parrish's office",
         "lines": {
-          "0": 16,
-          "1": 13,
-          "3": 8
+          "0": 19,
+          "1": 14,
+          "3": 10
         }
       },
       {
@@ -488,21 +494,21 @@
           "0": 10,
           "1": 7,
           "2": 6,
-          "3": 12,
-          "4": 11,
-          "5": 9
+          "3": 14,
+          "4": 12,
+          "5": 10
         }
       },
       {
         "place": "Dining room, parrish townhouse",
         "lines": {
-          "0": 7,
+          "0": 13,
           "1": 12,
           "2": 10,
           "3": 6,
           "4": 3,
           "5": 5,
-          "13": 2
+          "11": 2
         }
       },
       {
@@ -518,14 +524,14 @@
         "lines": {
           "0": 7,
           "1": 8,
-          "2": 20,
+          "2": 25,
           "3": 5
         }
       },
       {
         "place": "The carlyle hotel",
         "lines": {
-          "3": 8,
+          "3": 11,
           "4": 5,
           "9": 5
         }
@@ -534,17 +540,17 @@
         "place": "Dining room, parrish townhouse",
         "lines": {
           "0": 7,
-          "4": 5,
-          "5": 7
+          "4": 6,
+          "5": 8
         }
       },
       {
         "place": "Salon, parrish townhouse",
         "lines": {
           "0": 9,
-          "1": 20,
-          "2": 15,
-          "3": 12,
+          "1": 21,
+          "2": 21,
+          "3": 18,
           "4": 3
         }
       },
@@ -552,15 +558,15 @@
         "place": "Executive suite, parrish communications",
         "lines": {
           "0": 2,
-          "10": 3
+          "10": 4
         }
       },
       {
         "place": "Board room, parrish communications",
         "lines": {
-          "0": 12,
+          "0": 13,
           "1": 1,
-          "3": 11,
+          "3": 20,
           "9": 2
         }
       },
@@ -574,29 +580,29 @@
       {
         "place": "Hallway, parrish communications",
         "lines": {
-          "3": 4,
+          "3": 7,
           "4": 4
         }
       },
       {
         "place": "Foyer, parrish townhouse",
         "lines": {
-          "0": 5,
+          "0": 6,
           "1": 4
         }
       },
       {
         "place": "Guest suite, parrish townhouse",
         "lines": {
-          "1": 11,
-          "2": 13
+          "1": 13,
+          "2": 15
         }
       },
       {
         "place": "Foyer, parrish townhouse (later)",
         "lines": {
-          "0": 11,
-          "1": 12
+          "0": 14,
+          "1": 13
         }
       },
       {
@@ -609,15 +615,15 @@
       {
         "place": "Easter's room, new york hospital",
         "lines": {
-          "1": 13,
-          "8": 13
+          "1": 14,
+          "8": 14
         }
       },
       {
         "place": "Library, parrish townhouse",
         "lines": {
-          "0": 10,
-          "2": 10
+          "0": 12,
+          "2": 12
         }
       },
       {
@@ -630,7 +636,7 @@
       {
         "place": "Library, parrish townhouse",
         "lines": {
-          "0": 3,
+          "0": 4,
           "1": 4
         }
       },
@@ -656,15 +662,16 @@
         "place": "Lawns, country estate",
         "lines": {
           "0": 8,
-          "5": 8
+          "5": 10
         }
       },
       {
         "place": "Wine bar, lawns, country estate",
         "lines": {
-          "1": 13,
-          "4": 15,
-          "14": 2
+          "1": 14,
+          "4": 18,
+          "14": 2,
+          "25": 1
         }
       },
       {
@@ -679,15 +686,15 @@
         "place": "Garden, country estate",
         "lines": {
           "1": 11,
-          "2": 12,
-          "5": 1
+          "2": 15,
+          "5": 3
         }
       },
       {
         "place": "Parrish's study, country estate",
         "lines": {
-          "0": 23,
-          "1": 18,
+          "0": 26,
+          "1": 19,
           "4": 6,
           "24": 1
         }
@@ -696,14 +703,14 @@
         "place": "Lawns, country estate",
         "lines": {
           "1": 10,
-          "2": 11
+          "2": 20
         }
       },
       {
         "place": "Parrish's study, country estate",
         "lines": {
-          "0": 5,
-          "1": 2,
+          "0": 6,
+          "1": 3,
           "4": 2,
           "16": 1
         }
@@ -718,32 +725,32 @@
       {
         "place": "Parrish's study, country estate",
         "lines": {
-          "0": 15,
-          "1": 13,
-          "3": 11,
+          "0": 18,
+          "1": 14,
+          "3": 12,
           "5": 1,
-          "9": 4
+          "9": 5
         }
       },
       {
         "place": "Lawns, country estate",
         "lines": {
-          "0": 18,
-          "1": 12,
-          "2": 22,
-          "6": 8,
+          "0": 25,
+          "1": 15,
+          "2": 24,
+          "6": 10,
           "21": 2
         }
       }
     ],
     "measures": {
       "firstWomanLine": 5,
-      "longestWithoutWoman": 107,
-      "longestWithoutWomanStart": 475,
+      "longestWithoutWoman": 117,
+      "longestWithoutWomanStart": 523,
       "words": {
-        "w": 2609,
-        "m": 9869,
-        "unknown": 819
+        "w": 3084,
+        "m": 11897,
+        "unknown": 1004
       },
       "womenConversations": 13,
       "menConversations": 70,

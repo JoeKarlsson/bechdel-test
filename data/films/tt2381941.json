@@ -7,24 +7,22 @@
     "Drama"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 104,
+    "pass": false,
+    "bechdelScore": 1,
+    "numScenesPass": 0,
+    "numScenesDontPass": 105,
     "numOfFemalesChars": 14,
     "numOfMaleChars": 45,
-    "numOfFemalesCharsWithDialogue": 8,
-    "numOfMaleCharsWithDialogue": 28,
-    "totalLinesFemaleDialogue": 330,
-    "totalLinesMaleDialogue": 724,
-    "scenesThatPass": [
-      "JESS POV: She pans over the field pausing on various players.\nJESS POV: More scanning of the field, the sidelines...\nJESS: Uhhhhh...\nJESS: What the hell am I supposed to do?"
-    ]
+    "numOfFemalesCharsWithDialogue": 7,
+    "numOfMaleCharsWithDialogue": 24,
+    "totalLinesFemaleDialogue": 326,
+    "totalLinesMaleDialogue": 717,
+    "scenesThatPass": []
   },
   "script": {
     "file": "focus-2015.txt",
     "layout": "indented",
-    "dialogueLines": 1116,
+    "dialogueLines": 1103,
     "speakers": [
       {
         "name": "NICKY",
@@ -129,18 +127,6 @@
         "named": true
       },
       {
-        "name": "JESS POV",
-        "lines": 4,
-        "gender": "w",
-        "named": true
-      },
-      {
-        "name": "NICKY POV",
-        "lines": 4,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "ON THE FIELD",
         "lines": 4,
         "gender": null,
@@ -225,12 +211,6 @@
         "named": true
       },
       {
-        "name": "THEIR POV",
-        "lines": 2,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "WAITRESS",
         "lines": 2,
         "gender": "w",
@@ -297,19 +277,7 @@
         "named": true
       },
       {
-        "name": "FARHAD POV",
-        "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "FERRARI ENGINEER",
-        "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "GARRIGA POV",
         "lines": 1,
         "gender": "m",
         "named": true
@@ -417,12 +385,6 @@
         "named": true
       },
       {
-        "name": "TITLE CARD",
-        "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "TOURIST",
         "lines": 1,
         "gender": "w",
@@ -439,14 +401,14 @@
       {
         "place": null,
         "lines": {
-          "52": 1
+          "47": 1
         }
       },
       {
         "place": "White windowless room",
         "lines": {
           "11": 7,
-          "20": 3
+          "18": 3
         }
       },
       {
@@ -463,8 +425,7 @@
           "8": 13,
           "11": 1,
           "13": 5,
-          "35": 1,
-          "65": 1
+          "32": 1
         }
       },
       {
@@ -474,7 +435,7 @@
       {
         "place": "Hotel elevator",
         "lines": {
-          "29": 2
+          "27": 2
         }
       },
       {
@@ -482,7 +443,7 @@
         "lines": {
           "0": 6,
           "15": 4,
-          "66": 1
+          "60": 1
         }
       },
       {
@@ -490,9 +451,9 @@
         "lines": {
           "0": 8,
           "1": 8,
-          "24": 2,
-          "38": 1,
-          "60": 1
+          "22": 2,
+          "35": 1,
+          "55": 1
         }
       },
       {
@@ -509,7 +470,7 @@
           "0": 13,
           "1": 18,
           "9": 13,
-          "26": 2
+          "24": 2
         }
       },
       {
@@ -560,15 +521,15 @@
         "lines": {
           "0": 16,
           "1": 16,
-          "34": 2
+          "31": 2
         }
       },
       {
         "place": "Sports bar",
         "lines": {
           "0": 6,
-          "40": 1,
-          "64": 1
+          "37": 1,
+          "59": 1
         }
       },
       {
@@ -582,23 +543,23 @@
         "lines": {
           "0": 4,
           "1": 2,
-          "43": 1,
-          "61": 1
+          "40": 1,
+          "56": 1
         }
       },
       {
         "place": "Hotel suite",
         "lines": {
           "0": 3,
-          "62": 1
+          "57": 1
         }
       },
       {
         "place": "Penthouse suite",
         "lines": {
           "0": 1,
-          "44": 1,
-          "63": 1
+          "41": 1,
+          "58": 1
         }
       },
       {
@@ -606,9 +567,9 @@
         "lines": {
           "0": 1,
           "13": 1,
-          "23": 2,
-          "42": 1,
-          "53": 1
+          "21": 2,
+          "39": 1,
+          "48": 1
         }
       },
       {
@@ -631,7 +592,7 @@
         "lines": {
           "0": 8,
           "1": 5,
-          "49": 1
+          "44": 1
         }
       },
       {
@@ -680,8 +641,7 @@
       {
         "place": "Mall",
         "lines": {
-          "18": 2,
-          "59": 1
+          "54": 1
         }
       },
       {
@@ -712,13 +672,11 @@
           "1": 34,
           "5": 36,
           "17": 4,
-          "19": 4,
-          "27": 2,
-          "33": 2,
-          "39": 1,
+          "25": 2,
+          "36": 1,
+          "46": 1,
           "51": 1,
-          "56": 1,
-          "67": 1
+          "61": 1
         }
       },
       {
@@ -748,7 +706,7 @@
         "place": "Limo and miami streets",
         "lines": {
           "0": 3,
-          "37": 1
+          "34": 1
         }
       },
       {
@@ -764,7 +722,7 @@
         "lines": {
           "0": 9,
           "1": 9,
-          "50": 1
+          "45": 1
         }
       },
       {
@@ -784,8 +742,7 @@
         "place": "Autodromo buenos aires",
         "lines": {
           "2": 4,
-          "4": 3,
-          "47": 1
+          "4": 3
         }
       },
       {
@@ -801,8 +758,7 @@
         "lines": {
           "0": 5,
           "12": 3,
-          "18": 1,
-          "48": 1
+          "43": 1
         }
       },
       {
@@ -811,7 +767,7 @@
           "0": 4,
           "1": 2,
           "4": 2,
-          "30": 2
+          "28": 2
         }
       },
       {
@@ -853,7 +809,7 @@
           "1": 4,
           "2": 2,
           "4": 6,
-          "58": 1
+          "53": 1
         }
       },
       {
@@ -861,15 +817,14 @@
         "lines": {
           "0": 1,
           "16": 1,
-          "54": 1
+          "49": 1
         }
       },
       {
         "place": "Mcewen’s suite",
         "lines": {
           "0": 14,
-          "6": 21,
-          "18": 1
+          "6": 21
         }
       },
       {
@@ -877,27 +832,27 @@
         "lines": {
           "0": 12,
           "1": 19,
-          "41": 1
+          "38": 1
         }
       },
       {
         "place": "Alexander mcqueen boutique",
         "lines": {
-          "22": 1
+          "20": 1
         }
       },
       {
         "place": "Alexander mcqueen fitting area",
         "lines": {
           "1": 1,
-          "22": 2
+          "20": 2
         }
       },
       {
         "place": "Buenos aires street",
         "lines": {
           "1": 3,
-          "21": 3
+          "19": 3
         }
       },
       {
@@ -926,7 +881,7 @@
         "lines": {
           "0": 2,
           "6": 2,
-          "32": 1
+          "30": 1
         }
       },
       {
@@ -959,8 +914,7 @@
         "place": "Square",
         "lines": {
           "1": 13,
-          "3": 13,
-          "45": 1
+          "3": 13
         }
       },
       {
@@ -982,7 +936,7 @@
         "place": "Buenos aires hotel",
         "lines": {
           "0": 1,
-          "25": 2
+          "23": 2
         }
       },
       {
@@ -991,7 +945,7 @@
           "0": 24,
           "1": 4,
           "2": 17,
-          "55": 1
+          "50": 1
         }
       },
       {
@@ -1012,7 +966,7 @@
         "lines": {
           "0": 1,
           "6": 2,
-          "32": 1
+          "30": 1
         }
       },
       {
@@ -1030,7 +984,7 @@
         "place": "Lotus workshop",
         "lines": {
           "0": 1,
-          "28": 2
+          "26": 2
         }
       },
       {
@@ -1041,13 +995,13 @@
         "place": "Team red bull-renault pit",
         "lines": {
           "0": 1,
-          "31": 2
+          "29": 2
         }
       },
       {
         "place": "Dive bar",
         "lines": {
-          "46": 1
+          "42": 1
         }
       },
       {
@@ -1090,7 +1044,7 @@
         "place": "Bar",
         "lines": {
           "16": 2,
-          "36": 1
+          "33": 1
         }
       },
       {
@@ -1119,7 +1073,7 @@
           "2": 22,
           "4": 26,
           "10": 9,
-          "57": 1
+          "52": 1
         }
       },
       {
@@ -1138,14 +1092,14 @@
     "measures": {
       "firstWomanLine": 13,
       "longestWithoutWoman": 56,
-      "longestWithoutWomanStart": 966,
+      "longestWithoutWomanStart": 953,
       "words": {
-        "w": 2416,
-        "m": 7747,
-        "unknown": 553
+        "w": 2366,
+        "m": 7659,
+        "unknown": 534
       },
-      "womenConversations": 2,
-      "menConversations": 65,
+      "womenConversations": 0,
+      "menConversations": 63,
       "reverseScore": 3
     }
   },

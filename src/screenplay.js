@@ -12,13 +12,15 @@ const NOT_A_SPEAKER = new Set([
 	'FADE OUT', 'INSERT', 'INTERCUT', 'LATER', 'MOMENTS LATER', 'MONTAGE', 'END MONTAGE', 'POV', 'SERIES OF SHOTS', 'SUPER',
 	'TITLE', 'TITLES', 'THE END', 'WIDE', 'WIDE SHOT', 'FLASHBACK', 'END FLASHBACK', 'BACK TO PRESENT', 'SILENCE', 'BLACK',
 	'BLACKNESS', 'DARKNESS', 'OMITTED', 'MORE', 'NIGHT', 'DAY', 'DAWN', 'DUSK', 'MORNING', 'CONTINUOUS', 'SAME', 'THE', 'A', 'AND',
-	'CREDITS', 'MAIN TITLES', 'TITLE CARD', 'CARD', 'CHYRON', 'OPENING CREDITS', 'END CREDITS', 'FREEZE FRAME', 'SLOW MOTION', 'TIME CUT', 'JUMP CUT',
+	'CREDITS', 'DRAFT', 'MAIN TITLES', 'TITLE CARD', 'CARD', 'CHYRON', 'OPENING CREDITS', 'END CREDITS', 'FREEZE FRAME', 'SLOW MOTION', 'TIME CUT', 'JUMP CUT',
 ]);
 const SPEAKER_SUFFIX = /\s*(?:\((?:V\.?\s?O|O\.?\s?S|O\.?\s?C|CONT['’]?D|CONTD|CONT|INTO PHONE|ON PHONE|PHONE|FILTERED|OVER|PRE-?LAP|SUBTITLED?|CONT['’]?D\.?|[^)]{0,30})\.?\)\s*)+$/i;
 const PAGE_NUMBER = /^\s*\d+\.?\s*$/;
 // A heading without INT./EXT.: "ANNIE'S KITCHEN - SEVERAL DAYS LATER"
 const PLACE_HEADING = /^[A-Z0-9][A-Z0-9 .,'’&/()#-]{2,60}\s[-–—]\s*(?:DAY|NIGHT|MORNING|EVENING|AFTERNOON|DAWN|DUSK|SUNSET|SUNRISE|LATER|CONTINUOUS|SAME(?: TIME)?|MOMENTS LATER|(?:A )?(?:FEW|SEVERAL) (?:MINUTES|HOURS|DAYS|WEEKS|MONTHS) LATER)\.?$/;
 const isHeading = t => t === t.toUpperCase() && (SCENE_HEADING.test(t) || PLACE_HEADING.test(t));
+/** A normalized name that isn't a camera or structure note ("ANGLE ON", "CONTINUED", "DRAFT") */
+const isSpeakerName = name => !NOT_A_SPEAKER.has(name) && !/\bPOV\b|\bANGLE\b|\bSHOT\b/.test(name);
 
 /** "JAKE (V.O.)" -> "JAKE"; "NICK (CONT’D) *" -> "NICK"; "Mrs. Smith" -> "MRS. SMITH" */
 const normalizeSpeaker = raw => raw
@@ -39,7 +41,7 @@ const looksLikeCue = text => {
 	if (t !== t.toUpperCase() || !/[A-Z]{2}/.test(t)) return false;
 	if (isHeading(t) || TRANSITION.test(t) || /[!?]$/.test(t)) return false;
 	const name = normalizeSpeaker(t);
-	if (!name || NOT_A_SPEAKER.has(name) || name.split(' ').length > 4 || /\bPOV\b|\bANGLE\b|\bSHOT\b/.test(name)) return false;
+	if (!name || !isSpeakerName(name) || name.split(' ').length > 4) return false;
 	return /^[A-Z0-9][A-Z0-9 .'’&#/-]*$/.test(name);
 };
 
@@ -53,7 +55,7 @@ const looksLikeName = text => {
 	if (t.length < 1 || t.length > 40 || !/^[A-Za-z][A-Za-z0-9.'’&-]*(?:\s+[A-Za-z0-9.'’&-]+){0,3}(?:\s*\([^)]*\))*$/.test(t)) return false;
 	const upper = t.toUpperCase();
 	if (/[.,!?;:]$/.test(t.replace(/\s*\([^)]*\)$/, '')) && !/\b(?:MR|MRS|MS|DR|ST)\.$/.test(upper)) return false;
-	return !isHeading(upper) && !TRANSITION.test(upper) && !NOT_A_SPEAKER.has(normalizeSpeaker(t));
+	return !isHeading(upper) && !TRANSITION.test(upper) && isSpeakerName(normalizeSpeaker(t));
 };
 
 const indentOf = line => line.match(/^ */)[0].length;
@@ -162,9 +164,9 @@ const parseScreenplay = rawText => {
 	const nameAloneCount = {};
 	for (const l of lines) {
 		const m = l.trim().match(TITLE_COLON);
-		if (m) titleColonCount[m[1]] = (titleColonCount[m[1]] || 0) + 1;
+		if (m && isSpeakerName(normalizeSpeaker(m[1]))) titleColonCount[m[1]] = (titleColonCount[m[1]] || 0) + 1;
 		const alone = l.trim().match(NAME_ALONE);
-		if (alone) nameAloneCount[alone[1]] = (nameAloneCount[alone[1]] || 0) + 1;
+		if (alone && isSpeakerName(normalizeSpeaker(alone[1]))) nameAloneCount[alone[1]] = (nameAloneCount[alone[1]] || 0) + 1;
 	}
 	const isNameAlone = t => (nameAloneCount[t.match(NAME_ALONE)?.[1]] || 0) >= 3;
 
@@ -225,7 +227,9 @@ const parseScreenplay = rawText => {
 		}
 
 		// "BONNIE: Bull." or "NICK (CONT'D) Whose beer am I drinking?"
-		const colonCue = trimmed.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)\s*(\([^)]*\))?\s*:\s+(\S.*)$/);
+		const colonMatch = trimmed.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)\s*(\([^)]*\))?\s*:\s+(\S.*)$/);
+		// "ANGLE ON: SMEAGOL..." is action, not Angle On speaking
+		const colonCue = colonMatch && isSpeakerName(normalizeSpeaker(colonMatch[1])) ? colonMatch : null;
 		const inlineCue = !layout && trimmed.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)(\s*\([^)]*\))?\s*\*?\s+(?=\S)(.*[a-z].*)$/);
 		const inline = colonCue || (inlineCue && standaloneCues.has(normalizeSpeaker(inlineCue[1])) ? inlineCue : null);
 

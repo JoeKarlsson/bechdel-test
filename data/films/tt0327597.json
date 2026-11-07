@@ -9,13 +9,13 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 20,
-    "numScenesDontPass": 104,
+    "numScenesPass": 19,
+    "numScenesDontPass": 105,
     "numOfFemalesChars": 5,
     "numOfMaleChars": 7,
-    "numOfFemalesCharsWithDialogue": 9,
+    "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 8,
-    "totalLinesFemaleDialogue": 577,
+    "totalLinesFemaleDialogue": 575,
     "totalLinesMaleDialogue": 181,
     "scenesThatPass": [
       "CORALINE: Where does this door go?\nMEL: I'm really, really busy!",
@@ -28,7 +28,7 @@
   "script": {
     "file": "coraline.txt",
     "layout": "indented",
-    "dialogueLines": 773,
+    "dialogueLines": 770,
     "speakers": [
       {
         "name": "CORALINE",
@@ -199,28 +199,10 @@
         "named": true
       },
       {
-        "name": "ANGLE ON CORALINE",
-        "lines": 1,
-        "gender": "w",
-        "named": true
-      },
-      {
-        "name": "ANGLE ON PHOTO",
-        "lines": 1,
-        "gender": "w",
-        "named": true
-      },
-      {
         "name": "CLOSE ON DOLL",
         "lines": 1,
         "gender": "w",
-        "named": false
-      },
-      {
-        "name": "CORALINE'S POV DOWN STAIRWAY",
-        "lines": 1,
-        "gender": null,
-        "named": false
+        "named": true
       },
       {
         "name": "DRAGONFLIES",
@@ -311,7 +293,7 @@
           "0": 16,
           "1": 19,
           "17": 2,
-          "39": 1
+          "36": 1
         }
       },
       {
@@ -471,7 +453,7 @@
           "20": 2,
           "25": 1,
           "27": 1,
-          "32": 1
+          "29": 1
         }
       },
       {
@@ -533,7 +515,7 @@
           "0": 16,
           "1": 13,
           "17": 1,
-          "33": 1
+          "30": 1
         }
       },
       {
@@ -618,7 +600,7 @@
           "0": 2,
           "3": 2,
           "6": 2,
-          "35": 1
+          "32": 1
         }
       },
       {
@@ -626,7 +608,7 @@
         "lines": {
           "0": 2,
           "3": 3,
-          "41": 1
+          "38": 1
         }
       },
       {
@@ -650,8 +632,7 @@
       {
         "place": "Living room",
         "lines": {
-          "0": 1,
-          "28": 1
+          "0": 1
         }
       },
       {
@@ -714,9 +695,9 @@
           "20": 1,
           "25": 1,
           "27": 1,
+          "31": 1,
           "34": 1,
-          "37": 1,
-          "40": 1
+          "37": 1
         }
       },
       {
@@ -770,14 +751,14 @@
           "15": 5,
           "16": 5,
           "23": 2,
-          "38": 1
+          "35": 1
         }
       },
       {
         "place": "Other hallway",
         "lines": {
           "0": 2,
-          "36": 1
+          "33": 1
         }
       },
       {
@@ -898,7 +879,7 @@
         "place": "Living room, front of fireplace",
         "lines": {
           "0": 2,
-          "30": 1
+          "28": 1
         }
       },
       {
@@ -940,9 +921,7 @@
       },
       {
         "place": "Other house, stairway to spink and forcible's",
-        "lines": {
-          "31": 1
-        }
+        "lines": {}
       },
       {
         "place": "Downstairs theatre",
@@ -1075,8 +1054,7 @@
         "lines": {
           "0": 5,
           "1": 8,
-          "17": 1,
-          "29": 1
+          "17": 1
         }
       },
       {
@@ -1095,11 +1073,11 @@
     "measures": {
       "firstWomanLine": 5,
       "longestWithoutWoman": 5,
-      "longestWithoutWomanStart": 648,
+      "longestWithoutWomanStart": 646,
       "words": {
-        "w": 3807,
+        "w": 3747,
         "m": 1562,
-        "unknown": 127
+        "unknown": 116
       },
       "womenConversations": 51,
       "menConversations": 1,

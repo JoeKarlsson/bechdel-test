@@ -15,8 +15,8 @@
     "numOfMaleChars": 15,
     "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 10,
-    "totalLinesFemaleDialogue": 203,
-    "totalLinesMaleDialogue": 408,
+    "totalLinesFemaleDialogue": 204,
+    "totalLinesMaleDialogue": 411,
     "scenesThatPass": [
       "CHARLIE: That can't be more than an hour up the highway from here.\nAUDREY: Does that mean we can leave?",
       "AUDREY: Oh my god...we did it! Charlie, you did it!\nAUDREY: It's okay. The baby's okay.\nCHARLIE: I don't...I...",
@@ -27,8 +27,14 @@
   "script": {
     "file": "legion.txt",
     "layout": "indented",
-    "dialogueLines": 623,
+    "dialogueLines": 625,
     "speakers": [
+      {
+        "name": "BOB",
+        "lines": 98,
+        "gender": "m",
+        "named": true
+      },
       {
         "name": "CHARLIE",
         "lines": 98,
@@ -36,14 +42,8 @@
         "named": true
       },
       {
-        "name": "BOB",
-        "lines": 96,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "JEEP",
-        "lines": 88,
+        "lines": 89,
         "gender": "m",
         "named": true
       },
@@ -73,7 +73,7 @@
       },
       {
         "name": "SANDRA",
-        "lines": 37,
+        "lines": 38,
         "gender": "w",
         "named": true
       },
@@ -126,12 +126,6 @@
         "named": false
       },
       {
-        "name": "TITLE",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "RADIO VOICE",
         "lines": 2,
         "gender": null,
@@ -172,18 +166,25 @@
         "lines": 1,
         "gender": "w",
         "named": false
+      },
+      {
+        "name": "WRITTEN BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
       }
     ],
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "23": 1
+        }
       },
       {
         "place": "The mojave desert",
         "lines": {
-          "16": 1,
-          "23": 1
+          "22": 1
         }
       },
       {
@@ -228,16 +229,16 @@
       {
         "place": "Desert",
         "lines": {
-          "0": 9,
+          "1": 9,
           "2": 6,
-          "18": 1,
-          "19": 1
+          "17": 1,
+          "18": 1
         }
       },
       {
         "place": "Paradise falls gas `n' grub",
         "lines": {
-          "1": 1,
+          "0": 1,
           "5": 1,
           "6": 2,
           "7": 4,
@@ -253,7 +254,7 @@
       {
         "place": "Paradise falls gas `n' grub",
         "lines": {
-          "0": 6,
+          "1": 6,
           "2": 1,
           "3": 9
         }
@@ -261,8 +262,8 @@
       {
         "place": "Paradise falls gas `n' grub",
         "lines": {
-          "0": 3,
-          "1": 6,
+          "0": 6,
+          "1": 3,
           "3": 3,
           "9": 2
         }
@@ -270,22 +271,22 @@
       {
         "place": "Mechanic's bay",
         "lines": {
-          "1": 5,
+          "0": 6,
           "2": 5
         }
       },
       {
         "place": "Paradise gas `n' grub",
         "lines": {
-          "1": 5,
+          "0": 5,
           "2": 3
         }
       },
       {
         "place": "Paradise falls gas `n' grub",
         "lines": {
-          "0": 4,
-          "1": 11,
+          "0": 11,
+          "1": 4,
           "3": 2,
           "6": 3,
           "7": 1,
@@ -302,8 +303,8 @@
       {
         "place": "Diner",
         "lines": {
-          "0": 1,
-          "1": 6,
+          "0": 7,
+          "1": 1,
           "3": 2,
           "5": 1,
           "6": 2,
@@ -320,12 +321,12 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 15,
-          "1": 6,
+          "0": 6,
+          "1": 15,
           "2": 3,
           "3": 2,
           "6": 2,
-          "7": 6,
+          "7": 7,
           "8": 15,
           "9": 1,
           "13": 7
@@ -354,14 +355,14 @@
       {
         "place": "Diner bathroom",
         "lines": {
-          "1": 3,
-          "2": 1
+          "0": 3,
+          "2": 2
         }
       },
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 2,
+          "0": 2,
           "6": 2
         }
       },
@@ -377,7 +378,7 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 7,
+          "0": 7,
           "2": 4,
           "3": 7
         }
@@ -385,14 +386,14 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 1
+          "1": 1
         }
       },
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 2,
-          "1": 10,
+          "0": 10,
+          "1": 2,
           "2": 6,
           "3": 3,
           "4": 9,
@@ -412,7 +413,7 @@
       {
         "place": "In the diner",
         "lines": {
-          "1": 1,
+          "0": 1,
           "3": 1,
           "6": 1,
           "7": 1,
@@ -422,7 +423,7 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 2,
+          "0": 2,
           "3": 3,
           "4": 2,
           "6": 4
@@ -437,7 +438,7 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 5,
+          "0": 5,
           "3": 3,
           "4": 3,
           "6": 2
@@ -459,8 +460,8 @@
           "2": 1,
           "5": 3,
           "7": 4,
-          "21": 1,
-          "22": 1
+          "20": 1,
+          "21": 1
         }
       },
       {
@@ -472,8 +473,8 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 10,
-          "1": 4,
+          "0": 4,
+          "1": 10,
           "2": 2,
           "3": 7,
           "4": 18,
@@ -492,7 +493,7 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 3,
+          "0": 3,
           "2": 3,
           "4": 4,
           "7": 3
@@ -500,9 +501,7 @@
       },
       {
         "place": "Paradise falls gas `n' grub",
-        "lines": {
-          "16": 1
-        }
+        "lines": {}
       },
       {
         "place": "Paradise gas `n' grub",
@@ -538,14 +537,14 @@
       {
         "place": "Paradise gas `n' grub",
         "lines": {
-          "0": 1,
+          "1": 1,
           "7": 1
         }
       },
       {
         "place": "Paradise falls gas `n' grub",
         "lines": {
-          "1": 1,
+          "0": 1,
           "2": 1
         }
       },
@@ -557,7 +556,7 @@
           "2": 1,
           "4": 2,
           "5": 3,
-          "17": 2
+          "16": 2
         }
       },
       {
@@ -567,7 +566,7 @@
       {
         "place": "Diner",
         "lines": {
-          "0": 4,
+          "1": 4,
           "2": 4
         }
       },
@@ -581,7 +580,7 @@
       {
         "place": "Paradise falls gas `n' grub",
         "lines": {
-          "1": 1,
+          "0": 1,
           "4": 1
         }
       },
@@ -590,7 +589,7 @@
         "lines": {
           "3": 6,
           "5": 6,
-          "20": 1
+          "19": 1
         }
       },
       {
@@ -626,7 +625,7 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 2,
+          "1": 2,
           "4": 2
         }
       },
@@ -639,8 +638,8 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 4,
-          "1": 3,
+          "0": 3,
+          "1": 4,
           "2": 3,
           "4": 2,
           "14": 1
@@ -648,9 +647,7 @@
       },
       {
         "place": "Paradise gas `n' grub",
-        "lines": {
-          "16": 1
-        }
+        "lines": {}
       },
       {
         "place": "Paradise falls gas 'n' grub",
@@ -662,7 +659,7 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 3,
+          "0": 3,
           "2": 3
         }
       },
@@ -676,14 +673,14 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "1": 1,
+          "0": 1,
           "2": 1
         }
       },
       {
         "place": "Paradise gas `n' grub",
         "lines": {
-          "0": 4,
+          "1": 4,
           "4": 4,
           "5": 4
         }
@@ -699,8 +696,8 @@
       {
         "place": "Paradise falls gas 'n' grub",
         "lines": {
-          "0": 6,
-          "1": 5,
+          "0": 5,
+          "1": 6,
           "2": 11,
           "4": 6,
           "5": 1,
@@ -725,7 +722,7 @@
       {
         "place": "Police cruiser",
         "lines": {
-          "0": 2,
+          "1": 2,
           "2": 7,
           "5": 2
         }
@@ -750,20 +747,20 @@
       {
         "place": "Police cruiser",
         "lines": {
-          "0": 2,
+          "1": 2,
           "2": 1
         }
       },
       {
         "place": "Paradise gas `n' grub",
         "lines": {
-          "1": 1
+          "0": 1
         }
       },
       {
         "place": "Police cruiser",
         "lines": {
-          "0": 1,
+          "1": 1,
           "2": 2
         }
       },
@@ -789,7 +786,7 @@
       {
         "place": "Police cruiser",
         "lines": {
-          "0": 1,
+          "1": 1,
           "2": 3,
           "5": 1
         }
@@ -820,14 +817,14 @@
       {
         "place": "Police cruiser",
         "lines": {
-          "0": 5,
+          "1": 5,
           "2": 3
         }
       },
       {
         "place": "Red rock ridge",
         "lines": {
-          "0": 5,
+          "1": 5,
           "2": 3,
           "12": 3
         }
@@ -835,38 +832,38 @@
       {
         "place": "Red rock ridge",
         "lines": {
-          "0": 1,
+          "1": 1,
           "2": 1
         }
       },
       {
         "place": "The mojave desert",
         "lines": {
-          "0": 1,
+          "1": 1,
           "2": 2
         }
       },
       {
         "place": "The mojave desert",
         "lines": {
-          "0": 1
+          "1": 1
         }
       },
       {
         "place": "Car",
         "lines": {
-          "0": 3
+          "1": 3
         }
       }
     ],
     "measures": {
-      "firstWomanLine": 1,
-      "longestWithoutWoman": 30,
+      "firstWomanLine": 2,
+      "longestWithoutWoman": 31,
       "longestWithoutWomanStart": 77,
       "words": {
-        "w": 1716,
-        "m": 3501,
-        "unknown": 118
+        "w": 1737,
+        "m": 3542,
+        "unknown": 100
       },
       "womenConversations": 14,
       "menConversations": 49,

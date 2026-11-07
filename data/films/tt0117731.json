@@ -22,7 +22,7 @@
   "script": {
     "file": "star-trek-first-contact.txt",
     "layout": "indented",
-    "dialogueLines": 706,
+    "dialogueLines": 708,
     "speakers": [
       {
         "name": "PICARD",
@@ -205,10 +205,22 @@
         "named": false
       },
       {
+        "name": "SCREENPLAY BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "SECURITY OFFICER",
         "lines": 1,
         "gender": "m",
         "named": true
+      },
+      {
+        "name": "STORY BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
       },
       {
         "name": "VULCAN",
@@ -226,7 +238,10 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "30": 1,
+          "32": 1
+        }
       },
       {
         "place": "Borg recon center",
@@ -691,14 +706,14 @@
         "place": "Enterprise",
         "lines": {
           "2": 2,
-          "30": 1
+          "31": 1
         }
       },
       {
         "place": "Bridge",
         "lines": {
           "4": 1,
-          "32": 1
+          "34": 1
         }
       },
       {
@@ -1222,7 +1237,7 @@
           "5": 6,
           "11": 4,
           "13": 2,
-          "31": 1
+          "33": 1
         }
       },
       {
@@ -1272,13 +1287,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 2,
+      "firstWomanLine": 4,
       "longestWithoutWoman": 63,
-      "longestWithoutWomanStart": 245,
+      "longestWithoutWomanStart": 247,
       "words": {
         "w": 1710,
         "m": 4676,
-        "unknown": 479
+        "unknown": 494
       },
       "womenConversations": 1,
       "menConversations": 72,

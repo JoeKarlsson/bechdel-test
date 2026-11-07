@@ -8,18 +8,17 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 4,
-    "numScenesDontPass": 103,
+    "numScenesPass": 3,
+    "numScenesDontPass": 104,
     "numOfFemalesChars": 12,
     "numOfMaleChars": 7,
     "numOfFemalesCharsWithDialogue": 6,
     "numOfMaleCharsWithDialogue": 5,
-    "totalLinesFemaleDialogue": 519,
-    "totalLinesMaleDialogue": 439,
+    "totalLinesFemaleDialogue": 581,
+    "totalLinesMaleDialogue": 502,
     "scenesThatPass": [
-      "KATHRYN: I'll do my best.\nCECILE: What was that?\nKATHRYN: I was thanking her. Vietnamese is such a beautiful language.\nKATHRYN: You're too kind.",
+      "KATHRYN: I'll do my best.\nKATHRYN: Thank you, Sook-Hee. That will be all.\nCECILE: What was that?\nKATHRYN: I was thanking her. Vietnamese is such a beautiful language.",
       "KATHRYN: I'll call you later and we'll get together and plan your curriculum.\nCECILE: Thanks. Nice meeting you.",
-      "KATHRYN: Ow. That hurt you stupid bitch.\nSOOK-HEE: Sorry.\nKATHRYN: Oops.",
       "KATHRYN: Shhh.\nCECILE: That was beautiful.",
       "AUNT HELEN: More the merrier. Is everything alright my dear?\nCECILE: I'm just not feeling well."
     ]
@@ -27,53 +26,53 @@
   "script": {
     "file": "cruel-intentions.txt",
     "layout": "indented",
-    "dialogueLines": 975,
+    "dialogueLines": 1090,
     "speakers": [
       {
         "name": "SEBASTIAN",
-        "lines": 350,
+        "lines": 402,
         "gender": "m",
         "named": true
       },
       {
         "name": "KATHRYN",
-        "lines": 200,
+        "lines": 229,
         "gender": "w",
         "named": true
       },
       {
         "name": "ANNETTE",
-        "lines": 144,
+        "lines": 156,
         "gender": "w",
         "named": true
       },
       {
         "name": "CECILE",
-        "lines": 79,
+        "lines": 83,
         "gender": "w",
         "named": true
       },
       {
         "name": "RONALD",
-        "lines": 37,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "GREG",
-        "lines": 32,
+        "lines": 47,
         "gender": "m",
         "named": true
       },
       {
         "name": "MRS. CALDWELL",
-        "lines": 31,
+        "lines": 38,
         "gender": "w",
         "named": false
       },
       {
+        "name": "GREG",
+        "lines": 33,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "DR. GREENBAUM",
-        "lines": 21,
+        "lines": 25,
         "gender": "w",
         "named": true
       },
@@ -85,13 +84,13 @@
       },
       {
         "name": "AUNT HELEN",
-        "lines": 12,
+        "lines": 14,
         "gender": "w",
         "named": true
       },
       {
         "name": "MRS. O'SHEA",
-        "lines": 11,
+        "lines": 12,
         "gender": "w",
         "named": false
       },
@@ -99,12 +98,6 @@
         "name": "MRS. SUGERMAN",
         "lines": 7,
         "gender": "w",
-        "named": false
-      },
-      {
-        "name": "CLOSE ON",
-        "lines": 6,
-        "gender": null,
         "named": false
       },
       {
@@ -120,9 +113,9 @@
         "named": false
       },
       {
-        "name": "ANGLE ON",
-        "lines": 3,
-        "gender": null,
+        "name": "NURSE",
+        "lines": 4,
+        "gender": "w",
         "named": false
       },
       {
@@ -135,12 +128,6 @@
         "name": "GRETCHEN",
         "lines": 2,
         "gender": null,
-        "named": false
-      },
-      {
-        "name": "NURSE",
-        "lines": 2,
-        "gender": "w",
         "named": false
       },
       {
@@ -188,21 +175,21 @@
       {
         "name": "SEBASTIAN & KATHRYN",
         "lines": 1,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
         "name": "SOOK-HEE",
         "lines": 1,
         "gender": "w",
-        "named": true
+        "named": false
       }
     ],
     "scenes": [
       {
         "place": null,
         "lines": {
-          "20": 1
+          "18": 1
         }
       },
       {
@@ -212,48 +199,44 @@
       {
         "place": "Therapist's office",
         "lines": {
-          "0": 14,
-          "7": 15
+          "0": 16,
+          "7": 17
         }
       },
       {
         "place": "Rachel's bedroom",
         "lines": {
           "7": 5,
-          "13": 6
+          "12": 6
         }
       },
       {
         "place": "Therapist's office building",
         "lines": {
-          "7": 1
+          "7": 3
         }
       },
       {
         "place": "Valmont townhouse",
         "lines": {
-          "23": 1
+          "21": 1
         }
       },
       {
         "place": "Valmont townhouse",
-        "lines": {
-          "12": 3
-        }
+        "lines": {}
+      },
+      {
+        "place": "Valmont townhouse",
+        "lines": {}
       },
       {
         "place": "Valmont townhouse",
         "lines": {
-          "12": 1
-        }
-      },
-      {
-        "place": "Valmont townhouse",
-        "lines": {
-          "0": 11,
-          "1": 10,
+          "0": 15,
+          "1": 13,
           "3": 6,
-          "6": 8
+          "5": 9
         }
       },
       {
@@ -266,7 +249,7 @@
       {
         "place": "Valmont townhouse",
         "lines": {
-          "1": 1
+          "1": 2
         }
       },
       {
@@ -274,7 +257,7 @@
         "lines": {
           "0": 2,
           "1": 1,
-          "22": 1
+          "20": 1
         }
       },
       {
@@ -294,7 +277,7 @@
         "place": "Valmont townhouse",
         "lines": {
           "0": 19,
-          "1": 20
+          "1": 24
         }
       },
       {
@@ -304,24 +287,23 @@
       {
         "place": "Estate",
         "lines": {
-          "2": 6,
-          "9": 6,
-          "15": 1
+          "2": 7,
+          "9": 7
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 3,
-          "9": 4,
-          "25": 1
+          "0": 9,
+          "9": 5,
+          "23": 1
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 16,
-          "2": 14
+          "0": 18,
+          "2": 15
         }
       },
       {
@@ -329,9 +311,8 @@
         "lines": {
           "1": 2,
           "3": 4,
-          "4": 5,
-          "12": 1,
-          "19": 2
+          "4": 10,
+          "17": 2
         }
       },
       {
@@ -348,8 +329,8 @@
       {
         "place": "Central park",
         "lines": {
-          "1": 20,
-          "3": 20
+          "1": 22,
+          "3": 22
         }
       },
       {
@@ -368,13 +349,13 @@
         "lines": {
           "0": 3,
           "1": 5,
-          "27": 1
+          "25": 1
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 17,
+          "0": 20,
           "2": 17
         }
       },
@@ -386,21 +367,21 @@
         "place": "Blaine's house",
         "lines": {
           "0": 1,
-          "5": 1
+          "6": 1
         }
       },
       {
         "place": "Blaine's house",
         "lines": {
-          "0": 9,
-          "5": 10,
+          "0": 14,
+          "6": 10,
           "8": 4
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 18,
+          "0": 19,
           "2": 18
         }
       },
@@ -408,7 +389,7 @@
         "place": "Beach",
         "lines": {
           "2": 9,
-          "5": 9
+          "6": 10
         }
       },
       {
@@ -421,17 +402,16 @@
         "place": "Beach",
         "lines": {
           "0": 6,
-          "5": 6
+          "6": 6
         }
       },
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 12,
-          "1": 15,
+          "0": 13,
+          "1": 18,
           "3": 2,
-          "4": 3,
-          "15": 2
+          "4": 3
         }
       },
       {
@@ -441,13 +421,13 @@
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 1
+          "0": 2
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 9,
+          "0": 10,
           "2": 9
         }
       },
@@ -455,8 +435,8 @@
         "place": "Valmont townhouse",
         "lines": {
           "0": 3,
-          "17": 2,
-          "24": 1
+          "16": 2,
+          "22": 1
         }
       },
       {
@@ -466,9 +446,9 @@
       {
         "place": "Boutique",
         "lines": {
-          "1": 12,
-          "6": 10,
-          "16": 3
+          "1": 14,
+          "5": 10,
+          "15": 3
         }
       },
       {
@@ -476,7 +456,7 @@
         "lines": {
           "3": 2,
           "4": 5,
-          "6": 7
+          "5": 10
         }
       },
       {
@@ -489,9 +469,9 @@
         "place": "Valmont townhouse",
         "lines": {
           "0": 7,
-          "1": 6,
-          "4": 5,
-          "26": 1
+          "1": 10,
+          "4": 6,
+          "24": 1
         }
       },
       {
@@ -505,7 +485,7 @@
         "place": "Caldwell apartment",
         "lines": {
           "3": 2,
-          "6": 2
+          "5": 4
         }
       },
       {
@@ -515,10 +495,10 @@
       {
         "place": "Estate",
         "lines": {
-          "0": 7,
+          "0": 8,
           "2": 3,
           "3": 1,
-          "6": 2,
+          "5": 3,
           "9": 2
         }
       },
@@ -541,7 +521,7 @@
       {
         "place": "Retirement home",
         "lines": {
-          "18": 1
+          "14": 3
         }
       },
       {
@@ -553,20 +533,20 @@
         "lines": {
           "0": 6,
           "11": 7,
-          "18": 1
+          "14": 1
         }
       },
       {
         "place": "Porsche",
         "lines": {
-          "0": 12,
+          "0": 14,
           "2": 12
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "1": 17,
+          "1": 19,
           "3": 18
         }
       },
@@ -584,7 +564,7 @@
       {
         "place": "Estate",
         "lines": {
-          "0": 12,
+          "0": 16,
           "2": 12
         }
       },
@@ -597,7 +577,7 @@
       {
         "place": "Estate",
         "lines": {
-          "0": 1,
+          "0": 2,
           "3": 1
         }
       },
@@ -605,20 +585,20 @@
         "place": "Estate",
         "lines": {
           "0": 8,
-          "3": 9
+          "3": 11
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 7,
+          "0": 8,
           "2": 7
         }
       },
       {
         "place": "Estate",
         "lines": {
-          "0": 1
+          "0": 2
         }
       },
       {
@@ -635,14 +615,14 @@
       {
         "place": "Greg's dorm room",
         "lines": {
-          "5": 1
+          "6": 1
         }
       },
       {
         "place": "Highway/int. porsche",
         "lines": {
-          "0": 6,
-          "5": 5
+          "0": 7,
+          "6": 5
         }
       },
       {
@@ -656,7 +636,7 @@
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 1
+          "0": 3
         }
       },
       {
@@ -666,7 +646,7 @@
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 2,
+          "0": 3,
           "2": 2
         }
       },
@@ -688,8 +668,8 @@
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 13,
-          "1": 11,
+          "0": 15,
+          "1": 13,
           "4": 1
         }
       },
@@ -697,7 +677,7 @@
         "place": "Valmont townhouse",
         "lines": {
           "0": 7,
-          "1": 7
+          "1": 10
         }
       },
       {
@@ -721,7 +701,7 @@
         "place": "O'shea apartment building",
         "lines": {
           "0": 1,
-          "10": 1
+          "10": 2
         }
       },
       {
@@ -735,8 +715,8 @@
       {
         "place": "O'shea apartment",
         "lines": {
-          "0": 8,
-          "2": 8
+          "0": 9,
+          "2": 10
         }
       },
       {
@@ -750,8 +730,8 @@
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 18,
-          "1": 19
+          "0": 22,
+          "1": 21
         }
       },
       {
@@ -836,35 +816,34 @@
         "place": "O'shea apartment building",
         "lines": {
           "0": 4,
-          "14": 4
+          "13": 4
         }
       },
       {
         "place": "Valmont townhouse",
         "lines": {
-          "0": 11,
-          "2": 2,
-          "4": 7
+          "0": 16,
+          "2": 5,
+          "4": 11
         }
       },
       {
         "place": "Valmont townhouse",
         "lines": {
-          "6": 2
+          "5": 2
         }
       },
       {
         "place": "Valmont townhouse",
         "lines": {
-          "1": 15,
-          "2": 14,
-          "12": 1
+          "1": 16,
+          "2": 19
         }
       },
       {
         "place": "Porsche",
         "lines": {
-          "21": 1
+          "19": 1
         }
       },
       {
@@ -874,14 +853,14 @@
     ],
     "measures": {
       "firstWomanLine": 2,
-      "longestWithoutWoman": 27,
-      "longestWithoutWomanStart": 320,
+      "longestWithoutWoman": 33,
+      "longestWithoutWomanStart": 356,
       "words": {
-        "w": 4575,
-        "m": 3989,
-        "unknown": 170
+        "w": 5121,
+        "m": 4532,
+        "unknown": 48
       },
-      "womenConversations": 11,
+      "womenConversations": 10,
       "menConversations": 9,
       "reverseScore": 3
     }

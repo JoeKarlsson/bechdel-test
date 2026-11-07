@@ -16,13 +16,13 @@
     "numOfFemalesCharsWithDialogue": 2,
     "numOfMaleCharsWithDialogue": 20,
     "totalLinesFemaleDialogue": 76,
-    "totalLinesMaleDialogue": 658,
+    "totalLinesMaleDialogue": 659,
     "scenesThatPass": []
   },
   "script": {
     "file": "men-in-black.txt",
     "layout": "indented",
-    "dialogueLines": 765,
+    "dialogueLines": 766,
     "speakers": [
       {
         "name": "KAY",
@@ -247,6 +247,12 @@
         "named": false
       },
       {
+        "name": "MEN IN BLACK",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "SUBJECT",
         "lines": 1,
         "gender": null,
@@ -268,7 +274,9 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "37": 1
+        }
       },
       {
         "place": "Road -- texas/mexico border -- night",
@@ -395,7 +403,7 @@
         "lines": {
           "0": 3,
           "2": 3,
-          "39": 1
+          "40": 1
         }
       },
       {
@@ -725,8 +733,8 @@
           "1": 12,
           "4": 7,
           "30": 1,
-          "37": 1,
-          "38": 1
+          "38": 1,
+          "39": 1
         }
       },
       {
@@ -1132,12 +1140,12 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 89,
+      "firstWomanLine": 90,
       "longestWithoutWoman": 167,
-      "longestWithoutWomanStart": 192,
+      "longestWithoutWomanStart": 193,
       "words": {
         "w": 778,
-        "m": 6444,
+        "m": 6445,
         "unknown": 356
       },
       "womenConversations": 0,

@@ -28,7 +28,7 @@
   "script": {
     "file": "willow.txt",
     "layout": "indented",
-    "dialogueLines": 765,
+    "dialogueLines": 767,
     "speakers": [
       {
         "name": "WILLOW",
@@ -247,6 +247,12 @@
         "named": false
       },
       {
+        "name": "FIRST DRAFT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "GUARD",
         "lines": 1,
         "gender": null,
@@ -307,6 +313,12 @@
         "named": true
       },
       {
+        "name": "STORY BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "THE OTHER WOMAN",
         "lines": 1,
         "gender": "w",
@@ -328,7 +340,10 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "36": 1,
+          "47": 1
+        }
       },
       {
         "place": "Nockmaar castle",
@@ -345,7 +360,7 @@
           "17": 4,
           "18": 4,
           "20": 3,
-          "36": 1
+          "37": 1
         }
       },
       {
@@ -372,7 +387,7 @@
         "place": "Forest",
         "lines": {
           "27": 1,
-          "39": 1
+          "40": 1
         }
       },
       {
@@ -388,7 +403,7 @@
         "lines": {
           "0": 1,
           "13": 1,
-          "44": 1
+          "45": 1
         }
       },
       {
@@ -453,9 +468,9 @@
           "24": 1,
           "25": 1,
           "33": 1,
-          "41": 1,
-          "45": 1,
-          "48": 1
+          "42": 1,
+          "46": 1,
+          "50": 1
         }
       },
       {
@@ -631,7 +646,7 @@
           "0": 4,
           "5": 1,
           "10": 1,
-          "37": 1
+          "38": 1
         }
       },
       {
@@ -648,7 +663,7 @@
           "0": 4,
           "5": 1,
           "34": 1,
-          "42": 1
+          "43": 1
         }
       },
       {
@@ -659,7 +674,7 @@
           "10": 1,
           "21": 2,
           "32": 2,
-          "46": 1
+          "48": 1
         }
       },
       {
@@ -854,7 +869,7 @@
         "lines": {
           "1": 2,
           "24": 1,
-          "47": 1
+          "49": 1
         }
       },
       {
@@ -905,7 +920,7 @@
           "1": 3,
           "2": 2,
           "6": 7,
-          "43": 1
+          "44": 1
         }
       },
       {
@@ -985,7 +1000,7 @@
       {
         "place": "Tir asleen",
         "lines": {
-          "38": 1
+          "39": 1
         }
       },
       {
@@ -1014,7 +1029,7 @@
         "lines": {
           "1": 2,
           "3": 3,
-          "40": 1
+          "41": 1
         }
       },
       {
@@ -1252,13 +1267,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 2,
+      "firstWomanLine": 4,
       "longestWithoutWoman": 135,
-      "longestWithoutWomanStart": 122,
+      "longestWithoutWomanStart": 124,
       "words": {
         "w": 1525,
         "m": 4196,
-        "unknown": 109
+        "unknown": 116
       },
       "womenConversations": 9,
       "menConversations": 69,

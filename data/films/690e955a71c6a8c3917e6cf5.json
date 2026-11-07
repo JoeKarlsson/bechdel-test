@@ -14,43 +14,43 @@
     "numOfFemalesChars": 1,
     "numOfMaleChars": 19,
     "numOfFemalesCharsWithDialogue": 1,
-    "numOfMaleCharsWithDialogue": 2,
-    "totalLinesFemaleDialogue": 298,
-    "totalLinesMaleDialogue": 424,
+    "numOfMaleCharsWithDialogue": 3,
+    "totalLinesFemaleDialogue": 366,
+    "totalLinesMaleDialogue": 498,
     "scenesThatPass": []
   },
   "script": {
     "file": "entrapment.txt",
     "layout": "indented",
-    "dialogueLines": 746,
+    "dialogueLines": 903,
     "speakers": [
       {
         "name": "MAC",
-        "lines": 377,
+        "lines": 444,
         "gender": "m",
         "named": true
       },
       {
         "name": "GIN",
-        "lines": 298,
+        "lines": 365,
         "gender": "w",
         "named": true
       },
       {
         "name": "CRUZ",
-        "lines": 24,
+        "lines": 27,
         "gender": "m",
         "named": false
       },
       {
         "name": "CARLSBY",
-        "lines": 12,
+        "lines": 14,
         "gender": null,
         "named": false
       },
       {
         "name": "QIU",
-        "lines": 9,
+        "lines": 14,
         "gender": "m",
         "named": true
       },
@@ -62,13 +62,31 @@
       },
       {
         "name": "OKATI",
-        "lines": 5,
-        "gender": "m",
+        "lines": 6,
+        "gender": null,
         "named": true
       },
       {
         "name": "VOICE",
-        "lines": 4,
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HONGWEI",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SALESMAN",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SOLDIER",
+        "lines": 2,
         "gender": null,
         "named": false
       },
@@ -91,6 +109,12 @@
         "named": false
       },
       {
+        "name": "MAC (PULLING PLASTIC FROM HIS BILLFOLD)",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
         "name": "MAC'S RECORDED VOICE",
         "lines": 1,
         "gender": null,
@@ -100,6 +124,12 @@
         "name": "MAN",
         "lines": 1,
         "gender": "m",
+        "named": false
+      },
+      {
+        "name": "OFFICER",
+        "lines": 1,
+        "gender": null,
         "named": false
       },
       {
@@ -127,9 +157,21 @@
         "named": false
       },
       {
-        "name": "SOLDIER",
+        "name": "SUMO GUY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TAXI DRIVER",
         "lines": 1,
         "gender": null,
+        "named": false
+      },
+      {
+        "name": "WOMAN",
+        "lines": 1,
+        "gender": "w",
         "named": false
       }
     ],
@@ -157,35 +199,37 @@
       {
         "place": "Situation room",
         "lines": {
-          "1": 25,
-          "2": 18
+          "1": 29,
+          "2": 21
         }
       },
       {
         "place": "Hotel okura, tokyo",
         "lines": {
-          "0": 3,
-          "1": 2
+          "0": 6,
+          "1": 7,
+          "24": 1
         }
       },
       {
         "place": "Hotel okura",
         "lines": {
-          "0": 10,
-          "1": 11
+          "0": 11,
+          "1": 12
         }
       },
       {
         "place": "Imperial hotel bar",
         "lines": {
           "0": 11,
-          "1": 3
+          "1": 4,
+          "22": 1
         }
       },
       {
         "place": "Car, shinjuku district",
         "lines": {
-          "0": 3,
+          "0": 8,
           "1": 4
         }
       },
@@ -215,7 +259,11 @@
       },
       {
         "place": "Employee lounge",
-        "lines": {}
+        "lines": {
+          "0": 1,
+          "7": 1,
+          "17": 1
+        }
       },
       {
         "place": "Guest lobby",
@@ -224,62 +272,66 @@
       {
         "place": "Men's room",
         "lines": {
-          "0": 10,
-          "1": 5
+          "0": 11,
+          "1": 6
         }
       },
       {
         "place": "Cab, nihonbashi district",
         "lines": {
-          "0": 8,
-          "1": 7
+          "0": 9,
+          "1": 10,
+          "23": 1
         }
       },
       {
         "place": "Mac's suite",
         "lines": {
           "0": 13,
-          "1": 14
+          "1": 16
         }
       },
       {
         "place": "Mac's suite",
         "lines": {
           "0": 11,
-          "1": 4
+          "1": 5,
+          "14": 1
         }
       },
       {
         "place": "Wharf, yokohama",
         "lines": {
-          "11": 1
+          "1": 1,
+          "15": 1
         }
       },
       {
         "place": "Kendo souvenirs",
         "lines": {
-          "0": 21,
-          "1": 7,
-          "6": 5,
-          "10": 1,
+          "0": 24,
+          "1": 21,
+          "6": 6,
           "13": 1,
-          "16": 1
+          "18": 1,
+          "21": 1
         }
       },
       {
         "place": "Small channel",
         "lines": {
-          "0": 21,
-          "1": 13
+          "0": 25,
+          "1": 14
         }
       },
       {
         "place": "Freighter hold",
         "lines": {
-          "0": 10,
-          "1": 2,
-          "3": 11,
-          "12": 1
+          "0": 12,
+          "1": 4,
+          "3": 13,
+          "7": 1,
+          "16": 1
         }
       },
       {
@@ -293,8 +345,8 @@
       {
         "place": "Cessna",
         "lines": {
-          "0": 8,
-          "1": 11
+          "0": 10,
+          "1": 12
         }
       },
       {
@@ -352,7 +404,7 @@
       {
         "place": "Front porch",
         "lines": {
-          "15": 1
+          "20": 1
         }
       },
       {
@@ -369,13 +421,15 @@
       {
         "place": "Phone booth",
         "lines": {
-          "1": 7,
+          "1": 8,
           "2": 6
         }
       },
       {
         "place": "Tienanmen square, beijing",
-        "lines": {}
+        "lines": {
+          "4": 4
+        }
       },
       {
         "place": "Zhongnankai, beijing",
@@ -383,20 +437,22 @@
       },
       {
         "place": "Ophthalmologist's office, beijing",
-        "lines": {}
+        "lines": {
+          "8": 2
+        }
       },
       {
         "place": "Golden gate bridge, san francisco",
         "lines": {
-          "0": 17,
-          "1": 13
+          "0": 18,
+          "1": 15
         }
       },
       {
         "place": "Shikoku maru",
         "lines": {
           "0": 2,
-          "1": 1,
+          "1": 3,
           "5": 6
         }
       },
@@ -407,8 +463,8 @@
       {
         "place": "Small plane",
         "lines": {
-          "0": 31,
-          "1": 25
+          "0": 39,
+          "1": 29
         }
       },
       {
@@ -419,7 +475,7 @@
         "place": "Ballroom",
         "lines": {
           "0": 9,
-          "1": 4,
+          "1": 5,
           "5": 1,
           "7": 1
         }
@@ -434,22 +490,22 @@
       {
         "place": "Deck",
         "lines": {
-          "0": 17,
-          "1": 20
+          "0": 20,
+          "1": 21
         }
       },
       {
         "place": "Street, shihlin district, taipei",
         "lines": {
-          "0": 4,
+          "0": 6,
           "1": 7
         }
       },
       {
         "place": "Loft",
         "lines": {
-          "0": 12,
-          "1": 15
+          "0": 19,
+          "1": 16
         }
       },
       {
@@ -462,8 +518,8 @@
       {
         "place": "Museum",
         "lines": {
-          "0": 2,
-          "1": 7
+          "0": 6,
+          "1": 8
         }
       },
       {
@@ -488,8 +544,8 @@
       {
         "place": "Tunnel shaft",
         "lines": {
-          "0": 6,
-          "1": 1
+          "0": 7,
+          "1": 2
         }
       },
       {
@@ -512,7 +568,7 @@
         "place": "Air vent #",
         "lines": {
           "0": 2,
-          "1": 2
+          "1": 4
         }
       },
       {
@@ -525,7 +581,9 @@
       },
       {
         "place": "Train",
-        "lines": {}
+        "lines": {
+          "1": 1
+        }
       },
       {
         "place": "Tunnel",
@@ -533,7 +591,9 @@
       },
       {
         "place": "Train",
-        "lines": {}
+        "lines": {
+          "1": 1
+        }
       },
       {
         "place": "Tunnel",
@@ -548,11 +608,16 @@
       },
       {
         "place": "Storage room",
-        "lines": {}
+        "lines": {
+          "1": 5,
+          "9": 2
+        }
       },
       {
         "place": "Vent",
-        "lines": {}
+        "lines": {
+          "0": 2
+        }
       },
       {
         "place": "Lingerie shop, shin kong mall",
@@ -567,23 +632,24 @@
       {
         "place": "Statue square, hong kong",
         "lines": {
-          "17": 1
+          "0": 1,
+          "10": 2
         }
       },
       {
         "place": "Mansion, victoria peak",
         "lines": {
-          "0": 13,
+          "0": 15,
           "1": 10,
-          "4": 9,
-          "9": 1
+          "4": 10,
+          "12": 1
         }
       },
       {
         "place": "Suite, peninsula hotel",
         "lines": {
-          "0": 15,
-          "1": 14
+          "0": 16,
+          "1": 15
         }
       },
       {
@@ -604,45 +670,45 @@
       {
         "place": "Elevator bank",
         "lines": {
-          "0": 6,
+          "0": 9,
           "1": 1
         }
       },
       {
         "place": "14th floor",
         "lines": {
-          "0": 20,
-          "1": 9
+          "0": 22,
+          "1": 13
         }
       },
       {
         "place": "Corridor",
         "lines": {
-          "0": 21,
-          "1": 11,
-          "14": 1
+          "0": 24,
+          "1": 12,
+          "19": 1
         }
       },
       {
         "place": "Nathan road",
         "lines": {
-          "0": 45,
-          "1": 22,
-          "8": 1
+          "0": 49,
+          "1": 23,
+          "11": 1
         }
       }
     ],
     "measures": {
       "firstWomanLine": 2,
-      "longestWithoutWoman": 20,
-      "longestWithoutWomanStart": 172,
+      "longestWithoutWoman": 15,
+      "longestWithoutWomanStart": 314,
       "words": {
-        "w": 2729,
-        "m": 3697,
-        "unknown": 363
+        "w": 3095,
+        "m": 4248,
+        "unknown": 455
       },
       "womenConversations": 0,
-      "menConversations": 4,
+      "menConversations": 5,
       "reverseScore": 3
     }
   },

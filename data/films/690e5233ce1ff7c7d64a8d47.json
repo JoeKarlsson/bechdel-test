@@ -16,13 +16,13 @@
     "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 10,
     "totalLinesFemaleDialogue": 159,
-    "totalLinesMaleDialogue": 386,
+    "totalLinesMaleDialogue": 387,
     "scenesThatPass": []
   },
   "script": {
     "file": "blade.txt",
     "layout": "indented",
-    "dialogueLines": 563,
+    "dialogueLines": 567,
     "speakers": [
       {
         "name": "BLADE",
@@ -50,7 +50,7 @@
       },
       {
         "name": "QUINN",
-        "lines": 15,
+        "lines": 16,
         "gender": "m",
         "named": true
       },
@@ -109,6 +109,12 @@
         "named": true
       },
       {
+        "name": "VOICE",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "KAM",
         "lines": 4,
         "gender": "m",
@@ -119,12 +125,6 @@
         "lines": 4,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "VOICE",
-        "lines": 3,
-        "gender": null,
-        "named": false
       },
       {
         "name": "ASSISTANT",
@@ -158,6 +158,12 @@
       },
       {
         "name": "AUTOMATED VOICE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BY",
         "lines": 1,
         "gender": null,
         "named": false
@@ -221,15 +227,16 @@
       {
         "place": null,
         "lines": {
-          "0": 1
+          "0": 1,
+          "23": 1
         }
       },
       {
         "place": "Hospital, inner-city trauma ward",
         "lines": {
           "20": 2,
-          "27": 1,
-          "29": 1
+          "28": 1,
+          "30": 1
         }
       },
       {
@@ -240,7 +247,7 @@
         "place": "Mercedes",
         "lines": {
           "12": 3,
-          "15": 3
+          "16": 3
         }
       },
       {
@@ -263,7 +270,7 @@
           "0": 3,
           "4": 2,
           "12": 2,
-          "15": 1
+          "16": 1
         }
       },
       {
@@ -278,7 +285,7 @@
         "lines": {
           "1": 7,
           "6": 5,
-          "25": 1
+          "26": 1
         }
       },
       {
@@ -334,7 +341,7 @@
         "lines": {
           "2": 9,
           "7": 6,
-          "28": 1
+          "29": 1
         }
       },
       {
@@ -452,7 +459,7 @@
           "0": 1,
           "1": 1,
           "11": 1,
-          "16": 1,
+          "14": 1,
           "22": 1
         }
       },
@@ -460,7 +467,7 @@
         "place": "Tanaka's mustang",
         "lines": {
           "11": 2,
-          "16": 1
+          "14": 1
         }
       },
       {
@@ -477,7 +484,7 @@
       {
         "place": "The black pearl",
         "lines": {
-          "24": 1
+          "25": 1
         }
       },
       {
@@ -487,7 +494,7 @@
       {
         "place": "Black pearl, hallway",
         "lines": {
-          "26": 1
+          "27": 1
         }
       },
       {
@@ -541,9 +548,9 @@
         "lines": {
           "0": 7,
           "1": 2,
-          "4": 7,
+          "4": 8,
           "10": 5,
-          "16": 1
+          "14": 1
         }
       },
       {
@@ -637,14 +644,14 @@
         "place": "Herbalist shop",
         "lines": {
           "0": 2,
-          "14": 1
+          "15": 1
         }
       },
       {
         "place": "Herbalist shop, back room",
         "lines": {
           "0": 5,
-          "14": 3
+          "15": 3
         }
       },
       {
@@ -652,6 +659,7 @@
         "lines": {
           "0": 6,
           "2": 15,
+          "14": 2,
           "18": 1
         }
       },
@@ -684,7 +692,7 @@
         "lines": {
           "0": 1,
           "18": 1,
-          "31": 1
+          "32": 1
         }
       },
       {
@@ -748,7 +756,7 @@
         "place": "Frost's penthouse, hallway",
         "lines": {
           "0": 1,
-          "30": 1
+          "31": 1
         }
       },
       {
@@ -808,7 +816,7 @@
         "lines": {
           "1": 1,
           "19": 2,
-          "23": 1
+          "24": 1
         }
       },
       {
@@ -906,13 +914,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 3,
-      "longestWithoutWoman": 35,
-      "longestWithoutWomanStart": 334,
+      "firstWomanLine": 4,
+      "longestWithoutWoman": 37,
+      "longestWithoutWomanStart": 336,
       "words": {
         "w": 1412,
-        "m": 4511,
-        "unknown": 119
+        "m": 4515,
+        "unknown": 124
       },
       "womenConversations": 1,
       "menConversations": 40,

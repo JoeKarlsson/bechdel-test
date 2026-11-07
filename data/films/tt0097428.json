@@ -16,7 +16,7 @@
     "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 19,
     "totalLinesFemaleDialogue": 132,
-    "totalLinesMaleDialogue": 613,
+    "totalLinesMaleDialogue": 614,
     "scenesThatPass": [
       "DANA: Well, we didn't part on very good terms and we sort of lost track of each other when I got married.\nASSISTANT: We're ready for the affection test."
     ]
@@ -24,7 +24,7 @@
   "script": {
     "file": "ghostbusters-2.txt",
     "layout": "indented",
-    "dialogueLines": 800,
+    "dialogueLines": 803,
     "speakers": [
       {
         "name": "VENKMAN",
@@ -243,6 +243,12 @@
         "named": false
       },
       {
+        "name": "DAN AYKROYD",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "DETECTIVE ONE",
         "lines": 1,
         "gender": null,
@@ -256,6 +262,18 @@
       },
       {
         "name": "DETECTIVE TWO",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GHOSTBUSTERS II",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HAROLD RAMIS",
         "lines": 1,
         "gender": null,
         "named": false
@@ -282,7 +300,11 @@
     "scenes": [
       {
         "place": null,
-        "lines": {}
+        "lines": {
+          "36": 1,
+          "40": 1,
+          "41": 1
+        }
       },
       {
         "place": "Manhattan island",
@@ -341,8 +363,8 @@
           "5": 1,
           "26": 2,
           "28": 2,
-          "39": 1,
-          "41": 1
+          "42": 1,
+          "44": 1
         }
       },
       {
@@ -1013,7 +1035,7 @@
         "place": "Public fountain (59th and fifth)",
         "lines": {
           "18": 2,
-          "40": 1
+          "43": 1
         }
       },
       {
@@ -1021,9 +1043,9 @@
         "lines": {
           "17": 4,
           "29": 2,
-          "36": 1,
           "37": 1,
-          "38": 1
+          "38": 1,
+          "39": 1
         }
       },
       {
@@ -1293,13 +1315,13 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 1,
+      "firstWomanLine": 4,
       "longestWithoutWoman": 60,
-      "longestWithoutWomanStart": 417,
+      "longestWithoutWomanStart": 420,
       "words": {
         "w": 1478,
-        "m": 7714,
-        "unknown": 887
+        "m": 7715,
+        "unknown": 896
       },
       "womenConversations": 3,
       "menConversations": 75,

@@ -14,9 +14,9 @@
     "numOfFemalesChars": 13,
     "numOfMaleChars": 51,
     "numOfFemalesCharsWithDialogue": 9,
-    "numOfMaleCharsWithDialogue": 31,
+    "numOfMaleCharsWithDialogue": 30,
     "totalLinesFemaleDialogue": 250,
-    "totalLinesMaleDialogue": 536,
+    "totalLinesMaleDialogue": 535,
     "scenesThatPass": [
       "MARILOU: You were great.\nRAILLY: You're leaving?\nMARILOU: The reservation's at nine thirty -- it's getting late.",
       "RAILLY: No -- I'm in a state of hyper- alertness. I can't sleep.\nMARILOU: Did you take the sedative?\nRAILLY: I hate those things. They mess my head up.",
@@ -26,7 +26,7 @@
   "script": {
     "file": "12-monkeys.txt",
     "layout": "indented",
-    "dialogueLines": 957,
+    "dialogueLines": 915,
     "speakers": [
       {
         "name": "COLE",
@@ -63,12 +63,6 @@
         "lines": 19,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "COLE'S POV",
-        "lines": 15,
-        "gender": null,
-        "named": false
       },
       {
         "name": "DR. MASON",
@@ -110,13 +104,7 @@
         "name": "GEOLOGIST",
         "lines": 11,
         "gender": "m",
-        "named": false
-      },
-      {
-        "name": "YOUNG COLE'S POV",
-        "lines": 11,
-        "gender": null,
-        "named": false
+        "named": true
       },
       {
         "name": "JOSE",
@@ -152,7 +140,7 @@
         "name": "ZOOLOGIST",
         "lines": 8,
         "gender": "m",
-        "named": false
+        "named": true
       },
       {
         "name": "FRANKI",
@@ -227,12 +215,6 @@
         "named": true
       },
       {
-        "name": "RAILLY'S POV",
-        "lines": 4,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "SCARFACE",
         "lines": 4,
         "gender": null,
@@ -270,12 +252,6 @@
       },
       {
         "name": "DISHEVELED PROFESSOR",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "HER POV",
         "lines": 3,
         "gender": null,
         "named": false
@@ -389,12 +365,6 @@
         "named": true
       },
       {
-        "name": "HIS POV",
-        "lines": 2,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "MARILOU MARTIN",
         "lines": 2,
         "gender": "w",
@@ -414,12 +384,6 @@
       },
       {
         "name": "RADIO ANNOUNCER",
-        "lines": 2,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "RAILLY'S POV THROUGH THE WINDOW",
         "lines": 2,
         "gender": null,
         "named": false
@@ -497,12 +461,6 @@
         "named": false
       },
       {
-        "name": "AGENTS POV OUT THE WINDOW",
-        "lines": 1,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "AMPLIFIED VOICE",
         "lines": 1,
         "gender": null,
@@ -551,12 +509,6 @@
         "named": false
       },
       {
-        "name": "DR. PETERS' POV",
-        "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "FAMILIAR VOICE",
         "lines": 1,
         "gender": null,
@@ -567,12 +519,6 @@
         "lines": 1,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "FIRST DETECTIVE9S POV",
-        "lines": 1,
-        "gender": null,
-        "named": false
       },
       {
         "name": "FIRST SECURITY OFFICER",
@@ -689,12 +635,6 @@
         "named": false
       },
       {
-        "name": "POV THROUGH SLIT",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "PRISON P.A. SYSTEM",
         "lines": 1,
         "gender": null,
@@ -728,12 +668,6 @@
         "name": "SECURITY MAN",
         "lines": 1,
         "gender": "m",
-        "named": true
-      },
-      {
-        "name": "SECURITY OFFICER'S POV",
-        "lines": 1,
-        "gender": null,
         "named": true
       },
       {
@@ -825,32 +759,31 @@
       {
         "place": null,
         "lines": {
-          "85": 1,
-          "96": 1,
-          "127": 1
+          "78": 1,
+          "87": 1,
+          "116": 1
         }
       },
       {
         "place": "Concourse/airport terminal",
         "lines": {
-          "14": 2,
-          "25": 1,
-          "31": 1
+          "23": 1,
+          "29": 1
         }
       },
       {
         "place": "Prison dormitory/future",
         "lines": {
           "0": 3,
-          "15": 1,
-          "34": 2,
-          "111": 1
+          "13": 1,
+          "31": 2,
+          "101": 1
         }
       },
       {
         "place": "Equipment room",
         "lines": {
-          "62": 2
+          "57": 2
         }
       },
       {
@@ -887,9 +820,7 @@
       },
       {
         "place": "Department store",
-        "lines": {
-          "6": 2
-        }
+        "lines": {}
       },
       {
         "place": "First underground decontamination chamber",
@@ -898,7 +829,7 @@
       {
         "place": "Second underground decontamination chamber",
         "lines": {
-          "79": 1
+          "72": 1
         }
       },
       {
@@ -910,11 +841,10 @@
         "lines": {
           "0": 3,
           "3": 1,
-          "6": 1,
-          "10": 3,
-          "12": 1,
-          "34": 2,
-          "122": 1
+          "9": 3,
+          "11": 1,
+          "31": 2,
+          "111": 1
         }
       },
       {
@@ -922,18 +852,18 @@
         "lines": {
           "0": 5,
           "3": 2,
-          "8": 1,
-          "10": 1,
-          "12": 1,
-          "82": 1
+          "7": 1,
+          "9": 1,
+          "11": 1,
+          "75": 1
         }
       },
       {
         "place": "Concourse/airport",
         "lines": {
-          "25": 1,
-          "47": 1,
-          "121": 1
+          "23": 1,
+          "43": 1,
+          "110": 1
         }
       },
       {
@@ -941,24 +871,23 @@
         "lines": {
           "0": 4,
           "3": 4,
-          "8": 1,
-          "10": 3,
-          "12": 4,
-          "20": 1
+          "7": 1,
+          "9": 3,
+          "11": 4,
+          "18": 1
         }
       },
       {
         "place": "Art gallery",
         "lines": {
-          "48": 3
+          "44": 3
         }
       },
       {
         "place": "Corridor/police station",
         "lines": {
           "1": 5,
-          "21": 6,
-          "65": 2
+          "19": 6
         }
       },
       {
@@ -972,8 +901,8 @@
         "place": "Police station corridor",
         "lines": {
           "0": 2,
-          "108": 1,
-          "109": 1
+          "99": 1,
+          "100": 1
         }
       },
       {
@@ -984,7 +913,7 @@
         "place": "County hospital/showers",
         "lines": {
           "0": 2,
-          "17": 3
+          "15": 3
         }
       },
       {
@@ -992,28 +921,28 @@
         "lines": {
           "0": 1,
           "2": 11,
-          "17": 2,
-          "25": 1,
-          "70": 2,
-          "71": 2
+          "15": 2,
+          "23": 1,
+          "64": 2,
+          "65": 2
         }
       },
       {
         "place": "Psych ward conference room",
         "lines": {
           "0": 13,
-          "9": 5,
-          "30": 1,
-          "57": 2,
-          "66": 2,
-          "112": 1,
-          "113": 1
+          "8": 5,
+          "28": 1,
+          "53": 2,
+          "60": 2,
+          "102": 1,
+          "103": 1
         }
       },
       {
         "place": "Low rent apartment",
         "lines": {
-          "46": 1
+          "42": 1
         }
       },
       {
@@ -1026,8 +955,8 @@
       {
         "place": "Airport concourse",
         "lines": {
-          "47": 1,
-          "76": 1
+          "43": 1,
+          "70": 1
         }
       },
       {
@@ -1035,8 +964,7 @@
         "lines": {
           "0": 4,
           "2": 11,
-          "6": 1,
-          "74": 1
+          "68": 1
         }
       },
       {
@@ -1044,8 +972,8 @@
         "lines": {
           "0": 4,
           "2": 6,
-          "17": 1,
-          "125": 1
+          "15": 1,
+          "114": 1
         }
       },
       {
@@ -1053,21 +981,19 @@
         "lines": {
           "0": 2,
           "2": 11,
-          "6": 2,
-          "17": 1,
-          "63": 2,
+          "15": 1,
+          "58": 2,
+          "85": 1,
+          "92": 1,
           "94": 1,
-          "101": 1,
-          "103": 1,
-          "120": 1,
-          "124": 1
+          "109": 1,
+          "113": 1
         }
       },
       {
         "place": "Corridor/county hospital",
         "lines": {
-          "6": 1,
-          "116": 1
+          "106": 1
         }
       },
       {
@@ -1078,14 +1004,14 @@
         "place": "Railly's office",
         "lines": {
           "1": 2,
-          "30": 3,
-          "55": 2
+          "28": 3,
+          "51": 2
         }
       },
       {
         "place": "X-ray department/basement",
         "lines": {
-          "54": 2
+          "50": 2
         }
       },
       {
@@ -1103,25 +1029,25 @@
         "place": "Conference room/psych ward",
         "lines": {
           "1": 3,
-          "9": 4,
-          "17": 1
+          "8": 4,
+          "15": 1
         }
       },
       {
         "place": "Corridor/psych ward",
         "lines": {
           "1": 1,
-          "9": 3,
-          "17": 1
+          "8": 3,
+          "15": 1
         }
       },
       {
         "place": "Concourse/airport",
         "lines": {
-          "12": 1,
-          "25": 1,
-          "76": 1,
-          "83": 1
+          "11": 1,
+          "23": 1,
+          "70": 1,
+          "76": 1
         }
       },
       {
@@ -1129,14 +1055,14 @@
         "lines": {
           "0": 5,
           "3": 2,
-          "8": 1,
-          "10": 1,
-          "12": 1,
-          "13": 2,
-          "20": 1,
-          "35": 1,
-          "128": 1,
-          "129": 1
+          "7": 1,
+          "9": 1,
+          "11": 1,
+          "12": 2,
+          "18": 1,
+          "32": 1,
+          "117": 1,
+          "118": 1
         }
       },
       {
@@ -1144,12 +1070,12 @@
         "lines": {
           "0": 3,
           "3": 3,
-          "8": 1,
-          "10": 1,
+          "7": 1,
+          "9": 1,
+          "11": 1,
           "12": 1,
-          "13": 1,
-          "20": 2,
-          "99": 1
+          "18": 2,
+          "90": 1
         }
       },
       {
@@ -1169,20 +1095,19 @@
         "place": "Lab",
         "lines": {
           "3": 1,
-          "6": 1,
-          "10": 1,
-          "13": 1,
-          "20": 1
+          "9": 1,
+          "12": 1,
+          "18": 1
         }
       },
       {
         "place": "Trench/france",
         "lines": {
           "0": 4,
-          "15": 1,
-          "53": 2,
-          "69": 2,
-          "74": 1
+          "13": 1,
+          "49": 2,
+          "63": 2,
+          "68": 1
         }
       },
       {
@@ -1199,23 +1124,23 @@
         "place": "Reception room",
         "lines": {
           "1": 2,
-          "11": 1,
-          "40": 3,
-          "45": 2,
-          "130": 1
+          "10": 1,
+          "37": 3,
+          "41": 2,
+          "119": 1
         }
       },
       {
         "place": "Parking lot/breitrose hall",
         "lines": {
-          "19": 2
+          "17": 2
         }
       },
       {
         "place": "Acura/parking lot",
         "lines": {
           "1": 2,
-          "19": 2
+          "17": 2
         }
       },
       {
@@ -1227,7 +1152,7 @@
         "lines": {
           "0": 1,
           "1": 4,
-          "19": 4
+          "17": 4
         }
       },
       {
@@ -1254,16 +1179,14 @@
       },
       {
         "place": "Acura/freeway",
-        "lines": {
-          "6": 1
-        }
+        "lines": {}
       },
       {
         "place": "Railly's apartment",
         "lines": {
-          "61": 2,
-          "81": 1,
-          "102": 1
+          "56": 2,
+          "74": 1,
+          "93": 1
         }
       },
       {
@@ -1277,7 +1200,7 @@
       {
         "place": "Concourse/airport",
         "lines": {
-          "31": 1
+          "29": 1
         }
       },
       {
@@ -1285,7 +1208,7 @@
         "lines": {
           "0": 5,
           "1": 6,
-          "73": 2
+          "67": 2
         }
       },
       {
@@ -1297,20 +1220,19 @@
         "lines": {
           "0": 8,
           "1": 4,
-          "49": 3
+          "45": 3
         }
       },
       {
         "place": "Skid row street/philadelphia",
         "lines": {
-          "58": 1
+          "54": 1
         }
       },
       {
         "place": "Acura/skid row street",
         "lines": {
-          "0": 2,
-          "6": 1
+          "0": 2
         }
       },
       {
@@ -1319,7 +1241,7 @@
           "0": 4,
           "1": 2,
           "4": 1,
-          "24": 2
+          "22": 2
         }
       },
       {
@@ -1333,15 +1255,14 @@
         "lines": {
           "0": 5,
           "1": 5,
-          "33": 1,
-          "92": 1,
-          "115": 1
+          "83": 1,
+          "105": 1
         }
       },
       {
         "place": "Second ave",
         "lines": {
-          "58": 1
+          "54": 1
         }
       },
       {
@@ -1350,8 +1271,8 @@
           "0": 5,
           "1": 4,
           "5": 4,
-          "16": 2,
-          "22": 2
+          "14": 2,
+          "20": 2
         }
       },
       {
@@ -1359,8 +1280,8 @@
         "lines": {
           "0": 6,
           "5": 6,
-          "16": 3,
-          "22": 3
+          "14": 3,
+          "20": 3
         }
       },
       {
@@ -1381,7 +1302,7 @@
         "lines": {
           "0": 4,
           "1": 4,
-          "64": 1
+          "59": 1
         }
       },
       {
@@ -1396,27 +1317,27 @@
         "lines": {
           "0": 4,
           "1": 3,
-          "64": 1
+          "59": 1
         }
       },
       {
         "place": "Mason mansion",
         "lines": {
-          "32": 4,
-          "50": 3
+          "30": 4,
+          "46": 3
         }
       },
       {
         "place": "Mason mansion/dining room",
         "lines": {
           "2": 2,
-          "7": 4
+          "6": 4
         }
       },
       {
         "place": "Hallway/mason mansion",
         "lines": {
-          "28": 1
+          "26": 1
         }
       },
       {
@@ -1424,8 +1345,8 @@
         "lines": {
           "0": 3,
           "2": 7,
-          "23": 2,
-          "28": 2
+          "21": 2,
+          "26": 2
         }
       },
       {
@@ -1433,8 +1354,8 @@
         "lines": {
           "0": 6,
           "2": 10,
-          "23": 2,
-          "28": 1
+          "21": 2,
+          "26": 1
         }
       },
       {
@@ -1444,7 +1365,7 @@
       {
         "place": "Dining room/mason mansion",
         "lines": {
-          "23": 1
+          "21": 1
         }
       },
       {
@@ -1454,16 +1375,15 @@
       {
         "place": "Den/mason mansion",
         "lines": {
-          "38": 1,
-          "72": 2,
-          "78": 1,
-          "100": 1
+          "35": 1,
+          "66": 2,
+          "91": 1
         }
       },
       {
         "place": "Mason mansion",
         "lines": {
-          "80": 1
+          "73": 1
         }
       },
       {
@@ -1507,7 +1427,7 @@
       {
         "place": "Flying helicopter",
         "lines": {
-          "26": 1
+          "24": 1
         }
       },
       {
@@ -1529,14 +1449,14 @@
       {
         "place": "Helicopter",
         "lines": {
-          "26": 4,
-          "39": 3
+          "24": 4,
+          "36": 3
         }
       },
       {
         "place": "Woods",
         "lines": {
-          "107": 1
+          "98": 1
         }
       },
       {
@@ -1560,16 +1480,16 @@
         "place": "Police station office",
         "lines": {
           "1": 4,
-          "43": 1,
-          "44": 2
+          "39": 1,
+          "40": 2
         }
       },
       {
         "place": "Airport concourse/the dream",
         "lines": {
           "3": 1,
-          "10": 1,
-          "13": 1
+          "9": 1,
+          "12": 1
         }
       },
       {
@@ -1577,19 +1497,18 @@
         "lines": {
           "0": 1,
           "3": 1,
-          "13": 1,
-          "35": 1
+          "12": 1,
+          "32": 1
         }
       },
       {
         "place": "Railly's apartment",
         "lines": {
           "1": 4,
-          "38": 3,
+          "35": 3,
           "41": 1,
-          "45": 1,
-          "75": 2,
-          "126": 1
+          "69": 2,
+          "115": 1
         }
       },
       {
@@ -1597,19 +1516,19 @@
         "lines": {
           "0": 2,
           "3": 5,
-          "8": 4,
-          "10": 2,
-          "12": 2,
-          "13": 3,
-          "20": 2,
-          "35": 2
+          "7": 4,
+          "9": 2,
+          "11": 2,
+          "12": 3,
+          "18": 2,
+          "32": 2
         }
       },
       {
         "place": "Psychiatrist's office",
         "lines": {
           "1": 3,
-          "9": 2
+          "8": 2
         }
       },
       {
@@ -1623,8 +1542,8 @@
         "place": "Railly's bedroom",
         "lines": {
           "1": 1,
-          "43": 2,
-          "44": 1
+          "39": 2,
+          "40": 1
         }
       },
       {
@@ -1638,16 +1557,16 @@
         "lines": {
           "0": 4,
           "3": 4,
-          "10": 1,
-          "13": 2,
-          "20": 1,
-          "51": 2
+          "9": 1,
+          "12": 2,
+          "18": 1,
+          "47": 2
         }
       },
       {
         "place": "Dr. mason's office",
         "lines": {
-          "7": 1
+          "6": 1
         }
       },
       {
@@ -1659,16 +1578,16 @@
       {
         "place": "Dr. mason's office",
         "lines": {
-          "7": 3,
-          "11": 1,
-          "56": 2
+          "6": 3,
+          "10": 1,
+          "52": 2
         }
       },
       {
         "place": "Scientists' chamber",
         "lines": {
           "0": 5,
-          "8": 6
+          "7": 6
         }
       },
       {
@@ -1682,7 +1601,7 @@
         "lines": {
           "2": 1,
           "5": 2,
-          "16": 1
+          "14": 1
         }
       },
       {
@@ -1690,8 +1609,8 @@
         "lines": {
           "1": 5,
           "4": 1,
-          "24": 3,
-          "97": 1
+          "22": 3,
+          "88": 1
         }
       },
       {
@@ -1699,10 +1618,9 @@
         "lines": {
           "2": 4,
           "5": 4,
-          "16": 2,
-          "22": 1,
-          "42": 1,
-          "110": 1
+          "14": 2,
+          "20": 1,
+          "38": 1
         }
       },
       {
@@ -1717,23 +1635,21 @@
         "lines": {
           "2": 4,
           "5": 3,
-          "16": 1
+          "14": 1
         }
       },
       {
         "place": "Skid row alley",
         "lines": {
           "0": 2,
-          "1": 2,
-          "33": 1,
-          "41": 1
+          "1": 2
         }
       },
       {
         "place": "Globe hotel/lobby",
         "lines": {
           "1": 2,
-          "29": 4
+          "27": 4
         }
       },
       {
@@ -1741,16 +1657,15 @@
         "lines": {
           "0": 11,
           "1": 15,
-          "18": 5,
-          "41": 1,
-          "119": 1
+          "16": 5,
+          "108": 1
         }
       },
       {
         "place": "Bathroom",
         "lines": {
           "1": 1,
-          "18": 2
+          "16": 2
         }
       },
       {
@@ -1768,7 +1683,7 @@
         "place": "Room 44/globe hotel",
         "lines": {
           "1": 1,
-          "18": 1
+          "16": 1
         }
       },
       {
@@ -1782,30 +1697,27 @@
       {
         "place": "Globe hotel fourth floor",
         "lines": {
-          "105": 1
+          "96": 1
         }
       },
       {
         "place": "Globe hotel room",
         "lines": {
-          "18": 1,
-          "60": 1
+          "16": 1
         }
       },
       {
         "place": "Bus stop/downtown",
         "lines": {
           "0": 4,
-          "1": 7,
-          "6": 2
+          "1": 7
         }
       },
       {
         "place": "Department store/men's department",
         "lines": {
           "1": 4,
-          "6": 1,
-          "84": 1
+          "77": 1
         }
       },
       {
@@ -1816,8 +1728,8 @@
         "place": "Parked pest control van",
         "lines": {
           "2": 1,
-          "42": 2,
-          "131": 1
+          "38": 2,
+          "120": 1
         }
       },
       {
@@ -1828,10 +1740,10 @@
         "place": "Pest control van/moving",
         "lines": {
           "2": 7,
-          "7": 6,
-          "67": 1,
-          "93": 1,
-          "95": 1
+          "6": 6,
+          "61": 1,
+          "84": 1,
+          "86": 1
         }
       },
       {
@@ -1839,17 +1751,17 @@
         "lines": {
           "0": 6,
           "1": 7,
-          "98": 1,
-          "114": 1,
-          "118": 1
+          "89": 1,
+          "104": 1,
+          "107": 1
         }
       },
       {
         "place": "Gorilla's pen/zoo",
         "lines": {
           "2": 1,
-          "7": 1,
-          "67": 1
+          "6": 1,
+          "61": 1
         }
       },
       {
@@ -1867,8 +1779,7 @@
       {
         "place": "Movie theater auditorium",
         "lines": {
-          "0": 1,
-          "60": 1
+          "0": 1
         }
       },
       {
@@ -1876,7 +1787,7 @@
         "lines": {
           "0": 2,
           "1": 2,
-          "52": 1
+          "48": 1
         }
       },
       {
@@ -1900,9 +1811,8 @@
         "lines": {
           "0": 1,
           "1": 5,
-          "6": 1,
-          "27": 5,
-          "77": 2
+          "25": 5,
+          "71": 2
         }
       },
       {
@@ -1910,9 +1820,8 @@
         "lines": {
           "0": 4,
           "1": 4,
-          "25": 1,
-          "33": 1,
-          "86": 1
+          "23": 1,
+          "79": 1
         }
       },
       {
@@ -1935,7 +1844,7 @@
         "place": "Ticket counter",
         "lines": {
           "1": 1,
-          "37": 2
+          "34": 2
         }
       },
       {
@@ -1943,36 +1852,35 @@
         "lines": {
           "0": 3,
           "4": 2,
-          "106": 1
+          "97": 1
         }
       },
       {
         "place": "Ticket counter",
         "lines": {
-          "37": 2,
-          "47": 1
+          "34": 2,
+          "43": 1
         }
       },
       {
         "place": "Terminal lobby",
         "lines": {
           "0": 4,
-          "15": 4,
-          "88": 1
+          "13": 4,
+          "80": 1
         }
       },
       {
         "place": "Gift shop/terminal",
         "lines": {
-          "11": 1,
-          "33": 1
+          "10": 1
         }
       },
       {
         "place": "Gift shop",
         "lines": {
           "1": 1,
-          "104": 1
+          "95": 1
         }
       },
       {
@@ -1980,14 +1888,14 @@
         "lines": {
           "0": 4,
           "1": 2,
-          "15": 4
+          "13": 4
         }
       },
       {
         "place": "Security check point/terminal",
         "lines": {
-          "11": 1,
-          "36": 1
+          "10": 1,
+          "33": 1
         }
       },
       {
@@ -1995,28 +1903,23 @@
         "lines": {
           "0": 2,
           "1": 4,
-          "6": 1,
-          "11": 7,
-          "14": 9,
-          "31": 2,
-          "36": 3,
-          "46": 2,
-          "52": 1,
-          "59": 2,
-          "68": 2,
-          "90": 1,
-          "91": 1,
-          "117": 1,
-          "123": 1
+          "10": 7,
+          "29": 2,
+          "33": 3,
+          "42": 2,
+          "48": 1,
+          "55": 2,
+          "62": 2,
+          "82": 1,
+          "112": 1
         }
       },
       {
         "place": "747 cabin",
         "lines": {
           "3": 1,
-          "11": 1,
-          "87": 1,
-          "89": 1
+          "10": 1,
+          "81": 1
         }
       },
       {
@@ -2025,16 +1928,16 @@
       }
     ],
     "measures": {
-      "firstWomanLine": 28,
+      "firstWomanLine": 23,
       "longestWithoutWoman": 51,
-      "longestWithoutWomanStart": 494,
+      "longestWithoutWomanStart": 479,
       "words": {
         "w": 3105,
-        "m": 8020,
-        "unknown": 2383
+        "m": 7991,
+        "unknown": 1658
       },
       "womenConversations": 4,
-      "menConversations": 53,
+      "menConversations": 59,
       "reverseScore": 3
     }
   },
