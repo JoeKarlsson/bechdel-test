@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Download every movie script on IMSDb that we don't have yet, as
+ * Download every movie script on IMSDb that we don't have yet (on disk or in
+ * the manifest: a script deleted as unusable stays listed so it isn't refetched), as
  * scripts/local/<title>.txt (gitignored: the scripts belong to their writers,
  * so we analyze them but don't republish them). Then run `npm run match` to
  * give each one its film.
@@ -10,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const { IMSDB, scriptFileName, parseScriptIndex, parseScriptPageUrl, parseScriptText } = require('../src/imsdb');
-const { listScriptPaths, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
+const { listScriptPaths, loadManifest, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
 const { cleanScriptText } = require('../src/scriptText');
 
 // Pages fetched at once, to stay gentle on IMSDb
@@ -39,7 +40,7 @@ const downloadScript = async ({ title, moviePageUrl }, file) => {
 
 const main = async () => {
 	fs.mkdirSync(LOCAL_SCRIPTS_DIR, { recursive: true });
-	const existing = new Set(listScriptPaths().map(scriptPath => path.basename(scriptPath)));
+	const existing = new Set([...listScriptPaths().map(scriptPath => path.basename(scriptPath)), ...Object.keys(loadManifest())]);
 	const queue = [];
 	for (const movie of parseScriptIndex(await fetchPage(`${IMSDB}/all-scripts.html`))) {
 		const file = scriptFileName(movie.title);
