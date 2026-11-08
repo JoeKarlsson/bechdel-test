@@ -1,0 +1,116 @@
+---
+// A ranked list of people, one square per film: pink passes, gray fails.
+// Each row opens to list the films, linked.
+interface Props {
+	people: { name: string; pass: number; films: { slug: string; title: string; year: number | null; pass: boolean }[] }[];
+}
+const { people } = Astro.props;
+const named = (f: { title: string; year: number | null }) => (f.year ? `${f.title} (${f.year})` : f.title);
+---
+
+<ol class="people">
+	{people.map((p) => {
+		const passed = p.films.filter((f) => f.pass);
+		const failed = p.films.filter((f) => !f.pass);
+		return (
+			<li>
+				<details>
+					<summary>
+						<span class="name">{p.name}</span>
+						<span class="squares" aria-hidden="true">
+							{p.films.map((f) => <span class:list={['sq', { pass: f.pass }]} title={`${named(f)}: ${f.pass ? 'passes' : 'fails'}`} />)}
+						</span>
+						<span class="value">{p.pass} of {p.films.length}</span>
+					</summary>
+					<div class="films">
+						{passed.length > 0 && (
+							<p>
+								<span class="lead">Pass:</span>{' '}
+								{passed.map((f, i) => <>{i > 0 && ', '}<a href={`/films/${f.slug}/`}>{named(f)}</a></>)}
+							</p>
+						)}
+						{failed.length > 0 && (
+							<p>
+								<span class="lead">Fail:</span>{' '}
+								{failed.map((f, i) => <>{i > 0 && ', '}<a href={`/films/${f.slug}/`}>{named(f)}</a></>)}
+							</p>
+						)}
+					</div>
+				</details>
+			</li>
+		);
+	})}
+</ol>
+
+<style>
+	.people {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-4);
+		max-width: 720px;
+	}
+	.people li + li {
+		margin-top: var(--space-2);
+	}
+	summary {
+		display: grid;
+		grid-template-columns: minmax(8rem, 13rem) 1fr 5.5rem;
+		align-items: center;
+		gap: var(--space-3);
+		cursor: pointer;
+		list-style: none;
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	.name {
+		text-decoration: underline dotted var(--muted);
+		text-underline-offset: 0.2em;
+	}
+	summary:hover .name,
+	details[open] .name {
+		text-decoration-color: var(--pink);
+	}
+	.squares {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--mark-gap);
+	}
+	.sq {
+		width: 14px;
+		height: 14px;
+		border-radius: 2px;
+		background: var(--fail);
+	}
+	.sq.pass {
+		background: var(--pink);
+	}
+	.value {
+		font-variant-numeric: tabular-nums;
+		text-align: right;
+		white-space: nowrap;
+	}
+	.films {
+		padding: var(--space-2) 0 var(--space-3) var(--space-4);
+		font-size: var(--text-small);
+	}
+	.films p + p {
+		margin-top: var(--space-2);
+	}
+	.lead {
+		color: var(--muted);
+	}
+	@media (max-width: 480px) {
+		.people li + li {
+			margin-top: var(--space-3);
+		}
+		summary {
+			grid-template-columns: 1fr auto;
+			row-gap: var(--space-1);
+		}
+		.squares {
+			grid-row: 2;
+			grid-column: 1 / -1;
+		}
+	}
+</style>

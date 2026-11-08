@@ -1,0 +1,142 @@
+---
+// One measure year by year on a 0-100% scale: a gray dot per year and a pink
+// line for the five years around it. Each year is a button over the plot, so
+// hover, tap or the arrow keys put that year's numbers in the readout below
+// (scripts/year-chart.ts). The marks are drawn in a 0-100 box stretched to
+// fit; strokes don't scale, so the dots stay round.
+interface Props {
+	title: string;
+	points: { year: number; value: number; average: number; says: string }[];
+}
+const { title, points } = Astro.props;
+
+const first = points[0].year;
+const slots = points.at(-1)!.year - first + 1;
+const x = (year: number) => ((year - first + 0.5) / slots) * 100;
+const y = (v: number) => (1 - v) * 100;
+const line = points.map((p) => `${x(p.year).toFixed(2)},${y(p.average).toFixed(2)}`).join(' ');
+const decades = points.filter((p) => p.year % 10 === 0);
+const last = points.at(-1)!;
+---
+
+<figure class="ychart" data-year-chart>
+	<figcaption class="ychart-title">{title}</figcaption>
+	<div class="plot">
+		<span class="tick" style="top: 0%" aria-hidden="true">100%</span>
+		<span class="tick" style="top: 50%" aria-hidden="true">50%</span>
+		<span class="tick" style="top: 100%" aria-hidden="true">0%</span>
+		<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+			{[0, 50, 100].map((v) => <line class="grid" x1="0" x2="100" y1={v} y2={v} vector-effect="non-scaling-stroke" />)}
+			{points.map((p) => <line class="dot" x1={x(p.year)} x2={x(p.year)} y1={y(p.value)} y2={y(p.value)} vector-effect="non-scaling-stroke" />)}
+			<polyline class="avg" points={line} vector-effect="non-scaling-stroke" />
+		</svg>
+		<div class="years" role="group" aria-label={`${title}, year by year`}>
+			{points.map((p) => (
+				<button
+					type="button"
+					style={`left: ${(((p.year - first) / slots) * 100).toFixed(3)}%; width: ${(100 / slots).toFixed(3)}%`}
+					aria-label={p.says}
+					aria-pressed={String(p === last)}
+					tabindex={p === last ? 0 : -1}
+					data-says={p.says}
+				/>
+			))}
+		</div>
+		<div class="xaxis" aria-hidden="true">
+			{decades.map((p) => <span style={`left: ${x(p.year).toFixed(2)}%`}>{p.year}</span>)}
+		</div>
+	</div>
+	<p class="readout" data-year-readout aria-live="polite">{last.says}</p>
+</figure>
+
+<script>
+	import { setUpYearCharts } from '../scripts/year-chart';
+	setUpYearCharts();
+</script>
+
+<style>
+	.ychart {
+		margin: 0;
+	}
+	.ychart-title {
+		font-family: var(--poster);
+		font-size: clamp(1.5rem, 3vw, 1.875rem);
+		line-height: 1.1;
+		margin-bottom: var(--space-4);
+	}
+	/* Room on the left for the percent ticks and below for the years */
+	.plot {
+		position: relative;
+		height: clamp(180px, 26vw, 240px);
+		margin: 0 0 2.25rem 3.5rem;
+	}
+	.tick {
+		position: absolute;
+		right: calc(100% + 0.5rem);
+		transform: translateY(-50%);
+		font-size: var(--text-small);
+		line-height: 1;
+		font-variant-numeric: tabular-nums;
+		color: var(--muted);
+	}
+	svg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+	}
+	.grid {
+		stroke: var(--plank);
+		stroke-width: 1px;
+	}
+	.dot {
+		stroke: var(--fail);
+		stroke-width: 7px;
+		stroke-linecap: round;
+	}
+	.avg {
+		fill: none;
+		stroke: var(--pink);
+		stroke-width: 3px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+	}
+	.years {
+		position: absolute;
+		inset: 0;
+	}
+	.years button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: crosshair;
+	}
+	.years button[aria-pressed='true']::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		border-left: 1px solid var(--chalk);
+	}
+	.years button:focus-visible {
+		outline: 2px solid var(--chalk);
+		outline-offset: 2px;
+	}
+	.xaxis span {
+		position: absolute;
+		top: calc(100% + 0.5rem);
+		transform: translateX(-50%);
+		font-size: var(--text-small);
+		line-height: 1;
+		font-variant-numeric: tabular-nums;
+		color: var(--muted);
+	}
+	.readout {
+		min-height: 2.6em;
+	}
+</style>
