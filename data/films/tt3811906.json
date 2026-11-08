@@ -1,0 +1,1943 @@
+{
+  "_id": "tt3811906",
+  "title": "Malignant",
+  "genres": [
+    "Crime",
+    "Horror",
+    "Mystery"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 25,
+    "numScenesDontPass": 140,
+    "numOfFemalesChars": 22,
+    "numOfMaleChars": 14,
+    "numOfFemalesCharsWithDialogue": 12,
+    "numOfMaleCharsWithDialogue": 6,
+    "totalLinesFemaleDialogue": 531,
+    "totalLinesMaleDialogue": 172,
+    "scenesThatPass": [
+      "SYDNEY: She's been pumped full of sedative, she's barely lucid. You're not gonna get much --\nMADISON: It's okay, Sydney.\nMADISON: I don't know how much help I'll be. But I'll answer whatever I can...",
+      "SYDNEY: Hey. Got you some groceries. Thought I'll make you your fav dish tonight, what'd say??\nSYDNEY: Umm. What the hell was that?\nMADISON: Nothing.",
+      "SYDNEY: Madison??\nMADISON. OPEN THE DOOR: Sydney shoulders the door -- again and again -- finally smashing it open and seeing an empty bed.",
+      "REGINA: It's gonna take awhile.\nSYDNEY: We'll wait.\nSYDNEY: If there's nothing there, then we're lying, lock us up.\nSYDNEY: If there is, you have a serial killer on your hands, Detective.",
+      "SYDNEY: Sorry...\nSYDNEY: ...don't mean to play with your bird.\nREGINA: A red neon \"Silvercup\" sign is an apartment building down in Boyle Heights.\nMADISON: That's it. It's across from it."
+    ]
+  },
+  "script": {
+    "file": "malignant.txt",
+    "layout": "indented",
+    "dialogueLines": 818,
+    "speakers": [
+      {
+        "name": "MADISON",
+        "lines": 162,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SYDNEY",
+        "lines": 142,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ERIK",
+        "lines": 137,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "REGINA",
+        "lines": 88,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DR. WEAVER",
+        "lines": 37,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JEANNE",
+        "lines": 29,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "GABRIELLE",
+        "lines": 21,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BEVERLY",
+        "lines": 18,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DEREK",
+        "lines": 18,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RAVINA",
+        "lines": 9,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "THE KILLER",
+        "lines": 9,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "LIEUTENANT DANIELS",
+        "lines": 8,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "ALPHA GANBANGER",
+        "lines": 7,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "ANDY",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CHRIS",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CRANIAL SURGEON",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ON SECURITY MONITOR",
+        "lines": 7,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CORONER",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EIGHT-YEAR OLD MADISON",
+        "lines": 6,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "UNIFORMED OFFICER",
+        "lines": 5,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "VOICE",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ALPHA GANGBANGER",
+        "lines": 4,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "FEMALE OFFICER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LAWYER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MAN",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "OFFICER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TECH FORENSIC",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WOMAN",
+        "lines": 4,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "YOUNG EMILY",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "RECEPTIONIST",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THIRTY-YEAR OLD JEANNE",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NEWS ANCHOR",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "ORDERLY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STORE P.A",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "YOUNG MADISON",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BETA GANBANGER",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "DO IT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DON'T BOTHER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DR. GREGORY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DROP IT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FLASHCUT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GUARD",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HOUSEKEEPER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HURT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "I REMEMBER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IMAGINATION --",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IT WON'T WORK",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "IT'S DOCTOR WEAVER'S",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "JOHN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOOSE. SMART",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MADISON. OPEN THE DOOR",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MADISON'S NOT HERE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NOTHING PERSONAL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NOW TRY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "NURSE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "POLICE OFFICER",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "PSYCHIATRIST",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SHHHHHHHH",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SMASHCUT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SOMEONE HELP --",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STARTED IT",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STOP RIGHT THERE",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "STORY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "STORY BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SYDNEY/ERIK",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "THERE YOU ARE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TIME STAMP",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "UP",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VICTOR",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WOULD HEAR YOU",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WRITTEN BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "YOU'VE SERVED YOUR PURPOSE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "63": 1,
+          "70": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 6,
+          "8": 7
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 1,
+          "8": 3
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "3": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "2": 2,
+          "3": 1,
+          "25": 2
+        }
+      },
+      {
+        "place": "Home",
+        "lines": {
+          "2": 2,
+          "3": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Hospital room",
+        "lines": {
+          "0": 6,
+          "1": 6
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital room",
+        "lines": {
+          "0": 9,
+          "1": 7,
+          "2": 17
+        }
+      },
+      {
+        "place": "Morgue",
+        "lines": {
+          "2": 5,
+          "3": 5,
+          "17": 6
+        }
+      },
+      {
+        "place": "Hallway",
+        "lines": {
+          "2": 4,
+          "3": 7
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Car",
+        "lines": {
+          "0": 7,
+          "1": 9
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Grocery store",
+        "lines": {
+          "33": 2
+        }
+      },
+      {
+        "place": "Parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Entrance",
+        "lines": {}
+      },
+      {
+        "place": "Living room",
+        "lines": {}
+      },
+      {
+        "place": "Kitchen",
+        "lines": {}
+      },
+      {
+        "place": "Master bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Master bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Living room",
+        "lines": {
+          "0": 4,
+          "2": 1,
+          "10": 3
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 2,
+          "2": 2
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "2": 1,
+          "67": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "2": 3
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 9,
+          "1": 10
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "1": 9,
+          "5": 8
+        }
+      },
+      {
+        "place": "Loft space",
+        "lines": {
+          "10": 4,
+          "37": 1,
+          "47": 1,
+          "60": 1,
+          "69": 1
+        }
+      },
+      {
+        "place": "Upscale house",
+        "lines": {}
+      },
+      {
+        "place": "Upscale home",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Laundry",
+        "lines": {
+          "0": 1,
+          "4": 3,
+          "10": 1
+        }
+      },
+      {
+        "place": "Upscale house",
+        "lines": {}
+      },
+      {
+        "place": "Upscale house",
+        "lines": {
+          "42": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Upscale house",
+        "lines": {
+          "3": 1,
+          "22": 1
+        }
+      },
+      {
+        "place": "Upscale house",
+        "lines": {
+          "2": 1,
+          "3": 2,
+          "22": 2
+        }
+      },
+      {
+        "place": "Upscale home",
+        "lines": {
+          "2": 4,
+          "3": 7,
+          "22": 1
+        }
+      },
+      {
+        "place": "Loft space",
+        "lines": {
+          "10": 1,
+          "44": 1,
+          "65": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 5,
+          "1": 4,
+          "31": 2
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 3,
+          "3": 4,
+          "13": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 3,
+          "13": 5
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "1": 1,
+          "50": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 6
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Silvercup apartment",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Silvercup apartment",
+        "lines": {
+          "2": 2,
+          "3": 4
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Apartment",
+        "lines": {
+          "2": 2,
+          "3": 2,
+          "19": 1
+        }
+      },
+      {
+        "place": "Silvercup apartment",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 4,
+          "1": 4,
+          "2": 8,
+          "3": 3,
+          "40": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 6,
+          "6": 2,
+          "20": 5,
+          "43": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 3,
+          "2": 2,
+          "3": 5,
+          "11": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Car",
+        "lines": {
+          "0": 8,
+          "1": 8
+        }
+      },
+      {
+        "place": "Jeanne's house",
+        "lines": {
+          "0": 6,
+          "1": 4,
+          "5": 7
+        }
+      },
+      {
+        "place": "Spare bedroom",
+        "lines": {
+          "0": 5,
+          "1": 4,
+          "5": 7,
+          "18": 6,
+          "24": 4,
+          "30": 3
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Sydney's car",
+        "lines": {
+          "0": 6,
+          "1": 5
+        }
+      },
+      {
+        "place": "Loft space",
+        "lines": {
+          "6": 2,
+          "36": 1,
+          "46": 1,
+          "49": 1,
+          "53": 1,
+          "71": 1
+        }
+      },
+      {
+        "place": "Dr weaver's house",
+        "lines": {}
+      },
+      {
+        "place": "Dr. weaver's house",
+        "lines": {
+          "2": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 2,
+          "48": 1
+        }
+      },
+      {
+        "place": "Apartment complex",
+        "lines": {}
+      },
+      {
+        "place": "Penthouse apartment",
+        "lines": {
+          "2": 3
+        }
+      },
+      {
+        "place": "Penthouse apartment",
+        "lines": {
+          "0": 2,
+          "2": 1
+        }
+      },
+      {
+        "place": "Apartment complex",
+        "lines": {}
+      },
+      {
+        "place": "Rooftop",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Penthouse apartment",
+        "lines": {
+          "2": 3,
+          "3": 4,
+          "26": 4
+        }
+      },
+      {
+        "place": "Apartment complex",
+        "lines": {
+          "2": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Apartment complex",
+        "lines": {
+          "2": 8,
+          "3": 4,
+          "16": 7
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 4,
+          "2": 3
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 12,
+          "1": 3,
+          "2": 3,
+          "7": 13
+        }
+      },
+      {
+        "place": "Jeanne's house",
+        "lines": {
+          "34": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 1,
+          "56": 1
+        }
+      },
+      {
+        "place": "Jeanne's house",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 3,
+          "7": 3
+        }
+      },
+      {
+        "place": "Jeanne's house",
+        "lines": {
+          "0": 1,
+          "7": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 5,
+          "1": 1,
+          "2": 3,
+          "3": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Loft space",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "1": 1,
+          "3": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {}
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "2": 2,
+          "3": 4
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 3,
+          "2": 1,
+          "3": 3,
+          "62": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "1": 1,
+          "3": 1,
+          "11": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 6,
+          "2": 10,
+          "3": 3,
+          "6": 10,
+          "45": 1,
+          "52": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 2,
+          "3": 5,
+          "11": 4,
+          "23": 4
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {}
+      },
+      {
+        "place": "Jeanne's house",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Jeanne's house",
+        "lines": {
+          "1": 2,
+          "5": 3
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Sydney's car",
+        "lines": {
+          "1": 3,
+          "29": 3
+        }
+      },
+      {
+        "place": "Cradle of love adoption agency",
+        "lines": {
+          "1": 8,
+          "14": 7
+        }
+      },
+      {
+        "place": "Sydney's car",
+        "lines": {
+          "1": 3,
+          "27": 4
+        }
+      },
+      {
+        "place": "Country coastal",
+        "lines": {}
+      },
+      {
+        "place": "Simion hill clinic",
+        "lines": {}
+      },
+      {
+        "place": "Simion hospital",
+        "lines": {}
+      },
+      {
+        "place": "Simion hill clinic",
+        "lines": {}
+      },
+      {
+        "place": "Simion hill clinic",
+        "lines": {}
+      },
+      {
+        "place": "Simion hospital",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "1": 1,
+          "4": 5,
+          "5": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "2": 3,
+          "3": 1,
+          "54": 1
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "1": 1,
+          "4": 13,
+          "5": 1,
+          "28": 4
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 2,
+          "4": 1,
+          "21": 4
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "4": 2,
+          "5": 1,
+          "66": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "0": 3,
+          "12": 3,
+          "58": 1
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "4": 5,
+          "38": 1,
+          "68": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "12": 2,
+          "35": 1
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "4": 2
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "4": 1,
+          "12": 1
+        }
+      },
+      {
+        "place": "Jeanne's home",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 3,
+          "3": 3
+        }
+      },
+      {
+        "place": "Sydney's car",
+        "lines": {
+          "1": 3,
+          "2": 2
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "12": 1,
+          "41": 1,
+          "59": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Sydney's car",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "11": 1,
+          "55": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {}
+      },
+      {
+        "place": "Precinct",
+        "lines": {}
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 1,
+          "3": 2,
+          "6": 2
+        }
+      },
+      {
+        "place": "Sydney's car",
+        "lines": {}
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "1": 7,
+          "2": 6,
+          "64": 1
+        }
+      },
+      {
+        "place": "Precinct",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "19": 3,
+          "61": 1
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "6": 2,
+          "9": 5,
+          "57": 1
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "1": 4,
+          "2": 1,
+          "6": 1,
+          "9": 2,
+          "51": 1
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 2,
+          "1": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Mitchell home",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "2": 1,
+          "6": 2,
+          "8": 3,
+          "39": 1
+        }
+      },
+      {
+        "place": "New age mental hospital",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "2": 3,
+          "15": 7
+        }
+      },
+      {
+        "place": "Padded room",
+        "lines": {
+          "0": 1,
+          "32": 2
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 5,
+      "longestWithoutWoman": 10,
+      "longestWithoutWomanStart": 249,
+      "words": {
+        "w": 5927,
+        "m": 1636,
+        "unknown": 1477
+      },
+      "womenConversations": 51,
+      "menConversations": 5,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/xnyGhzrfqENfFoiNZ9z4oy63Z9F.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/dGv2BWjzwAz6LB8a8JeRIZL8hSz.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 10048
+  },
+  "actors": [
+    {
+      "actorName": "Annabelle Wallis",
+      "character": "Madison Mitchell",
+      "actorActress": "1",
+      "age": 36
+    },
+    {
+      "actorName": "Maddie Hasson",
+      "character": "Sydney Lake",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "George Young",
+      "character": "Detective Kekoa Shaw",
+      "actorActress": "2",
+      "age": 41
+    },
+    {
+      "actorName": "Michole Briana White",
+      "character": "Detective Regina Moss",
+      "actorActress": "1",
+      "age": 52
+    },
+    {
+      "actorName": "Susanna Thompson",
+      "character": "Jeanne",
+      "actorActress": "1",
+      "age": 63
+    },
+    {
+      "actorName": "Ingrid Bisu",
+      "character": "Winnie",
+      "actorActress": "1",
+      "age": 33
+    },
+    {
+      "actorName": "Jean Louisa Kelly",
+      "character": "Jane Doe",
+      "actorActress": "1",
+      "age": 49
+    },
+    {
+      "actorName": "Jake Abel",
+      "character": "Derek Mitchell",
+      "actorActress": "2",
+      "age": 33
+    },
+    {
+      "actorName": "Jacqueline McKenzie",
+      "character": "Dr. Florence Weaver",
+      "actorActress": "1",
+      "age": 53
+    },
+    {
+      "actorName": "Christian Clemenson",
+      "character": "Dr. Victor Fields",
+      "actorActress": "2",
+      "age": 63
+    },
+    {
+      "actorName": "Amir Aboulela",
+      "character": "Dr. Gregory",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mercedes Colon",
+      "character": "Mendez",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ruben Pla",
+      "character": "Officer Rubin",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jon Lee Brody",
+      "character": "Officer Lee",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Paula Marshall",
+      "character": "Beverly Woods",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Zoë Bell",
+      "character": "Scorpion",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Shaunte Lynette Johnson",
+      "character": "Beta"
+    },
+    {
+      "actorName": "Natalia Safran",
+      "character": "Nurse Annie",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Mike Mendez",
+      "character": "Hospital Security Guard #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Randy Haynie",
+      "character": "Hospital Security Guard #2"
+    },
+    {
+      "actorName": "Cord Walker",
+      "character": "Hospital Security Guard #3"
+    },
+    {
+      "actorName": "Jesus Trujillo",
+      "character": "Research Doctor"
+    },
+    {
+      "actorName": "Lisa Catara",
+      "character": "Research Orderly",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Danielle Nottingham",
+      "character": "News Anchor",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ray Chase",
+      "character": "Gabriel (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Marina Mazepa",
+      "character": "Gabriel",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Mckenna Grace",
+      "character": "Young Madison",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Madison Wolfe",
+      "character": "Young Serena",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Andy Bean",
+      "character": "Frank",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Patricia Velásquez",
+      "character": "Nurse Velasquez",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Patrick Cox",
+      "character": "Mr. Stanley (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gregory Garcia",
+      "character": "Seattle Police Officer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Emir García",
+      "character": "Mustang Driver (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Renee Harbek",
+      "character": "Caroline (uncredited)"
+    },
+    {
+      "actorName": "Janet Hsieh",
+      "character": "Nurse J. De Marco (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Paul Mabon",
+      "character": "Orderly (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Gino Montesinos",
+      "character": "Seattle Police Officer (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Josh Rutgers",
+      "character": "Referee (uncredited)"
+    },
+    {
+      "actorName": "Halston Van Atta",
+      "character": "Child Madison (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Louise Van Veenendaal",
+      "character": "Prisoner (uncredited)"
+    },
+    {
+      "actorName": "Kalina Vanska",
+      "character": "Seattle Police Officer (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Christina Veronica",
+      "character": "Prisoner (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rachel Winfree",
+      "character": "Mrs. Ryerson (uncredited)",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "James Wan",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Akela Cooper",
+        "gender": "w"
+      },
+      {
+        "job": "Story",
+        "name": "Akela Cooper",
+        "gender": "w"
+      },
+      {
+        "job": "Story",
+        "name": "James Wan",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Ingrid Bisu",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "James Wan",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Michael Clear",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Michael Burgess",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Kirk M. Morri",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Joseph Bishara",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Desma Murphy",
+        "gender": null
+      },
+      {
+        "job": "Costume Design",
+        "name": "Lisa Norcia",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Kellie Roy",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Anne McCarthy",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Sound": {
+        "w": 0,
+        "m": 6,
+        "nb": 0,
+        "unknown": 11
+      },
+      "Writing": {
+        "w": 3,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Costume & Make-Up": {
+        "w": 6,
+        "m": 5,
+        "nb": 0,
+        "unknown": 9
+      },
+      "Art": {
+        "w": 2,
+        "m": 1,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Production": {
+        "w": 8,
+        "m": 7,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 7,
+        "nb": 0,
+        "unknown": 11
+      },
+      "Crew": {
+        "w": 21,
+        "m": 20,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Directing": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Camera": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      }
+    }
+  },
+  "money": {
+    "budget": 40000000,
+    "revenue": 34891791
+  },
+  "directors": [
+    {
+      "name": "James Wan"
+    }
+  ],
+  "writers": [
+    {
+      "name": "James Wan"
+    },
+    {
+      "name": "Ingrid Bisu"
+    },
+    {
+      "name": "Akela Cooper"
+    }
+  ],
+  "awards": [
+    {
+      "name": "4 wins & 18 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-08T19:40:48.277Z",
+  "plot": "Twenty-seven long years after the brutal Simion Research Hospital incident, abused Madison wakes up in a hospital in present-day Seattle. But with numbing visions of murder getting in the way of a normal life, more and more, Madison's obscure past emerges, baffling both herself and the local detectives. Are these explicitly violent killings figments of Madison's troubled imagination? Either way, someone, or better yet, something, links the past to the present, demanding closure and blood. Is the bogeyman real?",
+  "simplePlot": "Twenty-seven long years after the brutal Simion Research Hospital incident, abused Madison wakes up in a hospital in present-day Seattle. But with numbing visions of murder getting in the way of a normal life, more and more, Madison's obscure past emerges, baffling both herself and the local detectives. Are these explicitly violent killings figments of Madison's troubled imagination? Either way, someone, or better yet, something, links the past to the present, demanding closure and blood. Is the bogeyman real?",
+  "year": 2021,
+  "releaseDate": "10 Sep 2021",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BNTU3YjhmMTQtNmM5Yi00MDI2LTk0M2UtZGY5ZTNkYjIzNDE3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt3811906",
+  "rating": "6.2",
+  "metascore": 51,
+  "urlIMDB": "https://www.imdb.com/title/tt3811906/"
+}

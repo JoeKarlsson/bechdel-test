@@ -1,0 +1,1766 @@
+{
+  "_id": "tt0439815",
+  "title": "Slither",
+  "genres": [
+    "Comedy",
+    "Horror",
+    "Sci-Fi"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 4,
+    "numScenesDontPass": 192,
+    "numOfFemalesChars": 14,
+    "numOfMaleChars": 22,
+    "numOfFemalesCharsWithDialogue": 6,
+    "numOfMaleCharsWithDialogue": 5,
+    "totalLinesFemaleDialogue": 237,
+    "totalLinesMaleDialogue": 312,
+    "scenesThatPass": [
+      "STARLA: Janene!\nJANENE: Hey, Grant.",
+      "BRENDA: It hurts!\nBRENDA: Help me!! Help!!\nSTARLA: Bill!\nBRENDA: Little fuckers are tearing me aparrrr- !",
+      "STARLA: Bill, I'll run out to your car, call for paramedics from there.\nMARGARET: That's a long ways. Them worms are out there.\nSTARLA: I'll keep my mouth covered.",
+      "KYLIE'S SISTERS: We're itchy!\nKYLIE: They're not my... They killed..."
+    ]
+  },
+  "script": {
+    "file": "slither.txt",
+    "layout": "indented",
+    "dialogueLines": 571,
+    "speakers": [
+      {
+        "name": "BILL",
+        "lines": 133,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STARLA",
+        "lines": 128,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "GRANT",
+        "lines": 72,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TREVOR",
+        "lines": 35,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BRENDA",
+        "lines": 26,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "WALLY",
+        "lines": 26,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "KYLIE",
+        "lines": 24,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "JACK",
+        "lines": 22,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MARGARET",
+        "lines": 22,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SHELBY",
+        "lines": 13,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "KYLIE'S MOM",
+        "lines": 9,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "CAMPER",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JANENE",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "KYLIE'S DAD",
+        "lines": 5,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PASTOR",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REDNECK",
+        "lines": 5,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BUTCHER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "OLDER COP",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "WAITRESS",
+        "lines": 3,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "BRENDA'S HUSBAND",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GOOD OL' BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "KYLIE'S SISTER 1",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "NEIGHBOR",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SHERRY",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SMASHED-FACE MAN",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "BARKEEP",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BOY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "CASHIER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DISEASED TOWNSFOLK",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DISEASED WOMAN SHELBY",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HEALTHY HUMAN BEINGS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "KYLIE'S SISTER 2",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "KYLIE'S SISTERS",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MOTHER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "RANCHER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SECRETARY",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "WILL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "High school classroom",
+        "lines": {
+          "1": 4,
+          "36": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "7": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "High school",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Horse ranch",
+        "lines": {}
+      },
+      {
+        "place": "Grant's office",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "0": 1,
+          "3": 2,
+          "5": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Diner",
+        "lines": {
+          "18": 1
+        }
+      },
+      {
+        "place": "Diner kitchen",
+        "lines": {
+          "0": 8,
+          "5": 2,
+          "8": 2,
+          "18": 2
+        }
+      },
+      {
+        "place": "Glass workshop",
+        "lines": {
+          "2": 1,
+          "35": 1
+        }
+      },
+      {
+        "place": "Grant house",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Grant dining room",
+        "lines": {
+          "1": 2,
+          "2": 4
+        }
+      },
+      {
+        "place": "Grant master bathroom",
+        "lines": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 5,
+          "2": 7
+        }
+      },
+      {
+        "place": "Henenlotter's sports bar",
+        "lines": {
+          "2": 9,
+          "4": 8,
+          "25": 1
+        }
+      },
+      {
+        "place": "Shaded creek",
+        "lines": {
+          "2": 4,
+          "11": 6
+        }
+      },
+      {
+        "place": "Grant's pickup",
+        "lines": {}
+      },
+      {
+        "place": "Grant house",
+        "lines": {
+          "2": 1,
+          "22": 2
+        }
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Grant bathroom",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 3,
+          "2": 6
+        }
+      },
+      {
+        "place": "Teacher's lounge",
+        "lines": {
+          "1": 5,
+          "12": 4
+        }
+      },
+      {
+        "place": "Grant bathroom",
+        "lines": {}
+      },
+      {
+        "place": "Grant kitchen",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Grant garage",
+        "lines": {}
+      },
+      {
+        "place": "Supermarket",
+        "lines": {
+          "2": 6,
+          "16": 4
+        }
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant garage",
+        "lines": {
+          "2": 2
+        }
+      },
+      {
+        "place": "Grant garage",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {
+          "1": 6,
+          "2": 6
+        }
+      },
+      {
+        "place": "Grant home",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Grant home",
+        "lines": {
+          "1": 2,
+          "26": 1
+        }
+      },
+      {
+        "place": "Shaded forest",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Grant master bathroom",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Wheelsy saddle lodge",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "2": 1,
+          "3": 2,
+          "7": 2,
+          "8": 1
+        }
+      },
+      {
+        "place": "Wheelsy saddle lodge",
+        "lines": {
+          "1": 2,
+          "2": 1,
+          "12": 1
+        }
+      },
+      {
+        "place": "Wheelsy saddle lodge",
+        "lines": {}
+      },
+      {
+        "place": "Saddle lodge playground",
+        "lines": {
+          "2": 3,
+          "4": 4
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "2": 4,
+          "4": 4
+        }
+      },
+      {
+        "place": "Wheelsy saddle lodge back porch",
+        "lines": {
+          "0": 12,
+          "1": 9,
+          "2": 1,
+          "5": 2
+        }
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Wheelsy police station",
+        "lines": {
+          "8": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "Stop sign",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {
+          "1": 2
+        }
+      },
+      {
+        "place": "Grant kitchen",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 3,
+          "2": 3
+        }
+      },
+      {
+        "place": "Grant garage",
+        "lines": {}
+      },
+      {
+        "place": "Grant house",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "2": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Grant's truck",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {
+          "0": 6,
+          "1": 3,
+          "5": 3
+        }
+      },
+      {
+        "place": "Grant closet",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {}
+      },
+      {
+        "place": "Grant garage",
+        "lines": {}
+      },
+      {
+        "place": "Grant living room",
+        "lines": {
+          "1": 2,
+          "23": 1
+        }
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {}
+      },
+      {
+        "place": "Grant hall",
+        "lines": {}
+      },
+      {
+        "place": "Grant family room",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "Grant home",
+        "lines": {
+          "14": 1
+        }
+      },
+      {
+        "place": "Church",
+        "lines": {
+          "14": 3
+        }
+      },
+      {
+        "place": "Church parking lot",
+        "lines": {
+          "0": 4,
+          "1": 2
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "0": 8,
+          "3": 1,
+          "7": 12,
+          "9": 2,
+          "23": 1
+        }
+      },
+      {
+        "place": "Cattle ranch",
+        "lines": {
+          "0": 4,
+          "3": 3,
+          "5": 4,
+          "8": 5
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "0": 6,
+          "3": 1,
+          "5": 1,
+          "15": 1
+        }
+      },
+      {
+        "place": "Police station/armory",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "0": 3,
+          "1": 5
+        }
+      },
+      {
+        "place": "Strutemyer kitchen",
+        "lines": {
+          "6": 2,
+          "10": 1,
+          "13": 2
+        }
+      },
+      {
+        "place": "Strutemyer farmhouse",
+        "lines": {
+          "7": 1,
+          "15": 2,
+          "20": 1
+        }
+      },
+      {
+        "place": "Strutemyer ranch",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyer ranch",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyer barn",
+        "lines": {
+          "0": 4,
+          "1": 2,
+          "5": 2
+        }
+      },
+      {
+        "place": "Strutemyer ranch",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyer barn",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Strutemyer ranch",
+        "lines": {
+          "3": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Strutemyer barn",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Strutemyer ranch",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyer barn",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyer ranch",
+        "lines": {
+          "0": 1,
+          "1": 5,
+          "20": 1
+        }
+      },
+      {
+        "place": "Kylie's bathroom",
+        "lines": {}
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Creek",
+        "lines": {}
+      },
+      {
+        "place": "Forest clearing",
+        "lines": {
+          "0": 1,
+          "3": 1,
+          "8": 2,
+          "15": 1
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "3": 1,
+          "5": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "0": 3,
+          "4": 5,
+          "5": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "4": 3,
+          "5": 1,
+          "7": 1,
+          "15": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyers' ranch",
+        "lines": {}
+      },
+      {
+        "place": "Kylie's bathroom",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyers' farmhouse",
+        "lines": {}
+      },
+      {
+        "place": "Kylie's bathroom",
+        "lines": {
+          "6": 1,
+          "10": 1
+        }
+      },
+      {
+        "place": "Strutemyers' hallway",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Strutemyer girls' bedroom",
+        "lines": {
+          "10": 3,
+          "21": 1
+        }
+      },
+      {
+        "place": "Strutemyers' farmhouse",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Strutemyer girls' bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Kylie's bathroom",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Strutemyers' hallway",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Strutemyer girls' bedroom",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Strutemyers' farmhouse awning",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyers' front lawn",
+        "lines": {}
+      },
+      {
+        "place": "Pickup truck",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "0": 7,
+          "1": 3,
+          "3": 3,
+          "8": 3
+        }
+      },
+      {
+        "place": "Forest clearing",
+        "lines": {}
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "1": 1,
+          "3": 3,
+          "5": 4,
+          "8": 3
+        }
+      },
+      {
+        "place": "Strutemyers' farmhouse/int. pickup truck",
+        "lines": {
+          "6": 1,
+          "10": 2,
+          "13": 1,
+          "21": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "Forest near strutemyer's",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyers' ranch",
+        "lines": {
+          "0": 6,
+          "6": 1,
+          "13": 2,
+          "32": 1,
+          "34": 1
+        }
+      },
+      {
+        "place": "Old barn",
+        "lines": {
+          "1": 5,
+          "3": 1,
+          "5": 2,
+          "7": 2,
+          "8": 3,
+          "17": 1
+        }
+      },
+      {
+        "place": "Tree-thick forest",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Strutemyers' ranch",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Tree-thick forest",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Strutemyers' ranch",
+        "lines": {
+          "0": 2,
+          "3": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "Tree-thick forest",
+        "lines": {}
+      },
+      {
+        "place": "Strutemyers' ranch",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Forest",
+        "lines": {
+          "0": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Road away from forest",
+        "lines": {
+          "0": 2,
+          "9": 1
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "0": 13,
+          "1": 7,
+          "3": 3,
+          "6": 12,
+          "9": 5
+        }
+      },
+      {
+        "place": "Road toward wheelsy",
+        "lines": {
+          "0": 8,
+          "1": 7,
+          "3": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Wheelsy city limit",
+        "lines": {}
+      },
+      {
+        "place": "Road toward wheelsy",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Buick century",
+        "lines": {
+          "0": 3,
+          "3": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Flower store",
+        "lines": {
+          "0": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "Flower store storage area",
+        "lines": {}
+      },
+      {
+        "place": "Flower store",
+        "lines": {}
+      },
+      {
+        "place": "Flower store storage area",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Flower store",
+        "lines": {}
+      },
+      {
+        "place": "Flower store storage area",
+        "lines": {}
+      },
+      {
+        "place": "Flower store",
+        "lines": {}
+      },
+      {
+        "place": "Flower store storage area",
+        "lines": {}
+      },
+      {
+        "place": "Flower store",
+        "lines": {}
+      },
+      {
+        "place": "Flower store storage area",
+        "lines": {
+          "0": 4,
+          "1": 3
+        }
+      },
+      {
+        "place": "Flower store",
+        "lines": {
+          "1": 4,
+          "19": 1,
+          "24": 2
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {}
+      },
+      {
+        "place": "Side of movie theater",
+        "lines": {
+          "14": 1,
+          "29": 1
+        }
+      },
+      {
+        "place": "Grant street",
+        "lines": {}
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "House across from the grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "House across from the grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant kitchen",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Neighbor's backyard",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Neighbor's house",
+        "lines": {}
+      },
+      {
+        "place": "Grant upstairs hallway",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 4
+        }
+      },
+      {
+        "place": "Neighbor's upstairs hall",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Kid's bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 7
+        }
+      },
+      {
+        "place": "Kid's bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Neighbor's house",
+        "lines": {}
+      },
+      {
+        "place": "Kid's bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Neighbor's mock balcony",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Neighbor's mock balcony",
+        "lines": {}
+      },
+      {
+        "place": "Grant bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Neighbor's mock balcony",
+        "lines": {}
+      },
+      {
+        "place": "Grant bathroom",
+        "lines": {}
+      },
+      {
+        "place": "Neighbor's mock balcony",
+        "lines": {}
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant foyer",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant hallway",
+        "lines": {}
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant home",
+        "lines": {}
+      },
+      {
+        "place": "Grant hallway",
+        "lines": {}
+      },
+      {
+        "place": "Grant home",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {}
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Wheelsy exit",
+        "lines": {}
+      },
+      {
+        "place": "Road beyond wheelsy",
+        "lines": {}
+      },
+      {
+        "place": "Cluster of stores",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "30": 1
+        }
+      },
+      {
+        "place": "Gas station",
+        "lines": {}
+      },
+      {
+        "place": "Gas station mart",
+        "lines": {
+          "0": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Gas station",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Gas station mart",
+        "lines": {}
+      },
+      {
+        "place": "Gas station",
+        "lines": {}
+      },
+      {
+        "place": "Maxima",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "Gas station",
+        "lines": {}
+      },
+      {
+        "place": "Maxima",
+        "lines": {}
+      },
+      {
+        "place": "Gas station",
+        "lines": {}
+      },
+      {
+        "place": "Maxima",
+        "lines": {}
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 21,
+      "longestWithoutWomanStart": 238,
+      "words": {
+        "w": 2017,
+        "m": 2701,
+        "unknown": 187
+      },
+      "womenConversations": 8,
+      "menConversations": 37,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/kUpD6EnpnQBi3mjYxmiM4xvuh8g.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/zNlJvCY3Pz7SE09Lf4G7uPs5XFZ.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 1702
+  },
+  "actors": [
+    {
+      "actorName": "Nathan Fillion",
+      "character": "Bill Pardy",
+      "actorActress": "2",
+      "age": 35
+    },
+    {
+      "actorName": "Michael Rooker",
+      "character": "Grant Grant",
+      "actorActress": "2",
+      "age": 50
+    },
+    {
+      "actorName": "Elizabeth Banks",
+      "character": "Starla Grant",
+      "actorActress": "1",
+      "age": 32
+    },
+    {
+      "actorName": "Gregg Henry",
+      "character": "Jack MacReady",
+      "actorActress": "2",
+      "age": 53
+    },
+    {
+      "actorName": "Tania Saulnier",
+      "character": "Kylie Strutemyer",
+      "actorActress": "1",
+      "age": 24
+    },
+    {
+      "actorName": "Don Thompson",
+      "character": "Wally",
+      "actorActress": "2",
+      "age": 49
+    },
+    {
+      "actorName": "Brenda James",
+      "character": "Brenda Gutierrez",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Jennifer Copping",
+      "character": "Margaret",
+      "actorActress": "1",
+      "age": 26
+    },
+    {
+      "actorName": "Jenna Fischer",
+      "character": "Shelby",
+      "actorActress": "1",
+      "age": 32
+    },
+    {
+      "actorName": "Haig Sutherland",
+      "character": "Trevor",
+      "actorActress": "2",
+      "age": 22
+    },
+    {
+      "actorName": "William MacDonald",
+      "character": "Mr. Strutemyer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Iris Quinn",
+      "character": "Mrs. Strutemyer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Matreya Fedor",
+      "character": "Emily Strutemyer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Amber Lee Bartlett",
+      "character": "Jenna Strutemyer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Xantha Radley",
+      "character": "Uptight Mom",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dustin Milligan",
+      "character": "Drawing Boy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lloyd Kaufman",
+      "character": "Sad Drunk",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Zak Ludwig",
+      "character": "Gina Kid",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tom Heaton",
+      "character": "Tourneur",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mary Black",
+      "character": "Woman in Basement",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ben Cotton",
+      "character": "Charlie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lorena Gale",
+      "character": "Janene",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dee Jay Jackson",
+      "character": "Dwight",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nicholas Podbrey",
+      "character": "Diseased Grant part 1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Malcolm Scott",
+      "character": "Dude Joining Grant",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Darren Shahlavi",
+      "character": "Brenda's Husband",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kathryn Kirkpatrick",
+      "character": "Karaoke Woman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Corb Lund",
+      "character": "Lead Singer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Cromien",
+      "character": "Fitzgibbon"
+    },
+    {
+      "actorName": "Robert Musnicki",
+      "character": "Diseased Leader",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Stephen Park",
+      "character": "Gleeked on Guy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Nicholas Podbrey",
+      "character": "Diseased Grant #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jeny Cassady",
+      "character": "Diseased Grant #2",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alette Falle",
+      "character": "Diseased Grant #3"
+    },
+    {
+      "actorName": "Matt McInnis",
+      "character": "Head-Shot Norman"
+    },
+    {
+      "actorName": "James Gunn",
+      "character": "Hank (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Magda Apanowicz",
+      "character": "Friend (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rick Morwick",
+      "character": "Truck Driver (uncredited)"
+    },
+    {
+      "actorName": "Rob Zombie",
+      "character": "Dr. Karl (voice)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Mark Torgl",
+      "character": "Melvin Junko (Archive footage)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "James Gunn",
+        "gender": "m"
+      },
+      {
+        "job": "Writer",
+        "name": "James Gunn",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Eric Newman",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Paul Brooks",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Dan Lee West",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Gregory Middleton",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "John Axelrad",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Tyler Bates",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Andrew Neskoromny",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Patricia Hargreaves",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Production": {
+        "w": 1,
+        "m": 13,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Editing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Directing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Writing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Crew": {
+        "w": 3,
+        "m": 14,
+        "nb": 0,
+        "unknown": 26
+      },
+      "Camera": {
+        "w": 0,
+        "m": 5,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Costume & Make-Up": {
+        "w": 4,
+        "m": 2,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 13
+      },
+      "Art": {
+        "w": 1,
+        "m": 7,
+        "nb": 0,
+        "unknown": 14
+      },
+      "Sound": {
+        "w": 2,
+        "m": 8,
+        "nb": 0,
+        "unknown": 11
+      }
+    }
+  },
+  "money": {
+    "budget": 15000000,
+    "revenue": 12834936
+  },
+  "directors": [
+    {
+      "name": "James Gunn"
+    }
+  ],
+  "writers": [
+    {
+      "name": "James Gunn"
+    }
+  ],
+  "awards": [
+    {
+      "name": "2 wins & 5 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-08T19:42:08.070Z",
+  "plot": "From the depths of the endless space, a flaming meteorite crashes into the dark woods of the sleepy town of Wheelsy, South Carolina. As the scorched rock reveals its silent content--a baneful parasitic organism--a subtle alien invasion commences, and the war's unlucky first victim is the town's local businessman, Grant. Little by little, as an internal change transforms Grant into an utterly hideous monstrosity, his wife, Starla, starts to feel that something's been eating at him the last few days. Now, before the unstoppable extraterrestrial attack, no one is safe, and to make matters worse, Grant's transformation is far from over yet. Who can stop the slithering army from outer space?",
+  "simplePlot": "From the depths of the endless space, a flaming meteorite crashes into the dark woods of the sleepy town of Wheelsy, South Carolina. As the scorched rock reveals its silent content--a baneful parasitic organism--a subtle alien invasion commences, and the war's unlucky first victim is the town's local businessman, Grant. Little by little, as an internal change transforms Grant into an utterly hideous monstrosity, his wife, Starla, starts to feel that something's been eating at him the last few days. Now, before the unstoppable extraterrestrial attack, no one is safe, and to make matters worse, Grant's transformation is far from over yet. Who can stop the slithering army from outer space?",
+  "year": 2006,
+  "releaseDate": "31 Mar 2006",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BMTk5NDQwOGItYTQ4Mi00MGFjLWEzYjMtMDZkMTIxMGJhNWIyXkEyXkFqcGc@._V1_QL75_UY562_CR0,0,380,562_.jpg",
+  "idIMDB": "tt0439815",
+  "rating": "6.5",
+  "metascore": 67,
+  "urlIMDB": "https://www.imdb.com/title/tt0439815/"
+}
