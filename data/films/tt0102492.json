@@ -1,0 +1,602 @@
+{
+  "_id": "tt0102492",
+  "title": "My Girl",
+  "genres": [
+    "Comedy",
+    "Drama",
+    "Family"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 1,
+    "numScenesDontPass": 0,
+    "numOfFemalesChars": 8,
+    "numOfMaleChars": 13,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 6,
+    "totalLinesFemaleDialogue": 476,
+    "totalLinesMaleDialogue": 383,
+    "scenesThatPass": [
+      "VADA: Is that your camper?\nSHELLY: Yes it is.\nVADA: That's really cool.\nSHELLY: Hello.",
+      "SHELLY: You know Vada, you shouldn't let those girls upset you.\nVADA: I'm not upset. I will never play with those girls. I only surround myself with people who I find intellectually stimulating.\nSHELLY: Want a piece of chocolate?\nSHELLY: Thomas J?",
+      "SHELLY: Ooh, that's a pretty ring you're wearing.\nVADA: It's a mood ring, it tells what mood I'm in.",
+      "VADA: It's only black when you're around 'cause you put me in a bad mood.\nSHELLY: Maybe black means you're happy?\nVADA: I don't think so. Shelly, how can I get thirty five dollars?",
+      "VADA: There's Shelly!\nSHELLY: Hi.\nVADA: Can we look around in your camper?\nSHELLY: Sure. I'll give you the royal tour."
+    ]
+  },
+  "script": {
+    "file": "my-girl.txt",
+    "layout": "indented",
+    "dialogueLines": 914,
+    "speakers": [
+      {
+        "name": "VADA",
+        "lines": 271,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SHELLY",
+        "lines": 178,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HARRY",
+        "lines": 162,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "THOMAS J",
+        "lines": 119,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MR. BIXLER",
+        "lines": 36,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PHIL",
+        "lines": 19,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DANNY",
+        "lines": 14,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VADA'S THOUGHTS",
+        "lines": 10,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MRS. SENNETT",
+        "lines": 9,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NURSE RANDALL",
+        "lines": 9,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ARTHUR",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DR WELTY",
+        "lines": 8,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "JUSTIN",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JUDY",
+        "lines": 6,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "BOY#2",
+        "lines": 5,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "RONDA",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "STRANGER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CARL",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GIRL#2",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MINISTER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "POLICEMAN",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "RALPH",
+        "lines": 3,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SUZANNE",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "BOY#3",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GIRL#1",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GRAMMOO",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "GUY",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "GUY#2",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "REV",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VERNON",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ANNOUNCER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BINGO ANNOUNCER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GIRL#1 & GIRL#2",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MAN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "MEN",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PSYCHO MECHANIC",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THOMAS J & VADA",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "VADA & THOMAS J",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "VERNON'S WIFE",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "0": 271,
+          "1": 178,
+          "2": 162,
+          "3": 119,
+          "4": 36,
+          "5": 19,
+          "6": 14,
+          "7": 10,
+          "8": 9,
+          "9": 9,
+          "10": 8,
+          "11": 8,
+          "12": 8,
+          "13": 6,
+          "14": 5,
+          "15": 5,
+          "16": 4,
+          "17": 3,
+          "18": 3,
+          "19": 3,
+          "20": 3,
+          "21": 3,
+          "22": 3,
+          "23": 2,
+          "24": 2,
+          "25": 2,
+          "26": 2,
+          "27": 2,
+          "28": 2,
+          "29": 2,
+          "30": 2,
+          "31": 1,
+          "32": 1,
+          "33": 1,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "39": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 19,
+      "longestWithoutWomanStart": 363,
+      "words": {
+        "w": 3673,
+        "m": 3321,
+        "unknown": 733
+      },
+      "womenConversations": 41,
+      "menConversations": 17,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/6ZGOy9vXPaKGL6W0aMva9iiiUbj.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/qyJJNHteA7BUwQSey05t7qP4vRV.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 5265
+  },
+  "actors": [
+    {
+      "actorName": "Anna Chlumsky",
+      "character": "Vada Sultenfuss",
+      "actorActress": "1",
+      "age": 10
+    },
+    {
+      "actorName": "Macaulay Culkin",
+      "character": "Thomas J. Sennett",
+      "actorActress": "2",
+      "age": 11
+    },
+    {
+      "actorName": "Dan Aykroyd",
+      "character": "Harry Sultenfuss",
+      "actorActress": "2",
+      "age": 39
+    },
+    {
+      "actorName": "Jamie Lee Curtis",
+      "character": "Shelly DeVoto",
+      "actorActress": "1",
+      "age": 32
+    },
+    {
+      "actorName": "Richard Masur",
+      "character": "Phil Sultenfuss",
+      "actorActress": "2",
+      "age": 43
+    },
+    {
+      "actorName": "Griffin Dunne",
+      "character": "Mr. Jake Bixler",
+      "actorActress": "2",
+      "age": 36
+    },
+    {
+      "actorName": "Ann Nelson",
+      "character": "Gramoo Sultenfuss",
+      "actorActress": "1",
+      "age": 75
+    },
+    {
+      "actorName": "Peter Michael Goetz",
+      "character": "Dr. Welty",
+      "actorActress": "2",
+      "age": 49
+    },
+    {
+      "actorName": "Jane Hallaren",
+      "character": "Nurse Randall",
+      "actorActress": "1",
+      "age": 51
+    },
+    {
+      "actorName": "Anthony R. Jones",
+      "character": "Arthur",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tom Villard",
+      "character": "Justin",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lara Steinick",
+      "character": "Ronda",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kristian Truelsen",
+      "character": "Charles",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "David Caprita",
+      "character": "Ray",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jody Wilson",
+      "character": "Mrs. Hunsaker",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Linda Perri",
+      "character": "Betty",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Nancy L. Chlumsky",
+      "character": "Jackie"
+    },
+    {
+      "actorName": "Glenda Chism",
+      "character": "Thomas J.'s Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Bill Cordell",
+      "character": "Thomas J.'s Father",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ray Buktenica",
+      "character": "Danny",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Shane Obedzinski",
+      "character": "Billy",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Edgar Allan Poe IV",
+      "character": "Carnival Barker",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Anthony Giaimo",
+      "character": "Carnival Barker"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Howard Zieff",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Laurice Elehwany",
+        "gender": null
+      },
+      {
+        "job": "Producer",
+        "name": "Brian Grazer",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Paul Elliott",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Wendy Greene Bricmont",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "James Newton Howard",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Joseph T. Garrity",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Karen Patch",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mary Colquhoun",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Ellen Jacoby",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 0,
+        "m": 0,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Production": {
+        "w": 3,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 17000000,
+    "revenue": 59490000
+  },
+  "directors": [
+    {
+      "name": "Howard Zieff"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Laurice Elehwany"
+    }
+  ],
+  "awards": [
+    {
+      "name": "2 wins & 5 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-08T19:41:07.640Z",
+  "plot": "Vada Sultenfuss is an intelligent, bubbly, hypochondriacal 11-year-old girl. Her father, Harry (Dan Aykroyd), is a mortician and widower. Her best friend is Thomas J. Sennett. Then Harry hires a new receptionist named Shelly DeVoto, and life will never be the same again.",
+  "simplePlot": "Vada Sultenfuss is an intelligent, bubbly, hypochondriacal 11-year-old girl. Her father, Harry (Dan Aykroyd), is a mortician and widower. Her best friend is Thomas J. Sennett. Then Harry hires a new receptionist named Shelly DeVoto, and life will never be the same again.",
+  "year": 1991,
+  "releaseDate": "27 Nov 1991",
+  "rated": "PG",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BNmI5M2EzZDUtZTBkZS00YWFmLWFhZTMtNjc3YTllZDBhODQ4XkEyXkFqcGc@._V1_QL75_UY562_CR2,0,380,562_.jpg",
+  "idIMDB": "tt0102492",
+  "rating": "6.9",
+  "metascore": 56,
+  "urlIMDB": "https://www.imdb.com/title/tt0102492/"
+}

@@ -1,0 +1,4003 @@
+{
+  "_id": "tt0098084",
+  "title": "Pet Sematary",
+  "genres": [
+    "Fantasy",
+    "Horror",
+    "Thriller"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 6,
+    "numScenesDontPass": 626,
+    "numOfFemalesChars": 7,
+    "numOfMaleChars": 10,
+    "numOfFemalesCharsWithDialogue": 8,
+    "numOfMaleCharsWithDialogue": 13,
+    "totalLinesFemaleDialogue": 225,
+    "totalLinesMaleDialogue": 594,
+    "scenesThatPass": [
+      "RACHEL: It's gorgeous!\nELLIE: Am I really gonna have my own room?",
+      "ELLIE: Yaay!\nELLIE: Is that a swing?\nRACHEL: Yes, but the rope might be--\nELLIE: Yaay!",
+      "ELLIE: What's it say, mommy?\nRACHEL: It says Pet Cemetery, hon. It's misspelled, but...that's what it says.\nRACHEL: Ellen--!",
+      "RACHEL: I know what you just said. Ellie, clear your place.\nELLIE: I'm scared. What if school here isn't like in Chicago! I'm scared and I want to go h-h-home!",
+      "ELLIE: I don't want to go to Chicago, Gramma Dory.\nDORY: Why not, darling?\nELLIE: I had a bad dream last night. A nightmare."
+    ]
+  },
+  "script": {
+    "file": "pet-sematary.txt",
+    "layout": "indented",
+    "dialogueLines": 851,
+    "speakers": [
+      {
+        "name": "LOUIS",
+        "lines": 277,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JUD",
+        "lines": 171,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RACHEL",
+        "lines": 103,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "ELLIE",
+        "lines": 102,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SOUND",
+        "lines": 41,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PASCOW",
+        "lines": 28,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GAGE",
+        "lines": 21,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "IRWIN",
+        "lines": 21,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BILL",
+        "lines": 10,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STEVE",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MISSY",
+        "lines": 4,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "TIMMY",
+        "lines": 4,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TOLLING CONTINUES",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CHARLTON",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CHURCH",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CLERK",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DORY",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "PILOT",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TRUCKER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ALAN",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GATE AGENT",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "GIRL",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "IRWIN GOLDMAN",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JUD CRANDALL",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JUD'S MOM",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "RADIO",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SOUND BLEEDS IN",
+        "lines": 2,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "SOUNDS",
+        "lines": 2,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "BILL BATERMAN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BY",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CANDYSTRIPER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COP",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "DORY GOLDMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DRIVER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ELLEN",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "ELLIE CREED",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "FEMALE GATE AGENT",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "FIRST MOVER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GEORGE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GROWING SOUND",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HANNIBAL",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HERTZ CLERK",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOIS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LOUIS CREED",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOUIS RACHEL",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "MARCY",
+        "lines": 1,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MINISTER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "NEWSCASTER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SEATMATE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TIMME",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TOLLING CONCLUDES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {
+          "29": 1
+        }
+      },
+      {
+        "place": "A grave marker  summer day",
+        "lines": {}
+      },
+      {
+        "place": "Another grave marker",
+        "lines": {}
+      },
+      {
+        "place": "Two markers",
+        "lines": {}
+      },
+      {
+        "place": "Five or six markers",
+        "lines": {}
+      },
+      {
+        "place": "Angle on the pet sematary",
+        "lines": {}
+      },
+      {
+        "place": "The arch, from the path side, cu",
+        "lines": {}
+      },
+      {
+        "place": "A house in the country  evening",
+        "lines": {
+          "39": 1
+        }
+      },
+      {
+        "place": "Rear of the wagon",
+        "lines": {
+          "35": 1,
+          "43": 1
+        }
+      },
+      {
+        "place": "The wagon, a new angle",
+        "lines": {
+          "0": 4,
+          "2": 5,
+          "3": 4
+        }
+      },
+      {
+        "place": "The front seat, with rahel and gage",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The rear of the wagon, with louis",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie in the tire swing",
+        "lines": {}
+      },
+      {
+        "place": "The view up toward the woods, ellie's pov",
+        "lines": {}
+      },
+      {
+        "place": "Rachel and gage (front of the car)",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The rope and the branch, cu",
+        "lines": {}
+      },
+      {
+        "place": "Louis (rear of the car)",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie",
+        "lines": {
+          "3": 1,
+          "4": 1,
+          "44": 1
+        }
+      },
+      {
+        "place": "Ellie, rachel, louis, a closer shot",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Gage",
+        "lines": {
+          "4": 1,
+          "6": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "The road (gage's pov)",
+        "lines": {}
+      },
+      {
+        "place": "Gage, by the cat carrier",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Louis, rachel, ellie (at the swing)",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "The front of the wagon (rachel's pov)",
+        "lines": {}
+      },
+      {
+        "place": "Rachel, ellie, louis, by the swing",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Gage, at the edge of the road",
+        "lines": {}
+      },
+      {
+        "place": "Angle on the truck, cu",
+        "lines": {}
+      },
+      {
+        "place": "Gage",
+        "lines": {}
+      },
+      {
+        "place": "Gage and jud crandall",
+        "lines": {
+          "0": 3,
+          "1": 9,
+          "2": 4,
+          "3": 4,
+          "4": 1,
+          "6": 1,
+          "23": 1
+        }
+      },
+      {
+        "place": "A moving van",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Rachel and gage",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "0": 1,
+          "37": 1
+        }
+      },
+      {
+        "place": "Rachel and gage, at the head of the path",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "The creed house  night",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The living room  night",
+        "lines": {
+          "0": 4,
+          "2": 4,
+          "4": 1
+        }
+      },
+      {
+        "place": "The path of the crandall house  night",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The screened-in porch of the crandall house",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The porch, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The porch, a slightly wider shot",
+        "lines": {
+          "0": 6,
+          "1": 8,
+          "4": 1
+        }
+      },
+      {
+        "place": "Int.  the road (through the porch screen)",
+        "lines": {}
+      },
+      {
+        "place": "The porch, with louis and jud",
+        "lines": {
+          "0": 4,
+          "1": 4
+        }
+      },
+      {
+        "place": "Route 9  night",
+        "lines": {}
+      },
+      {
+        "place": "Church",
+        "lines": {}
+      },
+      {
+        "place": "Louis and church, at the head of the path",
+        "lines": {
+          "0": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "The road, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis and church",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "A kitchen blackboard, cu  day",
+        "lines": {}
+      },
+      {
+        "place": "At the top of the hill, with creeds and jud",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "The view",
+        "lines": {}
+      },
+      {
+        "place": "At the top of the hill, with jud and the creeds",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Forest  day",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "Jud and the creeds, on the path",
+        "lines": {
+          "1": 1,
+          "2": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie",
+        "lines": {}
+      },
+      {
+        "place": "Rachel, louis, jud",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ellie",
+        "lines": {}
+      },
+      {
+        "place": "Rachel, louis, jud",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie, at the edge of the sematary",
+        "lines": {}
+      },
+      {
+        "place": "Rachel, louis, jud",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "2": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie, on the deadfall",
+        "lines": {}
+      },
+      {
+        "place": "The grownups, at the arch",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Eliie, on the deadfall",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie's foot, cu",
+        "lines": {}
+      },
+      {
+        "place": "Ellie and jud",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Rachel, standing at the arch",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Louis, jud, ellie",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Rachel, standing at the arch",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Louis, jud, ellie--by the deadfall",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel at the arch (ellen in f.g.)",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Ellen",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Ellen, at the grave marker",
+        "lines": {
+          "34": 1
+        }
+      },
+      {
+        "place": "Jud and louis",
+        "lines": {
+          "0": 2,
+          "1": 7,
+          "3": 5
+        }
+      },
+      {
+        "place": "Rachel, outside the arch",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Louis, ellie, jud",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel and ellie",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "The arch, a new angle",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "The deadfall, from the arch",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen trash can  night",
+        "lines": {
+          "0": 2,
+          "3": 2
+        }
+      },
+      {
+        "place": "Just outside the kitchen door",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Louis and ellie",
+        "lines": {
+          "0": 2,
+          "3": 3
+        }
+      },
+      {
+        "place": "The hallway outside the kitchen, with rachel",
+        "lines": {}
+      },
+      {
+        "place": "Ellie's bedroom  night",
+        "lines": {}
+      },
+      {
+        "place": "The doorway, with rachel",
+        "lines": {}
+      },
+      {
+        "place": "Louis's and rachel's bedroom  night",
+        "lines": {
+          "0": 4,
+          "2": 4,
+          "4": 1
+        }
+      },
+      {
+        "place": "Route 9  night",
+        "lines": {}
+      },
+      {
+        "place": "Louis's and rachel's bedroom",
+        "lines": {}
+      },
+      {
+        "place": "Gage  morning",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen table, with ellie",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "The kitchen, a wider shot",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "By the kitchen door",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen table, with ellie and gage",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel and louis, by the sink",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ellie",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel and louis, by the sink",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ellie, by the cat carrier",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Louis and rachel, by the sink",
+        "lines": {
+          "0": 2,
+          "2": 3,
+          "3": 1
+        }
+      },
+      {
+        "place": "The kitchen, a new angle (features louis and rachel)",
+        "lines": {
+          "0": 4,
+          "2": 3,
+          "3": 2
+        }
+      },
+      {
+        "place": "Gage",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "The cat-carrier",
+        "lines": {}
+      },
+      {
+        "place": "The creed house  morning",
+        "lines": {}
+      },
+      {
+        "place": "Louis, rachel, and gage, in the front doorway",
+        "lines": {
+          "2": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "The bus",
+        "lines": {}
+      },
+      {
+        "place": "The creed driveway  morning",
+        "lines": {
+          "0": 3,
+          "10": 4
+        }
+      },
+      {
+        "place": "The side yard  morning",
+        "lines": {
+          "0": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Victor pascow and friends  morning",
+        "lines": {}
+      },
+      {
+        "place": "Nurse charlton, at the doors",
+        "lines": {
+          "13": 1
+        }
+      },
+      {
+        "place": "The infirmary reception area",
+        "lines": {
+          "0": 7,
+          "9": 2,
+          "13": 2,
+          "21": 2,
+          "30": 1
+        }
+      },
+      {
+        "place": "Louis and pascow, a closer shot",
+        "lines": {
+          "0": 3,
+          "5": 3,
+          "42": 1
+        }
+      },
+      {
+        "place": "Hallway entrance to reception, with steve",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Louis and pascow",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The main infirmary hallway",
+        "lines": {}
+      },
+      {
+        "place": "Louis, steve, pascow",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "A country road, late afternoon",
+        "lines": {
+          "25": 1
+        }
+      },
+      {
+        "place": "The car, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The station wagon",
+        "lines": {}
+      },
+      {
+        "place": "Louis, behind the wheel",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The creed house  night",
+        "lines": {}
+      },
+      {
+        "place": "The creed bedroom  night",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The doorway, with pascow",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Pascow",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Pascow",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The bed, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "The doorway, with louis",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "The kitchen",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "The shed/garage",
+        "lines": {
+          "0": 1,
+          "5": 2
+        }
+      },
+      {
+        "place": "The field behind the house, long  night",
+        "lines": {}
+      },
+      {
+        "place": "The pet sematary arch",
+        "lines": {}
+      },
+      {
+        "place": "Louis, close",
+        "lines": {}
+      },
+      {
+        "place": "The pet sematary, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The deadfall, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Pascow, close",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis and pascow",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "The deadfall",
+        "lines": {}
+      },
+      {
+        "place": "Pascow and louis",
+        "lines": {
+          "0": 2,
+          "5": 2,
+          "25": 1
+        }
+      },
+      {
+        "place": "Louis, in bed",
+        "lines": {
+          "0": 2,
+          "2": 2
+        }
+      },
+      {
+        "place": "Louis's feet, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {}
+      },
+      {
+        "place": "The laundry chute, cu",
+        "lines": {}
+      },
+      {
+        "place": "Louis, in the upstairs hall",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The creed living room  afternoon",
+        "lines": {
+          "0": 1,
+          "23": 1
+        }
+      },
+      {
+        "place": "The crandall living room, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The creed living room, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The crandall living room, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The creed living room, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The crandall house, medium-long",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The cat's body",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud, on the edge of the crandall lawn",
+        "lines": {
+          "0": 6,
+          "1": 5
+        }
+      },
+      {
+        "place": "The creed kitchen  morning",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The crandall lawn, with jud and louis",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "The start of the path to the pet sematary, long  evening",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "The pet sematary and the back of the arch  late evening",
+        "lines": {
+          "0": 7,
+          "1": 5
+        }
+      },
+      {
+        "place": "Their feet",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Louis's feet",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The deadfall, reverse  twilight",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Big god woods, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis, atop the deadfall",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis's feet",
+        "lines": {}
+      },
+      {
+        "place": "Louis, jud's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis, closer",
+        "lines": {}
+      },
+      {
+        "place": "Jud, at the base of the deadfall",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "Louis and jud, from the deadfall",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud, at the edge of little god swamp  twilight",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Little god swamp, louis's and jud's pov  deep twilight",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Jud, cu",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis, behind jud",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Angle on little god swamp, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Jud and louis, long angle  night",
+        "lines": {}
+      },
+      {
+        "place": "The far side of little god swamp  night",
+        "lines": {}
+      },
+      {
+        "place": "A low, stony bluff or steep hill",
+        "lines": {}
+      },
+      {
+        "place": "Jud and louis, a closer shot",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "The micmac burying ground, louis and jud's pov",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Louis and jud, at the edge of the burying ground",
+        "lines": {
+          "0": 5,
+          "1": 6
+        }
+      },
+      {
+        "place": "Looking down into a shallow hole  night",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "The micmac burying ground, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis and jud, by church's grave",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Louis, by the garbage bag",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The cairn, cu  night",
+        "lines": {}
+      },
+      {
+        "place": "Louis, by the cairn",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The creed house  night",
+        "lines": {}
+      },
+      {
+        "place": "Louis's field  night",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The creed's side yard, by the tire swing",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen door of the creed house, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The end of the path, with jud",
+        "lines": {}
+      },
+      {
+        "place": "The living room, with the phone",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The kitchen/living room doorway, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis, by the phone",
+        "lines": {}
+      },
+      {
+        "place": "Jud",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "The road, with jud",
+        "lines": {
+          "0": 1,
+          "27": 1,
+          "32": 1
+        }
+      },
+      {
+        "place": "Louis, in the living room  night",
+        "lines": {
+          "0": 5,
+          "2": 1,
+          "3": 5
+        }
+      },
+      {
+        "place": "The goldman living room, with ellie",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "The creed living room, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The goldman living room, with ellie",
+        "lines": {
+          "0": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "The creed lving room, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The creed house  morning",
+        "lines": {}
+      },
+      {
+        "place": "The garage, with louis",
+        "lines": {}
+      },
+      {
+        "place": "Church, ecu",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "On top of the station wagon, with church",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The side yard, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen stoop, with louis",
+        "lines": {
+          "0": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "The side of the house, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Church",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Church's neck, cu (louis's pov)",
+        "lines": {}
+      },
+      {
+        "place": "Louis and church, on the stoop",
+        "lines": {}
+      },
+      {
+        "place": "Louis's hand, ecu",
+        "lines": {}
+      },
+      {
+        "place": "Louis and church",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Jud crandall's garden, with jud",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The crandall kitchen",
+        "lines": {
+          "0": 4,
+          "1": 5
+        }
+      },
+      {
+        "place": "Jud, at the fridge",
+        "lines": {
+          "0": 1,
+          "1": 4
+        }
+      },
+      {
+        "place": "Jud as a boy, cu/sepia tone  day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Jud's kitchen, with jud and louis",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "The crandall back yard/sepia tone  day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Spot, closer/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The back stoop of the crandall house/sepia",
+        "lines": {}
+      },
+      {
+        "place": "Jud's mom/sepia (jud's pov)",
+        "lines": {
+          "24": 1
+        }
+      },
+      {
+        "place": "The boy jud/sepia",
+        "lines": {}
+      },
+      {
+        "place": "Jud's mom/sepia",
+        "lines": {
+          "24": 1
+        }
+      },
+      {
+        "place": "Jud and louis, in jud's kitchen",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "The road between the two houses, with louis and jud",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jud and louis, on the creed front lawn",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Bathtub fixtures, cu",
+        "lines": {}
+      },
+      {
+        "place": "The bathroom, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The bathtub spigots",
+        "lines": {}
+      },
+      {
+        "place": "Louis in the tub",
+        "lines": {}
+      },
+      {
+        "place": "By the kitchen sink, with rachel",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The kitchen table",
+        "lines": {
+          "0": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "The bathtub, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The creed kitchen table",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Rachel, at the kitchen sink",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The bathtub, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The creed kitchen table",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis, in the bathtub, cu",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The bathwater, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The toilet lid, with church",
+        "lines": {}
+      },
+      {
+        "place": "The bathroom",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "A delta",
+        "lines": {}
+      },
+      {
+        "place": "A deplaning area  day",
+        "lines": {}
+      },
+      {
+        "place": "Louis, outside the security point",
+        "lines": {}
+      },
+      {
+        "place": "The deplaning area, louis's pov",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Just outside the security point",
+        "lines": {
+          "0": 5,
+          "2": 1,
+          "3": 4
+        }
+      },
+      {
+        "place": "The creed kitchen, night",
+        "lines": {}
+      },
+      {
+        "place": "The creed living room, night",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "3": 3
+        }
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {
+          "0": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "A study desk, cu",
+        "lines": {}
+      },
+      {
+        "place": "The dandridge cellar, night",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The noose, cu",
+        "lines": {}
+      },
+      {
+        "place": "The dandridge house, night",
+        "lines": {
+          "4": 3
+        }
+      },
+      {
+        "place": "The cellar, with missy dandridge",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "In front of the grace methodist church  day",
+        "lines": {}
+      },
+      {
+        "place": "Louis and ellie, on the church steps",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "The church parking area",
+        "lines": {}
+      },
+      {
+        "place": "Ludlow cemetary  day",
+        "lines": {
+          "46": 1
+        }
+      },
+      {
+        "place": "Louis, ellie, jud",
+        "lines": {
+          "0": 6,
+          "1": 5,
+          "3": 1
+        }
+      },
+      {
+        "place": "The back seat of the wagon",
+        "lines": {
+          "0": 2,
+          "3": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "The station wagon, day",
+        "lines": {}
+      },
+      {
+        "place": "Tv screen, cu  night",
+        "lines": {
+          "3": 1,
+          "47": 1
+        }
+      },
+      {
+        "place": "The creed living room  night",
+        "lines": {
+          "0": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "The kitchen, with rachel",
+        "lines": {}
+      },
+      {
+        "place": "The living room, with louis and ellie",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel, at the door",
+        "lines": {}
+      },
+      {
+        "place": "Louis and ellie, in the living room",
+        "lines": {
+          "0": 3,
+          "3": 3
+        }
+      },
+      {
+        "place": "The living room sofa, with church, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis and ellie",
+        "lines": {
+          "0": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel, at the kitchen door",
+        "lines": {}
+      },
+      {
+        "place": "Louis and ellie",
+        "lines": {
+          "0": 3,
+          "3": 2
+        }
+      },
+      {
+        "place": "Rachel, at the door",
+        "lines": {}
+      },
+      {
+        "place": "Louis and ellie",
+        "lines": {
+          "0": 4,
+          "3": 3
+        }
+      },
+      {
+        "place": "Louis and rachel's bedroom",
+        "lines": {
+          "0": 5,
+          "2": 6,
+          "4": 1
+        }
+      },
+      {
+        "place": "The grille of a truck  day",
+        "lines": {}
+      },
+      {
+        "place": "The truck, a new angle",
+        "lines": {
+          "22": 1
+        }
+      },
+      {
+        "place": "The orinco shipping yard  day",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "A funeral chapel, with irwin goldman and louis  day",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "The front of the funeral chapel  day",
+        "lines": {}
+      },
+      {
+        "place": "Irwin and louis  day",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "Route 9, w/truck  day",
+        "lines": {}
+      },
+      {
+        "place": "A kite, cu",
+        "lines": {}
+      },
+      {
+        "place": "The field beside the creed house, with louis",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "A picnic table  day",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Louis, running with the kite",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The funeral chapel, with louis and irwin",
+        "lines": {}
+      },
+      {
+        "place": "The back of the chapel, with rachel and dory goldman",
+        "lines": {}
+      },
+      {
+        "place": "Louis and irwin",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "The cab of the orinco truck  day",
+        "lines": {}
+      },
+      {
+        "place": "Route 9, trucker's pov",
+        "lines": {}
+      },
+      {
+        "place": "The tucker's foot",
+        "lines": {}
+      },
+      {
+        "place": "The oncoming truck",
+        "lines": {}
+      },
+      {
+        "place": "The sky, with the kite",
+        "lines": {}
+      },
+      {
+        "place": "Louis, in the field",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The picnic table",
+        "lines": {}
+      },
+      {
+        "place": "Route 9 with the orinco tanker",
+        "lines": {}
+      },
+      {
+        "place": "The field, with louis and gage",
+        "lines": {
+          "0": 2,
+          "6": 2
+        }
+      },
+      {
+        "place": "The kite",
+        "lines": {}
+      },
+      {
+        "place": "Louis and gage",
+        "lines": {
+          "0": 2,
+          "6": 1
+        }
+      },
+      {
+        "place": "The kite",
+        "lines": {
+          "22": 1
+        }
+      },
+      {
+        "place": "The funeral chapel, with louis and irwin",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "The rear of the chapel, featuring rachel and dory",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Louis and irwin",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "Angle on the other mourners",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Louis and irwin",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "Irwin goldman",
+        "lines": {}
+      },
+      {
+        "place": "Rachel and dory",
+        "lines": {}
+      },
+      {
+        "place": "Angle on mourners, with marcy and steve",
+        "lines": {
+          "45": 1
+        }
+      },
+      {
+        "place": "The front of the chapel, with irwin",
+        "lines": {
+          "7": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "The front pew, with pascow and church",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {}
+      },
+      {
+        "place": "The cab of the tanker",
+        "lines": {}
+      },
+      {
+        "place": "The gas pedal",
+        "lines": {}
+      },
+      {
+        "place": "Louis and gage with the kite, in the field",
+        "lines": {}
+      },
+      {
+        "place": "Louis and gage, a new angle (kite's pov)",
+        "lines": {}
+      },
+      {
+        "place": "The picnic table, with rachel, ellie, and jud",
+        "lines": {
+          "2": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Louis and gage",
+        "lines": {
+          "7": 1
+        }
+      },
+      {
+        "place": "The funeral chapel",
+        "lines": {
+          "0": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Louis and gage, in the field",
+        "lines": {}
+      },
+      {
+        "place": "The picnic table",
+        "lines": {
+          "2": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "The ball of kite twine",
+        "lines": {}
+      },
+      {
+        "place": "Gage",
+        "lines": {
+          "4": 1,
+          "6": 1
+        }
+      },
+      {
+        "place": "The truck",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The picnic table",
+        "lines": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Gage",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The picnic table",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Gage, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Gage, running into the road",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Everyone, kite's pov",
+        "lines": {}
+      },
+      {
+        "place": "Gage, in the road",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "The oncoming truck and the driver, gage's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis, on the verge of the road",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Gage",
+        "lines": {}
+      },
+      {
+        "place": "Photo montage",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The kitchen table, with louis",
+        "lines": {
+          "0": 1,
+          "1": 2
+        }
+      },
+      {
+        "place": "Ellie",
+        "lines": {}
+      },
+      {
+        "place": "Jud and louis, at the table",
+        "lines": {
+          "0": 1,
+          "1": 4,
+          "3": 5
+        }
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {}
+      },
+      {
+        "place": "Ellie's bedroom  night",
+        "lines": {
+          "0": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Ellie, cu",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Louis, at the door",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ellie, in bed",
+        "lines": {}
+      },
+      {
+        "place": "The upstairs hall, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The master bedroom, with louis",
+        "lines": {}
+      },
+      {
+        "place": "Louis and rachel's bed, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "The bed, a new angle",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Church, cu",
+        "lines": {}
+      },
+      {
+        "place": "Louis, by the bed",
+        "lines": {}
+      },
+      {
+        "place": "The upstairs hall, with louis",
+        "lines": {}
+      },
+      {
+        "place": "On the stairs, cu",
+        "lines": {}
+      },
+      {
+        "place": "On the stairs with louis, wider",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen, with jud and louis and church",
+        "lines": {
+          "0": 5,
+          "1": 7
+        }
+      },
+      {
+        "place": "Jud, cu",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "A country railroad station/sepia  day",
+        "lines": {}
+      },
+      {
+        "place": "The hearse, with undertaker and bill baterman/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The train, in front of the depot/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The rear of the hearse/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The creed kitchen, with louis and jud  night",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "The ludlow cemetary/sepia  dusk",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Bill baterman at the back of his truck/sepia  dusk",
+        "lines": {}
+      },
+      {
+        "place": "Margie washburn, on her porch/sepia  day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "A country dirt road, with timmy baterman/sepia  day",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Margie/sepia",
+        "lines": {}
+      },
+      {
+        "place": "Timmy/sepia",
+        "lines": {}
+      },
+      {
+        "place": "In front of the ludlow town offices, with margie/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The town offices, with margie/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The selectmen's office/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The baterman place/sepia  sunset",
+        "lines": {
+          "1": 1,
+          "4": 1,
+          "26": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "The back yard, with bill and timmy/sepia",
+        "lines": {}
+      },
+      {
+        "place": "The back yard, a new angle/sepia",
+        "lines": {
+          "1": 2,
+          "8": 5,
+          "11": 1,
+          "19": 1,
+          "38": 1,
+          "40": 1
+        }
+      },
+      {
+        "place": "Timmy baterman/sepia",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "The entire group/sepia",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "The four men/sepia",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Bill and timmy baterman/sepia",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Timmy baterman, cu/sepia",
+        "lines": {}
+      },
+      {
+        "place": "The creed kitchen, with louis and jud",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The baterman place--montage  night",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The baterman porch  night",
+        "lines": {
+          "1": 1,
+          "8": 2,
+          "11": 1
+        }
+      },
+      {
+        "place": "The baterman place--montage  night",
+        "lines": {}
+      },
+      {
+        "place": "The baterman place  night",
+        "lines": {}
+      },
+      {
+        "place": "The men",
+        "lines": {
+          "1": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "The front door",
+        "lines": {
+          "8": 1,
+          "49": 1
+        }
+      },
+      {
+        "place": "The front hall, with timmy",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "The front yard  night",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen, with louis and jud",
+        "lines": {
+          "1": 1,
+          "26": 1
+        }
+      },
+      {
+        "place": "Bangor international terminal  day",
+        "lines": {
+          "20": 1
+        }
+      },
+      {
+        "place": "A boarding gate, with louis and rachel",
+        "lines": {
+          "0": 3,
+          "2": 2,
+          "20": 1
+        }
+      },
+      {
+        "place": "The goldmans, with ellie",
+        "lines": {
+          "3": 4,
+          "7": 1,
+          "16": 1
+        }
+      },
+      {
+        "place": "Rachel and louis",
+        "lines": {
+          "0": 4,
+          "3": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Ellie, cu",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Louis and ellie",
+        "lines": {
+          "0": 3,
+          "3": 2
+        }
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {}
+      },
+      {
+        "place": "The airport parking lot, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The terminal,, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis, in the parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Route 15 in brewer",
+        "lines": {}
+      },
+      {
+        "place": "The hardware store counter, cu",
+        "lines": {}
+      },
+      {
+        "place": "Louis and clerk (small pun, hee-hee)",
+        "lines": {
+          "0": 2,
+          "15": 2
+        }
+      },
+      {
+        "place": "A united jetliner, with ellie and rachel",
+        "lines": {}
+      },
+      {
+        "place": "Jetliner, slightly wider",
+        "lines": {
+          "2": 1,
+          "3": 2
+        }
+      },
+      {
+        "place": "Ludlow cemetary  day",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Gage, in the field",
+        "lines": {}
+      },
+      {
+        "place": "Louis, by gage's grave",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "A tomb, louis's pov",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Louis, by gage's grave",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Pascow",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Louis, by gage's grave",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Pascow, by the tomb",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The tomb, sans pascow",
+        "lines": {}
+      },
+      {
+        "place": "Louis, by gage's grave",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Upstairs hall  night",
+        "lines": {
+          "2": 5,
+          "3": 5
+        }
+      },
+      {
+        "place": "The upstairs hallway",
+        "lines": {
+          "2": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "The creed home in ludlow  night",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The goldman living room  night",
+        "lines": {
+          "2": 1,
+          "16": 1
+        }
+      },
+      {
+        "place": "The crandall house  night",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The crandall kitchen, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The goldman living room, with rachel",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "The crandall kitchen, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The goldman living room",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "The crandall kitchen, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The goldman living room, with rachel",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "The crandall kitchen, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The front hall of the goldman house",
+        "lines": {
+          "2": 2,
+          "3": 1,
+          "7": 2,
+          "16": 1
+        }
+      },
+      {
+        "place": "Ellie, on the stairs",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Rachel and the goldmans",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Ludlow cemetery  night",
+        "lines": {}
+      },
+      {
+        "place": "Ludlow cemetery, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The goldman car, with rachel and irwin",
+        "lines": {
+          "2": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "O'hare united airlines terminal, with irwin's car",
+        "lines": {}
+      },
+      {
+        "place": "The grave of gage creed",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The shovel, cu",
+        "lines": {}
+      },
+      {
+        "place": "Jetliner, with rachel",
+        "lines": {
+          "4": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "Gage's grave  night",
+        "lines": {}
+      },
+      {
+        "place": "Louis  night",
+        "lines": {}
+      },
+      {
+        "place": "In the grave, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The crandall porch",
+        "lines": {}
+      },
+      {
+        "place": "The creed house, jud's pov",
+        "lines": {}
+      },
+      {
+        "place": "The crandall porch, with jud",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The road outside of the cemetery",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The police car",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The top of the coffin, cu",
+        "lines": {}
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {}
+      },
+      {
+        "place": "Rachel and her seatmate",
+        "lines": {
+          "2": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Louis, by gage's grave",
+        "lines": {}
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jud crandall, on his porch",
+        "lines": {}
+      },
+      {
+        "place": "The graveyard, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The ground beside the tarp, cu",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Jetliner in the night sky",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "The jetliner, with rachel",
+        "lines": {
+          "2": 1,
+          "17": 1
+        }
+      },
+      {
+        "place": "The graveyard, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The road",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The police car",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The cop",
+        "lines": {
+          "31": 1
+        }
+      },
+      {
+        "place": "Louis, behind the wall",
+        "lines": {}
+      },
+      {
+        "place": "The street side of the wall, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The rear of the wagon, with louis",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Passing car",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Ignition, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "A jetway at logan international",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "The concourse, with rachel",
+        "lines": {}
+      },
+      {
+        "place": "Gate 27, with female gate agent and pascow",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Ext.  the jet plane, through the gate windows",
+        "lines": {}
+      },
+      {
+        "place": "Rachel and female gate agent (pascow is gone)",
+        "lines": {
+          "2": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "The jetway  night",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The jet, rachel's pov",
+        "lines": {}
+      },
+      {
+        "place": "Rachel",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Jud crandall, on his porch",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The creed house",
+        "lines": {}
+      },
+      {
+        "place": "The path to the pet sematary, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Jud, on his porch",
+        "lines": {}
+      },
+      {
+        "place": "Outside the arch to the pet sematary, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The pet sematary, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis, a new angle",
+        "lines": {}
+      },
+      {
+        "place": "The foot of the dedfall, woods side",
+        "lines": {}
+      },
+      {
+        "place": "The woods, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis, at the edge of little god swamp",
+        "lines": {}
+      },
+      {
+        "place": "The hertz desk, at bia with rachel and clerk--and pascow",
+        "lines": {
+          "2": 1,
+          "5": 1,
+          "15": 1,
+          "41": 1
+        }
+      },
+      {
+        "place": "Louis, in little god swamp",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Mist-face, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Little god swamp, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis's feet",
+        "lines": {}
+      },
+      {
+        "place": "Louis, looking down",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis's feet",
+        "lines": {}
+      },
+      {
+        "place": "Louis, in little god swamp",
+        "lines": {}
+      },
+      {
+        "place": "Woods",
+        "lines": {
+          "4": 2
+        }
+      },
+      {
+        "place": "Woods, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The woods--and the shape, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Louis, a new angle",
+        "lines": {}
+      },
+      {
+        "place": "The forest floor, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The micmac burying ground",
+        "lines": {
+          "4": 2
+        }
+      },
+      {
+        "place": "A broken cairn and the grave beneath, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "A country road, with an aries k",
+        "lines": {}
+      },
+      {
+        "place": "The aries k with rachel and pascow",
+        "lines": {}
+      },
+      {
+        "place": "The aries k",
+        "lines": {}
+      },
+      {
+        "place": "Rachel",
+        "lines": {}
+      },
+      {
+        "place": "Rachel",
+        "lines": {
+          "2": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "Gage's cairn, cu",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Rachel, on route",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "The field beside louis's house",
+        "lines": {}
+      },
+      {
+        "place": "The garage",
+        "lines": {}
+      },
+      {
+        "place": "The upstairs hall",
+        "lines": {}
+      },
+      {
+        "place": "The bedroom",
+        "lines": {}
+      },
+      {
+        "place": "The micmac burying ground, featuring gage's cairn",
+        "lines": {}
+      },
+      {
+        "place": "The creed bedroom, with louis",
+        "lines": {}
+      },
+      {
+        "place": "Rachel",
+        "lines": {}
+      },
+      {
+        "place": "The deadfall in the pet sematary",
+        "lines": {
+          "27": 1
+        }
+      },
+      {
+        "place": "Rachel",
+        "lines": {}
+      },
+      {
+        "place": "Rachel and the truck",
+        "lines": {
+          "2": 1,
+          "33": 1
+        }
+      },
+      {
+        "place": "The creed kitchen, with church",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The kitchen, a new (low) angle",
+        "lines": {}
+      },
+      {
+        "place": "The bedroom, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The orinco truck, on route 9  night",
+        "lines": {}
+      },
+      {
+        "place": "The cab, with rachel and driver",
+        "lines": {
+          "2": 3,
+          "18": 2
+        }
+      },
+      {
+        "place": "Jud, on his porch",
+        "lines": {}
+      },
+      {
+        "place": "The living room, with jud",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "A sony radio, cu",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The hall, with jud",
+        "lines": {
+          "1": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Jud's bedroom",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "The bedroom, with jud",
+        "lines": {
+          "1": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "Jud, by the bed",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Jud's feet",
+        "lines": {}
+      },
+      {
+        "place": "Jud",
+        "lines": {}
+      },
+      {
+        "place": "Jud's feet",
+        "lines": {}
+      },
+      {
+        "place": "Jud",
+        "lines": {}
+      },
+      {
+        "place": "Jud and gage",
+        "lines": {}
+      },
+      {
+        "place": "Route 9, between the crandall and creed houses",
+        "lines": {}
+      },
+      {
+        "place": "Angle on the cab",
+        "lines": {
+          "2": 2,
+          "5": 2,
+          "6": 2,
+          "18": 1
+        }
+      },
+      {
+        "place": "Jud's house, rachel's pov",
+        "lines": {}
+      },
+      {
+        "place": "Rachel",
+        "lines": {
+          "2": 3,
+          "6": 2,
+          "14": 1
+        }
+      },
+      {
+        "place": "The creed bedroom, with louis",
+        "lines": {}
+      },
+      {
+        "place": "Louis, on the floor",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Gage's tracks on the bedroom floor, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The doctor-bag",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The hall, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Gage's room, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis, on the stairs",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen, with louis",
+        "lines": {
+          "0": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "The floor, with two sets of gage-tracks, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen, with louis",
+        "lines": {
+          "0": 4,
+          "7": 5
+        }
+      },
+      {
+        "place": "The crandall living room, with the phone",
+        "lines": {}
+      },
+      {
+        "place": "The creed kitchen",
+        "lines": {
+          "0": 3,
+          "6": 2
+        }
+      },
+      {
+        "place": "The creed bed, cu",
+        "lines": {}
+      },
+      {
+        "place": "The bedroom, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The front door of the creed house",
+        "lines": {}
+      },
+      {
+        "place": "The crandall walk, with louis",
+        "lines": {}
+      },
+      {
+        "place": "Church, louis\"s pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Church",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Church",
+        "lines": {}
+      },
+      {
+        "place": "Angle on louis and church",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Church, cu",
+        "lines": {}
+      },
+      {
+        "place": "Church and louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The tote-bag, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Church, on the path, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "Louis, on the porch",
+        "lines": {}
+      },
+      {
+        "place": "The foyer of the crandall home, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "A shoe, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "The stairs, louis's pov",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Louis, at the foot of the stairs",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "The stairs",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Upstairs, with louis",
+        "lines": {}
+      },
+      {
+        "place": "Jud's room, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The floor, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "The hallway, with louis",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Ceiling trapdoor",
+        "lines": {}
+      },
+      {
+        "place": "Louis",
+        "lines": {}
+      },
+      {
+        "place": "The trapdoor, with gage",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Louis and gage",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Rachel, louis's pov",
+        "lines": {}
+      },
+      {
+        "place": "The back yard of the crandall house",
+        "lines": {}
+      },
+      {
+        "place": "The kitchen, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The back lawn, with louis",
+        "lines": {}
+      },
+      {
+        "place": "The front of the crandall house, from across the road",
+        "lines": {}
+      },
+      {
+        "place": "The smouldering ruins of the crandall house  night",
+        "lines": {
+          "12": 1
+        }
+      },
+      {
+        "place": "The kitchen table, with louis",
+        "lines": {
+          "0": 1,
+          "4": 3,
+          "12": 2
+        }
+      },
+      {
+        "place": "The card",
+        "lines": {
+          "12": 1
+        }
+      },
+      {
+        "place": "Louis, cu",
+        "lines": {
+          "2": 1,
+          "50": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 3,
+      "longestWithoutWoman": 80,
+      "longestWithoutWomanStart": 298,
+      "words": {
+        "w": 1815,
+        "m": 5566,
+        "unknown": 332
+      },
+      "womenConversations": 15,
+      "menConversations": 70,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/xWq3T9P4NU2pTdZ3hXFygsNnAq4.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/8ZtH1V4rhrtP53ezlEWrCaMALXF.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Dale Midkiff",
+      "character": "Louis Creed",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Fred Gwynne",
+      "character": "Jud Crandall",
+      "actorActress": "2",
+      "age": 62
+    },
+    {
+      "actorName": "Denise Crosby",
+      "character": "Rachel Creed",
+      "actorActress": "1",
+      "age": 31
+    },
+    {
+      "actorName": "Brad Greenquist",
+      "character": "Victor Pascow",
+      "actorActress": "2",
+      "age": 29
+    },
+    {
+      "actorName": "Michael Lombard",
+      "character": "Irwin Goldman",
+      "actorActress": "2",
+      "age": 54
+    },
+    {
+      "actorName": "Miko Hughes",
+      "character": "Gage Creed",
+      "actorActress": "2",
+      "age": 3
+    },
+    {
+      "actorName": "Blaze Berdahl",
+      "character": "Ellie Creed",
+      "actorActress": "1",
+      "age": 8
+    },
+    {
+      "actorName": "Susan Blommaert",
+      "character": "Missy Dandridge",
+      "actorActress": "1",
+      "age": 41
+    },
+    {
+      "actorName": "Mara Clark",
+      "character": "Marcy Charlton",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kavi Raz",
+      "character": "Steve Masterton",
+      "actorActress": "2",
+      "age": 36
+    },
+    {
+      "actorName": "Mary Louise Wilson",
+      "character": "Dory Goldman",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Andrew Hubatsek",
+      "character": "Zelda",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Liz Davies",
+      "character": "Girl at Infirmary",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Kara Dalke",
+      "character": "Candystriper"
+    },
+    {
+      "actorName": "Lisa Stathoplos",
+      "character": "Jud's Mother"
+    },
+    {
+      "actorName": "Stephen King",
+      "character": "Minister",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Elizabeth Ureneck",
+      "character": "Rachel as a Child",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Chuck Courtney",
+      "character": "Bill Baterman",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Stader",
+      "character": "Timmy Baterman",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Mary Lambert",
+        "gender": "w"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Stephen King",
+        "gender": "m"
+      },
+      {
+        "job": "Novel",
+        "name": "Stephen King",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Richard P. Rubinstein",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Peter Stein",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Mike Hill",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Daniel P. Hanley",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Elliot Goldenthal",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Michael Z. Hanan",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Marlene Stewart",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Fern Champion",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Pamela Basker",
+        "gender": null
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 3,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 3,
+        "m": 5,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Sound": {
+        "w": 0,
+        "m": 9,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Camera": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Editing": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Art": {
+        "w": 2,
+        "m": 4,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Crew": {
+        "w": 2,
+        "m": 5,
+        "nb": 0,
+        "unknown": 3
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      }
+    }
+  },
+  "money": {
+    "budget": 11500000,
+    "revenue": 57500000
+  },
+  "directors": [
+    {
+      "name": "Mary Lambert"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Stephen King"
+    }
+  ],
+  "awards": [
+    {
+      "name": "1 win & 6 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-08T19:41:30.411Z",
+  "plot": "Eager to start afresh, the young doctor, Louis Creed, and his family--his wife, Rachel, their daughter, Ellie, and their two-year-old toddler, Gage--move to their new home in the small rural town of Ludlow, Maine, alarmingly close to a busy highway. However, after the inadvertent death of Rachel's cherished tomcat in an awful accident, reluctantly, a desperate Louis will take his friendly neighbor's advice to bury it in an ancient Micmac graveyard: a mystical burial ground imbued with alleged reanimating powers. Now, despite the terrible results and the insistent warnings from a recently deceased, tragedy-stricken Louis has no other choice but to go back to the Indian cemetery, in high hopes that, this time, things will be different. Nevertheless, can the dead truly return from the grave?",
+  "simplePlot": "Eager to start afresh, the young doctor, Louis Creed, and his family--his wife, Rachel, their daughter, Ellie, and their two-year-old toddler, Gage--move to their new home in the small rural town of Ludlow, Maine, alarmingly close to a busy highway. However, after the inadvertent death of Rachel's cherished tomcat in an awful accident, reluctantly, a desperate Louis will take his friendly neighbor's advice to bury it in an ancient Micmac graveyard: a mystical burial ground imbued with alleged reanimating powers. Now, despite the terrible results and the insistent warnings from a recently deceased, tragedy-stricken Louis has no other choice but to go back to the Indian cemetery, in high hopes that, this time, things will be different. Nevertheless, can the dead truly return from the grave?",
+  "year": 1989,
+  "releaseDate": "21 Apr 1989",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BZTEyYWIyZWYtMTM5OC00M2ZmLWI5NzMtZjA0ZTI4MTQ4ZDZkXkEyXkFqcGc@._V1_QL75_UX380_CR0,9,380,562_.jpg",
+  "idIMDB": "tt0098084",
+  "rating": "6.5",
+  "metascore": 38,
+  "urlIMDB": "https://www.imdb.com/title/tt0098084/"
+}

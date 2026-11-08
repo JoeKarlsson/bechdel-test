@@ -1,0 +1,1389 @@
+{
+  "_id": "tt2053425",
+  "title": "Rust and Bone",
+  "genres": [
+    "Drama",
+    "Romance"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 6,
+    "numScenesDontPass": 138,
+    "numOfFemalesChars": 9,
+    "numOfMaleChars": 12,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 6,
+    "totalLinesFemaleDialogue": 354,
+    "totalLinesMaleDialogue": 459,
+    "scenesThatPass": [
+      "STEPHANIE: What... What happened?\nLOUISE: Tom and Niska... They got in each other's way. Then Louise sees blood spurting from the rips in her diving suit. She tries to find a pressur…\nSTEPHANIE: Stop it, calm down. I'm fine! Her hand searches for something at thigh level, without finding it. She faints.",
+      "LOUISE: Help! Help! Please! On the linoleum, two stumps stick out of Stephanie's nightshirt: two thick bandages surround her thighs that look like t…\nSTEPHANIE: My legs! What did you do with my legs? Two nurses arrive. Stephanie is back in bed, the IVs in her arms. Louise rocks her gently. Stephanie'…",
+      "LOUISE: Steph! Made up and well-groomed, she looks older than she actually is. Stephanie answers from the bathroom.\nSTEPHANIE: I'm in here! Louise puts the mail on the living room table and enters the bedroom. Stephanie wheels herself out of the bathroom, her hair we…\nLOUISE: Shit, you're not ready! The appointment is in a half hour!\nSTEPHANIE: It's fine!",
+      "STEPHANIE: I can do the seat belt! In front of the open trunk, Louise struggles to fold the wheelchair.\nLOUISE: Can't you call them to tell them we're going to be late?",
+      "STEPHANIE: Or just a plank. A plank with wheels and straps. And irons to move forward with.\nLOUISE: Can you cut it out?\nSTEPHANIE: What? If I want...\nLOUISE: I've had enough of your schtick, you hear me?"
+    ]
+  },
+  "script": {
+    "file": "rust-and-bone.txt",
+    "layout": "indented",
+    "dialogueLines": 862,
+    "speakers": [
+      {
+        "name": "ALI",
+        "lines": 308,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "STEPHANIE",
+        "lines": 273,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MARTIAL",
+        "lines": 56,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ANNA",
+        "lines": 47,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SAM",
+        "lines": 32,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOUISE",
+        "lines": 26,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "RICHARD",
+        "lines": 22,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SIMON",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COUSIN",
+        "lines": 13,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "OWNER",
+        "lines": 11,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FOUED",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GILLES",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GUY",
+        "lines": 6,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "KADHI",
+        "lines": 5,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "WOMAN",
+        "lines": 4,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "JOELLE",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VITIAS",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ANGRY MAN",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "COLLEAGUE",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "CU",
+        "lines": 2,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "MOTHER",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "NURSE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "RAPHAEL",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "STEPH",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "UNION REP",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "HOMEBOY 1",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LEONARDINI",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SAY ANYTHING",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SECURITY GUARD",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "THE CAUCASIAN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TRAINER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Northwest landscapes. day",
+        "lines": {
+          "0": 3
+        }
+      },
+      {
+        "place": "Train.day",
+        "lines": {
+          "0": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Tgv. day",
+        "lines": {}
+      },
+      {
+        "place": "Tgv. day",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Cannes street. day",
+        "lines": {
+          "0": 2,
+          "4": 1
+        }
+      },
+      {
+        "place": "Cannes street. day",
+        "lines": {}
+      },
+      {
+        "place": "Richard's truck. day",
+        "lines": {
+          "0": 1,
+          "4": 4,
+          "6": 4
+        }
+      },
+      {
+        "place": "Suburban kitchen. day",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Suburban home. day",
+        "lines": {
+          "0": 4,
+          "3": 7,
+          "4": 1
+        }
+      },
+      {
+        "place": "Garden. evening",
+        "lines": {
+          "0": 5,
+          "3": 7
+        }
+      },
+      {
+        "place": "Basement. night",
+        "lines": {}
+      },
+      {
+        "place": "Electronic goods shop. day",
+        "lines": {}
+      },
+      {
+        "place": "Antibes streets. day",
+        "lines": {
+          "0": 1,
+          "28": 1
+        }
+      },
+      {
+        "place": "Antibes streets. day",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Alleyway. day",
+        "lines": {}
+      },
+      {
+        "place": "Antibes",
+        "lines": {
+          "0": 5,
+          "4": 4
+        }
+      },
+      {
+        "place": "Office",
+        "lines": {
+          "0": 8,
+          "9": 11
+        }
+      },
+      {
+        "place": "Alta security office. day",
+        "lines": {}
+      },
+      {
+        "place": "Fever ray. night",
+        "lines": {
+          "0": 6,
+          "1": 5,
+          "10": 3,
+          "17": 2,
+          "29": 1
+        }
+      },
+      {
+        "place": "Stephanie's car. night",
+        "lines": {
+          "0": 12,
+          "1": 12
+        }
+      },
+      {
+        "place": "Simon & stephanie's building. night",
+        "lines": {
+          "0": 6,
+          "1": 7
+        }
+      },
+      {
+        "place": "Simon & stephanie's apartment. night",
+        "lines": {
+          "0": 8,
+          "1": 10,
+          "7": 11
+        }
+      },
+      {
+        "place": "Simon & stephanie's apartment",
+        "lines": {
+          "1": 5,
+          "7": 4
+        }
+      },
+      {
+        "place": "Marineland. trainers' office. day",
+        "lines": {
+          "1": 5,
+          "5": 5,
+          "30": 1
+        }
+      },
+      {
+        "place": "Marineland. pool",
+        "lines": {}
+      },
+      {
+        "place": "Marineland. day",
+        "lines": {}
+      },
+      {
+        "place": "Marineland pool. day",
+        "lines": {}
+      },
+      {
+        "place": "Marineland",
+        "lines": {
+          "1": 2,
+          "5": 1
+        }
+      },
+      {
+        "place": "Road to the beach. day",
+        "lines": {}
+      },
+      {
+        "place": "Anna's house. day",
+        "lines": {
+          "0": 7,
+          "4": 1,
+          "15": 3
+        }
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Hospital room. night",
+        "lines": {
+          "1": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Hospital room. day/night",
+        "lines": {
+          "5": 1,
+          "20": 2
+        }
+      },
+      {
+        "place": "Marineland. night",
+        "lines": {}
+      },
+      {
+        "place": "Stephanie's new apartment",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {}
+      },
+      {
+        "place": "Gilles' car. evening",
+        "lines": {
+          "1": 5,
+          "11": 8,
+          "22": 2
+        }
+      },
+      {
+        "place": "Int. hyperbrico. night",
+        "lines": {}
+      },
+      {
+        "place": "Hyperbrico. night",
+        "lines": {
+          "0": 3,
+          "2": 2,
+          "13": 3
+        }
+      },
+      {
+        "place": "Hyperbrico",
+        "lines": {}
+      },
+      {
+        "place": "Hyperbrico",
+        "lines": {
+          "0": 5,
+          "2": 8
+        }
+      },
+      {
+        "place": "Supermarket",
+        "lines": {
+          "0": 7,
+          "1": 9
+        }
+      },
+      {
+        "place": "Antibes",
+        "lines": {}
+      },
+      {
+        "place": "Stephanie's residence",
+        "lines": {}
+      },
+      {
+        "place": "Stephanie's apartment. day",
+        "lines": {
+          "0": 15,
+          "1": 15
+        }
+      },
+      {
+        "place": "Stephanie's residence",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "Sidewalk cafe",
+        "lines": {
+          "0": 6,
+          "1": 5
+        }
+      },
+      {
+        "place": "Private beach. day",
+        "lines": {
+          "0": 5,
+          "1": 10
+        }
+      },
+      {
+        "place": "Gym. day",
+        "lines": {}
+      },
+      {
+        "place": "Gym",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Gym",
+        "lines": {}
+      },
+      {
+        "place": "Gym",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Nusery school",
+        "lines": {}
+      },
+      {
+        "place": "Antibes evening",
+        "lines": {}
+      },
+      {
+        "place": "Stephanie's apartment. day",
+        "lines": {
+          "1": 3,
+          "5": 4
+        }
+      },
+      {
+        "place": "Stéphanie's residence. day",
+        "lines": {
+          "1": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Prosthesist's office. day",
+        "lines": {
+          "1": 5,
+          "5": 3,
+          "16": 3
+        }
+      },
+      {
+        "place": "Prosthesist's office. day",
+        "lines": {
+          "1": 3,
+          "5": 2,
+          "21": 1
+        }
+      },
+      {
+        "place": "Hyperbrico",
+        "lines": {
+          "13": 2
+        }
+      },
+      {
+        "place": "Projects. day",
+        "lines": {
+          "0": 4,
+          "2": 5,
+          "8": 4
+        }
+      },
+      {
+        "place": "Living room. day",
+        "lines": {
+          "0": 9,
+          "3": 2,
+          "4": 2
+        }
+      },
+      {
+        "place": "Arab café. day",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Living room. day",
+        "lines": {
+          "0": 7,
+          "3": 5,
+          "4": 2
+        }
+      },
+      {
+        "place": "Beach. day",
+        "lines": {
+          "0": 11,
+          "1": 12
+        }
+      },
+      {
+        "place": "Int. martial's mercedes. day",
+        "lines": {
+          "2": 1,
+          "25": 1
+        }
+      },
+      {
+        "place": "Int. martial's mercedes. day",
+        "lines": {
+          "0": 4,
+          "1": 3,
+          "2": 3
+        }
+      },
+      {
+        "place": "Projects courtyard. day",
+        "lines": {
+          "2": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Martial's mercedes. day",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Road. day",
+        "lines": {}
+      },
+      {
+        "place": "Martial's mercedes. day",
+        "lines": {
+          "0": 3,
+          "1": 4,
+          "2": 1
+        }
+      },
+      {
+        "place": "Martial's mercedes. day",
+        "lines": {
+          "0": 2,
+          "1": 7,
+          "2": 7
+        }
+      },
+      {
+        "place": "Beach",
+        "lines": {}
+      },
+      {
+        "place": "Beach. day",
+        "lines": {
+          "0": 8,
+          "3": 5,
+          "6": 1
+        }
+      },
+      {
+        "place": "Beach. day",
+        "lines": {
+          "0": 3,
+          "4": 3
+        }
+      },
+      {
+        "place": "Joelle's room. evening",
+        "lines": {}
+      },
+      {
+        "place": "Stephanie's apartment. evening",
+        "lines": {}
+      },
+      {
+        "place": "Formule",
+        "lines": {
+          "0": 6,
+          "2": 9
+        }
+      },
+      {
+        "place": "Richard's truck. day",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Road. day",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "New gym. day",
+        "lines": {}
+      },
+      {
+        "place": "Antibes. street. day",
+        "lines": {
+          "0": 9,
+          "1": 8
+        }
+      },
+      {
+        "place": "Stephanie's apartment",
+        "lines": {
+          "0": 17,
+          "1": 21
+        }
+      },
+      {
+        "place": "Stephanie's apartment",
+        "lines": {
+          "0": 3,
+          "1": 6
+        }
+      },
+      {
+        "place": "Stephanie's apartment",
+        "lines": {
+          "0": 8,
+          "1": 6
+        }
+      },
+      {
+        "place": "Marineland",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Marineland",
+        "lines": {}
+      },
+      {
+        "place": "Pool n3. day",
+        "lines": {}
+      },
+      {
+        "place": "Pool n",
+        "lines": {
+          "1": 1,
+          "5": 1
+        }
+      },
+      {
+        "place": "Marineland",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Supermarket. day",
+        "lines": {
+          "1": 8,
+          "5": 6
+        }
+      },
+      {
+        "place": "Parking lot. marineland. day",
+        "lines": {}
+      },
+      {
+        "place": "Taxi/parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Basement. day",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Garden. day",
+        "lines": {
+          "0": 8,
+          "1": 2,
+          "3": 6,
+          "23": 2
+        }
+      },
+      {
+        "place": "Anna's house. day",
+        "lines": {}
+      },
+      {
+        "place": "Sam's room. day",
+        "lines": {
+          "1": 3,
+          "4": 1
+        }
+      },
+      {
+        "place": "Martial's car. day",
+        "lines": {
+          "1": 1,
+          "2": 2
+        }
+      },
+      {
+        "place": "Projects",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Martial's car. day",
+        "lines": {}
+      },
+      {
+        "place": "Mousquetaires. day",
+        "lines": {}
+      },
+      {
+        "place": "Mousquetaires",
+        "lines": {
+          "0": 6,
+          "2": 3,
+          "14": 4,
+          "24": 2
+        }
+      },
+      {
+        "place": "Martial's formule 1 room. night",
+        "lines": {
+          "1": 9,
+          "2": 13
+        }
+      },
+      {
+        "place": "Fever ray. night",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Fever ray. night",
+        "lines": {
+          "0": 4,
+          "1": 1
+        }
+      },
+      {
+        "place": "Fever ray. night",
+        "lines": {
+          "1": 5,
+          "8": 8
+        }
+      },
+      {
+        "place": "Fever ray. night",
+        "lines": {
+          "1": 7,
+          "12": 6
+        }
+      },
+      {
+        "place": "Antibes",
+        "lines": {
+          "0": 18,
+          "1": 25
+        }
+      },
+      {
+        "place": "Tattoo parlor. day",
+        "lines": {}
+      },
+      {
+        "place": "Int. bank. day",
+        "lines": {}
+      },
+      {
+        "place": "Int used car dealership. day",
+        "lines": {
+          "19": 1
+        }
+      },
+      {
+        "place": "Projects",
+        "lines": {}
+      },
+      {
+        "place": "New gym. day",
+        "lines": {
+          "10": 1
+        }
+      },
+      {
+        "place": "Locker room",
+        "lines": {
+          "0": 3,
+          "10": 2
+        }
+      },
+      {
+        "place": "Projects",
+        "lines": {
+          "0": 1,
+          "1": 1
+        }
+      },
+      {
+        "place": "Stephanie's apartment. night / dawn",
+        "lines": {
+          "0": 5,
+          "1": 5,
+          "19": 1
+        }
+      },
+      {
+        "place": "Stephanie's apartment",
+        "lines": {
+          "0": 2,
+          "1": 5
+        }
+      },
+      {
+        "place": "Stephanie's apartment. dawn",
+        "lines": {
+          "0": 3,
+          "1": 2
+        }
+      },
+      {
+        "place": "Int. nissan suv. day",
+        "lines": {}
+      },
+      {
+        "place": "Coastal road. day",
+        "lines": {}
+      },
+      {
+        "place": "Turin",
+        "lines": {
+          "1": 6
+        }
+      },
+      {
+        "place": "Turin",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Hotel corridor. night",
+        "lines": {
+          "1": 1,
+          "27": 1
+        }
+      },
+      {
+        "place": "Supermarket. day",
+        "lines": {}
+      },
+      {
+        "place": "Supermarket",
+        "lines": {
+          "3": 1,
+          "18": 2
+        }
+      },
+      {
+        "place": "House. day",
+        "lines": {}
+      },
+      {
+        "place": "Kitchen. day",
+        "lines": {
+          "0": 6,
+          "3": 8,
+          "6": 2
+        }
+      },
+      {
+        "place": "Anna's house",
+        "lines": {}
+      },
+      {
+        "place": "Anna's house",
+        "lines": {}
+      },
+      {
+        "place": "Ext. basement. day",
+        "lines": {
+          "1": 4,
+          "3": 6
+        }
+      },
+      {
+        "place": "Alsatian countryside. morning",
+        "lines": {}
+      },
+      {
+        "place": "Holiday village. gym. day",
+        "lines": {
+          "26": 1
+        }
+      },
+      {
+        "place": "Holiday village rec room. evening",
+        "lines": {}
+      },
+      {
+        "place": "Richard's truck. night/day",
+        "lines": {}
+      },
+      {
+        "place": "Holiday village. day",
+        "lines": {}
+      },
+      {
+        "place": "Holiday village",
+        "lines": {
+          "0": 8,
+          "6": 10
+        }
+      },
+      {
+        "place": "Alsatian countryside. day",
+        "lines": {
+          "0": 12,
+          "4": 10
+        }
+      },
+      {
+        "place": "Pond. evening",
+        "lines": {}
+      },
+      {
+        "place": "Country road. evening",
+        "lines": {}
+      },
+      {
+        "place": "Strasbourg",
+        "lines": {
+          "21": 1
+        }
+      },
+      {
+        "place": "Sam's hospital room. evening",
+        "lines": {}
+      },
+      {
+        "place": "Hospital",
+        "lines": {
+          "0": 15,
+          "1": 10,
+          "6": 1
+        }
+      },
+      {
+        "place": "Poland. hotel room. day",
+        "lines": {
+          "0": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Poland. hotel",
+        "lines": {}
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 23,
+      "longestWithoutWoman": 45,
+      "longestWithoutWomanStart": 793,
+      "words": {
+        "w": 4732,
+        "m": 5691,
+        "unknown": 728
+      },
+      "womenConversations": 11,
+      "menConversations": 24,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/dmj6rictIMGfDbTv6pxeifyqs3I.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/6bcerd7CeQ5y5Dilym1O2C8c8Gl.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Marion Cotillard",
+      "character": "Stéphanie",
+      "actorActress": "1",
+      "age": 36
+    },
+    {
+      "actorName": "Matthias Schoenaerts",
+      "character": "Alain 'Ali' van Versch",
+      "actorActress": "2",
+      "age": 34
+    },
+    {
+      "actorName": "Armand Verdure",
+      "character": "Sam",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Céline Sallette",
+      "character": "Louise",
+      "actorActress": "1",
+      "age": 32
+    },
+    {
+      "actorName": "Corinne Masiero",
+      "character": "Anna",
+      "actorActress": "1",
+      "age": 48
+    },
+    {
+      "actorName": "Bouli Lanners",
+      "character": "Martial",
+      "actorActress": "2",
+      "age": 46
+    },
+    {
+      "actorName": "Jean-Michel Correia",
+      "character": "Richard",
+      "actorActress": "2",
+      "age": 48
+    },
+    {
+      "actorName": "Yannick Choirat",
+      "character": "Simon",
+      "actorActress": "2",
+      "age": 37
+    },
+    {
+      "actorName": "Mourad Frarema",
+      "character": "Foued",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Fred Menut",
+      "character": "Boss of ELP Sécurité",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Duncan Versteegh",
+      "character": "Orca Healer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Katia Chaperon",
+      "character": "Orca Healer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Catherine Fa",
+      "character": "Orca Healer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Andès Lopez Jabois",
+      "character": "Orca Healer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Françoise Michaud",
+      "character": "Stephanie's Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Irina Coito",
+      "character": "Aerobics Teacher",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Yvon L'Allain",
+      "character": "Prosthetist",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Fabien Baïardi",
+      "character": "Flirtatious in the Nightclub",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Pascal Rozand",
+      "character": "Dealer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Martine Millar",
+      "character": "Anna's Colleague",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Océane Cartia",
+      "character": "The Babysitter",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Jacques Audiard",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Thomas Bidegain",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Jacques Audiard",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Grégoire Sorlat",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Jacques Audiard",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Pascal Caucheteux",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Martine Cassinelli",
+        "gender": "w"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Stéphane Fontaine",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Juliette Welfling",
+        "gender": "w"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Alexandre Desplat",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Michel Barthélémy",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Virginie Montel",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mohamed Belhamar",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Richard Rousseau",
+        "gender": "m"
+      }
+    ],
+    "departments": {
+      "Costume & Make-Up": {
+        "w": 5,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Production": {
+        "w": 2,
+        "m": 8,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Directing": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Editing": {
+        "w": 1,
+        "m": 0,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 5,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 2,
+        "m": 3,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Crew": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "money": {
+    "budget": 15400000,
+    "revenue": 25762027
+  },
+  "directors": [
+    {
+      "name": "Jacques Audiard"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Jacques Audiard"
+    },
+    {
+      "name": "Thomas Bidegain"
+    },
+    {
+      "name": "Craig Davidson"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 2 BAFTA Awards. 32 wins & 73 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-08T19:41:51.543Z",
+  "plot": "After suddenly finding himself face-to-face with a young son he hardly knows, Ali, penniless and friendless, takes refuge with his sister. Meanwhile, he meets a beautiful woman, Stephanie, during a night club brawl. Stephanie trains killer whales at Marineland. When a performance ends in tragedy, a call in the night again brings them together.",
+  "simplePlot": "After suddenly finding himself face-to-face with a young son he hardly knows, Ali, penniless and friendless, takes refuge with his sister. Meanwhile, he meets a beautiful woman, Stephanie, during a night club brawl. Stephanie trains killer whales at Marineland. When a performance ends in tragedy, a call in the night again brings them together.",
+  "year": 2012,
+  "releaseDate": "17 May 2012",
+  "rated": "R",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BZjEyZDUyYjEtNDI4OS00MWIyLWFiM2UtNWU1NGJhMTRhNDNiXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt2053425",
+  "rating": "7.4",
+  "metascore": 73,
+  "urlIMDB": "https://www.imdb.com/title/tt2053425/"
+}
