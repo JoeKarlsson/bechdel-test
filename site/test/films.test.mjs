@@ -13,6 +13,7 @@ import {
 	aiModelOf,
 	crewFrom,
 	shelfStats,
+	peopleRanking,
 } from '../src/lib/films.mjs';
 
 test('cleanTitle drops a trailing year', () => {
@@ -84,9 +85,9 @@ test('crewFrom groups key jobs by label and sorts departments by size', () => {
 	assert.equal(crewFrom(undefined), null);
 });
 
-test('shelfStats groups by decade and genre, and compares films with and without women in key jobs', () => {
+test('shelfStats groups by genre, and compares films with and without women in key jobs', () => {
 	const film = (year, pass, genres, extra = {}) => ({
-		year, genres, bechdel: { pass }, readers: null, lines: { w: 1, m: 3, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0, ...extra,
+		year, genres, bechdel: { pass, score: pass ? 3 : 1 }, readers: null, lines: { w: 1, m: 3, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0, ...extra,
 	});
 	const directedBy = (gender) => ({ crew: { roles: [{ label: 'Directed by', people: [{ name: 'X', gender }] }] } });
 	const films = [
@@ -97,11 +98,29 @@ test('shelfStats groups by decade and genre, and compares films with and without
 	];
 	const stats = shelfStats(films, { minGroup: 2 });
 	assert.equal(stats.pass, 2);
-	assert.deepEqual(stats.byDecade, [{ label: '1990s', films: 3, pass: 1, womenLines: 0.25 }]);
+	assert.deepEqual(stats.scores, [{ score: 0, films: 0 }, { score: 1, films: 2 }, { score: 2, films: 0 }, { score: 3, films: 2 }]);
 	assert.deepEqual(stats.byGenre, [{ label: 'Drama', films: 3, pass: 2 }]);
 	assert.deepEqual(stats.womanDirector, { yes: { films: 1, pass: 1 }, no: { films: 3, pass: 1 } });
 	assert.deepEqual(stats.jobs, [{ label: 'Directed by', w: 1, m: 2, nb: 0, unknown: 0, films: 3 }]);
 	assert.deepEqual(stats.money, { pass: { films: 1, multiple: 5 }, fail: { films: 1, multiple: 3 } });
+});
+
+test('shelfStats gives each year with enough films its own rate and the five years around it', () => {
+	const film = (year, pass, w) => ({ year, genres: [], bechdel: { pass, score: pass ? 3 : 0 }, readers: null, lines: { w, m: 4 - w, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0 });
+	const films = [film(2000, true, 1), film(2000, false, 1), film(2002, true, 3), film(2003, false, 2), film(2010, true, 2)];
+	const { byYear } = shelfStats(films, { minYear: 2 });
+	// Only 2000 has two films; its five years pool 1998 to 2002
+	assert.deepEqual(byYear, [{ year: 2000, films: 2, pass: 1, fiveYearPass: 2 / 3, womenLines: 0.25, fiveYearWomenLines: 0.25 }]);
+});
+
+test('peopleRanking keeps people with enough films, best pass rate first, passing films first', () => {
+	const film = (slug, year, pass, directors) => ({ slug, title: slug, year, bechdel: { pass }, directors });
+	const films = [film('a', 2001, false, ['Ann']), film('b', 1999, true, ['Ann', 'Bo']), film('c', 2005, true, ['Bo']), film('d', 2006, false, ['Cy'])];
+	const ranked = peopleRanking(films, (f) => f.directors, 2);
+	assert.deepEqual(ranked.map((p) => [p.name, p.pass, p.films.map((f) => f.slug)]), [
+		['Bo', 2, ['b', 'c']],
+		['Ann', 1, ['b', 'a']],
+	]);
 });
 
 test('aiModelOf names the model that wrote an analysis', () => {

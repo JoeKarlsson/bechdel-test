@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import { loadFilms, shelfStats } from '../lib/films.mjs';
+import YearChart from '../components/YearChart.astro';
+import PeopleRanking from '../components/PeopleRanking.astro';
+import { loadFilms, shelfStats, peopleRanking } from '../lib/films.mjs';
 
 const films = loadFilms();
 const s = shelfStats(films);
@@ -11,15 +13,40 @@ const times = (x: number | null) => (x === null ? '?' : `${x.toFixed(1)} times`)
 
 // Every chart on the page is one bar per row on a 0-100% track
 type Row = { label: string; share: number; value: string; aria: string };
-const decadeRows: Row[] = s.byDecade.map((d) => ({
-	label: d.label,
-	share: d.pass / d.films,
-	value: `${d.pass} of ${d.films}`,
-	aria: `${d.label}: ${d.pass} of ${d.films} films pass`,
+const passPoints = s.byYear.map((y) => ({
+	year: y.year,
+	value: y.pass / y.films,
+	average: y.fiveYearPass,
+	says: `${y.year}: ${y.pass} of ${y.films} films pass (${pct(y.pass, y.films)}%). Five years around it: ${percent(y.fiveYearPass)}.`,
 }));
-const linesRows: Row[] = s.byDecade
-	.filter((d) => d.womenLines !== null)
-	.map((d) => ({ label: d.label, share: d.womenLines!, value: percent(d.womenLines), aria: `${d.label}: women have ${percent(d.womenLines)} of the lines in the median film` }));
+const linesPoints = s.byYear
+	.filter((y) => y.womenLines !== null)
+	.map((y) => ({
+		year: y.year,
+		value: y.womenLines!,
+		average: y.fiveYearWomenLines!,
+		says: `${y.year}: women have ${percent(y.womenLines)} of the lines in the median film. Five years around it: ${percent(y.fiveYearWomenLines)}.`,
+	}));
+const firstYear = s.byYear[0].year;
+
+// How far the films get: the three rules are cumulative
+const SCORE_NAMES = ['Fewer than two women', 'Two women who never talk', 'They talk, only about a man', 'Passes'];
+const scoreRows = s.scores.map((r) => ({
+	label: SCORE_NAMES[r.score],
+	share: r.films / s.films,
+	value: r.films.toLocaleString('en-US'),
+	aria: `${SCORE_NAMES[r.score]}: ${r.films} films, ${pct(r.films, s.films)}%`,
+	pass: r.score === 3,
+}));
+
+const MIN_DIRECTOR_FILMS = 8;
+const directorRanking = peopleRanking(films, (f) => f.directors, MIN_DIRECTOR_FILMS);
+// Stars: the top three billed in each film
+const MIN_STAR_FILMS = 10;
+const STAR_LIST = 10;
+const starRanking = peopleRanking(films, (f) => f.cast.slice(0, 3).map((c) => c.actor), MIN_STAR_FILMS);
+const womenStars = new Set(films.flatMap((f) => f.cast.slice(0, 3).filter((c) => c.gender === 'w').map((c) => c.actor)));
+const starWomen = starRanking.filter((p) => womenStars.has(p.name)).length;
 const genreRows: Row[] = s.byGenre.map((g) => ({
 	label: g.label,
 	share: g.pass / g.films,
@@ -53,7 +80,7 @@ const h = s.heard;
 
 <Base
 	title="The shelf in numbers"
-	description={`All ${s.films} films on the shelf, counted: pass rates by decade and genre, who gets heard, who made the films, how old the stars were, and what they earned.`}
+	description={`All ${s.films} films on the shelf, counted: pass rates by year, genre, director and star, who gets heard, who made the films, and what they earned.`}
 	nav="numbers"
 >
 	<div class="page">
@@ -75,39 +102,46 @@ const h = s.heard;
 			</div>
 		</section>
 
-		<section class="section" aria-labelledby="decade-title">
-			<h2 id="decade-title" class="section-title">By decade</h2>
+		<section class="section" aria-labelledby="time-title">
+			<h2 id="time-title" class="section-title">Year by year</h2>
 			<div class="two">
-				<div>
-					<h3>Films that pass</h3>
-					<ul class="hbars">
-						{decadeRows.map((r) => (
-							<li>
-								<div class="hb-row" role="img" aria-label={r.aria}>
-								<span class="hb-label">{r.label}</span>
-								<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
-								<span class="hb-value">{r.value}</span>
-								</div>
-							</li>
-						))}
-					</ul>
-				</div>
-				<div>
-					<h3>Women's share of the lines</h3>
-					<ul class="hbars">
-						{linesRows.map((r) => (
-							<li>
-								<div class="hb-row" role="img" aria-label={r.aria}>
-								<span class="hb-label">{r.label}</span>
-								<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
-								<span class="hb-value">{r.value}</span>
-								</div>
-							</li>
-						))}
-					</ul>
-				</div>
+				<YearChart title="Films that pass" points={passPoints} />
+				<YearChart title="Women's share of the lines" points={linesPoints} />
 			</div>
-			<p class="note">The share of lines is for the median film of each decade, counting lines whose speaker we could place. Decades with fewer than five films on the shelf are left out.</p>
+			<p class="note">
+				Gray dots are single years; the pink line pools the five years around each one. The share of lines is for the median film,
+				counting lines whose speaker we could place. Years with fewer than ten films on the shelf, all of them before {firstYear}, are
+				left out.
+			</p>
+			<details class="table-view">
+				<summary>The numbers by year</summary>
+				<table>
+					<thead>
+						<tr><th scope="col">Year</th><th scope="col">Films</th><th scope="col">Pass</th><th scope="col">Women's lines</th></tr>
+					</thead>
+					<tbody>
+						{s.byYear.map((y) => (
+							<tr><th scope="row">{y.year}</th><td>{y.films}</td><td>{y.pass} ({pct(y.pass, y.films)}%)</td><td>{percent(y.womenLines)}</td></tr>
+						))}
+					</tbody>
+				</table>
+			</details>
+		</section>
+
+		<section class="section" aria-labelledby="fail-title">
+			<h2 id="fail-title" class="section-title">How far films get</h2>
+			<ul class="hbars wide-labels score-labels">
+				{scoreRows.map((r) => (
+					<li>
+						<div class="hb-row" role="img" aria-label={r.aria}>
+							<span class="hb-label">{r.label}</span>
+							<span class="hb-track"><span class:list={['hb-bar', { fail: !r.pass }]} style={`width: ${(r.share * 100).toFixed(1)}%`} /></span>
+							<span class="hb-value">{r.value}</span>
+						</div>
+					</li>
+				))}
+			</ul>
+			<p class="note">The three rules build on each other, so each film counts once, at the last rule it clears.</p>
 		</section>
 
 		<section class="section" aria-labelledby="genre-title">
@@ -176,6 +210,34 @@ const h = s.heard;
 			</div>
 		</section>
 
+		<section class="section" aria-labelledby="directors-title">
+			<h2 id="directors-title" class="section-title">By director</h2>
+			<PeopleRanking people={directorRanking} />
+			<p class="note">
+				The {directorRanking.length} directors with {MIN_DIRECTOR_FILMS} or more films on the shelf, one square per film. Open a name for
+				the films. Co-directors, like Joel and Ethan Coen, each count the film. With this few films each, one film moves a director a long
+				way.
+			</p>
+		</section>
+
+		<section class="section" aria-labelledby="stars-title">
+			<h2 id="stars-title" class="section-title">By star</h2>
+			<div class="two">
+				<div>
+					<h3>Most often pass</h3>
+					<PeopleRanking people={starRanking.slice(0, STAR_LIST)} />
+				</div>
+				<div>
+					<h3>Least often pass</h3>
+					<PeopleRanking people={starRanking.slice(-STAR_LIST).reverse()} />
+				</div>
+			</div>
+			<p class="note">
+				Of the {starRanking.length} actors billed in the top three of {MIN_STAR_FILMS} or more films on the shelf, {starWomen} are women.
+				These are the ten at each end.
+			</p>
+		</section>
+
 		<section class="section" aria-labelledby="ages-title">
 			<h2 id="ages-title" class="section-title">How old the stars were</h2>
 			<dl class="tiles">
@@ -236,6 +298,9 @@ const h = s.heard;
 	.hbars.wide-labels .hb-row {
 		grid-template-columns: minmax(7rem, 13rem) 1fr 5.5rem;
 	}
+	.hbars.score-labels .hb-row {
+		grid-template-columns: minmax(7rem, 16rem) 1fr 5.5rem;
+	}
 	.hbars li + li {
 		margin-top: var(--space-2);
 	}
@@ -251,6 +316,9 @@ const h = s.heard;
 		min-width: 3px;
 		background: var(--pink);
 		border-radius: 4px;
+	}
+	.hb-bar.fail {
+		background: var(--fail);
 	}
 	.hb-value {
 		font-variant-numeric: tabular-nums;
@@ -272,6 +340,26 @@ const h = s.heard;
 	.tiles dd {
 		margin: var(--space-2) 0 0;
 		max-width: 28ch;
+	}
+	.table-view summary {
+		cursor: pointer;
+		text-decoration: underline dotted var(--muted);
+		text-underline-offset: 0.2em;
+		width: fit-content;
+	}
+	.table-view table {
+		margin-top: var(--space-3);
+		border-collapse: collapse;
+		font-variant-numeric: tabular-nums;
+	}
+	.table-view th,
+	.table-view td {
+		padding: var(--space-1) var(--space-4) var(--space-1) 0;
+		text-align: right;
+	}
+	.table-view thead th {
+		color: var(--muted);
+		font-weight: normal;
 	}
 	@media (max-width: 480px) {
 		.hbars li,

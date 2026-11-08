@@ -335,27 +335,13 @@ const hasWomanIn = (f, label) => !!f.crew?.roles.find((g) => g.label === label)?
 export const SHELF_JOBS = ['Directed by', 'Written by', 'Produced by', 'Shot by', 'Edited by', 'Music by', 'Production design by', 'Costumes by', 'Cast by'];
 
 /**
- * The whole shelf in numbers: pass rates by decade and genre, who gets heard,
- * who made the films, the cast's ages and the money. Groups smaller than
- * `minGroup` films are left out of the by-decade and by-genre lists.
+ * The whole shelf in numbers: pass rates by year and genre, how far films get,
+ * who gets heard, who made the films, the cast's ages and the money. Genres
+ * with fewer than `minGroup` films and years with fewer than `minYear` films
+ * are left out. Each year also carries the figure for the five years around
+ * it, all films pooled.
  */
-export function shelfStats(films, { minGroup = 5 } = {}) {
-	const decades = new Map();
-	for (const f of films) {
-		if (!f.year) continue;
-		const d = Math.floor(f.year / 10) * 10;
-		if (!decades.has(d)) decades.set(d, []);
-		decades.get(d).push(f);
-	}
-	const byDecade = [...decades]
-		.sort((a, b) => a[0] - b[0])
-		.filter(([, fs]) => fs.length >= minGroup)
-		.map(([d, fs]) => ({
-			label: `${d}s`,
-			...rate(fs),
-			womenLines: median(fs.map(womenLineShare).filter((x) => x !== null)),
-		}));
-
+export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 	const genres = new Map();
 	for (const f of films) for (const g of f.genres) genres.set(g, [...(genres.get(g) ?? []), f]);
 	const byGenre = [...genres]
@@ -379,11 +365,27 @@ export function shelfStats(films, { minGroup = 5 } = {}) {
 	const multiple = (f) => (f.money?.budget && f.money?.revenue ? f.money.revenue / f.money.budget : null);
 	const multiples = (fs) => fs.map(multiple).filter((x) => x !== null);
 
+	const years = new Map();
+	for (const f of films) if (f.year) years.set(f.year, [...(years.get(f.year) ?? []), f]);
+	const around = (y) => films.filter((f) => f.year && Math.abs(f.year - y) <= 2);
+	const share = (r) => r.pass / r.films;
+	const byYear = [...years]
+		.sort((a, b) => a[0] - b[0])
+		.filter(([, fs]) => fs.length >= minYear)
+		.map(([year, fs]) => ({
+			year,
+			...rate(fs),
+			fiveYearPass: share(rate(around(year))),
+			womenLines: median(fs.map(womenLineShare).filter((x) => x !== null)),
+			fiveYearWomenLines: median(around(year).map(womenLineShare).filter((x) => x !== null)),
+		}));
+
 	return {
 		...rate(films),
 		readers: { films: rated.length, agree: rated.filter((f) => f.bechdel.pass === (f.readers.score === 3)).length },
-		byDecade,
+		byYear,
 		byGenre,
+		scores: [0, 1, 2, 3].map((score) => ({ score, films: films.filter((f) => f.bechdel.score === score).length })),
 		heard: {
 			films: withMeasures.length,
 			firstWomanShare: median(firstShares),
@@ -407,6 +409,26 @@ export function shelfStats(films, { minGroup = 5 } = {}) {
 			fail: { films: multiples(films.filter((f) => !f.bechdel.pass)).length, multiple: median(multiples(films.filter((f) => !f.bechdel.pass))) },
 		},
 	};
+}
+
+/**
+ * People with at least `minFilms` films on the shelf, best pass rate first
+ * (ties: more films first, then by name). `namesOf` picks a film's people,
+ * say its directors. Each person's films are listed passing first, then by year.
+ */
+export function peopleRanking(films, namesOf, minFilms) {
+	const byName = new Map();
+	for (const f of films) for (const name of new Set(namesOf(f))) byName.set(name, [...(byName.get(name) ?? []), f]);
+	return [...byName]
+		.filter(([, fs]) => fs.length >= minFilms)
+		.map(([name, fs]) => ({
+			name,
+			...rate(fs),
+			films: fs
+				.map((f) => ({ slug: f.slug, title: f.title, year: f.year, pass: f.bechdel.pass }))
+				.sort((a, b) => b.pass - a.pass || (a.year ?? 0) - (b.year ?? 0)),
+		}))
+		.sort((a, b) => b.pass / b.films.length - a.pass / a.films.length || b.films.length - a.films.length || a.name.localeCompare(b.name));
 }
 
 /**
