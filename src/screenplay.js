@@ -94,7 +94,7 @@ const cueColumnOf = (lines, layout) => {
 		const next = lines[i + 1] ?? '';
 		if (!next.trim() || !looksLikeName(l)) return;
 		const indent = indentOf(l);
-		if (indent > layout.action + 8 && indentOf(next) >= layout.action && indentOf(next) < indent) counts[indent] = (counts[indent] || 0) + 1;
+		if (indent >= layout.action + 8 && indentOf(next) >= layout.action && indentOf(next) < indent) counts[indent] = (counts[indent] || 0) + 1;
 	});
 	const [column, count] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] ?? [];
 	return count >= MIN_CUE_COLUMN_LINES ? Number(column) : null;
@@ -173,6 +173,9 @@ const parseScreenplay = rawText => {
 	// Names that aren't all caps, read only at the column the script's names sit at
 	const cueColumn = cueColumnOf(lines, layout);
 	const atCueColumn = l => cueColumn !== null && Math.abs(indentOf(l) - cueColumn) <= 2 && looksLikeName(l);
+	// Cues sit more than 8 right of the action, or exactly 8 when that's the
+	// script's own name column (shot directions often sit at +8 elsewhere)
+	const inCueRange = l => indentOf(l) > layout.action + 8 || indentOf(l) === cueColumn;
 
 	// Older scripts write "Fran:<tab>LINE", small-caps ones "bono:   LINE".
 	// Count each "Name:" opener; a name that recurs is a speaker, a one-off ("Note:") isn't
@@ -265,7 +268,7 @@ const parseScreenplay = rawText => {
 		}
 		const nextLine = lines[first] ?? '';
 		const isCue = (looksLikeCue(trimmed) || atCueColumn(line)) && nextLine.trim() && !isHeading(nextLine.trim())
-			&& (layout ? indentOf(line) > layout.action + 8 && indentOf(nextLine) >= layout.action : !looksLikeCue(nextLine));
+			&& (layout ? inCueRange(line) && indentOf(nextLine) >= layout.action : !looksLikeCue(nextLine));
 
 		if (!isCue && !inline) {
 			action.push(trimmed);
@@ -286,7 +289,7 @@ const parseScreenplay = rawText => {
 			const t = l.trim();
 			if (!t || isHeading(t) || TRANSITION.test(t)) break;
 			if (layout && !inline && indentOf(l) < dialogueIndent && indentOf(l) <= layout.action) break;
-			if ((looksLikeCue(t) || atCueColumn(l)) && (layout ? indentOf(l) > layout.action + 8 : true)) break;
+			if ((looksLikeCue(t) || atCueColumn(l)) && (layout ? inCueRange(l) : true)) break;
 			if (!layout && (/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)\s*(\([^)]*\))?\s*:\s+\S/.test(t))) break;
 			if (!layout) {
 				const m = t.match(/^([A-Z][A-Z0-9 .'’&#-]{1,30}?)(\s*\([^)]*\))?\s*\*?\s+\S/);

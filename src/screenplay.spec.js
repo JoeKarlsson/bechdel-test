@@ -64,6 +64,15 @@ describe('parseScreenplay', () => {
 		expect(speakers).toHaveLength(40);
 	});
 
+	it('reads names sitting exactly 8 right of the action when that is where all the names sit, but not shots at +8 elsewhere', () => {
+		// Runaway Bride's layout: action at 2, dialogue at 4, names at 10
+		const exchange = '  Ike leans on the bar, watching the woman throw darts at the board.\n          WOMAN\n    That\'s flattering.\n          IKE\n    No, you don\'t understand.\n';
+		expect(dialogueOf(parseScreenplay(exchange.repeat(20)))).toHaveLength(40);
+		// Names further right: a shot at +8 stays a direction
+		const shot = '  Kevin runs down the long hallway toward the hotel elevator doors.\n                    KEVIN\n          Wait for me!\n          CU. KEVIN\n    He presses the button.\n';
+		expect(new Set(dialogueOf(parseScreenplay(shot.repeat(20))).map(d => d.speaker))).toEqual(new Set(['KEVIN']));
+	});
+
 	it('reads transcripts that put "Name:" alone on a line, and small-caps "name:" inline', () => {
 		const transcript = 'Bert:\nNumber 17.\nAdmiral Boom:\nEnter that in the log.\n[He salutes.]\n'.repeat(3);
 		expect(dialogueOf(parseScreenplay(transcript)).slice(0, 2)).toEqual([
