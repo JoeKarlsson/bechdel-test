@@ -4,22 +4,17 @@
 [![Site](https://github.com/JoeKarlsson/bechdel-test/actions/workflows/site.yml/badge.svg)](https://github.com/JoeKarlsson/bechdel-test/actions/workflows/site.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Bechdel.io checks movie scripts against the Bechdel Test: are there at least two
-women, do they talk to each other, and do they talk about something other than a
-man. This repo has the analyzer that reads a screenplay and writes a film's
-data, and the static Astro site at
-[bechdel.joekarlsson.com](https://bechdel.joekarlsson.com/) that builds from it.
-
 ![Bechdel.io: the headline "Do two women talk to each other about something other than a man?", the shelf of movie posters marked passes or fails, filtering to films that pass, then the Gone Girl page scoring 3 of 3 and its cast sized by lines spoken](.github/readme/2026-11-recording.gif)
 
-## Artist statement
+Bechdel.io checks movie scripts against the Bechdel Test: are there at least two
+women, do they talk to each other, and do they talk about something other than a
+man. It sorts a wall of movies most people have already seen into pass and fail,
+which makes you look at them again. About half of the 218 films fail, and a lot
+of them are favorites. My sister Laurel and I made it in 2015 and released it as
+open source because we saw it as feminist activism.
 
-A wall of movies most people have already seen, sorted into pass and fail, makes
-you look at them again. About half of the 218 films on the shelf fail, and a lot
-of them are favorites. My sister Laurel and I released it as open source because
-we saw it as feminist activism.
-
-[Read the full statement](https://www.joekarlsson.com/work/bechdel-io/).
+[See the shelf at bechdel.joekarlsson.com](https://bechdel.joekarlsson.com/) ·
+[Read the full statement](https://www.joekarlsson.com/work/bechdel-io/)
 
 ## Quick start
 
