@@ -83,7 +83,7 @@ class AiAnalyzer {
 			};
 		} catch (error) {
 			console.error('Error in AI analysis:', error);
-			throw new Error(`AI analysis failed: ${error.message}`);
+			throw new Error(`AI analysis failed: ${error.message}`, { cause: error });
 		}
 	}
 
