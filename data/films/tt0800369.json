@@ -1,0 +1,1948 @@
+{
+  "_id": "tt0800369",
+  "title": "Thor",
+  "genres": [
+    "Action",
+    "Fantasy"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 5,
+    "numScenesDontPass": 186,
+    "numOfFemalesChars": 13,
+    "numOfMaleChars": 43,
+    "numOfFemalesCharsWithDialogue": 5,
+    "numOfMaleCharsWithDialogue": 26,
+    "totalLinesFemaleDialogue": 224,
+    "totalLinesMaleDialogue": 574,
+    "scenesThatPass": [
+      "JANE: You've gotta get us closer so I can take a magnetic reading. Darcy laughs.\nDARCY: Yeah, right! Good one! Oh God, you're serious...\nJANE: You want those college credits or not?",
+      "JANE: I think the lensing around the edges is characteristic of an Einstein-Rosen Bridge.\nDARCY: A what?",
+      "JANE: Excuse me, did you say there was a satellite crash?\nDARCY: Oh my God, this is going on Facebook. Darcy whips out her cellphone.",
+      "JANE: Years of research, gone.\nDARCY: They even took my iPod.",
+      "JANE: Look around! They took our back- ups. They took the back-ups of our back-ups.\nDARCY: I just downloaded, like, thirty songs on there."
+    ]
+  },
+  "script": {
+    "file": "thor.txt",
+    "layout": "indented",
+    "dialogueLines": 811,
+    "speakers": [
+      {
+        "name": "THOR",
+        "lines": 165,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JANE",
+        "lines": 117,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "LOKI",
+        "lines": 89,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SELVIG",
+        "lines": 65,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "VOLSTAGG",
+        "lines": 56,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FANDRAL",
+        "lines": 48,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ODIN",
+        "lines": 47,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SIF",
+        "lines": 45,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "DARCY",
+        "lines": 37,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "COULSON",
+        "lines": 27,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FRIGGA",
+        "lines": 23,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "HEIMDALL",
+        "lines": 18,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LAUFEY",
+        "lines": 18,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "HOGUN",
+        "lines": 9,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ADMISSIONS NURSE",
+        "lines": 5,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "AGENT GARRETT",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ODIN ALLFATHER",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "SITWELL",
+        "lines": 3,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "TECHIE",
+        "lines": 3,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "AGENT CALE",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "DRUNK TOWNIE",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "EINHERJAR GUARD",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ISABEL",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ISABELA",
+        "lines": 2,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "NURSE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TOWNIE PETE",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "A--",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "AGENT DELANCEY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "EAGER TOWNIE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FATHER--",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "JOTUN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "JOTUN SENTRY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOKIS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MJOLNIR",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ORDERLY",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PETE",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "SHIELD AGENT",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "THE DESTROYER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TOWNIE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "UNDERSTANDING SOMETHING",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "URGENTLY--",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "VOLSTAGG/HOGUN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Puente antiguo, new mexico",
+        "lines": {}
+      },
+      {
+        "place": "Suv",
+        "lines": {
+          "1": 6,
+          "3": 3
+        }
+      },
+      {
+        "place": "Suv",
+        "lines": {
+          "1": 5,
+          "3": 1,
+          "8": 3
+        }
+      },
+      {
+        "place": "Desert",
+        "lines": {}
+      },
+      {
+        "place": "Suv",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Desert",
+        "lines": {}
+      },
+      {
+        "place": "Suv",
+        "lines": {
+          "1": 2,
+          "8": 1
+        }
+      },
+      {
+        "place": "Suv",
+        "lines": {}
+      },
+      {
+        "place": "Suv",
+        "lines": {
+          "1": 1,
+          "8": 2
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {}
+      },
+      {
+        "place": "Suv",
+        "lines": {}
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "1": 3,
+          "3": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Space",
+        "lines": {}
+      },
+      {
+        "place": "Asgard",
+        "lines": {}
+      },
+      {
+        "place": "Odin's palace",
+        "lines": {
+          "16": 1
+        }
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {
+          "6": 6,
+          "10": 5
+        }
+      },
+      {
+        "place": "Palace anteroom",
+        "lines": {
+          "0": 9,
+          "2": 7
+        }
+      },
+      {
+        "place": "Antechamber",
+        "lines": {
+          "5": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Throne room",
+        "lines": {
+          "4": 2,
+          "5": 2,
+          "7": 2
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {}
+      },
+      {
+        "place": "Palace anteroom",
+        "lines": {
+          "0": 3,
+          "10": 4
+        }
+      },
+      {
+        "place": "Throne room",
+        "lines": {
+          "2": 2,
+          "4": 2,
+          "5": 1,
+          "7": 2,
+          "33": 1
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {}
+      },
+      {
+        "place": "Throne room",
+        "lines": {
+          "6": 2
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {}
+      },
+      {
+        "place": "Throne room",
+        "lines": {
+          "0": 3,
+          "6": 4
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "0": 9,
+          "5": 1,
+          "6": 8,
+          "7": 2
+        }
+      },
+      {
+        "place": "Banquet hall",
+        "lines": {
+          "0": 9,
+          "2": 7,
+          "4": 6,
+          "5": 5,
+          "7": 5,
+          "13": 2,
+          "41": 1
+        }
+      },
+      {
+        "place": "Odin's palace",
+        "lines": {
+          "0": 1,
+          "4": 3,
+          "5": 2
+        }
+      },
+      {
+        "place": "Gate of asgard",
+        "lines": {}
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 1,
+          "2": 4,
+          "4": 1,
+          "5": 1,
+          "11": 3
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 1,
+          "11": 2
+        }
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {}
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 1,
+          "4": 2,
+          "11": 2
+        }
+      },
+      {
+        "place": "Bifrost landing site (jotunheim)",
+        "lines": {
+          "0": 4,
+          "2": 2,
+          "4": 2,
+          "5": 2,
+          "7": 1,
+          "13": 1
+        }
+      },
+      {
+        "place": "Jotunheim",
+        "lines": {
+          "0": 4,
+          "4": 1,
+          "5": 3,
+          "7": 3,
+          "13": 1
+        }
+      },
+      {
+        "place": "Central plaza",
+        "lines": {
+          "0": 13,
+          "2": 7,
+          "4": 9,
+          "5": 6,
+          "7": 5,
+          "12": 7,
+          "13": 2,
+          "30": 1,
+          "31": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (jotunheim)",
+        "lines": {
+          "0": 2,
+          "6": 4,
+          "12": 2,
+          "16": 1
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 5,
+          "6": 6,
+          "29": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "0": 6,
+          "1": 4,
+          "3": 4,
+          "8": 3,
+          "26": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {}
+      },
+      {
+        "place": "Desert",
+        "lines": {}
+      },
+      {
+        "place": "County hospital",
+        "lines": {}
+      },
+      {
+        "place": "County hospital er",
+        "lines": {
+          "1": 5,
+          "3": 1,
+          "8": 1,
+          "14": 2
+        }
+      },
+      {
+        "place": "Hospital er",
+        "lines": {
+          "0": 3,
+          "24": 2,
+          "34": 1
+        }
+      },
+      {
+        "place": "New mexico desert",
+        "lines": {
+          "38": 1
+        }
+      },
+      {
+        "place": "Int. smith motors",
+        "lines": {
+          "1": 10,
+          "3": 9,
+          "8": 3
+        }
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {}
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {
+          "6": 4,
+          "10": 4
+        }
+      },
+      {
+        "place": "Hospital room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "County hospital er",
+        "lines": {
+          "1": 1,
+          "14": 3
+        }
+      },
+      {
+        "place": "Hospital corridor",
+        "lines": {}
+      },
+      {
+        "place": "Hospital room",
+        "lines": {}
+      },
+      {
+        "place": "Hospital parking lot",
+        "lines": {}
+      },
+      {
+        "place": "Jane's suv",
+        "lines": {
+          "1": 4,
+          "3": 2,
+          "8": 2
+        }
+      },
+      {
+        "place": "Hospital parking lot",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Healing room",
+        "lines": {
+          "2": 4,
+          "4": 6,
+          "5": 5,
+          "7": 6,
+          "13": 2
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "2": 11,
+          "6": 10
+        }
+      },
+      {
+        "place": "Outside of crater",
+        "lines": {}
+      },
+      {
+        "place": "Inside of crater",
+        "lines": {
+          "28": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "3": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {
+          "2": 4,
+          "10": 5
+        }
+      },
+      {
+        "place": "Isabela's diner",
+        "lines": {
+          "0": 6,
+          "1": 8,
+          "3": 1,
+          "8": 3,
+          "23": 2,
+          "25": 2,
+          "35": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "0": 7,
+          "1": 10,
+          "3": 5,
+          "8": 1
+        }
+      },
+      {
+        "place": "Odin's palace",
+        "lines": {}
+      },
+      {
+        "place": "Throne room",
+        "lines": {
+          "2": 5,
+          "4": 1,
+          "5": 2,
+          "7": 3,
+          "40": 1
+        }
+      },
+      {
+        "place": "Puente antiguo, new mexico",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "1": 7,
+          "3": 1,
+          "9": 6,
+          "39": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "1": 3,
+          "3": 3,
+          "8": 3
+        }
+      },
+      {
+        "place": "Puente antiguo library",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Pet store",
+        "lines": {
+          "0": 2,
+          "1": 1
+        }
+      },
+      {
+        "place": "Puente antiguo library",
+        "lines": {}
+      },
+      {
+        "place": "Desert",
+        "lines": {}
+      },
+      {
+        "place": "Pinzgauer",
+        "lines": {
+          "0": 7,
+          "1": 8
+        }
+      },
+      {
+        "place": "Desert",
+        "lines": {}
+      },
+      {
+        "place": "Ridge above crater",
+        "lines": {
+          "0": 3,
+          "1": 4
+        }
+      },
+      {
+        "place": "Shield base / int. hammer containment cube structure 72a",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {
+          "17": 2,
+          "18": 2
+        }
+      },
+      {
+        "place": "Shield desert base 74a",
+        "lines": {}
+      },
+      {
+        "place": "Shield security room 74b",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {
+          "27": 1
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {
+          "36": 1
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Ridge above crater 78a",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Edge of crater 80a",
+        "lines": {}
+      },
+      {
+        "place": "Ridge above crater",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base 82b",
+        "lines": {}
+      },
+      {
+        "place": "Main entrance tube 82c",
+        "lines": {}
+      },
+      {
+        "place": "Entrance tube 82d",
+        "lines": {}
+      },
+      {
+        "place": "Edge of crater 82e",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Tunnel 82g",
+        "lines": {}
+      },
+      {
+        "place": "Ridge above crater 82h",
+        "lines": {}
+      },
+      {
+        "place": "Crater 82i",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base 82k",
+        "lines": {}
+      },
+      {
+        "place": "Tunnel complex 82l",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Tunnel 83a",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Junction box 83b",
+        "lines": {}
+      },
+      {
+        "place": "Crane bucket 83c",
+        "lines": {}
+      },
+      {
+        "place": "Tunnel 83d",
+        "lines": {}
+      },
+      {
+        "place": "Ridge above crater 83e",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Crater",
+        "lines": {}
+      },
+      {
+        "place": "Hammer containment cube 84h",
+        "lines": {}
+      },
+      {
+        "place": "Crane bucket 84i",
+        "lines": {}
+      },
+      {
+        "place": "Hammer containment cube 84j",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Crane bucket 84k",
+        "lines": {}
+      },
+      {
+        "place": "Hammer containment cube 84l",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Ridge above crater",
+        "lines": {}
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {}
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "1": 8,
+          "3": 7,
+          "8": 3
+        }
+      },
+      {
+        "place": "Shield holding cell",
+        "lines": {
+          "0": 8,
+          "2": 6,
+          "9": 3
+        }
+      },
+      {
+        "place": "Crater",
+        "lines": {}
+      },
+      {
+        "place": "Holding cell",
+        "lines": {}
+      },
+      {
+        "place": "Security room",
+        "lines": {
+          "3": 6,
+          "9": 6
+        }
+      },
+      {
+        "place": "Shield holding cell",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Coulson's trailer",
+        "lines": {}
+      },
+      {
+        "place": "Security room",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {
+          "3": 2,
+          "9": 2
+        }
+      },
+      {
+        "place": "Jotunheim",
+        "lines": {}
+      },
+      {
+        "place": "Laufey's temple",
+        "lines": {
+          "2": 8,
+          "12": 8
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "2": 6,
+          "11": 5
+        }
+      },
+      {
+        "place": "Bar",
+        "lines": {
+          "0": 8,
+          "3": 8,
+          "20": 2
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {}
+      },
+      {
+        "place": "Jane's trailer",
+        "lines": {
+          "0": 4,
+          "1": 4,
+          "3": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "0": 6,
+          "1": 6
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {}
+      },
+      {
+        "place": "Healing room",
+        "lines": {
+          "4": 3,
+          "5": 3,
+          "7": 2,
+          "21": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {}
+      },
+      {
+        "place": "Smith motors",
+        "lines": {}
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "0": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "0": 1,
+          "8": 1,
+          "15": 2,
+          "19": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "0": 2,
+          "22": 2
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "4": 3,
+          "5": 1,
+          "7": 2,
+          "11": 3
+        }
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {
+          "9": 2,
+          "18": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "4": 1,
+          "5": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Main street",
+        "lines": {}
+      },
+      {
+        "place": "Down the street",
+        "lines": {
+          "4": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Puente antiguo",
+        "lines": {
+          "4": 1,
+          "15": 1,
+          "19": 1
+        }
+      },
+      {
+        "place": "Palace grounds",
+        "lines": {
+          "21": 1
+        }
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {
+          "2": 1,
+          "11": 2
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "3": 1,
+          "4": 2,
+          "5": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "8": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "9": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "4": 1,
+          "5": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {}
+      },
+      {
+        "place": "Main street",
+        "lines": {}
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "37": 1
+        }
+      },
+      {
+        "place": "Street",
+        "lines": {
+          "4": 2,
+          "5": 2,
+          "7": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "4": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "0": 1,
+          "1": 2,
+          "3": 1
+        }
+      },
+      {
+        "place": "Down the street",
+        "lines": {
+          "0": 4,
+          "3": 1,
+          "5": 1,
+          "7": 2
+        }
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {}
+      },
+      {
+        "place": "Smith motors",
+        "lines": {}
+      },
+      {
+        "place": "Shield desert base",
+        "lines": {}
+      },
+      {
+        "place": "Main street",
+        "lines": {
+          "1": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "0": 1,
+          "4": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {}
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "0": 2,
+          "4": 1,
+          "5": 1,
+          "8": 1
+        }
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {}
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "0": 2,
+          "4": 1,
+          "5": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {}
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {}
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {}
+      },
+      {
+        "place": "Odin's palace",
+        "lines": {}
+      },
+      {
+        "place": "Odin's chambers",
+        "lines": {
+          "0": 3,
+          "2": 3,
+          "10": 3,
+          "12": 1
+        }
+      },
+      {
+        "place": "Odin's palace",
+        "lines": {}
+      },
+      {
+        "place": "Palace grounds",
+        "lines": {}
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {}
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {}
+      },
+      {
+        "place": "Palace grounds",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {}
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 6,
+          "2": 7
+        }
+      },
+      {
+        "place": "Jotunheim",
+        "lines": {}
+      },
+      {
+        "place": "Bifrost landing site (earth)",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "2": 1
+        }
+      },
+      {
+        "place": "Heimdall's observatory",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "2": 2,
+          "6": 1,
+          "16": 1,
+          "32": 1
+        }
+      },
+      {
+        "place": "Odin's palace",
+        "lines": {
+          "4": 2,
+          "5": 3,
+          "7": 3,
+          "10": 2,
+          "13": 1
+        }
+      },
+      {
+        "place": "Palace balcony",
+        "lines": {
+          "0": 1,
+          "6": 2
+        }
+      },
+      {
+        "place": "Rainbow bridge",
+        "lines": {
+          "0": 2,
+          "11": 1
+        }
+      },
+      {
+        "place": "Smith motors",
+        "lines": {
+          "1": 2,
+          "8": 2
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 80,
+      "longestWithoutWomanStart": 552,
+      "words": {
+        "w": 3321,
+        "m": 9602,
+        "unknown": 132
+      },
+      "womenConversations": 22,
+      "menConversations": 66,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 2252
+  },
+  "actors": [
+    {
+      "actorName": "Chris Hemsworth",
+      "character": "Thor",
+      "actorActress": "2",
+      "age": 27
+    },
+    {
+      "actorName": "Natalie Portman",
+      "character": "Jane Foster",
+      "actorActress": "1",
+      "age": 29
+    },
+    {
+      "actorName": "Tom Hiddleston",
+      "character": "Loki",
+      "actorActress": "2",
+      "age": 30
+    },
+    {
+      "actorName": "Anthony Hopkins",
+      "character": "Odin",
+      "actorActress": "2",
+      "age": 73
+    },
+    {
+      "actorName": "Stellan Skarsgård",
+      "character": "Erik Selvig",
+      "actorActress": "2",
+      "age": 59
+    },
+    {
+      "actorName": "Kat Dennings",
+      "character": "Darcy Lewis",
+      "actorActress": "1",
+      "age": 24
+    },
+    {
+      "actorName": "Clark Gregg",
+      "character": "Agent Coulson",
+      "actorActress": "2",
+      "age": 49
+    },
+    {
+      "actorName": "Colm Feore",
+      "character": "King Laufey",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "Idris Elba",
+      "character": "Heimdall",
+      "actorActress": "2",
+      "age": 38
+    },
+    {
+      "actorName": "Ray Stevenson",
+      "character": "Volstagg",
+      "actorActress": "2",
+      "age": 46
+    },
+    {
+      "actorName": "Tadanobu Asano",
+      "character": "Hogun",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Josh Dallas",
+      "character": "Fandral",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jaimie Alexander",
+      "character": "Sif",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rene Russo",
+      "character": "Frigga",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Adriana Barraza",
+      "character": "Isabela Alvarez",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Maximiliano Hernández",
+      "character": "Agent Sitwell",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Richard Cetrone",
+      "character": "Frost Giant Captain",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Darren Kendrick",
+      "character": "Frost Giant Sentry",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Josh Coxx",
+      "character": "Frost Giant Hailstrum",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Justice J. Smith Jr.",
+      "character": "Frost Giant Brute",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joseph Gatt",
+      "character": "Frost Giant Grundroth",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Luke Massy",
+      "character": "Frost Giant Raze",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Matthew Ducey",
+      "character": "Einherjar Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jason Camp",
+      "character": "Einherjar Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Buddy Sosthand",
+      "character": "Agent Delancey",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Blake Silver",
+      "character": "Techie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jamie McShane",
+      "character": "Agent Jackson",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Dale Godboldo",
+      "character": "Agent Garrett",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Patrick O'Brien Demsey",
+      "character": "Agent Cale",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jim Palmer",
+      "character": "SHIELD Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Seth Coltan",
+      "character": "Townie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "J. Michael Straczynski",
+      "character": "Townie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ryan Schaefer",
+      "character": "Townie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Matt Battaglia",
+      "character": "Pete",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Stan Lee",
+      "character": "Stan the Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Joel McCrary",
+      "character": "Drunk Townie",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Isaac Kappy",
+      "character": "Pet Store Clerk",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Juliet Lopez",
+      "character": "Admission Nurse",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rob Mars",
+      "character": "Orderly",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Carrie Lazar",
+      "character": "Viking Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Harley Graham",
+      "character": "Viking Child",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Alexander Wright",
+      "character": "Viking Elder",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Hilary Pingle",
+      "character": "Viking",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Shawn-Caulin Young",
+      "character": "Viking",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kinsey McLean",
+      "character": "Viking",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kelly Hawthorne",
+      "character": "Viking",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dakota Goyo",
+      "character": "Young Thor",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ted Allpress",
+      "character": "Young Loki",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Douglas Tait",
+      "character": "Frost Giant (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Walt Simonson",
+      "character": "Guest (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jeremy Renner",
+      "character": "Clint Barton / Hawkeye (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Samuel L. Jackson",
+      "character": "Nick Fury (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Vanessa Bednar",
+      "character": "Viking Villager (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Michelle Csitos",
+      "character": "Viking Village Wife (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Stephen Oyoung",
+      "character": "Einherjar Guard (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rachel de la Torre",
+      "character": "Nurse #1 (uncredited)",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Kenneth Branagh",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Don Payne",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Ashley Miller",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Zack Stentz",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "J. Michael Straczynski",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Mark Protosevich",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Kevin Feige",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Haris Zambarloukos",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Paul Rubell",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Patrick Doyle",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Bo Welch",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Alexandra Byrne",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Sarah Halley Finn",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Randi Hiller",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 1,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Visual Effects": {
+        "w": 5,
+        "m": 15,
+        "nb": 0,
+        "unknown": 43
+      },
+      "Production": {
+        "w": 9,
+        "m": 7,
+        "nb": 0,
+        "unknown": 5
+      },
+      "Editing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Writing": {
+        "w": 0,
+        "m": 8,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Sound": {
+        "w": 2,
+        "m": 12,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Camera": {
+        "w": 0,
+        "m": 11,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Art": {
+        "w": 6,
+        "m": 24,
+        "nb": 0,
+        "unknown": 12
+      },
+      "Crew": {
+        "w": 10,
+        "m": 60,
+        "nb": 0,
+        "unknown": 34
+      },
+      "Costume & Make-Up": {
+        "w": 9,
+        "m": 12,
+        "nb": 0,
+        "unknown": 46
+      },
+      "Lighting": {
+        "w": 1,
+        "m": 6,
+        "nb": 0,
+        "unknown": 12
+      }
+    }
+  },
+  "money": {
+    "budget": 150000000,
+    "revenue": 449326618
+  },
+  "directors": [
+    {
+      "name": "Kenneth Branagh"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Ashley E. Miller"
+    },
+    {
+      "name": "Zack Stentz"
+    },
+    {
+      "name": "Don Payne"
+    }
+  ],
+  "awards": [
+    {
+      "name": "5 wins & 30 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-09T15:07:00.625Z",
+  "plot": "The warrior Thor (Chris Hemsworth) is cast out of the fantastic realm of Asgard by his father Odin (Sir Anthony Hopkins) for his arrogance and sent to Earth to live amongst humans. Falling in love with scientist Jane Foster (Natalie Portman) teaches Thor much-needed lessons, and his new-found strength comes into play as a villain from his homeland sends dark forces toward Earth.",
+  "simplePlot": "The warrior Thor (Chris Hemsworth) is cast out of the fantastic realm of Asgard by his father Odin (Sir Anthony Hopkins) for his arrogance and sent to Earth to live amongst humans. Falling in love with scientist Jane Foster (Natalie Portman) teaches Thor much-needed lessons, and his new-found strength comes into play as a villain from his homeland sends dark forces toward Earth.",
+  "year": 2011,
+  "releaseDate": "06 May 2011",
+  "rated": "PG-13",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BNjRhNGZjZjEtYTQzYS00OWUxLThjNGEtMTIwMTE2ZDFlZTZkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+  "idIMDB": "tt0800369",
+  "rating": "7.0",
+  "metascore": 57,
+  "urlIMDB": "https://www.imdb.com/title/tt0800369/"
+}
