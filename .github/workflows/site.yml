@@ -20,6 +20,7 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
 
@@ -44,8 +45,17 @@ jobs:
       - name: Unit and build-output tests
         run: npm test
 
+      # --with-deps pulls ~110 packages from Ubuntu's Azure mirror, which usually
+      # takes 30-60s but sometimes crawls for 10+ minutes. Give each try 4
+      # minutes; packages already downloaded stay in apt's cache for the next.
       - name: Install browsers
-        run: npx playwright install --with-deps chromium webkit
+        run: |
+          for attempt in 1 2 3; do
+            timeout 4m npx playwright install --with-deps chromium webkit && exit 0
+            echo "::warning::Browser install attempt $attempt failed or took over 4 minutes"
+            sudo dpkg --configure -a
+          done
+          exit 1
 
       - name: End-to-end, accessibility and layout tests (desktop, Pixel, iPhone)
         run: npm run e2e
