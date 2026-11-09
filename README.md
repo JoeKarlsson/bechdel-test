@@ -9,9 +9,7 @@
 Bechdel.io checks movie scripts against the Bechdel Test: are there at least two
 women, do they talk to each other, and do they talk about something other than a
 man. It sorts a wall of movies most people have already seen into pass and fail,
-which makes you look at them again. About half of the 218 films fail, and a lot
-of them are favorites. My sister Laurel and I made it in 2015 and released it as
-open source because we saw it as feminist activism.
+and about half of them fail, a lot of them favorites.
 
 [See the shelf at bechdel.joekarlsson.com](https://bechdel.joekarlsson.com/) ·
 [Read the full statement](https://www.joekarlsson.com/work/bechdel-io/)
