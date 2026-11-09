@@ -20,6 +20,12 @@
 
 What Bechdel.io looked like in November 2026, recorded for [its page on joekarlsson.com](https://www.joekarlsson.com/work/bechdel-io/). The full-quality video is [2026-11-recording.mp4](.github/readme/2026-11-recording.mp4).
 
+## Artist statement
+
+A wall of movies most people have already seen, sorted into pass and fail, makes you look at them again. The counting is also where it goes wrong. It can't see a trans character, a character whose gender changes during the film, or anyone who isn't a man or a woman.
+
+[Read the full statement](https://www.joekarlsson.com/work/bechdel-io/), also on the site's [about page](https://bechdel.joekarlsson.com/about/#artist-statement).
+
 ## The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria
 
 1. It includes at least two women
