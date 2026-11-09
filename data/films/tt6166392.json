@@ -1,0 +1,1771 @@
+{
+  "_id": "tt6166392",
+  "title": "Wonka",
+  "genres": [
+    "Adventure",
+    "Comedy",
+    "Drama"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 7,
+    "numScenesDontPass": 118,
+    "numOfFemalesChars": 16,
+    "numOfMaleChars": 27,
+    "numOfFemalesCharsWithDialogue": 4,
+    "numOfMaleCharsWithDialogue": 18,
+    "totalLinesFemaleDialogue": 315,
+    "totalLinesMaleDialogue": 753,
+    "scenesThatPass": [
+      "MRS SCRUBITT: Then just sign here and we're done.\nNOODLE: Read the small print!",
+      "MRS SCRUBITT: Noodle! Oh Noodle!\nNOODLE: Yes, Mrs Scrubitt?\nMRS SCRUBITT: I've been looking for you.\nNOODLE: What d'you want?",
+      "LOTTIE BELL: What? Why are you staring at me?\nPIPER BENZ: I just never heard you speak.",
+      "LOTTIE BELL: Definitely not.\nNOODLE: But if we have to take a day off, at least I can give you another reading lesson.",
+      "LOTTIE BELL: I don't understand. What...? What...?\nPIPER BENZ: What happened?"
+    ]
+  },
+  "script": {
+    "file": "wonka.txt",
+    "layout": "indented",
+    "dialogueLines": 1162,
+    "speakers": [
+      {
+        "name": "WILLY",
+        "lines": 354,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "NOODLE",
+        "lines": 164,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "MRS SCRUBITT",
+        "lines": 88,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "SLUGWORTH",
+        "lines": 81,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OOMPA LOOMPA",
+        "lines": 66,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ABACUS CRUNCH",
+        "lines": 51,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CHIEF",
+        "lines": 51,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BLEACHER",
+        "lines": 43,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "FICKELGRUBER",
+        "lines": 29,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PRODNOSE",
+        "lines": 28,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LARRY CHUCKLESWORTH",
+        "lines": 20,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "PRIEST",
+        "lines": 17,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "PIPER BENZ",
+        "lines": 16,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "OFFICER AFFABLE",
+        "lines": 15,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "LOTTIE BELL",
+        "lines": 12,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "WORKERS",
+        "lines": 12,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "MAMMA",
+        "lines": 11,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "ZOO SECURITY GUARD",
+        "lines": 10,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "OLD MAN",
+        "lines": 9,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "YOUNG WILLY",
+        "lines": 9,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "COLIN",
+        "lines": 8,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "MISTRESS OF THE KEYS",
+        "lines": 5,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CHOCOLATIERS",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "PASSENGERS",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BARBARA",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BEGGAR GIRL",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "CROWD",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DUCHESS",
+        "lines": 3,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "GREEN-FACED CUSTOMER",
+        "lines": 3,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "MISS BON-BON",
+        "lines": 3,
+        "gender": "w",
+        "named": true
+      },
+      {
+        "name": "BRETHREN",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DAUGHTER",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "DONOVAN",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "FIGURE",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FRUIT SELLER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LADY 1",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "PINK-HAIRED CUSTOMER",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SHOESHINE BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "AFFABLE",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "BLUE-HAIRED CUSTOMER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BRETHRED",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CAPTAIN",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "COLIN AND BARBARA",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "CUSTOMER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CUSTOMERS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "CUSTOMERS & WILLY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "EVERYONE",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LADIES",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "LADY 2",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MAP-SELLER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "NOODLE WILLY",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "ORANGE-HAIRED CUSTOMER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "RADIO ANNOUNCER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SCRUBITT AND BLEACHER",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TIDDLES",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "WAITER",
+        "lines": 1,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "WILLY AND COLIN",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "WILLY AND NOODLE",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "YOUNG MOTHER",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Ocean",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Boat",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Docks",
+        "lines": {
+          "0": 2,
+          "41": 1
+        }
+      },
+      {
+        "place": "Town square",
+        "lines": {
+          "0": 10,
+          "34": 2,
+          "37": 2,
+          "49": 1
+        }
+      },
+      {
+        "place": "Galeries gourmet",
+        "lines": {
+          "0": 2
+        }
+      },
+      {
+        "place": "Riverbank",
+        "lines": {
+          "0": 10,
+          "7": 6,
+          "58": 1
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "2": 3,
+          "7": 2
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "0": 20,
+          "1": 2,
+          "2": 20,
+          "7": 3
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "1": 4,
+          "2": 6
+        }
+      },
+      {
+        "place": "Galeries gourmet",
+        "lines": {
+          "0": 22,
+          "3": 11,
+          "6": 3,
+          "8": 6,
+          "9": 3,
+          "13": 4,
+          "29": 2
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "0": 8,
+          "2": 12,
+          "7": 6
+        }
+      },
+      {
+        "place": "Wash house",
+        "lines": {
+          "0": 2,
+          "5": 7,
+          "10": 3,
+          "12": 6,
+          "15": 3
+        }
+      },
+      {
+        "place": "Back stairs",
+        "lines": {
+          "15": 1
+        }
+      },
+      {
+        "place": "Staff corridor",
+        "lines": {
+          "7": 1,
+          "15": 2,
+          "53": 1
+        }
+      },
+      {
+        "place": "Willy's room",
+        "lines": {
+          "0": 15,
+          "1": 18
+        }
+      },
+      {
+        "place": "River",
+        "lines": {
+          "0": 2,
+          "16": 1
+        }
+      },
+      {
+        "place": "Barge",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "16": 9,
+          "19": 9
+        }
+      },
+      {
+        "place": "Willy's room",
+        "lines": {
+          "0": 13,
+          "1": 11
+        }
+      },
+      {
+        "place": "Town square",
+        "lines": {}
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "6": 1
+        }
+      },
+      {
+        "place": "Confessional",
+        "lines": {
+          "6": 2,
+          "11": 1
+        }
+      },
+      {
+        "place": "Crypt",
+        "lines": {}
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "3": 12,
+          "6": 16,
+          "8": 7,
+          "9": 9,
+          "22": 2
+        }
+      },
+      {
+        "place": "Back stairs",
+        "lines": {
+          "0": 8,
+          "2": 2,
+          "7": 10
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "1": 7,
+          "2": 9
+        }
+      },
+      {
+        "place": "Wash house",
+        "lines": {
+          "0": 2,
+          "10": 1,
+          "15": 2,
+          "54": 1
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "2": 7,
+          "7": 4
+        }
+      },
+      {
+        "place": "Wash house",
+        "lines": {
+          "0": 5,
+          "15": 4
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "2": 2,
+          "7": 2
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher / alley",
+        "lines": {
+          "0": 13,
+          "1": 13
+        }
+      },
+      {
+        "place": "Zoo / security lodge",
+        "lines": {
+          "0": 8,
+          "1": 5,
+          "17": 7
+        }
+      },
+      {
+        "place": "Zoo",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Backstage corridor",
+        "lines": {
+          "0": 3,
+          "1": 3
+        }
+      },
+      {
+        "place": "Giraffe enclosure",
+        "lines": {
+          "0": 20,
+          "1": 17,
+          "57": 1
+        }
+      },
+      {
+        "place": "Zoo",
+        "lines": {
+          "50": 1
+        }
+      },
+      {
+        "place": "Galeries gourmet",
+        "lines": {}
+      },
+      {
+        "place": "Town square",
+        "lines": {
+          "0": 8,
+          "1": 2,
+          "6": 11,
+          "13": 3
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "0": 1,
+          "2": 1,
+          "7": 1
+        }
+      },
+      {
+        "place": "Wash house",
+        "lines": {
+          "0": 6,
+          "1": 3,
+          "5": 10,
+          "10": 4,
+          "12": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Slugworth's office",
+        "lines": {
+          "3": 4,
+          "5": 3,
+          "29": 1
+        }
+      },
+      {
+        "place": "Police station",
+        "lines": {
+          "5": 2
+        }
+      },
+      {
+        "place": "Willy's room",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Back of scrubitt and bleacher",
+        "lines": {
+          "0": 13,
+          "1": 10,
+          "5": 2,
+          "10": 2,
+          "12": 3,
+          "14": 3
+        }
+      },
+      {
+        "place": "Town square",
+        "lines": {
+          "0": 5,
+          "20": 8,
+          "24": 3,
+          "55": 1,
+          "56": 1
+        }
+      },
+      {
+        "place": "Tram",
+        "lines": {
+          "0": 1,
+          "23": 1,
+          "35": 2,
+          "47": 1,
+          "48": 1
+        }
+      },
+      {
+        "place": "Barber's shop",
+        "lines": {
+          "0": 3,
+          "43": 1
+        }
+      },
+      {
+        "place": "Tram",
+        "lines": {
+          "23": 1
+        }
+      },
+      {
+        "place": "Barber's shop",
+        "lines": {
+          "44": 1
+        }
+      },
+      {
+        "place": "Tram",
+        "lines": {
+          "6": 1,
+          "13": 1,
+          "23": 2
+        }
+      },
+      {
+        "place": "Noodle's room",
+        "lines": {
+          "0": 2,
+          "1": 3,
+          "5": 1
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "3": 1,
+          "6": 1,
+          "8": 3,
+          "9": 1,
+          "22": 2
+        }
+      },
+      {
+        "place": "Town square",
+        "lines": {
+          "0": 3,
+          "6": 2,
+          "13": 1,
+          "26": 3,
+          "42": 1
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {}
+      },
+      {
+        "place": "Willy's room",
+        "lines": {
+          "0": 12,
+          "4": 11,
+          "33": 2
+        }
+      },
+      {
+        "place": "Loompaland",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Loompaland",
+        "lines": {
+          "0": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Beach",
+        "lines": {
+          "0": 1,
+          "4": 2
+        }
+      },
+      {
+        "place": "Willy's room",
+        "lines": {
+          "0": 7,
+          "4": 8
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher / alley",
+        "lines": {
+          "0": 6,
+          "1": 7,
+          "5": 3,
+          "10": 1,
+          "12": 2,
+          "14": 1
+        }
+      },
+      {
+        "place": "University quarter",
+        "lines": {}
+      },
+      {
+        "place": "Library / reading room",
+        "lines": {
+          "0": 8,
+          "1": 11,
+          "10": 1,
+          "46": 1
+        }
+      },
+      {
+        "place": "Willy's chocolate shop",
+        "lines": {
+          "0": 2,
+          "1": 1,
+          "5": 3,
+          "10": 1,
+          "12": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Alley",
+        "lines": {
+          "3": 7,
+          "6": 7,
+          "8": 4,
+          "9": 2
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "2": 4,
+          "3": 3,
+          "7": 1
+        }
+      },
+      {
+        "place": "Galeries gourmet",
+        "lines": {
+          "0": 5,
+          "18": 1
+        }
+      },
+      {
+        "place": "Wonka's chocolate shop",
+        "lines": {
+          "0": 14,
+          "1": 1,
+          "5": 5,
+          "18": 8,
+          "27": 3,
+          "28": 3,
+          "31": 2,
+          "36": 2,
+          "39": 1,
+          "45": 1,
+          "51": 1
+        }
+      },
+      {
+        "place": "Chocolatiers' offices",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Willy's shop",
+        "lines": {
+          "0": 6,
+          "1": 4,
+          "3": 7,
+          "5": 2,
+          "8": 3,
+          "9": 3,
+          "12": 1,
+          "14": 1,
+          "16": 1
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Willy's room",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Staff corridor",
+        "lines": {
+          "0": 1
+        }
+      },
+      {
+        "place": "Noodle's room",
+        "lines": {
+          "0": 1,
+          "1": 3
+        }
+      },
+      {
+        "place": "Docks",
+        "lines": {
+          "3": 2,
+          "8": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Deck",
+        "lines": {
+          "0": 14,
+          "4": 17
+        }
+      },
+      {
+        "place": "Wharf",
+        "lines": {
+          "3": 1,
+          "6": 2
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "1": 3,
+          "2": 14,
+          "5": 1,
+          "7": 4,
+          "10": 3,
+          "12": 1
+        }
+      },
+      {
+        "place": "Coop",
+        "lines": {
+          "0": 9,
+          "1": 6,
+          "5": 4,
+          "10": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 1,
+          "25": 3
+        }
+      },
+      {
+        "place": "Zoo / security lodge",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "Zoo transport van",
+        "lines": {
+          "0": 2,
+          "5": 3
+        }
+      },
+      {
+        "place": "Alley near cathedral",
+        "lines": {}
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 3,
+          "30": 2,
+          "40": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 2
+        }
+      },
+      {
+        "place": "Telephone exchange",
+        "lines": {
+          "11": 1,
+          "14": 2
+        }
+      },
+      {
+        "place": "Alley near cathedral",
+        "lines": {
+          "10": 3
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "5": 1
+        }
+      },
+      {
+        "place": "Crypt",
+        "lines": {
+          "21": 2
+        }
+      },
+      {
+        "place": "Zoo / security lodge",
+        "lines": {
+          "17": 1
+        }
+      },
+      {
+        "place": "Crypt",
+        "lines": {
+          "1": 1,
+          "21": 2
+        }
+      },
+      {
+        "place": "Zoo / security lodge",
+        "lines": {}
+      },
+      {
+        "place": "Crypt",
+        "lines": {}
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Slugworth's limousine",
+        "lines": {
+          "3": 1,
+          "32": 1,
+          "52": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 2
+        }
+      },
+      {
+        "place": "Slugworth's car",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "11": 1
+        }
+      },
+      {
+        "place": "Slugworth's car",
+        "lines": {
+          "3": 1,
+          "32": 1
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "0": 6,
+          "1": 6,
+          "3": 3
+        }
+      },
+      {
+        "place": "Slugworth's house",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Slugworth's house",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Scrubitt and bleacher",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Wash house",
+        "lines": {
+          "1": 1
+        }
+      },
+      {
+        "place": "Slugworth's house",
+        "lines": {
+          "3": 2
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "3": 8,
+          "8": 1,
+          "9": 2
+        }
+      },
+      {
+        "place": "Chocolate tank",
+        "lines": {
+          "0": 4,
+          "3": 4,
+          "8": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {}
+      },
+      {
+        "place": "Chocolate tank",
+        "lines": {}
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "3": 1
+        }
+      },
+      {
+        "place": "Chocolate tank",
+        "lines": {
+          "0": 4,
+          "1": 3
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "3": 2,
+          "8": 1,
+          "9": 3,
+          "11": 2
+        }
+      },
+      {
+        "place": "Chocolate tank",
+        "lines": {
+          "0": 2,
+          "1": 2
+        }
+      },
+      {
+        "place": "Confessional booth",
+        "lines": {
+          "4": 2,
+          "11": 1
+        }
+      },
+      {
+        "place": "Vault",
+        "lines": {
+          "4": 2
+        }
+      },
+      {
+        "place": "Chocolate tank",
+        "lines": {
+          "0": 2,
+          "1": 3
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "0": 5,
+          "1": 1,
+          "3": 7,
+          "6": 5,
+          "8": 1,
+          "9": 1,
+          "13": 3
+        }
+      },
+      {
+        "place": "Storm drains",
+        "lines": {
+          "14": 1
+        }
+      },
+      {
+        "place": "Cathedral",
+        "lines": {
+          "0": 2,
+          "3": 1,
+          "8": 1,
+          "9": 2,
+          "17": 1,
+          "21": 1
+        }
+      },
+      {
+        "place": "Town square",
+        "lines": {
+          "0": 5,
+          "1": 3,
+          "5": 2,
+          "12": 1,
+          "14": 1
+        }
+      },
+      {
+        "place": "University quarter",
+        "lines": {
+          "0": 13,
+          "1": 1,
+          "4": 11
+        }
+      },
+      {
+        "place": "Ruined castle",
+        "lines": {
+          "0": 5,
+          "2": 7,
+          "4": 10,
+          "7": 3,
+          "13": 3,
+          "38": 1
+        }
+      }
+    ],
+    "measures": {
+      "firstWomanLine": 25,
+      "longestWithoutWoman": 66,
+      "longestWithoutWomanStart": 631,
+      "words": {
+        "w": 2694,
+        "m": 7679,
+        "unknown": 991
+      },
+      "womenConversations": 13,
+      "menConversations": 65,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/uIk2g2bRkNwNywKZIhC5oIU94Kh.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/qhb1qOilapbapxWQn9jtRCMwXJF.jpg"
+  },
+  "bechdelData": {
+    "rating": 3,
+    "dubious": 0,
+    "id": 11200
+  },
+  "actors": [
+    {
+      "actorName": "Timothée Chalamet",
+      "character": "Willy Wonka",
+      "actorActress": "2",
+      "age": 27
+    },
+    {
+      "actorName": "Calah Lane",
+      "character": "Noodle",
+      "actorActress": "1",
+      "age": 14
+    },
+    {
+      "actorName": "Keegan-Michael Key",
+      "character": "Chief of Police",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "Hugh Grant",
+      "character": "Oompa Loompa",
+      "actorActress": "2",
+      "age": 63
+    },
+    {
+      "actorName": "Paterson Joseph",
+      "character": "Arthur Slugworth",
+      "actorActress": "2",
+      "age": 59
+    },
+    {
+      "actorName": "Olivia Colman",
+      "character": "Mrs. Scrubbit",
+      "actorActress": "1",
+      "age": 49
+    },
+    {
+      "actorName": "Tom Davis",
+      "character": "Bleacher",
+      "actorActress": "2",
+      "age": 54
+    },
+    {
+      "actorName": "Jim Carter",
+      "character": "Abacus Crunch",
+      "actorActress": "2",
+      "age": 75
+    },
+    {
+      "actorName": "Rowan Atkinson",
+      "character": "Father Julius",
+      "actorActress": "2",
+      "age": 68
+    },
+    {
+      "actorName": "Matt Lucas",
+      "character": "Prodnose",
+      "actorActress": "2",
+      "age": 49
+    },
+    {
+      "actorName": "Mathew Baynton",
+      "character": "Ficklegruber",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Natasha Rothwell",
+      "character": "Piper Benz",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rakhee Thakrar",
+      "character": "Lottie Bell",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Rich Fulcher",
+      "character": "Larry Chucklesworth",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Kobna Holdbrook-Smith",
+      "character": "Officer Affable",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Simon Farnaby",
+      "character": "Basil, Zoo Security Guard",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ellie White",
+      "character": "Gwennie, Mistress of the Keys",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Sally Hawkins",
+      "character": "Willy's Mother",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Colin O'Brien",
+      "character": "Young Willy Wonka",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Freya Parker",
+      "character": "Miss Bon Bon",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Murray McArthur",
+      "character": "Ship Captain",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Charlotte Ritchie",
+      "character": "Barbara",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Phil Wang",
+      "character": "Colin",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rufus Jones",
+      "character": "Jenkins",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Isy Suttie",
+      "character": "Fruit & Veg Vendor",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Ian Bartholomew",
+      "character": "Sceptical Old Man",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Sophie Winkleman",
+      "character": "The Countess",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Justin Edwards",
+      "character": "Green Skinned Customer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Michael Abubakar",
+      "character": "Orange Haired Customer",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Tim FitzHigham",
+      "character": "Sinister Ship’s Captain",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jane Bertish",
+      "character": "Baroness Von Schmeichelhammer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Tracy Ifeachor",
+      "character": "Dorothy Smith",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Dominic Coleman",
+      "character": "Donovan",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Muzz Khan",
+      "character": "Oompa Loompa Guard 1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Ben Howard",
+      "character": "Oompa Loompa Guard 2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Alison Pargeter",
+      "character": "Wendy Chucklesworth",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Bleu Woodward",
+      "character": "Waitress"
+    },
+    {
+      "actorName": "Paul G. Raymond",
+      "character": "Map Seller",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Lola Shepelev",
+      "character": "Moustachided Little Girl",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Marina Bye",
+      "character": "Green-Bearded Customer",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Robyn Rose",
+      "character": "Tram Lady 1"
+    },
+    {
+      "actorName": "Millie O'Donnell",
+      "character": "Tram Lady 2"
+    },
+    {
+      "actorName": "Susie Fairfax",
+      "character": "Abacus Crunch's Wife"
+    },
+    {
+      "actorName": "Macie Blake",
+      "character": "Abacus Crunch's Granddaughter (4 Years Old)"
+    },
+    {
+      "actorName": "Ellie Blake",
+      "character": "Abacus Crunch's Granddaughter (8 Years Old)"
+    },
+    {
+      "actorName": "Matilda Tucker",
+      "character": "Young Mother"
+    },
+    {
+      "actorName": "Bertie Caplan",
+      "character": "Shoeshine Boy"
+    },
+    {
+      "actorName": "Gustave Die",
+      "character": "Ship's Engineer"
+    },
+    {
+      "actorName": "Poppy Townsend White",
+      "character": "School Girl (uncredited)",
+      "actorActress": "1"
+    },
+    {
+      "actorName": "Grant Crookes",
+      "character": "Mourner (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Rene Costa",
+      "character": "Barber (uncredited)",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Luan Gallagher",
+      "character": "Dancer (uncredited)",
+      "actorActress": "2"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Paul King",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Simon Farnaby",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Paul King",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Paul King",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Luke Kelly",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Alexandra Derbyshire",
+        "gender": "w"
+      },
+      {
+        "job": "Producer",
+        "name": "David Heyman",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "Chung Chung-hoon",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Mark Everson",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "Joby Talbot",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Nathan Crowley",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Lindy Hemming",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Nina Gold",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Production": {
+        "w": 6,
+        "m": 8,
+        "nb": 0,
+        "unknown": 10
+      },
+      "Writing": {
+        "w": 0,
+        "m": 4,
+        "nb": 0,
+        "unknown": 0
+      },
+      "Art": {
+        "w": 4,
+        "m": 11,
+        "nb": 0,
+        "unknown": 16
+      },
+      "Crew": {
+        "w": 4,
+        "m": 13,
+        "nb": 0,
+        "unknown": 19
+      },
+      "Visual Effects": {
+        "w": 1,
+        "m": 6,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Sound": {
+        "w": 1,
+        "m": 15,
+        "nb": 0,
+        "unknown": 19
+      },
+      "Camera": {
+        "w": 0,
+        "m": 9,
+        "nb": 0,
+        "unknown": 30
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 6
+      },
+      "Editing": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 14
+      },
+      "Directing": {
+        "w": 1,
+        "m": 4,
+        "nb": 0,
+        "unknown": 9
+      },
+      "Costume & Make-Up": {
+        "w": 4,
+        "m": 0,
+        "nb": 0,
+        "unknown": 16
+      }
+    }
+  },
+  "money": {
+    "budget": 125000000,
+    "revenue": 634502312
+  },
+  "directors": [
+    {
+      "name": "Paul King"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Simon Farnaby"
+    },
+    {
+      "name": "Paul King"
+    },
+    {
+      "name": "Roald Dahl"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Nominated for 1 BAFTA Award. 6 wins & 45 nominations total"
+    }
+  ],
+  "dateUploaded": "2026-11-09T15:07:23.283Z",
+  "plot": "Willy Wonka is the mastermind behind some of the most delicious and innovative chocolate creations the world has ever seen. But before shaking up the chocolate industry and making a name for himself as a confectionery genius, the ambitious young creator had to defy all odds. As a result, Willy transformed his wildest dreams into reality with a bold vision, determination, and unexpected help from new friends. After all, hard work and a dash of magic can make anything happen. Because, as Willy already knows, it only takes a dream to make a difference.",
+  "simplePlot": "Willy Wonka is the mastermind behind some of the most delicious and innovative chocolate creations the world has ever seen. But before shaking up the chocolate industry and making a name for himself as a confectionery genius, the ambitious young creator had to defy all odds. As a result, Willy transformed his wildest dreams into reality with a bold vision, determination, and unexpected help from new friends. After all, hard work and a dash of magic can make anything happen. Because, as Willy already knows, it only takes a dream to make a difference.",
+  "year": 2023,
+  "releaseDate": "15 Dec 2023",
+  "rated": "PG",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BM2Y1N2ZhNjctYjVhZC00MDg2LWFhNTItMzI3ZjAwZDhjYmFiXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg",
+  "idIMDB": "tt6166392",
+  "rating": "6.9",
+  "metascore": 66,
+  "urlIMDB": "https://www.imdb.com/title/tt6166392/"
+}
