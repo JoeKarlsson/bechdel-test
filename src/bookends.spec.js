@@ -40,6 +40,19 @@ describe('quoteOf', () => {
 		expect(quoteOf('I do. They kiss in the rain.', names)).toBe('I do.');
 		expect(quoteOf('Home. The CAMERA CRANES UP.', names)).toBe('Home.');
 		expect(quoteOf('We follow Elizabeth into the house.', names)).toBe('');
+		expect(quoteOf("Carnival's bigger today. MARK LIJEK, 29, a consular officer, joins Anders.", names)).toBe("Carnival's bigger today.");
+		expect(quoteOf('Nobody. MAYOR: - Your wife?', names)).toBe('Nobody.');
+		expect(quoteOf('What a shot! He smiles and turns his back.', names)).toBe('What a shot!');
+		expect(quoteOf('CONNORS is standing in front of a blank wall.', names)).toBe('');
+		expect(quoteOf('(mock-serious,', names)).toBe('');
+	});
+
+	it('keeps initials, titles and parentheticals out of the way', () => {
+		expect(quoteOf("I'm moving back to L.A.", names)).toBe("I'm moving back to L.A.");
+		expect(quoteOf('So do I.', names)).toBe('So do I.');
+		expect(quoteOf('Pardon me. (gravely) To continue.', names)).toBe('Pardon me. To continue.');
+		expect(quoteOf('playing commentator) What a shot!', names)).toBe('What a shot!');
+		expect(quoteOf('Hi.', names)).toBe('Hi.');
 	});
 
 	it('keeps a shouted line and shortens a long one at a sentence', () => {
