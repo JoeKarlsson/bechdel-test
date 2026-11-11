@@ -53,6 +53,9 @@ jobs:
           for attempt in 1 2 3; do
             timeout 4m npx playwright install --with-deps chromium webkit && exit 0
             echo "::warning::Browser install attempt $attempt failed or took over 4 minutes"
+            # timeout can't stop the root apt-get Playwright started, and it holds the dpkg lock
+            sudo pkill -x apt-get || true
+            while sudo fuser /var/lib/dpkg/lock-frontend >/dev/null 2>&1; do sleep 2; done
             sudo dpkg --configure -a
           done
           exit 1
