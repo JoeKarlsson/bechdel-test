@@ -6,30 +6,71 @@ import { loadFilms } from '../../lib/films.mjs';
 // links to every film for search engines
 const films = [...loadFilms()].sort((a, b) => a.title.localeCompare(b.title));
 const passing = films.filter((f) => f.bechdel.pass).length;
+// Grouped by first letter, with a jump row; titles starting with a digit or symbol go under #
+const letterOf = (title: string) => {
+	const c = title.normalize('NFD').charAt(0).toUpperCase();
+	return c >= 'A' && c <= 'Z' ? c : '#';
+};
+const groups = new Map<string, typeof films>();
+for (const f of films) groups.set(letterOf(f.title), [...(groups.get(letterOf(f.title)) ?? []), f]);
+const letters = [...groups.keys()].sort((a, b) => (a === '#' ? -1 : b === '#' ? 1 : a.localeCompare(b)));
+const anchor = (letter: string) => (letter === '#' ? 'digits' : letter.toLowerCase());
 ---
 
 <Base
 	title="Every film, A to Z"
-	description={`All ${films.length} films we've checked against the Bechdel test, A to Z, with each one's score.`}
+	description={`All ${films.length.toLocaleString('en-US')} films we've checked against the Bechdel test, A to Z, with each one's score.`}
 	nav="shelf"
 >
 	<div class="page">
 		<h1 class="page-title">Every film, A to Z</h1>
-		<p class="page-lead">{films.length} films. {passing} pass the Bechdel test.</p>
-		<ol class="all">
-			{
-				films.map((f) => (
-					<li>
-						<a href={`/films/${f.slug}/`}>{f.title}</a>
-						{f.year && ` (${f.year})`}, {f.bechdel.score} of 3, <span class:list={['verdict', f.bechdel.pass ? 'pass' : 'fail']}>{f.bechdel.pass ? 'passes' : 'fails'}</span>
-					</li>
-				))
-			}
-		</ol>
+		<p class="page-lead">{films.length.toLocaleString('en-US')} films. {passing.toLocaleString('en-US')} pass the Bechdel test.</p>
+		<nav class="jump" aria-label="Jump to a letter">
+			{letters.map((l) => <a href={`#${anchor(l)}`}>{l}</a>)}
+		</nav>
+		{
+			letters.map((l) => (
+				<section class="letter" aria-labelledby={anchor(l)}>
+					<h2 id={anchor(l)}>{l}</h2>
+					<ol class="all">
+						{groups.get(l)!.map((f) => (
+							<li>
+								<a href={`/films/${f.slug}/`}>{f.title}</a>
+								{f.year && ` (${f.year})`}, {f.bechdel.score} of 3, <span class:list={['verdict', f.bechdel.pass ? 'pass' : 'fail']}>{f.bechdel.pass ? 'passes' : 'fails'}</span>
+							</li>
+						))}
+					</ol>
+				</section>
+			))
+		}
 	</div>
 </Base>
 
 <style>
+	.jump {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 var(--space-1);
+		margin: var(--space-6) 0 0;
+	}
+	.jump a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 44px;
+		min-height: 44px;
+		font-family: var(--poster);
+		font-size: 1.25rem;
+		color: var(--chalk);
+	}
+	.jump a:hover {
+		color: var(--pink);
+	}
+	.letter h2 {
+		font-size: clamp(2rem, 4vw, 2.75rem);
+		margin: var(--space-6) 0 var(--space-2);
+		scroll-margin-top: var(--space-4);
+	}
 	.all {
 		list-style: none;
 		padding: 0;

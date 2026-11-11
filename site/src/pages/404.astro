@@ -7,12 +7,34 @@ import Base from '../layouts/Base.astro';
 		<h1 class="page-title">Not on the shelf</h1>
 		<p class="stamp" aria-hidden="true">Fail</p>
 		<p class="page-lead">We couldn't find that page. It may have moved when the site was rebuilt.</p>
+		<p class="suggest" hidden data-suggest>Did you mean <a href="/"></a>?</p>
 		<p class="links">
 			<a href="/">Browse all the films</a>
 			<a href="/about/">Read about the test</a>
 		</p>
 	</div>
 </Base>
+
+<script>
+	// A mistyped film address (/films/mad-max-fury-rood-2015/, or no year) gets the nearest film
+	import { closest } from '../lib/search.mjs';
+
+	const slug = location.pathname.match(/^\/films\/([^/]+)/)?.[1];
+	const suggest = document.querySelector<HTMLElement>('[data-suggest]');
+	if (slug && suggest) {
+		fetch('/shelf.json')
+			.then((res) => (res.ok ? (res.json() as Promise<{ slug: string; title: string; year: number | null }[]>) : []))
+			.then((films) => {
+				const near = closest(slug, films, (f) => [f.slug, f.slug.replace(/-\d{4}$/, '')]);
+				if (!near) return;
+				const link = suggest.querySelector('a')!;
+				link.href = `/films/${near.slug}/`;
+				link.textContent = near.year ? `${near.title} (${near.year})` : near.title;
+				suggest.hidden = false;
+			})
+			.catch((error) => console.warn('No suggestion for this address:', error)); // the links below still work
+	}
+</script>
 
 <style>
 	/* The gray FAIL label from the favicon and the film pages */
@@ -27,6 +49,10 @@ import Base from '../layouts/Base.astro';
 		background: var(--fail);
 		padding: var(--space-1) var(--space-3);
 		transform: rotate(-3deg);
+	}
+	.suggest {
+		margin-top: var(--space-4);
+		font-size: var(--text-lead);
 	}
 	.links {
 		display: flex;

@@ -150,6 +150,27 @@ h4 {
 	color: var(--muted);
 	font-size: var(--text-small);
 	margin: 0;
+	max-width: 40em;
+}
+
+/* No one-word last lines; headings break into even lines */
+p,
+li {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3 {
+	text-wrap: balance;
+}
+
+/* A link alone on its line gets a 44 px tall target, like the header and footer links */
+p > a:only-child,
+dd > a:only-child,
+.scores th a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
 }
 
 /* Paper: chalk-colored cards with black text */
@@ -230,12 +251,55 @@ h4 {
 	outline-offset: -2px;
 }
 
+/* Folds open and close instead of snapping: the people rankings and the
+   film-page exhibits and charges. The cast and data tables stay instant, since
+   at thousands of pixels tall an animation would only re-lay the page out. */
+@supports (interpolate-size: allow-keywords) {
+	:is(.people details, details.fold, details.charge) {
+		interpolate-size: allow-keywords;
+	}
+	:is(.people details, details.fold, details.charge)::details-content {
+		block-size: 0;
+		overflow: clip;
+		transition:
+			block-size 180ms ease-in,
+			content-visibility 180ms allow-discrete;
+	}
+	:is(.people details, details.fold, details.charge)[open]::details-content {
+		block-size: auto;
+		transition-duration: 220ms;
+		transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	/* Its own rule: the * reset below doesn't reach ::details-content, and an
+	   unknown pseudo-element there would void that whole reset */
+	@media (prefers-reduced-motion: reduce) {
+		:is(.people details, details.fold, details.charge)::details-content {
+			transition: none !important;
+		}
+	}
+}
+
+/* A quick crossfade between pages, where the browser supports it */
+@view-transition {
+	navigation: auto;
+}
+::view-transition-old(root) {
+	animation-duration: 120ms;
+}
+::view-transition-new(root) {
+	animation-duration: 160ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
 	*::after {
 		animation: none !important;
 		transition: none !important;
+	}
+	/* The rule above doesn't reach view transitions */
+	@view-transition {
+		navigation: none;
 	}
 }
 
@@ -252,8 +316,9 @@ h4 {
 }
 
 /* Long-form text pages */
+/* About 70 characters a line */
 .prose {
-	max-width: 40em;
+	max-width: 34em;
 }
 .prose h2 {
 	font-size: clamp(2rem, 4vw, 2.75rem);

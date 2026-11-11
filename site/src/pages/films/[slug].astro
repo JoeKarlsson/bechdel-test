@@ -23,6 +23,8 @@ const ai = showAiReadings ? film.ai : null;
 const poster = posterFor(film.images.poster, [342, 500]);
 const backdrop = backdropFor(film.images.backdrop);
 const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+// Letters in the title's longest word: the hero caps its size so that word fits a phone
+const longestWord = Math.max(...film.title.split(/\s+/).map((w: string) => w.length));
 const yes = (ok: boolean) => (ok ? 'Yes' : 'No');
 
 // What each rule's yes or no rests on, in plain words
@@ -35,7 +37,9 @@ const ruleEvidence = [
 		: 'Fewer than two women characters.',
 	bechdel.rules[1]
 		? bechdel.pass
-			? `In ${plural(bechdel.scenesPass, 'scene')} out of ${bechdel.scenesTotal}.`
+			? bechdel.scenesTotal > 1
+				? `In ${plural(bechdel.scenesPass, 'scene')} out of ${bechdel.scenesTotal}.`
+				: 'Women talk to each other.'
 			: 'Women do talk to each other.'
 		: 'Our parser found no scene where two women talk to each other.',
 	bechdel.rules[2]
@@ -213,10 +217,11 @@ const facts = [
 	['Metascore', film.metascore !== null ? `${film.metascore} / 100` : null],
 	['Awards', film.awards.join('; ') || null],
 ].filter(([, v]) => v);
+const names = new Intl.ListFormat('en', { type: 'conjunction' });
 const credit = [
 	film.year,
-	film.directors.length ? `Directed by ${film.directors.join(' and ')}` : null,
-	film.writers.length ? `written by ${film.writers.join(' and ')}` : null,
+	film.directors.length ? `Directed by ${names.format(film.directors)}` : null,
+	film.writers.length ? `written by ${names.format(film.writers)}` : null,
 ]
 	.filter(Boolean)
 	.join('. ')
@@ -224,6 +229,7 @@ const credit = [
 ---
 
 <Base
+	nav="shelf"
 	title={`${film.title} (${film.year}): ${verdictWord.toLowerCase()} the Bechdel test`}
 	description={description}
 	image={`/og/${film.slug}.jpg`}
@@ -244,7 +250,7 @@ const credit = [
 		}
 		<div class="hero-text page">
 			<p class:list={['verdict-stamp', bechdel.pass ? 'pass' : 'fail']}>{verdictWord} the Bechdel test</p>
-			<h1 class:list={{ long: film.title.length > 22 }}><span>{film.title}</span></h1>
+			<h1 class:list={{ long: film.title.length > 22 }} style={`--longest: ${longestWord}`}><span>{film.title}</span></h1>
 			{credit && <p class="credit">{credit}.</p>}
 		</div>
 	</section>
@@ -397,7 +403,7 @@ const credit = [
 						Who talks, scene by scene
 					</h2>
 					<p class="note chart-note">
-						Lines of dialogue in every {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below.
+						Lines of dialogue in groups of {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below.
 						{unknownShare > 0 && ` ${unknownShare}% of lines come from characters we couldn't match to the cast list and aren't shown.`}
 					</p>
 					<p class="axis-label women">Women</p>
@@ -452,7 +458,11 @@ const credit = [
 					<h2 id="timeline-title" class="section-title">
 						Who talks, scene by scene
 					</h2>
-					<p>We couldn't read who says what in this film's script, so there's no dialogue chart for it yet.</p>
+					<p>
+						{film.sceneCount <= 1 && film.dialogueCount > 0
+							? "Our parser couldn't find scene headings in this script, so it read it as one long scene. There's no scene chart for it."
+							: "We couldn't read who says what in this film's script, so there's no dialogue chart for it yet."}
+					</p>
 				</section>
 			)
 		}
@@ -475,7 +485,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}</h3>
-										<p class="gist">The scene our parser counted as passing, word for word{review && ", with what it's about"}.</p>
+										<p class="gist">{bechdel.passingScenes.length === 1 ? 'The scene' : 'The scenes'} our parser counted as passing, word for word{review && ", with what it's about"}.</p>
 									</summary>
 									{bechdel.passingScenes.map((scene, i) => (
 										<figure class="script">
@@ -519,7 +529,7 @@ const credit = [
 								<details class="fold" open data-fold>
 									<summary>
 										<h3 id="ex-waffle">Exhibit {letter('waffle')}: every 100 lines</h3>
-										<p class="gist">Out of every 100 lines with a known speaker, {womenShare} are women's.</p>
+										<p class="gist">Out of every 100 lines with a known speaker, {womenShare} {womenShare === 1 ? 'is' : 'are'} women's.</p>
 									</summary>
 									<div class="waffle" role="img" aria-label={`${womenShare} of every 100 lines are spoken by women`}>
 										{waffle.map((w) => <span class:list={['cell', w ? 'w' : 'm']} />)}
@@ -970,7 +980,7 @@ const credit = [
 		<section class="section about" aria-labelledby="how-title">
 			<h2 id="how-title" class="section-title">About this analysis</h2>
 			<p>
-				Our parser read the script{film.sceneCount > 0 && `: ${film.sceneCount} scenes and ${film.dialogueCount.toLocaleString('en-US')} lines of dialogue`}.
+				Our parser read the script{film.sceneCount > 0 && `: ${plural(film.sceneCount, 'scene')} and ${film.dialogueCount.toLocaleString('en-US')} ${film.dialogueCount === 1 ? 'line' : 'lines'} of dialogue`}.
 				{readers && ' The bechdeltest.com rating comes from that site’s readers.'}
 				{' '}<a href="/about/">How the test works</a>
 			</p>
@@ -1042,12 +1052,15 @@ const credit = [
 	.verdict-stamp.fail {
 		color: var(--fail);
 	}
+	/* Never bigger than lets the longest word fit the line (Anton capitals run
+	   about 0.55em a letter), so "BlacKkKlansman" isn't cut off on a phone */
 	.hero h1 {
-		font-size: clamp(3.5rem, 11vw, 10rem);
+		--fit: calc((min(100vw, var(--page)) - 2 * var(--gutter) - 2 * var(--space-4)) / (var(--longest, 8) * 0.55));
+		font-size: min(clamp(3.5rem, 11vw, 10rem), var(--fit));
 		line-height: 1.05;
 	}
 	.hero h1.long {
-		font-size: clamp(2.75rem, 7vw, 6.5rem);
+		font-size: min(clamp(2.75rem, 7vw, 6.5rem), var(--fit));
 	}
 	.hero h1 {
 		line-height: 1.15;
@@ -1402,6 +1415,11 @@ const credit = [
 		padding: var(--space-2) var(--space-4);
 		min-height: 44px;
 		cursor: pointer;
+		transition: scale 120ms ease-out;
+	}
+	.side-switch button:active {
+		scale: 0.97;
+		transition-duration: 60ms;
 	}
 	.side-switch button[aria-pressed='true'] {
 		background: var(--chalk);

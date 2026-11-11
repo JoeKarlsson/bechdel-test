@@ -4,11 +4,14 @@
 // template. Without JavaScript the first page shows, with a link to every film.
 
 import { posterFor } from '../lib/images';
+import { closest, squash, titleKeys } from '../lib/search.mjs';
+import { motionAllowed } from './motion';
 
 type Sort = 'popularity' | 'score' | 'new' | 'old' | 'az';
 type ShelfFilm = { slug: string; title: string; year: number | null; director: string; score: number; popularity: number; poster: string | null };
 
 const num = (el: HTMLElement, key: string) => Number(el.dataset[key] ?? 0);
+const n = (x: number) => x.toLocaleString('en-US');
 
 const comparators: Record<Sort, (a: HTMLElement, b: HTMLElement) => number> = {
 	popularity: (a, b) => num(a, 'popularity') - num(b, 'popularity'),
@@ -64,7 +67,17 @@ export function setUpShelf() {
 	const clear = document.querySelector<HTMLButtonElement>('[data-shelf-clear]');
 	const moreWrap = document.querySelector<HTMLElement>('[data-shelf-more-wrap]');
 	const more = document.querySelector<HTMLButtonElement>('[data-shelf-more]');
-	if (!form || !shelf || !template || !count || !empty || !clear || !moreWrap || !more) return;
+	const suggest = document.querySelector<HTMLElement>('[data-shelf-suggest]');
+	if (!form || !shelf || !template || !count || !empty || !clear || !moreWrap || !more || !suggest) return;
+	const suggestLink = suggest.querySelector('a')!;
+
+	// Each tape's title and director squashed once, so "madmax" finds Mad Max
+	const keys = new WeakMap<HTMLElement, string[]>();
+	const keysOf = (tape: HTMLElement) => {
+		let k = keys.get(tape);
+		if (!k) keys.set(tape, (k = [squash(tape.dataset.title), squash(tape.dataset.director)]));
+		return k;
+	};
 
 	let tapes = [...shelf.querySelectorAll<HTMLElement>('li')];
 	const total = Number(shelf.dataset.total ?? tapes.length);
@@ -74,8 +87,9 @@ export function setUpShelf() {
 
 	// Every film, fetched once; the tapes already on the page are reused
 	let loading: Promise<void> | null = null;
+	// The shelf dims while the films load (CSS waits 200 ms, so a fast load never shows it)
 	const loadAll = () =>
-		(loading ??= fetch('/shelf.json')
+		(loading ??= (shelf.setAttribute('aria-busy', 'true'), fetch('/shelf.json'))
 			.then((res) => {
 				if (!res.ok) throw new Error(`HTTP ${res.status}`);
 				return res.json() as Promise<ShelfFilm[]>;
@@ -88,16 +102,40 @@ export function setUpShelf() {
 				loading = null;
 				count.textContent = `Couldn't load the rest of the shelf (${error.message}). Try again, or see every film A to Z.`;
 				throw error;
-			}));
+			})
+			.finally(() => shelf.removeAttribute('aria-busy')));
+	// Start the download as soon as someone heads for the controls, not on their first keystroke
+	const warm = () => loadAll().catch(() => {});
+	form.addEventListener('pointerenter', warm, { once: true });
+	form.addEventListener('focusin', warm, { once: true });
 
+	// Tapes the visitor just asked for slide up row by row (the first eight rows only)
+	const dealIn = (list: HTMLElement[]) => {
+		if (!list.length || !motionAllowed()) return;
+		const cols = getComputedStyle(shelf).gridTemplateColumns.split(' ').length;
+		list.slice(0, cols * 8).forEach((tape, i) =>
+			tape.animate(
+				{ opacity: [0, 1], translate: ['0 8px', '0 0'] },
+				{ duration: 220, delay: Math.floor(i / cols) * 30, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' },
+			),
+		);
+	};
+	const visibleTapes = () => [...shelf.querySelectorAll<HTMLElement>('li:not([hidden])')];
+
+	// Re-appending 2,000+ tapes costs most of an update, so only do it when the order changes
+	let orderOnPage: Sort = 'popularity';
 	const update = () => {
 		const data = new FormData(form);
-		const q = String(data.get('q') ?? '').trim().toLowerCase();
+		const typed = String(data.get('q') ?? '').trim();
+		const q = squash(typed);
 		const show = String(data.get('show') ?? 'all');
 		const sort = String(data.get('sort') ?? 'popularity') as Sort;
 
 		const sorted = [...tapes].sort(comparators[sort] ?? comparators.popularity);
-		shelf.append(...sorted);
+		if (sort !== orderOnPage || shelf.childElementCount !== sorted.length) {
+			shelf.append(...sorted);
+			orderOnPage = sort;
+		}
 
 		const browsing = !q && show === 'all';
 		let matched = 0;
@@ -106,7 +144,7 @@ export function setUpShelf() {
 			const pass = num(tape, 'score') === 3;
 			const matches =
 				(show === 'all' || (show === 'pass' ? pass : !pass)) &&
-				(!q || (tape.dataset.title ?? '').includes(q) || (tape.dataset.director ?? '').includes(q));
+				(!q || keysOf(tape).some((k) => k.includes(q)));
 			if (matches) {
 				matched++;
 				if (pass) passing++;
@@ -117,22 +155,35 @@ export function setUpShelf() {
 		const left = matched - visible;
 
 		count.textContent =
-			visible === total ? `All ${total} films, ${passing} pass` : browsing ? `Showing ${visible} of ${total}, ${passing} pass in all` : `Showing ${matched} of ${total}, ${passing} pass`;
+			visible === total
+				? `All ${n(total)} films, ${n(passing)} pass`
+				: browsing
+					? `Showing ${n(visible)} of ${n(total)}, ${n(passing)} pass in all`
+					: `Showing ${n(matched)} of ${n(total)}, ${n(passing)} pass`;
 		empty.hidden = matched > 0;
+		// Nothing matched: offer the nearest title, if one is close
+		const near = matched === 0 && typed ? closest(typed, tapes, (t) => titleKeys(t.querySelector('.title')?.textContent ?? '')) : null;
+		suggest.hidden = !near;
+		if (near) {
+			suggestLink.href = near.querySelector('a')!.href;
+			suggestLink.textContent = near.querySelector('.title')!.textContent;
+		}
 		moreWrap.hidden = left === 0;
 		more.textContent = `Show ${Math.min(pageSize, left)} more`;
 	};
 	// Every change first makes sure the whole shelf is loaded
 	const refresh = () => loadAll().then(update, () => {});
 
-	form.addEventListener('input', () => {
+	form.addEventListener('input', (e) => {
 		limit = pageSize;
-		refresh();
+		// Sort and Show re-deal the shelf; typing in search doesn't, or it would flicker on every key
+		refresh().then(() => e.target instanceof HTMLSelectElement && dealIn(visibleTapes()));
 	});
 	more.addEventListener('click', async () => {
 		const firstNew = Math.min(limit, tapes.length);
 		limit += pageSize;
 		await refresh();
+		dealIn(visibleTapes().slice(firstNew));
 		// Move focus to the first newly shown film, so keyboard users land there
 		shelf.querySelectorAll<HTMLElement>('li:not([hidden]) a')[firstNew]?.focus();
 	});
