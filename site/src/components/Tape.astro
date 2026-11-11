@@ -179,11 +179,12 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 	}
 	/* Pulled off the shelf: the box lifts and tilts, the plank stays put. The
 	   separate translate/rotate/scale properties leave the sticker's own
-	   transform alone. Entering eases out, settling back is quicker. */
+	   transform alone. Lifting eases out; settling back is a move, not an exit
+	   (the box stays on screen), so it eases in and out, and it's quicker. */
 	.box {
 		transition:
-			translate 130ms ease-in,
-			rotate 130ms ease-in,
+			translate 130ms var(--ease-move),
+			rotate 130ms var(--ease-move),
 			scale 100ms ease-out;
 	}
 	@media (hover: hover) and (pointer: fine) {
@@ -191,7 +192,7 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 			translate: 0 -6px;
 			rotate: -1deg;
 			transition-duration: 160ms;
-			transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+			transition-timing-function: var(--ease-enter);
 		}
 	}
 	a:focus-visible .box {

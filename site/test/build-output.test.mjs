@@ -130,3 +130,9 @@ test('no words run into a following link or citation', () => {
 	const jammed = pages.flatMap((p) => (p.html.match(/[A-Za-z,]<(a|cite|button)[\s>]/g) ?? []).map((m) => `${p.path}: ${m}`));
 	assert.deepEqual(jammed, []);
 });
+
+test('no page shows a double-escaped character like O&apos;Bannon', () => {
+	// OMDB sends some names HTML-escaped; stored as-is, they came out as "O&apos;Bannon" on the page
+	const escaped = pages.filter((p) => /&amp;(?:apos|amp|quot|lt|gt|#\d+);/.test(p.html)).map((p) => p.path);
+	assert.deepEqual(escaped, []);
+});

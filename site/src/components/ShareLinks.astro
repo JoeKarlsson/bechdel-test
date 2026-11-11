@@ -12,6 +12,7 @@ const both = encodeURIComponent(`${title} ${url}`);
 const NETWORKS = [
 	['Bluesky', `https://bsky.app/intent/compose?text=${both}`],
 	['Threads', `https://www.threads.net/intent/post?text=${both}`],
+	['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`],
 	['Reddit', `https://www.reddit.com/submit?url=${u}&title=${t}`],
 	['Hacker News', `https://news.ycombinator.com/submitlink?u=${u}&t=${t}`],
 	['X', `https://x.com/intent/post?text=${t}&url=${u}`],
@@ -27,16 +28,19 @@ const NETWORKS = [
 		])
 	}, or <button type="button" class="copy plausible-event-name=Copy+Link" data-copy-link={url}
 		><span class="copy-label">copy the link</span><span class="copy-done" aria-hidden="true">link copied</span></button
-	>.
+	><span class="sr-only" role="status" data-copy-status></span>.
 </p>
 
 <script>
-	// Copies the page link and says so; leaves the button as a plain link otherwise
+	// Copies the page link and says so. The status next to the button is what
+	// screen readers hear (a live region inside a button isn't announced); it
+	// also shows the fallback when the browser won't copy, so the button keeps
+	// its width.
 	for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy-link]')) {
 		// Both labels share one grid cell, so the button keeps its width while they crossfade
 		const label = button.querySelector<HTMLElement>('.copy-label')!;
 		const done = button.querySelector<HTMLElement>('.copy-done')!;
-		const original = label.textContent;
+		const status = button.nextElementSibling as HTMLElement;
 		let reset: number | undefined;
 		button.addEventListener('click', async () => {
 			clearTimeout(reset);
@@ -45,14 +49,17 @@ const NETWORKS = [
 				button.dataset.copied = '';
 				label.setAttribute('aria-hidden', 'true');
 				done.removeAttribute('aria-hidden');
+				status.className = 'sr-only';
+				status.textContent = 'Link copied';
 			} catch {
-				label.textContent = 'press and hold the address bar to copy';
+				status.className = 'copy-failed';
+				status.textContent = ' (press and hold the address bar to copy it)';
 			}
 			reset = window.setTimeout(() => {
 				delete button.dataset.copied;
-				label.textContent = original;
 				label.removeAttribute('aria-hidden');
 				done.setAttribute('aria-hidden', 'true');
+				status.textContent = '';
 			}, 2500);
 		});
 	}
@@ -107,6 +114,17 @@ const NETWORKS = [
 	@keyframes copied-pulse {
 		35% {
 			scale: 1.08;
+		}
+	}
+	/* Reduced motion on a finger: the labels only fade */
+	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
+		.copy > span {
+			transition: opacity 150ms ease-out !important;
+		}
+		.copy-done,
+		.copy[data-copied] .copy-label {
+			scale: 1;
+			filter: none;
 		}
 	}
 </style>

@@ -1,4 +1,5 @@
 ---
+import OnThisPage from '../components/OnThisPage.astro';
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Scribble from '../components/Scribble.astro';
@@ -10,6 +11,17 @@ const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 // The statement's numbers follow the shelf, the way the footer's do
 const films = loadFilms();
 const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / films.length) * 100);
+
+// The page's sections, for the contents list at the top
+const CONTENTS = [
+	{ id: 'where-it-comes-from', label: 'Where it comes from' },
+	{ id: 'what-it-cant-tell-you', label: "What it can't tell you" },
+	{ id: 'how-we-check', label: 'How we check a film' },
+	{ id: 'artist-statement', label: 'Artist statement' },
+	{ id: 'why-we-built-it', label: 'Why we built it' },
+	{ id: 'read-more', label: 'Read more' },
+	{ id: 'thanks', label: 'Thanks' },
+];
 ---
 
 <Base
@@ -29,9 +41,10 @@ const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / film
 	<div class="page">
 		<h1 class="page-title">About the Bechdel test</h1>
 		<p class="page-lead">A film passes if it has at least two women in it, who talk to each other, about something besides a man.</p>
+		<OnThisPage items={CONTENTS} />
 
 		<div class="prose">
-			<h2>Where it comes from</h2>
+			<h2 id="where-it-comes-from">Where it comes from</h2>
 			<figure class="strip paper">
 				<Picture src={theRule} alt="A panel from the comic: one woman tells another the three rules a movie has to meet before she'll see it." formats={['avif', 'webp']} width={390} height={260} />
 				<figcaption>
@@ -59,7 +72,7 @@ const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / film
 				feminist film criticism.
 			</p>
 
-			<h2>What it can't tell you</h2>
+			<h2 id="what-it-cant-tell-you">What it can't tell you</h2>
 			<p>
 				The test is simple on purpose, and that's its power. It also means it can't capture everything about how a film treats
 				women.
@@ -88,7 +101,7 @@ const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / film
 				are. bechdeltest.com readers give a second opinion. Use the test to start a conversation, not to end one.
 			</p>
 
-			<h2>How we check a film</h2>
+			<h2 id="how-we-check">How we check a film</h2>
 			<p>
 				A parser reads the film's script scene by scene. It counts the women and men, finds the scenes where two women speak to
 				each other, and checks whether those scenes name a man. That gives each film its Bechdel score, from 0 to 3. It also counts
@@ -163,7 +176,7 @@ const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / film
 				<a href="https://www.joekarlsson.com/work/bechdel-io/" {...ext}>bechdel.io’s page on joekarlsson.com</a>.
 			</p>
 
-			<h2>Why we built it</h2>
+			<h2 id="why-we-built-it">Why we built it</h2>
 			<p>
 				This digital humanities project, by Joe and me, comes from a shared love of film, feminism and what technology can do. It
 				brings together my work as an English scholar and Joe's as a software engineer.
@@ -193,7 +206,7 @@ const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / film
 				<a href="https://github.com/JoeKarlsson/bechdel-test/issues" {...ext}>we'd love to hear them</a>.
 			</p>
 
-			<h2>Read more</h2>
+			<h2 id="read-more">Read more</h2>
 			<ul class="links">
 				<li><a href="https://dykestowatchoutfor.com/the-rule/" {...ext}><cite>The Rule</cite></a>, the 1985 strip where the test began, on Alison Bechdel's site</li>
 				<li><a href="https://alisonbechdel.com/" {...ext}>Alison Bechdel</a>, her books and comics</li>
@@ -204,7 +217,7 @@ const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / film
 				<li><a href="https://dhq.digitalhumanities.org/vol/8/4/000190/000190.html" {...ext}><cite>Visualizing and Analyzing the Hollywood Screenplay with ScripThreads</cite></a>, Digital Humanities Quarterly</li>
 			</ul>
 
-			<h2>Thanks</h2>
+			<h2 id="thanks">Thanks</h2>
 			<p>Thank you to:</p>
 			<ul class="links">
 				<li>

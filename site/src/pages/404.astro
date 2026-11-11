@@ -7,7 +7,7 @@ import Base from '../layouts/Base.astro';
 		<h1 class="page-title">Not on the shelf</h1>
 		<p class="stamp" aria-hidden="true">Fail</p>
 		<p class="page-lead">We couldn't find that page. It may have moved when the site was rebuilt.</p>
-		<p class="suggest" hidden data-suggest>Did you mean <a href="/"></a>?</p>
+		<p class="suggest" data-suggest>Did you mean <a href="/"></a>?</p>
 		<p class="links">
 			<a href="/">Browse all the films</a>
 			<a href="/about/">Read about the test</a>
@@ -16,23 +16,38 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <script>
-	// A mistyped film address (/films/mad-max-fury-rood-2015/, or no year) gets the nearest film
+	// A mistyped address gets the nearest page: a film for /films/mad-max-fury-rood-2015/
+	// (or no year), one of the site's pages for /abuot/
 	import { closest } from '../lib/search.mjs';
 
+	const PAGES = [
+		{ href: '/about/', title: 'About' },
+		{ href: '/numbers/', title: 'The numbers' },
+		{ href: '/case-study/', title: 'The case study' },
+		{ href: '/privacy/', title: 'Privacy' },
+		{ href: '/films/', title: 'Every film, A to Z' },
+	];
+	const suggest = document.querySelector<HTMLElement>('[data-suggest]')!;
+	const offer = (href: string, text: string) => {
+		const link = suggest.querySelector('a')!;
+		link.href = href;
+		link.textContent = text;
+		suggest.classList.add('found');
+	};
+
 	const slug = location.pathname.match(/^\/films\/([^/]+)/)?.[1];
-	const suggest = document.querySelector<HTMLElement>('[data-suggest]');
-	if (slug && suggest) {
+	if (slug) {
 		fetch('/shelf.json')
 			.then((res) => (res.ok ? (res.json() as Promise<{ slug: string; title: string; year: number | null }[]>) : []))
 			.then((films) => {
 				const near = closest(slug, films, (f) => [f.slug, f.slug.replace(/-\d{4}$/, '')]);
-				if (!near) return;
-				const link = suggest.querySelector('a')!;
-				link.href = `/films/${near.slug}/`;
-				link.textContent = near.year ? `${near.title} (${near.year})` : near.title;
-				suggest.hidden = false;
+				if (near) offer(`/films/${near.slug}/`, near.year ? `${near.title} (${near.year})` : near.title);
 			})
 			.catch((error) => console.warn('No suggestion for this address:', error)); // the links below still work
+	} else {
+		const first = location.pathname.split('/').filter(Boolean)[0] ?? '';
+		const near = closest(first, PAGES, (p) => [p.href.replaceAll('/', '')]);
+		if (near) offer(near.href, near.title);
 	}
 </script>
 
@@ -50,9 +65,14 @@ import Base from '../layouts/Base.astro';
 		padding: var(--space-1) var(--space-3);
 		transform: rotate(-3deg);
 	}
+	/* The line is held from the start, so the links don't jump when a
+	   suggestion arrives after the films load */
 	.suggest {
 		margin-top: var(--space-4);
 		font-size: var(--text-lead);
+	}
+	.suggest:not(.found) {
+		visibility: hidden;
 	}
 	.links {
 		display: flex;

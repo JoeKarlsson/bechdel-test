@@ -55,4 +55,4 @@ const parseScriptText = html => {
 	return text.trim() + '\n';
 };
 
-module.exports = { IMSDB, scriptFileName, parseScriptIndex, parseScriptPageUrl, parseScriptText };
+module.exports = { IMSDB, decodeHtmlEntities, scriptFileName, parseScriptIndex, parseScriptPageUrl, parseScriptText };

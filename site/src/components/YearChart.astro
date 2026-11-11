@@ -105,6 +105,8 @@ const last = points.at(-1)!;
 	.years {
 		position: absolute;
 		inset: 0;
+		/* Sideways is for scrubbing the chart (scripts/year-chart.ts); up and down still scrolls */
+		touch-action: pan-y;
 	}
 	.years button {
 		position: absolute;

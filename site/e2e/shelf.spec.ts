@@ -29,8 +29,11 @@ test.describe('the shelf', () => {
 		await page.getByLabel('Show').selectOption('pass');
 		await page.getByLabel('Sort').selectOption('old');
 		const titles = page.locator('[data-shelf] li:not([hidden]) .title');
-		// Filtering shows every match, not a page of them
-		await expect(titles).toHaveCount(passing.length);
+		// Filtering shows a page of matches at a time, like browsing
+		await expect(titles).toHaveCount(PAGE_SIZE);
+		await expect(page.locator('[data-shelf-count]')).toHaveText(`Showing ${PAGE_SIZE} of ${passing.length.toLocaleString('en-US')} matches, ${passing.length.toLocaleString('en-US')} pass`);
+		await page.getByRole('button', { name: `Show ${PAGE_SIZE} more` }).click();
+		await expect(titles).toHaveCount(2 * PAGE_SIZE);
 		const oldest = Math.min(...passing.map((f) => f.year));
 		expect(passing.filter((f) => f.year === oldest).map((f) => f.title)).toContain(await titles.first().textContent());
 	});

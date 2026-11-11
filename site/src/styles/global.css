@@ -77,6 +77,14 @@
 	--gutter: clamp(16px, 4vw, 40px);
 	--page: 1240px;
 	--tilt: -0.5deg;
+
+	/* Motion: things arriving decelerate, things leaving accelerate away, things
+	   that move and stay ease in and out. Exits run about 20% shorter. */
+	--ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-exit: cubic-bezier(0.3, 0, 0.6, 0.6);
+	--ease-move: cubic-bezier(0.45, 0, 0.55, 1);
+	--duration-enter: 220ms;
+	--duration-exit: 175ms;
 }
 
 *,
@@ -251,52 +259,81 @@ dd > a:only-child,
 	outline-offset: -2px;
 }
 
-/* Folds open and close instead of snapping: the people rankings and the
-   film-page exhibits and charges. The cast and data tables stay instant, since
-   at thousands of pixels tall an animation would only re-lay the page out. */
+/* Folds open and close instead of snapping: the people rankings, the
+   contents lists, and the film-page exhibits and charges. The cast and data tables stay instant, since
+   at thousands of pixels tall an animation would only re-lay the page out.
+   Opening, the fold grows and fades in on the entrance curve. Closing, its
+   height is the content below moving, so it eases in and out while the fold
+   fades on the exit curve. Film-page exhibits animate only once exhibits.ts has
+   set their first state (data-folds-ready), so phones don't watch them close
+   on load. */
 @supports (interpolate-size: allow-keywords) {
-	:is(.people details, details.fold, details.charge) {
+	:is(.people details, details.fold, details.charge, details.contents) {
 		interpolate-size: allow-keywords;
 	}
-	:is(.people details, details.fold, details.charge)::details-content {
+	:is(.people details, details.fold, details.charge, details.contents)::details-content {
 		block-size: 0;
 		overflow: clip;
-		transition:
-			block-size 180ms ease-in,
-			content-visibility 180ms allow-discrete;
+		opacity: 0;
 	}
-	:is(.people details, details.fold, details.charge)[open]::details-content {
+	:is(.people details, details.fold, details.charge, details.contents)[open]::details-content {
 		block-size: auto;
-		transition-duration: 220ms;
-		transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+		opacity: 1;
 	}
-	/* Its own rule: the * reset below doesn't reach ::details-content, and an
-	   unknown pseudo-element there would void that whole reset */
+	:is(.people details, :root[data-folds-ready] details.fold, details.charge, details.contents)::details-content {
+		transition:
+			block-size var(--duration-exit) var(--ease-move),
+			opacity var(--duration-exit) var(--ease-exit),
+			content-visibility var(--duration-exit) allow-discrete;
+	}
+	:is(.people details, :root[data-folds-ready] details.fold, details.charge, details.contents)[open]::details-content {
+		transition:
+			block-size var(--duration-enter) var(--ease-enter),
+			opacity var(--duration-enter) var(--ease-enter),
+			content-visibility var(--duration-enter) allow-discrete;
+	}
+	/* Their own rules: the * reset below doesn't reach ::details-content, and
+	   an unknown pseudo-element there would void that whole reset. Under a
+	   finger, the fold fades instead and its height lands while it's clear. */
 	@media (prefers-reduced-motion: reduce) {
-		:is(.people details, details.fold, details.charge)::details-content {
-			transition: none !important;
+		:is(.people details, details.fold, details.charge, details.contents)::details-content {
+			transition-duration: 0s !important;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
+		:is(.people details, details.fold, details.charge, details.contents)::details-content {
+			transition:
+				opacity 150ms ease-out,
+				content-visibility 150ms allow-discrete !important;
 		}
 	}
 }
 
-/* A quick crossfade between pages, where the browser supports it */
+/* A quick crossfade between pages, where the browser supports it. It's
+   opacity only, so a finger keeps it under reduced motion; a mouse doesn't. */
 @view-transition {
 	navigation: auto;
 }
 ::view-transition-old(root) {
 	animation-duration: 120ms;
+	animation-timing-function: var(--ease-exit);
 }
 ::view-transition-new(root) {
 	animation-duration: 160ms;
+	animation-timing-function: var(--ease-enter);
 }
 
+/* Durations, not the whole transition, so a delay (the shelf's 200 ms before
+   it dims) still holds */
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
 	*::after {
 		animation: none !important;
-		transition: none !important;
+		transition-duration: 0s !important;
 	}
+}
+@media (prefers-reduced-motion: reduce) and (not (pointer: coarse)) {
 	/* The rule above doesn't reach view transitions */
 	@view-transition {
 		navigation: none;
