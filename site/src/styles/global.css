@@ -106,8 +106,10 @@ body {
 	line-height: 1.5;
 }
 
-/* `hidden` always wins over a component's display rule */
-[hidden] {
+/* `hidden` always wins over a component's display rule. hidden="until-found"
+   keeps its box (the browser hides it with content-visibility), so
+   find-in-page can still reach and open it. */
+[hidden]:not([hidden='until-found']) {
 	display: none !important;
 }
 
@@ -260,48 +262,62 @@ dd > a:only-child,
 }
 
 /* Folds open and close instead of snapping: the people rankings, the
-   contents lists, and the film-page exhibits and charges. The cast and data tables stay instant, since
-   at thousands of pixels tall an animation would only re-lay the page out.
+   contents lists, the red-flag charges, and the film-page exhibits (a heading
+   button over a hidden="until-found" body, scripts/exhibits.ts). The cast and
+   data tables stay instant, since at thousands of pixels tall an animation
+   would only re-lay the page out.
    Opening, the fold grows and fades in on the entrance curve. Closing, its
    height is the content below moving, so it eases in and out while the fold
-   fades on the exit curve. Film-page exhibits animate only once exhibits.ts has
-   set their first state (data-folds-ready), so phones don't watch them close
-   on load. */
+   fades on the exit curve. Exhibits animate only once exhibits.ts has set
+   their first state (data-folds-ready), so phones don't watch them close on
+   load. */
 @supports (interpolate-size: allow-keywords) {
-	:is(.people details, details.fold, details.charge, details.contents) {
+	:is(.people details, details.charge, details.contents),
+	.fold-body {
 		interpolate-size: allow-keywords;
 	}
-	:is(.people details, details.fold, details.charge, details.contents)::details-content {
+	:is(.people details, details.charge, details.contents)::details-content,
+	.fold-body[hidden] {
 		block-size: 0;
 		overflow: clip;
 		opacity: 0;
 	}
-	:is(.people details, details.fold, details.charge, details.contents)[open]::details-content {
+	:is(.people details, details.charge, details.contents)[open]::details-content {
 		block-size: auto;
 		opacity: 1;
 	}
-	:is(.people details, :root[data-folds-ready] details.fold, details.charge, details.contents)::details-content {
+	/* Stays clipped while open too, so nothing spills out mid-animation; layout
+	   containment keeps the children's margins inside the part that's clipped */
+	.fold-body {
+		overflow: clip;
+		contain: layout;
+	}
+	:is(.people details, details.charge, details.contents)::details-content,
+	:root[data-folds-ready] .fold-body[hidden] {
 		transition:
 			block-size var(--duration-exit) var(--ease-move),
 			opacity var(--duration-exit) var(--ease-exit),
 			content-visibility var(--duration-exit) allow-discrete;
 	}
-	:is(.people details, :root[data-folds-ready] details.fold, details.charge, details.contents)[open]::details-content {
+	:is(.people details, details.charge, details.contents)[open]::details-content,
+	:root[data-folds-ready] .fold-body:not([hidden]) {
 		transition:
 			block-size var(--duration-enter) var(--ease-enter),
 			opacity var(--duration-enter) var(--ease-enter),
 			content-visibility var(--duration-enter) allow-discrete;
 	}
-	/* Their own rules: the * reset below doesn't reach ::details-content, and
-	   an unknown pseudo-element there would void that whole reset. Under a
-	   finger, the fold fades instead and its height lands while it's clear. */
+	/* The * reset below doesn't reach ::details-content (and an unknown
+	   pseudo-element there would void that whole reset), so it gets its own.
+	   Under a finger, folds fade instead and their height lands while they're
+	   clear. */
 	@media (prefers-reduced-motion: reduce) {
-		:is(.people details, details.fold, details.charge, details.contents)::details-content {
+		:is(.people details, details.charge, details.contents)::details-content {
 			transition-duration: 0s !important;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
-		:is(.people details, details.fold, details.charge, details.contents)::details-content {
+		:is(.people details, details.charge, details.contents)::details-content,
+		.fold-body {
 			transition:
 				opacity 150ms ease-out,
 				content-visibility 150ms allow-discrete !important;
