@@ -15,6 +15,7 @@ const firstPage = films.slice(0, PAGE_SIZE);
 // Old /#/film/<id> links: only the first films had these database ids
 const legacySlugs = Object.fromEntries(films.filter((f) => /^[a-f0-9]{24}$/.test(f.id)).map((f) => [f.id, f.slug]));
 const description = `Do two women talk to each other about something other than a man? We check film scripts against the Bechdel test. ${passShare}% pass.`;
+const n = (x: number) => x.toLocaleString('en-US');
 ---
 
 <Base
@@ -72,10 +73,11 @@ const description = `Do two women talk to each other about something other than 
 				</label>
 			</form>
 			<p class="note count" aria-live="polite" data-shelf-count>
-				{films.length > PAGE_SIZE ? `Showing ${PAGE_SIZE} of ${films.length}, ${passing} pass in all` : `All ${films.length} films, ${passing} pass`}
+				{films.length > PAGE_SIZE ? `Showing ${PAGE_SIZE} of ${n(films.length)}, ${n(passing)} pass in all` : `All ${n(films.length)} films, ${n(passing)} pass`}
 			</p>
 			<div class="empty" hidden data-shelf-empty>
 				<p class="empty-title">Nothing on the shelf matches</p>
+				<p hidden data-shelf-suggest>Did you mean <a href="/"></a>?</p>
 				<p><button type="button" class="link-button" data-shelf-clear>Clear the search</button></p>
 			</div>
 
@@ -214,6 +216,12 @@ const description = `Do two women talk to each other about something other than 
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 		gap: var(--space-6) var(--space-4);
+		transition: opacity 120ms ease-in;
+	}
+	/* Dims only if the films take longer than 200 ms to arrive */
+	.shelf[aria-busy='true'] {
+		opacity: 0.5;
+		transition: opacity 150ms ease-out 200ms;
 	}
 	/* Phones: a shorter question and a compact rules card, so the shelf shows sooner */
 	@media (max-width: 600px) {
@@ -261,8 +269,13 @@ const description = `Do two women talk to each other about something other than 
 		padding: var(--space-3) var(--space-5);
 		min-height: 44px;
 		cursor: pointer;
+		transition: scale 120ms ease-out;
 	}
 	.more-button:hover {
 		background: var(--chalk);
+	}
+	.more-button:active {
+		scale: 0.97;
+		transition-duration: 60ms;
 	}
 </style>

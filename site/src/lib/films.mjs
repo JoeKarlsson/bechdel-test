@@ -318,7 +318,8 @@ export function normalizeFilm(raw) {
 			menChars: toNumber(b.numOfMaleChars),
 			womenSpeaking: toNumber(b.numOfFemalesCharsWithDialogue),
 			menSpeaking: toNumber(b.numOfMaleCharsWithDialogue),
-			passingScenes: list(b.scenesThatPass),
+			// Some exports list the same excerpt more than once
+			passingScenes: [...new Set(list(b.scenesThatPass).map((x) => String(x).trim()))],
 		},
 		readers,
 		cast: actors

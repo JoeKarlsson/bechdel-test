@@ -13,7 +13,7 @@ test.describe('the shelf', () => {
 	test('arrives with the first page of films', async ({ page }) => {
 		await expect(page.locator('[data-shelf] li')).toHaveCount(60);
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(60);
-		await expect(page.locator('[data-shelf-count]')).toHaveText(`Showing ${PAGE_SIZE} of ${films.length}, ${passing.length} pass in all`);
+		await expect(page.locator('[data-shelf-count]')).toHaveText(`Showing ${PAGE_SIZE} of ${films.length.toLocaleString('en-US')}, ${passing.length.toLocaleString('en-US')} pass in all`);
 	});
 
 	test('searches titles and directors', async ({ page }) => {
@@ -22,7 +22,7 @@ test.describe('the shelf', () => {
 		await page.getByLabel('Search').fill('fincher');
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(fincher.length);
 		const fincherPasses = fincher.filter((f) => f.score === 3).length;
-		await expect(page.locator('[data-shelf-count]')).toHaveText(`Showing ${fincher.length} of ${films.length}, ${fincherPasses} pass`);
+		await expect(page.locator('[data-shelf-count]')).toHaveText(`Showing ${fincher.length} of ${films.length.toLocaleString('en-US')}, ${fincherPasses} pass`);
 	});
 
 	test('filters to passing films and sorts them', async ({ page }) => {

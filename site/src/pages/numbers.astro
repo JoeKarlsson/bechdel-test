@@ -76,6 +76,8 @@ const jobRows: Row[] = s.jobs.map((j) => {
 const directors = s.jobs.find((j) => j.label === 'Directed by');
 const shooters = s.jobs.find((j) => j.label === 'Shot by');
 const h = s.heard;
+// Counts over 999 get a thousands comma, like the rest of the site
+const n = (x: number) => x.toLocaleString('en-US');
 
 // Last words: who has the first and last line
 const lw = s.lastWords;
@@ -114,19 +116,19 @@ const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean
 
 <Base
 	title="The shelf in numbers"
-	description={`All ${s.films} films on the shelf, counted: pass rates by year, genre, director and star, who gets heard, who made the films, and what they earned.`}
+	description={`All ${n(s.films)} films on the shelf, counted: pass rates by year, genre, director and star, who gets heard, who made the films, and what they earned.`}
 	nav="numbers"
 >
 	<div class="page">
 		<h1 class="page-title">The shelf in numbers</h1>
-		<p class="page-lead">{s.films} films. {s.pass} of them pass the Bechdel test, {pct(s.pass, s.films)}%.</p>
+		<p class="page-lead">{n(s.films)} films. {n(s.pass)} of them pass the Bechdel test, {pct(s.pass, s.films)}%.</p>
 
 		<section class="section" aria-labelledby="trust-title">
 			<h2 id="trust-title" class="section-title">How far to trust these</h2>
 			<div class="prose">
 				<p>
 					The scores come from our script parser. Where bechdeltest.com's readers have rated a film, the parser agrees with them on
-					pass or fail for {s.readers.agree} of {s.readers.films} films ({pct(s.readers.agree, s.readers.films)}%). Each film's page
+					pass or fail for {n(s.readers.agree)} of {n(s.readers.films)} films ({pct(s.readers.agree, s.readers.films)}%). Each film's page
 					shows the readers' score next to ours.
 				</p>
 				<p>
@@ -314,7 +316,7 @@ const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean
 				))}
 			</ul>
 			<p class="note prose">
-				Lines come from each script, which can differ from the film as released. A lead is one of the two characters with the most lines. {lw.first.none} {lw.first.none === 1 ? 'film has' : 'films have'} no clear first line and {lw.last.none} no clear last line, where the script
+				Lines come from each script, which can differ from the film as released. A lead is one of the two characters with the most lines. {n(lw.first.none)} {lw.first.none === 1 ? 'film has' : 'films have'} no clear first line and {n(lw.last.none)} no clear last line, where the script
 				opens or ends on credits, songs or stage directions; they're left out of those counts. Old scanned scripts sometimes leave a stage direction in a quote.
 			</p>
 		</section>
@@ -337,12 +339,12 @@ const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean
 				<p>
 					{directors && `Women directed ${directors.w} of the ${directors.w + directors.m + directors.nb} director credits.`}
 					{shooters && shooters.w === 0 && ' None of the films was shot by a woman.'}
-					{` Films with a woman director pass ${s.womanDirector.yes.pass} of ${s.womanDirector.yes.films} times (${pct(s.womanDirector.yes.pass, s.womanDirector.yes.films)}%), the rest ${s.womanDirector.no.pass} of ${s.womanDirector.no.films} (${pct(s.womanDirector.no.pass, s.womanDirector.no.films)}%).`}
-					{` With a woman among the writers, ${s.womanWriter.yes.pass} of ${s.womanWriter.yes.films} pass (${pct(s.womanWriter.yes.pass, s.womanWriter.yes.films)}%), against ${s.womanWriter.no.pass} of ${s.womanWriter.no.films} (${pct(s.womanWriter.no.pass, s.womanWriter.no.films)}%) without.`}
+					{` Films with a woman director pass ${n(s.womanDirector.yes.pass)} of ${n(s.womanDirector.yes.films)} times (${pct(s.womanDirector.yes.pass, s.womanDirector.yes.films)}%), the rest ${n(s.womanDirector.no.pass)} of ${n(s.womanDirector.no.films)} (${pct(s.womanDirector.no.pass, s.womanDirector.no.films)}%).`}
+					{` With a woman among the writers, ${n(s.womanWriter.yes.pass)} of ${n(s.womanWriter.yes.films)} pass (${pct(s.womanWriter.yes.pass, s.womanWriter.yes.films)}%), against ${n(s.womanWriter.no.pass)} of ${n(s.womanWriter.no.films)} (${pct(s.womanWriter.no.pass, s.womanWriter.no.films)}%) without.`}
 				</p>
 				<p class="note">
 					Credits come from TMDB, which lists a gender for almost everyone in these jobs but not for much of the wider crew. A person
-					who did a job on several films counts once per film. With only {s.womanDirector.yes.films} films directed by a woman on the
+					who did a job on several films counts once per film. With only {n(s.womanDirector.yes.films)} films directed by a woman on the
 					shelf, that gap could be chance.
 				</p>
 			</div>
@@ -389,10 +391,10 @@ const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean
 				</div>
 				<div>
 					<dt>{pct(s.ages.womenYounger, s.ages.films)}%</dt>
-					<dd>of films cast women who are younger on average than the men ({s.ages.womenYounger} of {s.ages.films}).</dd>
+					<dd>of films cast women who are younger on average than the men ({n(s.ages.womenYounger)} of {n(s.ages.films)}).</dd>
 				</div>
 			</dl>
-			<p class="note">The ten top-billed actors of each film, from TMDB birthdays, for the {s.ages.films} films with at least one woman and one man among them.</p>
+			<p class="note">The ten top-billed actors of each film, from TMDB birthdays, for the {n(s.ages.films)} films with at least one woman and one man among them.</p>
 		</section>
 
 		<section class="section" aria-labelledby="money-title">

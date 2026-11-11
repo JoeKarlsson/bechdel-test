@@ -4,8 +4,12 @@ import Base from '../layouts/Base.astro';
 import Scribble from '../components/Scribble.astro';
 import theRule from '../assets/about/the-rule-excerpt.jpg';
 import alisonBechdel from '../assets/about/alison-bechdel.jpg';
+import { loadFilms } from '../lib/films.mjs';
 
 const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
+// The statement's numbers follow the shelf, the way the footer's do
+const films = loadFilms();
+const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / films.length) * 100);
 ---
 
 <Base
@@ -149,7 +153,7 @@ const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 				Bechdel.io checks movie scripts against the Bechdel Test. The test comes from a 1985 Alison Bechdel comic strip, and it asks three things: are there at least two women, do they talk to each other, and do they talk about something other than a man.
 			</p>
 			<p>
-				It sorts a wall of movies most people have already seen into pass and fail. About half of the 218 films on the shelf fail, and a lot of them are favorites.
+				It sorts a wall of movies most people have already seen into pass and fail. {failShare}% of the {films.length.toLocaleString('en-US')} films on the shelf fail, and a lot of them are favorites.
 			</p>
 			<p>
 				We released it as open source because we saw it as feminist activism.

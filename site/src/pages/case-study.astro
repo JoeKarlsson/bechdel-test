@@ -3,25 +3,30 @@ import Base from '../layouts/Base.astro';
 import { loadFilms } from '../lib/films.mjs';
 
 // The 2015 Oscar films Laurel and Joe tested (87th Academy Awards). Scores are
-// from that study; two of the films are also on today's shelf.
+// from that study; the slug is the film's page on today's shelf, if it has one.
 const STUDY = [
-	['Boyhood', 3],
-	['Gone Girl', 3],
-	['The Imitation Game', 3],
-	['Into the Woods', 3],
-	['Wild', 3],
-	['American Sniper', 2],
-	['Birdman', 1],
-	['Foxcatcher', 1],
-	['The Grand Budapest Hotel', 1],
-	['Still Alice', 1],
-	['The Theory of Everything', 1],
-	['The Judge', 1],
-	['Whiplash', 1],
+	['Boyhood', 3, 'boyhood-2014'],
+	['Gone Girl', 3, 'gone-girl-2014'],
+	['The Imitation Game', 3, 'the-imitation-game-2014'],
+	['Into the Woods', 3, 'into-the-woods-2014'],
+	['Wild', 3, 'wild-2014'],
+	['American Sniper', 2, 'american-sniper-2015'],
+	['Birdman', 1, 'birdman-or-the-unexpected-virtue-of-ignorance-2014'],
+	['Foxcatcher', 1, 'foxcatcher-2014'],
+	['The Grand Budapest Hotel', 1, 'the-grand-budapest-hotel-2014'],
+	['Still Alice', 1, 'still-alice-2015'],
+	['The Theory of Everything', 1, 'the-theory-of-everything-2014'],
+	['The Judge', 1, null],
+	['Whiplash', 1, 'whiplash-2014'],
 ] as const;
 
-const onShelf = new Map(loadFilms().map((f) => [f.title, f.slug]));
-const rows = STUDY.map(([title, score]) => ({ title, score, slug: onShelf.get(title) ?? null }));
+// Today's parser scores some of these differently; the table says so where the verdict flips
+const shelf = new Map(loadFilms().map((f) => [f.slug, f.bechdel.score]));
+const rows = STUDY.map(([title, score, slug]) => {
+	const today = slug ? shelf.get(slug) : undefined;
+	if (slug && today === undefined) throw new Error(`Case study: no film ${slug} on the shelf`);
+	return { title, score, slug, flips: today !== undefined && (today === 3) !== (score === 3), todayPasses: today === 3 };
+});
 const passing = rows.filter((r) => r.score === 3).length;
 ---
 
@@ -58,7 +63,10 @@ const passing = rows.filter((r) => r.score === 3).length;
 									</span>
 									<span class="sr-only">{r.score} of 3</span>
 								</td>
-								<td class:list={['verdict', r.score === 3 ? 'pass' : 'fail']}>{r.score === 3 ? 'Passes' : 'Fails'}</td>
+								<td class:list={['verdict', r.score === 3 ? 'pass' : 'fail']}>
+									{r.score === 3 ? 'Passes' : 'Fails'}
+									{r.flips && <span class="today">today: {r.todayPasses ? 'passes' : 'fails'}</span>}
+								</td>
 							</tr>
 						))
 					}
@@ -109,6 +117,10 @@ const passing = rows.filter((r) => r.score === 3).length;
 				Two nominees are missing. The script for <cite>Selma</cite>, a Best Picture nominee, wasn't publicly available. <cite>Two
 				Days, One Night</cite>, with Best Actress nominee Marion Cotillard, is in French, and its script was only available in
 				French, which our parser can't read.
+			</p>
+			<p>
+				The scores above are the 2015 study's. Today's parser reads some of these scripts differently, so a few film pages give a
+				different verdict; the table marks those with today's.
 			</p>
 			<p><a href="/">Browse every film we've tested</a></p>
 		</div>
@@ -161,5 +173,12 @@ const passing = rows.filter((r) => r.score === 3).length;
 	}
 	.verdict.fail {
 		color: var(--fail);
+	}
+	.verdict .today {
+		display: block;
+		font-family: var(--book);
+		font-size: 0.875rem;
+		text-transform: none;
+		color: var(--muted);
 	}
 </style>

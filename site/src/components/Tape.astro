@@ -64,12 +64,18 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 </li>
 
 <style>
+	/* Boxes stretch to the tallest label in the row, so the planks line up */
 	.tape a {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		color: var(--chalk);
 		text-decoration: none;
 	}
 	.box {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
 		position: relative;
 		background: var(--shelf);
 		padding: var(--space-2) var(--space-2) 0;
@@ -101,20 +107,22 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 	}
 	.label {
 		display: block;
+		flex: 1;
 		background: var(--chalk);
 		color: var(--ink);
 		padding: var(--space-2);
 		margin: 0 calc(-1 * var(--space-2));
 	}
 	.title {
-		display: block;
 		font-family: var(--poster);
 		font-size: 1.1875rem;
 		line-height: 1.1;
 		text-transform: uppercase;
+		/* Up to three lines, so "The Lord of the Rings" films can be told apart */
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
 		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
 	}
 	.meta {
 		display: block;
@@ -168,5 +176,30 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 	a:hover .title,
 	a:focus-visible .title {
 		text-decoration: underline;
+	}
+	/* Pulled off the shelf: the box lifts and tilts, the plank stays put. The
+	   separate translate/rotate/scale properties leave the sticker's own
+	   transform alone. Entering eases out, settling back is quicker. */
+	.box {
+		transition:
+			translate 130ms ease-in,
+			rotate 130ms ease-in,
+			scale 100ms ease-out;
+	}
+	@media (hover: hover) and (pointer: fine) {
+		a:hover .box {
+			translate: 0 -6px;
+			rotate: -1deg;
+			transition-duration: 160ms;
+			transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+		}
+	}
+	a:focus-visible .box {
+		translate: 0 -6px;
+		rotate: -1deg;
+	}
+	a:active .box {
+		scale: 0.97;
+		transition-duration: 60ms;
 	}
 </style>
