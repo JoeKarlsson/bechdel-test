@@ -103,11 +103,15 @@ const pronounGender = (name, actionText) => {
  * @param {string[]} speakers - normalized speaker names from the parser
  * @param {Array<{character: string, gender: number, name: string}>} cast - TMDB cast (name is the actor)
  * @param {string} actionText - all stage directions, for pronoun evidence
+ * @param {Object<string, 'w'|'m'>} genderOverrides - genders set by hand, for picking each speaker's actor
  * @returns {Map<string, {gender: 'w'|'m'|null, named: boolean, source: string|null, actor: string|null}>}
  */
-const resolveSpeakers = (speakers, cast, actionText) => {
+const resolveSpeakers = (speakers, cast, actionText, genderOverrides = {}) => {
 	const { full, part } = castIndex(cast, member => (member.gender === 1 ? 'w' : member.gender === 2 ? 'm' : null));
-	const actors = castIndex(cast, member => member.name, { firstBilled: true });
+	// Actors by the speaker's gender, so MRS. KANE gets Kane's wife and not Orson Welles
+	const actorIndex = keep => castIndex(cast, member => (keep(member) ? member.name : null), { firstBilled: true });
+	// (an actor TMDB has no gender for stays a candidate either way)
+	const actorsBy = { w: actorIndex(m => m.gender !== 2), m: actorIndex(m => m.gender !== 1), any: actorIndex(() => true) };
 	const resolved = new Map();
 	for (const speaker of speakers) {
 		const w = words(speaker);
@@ -143,6 +147,7 @@ const resolveSpeakers = (speakers, cast, actionText) => {
 		const midSentence = x => (actionText.match(new RegExp(`[a-z,;] (?:${escape(titleCase(x))}|${escape(x)})\\b`, 'g')) || []).length;
 		const properNoun = nameWords.some(x => x.length > 1 && midSentence(x) >= (part.has(x) ? 1 : 2));
 		// Who plays them: the same name matching, against actors instead of genders
+		const actors = actorsBy[genderOverrides[speaker] ?? gender] ?? actorsBy.any;
 		const partActors = new Set(nameWords.map(x => actors.part.get(x)).filter(a => a !== undefined));
 		const actor = actors.full.get(speaker) ?? actors.full.get(nameWords.join(' '))
 			?? (partActors.size === 1 ? [...partActors][0] : null);
