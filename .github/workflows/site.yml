@@ -20,6 +20,10 @@ defaults:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # Playwright's image ships its browsers and their system libraries, so the
+    # job never waits on Ubuntu's apt mirrors (which failed every run on
+    # 2026-11-11). Keep the tag in step with @playwright/test in site/package.json.
+    container: mcr.microsoft.com/playwright:v1.65.0-resolute
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
@@ -45,21 +49,6 @@ jobs:
       - name: Unit and build-output tests
         run: npm test
 
-      # --with-deps pulls ~110 packages from Ubuntu's Azure mirror, which usually
-      # takes 30-60s but sometimes crawls for 10+ minutes. Give each try 4
-      # minutes; packages already downloaded stay in apt's cache for the next.
-      - name: Install browsers
-        run: |
-          for attempt in 1 2 3; do
-            timeout 4m npx playwright install --with-deps chromium webkit && exit 0
-            echo "::warning::Browser install attempt $attempt failed or took over 4 minutes"
-            # timeout can't stop the root apt-get Playwright started, and it holds the dpkg lock
-            sudo pkill -x apt-get || true
-            while sudo fuser /var/lib/dpkg/lock-frontend >/dev/null 2>&1; do sleep 2; done
-            sudo dpkg --configure -a
-          done
-          exit 1
-
       - name: End-to-end, accessibility and layout tests (desktop, Pixel, iPhone)
         run: npm run e2e
 
@@ -71,8 +60,11 @@ jobs:
           path: site/e2e/__screenshots__
           if-no-files-found: ignore
 
+      # Lighthouse runs the image's Chromium; the container runs as root, where Chrome needs --no-sandbox
       - name: Lighthouse (mobile, every category 90 or above)
-        run: npm run lighthouse
+        run: |
+          export CHROME_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+          npm run lighthouse -- --collect.settings.chromeFlags=--no-sandbox
 
       - name: Lighthouse reports
         if: failure()
