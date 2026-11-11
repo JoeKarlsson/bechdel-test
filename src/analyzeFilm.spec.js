@@ -23,6 +23,15 @@ describe('analyzeScriptText', () => {
 		expect(script.measures.reverseScore).toBe(0);
 	});
 
+	it('names who plays each speaker, the first-billed actor when two share the name', () => {
+		const withYoungRipley = [...cast, { name: 'Kid Actor', character: 'Young Ripley', gender: 1 }];
+		const { script } = analyzeScriptText(longScript(['RIPLEY', 'YOUNG RIPLEY', 'MOTHER']), charactersFromCast(withYoungRipley));
+		const actorOf = name => script.speakers.find(s => s.name === name).actor;
+		expect(actorOf('RIPLEY')).toBe('Ann Actor');
+		expect(actorOf('YOUNG RIPLEY')).toBe('Kid Actor');
+		expect(actorOf('MOTHER')).toBe('Unknown Actor');
+	});
+
 	it('applies a gender correction by hand, and rejects one for a speaker who never speaks', () => {
 		const characters = charactersFromCast(cast);
 		const { script } = analyzeScriptText(longScript(['RIPLEY', 'MOTHER']), characters, { MOTHER: 'm' });
