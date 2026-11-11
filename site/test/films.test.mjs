@@ -44,10 +44,10 @@ test('toNumber handles N/A and strings', () => {
 });
 
 test('speakersFrom title-cases the stored speakers, most lines first', () => {
-	const script = { speakers: [{ name: 'AMY', lines: 2, gender: 'w' }, { name: 'MRS. ELLIOTT', lines: 1, gender: null }] };
+	const script = { speakers: [{ name: 'AMY', lines: 2, gender: 'w', actor: 'Rosamund Pike' }, { name: 'MRS. ELLIOTT', lines: 1, gender: null }] };
 	assert.deepEqual(speakersFrom(script), [
-		{ name: 'Amy', lines: 2, gender: 'w' },
-		{ name: 'Mrs. Elliott', lines: 1, gender: null },
+		{ name: 'Amy', lines: 2, gender: 'w', actor: 'Rosamund Pike' },
+		{ name: 'Mrs. Elliott', lines: 1, gender: null, actor: null },
 	]);
 });
 

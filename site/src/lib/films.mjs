@@ -62,7 +62,7 @@ export function toNumber(value) {
 
 /** Lines per speaker, most first, from the parsed script `npm run analyze` stores */
 export function speakersFrom(script) {
-	return script.speakers.map((s) => ({ name: titleCase(s.name), lines: s.lines, gender: s.gender }));
+	return script.speakers.map((s) => ({ name: titleCase(s.name), lines: s.lines, gender: s.gender, actor: s.actor ?? null }));
 }
 
 // A lead is one of this many characters with the most lines

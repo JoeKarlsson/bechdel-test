@@ -54,7 +54,10 @@ const summarizeScript = (screenplay, resolved) => {
 	}
 	const speakers = [...counts]
 		.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-		.map(([name, lines]) => ({ name, lines, gender: resolved.get(name).gender, named: resolved.get(name).named }));
+		.map(([name, lines]) => {
+			const { gender, named, actor } = resolved.get(name);
+			return { name, lines, gender, named, ...(actor ? { actor } : {}) };
+		});
 	const index = new Map(speakers.map((s, i) => [s.name, i]));
 	return {
 		layout: screenplay.layout,

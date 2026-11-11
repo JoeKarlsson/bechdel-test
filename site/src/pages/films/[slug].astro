@@ -375,6 +375,7 @@ const credit = [
 									{s.lines}
 									<span class="sr-only"> lines{s.gender === 'w' ? ', woman' : s.gender === 'm' ? ', man' : ''}</span>
 								</span>
+								{s.actor && <span class="star-actor">({s.actor})</span>}
 							</li>
 						))}
 					</ol>
@@ -1609,6 +1610,16 @@ const credit = [
 		color: var(--chalk);
 		margin-left: var(--space-1);
 		vertical-align: super;
+	}
+	/* Who plays them: one size under every name, however big the name is */
+	.star-actor {
+		display: block;
+		margin-top: var(--space-1);
+		font-family: var(--book);
+		font-size: var(--text-small);
+		line-height: 1.3;
+		text-transform: none;
+		color: var(--muted);
 	}
 	.cast {
 		margin-top: var(--space-5);

@@ -48,27 +48,29 @@ const escape = w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /**
  * Name lookups from the TMDB cast: full character name, and each first or last
- * name, to the gender of the actor playing them. A name used by both a man and
- * a woman ("SMITH" for Mr. and Mrs. Smith) maps to null.
+ * name, to what valueOf gives for the cast member (the actor's gender, or the
+ * actor). A name that leads to two different values ("SMITH" for Mr. and Mrs.
+ * Smith) maps to null, or with firstBilled to the first in the cast's order
+ * ("CLARICE" is Clarice Starling, not Young Clarice).
  */
-const castIndex = cast => {
+const castIndex = (cast, valueOf, { firstBilled = false } = {}) => {
 	const full = new Map();
 	const part = new Map();
-	const put = (map, key, gender) => {
-		if (!key || key.length < 2) return;
-		map.set(key, map.has(key) && map.get(key) !== gender ? null : gender);
+	const put = (map, key, value) => {
+		if (!key || key.length < 2 || (firstBilled && map.has(key))) return;
+		map.set(key, map.has(key) && map.get(key) !== value ? null : value);
 	};
 	for (const member of cast) {
-		const gender = member.gender === 1 ? 'w' : member.gender === 2 ? 'm' : null;
-		if (!gender || !member.character) continue;
+		const value = valueOf(member);
+		if (!value || !member.character) continue;
 		// "Neytiri (voice)", "Jake Sully / Avatar", 'Frank "The Tank" Ricard'
 		for (const role of member.character.split(/\s+\/\s+|\s*;\s*/)) {
 			const nickname = role.match(/["“]([^"”]+)["”]|\s'([^']+)'\s/)?.slice(1).find(Boolean);
 			const clean = role.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\([^)]*\)/g, ' ')
 				.replace(/["“”]|\s'|'\s/g, ' ').toUpperCase().replace(/\s+/g, ' ').trim();
-			put(full, clean, gender);
-			if (nickname) put(full, nickname.toUpperCase(), gender);
-			for (const w of words(clean)) if (!DESCRIPTORS.has(w) && !WOMAN_WORDS.has(w) && !MAN_WORDS.has(w)) put(part, w, gender);
+			put(full, clean, value);
+			if (nickname) put(full, nickname.toUpperCase(), value);
+			for (const w of words(clean)) if (!DESCRIPTORS.has(w) && !WOMAN_WORDS.has(w) && !MAN_WORDS.has(w)) put(part, w, value);
 		}
 	}
 	return { full, part };
@@ -99,12 +101,13 @@ const pronounGender = (name, actionText) => {
 
 /**
  * @param {string[]} speakers - normalized speaker names from the parser
- * @param {Array<{character: string, gender: number}>} cast - TMDB cast
+ * @param {Array<{character: string, gender: number, name: string}>} cast - TMDB cast (name is the actor)
  * @param {string} actionText - all stage directions, for pronoun evidence
- * @returns {Map<string, {gender: 'w'|'m'|null, named: boolean, source: string|null}>}
+ * @returns {Map<string, {gender: 'w'|'m'|null, named: boolean, source: string|null, actor: string|null}>}
  */
 const resolveSpeakers = (speakers, cast, actionText) => {
-	const { full, part } = castIndex(cast);
+	const { full, part } = castIndex(cast, member => (member.gender === 1 ? 'w' : member.gender === 2 ? 'm' : null));
+	const actors = castIndex(cast, member => member.name, { firstBilled: true });
 	const resolved = new Map();
 	for (const speaker of speakers) {
 		const w = words(speaker);
@@ -139,7 +142,11 @@ const resolveSpeakers = (speakers, cast, actionText) => {
 		// like FASHIONISTA or SECRETARY OF STATE that only open sentences
 		const midSentence = x => (actionText.match(new RegExp(`[a-z,;] (?:${escape(titleCase(x))}|${escape(x)})\\b`, 'g')) || []).length;
 		const properNoun = nameWords.some(x => x.length > 1 && midSentence(x) >= (part.has(x) ? 1 : 2));
-		resolved.set(speaker, { gender, named: !generic && nameWords.length > 0 && properNoun, source });
+		// Who plays them: the same name matching, against actors instead of genders
+		const partActors = new Set(nameWords.map(x => actors.part.get(x)).filter(a => a !== undefined));
+		const actor = actors.full.get(speaker) ?? actors.full.get(nameWords.join(' '))
+			?? (partActors.size === 1 ? [...partActors][0] : null);
+		resolved.set(speaker, { gender, named: !generic && nameWords.length > 0 && properNoun, source, actor });
 	}
 	return resolved;
 };
