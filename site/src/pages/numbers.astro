@@ -76,6 +76,40 @@ const jobRows: Row[] = s.jobs.map((j) => {
 const directors = s.jobs.find((j) => j.label === 'Directed by');
 const shooters = s.jobs.find((j) => j.label === 'Shot by');
 const h = s.heard;
+
+// Last words: who has the first and last line
+const lw = s.lastWords;
+type Ends = typeof lw.first;
+const womenOf = (x: Ends) => x.wLead + x.wSide;
+const leadsOf = (x: Ends) => x.wLead + x.mLead;
+const STACK_PARTS = [
+	{ key: 'wLead', css: 'w lead', label: 'Woman, a lead' },
+	{ key: 'wSide', css: 'w side', label: 'Woman, side character' },
+	{ key: 'mLead', css: 'm lead', label: 'Man, a lead' },
+	{ key: 'mSide', css: 'm side', label: 'Man, side character' },
+	{ key: 'unknown', css: 'unknown', label: 'Gender not known: narrators, voices, crowds' },
+] as const;
+const stackRows = (['first', 'last'] as const).map((end) => ({
+	label: end === 'first' ? 'First line' : 'Last line',
+	counts: lw[end],
+	aria: `${end === 'first' ? 'First' : 'Last'} line: ${STACK_PARTS.map((p) => `${p.label} ${pct(lw[end][p.key], lw[end].films)}%`).join(', ')}`,
+}));
+const decadeName = (d: number) => (d === 1970 ? 'Before 1980' : `${d}s`);
+const decadeRows = (end: 'first' | 'last'): Row[] =>
+	lw.byDecade.map((d) => ({
+		label: decadeName(d.decade),
+		share: d[end].w / d[end].films,
+		value: `${pct(d[end].w, d[end].films)}%`,
+		aria: `${decadeName(d.decade)}: ${d[end].w} of ${d[end].films} films ${end === 'first' ? 'open' : 'end'} on a woman's line`,
+	}));
+const passRows: Row[] = [
+	{ label: 'Passes', ...lw.pass },
+	{ label: 'Fails', ...lw.fail },
+].map((r) => ({ label: r.label, share: r.w / r.films, value: `${pct(r.w, r.films)}%`, aria: `Films that ${r.label.toLowerCase().replace(/s$/, '')}: ${r.w} of ${r.films} end on a woman's line` }));
+// The best-rated films' last lines, three said by women and three by men
+const byRating = films.filter((f) => f.bookends?.last && f.imdbRating !== null).sort((a, b) => b.imdbRating! - a.imdbRating!);
+const lastOf = (gender: 'w' | 'm') => byRating.filter((f) => f.bookends!.last!.gender === gender).slice(0, 3);
+const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean);
 ---
 
 <Base
@@ -179,6 +213,110 @@ const h = s.heard;
 					</dd>
 				</div>
 			</dl>
+		</section>
+
+		<section class="section" aria-labelledby="words-title">
+			<h2 id="words-title" class="section-title">Last words</h2>
+			<dl class="tiles">
+				<div>
+					<dt>{pct(womenOf(lw.last), lw.last.films)}%</dt>
+					<dd>of films end on a woman's line. Women speak {percent(lw.womenLineShare)} of all the lines.</dd>
+				</div>
+				<div>
+					<dt>{pct(womenOf(lw.first), lw.first.films)}%</dt>
+					<dd>of films open on a woman's line.</dd>
+				</div>
+				<div>
+					<dt>{pct(lw.ledByWoman.w, lw.ledByWoman.films)}%</dt>
+					<dd>of films where a woman has the most lines end on a woman's line. Where a man has the most, {pct(lw.ledByMan.w, lw.ledByMan.films)}% do.</dd>
+				</div>
+			</dl>
+
+			<h3>Who speaks first and last</h3>
+			<div class="stack-rows">
+				{stackRows.map((r) => (
+					<>
+						<p class="stack-label">{r.label}</p>
+						<div class="stack" role="img" aria-label={r.aria}>
+							{STACK_PARTS.map((p) => r.counts[p.key] > 0 && <span class:list={['stack-part', p.css]} style={`flex-grow: ${r.counts[p.key]}`} />)}
+						</div>
+					</>
+				))}
+			</div>
+			<ul class="legend">
+				{STACK_PARTS.map((p) => <li><span class:list={['swatch', 'stack-swatch', p.css]} />{p.label}</li>)}
+			</ul>
+			<div class="prose">
+				<p>
+					Leads have the first line in {pct(leadsOf(lw.first), lw.first.films)}% of films and the last in {pct(leadsOf(lw.last), lw.last.films)}%.
+					When a woman has the last line she's a lead {pct(lw.last.wLead, womenOf(lw.last))}% of the time; when a man does, {pct(lw.last.mLead, lw.last.mLead + lw.last.mSide)}%.
+					The character with the most lines closes the film in {pct(lw.ledByWoman.topCloses, lw.ledByWoman.films)}% of films when she's a woman, and {pct(lw.ledByMan.topCloses, lw.ledByMan.films)}% when he's a man.
+				</p>
+			</div>
+
+			<div class="two">
+				<div>
+					<h3>Open on a woman's line</h3>
+					<ul class="hbars wide-labels">
+						{decadeRows('first').map((r) => (
+							<li>
+								<div class="hb-row" role="img" aria-label={r.aria}>
+									<span class="hb-label">{r.label}</span>
+									<span class="hb-track"><span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} /></span>
+									<span class="hb-value">{r.value}</span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+				<div>
+					<h3>End on a woman's line</h3>
+					<ul class="hbars wide-labels">
+						{decadeRows('last').map((r) => (
+							<li>
+								<div class="hb-row" role="img" aria-label={r.aria}>
+									<span class="hb-label">{r.label}</span>
+									<span class="hb-track"><span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} /></span>
+									<span class="hb-value">{r.value}</span>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+
+			<h3>Pass or fail</h3>
+			<ul class="hbars wide-labels">
+				{passRows.map((r) => (
+					<li>
+						<div class="hb-row" role="img" aria-label={r.aria}>
+							<span class="hb-label">{r.label}</span>
+							<span class="hb-track"><span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} /></span>
+							<span class="hb-value">{r.value}</span>
+						</div>
+					</li>
+				))}
+			</ul>
+			<div class="prose">
+				<p>
+					Films that pass the test end on a woman's line {pct(lw.pass.w, lw.pass.films)}% of the time, films that fail {pct(lw.fail.w, lw.fail.films)}%.
+					{pct(lw.bothMen, lw.films)}% of films open and close on a man, {pct(lw.bothWomen, lw.films)}% on a woman.
+				</p>
+			</div>
+
+			<h3>Some last words</h3>
+			<ul class="quotes">
+				{quotes.map((f) => (
+					<li class={f.bookends!.last!.gender!}>
+						<q>{f.bookends!.last!.text}</q>
+						<p class="note">{f.bookends!.last!.name}, {f.bookends!.last!.lead ? 'a lead' : 'side character'}, in <a href={`/films/${f.slug}/`}>{f.title} ({f.year})</a></p>
+					</li>
+				))}
+			</ul>
+			<p class="note prose">
+				Lines come from each script, which can differ from the film as released. A lead is one of the two characters with the most lines. {lw.first.none} {lw.first.none === 1 ? 'film has' : 'films have'} no clear first line and {lw.last.none} no clear last line, where the script
+				opens or ends on credits, songs or stage directions; they're left out of those counts. Old scanned scripts sometimes leave a stage direction in a quote.
+			</p>
 		</section>
 
 		<section class="section" aria-labelledby="crew-title">
@@ -340,6 +478,77 @@ const h = s.heard;
 	.tiles dd {
 		margin: var(--space-2) 0 0;
 		max-width: 28ch;
+	}
+	/* Last words: one bar per end of the film, split by gender and lead or side */
+	.stack-rows {
+		display: grid;
+		grid-template-columns: max-content minmax(0, 1fr);
+		align-items: center;
+		gap: var(--space-3);
+		max-width: 960px;
+		margin-bottom: var(--space-3);
+	}
+	.stack-label {
+		margin: 0;
+	}
+	.stack {
+		display: flex;
+		gap: var(--mark-gap);
+		height: 2.5rem;
+	}
+	.stack-part {
+		display: block;
+		min-width: 3px;
+	}
+	/* Filled: a lead. Outlined: a side character */
+	.stack-part.w.lead,
+	.stack-swatch.w.lead {
+		background: var(--pink);
+	}
+	.stack-part.m.lead,
+	.stack-swatch.m.lead {
+		background: var(--chalk);
+	}
+	.stack-part.w.side,
+	.stack-swatch.w.side {
+		border: 3px solid var(--pink);
+	}
+	.stack-part.m.side,
+	.stack-swatch.m.side {
+		border: 3px solid var(--chalk);
+	}
+	.stack-part.unknown,
+	.stack-swatch.unknown {
+		background: var(--muted);
+	}
+	.quotes {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-4);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+		gap: var(--space-4) var(--space-6);
+	}
+	.quotes li {
+		border-left: 3px solid var(--muted);
+		padding-left: var(--space-3);
+		min-width: 0;
+	}
+	.quotes li.w {
+		border-left-color: var(--pink);
+	}
+	.quotes li.m {
+		border-left-color: var(--chalk);
+	}
+	.quotes q {
+		font-size: var(--text-lead);
+		overflow-wrap: anywhere;
+	}
+	@media (max-width: 480px) {
+		.stack-rows {
+			grid-template-columns: minmax(0, 1fr);
+			gap: var(--space-1);
+		}
 	}
 	.table-view summary {
 		cursor: pointer;

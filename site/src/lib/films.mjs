@@ -65,6 +65,29 @@ export function speakersFrom(script) {
 	return script.speakers.map((s) => ({ name: titleCase(s.name), lines: s.lines, gender: s.gender }));
 }
 
+// A lead is one of this many characters with the most lines
+export const LEADS = 2;
+
+/**
+ * The film's first and last line and who says them, from `npm run analyze`;
+ * either is null when the script has no clear one. rank 1 has the most lines.
+ */
+export function bookendsFrom(script, speakers) {
+	if (!script.bookends) return null;
+	const said = (end) => end && {
+		text: end.text,
+		line: end.line,
+		name: speakers[end.speaker].name,
+		gender: speakers[end.speaker].gender ?? null,
+		lines: speakers[end.speaker].lines,
+		rank: end.speaker + 1,
+		lead: end.speaker < LEADS,
+	};
+	const first = said(script.bookends.first);
+	const last = said(script.bookends.last);
+	return first || last ? { first, last } : null;
+}
+
 /**
  * Women's and men's lines across the film, in `bars` even groups of scenes,
  * with where each group takes place and who speaks most in it
@@ -310,6 +333,7 @@ export function normalizeFilm(raw) {
 		sceneCount: raw.script.scenes.length,
 		dialogueCount: raw.script.dialogueLines,
 		measures: raw.script.measures ?? null,
+		bookends: bookendsFrom(raw.script, speakers),
 		crew: crewFrom(raw.crew),
 		money: raw.money && (raw.money.budget || raw.money.revenue) ? { budget: raw.money.budget, revenue: raw.money.revenue } : null,
 		// Top-billed actors with a known age at release, women and men
@@ -360,6 +384,32 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 	}).filter((j) => j.w + j.m + j.nb > 0);
 	const split = (test) => ({ yes: rate(films.filter(test)), no: rate(films.filter((f) => !test(f))) });
 
+	// Last words: who has each film's first and last line
+	const withEnds = films.filter((f) => f.bookends);
+	const whoSays = (end) => {
+		const said = withEnds.map((f) => f.bookends[end]).filter(Boolean);
+		const count = (gender, lead) => said.filter((l) => l.gender === gender && l.lead === lead).length;
+		return {
+			films: said.length,
+			none: withEnds.length - said.length,
+			wLead: count('w', true),
+			wSide: count('w', false),
+			mLead: count('m', true),
+			mSide: count('m', false),
+			unknown: said.filter((l) => l.gender === null).length,
+		};
+	};
+	const womenSay = (fs, end) => ({ films: fs.filter((f) => f.bookends?.[end]).length, w: fs.filter((f) => f.bookends?.[end]?.gender === 'w').length });
+	const ledBy = (gender) => {
+		const fs = withEnds.filter((f) => f.speakers[0]?.gender === gender);
+		return { ...womenSay(fs, 'last'), topCloses: fs.filter((f) => f.bookends.last?.rank === 1).length };
+	};
+	// Few films before 1980 are on the shelf, so they share one row
+	const decadeOf = (year) => (year < 1980 ? 1970 : Math.floor(year / 10) * 10);
+	const decades = [...new Set(withEnds.filter((f) => f.year).map((f) => decadeOf(f.year)))].sort();
+	const bothBy = (gender) => withEnds.filter((f) => f.bookends.first?.gender === gender && f.bookends.last?.gender === gender).length;
+	const pooledLines = films.reduce((acc, f) => ({ w: acc.w + f.lines.w, m: acc.m + f.lines.m }), { w: 0, m: 0 });
+
 	const withAges = films.filter((f) => f.ages.some((a) => a.gender === 'w') && f.ages.some((a) => a.gender === 'm'));
 	const meanAge = (f, g) => average(f.ages.filter((a) => a.gender === g).map((a) => a.age));
 	const multiple = (f) => (f.money?.budget && f.money?.revenue ? f.money.revenue / f.money.budget : null);
@@ -394,6 +444,22 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 			womenConversations: withMeasures.reduce((n, f) => n + f.measures.womenConversations, 0),
 			menConversations: withMeasures.reduce((n, f) => n + f.measures.menConversations, 0),
 			reversePass: withMeasures.filter((f) => f.measures.reverseScore === 3).length,
+		},
+		lastWords: {
+			films: withEnds.length,
+			first: whoSays('first'),
+			last: whoSays('last'),
+			womenLineShare: pooledLines.w / (pooledLines.w + pooledLines.m),
+			ledByWoman: ledBy('w'),
+			ledByMan: ledBy('m'),
+			pass: womenSay(withEnds.filter((f) => f.bechdel.pass), 'last'),
+			fail: womenSay(withEnds.filter((f) => !f.bechdel.pass), 'last'),
+			byDecade: decades.map((decade) => {
+				const fs = withEnds.filter((f) => f.year && decadeOf(f.year) === decade);
+				return { decade, first: womenSay(fs, 'first'), last: womenSay(fs, 'last') };
+			}),
+			bothWomen: bothBy('w'),
+			bothMen: bothBy('m'),
 		},
 		jobs,
 		womanDirector: split((f) => hasWomanIn(f, 'Directed by')),
