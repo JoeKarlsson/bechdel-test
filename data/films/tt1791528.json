@@ -7,17 +7,19 @@
     "Drama"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 2,
-    "numScenesPass": 0,
-    "numScenesDontPass": 84,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 1,
+    "numScenesDontPass": 83,
     "numOfFemalesChars": 48,
     "numOfMaleChars": 39,
     "numOfFemalesCharsWithDialogue": 16,
-    "numOfMaleCharsWithDialogue": 23,
-    "totalLinesFemaleDialogue": 231,
-    "totalLinesMaleDialogue": 768,
-    "scenesThatPass": []
+    "numOfMaleCharsWithDialogue": 22,
+    "totalLinesFemaleDialogue": 234,
+    "totalLinesMaleDialogue": 765,
+    "scenesThatPass": [
+      "MRS. BIGFOOT: AFTER A DEDUCTIBLE THAT WOULD CHOKE A FUCKING HORSE!!!\nSHASTA: What kind of girl do you need, Doc? Maybe a thing for those Manson chicks?"
+    ]
   },
   "script": {
     "file": "inherent-vice-2014.txt",
@@ -250,9 +252,8 @@
       {
         "name": "MRS. BIGFOOT",
         "lines": 3,
-        "gender": "m",
-        "named": true,
-        "actor": "Josh Brolin"
+        "gender": "w",
+        "named": true
       },
       {
         "name": "SECRETARY",
@@ -1096,12 +1097,12 @@
       "longestWithoutWoman": 61,
       "longestWithoutWomanStart": 142,
       "words": {
-        "w": 4132,
-        "m": 10143,
+        "w": 4195,
+        "m": 10080,
         "unknown": 269
       },
-      "womenConversations": 3,
-      "menConversations": 15,
+      "womenConversations": 4,
+      "menConversations": 14,
       "reverseScore": 3
     }
   },

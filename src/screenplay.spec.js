@@ -135,6 +135,17 @@ describe('resolveSpeakers', () => {
 		// Mr. and Mrs. Smith share the name, so SMITH alone stays unknown
 		expect(resolved.get('SMITH').gender).toBeNull();
 	});
+
+	it("trusts an honorific over a role that only shares the name, but not one tacked on after a name", () => {
+		const castWithCelie = [...cast, { character: 'Celie', gender: 1 }];
+		const resolved = resolveSpeakers(['MRS. DALLAS', 'MR. LAMBERT', 'CELIE MISTER', 'MRS. SMITH'], castWithCelie, action);
+		expect(resolved.get('MRS. DALLAS').gender).toBe('w');
+		expect(resolved.get('MR. LAMBERT').gender).toBe('m');
+		// Two cues the parser ran together: Mister is a name here, so Celie's match stands
+		expect(resolved.get('CELIE MISTER').gender).toBe('w');
+		// The cast lists her by the full title, which still wins
+		expect(resolved.get('MRS. SMITH')).toMatchObject({ gender: 'w', source: 'cast' });
+	});
 });
 
 describe('scoreBechdel', () => {

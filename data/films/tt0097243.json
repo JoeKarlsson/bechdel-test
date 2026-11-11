@@ -8,16 +8,17 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 159,
+    "numScenesPass": 2,
+    "numScenesDontPass": 158,
     "numOfFemalesChars": 10,
     "numOfMaleChars": 17,
     "numOfFemalesCharsWithDialogue": 7,
-    "numOfMaleCharsWithDialogue": 16,
-    "totalLinesFemaleDialogue": 210,
-    "totalLinesMaleDialogue": 977,
+    "numOfMaleCharsWithDialogue": 15,
+    "totalLinesFemaleDialogue": 212,
+    "totalLinesMaleDialogue": 975,
     "scenesThatPass": [
-      "SUSAN: This bloody Bruwer woman reports one hundred shot, but the radio said only twenty and the police were attacked first.\nSUZETTE: I thought the idea was to give them their own areas, banstustans. Let them live with their own kind. No chance of conflict then. Everybody's…"
+      "SUSAN: This bloody Bruwer woman reports one hundred shot, but the radio said only twenty and the police were attacked first.\nSUZETTE: I thought the idea was to give them their own areas, banstustans. Let them live with their own kind. No chance of conflict then. Everybody's…",
+      "MRS. CLOETE: Please!\nMRS. CLOETE: Oh, I saw those sheets you liked, Sally, on sale at Bloom's.\nMRS. BESTER: Will you be free on Wednesday afternoon? I have one or two other things to buy."
     ]
   },
   "script": {
@@ -332,9 +333,8 @@
       {
         "name": "MRS. CLOETE",
         "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Richard Wilson"
+        "gender": "w",
+        "named": true
       },
       {
         "name": "MRS. COETZEE",
@@ -1606,11 +1606,11 @@
       "longestWithoutWoman": 77,
       "longestWithoutWomanStart": 482,
       "words": {
-        "w": 2714,
-        "m": 12285,
+        "w": 2727,
+        "m": 12272,
         "unknown": 452
       },
-      "womenConversations": 5,
+      "womenConversations": 6,
       "menConversations": 79,
       "reverseScore": 3
     }
