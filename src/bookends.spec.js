@@ -44,6 +44,8 @@ describe('quoteOf', () => {
 
 	it('keeps a shouted line and shortens a long one at a sentence', () => {
 		expect(quoteOf('Freeze! FBI!', names)).toBe('Freeze! FBI!');
+		expect(quoteOf('HOLD IT! Nobody move.', names)).toBe('HOLD IT! Nobody move.');
+		expect(quoteOf('Stop it! BLACK SCREEN END TITLES.', names)).toBe('Stop it!');
 		// Three 100-character sentences: the third would pass 280
 		const long = `${'Word '.repeat(20).trim()}. ${'More '.repeat(20).trim()}. ${'Last '.repeat(20).trim()}.`;
 		expect(quoteOf(long, names)).toBe(`${'Word '.repeat(20).trim()}. ${'More '.repeat(20).trim()}.`);

@@ -391,7 +391,7 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 		const count = (gender, lead) => said.filter((l) => l.gender === gender && l.lead === lead).length;
 		return {
 			films: said.length,
-			none: withEnds.length - said.length,
+			none: films.length - said.length,
 			wLead: count('w', true),
 			wSide: count('w', false),
 			mLead: count('m', true),
