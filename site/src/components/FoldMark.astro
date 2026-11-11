@@ -1,8 +1,8 @@
 ---
 // The + / − after a fold's title. Both signs share one grid cell and crossfade
 // when the fold opens or closes, so the mark never snaps or changes width.
-// aria-hidden keeps it out of the heading's name; the <details> already says
-// whether it's open.
+// aria-hidden keeps it out of the title's name; the <details> or the button's
+// aria-expanded already says whether it's open.
 ---
 
 <span class="fold-mark" aria-hidden="true"><span>+</span><span>&minus;</span></span>
@@ -20,12 +20,12 @@
 			filter 150ms ease-out;
 	}
 	.fold-mark > span:last-child,
-	:global(details[open] > summary) .fold-mark > span:first-child {
+	:global(:is(details[open] > summary, [aria-expanded='true'])) .fold-mark > span:first-child {
 		opacity: 0;
 		scale: 0.8;
 		filter: blur(2px);
 	}
-	:global(details[open] > summary) .fold-mark > span:last-child {
+	:global(:is(details[open] > summary, [aria-expanded='true'])) .fold-mark > span:last-child {
 		opacity: 1;
 		scale: 1;
 		filter: none;

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Locator } from '@playwright/test';
 import { PAGE_TYPES } from './pages';
 
 for (const [name, path] of Object.entries(PAGE_TYPES)) {
@@ -62,18 +62,53 @@ test('the scene timeline explains a group of scenes on focus, and the arrow keys
 	await expect(bars.first()).toHaveAttribute('tabindex', '-1');
 });
 
+// A folded body is hidden="until-found" (so find-in-page still reaches it) and
+// takes no height. offsetHeight, since the tilted panels give even an empty
+// box a few pixels of bounding box.
+async function expectFolded(body: Locator, folded: boolean) {
+	if (folded) {
+		await expect(body).toHaveAttribute('hidden', 'until-found');
+		await expect(body).toHaveJSProperty('offsetHeight', 0);
+	} else {
+		await expect(body).not.toHaveAttribute('hidden');
+		await expect(body).toBeVisible();
+	}
+}
+
 test('exhibits fold on phones, without animating shut on load', async ({ page }, info) => {
 	await page.goto('/films/gone-girl-2014/');
-	const firstFold = page.locator('details[data-fold]').first();
-	await expect(firstFold).toHaveJSProperty('open', info.project.name === 'desktop');
+	const open = info.project.name === 'desktop';
+	const button = page.getByRole('heading', { name: /^Exhibit A: / }).getByRole('button');
+	await expect(button).toHaveAttribute('aria-expanded', String(open));
+	await expectFolded(page.locator('#ex-scene-body'), !open);
 	await expect(page.locator('html')).toHaveAttribute('data-folds-ready', '');
 	// Nothing animates on first paint: the folds land closed instead of shrinking
 	expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
 });
 
-test("an exhibit's heading doesn't read its + or − mark", async ({ page }) => {
+test('an exhibit is a heading with a button that folds its body', async ({ page }) => {
 	await page.goto('/films/gone-girl-2014/');
-	await expect(page.getByRole('heading', { name: /^Exhibit A: the passing scenes?$/ })).toHaveCount(1);
+	// The heading keeps its name without the + or − mark, and screen readers can jump to it
+	const heading = page.getByRole('heading', { name: /^Exhibit A: the passing scenes?$/ });
+	await expect(heading).toHaveCount(1);
+	const button = heading.getByRole('button');
+	const body = page.locator('#ex-scene-body');
+	const wasOpen = (await button.getAttribute('aria-expanded')) === 'true';
+	await button.click();
+	await expect(button).toHaveAttribute('aria-expanded', String(!wasOpen));
+	await expectFolded(body, wasOpen);
+	await button.press('Enter');
+	await expect(button).toHaveAttribute('aria-expanded', String(wasOpen));
+	await expectFolded(body, !wasOpen);
+});
+
+test('without JavaScript, every exhibit is open and its title is plain text', async ({ browser }) => {
+	const context = await browser.newContext({ javaScriptEnabled: false });
+	const page = await context.newPage();
+	await page.goto('/films/gone-girl-2014/');
+	await expect(page.locator('#ex-scene-body')).toBeVisible();
+	await expect(page.locator('h3[data-fold] button')).toHaveCount(0);
+	await context.close();
 });
 
 test('a finger anywhere on the timeline picks the nearest group of scenes', async ({ page }, info) => {
