@@ -25,6 +25,8 @@ const MAN_WORDS = new Set([
 	'BRO', 'BUDDY', 'GUNMAN', 'FOREMAN', 'WATCHMAN', 'MAILMAN', 'MILKMAN', 'HANDYMAN', 'MIDDLEMAN', 'BAGMAN', 'HITMAN',
 	'NEWSMAN', 'CAMERAMAN', 'CLERGYMAN', 'CRAFTSMAN', 'FRONTMAN', 'HENCHMAN', 'HORSEMAN', 'LAWMAN', 'MADMAN', 'SNOWMAN', 'STRONGMAN',
 ]);
+// Titles that only go before a name, and always say the person's gender
+const HONORIFICS = new Set(['MRS', 'MR', 'MS', 'MISS', 'MADAME', 'MADAM', 'MME', 'MLLE', 'MONSIEUR', 'SENORA', 'SENORITA', 'SENOR', 'SIGNORA', 'SIGNOR', 'FRAU', 'FRAULEIN', 'HERR', 'MISTER']);
 // Words that describe rather than name: "YOUNG JANE", "OLD MAN", "DR. GRANT"
 const DESCRIPTORS = new Set([
 	'YOUNG', 'YOUNGER', 'OLD', 'OLDER', 'LITTLE', 'BIG', 'TEEN', 'TEENAGE', 'ADULT', 'BABY', 'KID', 'KIDS', 'CHILD', 'THE', 'A', 'AN',
@@ -120,10 +122,15 @@ const resolveSpeakers = (speakers, cast, actionText, genderOverrides = {}) => {
 		let gender = null;
 		let source = null;
 
-		const fullMatch = full.get(speaker) ?? full.get(nameWords.join(' '));
 		const titleWords = w.filter(x => WOMAN_WORDS.has(x) || MAN_WORDS.has(x));
 		const titleGender = titleWords.length && titleWords.every(x => WOMAN_WORDS.has(x)) ? 'w'
 			: titleWords.length && titleWords.every(x => MAN_WORDS.has(x)) ? 'm' : null;
+		// An honorific before a name beats a role matched on that name alone: MRS. DALLAS isn't Dallas.
+		// Only before a name ("CELIE MISTER" is two cues run together), and not in "MR. & MRS. X"
+		const honorific = w.slice(0, -1).find(x => HONORIFICS.has(x));
+		const honorificGender = honorific && !/[&/]|\bAND\b/.test(speaker) ? (WOMAN_WORDS.has(honorific) ? 'w' : 'm') : null;
+		const nameMatch = full.get(nameWords.join(' '));
+		const fullMatch = full.get(speaker) ?? (honorificGender && nameMatch && nameMatch !== honorificGender ? undefined : nameMatch);
 		const partGenders = new Set(nameWords.map(x => part.get(x)).filter(g => g !== undefined));
 
 		if (fullMatch) {

@@ -9,20 +9,20 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 11,
-    "numScenesDontPass": 109,
+    "numScenesPass": 10,
+    "numScenesDontPass": 110,
     "numOfFemalesChars": 7,
     "numOfMaleChars": 11,
-    "numOfFemalesCharsWithDialogue": 11,
+    "numOfFemalesCharsWithDialogue": 10,
     "numOfMaleCharsWithDialogue": 14,
-    "totalLinesFemaleDialogue": 216,
-    "totalLinesMaleDialogue": 695,
+    "totalLinesFemaleDialogue": 211,
+    "totalLinesMaleDialogue": 700,
     "scenesThatPass": [
       "ALICE: Fuck you, don’t do that!\nMADDY: Have you seen Emma?\nALICE: Not since we got here.\nMADDY: Can you see her from up there?",
       "MADDY: I don’t really, like, know you? I just want to speak to my friend.\nALICE: Just one sec, OK? Okay, do you remember where you last saw her?\nMADDY: She was playing beer pong with some people... I don't know. That was a while ago.\nALICE: Like how long ago? Like what, half an hour?",
       "MADDY: I think... we need to call the police.\nALICE: You need to hydrate--\nMADDY: We need to do something--\nALICE: Maddy. Drink the water. We're going to keep looking, okay?",
       "MADDY: Ok, so she's ignoring me? How is that helpful?\nALICE: Does she have an app like Find My Friend? We can track her.",
-      "MR. KAREN: What did you just say?\nMR. KAREN: What did you just say???\nGOLDILOCKS: Racisssolllbiiitchh. Biiiiiitch!"
+      "MADDY: Where the hell are we? This is like... the hood.\nALICE: Can you pedal for a while, Maddy? I'm getting really tired.\nMADDY: I really would but I have bad knees. Plus, we're like super close."
     ]
   },
   "script": {
@@ -140,9 +140,8 @@
       {
         "name": "MR. KAREN",
         "lines": 5,
-        "gender": "w",
-        "named": true,
-        "actor": "Melanie Jeffcoat"
+        "gender": "m",
+        "named": true
       },
       {
         "name": "FACIAL TATTOO GUY",
@@ -1218,11 +1217,11 @@
       "longestWithoutWoman": 81,
       "longestWithoutWomanStart": 198,
       "words": {
-        "w": 1993,
-        "m": 6807,
+        "w": 1964,
+        "m": 6836,
         "unknown": 232
       },
-      "womenConversations": 23,
+      "womenConversations": 22,
       "menConversations": 76,
       "reverseScore": 3
     }

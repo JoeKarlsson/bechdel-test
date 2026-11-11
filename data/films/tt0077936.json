@@ -6,17 +6,21 @@
     "History"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 131,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 129,
     "numOfFemalesChars": 8,
     "numOfMaleChars": 25,
     "numOfFemalesCharsWithDialogue": 3,
-    "numOfMaleCharsWithDialogue": 16,
-    "totalLinesFemaleDialogue": 120,
-    "totalLinesMaleDialogue": 493,
-    "scenesThatPass": []
+    "numOfMaleCharsWithDialogue": 15,
+    "totalLinesFemaleDialogue": 144,
+    "totalLinesMaleDialogue": 469,
+    "scenesThatPass": [
+      "COSETTE: There is a castle on a cloud I like to go there in my sleep. Aren't any floors for me to sweep, Not in my castle on a cloud.\nMADAME THENARDIER: Now look who's here! The little madam herself, Pretending once again She's been so awfully good! Better not let me catch you slacking! Bette…\nMADAME THENARDIER: Eponine, come my dear. Eponine, let me see you. You look very well in that little blue hat! There's some little girls who know how to behave…\nMADAME THENARDIER: Still there, Cosette? Your tears will do you no good! I told you to fetch some water from the well in the wood.",
+      "MADAME THENARDIER: Watch'em till they drop!\nTHENARDIER/MADAME THENARDIER: Keep your wits about you And you stand on top!",
+      "MADAME THENARDIER: Always get our share\nTHENARDIER/MADAME THENARDIER: Clear away the barricades And we're still there! We know where the wind is blowing Money is the stuff we smell - And when we're rich as Croe…"
+    ]
   },
   "script": {
     "file": "les-miserables.txt",
@@ -81,9 +85,9 @@
       {
         "name": "MADAME THENARDIER",
         "lines": 24,
-        "gender": "m",
+        "gender": "w",
         "named": true,
-        "actor": "Ian Holm"
+        "actor": "Caroline Blakiston"
       },
       {
         "name": "GAVROCHE",
@@ -1766,12 +1770,12 @@
       "longestWithoutWoman": 194,
       "longestWithoutWomanStart": 521,
       "words": {
-        "w": 1541,
-        "m": 7709,
+        "w": 1946,
+        "m": 7304,
         "unknown": 2594
       },
-      "womenConversations": 0,
-      "menConversations": 55,
+      "womenConversations": 3,
+      "menConversations": 54,
       "reverseScore": 3
     }
   },
