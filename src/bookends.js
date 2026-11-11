@@ -31,8 +31,9 @@ const sentencesOf = text => text.match(/[^.!?]+(?:[.!?]+["'’”)]*|$)/g)?.map(
  * the line ("MARK I'll keep my eye on you"), or a character's name then a
  * present-tense verb ("Amy turns", "Jack and Teresa climb")
  */
-const isAction = (sentence, names) => {
-	if (CAMERA.test(sentence) || DIRECTION_CAPS.test(sentence)) return true;
+const isAction = (sentence, names, opening) => {
+	// An all-capitals opening is shouting ("HOLD IT!"); after the line it's a direction ("CAMERA PANS UP")
+	if (CAMERA.test(sentence) || (DIRECTION_CAPS.test(sentence) && (!opening || /[a-z]/.test(sentence)))) return true;
 	const cue = sentence.match(/^([A-Z][A-Z.'’-]+(?: [A-Z][A-Z.'’-]+)*?) (?=\S*[a-z])/);
 	if (cue && names.has(cue[1])) return true;
 	const named = sentence.match(/^([A-Z][a-z]+)(?: and ([A-Z][a-z]+))? ([a-z]+)\b/);
@@ -45,8 +46,10 @@ const quoteOf = (text, names) => {
 	const flat = text.replace(/[•·~]+/g, '').replace(/\s+/g, ' ').replace(/^(?:[^A-Za-z0-9"'‘“(¡¿.]|\.(?!\.))+/, '').replace(TRANSITION, '').trim();
 	const kept = [];
 	for (const sentence of sentencesOf(flat)) {
-		if (kept.length > 0 && isAction(sentence, names)) break;
-		if (kept.length === 0 && isAction(sentence, names)) return '';
+		if (isAction(sentence, names, kept.length === 0)) {
+			if (kept.length === 0) return '';
+			break;
+		}
 		kept.push(sentence);
 	}
 	let quote = kept.join(' ');
