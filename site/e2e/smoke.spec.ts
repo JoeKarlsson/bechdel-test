@@ -62,8 +62,47 @@ test('the scene timeline explains a group of scenes on focus, and the arrow keys
 	await expect(bars.first()).toHaveAttribute('tabindex', '-1');
 });
 
-test('exhibits fold on phones', async ({ page }, info) => {
+test('exhibits fold on phones, without animating shut on load', async ({ page }, info) => {
 	await page.goto('/films/gone-girl-2014/');
 	const firstFold = page.locator('details[data-fold]').first();
 	await expect(firstFold).toHaveJSProperty('open', info.project.name === 'desktop');
+	await expect(page.locator('html')).toHaveAttribute('data-folds-ready', '');
+	// Nothing animates on first paint: the folds land closed instead of shrinking
+	expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
+});
+
+test("an exhibit's heading doesn't read its + or − mark", async ({ page }) => {
+	await page.goto('/films/gone-girl-2014/');
+	await expect(page.getByRole('heading', { name: /^Exhibit A: the passing scenes?$/ })).toHaveCount(1);
+});
+
+test('a finger anywhere on the timeline picks the nearest group of scenes', async ({ page }, info) => {
+	test.skip(info.project.name === 'desktop', 'Touch only');
+	await page.goto('/films/gone-girl-2014/');
+	const chart = page.locator('[data-timeline]');
+	await chart.scrollIntoViewIfNeeded();
+	const box = (await chart.boundingBox())!;
+	await page.touchscreen.tap(box.x + box.width / 2, box.y + 4);
+	const pressed = page.locator('[data-timeline] button[aria-pressed="true"]');
+	await expect(pressed).toHaveCount(1);
+	const bar = (await pressed.boundingBox())!;
+	expect(Math.abs(bar.x + bar.width / 2 - (box.x + box.width / 2))).toBeLessThan(bar.width + 4);
+});
+
+test('a mistyped page address suggests the nearest page', async ({ page }) => {
+	await page.goto('/abuot/');
+	await expect(page.getByRole('link', { name: 'About' }).last()).toBeVisible();
+	await expect(page.locator('[data-suggest] a')).toHaveAttribute('href', '/about/');
+});
+
+test('the long pages open a contents list whose links reach every section', async ({ page }) => {
+	for (const path of ['/numbers/', '/about/']) {
+		await page.goto(path);
+		await page.locator('details.contents summary').click();
+		const links = page.locator('details.contents a');
+		expect(await links.count()).toBeGreaterThan(5);
+		for (const href of await links.evaluateAll((as) => as.map((a) => a.getAttribute('href')!))) {
+			await expect(page.locator(href), `${path}${href}`).toHaveCount(1);
+		}
+	}
 });

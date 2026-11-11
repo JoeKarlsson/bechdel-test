@@ -1,0 +1,53 @@
+---
+// A folded contents list for the long text pages, so a phone can jump to a
+// section instead of scrolling twenty screens to find it
+import FoldMark from './FoldMark.astro';
+
+interface Props {
+	items: { id: string; label: string }[];
+}
+const { items } = Astro.props;
+---
+
+<details class="contents">
+	<summary>On this page<FoldMark /></summary>
+	<ol>
+		{
+			items.map((item) => (
+				<li>
+					<a href={`#${item.id}`}>{item.label}</a>
+				</li>
+			))
+		}
+	</ol>
+</details>
+
+<style>
+	.contents {
+		margin-top: var(--space-5);
+		max-width: 34em;
+	}
+	summary {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+		list-style: none;
+		cursor: pointer;
+		font-family: var(--poster);
+		font-size: var(--text-lead);
+		text-transform: uppercase;
+		color: var(--pink);
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	ol {
+		margin: 0;
+		padding: var(--space-2) 0 0 var(--space-5);
+	}
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+	}
+</style>

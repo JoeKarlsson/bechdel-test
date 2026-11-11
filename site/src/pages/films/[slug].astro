@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import FoldMark from '../../components/FoldMark.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
 import Term from '../../components/Term.astro';
@@ -32,7 +33,8 @@ const ruleEvidence = [
 	bechdel.rules[0]
 		? // Only quote the counts when they back the result (some exports have none)
 			(bechdel.womenChars ?? 0) >= 2 && bechdel.womenSpeaking !== null
-			? `${plural(bechdel.womenChars, 'woman character', 'women characters')}. ${bechdel.womenSpeaking} of them speak.`
+			? // Two sources: the cast list counts characters, the script counts who speaks, so neither is a share of the other
+				`${plural(bechdel.womenChars, 'woman', 'women')} in the cast, and ${plural(bechdel.womenSpeaking, 'woman', 'women')} with lines in the script.`
 			: 'The film has at least two women characters.'
 		: 'Fewer than two women characters.',
 	bechdel.rules[1]
@@ -481,11 +483,11 @@ const credit = [
 
 					<div class="wall">
 						{has.scene && (
-							<section id="exhibit-scene" class="exhibit paper wide tilt-l" aria-labelledby="ex-scene">
+							<section id="exhibit-scene" class="exhibit paper wide tilt-l">
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}</h3>
+										<h3 id="ex-scene">Exhibit {letter('scene')}: {bechdel.passingScenes.length === 1 ? 'the passing scene' : 'the passing scenes'}<FoldMark /></h3>
 										<p class="gist">{bechdel.passingScenes.length === 1 ? 'The scene' : 'The scenes'} our parser counted as passing, word for word{review && ", with what it's about"}.</p>
 									</summary>
 									{bechdel.passingScenes.map((scene, i) => (
@@ -526,10 +528,10 @@ const credit = [
 						)}
 
 						{has.waffle && (
-							<section class="exhibit panel narrow tilt-r" aria-labelledby="ex-waffle">
+							<section class="exhibit panel narrow tilt-r">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-waffle">Exhibit {letter('waffle')}: every 100 lines</h3>
+										<h3 id="ex-waffle">Exhibit {letter('waffle')}: every 100 lines<FoldMark /></h3>
 										<p class="gist">Out of every 100 lines with a known speaker, {womenShare} {womenShare === 1 ? 'is' : 'are'} women's.</p>
 									</summary>
 									<div class="waffle" role="img" aria-label={`${womenShare} of every 100 lines are spoken by women`}>
@@ -545,11 +547,11 @@ const credit = [
 						)}
 
 						{has.cast && (
-							<section class="exhibit panel narrow tilt-l" aria-labelledby="ex-cast">
+							<section class="exhibit panel narrow tilt-l">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-cast">Exhibit {letter('cast')}: who's in it</h3>
-										<p class="gist">{bechdel.womenChars} women and {bechdel.menChars} men in the cast. {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men from it get lines.</p>
+										<h3 id="ex-cast">Exhibit {letter('cast')}: who's in it<FoldMark /></h3>
+										<p class="gist">{bechdel.womenChars} women and {bechdel.menChars} men in the cast. In the script, {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men get lines.</p>
 									</summary>
 									<div role="img" aria-label={`Characters: ${bechdel.womenChars} women and ${bechdel.menChars} men. With lines: ${bechdel.womenSpeaking} women and ${bechdel.menSpeaking} men.`}>
 										<p class="note">Characters</p>
@@ -572,10 +574,10 @@ const credit = [
 						)}
 
 						{has.heard && m && (
-							<section class="exhibit panel wide tilt-r" aria-labelledby="ex-heard">
+							<section class="exhibit panel wide tilt-r">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-heard">Exhibit {letter('heard')}: who gets heard</h3>
+										<h3 id="ex-heard">Exhibit {letter('heard')}: who gets heard<FoldMark /></h3>
 										<p class="gist">
 											{m.firstWomanLine === null
 												? 'No woman speaks.'
@@ -618,11 +620,11 @@ const credit = [
 						)}
 
 						{ends && (
-							<section class="exhibit paper wide tilt-l" aria-labelledby="ex-ends">
+							<section class="exhibit paper wide tilt-l">
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-ends">Exhibit {letter('ends')}: first and last word</h3>
+										<h3 id="ex-ends">Exhibit {letter('ends')}: first and last word<FoldMark /></h3>
 										<p class="gist">{endsGist}</p>
 									</summary>
 									<div class="ends">
@@ -656,10 +658,10 @@ const credit = [
 						)}
 
 						{has.reverse && m && (
-							<section class="exhibit panel narrow tilt-l" aria-labelledby="ex-reverse">
+							<section class="exhibit panel narrow tilt-l">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-reverse">Exhibit {letter('reverse')}: the test the other way</h3>
+										<h3 id="ex-reverse">Exhibit {letter('reverse')}: the test the other way<FoldMark /></h3>
 										<p class="gist">
 											{m.reverseScore === 3
 												? 'Two named men talk to each other about something besides a woman. It passes the reverse test.'
@@ -680,10 +682,10 @@ const credit = [
 						)}
 
 						{has.crew && crew && (
-							<section class="exhibit panel full tilt-r" aria-labelledby="ex-crew">
+							<section class="exhibit panel full tilt-r">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-crew">Exhibit {letter('crew')}: behind the camera</h3>
+										<h3 id="ex-crew">Exhibit {letter('crew')}: behind the camera<FoldMark /></h3>
 										<p class="gist">
 											{`${crew.keyWomen === 0 ? 'None' : crew.keyWomen} of the ${crew.keyPeople} people in these jobs ${crew.keyWomen === 1 ? 'is a woman' : 'are women'}.`}
 											{crewWomenShare !== null && ` Across the whole crew, ${crewWomenShare}% of the people whose gender is listed are women.`}
@@ -736,10 +738,10 @@ const credit = [
 						)}
 
 						{has.ages && (
-							<section class="exhibit panel wide tilt-l" aria-labelledby="ex-ages">
+							<section class="exhibit panel wide tilt-l">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-ages">Exhibit {letter('ages')}: how old the stars were</h3>
+										<h3 id="ex-ages">Exhibit {letter('ages')}: how old the stars were<FoldMark /></h3>
 										<p class="gist">
 											{ageRows.map((r) => `${r.label}: ${mean(r.people.map((p) => p.age))} on average.`).join(' ')}
 											{' '}The top-billed cast, at the film's release.
@@ -760,10 +762,10 @@ const credit = [
 						)}
 
 						{has.money && money && (
-							<section class="exhibit panel narrow tilt-r" aria-labelledby="ex-money">
+							<section class="exhibit panel narrow tilt-r">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-money">Exhibit {letter('money')}: the money</h3>
+										<h3 id="ex-money">Exhibit {letter('money')}: the money<FoldMark /></h3>
 										<p class="gist">
 											{multiple !== null
 												? `It made ${multiple >= 1 ? `${multiple.toFixed(1)} times` : `${Math.round(multiple * 100)}% of`} what it cost.`
@@ -782,10 +784,10 @@ const credit = [
 						)}
 
 						{has.scores && (
-							<section class="exhibit panel full tilt-r" aria-labelledby="ex-scores">
+							<section class="exhibit panel full tilt-r">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-scores">Exhibit {letter('scores')}: how the film treats women, against the shelf</h3>
+										<h3 id="ex-scores">Exhibit {letter('scores')}: how the film treats women, against the shelf<FoldMark /></h3>
 										<p class="gist">Five scores, turned so higher is always better for women, next to every film we've checked.</p>
 									</summary>
 									<ul class="legend small">
@@ -817,10 +819,10 @@ const credit = [
 						)}
 
 						{has.agency && ai && (
-							<section class="exhibit panel full tilt-l" aria-labelledby="ex-agency">
+							<section class="exhibit panel full tilt-l">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-agency">Exhibit {letter('agency')}: do the women drive the story?</h3>
+										<h3 id="ex-agency">Exhibit {letter('agency')}: do the women drive the story?<FoldMark /></h3>
 										<p class="gist">Agency is whether women's choices move the story, or the story happens to them. There are {plural(ai.agency.drives.length, 'moment')} where they drive it and {ai.agency.reacts.length} where they react.</p>
 									</summary>
 									<div class="tug" role="img" aria-label={`${ai.agency.drives.length} moments driving the story, ${ai.agency.reacts.length} reacting`}>
@@ -853,11 +855,11 @@ const credit = [
 						)}
 
 						{has.power && ai && (
-							<section class="exhibit paper wide tilt-r" aria-labelledby="ex-power">
+							<section class="exhibit paper wide tilt-r">
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-power">Exhibit {letter('power')}: who holds the power</h3>
+										<h3 id="ex-power">Exhibit {letter('power')}: who holds the power<FoldMark /></h3>
 										<p class="gist">Who gives orders, who gets interrupted, who holds the official roles. Where we can count it, the count sits next to the reading.</p>
 									</summary>
 									{ai.power.speakingTime && womenShare !== null && (
@@ -888,10 +890,10 @@ const credit = [
 						)}
 
 						{has.compare && ai && (
-							<section class="exhibit panel full tilt-l" aria-labelledby="ex-compare">
+							<section class="exhibit panel full tilt-l">
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-compare">Exhibit {letter('compare')}: her side, his side</h3>
+										<h3 id="ex-compare">Exhibit {letter('compare')}: her side, his side<FoldMark /></h3>
 										<p class="gist">How the women and the men in this film are written, row by row.</p>
 									</summary>
 									<div class="side-switch" role="group" aria-label="Show" hidden data-side-switch>
@@ -919,11 +921,11 @@ const credit = [
 						)}
 
 						{has.flags && (
-							<section class="exhibit flag full tilt-r" aria-labelledby="ex-flags">
+							<section class="exhibit flag full tilt-r">
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-flags">Exhibit {letter('flags')}: red flags</h3>
+										<h3 id="ex-flags">Exhibit {letter('flags')}: red flags<FoldMark /></h3>
 										<p class="gist">Problems in the script, worst first. Open one for the details.</p>
 									</summary>
 									<ul class="charges">
@@ -931,7 +933,7 @@ const credit = [
 											<li>
 												<details class="charge">
 													<summary>
-														<span class="charge-name">{g.name}</span>
+														<span class="charge-name">{g.name}<FoldMark /></span>
 														<span class="charge-found">{g.found} found</span>
 														{g.severity !== null && (
 															<span class="charge-sev" role="img" aria-label={`Severity ${g.severity} out of 10`}>
@@ -958,11 +960,11 @@ const credit = [
 						)}
 
 						{has.recs && ai && (
-							<section class="exhibit paper full tilt-l" aria-labelledby="ex-recs">
+							<section class="exhibit paper full tilt-l">
 								<span class="tape-strip" aria-hidden="true" />
 								<details class="fold" open data-fold>
 									<summary>
-										<h3 id="ex-recs">Exhibit {letter('recs')}: what would make it better</h3>
+										<h3 id="ex-recs">Exhibit {letter('recs')}: what would make it better<FoldMark /></h3>
 										<p class="gist">Suggestions for making this story better for women.</p>
 									</summary>
 									<ol class="recs">
@@ -1028,6 +1030,8 @@ const credit = [
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		/* Wide screens crop the still top and bottom; keep the faces, not the chins */
+		object-position: 50% 25%;
 		filter: grayscale(1) contrast(1.4);
 		mix-blend-mode: multiply;
 	}
@@ -1214,7 +1218,7 @@ const credit = [
 		height: auto;
 	}
 	/* On phones the hero already shows the film; the poster only repeats it */
-	/* Folding exhibits: open on wide screens, closed on phones (scripts/fold.ts) */
+	/* Folding exhibits: open on wide screens, closed on phones (scripts/exhibits.ts) */
 	.fold > summary {
 		display: block;
 		list-style: none;
@@ -1226,15 +1230,11 @@ const credit = [
 	.fold > summary h3 {
 		display: inline;
 	}
-	.fold > summary h3::after {
-		content: ' +';
+	.fold > summary h3 :global(.fold-mark) {
 		color: var(--pink);
 	}
-	.fold[open] > summary h3::after {
-		content: ' \2212';
-	}
-	.paper .fold > summary h3::after,
-	.flag .fold > summary h3::after {
+	.paper .fold > summary h3 :global(.fold-mark),
+	.flag .fold > summary h3 :global(.fold-mark) {
 		color: var(--ink);
 	}
 	.gist {
@@ -1513,12 +1513,8 @@ const credit = [
 		font-size: 1.5rem;
 		text-transform: uppercase;
 	}
-	.charge-name::after {
-		content: ' +';
+	.charge-name :global(.fold-mark) {
 		color: var(--tangerine);
-	}
-	.charge[open] .charge-name::after {
-		content: ' \2212';
 	}
 	.charge-found {
 		grid-area: found;
@@ -1674,6 +1670,8 @@ const credit = [
 		display: flex;
 		gap: var(--mark-gap);
 		position: relative;
+		/* Sideways is for scrubbing the chart (scripts/timeline.ts); up and down still scrolls */
+		touch-action: pan-y;
 	}
 	/* The baseline between women's bars above and men's below */
 	.timeline::before {

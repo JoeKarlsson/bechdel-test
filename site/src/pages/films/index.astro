@@ -30,7 +30,7 @@ const anchor = (letter: string) => (letter === '#' ? 'digits' : letter.toLowerCa
 		</nav>
 		{
 			letters.map((l) => (
-				<section class="letter" aria-labelledby={anchor(l)}>
+				<section class="letter">
 					<h2 id={anchor(l)}>{l}</h2>
 					<ol class="all">
 						{groups.get(l)!.map((f) => (

@@ -1,4 +1,5 @@
 ---
+import OnThisPage from '../components/OnThisPage.astro';
 import Base from '../layouts/Base.astro';
 import YearChart from '../components/YearChart.astro';
 import PeopleRanking from '../components/PeopleRanking.astro';
@@ -112,6 +113,21 @@ const passRows: Row[] = [
 const byRating = films.filter((f) => f.bookends?.last && f.imdbRating !== null).sort((a, b) => b.imdbRating! - a.imdbRating!);
 const lastOf = (gender: 'w' | 'm') => byRating.filter((f) => f.bookends!.last!.gender === gender).slice(0, 3);
 const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean);
+
+// The page's sections, for the contents list at the top
+const CONTENTS = [
+	{ id: 'trust-title', label: 'How far to trust these' },
+	{ id: 'time-title', label: 'Year by year' },
+	{ id: 'fail-title', label: 'How far films get' },
+	{ id: 'genre-title', label: 'By genre' },
+	{ id: 'heard-title', label: 'Who gets heard' },
+	{ id: 'words-title', label: 'Last words' },
+	{ id: 'crew-title', label: 'Behind the camera' },
+	{ id: 'directors-title', label: 'By director' },
+	{ id: 'stars-title', label: 'By star' },
+	{ id: 'ages-title', label: 'How old the stars were' },
+	{ id: 'money-title', label: 'The money' },
+];
 ---
 
 <Base
@@ -122,6 +138,7 @@ const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean
 	<div class="page">
 		<h1 class="page-title">The shelf in numbers</h1>
 		<p class="page-lead">{n(s.films)} films. {n(s.pass)} of them pass the Bechdel test, {pct(s.pass, s.films)}%.</p>
+		<OnThisPage items={CONTENTS} />
 
 		<section class="section" aria-labelledby="trust-title">
 			<h2 id="trust-title" class="section-title">How far to trust these</h2>
@@ -553,6 +570,9 @@ const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean
 		}
 	}
 	.table-view summary {
+		/* 44px tall, for a thumb */
+		min-height: 44px;
+		padding-block: var(--space-2);
 		cursor: pointer;
 		text-decoration: underline dotted var(--muted);
 		text-underline-offset: 0.2em;

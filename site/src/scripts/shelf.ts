@@ -5,7 +5,7 @@
 
 import { posterFor } from '../lib/images';
 import { closest, squash, titleKeys } from '../lib/search.mjs';
-import { motionAllowed } from './motion';
+import { motionKind } from './motion';
 
 type Sort = 'popularity' | 'score' | 'new' | 'old' | 'az';
 type ShelfFilm = { slug: string; title: string; year: number | null; director: string; score: number; popularity: number; poster: string | null };
@@ -68,7 +68,9 @@ export function setUpShelf() {
 	const moreWrap = document.querySelector<HTMLElement>('[data-shelf-more-wrap]');
 	const more = document.querySelector<HTMLButtonElement>('[data-shelf-more]');
 	const suggest = document.querySelector<HTMLElement>('[data-shelf-suggest]');
-	if (!form || !shelf || !template || !count || !empty || !clear || !moreWrap || !more || !suggest) return;
+	const status = document.querySelector<HTMLElement>('[data-shelf-status]');
+	const search = document.querySelector<HTMLElement>('[data-shelf-search]');
+	if (!search || !form || !shelf || !template || !count || !empty || !clear || !moreWrap || !more || !suggest || !status) return;
 	const suggestLink = suggest.querySelector('a')!;
 
 	// Each tape's title and director squashed once, so "madmax" finds Mad Max
@@ -81,7 +83,8 @@ export function setUpShelf() {
 
 	let tapes = [...shelf.querySelectorAll<HTMLElement>('li')];
 	const total = Number(shelf.dataset.total ?? tapes.length);
-	// Browsing shows a page at a time; searching or filtering shows every match
+	// Browsing, searching and filtering all show a page at a time: putting
+	// hundreds of tapes on screen at once made each keystroke take a second on phones
 	const pageSize = Number(shelf.dataset.pageSize ?? 60);
 	let limit = pageSize;
 
@@ -109,14 +112,18 @@ export function setUpShelf() {
 	form.addEventListener('pointerenter', warm, { once: true });
 	form.addEventListener('focusin', warm, { once: true });
 
-	// Tapes the visitor just asked for slide up row by row (the first eight rows only)
+	// Tapes the visitor just asked for slide up row by row (the first eight rows
+	// only). Reduced motion on a finger fades them in together instead. They
+	// start at 0.001, not 0: Chromium skips drawing a layer that starts at 0.
 	const dealIn = (list: HTMLElement[]) => {
-		if (!list.length || !motionAllowed()) return;
+		const kind = motionKind();
+		if (!list.length || kind === 'none') return;
 		const cols = getComputedStyle(shelf).gridTemplateColumns.split(' ').length;
+		const easing = getComputedStyle(document.documentElement).getPropertyValue('--ease-enter');
 		list.slice(0, cols * 8).forEach((tape, i) =>
 			tape.animate(
-				{ opacity: [0, 1], translate: ['0 8px', '0 0'] },
-				{ duration: 220, delay: Math.floor(i / cols) * 30, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' },
+				kind === 'fade' ? { opacity: [0.001, 1] } : { opacity: [0.001, 1], translate: ['0 8px', '0 0'] },
+				{ duration: kind === 'fade' ? 150 : 220, delay: kind === 'fade' ? 0 : Math.floor(i / cols) * 30, easing, fill: 'backwards' },
 			),
 		);
 	};
@@ -149,9 +156,9 @@ export function setUpShelf() {
 				matched++;
 				if (pass) passing++;
 			}
-			tape.hidden = !matches || (browsing && matched > limit);
+			tape.hidden = !matches || matched > limit;
 		}
-		const visible = browsing ? Math.min(limit, matched) : matched;
+		const visible = Math.min(limit, matched);
 		const left = matched - visible;
 
 		count.textContent =
@@ -159,7 +166,10 @@ export function setUpShelf() {
 				? `All ${n(total)} films, ${n(passing)} pass`
 				: browsing
 					? `Showing ${n(visible)} of ${n(total)}, ${n(passing)} pass in all`
-					: `Showing ${n(matched)} of ${n(total)}, ${n(passing)} pass`;
+					: left > 0
+						? `Showing ${n(visible)} of ${n(matched)} matches, ${n(passing)} pass`
+						: `Showing ${n(matched)} of ${n(total)}, ${n(passing)} pass`;
+		announce();
 		empty.hidden = matched > 0;
 		// Nothing matched: offer the nearest title, if one is close
 		const near = matched === 0 && typed ? closest(typed, tapes, (t) => titleKeys(t.querySelector('.title')?.textContent ?? '')) : null;
@@ -171,13 +181,27 @@ export function setUpShelf() {
 		moreWrap.hidden = left === 0;
 		more.textContent = `Show ${Math.min(pageSize, left)} more`;
 	};
+	// Screen readers hear the count once typing pauses, not on every key
+	let announceTimer: number | undefined;
+	const announce = () => {
+		clearTimeout(announceTimer);
+		announceTimer = window.setTimeout(() => (status.textContent = count.textContent), 500);
+	};
+
 	// Every change first makes sure the whole shelf is loaded
 	const refresh = () => loadAll().then(update, () => {});
 
+	// Typing waits for a short pause before the shelf updates; Show and Sort update at once
+	let typingTimer: number | undefined;
 	form.addEventListener('input', (e) => {
 		limit = pageSize;
-		// Sort and Show re-deal the shelf; typing in search doesn't, or it would flicker on every key
-		refresh().then(() => e.target instanceof HTMLSelectElement && dealIn(visibleTapes()));
+		clearTimeout(typingTimer);
+		if (e.target instanceof HTMLSelectElement) {
+			// Sort and Show re-deal the shelf; typing doesn't, or it would flicker on every key
+			refresh().then(() => dealIn(visibleTapes()));
+		} else {
+			typingTimer = window.setTimeout(refresh, 150);
+		}
 	});
 	more.addEventListener('click', async () => {
 		const firstNew = Math.min(limit, tapes.length);
@@ -189,12 +213,13 @@ export function setUpShelf() {
 	});
 	form.addEventListener('submit', (e) => e.preventDefault());
 	clear.addEventListener('click', () => {
+		clearTimeout(typingTimer);
 		form.reset();
 		limit = pageSize;
 		refresh();
 		form.querySelector('input')?.focus();
 	});
-	form.hidden = false;
+	search.hidden = false;
 	// The page arrives sorted by popularity with nothing filtered: only the
 	// "Show more" button needs setting up until someone uses the shelf
 	moreWrap.hidden = total <= pageSize;

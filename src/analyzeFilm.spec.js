@@ -82,6 +82,15 @@ describe('buildFilmRecord', () => {
 		expect(record).not.toHaveProperty('bechdelData');
 	});
 
+	it("decodes OMDB's HTML entities in names and text", () => {
+		const escaped = buildFilmRecord({
+			id: 'tt0078748', dateUploaded: '2026-11-06T00:00:00.000Z', cast, images: {}, bechdelResults: {},
+			omdb: { ...omdb, Writer: 'Dan O&apos;Bannon, Ronald Shusett', Plot: 'Surf &amp; Snack.' },
+		});
+		expect(escaped.writers).toEqual([{ name: "Dan O'Bannon" }, { name: 'Ronald Shusett' }]);
+		expect(escaped.plot).toBe('Surf & Snack.');
+	});
+
 	it('stores TMDB genders as the strings the site reads, and none for unknown', () => {
 		expect(record.actors[0]).toEqual({ actorName: 'Ann Actor', character: 'Ripley', actorActress: '1' });
 		expect(record.actors[3]).not.toHaveProperty('actorActress');

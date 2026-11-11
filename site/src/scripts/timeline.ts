@@ -1,4 +1,4 @@
-// The who-talks timeline: hover, tap or arrow-key to a group of scenes and the
+// The who-talks timeline: hover, tap, slide a finger along or arrow-key to a group of scenes and the
 // readout says where they happen and who talks. One tab stop for the whole
 // chart (roving tabindex); the arrow keys, Home and End move within it.
 type Speaker = { name: string; gender: 'w' | 'm' | null; lines: number };
@@ -41,6 +41,19 @@ export function setUpTimeline() {
 		}
 		readout.replaceChildren(title, where, counts, who);
 	};
+
+	// A finger anywhere on the chart picks the nearest group, and sliding along
+	// it scrubs: the bars are a few pixels wide on phones. Mice keep hover.
+	const showNearest = (e: PointerEvent) => {
+		if (e.pointerType === 'mouse') return;
+		const distance = (c: HTMLElement) => {
+			const r = c.getBoundingClientRect();
+			return Math.abs(r.left + r.width / 2 - e.clientX);
+		};
+		show(cols.reduce((best, c) => (distance(c) < distance(best) ? c : best)));
+	};
+	chart.addEventListener('pointerdown', showNearest);
+	chart.addEventListener('pointermove', (e) => e.buttons && showNearest(e));
 
 	cols.forEach((col, i) => {
 		col.addEventListener('mouseenter', () => show(col));

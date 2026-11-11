@@ -48,33 +48,36 @@ const n = (x: number) => x.toLocaleString('en-US');
 		<section class="section" aria-labelledby="shelf-title">
 			<h2 id="shelf-title" class="section-title">The shelf</h2>
 
-			<form class="controls" role="search" hidden data-shelf-controls>
-				<label class="field grow">
-					<span>Search</span>
-					<input type="search" name="q" placeholder="Title or director" autocomplete="off" />
-				</label>
-				<label class="field">
-					<span>Show</span>
-					<select name="show">
-						<option value="all">Every film</option>
-						<option value="pass">Passes</option>
-						<option value="fail">Fails</option>
-					</select>
-				</label>
-				<label class="field">
-					<span>Sort</span>
-					<select name="sort">
-						<option value="popularity">Most popular</option>
-						<option value="score">Highest score</option>
-						<option value="new">Newest</option>
-						<option value="old">Oldest</option>
-						<option value="az">A to Z</option>
-					</select>
-				</label>
-			</form>
-			<p class="note count" aria-live="polite" data-shelf-count>
+			<search hidden data-shelf-search>
+				<form class="controls" data-shelf-controls>
+					<label class="field grow" for="shelf-q">
+						<span>Search</span>
+						<input type="search" id="shelf-q" name="q" placeholder="Title or director" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" />
+					</label>
+					<label class="field" for="shelf-show">
+						<span>Show</span>
+						<select id="shelf-show" name="show">
+							<option value="all">Every film</option>
+							<option value="pass">Passes</option>
+							<option value="fail">Fails</option>
+						</select>
+					</label>
+					<label class="field" for="shelf-sort">
+						<span>Sort</span>
+						<select id="shelf-sort" name="sort">
+							<option value="popularity">Most popular</option>
+							<option value="score">Highest score</option>
+							<option value="new">Newest</option>
+							<option value="old">Oldest</option>
+							<option value="az">A to Z</option>
+						</select>
+					</label>
+				</form>
+			</search>
+			<p class="note count" data-shelf-count>
 				{films.length > PAGE_SIZE ? `Showing ${PAGE_SIZE} of ${n(films.length)}, ${n(passing)} pass in all` : `All ${n(films.length)} films, ${n(passing)} pass`}
 			</p>
+			<p class="sr-only" role="status" data-shelf-status></p>
 			<div class="empty" hidden data-shelf-empty>
 				<p class="empty-title">Nothing on the shelf matches</p>
 				<p hidden data-shelf-suggest>Did you mean <a href="/"></a>?</p>
@@ -83,7 +86,7 @@ const n = (x: number) => x.toLocaleString('en-US');
 
 			<!-- Old /#/film/<id> links forward to the film's page (scripts/legacy-redirect.ts) -->
 			<script type="application/json" id="legacy-film-slugs" set:html={JSON.stringify(legacySlugs)} />
-			<ul class="shelf" data-shelf data-page-size={PAGE_SIZE} data-total={films.length}>
+			<ul class="shelf" role="list" data-shelf data-page-size={PAGE_SIZE} data-total={films.length}>
 				{firstPage.map((film, i) => <Tape film={film} eager={i < 6} />)}
 			</ul>
 			<!-- One tape for scripts/shelf.ts to copy for each film it adds -->

@@ -9,6 +9,7 @@ const scriptCleaner = require('./scriptCleaner');
 const AiAnalyzer = require('./aiAnalyzer');
 const { dialogueEnglishShare } = require('./scriptText');
 const { bookendLines } = require('./bookends');
+const { decodeHtmlEntities } = require('./imsdb');
 
 // Below this many lines of dialogue the script didn't parse (a layout the
 // parser can't read), and any score would be noise
@@ -209,9 +210,9 @@ const ageOn = (birthday, date) => {
 	return age >= 0 ? age : undefined;
 };
 
-// OMDB says "N/A" for missing values
-const omdbValue = value => (value && value !== 'N/A' ? value : null);
-const omdbList = value => (omdbValue(value) ? value.split(',').map(name => ({ name: name.trim() })) : []);
+// OMDB says "N/A" for missing values, and sends some text HTML-escaped ("O&apos;Bannon")
+const omdbValue = value => (value && value !== 'N/A' ? decodeHtmlEntities(value) : null);
+const omdbList = value => (omdbValue(value) ? omdbValue(value).split(',').map(name => ({ name: name.trim() })) : []);
 const omdbInt = value => {
 	const n = parseInt(omdbValue(value), 10);
 	return Number.isNaN(n) ? null : n;
@@ -223,8 +224,8 @@ const buildFilmRecord = ({
 	bechdelData,
 }) => ({
 	_id: id,
-	title: omdb.Title,
-	genres: omdbValue(omdb.Genre) ? omdb.Genre.split(',').map(genre => genre.trim()) : [],
+	title: omdbValue(omdb.Title),
+	genres: omdbValue(omdb.Genre) ? omdbValue(omdb.Genre).split(',').map(genre => genre.trim()) : [],
 	bechdelResults,
 	script,
 	images: imageUrls(images),
@@ -241,7 +242,7 @@ const buildFilmRecord = ({
 	money: { budget: details.budget || null, revenue: details.revenue || null },
 	directors: omdbList(omdb.Director),
 	writers: omdbList(omdb.Writer),
-	awards: omdbValue(omdb.Awards) ? [{ name: omdb.Awards }] : [],
+	awards: omdbValue(omdb.Awards) ? [{ name: omdbValue(omdb.Awards) }] : [],
 	dateUploaded,
 	plot: omdbValue(omdb.Plot),
 	simplePlot: omdbValue(omdb.Plot),
