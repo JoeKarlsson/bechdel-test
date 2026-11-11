@@ -131,6 +131,30 @@ const womenWordShare = wordsKnown > 0 ? Math.round((m!.words.w / wordsKnown) * 1
 const at = (line: number) => `${((Math.max(0, line - 1) / Math.max(1, film.dialogueCount)) * 100).toFixed(2)}%`;
 const conversationMax = m ? Math.max(1, m.womenConversations, m.menConversations) : 1;
 
+// First and last word: either line can be missing when the script has no clear one
+const ends = film.bookends;
+type Said = NonNullable<NonNullable<typeof ends>['first']>;
+const nth = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[n % 10] ?? 'th'}`;
+const someone = (said: Said) => (said.gender === 'w' ? 'a woman' : said.gender === 'm' ? 'a man' : "a speaker we can't place");
+const roleOf = (said: Said) => (said.lead ? 'a lead' : 'a side character');
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const endsGist = (() => {
+	if (!ends) return '';
+	const { first, last } = ends;
+	if (first && last) {
+		if (first.name === last.name) return `${first.name}, ${roleOf(first)}, opens and closes the film.`;
+		const who = first.gender && first.gender === last.gender
+			? `${first.gender === 'w' ? 'Women' : 'Men'} open and close the film.`
+			: `${capitalize(someone(first))} opens the film and ${someone(last)} closes it.`;
+		const roles = first.lead && last.lead ? 'Both are leads.' : !first.lead && !last.lead ? 'Neither is a lead.' : `The ${first.lead ? 'first' : 'last'} is a lead, the ${first.lead ? 'last' : 'first'} a side character.`;
+		return `${who} ${roles}`;
+	}
+	const only = (first ?? last)!;
+	return `${capitalize(someone(only))}, ${roleOf(only)}, ${first ? 'opens' : 'closes'} the film. The script has no clear ${first ? 'last' : 'first'} line.`;
+})();
+const closers = allFilms.filter((f) => f.bookends?.last);
+const shelfWomenLast = Math.round((closers.filter((f) => f.bookends!.last!.gender === 'w').length / closers.length) * 100);
+
 // Behind the camera: producers can run long, so show a few and count the rest
 const crew = film.crew;
 const SHOWN_PER_JOB = 6;
@@ -160,6 +184,7 @@ const has = {
 	waffle: womenShare !== null,
 	cast: bechdel.womenChars !== null && bechdel.menChars !== null,
 	heard: !!m && film.dialogueCount > 0,
+	ends: !!ends,
 	reverse: !!m,
 	crew: !!crew && crew.roles.length > 0,
 	ages: ageRows.length > 0,
@@ -577,6 +602,44 @@ const credit = [
 											</p>
 										</>
 									)}
+								</details>
+							</section>
+						)}
+
+						{ends && (
+							<section class="exhibit paper wide tilt-l" aria-labelledby="ex-ends">
+								<span class="tape-strip" aria-hidden="true" />
+								<details class="fold" open data-fold>
+									<summary>
+										<h3 id="ex-ends">Exhibit {letter('ends')}: first and last word</h3>
+										<p class="gist">{endsGist}</p>
+									</summary>
+									<div class="ends">
+										{(['first', 'last'] as const).map((end) => {
+											const said = ends[end];
+											return (
+												<figure class="end">
+													<figcaption class="end-where">
+														<strong>{end === 'first' ? 'First line' : 'Last line'}</strong>
+														{said && ` line ${said.line.toLocaleString('en-US')} of ${film.dialogueCount.toLocaleString('en-US')}`}
+													</figcaption>
+													{said ? (
+														<>
+															<blockquote><span class="end-who">{said.name}:</span> {said.text}</blockquote>
+															<p class="end-tag">
+																<span class:list={['end-swatch', said.gender ?? 'unknown', { lead: said.lead }]} />
+																<strong>{said.gender === 'w' ? 'Woman' : said.gender === 'm' ? 'Man' : 'Gender not known'}, {said.lead ? 'a lead' : 'side character'}</strong>
+																<span class="end-rank">· {said.rank === 1 ? 'most lines' : `${nth(said.rank)}-most lines`} ({said.lines.toLocaleString('en-US')})</span>
+															</p>
+														</>
+													) : (
+														<p>No clear {end} line. Near this end of the script nothing is clearly a character speaking, only credits, songs or stage directions.</p>
+													)}
+												</figure>
+											);
+										})}
+									</div>
+									<p class="note">From the script, which can differ from the film as released. A lead is one of the two characters with the most lines. Across the shelf, {shelfWomenLast}% of films end on a woman's line.</p>
 								</details>
 							</section>
 						)}
@@ -1869,6 +1932,75 @@ const credit = [
 	}
 	.part.unknown {
 		background: var(--muted);
+	}
+
+	/* First and last word: two lines from the script, side by side */
+	.ends {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+		gap: var(--space-5);
+		margin-bottom: var(--space-4);
+	}
+	.end {
+		margin: 0;
+		display: grid;
+		gap: var(--space-2);
+		align-content: start;
+		min-width: 0;
+	}
+	.end-where {
+		font-size: var(--text-small);
+		color: var(--fail-on-chalk);
+		font-variant-numeric: tabular-nums;
+	}
+	.end-where strong {
+		font-family: var(--poster);
+		font-weight: 400;
+		text-transform: uppercase;
+		color: var(--ink);
+		margin-right: var(--space-2);
+	}
+	.end blockquote {
+		margin: 0;
+		font-size: var(--text-lead);
+		overflow-wrap: anywhere;
+	}
+	.end-who {
+		font-weight: 700;
+	}
+	.end-tag {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1) var(--space-2);
+		margin: 0;
+		font-size: var(--text-small);
+	}
+	.end-rank,
+	.paper .note {
+		color: var(--fail-on-chalk);
+	}
+	/* Filled: a lead. Outlined: a side character */
+	.end-swatch {
+		width: 1em;
+		height: 1em;
+		flex: none;
+		border: 2px solid var(--fail-on-chalk);
+	}
+	.end-swatch.w {
+		border-color: var(--pink-on-chalk);
+	}
+	.end-swatch.m {
+		border-color: var(--ink);
+	}
+	.end-swatch.lead.w {
+		background: var(--pink-on-chalk);
+	}
+	.end-swatch.lead.m {
+		background: var(--ink);
+	}
+	.end-swatch.lead.unknown {
+		background: var(--fail-on-chalk);
 	}
 
 	/* The test the other way: two bars */

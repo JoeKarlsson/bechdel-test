@@ -8,6 +8,7 @@ const castParser = require('./castParser');
 const scriptCleaner = require('./scriptCleaner');
 const AiAnalyzer = require('./aiAnalyzer');
 const { dialogueEnglishShare } = require('./scriptText');
+const { bookendLines } = require('./bookends');
 
 // Below this many lines of dialogue the script didn't parse (a layout the
 // parser can't read), and any score would be noise
@@ -44,7 +45,7 @@ const unresolvedMainSpeakers = speakers => speakers
 /**
  * What the site draws from the script: every speaker with their gender and
  * line count, and each scene's place and lines per speaker (by index into
- * speakers). No script text is kept.
+ * speakers). No script text is kept beyond the first and last line (bookends).
  */
 const summarizeScript = (screenplay, resolved) => {
 	const counts = new Map();
@@ -122,6 +123,7 @@ const analyzeScriptText = (scriptText, characters, genderOverrides = {}) => {
 	}
 	const { namedWomen, exchanges, reverse, ...bechdelResults } = scoreBechdel(screenplay, resolved, characters);
 	const summary = summarizeScript(screenplay, resolved);
+	summary.bookends = bookendLines(dialogue, summary.speakers);
 	summary.measures = {
 		...measureDialogue(dialogue, resolved),
 		womenConversations: exchanges,

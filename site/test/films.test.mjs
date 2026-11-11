@@ -7,6 +7,7 @@ import {
 	rulesFromScore,
 	toNumber,
 	speakersFrom,
+	bookendsFrom,
 	timelineFrom,
 	relatedFilms,
 	loadFilms,
@@ -111,6 +112,37 @@ test('shelfStats gives each year with enough films its own rate and the five yea
 	const { byYear } = shelfStats(films, { minYear: 2 });
 	// Only 2000 has two films; its five years pool 1998 to 2002
 	assert.deepEqual(byYear, [{ year: 2000, films: 2, pass: 1, fiveYearPass: 2 / 3, womenLines: 0.25, fiveYearWomenLines: 0.25 }]);
+});
+
+test('bookendsFrom names who has the first and last line, and keeps a missing one null', () => {
+	const speakers = speakersFrom({ speakers: [{ name: 'JO', lines: 9, gender: 'w' }, { name: 'AMY', lines: 5, gender: 'w' }, { name: 'NARRATOR', lines: 2, gender: null }] });
+	const script = { bookends: { first: { speaker: 2, line: 1, text: 'Once.' }, last: null } };
+	assert.deepEqual(bookendsFrom(script, speakers), {
+		first: { text: 'Once.', line: 1, name: 'Narrator', gender: null, lines: 2, rank: 3, lead: false },
+		last: null,
+	});
+	assert.equal(bookendsFrom({ bookends: { first: null, last: null } }, speakers), null);
+	assert.equal(bookendsFrom({}, speakers), null);
+});
+
+test('shelfStats counts who has the last word, by gender and lead or side', () => {
+	const said = (gender, rank) => ({ text: 'Hi.', line: 1, name: 'X', gender, lines: 1, rank, lead: rank <= 2 });
+	const film = (year, pass, lead, first, last) => ({
+		year, genres: [], bechdel: { pass, score: pass ? 3 : 0 }, readers: null, lines: { w: 1, m: 1, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0,
+		speakers: [{ gender: lead }], bookends: { first, last },
+	});
+	const { lastWords } = shelfStats([
+		film(1975, true, 'w', said('w', 1), said('w', 1)),
+		film(1995, false, 'm', null, said('m', 4)),
+		film(1999, false, 'm', said(null, 9), said('w', 3)),
+	]);
+	assert.deepEqual(lastWords.last, { films: 3, none: 0, wLead: 1, wSide: 1, mLead: 0, mSide: 1, unknown: 0 });
+	assert.deepEqual(lastWords.first, { films: 2, none: 1, wLead: 1, wSide: 0, mLead: 0, mSide: 0, unknown: 1 });
+	assert.deepEqual(lastWords.ledByWoman, { films: 1, w: 1, topCloses: 1 });
+	assert.deepEqual(lastWords.ledByMan, { films: 2, w: 1, topCloses: 0 });
+	assert.deepEqual(lastWords.byDecade.map((d) => d.decade), [1970, 1990]);
+	assert.equal(lastWords.bothWomen, 1);
+	assert.equal(lastWords.womenLineShare, 0.5);
 });
 
 test('peopleRanking keeps people with enough films, best pass rate first, passing films first', () => {
