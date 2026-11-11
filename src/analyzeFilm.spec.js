@@ -32,6 +32,13 @@ describe('analyzeScriptText', () => {
 		expect(actorOf('MOTHER')).toBe('Unknown Actor');
 	});
 
+	it("matches an actor of the speaker's gender: MRS. KANE isn't Charles Kane", () => {
+		// Matched on the surname alone, where Charles (billed first) would win without the gender check
+		const kanes = [...cast, { name: 'Husband Actor', character: 'Charles Kane', gender: 2 }, { name: 'Wife Actor', character: 'Emily Kane', gender: 1 }];
+		const { script } = analyzeScriptText(longScript(['RIPLEY', 'KANE', 'MRS. KANE']), charactersFromCast(kanes));
+		expect(script.speakers.find(s => s.name === 'MRS. KANE').actor).toBe('Wife Actor');
+	});
+
 	it('applies a gender correction by hand, and rejects one for a speaker who never speaks', () => {
 		const characters = charactersFromCast(cast);
 		const { script } = analyzeScriptText(longScript(['RIPLEY', 'MOTHER']), characters, { MOTHER: 'm' });

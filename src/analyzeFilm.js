@@ -118,7 +118,7 @@ const analyzeScriptText = (scriptText, characters, genderOverrides = {}) => {
 		throw new Error(`script dialogue is garbled: ${Math.round(english * 100)}% English words, likely a bad scan; npm run recover-scripts looks for a clean copy`);
 	}
 	const actionText = blocks.filter(block => block.kind === 'action').map(block => block.text).join('\n');
-	const resolved = resolveSpeakers([...new Set(dialogue.map(block => block.speaker))], characters, actionText);
+	const resolved = resolveSpeakers([...new Set(dialogue.map(block => block.speaker))], characters, actionText, genderOverrides);
 	// Corrections by hand (data/gender-overrides.json): { "ARIADNE": "w" }
 	for (const [speaker, gender] of Object.entries(genderOverrides)) {
 		if (!resolved.has(speaker)) throw new Error(`gender override for ${speaker}, who never speaks in this script`);
