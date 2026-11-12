@@ -1,0 +1,991 @@
+{
+	"_id": "tt1832382",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 21,
+		"eligible": 16,
+		"rejected": {
+			"split across CDs": 1,
+			"duplicate": 3,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1953630181",
+		"versions": [
+			"1952960861",
+			"1952990410",
+			"1952987658",
+			"1953630181",
+			"1952955264",
+			"1954081930",
+			"1952955780",
+			"1952993115",
+			"1955416412"
+		],
+		"sdh": false,
+		"meanAgreement": 0.6192765140936015,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7380,
+	"quality": {
+		"anchoredShare": 0.5313912606730287
+	},
+	"words": {
+		"page": 9955,
+		"screen": 9640,
+		"kept": 4104,
+		"cut": 5851,
+		"notInScript": 4350,
+		"moved": 145
+	},
+	"lines": {
+		"page": 1064,
+		"kept": 338,
+		"changed": 401,
+		"cut": 325,
+		"screen": 1918,
+		"notInScript": 777
+	},
+	"byGender": {
+		"w": {
+			"lines": 511,
+			"kept": 180,
+			"changed": 171,
+			"cut": 160
+		},
+		"m": {
+			"lines": 480,
+			"kept": 133,
+			"changed": 208,
+			"cut": 139
+		},
+		"unknown": {
+			"lines": 73,
+			"kept": 25,
+			"changed": 22,
+			"cut": 26
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 14,
+			"kept": 5,
+			"cut": 4
+		},
+		{
+			"cut": 9,
+			"changed": 8,
+			"kept": 5
+		},
+		{
+			"cut": 6,
+			"changed": 11,
+			"kept": 5
+		},
+		{
+			"cut": 8,
+			"changed": 12,
+			"kept": 2
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 8
+		},
+		{
+			"kept": 4,
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"kept": 6,
+			"cut": 12,
+			"changed": 5
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 6
+		},
+		{
+			"cut": 7,
+			"changed": 10,
+			"kept": 5
+		},
+		{
+			"changed": 9,
+			"kept": 5,
+			"cut": 8
+		},
+		{
+			"cut": 10,
+			"changed": 6,
+			"kept": 6
+		},
+		{
+			"changed": 5,
+			"kept": 11,
+			"cut": 6
+		},
+		{
+			"changed": 7,
+			"kept": 5,
+			"cut": 11
+		},
+		{
+			"cut": 8,
+			"kept": 8,
+			"changed": 6
+		},
+		{
+			"cut": 9,
+			"kept": 8,
+			"changed": 5
+		},
+		{
+			"cut": 14,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"changed": 9,
+			"kept": 7,
+			"cut": 6
+		},
+		{
+			"kept": 11,
+			"cut": 6,
+			"changed": 5
+		},
+		{
+			"changed": 9,
+			"cut": 7,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"changed": 7,
+			"cut": 4
+		},
+		{
+			"changed": 5,
+			"cut": 14,
+			"kept": 3
+		},
+		{
+			"cut": 4,
+			"changed": 13,
+			"kept": 5
+		},
+		{
+			"changed": 11,
+			"kept": 5,
+			"cut": 6
+		},
+		{
+			"changed": 12,
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"changed": 12,
+			"cut": 8,
+			"kept": 3
+		},
+		{
+			"cut": 4,
+			"changed": 8,
+			"kept": 10
+		},
+		{
+			"changed": 8,
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"kept": 4,
+			"changed": 15,
+			"cut": 3
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 6
+		},
+		{
+			"changed": 13,
+			"kept": 3,
+			"cut": 6
+		},
+		{
+			"kept": 7,
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"changed": 9,
+			"kept": 7,
+			"cut": 6
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 9
+		},
+		{
+			"changed": 13,
+			"kept": 6,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"changed": 10,
+			"kept": 6
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 10
+		},
+		{
+			"changed": 10,
+			"kept": 7,
+			"cut": 6
+		},
+		{
+			"changed": 10,
+			"cut": 7,
+			"kept": 5
+		},
+		{
+			"changed": 8,
+			"kept": 9,
+			"cut": 5
+		},
+		{
+			"changed": 10,
+			"kept": 8,
+			"cut": 4
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 5
+		},
+		{
+			"kept": 14,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"changed": 11,
+			"kept": 6,
+			"cut": 6
+		},
+		{
+			"changed": 14,
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"changed": 7,
+			"cut": 6,
+			"kept": 9
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 7
+		},
+		{
+			"kept": 10,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"changed": 5,
+			"kept": 14,
+			"cut": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 128,
+			"notInScript": 153
+		},
+		{
+			"scripted": 247,
+			"notInScript": 172
+		},
+		{
+			"scripted": 77,
+			"notInScript": 48
+		},
+		{
+			"scripted": 173,
+			"notInScript": 62
+		},
+		{
+			"scripted": 86,
+			"notInScript": 22
+		},
+		{
+			"scripted": 63,
+			"notInScript": 12
+		},
+		{
+			"scripted": 92,
+			"notInScript": 32
+		},
+		{
+			"scripted": 84,
+			"notInScript": 49
+		},
+		{
+			"scripted": 63,
+			"notInScript": 72
+		},
+		{
+			"scripted": 190,
+			"notInScript": 64
+		},
+		{
+			"scripted": 178,
+			"notInScript": 119
+		},
+		{
+			"scripted": 136,
+			"notInScript": 22
+		},
+		{
+			"scripted": 34,
+			"notInScript": 18
+		},
+		{
+			"scripted": 34,
+			"notInScript": 59
+		},
+		{
+			"scripted": 48,
+			"notInScript": 51
+		},
+		{
+			"scripted": 86,
+			"notInScript": 65
+		},
+		{
+			"scripted": 71,
+			"notInScript": 216
+		},
+		{
+			"scripted": 60,
+			"notInScript": 59
+		},
+		{
+			"scripted": 195,
+			"notInScript": 41
+		},
+		{
+			"scripted": 163,
+			"notInScript": 52
+		},
+		{
+			"scripted": 90,
+			"notInScript": 117
+		},
+		{
+			"scripted": 145,
+			"notInScript": 71
+		},
+		{
+			"scripted": 315,
+			"notInScript": 52
+		},
+		{
+			"scripted": 137,
+			"notInScript": 76
+		},
+		{
+			"scripted": 106,
+			"notInScript": 157
+		},
+		{
+			"scripted": 94,
+			"notInScript": 64
+		},
+		{
+			"scripted": 268,
+			"notInScript": 66
+		},
+		{
+			"scripted": 224,
+			"notInScript": 115
+		},
+		{
+			"scripted": 180,
+			"notInScript": 131
+		},
+		{
+			"scripted": 136,
+			"notInScript": 5
+		},
+		{
+			"scripted": 75,
+			"notInScript": 31
+		},
+		{
+			"scripted": 307,
+			"notInScript": 75
+		},
+		{
+			"scripted": 95,
+			"notInScript": 77
+		},
+		{
+			"scripted": 260,
+			"notInScript": 81
+		},
+		{
+			"scripted": 235,
+			"notInScript": 40
+		},
+		{
+			"scripted": 226,
+			"notInScript": 122
+		},
+		{
+			"scripted": 104,
+			"notInScript": 70
+		},
+		{
+			"scripted": 134,
+			"notInScript": 48
+		},
+		{
+			"scripted": 174,
+			"notInScript": 21
+		},
+		{
+			"scripted": 150,
+			"notInScript": 54
+		},
+		{
+			"scripted": 263,
+			"notInScript": 45
+		},
+		{
+			"scripted": 85,
+			"notInScript": 73
+		},
+		{
+			"scripted": 152,
+			"notInScript": 25
+		},
+		{
+			"scripted": 140,
+			"notInScript": 23
+		},
+		{
+			"scripted": 133,
+			"notInScript": 41
+		},
+		{
+			"scripted": 30,
+			"notInScript": 20
+		},
+		{
+			"scripted": 56,
+			"notInScript": 30
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 8,
+		"seconds": 98.4,
+		"longest": 27.5,
+		"spans": [
+			[
+				557.4,
+				572.8
+			],
+			[
+				942.4,
+				969.9
+			],
+			[
+				2408.3,
+				2416.9
+			],
+			[
+				3985.7,
+				3989.9
+			],
+			[
+				4138.8,
+				4159.4
+			],
+			[
+				6326.6,
+				6331.3
+			],
+			[
+				6528.4,
+				6536
+			],
+			[
+				6625.6,
+				6635.5
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 128,
+				"kept": 44,
+				"changed": 32,
+				"cut": 52
+			},
+			"other": {
+				"lines": 326,
+				"kept": 121,
+				"changed": 115,
+				"cut": 90
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 80,
+				"kept": 25,
+				"changed": 44,
+				"cut": 11
+			},
+			"other": {
+				"lines": 318,
+				"kept": 84,
+				"changed": 130,
+				"cut": 104
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "NADER",
+				"text": "Let go of her hand… Dad… let go."
+			},
+			{
+				"speaker": "NADER",
+				"text": "What’s wrong dad? Does your leg hurt?"
+			},
+			{
+				"speaker": "HOJJAT",
+				"text": "It’s on your desk."
+			},
+			{
+				"speaker": "NADER",
+				"text": "Sweetie will you put the kettle on?"
+			},
+			{
+				"speaker": "SIMIN",
+				"text": "They’re both being stubborn."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 310,
+				"text": "My finding is that your problem is a small problem."
+			},
+			{
+				"at": 2362,
+				"text": "Okay, go to the kitchen."
+			},
+			{
+				"at": 3394,
+				"text": "How can anyone tell she was pregnant?"
+			},
+			{
+				"at": 4369,
+				"text": "They said go sit at home."
+			},
+			{
+				"at": 6013,
+				"text": "You think I am a bum and my kid died and I don't understand anything."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "RAZIEH",
+				"page": "The commute is far. Several bus lines.",
+				"screen": "The commute is far. Several bus lines.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"commute",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"far.",
+						false
+					],
+					[
+						"Several",
+						false
+					],
+					[
+						"bus",
+						false
+					],
+					[
+						"lines.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"commute",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"far.",
+						true
+					],
+					[
+						"Several",
+						true
+					],
+					[
+						"bus",
+						true
+					],
+					[
+						"lines.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "NADER",
+				"page": "You didn’t take money? Just get the hell out!",
+				"screen": "You didn't take it?",
+				"pageWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"didn’t",
+						true
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"money?",
+						false
+					],
+					[
+						"Just",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"hell",
+						false
+					],
+					[
+						"out!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"it?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SIMIN",
+				"page": "Say the truth. You told him?",
+				"screen": "Tell me the truth. You told him?",
+				"pageWords": [
+					[
+						"Say",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"truth.",
+						true
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"told",
+						false
+					],
+					[
+						"him?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Tell",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"truth.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"told",
+						true
+					],
+					[
+						"him?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SOMAYEH",
+				"page": "My mom didn’t take any money.",
+				"screen": "My mummy didn't take your money.",
+				"pageWords": [
+					[
+						"My",
+						false
+					],
+					[
+						"mom",
+						false
+					],
+					[
+						"didn’t",
+						true
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"money.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"My",
+						false
+					],
+					[
+						"mummy",
+						false
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"money.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NADER",
+				"page": "Oh God why can’t I make her understand?",
+				"screen": "Oh God, why can't I make her understand?",
+				"pageWords": [
+					[
+						"Oh",
+						false
+					],
+					[
+						"God",
+						true
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"can’t",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"make",
+						false
+					],
+					[
+						"her",
+						false
+					],
+					[
+						"understand?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Oh",
+						true
+					],
+					[
+						"God,",
+						true
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"make",
+						true
+					],
+					[
+						"her",
+						true
+					],
+					[
+						"understand?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

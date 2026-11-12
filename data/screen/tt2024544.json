@@ -1,0 +1,961 @@
+{
+	"_id": "tt2024544",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 48,
+		"eligible": 32,
+		"rejected": {
+			"duplicate": 16
+		},
+		"used": 9,
+		"primary": "1954136532",
+		"versions": [
+			"1954138161",
+			"1956628388",
+			"1954573396",
+			"1954138162",
+			"1954136796",
+			"1954852265",
+			"1954153737",
+			"1954136532",
+			"1956888045"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9970142357519884,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 8040,
+	"quality": {
+		"anchoredShare": 0.33543018150842013
+	},
+	"words": {
+		"page": 15261,
+		"screen": 8031,
+		"kept": 5119,
+		"cut": 10142,
+		"notInScript": 2912,
+		"moved": 233
+	},
+	"lines": {
+		"page": 764,
+		"kept": 282,
+		"changed": 162,
+		"cut": 320,
+		"screen": 1505,
+		"notInScript": 572
+	},
+	"byGender": {
+		"w": {
+			"lines": 125,
+			"kept": 54,
+			"changed": 21,
+			"cut": 50
+		},
+		"m": {
+			"lines": 614,
+			"kept": 224,
+			"changed": 138,
+			"cut": 252
+		},
+		"unknown": {
+			"lines": 25,
+			"kept": 4,
+			"changed": 3,
+			"cut": 18
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 9,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 2
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 14,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"cut": 7,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"changed": 7,
+			"kept": 6,
+			"cut": 3
+		},
+		{
+			"changed": 8,
+			"kept": 3,
+			"cut": 4
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 8,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 11,
+			"kept": 3
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"changed": 1,
+			"cut": 8,
+			"kept": 7
+		},
+		{
+			"cut": 7,
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"cut": 8,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"kept": 2,
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"changed": 5,
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 8
+		},
+		{
+			"cut": 6,
+			"changed": 7,
+			"kept": 3
+		},
+		{
+			"kept": 14,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"changed": 7,
+			"kept": 5,
+			"cut": 4
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 14,
+			"kept": 2
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 7
+		},
+		{
+			"changed": 5,
+			"cut": 7,
+			"kept": 4
+		},
+		{
+			"kept": 9,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"changed": 5,
+			"cut": 6,
+			"kept": 5
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 8,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"changed": 8,
+			"kept": 4
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"changed": 3,
+			"cut": 13
+		},
+		{
+			"cut": 3,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 12,
+			"notInScript": 104
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 34,
+			"notInScript": 70
+		},
+		{
+			"scripted": 248,
+			"notInScript": 86
+		},
+		{
+			"scripted": 147,
+			"notInScript": 12
+		},
+		{
+			"scripted": 51,
+			"notInScript": 5
+		},
+		{
+			"scripted": 260,
+			"notInScript": 41
+		},
+		{
+			"scripted": 67,
+			"notInScript": 89
+		},
+		{
+			"scripted": 115,
+			"notInScript": 4
+		},
+		{
+			"scripted": 134,
+			"notInScript": 79
+		},
+		{
+			"scripted": 143,
+			"notInScript": 179
+		},
+		{
+			"scripted": 208,
+			"notInScript": 114
+		},
+		{
+			"scripted": 235,
+			"notInScript": 28
+		},
+		{
+			"scripted": 159,
+			"notInScript": 88
+		},
+		{
+			"scripted": 260,
+			"notInScript": 8
+		},
+		{
+			"scripted": 225,
+			"notInScript": 44
+		},
+		{
+			"scripted": 154,
+			"notInScript": 26
+		},
+		{
+			"scripted": 78,
+			"notInScript": 3
+		},
+		{
+			"scripted": 40,
+			"notInScript": 0
+		},
+		{
+			"scripted": 176,
+			"notInScript": 0
+		},
+		{
+			"scripted": 147,
+			"notInScript": 35
+		},
+		{
+			"scripted": 96,
+			"notInScript": 20
+		},
+		{
+			"scripted": 113,
+			"notInScript": 25
+		},
+		{
+			"scripted": 32,
+			"notInScript": 18
+		},
+		{
+			"scripted": 233,
+			"notInScript": 70
+		},
+		{
+			"scripted": 176,
+			"notInScript": 55
+		},
+		{
+			"scripted": 8,
+			"notInScript": 2
+		},
+		{
+			"scripted": 77,
+			"notInScript": 107
+		},
+		{
+			"scripted": 175,
+			"notInScript": 10
+		},
+		{
+			"scripted": 84,
+			"notInScript": 34
+		},
+		{
+			"scripted": 86,
+			"notInScript": 6
+		},
+		{
+			"scripted": 68,
+			"notInScript": 104
+		},
+		{
+			"scripted": 282,
+			"notInScript": 0
+		},
+		{
+			"scripted": 126,
+			"notInScript": 0
+		},
+		{
+			"scripted": 159,
+			"notInScript": 2
+		},
+		{
+			"scripted": 29,
+			"notInScript": 123
+		},
+		{
+			"scripted": 139,
+			"notInScript": 113
+		},
+		{
+			"scripted": 247,
+			"notInScript": 94
+		},
+		{
+			"scripted": 205,
+			"notInScript": 13
+		},
+		{
+			"scripted": 91,
+			"notInScript": 22
+		},
+		{
+			"scripted": 54,
+			"notInScript": 2
+		},
+		{
+			"scripted": 164,
+			"notInScript": 0
+		},
+		{
+			"scripted": 107,
+			"notInScript": 0
+		},
+		{
+			"scripted": 158,
+			"notInScript": 41
+		},
+		{
+			"scripted": 33,
+			"notInScript": 78
+		},
+		{
+			"scripted": 39,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 201
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 5,
+				"kept": 0,
+				"changed": 0,
+				"cut": 5
+			},
+			"other": {
+				"lines": 120,
+				"kept": 54,
+				"changed": 21,
+				"cut": 45
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 379,
+				"kept": 152,
+				"changed": 85,
+				"cut": 142
+			},
+			"other": {
+				"lines": 195,
+				"kept": 60,
+				"changed": 45,
+				"cut": 90
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "SOLOMON",
+				"text": "You understand this is all very sudden."
+			},
+			{
+				"speaker": "ELIZA",
+				"text": "My poor, poor babies."
+			},
+			{
+				"speaker": "SOLOMON",
+				"text": "I'm certain Patsey's well being is Master Epps's only concern."
+			},
+			{
+				"speaker": "SOLOMON",
+				"text": "I have my letter."
+			},
+			{
+				"speaker": "EPPS",
+				"text": "Yah took yerself ta pleasure Shaw. Yah gave baser passion to that unblushin' libertine! Solomon tries to intervene:"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 734,
+				"text": "One too many libation."
+			},
+			{
+				"at": 1919,
+				"text": "Mr. Ford, a pleasure."
+			},
+			{
+				"at": 4242,
+				"text": "I brought her back, just like you..."
+			},
+			{
+				"at": 6029,
+				"text": "I said roll, Jordan, roll"
+			},
+			{
+				"at": 7906,
+				"text": "When I woke the devil in hell"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "RADBURN",
+				"page": "There. Tha's fine. Tha's fine. Got no gratitude?",
+				"screen": "That's fine. Got no gratitude?",
+				"pageWords": [
+					[
+						"There.",
+						false
+					],
+					[
+						"Tha's",
+						false
+					],
+					[
+						"fine.",
+						false
+					],
+					[
+						"Tha's",
+						false
+					],
+					[
+						"fine.",
+						true
+					],
+					[
+						"Got",
+						true
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"gratitude?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"That's",
+						false
+					],
+					[
+						"fine.",
+						true
+					],
+					[
+						"Got",
+						true
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"gratitude?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "FORD",
+				"page": "What is the price for the ones Platt and Eliza?",
+				"screen": "How much for the ones Platt and Eliza?",
+				"pageWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"price",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"ones",
+						true
+					],
+					[
+						"Platt",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"Eliza?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"much",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"ones",
+						true
+					],
+					[
+						"Platt",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"Eliza?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EPPS",
+				"page": "Hit one forty five yesterday. Pull her out.",
+				"screen": "Hit 145 yesterday. Pull her out.",
+				"pageWords": [
+					[
+						"Hit",
+						true
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"forty",
+						false
+					],
+					[
+						"five",
+						false
+					],
+					[
+						"yesterday.",
+						true
+					],
+					[
+						"Pull",
+						true
+					],
+					[
+						"her",
+						true
+					],
+					[
+						"out.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Hit",
+						true
+					],
+					[
+						"145",
+						false
+					],
+					[
+						"yesterday.",
+						true
+					],
+					[
+						"Pull",
+						true
+					],
+					[
+						"her",
+						true
+					],
+					[
+						"out.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EPPS",
+				"page": "Damn you! Damn you all! Damn you!",
+				"screen": "Damn you! Damn all y'all!",
+				"pageWords": [
+					[
+						"Damn",
+						true
+					],
+					[
+						"you!",
+						true
+					],
+					[
+						"Damn",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"all!",
+						false
+					],
+					[
+						"Damn",
+						false
+					],
+					[
+						"you!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Damn",
+						true
+					],
+					[
+						"you!",
+						true
+					],
+					[
+						"Damn",
+						true
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"y'all!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PATSEY",
+				"page": "Do not strike him. I went to Massa Shaw's plantation!",
+				"screen": "I went to Master Shaw's plantation.",
+				"pageWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"strike",
+						false
+					],
+					[
+						"him.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"went",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"Massa",
+						false
+					],
+					[
+						"Shaw's",
+						true
+					],
+					[
+						"plantation!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"went",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"Master",
+						false
+					],
+					[
+						"Shaw's",
+						true
+					],
+					[
+						"plantation.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

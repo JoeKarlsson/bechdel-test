@@ -1,0 +1,1033 @@
+{
+	"_id": "tt1800241",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 28,
+		"eligible": 24,
+		"rejected": {
+			"duplicate": 3,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1954316146",
+		"versions": [
+			"1954148738",
+			"1954316146",
+			"1954162197",
+			"1954148346",
+			"1954221854",
+			"1954067149",
+			"1954144236",
+			"1954148293",
+			"1957500251"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8967496520763193,
+		"lyricsDropped": 126
+	},
+	"runtimeSeconds": 8280,
+	"quality": {
+		"anchoredShare": 0.9166374576469214
+	},
+	"words": {
+		"page": 17118,
+		"screen": 19417,
+		"kept": 15702,
+		"cut": 1416,
+		"notInScript": 3726,
+		"moved": 5
+	},
+	"lines": {
+		"page": 1252,
+		"kept": 1118,
+		"changed": 70,
+		"cut": 64,
+		"screen": 3275,
+		"notInScript": 758
+	},
+	"byGender": {
+		"w": {
+			"lines": 318,
+			"kept": 282,
+			"changed": 18,
+			"cut": 18
+		},
+		"m": {
+			"lines": 920,
+			"kept": 831,
+			"changed": 48,
+			"cut": 41
+		},
+		"unknown": {
+			"lines": 14,
+			"kept": 5,
+			"changed": 4,
+			"cut": 5
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 2,
+			"kept": 24,
+			"cut": 1
+		},
+		{
+			"kept": 24,
+			"changed": 2
+		},
+		{
+			"kept": 25,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 26
+		},
+		{
+			"kept": 25,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 24,
+			"changed": 2
+		},
+		{
+			"kept": 26
+		},
+		{
+			"kept": 25,
+			"changed": 1
+		},
+		{
+			"kept": 24,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 25,
+			"cut": 1
+		},
+		{
+			"kept": 24,
+			"cut": 2
+		},
+		{
+			"kept": 24,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 25,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"changed": 3
+		},
+		{
+			"kept": 21,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 25,
+			"cut": 1
+		},
+		{
+			"kept": 24,
+			"cut": 2
+		},
+		{
+			"kept": 23,
+			"changed": 3
+		},
+		{
+			"kept": 20,
+			"changed": 6
+		},
+		{
+			"kept": 26,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 19,
+			"changed": 4
+		},
+		{
+			"kept": 22,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 26
+		},
+		{
+			"kept": 20,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 23,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 21,
+			"cut": 1,
+			"changed": 4
+		},
+		{
+			"kept": 23,
+			"cut": 3
+		},
+		{
+			"kept": 24,
+			"changed": 2
+		},
+		{
+			"kept": 20,
+			"changed": 6
+		},
+		{
+			"kept": 26,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 25,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"changed": 4
+		},
+		{
+			"kept": 22,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 25,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 25,
+			"changed": 1
+		},
+		{
+			"kept": 21,
+			"cut": 5
+		},
+		{
+			"kept": 23,
+			"cut": 3
+		},
+		{
+			"kept": 26
+		},
+		{
+			"kept": 24,
+			"cut": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 226
+		},
+		{
+			"scripted": 302,
+			"notInScript": 75
+		},
+		{
+			"scripted": 440,
+			"notInScript": 73
+		},
+		{
+			"scripted": 262,
+			"notInScript": 6
+		},
+		{
+			"scripted": 329,
+			"notInScript": 61
+		},
+		{
+			"scripted": 315,
+			"notInScript": 31
+		},
+		{
+			"scripted": 299,
+			"notInScript": 30
+		},
+		{
+			"scripted": 448,
+			"notInScript": 28
+		},
+		{
+			"scripted": 439,
+			"notInScript": 101
+		},
+		{
+			"scripted": 417,
+			"notInScript": 53
+		},
+		{
+			"scripted": 556,
+			"notInScript": 0
+		},
+		{
+			"scripted": 448,
+			"notInScript": 43
+		},
+		{
+			"scripted": 394,
+			"notInScript": 7
+		},
+		{
+			"scripted": 528,
+			"notInScript": 75
+		},
+		{
+			"scripted": 556,
+			"notInScript": 36
+		},
+		{
+			"scripted": 616,
+			"notInScript": 10
+		},
+		{
+			"scripted": 229,
+			"notInScript": 48
+		},
+		{
+			"scripted": 559,
+			"notInScript": 51
+		},
+		{
+			"scripted": 412,
+			"notInScript": 57
+		},
+		{
+			"scripted": 365,
+			"notInScript": 217
+		},
+		{
+			"scripted": 151,
+			"notInScript": 70
+		},
+		{
+			"scripted": 292,
+			"notInScript": 35
+		},
+		{
+			"scripted": 561,
+			"notInScript": 16
+		},
+		{
+			"scripted": 412,
+			"notInScript": 47
+		},
+		{
+			"scripted": 490,
+			"notInScript": 69
+		},
+		{
+			"scripted": 312,
+			"notInScript": 40
+		},
+		{
+			"scripted": 408,
+			"notInScript": 106
+		},
+		{
+			"scripted": 324,
+			"notInScript": 62
+		},
+		{
+			"scripted": 487,
+			"notInScript": 54
+		},
+		{
+			"scripted": 204,
+			"notInScript": 3
+		},
+		{
+			"scripted": 195,
+			"notInScript": 8
+		},
+		{
+			"scripted": 325,
+			"notInScript": 87
+		},
+		{
+			"scripted": 396,
+			"notInScript": 30
+		},
+		{
+			"scripted": 327,
+			"notInScript": 10
+		},
+		{
+			"scripted": 479,
+			"notInScript": 51
+		},
+		{
+			"scripted": 521,
+			"notInScript": 43
+		},
+		{
+			"scripted": 352,
+			"notInScript": 38
+		},
+		{
+			"scripted": 230,
+			"notInScript": 20
+		},
+		{
+			"scripted": 446,
+			"notInScript": 88
+		},
+		{
+			"scripted": 344,
+			"notInScript": 8
+		},
+		{
+			"scripted": 355,
+			"notInScript": 33
+		},
+		{
+			"scripted": 258,
+			"notInScript": 78
+		},
+		{
+			"scripted": 336,
+			"notInScript": 143
+		},
+		{
+			"scripted": 249,
+			"notInScript": 50
+		},
+		{
+			"scripted": 392,
+			"notInScript": 16
+		},
+		{
+			"scripted": 193,
+			"notInScript": 31
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 6,
+		"seconds": 42.1,
+		"longest": 10.3,
+		"spans": [
+			[
+				682.8,
+				693.1
+			],
+			[
+				1059.3,
+				1066
+			],
+			[
+				2569.7,
+				2572.4
+			],
+			[
+				4524.7,
+				4533.7
+			],
+			[
+				4911.3,
+				4921.4
+			],
+			[
+				4959,
+				4962
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 53,
+				"kept": 44,
+				"changed": 3,
+				"cut": 6
+			},
+			"other": {
+				"lines": 253,
+				"kept": 227,
+				"changed": 14,
+				"cut": 12
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 624,
+				"kept": 568,
+				"changed": 30,
+				"cut": 26
+			},
+			"other": {
+				"lines": 284,
+				"kept": 254,
+				"changed": 17,
+				"cut": 13
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "IRVING ROSENFELD",
+				"text": "Is that messing up your judgement? Don't be stupid."
+			},
+			{
+				"speaker": "IRVING ROSENFELD",
+				"text": "Gimme the phone, come on."
+			},
+			{
+				"speaker": "EDITH GREENSLY",
+				"text": "Yeah, you need to come with me right now."
+			},
+			{
+				"speaker": "CARMINE POLITO",
+				"text": "Congressman, thank you for coming by, John --"
+			},
+			{
+				"speaker": "DOLLY POLITO",
+				"text": "Is everything alright? Can I have a word with you?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 437,
+				"text": "You understand that he has..."
+			},
+			{
+				"at": 2909,
+				"text": "Look, I don't know you."
+			},
+			{
+				"at": 4112,
+				"text": "Just look at me, all right?"
+			},
+			{
+				"at": 5438,
+				"text": "You want real, okay."
+			},
+			{
+				"at": 7196,
+				"text": "I'm kissing his boo-boos!"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "IRVING ROSENFELD",
+				"page": "What's going on, you like this guy?",
+				"screen": "You like this guy?",
+				"pageWords": [
+					[
+						"What's",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"guy?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"guy?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "IRVING ROSENFELD",
+				"page": "I gotta work with him. He's the Sheik's man.",
+				"screen": "I got to work with him.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"gotta",
+						true
+					],
+					[
+						"work",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"him.",
+						true
+					],
+					[
+						"He's",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"Sheik's",
+						false
+					],
+					[
+						"man.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"work",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"him.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DOLLY POLITO",
+				"page": "Tell her I got the nail polish for her.",
+				"screen": "Yeah, I do, I got your nail polish.",
+				"pageWords": [
+					[
+						"Tell",
+						false
+					],
+					[
+						"her",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"nail",
+						true
+					],
+					[
+						"polish",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"her.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"do,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"nail",
+						true
+					],
+					[
+						"polish.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "RICHIE DIMASO",
+				"page": "You're going to give me the Sherman Suite. The whole floor.",
+				"screen": "You got to get me the Sherman Suite. The whole ﬂoor.",
+				"pageWords": [
+					[
+						"You're",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"give",
+						false
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Sherman",
+						true
+					],
+					[
+						"Suite.",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"whole",
+						true
+					],
+					[
+						"floor.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"got",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Sherman",
+						true
+					],
+					[
+						"Suite.",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"whole",
+						true
+					],
+					[
+						"ﬂoor.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PETE MUSANE",
+				"page": "You stay here. Get yourself some dessert. Finish the bottle of prosecco. I'm sorry.",
+				"screen": "Have some dessert, finish the bottle of Prosecco. I'm sorry.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"stay",
+						false
+					],
+					[
+						"here.",
+						false
+					],
+					[
+						"Get",
+						false
+					],
+					[
+						"yourself",
+						false
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"dessert.",
+						true
+					],
+					[
+						"Finish",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"bottle",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"prosecco.",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"sorry.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Have",
+						false
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"dessert,",
+						true
+					],
+					[
+						"finish",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"bottle",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Prosecco.",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"sorry.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,955 @@
+{
+	"_id": "690ea7f271c6a8c3917f133b",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 30,
+		"eligible": 20,
+		"rejected": {
+			"split across CDs": 4,
+			"duplicate": 6
+		},
+		"used": 9,
+		"primary": "1954275439",
+		"versions": [
+			"161807",
+			"1955006388",
+			"1954275439",
+			"1952766675",
+			"1951634742",
+			"161792",
+			"114675",
+			"1951846014",
+			"117163"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9365191345524154,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6120,
+	"quality": {
+		"anchoredShare": 0.4255917667238422
+	},
+	"words": {
+		"page": 14575,
+		"screen": 10364,
+		"kept": 6197,
+		"cut": 8378,
+		"notInScript": 4161,
+		"moved": 164
+	},
+	"lines": {
+		"page": 1111,
+		"kept": 476,
+		"changed": 213,
+		"cut": 422,
+		"screen": 1838,
+		"notInScript": 637
+	},
+	"byGender": {
+		"w": {
+			"lines": 292,
+			"kept": 145,
+			"changed": 68,
+			"cut": 79
+		},
+		"m": {
+			"lines": 760,
+			"kept": 316,
+			"changed": 133,
+			"cut": 311
+		},
+		"unknown": {
+			"lines": 59,
+			"kept": 15,
+			"changed": 12,
+			"cut": 32
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 5,
+			"cut": 15,
+			"changed": 4
+		},
+		{
+			"kept": 7,
+			"changed": 7,
+			"cut": 9
+		},
+		{
+			"kept": 5,
+			"cut": 18
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 12
+		},
+		{
+			"cut": 13,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"kept": 16,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"changed": 3,
+			"cut": 16
+		},
+		{
+			"cut": 16,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 14,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 7
+		},
+		{
+			"kept": 14,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"cut": 11,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 10,
+			"cut": 7
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 8
+		},
+		{
+			"kept": 14,
+			"cut": 3,
+			"changed": 6
+		},
+		{
+			"kept": 8,
+			"cut": 9,
+			"changed": 6
+		},
+		{
+			"cut": 3,
+			"kept": 18,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"kept": 15,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 8
+		},
+		{
+			"kept": 16,
+			"changed": 3,
+			"cut": 5
+		},
+		{
+			"kept": 16,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"cut": 4,
+			"changed": 5,
+			"kept": 14
+		},
+		{
+			"cut": 2,
+			"kept": 16,
+			"changed": 5
+		},
+		{
+			"cut": 23
+		},
+		{
+			"cut": 21,
+			"changed": 2
+		},
+		{
+			"cut": 22,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 10,
+			"cut": 2
+		},
+		{
+			"cut": 3,
+			"kept": 14,
+			"changed": 6
+		},
+		{
+			"kept": 13,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"changed": 4,
+			"kept": 10,
+			"cut": 9
+		},
+		{
+			"kept": 9,
+			"changed": 4,
+			"cut": 10
+		},
+		{
+			"cut": 3,
+			"changed": 7,
+			"kept": 13
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 14
+		},
+		{
+			"kept": 14,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"cut": 4,
+			"kept": 12
+		},
+		{
+			"cut": 6,
+			"changed": 7,
+			"kept": 10
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 14
+		},
+		{
+			"cut": 18,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"kept": 17,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"changed": 11,
+			"cut": 5
+		},
+		{
+			"kept": 8,
+			"cut": 7,
+			"changed": 8
+		},
+		{
+			"kept": 13,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"kept": 2,
+			"changed": 3,
+			"cut": 18
+		},
+		{
+			"cut": 10,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"cut": 8,
+			"changed": 7
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 25
+		},
+		{
+			"scripted": 31,
+			"notInScript": 182
+		},
+		{
+			"scripted": 45,
+			"notInScript": 119
+		},
+		{
+			"scripted": 247,
+			"notInScript": 28
+		},
+		{
+			"scripted": 110,
+			"notInScript": 61
+		},
+		{
+			"scripted": 163,
+			"notInScript": 89
+		},
+		{
+			"scripted": 150,
+			"notInScript": 82
+		},
+		{
+			"scripted": 152,
+			"notInScript": 35
+		},
+		{
+			"scripted": 15,
+			"notInScript": 80
+		},
+		{
+			"scripted": 119,
+			"notInScript": 49
+		},
+		{
+			"scripted": 246,
+			"notInScript": 17
+		},
+		{
+			"scripted": 218,
+			"notInScript": 62
+		},
+		{
+			"scripted": 87,
+			"notInScript": 82
+		},
+		{
+			"scripted": 256,
+			"notInScript": 53
+		},
+		{
+			"scripted": 126,
+			"notInScript": 56
+		},
+		{
+			"scripted": 317,
+			"notInScript": 12
+		},
+		{
+			"scripted": 153,
+			"notInScript": 104
+		},
+		{
+			"scripted": 226,
+			"notInScript": 70
+		},
+		{
+			"scripted": 189,
+			"notInScript": 95
+		},
+		{
+			"scripted": 337,
+			"notInScript": 39
+		},
+		{
+			"scripted": 287,
+			"notInScript": 82
+		},
+		{
+			"scripted": 164,
+			"notInScript": 43
+		},
+		{
+			"scripted": 182,
+			"notInScript": 48
+		},
+		{
+			"scripted": 161,
+			"notInScript": 54
+		},
+		{
+			"scripted": 205,
+			"notInScript": 32
+		},
+		{
+			"scripted": 145,
+			"notInScript": 50
+		},
+		{
+			"scripted": 149,
+			"notInScript": 141
+		},
+		{
+			"scripted": 181,
+			"notInScript": 29
+		},
+		{
+			"scripted": 208,
+			"notInScript": 47
+		},
+		{
+			"scripted": 239,
+			"notInScript": 39
+		},
+		{
+			"scripted": 74,
+			"notInScript": 46
+		},
+		{
+			"scripted": 199,
+			"notInScript": 12
+		},
+		{
+			"scripted": 156,
+			"notInScript": 124
+		},
+		{
+			"scripted": 268,
+			"notInScript": 61
+		},
+		{
+			"scripted": 169,
+			"notInScript": 85
+		},
+		{
+			"scripted": 251,
+			"notInScript": 97
+		},
+		{
+			"scripted": 241,
+			"notInScript": 30
+		},
+		{
+			"scripted": 195,
+			"notInScript": 47
+		},
+		{
+			"scripted": 20,
+			"notInScript": 113
+		},
+		{
+			"scripted": 127,
+			"notInScript": 59
+		},
+		{
+			"scripted": 65,
+			"notInScript": 74
+		},
+		{
+			"scripted": 245,
+			"notInScript": 58
+		},
+		{
+			"scripted": 107,
+			"notInScript": 102
+		},
+		{
+			"scripted": 113,
+			"notInScript": 31
+		},
+		{
+			"scripted": 128,
+			"notInScript": 54
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 2,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 223,
+				"kept": 118,
+				"changed": 50,
+				"cut": 55
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 491,
+				"kept": 182,
+				"changed": 77,
+				"cut": 232
+			},
+			"other": {
+				"lines": 241,
+				"kept": 126,
+				"changed": 48,
+				"cut": 67
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LARGE",
+				"text": "That depends, are you arresting me? Kenny laughs."
+			},
+			{
+				"speaker": "TIM",
+				"text": "No I don't know the whole language, I just..."
+			},
+			{
+				"speaker": "LARGE",
+				"text": "i looked for a message; I got bored and became an actor. He leaves."
+			},
+			{
+				"speaker": "JESSE",
+				"text": "All he heard of that whole story was \"left drugs in LA\"."
+			},
+			{
+				"speaker": "SAM",
+				"text": "Save something from being discovered."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 293,
+				"text": "flight number 1 2 1 with nonstop service to Newark International will be departing from Gate 32."
+			},
+			{
+				"at": 1394,
+				"text": "I had a lovely evening."
+			},
+			{
+				"at": 2664,
+				"text": "Blah, blah, blah, blah, la!"
+			},
+			{
+				"at": 4187,
+				"text": "I'm opening my own business."
+			},
+			{
+				"at": 5169,
+				"text": "Sometimes it fuckin' hurts."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "KENNY",
+				"page": "I mean you know... how did I do?",
+				"screen": "I don't know. You know, just the whole...",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"mean",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"know...",
+						true
+					],
+					[
+						"how",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"do?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"know.",
+						false
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"know,",
+						true
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"whole...",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LARGE",
+				"page": "No, I'm just auditioning and.,.",
+				"screen": "I'm just, I'm auditioning--",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"auditioning",
+						false
+					],
+					[
+						"and.,.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"just,",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"auditioning--",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SAM",
+				"page": "How did she die? Large thinks about that.",
+				"screen": "How did she die?",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"die?",
+						true
+					],
+					[
+						"Large",
+						false
+					],
+					[
+						"thinks",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"that.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"die?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LARGE",
+				"page": "Yeah I've been kind of catching up with people around here.",
+				"screen": "I've been catching up with people here--",
+				"pageWords": [
+					[
+						"Yeah",
+						false
+					],
+					[
+						"I've",
+						false
+					],
+					[
+						"been",
+						false
+					],
+					[
+						"kind",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"catching",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"people",
+						true
+					],
+					[
+						"around",
+						false
+					],
+					[
+						"here.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I've",
+						false
+					],
+					[
+						"been",
+						false
+					],
+					[
+						"catching",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"people",
+						true
+					],
+					[
+						"here--",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SAM",
+				"page": "I'd love some tea. Large and Mark look at her.",
+				"screen": "I'd love some, thank you.",
+				"pageWords": [
+					[
+						"I'd",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"tea.",
+						false
+					],
+					[
+						"Large",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"Mark",
+						false
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"her.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'd",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"some,",
+						true
+					],
+					[
+						"thank",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

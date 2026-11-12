@@ -1,0 +1,979 @@
+{
+	"_id": "tt0172495",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 48,
+		"eligible": 30,
+		"rejected": {
+			"runtime mismatch": 4,
+			"split across CDs": 4,
+			"duplicate": 10
+		},
+		"used": 9,
+		"primary": "1956776203",
+		"versions": [
+			"1951903405",
+			"1953583174",
+			"1955254105",
+			"1954212666",
+			"1955742419",
+			"1958786819",
+			"1952496888",
+			"1956776203",
+			"1955982400"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9163902236636083,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9300,
+	"quality": {
+		"anchoredShare": 0.18521038902120904
+	},
+	"words": {
+		"page": 8817,
+		"screen": 7924,
+		"kept": 1474,
+		"cut": 7343,
+		"notInScript": 6291,
+		"moved": 96
+	},
+	"lines": {
+		"page": 702,
+		"kept": 81,
+		"changed": 72,
+		"cut": 548,
+		"screen": 1476,
+		"notInScript": 1174
+	},
+	"byGender": {
+		"w": {
+			"lines": 93,
+			"kept": 13,
+			"changed": 14,
+			"cut": 66
+		},
+		"m": {
+			"lines": 587,
+			"kept": 67,
+			"changed": 57,
+			"cut": 463
+		},
+		"unknown": {
+			"lines": 21,
+			"kept": 1,
+			"changed": 1,
+			"cut": 19
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"kept": 8
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 5,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"kept": 3,
+			"changed": 1,
+			"cut": 11
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"kept": 4,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 10
+		},
+		{
+			"cut": 5,
+			"kept": 4,
+			"changed": 6
+		},
+		{
+			"changed": 4,
+			"cut": 9,
+			"kept": 2
+		},
+		{
+			"cut": 7,
+			"kept": 7
+		},
+		{
+			"cut": 12,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"kept": 3,
+			"cut": 7
+		},
+		{
+			"kept": 2,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"changed": 5,
+			"cut": 5,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 7
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"kept": 4,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 13,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 6,
+			"notInScript": 85
+		},
+		{
+			"scripted": 0,
+			"notInScript": 97
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 132,
+			"notInScript": 49
+		},
+		{
+			"scripted": 68,
+			"notInScript": 36
+		},
+		{
+			"scripted": 88,
+			"notInScript": 252
+		},
+		{
+			"scripted": 101,
+			"notInScript": 159
+		},
+		{
+			"scripted": 62,
+			"notInScript": 269
+		},
+		{
+			"scripted": 170,
+			"notInScript": 100
+		},
+		{
+			"scripted": 7,
+			"notInScript": 178
+		},
+		{
+			"scripted": 114,
+			"notInScript": 28
+		},
+		{
+			"scripted": 36,
+			"notInScript": 98
+		},
+		{
+			"scripted": 0,
+			"notInScript": 79
+		},
+		{
+			"scripted": 0,
+			"notInScript": 16
+		},
+		{
+			"scripted": 74,
+			"notInScript": 123
+		},
+		{
+			"scripted": 52,
+			"notInScript": 144
+		},
+		{
+			"scripted": 25,
+			"notInScript": 136
+		},
+		{
+			"scripted": 45,
+			"notInScript": 35
+		},
+		{
+			"scripted": 7,
+			"notInScript": 94
+		},
+		{
+			"scripted": 174,
+			"notInScript": 195
+		},
+		{
+			"scripted": 58,
+			"notInScript": 105
+		},
+		{
+			"scripted": 38,
+			"notInScript": 161
+		},
+		{
+			"scripted": 58,
+			"notInScript": 182
+		},
+		{
+			"scripted": 9,
+			"notInScript": 92
+		},
+		{
+			"scripted": 111,
+			"notInScript": 124
+		},
+		{
+			"scripted": 91,
+			"notInScript": 188
+		},
+		{
+			"scripted": 10,
+			"notInScript": 134
+		},
+		{
+			"scripted": 72,
+			"notInScript": 106
+		},
+		{
+			"scripted": 0,
+			"notInScript": 47
+		},
+		{
+			"scripted": 54,
+			"notInScript": 127
+		},
+		{
+			"scripted": 0,
+			"notInScript": 10
+		},
+		{
+			"scripted": 76,
+			"notInScript": 98
+		},
+		{
+			"scripted": 55,
+			"notInScript": 249
+		},
+		{
+			"scripted": 0,
+			"notInScript": 96
+		},
+		{
+			"scripted": 63,
+			"notInScript": 136
+		},
+		{
+			"scripted": 10,
+			"notInScript": 40
+		},
+		{
+			"scripted": 14,
+			"notInScript": 90
+		},
+		{
+			"scripted": 22,
+			"notInScript": 192
+		},
+		{
+			"scripted": 22,
+			"notInScript": 245
+		},
+		{
+			"scripted": 27,
+			"notInScript": 205
+		},
+		{
+			"scripted": 35,
+			"notInScript": 120
+		},
+		{
+			"scripted": 0,
+			"notInScript": 86
+		},
+		{
+			"scripted": 6,
+			"notInScript": 203
+		},
+		{
+			"scripted": 185,
+			"notInScript": 42
+		},
+		{
+			"scripted": 8,
+			"notInScript": 97
+		},
+		{
+			"scripted": 0,
+			"notInScript": 132
+		},
+		{
+			"scripted": 12,
+			"notInScript": 245
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 93,
+				"kept": 13,
+				"changed": 14,
+				"cut": 66
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 415,
+				"kept": 44,
+				"changed": 43,
+				"cut": 328
+			},
+			"other": {
+				"lines": 152,
+				"kept": 22,
+				"changed": 13,
+				"cut": 117
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MAXIMUS",
+				"text": "What's your name, son?"
+			},
+			{
+				"speaker": "MAXIMUS",
+				"text": "If you miss the spot there'll be blood everywhere. Quite a spray."
+			},
+			{
+				"speaker": "LUCILLA",
+				"text": "And they've started arresting scholars now. Anyone who dares speak out -- even satirists and chroniclers."
+			},
+			{
+				"speaker": "PROXIMO",
+				"text": "Gods! That old Homicide! The Emperor must truly hate you."
+			},
+			{
+				"speaker": "MAXIMUS",
+				"text": "You pox-ridden bastard -- !"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1511,
+				"text": "They fought for you and for Rome."
+			},
+			{
+				"at": 3363,
+				"text": "You will need their help today."
+			},
+			{
+				"at": 5039,
+				"text": "He's going to dissolve the Senate."
+			},
+			{
+				"at": 7014,
+				"text": "We're with you, Maximus!"
+			},
+			{
+				"at": 8460,
+				"text": "Isn't it late to be playing legionnaire?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MARCUS",
+				"page": "There are always people left to fight...",
+				"screen": "There is always someone left to fight.",
+				"pageWords": [
+					[
+						"There",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"always",
+						false
+					],
+					[
+						"people",
+						false
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"fight...",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"There",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"always",
+						false
+					],
+					[
+						"someone",
+						false
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"fight.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LUCILLA",
+				"page": "What does my father intend?",
+				"screen": "What did my father want with you?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"does",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"father",
+						true
+					],
+					[
+						"intend?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"father",
+						true
+					],
+					[
+						"want",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"you?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "QUINTUS",
+				"page": "They will greet you in the afterlife.",
+				"screen": "Your family will meet you in the afterlife.",
+				"pageWords": [
+					[
+						"They",
+						false
+					],
+					[
+						"will",
+						false
+					],
+					[
+						"greet",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"afterlife.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Your",
+						false
+					],
+					[
+						"family",
+						false
+					],
+					[
+						"will",
+						false
+					],
+					[
+						"meet",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"afterlife.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "COMMODUS",
+				"page": "All I want is to be a good father to my people. Why don't they understand that?",
+				"screen": "Rome is to be a republic again.",
+				"pageWords": [
+					[
+						"All",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"want",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"good",
+						false
+					],
+					[
+						"father",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"people.",
+						false
+					],
+					[
+						"Why",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"understand",
+						false
+					],
+					[
+						"that?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Rome",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"republic",
+						false
+					],
+					[
+						"again.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LUCILLA",
+				"page": "Will you swear it on the memory of your son?",
+				"screen": "You would die for the memory of your ancestors.",
+				"pageWords": [
+					[
+						"Will",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"swear",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"memory",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"son?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"would",
+						false
+					],
+					[
+						"die",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"memory",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"ancestors.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,953 @@
+{
+	"_id": "tt0073629",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 27,
+		"eligible": 18,
+		"rejected": {
+			"split across CDs": 1,
+			"duplicate": 7,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1951709314",
+		"versions": [
+			"1955700379",
+			"1953134429",
+			"1958332213",
+			"1951709314",
+			"1955079772",
+			"1952386460",
+			"1955700378",
+			"154985",
+			"1953200137"
+		],
+		"sdh": false,
+		"meanAgreement": 0.551557707594456,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6000,
+	"quality": {
+		"anchoredShare": 0.7912295786758383
+	},
+	"words": {
+		"page": 5815,
+		"screen": 6149,
+		"kept": 4502,
+		"cut": 1313,
+		"notInScript": 1548,
+		"moved": 11
+	},
+	"lines": {
+		"page": 540,
+		"kept": 414,
+		"changed": 51,
+		"cut": 75,
+		"screen": 1172,
+		"notInScript": 241
+	},
+	"byGender": {
+		"w": {
+			"lines": 128,
+			"kept": 99,
+			"changed": 13,
+			"cut": 16
+		},
+		"m": {
+			"lines": 338,
+			"kept": 256,
+			"changed": 35,
+			"cut": 47
+		},
+		"unknown": {
+			"lines": 74,
+			"kept": 59,
+			"changed": 3,
+			"cut": 12
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 2,
+			"kept": 10
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 11
+		},
+		{
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 4,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"changed": 2,
+			"kept": 7,
+			"cut": 3
+		},
+		{
+			"cut": 2,
+			"changed": 1,
+			"kept": 8
+		},
+		{
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 11
+		},
+		{
+			"kept": 11
+		},
+		{
+			"cut": 1,
+			"kept": 10
+		},
+		{
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 11
+		},
+		{
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 5,
+			"changed": 1,
+			"kept": 5
+		},
+		{
+			"changed": 1,
+			"kept": 2,
+			"cut": 8
+		},
+		{
+			"changed": 1,
+			"kept": 10
+		},
+		{
+			"kept": 5,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 2,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 11
+		},
+		{
+			"cut": 1,
+			"kept": 10
+		},
+		{
+			"kept": 9,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 11
+		},
+		{
+			"cut": 4,
+			"kept": 7
+		},
+		{
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 12
+		},
+		{
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 6,
+			"cut": 4,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 94,
+			"notInScript": 0
+		},
+		{
+			"scripted": 116,
+			"notInScript": 1
+		},
+		{
+			"scripted": 67,
+			"notInScript": 51
+		},
+		{
+			"scripted": 164,
+			"notInScript": 21
+		},
+		{
+			"scripted": 181,
+			"notInScript": 9
+		},
+		{
+			"scripted": 117,
+			"notInScript": 51
+		},
+		{
+			"scripted": 113,
+			"notInScript": 11
+		},
+		{
+			"scripted": 108,
+			"notInScript": 0
+		},
+		{
+			"scripted": 99,
+			"notInScript": 3
+		},
+		{
+			"scripted": 141,
+			"notInScript": 39
+		},
+		{
+			"scripted": 95,
+			"notInScript": 81
+		},
+		{
+			"scripted": 193,
+			"notInScript": 69
+		},
+		{
+			"scripted": 128,
+			"notInScript": 16
+		},
+		{
+			"scripted": 92,
+			"notInScript": 21
+		},
+		{
+			"scripted": 178,
+			"notInScript": 11
+		},
+		{
+			"scripted": 43,
+			"notInScript": 12
+		},
+		{
+			"scripted": 20,
+			"notInScript": 11
+		},
+		{
+			"scripted": 131,
+			"notInScript": 79
+		},
+		{
+			"scripted": 120,
+			"notInScript": 21
+		},
+		{
+			"scripted": 42,
+			"notInScript": 104
+		},
+		{
+			"scripted": 65,
+			"notInScript": 36
+		},
+		{
+			"scripted": 29,
+			"notInScript": 69
+		},
+		{
+			"scripted": 126,
+			"notInScript": 10
+		},
+		{
+			"scripted": 93,
+			"notInScript": 1
+		},
+		{
+			"scripted": 189,
+			"notInScript": 9
+		},
+		{
+			"scripted": 95,
+			"notInScript": 13
+		},
+		{
+			"scripted": 159,
+			"notInScript": 34
+		},
+		{
+			"scripted": 178,
+			"notInScript": 19
+		},
+		{
+			"scripted": 118,
+			"notInScript": 21
+		},
+		{
+			"scripted": 68,
+			"notInScript": 2
+		},
+		{
+			"scripted": 70,
+			"notInScript": 37
+		},
+		{
+			"scripted": 176,
+			"notInScript": 55
+		},
+		{
+			"scripted": 166,
+			"notInScript": 31
+		},
+		{
+			"scripted": 193,
+			"notInScript": 7
+		},
+		{
+			"scripted": 176,
+			"notInScript": 6
+		},
+		{
+			"scripted": 132,
+			"notInScript": 18
+		},
+		{
+			"scripted": 91,
+			"notInScript": 0
+		},
+		{
+			"scripted": 46,
+			"notInScript": 24
+		},
+		{
+			"scripted": 122,
+			"notInScript": 107
+		},
+		{
+			"scripted": 64,
+			"notInScript": 21
+		},
+		{
+			"scripted": 29,
+			"notInScript": 32
+		},
+		{
+			"scripted": 96,
+			"notInScript": 3
+		},
+		{
+			"scripted": 106,
+			"notInScript": 1
+		},
+		{
+			"scripted": 87,
+			"notInScript": 0
+		},
+		{
+			"scripted": 39,
+			"notInScript": 0
+		},
+		{
+			"scripted": 27,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 16.6,
+		"longest": 10.6,
+		"spans": [
+			[
+				3351.5,
+				3362.1
+			],
+			[
+				5286.9,
+				5292.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 16,
+				"kept": 15,
+				"changed": 0,
+				"cut": 1
+			},
+			"other": {
+				"lines": 112,
+				"kept": 84,
+				"changed": 13,
+				"cut": 15
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 185,
+				"kept": 142,
+				"changed": 16,
+				"cut": 27
+			},
+			"other": {
+				"lines": 150,
+				"kept": 114,
+				"changed": 18,
+				"cut": 18
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "JANET",
+				"text": "Yes, the rain has been very heavy."
+			},
+			{
+				"speaker": "GUESTS",
+				"text": "Sha la la la That ain't no crime - That ain't no crime."
+			},
+			{
+				"speaker": "ROCKY",
+				"text": "No no no no."
+			},
+			{
+				"speaker": "BRAD",
+				"text": "Janet! Oh! Yes it's alright. Janet. Everything's going to be alright."
+			},
+			{
+				"speaker": "FRANK",
+				"text": "Well, let's ask him."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1227,
+				"text": "And nothing can ever be the same"
+			},
+			{
+				"at": 1627,
+				"text": "It's too nice a job to rush."
+			},
+			{
+				"at": 2464,
+				"text": "Hot patootie, bless my soul"
+			},
+			{
+				"at": 3507,
+				"text": "Shall we inquire of him in person?"
+			},
+			{
+				"at": 4823,
+				"text": "We're a wild and an untamed thing"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BRAD",
+				"page": "Here's a ring to prove that I'm not joker.",
+				"screen": "Here's a ring to prove That I'm no joker",
+				"pageWords": [
+					[
+						"Here's",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"ring",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"prove",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"joker.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Here's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"ring",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"prove",
+						true
+					],
+					[
+						"That",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"no",
+						false
+					],
+					[
+						"joker",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JANET",
+				"page": "But where will you go? We're in the middle of nowhere.",
+				"screen": "We're in the middle of nowhere.",
+				"pageWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"where",
+						false
+					],
+					[
+						"will",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"go?",
+						false
+					],
+					[
+						"We're",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"middle",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"nowhere.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"middle",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"nowhere.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GUESTS",
+				"page": "That ain't no crime.",
+				"screen": "That ain 't no crime.",
+				"pageWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"ain't",
+						false
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"crime.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"ain",
+						false
+					],
+					[
+						"'t",
+						false
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"crime.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JANET",
+				"page": "Oh, I hope so my darling. But let me switch on the light.",
+				"screen": "Oh, I hope so, my darling.",
+				"pageWords": [
+					[
+						"Oh,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"hope",
+						true
+					],
+					[
+						"so",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"darling.",
+						true
+					],
+					[
+						"But",
+						false
+					],
+					[
+						"let",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"switch",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"light.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"hope",
+						true
+					],
+					[
+						"so,",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"darling.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DR. SCOTT",
+				"page": "Was rock and roll,",
+				"screen": "Was rock 'n ' roll porn",
+				"pageWords": [
+					[
+						"Was",
+						true
+					],
+					[
+						"rock",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"roll,",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Was",
+						true
+					],
+					[
+						"rock",
+						true
+					],
+					[
+						"'n",
+						false
+					],
+					[
+						"'",
+						null
+					],
+					[
+						"roll",
+						false
+					],
+					[
+						"porn",
+						false
+					]
+				]
+			}
+		]
+	}
+}

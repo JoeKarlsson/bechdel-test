@@ -1,0 +1,935 @@
+{
+	"_id": "tt1615147",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 26,
+		"eligible": 13,
+		"rejected": {
+			"duplicate": 13
+		},
+		"used": 9,
+		"primary": "1953909875",
+		"versions": [
+			"1953189276",
+			"1956018059",
+			"1956375296",
+			"1953909875",
+			"1956884033",
+			"1953194131",
+			"1952976541",
+			"1952954166",
+			"1952983949"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9397927094426133,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6420,
+	"quality": {
+		"anchoredShare": 0.6298952013237727
+	},
+	"words": {
+		"page": 9065,
+		"screen": 9073,
+		"kept": 5711,
+		"cut": 3354,
+		"notInScript": 3363,
+		"moved": 109
+	},
+	"lines": {
+		"page": 979,
+		"kept": 568,
+		"changed": 154,
+		"cut": 257,
+		"screen": 1503,
+		"notInScript": 437
+	},
+	"byGender": {
+		"w": {
+			"lines": 97,
+			"kept": 68,
+			"changed": 6,
+			"cut": 23
+		},
+		"m": {
+			"lines": 876,
+			"kept": 500,
+			"changed": 147,
+			"cut": 229
+		},
+		"unknown": {
+			"lines": 6,
+			"kept": 0,
+			"changed": 1,
+			"cut": 5
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 18,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 7,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"kept": 9,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 12,
+			"cut": 3
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"cut": 7,
+			"changed": 5
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"kept": 18,
+			"cut": 2
+		},
+		{
+			"cut": 6,
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"changed": 8
+		},
+		{
+			"kept": 12,
+			"changed": 7,
+			"cut": 1
+		},
+		{
+			"changed": 2,
+			"kept": 11,
+			"cut": 8
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 8
+		},
+		{
+			"changed": 6,
+			"kept": 7,
+			"cut": 8
+		},
+		{
+			"kept": 18,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"kept": 9
+		},
+		{
+			"kept": 17,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1,
+			"changed": 3
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 6
+		},
+		{
+			"changed": 5,
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"changed": 7,
+			"cut": 2,
+			"kept": 12
+		},
+		{
+			"changed": 6,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 19,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 8
+		},
+		{
+			"cut": 16,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"cut": 8,
+			"kept": 9,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"cut": 3,
+			"kept": 13
+		},
+		{
+			"kept": 2,
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 5,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 8
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 7
+		},
+		{
+			"cut": 13,
+			"kept": 7
+		},
+		{
+			"changed": 1,
+			"cut": 13,
+			"kept": 6
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 5,
+			"notInScript": 0
+		},
+		{
+			"scripted": 69,
+			"notInScript": 7
+		},
+		{
+			"scripted": 242,
+			"notInScript": 38
+		},
+		{
+			"scripted": 160,
+			"notInScript": 34
+		},
+		{
+			"scripted": 86,
+			"notInScript": 19
+		},
+		{
+			"scripted": 116,
+			"notInScript": 35
+		},
+		{
+			"scripted": 159,
+			"notInScript": 15
+		},
+		{
+			"scripted": 36,
+			"notInScript": 10
+		},
+		{
+			"scripted": 40,
+			"notInScript": 51
+		},
+		{
+			"scripted": 263,
+			"notInScript": 99
+		},
+		{
+			"scripted": 201,
+			"notInScript": 83
+		},
+		{
+			"scripted": 244,
+			"notInScript": 14
+		},
+		{
+			"scripted": 232,
+			"notInScript": 69
+		},
+		{
+			"scripted": 121,
+			"notInScript": 46
+		},
+		{
+			"scripted": 217,
+			"notInScript": 12
+		},
+		{
+			"scripted": 276,
+			"notInScript": 16
+		},
+		{
+			"scripted": 272,
+			"notInScript": 39
+		},
+		{
+			"scripted": 165,
+			"notInScript": 27
+		},
+		{
+			"scripted": 195,
+			"notInScript": 81
+		},
+		{
+			"scripted": 142,
+			"notInScript": 15
+		},
+		{
+			"scripted": 145,
+			"notInScript": 33
+		},
+		{
+			"scripted": 322,
+			"notInScript": 34
+		},
+		{
+			"scripted": 239,
+			"notInScript": 2
+		},
+		{
+			"scripted": 208,
+			"notInScript": 0
+		},
+		{
+			"scripted": 267,
+			"notInScript": 25
+		},
+		{
+			"scripted": 254,
+			"notInScript": 21
+		},
+		{
+			"scripted": 175,
+			"notInScript": 0
+		},
+		{
+			"scripted": 158,
+			"notInScript": 44
+		},
+		{
+			"scripted": 163,
+			"notInScript": 11
+		},
+		{
+			"scripted": 123,
+			"notInScript": 29
+		},
+		{
+			"scripted": 18,
+			"notInScript": 11
+		},
+		{
+			"scripted": 190,
+			"notInScript": 18
+		},
+		{
+			"scripted": 160,
+			"notInScript": 28
+		},
+		{
+			"scripted": 93,
+			"notInScript": 25
+		},
+		{
+			"scripted": 202,
+			"notInScript": 69
+		},
+		{
+			"scripted": 190,
+			"notInScript": 29
+		},
+		{
+			"scripted": 40,
+			"notInScript": 6
+		},
+		{
+			"scripted": 85,
+			"notInScript": 8
+		},
+		{
+			"scripted": 163,
+			"notInScript": 76
+		},
+		{
+			"scripted": 139,
+			"notInScript": 92
+		},
+		{
+			"scripted": 108,
+			"notInScript": 172
+		},
+		{
+			"scripted": 24,
+			"notInScript": 268
+		},
+		{
+			"scripted": 124,
+			"notInScript": 43
+		},
+		{
+			"scripted": 263,
+			"notInScript": 27
+		},
+		{
+			"scripted": 76,
+			"notInScript": 13
+		},
+		{
+			"scripted": 100,
+			"notInScript": 9
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 16.3,
+		"longest": 16.3,
+		"spans": [
+			[
+				394,
+				410.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 9,
+				"kept": 8,
+				"changed": 1,
+				"cut": 0
+			},
+			"other": {
+				"lines": 77,
+				"kept": 57,
+				"changed": 5,
+				"cut": 15
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 783,
+				"kept": 452,
+				"changed": 134,
+				"cut": 197
+			},
+			"other": {
+				"lines": 89,
+				"kept": 45,
+				"changed": 13,
+				"cut": 31
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "WILL EMERSON",
+				"text": "I think I have his home number."
+			},
+			{
+				"speaker": "SARAH ROBERTSON",
+				"text": "Don't even start.... This was discussed."
+			},
+			{
+				"speaker": "PETER",
+				"text": "How are you? Are you happy? You look happy."
+			},
+			{
+				"speaker": "SETH",
+				"text": "Are you ok with that?"
+			},
+			{
+				"speaker": "SETH",
+				"text": "You just fired me."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1249,
+				"text": "Do you have a little dress that matches it?"
+			},
+			{
+				"at": 2287,
+				"text": "Well, I don't see any other choice."
+			},
+			{
+				"at": 4386,
+				"text": "They're going to fight you on your package, your options, everything."
+			},
+			{
+				"at": 5463,
+				"text": "I just sent it."
+			},
+			{
+				"at": 5552,
+				"text": "I got Lawrence at Merrill."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "WILL EMERSON",
+				"page": "They are ready for you.",
+				"screen": "They're ready for you.",
+				"pageWords": [
+					[
+						"They",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"ready",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"They're",
+						false
+					],
+					[
+						"ready",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JARED COHEN",
+				"page": "What do you have in exposure right now, tonight?",
+				"screen": "What do you have for us?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"exposure",
+						false
+					],
+					[
+						"right",
+						false
+					],
+					[
+						"now,",
+						false
+					],
+					[
+						"tonight?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"us?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JARED COHEN",
+				"page": "Well, that's Peter Sullivan here.",
+				"screen": "That would be Peter Sullivan.",
+				"pageWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"Peter",
+						true
+					],
+					[
+						"Sullivan",
+						true
+					],
+					[
+						"here.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"would",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"Peter",
+						true
+					],
+					[
+						"Sullivan.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JOHN TULD",
+				"page": "It was all a very grey area.",
+				"screen": "It was always a very gray area.",
+				"pageWords": [
+					[
+						"It",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"grey",
+						false
+					],
+					[
+						"area.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"It",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"always",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"gray",
+						false
+					],
+					[
+						"area.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PETER",
+				"page": "Have you told him what's about to happen?",
+				"screen": "Does he know what's about to happen?",
+				"pageWords": [
+					[
+						"Have",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"told",
+						false
+					],
+					[
+						"him",
+						false
+					],
+					[
+						"what's",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"happen?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Does",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"what's",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"happen?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

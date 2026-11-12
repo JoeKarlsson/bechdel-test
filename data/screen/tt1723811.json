@@ -1,0 +1,962 @@
+{
+	"_id": "tt1723811",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 23,
+		"eligible": 17,
+		"rejected": {
+			"runtime mismatch": 2,
+			"duplicate": 4
+		},
+		"used": 9,
+		"primary": "1953110258",
+		"versions": [
+			"1953084999",
+			"1953110258",
+			"1958166109",
+			"1953110257",
+			"1953203326",
+			"1955183620",
+			"1953199136",
+			"1953100281",
+			"1953730910"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9643825883398675,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6120,
+	"quality": {
+		"anchoredShare": 0.8877944325481799
+	},
+	"words": {
+		"page": 4670,
+		"screen": 4594,
+		"kept": 4144,
+		"cut": 526,
+		"notInScript": 448,
+		"moved": 12
+	},
+	"lines": {
+		"page": 723,
+		"kept": 625,
+		"changed": 30,
+		"cut": 56,
+		"screen": 1149,
+		"notInScript": 111
+	},
+	"byGender": {
+		"w": {
+			"lines": 270,
+			"kept": 234,
+			"changed": 7,
+			"cut": 29
+		},
+		"m": {
+			"lines": 432,
+			"kept": 382,
+			"changed": 23,
+			"cut": 27
+		},
+		"unknown": {
+			"lines": 9,
+			"kept": 9,
+			"changed": 0,
+			"cut": 0
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 3
+		},
+		{
+			"changed": 1,
+			"kept": 9,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 14
+		},
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 12,
+			"notInScript": 7
+		},
+		{
+			"scripted": 0,
+			"notInScript": 23
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 110,
+			"notInScript": 7
+		},
+		{
+			"scripted": 6,
+			"notInScript": 19
+		},
+		{
+			"scripted": 200,
+			"notInScript": 26
+		},
+		{
+			"scripted": 298,
+			"notInScript": 38
+		},
+		{
+			"scripted": 87,
+			"notInScript": 3
+		},
+		{
+			"scripted": 105,
+			"notInScript": 56
+		},
+		{
+			"scripted": 120,
+			"notInScript": 1
+		},
+		{
+			"scripted": 105,
+			"notInScript": 4
+		},
+		{
+			"scripted": 170,
+			"notInScript": 10
+		},
+		{
+			"scripted": 154,
+			"notInScript": 0
+		},
+		{
+			"scripted": 51,
+			"notInScript": 7
+		},
+		{
+			"scripted": 58,
+			"notInScript": 14
+		},
+		{
+			"scripted": 392,
+			"notInScript": 6
+		},
+		{
+			"scripted": 141,
+			"notInScript": 8
+		},
+		{
+			"scripted": 41,
+			"notInScript": 4
+		},
+		{
+			"scripted": 12,
+			"notInScript": 0
+		},
+		{
+			"scripted": 203,
+			"notInScript": 4
+		},
+		{
+			"scripted": 131,
+			"notInScript": 2
+		},
+		{
+			"scripted": 147,
+			"notInScript": 6
+		},
+		{
+			"scripted": 198,
+			"notInScript": 9
+		},
+		{
+			"scripted": 226,
+			"notInScript": 1
+		},
+		{
+			"scripted": 222,
+			"notInScript": 0
+		},
+		{
+			"scripted": 54,
+			"notInScript": 4
+		},
+		{
+			"scripted": 135,
+			"notInScript": 8
+		},
+		{
+			"scripted": 27,
+			"notInScript": 0
+		},
+		{
+			"scripted": 5,
+			"notInScript": 0
+		},
+		{
+			"scripted": 6,
+			"notInScript": 5
+		},
+		{
+			"scripted": 18,
+			"notInScript": 0
+		},
+		{
+			"scripted": 28,
+			"notInScript": 1
+		},
+		{
+			"scripted": 119,
+			"notInScript": 0
+		},
+		{
+			"scripted": 227,
+			"notInScript": 7
+		},
+		{
+			"scripted": 189,
+			"notInScript": 0
+		},
+		{
+			"scripted": 33,
+			"notInScript": 0
+		},
+		{
+			"scripted": 150,
+			"notInScript": 11
+		},
+		{
+			"scripted": 2,
+			"notInScript": 0
+		},
+		{
+			"scripted": 34,
+			"notInScript": 4
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 75,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 1,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 5
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 2,
+		"longest": 2,
+		"spans": [
+			[
+				904.4,
+				906.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 5,
+				"kept": 1,
+				"changed": 0,
+				"cut": 4
+			},
+			"other": {
+				"lines": 260,
+				"kept": 228,
+				"changed": 7,
+				"cut": 25
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 97,
+				"kept": 83,
+				"changed": 5,
+				"cut": 9
+			},
+			"other": {
+				"lines": 293,
+				"kept": 263,
+				"changed": 18,
+				"cut": 12
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "BRANDON",
+				"text": "I walk in and it's not there? And I get some kind of replacement?"
+			},
+			{
+				"speaker": "LOREN",
+				"text": "How's it humping an old man?"
+			},
+			{
+				"speaker": "BRANDON",
+				"text": "Are you collecting mad hats?"
+			},
+			{
+				"speaker": "SISSY",
+				"text": "Well, I am hot, I am hot."
+			},
+			{
+				"speaker": "FEMALE CONDUCTOR",
+				"text": "Move on. This way."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 594,
+				"text": "Eventually, the cynicism is turning into awe."
+			},
+			{
+				"at": 1014,
+				"text": "And they're stepping lightly"
+			},
+			{
+				"at": 1258,
+				"text": "I want your love I want your love"
+			},
+			{
+				"at": 1938,
+				"text": "Cream of the crop"
+			},
+			{
+				"at": 4794,
+				"text": "I said not tonight."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DAVID",
+				"page": "Come one, come on, it's fun. It's fun.",
+				"screen": "Come on, come on, it's fun.",
+				"pageWords": [
+					[
+						"Come",
+						false
+					],
+					[
+						"one,",
+						false
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"on,",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"fun.",
+						true
+					],
+					[
+						"It's",
+						false
+					],
+					[
+						"fun.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Come",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"on,",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"fun.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SISSY",
+				"page": "They're melting away. I gonna make a brand new start of it.",
+				"screen": "Right through the very heart of it",
+				"pageWords": [
+					[
+						"They're",
+						false
+					],
+					[
+						"melting",
+						false
+					],
+					[
+						"away.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"gonna",
+						false
+					],
+					[
+						"make",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"brand",
+						false
+					],
+					[
+						"new",
+						false
+					],
+					[
+						"start",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"it.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Right",
+						false
+					],
+					[
+						"through",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"very",
+						false
+					],
+					[
+						"heart",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"it",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SISSY",
+				"page": "New york New york New York..New York.. New york New york New york New york.",
+				"screen": "New York New York",
+				"pageWords": [
+					[
+						"New",
+						true
+					],
+					[
+						"york",
+						false
+					],
+					[
+						"New",
+						false
+					],
+					[
+						"york",
+						false
+					],
+					[
+						"New",
+						false
+					],
+					[
+						"York..New",
+						false
+					],
+					[
+						"York..",
+						false
+					],
+					[
+						"New",
+						false
+					],
+					[
+						"york",
+						false
+					],
+					[
+						"New",
+						false
+					],
+					[
+						"york",
+						false
+					],
+					[
+						"New",
+						false
+					],
+					[
+						"york",
+						false
+					],
+					[
+						"New",
+						true
+					],
+					[
+						"york.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"New",
+						true
+					],
+					[
+						"York",
+						true
+					],
+					[
+						"New",
+						true
+					],
+					[
+						"York",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DAVID",
+				"page": "No, no, no, no, no no. Look, look.",
+				"screen": "No. No, no, no.",
+				"pageWords": [
+					[
+						"No,",
+						true
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"no,",
+						true
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"no.",
+						true
+					],
+					[
+						"Look,",
+						true
+					],
+					[
+						"look.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"No.",
+						true
+					],
+					[
+						"No,",
+						true
+					],
+					[
+						"no,",
+						true
+					],
+					[
+						"no.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DAVID",
+				"page": "Ah come on, come on, come on, come on, come on...",
+				"screen": "Come on, come on.",
+				"pageWords": [
+					[
+						"Ah",
+						null
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"on,",
+						true
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"on,",
+						true
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"on...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Come",
+						true
+					],
+					[
+						"on,",
+						true
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"on.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

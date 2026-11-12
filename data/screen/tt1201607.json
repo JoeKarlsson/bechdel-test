@@ -1,0 +1,1031 @@
+{
+	"_id": "tt1201607",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 38,
+		"eligible": 31,
+		"rejected": {
+			"duplicate": 4,
+			"split across CDs": 1,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1954564192",
+		"versions": [
+			"1959328620",
+			"1956597133",
+			"1954564192",
+			"1958969269",
+			"1958954366",
+			"1952955426",
+			"1952955425",
+			"1952896718",
+			"1954968135"
+		],
+		"sdh": false,
+		"meanAgreement": 0.7061922631729397,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7800,
+	"quality": {
+		"anchoredShare": 0.4910372848948375
+	},
+	"words": {
+		"page": 8368,
+		"screen": 5350,
+		"kept": 4109,
+		"cut": 4259,
+		"notInScript": 1241,
+		"moved": 246
+	},
+	"lines": {
+		"page": 891,
+		"kept": 414,
+		"changed": 80,
+		"cut": 397,
+		"screen": 1045,
+		"notInScript": 226
+	},
+	"byGender": {
+		"w": {
+			"lines": 205,
+			"kept": 87,
+			"changed": 11,
+			"cut": 107
+		},
+		"m": {
+			"lines": 670,
+			"kept": 321,
+			"changed": 68,
+			"cut": 281
+		},
+		"unknown": {
+			"lines": 16,
+			"kept": 6,
+			"changed": 1,
+			"cut": 9
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 7,
+			"kept": 12
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"kept": 11,
+			"changed": 5
+		},
+		{
+			"changed": 3,
+			"kept": 5,
+			"cut": 11
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 11,
+			"kept": 8
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 5
+		},
+		{
+			"kept": 9,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 6
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 6
+		},
+		{
+			"kept": 12,
+			"cut": 6
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"cut": 6,
+			"kept": 13
+		},
+		{
+			"cut": 5,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"cut": 5,
+			"kept": 12
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 8
+		},
+		{
+			"kept": 7,
+			"cut": 12
+		},
+		{
+			"cut": 7,
+			"kept": 11
+		},
+		{
+			"cut": 7,
+			"kept": 12
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 6
+		},
+		{
+			"kept": 13,
+			"cut": 6
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 5
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"kept": 15,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 6
+		},
+		{
+			"cut": 6,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"changed": 1,
+			"kept": 11,
+			"cut": 6
+		},
+		{
+			"kept": 14,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 10,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"kept": 7,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"changed": 5,
+			"kept": 8
+		},
+		{
+			"changed": 1,
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"kept": 12,
+			"cut": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 23,
+			"notInScript": 0
+		},
+		{
+			"scripted": 209,
+			"notInScript": 29
+		},
+		{
+			"scripted": 165,
+			"notInScript": 25
+		},
+		{
+			"scripted": 195,
+			"notInScript": 8
+		},
+		{
+			"scripted": 78,
+			"notInScript": 19
+		},
+		{
+			"scripted": 106,
+			"notInScript": 10
+		},
+		{
+			"scripted": 44,
+			"notInScript": 29
+		},
+		{
+			"scripted": 56,
+			"notInScript": 13
+		},
+		{
+			"scripted": 128,
+			"notInScript": 27
+		},
+		{
+			"scripted": 116,
+			"notInScript": 21
+		},
+		{
+			"scripted": 334,
+			"notInScript": 7
+		},
+		{
+			"scripted": 242,
+			"notInScript": 1
+		},
+		{
+			"scripted": 233,
+			"notInScript": 3
+		},
+		{
+			"scripted": 117,
+			"notInScript": 24
+		},
+		{
+			"scripted": 107,
+			"notInScript": 92
+		},
+		{
+			"scripted": 203,
+			"notInScript": 17
+		},
+		{
+			"scripted": 181,
+			"notInScript": 0
+		},
+		{
+			"scripted": 137,
+			"notInScript": 3
+		},
+		{
+			"scripted": 77,
+			"notInScript": 8
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 62,
+			"notInScript": 21
+		},
+		{
+			"scripted": 82,
+			"notInScript": 3
+		},
+		{
+			"scripted": 42,
+			"notInScript": 19
+		},
+		{
+			"scripted": 75,
+			"notInScript": 16
+		},
+		{
+			"scripted": 68,
+			"notInScript": 14
+		},
+		{
+			"scripted": 106,
+			"notInScript": 5
+		},
+		{
+			"scripted": 108,
+			"notInScript": 8
+		},
+		{
+			"scripted": 5,
+			"notInScript": 12
+		},
+		{
+			"scripted": 106,
+			"notInScript": 55
+		},
+		{
+			"scripted": 239,
+			"notInScript": 44
+		},
+		{
+			"scripted": 64,
+			"notInScript": 14
+		},
+		{
+			"scripted": 72,
+			"notInScript": 4
+		},
+		{
+			"scripted": 83,
+			"notInScript": 5
+		},
+		{
+			"scripted": 23,
+			"notInScript": 7
+		},
+		{
+			"scripted": 210,
+			"notInScript": 9
+		},
+		{
+			"scripted": 157,
+			"notInScript": 18
+		},
+		{
+			"scripted": 40,
+			"notInScript": 10
+		},
+		{
+			"scripted": 114,
+			"notInScript": 10
+		},
+		{
+			"scripted": 6,
+			"notInScript": 23
+		},
+		{
+			"scripted": 55,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 47
+		},
+		{
+			"scripted": 93,
+			"notInScript": 5
+		},
+		{
+			"scripted": 20,
+			"notInScript": 13
+		},
+		{
+			"scripted": 57,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 15.6,
+		"longest": 15.6,
+		"spans": [
+			[
+				2025.9,
+				2041.5
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 20,
+				"kept": 7,
+				"changed": 0,
+				"cut": 13
+			},
+			"other": {
+				"lines": 156,
+				"kept": 60,
+				"changed": 11,
+				"cut": 85
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 531,
+				"kept": 264,
+				"changed": 61,
+				"cut": 206
+			},
+			"other": {
+				"lines": 139,
+				"kept": 57,
+				"changed": 7,
+				"cut": 75
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "BELLATRIX",
+				"text": "I’m going to ask you once again: what else did you and your friends take from my vault!"
+			},
+			{
+				"speaker": "HARRY",
+				"text": "I reckon you should take this then."
+			},
+			{
+				"speaker": "HERMIONE",
+				"text": "It doesn’t realize it’s free! Leviosa! Aviatus! Ex Cappa!"
+			},
+			{
+				"speaker": "RON",
+				"text": "You’re bloody well welcome! Prat."
+			},
+			{
+				"speaker": "SORTING HAT",
+				"text": "Don’t despair, Longbottom. I put you in Gryffindor for good reason..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 455,
+				"text": "Is it not still?"
+			},
+			{
+				"at": 1666,
+				"text": "Who gave that to you?"
+			},
+			{
+				"at": 3354,
+				"text": "Are you all right?"
+			},
+			{
+				"at": 4755,
+				"text": "Don't say a word against my father."
+			},
+			{
+				"at": 6649,
+				"text": "I couldn't find my wand."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "HARRY",
+				"page": "Then I guess I’ll just have to kill him before he finds me, sir.",
+				"screen": "Well, I suppose I'll have to kill him before he finds me, then.",
+				"pageWords": [
+					[
+						"Then",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"guess",
+						false
+					],
+					[
+						"I’ll",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"kill",
+						true
+					],
+					[
+						"him",
+						true
+					],
+					[
+						"before",
+						true
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"finds",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"sir.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"suppose",
+						false
+					],
+					[
+						"I'll",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"kill",
+						true
+					],
+					[
+						"him",
+						true
+					],
+					[
+						"before",
+						true
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"finds",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"then.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "HERMIONE",
+				"page": "That’s Ariana, isn’t it? Your sister. She’s beautiful.",
+				"screen": "That's your sister, Ariana, isn't it?",
+				"pageWords": [
+					[
+						"That’s",
+						true
+					],
+					[
+						"Ariana,",
+						true
+					],
+					[
+						"isn’t",
+						true
+					],
+					[
+						"it?",
+						true
+					],
+					[
+						"Your",
+						false
+					],
+					[
+						"sister.",
+						false
+					],
+					[
+						"She’s",
+						false
+					],
+					[
+						"beautiful.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That's",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"sister,",
+						false
+					],
+					[
+						"Ariana,",
+						true
+					],
+					[
+						"isn't",
+						true
+					],
+					[
+						"it?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HARRY",
+				"page": "I’m a bit preoccupied right now, Luna.",
+				"screen": "I'm a bit preoccupied at the moment, Luna.",
+				"pageWords": [
+					[
+						"I’m",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"bit",
+						true
+					],
+					[
+						"preoccupied",
+						true
+					],
+					[
+						"right",
+						false
+					],
+					[
+						"now,",
+						false
+					],
+					[
+						"Luna.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"bit",
+						true
+					],
+					[
+						"preoccupied",
+						true
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"moment,",
+						false
+					],
+					[
+						"Luna.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DUMBLEDORE",
+				"page": "My word that I shall never reveal the best of you, Severus? If you insist.",
+				"screen": "That I should never reveal the best of you, Severus?",
+				"pageWords": [
+					[
+						"My",
+						false
+					],
+					[
+						"word",
+						false
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"shall",
+						false
+					],
+					[
+						"never",
+						true
+					],
+					[
+						"reveal",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"best",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"you,",
+						true
+					],
+					[
+						"Severus?",
+						true
+					],
+					[
+						"If",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"insist.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"never",
+						true
+					],
+					[
+						"reveal",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"best",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"you,",
+						true
+					],
+					[
+						"Severus?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "VOLDEMORT",
+				"page": "I do not require assistance.",
+				"screen": "What should I do?",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"require",
+						false
+					],
+					[
+						"assistance.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"do?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

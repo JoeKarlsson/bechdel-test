@@ -1,0 +1,1025 @@
+{
+	"_id": "tt2872732",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 32,
+		"eligible": 22,
+		"rejected": {
+			"too few lines": 6,
+			"duplicate": 3,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1954481205",
+		"versions": [
+			"1954649179",
+			"1955726160",
+			"1954841205",
+			"1956992236",
+			"1954481205",
+			"1954481219",
+			"1954481118",
+			"1956950306",
+			"1954481218"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9866556415278862,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5340,
+	"quality": {
+		"anchoredShare": 0.3941593796403234
+	},
+	"words": {
+		"page": 6061,
+		"screen": 4837,
+		"kept": 2390,
+		"cut": 3671,
+		"notInScript": 2448,
+		"moved": 55
+	},
+	"lines": {
+		"page": 461,
+		"kept": 155,
+		"changed": 106,
+		"cut": 200,
+		"screen": 847,
+		"notInScript": 400
+	},
+	"byGender": {
+		"w": {
+			"lines": 236,
+			"kept": 76,
+			"changed": 50,
+			"cut": 110
+		},
+		"m": {
+			"lines": 125,
+			"kept": 49,
+			"changed": 31,
+			"cut": 45
+		},
+		"unknown": {
+			"lines": 100,
+			"kept": 30,
+			"changed": 25,
+			"cut": 45
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 2,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 3,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"cut": 1,
+			"kept": 8,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"cut": 5,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"kept": 6,
+			"cut": 1
+		},
+		{
+			"changed": 1,
+			"cut": 8
+		},
+		{
+			"changed": 6,
+			"kept": 3,
+			"cut": 1
+		},
+		{
+			"kept": 2,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"cut": 2,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"cut": 5,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"cut": 4,
+			"kept": 3
+		},
+		{
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 2,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 6,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"kept": 2
+		},
+		{
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"changed": 3,
+			"kept": 3,
+			"cut": 4
+		},
+		{
+			"cut": 5,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 5,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"cut": 6,
+			"kept": 2
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 1
+		},
+		{
+			"kept": 7,
+			"cut": 3
+		},
+		{
+			"cut": 9
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 1
+		},
+		{
+			"cut": 4,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"kept": 4,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"kept": 3,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 15,
+			"notInScript": 0
+		},
+		{
+			"scripted": 161,
+			"notInScript": 76
+		},
+		{
+			"scripted": 243,
+			"notInScript": 85
+		},
+		{
+			"scripted": 86,
+			"notInScript": 14
+		},
+		{
+			"scripted": 4,
+			"notInScript": 16
+		},
+		{
+			"scripted": 93,
+			"notInScript": 52
+		},
+		{
+			"scripted": 54,
+			"notInScript": 26
+		},
+		{
+			"scripted": 17,
+			"notInScript": 12
+		},
+		{
+			"scripted": 89,
+			"notInScript": 48
+		},
+		{
+			"scripted": 111,
+			"notInScript": 0
+		},
+		{
+			"scripted": 83,
+			"notInScript": 65
+		},
+		{
+			"scripted": 206,
+			"notInScript": 16
+		},
+		{
+			"scripted": 88,
+			"notInScript": 40
+		},
+		{
+			"scripted": 5,
+			"notInScript": 0
+		},
+		{
+			"scripted": 239,
+			"notInScript": 8
+		},
+		{
+			"scripted": 1,
+			"notInScript": 7
+		},
+		{
+			"scripted": 18,
+			"notInScript": 4
+		},
+		{
+			"scripted": 49,
+			"notInScript": 26
+		},
+		{
+			"scripted": 144,
+			"notInScript": 36
+		},
+		{
+			"scripted": 184,
+			"notInScript": 7
+		},
+		{
+			"scripted": 43,
+			"notInScript": 20
+		},
+		{
+			"scripted": 82,
+			"notInScript": 60
+		},
+		{
+			"scripted": 67,
+			"notInScript": 65
+		},
+		{
+			"scripted": 211,
+			"notInScript": 64
+		},
+		{
+			"scripted": 78,
+			"notInScript": 95
+		},
+		{
+			"scripted": 55,
+			"notInScript": 108
+		},
+		{
+			"scripted": 160,
+			"notInScript": 51
+		},
+		{
+			"scripted": 2,
+			"notInScript": 30
+		},
+		{
+			"scripted": 89,
+			"notInScript": 40
+		},
+		{
+			"scripted": 30,
+			"notInScript": 62
+		},
+		{
+			"scripted": 45,
+			"notInScript": 22
+		},
+		{
+			"scripted": 27,
+			"notInScript": 92
+		},
+		{
+			"scripted": 10,
+			"notInScript": 24
+		},
+		{
+			"scripted": 0,
+			"notInScript": 29
+		},
+		{
+			"scripted": 23,
+			"notInScript": 8
+		},
+		{
+			"scripted": 117,
+			"notInScript": 47
+		},
+		{
+			"scripted": 76,
+			"notInScript": 74
+		},
+		{
+			"scripted": 164,
+			"notInScript": 21
+		},
+		{
+			"scripted": 64,
+			"notInScript": 62
+		},
+		{
+			"scripted": 0,
+			"notInScript": 40
+		},
+		{
+			"scripted": 0,
+			"notInScript": 14
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 17
+		},
+		{
+			"scripted": 8,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 11.3,
+		"longest": 7.7,
+		"spans": [
+			[
+				2528.6,
+				2536.2
+			],
+			[
+				3143.7,
+				3147.3
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 33,
+				"kept": 6,
+				"changed": 6,
+				"cut": 21
+			},
+			"other": {
+				"lines": 194,
+				"kept": 61,
+				"changed": 44,
+				"cut": 89
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 11,
+				"kept": 3,
+				"changed": 0,
+				"cut": 8
+			},
+			"other": {
+				"lines": 111,
+				"kept": 46,
+				"changed": 30,
+				"cut": 35
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LUCY",
+				"text": "Look, I've got nothing to do with all this ..."
+			},
+			{
+				"speaker": "LUCY",
+				"text": "We never truly die."
+			},
+			{
+				"speaker": "CAROLINE",
+				"text": "Lucy, is this some kind of joke?"
+			},
+			{
+				"speaker": "ROBERTTHE COP",
+				"text": "First, you're gonnasee a doctor. Believe me, it'll be way better for your health."
+			},
+			{
+				"speaker": "LUCY",
+				"text": "Pass it on . Like a humble cell that would strive to keep going through time."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 343,
+				"text": "I'm here for, uh..."
+			},
+			{
+				"at": 2242,
+				"text": "I didn't realize that they'd succeeded."
+			},
+			{
+				"at": 2809,
+				"text": "The sole purpose of life has been"
+			},
+			{
+				"at": 3458,
+				"text": "To put everyone to sleep like that."
+			},
+			{
+				"at": 4231,
+				"text": "I'm afraid you won't survive."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "LUCY",
+				"page": "No, I'm just curious how much you get paid. Go on... How much?",
+				"screen": "How much do you get paid?",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"curious",
+						false
+					],
+					[
+						"how",
+						true
+					],
+					[
+						"much",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"paid.",
+						true
+					],
+					[
+						"Go",
+						false
+					],
+					[
+						"on...",
+						false
+					],
+					[
+						"How",
+						true
+					],
+					[
+						"much?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						true
+					],
+					[
+						"much",
+						true
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"paid?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LUCY",
+				"page": "What's in the case?",
+				"screen": "What's really in here?",
+				"pageWords": [
+					[
+						"What's",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"case?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What's",
+						true
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"here?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SURGEON",
+				"page": "I'm ... I'm going to have to ... reach inside.",
+				"screen": "I'm going to have to go inside.",
+				"pageWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"reach",
+						false
+					],
+					[
+						"inside.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"inside.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CAROLINE",
+				"page": "Ready for what? What truth are you talking about. Lucy,you're scaring me.",
+				"screen": "I'm sorry, I'm talking about myself.",
+				"pageWords": [
+					[
+						"Ready",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"what?",
+						false
+					],
+					[
+						"What",
+						false
+					],
+					[
+						"truth",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about.",
+						true
+					],
+					[
+						"Lucy,you're",
+						false
+					],
+					[
+						"scaring",
+						false
+					],
+					[
+						"me.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"sorry,",
+						false
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"myself.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PROFESSOR NORMAN",
+				"page": "Oh? Nice to meet you. Let me introduce my colleagues. First, Professor Cantie, a neurosurgeon who --",
+				"screen": "Let me introduce you to my colleagues.",
+				"pageWords": [
+					[
+						"Oh?",
+						false
+					],
+					[
+						"Nice",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"meet",
+						false
+					],
+					[
+						"you.",
+						false
+					],
+					[
+						"Let",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"introduce",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"colleagues.",
+						true
+					],
+					[
+						"First,",
+						false
+					],
+					[
+						"Professor",
+						false
+					],
+					[
+						"Cantie,",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"neurosurgeon",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"--",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"Let",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"introduce",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"colleagues.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

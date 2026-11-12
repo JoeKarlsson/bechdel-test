@@ -1,0 +1,993 @@
+{
+	"_id": "tt0123964",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 10,
+		"eligible": 4,
+		"rejected": {
+			"duplicate": 3,
+			"split across CDs": 3
+		},
+		"used": 4,
+		"primary": "1952134564",
+		"versions": [
+			"1951860734",
+			"1952134564",
+			"1953795161",
+			"1959357629"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9266767129781878,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6480,
+	"quality": {
+		"anchoredShare": 0.35493431592438324
+	},
+	"words": {
+		"page": 12484,
+		"screen": 11131,
+		"kept": 4429,
+		"cut": 8055,
+		"notInScript": 6700,
+		"moved": 132
+	},
+	"lines": {
+		"page": 1014,
+		"kept": 286,
+		"changed": 286,
+		"cut": 442,
+		"screen": 1930,
+		"notInScript": 1028
+	},
+	"byGender": {
+		"w": {
+			"lines": 49,
+			"kept": 14,
+			"changed": 9,
+			"cut": 26
+		},
+		"m": {
+			"lines": 940,
+			"kept": 265,
+			"changed": 274,
+			"cut": 401
+		},
+		"unknown": {
+			"lines": 25,
+			"kept": 7,
+			"changed": 3,
+			"cut": 15
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 5,
+			"kept": 8,
+			"changed": 9
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"changed": 7,
+			"cut": 1
+		},
+		{
+			"cut": 13,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"changed": 8,
+			"kept": 4
+		},
+		{
+			"changed": 10,
+			"cut": 8,
+			"kept": 3
+		},
+		{
+			"cut": 7,
+			"changed": 9,
+			"kept": 5
+		},
+		{
+			"changed": 5,
+			"cut": 12,
+			"kept": 4
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 11,
+			"cut": 5,
+			"changed": 5
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 9
+		},
+		{
+			"kept": 8,
+			"cut": 9,
+			"changed": 4
+		},
+		{
+			"changed": 12,
+			"kept": 5,
+			"cut": 4
+		},
+		{
+			"kept": 14,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"cut": 14,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"cut": 10,
+			"changed": 10,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"cut": 7,
+			"kept": 6,
+			"changed": 8
+		},
+		{
+			"cut": 21
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 6
+		},
+		{
+			"kept": 9,
+			"cut": 5,
+			"changed": 7
+		},
+		{
+			"changed": 7,
+			"kept": 8,
+			"cut": 7
+		},
+		{
+			"changed": 10,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 21
+		},
+		{
+			"cut": 17,
+			"changed": 4
+		},
+		{
+			"kept": 5,
+			"changed": 10,
+			"cut": 6
+		},
+		{
+			"kept": 12,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"changed": 10,
+			"kept": 8
+		},
+		{
+			"cut": 12,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"cut": 11,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"kept": 9,
+			"changed": 9,
+			"cut": 3
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 10
+		},
+		{
+			"cut": 10,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"kept": 9,
+			"changed": 8,
+			"cut": 4
+		},
+		{
+			"changed": 6,
+			"kept": 10,
+			"cut": 5
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"changed": 9,
+			"kept": 5,
+			"cut": 7
+		},
+		{
+			"cut": 6,
+			"changed": 9,
+			"kept": 6
+		},
+		{
+			"cut": 13,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"changed": 8,
+			"cut": 9
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"cut": 16,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 189,
+			"notInScript": 84
+		},
+		{
+			"scripted": 160,
+			"notInScript": 65
+		},
+		{
+			"scripted": 197,
+			"notInScript": 94
+		},
+		{
+			"scripted": 194,
+			"notInScript": 127
+		},
+		{
+			"scripted": 236,
+			"notInScript": 127
+		},
+		{
+			"scripted": 129,
+			"notInScript": 180
+		},
+		{
+			"scripted": 198,
+			"notInScript": 88
+		},
+		{
+			"scripted": 84,
+			"notInScript": 95
+		},
+		{
+			"scripted": 69,
+			"notInScript": 66
+		},
+		{
+			"scripted": 138,
+			"notInScript": 176
+		},
+		{
+			"scripted": 130,
+			"notInScript": 192
+		},
+		{
+			"scripted": 176,
+			"notInScript": 140
+		},
+		{
+			"scripted": 202,
+			"notInScript": 69
+		},
+		{
+			"scripted": 159,
+			"notInScript": 69
+		},
+		{
+			"scripted": 214,
+			"notInScript": 88
+		},
+		{
+			"scripted": 161,
+			"notInScript": 106
+		},
+		{
+			"scripted": 107,
+			"notInScript": 307
+		},
+		{
+			"scripted": 96,
+			"notInScript": 37
+		},
+		{
+			"scripted": 150,
+			"notInScript": 83
+		},
+		{
+			"scripted": 199,
+			"notInScript": 121
+		},
+		{
+			"scripted": 150,
+			"notInScript": 119
+		},
+		{
+			"scripted": 232,
+			"notInScript": 122
+		},
+		{
+			"scripted": 56,
+			"notInScript": 146
+		},
+		{
+			"scripted": 93,
+			"notInScript": 86
+		},
+		{
+			"scripted": 177,
+			"notInScript": 93
+		},
+		{
+			"scripted": 135,
+			"notInScript": 91
+		},
+		{
+			"scripted": 130,
+			"notInScript": 151
+		},
+		{
+			"scripted": 92,
+			"notInScript": 92
+		},
+		{
+			"scripted": 72,
+			"notInScript": 166
+		},
+		{
+			"scripted": 65,
+			"notInScript": 33
+		},
+		{
+			"scripted": 159,
+			"notInScript": 66
+		},
+		{
+			"scripted": 168,
+			"notInScript": 76
+		},
+		{
+			"scripted": 45,
+			"notInScript": 51
+		},
+		{
+			"scripted": 180,
+			"notInScript": 121
+		},
+		{
+			"scripted": 164,
+			"notInScript": 71
+		},
+		{
+			"scripted": 123,
+			"notInScript": 179
+		},
+		{
+			"scripted": 57,
+			"notInScript": 109
+		},
+		{
+			"scripted": 115,
+			"notInScript": 78
+		},
+		{
+			"scripted": 188,
+			"notInScript": 89
+		},
+		{
+			"scripted": 187,
+			"notInScript": 97
+		},
+		{
+			"scripted": 137,
+			"notInScript": 241
+		},
+		{
+			"scripted": 99,
+			"notInScript": 148
+		},
+		{
+			"scripted": 79,
+			"notInScript": 188
+		},
+		{
+			"scripted": 20,
+			"notInScript": 93
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 0,
+				"changed": 1,
+				"cut": 1
+			},
+			"other": {
+				"lines": 38,
+				"kept": 11,
+				"changed": 7,
+				"cut": 20
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 790,
+				"kept": 218,
+				"changed": 233,
+				"cut": 339
+			},
+			"other": {
+				"lines": 92,
+				"kept": 26,
+				"changed": 25,
+				"cut": 41
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "CLAUDE",
+				"text": "Any fool could see those are whites- only, not-for-blacks, come-on-let's- get-the-fuck-outta-here pies. Thank you very much."
+			},
+			{
+				"speaker": "BISCUIT",
+				"text": "Shame, shame, that's your name."
+			},
+			{
+				"speaker": "WILLIE",
+				"text": "I got a crispy new dollar bill says both of them gonna make it."
+			},
+			{
+				"speaker": "CLAUDE",
+				"text": "You never said nothing of value anyway."
+			},
+			{
+				"speaker": "CLAUDE",
+				"text": "Damn fool gonna set this place on fire one of these days."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 862,
+				"text": "That sign on the door...."
+			},
+			{
+				"at": 1918,
+				"text": "'Course, I was wrong about that."
+			},
+			{
+				"at": 3067,
+				"text": "Was I part of that?"
+			},
+			{
+				"at": 4344,
+				"text": "I ain't goin' out like that!"
+			},
+			{
+				"at": 5635,
+				"text": "I don't want no Jell-O."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "RAY",
+				"page": "You? Dine and ditch, right? Over ten bucks? You're probably looking at a thumb.",
+				"screen": "What'd you do, dine and ditch? Over ten bucks?",
+				"pageWords": [
+					[
+						"You?",
+						false
+					],
+					[
+						"Dine",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"ditch,",
+						true
+					],
+					[
+						"right?",
+						false
+					],
+					[
+						"Over",
+						true
+					],
+					[
+						"ten",
+						true
+					],
+					[
+						"bucks?",
+						true
+					],
+					[
+						"You're",
+						false
+					],
+					[
+						"probably",
+						false
+					],
+					[
+						"looking",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"thumb.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What'd",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"do,",
+						false
+					],
+					[
+						"dine",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"ditch?",
+						true
+					],
+					[
+						"Over",
+						true
+					],
+					[
+						"ten",
+						true
+					],
+					[
+						"bucks?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HOPPIN' BOB",
+				"page": "Listen up, jiggaboo! State of Mississippi ain't interested in your... in your... metropolitan assets!",
+				"screen": "Listen up, jigaboo! The state of Mississippi ain't interested in your your \"metacalogical\" assessments!",
+				"pageWords": [
+					[
+						"Listen",
+						true
+					],
+					[
+						"up,",
+						true
+					],
+					[
+						"jiggaboo!",
+						false
+					],
+					[
+						"State",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Mississippi",
+						true
+					],
+					[
+						"ain't",
+						true
+					],
+					[
+						"interested",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"your...",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"your...",
+						false
+					],
+					[
+						"metropolitan",
+						false
+					],
+					[
+						"assets!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Listen",
+						true
+					],
+					[
+						"up,",
+						true
+					],
+					[
+						"jigaboo!",
+						false
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"state",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Mississippi",
+						true
+					],
+					[
+						"ain't",
+						true
+					],
+					[
+						"interested",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"\"metacalogical\"",
+						false
+					],
+					[
+						"assessments!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "COOKIE",
+				"page": "How about some steak sauce?",
+				"screen": "You got some steak sauce?",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"steak",
+						true
+					],
+					[
+						"sauce?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"got",
+						false
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"steak",
+						true
+					],
+					[
+						"sauce?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ABERNATHY",
+				"page": "Well, then, who is it?",
+				"screen": "Well, who is it?",
+				"pageWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"then,",
+						false
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"it?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"it?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PIKE",
+				"page": "He's crazy. Don't listen to him, Wilkins.",
+				"screen": "Don't listen to him.",
+				"pageWords": [
+					[
+						"He's",
+						false
+					],
+					[
+						"crazy.",
+						false
+					],
+					[
+						"Don't",
+						true
+					],
+					[
+						"listen",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"him,",
+						true
+					],
+					[
+						"Wilkins.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Don't",
+						true
+					],
+					[
+						"listen",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"him.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

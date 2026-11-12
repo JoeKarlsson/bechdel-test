@@ -1,0 +1,878 @@
+{
+	"_id": "tt2883512",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 20,
+		"eligible": 16,
+		"rejected": {
+			"duplicate": 4
+		},
+		"used": 9,
+		"primary": "1954454095",
+		"versions": [
+			"1954390352",
+			"1954390354",
+			"1956989776",
+			"1959430791",
+			"1958159297",
+			"1957576100",
+			"1954397195",
+			"1954454095",
+			"1954573428"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9738757264519052,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6840,
+	"quality": {
+		"anchoredShare": 0.2831674505085858
+	},
+	"words": {
+		"page": 9143,
+		"screen": 14875,
+		"kept": 2589,
+		"cut": 6554,
+		"notInScript": 12286,
+		"moved": 114
+	},
+	"lines": {
+		"page": 1019,
+		"kept": 263,
+		"changed": 222,
+		"cut": 534,
+		"screen": 3110,
+		"notInScript": 2469
+	},
+	"byGender": {
+		"w": {
+			"lines": 194,
+			"kept": 47,
+			"changed": 37,
+			"cut": 110
+		},
+		"m": {
+			"lines": 815,
+			"kept": 216,
+			"changed": 184,
+			"cut": 415
+		},
+		"unknown": {
+			"lines": 10,
+			"kept": 0,
+			"changed": 1,
+			"cut": 9
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 14,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"cut": 11,
+			"kept": 5,
+			"changed": 5
+		},
+		{
+			"cut": 11,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 6
+		},
+		{
+			"changed": 4,
+			"cut": 18
+		},
+		{
+			"kept": 5,
+			"changed": 6,
+			"cut": 10
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 16,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"cut": 16,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"changed": 8,
+			"cut": 9,
+			"kept": 4
+		},
+		{
+			"changed": 6,
+			"kept": 9,
+			"cut": 6
+		},
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"kept": 9,
+			"cut": 7,
+			"changed": 5
+		},
+		{
+			"kept": 16,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"changed": 3,
+			"cut": 4,
+			"kept": 14
+		},
+		{
+			"kept": 9,
+			"cut": 8,
+			"changed": 4
+		},
+		{
+			"kept": 6,
+			"changed": 1,
+			"cut": 14
+		},
+		{
+			"cut": 21,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 11,
+			"changed": 9,
+			"kept": 1
+		},
+		{
+			"changed": 10,
+			"cut": 7,
+			"kept": 4
+		},
+		{
+			"changed": 10,
+			"kept": 2,
+			"cut": 10
+		},
+		{
+			"changed": 3,
+			"cut": 12,
+			"kept": 6
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 5
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 6
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 11
+		},
+		{
+			"cut": 19,
+			"changed": 3
+		},
+		{
+			"cut": 18,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 15,
+			"changed": 2
+		},
+		{
+			"cut": 19,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"kept": 11,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 5
+		},
+		{
+			"changed": 4,
+			"cut": 17
+		},
+		{
+			"cut": 13,
+			"changed": 8,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 6,
+			"changed": 8
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 5
+		},
+		{
+			"changed": 8,
+			"cut": 4,
+			"kept": 9
+		},
+		{
+			"changed": 4,
+			"cut": 9,
+			"kept": 8
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 10
+		},
+		{
+			"kept": 9,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"changed": 6,
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"changed": 4,
+			"cut": 10,
+			"kept": 7
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 7
+		},
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 15
+		},
+		{
+			"kept": 9,
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"cut": 10,
+			"changed": 10,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 62,
+			"notInScript": 90
+		},
+		{
+			"scripted": 225,
+			"notInScript": 303
+		},
+		{
+			"scripted": 178,
+			"notInScript": 323
+		},
+		{
+			"scripted": 118,
+			"notInScript": 326
+		},
+		{
+			"scripted": 19,
+			"notInScript": 294
+		},
+		{
+			"scripted": 59,
+			"notInScript": 304
+		},
+		{
+			"scripted": 52,
+			"notInScript": 158
+		},
+		{
+			"scripted": 75,
+			"notInScript": 188
+		},
+		{
+			"scripted": 102,
+			"notInScript": 164
+		},
+		{
+			"scripted": 235,
+			"notInScript": 118
+		},
+		{
+			"scripted": 36,
+			"notInScript": 4
+		},
+		{
+			"scripted": 279,
+			"notInScript": 198
+		},
+		{
+			"scripted": 289,
+			"notInScript": 308
+		},
+		{
+			"scripted": 94,
+			"notInScript": 277
+		},
+		{
+			"scripted": 58,
+			"notInScript": 150
+		},
+		{
+			"scripted": 40,
+			"notInScript": 112
+		},
+		{
+			"scripted": 204,
+			"notInScript": 241
+		},
+		{
+			"scripted": 232,
+			"notInScript": 197
+		},
+		{
+			"scripted": 34,
+			"notInScript": 526
+		},
+		{
+			"scripted": 50,
+			"notInScript": 306
+		},
+		{
+			"scripted": 142,
+			"notInScript": 202
+		},
+		{
+			"scripted": 91,
+			"notInScript": 78
+		},
+		{
+			"scripted": 63,
+			"notInScript": 211
+		},
+		{
+			"scripted": 26,
+			"notInScript": 437
+		},
+		{
+			"scripted": 87,
+			"notInScript": 336
+		},
+		{
+			"scripted": 105,
+			"notInScript": 305
+		},
+		{
+			"scripted": 24,
+			"notInScript": 235
+		},
+		{
+			"scripted": 90,
+			"notInScript": 313
+		},
+		{
+			"scripted": 91,
+			"notInScript": 277
+		},
+		{
+			"scripted": 52,
+			"notInScript": 334
+		},
+		{
+			"scripted": 106,
+			"notInScript": 273
+		},
+		{
+			"scripted": 181,
+			"notInScript": 266
+		},
+		{
+			"scripted": 27,
+			"notInScript": 198
+		},
+		{
+			"scripted": 37,
+			"notInScript": 368
+		},
+		{
+			"scripted": 46,
+			"notInScript": 211
+		},
+		{
+			"scripted": 37,
+			"notInScript": 211
+		},
+		{
+			"scripted": 39,
+			"notInScript": 380
+		},
+		{
+			"scripted": 0,
+			"notInScript": 245
+		},
+		{
+			"scripted": 79,
+			"notInScript": 296
+		},
+		{
+			"scripted": 53,
+			"notInScript": 318
+		},
+		{
+			"scripted": 0,
+			"notInScript": 137
+		},
+		{
+			"scripted": 19,
+			"notInScript": 139
+		},
+		{
+			"scripted": 193,
+			"notInScript": 206
+		},
+		{
+			"scripted": 13,
+			"notInScript": 59
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 211
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 192,
+				"kept": 47,
+				"changed": 36,
+				"cut": 109
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 567,
+				"kept": 170,
+				"changed": 130,
+				"cut": 267
+			},
+			"other": {
+				"lines": 215,
+				"kept": 46,
+				"changed": 40,
+				"cut": 129
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PERCY",
+				"text": "Which was to change the menu. Right?"
+			},
+			{
+				"speaker": "CARL",
+				"text": "How does Twitter work?"
+			},
+			{
+				"speaker": "JEN",
+				"text": "Because there’s so much footage it’s become a hot story. And it’s of you threatening someone."
+			},
+			{
+				"speaker": "CARL",
+				"text": "You don’t plan enough parties to keep me in business. I don’t have any money saved."
+			},
+			{
+				"speaker": "MARTIN",
+				"text": "Now that’s your son, Jefe."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 613,
+				"text": "It's a natural fact"
+			},
+			{
+				"at": 2289,
+				"text": "I am not cloying."
+			},
+			{
+				"at": 3394,
+				"text": "You know, you're not a loser, but you have lost, OK?"
+			},
+			{
+				"at": 4404,
+				"text": "I might not do everything great in my life, OK?"
+			},
+			{
+				"at": 5508,
+				"text": "I got po' boy right here."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "PERCY",
+				"page": "Can I get a funnel cake?",
+				"screen": "Where'd you get a phone?",
+				"pageWords": [
+					[
+						"Can",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"funnel",
+						false
+					],
+					[
+						"cake?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Where'd",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"phone?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CARL",
+				"page": "We do lots of things.",
+				"screen": "Well, we do things.",
+				"pageWords": [
+					[
+						"We",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"lots",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"things.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"things.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "RIVA",
+				"page": "Unfortunately Chef was called away.",
+				"screen": "Unfortunately, he was called away.",
+				"pageWords": [
+					[
+						"Unfortunately",
+						false
+					],
+					[
+						"Chef",
+						false
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"called",
+						true
+					],
+					[
+						"away.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Unfortunately,",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"called",
+						true
+					],
+					[
+						"away.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "INEZ",
+				"page": "What did the tests say?",
+				"screen": "What did he say?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"tests",
+						false
+					],
+					[
+						"say?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"say?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CARL",
+				"page": "I think they like the food.",
+				"screen": "I think I missed the exit.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"food.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"missed",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"exit.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

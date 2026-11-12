@@ -1,0 +1,998 @@
+{
+	"_id": "tt0116705",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 18,
+		"eligible": 14,
+		"rejected": {
+			"duplicate": 3,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1954036864",
+		"versions": [
+			"1954036864",
+			"1953021234",
+			"1951990293",
+			"1952893490",
+			"1958384727",
+			"1958599400",
+			"1955350508",
+			"1955052055",
+			"1957240828"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9053229537930054,
+		"lyricsDropped": 154
+	},
+	"runtimeSeconds": 5340,
+	"quality": {
+		"anchoredShare": 0.15892494929006085
+	},
+	"words": {
+		"page": 9860,
+		"screen": 7721,
+		"kept": 1563,
+		"cut": 8297,
+		"notInScript": 6154,
+		"moved": 128
+	},
+	"lines": {
+		"page": 691,
+		"kept": 70,
+		"changed": 108,
+		"cut": 513,
+		"screen": 1570,
+		"notInScript": 1238
+	},
+	"byGender": {
+		"w": {
+			"lines": 114,
+			"kept": 6,
+			"changed": 12,
+			"cut": 96
+		},
+		"m": {
+			"lines": 466,
+			"kept": 46,
+			"changed": 74,
+			"cut": 346
+		},
+		"unknown": {
+			"lines": 111,
+			"kept": 18,
+			"changed": 22,
+			"cut": 71
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 15
+		},
+		{
+			"cut": 10,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"cut": 13
+		},
+		{
+			"cut": 9,
+			"changed": 5
+		},
+		{
+			"cut": 5,
+			"changed": 7,
+			"kept": 3
+		},
+		{
+			"changed": 2,
+			"kept": 4,
+			"cut": 8
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 9,
+			"kept": 2
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 1,
+			"kept": 1,
+			"cut": 13
+		},
+		{
+			"cut": 14
+		},
+		{
+			"changed": 2,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"kept": 5,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"kept": 1,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"kept": 1,
+			"cut": 9
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 9
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 2,
+			"cut": 8,
+			"changed": 5
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 6,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"changed": 2,
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"changed": 6,
+			"cut": 8
+		},
+		{
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 37
+		},
+		{
+			"scripted": 0,
+			"notInScript": 160
+		},
+		{
+			"scripted": 63,
+			"notInScript": 83
+		},
+		{
+			"scripted": 5,
+			"notInScript": 105
+		},
+		{
+			"scripted": 49,
+			"notInScript": 101
+		},
+		{
+			"scripted": 84,
+			"notInScript": 73
+		},
+		{
+			"scripted": 178,
+			"notInScript": 64
+		},
+		{
+			"scripted": 48,
+			"notInScript": 191
+		},
+		{
+			"scripted": 113,
+			"notInScript": 93
+		},
+		{
+			"scripted": 39,
+			"notInScript": 341
+		},
+		{
+			"scripted": 74,
+			"notInScript": 112
+		},
+		{
+			"scripted": 23,
+			"notInScript": 107
+		},
+		{
+			"scripted": 2,
+			"notInScript": 22
+		},
+		{
+			"scripted": 123,
+			"notInScript": 152
+		},
+		{
+			"scripted": 25,
+			"notInScript": 235
+		},
+		{
+			"scripted": 126,
+			"notInScript": 35
+		},
+		{
+			"scripted": 0,
+			"notInScript": 62
+		},
+		{
+			"scripted": 61,
+			"notInScript": 96
+		},
+		{
+			"scripted": 78,
+			"notInScript": 170
+		},
+		{
+			"scripted": 55,
+			"notInScript": 92
+		},
+		{
+			"scripted": 13,
+			"notInScript": 120
+		},
+		{
+			"scripted": 7,
+			"notInScript": 77
+		},
+		{
+			"scripted": 14,
+			"notInScript": 118
+		},
+		{
+			"scripted": 87,
+			"notInScript": 101
+		},
+		{
+			"scripted": 139,
+			"notInScript": 42
+		},
+		{
+			"scripted": 63,
+			"notInScript": 220
+		},
+		{
+			"scripted": 28,
+			"notInScript": 196
+		},
+		{
+			"scripted": 16,
+			"notInScript": 212
+		},
+		{
+			"scripted": 66,
+			"notInScript": 259
+		},
+		{
+			"scripted": 42,
+			"notInScript": 132
+		},
+		{
+			"scripted": 38,
+			"notInScript": 73
+		},
+		{
+			"scripted": 61,
+			"notInScript": 55
+		},
+		{
+			"scripted": 15,
+			"notInScript": 14
+		},
+		{
+			"scripted": 102,
+			"notInScript": 113
+		},
+		{
+			"scripted": 35,
+			"notInScript": 39
+		},
+		{
+			"scripted": 26,
+			"notInScript": 144
+		},
+		{
+			"scripted": 24,
+			"notInScript": 111
+		},
+		{
+			"scripted": 91,
+			"notInScript": 206
+		},
+		{
+			"scripted": 40,
+			"notInScript": 36
+		},
+		{
+			"scripted": 15,
+			"notInScript": 105
+		},
+		{
+			"scripted": 42,
+			"notInScript": 116
+		},
+		{
+			"scripted": 16,
+			"notInScript": 175
+		},
+		{
+			"scripted": 14,
+			"notInScript": 60
+		},
+		{
+			"scripted": 8,
+			"notInScript": 56
+		},
+		{
+			"scripted": 98,
+			"notInScript": 78
+		},
+		{
+			"scripted": 20,
+			"notInScript": 207
+		},
+		{
+			"scripted": 0,
+			"notInScript": 58
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 5,
+				"kept": 0,
+				"changed": 0,
+				"cut": 5
+			},
+			"other": {
+				"lines": 103,
+				"kept": 6,
+				"changed": 11,
+				"cut": 86
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 321,
+				"kept": 39,
+				"changed": 53,
+				"cut": 229
+			},
+			"other": {
+				"lines": 133,
+				"kept": 6,
+				"changed": 18,
+				"cut": 109
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LIZ",
+				"text": "Jamie, move back. You'll ruin your eyes."
+			},
+			{
+				"speaker": "SHORT LADY",
+				"text": "You• re disg11sting. I 'm go·ing to call security! ."
+			},
+			{
+				"speaker": "MALL SANTA",
+				"text": "TUrn right at the wino over there."
+			},
+			{
+				"speaker": "JAMIE",
+				"text": "come on. Let's go."
+			},
+			{
+				"speaker": "BOWARD",
+				"text": "· Jamie?! Jamie is stunned. His mouth drops."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 561,
+				"text": "Battle evil with America's favorite superhero... and his sidekick Booster."
+			},
+			{
+				"at": 1574,
+				"text": "I got caught up in the friendly spirit of competition."
+			},
+			{
+				"at": 2802,
+				"text": "And the roof didn't sit quite straight... but you should have seen his face light up."
+			},
+			{
+				"at": 3287,
+				"text": "You, too, Barnaby Jones."
+			},
+			{
+				"at": 4645,
+				"text": "I'm sorry I hollered."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "HOWARD",
+				"page": "Jamie? Can I come in? No answer. Howard opens the door.",
+				"screen": "Jamie. Can I come in?",
+				"pageWords": [
+					[
+						"Jamie?",
+						true
+					],
+					[
+						"Can",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"in?",
+						true
+					],
+					[
+						"No",
+						false
+					],
+					[
+						"answer.",
+						false
+					],
+					[
+						"Howard",
+						false
+					],
+					[
+						"opens",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"door.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Jamie.",
+						true
+					],
+					[
+						"Can",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"in?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LOST SHOPPER",
+				"page": "Wow. That's so nice. I love this time of year.",
+				"screen": "Oh, I love this time of year.",
+				"pageWords": [
+					[
+						"Wow.",
+						false
+					],
+					[
+						"That's",
+						false
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"nice.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"time",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"year.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"time",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"year.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HOWARD",
+				"page": "Oh geez. I didn't mean to",
+				"screen": "Look, I didn't mean—",
+				"pageWords": [
+					[
+						"Oh",
+						false
+					],
+					[
+						"geez.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"mean",
+						true
+					],
+					[
+						"to",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Look,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"mean—",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GALE",
+				"page": "well everybody, looks like it's that time of year again! The annual •Lights Before Christmas Parade• 1",
+				"screen": "Well, it looks like it's that time of year again— the 12th annual Holiday Wintertainment Parade.",
+				"pageWords": [
+					[
+						"well",
+						false
+					],
+					[
+						"everybody,",
+						false
+					],
+					[
+						"looks",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"time",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"year",
+						true
+					],
+					[
+						"again!",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"annual",
+						false
+					],
+					[
+						"•Lights",
+						false
+					],
+					[
+						"Before",
+						false
+					],
+					[
+						"Christmas",
+						false
+					],
+					[
+						"Parade•",
+						false
+					],
+					[
+						"1",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"looks",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"time",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"year",
+						true
+					],
+					[
+						"again—",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"12th",
+						false
+					],
+					[
+						"annual",
+						false
+					],
+					[
+						"Holiday",
+						false
+					],
+					[
+						"Wintertainment",
+						false
+					],
+					[
+						"Parade.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JAMIE",
+				"page": "Quick, Tai -- use your Turbo-rang!\"",
+				"screen": "Use your turbo discs!",
+				"pageWords": [
+					[
+						"Quick,",
+						false
+					],
+					[
+						"Tai",
+						false
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"use",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"Turbo-rang!\"",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Use",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"turbo",
+						true
+					],
+					[
+						"discs!",
+						false
+					]
+				]
+			}
+		]
+	}
+}

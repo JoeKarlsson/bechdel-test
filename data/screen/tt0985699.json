@@ -1,0 +1,953 @@
+{
+	"_id": "tt0985699",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 47,
+		"eligible": 33,
+		"rejected": {
+			"split across CDs": 6,
+			"duplicate": 7,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1952119683",
+		"versions": [
+			"1952145200",
+			"1952136424",
+			"1952167604",
+			"1952070033",
+			"1952839423",
+			"1953098326",
+			"1952120670",
+			"1952119683",
+			"1952188772"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8298635962344331,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7260,
+	"quality": {
+		"anchoredShare": 0.39946653118252257
+	},
+	"words": {
+		"page": 7873,
+		"screen": 7300,
+		"kept": 3145,
+		"cut": 4728,
+		"notInScript": 4155,
+		"moved": 425
+	},
+	"lines": {
+		"page": 673,
+		"kept": 238,
+		"changed": 105,
+		"cut": 330,
+		"screen": 1163,
+		"notInScript": 611
+	},
+	"byGender": {
+		"w": {
+			"lines": 13,
+			"kept": 1,
+			"changed": 1,
+			"cut": 11
+		},
+		"m": {
+			"lines": 614,
+			"kept": 230,
+			"changed": 103,
+			"cut": 281
+		},
+		"unknown": {
+			"lines": 46,
+			"kept": 7,
+			"changed": 1,
+			"cut": 38
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"changed": 1,
+			"kept": 7
+		},
+		{
+			"cut": 5,
+			"kept": 8,
+			"changed": 1
+		},
+		{
+			"changed": 1,
+			"cut": 6,
+			"kept": 7
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"cut": 9,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"cut": 5,
+			"kept": 6
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 10,
+			"cut": 1,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 6
+		},
+		{
+			"kept": 7,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 4
+		},
+		{
+			"cut": 6,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"cut": 6,
+			"kept": 6
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 10
+		},
+		{
+			"kept": 5,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 9
+		},
+		{
+			"changed": 3,
+			"cut": 5,
+			"kept": 6
+		},
+		{
+			"kept": 6,
+			"cut": 8
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"changed": 3,
+			"cut": 6,
+			"kept": 5
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"cut": 3,
+			"kept": 8,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"changed": 5,
+			"kept": 7,
+			"cut": 2
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 6,
+			"kept": 4,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"kept": 3,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 9,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 66
+		},
+		{
+			"scripted": 5,
+			"notInScript": 241
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 15,
+			"notInScript": 14
+		},
+		{
+			"scripted": 138,
+			"notInScript": 47
+		},
+		{
+			"scripted": 113,
+			"notInScript": 12
+		},
+		{
+			"scripted": 34,
+			"notInScript": 80
+		},
+		{
+			"scripted": 105,
+			"notInScript": 229
+		},
+		{
+			"scripted": 34,
+			"notInScript": 61
+		},
+		{
+			"scripted": 191,
+			"notInScript": 73
+		},
+		{
+			"scripted": 177,
+			"notInScript": 57
+		},
+		{
+			"scripted": 173,
+			"notInScript": 7
+		},
+		{
+			"scripted": 245,
+			"notInScript": 90
+		},
+		{
+			"scripted": 196,
+			"notInScript": 106
+		},
+		{
+			"scripted": 83,
+			"notInScript": 39
+		},
+		{
+			"scripted": 103,
+			"notInScript": 37
+		},
+		{
+			"scripted": 95,
+			"notInScript": 83
+		},
+		{
+			"scripted": 216,
+			"notInScript": 45
+		},
+		{
+			"scripted": 139,
+			"notInScript": 63
+		},
+		{
+			"scripted": 29,
+			"notInScript": 30
+		},
+		{
+			"scripted": 9,
+			"notInScript": 8
+		},
+		{
+			"scripted": 8,
+			"notInScript": 25
+		},
+		{
+			"scripted": 39,
+			"notInScript": 127
+		},
+		{
+			"scripted": 259,
+			"notInScript": 83
+		},
+		{
+			"scripted": 63,
+			"notInScript": 33
+		},
+		{
+			"scripted": 88,
+			"notInScript": 51
+		},
+		{
+			"scripted": 62,
+			"notInScript": 21
+		},
+		{
+			"scripted": 55,
+			"notInScript": 254
+		},
+		{
+			"scripted": 78,
+			"notInScript": 61
+		},
+		{
+			"scripted": 143,
+			"notInScript": 74
+		},
+		{
+			"scripted": 7,
+			"notInScript": 25
+		},
+		{
+			"scripted": 181,
+			"notInScript": 31
+		},
+		{
+			"scripted": 69,
+			"notInScript": 14
+		},
+		{
+			"scripted": 186,
+			"notInScript": 87
+		},
+		{
+			"scripted": 30,
+			"notInScript": 150
+		},
+		{
+			"scripted": 41,
+			"notInScript": 257
+		},
+		{
+			"scripted": 75,
+			"notInScript": 101
+		},
+		{
+			"scripted": 94,
+			"notInScript": 45
+		},
+		{
+			"scripted": 91,
+			"notInScript": 202
+		},
+		{
+			"scripted": 0,
+			"notInScript": 214
+		},
+		{
+			"scripted": 2,
+			"notInScript": 37
+		},
+		{
+			"scripted": 123,
+			"notInScript": 50
+		},
+		{
+			"scripted": 75,
+			"notInScript": 54
+		},
+		{
+			"scripted": 0,
+			"notInScript": 47
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 13,
+				"kept": 1,
+				"changed": 1,
+				"cut": 11
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 524,
+				"kept": 206,
+				"changed": 88,
+				"cut": 230
+			},
+			"other": {
+				"lines": 79,
+				"kept": 23,
+				"changed": 14,
+				"cut": 42
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "OLBRICHT",
+				"text": "If we win, it will still be Hitler's Germany."
+			},
+			{
+				"speaker": "FROMM",
+				"text": "Well, Olbricht? Speak up."
+			},
+			{
+				"speaker": "NINA",
+				"text": "Have you heard a word I said?"
+			},
+			{
+				"speaker": "STAUFFENBERG",
+				"text": "No room for error this time. Assume I have ten minutes in this heat."
+			},
+			{
+				"speaker": "REMER",
+				"text": "It just all seems very... vague, sir. Protocol dictates we should receive orders in writing-"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 936,
+				"text": "When you're ready, sir."
+			},
+			{
+				"at": 1995,
+				"text": "That's why I'm putting you in charge of the military wing of the operation."
+			},
+			{
+				"at": 4118,
+				"text": "Lack of supplies is continuing to weaken our main units, and reserves are severely depleted."
+			},
+			{
+				"at": 5338,
+				"text": "You'll have no trouble getting reinforcements."
+			},
+			{
+				"at": 5903,
+				"text": "...to the people a hundred times over."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BERTHOLD",
+				"page": "Then give them one. Find a way.",
+				"screen": "Then find a way.",
+				"pageWords": [
+					[
+						"Then",
+						false
+					],
+					[
+						"give",
+						false
+					],
+					[
+						"them",
+						false
+					],
+					[
+						"one.",
+						false
+					],
+					[
+						"Find",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"way.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Then",
+						false
+					],
+					[
+						"find",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"way.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "STAUFFENBERG",
+				"page": "Mein Führer, if I may... The situation in Normandy is-",
+				"screen": "My Führer, if I may.",
+				"pageWords": [
+					[
+						"Mein",
+						false
+					],
+					[
+						"Führer,",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"may...",
+						true
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"situation",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"Normandy",
+						false
+					],
+					[
+						"is-",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"My",
+						false
+					],
+					[
+						"Führer,",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"may.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "STAUFFENBERG",
+				"page": "I can manage, thank you.",
+				"screen": "I can manage this.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"manage,",
+						true
+					],
+					[
+						"thank",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"manage",
+						true
+					],
+					[
+						"this.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "FROMM",
+				"page": "What's going on up there? The most incredible rumors are circulating in Berlin.",
+				"screen": "The most incredible rumors are circulating in Berlin.",
+				"pageWords": [
+					[
+						"What's",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"there?",
+						false
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"most",
+						true
+					],
+					[
+						"incredible",
+						true
+					],
+					[
+						"rumors",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"circulating",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"Berlin.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"most",
+						true
+					],
+					[
+						"incredible",
+						true
+					],
+					[
+						"rumors",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"circulating",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"Berlin.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HAGEN",
+				"page": "But these men are part of a coup.",
+				"screen": "But they're part of the coup.",
+				"pageWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"these",
+						false
+					],
+					[
+						"men",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"part",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"coup.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"they're",
+						false
+					],
+					[
+						"part",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"coup.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

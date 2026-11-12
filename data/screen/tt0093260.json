@@ -1,0 +1,956 @@
+{
+	"_id": "tt0093260",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 20,
+		"eligible": 10,
+		"rejected": {
+			"split across CDs": 3,
+			"duplicate": 5,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1954330406",
+		"versions": [
+			"261103",
+			"155171",
+			"1954330406",
+			"1951877613",
+			"1956810484",
+			"262378",
+			"1954839683",
+			"1951845578",
+			"1956810485"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9218052718668065,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7200,
+	"quality": {
+		"anchoredShare": 0.21436304583182966
+	},
+	"words": {
+		"page": 8313,
+		"screen": 8256,
+		"kept": 1779,
+		"cut": 6534,
+		"notInScript": 6474,
+		"moved": 181
+	},
+	"lines": {
+		"page": 973,
+		"kept": 138,
+		"changed": 134,
+		"cut": 700,
+		"screen": 1704,
+		"notInScript": 1285
+	},
+	"byGender": {
+		"w": {
+			"lines": 181,
+			"kept": 34,
+			"changed": 21,
+			"cut": 126
+		},
+		"m": {
+			"lines": 740,
+			"kept": 103,
+			"changed": 109,
+			"cut": 528
+		},
+		"unknown": {
+			"lines": 51,
+			"kept": 1,
+			"changed": 4,
+			"cut": 46
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 20,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 5,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"cut": 20
+		},
+		{
+			"cut": 20,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"kept": 2
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"changed": 5,
+			"cut": 15,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"changed": 6,
+			"kept": 4
+		},
+		{
+			"changed": 4,
+			"cut": 15,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"kept": 4,
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 18,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"cut": 15,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 8,
+			"cut": 7
+		},
+		{
+			"cut": 6,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"changed": 8,
+			"kept": 2,
+			"cut": 10
+		},
+		{
+			"cut": 20
+		},
+		{
+			"cut": 11,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"kept": 1,
+			"cut": 19
+		},
+		{
+			"cut": 16,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 10
+		},
+		{
+			"cut": 12,
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"cut": 8,
+			"changed": 6,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"cut": 5,
+			"changed": 8
+		},
+		{
+			"cut": 18,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"changed": 2,
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 20
+		},
+		{
+			"kept": 2,
+			"cut": 18
+		},
+		{
+			"cut": 18,
+			"kept": 1,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 79
+		},
+		{
+			"scripted": 96,
+			"notInScript": 122
+		},
+		{
+			"scripted": 21,
+			"notInScript": 186
+		},
+		{
+			"scripted": 99,
+			"notInScript": 150
+		},
+		{
+			"scripted": 52,
+			"notInScript": 273
+		},
+		{
+			"scripted": 12,
+			"notInScript": 212
+		},
+		{
+			"scripted": 5,
+			"notInScript": 156
+		},
+		{
+			"scripted": 16,
+			"notInScript": 44
+		},
+		{
+			"scripted": 0,
+			"notInScript": 69
+		},
+		{
+			"scripted": 17,
+			"notInScript": 16
+		},
+		{
+			"scripted": 7,
+			"notInScript": 10
+		},
+		{
+			"scripted": 67,
+			"notInScript": 111
+		},
+		{
+			"scripted": 81,
+			"notInScript": 122
+		},
+		{
+			"scripted": 90,
+			"notInScript": 113
+		},
+		{
+			"scripted": 35,
+			"notInScript": 72
+		},
+		{
+			"scripted": 30,
+			"notInScript": 222
+		},
+		{
+			"scripted": 106,
+			"notInScript": 121
+		},
+		{
+			"scripted": 48,
+			"notInScript": 142
+		},
+		{
+			"scripted": 43,
+			"notInScript": 221
+		},
+		{
+			"scripted": 73,
+			"notInScript": 275
+		},
+		{
+			"scripted": 36,
+			"notInScript": 173
+		},
+		{
+			"scripted": 65,
+			"notInScript": 105
+		},
+		{
+			"scripted": 30,
+			"notInScript": 173
+		},
+		{
+			"scripted": 127,
+			"notInScript": 168
+		},
+		{
+			"scripted": 83,
+			"notInScript": 26
+		},
+		{
+			"scripted": 148,
+			"notInScript": 48
+		},
+		{
+			"scripted": 54,
+			"notInScript": 135
+		},
+		{
+			"scripted": 93,
+			"notInScript": 150
+		},
+		{
+			"scripted": 130,
+			"notInScript": 134
+		},
+		{
+			"scripted": 38,
+			"notInScript": 36
+		},
+		{
+			"scripted": 105,
+			"notInScript": 133
+		},
+		{
+			"scripted": 42,
+			"notInScript": 195
+		},
+		{
+			"scripted": 47,
+			"notInScript": 159
+		},
+		{
+			"scripted": 78,
+			"notInScript": 154
+		},
+		{
+			"scripted": 43,
+			"notInScript": 102
+		},
+		{
+			"scripted": 130,
+			"notInScript": 94
+		},
+		{
+			"scripted": 50,
+			"notInScript": 39
+		},
+		{
+			"scripted": 90,
+			"notInScript": 24
+		},
+		{
+			"scripted": 42,
+			"notInScript": 150
+		},
+		{
+			"scripted": 25,
+			"notInScript": 187
+		},
+		{
+			"scripted": 27,
+			"notInScript": 94
+		},
+		{
+			"scripted": 10,
+			"notInScript": 32
+		},
+		{
+			"scripted": 11,
+			"notInScript": 192
+		},
+		{
+			"scripted": 15,
+			"notInScript": 187
+		},
+		{
+			"scripted": 5,
+			"notInScript": 71
+		},
+		{
+			"scripted": 13,
+			"notInScript": 125
+		},
+		{
+			"scripted": 0,
+			"notInScript": 19
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 7,
+				"kept": 2,
+				"changed": 1,
+				"cut": 4
+			},
+			"other": {
+				"lines": 172,
+				"kept": 31,
+				"changed": 20,
+				"cut": 121
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 415,
+				"kept": 68,
+				"changed": 78,
+				"cut": 269
+			},
+			"other": {
+				"lines": 262,
+				"kept": 33,
+				"changed": 27,
+				"cut": 202
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "TUCK",
+				"text": "What's tea come in again? A can? A jar? Wait... I remember. Little bags, right? Yeah... here they are."
+			},
+			{
+				"speaker": "JACK",
+				"text": "Oh, no... here comes the gun."
+			},
+			{
+				"speaker": "TUCK",
+				"text": "I got a gut reaction! Call it survival instinct. Get out now."
+			},
+			{
+				"speaker": "JACK",
+				"text": "You bet. I'm into this now. I'm hooked on adventure. What's your plan?"
+			},
+			{
+				"speaker": "LYDIA",
+				"text": "Since the wine cellar."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 551,
+				"text": "Put your head back."
+			},
+			{
+				"at": 2276,
+				"text": "You didn't hear that then?"
+			},
+			{
+				"at": 3288,
+				"text": "You know what, we're going to need a lot more help."
+			},
+			{
+				"at": 4730,
+				"text": "I'll attempt an electronic stimulation of your nerves and muscles."
+			},
+			{
+				"at": 6308,
+				"text": "I need some stomach action, and I need lots of it."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "JACK",
+				"page": "Sorry, Mr. Wormwood. You wouldn't believe what happened to me this morning.",
+				"screen": "You won't believe what happened to me.",
+				"pageWords": [
+					[
+						"Sorry,",
+						false
+					],
+					[
+						"Mr.",
+						false
+					],
+					[
+						"Wormwood.",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"wouldn't",
+						false
+					],
+					[
+						"believe",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"happened",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"morning.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"won't",
+						false
+					],
+					[
+						"believe",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"happened",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"me.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MESSENGER",
+				"page": "Shot out your TV, huh, man? Just like Elvis.",
+				"screen": "Shot your TV out, man? Just like Elvis.",
+				"pageWords": [
+					[
+						"Shot",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"TV,",
+						false
+					],
+					[
+						"huh,",
+						false
+					],
+					[
+						"man?",
+						true
+					],
+					[
+						"Just",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"Elvis.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Shot",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"TV",
+						false
+					],
+					[
+						"out,",
+						false
+					],
+					[
+						"man?",
+						true
+					],
+					[
+						"Just",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"Elvis.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TUCK",
+				"page": "Jack! What's that loud tapping sound!?",
+				"screen": "Jack, what is that loud clicking sound?",
+				"pageWords": [
+					[
+						"Jack!",
+						true
+					],
+					[
+						"What's",
+						false
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"loud",
+						true
+					],
+					[
+						"tapping",
+						false
+					],
+					[
+						"sound!?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Jack,",
+						true
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"loud",
+						true
+					],
+					[
+						"clicking",
+						false
+					],
+					[
+						"sound?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JACK",
+				"page": "I can feel it!",
+				"screen": "Come on, control it.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"feel",
+						false
+					],
+					[
+						"it!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Come",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"control",
+						false
+					],
+					[
+						"it.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JACK",
+				"page": "Tuck! Give me some adrenaline! Make me strong, Tuck!",
+				"screen": "Tuck, help me, make me strong.",
+				"pageWords": [
+					[
+						"Tuck!",
+						true
+					],
+					[
+						"Give",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"adrenaline!",
+						false
+					],
+					[
+						"Make",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"strong,",
+						true
+					],
+					[
+						"Tuck!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Tuck,",
+						true
+					],
+					[
+						"help",
+						false
+					],
+					[
+						"me,",
+						false
+					],
+					[
+						"make",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"strong.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

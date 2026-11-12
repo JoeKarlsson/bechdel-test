@@ -1,0 +1,1943 @@
+{
+	"method": "1.0",
+	"films": 2273,
+	"excluded": {
+		"the subtitles match the script no better than chance": 132,
+		"the script is a transcript of the film": 21,
+		"no subtitle version passed the selection rules": 8
+	},
+	"all": {
+		"label": "all",
+		"films": 2112,
+		"passingConversations": {
+			"films": 1115,
+			"totalSeconds": {
+				"n": 1115,
+				"median": 42.6,
+				"q1": 14.8,
+				"q3": 137.65
+			},
+			"longestSeconds": {
+				"n": 1115,
+				"median": 17.6,
+				"q1": 9.5,
+				"q3": 34.05
+			},
+			"under10": 0.1757847533632287,
+			"under30": 0.4134529147982063,
+			"under60": 0.5757847533632287
+		},
+		"conversationsCut": {
+			"women": {
+				"films": 1211,
+				"median": -0.001161440185830434,
+				"ci95": [
+					-0.007578397212543553,
+					0.0059457450761798425
+				],
+				"wilcoxon": {
+					"n": 1207,
+					"statistic": 378210.5,
+					"p": 0.2581745727596495
+				}
+			},
+			"menControl": {
+				"films": 2023,
+				"median": -0.02052680497343179,
+				"ci95": [
+					-0.025191675794085433,
+					-0.016666666666666607
+				],
+				"wilcoxon": {
+					"n": 2021,
+					"statistic": 713191.5,
+					"p": 0
+				}
+			}
+		},
+		"survival": {
+			"n": 2112,
+			"median": 0.4208426824442224,
+			"q1": 0.2647711553099249,
+			"q3": 0.607056847186731
+		},
+		"notInScript": {
+			"n": 2112,
+			"median": 0.5092344667889942,
+			"q1": 0.340212093414996,
+			"q3": 0.6959460137152043
+		},
+		"cutWomenMinusMen": {
+			"films": 2040,
+			"median": 0.0024284141207951554,
+			"ci95": [
+				-0.00032359732828540766,
+				0.005851260838671046
+			],
+			"wilcoxon": {
+				"n": 2040,
+				"statistic": 1098401,
+				"p": 0.030723276469684646
+			}
+		},
+		"verdict": {
+			"decided": 1965,
+			"unclear": 147,
+			"changed": 208,
+			"share": 0.10585241730279898,
+			"ci95": [
+				0.09301038674494111,
+				0.12023251150236199
+			],
+			"passToFail": 170,
+			"failToPass": 38,
+			"mcnemar": {
+				"b": 170,
+				"c": 38,
+				"p": 0
+			}
+		}
+	},
+	"byDraft": {
+		"early": {
+			"survival": {
+				"n": 131,
+				"median": 0.26656457376212356,
+				"q1": 0.14411762569926423,
+				"q3": 0.4020791859195383
+			},
+			"notInScript": {
+				"n": 131,
+				"median": 0.6859033548784241,
+				"q1": 0.5444411856143125,
+				"q3": 0.8429879580563278
+			}
+		},
+		"shooting": {
+			"survival": {
+				"n": 640,
+				"median": 0.42073059349460484,
+				"q1": 0.29473768969274095,
+				"q3": 0.582737925067151
+			},
+			"notInScript": {
+				"n": 640,
+				"median": 0.5021413853528969,
+				"q1": 0.35408541267425303,
+				"q3": 0.6642555121209146
+			}
+		},
+		"unknown": {
+			"survival": {
+				"n": 1341,
+				"median": 0.44067018590773466,
+				"q1": 0.2687076981466253,
+				"q3": 0.6359527627934101
+			},
+			"notInScript": {
+				"n": 1341,
+				"median": 0.4933041814703471,
+				"q1": 0.3210691305065171,
+				"q3": 0.6931126794840594
+			}
+		}
+	},
+	"byDecade": {
+		"1930s": {
+			"survival": {
+				"n": 12,
+				"median": 0.7577650332662649,
+				"q1": 0.5046698095780984,
+				"q3": 0.8326912022890385
+			},
+			"notInScript": {
+				"n": 12,
+				"median": 0.3870785641105403,
+				"q1": 0.2226310539905771,
+				"q3": 0.589424626101563
+			}
+		},
+		"1940s": {
+			"survival": {
+				"n": 14,
+				"median": 0.7140986691417205,
+				"q1": 0.562636894144269,
+				"q3": 0.8055989984197092
+			},
+			"notInScript": {
+				"n": 14,
+				"median": 0.22903231069899602,
+				"q1": 0.13119792674959074,
+				"q3": 0.3218595828668548
+			}
+		},
+		"1950s": {
+			"survival": {
+				"n": 24,
+				"median": 0.5561083139243728,
+				"q1": 0.38021308925666036,
+				"q3": 0.6931838816809889
+			},
+			"notInScript": {
+				"n": 24,
+				"median": 0.3821507840122292,
+				"q1": 0.2992932070665669,
+				"q3": 0.53707009628902
+			}
+		},
+		"1960s": {
+			"survival": {
+				"n": 32,
+				"median": 0.47860024590110317,
+				"q1": 0.2693400468844998,
+				"q3": 0.6659808538361608
+			},
+			"notInScript": {
+				"n": 32,
+				"median": 0.4289328985366741,
+				"q1": 0.24823749103912823,
+				"q3": 0.6310903783459122
+			}
+		},
+		"1970s": {
+			"survival": {
+				"n": 82,
+				"median": 0.3447729798859574,
+				"q1": 0.2555802375229354,
+				"q3": 0.4957006602720582
+			},
+			"notInScript": {
+				"n": 82,
+				"median": 0.6024169518389814,
+				"q1": 0.4266725560505567,
+				"q3": 0.7009953540769636
+			}
+		},
+		"1980s": {
+			"survival": {
+				"n": 236,
+				"median": 0.37117568111168386,
+				"q1": 0.25835493634177076,
+				"q3": 0.4785743554568265
+			},
+			"notInScript": {
+				"n": 236,
+				"median": 0.550302342292756,
+				"q1": 0.4263635384771983,
+				"q3": 0.6957743796520094
+			}
+		},
+		"1990s": {
+			"survival": {
+				"n": 419,
+				"median": 0.37091988130563797,
+				"q1": 0.22494288416869818,
+				"q3": 0.5336959740972202
+			},
+			"notInScript": {
+				"n": 419,
+				"median": 0.5740695988400193,
+				"q1": 0.39907149737561187,
+				"q3": 0.7292131881720377
+			}
+		},
+		"2000s": {
+			"survival": {
+				"n": 487,
+				"median": 0.38734251391737473,
+				"q1": 0.2393345175537166,
+				"q3": 0.5578361041739375
+			},
+			"notInScript": {
+				"n": 487,
+				"median": 0.5546979865771812,
+				"q1": 0.36412780940144124,
+				"q3": 0.7157473879363883
+			}
+		},
+		"2010s": {
+			"survival": {
+				"n": 607,
+				"median": 0.47400395591975136,
+				"q1": 0.2834842668594135,
+				"q3": 0.6573688323639619
+			},
+			"notInScript": {
+				"n": 607,
+				"median": 0.4685539403213466,
+				"q1": 0.3067984798739075,
+				"q3": 0.6872413902516459
+			}
+		},
+		"2020s": {
+			"survival": {
+				"n": 199,
+				"median": 0.5989492119089317,
+				"q1": 0.43881014509899574,
+				"q3": 0.8270957816413682
+			},
+			"notInScript": {
+				"n": 199,
+				"median": 0.3703590058300092,
+				"q1": 0.2184821007991563,
+				"q3": 0.5295923609936052
+			}
+		}
+	},
+	"bySdh": {
+		"SDH": {
+			"survival": {
+				"n": 452,
+				"median": 0.47512562457432767,
+				"q1": 0.2836722880505074,
+				"q3": 0.6750223678483338
+			},
+			"notInScript": {
+				"n": 452,
+				"median": 0.485981795150263,
+				"q1": 0.3055913864076124,
+				"q3": 0.6761376535333213
+			}
+		},
+		"regular": {
+			"survival": {
+				"n": 1660,
+				"median": 0.4089967697987167,
+				"q1": 0.2605817651262119,
+				"q3": 0.595214880410451
+			},
+			"notInScript": {
+				"n": 1660,
+				"median": 0.5159743367930257,
+				"q1": 0.34839950320164653,
+				"q3": 0.6986240683942997
+			}
+		}
+	},
+	"subtitleAgreement": {
+		"n": 2069,
+		"median": 0.9448477947173478,
+		"q1": 0.8995620898981225,
+		"q3": 0.9760253016063123
+	},
+	"robustness": [
+		{
+			"label": "SDH primary only",
+			"films": 452,
+			"passingConversations": {
+				"films": 274,
+				"totalSeconds": {
+					"n": 274,
+					"median": 60.75,
+					"q1": 19.025,
+					"q3": 184.47500000000002
+				},
+				"longestSeconds": {
+					"n": 274,
+					"median": 20.45,
+					"q1": 11.4,
+					"q3": 38.425
+				},
+				"under10": 0.11313868613138686,
+				"under30": 0.33941605839416056,
+				"under60": 0.48905109489051096
+			},
+			"conversationsCut": {
+				"women": {
+					"films": 281,
+					"median": -0.003875968992248041,
+					"ci95": [
+						-0.013371131585164175,
+						0.0059457450761798425
+					],
+					"wilcoxon": {
+						"n": 280,
+						"statistic": 20534.5,
+						"p": 0.5240613415535346
+					}
+				},
+				"menControl": {
+					"films": 427,
+					"median": -0.018337084602144837,
+					"ci95": [
+						-0.0307990469159004,
+						-0.012904858299595146
+					],
+					"wilcoxon": {
+						"n": 426,
+						"statistic": 30998,
+						"p": 1.2470721011403896e-8
+					}
+				}
+			},
+			"survival": {
+				"n": 452,
+				"median": 0.47512562457432767,
+				"q1": 0.2836722880505074,
+				"q3": 0.6750223678483338
+			},
+			"notInScript": {
+				"n": 452,
+				"median": 0.485981795150263,
+				"q1": 0.3055913864076124,
+				"q3": 0.6761376535333213
+			},
+			"cutWomenMinusMen": {
+				"films": 437,
+				"median": 0.00038284306218763775,
+				"ci95": [
+					-0.0064570466030319795,
+					0.005638604773144484
+				],
+				"wilcoxon": {
+					"n": 437,
+					"statistic": 48862,
+					"p": 0.7022122659141602
+				}
+			},
+			"verdict": {
+				"decided": 427,
+				"unclear": 25,
+				"changed": 25,
+				"share": 0.0585480093676815,
+				"ci95": [
+					0.039968444649667215,
+					0.08499970261521851
+				],
+				"passToFail": 19,
+				"failToPass": 6,
+				"mcnemar": {
+					"b": 19,
+					"c": 6,
+					"p": 0.016395058396719953
+				}
+			}
+		},
+		{
+			"label": "shooting drafts only",
+			"films": 640,
+			"passingConversations": {
+				"films": 321,
+				"totalSeconds": {
+					"n": 321,
+					"median": 32.5,
+					"q1": 13.4,
+					"q3": 89.7
+				},
+				"longestSeconds": {
+					"n": 321,
+					"median": 16.2,
+					"q1": 9.2,
+					"q3": 29.5
+				},
+				"under10": 0.19626168224299065,
+				"under30": 0.470404984423676,
+				"under60": 0.6573208722741433
+			},
+			"conversationsCut": {
+				"women": {
+					"films": 356,
+					"median": 0.00018527863888685714,
+					"ci95": [
+						-0.009793077547999506,
+						0.02016806722689074
+					],
+					"wilcoxon": {
+						"n": 355,
+						"statistic": 34423,
+						"p": 0.14393793486454487
+					}
+				},
+				"menControl": {
+					"films": 620,
+					"median": -0.02245334527566308,
+					"ci95": [
+						-0.031118766156033602,
+						-0.015540429719534177
+					],
+					"wilcoxon": {
+						"n": 620,
+						"statistic": 65735,
+						"p": 7.967182469315048e-12
+					}
+				}
+			},
+			"survival": {
+				"n": 640,
+				"median": 0.42073059349460484,
+				"q1": 0.29473768969274095,
+				"q3": 0.582737925067151
+			},
+			"notInScript": {
+				"n": 640,
+				"median": 0.5021413853528969,
+				"q1": 0.35408541267425303,
+				"q3": 0.6642555121209146
+			},
+			"cutWomenMinusMen": {
+				"films": 623,
+				"median": 0.003096846846846857,
+				"ci95": [
+					-0.003493508231829756,
+					0.011239800421492474
+				],
+				"wilcoxon": {
+					"n": 623,
+					"statistic": 102891,
+					"p": 0.2045039963542511
+				}
+			},
+			"verdict": {
+				"decided": 596,
+				"unclear": 44,
+				"changed": 77,
+				"share": 0.12919463087248323,
+				"ci95": [
+					0.1046226138051456,
+					0.1585160148179413
+				],
+				"passToFail": 68,
+				"failToPass": 9,
+				"mcnemar": {
+					"b": 68,
+					"c": 9,
+					"p": 3.870881393197578e-11
+				}
+			}
+		},
+		{
+			"label": "versions agree on 80%+",
+			"films": 1860,
+			"passingConversations": {
+				"films": 971,
+				"totalSeconds": {
+					"n": 971,
+					"median": 42.1,
+					"q1": 14.1,
+					"q3": 134.45
+				},
+				"longestSeconds": {
+					"n": 971,
+					"median": 17.5,
+					"q1": 9.4,
+					"q3": 33.95
+				},
+				"under10": 0.18125643666323377,
+				"under30": 0.41709577754891863,
+				"under60": 0.5829042224510813
+			},
+			"conversationsCut": {
+				"women": {
+					"films": 1054,
+					"median": -0.0008295339412360825,
+					"ci95": [
+						-0.007582720588235295,
+						0.008256408858485767
+					],
+					"wilcoxon": {
+						"n": 1050,
+						"statistic": 285854.5,
+						"p": 0.3105813306063021
+					}
+				},
+				"menControl": {
+					"films": 1781,
+					"median": -0.02041689352103912,
+					"ci95": [
+						-0.02501075731497418,
+						-0.016411351079859363
+					],
+					"wilcoxon": {
+						"n": 1780,
+						"statistic": 552656.5,
+						"p": 0
+					}
+				}
+			},
+			"survival": {
+				"n": 1860,
+				"median": 0.41962807724957557,
+				"q1": 0.26417196941654086,
+				"q3": 0.6025994527728717
+			},
+			"notInScript": {
+				"n": 1860,
+				"median": 0.5153448721468392,
+				"q1": 0.34313581234390994,
+				"q3": 0.6995169357597619
+			},
+			"cutWomenMinusMen": {
+				"films": 1794,
+				"median": 0.0017685525663808932,
+				"ci95": [
+					-0.0014328075830584708,
+					0.005267449855590689
+				],
+				"wilcoxon": {
+					"n": 1794,
+					"statistic": 843159,
+					"p": 0.08251987245378789
+				}
+			},
+			"verdict": {
+				"decided": 1722,
+				"unclear": 138,
+				"changed": 178,
+				"share": 0.10336817653890824,
+				"ci95": [
+					0.08986081268437741,
+					0.11864122383208688
+				],
+				"passToFail": 145,
+				"failToPass": 33,
+				"mcnemar": {
+					"b": 145,
+					"c": 33,
+					"p": 1.1102230246251565e-16
+				}
+			}
+		},
+		{
+			"label": "with the chance-level films put back",
+			"films": 2244,
+			"passingConversations": {
+				"films": 1130,
+				"totalSeconds": {
+					"n": 1130,
+					"median": 41.7,
+					"q1": 14.15,
+					"q3": 133.9
+				},
+				"longestSeconds": {
+					"n": 1130,
+					"median": 17.35,
+					"q1": 9.325000000000001,
+					"q3": 33.9
+				},
+				"under10": 0.18141592920353983,
+				"under30": 0.42123893805309737,
+				"under60": 0.5814159292035398
+			},
+			"conversationsCut": {
+				"women": {
+					"films": 1256,
+					"median": -0.0011066635727269257,
+					"ci95": [
+						-0.006628787878787956,
+						0.005775430703368999
+					],
+					"wilcoxon": {
+						"n": 1252,
+						"statistic": 406850.5,
+						"p": 0.25190113990334984
+					}
+				},
+				"menControl": {
+					"films": 2147,
+					"median": -0.018583943702427164,
+					"ci95": [
+						-0.022533175666798057,
+						-0.015470830539323688
+					],
+					"wilcoxon": {
+						"n": 2145,
+						"statistic": 810713.5,
+						"p": 0
+					}
+				}
+			},
+			"survival": {
+				"n": 2244,
+				"median": 0.3998402039713015,
+				"q1": 0.2299677578007384,
+				"q3": 0.5932276847726026
+			},
+			"notInScript": {
+				"n": 2244,
+				"median": 0.5334898492759872,
+				"q1": 0.3497722108436604,
+				"q3": 0.7292118861724115
+			},
+			"cutWomenMinusMen": {
+				"films": 2165,
+				"median": 0.002127383156322049,
+				"ci95": [
+					-0.0004014088154555423,
+					0.0052631578947368585
+				],
+				"wilcoxon": {
+					"n": 2164,
+					"statistic": 1231697.5,
+					"p": 0.037631862841963626
+				}
+			},
+			"verdict": {
+				"decided": 2085,
+				"unclear": 159,
+				"changed": 245,
+				"share": 0.11750599520383694,
+				"ci95": [
+					0.10438190794550303,
+					0.13203692450422186
+				],
+				"passToFail": 206,
+				"failToPass": 39,
+				"mcnemar": {
+					"b": 206,
+					"c": 39,
+					"p": 0
+				}
+			}
+		}
+	],
+	"changedFilms": [
+		{
+			"_id": "690e59ebfbd0373cb3fe9f7d",
+			"title": "Army of Darkness",
+			"year": 1992,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "690e781d71c6a8c3917dc51c",
+			"title": "Colombiana",
+			"year": 2011,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "690e7f3e71c6a8c3917dd992",
+			"title": "Crash",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "690e872a71c6a8c3917e1860",
+			"title": "Deep Cover",
+			"year": 1992,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "690e9d6171c6a8c3917eb3ac",
+			"title": "Fantastic Four",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "690e9eb371c6a8c3917ebcd8",
+			"title": "Feast",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0032551",
+			"title": "The Grapes of Wrath",
+			"year": 1940,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0041959",
+			"title": "The Third Man",
+			"year": 1950,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0044079",
+			"title": "Strangers on a Train",
+			"year": 1951,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0044706",
+			"title": "High Noon",
+			"year": 1952,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0048356",
+			"title": "Marty",
+			"year": 1955,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0056923",
+			"title": "Charade",
+			"year": 1963,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0059113",
+			"title": "Doctor Zhivago",
+			"year": 1965,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0063426",
+			"title": "Petulia",
+			"year": 1968,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0067217",
+			"title": "The Hospital",
+			"year": 1972,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0073705",
+			"title": "Shivers",
+			"year": 1975,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0074281",
+			"title": "Car Wash",
+			"year": 1976,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0074901",
+			"title": "Mikey and Nicky",
+			"year": 1976,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0076913",
+			"title": "Which Way Is Up?",
+			"year": 1978,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0077474",
+			"title": "The Driver",
+			"year": 1978,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0077745",
+			"title": "Invasion of the Body Snatchers",
+			"year": 1978,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0078841",
+			"title": "Being There",
+			"year": 1980,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0080678",
+			"title": "The Elephant Man",
+			"year": 1980,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0085636",
+			"title": "Halloween III: Season of the Witch",
+			"year": 1982,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0085794",
+			"title": "The King of Comedy",
+			"year": 1982,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0086856",
+			"title": "The Adventures of Buckaroo Banzai Across the 8th Dimension",
+			"year": 1984,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0089907",
+			"title": "The Return of the Living Dead",
+			"year": 1985,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0091369",
+			"title": "Labyrinth",
+			"year": 1986,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0091875",
+			"title": "Running Scared",
+			"year": 1986,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0092226",
+			"title": "Wise Guys",
+			"year": 1986,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0092654",
+			"title": "The Big Easy",
+			"year": 1987,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0093260",
+			"title": "Innerspace",
+			"year": 1987,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0094008",
+			"title": "Someone to Watch Over Me",
+			"year": 1987,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0095583",
+			"title": "Maniac Cop",
+			"year": 1988,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0097165",
+			"title": "Dead Poets Society",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0097179",
+			"title": "DeepStar Six",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0097243",
+			"title": "A Dry White Season",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0097428",
+			"title": "Ghostbusters II",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0097733",
+			"title": "Lethal Weapon 2",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0097742",
+			"title": "Licence to Kill",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0098273",
+			"title": "Sea of Love",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0098439",
+			"title": "Tango & Cash",
+			"year": 1989,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0098987",
+			"title": "The Adventures of Ford Fairlane",
+			"year": 1990,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0099739",
+			"title": "Hard to Kill",
+			"year": 1990,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0099871",
+			"title": "Jacob's Ladder",
+			"year": 1990,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0100157",
+			"title": "Misery",
+			"year": 1990,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0100507",
+			"title": "Rocky V",
+			"year": 1990,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0100935",
+			"title": "Wild at Heart",
+			"year": 1990,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0101452",
+			"title": "Bill & Ted's Bogus Journey",
+			"year": 1991,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0101507",
+			"title": "Boyz n the Hood",
+			"year": 1991,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0102798",
+			"title": "Robin Hood: Prince of Thieves",
+			"year": 1991,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0103007",
+			"title": "The Super",
+			"year": 1991,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0103064",
+			"title": "Terminator 2: Judgment Day",
+			"year": 1991,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0103874",
+			"title": "Dracula",
+			"year": 1992,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0104797",
+			"title": "Malcolm X",
+			"year": 1992,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0106453",
+			"title": "Body of Evidence",
+			"year": 1993,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0107798",
+			"title": "The Pelican Brief",
+			"year": 1993,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0108052",
+			"title": "Schindler's List",
+			"year": 1994,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0110148",
+			"title": "Interview with the Vampire: The Vampire Chronicles",
+			"year": 1994,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0110912",
+			"title": "Pulp Fiction",
+			"year": 1994,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0111257",
+			"title": "Speed",
+			"year": 1994,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0111280",
+			"title": "Star Trek: Generations",
+			"year": 1994,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0111282",
+			"title": "Stargate",
+			"year": 1994,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0112722",
+			"title": "Copycat",
+			"year": 1995,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0113690",
+			"title": "Lord of Illusions",
+			"year": 1995,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0113987",
+			"title": "Nixon",
+			"year": 1996,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0114558",
+			"title": "Strange Days",
+			"year": 1995,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0117218",
+			"title": "The Nutty Professor",
+			"year": 1996,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0118531",
+			"title": "One Eight Seven",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0118615",
+			"title": "Anaconda",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0118689",
+			"title": "Bean",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0119173",
+			"title": "G.I. Jane",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0119217",
+			"title": "Good Will Hunting",
+			"year": 1998,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0119229",
+			"title": "Grosse Pointe Blank",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0119675",
+			"title": "Mimic",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0119925",
+			"title": "The Postman",
+			"year": 1997,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0120587",
+			"title": "Antz",
+			"year": 1998,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0120685",
+			"title": "Godzilla",
+			"year": 1998,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0120780",
+			"title": "Out of Sight",
+			"year": 1998,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0120824",
+			"title": "The Shipping News",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0120891",
+			"title": "Wild Wild West",
+			"year": 1999,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0120901",
+			"title": "Wrongfully Accused",
+			"year": 1998,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0120902",
+			"title": "The X Files",
+			"year": 1998,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0121766",
+			"title": "Star Wars: Episode III - Revenge of the Sith",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0122151",
+			"title": "Lethal Weapon 4",
+			"year": 1998,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0125664",
+			"title": "Man on the Moon",
+			"year": 1999,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0128445",
+			"title": "Rushmore",
+			"year": 1999,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0143145",
+			"title": "The World Is Not Enough",
+			"year": 1999,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0145660",
+			"title": "Austin Powers: The Spy Who Shagged Me",
+			"year": 1999,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0159382",
+			"title": "Croupier",
+			"year": 2000,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0165710",
+			"title": "Detroit Rock City",
+			"year": 1999,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0165929",
+			"title": "Romeo Must Die",
+			"year": 2000,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0166110",
+			"title": "Bones",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0186566",
+			"title": "Space Cowboys",
+			"year": 2000,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0187393",
+			"title": "The Patriot",
+			"year": 2000,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0187738",
+			"title": "Blade II",
+			"year": 2002,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0195714",
+			"title": "Final Destination",
+			"year": 2000,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0203009",
+			"title": "Moulin Rouge!",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0209163",
+			"title": "The Mummy Returns",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0221069",
+			"title": "Chasing Sleep",
+			"year": 2000,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0232500",
+			"title": "The Fast and the Furious",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0241527",
+			"title": "Harry Potter and the Sorcerer's Stone",
+			"year": 2001,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0245674",
+			"title": "Thir13en Ghosts",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0247199",
+			"title": "The Believer",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0266452",
+			"title": "Death to Smoochy",
+			"year": 2002,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0266915",
+			"title": "Rush Hour 2",
+			"year": 2001,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0268126",
+			"title": "Adaptation.",
+			"year": 2003,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0274546",
+			"title": "Hellraiser: Hellseeker",
+			"year": 2002,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0285823",
+			"title": "Once Upon a Time in Mexico",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0289848",
+			"title": "Analyze That",
+			"year": 2002,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0289879",
+			"title": "The Butterfly Effect",
+			"year": 2004,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0306685",
+			"title": "Cradle 2 the Grave",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0307901",
+			"title": "25th Hour",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0317640",
+			"title": "The Hebrew Hammer",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0328099",
+			"title": "Malibu's Most Wanted",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0337921",
+			"title": "Cellular",
+			"year": 2004,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0338094",
+			"title": "The Haunted Mansion",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0349903",
+			"title": "Ocean's Twelve",
+			"year": 2004,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0357470",
+			"title": "The Battle of Shaker Heights",
+			"year": 2003,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0361127",
+			"title": "The Woodsman",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0362478",
+			"title": "The Box",
+			"year": 2009,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0366548",
+			"title": "Happy Feet",
+			"year": 2006,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0367882",
+			"title": "Indiana Jones and the Kingdom of the Crystal Skull",
+			"year": 2008,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0368008",
+			"title": "The Manchurian Candidate",
+			"year": 2004,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0372183",
+			"title": "The Bourne Supremacy",
+			"year": 2004,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0373469",
+			"title": "Kiss Kiss Bang Bang",
+			"year": 2005,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0381061",
+			"title": "Casino Royale",
+			"year": 2006,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0385887",
+			"title": "Motherless Brooklyn",
+			"year": 2019,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0386140",
+			"title": "The Legend of Zorro",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0395584",
+			"title": "The Devil's Rejects",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0396269",
+			"title": "Wedding Crashers",
+			"year": 2005,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0425112",
+			"title": "Hot Fuzz",
+			"year": 2007,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0430912",
+			"title": "Basic Instinct 2",
+			"year": 2006,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0443706",
+			"title": "Zodiac",
+			"year": 2007,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0445934",
+			"title": "Blades of Glory",
+			"year": 2007,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0453562",
+			"title": "42",
+			"year": 2013,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0464196",
+			"title": "Severance",
+			"year": 2006,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0467197",
+			"title": "Max Payne",
+			"year": 2008,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0472198",
+			"title": "Notorious",
+			"year": 2009,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0480687",
+			"title": "Hall Pass",
+			"year": 2011,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0486946",
+			"title": "Wild Hogs",
+			"year": 2007,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0795368",
+			"title": "Death at a Funeral",
+			"year": 2007,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0838283",
+			"title": "Step Brothers",
+			"year": 2008,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0862856",
+			"title": "Trick 'r Treat",
+			"year": 2015,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0878804",
+			"title": "The Blind Side",
+			"year": 2009,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt0887912",
+			"title": "The Hurt Locker",
+			"year": 2009,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0985694",
+			"title": "Machete",
+			"year": 2010,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1022603",
+			"title": "500 Days of Summer",
+			"year": 2009,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt10275534",
+			"title": "To Catch a Killer",
+			"year": 2023,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1068680",
+			"title": "Yes Man",
+			"year": 2008,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1086064",
+			"title": "Bill & Ted Face the Music",
+			"year": 2020,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1092026",
+			"title": "Paul",
+			"year": 2011,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt10986222",
+			"title": "C'mon C'mon",
+			"year": 2021,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1155056",
+			"title": "I Love You, Man",
+			"year": 2009,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt1205489",
+			"title": "Gran Torino",
+			"year": 2009,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt1213641",
+			"title": "First Man",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt12292206",
+			"title": "Those Who Walk Away",
+			"year": 2022,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt12530246",
+			"title": "Emancipation",
+			"year": 2022,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt1259528",
+			"title": "Den of Thieves",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt13143964",
+			"title": "Borat Subsequent Moviefilm",
+			"year": 2020,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt1334512",
+			"title": "Arthur",
+			"year": 2011,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1371111",
+			"title": "Cloud Atlas",
+			"year": 2012,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1413492",
+			"title": "12 Strong",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt14458442",
+			"title": "The Son",
+			"year": 2023,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1465522",
+			"title": "Tucker and Dale vs Evil",
+			"year": 2010,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1482459",
+			"title": "The Lorax",
+			"year": 2012,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1568346",
+			"title": "The Girl with the Dragon Tattoo",
+			"year": 2011,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1598778",
+			"title": "Contagion",
+			"year": 2011,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1605717",
+			"title": "Frank",
+			"year": 2014,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1657517",
+			"title": "The Song of Names",
+			"year": 2019,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt1677720",
+			"title": "Ready Player One",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1706593",
+			"title": "Chronicle",
+			"year": 2012,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1727824",
+			"title": "Bohemian Rhapsody",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1790885",
+			"title": "Zero Dark Thirty",
+			"year": 2013,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt1800302",
+			"title": "Gold",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1817273",
+			"title": "The Place Beyond the Pines",
+			"year": 2013,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1855199",
+			"title": "End of Watch",
+			"year": 2012,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1862079",
+			"title": "Safety Not Guaranteed",
+			"year": 2012,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt1959563",
+			"title": "The Hitman's Bodyguard",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt2024544",
+			"title": "12 Years a Slave",
+			"year": 2013,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt2084970",
+			"title": "The Imitation Game",
+			"year": 2014,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt2234155",
+			"title": "The Internship",
+			"year": 2013,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt2278388",
+			"title": "The Grand Budapest Hotel",
+			"year": 2014,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt2294449",
+			"title": "22 Jump Street",
+			"year": 2014,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt2350496",
+			"title": "The Lunchbox",
+			"year": 2013,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt2380307",
+			"title": "Coco",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt2802144",
+			"title": "Kingsman: The Secret Service",
+			"year": 2015,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3315342",
+			"title": "Logan",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3416532",
+			"title": "A Monster Calls",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3450958",
+			"title": "War for the Planet of the Apes",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3460252",
+			"title": "The Hateful Eight",
+			"year": 2015,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt3691740",
+			"title": "The BFG",
+			"year": 2016,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3704428",
+			"title": "Elvis",
+			"year": 2022,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3890160",
+			"title": "Baby Driver",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt3960412",
+			"title": "Popstar: Never Stop Never Stopping",
+			"year": 2016,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt4123432",
+			"title": "Fantastic Beasts: The Secrets of Dumbledore",
+			"year": 2022,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt4912910",
+			"title": "Mission: Impossible - Fallout",
+			"year": 2018,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt5580390",
+			"title": "The Shape of Water",
+			"year": 2017,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt5726616",
+			"title": "Call Me by Your Name",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt5827916",
+			"title": "A Hidden Life",
+			"year": 2019,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt6017942",
+			"title": "Kin",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt6169694",
+			"title": "I Think We're Alone Now",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt6294822",
+			"title": "The Post",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt6499752",
+			"title": "Upgrade",
+			"year": 2018,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt6998518",
+			"title": "Mandy",
+			"year": 2018,
+			"change": "page-fail-screen-pass"
+		},
+		{
+			"_id": "tt8367814",
+			"title": "The Gentlemen",
+			"year": 2020,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt8544498",
+			"title": "The Way Back",
+			"year": 2020,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt9777644",
+			"title": "Da 5 Bloods",
+			"year": 2020,
+			"change": "page-pass-screen-fail"
+		}
+	]
+}

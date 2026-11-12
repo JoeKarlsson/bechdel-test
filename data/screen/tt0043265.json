@@ -1,0 +1,964 @@
+{
+	"_id": "tt0043265",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 17,
+		"eligible": 11,
+		"rejected": {
+			"split across CDs": 3,
+			"duplicate": 2,
+			"not English": 1
+		},
+		"used": 9,
+		"primary": "1953113779",
+		"versions": [
+			"1953113778",
+			"1955477887",
+			"1953113779",
+			"1952299656",
+			"1957268944",
+			"1958333706",
+			"1952114669",
+			"1957080916",
+			"1954457195"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9536981726119167,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6300,
+	"quality": {
+		"anchoredShare": 0.3803921568627451
+	},
+	"words": {
+		"page": 8925,
+		"screen": 7987,
+		"kept": 3395,
+		"cut": 5530,
+		"notInScript": 4592,
+		"moved": 103
+	},
+	"lines": {
+		"page": 853,
+		"kept": 277,
+		"changed": 164,
+		"cut": 412,
+		"screen": 1255,
+		"notInScript": 552
+	},
+	"byGender": {
+		"w": {
+			"lines": 341,
+			"kept": 142,
+			"changed": 42,
+			"cut": 157
+		},
+		"m": {
+			"lines": 431,
+			"kept": 113,
+			"changed": 114,
+			"cut": 204
+		},
+		"unknown": {
+			"lines": 81,
+			"kept": 22,
+			"changed": 8,
+			"cut": 51
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"changed": 7,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"changed": 7,
+			"kept": 4
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 8,
+			"changed": 5
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"kept": 12,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"changed": 6,
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 4
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"kept": 7,
+			"cut": 7
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 2
+		},
+		{
+			"kept": 9,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"changed": 3,
+			"cut": 9,
+			"kept": 6
+		},
+		{
+			"kept": 5,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 5
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 3,
+			"changed": 8,
+			"cut": 7
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 5
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 8
+		},
+		{
+			"changed": 3,
+			"cut": 12,
+			"kept": 3
+		},
+		{
+			"cut": 13,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 3,
+			"changed": 4,
+			"kept": 10
+		},
+		{
+			"kept": 3,
+			"changed": 4,
+			"cut": 11
+		},
+		{
+			"cut": 15,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 7,
+			"cut": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 44
+		},
+		{
+			"scripted": 79,
+			"notInScript": 83
+		},
+		{
+			"scripted": 126,
+			"notInScript": 64
+		},
+		{
+			"scripted": 266,
+			"notInScript": 82
+		},
+		{
+			"scripted": 14,
+			"notInScript": 3
+		},
+		{
+			"scripted": 87,
+			"notInScript": 41
+		},
+		{
+			"scripted": 98,
+			"notInScript": 62
+		},
+		{
+			"scripted": 208,
+			"notInScript": 79
+		},
+		{
+			"scripted": 87,
+			"notInScript": 109
+		},
+		{
+			"scripted": 391,
+			"notInScript": 85
+		},
+		{
+			"scripted": 266,
+			"notInScript": 98
+		},
+		{
+			"scripted": 90,
+			"notInScript": 181
+		},
+		{
+			"scripted": 37,
+			"notInScript": 42
+		},
+		{
+			"scripted": 122,
+			"notInScript": 153
+		},
+		{
+			"scripted": 2,
+			"notInScript": 27
+		},
+		{
+			"scripted": 49,
+			"notInScript": 13
+		},
+		{
+			"scripted": 47,
+			"notInScript": 24
+		},
+		{
+			"scripted": 164,
+			"notInScript": 123
+		},
+		{
+			"scripted": 89,
+			"notInScript": 137
+		},
+		{
+			"scripted": 167,
+			"notInScript": 37
+		},
+		{
+			"scripted": 160,
+			"notInScript": 60
+		},
+		{
+			"scripted": 106,
+			"notInScript": 54
+		},
+		{
+			"scripted": 0,
+			"notInScript": 18
+		},
+		{
+			"scripted": 25,
+			"notInScript": 12
+		},
+		{
+			"scripted": 48,
+			"notInScript": 114
+		},
+		{
+			"scripted": 20,
+			"notInScript": 41
+		},
+		{
+			"scripted": 57,
+			"notInScript": 143
+		},
+		{
+			"scripted": 26,
+			"notInScript": 3
+		},
+		{
+			"scripted": 249,
+			"notInScript": 52
+		},
+		{
+			"scripted": 199,
+			"notInScript": 70
+		},
+		{
+			"scripted": 85,
+			"notInScript": 55
+		},
+		{
+			"scripted": 110,
+			"notInScript": 76
+		},
+		{
+			"scripted": 104,
+			"notInScript": 113
+		},
+		{
+			"scripted": 133,
+			"notInScript": 38
+		},
+		{
+			"scripted": 64,
+			"notInScript": 17
+		},
+		{
+			"scripted": 68,
+			"notInScript": 14
+		},
+		{
+			"scripted": 10,
+			"notInScript": 56
+		},
+		{
+			"scripted": 2,
+			"notInScript": 8
+		},
+		{
+			"scripted": 17,
+			"notInScript": 154
+		},
+		{
+			"scripted": 168,
+			"notInScript": 93
+		},
+		{
+			"scripted": 268,
+			"notInScript": 151
+		},
+		{
+			"scripted": 43,
+			"notInScript": 33
+		},
+		{
+			"scripted": 42,
+			"notInScript": 45
+		},
+		{
+			"scripted": 113,
+			"notInScript": 37
+		},
+		{
+			"scripted": 306,
+			"notInScript": 16
+		},
+		{
+			"scripted": 14,
+			"notInScript": 117
+		},
+		{
+			"scripted": 35,
+			"notInScript": 49
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 338,
+				"kept": 142,
+				"changed": 42,
+				"cut": 154
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 1,
+				"kept": 0,
+				"changed": 0,
+				"cut": 1
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ROSE",
+				"text": "Yes, they got here. Just after you"
+			},
+			{
+				"speaker": "ALLNUTT",
+				"text": "Now all that little choppin', them's shallas, Miss."
+			},
+			{
+				"speaker": "ROSE",
+				"text": "Don't worry, Mr. Allnutt."
+			},
+			{
+				"speaker": "ROSE",
+				"text": "Besides, it's high time we had our supper. It'll be dark before long."
+			},
+			{
+				"speaker": "ROSE",
+				"text": "When you come to think of it, we're a very lucky couple, really."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 654,
+				"text": "We must ask the Almighty to bless the arms of England and carry her through her hour of trial."
+			},
+			{
+				"at": 1795,
+				"text": "I'd like a cup of tea."
+			},
+			{
+				"at": 2882,
+				"text": "I just ain't used to it, that's all."
+			},
+			{
+				"at": 4210,
+				"text": "Right you are, Rosie, 'cause no other man alive's got you."
+			},
+			{
+				"at": 5511,
+				"text": "It's only that I just can't bear the thought of..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "ROSE",
+				"page": "I'm here with you, Brother dear. Right here beside you.",
+				"screen": "I'm here, Brother, beside you.",
+				"pageWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"you,",
+						false
+					],
+					[
+						"Brother",
+						false
+					],
+					[
+						"dear.",
+						false
+					],
+					[
+						"Right",
+						false
+					],
+					[
+						"here",
+						false
+					],
+					[
+						"beside",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"here,",
+						true
+					],
+					[
+						"Brother,",
+						false
+					],
+					[
+						"beside",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ROSE",
+				"page": "I'd like one too.",
+				"screen": "I'd like a bath myself.",
+				"pageWords": [
+					[
+						"I'd",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"too.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'd",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"bath",
+						false
+					],
+					[
+						"myself.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ROSE",
+				"page": "How much farther do you think it is to the lake?",
+				"screen": "How much further do you suppose it is to the lake, Charlie?",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"much",
+						false
+					],
+					[
+						"farther",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"lake?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"much",
+						false
+					],
+					[
+						"further",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"suppose",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"lake,",
+						true
+					],
+					[
+						"Charlie?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ROSE",
+				"page": "It wasn't for our sakes, either.",
+				"screen": "Judge us not for our weakness, but for our love.",
+				"pageWords": [
+					[
+						"It",
+						false
+					],
+					[
+						"wasn't",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"sakes,",
+						false
+					],
+					[
+						"either.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Judge",
+						false
+					],
+					[
+						"us",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"our",
+						false
+					],
+					[
+						"weakness,",
+						false
+					],
+					[
+						"but",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"love.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ROSE",
+				"page": "Acquired? Mr. Allnutt made them.",
+				"screen": "Mr. Allnut made them.",
+				"pageWords": [
+					[
+						"Acquired?",
+						false
+					],
+					[
+						"Mr.",
+						false
+					],
+					[
+						"Allnutt",
+						false
+					],
+					[
+						"made",
+						true
+					],
+					[
+						"them.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Mr.",
+						false
+					],
+					[
+						"Allnut",
+						false
+					],
+					[
+						"made",
+						true
+					],
+					[
+						"them.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

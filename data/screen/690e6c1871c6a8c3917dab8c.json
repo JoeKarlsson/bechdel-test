@@ -1,0 +1,1165 @@
+{
+	"_id": "690e6c1871c6a8c3917dab8c",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 8,
+		"eligible": 6,
+		"rejected": {
+			"duplicate": 2
+		},
+		"used": 6,
+		"primary": "1954358574",
+		"versions": [
+			"1956606182",
+			"1954405623",
+			"1954358574",
+			"1954921875",
+			"1954921872",
+			"1956988412"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9861969211041667,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6300,
+	"quality": {
+		"anchoredShare": 0.6209270307480496
+	},
+	"words": {
+		"page": 10895,
+		"screen": 7866,
+		"kept": 6714,
+		"cut": 4181,
+		"notInScript": 1101,
+		"moved": 340
+	},
+	"lines": {
+		"page": 816,
+		"kept": 488,
+		"changed": 144,
+		"cut": 184,
+		"screen": 1067,
+		"notInScript": 103
+	},
+	"byGender": {
+		"w": {
+			"lines": 449,
+			"kept": 275,
+			"changed": 69,
+			"cut": 105
+		},
+		"m": {
+			"lines": 361,
+			"kept": 212,
+			"changed": 75,
+			"cut": 74
+		},
+		"unknown": {
+			"lines": 6,
+			"kept": 1,
+			"changed": 0,
+			"cut": 5
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 8
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"changed": 8,
+			"kept": 6,
+			"cut": 3
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"cut": 8
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 13,
+			"changed": 3
+		},
+		{
+			"kept": 15,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"cut": 6,
+			"kept": 6,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 13,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 6
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 5,
+			"cut": 7,
+			"changed": 5
+		},
+		{
+			"kept": 7,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 8
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"changed": 1,
+			"kept": 12,
+			"cut": 4
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 4,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 1,
+			"changed": 6
+		},
+		{
+			"changed": 3,
+			"kept": 14
+		},
+		{
+			"kept": 15,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"changed": 7,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 30,
+			"notInScript": 1
+		},
+		{
+			"scripted": 110,
+			"notInScript": 0
+		},
+		{
+			"scripted": 135,
+			"notInScript": 6
+		},
+		{
+			"scripted": 156,
+			"notInScript": 32
+		},
+		{
+			"scripted": 95,
+			"notInScript": 17
+		},
+		{
+			"scripted": 235,
+			"notInScript": 0
+		},
+		{
+			"scripted": 209,
+			"notInScript": 0
+		},
+		{
+			"scripted": 229,
+			"notInScript": 2
+		},
+		{
+			"scripted": 134,
+			"notInScript": 35
+		},
+		{
+			"scripted": 249,
+			"notInScript": 1
+		},
+		{
+			"scripted": 267,
+			"notInScript": 7
+		},
+		{
+			"scripted": 238,
+			"notInScript": 0
+		},
+		{
+			"scripted": 145,
+			"notInScript": 0
+		},
+		{
+			"scripted": 112,
+			"notInScript": 11
+		},
+		{
+			"scripted": 149,
+			"notInScript": 5
+		},
+		{
+			"scripted": 174,
+			"notInScript": 4
+		},
+		{
+			"scripted": 215,
+			"notInScript": 8
+		},
+		{
+			"scripted": 111,
+			"notInScript": 13
+		},
+		{
+			"scripted": 207,
+			"notInScript": 4
+		},
+		{
+			"scripted": 176,
+			"notInScript": 3
+		},
+		{
+			"scripted": 100,
+			"notInScript": 11
+		},
+		{
+			"scripted": 230,
+			"notInScript": 3
+		},
+		{
+			"scripted": 196,
+			"notInScript": 0
+		},
+		{
+			"scripted": 301,
+			"notInScript": 8
+		},
+		{
+			"scripted": 173,
+			"notInScript": 1
+		},
+		{
+			"scripted": 60,
+			"notInScript": 20
+		},
+		{
+			"scripted": 103,
+			"notInScript": 8
+		},
+		{
+			"scripted": 211,
+			"notInScript": 19
+		},
+		{
+			"scripted": 211,
+			"notInScript": 0
+		},
+		{
+			"scripted": 220,
+			"notInScript": 24
+		},
+		{
+			"scripted": 123,
+			"notInScript": 0
+		},
+		{
+			"scripted": 192,
+			"notInScript": 45
+		},
+		{
+			"scripted": 64,
+			"notInScript": 0
+		},
+		{
+			"scripted": 235,
+			"notInScript": 1
+		},
+		{
+			"scripted": 157,
+			"notInScript": 2
+		},
+		{
+			"scripted": 203,
+			"notInScript": 0
+		},
+		{
+			"scripted": 135,
+			"notInScript": 1
+		},
+		{
+			"scripted": 221,
+			"notInScript": 0
+		},
+		{
+			"scripted": 99,
+			"notInScript": 0
+		},
+		{
+			"scripted": 234,
+			"notInScript": 0
+		},
+		{
+			"scripted": 130,
+			"notInScript": 1
+		},
+		{
+			"scripted": 130,
+			"notInScript": 51
+		},
+		{
+			"scripted": 110,
+			"notInScript": 72
+		},
+		{
+			"scripted": 116,
+			"notInScript": 0
+		},
+		{
+			"scripted": 119,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 11,
+		"seconds": 164.3,
+		"longest": 38.2,
+		"spans": [
+			[
+				698.6,
+				736.8
+			],
+			[
+				1068.4,
+				1076.1
+			],
+			[
+				1167.6,
+				1201.5
+			],
+			[
+				2524.1,
+				2532.3
+			],
+			[
+				2604.1,
+				2613.2
+			],
+			[
+				3011.8,
+				3016.5
+			],
+			[
+				3310.4,
+				3317.7
+			],
+			[
+				3319.2,
+				3325.5
+			],
+			[
+				3348.6,
+				3376
+			],
+			[
+				3445.7,
+				3458.2
+			],
+			[
+				4870.4,
+				4879.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 242,
+				"kept": 152,
+				"changed": 30,
+				"cut": 60
+			},
+			"other": {
+				"lines": 200,
+				"kept": 118,
+				"changed": 39,
+				"cut": 43
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 139,
+				"kept": 87,
+				"changed": 27,
+				"cut": 25
+			},
+			"other": {
+				"lines": 209,
+				"kept": 115,
+				"changed": 47,
+				"cut": 47
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LADY MANSFIELD",
+				"text": "Evidently he had some...`feeling' for the woman."
+			},
+			{
+				"speaker": "LORD MANSFIELD",
+				"text": "Hummm... Yours are grand ambitions."
+			},
+			{
+				"speaker": "DIDO",
+				"text": "Not what you wished for."
+			},
+			{
+				"speaker": "DIDO",
+				"text": "Mr Davinier. It makes him breathless just to see her there. A beat passes."
+			},
+			{
+				"speaker": "DIDO",
+				"text": "Papaa...? LORD MANSFIELD is incandescent. He shakes with rage."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 444,
+				"text": "Would you like to see it?"
+			},
+			{
+				"at": 1085,
+				"text": "Britain hail All hail to thee"
+			},
+			{
+				"at": 3484,
+				"text": "Let's see that smile."
+			},
+			{
+				"at": 4120,
+				"text": "Where is everyone, Mabel?"
+			},
+			{
+				"at": 5539,
+				"text": "Indeed, evidence shows the ship sailed past 8 ports... without pausing to restore water supplies."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "LADY MANSFIELD",
+				"page": "And most agreeable by all accounts! ELIZABETH'S mouth falls open. LADY MARY leans toward her.",
+				"screen": "And most agreeable by all accounts.",
+				"pageWords": [
+					[
+						"And",
+						true
+					],
+					[
+						"most",
+						true
+					],
+					[
+						"agreeable",
+						true
+					],
+					[
+						"by",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"accounts!",
+						true
+					],
+					[
+						"ELIZABETH'S",
+						false
+					],
+					[
+						"mouth",
+						false
+					],
+					[
+						"falls",
+						false
+					],
+					[
+						"open.",
+						false
+					],
+					[
+						"LADY",
+						false
+					],
+					[
+						"MARY",
+						false
+					],
+					[
+						"leans",
+						false
+					],
+					[
+						"toward",
+						false
+					],
+					[
+						"her.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"And",
+						true
+					],
+					[
+						"most",
+						true
+					],
+					[
+						"agreeable",
+						true
+					],
+					[
+						"by",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"accounts.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JOHN",
+				"page": "The slaves were intentionally drowned, that is not in question. Chained! Thrown into the waters - chained together as one.",
+				"screen": "The slaves were thrown into the waters... chained together as one.",
+				"pageWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"slaves",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"intentionally",
+						false
+					],
+					[
+						"drowned,",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"question.",
+						false
+					],
+					[
+						"Chained!",
+						false
+					],
+					[
+						"Thrown",
+						true
+					],
+					[
+						"into",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"waters",
+						true
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"chained",
+						true
+					],
+					[
+						"together",
+						true
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"one.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"slaves",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"thrown",
+						true
+					],
+					[
+						"into",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"waters...",
+						true
+					],
+					[
+						"chained",
+						true
+					],
+					[
+						"together",
+						true
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"one.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JOHN",
+				"page": "It is the utter injustice...the industrial slaughter of so many.",
+				"screen": "It is the utter injustice.",
+				"pageWords": [
+					[
+						"It",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"utter",
+						true
+					],
+					[
+						"injustice...the",
+						false
+					],
+					[
+						"industrial",
+						false
+					],
+					[
+						"slaughter",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"many.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"It",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"utter",
+						true
+					],
+					[
+						"injustice.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LADY MANSFIELD",
+				"page": "Will you join us, Dido? Dido? She is absorbed in the headline. Absolutely rooted.",
+				"screen": "Will you join us, Dido? Dido?",
+				"pageWords": [
+					[
+						"Will",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"join",
+						true
+					],
+					[
+						"us,",
+						true
+					],
+					[
+						"Dido?",
+						true
+					],
+					[
+						"Dido?",
+						true
+					],
+					[
+						"She",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"absorbed",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"headline.",
+						false
+					],
+					[
+						"Absolutely",
+						false
+					],
+					[
+						"rooted.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Will",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"join",
+						true
+					],
+					[
+						"us,",
+						true
+					],
+					[
+						"Dido?",
+						true
+					],
+					[
+						"Dido?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DIDO",
+				"page": "I don't know that I find myself anywhere. I have no place that I may claim.",
+				"screen": "I don't know that I find myself anywhere.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"find",
+						true
+					],
+					[
+						"myself",
+						true
+					],
+					[
+						"anywhere.",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"no",
+						false
+					],
+					[
+						"place",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"may",
+						false
+					],
+					[
+						"claim.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"find",
+						true
+					],
+					[
+						"myself",
+						true
+					],
+					[
+						"anywhere.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

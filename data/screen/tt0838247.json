@@ -1,0 +1,983 @@
+{
+	"_id": "tt0838247",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 16,
+		"eligible": 12,
+		"rejected": {
+			"duplicate": 4
+		},
+		"used": 9,
+		"primary": "1952379384",
+		"versions": [
+			"1952421057",
+			"1952623765",
+			"1956988773",
+			"1952377795",
+			"1952379384",
+			"1956980245",
+			"1952360016",
+			"1953175468",
+			"1955677184"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9901339388879694,
+		"lyricsDropped": 59
+	},
+	"runtimeSeconds": 6180,
+	"quality": {
+		"anchoredShare": 0.4768737597313387
+	},
+	"words": {
+		"page": 6551,
+		"screen": 4869,
+		"kept": 3128,
+		"cut": 3423,
+		"notInScript": 1745,
+		"moved": 268
+	},
+	"lines": {
+		"page": 790,
+		"kept": 386,
+		"changed": 116,
+		"cut": 288,
+		"screen": 1063,
+		"notInScript": 357
+	},
+	"byGender": {
+		"w": {
+			"lines": 256,
+			"kept": 106,
+			"changed": 40,
+			"cut": 110
+		},
+		"m": {
+			"lines": 478,
+			"kept": 276,
+			"changed": 76,
+			"cut": 126
+		},
+		"unknown": {
+			"lines": 56,
+			"kept": 4,
+			"changed": 0,
+			"cut": 52
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 8
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 12,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 4,
+			"kept": 10
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 4
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 5
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 4
+		},
+		{
+			"cut": 3,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"changed": 3,
+			"cut": 10,
+			"kept": 4
+		},
+		{
+			"kept": 10,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 6
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"cut": 14
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 6
+		},
+		{
+			"changed": 1,
+			"kept": 11,
+			"cut": 4
+		},
+		{
+			"changed": 1,
+			"kept": 6,
+			"cut": 10
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"cut": 1,
+			"kept": 13,
+			"changed": 3
+		},
+		{
+			"kept": 12,
+			"changed": 4
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 6,
+			"cut": 10
+		},
+		{
+			"changed": 3,
+			"kept": 8,
+			"cut": 6
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"cut": 10,
+			"kept": 6
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 28
+		},
+		{
+			"scripted": 67,
+			"notInScript": 17
+		},
+		{
+			"scripted": 13,
+			"notInScript": 41
+		},
+		{
+			"scripted": 94,
+			"notInScript": 13
+		},
+		{
+			"scripted": 33,
+			"notInScript": 0
+		},
+		{
+			"scripted": 214,
+			"notInScript": 67
+		},
+		{
+			"scripted": 10,
+			"notInScript": 53
+		},
+		{
+			"scripted": 53,
+			"notInScript": 3
+		},
+		{
+			"scripted": 86,
+			"notInScript": 28
+		},
+		{
+			"scripted": 90,
+			"notInScript": 69
+		},
+		{
+			"scripted": 94,
+			"notInScript": 32
+		},
+		{
+			"scripted": 136,
+			"notInScript": 33
+		},
+		{
+			"scripted": 32,
+			"notInScript": 61
+		},
+		{
+			"scripted": 84,
+			"notInScript": 49
+		},
+		{
+			"scripted": 149,
+			"notInScript": 31
+		},
+		{
+			"scripted": 50,
+			"notInScript": 14
+		},
+		{
+			"scripted": 66,
+			"notInScript": 18
+		},
+		{
+			"scripted": 10,
+			"notInScript": 2
+		},
+		{
+			"scripted": 185,
+			"notInScript": 14
+		},
+		{
+			"scripted": 41,
+			"notInScript": 3
+		},
+		{
+			"scripted": 36,
+			"notInScript": 36
+		},
+		{
+			"scripted": 120,
+			"notInScript": 12
+		},
+		{
+			"scripted": 18,
+			"notInScript": 7
+		},
+		{
+			"scripted": 21,
+			"notInScript": 16
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 82,
+			"notInScript": 27
+		},
+		{
+			"scripted": 32,
+			"notInScript": 0
+		},
+		{
+			"scripted": 111,
+			"notInScript": 31
+		},
+		{
+			"scripted": 33,
+			"notInScript": 63
+		},
+		{
+			"scripted": 67,
+			"notInScript": 24
+		},
+		{
+			"scripted": 121,
+			"notInScript": 65
+		},
+		{
+			"scripted": 124,
+			"notInScript": 15
+		},
+		{
+			"scripted": 153,
+			"notInScript": 24
+		},
+		{
+			"scripted": 116,
+			"notInScript": 31
+		},
+		{
+			"scripted": 122,
+			"notInScript": 56
+		},
+		{
+			"scripted": 214,
+			"notInScript": 29
+		},
+		{
+			"scripted": 174,
+			"notInScript": 36
+		},
+		{
+			"scripted": 47,
+			"notInScript": 3
+		},
+		{
+			"scripted": 110,
+			"notInScript": 7
+		},
+		{
+			"scripted": 70,
+			"notInScript": 14
+		},
+		{
+			"scripted": 79,
+			"notInScript": 49
+		},
+		{
+			"scripted": 83,
+			"notInScript": 19
+		},
+		{
+			"scripted": 63,
+			"notInScript": 39
+		},
+		{
+			"scripted": 30,
+			"notInScript": 21
+		},
+		{
+			"scripted": 90,
+			"notInScript": 27
+		},
+		{
+			"scripted": 16,
+			"notInScript": 3
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 18.1,
+		"longest": 13.4,
+		"spans": [
+			[
+				552.6,
+				566
+			],
+			[
+				1292.2,
+				1296.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 45,
+				"kept": 9,
+				"changed": 1,
+				"cut": 35
+			},
+			"other": {
+				"lines": 201,
+				"kept": 96,
+				"changed": 38,
+				"cut": 67
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 217,
+				"kept": 134,
+				"changed": 43,
+				"cut": 40
+			},
+			"other": {
+				"lines": 249,
+				"kept": 141,
+				"changed": 33,
+				"cut": 75
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ANNA",
+				"text": "I don't know Paul."
+			},
+			{
+				"speaker": "BEATRICE",
+				"text": "That's it. Go and cry to Paul."
+			},
+			{
+				"speaker": "ANNA",
+				"text": "I'm scared. I'm so scared."
+			},
+			{
+				"speaker": "ON POLAROID",
+				"text": "The Old Woman, Mrs. Whitehall, lying in her casket."
+			},
+			{
+				"speaker": "ON ANNA",
+				"text": "Her eyes still closed."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 715,
+				"text": "What's the special occasion?"
+			},
+			{
+				"at": 1517,
+				"text": "Who's going to take care of me now?"
+			},
+			{
+				"at": 3063,
+				"text": "One more key, come on."
+			},
+			{
+				"at": 3898,
+				"text": "I am so sorry."
+			},
+			{
+				"at": 4692,
+				"text": "Nothing was ever different."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "PAUL",
+				"page": "Let's not argue tonight. OK?",
+				"screen": "Let's try not to fight tonight, okay?",
+				"pageWords": [
+					[
+						"Let's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"argue",
+						false
+					],
+					[
+						"tonight.",
+						true
+					],
+					[
+						"OK?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Let's",
+						false
+					],
+					[
+						"try",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"fight",
+						false
+					],
+					[
+						"tonight,",
+						true
+					],
+					[
+						"okay?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BEATRICE",
+				"page": "It's us who are left behind. It's us who suffer.",
+				"screen": "We who are left behind.",
+				"pageWords": [
+					[
+						"It's",
+						false
+					],
+					[
+						"us",
+						false
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"behind.",
+						true
+					],
+					[
+						"It's",
+						false
+					],
+					[
+						"us",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"suffer.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"behind.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ANNA",
+				"page": "You had a long life.",
+				"screen": "Maybe you did die a long time ago.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"long",
+						true
+					],
+					[
+						"life.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Maybe",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"die",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"long",
+						true
+					],
+					[
+						"time",
+						false
+					],
+					[
+						"ago.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ELIOT",
+				"page": "Yes. Very tragic. Now is there anything else I can help you with?",
+				"screen": "Yes yes, very tragic.",
+				"pageWords": [
+					[
+						"Yes.",
+						true
+					],
+					[
+						"Very",
+						true
+					],
+					[
+						"tragic.",
+						true
+					],
+					[
+						"Now",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"anything",
+						false
+					],
+					[
+						"else",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"help",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"with?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yes",
+						false
+					],
+					[
+						"yes,",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"tragic.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ELIOT",
+				"page": "It's only a hole in the ground. I'm digging it for--",
+				"screen": "It's only a hole in the ground.",
+				"pageWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"only",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"hole",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"ground.",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"digging",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"for--",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"only",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"hole",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"ground.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

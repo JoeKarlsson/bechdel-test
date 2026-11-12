@@ -1,0 +1,989 @@
+{
+	"_id": "tt0101998",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 3,
+		"eligible": 3,
+		"rejected": {},
+		"used": 3,
+		"primary": "1958329801",
+		"versions": [
+			"1955863699",
+			"1956487300",
+			"1958329801"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9156337862896878,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5340,
+	"quality": {
+		"anchoredShare": 0.358679706601467
+	},
+	"words": {
+		"page": 12270,
+		"screen": 12293,
+		"kept": 4401,
+		"cut": 7869,
+		"notInScript": 7892,
+		"moved": 266
+	},
+	"lines": {
+		"page": 1063,
+		"kept": 289,
+		"changed": 330,
+		"cut": 444,
+		"screen": 2183,
+		"notInScript": 1154
+	},
+	"byGender": {
+		"w": {
+			"lines": 49,
+			"kept": 21,
+			"changed": 10,
+			"cut": 18
+		},
+		"m": {
+			"lines": 941,
+			"kept": 230,
+			"changed": 311,
+			"cut": 400
+		},
+		"unknown": {
+			"lines": 73,
+			"kept": 38,
+			"changed": 9,
+			"cut": 26
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 6,
+			"changed": 8,
+			"kept": 9
+		},
+		{
+			"changed": 10,
+			"cut": 4,
+			"kept": 8
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 8,
+			"changed": 12,
+			"cut": 2
+		},
+		{
+			"changed": 14,
+			"cut": 5,
+			"kept": 3
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 6
+		},
+		{
+			"cut": 6,
+			"changed": 11,
+			"kept": 6
+		},
+		{
+			"changed": 9,
+			"kept": 10,
+			"cut": 3
+		},
+		{
+			"changed": 10,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"cut": 7,
+			"changed": 10,
+			"kept": 5
+		},
+		{
+			"changed": 7,
+			"cut": 8,
+			"kept": 7
+		},
+		{
+			"changed": 7,
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"cut": 6,
+			"changed": 8,
+			"kept": 8
+		},
+		{
+			"cut": 17,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"changed": 10,
+			"cut": 9,
+			"kept": 3
+		},
+		{
+			"cut": 6,
+			"changed": 12,
+			"kept": 4
+		},
+		{
+			"kept": 7,
+			"cut": 3,
+			"changed": 12
+		},
+		{
+			"kept": 13,
+			"changed": 8,
+			"cut": 1
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 9
+		},
+		{
+			"changed": 9,
+			"cut": 4,
+			"kept": 9
+		},
+		{
+			"kept": 10,
+			"changed": 11,
+			"cut": 2
+		},
+		{
+			"kept": 8,
+			"cut": 7,
+			"changed": 7
+		},
+		{
+			"kept": 3,
+			"cut": 7,
+			"changed": 12
+		},
+		{
+			"kept": 7,
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"changed": 12,
+			"cut": 3
+		},
+		{
+			"cut": 10,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"changed": 9,
+			"cut": 9,
+			"kept": 5
+		},
+		{
+			"cut": 13,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"kept": 2,
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 9
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 15,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"changed": 2,
+			"kept": 3,
+			"cut": 17
+		},
+		{
+			"cut": 9,
+			"changed": 6,
+			"kept": 7
+		},
+		{
+			"cut": 16,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 11,
+			"changed": 5
+		},
+		{
+			"changed": 6,
+			"cut": 6,
+			"kept": 10
+		},
+		{
+			"changed": 9,
+			"kept": 11,
+			"cut": 2
+		},
+		{
+			"cut": 9,
+			"kept": 5,
+			"changed": 9
+		},
+		{
+			"cut": 19,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"kept": 5
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 12
+		},
+		{
+			"kept": 5,
+			"cut": 11,
+			"changed": 6
+		},
+		{
+			"changed": 7,
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 54,
+			"notInScript": 114
+		},
+		{
+			"scripted": 0,
+			"notInScript": 134
+		},
+		{
+			"scripted": 118,
+			"notInScript": 52
+		},
+		{
+			"scripted": 281,
+			"notInScript": 98
+		},
+		{
+			"scripted": 78,
+			"notInScript": 58
+		},
+		{
+			"scripted": 156,
+			"notInScript": 55
+		},
+		{
+			"scripted": 260,
+			"notInScript": 50
+		},
+		{
+			"scripted": 296,
+			"notInScript": 152
+		},
+		{
+			"scripted": 78,
+			"notInScript": 155
+		},
+		{
+			"scripted": 178,
+			"notInScript": 120
+		},
+		{
+			"scripted": 296,
+			"notInScript": 109
+		},
+		{
+			"scripted": 216,
+			"notInScript": 148
+		},
+		{
+			"scripted": 124,
+			"notInScript": 216
+		},
+		{
+			"scripted": 169,
+			"notInScript": 219
+		},
+		{
+			"scripted": 184,
+			"notInScript": 148
+		},
+		{
+			"scripted": 227,
+			"notInScript": 98
+		},
+		{
+			"scripted": 123,
+			"notInScript": 201
+		},
+		{
+			"scripted": 216,
+			"notInScript": 52
+		},
+		{
+			"scripted": 243,
+			"notInScript": 71
+		},
+		{
+			"scripted": 177,
+			"notInScript": 47
+		},
+		{
+			"scripted": 265,
+			"notInScript": 64
+		},
+		{
+			"scripted": 171,
+			"notInScript": 121
+		},
+		{
+			"scripted": 121,
+			"notInScript": 106
+		},
+		{
+			"scripted": 88,
+			"notInScript": 58
+		},
+		{
+			"scripted": 256,
+			"notInScript": 82
+		},
+		{
+			"scripted": 57,
+			"notInScript": 67
+		},
+		{
+			"scripted": 137,
+			"notInScript": 21
+		},
+		{
+			"scripted": 97,
+			"notInScript": 183
+		},
+		{
+			"scripted": 159,
+			"notInScript": 94
+		},
+		{
+			"scripted": 153,
+			"notInScript": 30
+		},
+		{
+			"scripted": 0,
+			"notInScript": 92
+		},
+		{
+			"scripted": 170,
+			"notInScript": 133
+		},
+		{
+			"scripted": 29,
+			"notInScript": 194
+		},
+		{
+			"scripted": 72,
+			"notInScript": 166
+		},
+		{
+			"scripted": 62,
+			"notInScript": 226
+		},
+		{
+			"scripted": 66,
+			"notInScript": 76
+		},
+		{
+			"scripted": 233,
+			"notInScript": 93
+		},
+		{
+			"scripted": 177,
+			"notInScript": 122
+		},
+		{
+			"scripted": 215,
+			"notInScript": 95
+		},
+		{
+			"scripted": 84,
+			"notInScript": 65
+		},
+		{
+			"scripted": 162,
+			"notInScript": 126
+		},
+		{
+			"scripted": 68,
+			"notInScript": 46
+		},
+		{
+			"scripted": 152,
+			"notInScript": 228
+		},
+		{
+			"scripted": 36,
+			"notInScript": 266
+		},
+		{
+			"scripted": 22,
+			"notInScript": 157
+		},
+		{
+			"scripted": 13,
+			"notInScript": 48
+		},
+		{
+			"scripted": 0,
+			"notInScript": 359
+		},
+		{
+			"scripted": 0,
+			"notInScript": 139
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 33,
+				"kept": 12,
+				"changed": 8,
+				"cut": 13
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 752,
+				"kept": 177,
+				"changed": 254,
+				"cut": 321
+			},
+			"other": {
+				"lines": 141,
+				"kept": 30,
+				"changed": 45,
+				"cut": 66
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "TOM",
+				"text": "Damn, well, you should've called me."
+			},
+			{
+				"speaker": "TOM",
+				"text": "Yeah,· me! What's a matter wit' me?"
+			},
+			{
+				"speaker": "VINNY",
+				"text": "Well, obviously, you don't know nothin' either, 'cause I never see you makin' no money off the shit."
+			},
+			{
+				"speaker": "TOM",
+				"text": "Yo, I'm tired, man. We had our fun."
+			},
+			{
+				"speaker": "TOM",
+				"text": "Alright! Tear it up, VINNY!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 809,
+				"text": "Do me a favor, man."
+			},
+			{
+				"at": 1621,
+				"text": "That's the white man oppressing me, keeping me down."
+			},
+			{
+				"at": 2806,
+				"text": "So who's Thomas mcneal?"
+			},
+			{
+				"at": 3834,
+				"text": "The way they kind of twitched around when I was in the moment?"
+			},
+			{
+				"at": 4821,
+				"text": "Uh, let me get a ham and egg on a roll, man."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "JOHNNY",
+				"page": "Awwww, man, I don't know, ya know? I feel kinda depressed tonight, ya know?",
+				"screen": "I don't know. You see that, man.",
+				"pageWords": [
+					[
+						"Awwww,",
+						false
+					],
+					[
+						"man,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know,",
+						true
+					],
+					[
+						"ya",
+						true
+					],
+					[
+						"know?",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"feel",
+						false
+					],
+					[
+						"kinda",
+						false
+					],
+					[
+						"depressed",
+						false
+					],
+					[
+						"tonight,",
+						false
+					],
+					[
+						"ya",
+						false
+					],
+					[
+						"know?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"that,",
+						false
+					],
+					[
+						"man.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JOHNNY",
+				"page": "Do you have a job, man, ha?",
+				"screen": "Do you have a job, vinny, huh?",
+				"pageWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"job,",
+						true
+					],
+					[
+						"man,",
+						false
+					],
+					[
+						"ha?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"job,",
+						true
+					],
+					[
+						"vinny,",
+						false
+					],
+					[
+						"huh?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JOHNNY",
+				"page": "Hey, a girl like that takes time. She's a shy, sensitive thing.",
+				"screen": "She's a shy and sensitive thing..",
+				"pageWords": [
+					[
+						"Hey,",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"girl",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"takes",
+						false
+					],
+					[
+						"time.",
+						false
+					],
+					[
+						"She's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"shy,",
+						true
+					],
+					[
+						"sensitive",
+						true
+					],
+					[
+						"thing.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"She's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"shy",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"sensitive",
+						true
+					],
+					[
+						"thing..",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "VINNY",
+				"page": "Yeah, well, that's like a nickname.",
+				"screen": "Yeah. so that's a nickname, that's all.",
+				"pageWords": [
+					[
+						"Yeah,",
+						true
+					],
+					[
+						"well,",
+						false
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"nickname.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah.",
+						true
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"nickname,",
+						true
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"all.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "TOM",
+				"page": "Yeah, man, we know, we know. I've got you, man.",
+				"screen": "Yeah, yeah, yeah, man.",
+				"pageWords": [
+					[
+						"Yeah,",
+						true
+					],
+					[
+						"man,",
+						true
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"know,",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"know.",
+						false
+					],
+					[
+						"I've",
+						false
+					],
+					[
+						"got",
+						false
+					],
+					[
+						"you,",
+						false
+					],
+					[
+						"man.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"yeah,",
+						false
+					],
+					[
+						"yeah,",
+						true
+					],
+					[
+						"man.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

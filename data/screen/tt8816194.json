@@ -1,0 +1,980 @@
+{
+	"_id": "tt8816194",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 6,
+		"eligible": 2,
+		"rejected": {
+			"duplicate": 4
+		},
+		"used": 2,
+		"primary": "1956658971",
+		"versions": [
+			"1956658971",
+			"1956659405"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9975924710002189,
+		"lyricsDropped": 6
+	},
+	"runtimeSeconds": 5760,
+	"quality": {
+		"anchoredShare": 0.7083426526504137
+	},
+	"words": {
+		"page": 4471,
+		"screen": 4573,
+		"kept": 3154,
+		"cut": 1317,
+		"notInScript": 1406,
+		"moved": 10
+	},
+	"lines": {
+		"page": 569,
+		"kept": 387,
+		"changed": 55,
+		"cut": 127,
+		"screen": 1022,
+		"notInScript": 285
+	},
+	"byGender": {
+		"w": {
+			"lines": 59,
+			"kept": 28,
+			"changed": 9,
+			"cut": 22
+		},
+		"m": {
+			"lines": 490,
+			"kept": 354,
+			"changed": 43,
+			"cut": 93
+		},
+		"unknown": {
+			"lines": 20,
+			"kept": 5,
+			"changed": 3,
+			"cut": 12
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 2,
+			"kept": 10
+		},
+		{
+			"cut": 1,
+			"changed": 1,
+			"kept": 10
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"cut": 4
+		},
+		{
+			"kept": 9,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 8,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 11
+		},
+		{
+			"kept": 9,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 7,
+			"cut": 1
+		},
+		{
+			"kept": 12
+		},
+		{
+			"changed": 2,
+			"cut": 9,
+			"kept": 1
+		},
+		{
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"cut": 1
+		},
+		{
+			"cut": 4,
+			"kept": 8
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"kept": 7,
+			"cut": 2
+		},
+		{
+			"kept": 12
+		},
+		{
+			"changed": 1,
+			"kept": 11
+		},
+		{
+			"kept": 11,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"cut": 6
+		},
+		{
+			"cut": 5,
+			"changed": 1,
+			"kept": 6
+		},
+		{
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"cut": 2,
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 2,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 7
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 6
+		},
+		{
+			"cut": 7,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 6,
+			"cut": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 34,
+			"notInScript": 0
+		},
+		{
+			"scripted": 83,
+			"notInScript": 8
+		},
+		{
+			"scripted": 121,
+			"notInScript": 22
+		},
+		{
+			"scripted": 63,
+			"notInScript": 8
+		},
+		{
+			"scripted": 116,
+			"notInScript": 50
+		},
+		{
+			"scripted": 142,
+			"notInScript": 16
+		},
+		{
+			"scripted": 119,
+			"notInScript": 11
+		},
+		{
+			"scripted": 59,
+			"notInScript": 23
+		},
+		{
+			"scripted": 95,
+			"notInScript": 0
+		},
+		{
+			"scripted": 69,
+			"notInScript": 13
+		},
+		{
+			"scripted": 216,
+			"notInScript": 8
+		},
+		{
+			"scripted": 132,
+			"notInScript": 71
+		},
+		{
+			"scripted": 46,
+			"notInScript": 17
+		},
+		{
+			"scripted": 110,
+			"notInScript": 9
+		},
+		{
+			"scripted": 165,
+			"notInScript": 4
+		},
+		{
+			"scripted": 60,
+			"notInScript": 2
+		},
+		{
+			"scripted": 144,
+			"notInScript": 4
+		},
+		{
+			"scripted": 12,
+			"notInScript": 0
+		},
+		{
+			"scripted": 13,
+			"notInScript": 0
+		},
+		{
+			"scripted": 6,
+			"notInScript": 2
+		},
+		{
+			"scripted": 142,
+			"notInScript": 30
+		},
+		{
+			"scripted": 100,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 23,
+			"notInScript": 2
+		},
+		{
+			"scripted": 97,
+			"notInScript": 23
+		},
+		{
+			"scripted": 124,
+			"notInScript": 21
+		},
+		{
+			"scripted": 89,
+			"notInScript": 78
+		},
+		{
+			"scripted": 202,
+			"notInScript": 9
+		},
+		{
+			"scripted": 149,
+			"notInScript": 28
+		},
+		{
+			"scripted": 128,
+			"notInScript": 22
+		},
+		{
+			"scripted": 73,
+			"notInScript": 15
+		},
+		{
+			"scripted": 41,
+			"notInScript": 8
+		},
+		{
+			"scripted": 135,
+			"notInScript": 3
+		},
+		{
+			"scripted": 58,
+			"notInScript": 49
+		},
+		{
+			"scripted": 53,
+			"notInScript": 2
+		},
+		{
+			"scripted": 170,
+			"notInScript": 90
+		},
+		{
+			"scripted": 22,
+			"notInScript": 24
+		},
+		{
+			"scripted": 31,
+			"notInScript": 8
+		},
+		{
+			"scripted": 123,
+			"notInScript": 32
+		},
+		{
+			"scripted": 12,
+			"notInScript": 14
+		},
+		{
+			"scripted": 58,
+			"notInScript": 26
+		},
+		{
+			"scripted": 1,
+			"notInScript": 106
+		},
+		{
+			"scripted": 67,
+			"notInScript": 0
+		},
+		{
+			"scripted": 8,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 3
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 56,
+				"kept": 28,
+				"changed": 9,
+				"cut": 19
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 356,
+				"kept": 276,
+				"changed": 29,
+				"cut": 51
+			},
+			"other": {
+				"lines": 126,
+				"kept": 78,
+				"changed": 14,
+				"cut": 34
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "NORVAL",
+				"text": "Come on, dad. Don’t. He really hates being woken at night."
+			},
+			{
+				"speaker": "GLADYS",
+				"text": "I’m very sorry for your loss."
+			},
+			{
+				"speaker": "NORVAL",
+				"text": "Oh fuck ... oh fuck ..."
+			},
+			{
+				"speaker": "NORVAL",
+				"text": "... oh ... shit ..."
+			},
+			{
+				"speaker": "PRECIOUS",
+				"text": "You come back to us, now."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 818,
+				"text": "Do I promote high-profile events pertaining to music and the performance of music?"
+			},
+			{
+				"at": 1730,
+				"text": "I'll see you Friday."
+			},
+			{
+				"at": 3789,
+				"text": "Put... put... put... put... put..."
+			},
+			{
+				"at": 4546,
+				"text": "I'm what's known in medical circles as a titty-holic."
+			},
+			{
+				"at": 5225,
+				"text": "In fact, if someone were to accuse me of being a shit excuse for one, well..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BRIAN",
+				"page": "I’m sure you are.",
+				"screen": "Oh, I bet you are.",
+				"pageWords": [
+					[
+						"I’m",
+						false
+					],
+					[
+						"sure",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"are.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"bet",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"are.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GLADYS",
+				"page": "If you have any questions, give me a call. And between you and me...",
+				"screen": "If you have any questions just call me.",
+				"pageWords": [
+					[
+						"If",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"any",
+						true
+					],
+					[
+						"questions,",
+						true
+					],
+					[
+						"give",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"call.",
+						false
+					],
+					[
+						"And",
+						false
+					],
+					[
+						"between",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"me...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"If",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"any",
+						true
+					],
+					[
+						"questions",
+						true
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"call",
+						false
+					],
+					[
+						"me.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BRIAN",
+				"page": "That dumbbell... take it... you smash their fucking brains in.",
+				"screen": "You take it, and use it as a weapon, and you bash their fuckin' brains in.",
+				"pageWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"dumbbell...",
+						false
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"it...",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"smash",
+						false
+					],
+					[
+						"their",
+						true
+					],
+					[
+						"fucking",
+						true
+					],
+					[
+						"brains",
+						true
+					],
+					[
+						"in.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"it,",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"use",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"as",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"weapon,",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"bash",
+						false
+					],
+					[
+						"their",
+						true
+					],
+					[
+						"fuckin'",
+						true
+					],
+					[
+						"brains",
+						true
+					],
+					[
+						"in.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BRIAN",
+				"page": "He was starving me. I was fucking hungry.",
+				"screen": "He was starving me!",
+				"pageWords": [
+					[
+						"He",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"starving",
+						true
+					],
+					[
+						"me.",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"fucking",
+						false
+					],
+					[
+						"hungry.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"He",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"starving",
+						true
+					],
+					[
+						"me!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JETHRO",
+				"page": "Oh yeah, do it harder. Really get aggressive now.",
+				"screen": "Really get aggressive now.",
+				"pageWords": [
+					[
+						"Oh",
+						false
+					],
+					[
+						"yeah,",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"harder.",
+						false
+					],
+					[
+						"Really",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"aggressive",
+						true
+					],
+					[
+						"now.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Really",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"aggressive",
+						true
+					],
+					[
+						"now.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,959 @@
+{
+	"_id": "tt1241317",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 12,
+		"eligible": 6,
+		"rejected": {
+			"too few lines": 2,
+			"duplicate": 4
+		},
+		"used": 6,
+		"primary": "1955657928",
+		"versions": [
+			"1955657799",
+			"1955657887",
+			"1955657886",
+			"1955657928",
+			"1955658033",
+			"1955657927"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9980454763007643,
+		"lyricsDropped": 101
+	},
+	"runtimeSeconds": 6060,
+	"quality": {
+		"anchoredShare": 0.03354064860062195
+	},
+	"excluded": "the subtitles match the script no better than chance",
+	"words": {
+		"page": 9004,
+		"screen": 7787,
+		"kept": 302,
+		"cut": 8702,
+		"notInScript": 7485,
+		"moved": 114
+	},
+	"lines": {
+		"page": 825,
+		"kept": 19,
+		"changed": 44,
+		"cut": 758,
+		"screen": 1188,
+		"notInScript": 1104
+	},
+	"byGender": {
+		"w": {
+			"lines": 85,
+			"kept": 1,
+			"changed": 2,
+			"cut": 82
+		},
+		"m": {
+			"lines": 593,
+			"kept": 14,
+			"changed": 34,
+			"cut": 545
+		},
+		"unknown": {
+			"lines": 143,
+			"kept": 4,
+			"changed": 8,
+			"cut": 131
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"changed": 2
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 17
+		},
+		{
+			"changed": 1,
+			"cut": 17
+		},
+		{
+			"cut": 15,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 13,
+			"kept": 1
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 15,
+			"changed": 2
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 17
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 29,
+			"notInScript": 112
+		},
+		{
+			"scripted": 46,
+			"notInScript": 179
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 25,
+			"notInScript": 130
+		},
+		{
+			"scripted": 0,
+			"notInScript": 102
+		},
+		{
+			"scripted": 6,
+			"notInScript": 299
+		},
+		{
+			"scripted": 0,
+			"notInScript": 195
+		},
+		{
+			"scripted": 27,
+			"notInScript": 56
+		},
+		{
+			"scripted": 33,
+			"notInScript": 106
+		},
+		{
+			"scripted": 19,
+			"notInScript": 238
+		},
+		{
+			"scripted": 7,
+			"notInScript": 235
+		},
+		{
+			"scripted": 0,
+			"notInScript": 163
+		},
+		{
+			"scripted": 21,
+			"notInScript": 328
+		},
+		{
+			"scripted": 0,
+			"notInScript": 178
+		},
+		{
+			"scripted": 0,
+			"notInScript": 191
+		},
+		{
+			"scripted": 11,
+			"notInScript": 282
+		},
+		{
+			"scripted": 21,
+			"notInScript": 156
+		},
+		{
+			"scripted": 12,
+			"notInScript": 289
+		},
+		{
+			"scripted": 38,
+			"notInScript": 194
+		},
+		{
+			"scripted": 1,
+			"notInScript": 284
+		},
+		{
+			"scripted": 66,
+			"notInScript": 236
+		},
+		{
+			"scripted": 31,
+			"notInScript": 224
+		},
+		{
+			"scripted": 3,
+			"notInScript": 253
+		},
+		{
+			"scripted": 3,
+			"notInScript": 173
+		},
+		{
+			"scripted": 17,
+			"notInScript": 343
+		},
+		{
+			"scripted": 16,
+			"notInScript": 222
+		},
+		{
+			"scripted": 17,
+			"notInScript": 319
+		},
+		{
+			"scripted": 13,
+			"notInScript": 162
+		},
+		{
+			"scripted": 33,
+			"notInScript": 183
+		},
+		{
+			"scripted": 0,
+			"notInScript": 138
+		},
+		{
+			"scripted": 7,
+			"notInScript": 18
+		},
+		{
+			"scripted": 0,
+			"notInScript": 144
+		},
+		{
+			"scripted": 9,
+			"notInScript": 101
+		},
+		{
+			"scripted": 10,
+			"notInScript": 157
+		},
+		{
+			"scripted": 9,
+			"notInScript": 50
+		},
+		{
+			"scripted": 1,
+			"notInScript": 20
+		},
+		{
+			"scripted": 8,
+			"notInScript": 147
+		},
+		{
+			"scripted": 12,
+			"notInScript": 143
+		},
+		{
+			"scripted": 0,
+			"notInScript": 29
+		},
+		{
+			"scripted": 0,
+			"notInScript": 72
+		},
+		{
+			"scripted": 0,
+			"notInScript": 56
+		},
+		{
+			"scripted": 0,
+			"notInScript": 192
+		},
+		{
+			"scripted": 21,
+			"notInScript": 97
+		},
+		{
+			"scripted": 1,
+			"notInScript": 5
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 67,
+				"kept": 1,
+				"changed": 2,
+				"cut": 64
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 259,
+				"kept": 6,
+				"changed": 18,
+				"cut": 235
+			},
+			"other": {
+				"lines": 254,
+				"kept": 6,
+				"changed": 11,
+				"cut": 237
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LUKE",
+				"text": "Hey, sorry I'm late."
+			},
+			{
+				"speaker": "BRETT",
+				"text": "I promise ••• on my mother's soul."
+			},
+			{
+				"speaker": "DT. WASHINGTON",
+				"text": "Maybe he's a pilot and that's his flight schedule."
+			},
+			{
+				"speaker": "LOZANO",
+				"text": "I don't understand. How the hell are you gonna help me?"
+			},
+			{
+				"speaker": "BRETT",
+				"text": "I don't believe you!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 960,
+				"text": "Ryuk, what exactly can I do with this Death Note?"
+			},
+			{
+				"at": 1882,
+				"text": "How long since you've slept?"
+			},
+			{
+				"at": 2651,
+				"text": "Even if they're suspicious, I don't see how they can prove it."
+			},
+			{
+				"at": 3394,
+				"text": "\"Watari becomes obsessed with revealing the true identity of the detective known as 'L.'"
+			},
+			{
+				"at": 4713,
+				"text": "I'm just gonna turn around really slowly."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "LUKE",
+				"page": "I wanna see mom's case file.",
+				"screen": "I know you want to.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"wanna",
+						true
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"mom's",
+						false
+					],
+					[
+						"case",
+						false
+					],
+					[
+						"file.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"to.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LUKE",
+				"page": "I looked these guys up, just out of curiosity. And you know what? They were all career criminals.",
+				"screen": "Sorry about what I said... you know. Uh, what?",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"looked",
+						false
+					],
+					[
+						"these",
+						false
+					],
+					[
+						"guys",
+						false
+					],
+					[
+						"up,",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"curiosity.",
+						false
+					],
+					[
+						"And",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what?",
+						true
+					],
+					[
+						"They",
+						false
+					],
+					[
+						"were",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"career",
+						false
+					],
+					[
+						"criminals.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Sorry",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"said...",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"know.",
+						true
+					],
+					[
+						"Uh,",
+						null
+					],
+					[
+						"what?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CAPT. MURRAY",
+				"page": "L, there's no way one guy is doing all of this.",
+				"screen": "We gotta stop doing all of this.",
+				"pageWords": [
+					[
+						"L,",
+						false
+					],
+					[
+						"there's",
+						false
+					],
+					[
+						"no",
+						false
+					],
+					[
+						"way",
+						false
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"guy",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"doing",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"this.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"gotta",
+						false
+					],
+					[
+						"stop",
+						false
+					],
+					[
+						"doing",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"this.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BRETT",
+				"page": "I didn't lie to you.",
+				"screen": "I didn't get this cool until much later.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"lie",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"cool",
+						false
+					],
+					[
+						"until",
+						false
+					],
+					[
+						"much",
+						false
+					],
+					[
+						"later.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LUKE",
+				"page": "Yeah, they're useless. Believe me .•. I have a better idea.",
+				"screen": "I have a theory.",
+				"pageWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"they're",
+						false
+					],
+					[
+						"useless.",
+						false
+					],
+					[
+						"Believe",
+						false
+					],
+					[
+						"me",
+						true
+					],
+					[
+						".•.",
+						null
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"better",
+						false
+					],
+					[
+						"idea.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"theory.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

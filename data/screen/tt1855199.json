@@ -1,0 +1,1180 @@
+{
+	"_id": "tt1855199",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 26,
+		"eligible": 18,
+		"rejected": {
+			"duplicate": 5,
+			"split across CDs": 2,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1953261090",
+		"versions": [
+			"1953273619",
+			"1953447315",
+			"1953287997",
+			"1953547250",
+			"1954040158",
+			"1953317747",
+			"1953276195",
+			"1953261090",
+			"1954459176"
+		],
+		"sdh": false,
+		"meanAgreement": 0.969293331056373,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6540,
+	"quality": {
+		"anchoredShare": 0.352796969021618
+	},
+	"words": {
+		"page": 8974,
+		"screen": 11674,
+		"kept": 3164,
+		"cut": 5810,
+		"notInScript": 8508,
+		"moved": 788
+	},
+	"lines": {
+		"page": 748,
+		"kept": 209,
+		"changed": 142,
+		"cut": 397,
+		"screen": 2216,
+		"notInScript": 1594
+	},
+	"byGender": {
+		"w": {
+			"lines": 88,
+			"kept": 20,
+			"changed": 8,
+			"cut": 60
+		},
+		"m": {
+			"lines": 575,
+			"kept": 174,
+			"changed": 117,
+			"cut": 284
+		},
+		"unknown": {
+			"lines": 85,
+			"kept": 15,
+			"changed": 17,
+			"cut": 53
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 16
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 7,
+			"cut": 7
+		},
+		{
+			"kept": 2,
+			"cut": 9,
+			"changed": 4
+		},
+		{
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"cut": 7,
+			"kept": 5
+		},
+		{
+			"kept": 5,
+			"changed": 5,
+			"cut": 5
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"cut": 8
+		},
+		{
+			"cut": 7,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"changed": 4,
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"kept": 6,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"kept": 8,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"cut": 4,
+			"changed": 8,
+			"kept": 4
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 5
+		},
+		{
+			"changed": 1,
+			"kept": 10,
+			"cut": 5
+		},
+		{
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"cut": 5,
+			"kept": 4,
+			"changed": 7
+		},
+		{
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 9,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"cut": 9,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"cut": 12,
+			"changed": 4
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 6
+		},
+		{
+			"kept": 7,
+			"changed": 8,
+			"cut": 1
+		},
+		{
+			"kept": 4,
+			"cut": 7,
+			"changed": 5
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"kept": 5,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"cut": 2,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"changed": 1,
+			"cut": 11,
+			"kept": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 199,
+			"notInScript": 78
+		},
+		{
+			"scripted": 156,
+			"notInScript": 129
+		},
+		{
+			"scripted": 139,
+			"notInScript": 276
+		},
+		{
+			"scripted": 177,
+			"notInScript": 157
+		},
+		{
+			"scripted": 202,
+			"notInScript": 219
+		},
+		{
+			"scripted": 113,
+			"notInScript": 178
+		},
+		{
+			"scripted": 43,
+			"notInScript": 366
+		},
+		{
+			"scripted": 299,
+			"notInScript": 98
+		},
+		{
+			"scripted": 122,
+			"notInScript": 261
+		},
+		{
+			"scripted": 43,
+			"notInScript": 467
+		},
+		{
+			"scripted": 144,
+			"notInScript": 96
+		},
+		{
+			"scripted": 163,
+			"notInScript": 132
+		},
+		{
+			"scripted": 38,
+			"notInScript": 236
+		},
+		{
+			"scripted": 42,
+			"notInScript": 146
+		},
+		{
+			"scripted": 55,
+			"notInScript": 116
+		},
+		{
+			"scripted": 170,
+			"notInScript": 53
+		},
+		{
+			"scripted": 39,
+			"notInScript": 137
+		},
+		{
+			"scripted": 118,
+			"notInScript": 183
+		},
+		{
+			"scripted": 63,
+			"notInScript": 154
+		},
+		{
+			"scripted": 42,
+			"notInScript": 114
+		},
+		{
+			"scripted": 165,
+			"notInScript": 75
+		},
+		{
+			"scripted": 17,
+			"notInScript": 117
+		},
+		{
+			"scripted": 88,
+			"notInScript": 275
+		},
+		{
+			"scripted": 69,
+			"notInScript": 108
+		},
+		{
+			"scripted": 210,
+			"notInScript": 115
+		},
+		{
+			"scripted": 128,
+			"notInScript": 263
+		},
+		{
+			"scripted": 92,
+			"notInScript": 329
+		},
+		{
+			"scripted": 71,
+			"notInScript": 20
+		},
+		{
+			"scripted": 71,
+			"notInScript": 163
+		},
+		{
+			"scripted": 14,
+			"notInScript": 233
+		},
+		{
+			"scripted": 119,
+			"notInScript": 282
+		},
+		{
+			"scripted": 9,
+			"notInScript": 143
+		},
+		{
+			"scripted": 77,
+			"notInScript": 131
+		},
+		{
+			"scripted": 99,
+			"notInScript": 257
+		},
+		{
+			"scripted": 241,
+			"notInScript": 198
+		},
+		{
+			"scripted": 99,
+			"notInScript": 252
+		},
+		{
+			"scripted": 63,
+			"notInScript": 87
+		},
+		{
+			"scripted": 59,
+			"notInScript": 82
+		},
+		{
+			"scripted": 32,
+			"notInScript": 125
+		},
+		{
+			"scripted": 5,
+			"notInScript": 171
+		},
+		{
+			"scripted": 0,
+			"notInScript": 106
+		},
+		{
+			"scripted": 32,
+			"notInScript": 13
+		},
+		{
+			"scripted": 275,
+			"notInScript": 130
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 23,
+				"kept": 3,
+				"changed": 3,
+				"cut": 17
+			},
+			"other": {
+				"lines": 45,
+				"kept": 13,
+				"changed": 3,
+				"cut": 29
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 461,
+				"kept": 150,
+				"changed": 86,
+				"cut": 225
+			},
+			"other": {
+				"lines": 76,
+				"kept": 21,
+				"changed": 22,
+				"cut": 33
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ZAVALA",
+				"text": "You talk it. Can you take it?"
+			},
+			{
+				"speaker": "DEMON",
+				"text": "I seen you looking at the homeboy."
+			},
+			{
+				"speaker": "SARGE",
+				"text": "Just consider the wisdom of what you're doing. The video camera has not been good to this department."
+			},
+			{
+				"speaker": "GABBY",
+				"text": "They're so pretty, thank you."
+			},
+			{
+				"speaker": "TAYLOR",
+				"text": "Senora. Bajase al suelo, por favor."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 607,
+				"text": "It is all about your attitude."
+			},
+			{
+				"at": 1356,
+				"text": "It's ok, it's ok."
+			},
+			{
+				"at": 2967,
+				"text": "What do we got?"
+			},
+			{
+				"at": 3967,
+				"text": "You can not give him an excuse."
+			},
+			{
+				"at": 4835,
+				"text": "Hell yeah, we're doing this."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "TAYLOR",
+				"page": "Two children. A boy and a girl. How old are they? Ma'am. Ma'am? How old are the children?",
+				"screen": "A boy and a girl.",
+				"pageWords": [
+					[
+						"Two",
+						false
+					],
+					[
+						"children.",
+						false
+					],
+					[
+						"A",
+						true
+					],
+					[
+						"boy",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"girl.",
+						true
+					],
+					[
+						"How",
+						false
+					],
+					[
+						"old",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"they?",
+						false
+					],
+					[
+						"Ma'am.",
+						false
+					],
+					[
+						"Ma'am?",
+						false
+					],
+					[
+						"How",
+						false
+					],
+					[
+						"old",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"children?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"A",
+						true
+					],
+					[
+						"boy",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"girl.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ZAVALA",
+				"page": "Our PC's that stupid CD hanging from the rearview mirror obstructing his vision? Let's see if he'll run.",
+				"screen": "That stupid CD hanging from his rearview mirror, obstructing his vision. Let's do this.",
+				"pageWords": [
+					[
+						"Our",
+						false
+					],
+					[
+						"PC's",
+						false
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"stupid",
+						true
+					],
+					[
+						"CD",
+						true
+					],
+					[
+						"hanging",
+						true
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"rearview",
+						true
+					],
+					[
+						"mirror",
+						true
+					],
+					[
+						"obstructing",
+						true
+					],
+					[
+						"his",
+						true
+					],
+					[
+						"vision?",
+						true
+					],
+					[
+						"Let's",
+						true
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"if",
+						false
+					],
+					[
+						"he'll",
+						false
+					],
+					[
+						"run.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						true
+					],
+					[
+						"stupid",
+						true
+					],
+					[
+						"CD",
+						true
+					],
+					[
+						"hanging",
+						true
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"his",
+						false
+					],
+					[
+						"rearview",
+						true
+					],
+					[
+						"mirror,",
+						true
+					],
+					[
+						"obstructing",
+						true
+					],
+					[
+						"his",
+						true
+					],
+					[
+						"vision.",
+						true
+					],
+					[
+						"Let's",
+						true
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"this.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ICE AGENT",
+				"page": "Watch out for these guys. They are bad, bad actors.",
+				"screen": "Watch out for these guys.",
+				"pageWords": [
+					[
+						"Watch",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"these",
+						true
+					],
+					[
+						"guys.",
+						true
+					],
+					[
+						"They",
+						true
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"bad,",
+						false
+					],
+					[
+						"bad",
+						false
+					],
+					[
+						"actors.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Watch",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"these",
+						true
+					],
+					[
+						"guys.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SARGE",
+				"page": "He ain't coming back. Split his eyeball. You could see his lens hanging out. Rookie ain't coming back either.",
+				"screen": "The lens was hanging out. She ain't coming back.",
+				"pageWords": [
+					[
+						"He",
+						false
+					],
+					[
+						"ain't",
+						false
+					],
+					[
+						"coming",
+						false
+					],
+					[
+						"back.",
+						false
+					],
+					[
+						"Split",
+						false
+					],
+					[
+						"his",
+						false
+					],
+					[
+						"eyeball.",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"his",
+						false
+					],
+					[
+						"lens",
+						false
+					],
+					[
+						"hanging",
+						true
+					],
+					[
+						"out.",
+						true
+					],
+					[
+						"Rookie",
+						false
+					],
+					[
+						"ain't",
+						true
+					],
+					[
+						"coming",
+						true
+					],
+					[
+						"back",
+						true
+					],
+					[
+						"either.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"lens",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"hanging",
+						true
+					],
+					[
+						"out.",
+						true
+					],
+					[
+						"She",
+						false
+					],
+					[
+						"ain't",
+						true
+					],
+					[
+						"coming",
+						true
+					],
+					[
+						"back.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ZAVALA",
+				"page": "We're good. Dispatch put it out. They're sending the cavalry. Rolling SWAT, airships the World.",
+				"screen": "We're good, we're all good! They're sending the cavalry, they're sending the whole fucking world.",
+				"pageWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"good.",
+						true
+					],
+					[
+						"Dispatch",
+						false
+					],
+					[
+						"put",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"out.",
+						false
+					],
+					[
+						"They're",
+						true
+					],
+					[
+						"sending",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"cavalry.",
+						true
+					],
+					[
+						"Rolling",
+						false
+					],
+					[
+						"SWAT,",
+						false
+					],
+					[
+						"airships",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"World.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"good,",
+						true
+					],
+					[
+						"we're",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"good!",
+						false
+					],
+					[
+						"They're",
+						true
+					],
+					[
+						"sending",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"cavalry,",
+						true
+					],
+					[
+						"they're",
+						false
+					],
+					[
+						"sending",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"whole",
+						false
+					],
+					[
+						"fucking",
+						false
+					],
+					[
+						"world.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

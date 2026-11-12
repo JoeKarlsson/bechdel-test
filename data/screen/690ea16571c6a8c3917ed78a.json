@@ -1,0 +1,959 @@
+{
+	"_id": "690ea16571c6a8c3917ed78a",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 18,
+		"eligible": 11,
+		"rejected": {
+			"duplicate": 6,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1953067635",
+		"versions": [
+			"129172",
+			"1952149022",
+			"1957820452",
+			"1951637630",
+			"1954550737",
+			"1953067635",
+			"1954230723",
+			"1956044157",
+			"1956876514"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9122998997586994,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6660,
+	"quality": {
+		"anchoredShare": 0.0716760897318986
+	},
+	"words": {
+		"page": 5483,
+		"screen": 5283,
+		"kept": 380,
+		"cut": 5103,
+		"notInScript": 4890,
+		"moved": 58
+	},
+	"lines": {
+		"page": 532,
+		"kept": 21,
+		"changed": 51,
+		"cut": 460,
+		"screen": 1138,
+		"notInScript": 1027
+	},
+	"byGender": {
+		"w": {
+			"lines": 138,
+			"kept": 7,
+			"changed": 12,
+			"cut": 119
+		},
+		"m": {
+			"lines": 363,
+			"kept": 14,
+			"changed": 37,
+			"cut": 312
+		},
+		"unknown": {
+			"lines": 31,
+			"kept": 0,
+			"changed": 2,
+			"cut": 29
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 10,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 8,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 4
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 6,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"changed": 4,
+			"cut": 6
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"kept": 1,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"changed": 3,
+			"cut": 9
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 2
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 12
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"kept": 3,
+			"cut": 8
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 47
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 35,
+			"notInScript": 114
+		},
+		{
+			"scripted": 10,
+			"notInScript": 132
+		},
+		{
+			"scripted": 58,
+			"notInScript": 107
+		},
+		{
+			"scripted": 36,
+			"notInScript": 138
+		},
+		{
+			"scripted": 16,
+			"notInScript": 62
+		},
+		{
+			"scripted": 4,
+			"notInScript": 58
+		},
+		{
+			"scripted": 5,
+			"notInScript": 132
+		},
+		{
+			"scripted": 14,
+			"notInScript": 77
+		},
+		{
+			"scripted": 4,
+			"notInScript": 93
+		},
+		{
+			"scripted": 45,
+			"notInScript": 68
+		},
+		{
+			"scripted": 5,
+			"notInScript": 68
+		},
+		{
+			"scripted": 33,
+			"notInScript": 118
+		},
+		{
+			"scripted": 3,
+			"notInScript": 164
+		},
+		{
+			"scripted": 0,
+			"notInScript": 57
+		},
+		{
+			"scripted": 4,
+			"notInScript": 86
+		},
+		{
+			"scripted": 19,
+			"notInScript": 174
+		},
+		{
+			"scripted": 0,
+			"notInScript": 63
+		},
+		{
+			"scripted": 48,
+			"notInScript": 108
+		},
+		{
+			"scripted": 62,
+			"notInScript": 144
+		},
+		{
+			"scripted": 0,
+			"notInScript": 68
+		},
+		{
+			"scripted": 0,
+			"notInScript": 53
+		},
+		{
+			"scripted": 2,
+			"notInScript": 126
+		},
+		{
+			"scripted": 28,
+			"notInScript": 108
+		},
+		{
+			"scripted": 12,
+			"notInScript": 165
+		},
+		{
+			"scripted": 15,
+			"notInScript": 155
+		},
+		{
+			"scripted": 0,
+			"notInScript": 147
+		},
+		{
+			"scripted": 0,
+			"notInScript": 95
+		},
+		{
+			"scripted": 0,
+			"notInScript": 52
+		},
+		{
+			"scripted": 21,
+			"notInScript": 92
+		},
+		{
+			"scripted": 0,
+			"notInScript": 99
+		},
+		{
+			"scripted": 4,
+			"notInScript": 50
+		},
+		{
+			"scripted": 0,
+			"notInScript": 94
+		},
+		{
+			"scripted": 34,
+			"notInScript": 153
+		},
+		{
+			"scripted": 24,
+			"notInScript": 150
+		},
+		{
+			"scripted": 3,
+			"notInScript": 130
+		},
+		{
+			"scripted": 7,
+			"notInScript": 185
+		},
+		{
+			"scripted": 0,
+			"notInScript": 73
+		},
+		{
+			"scripted": 0,
+			"notInScript": 21
+		},
+		{
+			"scripted": 0,
+			"notInScript": 43
+		},
+		{
+			"scripted": 0,
+			"notInScript": 169
+		},
+		{
+			"scripted": 0,
+			"notInScript": 133
+		},
+		{
+			"scripted": 13,
+			"notInScript": 124
+		},
+		{
+			"scripted": 33,
+			"notInScript": 49
+		},
+		{
+			"scripted": 3,
+			"notInScript": 84
+		},
+		{
+			"scripted": 0,
+			"notInScript": 53
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 17.5,
+		"longest": 17.5,
+		"spans": [
+			[
+				2756,
+				2773.5
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 34,
+				"kept": 4,
+				"changed": 3,
+				"cut": 27
+			},
+			"other": {
+				"lines": 104,
+				"kept": 3,
+				"changed": 9,
+				"cut": 92
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 263,
+				"kept": 11,
+				"changed": 24,
+				"cut": 228
+			},
+			"other": {
+				"lines": 96,
+				"kept": 3,
+				"changed": 13,
+				"cut": 80
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "DALE",
+				"text": "You're Dr. Hans Zarkov!"
+			},
+			{
+				"speaker": "FLASH",
+				"text": "Here we are where?"
+			},
+			{
+				"speaker": "AURA",
+				"text": "Maybe I was wrong -- surely the Prince of Arboria wouldn't be beaten by a toy."
+			},
+			{
+				"speaker": "AURA",
+				"text": "Barin -- my only -- I swear I didn't mean to get you into this!"
+			},
+			{
+				"speaker": "TIGER MAN",
+				"text": "Grrao! I'll charge down at them:"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 777,
+				"text": "Looks like an eclipse."
+			},
+			{
+				"at": 2164,
+				"text": "Water is leaking from her eyes."
+			},
+			{
+				"at": 3457,
+				"text": "What danger is there?"
+			},
+			{
+				"at": 4689,
+				"text": "A prison ship will take you away."
+			},
+			{
+				"at": 5826,
+				"text": "There's a lightning field at the entrance."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "CO-PILOT",
+				"page": "Zip. All chanels dead. Say, get a load of the VOR's....",
+				"screen": "Get a look at the V.O.R.",
+				"pageWords": [
+					[
+						"Zip.",
+						false
+					],
+					[
+						"All",
+						false
+					],
+					[
+						"chanels",
+						false
+					],
+					[
+						"dead.",
+						false
+					],
+					[
+						"Say,",
+						false
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"load",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"VOR's....",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Get",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"V.O.R.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MING",
+				"page": "Come closer, Dale Arden -- let me see you.",
+				"screen": "Let us see you.",
+				"pageWords": [
+					[
+						"Come",
+						false
+					],
+					[
+						"closer,",
+						false
+					],
+					[
+						"Dale",
+						false
+					],
+					[
+						"Arden",
+						false
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"let",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Let",
+						false
+					],
+					[
+						"us",
+						false
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "AURA",
+				"page": "Because he does anything I ask. He loves me.",
+				"screen": "Prince Barin does anything I ask.",
+				"pageWords": [
+					[
+						"Because",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"does",
+						true
+					],
+					[
+						"anything",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"ask.",
+						true
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"loves",
+						false
+					],
+					[
+						"me.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Prince",
+						false
+					],
+					[
+						"Barin",
+						false
+					],
+					[
+						"does",
+						true
+					],
+					[
+						"anything",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"ask.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BARIN",
+				"page": "I'll hide him, all right -- under six feet of Arborian dirt!",
+				"screen": "I'll keep him all right!",
+				"pageWords": [
+					[
+						"I'll",
+						false
+					],
+					[
+						"hide",
+						false
+					],
+					[
+						"him,",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"right",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"under",
+						false
+					],
+					[
+						"six",
+						false
+					],
+					[
+						"feet",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"Arborian",
+						false
+					],
+					[
+						"dirt!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'll",
+						false
+					],
+					[
+						"keep",
+						false
+					],
+					[
+						"him",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"right!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "FLASH",
+				"page": "We're all Ming's prisoners. I say let's team up and smash him.",
+				"screen": "Let's team up and fight him.",
+				"pageWords": [
+					[
+						"We're",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"Ming's",
+						false
+					],
+					[
+						"prisoners.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"say",
+						false
+					],
+					[
+						"let's",
+						true
+					],
+					[
+						"team",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"smash",
+						false
+					],
+					[
+						"him.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Let's",
+						true
+					],
+					[
+						"team",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"fight",
+						false
+					],
+					[
+						"him.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

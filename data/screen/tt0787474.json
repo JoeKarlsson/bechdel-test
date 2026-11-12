@@ -1,0 +1,960 @@
+{
+	"_id": "tt0787474",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 16,
+		"eligible": 10,
+		"rejected": {
+			"duplicate": 6
+		},
+		"used": 9,
+		"primary": "1954550129",
+		"versions": [
+			"1954550289",
+			"1954550287",
+			"1954549751",
+			"1954550129",
+			"1954549750",
+			"1954549714",
+			"1958019887",
+			"1954484295",
+			"1954549713"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9389127193302395,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5820,
+	"quality": {
+		"anchoredShare": 0.8455016486104568
+	},
+	"words": {
+		"page": 6369,
+		"screen": 6018,
+		"kept": 5387,
+		"cut": 982,
+		"notInScript": 633,
+		"moved": 4
+	},
+	"lines": {
+		"page": 954,
+		"kept": 772,
+		"changed": 39,
+		"cut": 136,
+		"screen": 1492,
+		"notInScript": 256
+	},
+	"byGender": {
+		"w": {
+			"lines": 200,
+			"kept": 174,
+			"changed": 8,
+			"cut": 18
+		},
+		"m": {
+			"lines": 682,
+			"kept": 569,
+			"changed": 29,
+			"cut": 84
+		},
+		"unknown": {
+			"lines": 65,
+			"kept": 29,
+			"changed": 2,
+			"cut": 34
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"changed": 1,
+			"kept": 16
+		},
+		{
+			"kept": 17,
+			"cut": 2
+		},
+		{
+			"kept": 17,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 8
+		},
+		{
+			"cut": 1,
+			"changed": 1,
+			"kept": 18
+		},
+		{
+			"kept": 17,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"changed": 2
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 6
+		},
+		{
+			"kept": 16,
+			"cut": 4
+		},
+		{
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"kept": 20
+		},
+		{
+			"kept": 17,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"cut": 7
+		},
+		{
+			"cut": 3,
+			"kept": 16,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 5
+		},
+		{
+			"kept": 17,
+			"cut": 2
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 4
+		},
+		{
+			"kept": 19,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"cut": 4
+		},
+		{
+			"kept": 18,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"cut": 4
+		},
+		{
+			"cut": 2,
+			"kept": 18
+		},
+		{
+			"changed": 2,
+			"kept": 16,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"kept": 15,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 15,
+			"cut": 3
+		},
+		{
+			"kept": 20
+		},
+		{
+			"cut": 2,
+			"kept": 18
+		},
+		{
+			"kept": 19,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"kept": 18
+		},
+		{
+			"cut": 5,
+			"kept": 15
+		},
+		{
+			"cut": 5,
+			"kept": 14
+		},
+		{
+			"cut": 3,
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 17,
+			"cut": 3
+		},
+		{
+			"changed": 1,
+			"kept": 17
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 155,
+			"notInScript": 2
+		},
+		{
+			"scripted": 74,
+			"notInScript": 14
+		},
+		{
+			"scripted": 15,
+			"notInScript": 10
+		},
+		{
+			"scripted": 135,
+			"notInScript": 21
+		},
+		{
+			"scripted": 15,
+			"notInScript": 2
+		},
+		{
+			"scripted": 3,
+			"notInScript": 4
+		},
+		{
+			"scripted": 3,
+			"notInScript": 1
+		},
+		{
+			"scripted": 28,
+			"notInScript": 2
+		},
+		{
+			"scripted": 241,
+			"notInScript": 14
+		},
+		{
+			"scripted": 68,
+			"notInScript": 19
+		},
+		{
+			"scripted": 154,
+			"notInScript": 4
+		},
+		{
+			"scripted": 207,
+			"notInScript": 3
+		},
+		{
+			"scripted": 19,
+			"notInScript": 6
+		},
+		{
+			"scripted": 33,
+			"notInScript": 11
+		},
+		{
+			"scripted": 160,
+			"notInScript": 56
+		},
+		{
+			"scripted": 207,
+			"notInScript": 20
+		},
+		{
+			"scripted": 124,
+			"notInScript": 20
+		},
+		{
+			"scripted": 208,
+			"notInScript": 7
+		},
+		{
+			"scripted": 88,
+			"notInScript": 3
+		},
+		{
+			"scripted": 233,
+			"notInScript": 5
+		},
+		{
+			"scripted": 150,
+			"notInScript": 14
+		},
+		{
+			"scripted": 125,
+			"notInScript": 4
+		},
+		{
+			"scripted": 129,
+			"notInScript": 6
+		},
+		{
+			"scripted": 196,
+			"notInScript": 2
+		},
+		{
+			"scripted": 143,
+			"notInScript": 7
+		},
+		{
+			"scripted": 181,
+			"notInScript": 1
+		},
+		{
+			"scripted": 170,
+			"notInScript": 5
+		},
+		{
+			"scripted": 137,
+			"notInScript": 8
+		},
+		{
+			"scripted": 201,
+			"notInScript": 3
+		},
+		{
+			"scripted": 55,
+			"notInScript": 18
+		},
+		{
+			"scripted": 190,
+			"notInScript": 12
+		},
+		{
+			"scripted": 93,
+			"notInScript": 8
+		},
+		{
+			"scripted": 100,
+			"notInScript": 4
+		},
+		{
+			"scripted": 90,
+			"notInScript": 2
+		},
+		{
+			"scripted": 175,
+			"notInScript": 4
+		},
+		{
+			"scripted": 135,
+			"notInScript": 16
+		},
+		{
+			"scripted": 198,
+			"notInScript": 14
+		},
+		{
+			"scripted": 140,
+			"notInScript": 34
+		},
+		{
+			"scripted": 179,
+			"notInScript": 8
+		},
+		{
+			"scripted": 111,
+			"notInScript": 17
+		},
+		{
+			"scripted": 78,
+			"notInScript": 4
+		},
+		{
+			"scripted": 117,
+			"notInScript": 14
+		},
+		{
+			"scripted": 109,
+			"notInScript": 1
+		},
+		{
+			"scripted": 37,
+			"notInScript": 11
+		},
+		{
+			"scripted": 137,
+			"notInScript": 0
+		},
+		{
+			"scripted": 31,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 4,
+		"seconds": 62.3,
+		"longest": 26.2,
+		"spans": [
+			[
+				1794.5,
+				1819.2
+			],
+			[
+				3274,
+				3280.9
+			],
+			[
+				3456.2,
+				3482.4
+			],
+			[
+				3675.6,
+				3680.2
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 23,
+				"kept": 19,
+				"changed": 4,
+				"cut": 0
+			},
+			"other": {
+				"lines": 169,
+				"kept": 151,
+				"changed": 4,
+				"cut": 14
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 530,
+				"kept": 438,
+				"changed": 25,
+				"cut": 67
+			},
+			"other": {
+				"lines": 142,
+				"kept": 125,
+				"changed": 4,
+				"cut": 13
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "EGGS",
+				"text": "OOOH! Hee hee hee."
+			},
+			{
+				"speaker": "BOXTROLLS",
+				"text": "Mr. Gristle returns and stalks Pickles from behind--"
+			},
+			{
+				"speaker": "ON FISH",
+				"text": "as Eggs watches the Redhats argue. Snatcher unsteadily climbs on top of the table and continues his tirade."
+			},
+			{
+				"speaker": "ON EGGS",
+				"text": "Eggs is horrified by the sight of the leeches sucking on Snatcher's swollen face."
+			},
+			{
+				"speaker": "HERBERT",
+				"text": "JELLY! Ha ha ha ha!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 404,
+				"text": "No, no, it was a metaphor."
+			},
+			{
+				"at": 1702,
+				"text": "Gorgonzola, fine cheddar and provolone!"
+			},
+			{
+				"at": 1727,
+				"text": "Madame Frou Frou time!"
+			},
+			{
+				"at": 2438,
+				"text": "Come on, come on!"
+			},
+			{
+				"at": 4640,
+				"text": "Stand up for yourselves."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MR. PICKLES",
+				"page": "They're right there, Mr. Trout!",
+				"screen": "Over there, Mr. Trout!",
+				"pageWords": [
+					[
+						"They're",
+						false
+					],
+					[
+						"right",
+						false
+					],
+					[
+						"there,",
+						true
+					],
+					[
+						"Mr.",
+						true
+					],
+					[
+						"Trout!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Over",
+						false
+					],
+					[
+						"there,",
+						true
+					],
+					[
+						"Mr.",
+						true
+					],
+					[
+						"Trout!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MR. PICKLES",
+				"page": "It'd be easier if he'd stop moving!",
+				"screen": "It'd be easier if he stopped moving.",
+				"pageWords": [
+					[
+						"It'd",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"easier",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"he'd",
+						false
+					],
+					[
+						"stop",
+						false
+					],
+					[
+						"moving!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"It'd",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"easier",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"stopped",
+						false
+					],
+					[
+						"moving.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MADAME FROU FROU/SNATCHER",
+				"page": "You have me. I am not a true red head.",
+				"screen": "You have me! I'm not a true redhead!",
+				"pageWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"me.",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"am",
+						false
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"true",
+						true
+					],
+					[
+						"red",
+						false
+					],
+					[
+						"head.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"me!",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"true",
+						true
+					],
+					[
+						"redhead!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "WINNIE",
+				"page": "... how did this hat get alllll the waaayyy out here?",
+				"screen": "How did this hat find itself all the way out here?",
+				"pageWords": [
+					[
+						"...",
+						null
+					],
+					[
+						"how",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"hat",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"alllll",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"waaayyy",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"here?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"hat",
+						true
+					],
+					[
+						"find",
+						false
+					],
+					[
+						"itself",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"way",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"here?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MR. PICKLES",
+				"page": "Yeah... all happy `n tidy.",
+				"screen": "All happy and tidy!",
+				"pageWords": [
+					[
+						"Yeah...",
+						false
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"happy",
+						true
+					],
+					[
+						"`n",
+						false
+					],
+					[
+						"tidy.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"All",
+						true
+					],
+					[
+						"happy",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"tidy!",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -64,14 +64,22 @@ const percent = (x: number) => `${Math.round(x * 100)}%`;
 const screenScore = onScreen ? (onScreen.bechdel.low === onScreen.bechdel.high ? `${onScreen.bechdel.low}` : `${onScreen.bechdel.low} or ${onScreen.bechdel.high}`) : '';
 const screenTag = onScreen ? ({ same: 'agree', unclear: 'none' } as Record<string, string>)[onScreen.bechdel.change] ?? 'disagree' : null;
 // Each rule on screen: yes, no, or unclear when the two readings of unattributed lines differ
-const screenRules = onScreen
-	? [1, 2, 3].map((rule) => (onScreen.bechdel.low >= rule ? 'Yes' : onScreen.bechdel.high >= rule ? 'Unclear' : 'No'))
-	: [];
 const draftWords: Record<string, string> = { shooting: 'a shooting draft', early: 'an early draft', unknown: 'a draft of unknown date', transcript: 'a transcript' };
 const clock = (seconds: number) => `${Math.floor(seconds / 3600)}:${String(Math.floor((seconds % 3600) / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
 const minuteMax = onScreen ? Math.max(1, ...onScreen.byMinute.map((b) => b.scripted + b.notInScript)) : 1;
+// a moment in the film as a share of its runtime, for the passing-conversation track
+const at100 = (seconds: number) => (onScreen ? Math.min(100, (seconds / onScreen.runtimeSeconds) * 100) : 0);
+// quotes shown per kind (the data keeps five)
+const QUOTES = 3;
+// Changed lines worth showing word by word: mostly heard, and no stage direction or second speaker run into the line
+// (the parser sometimes joins them, and they show up as long struck-out tails)
+const changedQuotes = (onScreen?.quotes.changed ?? []).filter((q) => {
+	const marks = q.pageWords.filter(([, heard]) => heard !== null);
+	return marks.length > 0 && marks.filter(([, heard]) => heard).length / marks.length >= 0.4 && !/\b[A-Z]{3,}[.:]|\b(?:He|She|They) [a-z]+s\b/.test(q.page);
+}).slice(0, QUOTES);
+const n = (x: number) => x.toLocaleString('en-US');
 const showCutRates = !!onScreen && onScreen.cut.wLines >= CUT_RATE_MIN_LINES && onScreen.cut.mLines >= CUT_RATE_MIN_LINES;
-const conversationCut = onScreen?.conversationCut;
+const conversationCut = onScreen?.conversationCut?.w;
 const showConversationCut = !!conversationCut && conversationCut.conversationLines >= CONVERSATION_MIN_LINES && conversationCut.otherLines >= CONVERSATION_MIN_LINES;
 // "41 seconds", "9 minutes"
 const duration = (seconds: number) => (seconds < 90 ? plural(Math.round(seconds), 'second') : plural(Math.round(seconds / 60), 'minute'));
@@ -704,18 +712,16 @@ const credit = [
 							<section id="exhibit-screen" class="exhibit panel full tilt-l">
 								<h3 id="ex-screen" data-fold="ex-screen-body">Exhibit {letter('screen')}: page vs screen<FoldMark /></h3>
 								<p class="gist">
-									{onScreen
-										? `${percent(onScreen.survival!)} of the script's words are heard in the film, and ${percent(onScreen.notInScript!)} of what's said on screen isn't in this draft.`
-										: `Not compared: ${screen.excluded}.`}
+									{onScreen ? `${percent(onScreen.survival!)} of the script's words are heard in the film.` : `Not compared: ${screen.excluded}.`}
 								</p>
 								<div class="fold-body" id="ex-screen-body">
 									{onScreen ? (
 										<>
-											<p class="note">The script's dialogue, first line to last</p>
+											<p class="note">The script, first line to last</p>
 											<div
 												class="ps-strip"
 												role="img"
-												aria-label={`The script's ${onScreen.lines.page.toLocaleString('en-US')} lines of dialogue in order: ${onScreen.lines.kept.toLocaleString('en-US')} heard as written, ${onScreen.lines.changed.toLocaleString('en-US')} changed, ${onScreen.lines.cut.toLocaleString('en-US')} cut.`}
+												aria-label={`The script's ${n(onScreen.lines.page)} lines in order: ${n(onScreen.lines.kept)} heard as written, ${n(onScreen.lines.changed)} changed, ${n(onScreen.lines.cut)} cut.`}
 											>
 												{onScreen.byScriptOrder.map((b) => (
 													<span class="ps-col">
@@ -726,16 +732,16 @@ const credit = [
 												))}
 											</div>
 											<ul class="legend small">
-												<li><span class="swatch swatch-kept" />Heard as written ({onScreen.lines.kept.toLocaleString('en-US')} lines)</li>
-												<li><span class="swatch swatch-changed" />Changed ({onScreen.lines.changed.toLocaleString('en-US')})</li>
-												<li><span class="swatch swatch-cut" />Cut ({onScreen.lines.cut.toLocaleString('en-US')})</li>
+												<li><span class="swatch swatch-kept" />Heard as written ({n(onScreen.lines.kept)} lines)</li>
+												<li><span class="swatch swatch-changed" />Changed ({n(onScreen.lines.changed)})</li>
+												<li><span class="swatch swatch-cut" />Cut ({n(onScreen.lines.cut)})</li>
 											</ul>
 
-											<p class="note">The film, minute by minute: words said on screen</p>
+											<p class="note">The film, start to end</p>
 											<div
 												class="ps-strip ps-minutes"
 												role="img"
-												aria-label={`The film's ${onScreen.runtimeMinutes} minutes: ${percent(onScreen.notInScript!)} of the words said aren't in the script.`}
+												aria-label={`Words said over the film's ${onScreen.runtimeMinutes} minutes: ${percent(onScreen.notInScript!)} aren't in the script.${onScreen.passing ? ` Women talk to each other in a way that passes the test ${plural(onScreen.passing.count, 'time')}, ${duration(onScreen.passing.seconds)} in all.` : ''}`}
 											>
 												{onScreen.byMinute.map((b) => (
 													<span class="ps-col" style={`height: ${(((b.scripted + b.notInScript) / minuteMax) * 100).toFixed(1)}%`}>
@@ -744,60 +750,54 @@ const credit = [
 													</span>
 												))}
 											</div>
+											{onScreen.passing && (
+												<div class="ps-track" aria-hidden="true">
+													{onScreen.passing.spans.map(([from, to]) => (
+														<span style={`left: ${at100(from)}%; width: ${Math.max(0.4, at100(to) - at100(from)).toFixed(2)}%`} />
+													))}
+												</div>
+											)}
 											<p class="note axis-ends">
 												<span>Start</span>
 												<span>{onScreen.runtimeMinutes} minutes</span>
 											</p>
 											<ul class="legend small">
 												<li><span class="swatch swatch-kept" />In the script</li>
-												<li><span class="swatch swatch-added" />Not in the script ({onScreen.words.notInScript.toLocaleString('en-US')} words)</li>
+												<li><span class="swatch swatch-added" />Not in the script</li>
+												{onScreen.passing && <li><span class="swatch swatch-w" />Women talking to each other, passing the test ({duration(onScreen.passing.seconds)})</li>}
 											</ul>
 
-											{showCutRates && (
+											{onScreen.bechdel.change !== 'same' && (
+												<p>
+													{onScreen.bechdel.change === 'unclear'
+														? "On screen the result depends on who says the lines that aren't in the script."
+														: bechdel.pass
+															? `On screen it stops at rule ${onScreen.bechdel.high + 1}: ${ruleNames[onScreen.bechdel.high].toLowerCase()}.`
+															: 'On screen it passes all three rules.'}
+												</p>
+											)}
+
+											{changedQuotes.length > 0 && (
 												<>
-													<p class="note">Lines cut, by who says them in the script</p>
-													<div class="pairs ps-rows" role="img" aria-label={`${percent(onScreen.cut.w!)} of women's lines are cut, and ${percent(onScreen.cut.m!)} of men's.`}>
-														<p class="pair-label">Women's lines</p>
-														<span class="pair-bar w" style={`width: ${(onScreen.cut.w! * 100).toFixed(1)}%`} />
-														<p class="pair-n">{percent(onScreen.cut.w!)}</p>
-														<p class="pair-label">Men's lines</p>
-														<span class="pair-bar m" style={`width: ${(onScreen.cut.m! * 100).toFixed(1)}%`} />
-														<p class="pair-n">{percent(onScreen.cut.m!)}</p>
-													</div>
+													<h4 class="ps-heading">Changed</h4>
+													<ul class="ps-changed">
+														{changedQuotes.map((q) => (
+															<li>
+																<p><span class="ps-said">Script</span> <span class="end-who">{q.speaker}:</span> {q.pageWords.map(([word, heard]) => (heard === false ? <del>{word}</del> : word)).reduce((acc, w) => [...acc, ' ', w], [])}</p>
+																<p><span class="ps-said">Film</span> {q.screenWords.map(([word, scripted]) => (scripted === false ? <ins>{word}</ins> : word)).reduce((acc, w) => [...acc, ' ', w], [])}</p>
+															</li>
+														))}
+													</ul>
+													<p class="note ps-key"><del>Struck</del> words are cut; <ins>underlined</ins> words aren't in the script.</p>
 												</>
-											)}
-
-											{showConversationCut && (
-												<p>
-													{percent(conversationCut!.conversation!)} of the lines in conversations between women are cut, against {percent(conversationCut!.other!)} of women's other lines.
-												</p>
-											)}
-
-											<table class="ps-rules">
-												<caption class="note">The Bechdel test, page and screen</caption>
-												<thead>
-													<tr><th scope="col">Rule</th><th scope="col">On the page</th><th scope="col">On screen</th></tr>
-												</thead>
-												<tbody>
-													{ruleNames.map((name, i) => (
-														<tr><th scope="row">{name}</th><td>{yes(bechdel.rules[i])}</td><td>{screenRules[i]}</td></tr>
-													))}
-												</tbody>
-											</table>
-
-											{onScreen.passing && (
-												<p>
-													On screen, the conversations that pass the test add up to {duration(onScreen.passing.seconds)}: {plural(onScreen.passing.count, 'conversation')}
-													{onScreen.passing.count > 1 && `, the longest ${duration(onScreen.passing.longest)}`}.
-												</p>
 											)}
 
 											<div class="ps-quotes">
 												{onScreen.quotes.cut.length > 0 && (
 													<div>
-														<h4>Cut</h4>
+														<h4 class="ps-heading">Cut</h4>
 														<ul>
-															{onScreen.quotes.cut.map((q) => (
+															{onScreen.quotes.cut.slice(0, QUOTES).map((q) => (
 																<li><span class="end-who">{q.speaker}:</span> {q.text}</li>
 															))}
 														</ul>
@@ -805,23 +805,10 @@ const credit = [
 												)}
 												{onScreen.quotes.notInScript.length > 0 && (
 													<div>
-														<h4>Not in the script</h4>
+														<h4 class="ps-heading">Not in the script</h4>
 														<ul>
-															{onScreen.quotes.notInScript.map((q) => (
-																<li><span class="ps-at">{clock(q.at)}</span> {q.text}</li>
-															))}
-														</ul>
-													</div>
-												)}
-												{onScreen.quotes.changed.length > 0 && (
-													<div>
-														<h4>Changed</h4>
-														<ul>
-															{onScreen.quotes.changed.map((q) => (
-																<li>
-																	<span class="end-who">{q.speaker}:</span> {q.page}
-																	<br /><span class="ps-said">On screen:</span> {q.screen}
-																</li>
+															{onScreen.quotes.notInScript.slice(0, QUOTES).map((q) => (
+																<li><span class="ps-said">{clock(q.at)}</span> {q.text}</li>
 															))}
 														</ul>
 													</div>
@@ -829,22 +816,19 @@ const credit = [
 											</div>
 
 											<p class="note">
-												The script is {draftWords[onScreen.draft]}. What's said on screen comes from {plural(onScreen.subtitles.versions, 'independent set', 'independent sets')} of
-												English subtitles{onScreen.subtitles.agreement !== null && `, which agree on ${percent(onScreen.subtitles.agreement)} of their words`}; a script word counts as heard
-												when most sets have it. "Not in the script" means not in this draft: an ad-lib, a later rewrite or a reshoot look the same.{' '}
-												<a href="/about/#page-vs-screen">How we compare</a>.
+												Script: {draftWords[onScreen.draft]}. Film: {plural(onScreen.subtitles.versions, 'set')} of English subtitles{onScreen.subtitles.agreement !== null && `, ${percent(onScreen.subtitles.agreement)} in agreement`}. <a href="/about/#page-vs-screen">How we compare</a>
 											</p>
 											<details class="data-table">
 												<summary>Show the numbers</summary>
 												<table>
 													<tbody>
-														<tr><th scope="row">Script lines</th><td>{onScreen.lines.page.toLocaleString('en-US')}</td></tr>
-														<tr><th scope="row">Heard as written</th><td>{onScreen.lines.kept.toLocaleString('en-US')}</td></tr>
-														<tr><th scope="row">Changed</th><td>{onScreen.lines.changed.toLocaleString('en-US')}</td></tr>
-														<tr><th scope="row">Cut</th><td>{onScreen.lines.cut.toLocaleString('en-US')}</td></tr>
-														<tr><th scope="row">Script words heard</th><td>{onScreen.words.kept.toLocaleString('en-US')} of {onScreen.words.page.toLocaleString('en-US')}</td></tr>
-														<tr><th scope="row">Words said on screen</th><td>{onScreen.words.screen.toLocaleString('en-US')}</td></tr>
-														<tr><th scope="row">Not in the script</th><td>{onScreen.words.notInScript.toLocaleString('en-US')} words, {onScreen.lines.notInScript.toLocaleString('en-US')} lines</td></tr>
+														<tr><th scope="row">Script lines</th><td>{n(onScreen.lines.page)}: {n(onScreen.lines.kept)} heard as written, {n(onScreen.lines.changed)} changed, {n(onScreen.lines.cut)} cut</td></tr>
+														<tr><th scope="row">Script words heard</th><td>{n(onScreen.words.kept)} of {n(onScreen.words.page)}</td></tr>
+														<tr><th scope="row">Words said on screen</th><td>{n(onScreen.words.screen)}, {n(onScreen.words.notInScript)} of them not in the script</td></tr>
+														{showCutRates && <tr><th scope="row">Lines cut, by speaker</th><td>women {percent(onScreen.cut.w!)}, men {percent(onScreen.cut.m!)}</td></tr>}
+														{showConversationCut && <tr><th scope="row">Women's lines cut</th><td>{percent(conversationCut!.conversation!)} in conversations with each other, {percent(conversationCut!.other!)} elsewhere</td></tr>}
+														{onScreen.passing && <tr><th scope="row">Passing conversations on screen</th><td>{onScreen.passing.count}, {duration(onScreen.passing.seconds)} in all, the longest {duration(onScreen.passing.longest)}</td></tr>}
+														<tr><th scope="row">Bechdel score</th><td>page {bechdel.score}, screen {screenScore}</td></tr>
 													</tbody>
 												</table>
 											</details>
@@ -852,11 +836,11 @@ const credit = [
 									) : (
 										<p class="note">
 											{screen.draft === 'transcript'
-												? "This script was written down from the finished film, so it can't show what changed between page and screen."
+												? "This script was typed up from the finished film, so it can't show what changed."
 												: screen.excluded.includes('chance')
-													? "The film's subtitles share no more of this script's dialogue than an unrelated film's would. It may be an early draft rewritten beyond recognition, or a script for another version of the story."
+													? 'The subtitles share no more of this script than an unrelated film would. It may be an early draft that was rewritten from scratch.'
 													: 'No complete English subtitles fit this film.'}{' '}
-											<a href="/about/#page-vs-screen">How we compare</a>.
+											<a href="/about/#page-vs-screen">How we compare</a>
 										</p>
 									)}
 								</div>
@@ -2138,7 +2122,7 @@ const credit = [
 		background: var(--muted);
 	}
 
-	/* Page vs screen: the script in order, and the film minute by minute */
+	/* Page vs screen: the script in order, and the film start to end */
 	.ps-strip {
 		display: flex;
 		align-items: flex-end;
@@ -2174,34 +2158,50 @@ const credit = [
 		background: var(--tangerine);
 	}
 	.ps-minutes {
-		margin-bottom: var(--space-1);
+		margin-bottom: 0;
 	}
-	.pairs.ps-rows {
-		margin-bottom: var(--space-5);
+	/* Under the film's strip: where women talk to each other in a way that passes */
+	.ps-track {
+		position: relative;
+		height: 0.5rem;
+		margin-top: 3px;
+		background: var(--plank);
 	}
-	.ps-rules {
-		border-collapse: collapse;
-		margin: var(--space-4) 0 var(--space-5);
-		font-variant-numeric: tabular-nums;
+	.ps-track span {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		min-width: 2px;
+		background: var(--pink);
 	}
-	.ps-rules caption {
-		text-align: left;
-		margin-bottom: var(--space-2);
+	.ps-heading {
+		margin-top: var(--space-5);
 	}
-	.ps-rules th,
-	.ps-rules td {
-		padding: var(--space-1) var(--space-5) var(--space-1) 0;
-		text-align: left;
+	.ps-changed {
+		list-style: none;
+		padding: 0;
 	}
-	.ps-rules thead th {
-		font-size: var(--text-small);
+	.ps-changed li + li {
+		margin-top: var(--space-4);
+	}
+	.ps-changed p {
+		margin: 0;
+		overflow-wrap: anywhere;
+	}
+	.ps-changed del,
+	.ps-key del {
 		color: var(--muted);
-		font-weight: 400;
+		text-decoration-thickness: 2px;
+	}
+	.ps-changed ins,
+	.ps-key ins {
+		text-decoration: underline 3px var(--tangerine);
+		text-underline-offset: 3px;
 	}
 	.ps-quotes {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-		gap: var(--space-5);
+		gap: 0 var(--space-6);
 		margin-bottom: var(--space-4);
 	}
 	.ps-quotes ul {
@@ -2214,8 +2214,9 @@ const credit = [
 	.ps-quotes li + li {
 		margin-top: var(--space-3);
 	}
-	.ps-at,
 	.ps-said {
+		display: inline-block;
+		min-width: 3.25rem;
 		font-size: var(--text-small);
 		color: var(--muted);
 		font-variant-numeric: tabular-nums;

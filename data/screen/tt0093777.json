@@ -1,0 +1,983 @@
+{
+	"_id": "tt0093777",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 16,
+		"eligible": 6,
+		"rejected": {
+			"duplicate": 9,
+			"split across CDs": 1
+		},
+		"used": 6,
+		"primary": "1957516478",
+		"versions": [
+			"187145",
+			"1956109180",
+			"1957159535",
+			"1956109181",
+			"1957516478",
+			"1953759495"
+		],
+		"sdh": false,
+		"meanAgreement": 0.964827443290303,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6120,
+	"quality": {
+		"anchoredShare": 0.4081450274479765
+	},
+	"words": {
+		"page": 7833,
+		"screen": 4902,
+		"kept": 3192,
+		"cut": 4641,
+		"notInScript": 1705,
+		"moved": 41
+	},
+	"lines": {
+		"page": 514,
+		"kept": 281,
+		"changed": 66,
+		"cut": 166,
+		"screen": 873,
+		"notInScript": 280
+	},
+	"byGender": {
+		"w": {
+			"lines": 122,
+			"kept": 73,
+			"changed": 15,
+			"cut": 34
+		},
+		"m": {
+			"lines": 347,
+			"kept": 208,
+			"changed": 50,
+			"cut": 89
+		},
+		"unknown": {
+			"lines": 44,
+			"kept": 0,
+			"changed": 1,
+			"cut": 43
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 8,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"kept": 5,
+			"cut": 2
+		},
+		{
+			"cut": 1,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 11
+		},
+		{
+			"changed": 5,
+			"kept": 6
+		},
+		{
+			"cut": 2,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"cut": 4,
+			"kept": 7
+		},
+		{
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"kept": 8
+		},
+		{
+			"kept": 6,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"cut": 2,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"kept": 6,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 4,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"cut": 3
+		},
+		{
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"kept": 11
+		},
+		{
+			"kept": 7,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 2
+		},
+		{
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 8,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"kept": 5,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 4,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"changed": 3,
+			"cut": 7,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"cut": 7
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 8,
+			"kept": 3
+		},
+		{
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 3,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 7,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 30
+		},
+		{
+			"scripted": 28,
+			"notInScript": 0
+		},
+		{
+			"scripted": 93,
+			"notInScript": 0
+		},
+		{
+			"scripted": 63,
+			"notInScript": 23
+		},
+		{
+			"scripted": 88,
+			"notInScript": 12
+		},
+		{
+			"scripted": 46,
+			"notInScript": 57
+		},
+		{
+			"scripted": 103,
+			"notInScript": 23
+		},
+		{
+			"scripted": 357,
+			"notInScript": 27
+		},
+		{
+			"scripted": 178,
+			"notInScript": 9
+		},
+		{
+			"scripted": 129,
+			"notInScript": 2
+		},
+		{
+			"scripted": 74,
+			"notInScript": 22
+		},
+		{
+			"scripted": 45,
+			"notInScript": 89
+		},
+		{
+			"scripted": 70,
+			"notInScript": 146
+		},
+		{
+			"scripted": 17,
+			"notInScript": 11
+		},
+		{
+			"scripted": 65,
+			"notInScript": 26
+		},
+		{
+			"scripted": 130,
+			"notInScript": 6
+		},
+		{
+			"scripted": 30,
+			"notInScript": 68
+		},
+		{
+			"scripted": 164,
+			"notInScript": 4
+		},
+		{
+			"scripted": 129,
+			"notInScript": 6
+		},
+		{
+			"scripted": 205,
+			"notInScript": 0
+		},
+		{
+			"scripted": 152,
+			"notInScript": 0
+		},
+		{
+			"scripted": 74,
+			"notInScript": 2
+		},
+		{
+			"scripted": 80,
+			"notInScript": 45
+		},
+		{
+			"scripted": 31,
+			"notInScript": 48
+		},
+		{
+			"scripted": 48,
+			"notInScript": 19
+		},
+		{
+			"scripted": 74,
+			"notInScript": 47
+		},
+		{
+			"scripted": 139,
+			"notInScript": 10
+		},
+		{
+			"scripted": 173,
+			"notInScript": 4
+		},
+		{
+			"scripted": 63,
+			"notInScript": 2
+		},
+		{
+			"scripted": 223,
+			"notInScript": 20
+		},
+		{
+			"scripted": 82,
+			"notInScript": 41
+		},
+		{
+			"scripted": 11,
+			"notInScript": 10
+		},
+		{
+			"scripted": 12,
+			"notInScript": 45
+		},
+		{
+			"scripted": 0,
+			"notInScript": 11
+		},
+		{
+			"scripted": 15,
+			"notInScript": 4
+		},
+		{
+			"scripted": 126,
+			"notInScript": 7
+		},
+		{
+			"scripted": 15,
+			"notInScript": 86
+		},
+		{
+			"scripted": 38,
+			"notInScript": 61
+		},
+		{
+			"scripted": 204,
+			"notInScript": 1
+		},
+		{
+			"scripted": 47,
+			"notInScript": 18
+		},
+		{
+			"scripted": 24,
+			"notInScript": 31
+		},
+		{
+			"scripted": 1,
+			"notInScript": 7
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 4,
+			"notInScript": 7
+		},
+		{
+			"scripted": 4,
+			"notInScript": 14
+		},
+		{
+			"scripted": 50,
+			"notInScript": 96
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 4,
+		"seconds": 75.8,
+		"longest": 25.7,
+		"spans": [
+			[
+				1462.4,
+				1472
+			],
+			[
+				2546.7,
+				2564.3
+			],
+			[
+				3473.5,
+				3499.3
+			],
+			[
+				3506.1,
+				3528.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 23,
+				"kept": 17,
+				"changed": 4,
+				"cut": 2
+			},
+			"other": {
+				"lines": 97,
+				"kept": 56,
+				"changed": 11,
+				"cut": 30
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 189,
+				"kept": 125,
+				"changed": 22,
+				"cut": 42
+			},
+			"other": {
+				"lines": 111,
+				"kept": 68,
+				"changed": 16,
+				"cut": 27
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "CATHERINE",
+				"text": "I made this model from the Latin equations ••• She shows him a sheet of figures."
+			},
+			{
+				"speaker": "DIRAC",
+				"text": "Usually as a result of rage."
+			},
+			{
+				"speaker": "CATHERINE",
+				"text": "Have you seen this figure before? THE ·DRAWING: a crude rendering of the figure on Kelly's arm"
+			},
+			{
+				"speaker": "WYNDHAM",
+				"text": "Hello-- Catherine turns to the window, frowning •••"
+			},
+			{
+				"speaker": "OVER DIRAC",
+				"text": "WHAM! Mullins spins around, stares at Dirac, pulls out the chopsticks."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 756,
+				"text": "The sect had enormous power and authority."
+			},
+			{
+				"at": 1565,
+				"text": "What are you supposed to be testing?"
+			},
+			{
+				"at": 2329,
+				"text": "Okay, it kind of starts here."
+			},
+			{
+				"at": 3842,
+				"text": "A sort of... remote camera view of the future, so that we can change it."
+			},
+			{
+				"at": 5136,
+				"text": "They're gonna kill me!"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "CATHERINE",
+				"page": "Coming with us where? Nobody knows ••• As Walter turns and walks moodily away •.•",
+				"screen": "Coming with us where?",
+				"pageWords": [
+					[
+						"Coming",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"us",
+						true
+					],
+					[
+						"where?",
+						true
+					],
+					[
+						"Nobody",
+						false
+					],
+					[
+						"knows",
+						false
+					],
+					[
+						"•••",
+						null
+					],
+					[
+						"As",
+						false
+					],
+					[
+						"Walter",
+						false
+					],
+					[
+						"turns",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"walks",
+						false
+					],
+					[
+						"moodily",
+						false
+					],
+					[
+						"away",
+						false
+					],
+					[
+						"•.•",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"Coming",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"us",
+						true
+					],
+					[
+						"where?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CATHERINE",
+				"page": "This is getting to be a habit. Okay.",
+				"screen": "This is starting to become a habit. Okay.",
+				"pageWords": [
+					[
+						"This",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"getting",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"habit.",
+						true
+					],
+					[
+						"Okay.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"This",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"starting",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"become",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"habit.",
+						true
+					],
+					[
+						"Okay.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "WALTER",
+				"page": "But we hadn't invented differ •••",
+				"screen": "We hadn't invented differential equations...",
+				"pageWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"hadn't",
+						true
+					],
+					[
+						"invented",
+						true
+					],
+					[
+						"differ",
+						false
+					],
+					[
+						"•••",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						true
+					],
+					[
+						"hadn't",
+						true
+					],
+					[
+						"invented",
+						true
+					],
+					[
+						"differential",
+						false
+					],
+					[
+						"equations...",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BRIAN",
+				"page": "Be ther~ in a minute ...",
+				"screen": "Yeah, I'll be there in a minute.",
+				"pageWords": [
+					[
+						"Be",
+						false
+					],
+					[
+						"ther~",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"minute",
+						true
+					],
+					[
+						"...",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"I'll",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"minute.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CATHERINE",
+				"page": "I can dig through with this. It'll take awhile ... Walter!",
+				"screen": "I think we can get through with this.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"dig",
+						false
+					],
+					[
+						"through",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"this.",
+						true
+					],
+					[
+						"It'll",
+						false
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"awhile",
+						false
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"Walter!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"through",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"this.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

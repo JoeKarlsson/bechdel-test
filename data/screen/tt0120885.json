@@ -1,0 +1,989 @@
+{
+	"_id": "tt0120885",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 16,
+		"eligible": 8,
+		"rejected": {
+			"runtime mismatch": 2,
+			"duplicate": 5,
+			"split across CDs": 1
+		},
+		"used": 8,
+		"primary": "1955998932",
+		"versions": [
+			"80283",
+			"1955317812",
+			"1951909189",
+			"1953195740",
+			"146218",
+			"1952279895",
+			"1955998932",
+			"111862"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9370981302353066,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5820,
+	"quality": {
+		"anchoredShare": 0.348035649327028
+	},
+	"words": {
+		"page": 10996,
+		"screen": 11654,
+		"kept": 3818,
+		"cut": 7178,
+		"notInScript": 7827,
+		"moved": 180
+	},
+	"lines": {
+		"page": 895,
+		"kept": 247,
+		"changed": 220,
+		"cut": 424,
+		"screen": 1954,
+		"notInScript": 1191
+	},
+	"byGender": {
+		"w": {
+			"lines": 191,
+			"kept": 51,
+			"changed": 37,
+			"cut": 103
+		},
+		"m": {
+			"lines": 639,
+			"kept": 178,
+			"changed": 166,
+			"cut": 295
+		},
+		"unknown": {
+			"lines": 61,
+			"kept": 18,
+			"changed": 17,
+			"cut": 26
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 6,
+			"changed": 9,
+			"kept": 4
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 6
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"cut": 8,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 10
+		},
+		{
+			"kept": 11,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 10
+		},
+		{
+			"changed": 5,
+			"kept": 10,
+			"cut": 3
+		},
+		{
+			"cut": 2,
+			"changed": 7,
+			"kept": 10
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 8
+		},
+		{
+			"kept": 4,
+			"changed": 5,
+			"cut": 9
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"kept": 6,
+			"cut": 11,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 14,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 3,
+			"changed": 11,
+			"kept": 4
+		},
+		{
+			"changed": 10,
+			"cut": 4,
+			"kept": 5
+		},
+		{
+			"kept": 7,
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 10,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"changed": 4,
+			"cut": 14
+		},
+		{
+			"kept": 4,
+			"changed": 9,
+			"cut": 6
+		},
+		{
+			"changed": 3,
+			"cut": 10,
+			"kept": 6
+		},
+		{
+			"cut": 13,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"changed": 6,
+			"cut": 8,
+			"kept": 5
+		},
+		{
+			"cut": 16,
+			"changed": 3
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"cut": 14,
+			"kept": 2
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"changed": 8,
+			"cut": 3,
+			"kept": 8
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"kept": 10,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"kept": 3,
+			"changed": 6
+		},
+		{
+			"kept": 6,
+			"cut": 4,
+			"changed": 9
+		},
+		{
+			"cut": 5,
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"cut": 13,
+			"kept": 4
+		},
+		{
+			"changed": 2,
+			"cut": 13,
+			"kept": 4
+		},
+		{
+			"cut": 15,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 5
+		},
+		{
+			"changed": 6,
+			"cut": 8,
+			"kept": 4
+		},
+		{
+			"cut": 6,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 6
+		},
+		{
+			"kept": 6,
+			"cut": 9,
+			"changed": 4
+		},
+		{
+			"kept": 5,
+			"cut": 7,
+			"changed": 6
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 22,
+			"notInScript": 54
+		},
+		{
+			"scripted": 66,
+			"notInScript": 45
+		},
+		{
+			"scripted": 156,
+			"notInScript": 141
+		},
+		{
+			"scripted": 200,
+			"notInScript": 75
+		},
+		{
+			"scripted": 161,
+			"notInScript": 162
+		},
+		{
+			"scripted": 170,
+			"notInScript": 153
+		},
+		{
+			"scripted": 172,
+			"notInScript": 138
+		},
+		{
+			"scripted": 149,
+			"notInScript": 117
+		},
+		{
+			"scripted": 226,
+			"notInScript": 109
+		},
+		{
+			"scripted": 149,
+			"notInScript": 86
+		},
+		{
+			"scripted": 87,
+			"notInScript": 175
+		},
+		{
+			"scripted": 99,
+			"notInScript": 194
+		},
+		{
+			"scripted": 58,
+			"notInScript": 145
+		},
+		{
+			"scripted": 48,
+			"notInScript": 203
+		},
+		{
+			"scripted": 186,
+			"notInScript": 150
+		},
+		{
+			"scripted": 121,
+			"notInScript": 153
+		},
+		{
+			"scripted": 54,
+			"notInScript": 151
+		},
+		{
+			"scripted": 23,
+			"notInScript": 208
+		},
+		{
+			"scripted": 121,
+			"notInScript": 222
+		},
+		{
+			"scripted": 82,
+			"notInScript": 156
+		},
+		{
+			"scripted": 207,
+			"notInScript": 140
+		},
+		{
+			"scripted": 196,
+			"notInScript": 110
+		},
+		{
+			"scripted": 0,
+			"notInScript": 164
+		},
+		{
+			"scripted": 86,
+			"notInScript": 153
+		},
+		{
+			"scripted": 151,
+			"notInScript": 156
+		},
+		{
+			"scripted": 28,
+			"notInScript": 201
+		},
+		{
+			"scripted": 72,
+			"notInScript": 130
+		},
+		{
+			"scripted": 89,
+			"notInScript": 215
+		},
+		{
+			"scripted": 98,
+			"notInScript": 140
+		},
+		{
+			"scripted": 208,
+			"notInScript": 93
+		},
+		{
+			"scripted": 134,
+			"notInScript": 96
+		},
+		{
+			"scripted": 92,
+			"notInScript": 86
+		},
+		{
+			"scripted": 79,
+			"notInScript": 260
+		},
+		{
+			"scripted": 126,
+			"notInScript": 128
+		},
+		{
+			"scripted": 29,
+			"notInScript": 223
+		},
+		{
+			"scripted": 98,
+			"notInScript": 99
+		},
+		{
+			"scripted": 92,
+			"notInScript": 63
+		},
+		{
+			"scripted": 178,
+			"notInScript": 133
+		},
+		{
+			"scripted": 67,
+			"notInScript": 205
+		},
+		{
+			"scripted": 225,
+			"notInScript": 90
+		},
+		{
+			"scripted": 135,
+			"notInScript": 137
+		},
+		{
+			"scripted": 62,
+			"notInScript": 88
+		},
+		{
+			"scripted": 14,
+			"notInScript": 154
+		},
+		{
+			"scripted": 152,
+			"notInScript": 89
+		},
+		{
+			"scripted": 99,
+			"notInScript": 193
+		},
+		{
+			"scripted": 0,
+			"notInScript": 120
+		},
+		{
+			"scripted": 0,
+			"notInScript": 84
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 13,
+				"kept": 2,
+				"changed": 5,
+				"cut": 6
+			},
+			"other": {
+				"lines": 150,
+				"kept": 44,
+				"changed": 27,
+				"cut": 79
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 314,
+				"kept": 94,
+				"changed": 86,
+				"cut": 134
+			},
+			"other": {
+				"lines": 195,
+				"kept": 52,
+				"changed": 51,
+				"cut": 92
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "BREAN",
+				"text": "What's it gonna cost?"
+			},
+			{
+				"speaker": "FAD KING",
+				"text": "...I meant the Leopard Skin..."
+			},
+			{
+				"speaker": "BREAN",
+				"text": "...she's running, it's some sacred... some ancestral land, cloven by the Brook named.... give it to Moss,"
+			},
+			{
+				"speaker": "MOSS",
+				"text": "Going to make a little stop back home, pick up my shirts, show him a little treat."
+			},
+			{
+				"speaker": "BREAN",
+				"text": "He's supposed to be flying in from Europe."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 742,
+				"text": "That's the title of the book."
+			},
+			{
+				"at": 1742,
+				"text": "This late-breaking news just in from Air Force One."
+			},
+			{
+				"at": 2763,
+				"text": "We guard... the American dream."
+			},
+			{
+				"at": 3812,
+				"text": "Jim, can I get a word with you?"
+			},
+			{
+				"at": 4996,
+				"text": "Are you all right?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "AMES",
+				"page": "Tell, tell, tell me again.",
+				"screen": "Tell me this again.",
+				"pageWords": [
+					[
+						"Tell,",
+						false
+					],
+					[
+						"tell,",
+						false
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"again.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Tell",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"again.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MOSS",
+				"page": "The men and women of Detachment Three-O-Three, with their...",
+				"screen": "To the men and women of the 303 detachment with their...",
+				"pageWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"men",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"women",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Detachment",
+						false
+					],
+					[
+						"Three-O-Three,",
+						false
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"their...",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"To",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"men",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"women",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"303",
+						false
+					],
+					[
+						"detachment",
+						false
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"their...",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BREAN",
+				"page": "Would you go to War to do that?",
+				"screen": "Would you fight to do that?",
+				"pageWords": [
+					[
+						"Would",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"War",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"that?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Would",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"fight",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"that?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "AMES",
+				"page": "Wait wait wait wait wait wait wait wait wait... What did he...what...what's the trouble?",
+				"screen": "Wait. What is the trouble?",
+				"pageWords": [
+					[
+						"Wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"wait...",
+						true
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"he...what...what's",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"trouble?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Wait.",
+						true
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"trouble?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MOSS",
+				"page": "No, 1emme talk to him... 1emme talk to him, we have a relationship...",
+				"screen": "I have a relationship.",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"1emme",
+						false
+					],
+					[
+						"talk",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"him...",
+						false
+					],
+					[
+						"1emme",
+						false
+					],
+					[
+						"talk",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"him,",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"relationship...",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"relationship.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

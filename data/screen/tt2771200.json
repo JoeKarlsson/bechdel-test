@@ -1,0 +1,975 @@
+{
+	"_id": "tt2771200",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 28,
+		"eligible": 21,
+		"rejected": {
+			"duplicate": 7
+		},
+		"used": 9,
+		"primary": "1955566080",
+		"versions": [
+			"1955566231",
+			"1955508384",
+			"1957051295",
+			"1955568426",
+			"1955566079",
+			"1955566133",
+			"1955566080",
+			"1955508242",
+			"1956632781"
+		],
+		"sdh": false,
+		"meanAgreement": 0.6495055411829432,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7740,
+	"quality": {
+		"anchoredShare": 0.9268709907341411
+	},
+	"words": {
+		"page": 7015,
+		"screen": 8869,
+		"kept": 4887,
+		"cut": 2128,
+		"notInScript": 2367,
+		"moved": 0
+	},
+	"lines": {
+		"page": 700,
+		"kept": 531,
+		"changed": 74,
+		"cut": 94,
+		"screen": 1840,
+		"notInScript": 560
+	},
+	"byGender": {
+		"w": {
+			"lines": 265,
+			"kept": 205,
+			"changed": 26,
+			"cut": 34
+		},
+		"m": {
+			"lines": 389,
+			"kept": 306,
+			"changed": 41,
+			"cut": 42
+		},
+		"unknown": {
+			"lines": 45,
+			"kept": 20,
+			"changed": 7,
+			"cut": 18
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 10,
+			"cut": 5
+		},
+		{
+			"cut": 1,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 6,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 5,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"cut": 2,
+			"kept": 13
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"cut": 4,
+			"kept": 11
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 9
+		},
+		{
+			"cut": 2,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"changed": 5,
+			"cut": 2,
+			"kept": 8
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 3,
+			"cut": 4,
+			"changed": 8
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"changed": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 148,
+			"notInScript": 5
+		},
+		{
+			"scripted": 200,
+			"notInScript": 4
+		},
+		{
+			"scripted": 323,
+			"notInScript": 10
+		},
+		{
+			"scripted": 253,
+			"notInScript": 64
+		},
+		{
+			"scripted": 157,
+			"notInScript": 23
+		},
+		{
+			"scripted": 116,
+			"notInScript": 13
+		},
+		{
+			"scripted": 265,
+			"notInScript": 8
+		},
+		{
+			"scripted": 73,
+			"notInScript": 45
+		},
+		{
+			"scripted": 55,
+			"notInScript": 28
+		},
+		{
+			"scripted": 41,
+			"notInScript": 25
+		},
+		{
+			"scripted": 134,
+			"notInScript": 21
+		},
+		{
+			"scripted": 134,
+			"notInScript": 57
+		},
+		{
+			"scripted": 122,
+			"notInScript": 177
+		},
+		{
+			"scripted": 210,
+			"notInScript": 5
+		},
+		{
+			"scripted": 180,
+			"notInScript": 16
+		},
+		{
+			"scripted": 210,
+			"notInScript": 31
+		},
+		{
+			"scripted": 226,
+			"notInScript": 112
+		},
+		{
+			"scripted": 185,
+			"notInScript": 12
+		},
+		{
+			"scripted": 104,
+			"notInScript": 247
+		},
+		{
+			"scripted": 116,
+			"notInScript": 195
+		},
+		{
+			"scripted": 137,
+			"notInScript": 12
+		},
+		{
+			"scripted": 56,
+			"notInScript": 32
+		},
+		{
+			"scripted": 131,
+			"notInScript": 8
+		},
+		{
+			"scripted": 298,
+			"notInScript": 10
+		},
+		{
+			"scripted": 136,
+			"notInScript": 61
+		},
+		{
+			"scripted": 150,
+			"notInScript": 4
+		},
+		{
+			"scripted": 121,
+			"notInScript": 1
+		},
+		{
+			"scripted": 174,
+			"notInScript": 17
+		},
+		{
+			"scripted": 171,
+			"notInScript": 5
+		},
+		{
+			"scripted": 190,
+			"notInScript": 5
+		},
+		{
+			"scripted": 230,
+			"notInScript": 83
+		},
+		{
+			"scripted": 57,
+			"notInScript": 13
+		},
+		{
+			"scripted": 133,
+			"notInScript": 0
+		},
+		{
+			"scripted": 141,
+			"notInScript": 19
+		},
+		{
+			"scripted": 186,
+			"notInScript": 0
+		},
+		{
+			"scripted": 247,
+			"notInScript": 36
+		},
+		{
+			"scripted": 328,
+			"notInScript": 19
+		},
+		{
+			"scripted": 164,
+			"notInScript": 24
+		},
+		{
+			"scripted": 138,
+			"notInScript": 27
+		},
+		{
+			"scripted": 67,
+			"notInScript": 13
+		},
+		{
+			"scripted": 64,
+			"notInScript": 18
+		},
+		{
+			"scripted": 53,
+			"notInScript": 18
+		},
+		{
+			"scripted": 6,
+			"notInScript": 15
+		},
+		{
+			"scripted": 119,
+			"notInScript": 27
+		},
+		{
+			"scripted": 4,
+			"notInScript": 133
+		},
+		{
+			"scripted": 0,
+			"notInScript": 114
+		},
+		{
+			"scripted": 0,
+			"notInScript": 118
+		},
+		{
+			"scripted": 0,
+			"notInScript": 186
+		}
+	],
+	"passingConversations": {
+		"count": 3,
+		"seconds": 42.7,
+		"longest": 24.6,
+		"spans": [
+			[
+				380.4,
+				392.3
+			],
+			[
+				476,
+				482.3
+			],
+			[
+				2093.4,
+				2118
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 37,
+				"kept": 28,
+				"changed": 4,
+				"cut": 5
+			},
+			"other": {
+				"lines": 161,
+				"kept": 134,
+				"changed": 16,
+				"cut": 11
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 185,
+				"kept": 145,
+				"changed": 16,
+				"cut": 24
+			},
+			"other": {
+				"lines": 196,
+				"kept": 157,
+				"changed": 25,
+				"cut": 14
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "APOTHECARY",
+				"text": "I wonder if she's feeling well"
+			},
+			{
+				"speaker": "COGSWORTH",
+				"text": "Um... that's a hair brush."
+			},
+			{
+				"speaker": "GASTON",
+				"text": "I'M ESPECIALLY GOOD AT EXPECTORATING!"
+			},
+			{
+				"speaker": "CADENZA",
+				"text": "Will I tremble again To my dear one's gorgeous refrain?"
+			},
+			{
+				"speaker": "BELLE",
+				"text": "This isn't over Gaston, you'll see!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1954,
+				"text": "A man, or a mantle clock?"
+			},
+			{
+				"at": 3048,
+				"text": "Tie your napkin 'round your neck, chérie"
+			},
+			{
+				"at": 4436,
+				"text": "And who'd have guessed"
+			},
+			{
+				"at": 7230,
+				"text": "Then when shadows overtake us"
+			},
+			{
+				"at": 7602,
+				"text": "I close my eyes but she's still there"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "VILLAGE LASSES' MOTHER",
+				"page": "Very different from the rest of us",
+				"screen": "Very different from the rest of us",
+				"pageWords": [
+					[
+						"Very",
+						true
+					],
+					[
+						"different",
+						true
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"rest",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"us",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Very",
+						true
+					],
+					[
+						"different",
+						true
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"rest",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"us",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MAURICE",
+				"page": "Water, fresh hay. Looks like you're set, old friend. Rest here...",
+				"screen": "You're all set, my old friend.",
+				"pageWords": [
+					[
+						"Water,",
+						false
+					],
+					[
+						"fresh",
+						false
+					],
+					[
+						"hay.",
+						false
+					],
+					[
+						"Looks",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"set,",
+						false
+					],
+					[
+						"old",
+						true
+					],
+					[
+						"friend.",
+						true
+					],
+					[
+						"Rest",
+						false
+					],
+					[
+						"here...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"set,",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"old",
+						true
+					],
+					[
+						"friend.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GASTON",
+				"page": "As a specimen, yes, I'm intimidating",
+				"screen": "As a specimen, yes, I'm intimidating",
+				"pageWords": [
+					[
+						"As",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"specimen,",
+						false
+					],
+					[
+						"yes,",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"intimidating",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"As",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"specimen,",
+						true
+					],
+					[
+						"yes,",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"intimidating",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "THE BEAST",
+				"page": "Should be something here you can start with...",
+				"screen": "Well, there are a couple of... things in here you could start with.",
+				"pageWords": [
+					[
+						"Should",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"something",
+						false
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"start",
+						true
+					],
+					[
+						"with...",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"couple",
+						false
+					],
+					[
+						"of...",
+						false
+					],
+					[
+						"things",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"start",
+						true
+					],
+					[
+						"with.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GASTON",
+				"page": "Screw your courage to the sticking place",
+				"screen": "Screw your courage to the sticking place",
+				"pageWords": [
+					[
+						"Screw",
+						false
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"courage",
+						true
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"sticking",
+						false
+					],
+					[
+						"place",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Screw",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"courage",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"sticking",
+						true
+					],
+					[
+						"place",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,996 @@
+{
+	"_id": "tt0467197",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 40,
+		"eligible": 23,
+		"rejected": {
+			"duplicate": 10,
+			"too few lines": 6,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1952012569",
+		"versions": [
+			"1953540889",
+			"1952283342",
+			"1961162909",
+			"1952012569",
+			"1952013951",
+			"1952012462",
+			"1954596630",
+			"1951973615",
+			"1951971942"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9217234591039227,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6000,
+	"quality": {
+		"anchoredShare": 0.2644553199202465
+	},
+	"words": {
+		"page": 5517,
+		"screen": 5150,
+		"kept": 1477,
+		"cut": 4040,
+		"notInScript": 3691,
+		"moved": 177
+	},
+	"lines": {
+		"page": 547,
+		"kept": 134,
+		"changed": 76,
+		"cut": 337,
+		"screen": 1077,
+		"notInScript": 787
+	},
+	"byGender": {
+		"w": {
+			"lines": 67,
+			"kept": 15,
+			"changed": 9,
+			"cut": 43
+		},
+		"m": {
+			"lines": 375,
+			"kept": 107,
+			"changed": 53,
+			"cut": 215
+		},
+		"unknown": {
+			"lines": 105,
+			"kept": 12,
+			"changed": 14,
+			"cut": 79
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 1,
+			"cut": 2,
+			"kept": 9
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"cut": 3
+		},
+		{
+			"changed": 1,
+			"cut": 6,
+			"kept": 4
+		},
+		{
+			"changed": 5,
+			"cut": 4,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"cut": 6,
+			"kept": 6
+		},
+		{
+			"changed": 3,
+			"cut": 7,
+			"kept": 1
+		},
+		{
+			"cut": 4,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"kept": 2,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"changed": 3,
+			"kept": 1,
+			"cut": 7
+		},
+		{
+			"cut": 5,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 5,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"cut": 5,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 12
+		},
+		{
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 12
+		},
+		{
+			"cut": 7,
+			"changed": 4
+		},
+		{
+			"kept": 2,
+			"cut": 9
+		},
+		{
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 12
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"changed": 2,
+			"cut": 8,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"kept": 3,
+			"changed": 1,
+			"cut": 7
+		},
+		{
+			"changed": 4,
+			"cut": 7,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 5
+		},
+		{
+			"cut": 12
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 5,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 78,
+			"notInScript": 12
+		},
+		{
+			"scripted": 181,
+			"notInScript": 46
+		},
+		{
+			"scripted": 55,
+			"notInScript": 11
+		},
+		{
+			"scripted": 75,
+			"notInScript": 50
+		},
+		{
+			"scripted": 94,
+			"notInScript": 172
+		},
+		{
+			"scripted": 22,
+			"notInScript": 59
+		},
+		{
+			"scripted": 23,
+			"notInScript": 22
+		},
+		{
+			"scripted": 65,
+			"notInScript": 38
+		},
+		{
+			"scripted": 14,
+			"notInScript": 43
+		},
+		{
+			"scripted": 25,
+			"notInScript": 182
+		},
+		{
+			"scripted": 5,
+			"notInScript": 89
+		},
+		{
+			"scripted": 6,
+			"notInScript": 35
+		},
+		{
+			"scripted": 53,
+			"notInScript": 119
+		},
+		{
+			"scripted": 75,
+			"notInScript": 143
+		},
+		{
+			"scripted": 26,
+			"notInScript": 94
+		},
+		{
+			"scripted": 176,
+			"notInScript": 67
+		},
+		{
+			"scripted": 5,
+			"notInScript": 155
+		},
+		{
+			"scripted": 56,
+			"notInScript": 93
+		},
+		{
+			"scripted": 23,
+			"notInScript": 24
+		},
+		{
+			"scripted": 49,
+			"notInScript": 50
+		},
+		{
+			"scripted": 53,
+			"notInScript": 14
+		},
+		{
+			"scripted": 10,
+			"notInScript": 60
+		},
+		{
+			"scripted": 9,
+			"notInScript": 113
+		},
+		{
+			"scripted": 0,
+			"notInScript": 73
+		},
+		{
+			"scripted": 20,
+			"notInScript": 96
+		},
+		{
+			"scripted": 31,
+			"notInScript": 16
+		},
+		{
+			"scripted": 55,
+			"notInScript": 51
+		},
+		{
+			"scripted": 48,
+			"notInScript": 81
+		},
+		{
+			"scripted": 37,
+			"notInScript": 187
+		},
+		{
+			"scripted": 61,
+			"notInScript": 131
+		},
+		{
+			"scripted": 42,
+			"notInScript": 117
+		},
+		{
+			"scripted": 70,
+			"notInScript": 126
+		},
+		{
+			"scripted": 34,
+			"notInScript": 73
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 42,
+			"notInScript": 0
+		},
+		{
+			"scripted": 17,
+			"notInScript": 220
+		},
+		{
+			"scripted": 64,
+			"notInScript": 21
+		},
+		{
+			"scripted": 0,
+			"notInScript": 3
+		},
+		{
+			"scripted": 5,
+			"notInScript": 29
+		},
+		{
+			"scripted": 52,
+			"notInScript": 164
+		},
+		{
+			"scripted": 24,
+			"notInScript": 67
+		},
+		{
+			"scripted": 22,
+			"notInScript": 32
+		},
+		{
+			"scripted": 20,
+			"notInScript": 34
+		},
+		{
+			"scripted": 19,
+			"notInScript": 42
+		},
+		{
+			"scripted": 11,
+			"notInScript": 24
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 4,
+				"kept": 1,
+				"changed": 0,
+				"cut": 3
+			},
+			"other": {
+				"lines": 62,
+				"kept": 14,
+				"changed": 9,
+				"cut": 39
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 237,
+				"kept": 65,
+				"changed": 32,
+				"cut": 140
+			},
+			"other": {
+				"lines": 122,
+				"kept": 34,
+				"changed": 20,
+				"cut": 68
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ALEX",
+				"text": "No, I moved out."
+			},
+			{
+				"speaker": "MAX",
+				"text": "It's real. I'm not crazy."
+			},
+			{
+				"speaker": "MAX",
+				"text": "Who? What's his name?"
+			},
+			{
+				"speaker": "COLVIN",
+				"text": "Show that to whoever will watch. If this thing spreads, nothing will keep the rest of you safe."
+			},
+			{
+				"speaker": "BB",
+				"text": "I understand an executive named Jason Colvin was also among the dead. Senseless tragedies, all."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 781,
+				"text": "See you around, Lupino."
+			},
+			{
+				"at": 1728,
+				"text": "I'd think twice about that."
+			},
+			{
+				"at": 2746,
+				"text": "Does this devil have a name?"
+			},
+			{
+				"at": 3607,
+				"text": "It only worked on one percent."
+			},
+			{
+				"at": 4991,
+				"text": "What the hell is goin'on?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MAX",
+				"page": "Why don't you let go--",
+				"screen": "Why don't you relax?",
+				"pageWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"let",
+						false
+					],
+					[
+						"go--",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"relax?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CHRISTA",
+				"page": "Don't talk to me like some stranger.",
+				"screen": "They still pay me like the janitor.",
+				"pageWords": [
+					[
+						"Don't",
+						false
+					],
+					[
+						"talk",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"stranger.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"They",
+						false
+					],
+					[
+						"still",
+						false
+					],
+					[
+						"pay",
+						false
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"janitor.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MONA",
+				"page": "Maybe it isn't anything new. People get strung out, act crazy...",
+				"screen": "You said people get the tattoo as protection.",
+				"pageWords": [
+					[
+						"Maybe",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"isn't",
+						false
+					],
+					[
+						"anything",
+						false
+					],
+					[
+						"new.",
+						false
+					],
+					[
+						"People",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"strung",
+						false
+					],
+					[
+						"out,",
+						false
+					],
+					[
+						"act",
+						false
+					],
+					[
+						"crazy...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"said",
+						false
+					],
+					[
+						"people",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"tattoo",
+						false
+					],
+					[
+						"as",
+						false
+					],
+					[
+						"protection.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "HOMICIDE COP",
+				"page": "Nobody, we just...why would anybody talk to IA without a reason?",
+				"screen": "You'll have the opportunity to come in and talk to-",
+				"pageWords": [
+					[
+						"Nobody,",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"just...why",
+						false
+					],
+					[
+						"would",
+						false
+					],
+					[
+						"anybody",
+						false
+					],
+					[
+						"talk",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"IA",
+						false
+					],
+					[
+						"without",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"reason?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You'll",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"opportunity",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"talk",
+						true
+					],
+					[
+						"to-",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BB",
+				"page": "need you to send a helicopter to my building. NThe storm's breaking...",
+				"screen": "I need you to send a helicopter to the roof.",
+				"pageWords": [
+					[
+						"need",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"send",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"helicopter",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"building.",
+						false
+					],
+					[
+						"NThe",
+						false
+					],
+					[
+						"storm's",
+						false
+					],
+					[
+						"breaking...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"send",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"helicopter",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"roof.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

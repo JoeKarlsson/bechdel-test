@@ -1,0 +1,987 @@
+{
+	"_id": "tt0317919",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 38,
+		"eligible": 16,
+		"rejected": {
+			"split across CDs": 10,
+			"duplicate": 8,
+			"runtime mismatch": 3,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1951971776",
+		"versions": [
+			"1951609595",
+			"1954641794",
+			"1954504780",
+			"1951971776",
+			"1954477488",
+			"1956772146",
+			"1951608507",
+			"1957425227",
+			"1952273042"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9955977593301034,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7560,
+	"quality": {
+		"anchoredShare": 0.5652066013152997
+	},
+	"words": {
+		"page": 8059,
+		"screen": 8180,
+		"kept": 4556,
+		"cut": 3503,
+		"notInScript": 3625,
+		"moved": 193
+	},
+	"lines": {
+		"page": 691,
+		"kept": 359,
+		"changed": 134,
+		"cut": 198,
+		"screen": 1634,
+		"notInScript": 705
+	},
+	"byGender": {
+		"w": {
+			"lines": 118,
+			"kept": 49,
+			"changed": 27,
+			"cut": 42
+		},
+		"m": {
+			"lines": 545,
+			"kept": 297,
+			"changed": 103,
+			"cut": 145
+		},
+		"unknown": {
+			"lines": 28,
+			"kept": 13,
+			"changed": 4,
+			"cut": 11
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 1,
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"kept": 4,
+			"cut": 6,
+			"changed": 4
+		},
+		{
+			"kept": 5,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 4
+		},
+		{
+			"changed": 5,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"changed": 5,
+			"kept": 7,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"cut": 3,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"changed": 1,
+			"cut": 6
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"kept": 3,
+			"cut": 11
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 6,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"kept": 11
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 5,
+			"cut": 9
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 7
+		},
+		{
+			"cut": 3,
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"cut": 2,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 3,
+			"changed": 2,
+			"kept": 9
+		},
+		{
+			"kept": 7,
+			"cut": 1,
+			"changed": 6
+		},
+		{
+			"kept": 8,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"cut": 2,
+			"changed": 1,
+			"kept": 12
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"cut": 2,
+			"changed": 6
+		},
+		{
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 3,
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"cut": 1,
+			"kept": 9,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"changed": 2,
+			"kept": 10
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"kept": 9
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 2
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 211,
+			"notInScript": 54
+		},
+		{
+			"scripted": 44,
+			"notInScript": 241
+		},
+		{
+			"scripted": 189,
+			"notInScript": 106
+		},
+		{
+			"scripted": 219,
+			"notInScript": 37
+		},
+		{
+			"scripted": 159,
+			"notInScript": 29
+		},
+		{
+			"scripted": 127,
+			"notInScript": 99
+		},
+		{
+			"scripted": 72,
+			"notInScript": 45
+		},
+		{
+			"scripted": 23,
+			"notInScript": 45
+		},
+		{
+			"scripted": 40,
+			"notInScript": 59
+		},
+		{
+			"scripted": 83,
+			"notInScript": 75
+		},
+		{
+			"scripted": 210,
+			"notInScript": 26
+		},
+		{
+			"scripted": 253,
+			"notInScript": 151
+		},
+		{
+			"scripted": 313,
+			"notInScript": 94
+		},
+		{
+			"scripted": 248,
+			"notInScript": 66
+		},
+		{
+			"scripted": 116,
+			"notInScript": 17
+		},
+		{
+			"scripted": 161,
+			"notInScript": 12
+		},
+		{
+			"scripted": 40,
+			"notInScript": 45
+		},
+		{
+			"scripted": 65,
+			"notInScript": 26
+		},
+		{
+			"scripted": 91,
+			"notInScript": 65
+		},
+		{
+			"scripted": 125,
+			"notInScript": 70
+		},
+		{
+			"scripted": 129,
+			"notInScript": 61
+		},
+		{
+			"scripted": 64,
+			"notInScript": 53
+		},
+		{
+			"scripted": 212,
+			"notInScript": 19
+		},
+		{
+			"scripted": 99,
+			"notInScript": 30
+		},
+		{
+			"scripted": 21,
+			"notInScript": 49
+		},
+		{
+			"scripted": 6,
+			"notInScript": 39
+		},
+		{
+			"scripted": 113,
+			"notInScript": 52
+		},
+		{
+			"scripted": 142,
+			"notInScript": 110
+		},
+		{
+			"scripted": 205,
+			"notInScript": 18
+		},
+		{
+			"scripted": 50,
+			"notInScript": 124
+		},
+		{
+			"scripted": 148,
+			"notInScript": 16
+		},
+		{
+			"scripted": 283,
+			"notInScript": 27
+		},
+		{
+			"scripted": 46,
+			"notInScript": 10
+		},
+		{
+			"scripted": 98,
+			"notInScript": 31
+		},
+		{
+			"scripted": 35,
+			"notInScript": 50
+		},
+		{
+			"scripted": 143,
+			"notInScript": 41
+		},
+		{
+			"scripted": 81,
+			"notInScript": 18
+		},
+		{
+			"scripted": 145,
+			"notInScript": 49
+		},
+		{
+			"scripted": 253,
+			"notInScript": 20
+		},
+		{
+			"scripted": 175,
+			"notInScript": 150
+		},
+		{
+			"scripted": 17,
+			"notInScript": 77
+		},
+		{
+			"scripted": 39,
+			"notInScript": 21
+		},
+		{
+			"scripted": 156,
+			"notInScript": 50
+		},
+		{
+			"scripted": 69,
+			"notInScript": 25
+		},
+		{
+			"scripted": 127,
+			"notInScript": 10
+		},
+		{
+			"scripted": 21,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 6.8,
+		"longest": 5,
+		"spans": [
+			[
+				353.4,
+				358.4
+			],
+			[
+				358.5,
+				360.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 7,
+				"kept": 1,
+				"changed": 4,
+				"cut": 2
+			},
+			"other": {
+				"lines": 105,
+				"kept": 46,
+				"changed": 23,
+				"cut": 36
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 409,
+				"kept": 226,
+				"changed": 82,
+				"cut": 101
+			},
+			"other": {
+				"lines": 127,
+				"kept": 70,
+				"changed": 20,
+				"cut": 37
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MUSGRAVE",
+				"text": "Thanks. What, you guys aren’t serving food?"
+			},
+			{
+				"speaker": "ETHAN",
+				"text": "Why didn’t you tell Brassel we were going after Lindsey?"
+			},
+			{
+				"speaker": "VATICAN GUARD",
+				"text": "Turn right into the courtyard."
+			},
+			{
+				"speaker": "BENJI",
+				"text": "You mean when we’re in prison together? We should have plenty of time."
+			},
+			{
+				"speaker": "BENJI",
+				"text": "No need to thank me: thank you-- I got the promotion."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 284,
+				"text": "Like we'd miss your engagement..."
+			},
+			{
+				"at": 1488,
+				"text": "Lindsey, I'm gonna short out the explosive in your head."
+			},
+			{
+				"at": 2861,
+				"text": "Delta team, download good."
+			},
+			{
+				"at": 4366,
+				"text": "Tell them that you came here..."
+			},
+			{
+				"at": 6193,
+				"text": "Benji, I don't have time for this."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "ETHAN",
+				"page": "-- we’re out of ice -- gonna make a quick run.",
+				"screen": "We ran out of ice.",
+				"pageWords": [
+					[
+						"--",
+						null
+					],
+					[
+						"we’re",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"ice",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"gonna",
+						false
+					],
+					[
+						"make",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"quick",
+						false
+					],
+					[
+						"run.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"ran",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"ice.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ETHAN ZHEN",
+				"page": "-- do we have a -- why? defibrillator? -- DO WE HAVE ONE?!",
+				"screen": "Do we have a defibrillator?",
+				"pageWords": [
+					[
+						"--",
+						null
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"why?",
+						false
+					],
+					[
+						"defibrillator?",
+						false
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"DO",
+						false
+					],
+					[
+						"WE",
+						false
+					],
+					[
+						"HAVE",
+						false
+					],
+					[
+						"ONE?!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"defibrillator?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ZHEN",
+				"page": "We’ve got a photo opportunity.",
+				"screen": "We have a photo opportunity.",
+				"pageWords": [
+					[
+						"We’ve",
+						false
+					],
+					[
+						"got",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"photo",
+						true
+					],
+					[
+						"opportunity.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"photo",
+						true
+					],
+					[
+						"opportunity.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ETHAN",
+				"page": "... that’s the one... How tall’s the building?",
+				"screen": "That's the one. How tall is that building?",
+				"pageWords": [
+					[
+						"...",
+						null
+					],
+					[
+						"that’s",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"one...",
+						true
+					],
+					[
+						"How",
+						true
+					],
+					[
+						"tall’s",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"building?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That's",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"one.",
+						true
+					],
+					[
+						"How",
+						true
+					],
+					[
+						"tall",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"building?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BENJI",
+				"page": "Make a left -- good -- good, now turn right.",
+				"screen": "Make a left. Good, good.",
+				"pageWords": [
+					[
+						"Make",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"good",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"good,",
+						true
+					],
+					[
+						"now",
+						false
+					],
+					[
+						"turn",
+						false
+					],
+					[
+						"right.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Make",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"left.",
+						true
+					],
+					[
+						"Good,",
+						true
+					],
+					[
+						"good.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

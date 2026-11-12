@@ -1,0 +1,978 @@
+{
+	"_id": "tt0115734",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 16,
+		"eligible": 10,
+		"rejected": {
+			"split across CDs": 1,
+			"duplicate": 5
+		},
+		"used": 9,
+		"primary": "1951655664",
+		"versions": [
+			"1952113339",
+			"1953026644",
+			"1955041851",
+			"1958745387",
+			"1952855071",
+			"1951655664",
+			"1955125176",
+			"1955368999",
+			"1951754960"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9454687974554693,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5460,
+	"quality": {
+		"anchoredShare": 0.16832600138921047
+	},
+	"words": {
+		"page": 8638,
+		"screen": 9036,
+		"kept": 1450,
+		"cut": 7188,
+		"notInScript": 7582,
+		"moved": 165
+	},
+	"lines": {
+		"page": 1193,
+		"kept": 172,
+		"changed": 147,
+		"cut": 872,
+		"screen": 1760,
+		"notInScript": 1386
+	},
+	"byGender": {
+		"w": {
+			"lines": 21,
+			"kept": 4,
+			"changed": 0,
+			"cut": 17
+		},
+		"m": {
+			"lines": 1138,
+			"kept": 161,
+			"changed": 145,
+			"cut": 832
+		},
+		"unknown": {
+			"lines": 32,
+			"kept": 7,
+			"changed": 2,
+			"cut": 23
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 22,
+			"changed": 3
+		},
+		{
+			"cut": 23,
+			"changed": 2
+		},
+		{
+			"cut": 18,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"changed": 6,
+			"cut": 19
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"kept": 3,
+			"cut": 21,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"cut": 16,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"cut": 21,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 20
+		},
+		{
+			"cut": 25
+		},
+		{
+			"cut": 21,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 13,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"cut": 15,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 18,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"kept": 6,
+			"cut": 15,
+			"changed": 4
+		},
+		{
+			"changed": 3,
+			"cut": 21,
+			"kept": 1
+		},
+		{
+			"changed": 4,
+			"kept": 3,
+			"cut": 18
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 10
+		},
+		{
+			"cut": 19,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"cut": 18,
+			"kept": 2
+		},
+		{
+			"cut": 23,
+			"changed": 1
+		},
+		{
+			"cut": 21,
+			"kept": 4
+		},
+		{
+			"changed": 5,
+			"cut": 18
+		},
+		{
+			"cut": 15,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 22,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 9
+		},
+		{
+			"changed": 5,
+			"kept": 2,
+			"cut": 18
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 12
+		},
+		{
+			"changed": 4,
+			"cut": 21
+		},
+		{
+			"cut": 25
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 16,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 11,
+			"kept": 7,
+			"changed": 6
+		},
+		{
+			"cut": 15,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"changed": 7,
+			"kept": 3
+		},
+		{
+			"cut": 11,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 2,
+			"changed": 3,
+			"cut": 20
+		},
+		{
+			"cut": 10,
+			"changed": 2,
+			"kept": 12
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 67
+		},
+		{
+			"scripted": 16,
+			"notInScript": 211
+		},
+		{
+			"scripted": 0,
+			"notInScript": 188
+		},
+		{
+			"scripted": 93,
+			"notInScript": 175
+		},
+		{
+			"scripted": 28,
+			"notInScript": 258
+		},
+		{
+			"scripted": 23,
+			"notInScript": 310
+		},
+		{
+			"scripted": 5,
+			"notInScript": 257
+		},
+		{
+			"scripted": 80,
+			"notInScript": 145
+		},
+		{
+			"scripted": 20,
+			"notInScript": 159
+		},
+		{
+			"scripted": 85,
+			"notInScript": 189
+		},
+		{
+			"scripted": 50,
+			"notInScript": 196
+		},
+		{
+			"scripted": 17,
+			"notInScript": 163
+		},
+		{
+			"scripted": 13,
+			"notInScript": 129
+		},
+		{
+			"scripted": 80,
+			"notInScript": 70
+		},
+		{
+			"scripted": 57,
+			"notInScript": 88
+		},
+		{
+			"scripted": 33,
+			"notInScript": 177
+		},
+		{
+			"scripted": 75,
+			"notInScript": 160
+		},
+		{
+			"scripted": 45,
+			"notInScript": 109
+		},
+		{
+			"scripted": 24,
+			"notInScript": 140
+		},
+		{
+			"scripted": 56,
+			"notInScript": 233
+		},
+		{
+			"scripted": 5,
+			"notInScript": 34
+		},
+		{
+			"scripted": 65,
+			"notInScript": 90
+		},
+		{
+			"scripted": 80,
+			"notInScript": 113
+		},
+		{
+			"scripted": 8,
+			"notInScript": 224
+		},
+		{
+			"scripted": 11,
+			"notInScript": 132
+		},
+		{
+			"scripted": 0,
+			"notInScript": 61
+		},
+		{
+			"scripted": 56,
+			"notInScript": 109
+		},
+		{
+			"scripted": 31,
+			"notInScript": 195
+		},
+		{
+			"scripted": 0,
+			"notInScript": 221
+		},
+		{
+			"scripted": 26,
+			"notInScript": 146
+		},
+		{
+			"scripted": 75,
+			"notInScript": 156
+		},
+		{
+			"scripted": 4,
+			"notInScript": 195
+		},
+		{
+			"scripted": 27,
+			"notInScript": 146
+		},
+		{
+			"scripted": 122,
+			"notInScript": 143
+		},
+		{
+			"scripted": 156,
+			"notInScript": 124
+		},
+		{
+			"scripted": 39,
+			"notInScript": 154
+		},
+		{
+			"scripted": 39,
+			"notInScript": 261
+		},
+		{
+			"scripted": 28,
+			"notInScript": 146
+		},
+		{
+			"scripted": 36,
+			"notInScript": 116
+		},
+		{
+			"scripted": 88,
+			"notInScript": 129
+		},
+		{
+			"scripted": 83,
+			"notInScript": 206
+		},
+		{
+			"scripted": 67,
+			"notInScript": 141
+		},
+		{
+			"scripted": 9,
+			"notInScript": 40
+		},
+		{
+			"scripted": 79,
+			"notInScript": 13
+		},
+		{
+			"scripted": 58,
+			"notInScript": 171
+		},
+		{
+			"scripted": 80,
+			"notInScript": 74
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 8,
+				"kept": 2,
+				"changed": 0,
+				"cut": 6
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 926,
+				"kept": 133,
+				"changed": 122,
+				"cut": 671
+			},
+			"other": {
+				"lines": 114,
+				"kept": 15,
+				"changed": 12,
+				"cut": 87
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ANTHONY",
+				"text": "Dignan, it's got an alarm."
+			},
+			{
+				"speaker": "DIGNAN",
+				"text": "Anthony, he sat in the car and watched a 4-11 in progress. He got what he deserved."
+			},
+			{
+				"speaker": "BOB",
+				"text": "Dignan. You're going to give me those keys or you're going to get hurt."
+			},
+			{
+				"speaker": "APPLEJACK",
+				"text": "Why the fuck do we need to blow up the car? It doesn't make any goddamn sense."
+			},
+			{
+				"speaker": "DIGNAN",
+				"text": "OK. Let's do it."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 478,
+				"text": "What was I supposed to say, they stuck you in an insane asylum?"
+			},
+			{
+				"at": 1237,
+				"text": "What do you mean, landscaping?"
+			},
+			{
+				"at": 2506,
+				"text": "Dignan, you know I was right out in front of the place with Inez."
+			},
+			{
+				"at": 3581,
+				"text": "Here he is, he thought he had a team."
+			},
+			{
+				"at": 4541,
+				"text": "Somebody's coming out of there."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BOB",
+				"page": "You should take a look. I have an entire crop in my backyard.",
+				"screen": "I'm growin' an entire crop of marijuana plants in my parents' back yard.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"look.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"entire",
+						true
+					],
+					[
+						"crop",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"backyard.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"growin'",
+						false
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"entire",
+						true
+					],
+					[
+						"crop",
+						true
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"marijuana",
+						false
+					],
+					[
+						"plants",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"parents'",
+						false
+					],
+					[
+						"back",
+						false
+					],
+					[
+						"yard.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BOB",
+				"page": "You're the one who kept saying ram him.",
+				"screen": "You're the one who hipped me to that.",
+				"pageWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"kept",
+						false
+					],
+					[
+						"saying",
+						false
+					],
+					[
+						"ram",
+						false
+					],
+					[
+						"him.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"hipped",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"that.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ANTHONY",
+				"page": "Man, I don't know anything about cars.",
+				"screen": "I don't know, man.",
+				"pageWords": [
+					[
+						"Man,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"anything",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"cars.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know,",
+						true
+					],
+					[
+						"man.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BOB",
+				"page": "Man, I don't want to go into this.",
+				"screen": "Of course you don't wanna get into it.",
+				"pageWords": [
+					[
+						"Man,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"into",
+						false
+					],
+					[
+						"this.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Of",
+						false
+					],
+					[
+						"course",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"wanna",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"into",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DIGNAN",
+				"page": "Take him to the car, Bob.",
+				"screen": "Get to the elevator!",
+				"pageWords": [
+					[
+						"Take",
+						false
+					],
+					[
+						"him",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"car,",
+						false
+					],
+					[
+						"Bob.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Get",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"elevator!",
+						false
+					]
+				]
+			}
+		]
+	}
+}

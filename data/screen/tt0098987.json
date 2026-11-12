@@ -1,0 +1,964 @@
+{
+	"_id": "tt0098987",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 10,
+		"eligible": 6,
+		"rejected": {
+			"duplicate": 4
+		},
+		"used": 6,
+		"primary": "1954734105",
+		"versions": [
+			"1955573667",
+			"1952583724",
+			"1955023891",
+			"1955038582",
+			"1954734105",
+			"1951823556"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9287179558600643,
+		"lyricsDropped": 240
+	},
+	"runtimeSeconds": 6120,
+	"quality": {
+		"anchoredShare": 0.3439651216154199
+	},
+	"words": {
+		"page": 8716,
+		"screen": 9258,
+		"kept": 2911,
+		"cut": 5805,
+		"notInScript": 6260,
+		"moved": 114
+	},
+	"lines": {
+		"page": 746,
+		"kept": 212,
+		"changed": 146,
+		"cut": 388,
+		"screen": 1781,
+		"notInScript": 1128
+	},
+	"byGender": {
+		"w": {
+			"lines": 192,
+			"kept": 64,
+			"changed": 18,
+			"cut": 110
+		},
+		"m": {
+			"lines": 515,
+			"kept": 137,
+			"changed": 122,
+			"cut": 256
+		},
+		"unknown": {
+			"lines": 39,
+			"kept": 11,
+			"changed": 6,
+			"cut": 22
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 7,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"changed": 3,
+			"kept": 7,
+			"cut": 6
+		},
+		{
+			"changed": 1,
+			"cut": 6,
+			"kept": 8
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 4
+		},
+		{
+			"cut": 7,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 7
+		},
+		{
+			"changed": 7,
+			"cut": 7,
+			"kept": 2
+		},
+		{
+			"kept": 4,
+			"changed": 6,
+			"cut": 5
+		},
+		{
+			"changed": 7,
+			"kept": 8,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"kept": 1,
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 3
+		},
+		{
+			"kept": 5,
+			"cut": 10
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 6
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"kept": 2,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"kept": 2,
+			"cut": 11,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"cut": 5,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 1,
+			"cut": 14
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"changed": 6,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 10,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"cut": 3,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 5
+		},
+		{
+			"changed": 5,
+			"kept": 4,
+			"cut": 7
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"cut": 6,
+			"kept": 5,
+			"changed": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 4,
+			"notInScript": 138
+		},
+		{
+			"scripted": 20,
+			"notInScript": 29
+		},
+		{
+			"scripted": 168,
+			"notInScript": 99
+		},
+		{
+			"scripted": 147,
+			"notInScript": 68
+		},
+		{
+			"scripted": 19,
+			"notInScript": 142
+		},
+		{
+			"scripted": 126,
+			"notInScript": 86
+		},
+		{
+			"scripted": 97,
+			"notInScript": 171
+		},
+		{
+			"scripted": 175,
+			"notInScript": 135
+		},
+		{
+			"scripted": 154,
+			"notInScript": 162
+		},
+		{
+			"scripted": 121,
+			"notInScript": 195
+		},
+		{
+			"scripted": 101,
+			"notInScript": 130
+		},
+		{
+			"scripted": 126,
+			"notInScript": 88
+		},
+		{
+			"scripted": 129,
+			"notInScript": 118
+		},
+		{
+			"scripted": 139,
+			"notInScript": 41
+		},
+		{
+			"scripted": 143,
+			"notInScript": 92
+		},
+		{
+			"scripted": 183,
+			"notInScript": 72
+		},
+		{
+			"scripted": 115,
+			"notInScript": 144
+		},
+		{
+			"scripted": 6,
+			"notInScript": 65
+		},
+		{
+			"scripted": 4,
+			"notInScript": 194
+		},
+		{
+			"scripted": 40,
+			"notInScript": 97
+		},
+		{
+			"scripted": 96,
+			"notInScript": 110
+		},
+		{
+			"scripted": 57,
+			"notInScript": 85
+		},
+		{
+			"scripted": 47,
+			"notInScript": 271
+		},
+		{
+			"scripted": 118,
+			"notInScript": 83
+		},
+		{
+			"scripted": 62,
+			"notInScript": 81
+		},
+		{
+			"scripted": 38,
+			"notInScript": 146
+		},
+		{
+			"scripted": 36,
+			"notInScript": 69
+		},
+		{
+			"scripted": 84,
+			"notInScript": 207
+		},
+		{
+			"scripted": 55,
+			"notInScript": 61
+		},
+		{
+			"scripted": 154,
+			"notInScript": 73
+		},
+		{
+			"scripted": 102,
+			"notInScript": 82
+		},
+		{
+			"scripted": 64,
+			"notInScript": 66
+		},
+		{
+			"scripted": 46,
+			"notInScript": 214
+		},
+		{
+			"scripted": 123,
+			"notInScript": 83
+		},
+		{
+			"scripted": 244,
+			"notInScript": 39
+		},
+		{
+			"scripted": 36,
+			"notInScript": 167
+		},
+		{
+			"scripted": 48,
+			"notInScript": 81
+		},
+		{
+			"scripted": 61,
+			"notInScript": 77
+		},
+		{
+			"scripted": 41,
+			"notInScript": 124
+		},
+		{
+			"scripted": 120,
+			"notInScript": 46
+		},
+		{
+			"scripted": 134,
+			"notInScript": 91
+		},
+		{
+			"scripted": 94,
+			"notInScript": 85
+		},
+		{
+			"scripted": 48,
+			"notInScript": 167
+		},
+		{
+			"scripted": 54,
+			"notInScript": 200
+		},
+		{
+			"scripted": 68,
+			"notInScript": 130
+		},
+		{
+			"scripted": 30,
+			"notInScript": 77
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 27,
+				"kept": 8,
+				"changed": 0,
+				"cut": 19
+			},
+			"other": {
+				"lines": 152,
+				"kept": 49,
+				"changed": 17,
+				"cut": 86
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 265,
+				"kept": 67,
+				"changed": 65,
+				"cut": 133
+			},
+			"other": {
+				"lines": 210,
+				"kept": 47,
+				"changed": 52,
+				"cut": 111
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "FORD",
+				"text": "All your friends call you Jazz."
+			},
+			{
+				"speaker": "FORD",
+				"text": "I'm sorry, that's gotta be a pair of tube socks he has down there."
+			},
+			{
+				"speaker": "FORD",
+				"text": "You hung out with Bobby Vomit. Who would want him dead?"
+			},
+			{
+				"speaker": "ZUZU",
+				"text": "Don't forget, Jazz, bonewad."
+			},
+			{
+				"speaker": "FORD",
+				"text": "Read. My. Lips. You're. Going. Down."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 739,
+				"text": "You know, Ford, sometimes you can be a real dick."
+			},
+			{
+				"at": 1827,
+				"text": "Does that excite you?"
+			},
+			{
+				"at": 2898,
+				"text": "I mean, who did all the work in bed?"
+			},
+			{
+				"at": 4152,
+				"text": "Bobby gave it to me the night that he passed away."
+			},
+			{
+				"at": 5444,
+				"text": "I was just gonna take a nice long nap."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "FORD",
+				"page": "Well what is it? I'm not Kreskin.",
+				"screen": "Yeah, what is it?",
+				"pageWords": [
+					[
+						"Well",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"it?",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"Kreskin.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"it?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LT. AMOS",
+				"page": "What are you running from?",
+				"screen": "What are you runnin' from?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"running",
+						false
+					],
+					[
+						"from?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"runnin'",
+						false
+					],
+					[
+						"from?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "FORD",
+				"page": "I wish I knew. You did good work...",
+				"screen": "I knew Colleen had something up her sleeve. You did good.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"wish",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"knew.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"good",
+						true
+					],
+					[
+						"work...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"knew",
+						true
+					],
+					[
+						"Colleen",
+						false
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"something",
+						false
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"her",
+						false
+					],
+					[
+						"sleeve.",
+						false
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"good.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GRENDEL",
+				"page": "Is she saying what I think she's...",
+				"screen": "Is she for real?",
+				"pageWords": [
+					[
+						"Is",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"saying",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"she's...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Is",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"real?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LT. AMOS",
+				"page": "You do realize that tonight is disco appreciation night at the Coconut Teazer...",
+				"screen": "You realize it's Disco Appreciation Night at the Coconut Teaser.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"realize",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"tonight",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"disco",
+						true
+					],
+					[
+						"appreciation",
+						true
+					],
+					[
+						"night",
+						true
+					],
+					[
+						"at",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Coconut",
+						true
+					],
+					[
+						"Teazer...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"realize",
+						false
+					],
+					[
+						"it's",
+						false
+					],
+					[
+						"Disco",
+						true
+					],
+					[
+						"Appreciation",
+						true
+					],
+					[
+						"Night",
+						true
+					],
+					[
+						"at",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Coconut",
+						true
+					],
+					[
+						"Teaser.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

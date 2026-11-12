@@ -275,6 +275,8 @@ const share = (n, d) => (d > 0 ? n / d : null);
 export const CUT_RATE_MIN_LINES = 20;
 // Conversations between women and women's other lines are compared only when each has this many lines
 export const CONVERSATION_MIN_LINES = 10;
+// Lengths of a film's passing conversations, in all, in seconds: [from, to)
+export const PASSING_BINS = [[0, 10], [10, 30], [30, 60], [60, 120], [120, 300], [300, Infinity]];
 
 /**
  * A film's page vs screen comparison (data/screen/<id>.json): how much of
@@ -297,6 +299,7 @@ export function screenFrom(s) {
 		byScriptOrder: s.byScriptOrder.map((b) => ({ kept: b.kept ?? 0, changed: b.changed ?? 0, cut: b.cut ?? 0 })),
 		byMinute: s.byMinute,
 		runtimeMinutes: Math.round(s.runtimeSeconds / 60),
+		runtimeSeconds: s.runtimeSeconds,
 		// both readings of lines nobody in the script says agree on pass or fail, unless change is 'unclear'
 		bechdel: { page: page.score, low: Math.min(strict.score, lenient.score), high: Math.max(strict.score, lenient.score), change },
 		quotes: s.quotes,
@@ -304,7 +307,10 @@ export function screenFrom(s) {
 		passing: s.passingConversations ?? null,
 		// share of named women's lines cut, in conversations between women and elsewhere
 		conversationCut: s.conversations
-			? { conversation: share(s.conversations.w.conversation.cut, s.conversations.w.conversation.lines), other: share(s.conversations.w.other.cut, s.conversations.w.other.lines), conversationLines: s.conversations.w.conversation.lines, otherLines: s.conversations.w.other.lines }
+			? Object.fromEntries(['w', 'm'].map((g) => {
+				const c = s.conversations[g];
+				return [g, { conversation: share(c.conversation.cut, c.conversation.lines), other: share(c.other.cut, c.other.lines), conversationLines: c.conversation.lines, otherLines: c.other.lines }];
+			}))
 			: null,
 		subtitles: { versions: s.subtitles.used, sdh: s.subtitles.sdh, agreement: s.subtitles.meanAgreement },
 	};
@@ -505,13 +511,24 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 			const seconds = compared.map((f) => f.screen.passing?.seconds).filter((x) => x !== undefined);
 			return { films: seconds.length, seconds: median(seconds), under30: seconds.length ? seconds.filter((x) => x < 30).length / seconds.length : null };
 		})(),
-		conversations: (() => {
-			const fs = compared.filter((f) => f.screen.conversationCut?.conversationLines >= CONVERSATION_MIN_LINES && f.screen.conversationCut.otherLines >= CONVERSATION_MIN_LINES);
-			return { films: fs.length, conversation: median(fs.map((f) => f.screen.conversationCut.conversation)), other: median(fs.map((f) => f.screen.conversationCut.other)) };
-		})(),
+		// median share of lines cut, in conversations between two women (or two men) and in their other lines
+		conversations: Object.fromEntries(['w', 'm'].map((g) => {
+			const fs = compared.filter((f) => f.screen.conversationCut?.[g].conversationLines >= CONVERSATION_MIN_LINES && f.screen.conversationCut[g].otherLines >= CONVERSATION_MIN_LINES);
+			return [g, { films: fs.length, conversation: median(fs.map((f) => f.screen.conversationCut[g].conversation)), other: median(fs.map((f) => f.screen.conversationCut[g].other)) }];
+		})),
+		// what each page verdict becomes on screen
+		flows: Object.fromEntries([['pass', true], ['fail', false]].map(([key, pass]) => {
+			const fs = compared.filter((f) => f.bechdel.pass === pass);
+			return [key, { films: fs.length, same: fs.filter((f) => f.screen.bechdel.change === 'same').length, flips: fs.filter((f) => changesOnScreen(f)).length, unclear: fs.filter((f) => f.screen.bechdel.change === 'unclear').length }];
+		})),
+		// films by share of the script heard, in tenths
+		survivalBins: Array.from({ length: 10 }, (_, k) => compared.filter((f) => Math.min(9, Math.floor(f.screen.survival * 10)) === k).length),
+		// films that pass on screen, by how long their passing conversations last in all
+		passingBins: PASSING_BINS.map(([from, to]) => compared.filter((f) => f.screen.passing && f.screen.passing.seconds >= from && f.screen.passing.seconds < to).length),
 		unclear: changed('unclear').length,
-		passToFail: changed('page-pass-screen-fail').map((f) => ({ slug: f.slug, title: f.title, year: f.year })),
-		failToPass: changed('page-fail-screen-pass').map((f) => ({ slug: f.slug, title: f.title, year: f.year })),
+		// best known first, as loadFilms sorts them
+		passToFail: changed('page-pass-screen-fail'),
+		failToPass: changed('page-fail-screen-pass'),
 	};
 
 	return {

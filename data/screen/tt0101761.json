@@ -1,0 +1,978 @@
+{
+	"_id": "tt0101761",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 24,
+		"eligible": 12,
+		"rejected": {
+			"runtime mismatch": 5,
+			"split across CDs": 4,
+			"duplicate": 3
+		},
+		"used": 9,
+		"primary": "118905",
+		"versions": [
+			"23867",
+			"1952255409",
+			"1951976316",
+			"112590",
+			"1958043824",
+			"314800",
+			"1951646103",
+			"118905",
+			"1956417893"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8350723352338665,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 8400,
+	"quality": {
+		"anchoredShare": 0.3307485833581867
+	},
+	"words": {
+		"page": 16765,
+		"screen": 10586,
+		"kept": 5597,
+		"cut": 11168,
+		"notInScript": 5041,
+		"moved": 594
+	},
+	"lines": {
+		"page": 1101,
+		"kept": 285,
+		"changed": 256,
+		"cut": 560,
+		"screen": 2081,
+		"notInScript": 914
+	},
+	"byGender": {
+		"w": {
+			"lines": 95,
+			"kept": 36,
+			"changed": 14,
+			"cut": 45
+		},
+		"m": {
+			"lines": 894,
+			"kept": 228,
+			"changed": 230,
+			"cut": 436
+		},
+		"unknown": {
+			"lines": 112,
+			"kept": 21,
+			"changed": 12,
+			"cut": 79
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 10,
+			"kept": 8,
+			"changed": 5
+		},
+		{
+			"kept": 9,
+			"changed": 8,
+			"cut": 6
+		},
+		{
+			"cut": 22,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 7
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 14
+		},
+		{
+			"changed": 10,
+			"cut": 6,
+			"kept": 7
+		},
+		{
+			"cut": 8,
+			"changed": 7,
+			"kept": 8
+		},
+		{
+			"cut": 14,
+			"changed": 7,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 11,
+			"cut": 6
+		},
+		{
+			"cut": 19,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"kept": 2,
+			"cut": 12,
+			"changed": 9
+		},
+		{
+			"cut": 10,
+			"changed": 6,
+			"kept": 7
+		},
+		{
+			"cut": 13,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"changed": 5,
+			"kept": 6
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 8
+		},
+		{
+			"kept": 3,
+			"changed": 8,
+			"cut": 12
+		},
+		{
+			"cut": 13,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"cut": 10,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 10
+		},
+		{
+			"cut": 11,
+			"changed": 7,
+			"kept": 5
+		},
+		{
+			"cut": 17,
+			"changed": 1,
+			"kept": 5
+		},
+		{
+			"changed": 11,
+			"cut": 12
+		},
+		{
+			"kept": 8,
+			"changed": 7,
+			"cut": 8
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 10
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 13
+		},
+		{
+			"cut": 9,
+			"changed": 9,
+			"kept": 5
+		},
+		{
+			"cut": 16,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 11,
+			"cut": 5,
+			"changed": 7
+		},
+		{
+			"cut": 14,
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"changed": 8,
+			"cut": 5
+		},
+		{
+			"kept": 5,
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"cut": 15,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"changed": 8,
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"changed": 4,
+			"cut": 12,
+			"kept": 7
+		},
+		{
+			"cut": 21,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"changed": 8,
+			"kept": 3
+		},
+		{
+			"cut": 18,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"kept": 6,
+			"cut": 9,
+			"changed": 8
+		},
+		{
+			"changed": 8,
+			"cut": 8,
+			"kept": 7
+		},
+		{
+			"changed": 6,
+			"cut": 13,
+			"kept": 4
+		},
+		{
+			"cut": 11,
+			"kept": 8,
+			"changed": 4
+		},
+		{
+			"kept": 7,
+			"changed": 7,
+			"cut": 9
+		},
+		{
+			"cut": 11,
+			"changed": 6,
+			"kept": 6
+		},
+		{
+			"kept": 8,
+			"changed": 7,
+			"cut": 8
+		},
+		{
+			"kept": 2,
+			"changed": 2,
+			"cut": 19
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 7
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 173,
+			"notInScript": 24
+		},
+		{
+			"scripted": 11,
+			"notInScript": 18
+		},
+		{
+			"scripted": 106,
+			"notInScript": 92
+		},
+		{
+			"scripted": 99,
+			"notInScript": 212
+		},
+		{
+			"scripted": 197,
+			"notInScript": 30
+		},
+		{
+			"scripted": 289,
+			"notInScript": 44
+		},
+		{
+			"scripted": 195,
+			"notInScript": 142
+		},
+		{
+			"scripted": 204,
+			"notInScript": 113
+		},
+		{
+			"scripted": 190,
+			"notInScript": 125
+		},
+		{
+			"scripted": 211,
+			"notInScript": 51
+		},
+		{
+			"scripted": 13,
+			"notInScript": 88
+		},
+		{
+			"scripted": 33,
+			"notInScript": 53
+		},
+		{
+			"scripted": 85,
+			"notInScript": 56
+		},
+		{
+			"scripted": 177,
+			"notInScript": 101
+		},
+		{
+			"scripted": 82,
+			"notInScript": 111
+		},
+		{
+			"scripted": 222,
+			"notInScript": 156
+		},
+		{
+			"scripted": 152,
+			"notInScript": 159
+		},
+		{
+			"scripted": 94,
+			"notInScript": 158
+		},
+		{
+			"scripted": 67,
+			"notInScript": 74
+		},
+		{
+			"scripted": 245,
+			"notInScript": 72
+		},
+		{
+			"scripted": 164,
+			"notInScript": 15
+		},
+		{
+			"scripted": 106,
+			"notInScript": 62
+		},
+		{
+			"scripted": 195,
+			"notInScript": 107
+		},
+		{
+			"scripted": 154,
+			"notInScript": 53
+		},
+		{
+			"scripted": 85,
+			"notInScript": 46
+		},
+		{
+			"scripted": 249,
+			"notInScript": 27
+		},
+		{
+			"scripted": 313,
+			"notInScript": 66
+		},
+		{
+			"scripted": 221,
+			"notInScript": 116
+		},
+		{
+			"scripted": 200,
+			"notInScript": 98
+		},
+		{
+			"scripted": 149,
+			"notInScript": 81
+		},
+		{
+			"scripted": 120,
+			"notInScript": 76
+		},
+		{
+			"scripted": 114,
+			"notInScript": 21
+		},
+		{
+			"scripted": 155,
+			"notInScript": 196
+		},
+		{
+			"scripted": 132,
+			"notInScript": 82
+		},
+		{
+			"scripted": 343,
+			"notInScript": 125
+		},
+		{
+			"scripted": 129,
+			"notInScript": 52
+		},
+		{
+			"scripted": 124,
+			"notInScript": 48
+		},
+		{
+			"scripted": 177,
+			"notInScript": 70
+		},
+		{
+			"scripted": 104,
+			"notInScript": 146
+		},
+		{
+			"scripted": 259,
+			"notInScript": 51
+		},
+		{
+			"scripted": 231,
+			"notInScript": 124
+		},
+		{
+			"scripted": 156,
+			"notInScript": 101
+		},
+		{
+			"scripted": 63,
+			"notInScript": 16
+		},
+		{
+			"scripted": 138,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 8,
+				"kept": 6,
+				"changed": 2,
+				"cut": 0
+			},
+			"other": {
+				"lines": 55,
+				"kept": 24,
+				"changed": 6,
+				"cut": 25
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 711,
+				"kept": 173,
+				"changed": 192,
+				"cut": 346
+			},
+			"other": {
+				"lines": 158,
+				"kept": 49,
+				"changed": 35,
+				"cut": 74
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PAM",
+				"text": "What was your father?"
+			},
+			{
+				"speaker": "PAUL",
+				"text": "Come on Jerry, cool it, cool it... he's a kid, it's a song about dying, changing..."
+			},
+			{
+				"speaker": "RAY",
+				"text": "I could never keep up with you Jim. I couldn't make the music."
+			},
+			{
+				"speaker": "RAY",
+				"text": "Alright, let's try something else."
+			},
+			{
+				"speaker": "PAM",
+				"text": "JIM MORRISON GODDAMIT I LOVE YOU I WANT YOU I NEED YOU."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 784,
+				"text": "All the poems have wolves in it."
+			},
+			{
+				"at": 2233,
+				"text": "We all love it!"
+			},
+			{
+				"at": 3186,
+				"text": "I think it was Edie, wasn't it?"
+			},
+			{
+				"at": 5089,
+				"text": "Looks like we're not gonna eat."
+			},
+			{
+				"at": 6707,
+				"text": "You know, the day destroy the night"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "RAY",
+				"page": "What do we call ourselves. \"Dionysus\"?",
+				"screen": "We should call ourselves Dionysus.",
+				"pageWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"call",
+						true
+					],
+					[
+						"ourselves.",
+						true
+					],
+					[
+						"\"Dionysus\"?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"call",
+						true
+					],
+					[
+						"ourselves",
+						true
+					],
+					[
+						"Dionysus.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JIM",
+				"page": "The biggest mistakes in my life have been haircuts.",
+				"screen": "Some of the worst mistakes of my life have been haircuts.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"biggest",
+						false
+					],
+					[
+						"mistakes",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"life",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"haircuts.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Some",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"worst",
+						false
+					],
+					[
+						"mistakes",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"life",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"haircuts.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "COP",
+				"page": "Okay, outta there both of you. No one's allowed backstage. Let's go.",
+				"screen": "Okay, out. No one's allowed backstage.",
+				"pageWords": [
+					[
+						"Okay,",
+						true
+					],
+					[
+						"outta",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"both",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"you.",
+						true
+					],
+					[
+						"No",
+						true
+					],
+					[
+						"one's",
+						true
+					],
+					[
+						"allowed",
+						true
+					],
+					[
+						"backstage.",
+						true
+					],
+					[
+						"Let's",
+						false
+					],
+					[
+						"go.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Okay,",
+						true
+					],
+					[
+						"out.",
+						true
+					],
+					[
+						"No",
+						true
+					],
+					[
+						"one's",
+						true
+					],
+					[
+						"allowed",
+						true
+					],
+					[
+						"backstage.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JIM",
+				"page": "You figured? What the fuck is this Ray?",
+				"screen": "We figured... What is this shit, Ray?",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"figured?",
+						false
+					],
+					[
+						"What",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"fuck",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"Ray?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"figured...",
+						true
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"shit,",
+						false
+					],
+					[
+						"Ray?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "RAY",
+				"page": "Jim we gotta finish \"LA Woman\".",
+				"screen": "Man, we gotta finish it.",
+				"pageWords": [
+					[
+						"Jim",
+						false
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"gotta",
+						true
+					],
+					[
+						"finish",
+						true
+					],
+					[
+						"\"LA",
+						false
+					],
+					[
+						"Woman\".",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Man,",
+						false
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"gotta",
+						true
+					],
+					[
+						"finish",
+						true
+					],
+					[
+						"it.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

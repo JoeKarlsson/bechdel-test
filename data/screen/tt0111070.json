@@ -1,0 +1,987 @@
+{
+	"_id": "tt0111070",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 9,
+		"eligible": 6,
+		"rejected": {
+			"duplicate": 2,
+			"split across CDs": 1
+		},
+		"used": 6,
+		"primary": "1955373887",
+		"versions": [
+			"1955373887",
+			"1953295087",
+			"1951625332",
+			"1957127925",
+			"1953413241",
+			"1956853395"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9550523568376424,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5820,
+	"quality": {
+		"anchoredShare": 0.11297440423654016
+	},
+	"words": {
+		"page": 10197,
+		"screen": 8787,
+		"kept": 1138,
+		"cut": 9059,
+		"notInScript": 7635,
+		"moved": 143
+	},
+	"lines": {
+		"page": 979,
+		"kept": 83,
+		"changed": 105,
+		"cut": 790,
+		"screen": 1870,
+		"notInScript": 1573
+	},
+	"byGender": {
+		"w": {
+			"lines": 139,
+			"kept": 12,
+			"changed": 13,
+			"cut": 114
+		},
+		"m": {
+			"lines": 740,
+			"kept": 67,
+			"changed": 82,
+			"cut": 591
+		},
+		"unknown": {
+			"lines": 99,
+			"kept": 4,
+			"changed": 10,
+			"cut": 85
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 18,
+			"kept": 2
+		},
+		{
+			"cut": 13,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"changed": 4,
+			"cut": 15,
+			"kept": 2
+		},
+		{
+			"kept": 1,
+			"cut": 14,
+			"changed": 5
+		},
+		{
+			"cut": 8,
+			"kept": 6,
+			"changed": 6
+		},
+		{
+			"cut": 12,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"changed": 8,
+			"kept": 3,
+			"cut": 9
+		},
+		{
+			"cut": 18,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"kept": 8,
+			"cut": 9
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 11
+		},
+		{
+			"kept": 5,
+			"cut": 11,
+			"changed": 4
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 15,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 20
+		},
+		{
+			"cut": 17,
+			"changed": 3
+		},
+		{
+			"cut": 18,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 19,
+			"kept": 1
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 20,
+			"changed": 1
+		},
+		{
+			"cut": 20
+		},
+		{
+			"cut": 21
+		},
+		{
+			"cut": 17,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 1,
+			"changed": 6
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 21
+		},
+		{
+			"cut": 18,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 19,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"cut": 15
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"changed": 4,
+			"cut": 15,
+			"kept": 1
+		},
+		{
+			"cut": 19,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 20
+		},
+		{
+			"cut": 20,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 173
+		},
+		{
+			"scripted": 14,
+			"notInScript": 298
+		},
+		{
+			"scripted": 116,
+			"notInScript": 232
+		},
+		{
+			"scripted": 37,
+			"notInScript": 116
+		},
+		{
+			"scripted": 32,
+			"notInScript": 155
+		},
+		{
+			"scripted": 109,
+			"notInScript": 117
+		},
+		{
+			"scripted": 57,
+			"notInScript": 80
+		},
+		{
+			"scripted": 34,
+			"notInScript": 78
+		},
+		{
+			"scripted": 86,
+			"notInScript": 156
+		},
+		{
+			"scripted": 17,
+			"notInScript": 128
+		},
+		{
+			"scripted": 18,
+			"notInScript": 129
+		},
+		{
+			"scripted": 34,
+			"notInScript": 137
+		},
+		{
+			"scripted": 0,
+			"notInScript": 88
+		},
+		{
+			"scripted": 24,
+			"notInScript": 128
+		},
+		{
+			"scripted": 33,
+			"notInScript": 189
+		},
+		{
+			"scripted": 82,
+			"notInScript": 173
+		},
+		{
+			"scripted": 201,
+			"notInScript": 117
+		},
+		{
+			"scripted": 86,
+			"notInScript": 120
+		},
+		{
+			"scripted": 31,
+			"notInScript": 120
+		},
+		{
+			"scripted": 15,
+			"notInScript": 114
+		},
+		{
+			"scripted": 42,
+			"notInScript": 53
+		},
+		{
+			"scripted": 111,
+			"notInScript": 146
+		},
+		{
+			"scripted": 6,
+			"notInScript": 281
+		},
+		{
+			"scripted": 18,
+			"notInScript": 281
+		},
+		{
+			"scripted": 45,
+			"notInScript": 209
+		},
+		{
+			"scripted": 14,
+			"notInScript": 210
+		},
+		{
+			"scripted": 19,
+			"notInScript": 139
+		},
+		{
+			"scripted": 0,
+			"notInScript": 211
+		},
+		{
+			"scripted": 20,
+			"notInScript": 221
+		},
+		{
+			"scripted": 0,
+			"notInScript": 180
+		},
+		{
+			"scripted": 0,
+			"notInScript": 229
+		},
+		{
+			"scripted": 0,
+			"notInScript": 102
+		},
+		{
+			"scripted": 0,
+			"notInScript": 172
+		},
+		{
+			"scripted": 11,
+			"notInScript": 129
+		},
+		{
+			"scripted": 9,
+			"notInScript": 194
+		},
+		{
+			"scripted": 64,
+			"notInScript": 166
+		},
+		{
+			"scripted": 53,
+			"notInScript": 131
+		},
+		{
+			"scripted": 10,
+			"notInScript": 135
+		},
+		{
+			"scripted": 28,
+			"notInScript": 109
+		},
+		{
+			"scripted": 28,
+			"notInScript": 71
+		},
+		{
+			"scripted": 14,
+			"notInScript": 96
+		},
+		{
+			"scripted": 49,
+			"notInScript": 150
+		},
+		{
+			"scripted": 17,
+			"notInScript": 119
+		},
+		{
+			"scripted": 2,
+			"notInScript": 201
+		},
+		{
+			"scripted": 11,
+			"notInScript": 66
+		},
+		{
+			"scripted": 0,
+			"notInScript": 93
+		},
+		{
+			"scripted": 0,
+			"notInScript": 131
+		},
+		{
+			"scripted": 0,
+			"notInScript": 117
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 133,
+				"kept": 12,
+				"changed": 13,
+				"cut": 108
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 562,
+				"kept": 54,
+				"changed": 69,
+				"cut": 439
+			},
+			"other": {
+				"lines": 153,
+				"kept": 13,
+				"changed": 12,
+				"cut": 128
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "SCOTT",
+				"text": "\"I sprang from my bed to see what was the matter...\""
+			},
+			{
+				"speaker": "LAURA",
+				"text": "And take a shave!"
+			},
+			{
+				"speaker": "BERNARD",
+				"text": "I told you. I’m Bernard."
+			},
+			{
+				"speaker": "PETE",
+				"text": "Santa? Did you bring me..."
+			},
+			{
+				"speaker": "LARRY",
+				"text": "T think I have an idea."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 366,
+				"text": "I believe in Santa Claus."
+			},
+			{
+				"at": 1775,
+				"text": "And I'm not a kid."
+			},
+			{
+				"at": 2924,
+				"text": "He knows if you've been bad or good"
+			},
+			{
+				"at": 3931,
+				"text": "So maybe I'm having second thoughts, kind of."
+			},
+			{
+				"at": 5225,
+				"text": "And I want you to come and see Charlie as often as you can."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "SCOTT",
+				"page": "Nothing. Have a good time.",
+				"screen": "You be a good boy, okay?",
+				"pageWords": [
+					[
+						"Nothing.",
+						false
+					],
+					[
+						"Have",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"good",
+						true
+					],
+					[
+						"time.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"good",
+						true
+					],
+					[
+						"boy,",
+						false
+					],
+					[
+						"okay?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SCOTT",
+				"page": "What do I do now?",
+				"screen": "Now what do we do?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"now?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Now",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"do?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BERNARD",
+				"page": "Not Santa Claus the person. “Santa Clause\" the clause. The Clause in the contract which says you’re Santa Claus.",
+				"screen": "Not Santa Claus the person, Santa Clause the clause. A clause, as in the last line of a contract.",
+				"pageWords": [
+					[
+						"Not",
+						true
+					],
+					[
+						"Santa",
+						true
+					],
+					[
+						"Claus",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"person.",
+						true
+					],
+					[
+						"“Santa",
+						true
+					],
+					[
+						"Clause\"",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"clause.",
+						true
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"Clause",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"contract",
+						false
+					],
+					[
+						"which",
+						false
+					],
+					[
+						"says",
+						false
+					],
+					[
+						"you’re",
+						false
+					],
+					[
+						"Santa",
+						false
+					],
+					[
+						"Claus.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Not",
+						true
+					],
+					[
+						"Santa",
+						true
+					],
+					[
+						"Claus",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"person,",
+						true
+					],
+					[
+						"Santa",
+						true
+					],
+					[
+						"Clause",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"clause.",
+						true
+					],
+					[
+						"A",
+						false
+					],
+					[
+						"clause,",
+						false
+					],
+					[
+						"as",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"last",
+						false
+					],
+					[
+						"line",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"contract.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SCOTT",
+				"page": "Bernard. I gotta talk to you.",
+				"screen": "I wanna talk to you.",
+				"pageWords": [
+					[
+						"Bernard.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"gotta",
+						false
+					],
+					[
+						"talk",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"wanna",
+						false
+					],
+					[
+						"talk",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TIM",
+				"page": "But I wanna be with you.",
+				"screen": "I can't be with ya all the time.",
+				"pageWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"wanna",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"can't",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"ya",
+						true
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"time.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

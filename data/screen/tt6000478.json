@@ -1,0 +1,960 @@
+{
+	"_id": "tt6000478",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 12,
+		"eligible": 10,
+		"rejected": {
+			"duplicate": 2
+		},
+		"used": 9,
+		"primary": "1955820713",
+		"versions": [
+			"1955820539",
+			"1955820575",
+			"1955819672",
+			"1955820538",
+			"1955819671",
+			"1955820713",
+			"1955820692",
+			"1955820576",
+			"1956370482"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9710605296722304,
+		"lyricsDropped": 147
+	},
+	"runtimeSeconds": 7320,
+	"quality": {
+		"anchoredShare": 0.6304347826086957
+	},
+	"words": {
+		"page": 9430,
+		"screen": 10268,
+		"kept": 5971,
+		"cut": 3459,
+		"notInScript": 4323,
+		"moved": 91
+	},
+	"lines": {
+		"page": 864,
+		"kept": 521,
+		"changed": 111,
+		"cut": 232,
+		"screen": 1771,
+		"notInScript": 688
+	},
+	"byGender": {
+		"w": {
+			"lines": 188,
+			"kept": 130,
+			"changed": 25,
+			"cut": 33
+		},
+		"m": {
+			"lines": 601,
+			"kept": 357,
+			"changed": 80,
+			"cut": 164
+		},
+		"unknown": {
+			"lines": 75,
+			"kept": 34,
+			"changed": 6,
+			"cut": 35
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 12,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"changed": 1,
+			"kept": 15
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"cut": 4,
+			"kept": 14
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"kept": 12,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"changed": 7
+		},
+		{
+			"kept": 15,
+			"changed": 3
+		},
+		{
+			"kept": 14,
+			"cut": 1,
+			"changed": 3
+		},
+		{
+			"changed": 1,
+			"kept": 16,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"changed": 7,
+			"cut": 2,
+			"kept": 9
+		},
+		{
+			"kept": 5,
+			"changed": 3,
+			"cut": 10
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 6
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"cut": 9
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"changed": 2,
+			"cut": 6,
+			"kept": 10
+		},
+		{
+			"cut": 8,
+			"changed": 2,
+			"kept": 8
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"cut": 4
+		},
+		{
+			"cut": 14,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 15
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 9
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 7,
+			"changed": 2,
+			"kept": 9
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"changed": 1,
+			"cut": 15,
+			"kept": 2
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"changed": 4,
+			"cut": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 181,
+			"notInScript": 50
+		},
+		{
+			"scripted": 161,
+			"notInScript": 151
+		},
+		{
+			"scripted": 246,
+			"notInScript": 58
+		},
+		{
+			"scripted": 295,
+			"notInScript": 42
+		},
+		{
+			"scripted": 47,
+			"notInScript": 143
+		},
+		{
+			"scripted": 262,
+			"notInScript": 20
+		},
+		{
+			"scripted": 235,
+			"notInScript": 61
+		},
+		{
+			"scripted": 322,
+			"notInScript": 16
+		},
+		{
+			"scripted": 173,
+			"notInScript": 43
+		},
+		{
+			"scripted": 302,
+			"notInScript": 16
+		},
+		{
+			"scripted": 130,
+			"notInScript": 173
+		},
+		{
+			"scripted": 289,
+			"notInScript": 103
+		},
+		{
+			"scripted": 294,
+			"notInScript": 21
+		},
+		{
+			"scripted": 180,
+			"notInScript": 231
+		},
+		{
+			"scripted": 239,
+			"notInScript": 31
+		},
+		{
+			"scripted": 233,
+			"notInScript": 93
+		},
+		{
+			"scripted": 176,
+			"notInScript": 41
+		},
+		{
+			"scripted": 251,
+			"notInScript": 65
+		},
+		{
+			"scripted": 151,
+			"notInScript": 72
+		},
+		{
+			"scripted": 146,
+			"notInScript": 113
+		},
+		{
+			"scripted": 190,
+			"notInScript": 12
+		},
+		{
+			"scripted": 129,
+			"notInScript": 25
+		},
+		{
+			"scripted": 121,
+			"notInScript": 14
+		},
+		{
+			"scripted": 15,
+			"notInScript": 13
+		},
+		{
+			"scripted": 24,
+			"notInScript": 63
+		},
+		{
+			"scripted": 149,
+			"notInScript": 10
+		},
+		{
+			"scripted": 240,
+			"notInScript": 88
+		},
+		{
+			"scripted": 68,
+			"notInScript": 74
+		},
+		{
+			"scripted": 251,
+			"notInScript": 46
+		},
+		{
+			"scripted": 213,
+			"notInScript": 8
+		},
+		{
+			"scripted": 182,
+			"notInScript": 29
+		},
+		{
+			"scripted": 213,
+			"notInScript": 60
+		},
+		{
+			"scripted": 98,
+			"notInScript": 226
+		},
+		{
+			"scripted": 333,
+			"notInScript": 63
+		},
+		{
+			"scripted": 177,
+			"notInScript": 48
+		},
+		{
+			"scripted": 23,
+			"notInScript": 10
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 127,
+			"notInScript": 20
+		},
+		{
+			"scripted": 36,
+			"notInScript": 113
+		},
+		{
+			"scripted": 68,
+			"notInScript": 73
+		},
+		{
+			"scripted": 186,
+			"notInScript": 124
+		},
+		{
+			"scripted": 286,
+			"notInScript": 21
+		},
+		{
+			"scripted": 13,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 130
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 8.2,
+		"longest": 8.2,
+		"spans": [
+			[
+				4913.4,
+				4921.6
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 11,
+				"kept": 6,
+				"changed": 2,
+				"cut": 3
+			},
+			"other": {
+				"lines": 133,
+				"kept": 96,
+				"changed": 22,
+				"cut": 15
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 304,
+				"kept": 185,
+				"changed": 38,
+				"cut": 81
+			},
+			"other": {
+				"lines": 253,
+				"kept": 143,
+				"changed": 38,
+				"cut": 72
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ROMAN",
+				"text": "Yes. That’s me. I’m him."
+			},
+			{
+				"speaker": "ROMAN",
+				"text": "As it happens non-action isn’t a viable option for me at this point. Now then..."
+			},
+			{
+				"speaker": "ROMAN",
+				"text": "No I’ll drop you off."
+			},
+			{
+				"speaker": "ROMAN",
+				"text": "What about why he did it? What about the reasons?"
+			},
+			{
+				"speaker": "ROMAN",
+				"text": "I need something tonight."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 576,
+				"text": "And do some push-ups."
+			},
+			{
+				"at": 1913,
+				"text": "If there's any questions concerns, anything you want to talk about free of charge, I'm here."
+			},
+			{
+				"at": 3124,
+				"text": "Maybe you can help me out with money or some..."
+			},
+			{
+				"at": 5063,
+				"text": "You know, all his talk of what could be and the difference one man could make."
+			},
+			{
+				"at": 6180,
+				"text": "You mean, on my own?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "GEORGE",
+				"page": "C’mon, let me take you. I just want to talk.",
+				"screen": "I just want to talk.",
+				"pageWords": [
+					[
+						"C’mon,",
+						false
+					],
+					[
+						"let",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"you.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"talk.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"talk.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CONNOR",
+				"page": "We’re just blowing off steam.",
+				"screen": "We were blowing off steam.",
+				"pageWords": [
+					[
+						"We’re",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"blowing",
+						true
+					],
+					[
+						"off",
+						true
+					],
+					[
+						"steam.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"were",
+						false
+					],
+					[
+						"blowing",
+						true
+					],
+					[
+						"off",
+						true
+					],
+					[
+						"steam.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ROMAN",
+				"page": "Without ID he’ll be cremated and mixed with a thousand others.",
+				"screen": "Well, without ID he'll get cremated and mixed up with 1000 other homeless people.",
+				"pageWords": [
+					[
+						"Without",
+						true
+					],
+					[
+						"ID",
+						true
+					],
+					[
+						"he’ll",
+						true
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"cremated",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"mixed",
+						true
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"thousand",
+						false
+					],
+					[
+						"others.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"without",
+						true
+					],
+					[
+						"ID",
+						true
+					],
+					[
+						"he'll",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"cremated",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"mixed",
+						true
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"1000",
+						false
+					],
+					[
+						"other",
+						false
+					],
+					[
+						"homeless",
+						false
+					],
+					[
+						"people.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ROMAN",
+				"page": "I prefer a double breast over the single.",
+				"screen": "I prefer double-breasted, but, uh...",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"prefer",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"double",
+						false
+					],
+					[
+						"breast",
+						false
+					],
+					[
+						"over",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"single.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"prefer",
+						true
+					],
+					[
+						"double-breasted,",
+						false
+					],
+					[
+						"but,",
+						false
+					],
+					[
+						"uh...",
+						null
+					]
+				]
+			},
+			{
+				"speaker": "ROMAN",
+				"page": "I’m giving it up.",
+				"screen": "I gave it up.",
+				"pageWords": [
+					[
+						"I’m",
+						false
+					],
+					[
+						"giving",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"up.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"gave",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"up.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

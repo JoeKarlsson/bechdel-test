@@ -1,0 +1,1182 @@
+{
+	"_id": "tt0765443",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 40,
+		"eligible": 20,
+		"rejected": {
+			"too few lines": 8,
+			"duplicate": 10,
+			"split across CDs": 2
+		},
+		"used": 9,
+		"primary": "1951976843",
+		"versions": [
+			"1951976843",
+			"1951837506",
+			"1952168551",
+			"1952325010",
+			"1951724049",
+			"1951730332",
+			"1959034390",
+			"1957647229",
+			"1952564111"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9767241008854195,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6000,
+	"quality": {
+		"anchoredShare": 0.5821828222642058
+	},
+	"words": {
+		"page": 6881,
+		"screen": 5237,
+		"kept": 4006,
+		"cut": 2875,
+		"notInScript": 1231,
+		"moved": 201
+	},
+	"lines": {
+		"page": 747,
+		"kept": 390,
+		"changed": 81,
+		"cut": 276,
+		"screen": 1025,
+		"notInScript": 260
+	},
+	"byGender": {
+		"w": {
+			"lines": 235,
+			"kept": 122,
+			"changed": 13,
+			"cut": 100
+		},
+		"m": {
+			"lines": 493,
+			"kept": 262,
+			"changed": 66,
+			"cut": 165
+		},
+		"unknown": {
+			"lines": 19,
+			"kept": 6,
+			"changed": 2,
+			"cut": 11
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 8,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 7
+		},
+		{
+			"changed": 3,
+			"cut": 8,
+			"kept": 4
+		},
+		{
+			"kept": 12,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"kept": 7,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"kept": 10
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"cut": 10,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"changed": 7,
+			"kept": 7,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 2,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"kept": 5
+		},
+		{
+			"kept": 4,
+			"changed": 4,
+			"cut": 8
+		},
+		{
+			"cut": 6,
+			"changed": 1,
+			"kept": 8
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"cut": 9
+		},
+		{
+			"cut": 5,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 6
+		},
+		{
+			"kept": 12,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"cut": 2,
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"changed": 5,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"cut": 3,
+			"kept": 12
+		},
+		{
+			"kept": 5,
+			"cut": 11
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"changed": 1,
+			"kept": 10
+		},
+		{
+			"kept": 12,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"kept": 7,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 5
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 6,
+			"kept": 9
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 65,
+			"notInScript": 21
+		},
+		{
+			"scripted": 53,
+			"notInScript": 34
+		},
+		{
+			"scripted": 144,
+			"notInScript": 2
+		},
+		{
+			"scripted": 111,
+			"notInScript": 6
+		},
+		{
+			"scripted": 114,
+			"notInScript": 28
+		},
+		{
+			"scripted": 126,
+			"notInScript": 16
+		},
+		{
+			"scripted": 156,
+			"notInScript": 2
+		},
+		{
+			"scripted": 50,
+			"notInScript": 22
+		},
+		{
+			"scripted": 93,
+			"notInScript": 34
+		},
+		{
+			"scripted": 37,
+			"notInScript": 3
+		},
+		{
+			"scripted": 85,
+			"notInScript": 19
+		},
+		{
+			"scripted": 108,
+			"notInScript": 26
+		},
+		{
+			"scripted": 49,
+			"notInScript": 12
+		},
+		{
+			"scripted": 126,
+			"notInScript": 6
+		},
+		{
+			"scripted": 120,
+			"notInScript": 23
+		},
+		{
+			"scripted": 109,
+			"notInScript": 1
+		},
+		{
+			"scripted": 166,
+			"notInScript": 27
+		},
+		{
+			"scripted": 44,
+			"notInScript": 6
+		},
+		{
+			"scripted": 164,
+			"notInScript": 8
+		},
+		{
+			"scripted": 185,
+			"notInScript": 2
+		},
+		{
+			"scripted": 175,
+			"notInScript": 2
+		},
+		{
+			"scripted": 190,
+			"notInScript": 23
+		},
+		{
+			"scripted": 146,
+			"notInScript": 12
+		},
+		{
+			"scripted": 99,
+			"notInScript": 16
+		},
+		{
+			"scripted": 135,
+			"notInScript": 3
+		},
+		{
+			"scripted": 140,
+			"notInScript": 2
+		},
+		{
+			"scripted": 91,
+			"notInScript": 1
+		},
+		{
+			"scripted": 29,
+			"notInScript": 28
+		},
+		{
+			"scripted": 44,
+			"notInScript": 1
+		},
+		{
+			"scripted": 129,
+			"notInScript": 0
+		},
+		{
+			"scripted": 145,
+			"notInScript": 29
+		},
+		{
+			"scripted": 127,
+			"notInScript": 34
+		},
+		{
+			"scripted": 58,
+			"notInScript": 6
+		},
+		{
+			"scripted": 88,
+			"notInScript": 20
+		},
+		{
+			"scripted": 181,
+			"notInScript": 0
+		},
+		{
+			"scripted": 71,
+			"notInScript": 9
+		},
+		{
+			"scripted": 72,
+			"notInScript": 22
+		},
+		{
+			"scripted": 0,
+			"notInScript": 17
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 78,
+			"notInScript": 18
+		},
+		{
+			"scripted": 194,
+			"notInScript": 1
+		},
+		{
+			"scripted": 108,
+			"notInScript": 5
+		},
+		{
+			"scripted": 15,
+			"notInScript": 21
+		},
+		{
+			"scripted": 59,
+			"notInScript": 27
+		},
+		{
+			"scripted": 29,
+			"notInScript": 44
+		},
+		{
+			"scripted": 42,
+			"notInScript": 47
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 20.5,
+		"longest": 15.2,
+		"spans": [
+			[
+				297.9,
+				313
+			],
+			[
+				2524.1,
+				2529.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 92,
+				"kept": 45,
+				"changed": 3,
+				"cut": 44
+			},
+			"other": {
+				"lines": 134,
+				"kept": 74,
+				"changed": 8,
+				"cut": 52
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 301,
+				"kept": 165,
+				"changed": 36,
+				"cut": 100
+			},
+			"other": {
+				"lines": 192,
+				"kept": 97,
+				"changed": 30,
+				"cut": 65
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "SEMYON",
+				"text": "So did you get a chance to talk to this girl before she died?"
+			},
+			{
+				"speaker": "NIKOLAI",
+				"text": "Albanians, Chechens, Russians. They deliver packages. Anything. Anywhere."
+			},
+			{
+				"speaker": "NIKOLAI",
+				"text": "When you were in what?"
+			},
+			{
+				"speaker": "ANNA",
+				"text": "...no, I couldn't get much sense out of him, he was drunk."
+			},
+			{
+				"speaker": "KIRILL",
+				"text": "Some bitch was out there saying you were the father of a baby."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 206,
+				"text": "Stay with us, all right?"
+			},
+			{
+				"at": 1423,
+				"text": "I've got my bike outside."
+			},
+			{
+				"at": 3435,
+				"text": "Just calm down, all right?"
+			},
+			{
+				"at": 4597,
+				"text": "\"Where do they unload them?\""
+			},
+			{
+				"at": 5512,
+				"text": "Why don't we go home?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "SEMYON",
+				"page": "My angels. You should be practising. You must make the wood cry. Like this, like this...",
+				"screen": "My angels, you must practice more. You must make the wood cry.",
+				"pageWords": [
+					[
+						"My",
+						true
+					],
+					[
+						"angels.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"practising.",
+						false
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"must",
+						true
+					],
+					[
+						"make",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"wood",
+						true
+					],
+					[
+						"cry.",
+						true
+					],
+					[
+						"Like",
+						false
+					],
+					[
+						"this,",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"this...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"My",
+						true
+					],
+					[
+						"angels,",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"practice",
+						false
+					],
+					[
+						"more.",
+						false
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"must",
+						true
+					],
+					[
+						"make",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"wood",
+						true
+					],
+					[
+						"cry.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KIRILL",
+				"page": "OK, Nikolai, he's all yours. And show some respect. This Muslim is scared of ghosts.",
+				"screen": "Okay, Kolya, he's all yours. Show some respect.",
+				"pageWords": [
+					[
+						"OK,",
+						true
+					],
+					[
+						"Nikolai,",
+						false
+					],
+					[
+						"he's",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"yours.",
+						true
+					],
+					[
+						"And",
+						false
+					],
+					[
+						"show",
+						true
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"respect.",
+						true
+					],
+					[
+						"This",
+						false
+					],
+					[
+						"Muslim",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"scared",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"ghosts.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Okay,",
+						true
+					],
+					[
+						"Kolya,",
+						false
+					],
+					[
+						"he's",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"yours.",
+						true
+					],
+					[
+						"Show",
+						true
+					],
+					[
+						"some",
+						true
+					],
+					[
+						"respect.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "NIKOLAI",
+				"page": "When I found out what had happened, I did what I had to do to clean the situation up.",
+				"screen": "When I find out what happened, we do what we have to, to clean up situation.",
+				"pageWords": [
+					[
+						"When",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"found",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"happened,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"clean",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"situation",
+						false
+					],
+					[
+						"up.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"When",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"find",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"happened,",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"to,",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"clean",
+						true
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"situation.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NIKOLAI",
+				"page": "I told you. I'm just a driver.",
+				"screen": "I'm just a driver.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"told",
+						false
+					],
+					[
+						"you.",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"driver.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"driver.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "NIKOLAI",
+				"page": "And you can tell them I'm going to replace Semyon at the head of the London organization.",
+				"screen": "Tell them I'm going to replace Semyon as boss of London organization.",
+				"pageWords": [
+					[
+						"And",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"them",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"replace",
+						true
+					],
+					[
+						"Semyon",
+						true
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"head",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"London",
+						true
+					],
+					[
+						"organization.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Tell",
+						true
+					],
+					[
+						"them",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"replace",
+						true
+					],
+					[
+						"Semyon",
+						true
+					],
+					[
+						"as",
+						false
+					],
+					[
+						"boss",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"London",
+						true
+					],
+					[
+						"organization.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

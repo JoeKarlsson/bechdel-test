@@ -1,0 +1,971 @@
+{
+	"_id": "tt0119081",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 26,
+		"eligible": 20,
+		"rejected": {
+			"duplicate": 5,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1957779719",
+		"versions": [
+			"1957039240",
+			"1952641932",
+			"1952184818",
+			"112695",
+			"1958350281",
+			"1957779719",
+			"1957204150",
+			"1956897233",
+			"1958917200"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9084173929723158,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5760,
+	"quality": {
+		"anchoredShare": 0.3281270003840737
+	},
+	"words": {
+		"page": 7811,
+		"screen": 6556,
+		"kept": 2561,
+		"cut": 5250,
+		"notInScript": 3993,
+		"moved": 151
+	},
+	"lines": {
+		"page": 872,
+		"kept": 246,
+		"changed": 136,
+		"cut": 490,
+		"screen": 1313,
+		"notInScript": 739
+	},
+	"byGender": {
+		"w": {
+			"lines": 211,
+			"kept": 61,
+			"changed": 31,
+			"cut": 119
+		},
+		"m": {
+			"lines": 581,
+			"kept": 163,
+			"changed": 100,
+			"cut": 318
+		},
+		"unknown": {
+			"lines": 80,
+			"kept": 22,
+			"changed": 5,
+			"cut": 53
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 1,
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"kept": 9,
+			"cut": 4
+		},
+		{
+			"kept": 6,
+			"cut": 12
+		},
+		{
+			"cut": 11,
+			"kept": 7
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"cut": 11,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"cut": 8,
+			"kept": 5
+		},
+		{
+			"kept": 6,
+			"cut": 9,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 6,
+			"cut": 8,
+			"changed": 5
+		},
+		{
+			"cut": 16,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"cut": 14,
+			"kept": 4
+		},
+		{
+			"kept": 2,
+			"changed": 4,
+			"cut": 12
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"kept": 7,
+			"changed": 1,
+			"cut": 11
+		},
+		{
+			"cut": 8,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"cut": 15,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 6
+		},
+		{
+			"changed": 3,
+			"cut": 14,
+			"kept": 2
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 10,
+			"kept": 4
+		},
+		{
+			"kept": 4,
+			"cut": 11,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"cut": 8,
+			"kept": 5,
+			"changed": 5
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"cut": 8,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"kept": 8,
+			"changed": 4
+		},
+		{
+			"kept": 7,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"kept": 8,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 10,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"kept": 8,
+			"cut": 5
+		},
+		{
+			"changed": 4,
+			"cut": 9,
+			"kept": 5
+		},
+		{
+			"kept": 3,
+			"cut": 15
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 4
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 4
+		},
+		{
+			"cut": 3,
+			"kept": 7,
+			"changed": 8
+		},
+		{
+			"changed": 4,
+			"cut": 13,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 3,
+			"notInScript": 17
+		},
+		{
+			"scripted": 154,
+			"notInScript": 131
+		},
+		{
+			"scripted": 26,
+			"notInScript": 14
+		},
+		{
+			"scripted": 42,
+			"notInScript": 75
+		},
+		{
+			"scripted": 139,
+			"notInScript": 202
+		},
+		{
+			"scripted": 219,
+			"notInScript": 82
+		},
+		{
+			"scripted": 196,
+			"notInScript": 32
+		},
+		{
+			"scripted": 131,
+			"notInScript": 59
+		},
+		{
+			"scripted": 102,
+			"notInScript": 28
+		},
+		{
+			"scripted": 212,
+			"notInScript": 59
+		},
+		{
+			"scripted": 89,
+			"notInScript": 60
+		},
+		{
+			"scripted": 71,
+			"notInScript": 65
+		},
+		{
+			"scripted": 29,
+			"notInScript": 64
+		},
+		{
+			"scripted": 41,
+			"notInScript": 16
+		},
+		{
+			"scripted": 127,
+			"notInScript": 93
+		},
+		{
+			"scripted": 133,
+			"notInScript": 45
+		},
+		{
+			"scripted": 141,
+			"notInScript": 124
+		},
+		{
+			"scripted": 92,
+			"notInScript": 102
+		},
+		{
+			"scripted": 52,
+			"notInScript": 26
+		},
+		{
+			"scripted": 84,
+			"notInScript": 34
+		},
+		{
+			"scripted": 53,
+			"notInScript": 14
+		},
+		{
+			"scripted": 171,
+			"notInScript": 140
+		},
+		{
+			"scripted": 61,
+			"notInScript": 22
+		},
+		{
+			"scripted": 102,
+			"notInScript": 115
+		},
+		{
+			"scripted": 190,
+			"notInScript": 121
+		},
+		{
+			"scripted": 81,
+			"notInScript": 102
+		},
+		{
+			"scripted": 131,
+			"notInScript": 58
+		},
+		{
+			"scripted": 82,
+			"notInScript": 97
+		},
+		{
+			"scripted": 104,
+			"notInScript": 38
+		},
+		{
+			"scripted": 111,
+			"notInScript": 88
+		},
+		{
+			"scripted": 81,
+			"notInScript": 30
+		},
+		{
+			"scripted": 3,
+			"notInScript": 4
+		},
+		{
+			"scripted": 2,
+			"notInScript": 126
+		},
+		{
+			"scripted": 54,
+			"notInScript": 60
+		},
+		{
+			"scripted": 9,
+			"notInScript": 115
+		},
+		{
+			"scripted": 0,
+			"notInScript": 19
+		},
+		{
+			"scripted": 27,
+			"notInScript": 81
+		},
+		{
+			"scripted": 15,
+			"notInScript": 43
+		},
+		{
+			"scripted": 43,
+			"notInScript": 31
+		},
+		{
+			"scripted": 95,
+			"notInScript": 77
+		},
+		{
+			"scripted": 26,
+			"notInScript": 82
+		},
+		{
+			"scripted": 22,
+			"notInScript": 75
+		},
+		{
+			"scripted": 0,
+			"notInScript": 37
+		},
+		{
+			"scripted": 0,
+			"notInScript": 107
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 3.7,
+		"longest": 3.7,
+		"spans": [
+			[
+				3742.2,
+				3745.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 23,
+				"kept": 9,
+				"changed": 6,
+				"cut": 8
+			},
+			"other": {
+				"lines": 188,
+				"kept": 52,
+				"changed": 25,
+				"cut": 111
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 366,
+				"kept": 117,
+				"changed": 70,
+				"cut": 179
+			},
+			"other": {
+				"lines": 215,
+				"kept": 46,
+				"changed": 30,
+				"cut": 139
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "WEIR",
+				"text": "I'm alright now. I'm alright..."
+			},
+			{
+				"speaker": "MILLER",
+				"text": "Keep your eyes open."
+			},
+			{
+				"speaker": "PETERS",
+				"text": "What happened to him?"
+			},
+			{
+				"speaker": "MILLER",
+				"text": "Stay here! Don't stop working!"
+			},
+			{
+				"speaker": "MILLER",
+				"text": "DJ? DJ, come in..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 769,
+				"text": "Thank you very much."
+			},
+			{
+				"at": 1957,
+				"text": "What the fuck is this?"
+			},
+			{
+				"at": 3014,
+				"text": "I didn't hear anything."
+			},
+			{
+				"at": 3813,
+				"text": "There's stuff I wanna get from medical."
+			},
+			{
+				"at": 5059,
+				"text": "Miller, can you hear me?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "SMITH",
+				"page": "Dead ahead, 5000 meters.",
+				"screen": "Dead ahead. 5,000 metres!",
+				"pageWords": [
+					[
+						"Dead",
+						true
+					],
+					[
+						"ahead,",
+						true
+					],
+					[
+						"5000",
+						false
+					],
+					[
+						"meters.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Dead",
+						true
+					],
+					[
+						"ahead.",
+						true
+					],
+					[
+						"5,000",
+						false
+					],
+					[
+						"metres!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MILLER",
+				"page": "Boarding party, sound off... Peters, do you read me... . Peters...",
+				"screen": "Boarding party, sound off.",
+				"pageWords": [
+					[
+						"Boarding",
+						true
+					],
+					[
+						"party,",
+						true
+					],
+					[
+						"sound",
+						true
+					],
+					[
+						"off...",
+						true
+					],
+					[
+						"Peters,",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"read",
+						false
+					],
+					[
+						"me...",
+						false
+					],
+					[
+						".",
+						null
+					],
+					[
+						"Peters...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Boarding",
+						true
+					],
+					[
+						"party,",
+						true
+					],
+					[
+						"sound",
+						true
+					],
+					[
+						"off.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DJ",
+				"page": "Carbon dioxide poisoning produces hallucinations, impaired judgement...",
+				"screen": "Carbon dioxide can produce hallucinations, impair judgement.",
+				"pageWords": [
+					[
+						"Carbon",
+						true
+					],
+					[
+						"dioxide",
+						true
+					],
+					[
+						"poisoning",
+						false
+					],
+					[
+						"produces",
+						false
+					],
+					[
+						"hallucinations,",
+						false
+					],
+					[
+						"impaired",
+						false
+					],
+					[
+						"judgement...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Carbon",
+						true
+					],
+					[
+						"dioxide",
+						true
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"produce",
+						false
+					],
+					[
+						"hallucinations,",
+						false
+					],
+					[
+						"impair",
+						false
+					],
+					[
+						"judgement.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JUSTIN",
+				"page": "But I can't... I gotta get out of here... Skipper, please...",
+				"screen": "We have to get out of here now.",
+				"pageWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"can't...",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"gotta",
+						false
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"here...",
+						true
+					],
+					[
+						"Skipper,",
+						false
+					],
+					[
+						"please...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"now.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MILLER",
+				"page": "Weir activated the drive. He's sending us to the Other Place.",
+				"screen": "Weir's activated the gravity drive.",
+				"pageWords": [
+					[
+						"Weir",
+						false
+					],
+					[
+						"activated",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"drive.",
+						false
+					],
+					[
+						"He's",
+						false
+					],
+					[
+						"sending",
+						false
+					],
+					[
+						"us",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"Other",
+						false
+					],
+					[
+						"Place.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Weir's",
+						false
+					],
+					[
+						"activated",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"gravity",
+						false
+					],
+					[
+						"drive.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

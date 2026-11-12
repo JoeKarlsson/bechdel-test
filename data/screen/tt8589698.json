@@ -1,0 +1,944 @@
+{
+	"_id": "tt8589698",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 3,
+		"eligible": 2,
+		"rejected": {
+			"duplicate": 1
+		},
+		"used": 2,
+		"primary": "1958249236",
+		"versions": [
+			"1958249236",
+			"1958497578"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9531342693296421,
+		"lyricsDropped": 13
+	},
+	"runtimeSeconds": 6000,
+	"quality": {
+		"anchoredShare": 0.8634929739030686
+	},
+	"words": {
+		"page": 10461,
+		"screen": 9908,
+		"kept": 8903,
+		"cut": 1558,
+		"notInScript": 875,
+		"moved": 6
+	},
+	"lines": {
+		"page": 1103,
+		"kept": 869,
+		"changed": 83,
+		"cut": 147,
+		"screen": 1961,
+		"notInScript": 218
+	},
+	"byGender": {
+		"w": {
+			"lines": 165,
+			"kept": 146,
+			"changed": 9,
+			"cut": 10
+		},
+		"m": {
+			"lines": 846,
+			"kept": 670,
+			"changed": 64,
+			"cut": 112
+		},
+		"unknown": {
+			"lines": 88,
+			"kept": 53,
+			"changed": 10,
+			"cut": 25
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 4,
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 18
+		},
+		{
+			"changed": 3,
+			"kept": 19,
+			"cut": 1
+		},
+		{
+			"kept": 19,
+			"cut": 3
+		},
+		{
+			"kept": 16,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 21,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 19,
+			"cut": 4
+		},
+		{
+			"kept": 17,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"changed": 3,
+			"cut": 5,
+			"kept": 15
+		},
+		{
+			"kept": 17,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 18,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 19,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 18,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"cut": 1,
+			"kept": 22
+		},
+		{
+			"kept": 20,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 21,
+			"cut": 2
+		},
+		{
+			"kept": 20,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 21,
+			"cut": 2
+		},
+		{
+			"changed": 1,
+			"kept": 20,
+			"cut": 2
+		},
+		{
+			"kept": 18,
+			"cut": 5
+		},
+		{
+			"kept": 19,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 20,
+			"cut": 3
+		},
+		{
+			"kept": 20,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 18,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"kept": 18,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 20,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 17
+		},
+		{
+			"kept": 19,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"kept": 20,
+			"cut": 2
+		},
+		{
+			"kept": 15,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 19,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 21,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 7
+		},
+		{
+			"changed": 2,
+			"cut": 4,
+			"kept": 17
+		},
+		{
+			"kept": 10,
+			"changed": 7,
+			"cut": 6
+		},
+		{
+			"kept": 17,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 4,
+			"kept": 17,
+			"changed": 2
+		},
+		{
+			"kept": 22
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 126,
+			"notInScript": 3
+		},
+		{
+			"scripted": 121,
+			"notInScript": 16
+		},
+		{
+			"scripted": 191,
+			"notInScript": 8
+		},
+		{
+			"scripted": 236,
+			"notInScript": 0
+		},
+		{
+			"scripted": 141,
+			"notInScript": 43
+		},
+		{
+			"scripted": 257,
+			"notInScript": 8
+		},
+		{
+			"scripted": 89,
+			"notInScript": 4
+		},
+		{
+			"scripted": 169,
+			"notInScript": 3
+		},
+		{
+			"scripted": 193,
+			"notInScript": 1
+		},
+		{
+			"scripted": 177,
+			"notInScript": 3
+		},
+		{
+			"scripted": 331,
+			"notInScript": 11
+		},
+		{
+			"scripted": 223,
+			"notInScript": 19
+		},
+		{
+			"scripted": 215,
+			"notInScript": 10
+		},
+		{
+			"scripted": 304,
+			"notInScript": 38
+		},
+		{
+			"scripted": 358,
+			"notInScript": 12
+		},
+		{
+			"scripted": 338,
+			"notInScript": 17
+		},
+		{
+			"scripted": 253,
+			"notInScript": 20
+		},
+		{
+			"scripted": 259,
+			"notInScript": 5
+		},
+		{
+			"scripted": 116,
+			"notInScript": 1
+		},
+		{
+			"scripted": 298,
+			"notInScript": 19
+		},
+		{
+			"scripted": 328,
+			"notInScript": 4
+		},
+		{
+			"scripted": 197,
+			"notInScript": 6
+		},
+		{
+			"scripted": 294,
+			"notInScript": 29
+		},
+		{
+			"scripted": 264,
+			"notInScript": 12
+		},
+		{
+			"scripted": 331,
+			"notInScript": 6
+		},
+		{
+			"scripted": 298,
+			"notInScript": 20
+		},
+		{
+			"scripted": 174,
+			"notInScript": 8
+		},
+		{
+			"scripted": 95,
+			"notInScript": 8
+		},
+		{
+			"scripted": 211,
+			"notInScript": 0
+		},
+		{
+			"scripted": 224,
+			"notInScript": 0
+		},
+		{
+			"scripted": 84,
+			"notInScript": 12
+		},
+		{
+			"scripted": 223,
+			"notInScript": 16
+		},
+		{
+			"scripted": 321,
+			"notInScript": 16
+		},
+		{
+			"scripted": 130,
+			"notInScript": 20
+		},
+		{
+			"scripted": 129,
+			"notInScript": 13
+		},
+		{
+			"scripted": 318,
+			"notInScript": 3
+		},
+		{
+			"scripted": 112,
+			"notInScript": 20
+		},
+		{
+			"scripted": 262,
+			"notInScript": 18
+		},
+		{
+			"scripted": 272,
+			"notInScript": 0
+		},
+		{
+			"scripted": 143,
+			"notInScript": 6
+		},
+		{
+			"scripted": 153,
+			"notInScript": 6
+		},
+		{
+			"scripted": 105,
+			"notInScript": 12
+		},
+		{
+			"scripted": 176,
+			"notInScript": 19
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 165,
+			"notInScript": 9
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 16.7,
+		"longest": 16.7,
+		"spans": [
+			[
+				5232.6,
+				5249.3
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 7,
+				"kept": 6,
+				"changed": 0,
+				"cut": 1
+			},
+			"other": {
+				"lines": 146,
+				"kept": 131,
+				"changed": 8,
+				"cut": 7
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 399,
+				"kept": 307,
+				"changed": 29,
+				"cut": 63
+			},
+			"other": {
+				"lines": 158,
+				"kept": 118,
+				"changed": 16,
+				"cut": 24
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MICHELANGELO DONATELLO",
+				"text": "They don't want to milk us Again with the milking... dad."
+			},
+			{
+				"speaker": "MICHELANGELO",
+				"text": "My mind is just BLOWN! A HUMAN! We talked to a human!"
+			},
+			{
+				"speaker": "BEBOP",
+				"text": "Ah! Woah! Hey no!"
+			},
+			{
+				"speaker": "SUPERFLY",
+				"text": "Mega Mutant HURLS a car a Donnie. RAPH appears,"
+			},
+			{
+				"speaker": "SUPERFLY",
+				"text": "Mega Mutant HURLS a statue at them."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 608,
+				"text": "I cannot be more quiet."
+			},
+			{
+				"at": 1690,
+				"text": "\"They are alone in the world.\""
+			},
+			{
+				"at": 2666,
+				"text": "Bro, he's got cool Tims."
+			},
+			{
+				"at": 3356,
+				"text": "Watch where you're driving!"
+			},
+			{
+				"at": 4585,
+				"text": "It looks like y'all want to die now."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DONATELLO",
+				"page": "That is sick dude!",
+				"screen": "That is sick, dude!",
+				"pageWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"sick",
+						true
+					],
+					[
+						"dude!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"sick,",
+						true
+					],
+					[
+						"dude!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TURTLES",
+				"page": "Guys I think she can see us./She can't see us./She can totally see us!",
+				"screen": "I think she can see us. She can't.",
+				"pageWords": [
+					[
+						"Guys",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"us./She",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"us./She",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"totally",
+						false
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"us!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"us.",
+						true
+					],
+					[
+						"She",
+						true
+					],
+					[
+						"can't.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DONATELLO",
+				"page": "We all know that does not say poke.",
+				"screen": "That does not say \"poke.\"",
+				"pageWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"does",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"say",
+						true
+					],
+					[
+						"poke.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						true
+					],
+					[
+						"does",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"say",
+						true
+					],
+					[
+						"\"poke.\"",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SUPERFLY",
+				"page": "Surprise! Why you socking yourself? Why you socking yourself?",
+				"screen": "Surprise! Why you socking yourself?",
+				"pageWords": [
+					[
+						"Surprise!",
+						true
+					],
+					[
+						"Why",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"socking",
+						false
+					],
+					[
+						"yourself?",
+						false
+					],
+					[
+						"Why",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"socking",
+						false
+					],
+					[
+						"yourself?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Surprise!",
+						true
+					],
+					[
+						"Why",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"socking",
+						true
+					],
+					[
+						"yourself?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SUPERFLY",
+				"page": "MEGA MUTANT Dang Mondo, you slippery lizard!",
+				"screen": "Hey, Mondo, you slippery lizard!",
+				"pageWords": [
+					[
+						"MEGA",
+						false
+					],
+					[
+						"MUTANT",
+						false
+					],
+					[
+						"Dang",
+						false
+					],
+					[
+						"Mondo,",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"slippery",
+						true
+					],
+					[
+						"lizard!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Hey,",
+						false
+					],
+					[
+						"Mondo,",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"slippery",
+						true
+					],
+					[
+						"lizard!",
+						true
+					]
+				]
+			}
+		]
+	}
+}

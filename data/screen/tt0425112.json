@@ -1,0 +1,1036 @@
+{
+	"_id": "tt0425112",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 45,
+		"eligible": 25,
+		"rejected": {
+			"duplicate": 13,
+			"split across CDs": 7
+		},
+		"used": 9,
+		"primary": "1952185604",
+		"versions": [
+			"1953019642",
+			"1952305598",
+			"1957278735",
+			"1957090834",
+			"1952185604",
+			"1952565352",
+			"1951670810",
+			"1952182181",
+			"1954066450"
+		],
+		"sdh": false,
+		"meanAgreement": 0.7809249389671115,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7260,
+	"quality": {
+		"anchoredShare": 0.6909702288198146
+	},
+	"words": {
+		"page": 12193,
+		"screen": 11142,
+		"kept": 8399,
+		"cut": 3794,
+		"notInScript": 2717,
+		"moved": 4
+	},
+	"lines": {
+		"page": 1358,
+		"kept": 918,
+		"changed": 174,
+		"cut": 265,
+		"screen": 1928,
+		"notInScript": 364
+	},
+	"byGender": {
+		"w": {
+			"lines": 80,
+			"kept": 65,
+			"changed": 8,
+			"cut": 7
+		},
+		"m": {
+			"lines": 1179,
+			"kept": 789,
+			"changed": 156,
+			"cut": 234
+		},
+		"unknown": {
+			"lines": 98,
+			"kept": 64,
+			"changed": 10,
+			"cut": 24
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 14,
+			"changed": 6,
+			"cut": 9
+		},
+		{
+			"cut": 8,
+			"kept": 16,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"kept": 19,
+			"cut": 5
+		},
+		{
+			"changed": 3,
+			"kept": 25,
+			"cut": 1
+		},
+		{
+			"cut": 4,
+			"kept": 20,
+			"changed": 4
+		},
+		{
+			"kept": 24,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"cut": 2,
+			"changed": 4
+		},
+		{
+			"cut": 6,
+			"kept": 20,
+			"changed": 2
+		},
+		{
+			"changed": 8,
+			"cut": 5,
+			"kept": 15
+		},
+		{
+			"cut": 8,
+			"kept": 19,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 17,
+			"cut": 10
+		},
+		{
+			"kept": 9,
+			"cut": 16,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"kept": 14,
+			"cut": 7
+		},
+		{
+			"kept": 16,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 16
+		},
+		{
+			"changed": 2,
+			"kept": 24,
+			"cut": 2
+		},
+		{
+			"kept": 21,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 19,
+			"changed": 5,
+			"cut": 5
+		},
+		{
+			"cut": 6,
+			"kept": 17,
+			"changed": 5
+		},
+		{
+			"kept": 21,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 27,
+			"changed": 2
+		},
+		{
+			"kept": 19,
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"cut": 12,
+			"kept": 16
+		},
+		{
+			"cut": 10,
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 18,
+			"changed": 7,
+			"cut": 3
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 16
+		},
+		{
+			"changed": 1,
+			"kept": 18,
+			"cut": 10
+		},
+		{
+			"changed": 4,
+			"kept": 16,
+			"cut": 8
+		},
+		{
+			"cut": 11,
+			"kept": 15,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"cut": 19,
+			"kept": 7
+		},
+		{
+			"changed": 4,
+			"kept": 21,
+			"cut": 3
+		},
+		{
+			"kept": 21,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"kept": 22
+		},
+		{
+			"kept": 20,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"kept": 25,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 23,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"cut": 3,
+			"changed": 7,
+			"kept": 18
+		},
+		{
+			"kept": 21,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"kept": 16,
+			"changed": 4,
+			"cut": 9
+		},
+		{
+			"kept": 15,
+			"changed": 9,
+			"cut": 4
+		},
+		{
+			"kept": 24,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 21,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"kept": 23,
+			"changed": 5
+		},
+		{
+			"kept": 21,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"kept": 21,
+			"cut": 2,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 121,
+			"notInScript": 70
+		},
+		{
+			"scripted": 416,
+			"notInScript": 11
+		},
+		{
+			"scripted": 306,
+			"notInScript": 54
+		},
+		{
+			"scripted": 109,
+			"notInScript": 6
+		},
+		{
+			"scripted": 229,
+			"notInScript": 10
+		},
+		{
+			"scripted": 98,
+			"notInScript": 27
+		},
+		{
+			"scripted": 267,
+			"notInScript": 19
+		},
+		{
+			"scripted": 363,
+			"notInScript": 12
+		},
+		{
+			"scripted": 323,
+			"notInScript": 27
+		},
+		{
+			"scripted": 312,
+			"notInScript": 24
+		},
+		{
+			"scripted": 256,
+			"notInScript": 40
+		},
+		{
+			"scripted": 172,
+			"notInScript": 27
+		},
+		{
+			"scripted": 296,
+			"notInScript": 27
+		},
+		{
+			"scripted": 325,
+			"notInScript": 32
+		},
+		{
+			"scripted": 236,
+			"notInScript": 12
+		},
+		{
+			"scripted": 248,
+			"notInScript": 4
+		},
+		{
+			"scripted": 399,
+			"notInScript": 11
+		},
+		{
+			"scripted": 164,
+			"notInScript": 46
+		},
+		{
+			"scripted": 340,
+			"notInScript": 20
+		},
+		{
+			"scripted": 201,
+			"notInScript": 43
+		},
+		{
+			"scripted": 201,
+			"notInScript": 26
+		},
+		{
+			"scripted": 263,
+			"notInScript": 85
+		},
+		{
+			"scripted": 196,
+			"notInScript": 29
+		},
+		{
+			"scripted": 143,
+			"notInScript": 57
+		},
+		{
+			"scripted": 197,
+			"notInScript": 45
+		},
+		{
+			"scripted": 349,
+			"notInScript": 19
+		},
+		{
+			"scripted": 231,
+			"notInScript": 0
+		},
+		{
+			"scripted": 339,
+			"notInScript": 6
+		},
+		{
+			"scripted": 400,
+			"notInScript": 0
+		},
+		{
+			"scripted": 186,
+			"notInScript": 58
+		},
+		{
+			"scripted": 158,
+			"notInScript": 26
+		},
+		{
+			"scripted": 157,
+			"notInScript": 109
+		},
+		{
+			"scripted": 367,
+			"notInScript": 42
+		},
+		{
+			"scripted": 289,
+			"notInScript": 16
+		},
+		{
+			"scripted": 165,
+			"notInScript": 85
+		},
+		{
+			"scripted": 40,
+			"notInScript": 7
+		},
+		{
+			"scripted": 42,
+			"notInScript": 9
+		},
+		{
+			"scripted": 7,
+			"notInScript": 6
+		},
+		{
+			"scripted": 118,
+			"notInScript": 9
+		},
+		{
+			"scripted": 231,
+			"notInScript": 41
+		},
+		{
+			"scripted": 115,
+			"notInScript": 39
+		},
+		{
+			"scripted": 130,
+			"notInScript": 7
+		},
+		{
+			"scripted": 18,
+			"notInScript": 2
+		},
+		{
+			"scripted": 99,
+			"notInScript": 15
+		},
+		{
+			"scripted": 140,
+			"notInScript": 20
+		},
+		{
+			"scripted": 58,
+			"notInScript": 41
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 0,
+				"changed": 1,
+				"cut": 1
+			},
+			"other": {
+				"lines": 65,
+				"kept": 55,
+				"changed": 5,
+				"cut": 5
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 1005,
+				"kept": 663,
+				"changed": 133,
+				"cut": 209
+			},
+			"other": {
+				"lines": 135,
+				"kept": 97,
+				"changed": 19,
+				"cut": 19
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ANGEL",
+				"text": "Well sir, I like to think my office is out on the street-"
+			},
+			{
+				"speaker": "SKINNER",
+				"text": "We don’t let any old riff raff in."
+			},
+			{
+				"speaker": "ANGEL",
+				"text": "No, she always used to accuse me of not being able to switch off."
+			},
+			{
+				"speaker": "WEAVER",
+				"text": "I do apologise for my grandson. Stand up straight Gabriel, this is Sergeant Angel."
+			},
+			{
+				"speaker": "ANNETTE ROPER",
+				"text": "-the paedophiles, the perverts-"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 450,
+				"text": "Look forward to meeting you anon."
+			},
+			{
+				"at": 2576,
+				"text": "Mr Webley, I trust you have a licence for that firearm?"
+			},
+			{
+				"at": 3631,
+				"text": "I think you're talking a load of old shit."
+			},
+			{
+				"at": 4801,
+				"text": "You'll find that we run a very tight ship here."
+			},
+			{
+				"at": 6135,
+				"text": "Wait, wait, wait, Michael, wait, listen to me."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "ANGEL",
+				"page": "You do know that window’s been broken from the inside?",
+				"screen": "You do realise that window was broken from the inside?",
+				"pageWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"window’s",
+						false
+					],
+					[
+						"been",
+						false
+					],
+					[
+						"broken",
+						true
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"inside?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"realise",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"window",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"broken",
+						true
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"inside?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "REV. SHOOTER",
+				"page": "Oh, are we an atheist?",
+				"screen": "Oh, you're an atheist?",
+				"pageWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"atheist?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"atheist?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ANGEL",
+				"page": "Well, in the meantime, why not start by checking out some of Martin Blower’s clients?",
+				"screen": "All right, in the meantime, why don't you check out a few of Martin Blower's clients?",
+				"pageWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"meantime,",
+						true
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"start",
+						false
+					],
+					[
+						"by",
+						false
+					],
+					[
+						"checking",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Martin",
+						true
+					],
+					[
+						"Blower’s",
+						true
+					],
+					[
+						"clients?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"All",
+						false
+					],
+					[
+						"right,",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"meantime,",
+						true
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"check",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"few",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Martin",
+						true
+					],
+					[
+						"Blower's",
+						true
+					],
+					[
+						"clients?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ANGEL",
+				"page": "The [U+FB02]rst name is Simon Skinner.",
+				"screen": "The first name is Simon Skinner.",
+				"pageWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"[U+FB02]rst",
+						false
+					],
+					[
+						"name",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"Simon",
+						true
+					],
+					[
+						"Skinner.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"first",
+						false
+					],
+					[
+						"name",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"Simon",
+						true
+					],
+					[
+						"Skinner.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ANGEL",
+				"page": "It was Frank, Danny. He’s appointed himself judge, jury and executioner.",
+				"screen": "He's appointed himself judge, jury and executioner.",
+				"pageWords": [
+					[
+						"It",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"Frank,",
+						false
+					],
+					[
+						"Danny.",
+						false
+					],
+					[
+						"He’s",
+						true
+					],
+					[
+						"appointed",
+						true
+					],
+					[
+						"himself",
+						true
+					],
+					[
+						"judge,",
+						true
+					],
+					[
+						"jury",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"executioner.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"He's",
+						true
+					],
+					[
+						"appointed",
+						true
+					],
+					[
+						"himself",
+						true
+					],
+					[
+						"judge,",
+						true
+					],
+					[
+						"jury",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"executioner.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

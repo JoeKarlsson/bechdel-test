@@ -1,0 +1,1061 @@
+{
+	"_id": "tt0120184",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 22,
+		"eligible": 16,
+		"rejected": {
+			"split across CDs": 4,
+			"duplicate": 1,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "54142",
+		"versions": [
+			"1954833343",
+			"1952087631",
+			"1955239969",
+			"20755",
+			"1952090175",
+			"26247",
+			"1953223019",
+			"54142",
+			"1956104281"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9540928826965326,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 8040,
+	"quality": {
+		"anchoredShare": 0.05856736580163527
+	},
+	"excluded": "the subtitles match the script no better than chance",
+	"words": {
+		"page": 11252,
+		"screen": 11286,
+		"kept": 640,
+		"cut": 10612,
+		"notInScript": 10627,
+		"moved": 203
+	},
+	"lines": {
+		"page": 1350,
+		"kept": 49,
+		"changed": 117,
+		"cut": 1184,
+		"screen": 2017,
+		"notInScript": 1826
+	},
+	"byGender": {
+		"w": {
+			"lines": 335,
+			"kept": 10,
+			"changed": 27,
+			"cut": 298
+		},
+		"m": {
+			"lines": 993,
+			"kept": 39,
+			"changed": 87,
+			"cut": 867
+		},
+		"unknown": {
+			"lines": 22,
+			"kept": 0,
+			"changed": 3,
+			"cut": 19
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 26,
+			"changed": 3
+		},
+		{
+			"cut": 25,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"cut": 22
+		},
+		{
+			"cut": 22,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"cut": 26,
+			"changed": 2
+		},
+		{
+			"cut": 26,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 26,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 27,
+			"kept": 1
+		},
+		{
+			"cut": 21,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"cut": 24,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 23,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"cut": 23
+		},
+		{
+			"cut": 28
+		},
+		{
+			"cut": 26,
+			"changed": 2
+		},
+		{
+			"cut": 25,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 25,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 26,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 26,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 28
+		},
+		{
+			"cut": 27,
+			"changed": 1
+		},
+		{
+			"cut": 24,
+			"kept": 1,
+			"changed": 3
+		},
+		{
+			"cut": 26,
+			"changed": 2
+		},
+		{
+			"cut": 27,
+			"changed": 1
+		},
+		{
+			"cut": 26,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 25,
+			"changed": 4
+		},
+		{
+			"cut": 22,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 24,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 27,
+			"kept": 1
+		},
+		{
+			"cut": 24,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 20,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"cut": 23,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 24,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 25,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 22,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 21,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 25,
+			"changed": 3
+		},
+		{
+			"cut": 24,
+			"changed": 4
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 19
+		},
+		{
+			"cut": 24,
+			"changed": 4
+		},
+		{
+			"cut": 25,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 26
+		},
+		{
+			"changed": 3,
+			"cut": 25
+		},
+		{
+			"cut": 27,
+			"changed": 1
+		},
+		{
+			"cut": 27,
+			"changed": 1
+		},
+		{
+			"cut": 27,
+			"changed": 1
+		},
+		{
+			"cut": 27,
+			"changed": 1
+		},
+		{
+			"cut": 23,
+			"kept": 2,
+			"changed": 3
+		},
+		{
+			"cut": 23,
+			"changed": 4,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 65,
+			"notInScript": 283
+		},
+		{
+			"scripted": 49,
+			"notInScript": 385
+		},
+		{
+			"scripted": 57,
+			"notInScript": 382
+		},
+		{
+			"scripted": 17,
+			"notInScript": 318
+		},
+		{
+			"scripted": 13,
+			"notInScript": 192
+		},
+		{
+			"scripted": 10,
+			"notInScript": 375
+		},
+		{
+			"scripted": 4,
+			"notInScript": 145
+		},
+		{
+			"scripted": 41,
+			"notInScript": 155
+		},
+		{
+			"scripted": 7,
+			"notInScript": 319
+		},
+		{
+			"scripted": 14,
+			"notInScript": 152
+		},
+		{
+			"scripted": 48,
+			"notInScript": 282
+		},
+		{
+			"scripted": 68,
+			"notInScript": 338
+		},
+		{
+			"scripted": 28,
+			"notInScript": 259
+		},
+		{
+			"scripted": 84,
+			"notInScript": 148
+		},
+		{
+			"scripted": 5,
+			"notInScript": 186
+		},
+		{
+			"scripted": 9,
+			"notInScript": 232
+		},
+		{
+			"scripted": 0,
+			"notInScript": 155
+		},
+		{
+			"scripted": 0,
+			"notInScript": 458
+		},
+		{
+			"scripted": 24,
+			"notInScript": 284
+		},
+		{
+			"scripted": 8,
+			"notInScript": 253
+		},
+		{
+			"scripted": 55,
+			"notInScript": 258
+		},
+		{
+			"scripted": 0,
+			"notInScript": 172
+		},
+		{
+			"scripted": 37,
+			"notInScript": 161
+		},
+		{
+			"scripted": 63,
+			"notInScript": 245
+		},
+		{
+			"scripted": 14,
+			"notInScript": 182
+		},
+		{
+			"scripted": 35,
+			"notInScript": 211
+		},
+		{
+			"scripted": 0,
+			"notInScript": 68
+		},
+		{
+			"scripted": 26,
+			"notInScript": 191
+		},
+		{
+			"scripted": 32,
+			"notInScript": 222
+		},
+		{
+			"scripted": 53,
+			"notInScript": 264
+		},
+		{
+			"scripted": 41,
+			"notInScript": 340
+		},
+		{
+			"scripted": 16,
+			"notInScript": 99
+		},
+		{
+			"scripted": 4,
+			"notInScript": 105
+		},
+		{
+			"scripted": 91,
+			"notInScript": 323
+		},
+		{
+			"scripted": 66,
+			"notInScript": 84
+		},
+		{
+			"scripted": 8,
+			"notInScript": 141
+		},
+		{
+			"scripted": 40,
+			"notInScript": 276
+		},
+		{
+			"scripted": 0,
+			"notInScript": 55
+		},
+		{
+			"scripted": 24,
+			"notInScript": 191
+		},
+		{
+			"scripted": 18,
+			"notInScript": 212
+		},
+		{
+			"scripted": 7,
+			"notInScript": 287
+		},
+		{
+			"scripted": 38,
+			"notInScript": 187
+		},
+		{
+			"scripted": 58,
+			"notInScript": 322
+		},
+		{
+			"scripted": 11,
+			"notInScript": 99
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 0,
+				"changed": 0,
+				"cut": 2
+			},
+			"other": {
+				"lines": 314,
+				"kept": 10,
+				"changed": 26,
+				"cut": 278
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 666,
+				"kept": 25,
+				"changed": 62,
+				"cut": 579
+			},
+			"other": {
+				"lines": 315,
+				"kept": 14,
+				"changed": 25,
+				"cut": 276
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ARTHUR",
+				"text": "Captain, open the hatch door, please ... the hatch door, Captain. Open it, please."
+			},
+			{
+				"speaker": "NORMAN",
+				"text": "Don't be so optomistic, Harry."
+			},
+			{
+				"speaker": "NORMAN",
+				"text": "This is like nursery school."
+			},
+			{
+				"speaker": "BETH",
+				"text": "I fixed your suit."
+			},
+			{
+				"speaker": "BETH",
+				"text": "... You have a professional stake in believing in your own mental health, don't you? Don't you, Norman?..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 650,
+				"text": "Did you tell Barnes?"
+			},
+			{
+				"at": 2059,
+				"text": "It's possible, but not plausible."
+			},
+			{
+				"at": 3413,
+				"text": "It's like a code."
+			},
+			{
+				"at": 5058,
+				"text": "Tell me what to do."
+			},
+			{
+				"at": 6751,
+				"text": "If it explodes, it'll disintegrate everything."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BARNES",
+				"page": "Off the record, I don't mind telling you, this thing scares the shit out of me.",
+				"screen": "This thing scares the hell out of me.",
+				"pageWords": [
+					[
+						"Off",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"record,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"mind",
+						false
+					],
+					[
+						"telling",
+						false
+					],
+					[
+						"you,",
+						false
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"thing",
+						true
+					],
+					[
+						"scares",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"shit",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"me.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"This",
+						true
+					],
+					[
+						"thing",
+						true
+					],
+					[
+						"scares",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hell",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"me.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BARNES",
+				"page": "I don't know. But it's something alien.",
+				"screen": "I don't know if I trust you.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know.",
+						true
+					],
+					[
+						"But",
+						false
+					],
+					[
+						"it's",
+						false
+					],
+					[
+						"something",
+						false
+					],
+					[
+						"alien.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"if",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"trust",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NORMAN",
+				"page": "... it raises a very serious question: What happens if Jerry gets mad?",
+				"screen": "What happens if Jerry gets mad?",
+				"pageWords": [
+					[
+						"...",
+						null
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"raises",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"very",
+						false
+					],
+					[
+						"serious",
+						false
+					],
+					[
+						"question:",
+						false
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"happens",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"Jerry",
+						true
+					],
+					[
+						"gets",
+						true
+					],
+					[
+						"mad?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"happens",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"Jerry",
+						true
+					],
+					[
+						"gets",
+						true
+					],
+					[
+						"mad?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HARRY",
+				"page": "I was just in the cafeteria, there's plenty of food in there. Take a look for yourself.",
+				"screen": "I was in trouble.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"cafeteria,",
+						false
+					],
+					[
+						"there's",
+						true
+					],
+					[
+						"plenty",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"food",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"there.",
+						false
+					],
+					[
+						"Take",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"yourself.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"trouble.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BETH",
+				"page": "This is what I'm talking about, Norman. Don't you see? It's in you. This vindictiveness. This rage.",
+				"screen": "That's not what I'm talking about.",
+				"pageWords": [
+					[
+						"This",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about,",
+						true
+					],
+					[
+						"Norman.",
+						false
+					],
+					[
+						"Don't",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"see?",
+						false
+					],
+					[
+						"It's",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"you.",
+						false
+					],
+					[
+						"This",
+						false
+					],
+					[
+						"vindictiveness.",
+						false
+					],
+					[
+						"This",
+						false
+					],
+					[
+						"rage.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,944 @@
+{
+	"_id": "tt0092105",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 3,
+		"eligible": 3,
+		"rejected": {},
+		"used": 3,
+		"primary": "1955633881",
+		"versions": [
+			"1952234648",
+			"1954806295",
+			"1955633881"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9325452508639872,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6240,
+	"quality": {
+		"anchoredShare": 0.5011229372131628
+	},
+	"words": {
+		"page": 10241,
+		"screen": 8962,
+		"kept": 5136,
+		"cut": 5105,
+		"notInScript": 3830,
+		"moved": 150
+	},
+	"lines": {
+		"page": 1020,
+		"kept": 486,
+		"changed": 247,
+		"cut": 287,
+		"screen": 1766,
+		"notInScript": 659
+	},
+	"byGender": {
+		"w": {
+			"lines": 86,
+			"kept": 47,
+			"changed": 18,
+			"cut": 21
+		},
+		"m": {
+			"lines": 840,
+			"kept": 395,
+			"changed": 208,
+			"cut": 237
+		},
+		"unknown": {
+			"lines": 94,
+			"kept": 44,
+			"changed": 21,
+			"cut": 29
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 13,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"kept": 12,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"kept": 16,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"kept": 12,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"changed": 6
+		},
+		{
+			"changed": 8,
+			"kept": 9,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"changed": 6,
+			"cut": 5
+		},
+		{
+			"changed": 4,
+			"kept": 11,
+			"cut": 7
+		},
+		{
+			"cut": 19,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 17,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"kept": 9,
+			"cut": 7,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 8,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"kept": 19,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 2,
+			"changed": 6
+		},
+		{
+			"cut": 7,
+			"kept": 11,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"changed": 10,
+			"kept": 11
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 10
+		},
+		{
+			"cut": 20,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"changed": 8,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 10
+		},
+		{
+			"kept": 14,
+			"cut": 3,
+			"changed": 5
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"changed": 9,
+			"kept": 7,
+			"cut": 5
+		},
+		{
+			"changed": 7,
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"changed": 9,
+			"cut": 1
+		},
+		{
+			"cut": 7,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"cut": 15,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"kept": 12,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"changed": 6,
+			"kept": 4,
+			"cut": 11
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 13
+		},
+		{
+			"cut": 4,
+			"changed": 8,
+			"kept": 9
+		},
+		{
+			"changed": 7,
+			"cut": 6,
+			"kept": 8
+		},
+		{
+			"kept": 11,
+			"changed": 7,
+			"cut": 3
+		},
+		{
+			"kept": 9,
+			"changed": 7,
+			"cut": 6
+		},
+		{
+			"changed": 8,
+			"cut": 7,
+			"kept": 6
+		},
+		{
+			"cut": 12,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"cut": 7,
+			"kept": 10,
+			"changed": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 175,
+			"notInScript": 65
+		},
+		{
+			"scripted": 270,
+			"notInScript": 25
+		},
+		{
+			"scripted": 171,
+			"notInScript": 77
+		},
+		{
+			"scripted": 264,
+			"notInScript": 31
+		},
+		{
+			"scripted": 205,
+			"notInScript": 97
+		},
+		{
+			"scripted": 186,
+			"notInScript": 69
+		},
+		{
+			"scripted": 118,
+			"notInScript": 26
+		},
+		{
+			"scripted": 56,
+			"notInScript": 128
+		},
+		{
+			"scripted": 184,
+			"notInScript": 71
+		},
+		{
+			"scripted": 198,
+			"notInScript": 9
+		},
+		{
+			"scripted": 182,
+			"notInScript": 28
+		},
+		{
+			"scripted": 95,
+			"notInScript": 39
+		},
+		{
+			"scripted": 175,
+			"notInScript": 45
+		},
+		{
+			"scripted": 148,
+			"notInScript": 39
+		},
+		{
+			"scripted": 38,
+			"notInScript": 21
+		},
+		{
+			"scripted": 172,
+			"notInScript": 65
+		},
+		{
+			"scripted": 108,
+			"notInScript": 28
+		},
+		{
+			"scripted": 75,
+			"notInScript": 29
+		},
+		{
+			"scripted": 90,
+			"notInScript": 66
+		},
+		{
+			"scripted": 142,
+			"notInScript": 63
+		},
+		{
+			"scripted": 163,
+			"notInScript": 89
+		},
+		{
+			"scripted": 152,
+			"notInScript": 76
+		},
+		{
+			"scripted": 130,
+			"notInScript": 84
+		},
+		{
+			"scripted": 70,
+			"notInScript": 109
+		},
+		{
+			"scripted": 195,
+			"notInScript": 32
+		},
+		{
+			"scripted": 107,
+			"notInScript": 117
+		},
+		{
+			"scripted": 133,
+			"notInScript": 26
+		},
+		{
+			"scripted": 121,
+			"notInScript": 30
+		},
+		{
+			"scripted": 129,
+			"notInScript": 71
+		},
+		{
+			"scripted": 168,
+			"notInScript": 47
+		},
+		{
+			"scripted": 144,
+			"notInScript": 43
+		},
+		{
+			"scripted": 170,
+			"notInScript": 32
+		},
+		{
+			"scripted": 219,
+			"notInScript": 94
+		},
+		{
+			"scripted": 91,
+			"notInScript": 155
+		},
+		{
+			"scripted": 167,
+			"notInScript": 42
+		},
+		{
+			"scripted": 153,
+			"notInScript": 58
+		},
+		{
+			"scripted": 78,
+			"notInScript": 36
+		},
+		{
+			"scripted": 188,
+			"notInScript": 47
+		},
+		{
+			"scripted": 220,
+			"notInScript": 21
+		},
+		{
+			"scripted": 204,
+			"notInScript": 31
+		},
+		{
+			"scripted": 29,
+			"notInScript": 53
+		},
+		{
+			"scripted": 95,
+			"notInScript": 112
+		},
+		{
+			"scripted": 95,
+			"notInScript": 73
+		},
+		{
+			"scripted": 36,
+			"notInScript": 61
+		},
+		{
+			"scripted": 77,
+			"notInScript": 16
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 70,
+				"kept": 38,
+				"changed": 14,
+				"cut": 18
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 622,
+				"kept": 296,
+				"changed": 160,
+				"cut": 166
+			},
+			"other": {
+				"lines": 182,
+				"kept": 84,
+				"changed": 39,
+				"cut": 59
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ARCHIE",
+				"text": "He's got you there."
+			},
+			{
+				"speaker": "ARCHIE",
+				"text": "No, of course I'm not gay."
+			},
+			{
+				"speaker": "HARRY",
+				"text": "Go away Yablonski, ya bother me."
+			},
+			{
+				"speaker": "LEON",
+				"text": "Big shit. I know Winchester."
+			},
+			{
+				"speaker": "BENNETT",
+				"text": "Bullshit! They conned you, Evans! They're bums! ••. crooks ••• the worst kind of low-life crud •••"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 905,
+				"text": "I've got strong hands and a strong back."
+			},
+			{
+				"at": 2329,
+				"text": "Well, that's sweet, Harry."
+			},
+			{
+				"at": 3246,
+				"text": "This is not a rest home."
+			},
+			{
+				"at": 4531,
+				"text": "That's what you said about the truck."
+			},
+			{
+				"at": 5543,
+				"text": "Damn, they think they're happy cowboys?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "ARCHIE",
+				"page": "You don't mind if I drive, do ya?",
+				"screen": "You mind if I drive?",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"mind",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"drive,",
+						true
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"ya?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"mind",
+						true
+					],
+					[
+						"if",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"drive?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ARCHIE",
+				"page": "Looks the same to me. What's the difference?",
+				"screen": "Looks the same to me.",
+				"pageWords": [
+					[
+						"Looks",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"same",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"me.",
+						true
+					],
+					[
+						"What's",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"difference?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Looks",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"same",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"me.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HARRY",
+				"page": "All right, Yablonski, you ·asked for it! ·",
+				"screen": "All right, Yablonski, that does it.",
+				"pageWords": [
+					[
+						"All",
+						true
+					],
+					[
+						"right,",
+						true
+					],
+					[
+						"Yablonski,",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"·asked",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"it!",
+						false
+					],
+					[
+						"·",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"All",
+						true
+					],
+					[
+						"right,",
+						true
+					],
+					[
+						"Yablonski,",
+						true
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"does",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LEON",
+				"page": "It's afternoon, nose pick.",
+				"screen": "It's afternoon, pencil neck.",
+				"pageWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"afternoon,",
+						true
+					],
+					[
+						"nose",
+						false
+					],
+					[
+						"pick.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"afternoon,",
+						true
+					],
+					[
+						"pencil",
+						false
+					],
+					[
+						"neck.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LEON",
+				"page": "Yeah! Surrendering's for wimps. - I vote we die! Harry looks over at Yablonski.",
+				"screen": "Surrender's for wimps. I vote we die.",
+				"pageWords": [
+					[
+						"Yeah!",
+						false
+					],
+					[
+						"Surrendering's",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"wimps.",
+						true
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"vote",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"die!",
+						true
+					],
+					[
+						"Harry",
+						false
+					],
+					[
+						"looks",
+						false
+					],
+					[
+						"over",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"Yablonski.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Surrender's",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"wimps.",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"vote",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"die.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

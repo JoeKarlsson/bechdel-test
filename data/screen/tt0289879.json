@@ -1,0 +1,933 @@
+{
+	"_id": "tt0289879",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 47,
+		"eligible": 27,
+		"rejected": {
+			"split across CDs": 8,
+			"duplicate": 11,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1954918573",
+		"versions": [
+			"1954639495",
+			"1953782051",
+			"1956643569",
+			"1952348227",
+			"92804",
+			"313917",
+			"1953488334",
+			"268931",
+			"1954918573"
+		],
+		"sdh": false,
+		"meanAgreement": 0.6146150970754505,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6780,
+	"quality": {
+		"anchoredShare": 0.6264225630875804
+	},
+	"words": {
+		"page": 8084,
+		"screen": 8909,
+		"kept": 5043,
+		"cut": 3041,
+		"notInScript": 3845,
+		"moved": 72
+	},
+	"lines": {
+		"page": 751,
+		"kept": 431,
+		"changed": 148,
+		"cut": 172,
+		"screen": 1545,
+		"notInScript": 612
+	},
+	"byGender": {
+		"w": {
+			"lines": 219,
+			"kept": 131,
+			"changed": 39,
+			"cut": 49
+		},
+		"m": {
+			"lines": 526,
+			"kept": 296,
+			"changed": 109,
+			"cut": 121
+		},
+		"unknown": {
+			"lines": 6,
+			"kept": 4,
+			"changed": 0,
+			"cut": 2
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 6,
+			"kept": 10
+		},
+		{
+			"cut": 5,
+			"kept": 11
+		},
+		{
+			"kept": 3,
+			"changed": 1,
+			"cut": 11
+		},
+		{
+			"cut": 9,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 8
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 9
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 7,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"changed": 9,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"cut": 3,
+			"changed": 5
+		},
+		{
+			"kept": 11,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"cut": 4
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"cut": 7,
+			"changed": 1,
+			"kept": 8
+		},
+		{
+			"kept": 5,
+			"cut": 5,
+			"changed": 5
+		},
+		{
+			"cut": 2,
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"kept": 9,
+			"cut": 5
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"cut": 3,
+			"changed": 6
+		},
+		{
+			"changed": 6,
+			"kept": 8,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"changed": 6,
+			"cut": 3,
+			"kept": 6
+		},
+		{
+			"changed": 5,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"cut": 3,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 7,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"changed": 5,
+			"kept": 8,
+			"cut": 2
+		},
+		{
+			"kept": 16
+		},
+		{
+			"changed": 6,
+			"cut": 2,
+			"kept": 8
+		},
+		{
+			"changed": 3,
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 8
+		},
+		{
+			"cut": 3,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 8,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"cut": 1,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"kept": 8,
+			"cut": 1
+		},
+		{
+			"cut": 4,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 5,
+			"cut": 9,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 36,
+			"notInScript": 7
+		},
+		{
+			"scripted": 231,
+			"notInScript": 8
+		},
+		{
+			"scripted": 158,
+			"notInScript": 81
+		},
+		{
+			"scripted": 266,
+			"notInScript": 29
+		},
+		{
+			"scripted": 38,
+			"notInScript": 102
+		},
+		{
+			"scripted": 148,
+			"notInScript": 71
+		},
+		{
+			"scripted": 66,
+			"notInScript": 69
+		},
+		{
+			"scripted": 215,
+			"notInScript": 26
+		},
+		{
+			"scripted": 145,
+			"notInScript": 29
+		},
+		{
+			"scripted": 96,
+			"notInScript": 71
+		},
+		{
+			"scripted": 80,
+			"notInScript": 27
+		},
+		{
+			"scripted": 78,
+			"notInScript": 24
+		},
+		{
+			"scripted": 153,
+			"notInScript": 75
+		},
+		{
+			"scripted": 137,
+			"notInScript": 47
+		},
+		{
+			"scripted": 103,
+			"notInScript": 4
+		},
+		{
+			"scripted": 89,
+			"notInScript": 16
+		},
+		{
+			"scripted": 182,
+			"notInScript": 78
+		},
+		{
+			"scripted": 17,
+			"notInScript": 168
+		},
+		{
+			"scripted": 79,
+			"notInScript": 90
+		},
+		{
+			"scripted": 115,
+			"notInScript": 68
+		},
+		{
+			"scripted": 229,
+			"notInScript": 42
+		},
+		{
+			"scripted": 71,
+			"notInScript": 57
+		},
+		{
+			"scripted": 250,
+			"notInScript": 28
+		},
+		{
+			"scripted": 60,
+			"notInScript": 40
+		},
+		{
+			"scripted": 147,
+			"notInScript": 34
+		},
+		{
+			"scripted": 98,
+			"notInScript": 56
+		},
+		{
+			"scripted": 96,
+			"notInScript": 96
+		},
+		{
+			"scripted": 84,
+			"notInScript": 57
+		},
+		{
+			"scripted": 221,
+			"notInScript": 85
+		},
+		{
+			"scripted": 109,
+			"notInScript": 44
+		},
+		{
+			"scripted": 133,
+			"notInScript": 12
+		},
+		{
+			"scripted": 40,
+			"notInScript": 32
+		},
+		{
+			"scripted": 128,
+			"notInScript": 50
+		},
+		{
+			"scripted": 154,
+			"notInScript": 32
+		},
+		{
+			"scripted": 169,
+			"notInScript": 37
+		},
+		{
+			"scripted": 169,
+			"notInScript": 33
+		},
+		{
+			"scripted": 173,
+			"notInScript": 25
+		},
+		{
+			"scripted": 125,
+			"notInScript": 10
+		},
+		{
+			"scripted": 273,
+			"notInScript": 28
+		},
+		{
+			"scripted": 204,
+			"notInScript": 56
+		},
+		{
+			"scripted": 94,
+			"notInScript": 108
+		},
+		{
+			"scripted": 241,
+			"notInScript": 33
+		},
+		{
+			"scripted": 103,
+			"notInScript": 56
+		},
+		{
+			"scripted": 139,
+			"notInScript": 47
+		},
+		{
+			"scripted": 146,
+			"notInScript": 89
+		},
+		{
+			"scripted": 149,
+			"notInScript": 82
+		},
+		{
+			"scripted": 72,
+			"notInScript": 63
+		},
+		{
+			"scripted": 53,
+			"notInScript": 125
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 9,
+				"kept": 1,
+				"changed": 1,
+				"cut": 7
+			},
+			"other": {
+				"lines": 187,
+				"kept": 113,
+				"changed": 36,
+				"cut": 38
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 270,
+				"kept": 155,
+				"changed": 60,
+				"cut": 55
+			},
+			"other": {
+				"lines": 224,
+				"kept": 122,
+				"changed": 42,
+				"cut": 60
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "TOMMY",
+				"text": "Fat little baby, crying for mommy."
+			},
+			{
+				"speaker": "ANDREA",
+				"text": "Come on, I doubt the answer's that simple."
+			},
+			{
+				"speaker": "EVAN",
+				"text": "Oh my God! No! No!"
+			},
+			{
+				"speaker": "EVAN",
+				"text": "Leave me alone, asshole. I didn't lay a hand on you, okay?"
+			},
+			{
+				"speaker": "ANDREA",
+				"text": "Stop him. Stop him. Stop him..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 835,
+				"text": "He's gonna be okay."
+			},
+			{
+				"at": 2343,
+				"text": "Hey, did... did Dad..."
+			},
+			{
+				"at": 3302,
+				"text": "I think you got one."
+			},
+			{
+				"at": 4694,
+				"text": "Look, it's stigmata, man."
+			},
+			{
+				"at": 6332,
+				"text": "\"I never wanted to be in the movie anyway."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "LENNY",
+				"page": "What? No frigging way, man. I'm not touching that thing.",
+				"screen": "What? No freaking way. I'm not touching this thing.",
+				"pageWords": [
+					[
+						"What?",
+						true
+					],
+					[
+						"No",
+						true
+					],
+					[
+						"frigging",
+						false
+					],
+					[
+						"way,",
+						false
+					],
+					[
+						"man.",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"touching",
+						true
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"thing.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What?",
+						true
+					],
+					[
+						"No",
+						true
+					],
+					[
+						"freaking",
+						false
+					],
+					[
+						"way.",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"touching",
+						true
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"thing.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HEIDI",
+				"page": "Wake up, idiot. It was just a dream.",
+				"screen": "It was just a dream.",
+				"pageWords": [
+					[
+						"Wake",
+						false
+					],
+					[
+						"up,",
+						false
+					],
+					[
+						"idiot.",
+						false
+					],
+					[
+						"It",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"dream.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"dream.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EVAN",
+				"page": "We'll find out soon enough.",
+				"screen": "Oh, uh... we'll find out.",
+				"pageWords": [
+					[
+						"We'll",
+						true
+					],
+					[
+						"find",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"soon",
+						false
+					],
+					[
+						"enough.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"uh...",
+						null
+					],
+					[
+						"we'll",
+						true
+					],
+					[
+						"find",
+						true
+					],
+					[
+						"out.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EVAN",
+				"page": "Oh fuck, Lenny, no!",
+				"screen": "What the fuck? Lenny, no.",
+				"pageWords": [
+					[
+						"Oh",
+						false
+					],
+					[
+						"fuck,",
+						false
+					],
+					[
+						"Lenny,",
+						true
+					],
+					[
+						"no!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"fuck?",
+						true
+					],
+					[
+						"Lenny,",
+						true
+					],
+					[
+						"no.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EVAN",
+				"page": "There must be a way to fix this.",
+				"screen": "I think I could fix this.",
+				"pageWords": [
+					[
+						"There",
+						false
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"way",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"fix",
+						true
+					],
+					[
+						"this.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"fix",
+						true
+					],
+					[
+						"this.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

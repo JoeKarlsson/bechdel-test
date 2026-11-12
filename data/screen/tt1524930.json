@@ -1,0 +1,991 @@
+{
+	"_id": "tt1524930",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 10,
+		"eligible": 7,
+		"rejected": {
+			"duplicate": 3
+		},
+		"used": 7,
+		"primary": "1954932180",
+		"versions": [
+			"1954922736",
+			"1954932366",
+			"1954932180",
+			"1954919613",
+			"1954932179",
+			"1954932365",
+			"1954925068"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9662203253808679,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5940,
+	"quality": {
+		"anchoredShare": 0.2838010832102413
+	},
+	"words": {
+		"page": 10155,
+		"screen": 11036,
+		"kept": 2882,
+		"cut": 7273,
+		"notInScript": 8154,
+		"moved": 123
+	},
+	"lines": {
+		"page": 1172,
+		"kept": 265,
+		"changed": 189,
+		"cut": 713,
+		"screen": 2283,
+		"notInScript": 1624
+	},
+	"byGender": {
+		"w": {
+			"lines": 297,
+			"kept": 62,
+			"changed": 53,
+			"cut": 182
+		},
+		"m": {
+			"lines": 807,
+			"kept": 200,
+			"changed": 136,
+			"cut": 471
+		},
+		"unknown": {
+			"lines": 63,
+			"kept": 3,
+			"changed": 0,
+			"cut": 60
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 17,
+			"changed": 7,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 15,
+			"changed": 7,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"cut": 20
+		},
+		{
+			"cut": 17,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 12,
+			"changed": 7,
+			"kept": 5
+		},
+		{
+			"kept": 2,
+			"cut": 20,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 11,
+			"kept": 9,
+			"changed": 4
+		},
+		{
+			"cut": 21,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 24
+		},
+		{
+			"kept": 1,
+			"cut": 22
+		},
+		{
+			"cut": 16,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"kept": 1,
+			"changed": 2,
+			"cut": 21
+		},
+		{
+			"cut": 21,
+			"changed": 4
+		},
+		{
+			"cut": 23
+		},
+		{
+			"cut": 23,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"changed": 6,
+			"kept": 7
+		},
+		{
+			"kept": 4,
+			"changed": 5,
+			"cut": 15
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"kept": 15,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 10
+		},
+		{
+			"cut": 16,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 13
+		},
+		{
+			"kept": 6,
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 6,
+			"changed": 5
+		},
+		{
+			"cut": 6,
+			"kept": 8,
+			"changed": 10
+		},
+		{
+			"changed": 5,
+			"cut": 6,
+			"kept": 13
+		},
+		{
+			"cut": 19,
+			"changed": 1,
+			"kept": 5
+		},
+		{
+			"kept": 9,
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"cut": 13,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 11
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 18
+		},
+		{
+			"cut": 15,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"changed": 7,
+			"cut": 10,
+			"kept": 7
+		},
+		{
+			"cut": 18,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 20,
+			"changed": 4
+		},
+		{
+			"cut": 5,
+			"kept": 14,
+			"changed": 6
+		},
+		{
+			"kept": 6,
+			"cut": 13,
+			"changed": 5
+		},
+		{
+			"cut": 13,
+			"changed": 5,
+			"kept": 6
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 13
+		},
+		{
+			"kept": 7,
+			"changed": 7,
+			"cut": 10
+		},
+		{
+			"cut": 16,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"kept": 6,
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 8,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 57,
+			"notInScript": 152
+		},
+		{
+			"scripted": 5,
+			"notInScript": 180
+		},
+		{
+			"scripted": 71,
+			"notInScript": 255
+		},
+		{
+			"scripted": 91,
+			"notInScript": 228
+		},
+		{
+			"scripted": 52,
+			"notInScript": 293
+		},
+		{
+			"scripted": 117,
+			"notInScript": 164
+		},
+		{
+			"scripted": 7,
+			"notInScript": 298
+		},
+		{
+			"scripted": 55,
+			"notInScript": 190
+		},
+		{
+			"scripted": 152,
+			"notInScript": 130
+		},
+		{
+			"scripted": 124,
+			"notInScript": 64
+		},
+		{
+			"scripted": 93,
+			"notInScript": 153
+		},
+		{
+			"scripted": 31,
+			"notInScript": 315
+		},
+		{
+			"scripted": 15,
+			"notInScript": 142
+		},
+		{
+			"scripted": 42,
+			"notInScript": 130
+		},
+		{
+			"scripted": 31,
+			"notInScript": 163
+		},
+		{
+			"scripted": 95,
+			"notInScript": 224
+		},
+		{
+			"scripted": 71,
+			"notInScript": 200
+		},
+		{
+			"scripted": 62,
+			"notInScript": 186
+		},
+		{
+			"scripted": 99,
+			"notInScript": 145
+		},
+		{
+			"scripted": 130,
+			"notInScript": 57
+		},
+		{
+			"scripted": 162,
+			"notInScript": 113
+		},
+		{
+			"scripted": 82,
+			"notInScript": 160
+		},
+		{
+			"scripted": 114,
+			"notInScript": 116
+		},
+		{
+			"scripted": 154,
+			"notInScript": 172
+		},
+		{
+			"scripted": 200,
+			"notInScript": 140
+		},
+		{
+			"scripted": 203,
+			"notInScript": 143
+		},
+		{
+			"scripted": 90,
+			"notInScript": 131
+		},
+		{
+			"scripted": 137,
+			"notInScript": 41
+		},
+		{
+			"scripted": 113,
+			"notInScript": 95
+		},
+		{
+			"scripted": 67,
+			"notInScript": 95
+		},
+		{
+			"scripted": 21,
+			"notInScript": 346
+		},
+		{
+			"scripted": 93,
+			"notInScript": 212
+		},
+		{
+			"scripted": 64,
+			"notInScript": 172
+		},
+		{
+			"scripted": 234,
+			"notInScript": 82
+		},
+		{
+			"scripted": 50,
+			"notInScript": 44
+		},
+		{
+			"scripted": 85,
+			"notInScript": 160
+		},
+		{
+			"scripted": 139,
+			"notInScript": 141
+		},
+		{
+			"scripted": 125,
+			"notInScript": 47
+		},
+		{
+			"scripted": 105,
+			"notInScript": 154
+		},
+		{
+			"scripted": 83,
+			"notInScript": 172
+		},
+		{
+			"scripted": 194,
+			"notInScript": 65
+		},
+		{
+			"scripted": 66,
+			"notInScript": 80
+		},
+		{
+			"scripted": 54,
+			"notInScript": 125
+		},
+		{
+			"scripted": 27,
+			"notInScript": 122
+		},
+		{
+			"scripted": 106,
+			"notInScript": 71
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 5.8,
+		"longest": 5.8,
+		"spans": [
+			[
+				3051,
+				3056.8
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 54,
+				"kept": 5,
+				"changed": 8,
+				"cut": 41
+			},
+			"other": {
+				"lines": 241,
+				"kept": 55,
+				"changed": 45,
+				"cut": 141
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 537,
+				"kept": 149,
+				"changed": 82,
+				"cut": 306
+			},
+			"other": {
+				"lines": 255,
+				"kept": 51,
+				"changed": 52,
+				"cut": 152
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "DEBBIE",
+				"text": "What the heck. It can’t be worse than Cheboygan."
+			},
+			{
+				"speaker": "BLUESMAN",
+				"text": "Jimmy, wait! I need your uterus!"
+			},
+			{
+				"speaker": "RUSTY",
+				"text": "She sure did. Is that the sort of person you would be interested in... gender- wise?"
+			},
+			{
+				"speaker": "RUSTY",
+				"text": "Did you hear a coyote?"
+			},
+			{
+				"speaker": "CLARK",
+				"text": "Gay? Yup. Very gay. Funny thing is, we didn’t know when we bought the place."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 554,
+				"text": "He's working me over."
+			},
+			{
+				"at": 1412,
+				"text": "That's what I said."
+			},
+			{
+				"at": 2324,
+				"text": "I really don't want to."
+			},
+			{
+				"at": 3842,
+				"text": "You like it when I slap that ass?"
+			},
+			{
+				"at": 4900,
+				"text": "You all come back now, you hear?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DEBBIE",
+				"page": "You were in Paris?!",
+				"screen": "You were the only one who didn't click \"like.\"",
+				"pageWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"Paris?!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"only",
+						false
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"click",
+						false
+					],
+					[
+						"\"like.\"",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "RUSTY",
+				"page": "I think it’s Korean.",
+				"screen": "Uh, I don't know. Korean?",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"it’s",
+						false
+					],
+					[
+						"Korean.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Uh,",
+						null
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"know.",
+						false
+					],
+					[
+						"Korean?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DEBBIE",
+				"page": "Okay, everyone out of --",
+				"screen": "Everybody out of Griswold Springs!",
+				"pageWords": [
+					[
+						"Okay,",
+						false
+					],
+					[
+						"everyone",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"--",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"Everybody",
+						false
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Griswold",
+						false
+					],
+					[
+						"Springs!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DEBBIE",
+				"page": "So many of them.",
+				"screen": "So many boobies out here!",
+				"pageWords": [
+					[
+						"So",
+						true
+					],
+					[
+						"many",
+						true
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"them.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"So",
+						true
+					],
+					[
+						"many",
+						true
+					],
+					[
+						"boobies",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"here!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DEBBIE",
+				"page": "I’ve only been thinking about me. How I want to be romanced and taken on exotic trips.",
+				"screen": "I've only been thinking about myself, you know? I wanted to change the routine, and go on exotic trips and...",
+				"pageWords": [
+					[
+						"I’ve",
+						true
+					],
+					[
+						"only",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"thinking",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"me.",
+						false
+					],
+					[
+						"How",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"want",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"romanced",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"taken",
+						false
+					],
+					[
+						"on",
+						true
+					],
+					[
+						"exotic",
+						true
+					],
+					[
+						"trips.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I've",
+						true
+					],
+					[
+						"only",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"thinking",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"myself,",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"know?",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"wanted",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"change",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"routine,",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"on",
+						true
+					],
+					[
+						"exotic",
+						true
+					],
+					[
+						"trips",
+						true
+					],
+					[
+						"and...",
+						false
+					]
+				]
+			}
+		]
+	}
+}

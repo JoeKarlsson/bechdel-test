@@ -1,0 +1,1408 @@
+{
+	"_id": "tt9114286",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 7,
+		"eligible": 4,
+		"rejected": {
+			"duplicate": 2,
+			"too few lines": 1
+		},
+		"used": 4,
+		"primary": "1957980422",
+		"versions": [
+			"1957985210",
+			"1958025138",
+			"1958060631",
+			"1957980422"
+		],
+		"sdh": false,
+		"meanAgreement": 0.6067914529392487,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9720,
+	"quality": {
+		"anchoredShare": 0.34625339717872394
+	},
+	"words": {
+		"page": 15454,
+		"screen": 9755,
+		"kept": 5083,
+		"cut": 10371,
+		"notInScript": 4404,
+		"moved": 587
+	},
+	"lines": {
+		"page": 1287,
+		"kept": 363,
+		"changed": 206,
+		"cut": 717,
+		"screen": 1692,
+		"notInScript": 727
+	},
+	"byGender": {
+		"w": {
+			"lines": 873,
+			"kept": 236,
+			"changed": 161,
+			"cut": 476
+		},
+		"m": {
+			"lines": 361,
+			"kept": 118,
+			"changed": 41,
+			"cut": 202
+		},
+		"unknown": {
+			"lines": 52,
+			"kept": 9,
+			"changed": 4,
+			"cut": 39
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 13,
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 15
+		},
+		{
+			"cut": 14,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"kept": 16,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"cut": 12,
+			"changed": 4
+		},
+		{
+			"cut": 8,
+			"changed": 7,
+			"kept": 12
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 11
+		},
+		{
+			"changed": 2,
+			"kept": 17,
+			"cut": 8
+		},
+		{
+			"kept": 15,
+			"changed": 11,
+			"cut": 1
+		},
+		{
+			"cut": 5,
+			"kept": 16,
+			"changed": 5
+		},
+		{
+			"changed": 5,
+			"kept": 13,
+			"cut": 9
+		},
+		{
+			"cut": 19,
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"changed": 9,
+			"cut": 7,
+			"kept": 11
+		},
+		{
+			"changed": 9,
+			"cut": 10,
+			"kept": 7
+		},
+		{
+			"cut": 10,
+			"changed": 7,
+			"kept": 10
+		},
+		{
+			"cut": 16,
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"cut": 13,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"cut": 23,
+			"changed": 4
+		},
+		{
+			"cut": 17,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"changed": 6,
+			"kept": 13
+		},
+		{
+			"kept": 7,
+			"cut": 16,
+			"changed": 4
+		},
+		{
+			"cut": 26,
+			"changed": 1
+		},
+		{
+			"cut": 27
+		},
+		{
+			"cut": 21,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"cut": 19,
+			"kept": 4
+		},
+		{
+			"cut": 23,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 19,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 20,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"cut": 17,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"cut": 21,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"changed": 6,
+			"kept": 2,
+			"cut": 19
+		},
+		{
+			"cut": 23,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"changed": 8,
+			"kept": 3,
+			"cut": 16
+		},
+		{
+			"cut": 11,
+			"kept": 6,
+			"changed": 9
+		},
+		{
+			"kept": 16,
+			"cut": 7,
+			"changed": 4
+		},
+		{
+			"kept": 3,
+			"changed": 5,
+			"cut": 19
+		},
+		{
+			"cut": 15,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 17
+		},
+		{
+			"kept": 5,
+			"changed": 2,
+			"cut": 19
+		},
+		{
+			"cut": 25,
+			"changed": 2
+		},
+		{
+			"cut": 18,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"cut": 19,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"kept": 8,
+			"changed": 5,
+			"cut": 14
+		},
+		{
+			"changed": 5,
+			"cut": 13,
+			"kept": 8
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 99,
+			"notInScript": 101
+		},
+		{
+			"scripted": 22,
+			"notInScript": 4
+		},
+		{
+			"scripted": 104,
+			"notInScript": 89
+		},
+		{
+			"scripted": 162,
+			"notInScript": 61
+		},
+		{
+			"scripted": 113,
+			"notInScript": 110
+		},
+		{
+			"scripted": 71,
+			"notInScript": 80
+		},
+		{
+			"scripted": 218,
+			"notInScript": 61
+		},
+		{
+			"scripted": 246,
+			"notInScript": 26
+		},
+		{
+			"scripted": 281,
+			"notInScript": 12
+		},
+		{
+			"scripted": 392,
+			"notInScript": 34
+		},
+		{
+			"scripted": 292,
+			"notInScript": 58
+		},
+		{
+			"scripted": 276,
+			"notInScript": 110
+		},
+		{
+			"scripted": 277,
+			"notInScript": 227
+		},
+		{
+			"scripted": 102,
+			"notInScript": 135
+		},
+		{
+			"scripted": 24,
+			"notInScript": 28
+		},
+		{
+			"scripted": 208,
+			"notInScript": 127
+		},
+		{
+			"scripted": 224,
+			"notInScript": 20
+		},
+		{
+			"scripted": 209,
+			"notInScript": 94
+		},
+		{
+			"scripted": 199,
+			"notInScript": 124
+		},
+		{
+			"scripted": 188,
+			"notInScript": 45
+		},
+		{
+			"scripted": 136,
+			"notInScript": 78
+		},
+		{
+			"scripted": 101,
+			"notInScript": 26
+		},
+		{
+			"scripted": 78,
+			"notInScript": 35
+		},
+		{
+			"scripted": 217,
+			"notInScript": 125
+		},
+		{
+			"scripted": 288,
+			"notInScript": 33
+		},
+		{
+			"scripted": 123,
+			"notInScript": 53
+		},
+		{
+			"scripted": 143,
+			"notInScript": 31
+		},
+		{
+			"scripted": 133,
+			"notInScript": 69
+		},
+		{
+			"scripted": 24,
+			"notInScript": 24
+		},
+		{
+			"scripted": 69,
+			"notInScript": 51
+		},
+		{
+			"scripted": 182,
+			"notInScript": 23
+		},
+		{
+			"scripted": 109,
+			"notInScript": 201
+		},
+		{
+			"scripted": 203,
+			"notInScript": 141
+		},
+		{
+			"scripted": 93,
+			"notInScript": 78
+		},
+		{
+			"scripted": 281,
+			"notInScript": 35
+		},
+		{
+			"scripted": 93,
+			"notInScript": 53
+		},
+		{
+			"scripted": 108,
+			"notInScript": 132
+		},
+		{
+			"scripted": 54,
+			"notInScript": 38
+		},
+		{
+			"scripted": 38,
+			"notInScript": 50
+		},
+		{
+			"scripted": 35,
+			"notInScript": 15
+		},
+		{
+			"scripted": 33,
+			"notInScript": 57
+		},
+		{
+			"scripted": 18,
+			"notInScript": 34
+		},
+		{
+			"scripted": 198,
+			"notInScript": 36
+		},
+		{
+			"scripted": 89,
+			"notInScript": 94
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 92,
+			"notInScript": 52
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 53,
+		"seconds": 615.9,
+		"longest": 61.6,
+		"spans": [
+			[
+				596.7,
+				635
+			],
+			[
+				656.3,
+				688.1
+			],
+			[
+				1268.8,
+				1271.3
+			],
+			[
+				1274.8,
+				1291.9
+			],
+			[
+				1311.1,
+				1326.2
+			],
+			[
+				1401.5,
+				1407.5
+			],
+			[
+				1929,
+				1946.2
+			],
+			[
+				1948.6,
+				1958.6
+			],
+			[
+				2217.8,
+				2221.4
+			],
+			[
+				2257.4,
+				2269.3
+			],
+			[
+				2284.2,
+				2295
+			],
+			[
+				2312.3,
+				2320.4
+			],
+			[
+				2320.6,
+				2334
+			],
+			[
+				2363.1,
+				2369.1
+			],
+			[
+				2387.1,
+				2403
+			],
+			[
+				2407.6,
+				2409.5
+			],
+			[
+				2421.4,
+				2424.3
+			],
+			[
+				2455.4,
+				2466
+			],
+			[
+				2483.3,
+				2486
+			],
+			[
+				2541.2,
+				2545.4
+			],
+			[
+				2545.7,
+				2552.7
+			],
+			[
+				2556.3,
+				2572
+			],
+			[
+				2575.6,
+				2582.7
+			],
+			[
+				2589.4,
+				2591.7
+			],
+			[
+				2600.4,
+				2612.3
+			],
+			[
+				3221.8,
+				3269.3
+			],
+			[
+				3566.6,
+				3577.3
+			],
+			[
+				3600.8,
+				3614.4
+			],
+			[
+				3702.2,
+				3718.6
+			],
+			[
+				3737,
+				3742.4
+			],
+			[
+				3757.1,
+				3766.4
+			],
+			[
+				3827.8,
+				3832.5
+			],
+			[
+				3837.2,
+				3850.4
+			],
+			[
+				5120.7,
+				5127.1
+			],
+			[
+				5369.8,
+				5373.5
+			],
+			[
+				5388.3,
+				5450
+			],
+			[
+				5576,
+				5585.5
+			],
+			[
+				5586.7,
+				5594
+			],
+			[
+				5701.8,
+				5704.1
+			],
+			[
+				5895.5,
+				5898.1
+			],
+			[
+				5911.7,
+				5916.8
+			],
+			[
+				6020.6,
+				6022.3
+			],
+			[
+				6591.1,
+				6598
+			],
+			[
+				6601,
+				6607.4
+			],
+			[
+				6639.5,
+				6662
+			],
+			[
+				6712.9,
+				6736
+			],
+			[
+				6753.2,
+				6757
+			],
+			[
+				6788.6,
+				6802.6
+			],
+			[
+				7056.6,
+				7064.2
+			],
+			[
+				7075.9,
+				7081.4
+			],
+			[
+				8149.7,
+				8155.8
+			],
+			[
+				8550.2,
+				8559.6
+			],
+			[
+				8563.3,
+				8578.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 606,
+				"kept": 174,
+				"changed": 116,
+				"cut": 316
+			},
+			"other": {
+				"lines": 267,
+				"kept": 62,
+				"changed": 45,
+				"cut": 160
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 41,
+				"kept": 18,
+				"changed": 5,
+				"cut": 18
+			},
+			"other": {
+				"lines": 269,
+				"kept": 79,
+				"changed": 32,
+				"cut": 158
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ROSS",
+				"text": "You’re way off. It wasn’t a government contract."
+			},
+			{
+				"speaker": "NAKIA",
+				"text": "A god? How is that possible?"
+			},
+			{
+				"speaker": "RAMONDA",
+				"text": "It is done. Return Shuri to me at once."
+			},
+			{
+				"speaker": "SHURI",
+				"text": "I did not ask you for your advice, Jabari."
+			},
+			{
+				"speaker": "OKOYE",
+				"text": "You are not worth my blade."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1032,
+				"text": "Smitty, we gotta go."
+			},
+			{
+				"at": 2631,
+				"text": "What the hell is that?"
+			},
+			{
+				"at": 4075,
+				"text": "He will be our new king."
+			},
+			{
+				"at": 6360,
+				"text": "Even weakened, he's still gonna be a problem."
+			},
+			{
+				"at": 8119,
+				"text": "You will greet your ancestors."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "OKOYE",
+				"page": "If you’re soldiers were present they’d still be choking on their furry costumes.",
+				"screen": "If your muscle brains were present... they would still be there choking on their fuzzy adornments.",
+				"pageWords": [
+					[
+						"If",
+						true
+					],
+					[
+						"you’re",
+						false
+					],
+					[
+						"soldiers",
+						false
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"present",
+						true
+					],
+					[
+						"they’d",
+						false
+					],
+					[
+						"still",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"choking",
+						true
+					],
+					[
+						"on",
+						true
+					],
+					[
+						"their",
+						true
+					],
+					[
+						"furry",
+						false
+					],
+					[
+						"costumes.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"If",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"muscle",
+						false
+					],
+					[
+						"brains",
+						false
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"present...",
+						true
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"would",
+						false
+					],
+					[
+						"still",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"choking",
+						true
+					],
+					[
+						"on",
+						true
+					],
+					[
+						"their",
+						true
+					],
+					[
+						"fuzzy",
+						false
+					],
+					[
+						"adornments.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "FEDERAL AGENT",
+				"page": "None... But we know it was the Wakandans. We knew they were coming.",
+				"screen": "None. But we think it was the Wakandans.",
+				"pageWords": [
+					[
+						"None...",
+						true
+					],
+					[
+						"But",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Wakandans.",
+						true
+					],
+					[
+						"We",
+						false
+					],
+					[
+						"knew",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"were",
+						false
+					],
+					[
+						"coming.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"None.",
+						true
+					],
+					[
+						"But",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Wakandans.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "NAKIA",
+				"page": "Please, if you’d just listen. My professor mentioned a study where you told researchers that you had encountered something...someone unimaginable.",
+				"screen": "Please. My professor mentioned a study where you told researchers that you encountered something... Someone unimaginable.",
+				"pageWords": [
+					[
+						"Please,",
+						false
+					],
+					[
+						"if",
+						false
+					],
+					[
+						"you’d",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"listen.",
+						false
+					],
+					[
+						"My",
+						true
+					],
+					[
+						"professor",
+						true
+					],
+					[
+						"mentioned",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"study",
+						true
+					],
+					[
+						"where",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"told",
+						true
+					],
+					[
+						"researchers",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"encountered",
+						true
+					],
+					[
+						"something...someone",
+						false
+					],
+					[
+						"unimaginable.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Please.",
+						true
+					],
+					[
+						"My",
+						true
+					],
+					[
+						"professor",
+						true
+					],
+					[
+						"mentioned",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"study",
+						true
+					],
+					[
+						"where",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"told",
+						true
+					],
+					[
+						"researchers",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"encountered",
+						true
+					],
+					[
+						"something...",
+						true
+					],
+					[
+						"Someone",
+						true
+					],
+					[
+						"unimaginable.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ANEKA",
+				"page": "You just hung up in the Queen of Wakanda’s face.",
+				"screen": "You just hung up on the Queen.",
+				"pageWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"hung",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Queen",
+						true
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"Wakanda’s",
+						false
+					],
+					[
+						"face.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"hung",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Queen.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ATTUMA",
+				"page": "You speak the mother tongue? You can greet your ancestors with it in the afterlife.",
+				"screen": "You speak the mother tongue? You can greet your ancestors with it...",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"speak",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"mother",
+						false
+					],
+					[
+						"tongue?",
+						false
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"greet",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"ancestors",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"afterlife.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"speak",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"mother",
+						true
+					],
+					[
+						"tongue?",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"greet",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"ancestors",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"it...",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,1047 @@
+{
+	"_id": "tt1170358",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 68,
+		"eligible": 45,
+		"rejected": {
+			"duplicate": 5,
+			"runtime mismatch": 8,
+			"split across CDs": 2,
+			"too few lines": 7,
+			"not English": 1
+		},
+		"used": 9,
+		"primary": "1954176356",
+		"versions": [
+			"1954180598",
+			"1958073979",
+			"1959230742",
+			"1954445829",
+			"1954180202",
+			"1955106412",
+			"1954176356",
+			"1954446122",
+			"1954573488"
+		],
+		"sdh": true,
+		"meanAgreement": 0.8903963969830875,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9660,
+	"quality": {
+		"anchoredShare": 0.7745429137067661
+	},
+	"words": {
+		"page": 8587,
+		"screen": 7571,
+		"kept": 6659,
+		"cut": 1928,
+		"notInScript": 920,
+		"moved": 8
+	},
+	"lines": {
+		"page": 768,
+		"kept": 640,
+		"changed": 36,
+		"cut": 92,
+		"screen": 1561,
+		"notInScript": 234
+	},
+	"byGender": {
+		"w": {
+			"lines": 38,
+			"kept": 32,
+			"changed": 0,
+			"cut": 6
+		},
+		"m": {
+			"lines": 692,
+			"kept": 599,
+			"changed": 35,
+			"cut": 58
+		},
+		"unknown": {
+			"lines": 38,
+			"kept": 9,
+			"changed": 1,
+			"cut": 28
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 2,
+			"kept": 14
+		},
+		{
+			"kept": 13,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 6,
+			"cut": 10
+		},
+		{
+			"cut": 7,
+			"kept": 9
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"changed": 2,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"kept": 9
+		},
+		{
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 2
+		},
+		{
+			"cut": 1,
+			"kept": 15
+		},
+		{
+			"kept": 8,
+			"cut": 8
+		},
+		{
+			"kept": 16
+		},
+		{
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"cut": 4
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 16
+		},
+		{
+			"kept": 16
+		},
+		{
+			"kept": 16
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 2
+		},
+		{
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 16
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 4
+		},
+		{
+			"changed": 1,
+			"kept": 15
+		},
+		{
+			"kept": 16
+		},
+		{
+			"kept": 16
+		},
+		{
+			"cut": 5,
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 52,
+			"notInScript": 28
+		},
+		{
+			"scripted": 283,
+			"notInScript": 0
+		},
+		{
+			"scripted": 247,
+			"notInScript": 18
+		},
+		{
+			"scripted": 2,
+			"notInScript": 0
+		},
+		{
+			"scripted": 195,
+			"notInScript": 15
+		},
+		{
+			"scripted": 187,
+			"notInScript": 0
+		},
+		{
+			"scripted": 212,
+			"notInScript": 10
+		},
+		{
+			"scripted": 115,
+			"notInScript": 6
+		},
+		{
+			"scripted": 49,
+			"notInScript": 59
+		},
+		{
+			"scripted": 61,
+			"notInScript": 31
+		},
+		{
+			"scripted": 111,
+			"notInScript": 16
+		},
+		{
+			"scripted": 331,
+			"notInScript": 5
+		},
+		{
+			"scripted": 247,
+			"notInScript": 2
+		},
+		{
+			"scripted": 229,
+			"notInScript": 87
+		},
+		{
+			"scripted": 16,
+			"notInScript": 18
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		},
+		{
+			"scripted": 39,
+			"notInScript": 0
+		},
+		{
+			"scripted": 310,
+			"notInScript": 22
+		},
+		{
+			"scripted": 349,
+			"notInScript": 3
+		},
+		{
+			"scripted": 255,
+			"notInScript": 0
+		},
+		{
+			"scripted": 239,
+			"notInScript": 12
+		},
+		{
+			"scripted": 290,
+			"notInScript": 24
+		},
+		{
+			"scripted": 235,
+			"notInScript": 6
+		},
+		{
+			"scripted": 288,
+			"notInScript": 0
+		},
+		{
+			"scripted": 238,
+			"notInScript": 26
+		},
+		{
+			"scripted": 295,
+			"notInScript": 0
+		},
+		{
+			"scripted": 270,
+			"notInScript": 24
+		},
+		{
+			"scripted": 131,
+			"notInScript": 0
+		},
+		{
+			"scripted": 153,
+			"notInScript": 11
+		},
+		{
+			"scripted": 71,
+			"notInScript": 20
+		},
+		{
+			"scripted": 210,
+			"notInScript": 3
+		},
+		{
+			"scripted": 7,
+			"notInScript": 0
+		},
+		{
+			"scripted": 17,
+			"notInScript": 9
+		},
+		{
+			"scripted": 105,
+			"notInScript": 2
+		},
+		{
+			"scripted": 256,
+			"notInScript": 4
+		},
+		{
+			"scripted": 209,
+			"notInScript": 31
+		},
+		{
+			"scripted": 191,
+			"notInScript": 1
+		},
+		{
+			"scripted": 13,
+			"notInScript": 11
+		},
+		{
+			"scripted": 39,
+			"notInScript": 13
+		},
+		{
+			"scripted": 99,
+			"notInScript": 7
+		},
+		{
+			"scripted": 95,
+			"notInScript": 11
+		},
+		{
+			"scripted": 56,
+			"notInScript": 11
+		},
+		{
+			"scripted": 34,
+			"notInScript": 15
+		},
+		{
+			"scripted": 104,
+			"notInScript": 0
+		},
+		{
+			"scripted": 68,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 36,
+				"kept": 30,
+				"changed": 0,
+				"cut": 6
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 608,
+				"kept": 538,
+				"changed": 28,
+				"cut": 42
+			},
+			"other": {
+				"lines": 71,
+				"kept": 52,
+				"changed": 4,
+				"cut": 15
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "AZOG",
+				"text": "Zad nathagash slangm-hu. You promised me his head."
+			},
+			{
+				"speaker": "LEGOLAS",
+				"text": "I nogoth, amman e tîr gin? Tauriel? Why does the Dwarf stare at you so? Tauriel?"
+			},
+			{
+				"speaker": "NARZUG",
+				"text": "Shâ hakhtiz khunai-go, Golgi! I do not answer to dogs, She-Elf!"
+			},
+			{
+				"speaker": "LEGOLAS",
+				"text": "Ci orch im, dangen le. If I was an Orc, you would be dead."
+			},
+			{
+				"speaker": "RING WORLD",
+				"text": "BILBO runs up the STAIRS, ducking behind a WALL ... he pulls off the RING."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1670,
+				"text": "Eat them now, while their blood is running."
+			},
+			{
+				"at": 2649,
+				"text": "They were... trading in silverwork for furs."
+			},
+			{
+				"at": 2876,
+				"text": "Come on, let's go!"
+			},
+			{
+				"at": 4337,
+				"text": "Can't afford to let the rabble band together... and start making noises."
+			},
+			{
+				"at": 7133,
+				"text": "I'm not leaving you."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BILBO",
+				"page": "No, it’s not that -",
+				"screen": "No, that's not it.",
+				"pageWords": [
+					[
+						"No,",
+						true
+					],
+					[
+						"it’s",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"-",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"No,",
+						true
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BILBO",
+				"page": "Because it is yours! You understand? We are going ‘round in circles. We’re lost!",
+				"screen": "Because it is yours. Do you understand? We're going around in circles. We are lost.",
+				"pageWords": [
+					[
+						"Because",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"yours!",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"understand?",
+						true
+					],
+					[
+						"We",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"‘round",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"circles.",
+						true
+					],
+					[
+						"We’re",
+						false
+					],
+					[
+						"lost!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Because",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"yours.",
+						true
+					],
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"understand?",
+						true
+					],
+					[
+						"We're",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"around",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"circles.",
+						true
+					],
+					[
+						"We",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"lost.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BALIN",
+				"page": "You are from Lake-town, unless I am mistaken?",
+				"screen": "Excuse me... but you're from Lake-town, if I'm not mistaken.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"Lake-town,",
+						true
+					],
+					[
+						"unless",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"am",
+						false
+					],
+					[
+						"mistaken?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Excuse",
+						false
+					],
+					[
+						"me...",
+						false
+					],
+					[
+						"but",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"from",
+						true
+					],
+					[
+						"Lake-town,",
+						true
+					],
+					[
+						"if",
+						false
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"mistaken.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BOFUR",
+				"page": "Did you miss the boat as well?",
+				"screen": "So you missed the boat as well?",
+				"pageWords": [
+					[
+						"Did",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"miss",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"boat",
+						true
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"well?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"So",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"missed",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"boat",
+						true
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"well?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "THORIN",
+				"page": "There must be a way - if this Map is true, the hidden door lies directly above us.",
+				"screen": "If the map is true... then the hidden door lies directly above us.",
+				"pageWords": [
+					[
+						"There",
+						false
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"way",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"if",
+						false
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"Map",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"true,",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hidden",
+						true
+					],
+					[
+						"door",
+						true
+					],
+					[
+						"lies",
+						true
+					],
+					[
+						"directly",
+						true
+					],
+					[
+						"above",
+						true
+					],
+					[
+						"us.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"If",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"map",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"true...",
+						true
+					],
+					[
+						"then",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hidden",
+						true
+					],
+					[
+						"door",
+						true
+					],
+					[
+						"lies",
+						true
+					],
+					[
+						"directly",
+						true
+					],
+					[
+						"above",
+						true
+					],
+					[
+						"us.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

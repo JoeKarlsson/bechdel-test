@@ -1,0 +1,998 @@
+{
+	"_id": "tt0116922",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 32,
+		"eligible": 16,
+		"rejected": {
+			"split across CDs": 3,
+			"duplicate": 10,
+			"too few lines": 1,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1953055197",
+		"versions": [
+			"1953055197",
+			"1961454324",
+			"1958209485",
+			"1952624311",
+			"1957629693",
+			"1958440270",
+			"1956406724",
+			"1951734284",
+			"149692"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9844005764749095,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 8040,
+	"quality": {
+		"anchoredShare": 0.41687157177983736
+	},
+	"words": {
+		"page": 5287,
+		"screen": 3131,
+		"kept": 2205,
+		"cut": 3082,
+		"notInScript": 927,
+		"moved": 65
+	},
+	"lines": {
+		"page": 709,
+		"kept": 304,
+		"changed": 69,
+		"cut": 336,
+		"screen": 738,
+		"notInScript": 203
+	},
+	"byGender": {
+		"w": {
+			"lines": 183,
+			"kept": 78,
+			"changed": 19,
+			"cut": 86
+		},
+		"m": {
+			"lines": 464,
+			"kept": 214,
+			"changed": 48,
+			"cut": 202
+		},
+		"unknown": {
+			"lines": 62,
+			"kept": 12,
+			"changed": 2,
+			"cut": 48
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"kept": 4,
+			"cut": 11
+		},
+		{
+			"cut": 4,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 2,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"kept": 3,
+			"cut": 12
+		},
+		{
+			"cut": 15
+		},
+		{
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 13
+		},
+		{
+			"changed": 2,
+			"kept": 13
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"kept": 2,
+			"cut": 13
+		},
+		{
+			"kept": 3,
+			"cut": 11
+		},
+		{
+			"cut": 9,
+			"kept": 6
+		},
+		{
+			"changed": 1,
+			"kept": 6,
+			"cut": 8
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"changed": 1,
+			"cut": 13
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 15
+		},
+		{
+			"changed": 1,
+			"cut": 13
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 9,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 8,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"changed": 7,
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"cut": 4,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"changed": 1,
+			"cut": 6,
+			"kept": 8
+		},
+		{
+			"changed": 3,
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"kept": 11
+		},
+		{
+			"cut": 12,
+			"kept": 2
+		},
+		{
+			"kept": 11,
+			"changed": 4
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"changed": 2,
+			"kept": 7,
+			"cut": 6
+		},
+		{
+			"changed": 1,
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"cut": 2,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 4,
+			"cut": 11
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 8
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 4,
+			"notInScript": 0
+		},
+		{
+			"scripted": 58,
+			"notInScript": 0
+		},
+		{
+			"scripted": 24,
+			"notInScript": 7
+		},
+		{
+			"scripted": 17,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 6
+		},
+		{
+			"scripted": 42,
+			"notInScript": 5
+		},
+		{
+			"scripted": 61,
+			"notInScript": 9
+		},
+		{
+			"scripted": 126,
+			"notInScript": 10
+		},
+		{
+			"scripted": 50,
+			"notInScript": 15
+		},
+		{
+			"scripted": 68,
+			"notInScript": 7
+		},
+		{
+			"scripted": 159,
+			"notInScript": 13
+		},
+		{
+			"scripted": 46,
+			"notInScript": 14
+		},
+		{
+			"scripted": 5,
+			"notInScript": 0
+		},
+		{
+			"scripted": 5,
+			"notInScript": 0
+		},
+		{
+			"scripted": 56,
+			"notInScript": 5
+		},
+		{
+			"scripted": 20,
+			"notInScript": 5
+		},
+		{
+			"scripted": 13,
+			"notInScript": 20
+		},
+		{
+			"scripted": 75,
+			"notInScript": 8
+		},
+		{
+			"scripted": 14,
+			"notInScript": 3
+		},
+		{
+			"scripted": 86,
+			"notInScript": 68
+		},
+		{
+			"scripted": 105,
+			"notInScript": 120
+		},
+		{
+			"scripted": 51,
+			"notInScript": 23
+		},
+		{
+			"scripted": 135,
+			"notInScript": 11
+		},
+		{
+			"scripted": 46,
+			"notInScript": 9
+		},
+		{
+			"scripted": 20,
+			"notInScript": 6
+		},
+		{
+			"scripted": 53,
+			"notInScript": 9
+		},
+		{
+			"scripted": 68,
+			"notInScript": 27
+		},
+		{
+			"scripted": 35,
+			"notInScript": 16
+		},
+		{
+			"scripted": 41,
+			"notInScript": 4
+		},
+		{
+			"scripted": 132,
+			"notInScript": 14
+		},
+		{
+			"scripted": 135,
+			"notInScript": 12
+		},
+		{
+			"scripted": 140,
+			"notInScript": 39
+		},
+		{
+			"scripted": 33,
+			"notInScript": 0
+		},
+		{
+			"scripted": 200,
+			"notInScript": 31
+		},
+		{
+			"scripted": 184,
+			"notInScript": 3
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 31,
+			"notInScript": 12
+		},
+		{
+			"scripted": 34,
+			"notInScript": 8
+		},
+		{
+			"scripted": 44,
+			"notInScript": 19
+		},
+		{
+			"scripted": 20,
+			"notInScript": 2
+		},
+		{
+			"scripted": 10,
+			"notInScript": 6
+		},
+		{
+			"scripted": 30,
+			"notInScript": 0
+		},
+		{
+			"scripted": 4,
+			"notInScript": 1
+		},
+		{
+			"scripted": 15,
+			"notInScript": 0
+		},
+		{
+			"scripted": 57,
+			"notInScript": 12
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 12,
+				"kept": 0,
+				"changed": 0,
+				"cut": 12
+			},
+			"other": {
+				"lines": 167,
+				"kept": 76,
+				"changed": 18,
+				"cut": 73
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 244,
+				"kept": 124,
+				"changed": 36,
+				"cut": 84
+			},
+			"other": {
+				"lines": 194,
+				"kept": 84,
+				"changed": 11,
+				"cut": 99
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "RENEE",
+				"text": "No, one of us is always here to let the maid in. Nobody else has a key."
+			},
+			{
+				"speaker": "FRED",
+				"text": "The pain is getting worse. I need more aspirin."
+			},
+			{
+				"speaker": "CAPTAIN HENDERSON",
+				"text": "Do you think Pete knows him?"
+			},
+			{
+				"speaker": "LANIE",
+				"text": "Keep it in your pants, \"V\"."
+			},
+			{
+				"speaker": "ALICE",
+				"text": "I already got the room."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1697,
+				"text": "2 double scotches, neat."
+			},
+			{
+				"at": 3554,
+				"text": "It's good you're back Wonderful."
+			},
+			{
+				"at": 3669,
+				"text": "I don't like the sound of something."
+			},
+			{
+				"at": 4846,
+				"text": "Come on up, Baby."
+			},
+			{
+				"at": 6377,
+				"text": "Honey, are you all right?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "ED",
+				"page": "Let's have a look at the hallway outside the bedroom.",
+				"screen": "Let's check the hallway and the bedroom.",
+				"pageWords": [
+					[
+						"Let's",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hallway",
+						true
+					],
+					[
+						"outside",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"bedroom.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Let's",
+						false
+					],
+					[
+						"check",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hallway",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"bedroom.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BILL",
+				"page": "Have you made any charges against him?",
+				"screen": "Where the fuck have you been, man?",
+				"pageWords": [
+					[
+						"Have",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"made",
+						false
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"charges",
+						false
+					],
+					[
+						"against",
+						false
+					],
+					[
+						"him?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Where",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"fuck",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"been,",
+						false
+					],
+					[
+						"man?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PETE",
+				"page": "No, it's not the carburetors. Pull over, but keep it runnin'.",
+				"screen": "Pull it over, but keep it running.",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"it's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"carburetors.",
+						false
+					],
+					[
+						"Pull",
+						false
+					],
+					[
+						"over,",
+						true
+					],
+					[
+						"but",
+						true
+					],
+					[
+						"keep",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"runnin'.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Pull",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"over,",
+						true
+					],
+					[
+						"but",
+						true
+					],
+					[
+						"keep",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"running.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PETE",
+				"page": "What is this? Why didn't you tell me? What?... I don't remember any of this.",
+				"screen": "What is this? I mean, why didn't you tell me anything?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"this?",
+						true
+					],
+					[
+						"Why",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me?",
+						true
+					],
+					[
+						"What?...",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"remember",
+						false
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"this.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"this?",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"mean,",
+						false
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"anything?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ALICE",
+				"page": "Up the stairs - down the hall.",
+				"screen": "It's upstairs, down the hall.",
+				"pageWords": [
+					[
+						"Up",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"stairs",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"down",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hall.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						false
+					],
+					[
+						"upstairs,",
+						false
+					],
+					[
+						"down",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hall.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

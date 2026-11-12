@@ -1,0 +1,980 @@
+{
+	"_id": "tt0086879",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 50,
+		"eligible": 22,
+		"rejected": {
+			"split across CDs": 15,
+			"duplicate": 6,
+			"runtime mismatch": 7
+		},
+		"used": 9,
+		"primary": "1954645083",
+		"versions": [
+			"1952924346",
+			"150465",
+			"1956628455",
+			"1953105423",
+			"1954645083",
+			"1952597936",
+			"298398",
+			"202871",
+			"1958407317"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9142237280130154,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9600,
+	"quality": {
+		"anchoredShare": 0.49389027431421445
+	},
+	"words": {
+		"page": 16040,
+		"screen": 9536,
+		"kept": 7925,
+		"cut": 8115,
+		"notInScript": 1614,
+		"moved": 324
+	},
+	"lines": {
+		"page": 1376,
+		"kept": 623,
+		"changed": 224,
+		"cut": 527,
+		"screen": 1909,
+		"notInScript": 267
+	},
+	"byGender": {
+		"w": {
+			"lines": 264,
+			"kept": 110,
+			"changed": 38,
+			"cut": 116
+		},
+		"m": {
+			"lines": 1047,
+			"kept": 499,
+			"changed": 178,
+			"cut": 370
+		},
+		"unknown": {
+			"lines": 63,
+			"kept": 14,
+			"changed": 8,
+			"cut": 41
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 8,
+			"cut": 19,
+			"kept": 2
+		},
+		{
+			"kept": 20,
+			"changed": 2,
+			"cut": 7
+		},
+		{
+			"cut": 12,
+			"changed": 5,
+			"kept": 11
+		},
+		{
+			"cut": 14,
+			"changed": 8,
+			"kept": 7
+		},
+		{
+			"kept": 19,
+			"changed": 4,
+			"cut": 6
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 14
+		},
+		{
+			"kept": 18,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"kept": 21,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 20,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 18,
+			"cut": 11
+		},
+		{
+			"cut": 14,
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"cut": 12,
+			"kept": 11
+		},
+		{
+			"kept": 19,
+			"changed": 4,
+			"cut": 6
+		},
+		{
+			"kept": 11,
+			"cut": 12,
+			"changed": 6
+		},
+		{
+			"cut": 10,
+			"changed": 6,
+			"kept": 12
+		},
+		{
+			"kept": 18,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"kept": 23,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"cut": 12,
+			"changed": 5
+		},
+		{
+			"cut": 25,
+			"kept": 4
+		},
+		{
+			"kept": 10,
+			"cut": 16,
+			"changed": 3
+		},
+		{
+			"changed": 8,
+			"cut": 10,
+			"kept": 10
+		},
+		{
+			"cut": 25,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"kept": 13,
+			"cut": 10,
+			"changed": 6
+		},
+		{
+			"changed": 7,
+			"kept": 11,
+			"cut": 10
+		},
+		{
+			"changed": 6,
+			"cut": 15,
+			"kept": 8
+		},
+		{
+			"changed": 8,
+			"cut": 9,
+			"kept": 12
+		},
+		{
+			"kept": 18,
+			"changed": 6,
+			"cut": 4
+		},
+		{
+			"changed": 2,
+			"kept": 13,
+			"cut": 14
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"kept": 22,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 18,
+			"changed": 5,
+			"cut": 6
+		},
+		{
+			"kept": 20,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"kept": 16,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"cut": 12,
+			"kept": 14,
+			"changed": 3
+		},
+		{
+			"cut": 18,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"cut": 23,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"changed": 9,
+			"kept": 13,
+			"cut": 7
+		},
+		{
+			"kept": 19,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"cut": 4,
+			"changed": 7
+		},
+		{
+			"changed": 6,
+			"kept": 17,
+			"cut": 6
+		},
+		{
+			"changed": 2,
+			"cut": 26
+		},
+		{
+			"cut": 16,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"kept": 14,
+			"cut": 10,
+			"changed": 5
+		},
+		{
+			"cut": 9,
+			"kept": 17,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"kept": 9,
+			"changed": 8
+		},
+		{
+			"changed": 8,
+			"cut": 3,
+			"kept": 18
+		},
+		{
+			"kept": 6,
+			"changed": 9,
+			"cut": 13
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 85,
+			"notInScript": 13
+		},
+		{
+			"scripted": 42,
+			"notInScript": 3
+		},
+		{
+			"scripted": 146,
+			"notInScript": 1
+		},
+		{
+			"scripted": 265,
+			"notInScript": 1
+		},
+		{
+			"scripted": 192,
+			"notInScript": 0
+		},
+		{
+			"scripted": 109,
+			"notInScript": 37
+		},
+		{
+			"scripted": 150,
+			"notInScript": 1
+		},
+		{
+			"scripted": 273,
+			"notInScript": 3
+		},
+		{
+			"scripted": 118,
+			"notInScript": 65
+		},
+		{
+			"scripted": 244,
+			"notInScript": 25
+		},
+		{
+			"scripted": 246,
+			"notInScript": 3
+		},
+		{
+			"scripted": 177,
+			"notInScript": 11
+		},
+		{
+			"scripted": 87,
+			"notInScript": 0
+		},
+		{
+			"scripted": 242,
+			"notInScript": 5
+		},
+		{
+			"scripted": 234,
+			"notInScript": 17
+		},
+		{
+			"scripted": 238,
+			"notInScript": 21
+		},
+		{
+			"scripted": 254,
+			"notInScript": 14
+		},
+		{
+			"scripted": 275,
+			"notInScript": 5
+		},
+		{
+			"scripted": 182,
+			"notInScript": 2
+		},
+		{
+			"scripted": 167,
+			"notInScript": 2
+		},
+		{
+			"scripted": 132,
+			"notInScript": 20
+		},
+		{
+			"scripted": 289,
+			"notInScript": 17
+		},
+		{
+			"scripted": 161,
+			"notInScript": 40
+		},
+		{
+			"scripted": 198,
+			"notInScript": 23
+		},
+		{
+			"scripted": 111,
+			"notInScript": 58
+		},
+		{
+			"scripted": 93,
+			"notInScript": 33
+		},
+		{
+			"scripted": 319,
+			"notInScript": 4
+		},
+		{
+			"scripted": 125,
+			"notInScript": 0
+		},
+		{
+			"scripted": 261,
+			"notInScript": 5
+		},
+		{
+			"scripted": 326,
+			"notInScript": 11
+		},
+		{
+			"scripted": 175,
+			"notInScript": 15
+		},
+		{
+			"scripted": 255,
+			"notInScript": 5
+		},
+		{
+			"scripted": 134,
+			"notInScript": 9
+		},
+		{
+			"scripted": 200,
+			"notInScript": 2
+		},
+		{
+			"scripted": 162,
+			"notInScript": 17
+		},
+		{
+			"scripted": 93,
+			"notInScript": 0
+		},
+		{
+			"scripted": 49,
+			"notInScript": 0
+		},
+		{
+			"scripted": 148,
+			"notInScript": 13
+		},
+		{
+			"scripted": 111,
+			"notInScript": 10
+		},
+		{
+			"scripted": 252,
+			"notInScript": 23
+		},
+		{
+			"scripted": 162,
+			"notInScript": 25
+		},
+		{
+			"scripted": 274,
+			"notInScript": 10
+		},
+		{
+			"scripted": 144,
+			"notInScript": 1
+		},
+		{
+			"scripted": 75,
+			"notInScript": 2
+		},
+		{
+			"scripted": 29,
+			"notInScript": 28
+		},
+		{
+			"scripted": 45,
+			"notInScript": 28
+		},
+		{
+			"scripted": 181,
+			"notInScript": 12
+		},
+		{
+			"scripted": 576,
+			"notInScript": 90
+		}
+	],
+	"passingConversations": {
+		"count": 3,
+		"seconds": 31.6,
+		"longest": 19.4,
+		"spans": [
+			[
+				2938.3,
+				2957.6
+			],
+			[
+				5292.1,
+				5299.2
+			],
+			[
+				5366.9,
+				5371.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 20,
+				"kept": 8,
+				"changed": 3,
+				"cut": 9
+			},
+			"other": {
+				"lines": 218,
+				"kept": 99,
+				"changed": 33,
+				"cut": 86
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 790,
+				"kept": 391,
+				"changed": 131,
+				"cut": 268
+			},
+			"other": {
+				"lines": 252,
+				"kept": 108,
+				"changed": 46,
+				"cut": 98
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MOZART",
+				"text": "Miaouw! Miaouw! Mouse-wouse? It's Puss-wuss, fangs-wangs. Paws-claws. Pounce-bounce!"
+			},
+			{
+				"speaker": "JOSEPH",
+				"text": "And the result satisfies."
+			},
+			{
+				"speaker": "FRAU SCHLUMBERG",
+				"text": "It's such an honour for us to have you here, Herr Mozart. And for Gertrude."
+			},
+			{
+				"speaker": "ORSINI-ROSENBERG",
+				"text": "You mean that play?"
+			},
+			{
+				"speaker": "PAPAGENO",
+				"text": "Oh. Well, thank you! How wonderful. Some people get all the luck."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1660,
+				"text": "Here's the third one."
+			},
+			{
+				"at": 4500,
+				"text": "We've got to break him of that habit."
+			},
+			{
+				"at": 4923,
+				"text": "Come on, come on!"
+			},
+			{
+				"at": 7822,
+				"text": "With what we've presented"
+			},
+			{
+				"at": 9590,
+				"text": "Do you have it?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MOZART",
+				"page": "These Viennese certainly know good music when they hear it.",
+				"screen": "The Viennese know good music, don't you think?",
+				"pageWords": [
+					[
+						"These",
+						false
+					],
+					[
+						"Viennese",
+						false
+					],
+					[
+						"certainly",
+						false
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"good",
+						true
+					],
+					[
+						"music",
+						true
+					],
+					[
+						"when",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"hear",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"Viennese",
+						false
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"good",
+						true
+					],
+					[
+						"music,",
+						true
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"think?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MOZART",
+				"page": "They'll come anyway. They love me here.",
+				"screen": "They love me here.",
+				"pageWords": [
+					[
+						"They'll",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"anyway.",
+						false
+					],
+					[
+						"They",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"here.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"They",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"here.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MOZART",
+				"page": "Isn't that marvelous? We're delighted.",
+				"screen": "Isn't it marvelous? We're delighted.",
+				"pageWords": [
+					[
+						"Isn't",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"marvelous?",
+						true
+					],
+					[
+						"We're",
+						true
+					],
+					[
+						"delighted.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Isn't",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"marvelous?",
+						true
+					],
+					[
+						"We're",
+						true
+					],
+					[
+						"delighted.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SALIERI",
+				"page": "Why bother with Orsini-Rosenberg? He's obviously no friend of yours.",
+				"screen": "Why bother? He's no friend of yours.",
+				"pageWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"bother",
+						true
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"Orsini-Rosenberg?",
+						false
+					],
+					[
+						"He's",
+						false
+					],
+					[
+						"obviously",
+						false
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"friend",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"yours.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"bother?",
+						true
+					],
+					[
+						"He's",
+						false
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"friend",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"yours.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SALIERI",
+				"page": "The end of the Recordare - Statuens in parte dextra.",
+				"screen": "The end of the Recordare.",
+				"pageWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"end",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Recordare",
+						true
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"Statuens",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"parte",
+						false
+					],
+					[
+						"dextra.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"end",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Recordare.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

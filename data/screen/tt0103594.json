@@ -1,0 +1,998 @@
+{
+	"_id": "tt0103594",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 20,
+		"eligible": 11,
+		"rejected": {
+			"split across CDs": 5,
+			"duplicate": 4
+		},
+		"used": 9,
+		"primary": "1957853125",
+		"versions": [
+			"1953512145",
+			"1956154268",
+			"1954282948",
+			"1956101389",
+			"1952852158",
+			"1953045925",
+			"1957727520",
+			"1959257108",
+			"1957853125"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9191666082122736,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9240,
+	"quality": {
+		"anchoredShare": 0.4776276276276276
+	},
+	"words": {
+		"page": 6660,
+		"screen": 5689,
+		"kept": 3186,
+		"cut": 3474,
+		"notInScript": 2508,
+		"moved": 161
+	},
+	"lines": {
+		"page": 637,
+		"kept": 269,
+		"changed": 103,
+		"cut": 265,
+		"screen": 930,
+		"notInScript": 370
+	},
+	"byGender": {
+		"w": {
+			"lines": 14,
+			"kept": 7,
+			"changed": 0,
+			"cut": 7
+		},
+		"m": {
+			"lines": 573,
+			"kept": 240,
+			"changed": 97,
+			"cut": 236
+		},
+		"unknown": {
+			"lines": 50,
+			"kept": 22,
+			"changed": 6,
+			"cut": 22
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"kept": 5,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"changed": 2,
+			"cut": 7
+		},
+		{
+			"cut": 3,
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 1,
+			"kept": 7
+		},
+		{
+			"changed": 1,
+			"kept": 3,
+			"cut": 9
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 8
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 9,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"cut": 9,
+			"kept": 4
+		},
+		{
+			"cut": 2,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 8
+		},
+		{
+			"kept": 5,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"cut": 6,
+			"changed": 1,
+			"kept": 6
+		},
+		{
+			"kept": 8,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"kept": 9
+		},
+		{
+			"kept": 4,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"cut": 6,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"cut": 3,
+			"kept": 6
+		},
+		{
+			"cut": 9,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"changed": 5,
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"changed": 6,
+			"cut": 3,
+			"kept": 4
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 2
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 8,
+			"changed": 4
+		},
+		{
+			"cut": 10,
+			"kept": 3
+		},
+		{
+			"cut": 6,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"changed": 2,
+			"kept": 8
+		},
+		{
+			"cut": 13
+		},
+		{
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 7
+		},
+		{
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 27,
+			"notInScript": 0
+		},
+		{
+			"scripted": 106,
+			"notInScript": 51
+		},
+		{
+			"scripted": 149,
+			"notInScript": 147
+		},
+		{
+			"scripted": 26,
+			"notInScript": 17
+		},
+		{
+			"scripted": 326,
+			"notInScript": 14
+		},
+		{
+			"scripted": 255,
+			"notInScript": 63
+		},
+		{
+			"scripted": 204,
+			"notInScript": 24
+		},
+		{
+			"scripted": 28,
+			"notInScript": 54
+		},
+		{
+			"scripted": 151,
+			"notInScript": 62
+		},
+		{
+			"scripted": 218,
+			"notInScript": 36
+		},
+		{
+			"scripted": 152,
+			"notInScript": 10
+		},
+		{
+			"scripted": 1,
+			"notInScript": 5
+		},
+		{
+			"scripted": 80,
+			"notInScript": 28
+		},
+		{
+			"scripted": 195,
+			"notInScript": 42
+		},
+		{
+			"scripted": 100,
+			"notInScript": 65
+		},
+		{
+			"scripted": 3,
+			"notInScript": 23
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 34,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 71,
+			"notInScript": 27
+		},
+		{
+			"scripted": 4,
+			"notInScript": 29
+		},
+		{
+			"scripted": 10,
+			"notInScript": 77
+		},
+		{
+			"scripted": 86,
+			"notInScript": 82
+		},
+		{
+			"scripted": 62,
+			"notInScript": 11
+		},
+		{
+			"scripted": 67,
+			"notInScript": 39
+		},
+		{
+			"scripted": 143,
+			"notInScript": 36
+		},
+		{
+			"scripted": 66,
+			"notInScript": 200
+		},
+		{
+			"scripted": 35,
+			"notInScript": 32
+		},
+		{
+			"scripted": 119,
+			"notInScript": 30
+		},
+		{
+			"scripted": 53,
+			"notInScript": 53
+		},
+		{
+			"scripted": 34,
+			"notInScript": 0
+		},
+		{
+			"scripted": 24,
+			"notInScript": 75
+		},
+		{
+			"scripted": 42,
+			"notInScript": 117
+		},
+		{
+			"scripted": 96,
+			"notInScript": 44
+		},
+		{
+			"scripted": 37,
+			"notInScript": 58
+		},
+		{
+			"scripted": 3,
+			"notInScript": 1
+		},
+		{
+			"scripted": 1,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 31,
+			"notInScript": 1
+		},
+		{
+			"scripted": 68,
+			"notInScript": 106
+		},
+		{
+			"scripted": 11,
+			"notInScript": 1
+		},
+		{
+			"scripted": 200,
+			"notInScript": 26
+		},
+		{
+			"scripted": 98,
+			"notInScript": 6
+		},
+		{
+			"scripted": 40,
+			"notInScript": 81
+		},
+		{
+			"scripted": 77,
+			"notInScript": 36
+		},
+		{
+			"scripted": 143,
+			"notInScript": 57
+		},
+		{
+			"scripted": 127,
+			"notInScript": 10
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 14,
+				"kept": 7,
+				"changed": 0,
+				"cut": 7
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 445,
+				"kept": 185,
+				"changed": 79,
+				"cut": 181
+			},
+			"other": {
+				"lines": 108,
+				"kept": 48,
+				"changed": 17,
+				"cut": 43
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "COLUMBUS",
+				"text": "We wouldn't have to turn back! We would find land at this point!"
+			},
+			{
+				"speaker": "MENDEZ",
+				"text": "Well, I surely know what a quadrant is! But I've never seen it used at night before."
+			},
+			{
+				"speaker": "GIACOMO",
+				"text": "Bartolome is stronger, more capable than I will ever be..."
+			},
+			{
+				"speaker": "COLUMBUS",
+				"text": "Good! I have to go back!"
+			},
+			{
+				"speaker": "COLUMBUS",
+				"text": "Will you ever forgive me?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 522,
+				"text": "I will not give up."
+			},
+			{
+				"at": 2337,
+				"text": "I know you're navigating by the stars like the Moors do but I don't know how?"
+			},
+			{
+				"at": 5019,
+				"text": "I'll be gone for several years."
+			},
+			{
+				"at": 6132,
+				"text": "Soon, we'll be eating our own bread."
+			},
+			{
+				"at": 8015,
+				"text": "Columbus forced nobility to hard labour he treated them equally with Indians."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "AROJAZ",
+				"page": "The Judgment is ours!",
+				"screen": "With all due respect, the judgement is ours.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"Judgment",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"ours!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"With",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"due",
+						false
+					],
+					[
+						"respect,",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"judgement",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"ours.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PINZON",
+				"page": "Jesus Maria! I should have never listened to you!",
+				"screen": "I shouldn't have listened to you.",
+				"pageWords": [
+					[
+						"Jesus",
+						false
+					],
+					[
+						"Maria!",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"never",
+						false
+					],
+					[
+						"listened",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"you!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"shouldn't",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"listened",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "COLUMBUS",
+				"page": "Good! We are also in need of judges. Except there are no thieves!",
+				"screen": "Good! We also need judges except, there are no crimes of people!",
+				"pageWords": [
+					[
+						"Good!",
+						true
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"also",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"judges.",
+						true
+					],
+					[
+						"Except",
+						true
+					],
+					[
+						"there",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"thieves!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Good!",
+						true
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"also",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"judges",
+						true
+					],
+					[
+						"except,",
+						true
+					],
+					[
+						"there",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"no",
+						true
+					],
+					[
+						"crimes",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"people!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MOXICA",
+				"page": "Do you want her?",
+				"screen": "Then you can have her.",
+				"pageWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"want",
+						false
+					],
+					[
+						"her?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Then",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"her.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ISABEL",
+				"page": "We have decided to allow you to undertake another voyage to the new world...",
+				"screen": "I allow you to undertake another voyage.",
+				"pageWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"decided",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"allow",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"undertake",
+						true
+					],
+					[
+						"another",
+						true
+					],
+					[
+						"voyage",
+						true
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"new",
+						false
+					],
+					[
+						"world...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"allow",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"undertake",
+						true
+					],
+					[
+						"another",
+						true
+					],
+					[
+						"voyage.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,981 @@
+{
+	"_id": "tt1483013",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 28,
+		"eligible": 16,
+		"rejected": {
+			"duplicate": 11,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1953659467",
+		"versions": [
+			"1954557366",
+			"1953659467",
+			"1953646899",
+			"1953645125",
+			"1953643298",
+			"1957849483",
+			"1953547245",
+			"1959186502",
+			"1953665202"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9472325293178407,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7440,
+	"quality": {
+		"anchoredShare": 0.05810995891215026
+	},
+	"excluded": "the subtitles match the script no better than chance",
+	"words": {
+		"page": 10222,
+		"screen": 5039,
+		"kept": 594,
+		"cut": 9628,
+		"notInScript": 4445,
+		"moved": 71
+	},
+	"lines": {
+		"page": 515,
+		"kept": 22,
+		"changed": 61,
+		"cut": 432,
+		"screen": 985,
+		"notInScript": 828
+	},
+	"byGender": {
+		"w": {
+			"lines": 200,
+			"kept": 13,
+			"changed": 23,
+			"cut": 164
+		},
+		"m": {
+			"lines": 294,
+			"kept": 8,
+			"changed": 37,
+			"cut": 249
+		},
+		"unknown": {
+			"lines": 21,
+			"kept": 1,
+			"changed": 1,
+			"cut": 19
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"changed": 4
+		},
+		{
+			"kept": 1,
+			"cut": 10
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"kept": 2,
+			"cut": 9
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"cut": 6,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"cut": 5,
+			"kept": 4
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"kept": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"changed": 1,
+			"cut": 9
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"changed": 1,
+			"cut": 9
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 10
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"kept": 1,
+			"changed": 4,
+			"cut": 6
+		},
+		{
+			"cut": 7,
+			"changed": 2,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 40,
+			"notInScript": 145
+		},
+		{
+			"scripted": 25,
+			"notInScript": 139
+		},
+		{
+			"scripted": 7,
+			"notInScript": 252
+		},
+		{
+			"scripted": 7,
+			"notInScript": 157
+		},
+		{
+			"scripted": 67,
+			"notInScript": 95
+		},
+		{
+			"scripted": 16,
+			"notInScript": 77
+		},
+		{
+			"scripted": 7,
+			"notInScript": 75
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 64
+		},
+		{
+			"scripted": 76,
+			"notInScript": 46
+		},
+		{
+			"scripted": 29,
+			"notInScript": 84
+		},
+		{
+			"scripted": 23,
+			"notInScript": 99
+		},
+		{
+			"scripted": 32,
+			"notInScript": 105
+		},
+		{
+			"scripted": 14,
+			"notInScript": 54
+		},
+		{
+			"scripted": 25,
+			"notInScript": 158
+		},
+		{
+			"scripted": 31,
+			"notInScript": 41
+		},
+		{
+			"scripted": 35,
+			"notInScript": 66
+		},
+		{
+			"scripted": 30,
+			"notInScript": 130
+		},
+		{
+			"scripted": 62,
+			"notInScript": 55
+		},
+		{
+			"scripted": 41,
+			"notInScript": 22
+		},
+		{
+			"scripted": 5,
+			"notInScript": 79
+		},
+		{
+			"scripted": 60,
+			"notInScript": 130
+		},
+		{
+			"scripted": 46,
+			"notInScript": 154
+		},
+		{
+			"scripted": 15,
+			"notInScript": 77
+		},
+		{
+			"scripted": 13,
+			"notInScript": 105
+		},
+		{
+			"scripted": 27,
+			"notInScript": 54
+		},
+		{
+			"scripted": 30,
+			"notInScript": 100
+		},
+		{
+			"scripted": 5,
+			"notInScript": 139
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 5,
+			"notInScript": 20
+		},
+		{
+			"scripted": 0,
+			"notInScript": 24
+		},
+		{
+			"scripted": 0,
+			"notInScript": 18
+		},
+		{
+			"scripted": 6,
+			"notInScript": 86
+		},
+		{
+			"scripted": 8,
+			"notInScript": 73
+		},
+		{
+			"scripted": 4,
+			"notInScript": 76
+		},
+		{
+			"scripted": 0,
+			"notInScript": 186
+		},
+		{
+			"scripted": 0,
+			"notInScript": 159
+		},
+		{
+			"scripted": 0,
+			"notInScript": 18
+		},
+		{
+			"scripted": 7,
+			"notInScript": 1
+		},
+		{
+			"scripted": 5,
+			"notInScript": 57
+		},
+		{
+			"scripted": 13,
+			"notInScript": 168
+		},
+		{
+			"scripted": 29,
+			"notInScript": 214
+		},
+		{
+			"scripted": 10,
+			"notInScript": 37
+		},
+		{
+			"scripted": 33,
+			"notInScript": 83
+		},
+		{
+			"scripted": 52,
+			"notInScript": 45
+		},
+		{
+			"scripted": 15,
+			"notInScript": 91
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 9,
+				"kept": 1,
+				"changed": 1,
+				"cut": 7
+			},
+			"other": {
+				"lines": 179,
+				"kept": 12,
+				"changed": 22,
+				"cut": 145
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 71,
+				"kept": 2,
+				"changed": 10,
+				"cut": 59
+			},
+			"other": {
+				"lines": 223,
+				"kept": 6,
+				"changed": 27,
+				"cut": 190
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "VICTORIA",
+				"text": "I'm sorry, I don't think it's funny."
+			},
+			{
+				"speaker": "JACK",
+				"text": "You're safe. You're in a skytower, on Earth."
+			},
+			{
+				"speaker": "JACK",
+				"text": "The Scavs took everything from us. And if you're working with them --"
+			},
+			{
+				"speaker": "JACK",
+				"text": "When I sleep. You're always there. She kisses him."
+			},
+			{
+				"speaker": "JULIA",
+				"text": "There is a way. Julia stands in the doorway to the library."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 372,
+				"text": "And we have Tet contact."
+			},
+			{
+				"at": 1733,
+				"text": "Your directive is to protect them."
+			},
+			{
+				"at": 3269,
+				"text": "My memory has been wiped to protect... the security of the mission."
+			},
+			{
+				"at": 4996,
+				"text": "That bogey came across the border and then I lost you."
+			},
+			{
+				"at": 6396,
+				"text": "Tech-49, I have you on approach."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "VICTORIA",
+				"page": "Where did you find this?",
+				"screen": "Where did you get this?",
+				"pageWords": [
+					[
+						"Where",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"find",
+						false
+					],
+					[
+						"this?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Where",
+						true
+					],
+					[
+						"did",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"this?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "VICTORIA",
+				"page": "I don't know what the machinery did or didn't do. There's protocol...",
+				"screen": "I don't know what you are, or where you're from, but I'd like to tell you about something I read.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"machinery",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"or",
+						false
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"do.",
+						false
+					],
+					[
+						"There's",
+						false
+					],
+					[
+						"protocol...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"are,",
+						false
+					],
+					[
+						"or",
+						false
+					],
+					[
+						"where",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"from,",
+						false
+					],
+					[
+						"but",
+						false
+					],
+					[
+						"I'd",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"something",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"read.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JACK",
+				"page": ".There was a transmission. I don't know who sent it.",
+				"screen": "We don't know who she is.",
+				"pageWords": [
+					[
+						".There",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"transmission.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"sent",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"she",
+						false
+					],
+					[
+						"is.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JACK",
+				"page": "No, they're programmed to",
+				"screen": "The drones are programmed... To kill humans, Jack.",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"they're",
+						false
+					],
+					[
+						"programmed",
+						true
+					],
+					[
+						"to",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"drones",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"programmed...",
+						true
+					],
+					[
+						"To",
+						true
+					],
+					[
+						"kill",
+						false
+					],
+					[
+						"humans,",
+						false
+					],
+					[
+						"Jack.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JACK",
+				"page": "This is Technician Jack Harper. The signal goes out. Beat. Beat...",
+				"screen": "Mission, this is Tower 49.",
+				"pageWords": [
+					[
+						"This",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"Technician",
+						false
+					],
+					[
+						"Jack",
+						false
+					],
+					[
+						"Harper.",
+						false
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"signal",
+						false
+					],
+					[
+						"goes",
+						false
+					],
+					[
+						"out.",
+						false
+					],
+					[
+						"Beat.",
+						false
+					],
+					[
+						"Beat...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Mission,",
+						false
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"Tower",
+						false
+					],
+					[
+						"49.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

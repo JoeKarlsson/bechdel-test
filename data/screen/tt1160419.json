@@ -1,0 +1,969 @@
+{
+	"_id": "tt1160419",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 13,
+		"eligible": 7,
+		"rejected": {
+			"duplicate": 5,
+			"too few lines": 1
+		},
+		"used": 7,
+		"primary": "1957415427",
+		"versions": [
+			"1957879248",
+			"1957463209",
+			"1958491881",
+			"1957481417",
+			"1957415427",
+			"1957415481",
+			"1961295721"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9882951867609097,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9300,
+	"quality": {
+		"anchoredShare": 0.6410024154589372
+	},
+	"words": {
+		"page": 6624,
+		"screen": 6569,
+		"kept": 4246,
+		"cut": 2378,
+		"notInScript": 2323,
+		"moved": 183
+	},
+	"lines": {
+		"page": 656,
+		"kept": 408,
+		"changed": 72,
+		"cut": 176,
+		"screen": 1244,
+		"notInScript": 411
+	},
+	"byGender": {
+		"w": {
+			"lines": 190,
+			"kept": 118,
+			"changed": 14,
+			"cut": 58
+		},
+		"m": {
+			"lines": 439,
+			"kept": 284,
+			"changed": 49,
+			"cut": 106
+		},
+		"unknown": {
+			"lines": 27,
+			"kept": 6,
+			"changed": 9,
+			"cut": 12
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 4,
+			"kept": 10
+		},
+		{
+			"cut": 3,
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 7
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"changed": 1,
+			"kept": 7
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 12
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 10
+		},
+		{
+			"kept": 12,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"cut": 5
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"changed": 1,
+			"kept": 11
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 3,
+			"cut": 5,
+			"changed": 6
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"cut": 5,
+			"kept": 8,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"kept": 8,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"kept": 7
+		},
+		{
+			"cut": 3,
+			"changed": 1,
+			"kept": 10
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 9
+		},
+		{
+			"kept": 6,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"cut": 1,
+			"kept": 12
+		},
+		{
+			"changed": 4,
+			"kept": 7,
+			"cut": 3
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"changed": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 112
+		},
+		{
+			"scripted": 68,
+			"notInScript": 118
+		},
+		{
+			"scripted": 137,
+			"notInScript": 60
+		},
+		{
+			"scripted": 135,
+			"notInScript": 61
+		},
+		{
+			"scripted": 154,
+			"notInScript": 151
+		},
+		{
+			"scripted": 178,
+			"notInScript": 33
+		},
+		{
+			"scripted": 119,
+			"notInScript": 7
+		},
+		{
+			"scripted": 157,
+			"notInScript": 8
+		},
+		{
+			"scripted": 153,
+			"notInScript": 13
+		},
+		{
+			"scripted": 230,
+			"notInScript": 7
+		},
+		{
+			"scripted": 12,
+			"notInScript": 0
+		},
+		{
+			"scripted": 137,
+			"notInScript": 52
+		},
+		{
+			"scripted": 141,
+			"notInScript": 56
+		},
+		{
+			"scripted": 120,
+			"notInScript": 95
+		},
+		{
+			"scripted": 62,
+			"notInScript": 125
+		},
+		{
+			"scripted": 232,
+			"notInScript": 38
+		},
+		{
+			"scripted": 359,
+			"notInScript": 12
+		},
+		{
+			"scripted": 231,
+			"notInScript": 66
+		},
+		{
+			"scripted": 190,
+			"notInScript": 9
+		},
+		{
+			"scripted": 192,
+			"notInScript": 109
+		},
+		{
+			"scripted": 36,
+			"notInScript": 65
+		},
+		{
+			"scripted": 128,
+			"notInScript": 38
+		},
+		{
+			"scripted": 39,
+			"notInScript": 59
+		},
+		{
+			"scripted": 14,
+			"notInScript": 101
+		},
+		{
+			"scripted": 12,
+			"notInScript": 11
+		},
+		{
+			"scripted": 106,
+			"notInScript": 4
+		},
+		{
+			"scripted": 1,
+			"notInScript": 3
+		},
+		{
+			"scripted": 45,
+			"notInScript": 21
+		},
+		{
+			"scripted": 61,
+			"notInScript": 23
+		},
+		{
+			"scripted": 63,
+			"notInScript": 9
+		},
+		{
+			"scripted": 48,
+			"notInScript": 28
+		},
+		{
+			"scripted": 85,
+			"notInScript": 35
+		},
+		{
+			"scripted": 150,
+			"notInScript": 34
+		},
+		{
+			"scripted": 161,
+			"notInScript": 33
+		},
+		{
+			"scripted": 17,
+			"notInScript": 32
+		},
+		{
+			"scripted": 65,
+			"notInScript": 5
+		},
+		{
+			"scripted": 27,
+			"notInScript": 52
+		},
+		{
+			"scripted": 79,
+			"notInScript": 10
+		},
+		{
+			"scripted": 16,
+			"notInScript": 8
+		},
+		{
+			"scripted": 37,
+			"notInScript": 97
+		},
+		{
+			"scripted": 4,
+			"notInScript": 28
+		},
+		{
+			"scripted": 170,
+			"notInScript": 7
+		},
+		{
+			"scripted": 121,
+			"notInScript": 19
+		},
+		{
+			"scripted": 85,
+			"notInScript": 11
+		},
+		{
+			"scripted": 35,
+			"notInScript": 7
+		},
+		{
+			"scripted": 76,
+			"notInScript": 9
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 10.2,
+		"longest": 10.2,
+		"spans": [
+			[
+				6453.6,
+				6463.8
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 70,
+				"kept": 46,
+				"changed": 2,
+				"cut": 22
+			},
+			"other": {
+				"lines": 119,
+				"kept": 72,
+				"changed": 12,
+				"cut": 35
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 326,
+				"kept": 212,
+				"changed": 32,
+				"cut": 82
+			},
+			"other": {
+				"lines": 112,
+				"kept": 71,
+				"changed": 17,
+				"cut": 24
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "DUNCAN",
+				"text": "I hope the girl part's true!"
+			},
+			{
+				"speaker": "PAUL",
+				"text": "My father rules an entire planet."
+			},
+			{
+				"speaker": "SPOTTER ONE PILOT",
+				"text": "Contact in four minutes."
+			},
+			{
+				"speaker": "LETO",
+				"text": "I think you're afraid it might be true. Salmon Rev. 67."
+			},
+			{
+				"speaker": "JESSICA",
+				"text": "You're afraid. What do you see that you fear?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 387,
+				"text": "Fremen attacks make spice harvesting extremely hazardous."
+			},
+			{
+				"at": 2402,
+				"text": "Well, the Hand of God is wreaking havoc on our comms system."
+			},
+			{
+				"at": 3775,
+				"text": "Carryall unable to receive."
+			},
+			{
+				"at": 4547,
+				"text": "Good night, Dr. Yueh."
+			},
+			{
+				"at": 7612,
+				"text": "You'll need to face your fears."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DUNCAN",
+				"page": "You put on muscle!",
+				"screen": "Put on some muscle?",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"put",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"muscle!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Put",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"muscle?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LANVILLE",
+				"page": "My Lord, the sun is too high now. We have to seal the doors.",
+				"screen": "My lord. The sun's getting too high. We need to seal the doors.",
+				"pageWords": [
+					[
+						"My",
+						true
+					],
+					[
+						"Lord,",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"sun",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"too",
+						true
+					],
+					[
+						"high",
+						true
+					],
+					[
+						"now.",
+						false
+					],
+					[
+						"We",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"seal",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"doors.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"My",
+						true
+					],
+					[
+						"lord.",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"sun's",
+						false
+					],
+					[
+						"getting",
+						false
+					],
+					[
+						"too",
+						true
+					],
+					[
+						"high.",
+						true
+					],
+					[
+						"We",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"seal",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"doors.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CARRYALL PILOT",
+				"page": "Hydraulics are dead. We won't make it. You'll need to evacuate.",
+				"screen": "Hydraulics are dead. We won't make it.",
+				"pageWords": [
+					[
+						"Hydraulics",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"dead.",
+						true
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"won't",
+						true
+					],
+					[
+						"make",
+						true
+					],
+					[
+						"it.",
+						true
+					],
+					[
+						"You'll",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"evacuate.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Hydraulics",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"dead.",
+						true
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"won't",
+						true
+					],
+					[
+						"make",
+						true
+					],
+					[
+						"it.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JESSICA",
+				"page": "You have to sleep.",
+				"screen": "You need to sleep.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"sleep.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"sleep.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "RABBAN",
+				"page": "Yes, Uncle. And the Fremen? Salmon Rev. 99.",
+				"screen": "Yes, Uncle. And the Fremen?",
+				"pageWords": [
+					[
+						"Yes,",
+						true
+					],
+					[
+						"Uncle.",
+						true
+					],
+					[
+						"And",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Fremen?",
+						false
+					],
+					[
+						"Salmon",
+						false
+					],
+					[
+						"Rev.",
+						false
+					],
+					[
+						"99.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yes,",
+						true
+					],
+					[
+						"Uncle.",
+						true
+					],
+					[
+						"And",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Fremen?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

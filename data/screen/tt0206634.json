@@ -1,0 +1,942 @@
+{
+	"_id": "tt0206634",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 52,
+		"eligible": 28,
+		"rejected": {
+			"split across CDs": 10,
+			"duplicate": 14
+		},
+		"used": 9,
+		"primary": "1951670085",
+		"versions": [
+			"1951670085",
+			"1952952454",
+			"1951728587",
+			"1952073444",
+			"1956250238",
+			"1952458348",
+			"1957273310",
+			"1954700675",
+			"1955447711"
+		],
+		"sdh": true,
+		"meanAgreement": 0.996697658484726,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6540,
+	"quality": {
+		"anchoredShare": 0.13898349489127587
+	},
+	"words": {
+		"page": 7634,
+		"screen": 7425,
+		"kept": 1061,
+		"cut": 6573,
+		"notInScript": 6364,
+		"moved": 111
+	},
+	"lines": {
+		"page": 859,
+		"kept": 101,
+		"changed": 105,
+		"cut": 651,
+		"screen": 1685,
+		"notInScript": 1383
+	},
+	"byGender": {
+		"w": {
+			"lines": 251,
+			"kept": 32,
+			"changed": 34,
+			"cut": 185
+		},
+		"m": {
+			"lines": 501,
+			"kept": 60,
+			"changed": 64,
+			"cut": 377
+		},
+		"unknown": {
+			"lines": 105,
+			"kept": 9,
+			"changed": 7,
+			"cut": 89
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 5,
+			"cut": 10,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 1,
+			"cut": 17
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"changed": 3,
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"changed": 6,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 15,
+			"kept": 3
+		},
+		{
+			"cut": 9,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 13,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 5
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"changed": 2,
+			"cut": 15
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 4
+		},
+		{
+			"kept": 1,
+			"cut": 16
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 10
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"cut": 17
+		},
+		{
+			"cut": 15,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 16,
+			"kept": 2
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 112,
+			"notInScript": 63
+		},
+		{
+			"scripted": 0,
+			"notInScript": 121
+		},
+		{
+			"scripted": 62,
+			"notInScript": 133
+		},
+		{
+			"scripted": 78,
+			"notInScript": 142
+		},
+		{
+			"scripted": 25,
+			"notInScript": 227
+		},
+		{
+			"scripted": 28,
+			"notInScript": 161
+		},
+		{
+			"scripted": 35,
+			"notInScript": 331
+		},
+		{
+			"scripted": 18,
+			"notInScript": 50
+		},
+		{
+			"scripted": 62,
+			"notInScript": 146
+		},
+		{
+			"scripted": 12,
+			"notInScript": 145
+		},
+		{
+			"scripted": 27,
+			"notInScript": 235
+		},
+		{
+			"scripted": 78,
+			"notInScript": 238
+		},
+		{
+			"scripted": 46,
+			"notInScript": 174
+		},
+		{
+			"scripted": 0,
+			"notInScript": 82
+		},
+		{
+			"scripted": 73,
+			"notInScript": 146
+		},
+		{
+			"scripted": 108,
+			"notInScript": 133
+		},
+		{
+			"scripted": 23,
+			"notInScript": 408
+		},
+		{
+			"scripted": 66,
+			"notInScript": 281
+		},
+		{
+			"scripted": 28,
+			"notInScript": 158
+		},
+		{
+			"scripted": 37,
+			"notInScript": 119
+		},
+		{
+			"scripted": 36,
+			"notInScript": 107
+		},
+		{
+			"scripted": 105,
+			"notInScript": 89
+		},
+		{
+			"scripted": 40,
+			"notInScript": 124
+		},
+		{
+			"scripted": 34,
+			"notInScript": 221
+		},
+		{
+			"scripted": 2,
+			"notInScript": 112
+		},
+		{
+			"scripted": 0,
+			"notInScript": 55
+		},
+		{
+			"scripted": 12,
+			"notInScript": 159
+		},
+		{
+			"scripted": 125,
+			"notInScript": 105
+		},
+		{
+			"scripted": 22,
+			"notInScript": 143
+		},
+		{
+			"scripted": 44,
+			"notInScript": 129
+		},
+		{
+			"scripted": 14,
+			"notInScript": 166
+		},
+		{
+			"scripted": 22,
+			"notInScript": 184
+		},
+		{
+			"scripted": 83,
+			"notInScript": 118
+		},
+		{
+			"scripted": 69,
+			"notInScript": 147
+		},
+		{
+			"scripted": 6,
+			"notInScript": 40
+		},
+		{
+			"scripted": 12,
+			"notInScript": 104
+		},
+		{
+			"scripted": 10,
+			"notInScript": 108
+		},
+		{
+			"scripted": 0,
+			"notInScript": 15
+		},
+		{
+			"scripted": 14,
+			"notInScript": 61
+		},
+		{
+			"scripted": 0,
+			"notInScript": 33
+		},
+		{
+			"scripted": 11,
+			"notInScript": 17
+		},
+		{
+			"scripted": 11,
+			"notInScript": 89
+		},
+		{
+			"scripted": 4,
+			"notInScript": 12
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 9,
+		"longest": 5.7,
+		"spans": [
+			[
+				3977.9,
+				3983.6
+			],
+			[
+				4527.1,
+				4530.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 94,
+				"kept": 9,
+				"changed": 12,
+				"cut": 73
+			},
+			"other": {
+				"lines": 149,
+				"kept": 23,
+				"changed": 22,
+				"cut": 104
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 302,
+				"kept": 36,
+				"changed": 41,
+				"cut": 225
+			},
+			"other": {
+				"lines": 186,
+				"kept": 19,
+				"changed": 21,
+				"cut": 146
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "THEO",
+				"text": "Naked was your idea."
+			},
+			{
+				"speaker": "JASPER",
+				"text": "She left a note. I didn't get here in time."
+			},
+			{
+				"speaker": "MIRIAM",
+				"text": "We're very well aware of it."
+			},
+			{
+				"speaker": "MIRIAM",
+				"text": "She had a contraction. It's normal."
+			},
+			{
+				"speaker": "SYD",
+				"text": "Okay, move. Let's go."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 638,
+				"text": "My ears are still ringing from earlier."
+			},
+			{
+				"at": 1493,
+				"text": "Is this the girl?"
+			},
+			{
+				"at": 2326,
+				"text": "I have my baby here..."
+			},
+			{
+				"at": 3255,
+				"text": "Wait for Syd at the old school on Watchbell Road in Rye."
+			},
+			{
+				"at": 4490,
+				"text": "Well, if it's nothing, then I can have a look."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "JULIAN",
+				"page": "That's not the point. He can get you a visa. He's your friend. You never asked your friends for help.",
+				"screen": "I can get you £5,000.",
+				"pageWords": [
+					[
+						"That's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"point.",
+						false
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"visa.",
+						false
+					],
+					[
+						"He's",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"friend.",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"never",
+						false
+					],
+					[
+						"asked",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"friends",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"help.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"£5,000.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MIRIAM",
+				"page": "Don't, Luke. Get in. Now!",
+				"screen": "Get in the fucking car!",
+				"pageWords": [
+					[
+						"Don't,",
+						false
+					],
+					[
+						"Luke.",
+						false
+					],
+					[
+						"Get",
+						true
+					],
+					[
+						"in.",
+						true
+					],
+					[
+						"Now!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Get",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"fucking",
+						false
+					],
+					[
+						"car!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "THEO",
+				"page": "In France? You know what's going on in France?",
+				"screen": "Now you know what's at stake.",
+				"pageWords": [
+					[
+						"In",
+						false
+					],
+					[
+						"France?",
+						false
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what's",
+						true
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"France?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Now",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what's",
+						true
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"stake.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JASPER",
+				"page": "Theo, you go first.",
+				"screen": "Yeah, there you go.",
+				"pageWords": [
+					[
+						"Theo,",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"go",
+						true
+					],
+					[
+						"first.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"go.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "THEO",
+				"page": "we need it before sunset",
+				"screen": "We need to go.",
+				"pageWords": [
+					[
+						"we",
+						true
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"before",
+						false
+					],
+					[
+						"sunset",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						true
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"go.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

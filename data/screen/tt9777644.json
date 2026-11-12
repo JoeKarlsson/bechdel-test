@@ -1,0 +1,985 @@
+{
+	"_id": "tt9777644",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 4,
+		"eligible": 2,
+		"rejected": {
+			"duplicate": 2
+		},
+		"used": 2,
+		"primary": "1956812566",
+		"versions": [
+			"1956812566",
+			"1956812702"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9994703389830508,
+		"lyricsDropped": 100
+	},
+	"runtimeSeconds": 9300,
+	"quality": {
+		"anchoredShare": 0.24879022966433673
+	},
+	"words": {
+		"page": 13019,
+		"screen": 11327,
+		"kept": 3234,
+		"cut": 9785,
+		"notInScript": 8088,
+		"moved": 97
+	},
+	"lines": {
+		"page": 1068,
+		"kept": 249,
+		"changed": 222,
+		"cut": 597,
+		"screen": 2442,
+		"notInScript": 1719
+	},
+	"byGender": {
+		"w": {
+			"lines": 94,
+			"kept": 23,
+			"changed": 14,
+			"cut": 57
+		},
+		"m": {
+			"lines": 944,
+			"kept": 224,
+			"changed": 203,
+			"cut": 517
+		},
+		"unknown": {
+			"lines": 30,
+			"kept": 2,
+			"changed": 5,
+			"cut": 23
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 22,
+			"kept": 1
+		},
+		{
+			"cut": 22
+		},
+		{
+			"cut": 19,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"kept": 10,
+			"cut": 7
+		},
+		{
+			"cut": 16,
+			"changed": 7
+		},
+		{
+			"cut": 11,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 9
+		},
+		{
+			"kept": 8,
+			"changed": 9,
+			"cut": 5
+		},
+		{
+			"kept": 4,
+			"changed": 4,
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"kept": 4,
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 11
+		},
+		{
+			"changed": 9,
+			"kept": 9,
+			"cut": 4
+		},
+		{
+			"changed": 4,
+			"cut": 15,
+			"kept": 3
+		},
+		{
+			"cut": 18,
+			"changed": 4
+		},
+		{
+			"changed": 7,
+			"kept": 5,
+			"cut": 11
+		},
+		{
+			"kept": 5,
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 12
+		},
+		{
+			"cut": 16,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"kept": 5,
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"changed": 10,
+			"cut": 5,
+			"kept": 7
+		},
+		{
+			"kept": 6,
+			"changed": 7,
+			"cut": 9
+		},
+		{
+			"changed": 9,
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"changed": 11,
+			"cut": 6,
+			"kept": 5
+		},
+		{
+			"kept": 4,
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 20,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"kept": 5,
+			"changed": 8
+		},
+		{
+			"cut": 10,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"cut": 10,
+			"kept": 8
+		},
+		{
+			"changed": 6,
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 6
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"cut": 20,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 7,
+			"kept": 5
+		},
+		{
+			"kept": 9,
+			"cut": 9,
+			"changed": 4
+		},
+		{
+			"cut": 12,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 8
+		},
+		{
+			"changed": 7,
+			"kept": 3,
+			"cut": 12
+		},
+		{
+			"cut": 19,
+			"changed": 3
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 13,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 11
+		},
+		{
+			"cut": 16,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"changed": 4,
+			"kept": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 285
+		},
+		{
+			"scripted": 118,
+			"notInScript": 194
+		},
+		{
+			"scripted": 212,
+			"notInScript": 268
+		},
+		{
+			"scripted": 103,
+			"notInScript": 117
+		},
+		{
+			"scripted": 4,
+			"notInScript": 58
+		},
+		{
+			"scripted": 195,
+			"notInScript": 168
+		},
+		{
+			"scripted": 124,
+			"notInScript": 47
+		},
+		{
+			"scripted": 118,
+			"notInScript": 135
+		},
+		{
+			"scripted": 194,
+			"notInScript": 154
+		},
+		{
+			"scripted": 319,
+			"notInScript": 68
+		},
+		{
+			"scripted": 76,
+			"notInScript": 44
+		},
+		{
+			"scripted": 44,
+			"notInScript": 152
+		},
+		{
+			"scripted": 62,
+			"notInScript": 276
+		},
+		{
+			"scripted": 88,
+			"notInScript": 173
+		},
+		{
+			"scripted": 107,
+			"notInScript": 402
+		},
+		{
+			"scripted": 90,
+			"notInScript": 119
+		},
+		{
+			"scripted": 63,
+			"notInScript": 262
+		},
+		{
+			"scripted": 193,
+			"notInScript": 100
+		},
+		{
+			"scripted": 172,
+			"notInScript": 139
+		},
+		{
+			"scripted": 116,
+			"notInScript": 46
+		},
+		{
+			"scripted": 222,
+			"notInScript": 206
+		},
+		{
+			"scripted": 41,
+			"notInScript": 207
+		},
+		{
+			"scripted": 72,
+			"notInScript": 311
+		},
+		{
+			"scripted": 220,
+			"notInScript": 104
+		},
+		{
+			"scripted": 73,
+			"notInScript": 50
+		},
+		{
+			"scripted": 85,
+			"notInScript": 143
+		},
+		{
+			"scripted": 98,
+			"notInScript": 230
+		},
+		{
+			"scripted": 19,
+			"notInScript": 259
+		},
+		{
+			"scripted": 169,
+			"notInScript": 135
+		},
+		{
+			"scripted": 110,
+			"notInScript": 115
+		},
+		{
+			"scripted": 153,
+			"notInScript": 133
+		},
+		{
+			"scripted": 217,
+			"notInScript": 60
+		},
+		{
+			"scripted": 15,
+			"notInScript": 259
+		},
+		{
+			"scripted": 199,
+			"notInScript": 142
+		},
+		{
+			"scripted": 56,
+			"notInScript": 162
+		},
+		{
+			"scripted": 56,
+			"notInScript": 37
+		},
+		{
+			"scripted": 22,
+			"notInScript": 156
+		},
+		{
+			"scripted": 48,
+			"notInScript": 49
+		},
+		{
+			"scripted": 39,
+			"notInScript": 133
+		},
+		{
+			"scripted": 17,
+			"notInScript": 63
+		},
+		{
+			"scripted": 92,
+			"notInScript": 61
+		},
+		{
+			"scripted": 94,
+			"notInScript": 119
+		},
+		{
+			"scripted": 43,
+			"notInScript": 27
+		},
+		{
+			"scripted": 78,
+			"notInScript": 97
+		},
+		{
+			"scripted": 17,
+			"notInScript": 160
+		},
+		{
+			"scripted": 0,
+			"notInScript": 47
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 5,
+				"kept": 1,
+				"changed": 0,
+				"cut": 4
+			},
+			"other": {
+				"lines": 89,
+				"kept": 22,
+				"changed": 14,
+				"cut": 53
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 837,
+				"kept": 204,
+				"changed": 189,
+				"cut": 444
+			},
+			"other": {
+				"lines": 107,
+				"kept": 20,
+				"changed": 14,
+				"cut": 73
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MELVIN",
+				"text": "Talk? We can talk later!"
+			},
+			{
+				"speaker": "OTIS",
+				"text": "Do you remember what I said that last day at The Airport."
+			},
+			{
+				"speaker": "DAVID",
+				"text": "We should head back. Hedy nods, understanding."
+			},
+			{
+				"speaker": "PAUL",
+				"text": "Fuck Dat Shit. Eddie’s Family got Money. This is between Us."
+			},
+			{
+				"speaker": "OTIS",
+				"text": "Hedy, can you find me something to tie it? Otis feels David’s forehead."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 599,
+				"text": "Those two right there."
+			},
+			{
+				"at": 2755,
+				"text": "Man, it's just a goddamn chicken."
+			},
+			{
+				"at": 4036,
+				"text": "Otis and Eddie think they slick."
+			},
+			{
+				"at": 5359,
+				"text": "Otis, back on up."
+			},
+			{
+				"at": 7147,
+				"text": "I think that wound is infected."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "PAUL",
+				"page": "Eddie what you gonna’ do with your share? Buy another yacht?",
+				"screen": "What you gonna do, David?",
+				"pageWords": [
+					[
+						"Eddie",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"gonna’",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"share?",
+						false
+					],
+					[
+						"Buy",
+						false
+					],
+					[
+						"another",
+						false
+					],
+					[
+						"yacht?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"gonna",
+						true
+					],
+					[
+						"do,",
+						true
+					],
+					[
+						"David?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DAVID",
+				"page": "You’re here for the Gold, aren’t you? Paul goes quiet. Can’t believe he said it.",
+				"screen": "You're here for the gold.",
+				"pageWords": [
+					[
+						"You’re",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Gold,",
+						true
+					],
+					[
+						"aren’t",
+						false
+					],
+					[
+						"you?",
+						false
+					],
+					[
+						"Paul",
+						false
+					],
+					[
+						"goes",
+						false
+					],
+					[
+						"quiet.",
+						false
+					],
+					[
+						"Can’t",
+						false
+					],
+					[
+						"believe",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"said",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"gold.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DAVID",
+				"page": "They’re Leopards out there.",
+				"screen": "There are leopards out here?",
+				"pageWords": [
+					[
+						"They’re",
+						false
+					],
+					[
+						"Leopards",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"there.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"There",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"leopards",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"here?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "OTIS",
+				"page": "Let’s talk about dis.",
+				"screen": "Let's just talk about it.",
+				"pageWords": [
+					[
+						"Let’s",
+						false
+					],
+					[
+						"talk",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"dis.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Let's",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"talk",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"it.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "VINH",
+				"page": "I can help you get it out of The Country. Otis looks at Melvin. He nods.",
+				"screen": "I can help you get it out of the country.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"help",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"Country.",
+						true
+					],
+					[
+						"Otis",
+						false
+					],
+					[
+						"looks",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"Melvin.",
+						false
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"nods.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"help",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"country.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,964 @@
+{
+	"_id": "tt0423510",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 6,
+		"eligible": 4,
+		"rejected": {
+			"split across CDs": 2
+		},
+		"used": 4,
+		"primary": "1956964636",
+		"versions": [
+			"1954969129",
+			"1956964636",
+			"1957828289",
+			"1956964645"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9571690268865258,
+		"lyricsDropped": 128
+	},
+	"runtimeSeconds": 7260,
+	"quality": {
+		"anchoredShare": 0.8014248558181613
+	},
+	"words": {
+		"page": 8843,
+		"screen": 10281,
+		"kept": 7081,
+		"cut": 1762,
+		"notInScript": 3194,
+		"moved": 128
+	},
+	"lines": {
+		"page": 864,
+		"kept": 692,
+		"changed": 61,
+		"cut": 111,
+		"screen": 1847,
+		"notInScript": 668
+	},
+	"byGender": {
+		"w": {
+			"lines": 199,
+			"kept": 165,
+			"changed": 15,
+			"cut": 19
+		},
+		"m": {
+			"lines": 569,
+			"kept": 465,
+			"changed": 38,
+			"cut": 66
+		},
+		"unknown": {
+			"lines": 96,
+			"kept": 62,
+			"changed": 8,
+			"cut": 26
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 8,
+			"changed": 2,
+			"kept": 8
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 5
+		},
+		{
+			"kept": 9,
+			"changed": 2,
+			"cut": 7
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"cut": 5
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 7,
+			"kept": 9
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"kept": 14
+		},
+		{
+			"kept": 14,
+			"changed": 4
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 7,
+			"cut": 1
+		},
+		{
+			"changed": 1,
+			"kept": 15,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"cut": 6
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 5,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"changed": 3
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 13
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 91,
+			"notInScript": 113
+		},
+		{
+			"scripted": 271,
+			"notInScript": 45
+		},
+		{
+			"scripted": 127,
+			"notInScript": 10
+		},
+		{
+			"scripted": 160,
+			"notInScript": 102
+		},
+		{
+			"scripted": 65,
+			"notInScript": 193
+		},
+		{
+			"scripted": 219,
+			"notInScript": 34
+		},
+		{
+			"scripted": 77,
+			"notInScript": 38
+		},
+		{
+			"scripted": 284,
+			"notInScript": 33
+		},
+		{
+			"scripted": 240,
+			"notInScript": 48
+		},
+		{
+			"scripted": 181,
+			"notInScript": 37
+		},
+		{
+			"scripted": 88,
+			"notInScript": 97
+		},
+		{
+			"scripted": 48,
+			"notInScript": 79
+		},
+		{
+			"scripted": 176,
+			"notInScript": 13
+		},
+		{
+			"scripted": 136,
+			"notInScript": 54
+		},
+		{
+			"scripted": 181,
+			"notInScript": 7
+		},
+		{
+			"scripted": 227,
+			"notInScript": 24
+		},
+		{
+			"scripted": 296,
+			"notInScript": 12
+		},
+		{
+			"scripted": 213,
+			"notInScript": 29
+		},
+		{
+			"scripted": 203,
+			"notInScript": 13
+		},
+		{
+			"scripted": 132,
+			"notInScript": 49
+		},
+		{
+			"scripted": 239,
+			"notInScript": 55
+		},
+		{
+			"scripted": 174,
+			"notInScript": 38
+		},
+		{
+			"scripted": 228,
+			"notInScript": 1
+		},
+		{
+			"scripted": 134,
+			"notInScript": 127
+		},
+		{
+			"scripted": 127,
+			"notInScript": 97
+		},
+		{
+			"scripted": 344,
+			"notInScript": 28
+		},
+		{
+			"scripted": 255,
+			"notInScript": 71
+		},
+		{
+			"scripted": 155,
+			"notInScript": 30
+		},
+		{
+			"scripted": 285,
+			"notInScript": 44
+		},
+		{
+			"scripted": 128,
+			"notInScript": 73
+		},
+		{
+			"scripted": 274,
+			"notInScript": 58
+		},
+		{
+			"scripted": 65,
+			"notInScript": 25
+		},
+		{
+			"scripted": 123,
+			"notInScript": 2
+		},
+		{
+			"scripted": 229,
+			"notInScript": 37
+		},
+		{
+			"scripted": 104,
+			"notInScript": 155
+		},
+		{
+			"scripted": 180,
+			"notInScript": 99
+		},
+		{
+			"scripted": 111,
+			"notInScript": 32
+		},
+		{
+			"scripted": 243,
+			"notInScript": 9
+		},
+		{
+			"scripted": 289,
+			"notInScript": 16
+		},
+		{
+			"scripted": 97,
+			"notInScript": 30
+		},
+		{
+			"scripted": 180,
+			"notInScript": 20
+		},
+		{
+			"scripted": 252,
+			"notInScript": 31
+		},
+		{
+			"scripted": 162,
+			"notInScript": 18
+		},
+		{
+			"scripted": 112,
+			"notInScript": 56
+		},
+		{
+			"scripted": 103,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 78
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 5.4,
+		"longest": 5.4,
+		"spans": [
+			[
+				948.4,
+				953.8
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 37,
+				"kept": 29,
+				"changed": 3,
+				"cut": 5
+			},
+			"other": {
+				"lines": 153,
+				"kept": 130,
+				"changed": 10,
+				"cut": 13
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 401,
+				"kept": 327,
+				"changed": 32,
+				"cut": 42
+			},
+			"other": {
+				"lines": 155,
+				"kept": 130,
+				"changed": 4,
+				"cut": 21
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "FRANKLIN",
+				"text": "I humbly accept your nomination for Vice-President!"
+			},
+			{
+				"speaker": "STANLEY",
+				"text": "I don't think you can stay there anymore."
+			},
+			{
+				"speaker": "FRANKLIN",
+				"text": "I really don't know what to say."
+			},
+			{
+				"speaker": "DAISY",
+				"text": "Bless the food on our table. Keep us healthy, strong and able. Amen."
+			},
+			{
+				"speaker": "FRANKLIN",
+				"text": "I'm useless, Eleanor. I feel so useless."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 734,
+				"text": "Come on, come on."
+			},
+			{
+				"at": 1350,
+				"text": "No, listen to this..."
+			},
+			{
+				"at": 3058,
+				"text": "Come help us sing."
+			},
+			{
+				"at": 4640,
+				"text": "Our able-bodied guests are green with envy."
+			},
+			{
+				"at": 5753,
+				"text": "These will come off clean."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "LOUIS",
+				"page": "Give it a little time.",
+				"screen": "So give it some time, and we'll test it out.",
+				"pageWords": [
+					[
+						"Give",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"little",
+						false
+					],
+					[
+						"time.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"So",
+						false
+					],
+					[
+						"give",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"time,",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"we'll",
+						false
+					],
+					[
+						"test",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"out.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "FRANKLIN",
+				"page": "No, Elliot. Just your grandmama.",
+				"screen": "No, just your grandmamma.",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"Elliot.",
+						false
+					],
+					[
+						"Just",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"grandmama.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"grandmamma.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "TOM",
+				"page": "Roughly twelve hundred or so. Why?",
+				"screen": "About 1,200 or so, why?",
+				"pageWords": [
+					[
+						"Roughly",
+						false
+					],
+					[
+						"twelve",
+						false
+					],
+					[
+						"hundred",
+						false
+					],
+					[
+						"or",
+						true
+					],
+					[
+						"so.",
+						true
+					],
+					[
+						"Why?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"About",
+						false
+					],
+					[
+						"1,200",
+						false
+					],
+					[
+						"or",
+						true
+					],
+					[
+						"so,",
+						true
+					],
+					[
+						"why?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PAT",
+				"page": "Don't mind him, Tom. He's a cheap bastard.",
+				"screen": "He's a cheap bastard.",
+				"pageWords": [
+					[
+						"Don't",
+						false
+					],
+					[
+						"mind",
+						false
+					],
+					[
+						"him,",
+						false
+					],
+					[
+						"Tom.",
+						true
+					],
+					[
+						"He's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"cheap",
+						true
+					],
+					[
+						"bastard.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"He's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"cheap",
+						true
+					],
+					[
+						"bastard.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "FRANKLIN",
+				"page": "This is a very special night we're celebrating. At last we are together eating in this dining room!",
+				"screen": "Now this is, as you know, a very special night we're celebrating.",
+				"pageWords": [
+					[
+						"This",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"special",
+						true
+					],
+					[
+						"night",
+						true
+					],
+					[
+						"we're",
+						true
+					],
+					[
+						"celebrating.",
+						true
+					],
+					[
+						"At",
+						false
+					],
+					[
+						"last",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"together",
+						false
+					],
+					[
+						"eating",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"dining",
+						true
+					],
+					[
+						"room!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Now",
+						false
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"is,",
+						true
+					],
+					[
+						"as",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"know,",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"special",
+						true
+					],
+					[
+						"night",
+						true
+					],
+					[
+						"we're",
+						true
+					],
+					[
+						"celebrating.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

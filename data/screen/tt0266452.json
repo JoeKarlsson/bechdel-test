@@ -1,0 +1,983 @@
+{
+	"_id": "tt0266452",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 14,
+		"eligible": 10,
+		"rejected": {
+			"duplicate": 3,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "152188",
+		"versions": [
+			"34762",
+			"152188",
+			"1957734509",
+			"151871",
+			"184675",
+			"203611",
+			"35070",
+			"1956560075",
+			"1954369918"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9261259243219785,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6540,
+	"quality": {
+		"anchoredShare": 0.35062147903067153
+	},
+	"words": {
+		"page": 11183,
+		"screen": 9749,
+		"kept": 3921,
+		"cut": 7262,
+		"notInScript": 5828,
+		"moved": 220
+	},
+	"lines": {
+		"page": 785,
+		"kept": 205,
+		"changed": 251,
+		"cut": 328,
+		"screen": 1770,
+		"notInScript": 935
+	},
+	"byGender": {
+		"w": {
+			"lines": 163,
+			"kept": 65,
+			"changed": 46,
+			"cut": 52
+		},
+		"m": {
+			"lines": 579,
+			"kept": 130,
+			"changed": 198,
+			"cut": 251
+		},
+		"unknown": {
+			"lines": 42,
+			"kept": 10,
+			"changed": 7,
+			"cut": 25
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 2,
+			"kept": 7,
+			"changed": 8
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 7
+		},
+		{
+			"changed": 6,
+			"kept": 3,
+			"cut": 7
+		},
+		{
+			"cut": 8,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"cut": 5,
+			"changed": 8,
+			"kept": 4
+		},
+		{
+			"kept": 8,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 6
+		},
+		{
+			"cut": 6,
+			"changed": 8,
+			"kept": 3
+		},
+		{
+			"changed": 6,
+			"kept": 5,
+			"cut": 5
+		},
+		{
+			"changed": 7,
+			"kept": 3,
+			"cut": 6
+		},
+		{
+			"cut": 6,
+			"changed": 9,
+			"kept": 2
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"changed": 8,
+			"kept": 4,
+			"cut": 5
+		},
+		{
+			"cut": 4,
+			"changed": 6,
+			"kept": 6
+		},
+		{
+			"cut": 15,
+			"kept": 2
+		},
+		{
+			"kept": 3,
+			"cut": 8,
+			"changed": 5
+		},
+		{
+			"cut": 5,
+			"kept": 6,
+			"changed": 5
+		},
+		{
+			"changed": 7,
+			"kept": 7,
+			"cut": 3
+		},
+		{
+			"changed": 9,
+			"kept": 4,
+			"cut": 3
+		},
+		{
+			"cut": 8,
+			"kept": 2,
+			"changed": 6
+		},
+		{
+			"changed": 9,
+			"kept": 2,
+			"cut": 6
+		},
+		{
+			"changed": 7,
+			"cut": 8,
+			"kept": 1
+		},
+		{
+			"changed": 5,
+			"cut": 6,
+			"kept": 5
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"changed": 8,
+			"kept": 7,
+			"cut": 1
+		},
+		{
+			"changed": 6,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"changed": 9,
+			"cut": 5,
+			"kept": 3
+		},
+		{
+			"cut": 4,
+			"changed": 6,
+			"kept": 6
+		},
+		{
+			"kept": 3,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"changed": 4,
+			"cut": 11,
+			"kept": 2
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"changed": 4,
+			"cut": 10,
+			"kept": 3
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"kept": 4,
+			"cut": 9,
+			"changed": 3
+		},
+		{
+			"kept": 5,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 6
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"cut": 9,
+			"kept": 2,
+			"changed": 5
+		},
+		{
+			"changed": 6,
+			"kept": 4,
+			"cut": 7
+		},
+		{
+			"changed": 4,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"kept": 4,
+			"changed": 6
+		},
+		{
+			"changed": 3,
+			"cut": 10,
+			"kept": 4
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 97,
+			"notInScript": 61
+		},
+		{
+			"scripted": 114,
+			"notInScript": 86
+		},
+		{
+			"scripted": 129,
+			"notInScript": 123
+		},
+		{
+			"scripted": 122,
+			"notInScript": 167
+		},
+		{
+			"scripted": 100,
+			"notInScript": 47
+		},
+		{
+			"scripted": 125,
+			"notInScript": 109
+		},
+		{
+			"scripted": 174,
+			"notInScript": 85
+		},
+		{
+			"scripted": 165,
+			"notInScript": 81
+		},
+		{
+			"scripted": 223,
+			"notInScript": 73
+		},
+		{
+			"scripted": 122,
+			"notInScript": 86
+		},
+		{
+			"scripted": 44,
+			"notInScript": 61
+		},
+		{
+			"scripted": 54,
+			"notInScript": 129
+		},
+		{
+			"scripted": 240,
+			"notInScript": 66
+		},
+		{
+			"scripted": 120,
+			"notInScript": 138
+		},
+		{
+			"scripted": 153,
+			"notInScript": 96
+		},
+		{
+			"scripted": 73,
+			"notInScript": 171
+		},
+		{
+			"scripted": 148,
+			"notInScript": 108
+		},
+		{
+			"scripted": 155,
+			"notInScript": 89
+		},
+		{
+			"scripted": 197,
+			"notInScript": 62
+		},
+		{
+			"scripted": 181,
+			"notInScript": 112
+		},
+		{
+			"scripted": 178,
+			"notInScript": 129
+		},
+		{
+			"scripted": 62,
+			"notInScript": 157
+		},
+		{
+			"scripted": 75,
+			"notInScript": 67
+		},
+		{
+			"scripted": 116,
+			"notInScript": 31
+		},
+		{
+			"scripted": 249,
+			"notInScript": 41
+		},
+		{
+			"scripted": 122,
+			"notInScript": 115
+		},
+		{
+			"scripted": 78,
+			"notInScript": 136
+		},
+		{
+			"scripted": 53,
+			"notInScript": 94
+		},
+		{
+			"scripted": 221,
+			"notInScript": 102
+		},
+		{
+			"scripted": 169,
+			"notInScript": 112
+		},
+		{
+			"scripted": 85,
+			"notInScript": 61
+		},
+		{
+			"scripted": 102,
+			"notInScript": 129
+		},
+		{
+			"scripted": 52,
+			"notInScript": 100
+		},
+		{
+			"scripted": 158,
+			"notInScript": 48
+		},
+		{
+			"scripted": 162,
+			"notInScript": 100
+		},
+		{
+			"scripted": 84,
+			"notInScript": 137
+		},
+		{
+			"scripted": 64,
+			"notInScript": 208
+		},
+		{
+			"scripted": 100,
+			"notInScript": 208
+		},
+		{
+			"scripted": 178,
+			"notInScript": 65
+		},
+		{
+			"scripted": 91,
+			"notInScript": 120
+		},
+		{
+			"scripted": 4,
+			"notInScript": 80
+		},
+		{
+			"scripted": 3,
+			"notInScript": 25
+		},
+		{
+			"scripted": 28,
+			"notInScript": 36
+		},
+		{
+			"scripted": 41,
+			"notInScript": 77
+		},
+		{
+			"scripted": 111,
+			"notInScript": 99
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 9,
+				"kept": 1,
+				"changed": 4,
+				"cut": 4
+			},
+			"other": {
+				"lines": 150,
+				"kept": 61,
+				"changed": 42,
+				"cut": 47
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 334,
+				"kept": 84,
+				"changed": 114,
+				"cut": 136
+			},
+			"other": {
+				"lines": 205,
+				"kept": 44,
+				"changed": 73,
+				"cut": 88
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "STOKES",
+				"text": "Don't start, Randolph. Please."
+			},
+			{
+				"speaker": "SHELDON",
+				"text": "Fair enough. If you change your mind --"
+			},
+			{
+				"speaker": "NORA",
+				"text": "Where do you shop?"
+			},
+			{
+				"speaker": "SPINNER",
+				"text": "Great! I get to hit something!"
+			},
+			{
+				"speaker": "BURKE",
+				"text": "It'll all be over tonight. Buggy's gonna take care of everything."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 535,
+				"text": "Spirulina with almond butter?"
+			},
+			{
+				"at": 1909,
+				"text": "How are you fixing it?"
+			},
+			{
+				"at": 3009,
+				"text": "Do you read Mein Kampf?"
+			},
+			{
+				"at": 4365,
+				"text": "I love you too, buddy."
+			},
+			{
+				"at": 5179,
+				"text": "Do not start with your magician's tricks, young Moses!"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BURKE",
+				"page": "Gimme a Five Crown.",
+				"screen": "Let me have a Five Crown.",
+				"pageWords": [
+					[
+						"Gimme",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"Five",
+						true
+					],
+					[
+						"Crown.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Let",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"Five",
+						true
+					],
+					[
+						"Crown.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SHELDON",
+				"page": "Well, he's a very nice man. Very sweet disposition for someone that size.",
+				"screen": "He's very sweet for such a big fella.",
+				"pageWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"he's",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"very",
+						false
+					],
+					[
+						"nice",
+						false
+					],
+					[
+						"man.",
+						false
+					],
+					[
+						"Very",
+						true
+					],
+					[
+						"sweet",
+						true
+					],
+					[
+						"disposition",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"someone",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"size.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"He's",
+						false
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"sweet",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"such",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"big",
+						false
+					],
+					[
+						"fella.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NORA",
+				"page": "We have nothing to talk about.",
+				"screen": "There's nothing to say.",
+				"pageWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"nothing",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"talk",
+						false
+					],
+					[
+						"about.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"There's",
+						false
+					],
+					[
+						"nothing",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"say.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BURKE",
+				"page": "Like they say, rock bottom's a college education.",
+				"screen": "Rock bottom is a college education.",
+				"pageWords": [
+					[
+						"Like",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"say,",
+						false
+					],
+					[
+						"rock",
+						false
+					],
+					[
+						"bottom's",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"college",
+						true
+					],
+					[
+						"education.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Rock",
+						false
+					],
+					[
+						"bottom",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"college",
+						true
+					],
+					[
+						"education.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SHELDON",
+				"page": "I appreciate everyone's concern, but I can take care of myself.",
+				"screen": "I appreciate everybody's concern. But I know what I'm doing.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"appreciate",
+						true
+					],
+					[
+						"everyone's",
+						false
+					],
+					[
+						"concern,",
+						true
+					],
+					[
+						"but",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"care",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"myself.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"appreciate",
+						true
+					],
+					[
+						"everybody's",
+						false
+					],
+					[
+						"concern.",
+						true
+					],
+					[
+						"But",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"doing.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

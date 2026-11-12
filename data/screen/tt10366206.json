@@ -1,0 +1,925 @@
+{
+	"_id": "tt10366206",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 8,
+		"eligible": 6,
+		"rejected": {
+			"duplicate": 2
+		},
+		"used": 6,
+		"primary": "1958111269",
+		"versions": [
+			"1958169221",
+			"1958111269",
+			"1958134224",
+			"1958158931",
+			"1958111270",
+			"1958134220"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9992105349989389,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 10200,
+	"quality": {
+		"anchoredShare": 0.4781740370898716
+	},
+	"words": {
+		"page": 7010,
+		"screen": 4772,
+		"kept": 3352,
+		"cut": 3658,
+		"notInScript": 1420,
+		"moved": 103
+	},
+	"lines": {
+		"page": 790,
+		"kept": 339,
+		"changed": 118,
+		"cut": 333,
+		"screen": 883,
+		"notInScript": 227
+	},
+	"byGender": {
+		"w": {
+			"lines": 62,
+			"kept": 29,
+			"changed": 7,
+			"cut": 26
+		},
+		"m": {
+			"lines": 692,
+			"kept": 304,
+			"changed": 109,
+			"cut": 279
+		},
+		"unknown": {
+			"lines": 36,
+			"kept": 6,
+			"changed": 2,
+			"cut": 28
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 6,
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"cut": 6
+		},
+		{
+			"kept": 6,
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"cut": 2,
+			"changed": 4,
+			"kept": 11
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 10,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 7
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 6
+		},
+		{
+			"kept": 8,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 8,
+			"cut": 1
+		},
+		{
+			"changed": 1,
+			"cut": 15
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"changed": 2,
+			"kept": 11
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"kept": 6,
+			"cut": 11
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 5
+		},
+		{
+			"cut": 4,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 10,
+			"cut": 5
+		},
+		{
+			"kept": 13,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"kept": 8,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 5,
+			"kept": 8,
+			"changed": 4
+		},
+		{
+			"cut": 13,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"kept": 7,
+			"changed": 1,
+			"cut": 9
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 6,
+			"cut": 7
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 64,
+			"notInScript": 3
+		},
+		{
+			"scripted": 108,
+			"notInScript": 31
+		},
+		{
+			"scripted": 187,
+			"notInScript": 2
+		},
+		{
+			"scripted": 123,
+			"notInScript": 27
+		},
+		{
+			"scripted": 113,
+			"notInScript": 10
+		},
+		{
+			"scripted": 168,
+			"notInScript": 30
+		},
+		{
+			"scripted": 84,
+			"notInScript": 12
+		},
+		{
+			"scripted": 243,
+			"notInScript": 11
+		},
+		{
+			"scripted": 47,
+			"notInScript": 4
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		},
+		{
+			"scripted": 26,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 32,
+			"notInScript": 18
+		},
+		{
+			"scripted": 20,
+			"notInScript": 13
+		},
+		{
+			"scripted": 37,
+			"notInScript": 46
+		},
+		{
+			"scripted": 37,
+			"notInScript": 26
+		},
+		{
+			"scripted": 189,
+			"notInScript": 8
+		},
+		{
+			"scripted": 134,
+			"notInScript": 26
+		},
+		{
+			"scripted": 204,
+			"notInScript": 24
+		},
+		{
+			"scripted": 115,
+			"notInScript": 7
+		},
+		{
+			"scripted": 159,
+			"notInScript": 8
+		},
+		{
+			"scripted": 180,
+			"notInScript": 31
+		},
+		{
+			"scripted": 157,
+			"notInScript": 27
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 0,
+			"notInScript": 28
+		},
+		{
+			"scripted": 50,
+			"notInScript": 1
+		},
+		{
+			"scripted": 275,
+			"notInScript": 4
+		},
+		{
+			"scripted": 185,
+			"notInScript": 14
+		},
+		{
+			"scripted": 178,
+			"notInScript": 37
+		},
+		{
+			"scripted": 112,
+			"notInScript": 28
+		},
+		{
+			"scripted": 160,
+			"notInScript": 17
+		},
+		{
+			"scripted": 161,
+			"notInScript": 83
+		},
+		{
+			"scripted": 106,
+			"notInScript": 37
+		},
+		{
+			"scripted": 6,
+			"notInScript": 41
+		},
+		{
+			"scripted": 47,
+			"notInScript": 3
+		},
+		{
+			"scripted": 39,
+			"notInScript": 25
+		},
+		{
+			"scripted": 1,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 44
+		},
+		{
+			"scripted": 0,
+			"notInScript": 8
+		},
+		{
+			"scripted": 26,
+			"notInScript": 23
+		},
+		{
+			"scripted": 24,
+			"notInScript": 22
+		},
+		{
+			"scripted": 25,
+			"notInScript": 13
+		},
+		{
+			"scripted": 35,
+			"notInScript": 11
+		},
+		{
+			"scripted": 51,
+			"notInScript": 18
+		},
+		{
+			"scripted": 16,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 61,
+				"kept": 29,
+				"changed": 7,
+				"cut": 25
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 612,
+				"kept": 278,
+				"changed": 100,
+				"cut": 234
+			},
+			"other": {
+				"lines": 76,
+				"kept": 26,
+				"changed": 9,
+				"cut": 41
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "THE DEALER",
+				"text": "You have something that belongs to me."
+			},
+			{
+				"speaker": "THE TRACKER",
+				"text": "I'm not with anybody."
+			},
+			{
+				"speaker": "FRAU GOETZ",
+				"text": "Very well. Method of payment?"
+			},
+			{
+				"speaker": "JOHN",
+				"text": "...What did the Marquis promise you?"
+			},
+			{
+				"speaker": "THE TRACKER",
+				"text": "Son of a bitch."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1153,
+				"text": "It's not too bad."
+			},
+			{
+				"at": 3595,
+				"text": "You, come with me."
+			},
+			{
+				"at": 6107,
+				"text": "If you don't, she will have to face the consequences."
+			},
+			{
+				"at": 6938,
+				"text": "Our man in black has been spotted in the Septième Arrondissement."
+			},
+			{
+				"at": 8275,
+				"text": "It appears Mr. Wick won't be joining us."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "THE MARQUIS",
+				"page": "I am amused that you think that is for you to decide.",
+				"screen": "That's not for you to decide.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"am",
+						false
+					],
+					[
+						"amused",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"decide.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"That's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"decide.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CAINE",
+				"page": "Koji. Please. Think of your daughter.",
+				"screen": "Just take care of your daughter.",
+				"pageWords": [
+					[
+						"Koji.",
+						false
+					],
+					[
+						"Please.",
+						false
+					],
+					[
+						"Think",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"daughter.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Just",
+						false
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"care",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"daughter.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JOHN",
+				"page": "A High Table Duels aren't real. They're myth.",
+				"screen": "High Table duels are a myth.",
+				"pageWords": [
+					[
+						"A",
+						false
+					],
+					[
+						"High",
+						true
+					],
+					[
+						"Table",
+						true
+					],
+					[
+						"Duels",
+						true
+					],
+					[
+						"aren't",
+						false
+					],
+					[
+						"real.",
+						false
+					],
+					[
+						"They're",
+						false
+					],
+					[
+						"myth.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"High",
+						true
+					],
+					[
+						"Table",
+						true
+					],
+					[
+						"duels",
+						true
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"myth.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "WINSTON",
+				"page": "I wish I could say the same.",
+				"screen": "Shame I can't say the same.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"wish",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"say",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"same.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Shame",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"can't",
+						false
+					],
+					[
+						"say",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"same.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CAINE",
+				"page": "How long until sunrise?",
+				"screen": "What time is sunrise?",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"long",
+						false
+					],
+					[
+						"until",
+						false
+					],
+					[
+						"sunrise?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"time",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"sunrise?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

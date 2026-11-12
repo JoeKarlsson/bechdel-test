@@ -1,0 +1,975 @@
+{
+	"_id": "tt0163978",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 20,
+		"eligible": 17,
+		"rejected": {
+			"split across CDs": 2,
+			"duplicate": 1
+		},
+		"used": 9,
+		"primary": "1954148841",
+		"versions": [
+			"1954273788",
+			"1952833777",
+			"1952050670",
+			"1953446547",
+			"1957359893",
+			"1954148841",
+			"1957433496",
+			"1951647674",
+			"1955293018"
+		],
+		"sdh": false,
+		"meanAgreement": 0.911058900531608,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7140,
+	"quality": {
+		"anchoredShare": 0.15665139674840564
+	},
+	"words": {
+		"page": 11133,
+		"screen": 7825,
+		"kept": 1760,
+		"cut": 9373,
+		"notInScript": 6081,
+		"moved": 176
+	},
+	"lines": {
+		"page": 685,
+		"kept": 99,
+		"changed": 104,
+		"cut": 482,
+		"screen": 1654,
+		"notInScript": 1275
+	},
+	"byGender": {
+		"w": {
+			"lines": 161,
+			"kept": 25,
+			"changed": 24,
+			"cut": 112
+		},
+		"m": {
+			"lines": 489,
+			"kept": 72,
+			"changed": 78,
+			"cut": 339
+		},
+		"unknown": {
+			"lines": 35,
+			"kept": 2,
+			"changed": 2,
+			"cut": 31
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"changed": 1,
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 7,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 4,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"kept": 6,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"cut": 6,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"kept": 6,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"changed": 1,
+			"cut": 13,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"kept": 8,
+			"cut": 4
+		},
+		{
+			"kept": 1,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 10,
+			"kept": 1,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"kept": 3,
+			"cut": 7
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"changed": 5,
+			"kept": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 5
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 1,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"changed": 1,
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 33,
+			"notInScript": 196
+		},
+		{
+			"scripted": 22,
+			"notInScript": 113
+		},
+		{
+			"scripted": 30,
+			"notInScript": 176
+		},
+		{
+			"scripted": 6,
+			"notInScript": 121
+		},
+		{
+			"scripted": 80,
+			"notInScript": 41
+		},
+		{
+			"scripted": 147,
+			"notInScript": 95
+		},
+		{
+			"scripted": 146,
+			"notInScript": 164
+		},
+		{
+			"scripted": 79,
+			"notInScript": 147
+		},
+		{
+			"scripted": 151,
+			"notInScript": 23
+		},
+		{
+			"scripted": 184,
+			"notInScript": 19
+		},
+		{
+			"scripted": 63,
+			"notInScript": 41
+		},
+		{
+			"scripted": 0,
+			"notInScript": 23
+		},
+		{
+			"scripted": 34,
+			"notInScript": 109
+		},
+		{
+			"scripted": 55,
+			"notInScript": 141
+		},
+		{
+			"scripted": 74,
+			"notInScript": 55
+		},
+		{
+			"scripted": 22,
+			"notInScript": 109
+		},
+		{
+			"scripted": 143,
+			"notInScript": 151
+		},
+		{
+			"scripted": 60,
+			"notInScript": 92
+		},
+		{
+			"scripted": 65,
+			"notInScript": 202
+		},
+		{
+			"scripted": 62,
+			"notInScript": 103
+		},
+		{
+			"scripted": 48,
+			"notInScript": 67
+		},
+		{
+			"scripted": 73,
+			"notInScript": 159
+		},
+		{
+			"scripted": 186,
+			"notInScript": 88
+		},
+		{
+			"scripted": 73,
+			"notInScript": 178
+		},
+		{
+			"scripted": 92,
+			"notInScript": 200
+		},
+		{
+			"scripted": 64,
+			"notInScript": 49
+		},
+		{
+			"scripted": 32,
+			"notInScript": 148
+		},
+		{
+			"scripted": 10,
+			"notInScript": 116
+		},
+		{
+			"scripted": 56,
+			"notInScript": 110
+		},
+		{
+			"scripted": 110,
+			"notInScript": 77
+		},
+		{
+			"scripted": 25,
+			"notInScript": 277
+		},
+		{
+			"scripted": 51,
+			"notInScript": 125
+		},
+		{
+			"scripted": 1,
+			"notInScript": 83
+		},
+		{
+			"scripted": 4,
+			"notInScript": 136
+		},
+		{
+			"scripted": 0,
+			"notInScript": 269
+		},
+		{
+			"scripted": 0,
+			"notInScript": 71
+		},
+		{
+			"scripted": 88,
+			"notInScript": 61
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 16,
+			"notInScript": 248
+		},
+		{
+			"scripted": 8,
+			"notInScript": 47
+		},
+		{
+			"scripted": 7,
+			"notInScript": 162
+		},
+		{
+			"scripted": 14,
+			"notInScript": 195
+		},
+		{
+			"scripted": 0,
+			"notInScript": 175
+		},
+		{
+			"scripted": 0,
+			"notInScript": 111
+		},
+		{
+			"scripted": 0,
+			"notInScript": 109
+		},
+		{
+			"scripted": 0,
+			"notInScript": 27
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 151,
+				"kept": 25,
+				"changed": 23,
+				"cut": 103
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 269,
+				"kept": 48,
+				"changed": 42,
+				"cut": 179
+			},
+			"other": {
+				"lines": 210,
+				"kept": 22,
+				"changed": 33,
+				"cut": 155
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "FRANCOISE",
+				"text": "He said if we lent him money h would tell us about a secret beach."
+			},
+			{
+				"speaker": "RICHARD",
+				"text": "And yes, unfortunately, there was a man with a guitar."
+			},
+			{
+				"speaker": "RICHARD",
+				"text": "Because you built a shelter."
+			},
+			{
+				"speaker": "RICHARD",
+				"text": "Oh. Well, here I am."
+			},
+			{
+				"speaker": "RICHARD",
+				"text": "I don't know. Sometime during all that shark shit."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 500,
+				"text": "No offence an' all, but... ..you're fucked in the head, right?"
+			},
+			{
+				"at": 2619,
+				"text": "All in all, this really was paradise."
+			},
+			{
+				"at": 3849,
+				"text": "I had paid for her silence and bought my ticket back."
+			},
+			{
+				"at": 5056,
+				"text": "You're moaning, that's all."
+			},
+			{
+				"at": 6174,
+				"text": "Cos if you pull that trigger..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "ETIENNE",
+				"page": "It's arranged. Tomorrow morning. Eight hundred baht.",
+				"screen": "** And get woozy... lt's arranged. Tomorrow morning. 1800 baht.",
+				"pageWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"arranged.",
+						true
+					],
+					[
+						"Tomorrow",
+						true
+					],
+					[
+						"morning.",
+						true
+					],
+					[
+						"Eight",
+						false
+					],
+					[
+						"hundred",
+						false
+					],
+					[
+						"baht.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"**",
+						null
+					],
+					[
+						"And",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"woozy...",
+						false
+					],
+					[
+						"lt's",
+						false
+					],
+					[
+						"arranged.",
+						true
+					],
+					[
+						"Tomorrow",
+						true
+					],
+					[
+						"morning.",
+						true
+					],
+					[
+						"1800",
+						false
+					],
+					[
+						"baht.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "RICHARD",
+				"page": "I think we're about half way. A few strokes later.",
+				"screen": "I think we're about half way.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"we're",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"half",
+						false
+					],
+					[
+						"way.",
+						false
+					],
+					[
+						"A",
+						false
+					],
+					[
+						"few",
+						false
+					],
+					[
+						"strokes",
+						false
+					],
+					[
+						"later.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"we're",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"half",
+						true
+					],
+					[
+						"way.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "RICHARD",
+				"page": "I don't know. I don't think so.",
+				"screen": "No, I don't think so.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"know.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"so.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"so.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SAL",
+				"page": "What about you? Will you come to Ko Pha Ngan with me?",
+				"screen": "Are you gonna come to Ko Pha-Ngan with me?",
+				"pageWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"you?",
+						false
+					],
+					[
+						"Will",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"Ko",
+						true
+					],
+					[
+						"Pha",
+						true
+					],
+					[
+						"Ngan",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"me?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Are",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"gonna",
+						false
+					],
+					[
+						"come",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"Ko",
+						true
+					],
+					[
+						"Pha-Ngan",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"me?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "FRANCOISE",
+				"page": "I think Sal is attracted to you.",
+				"screen": "Some people say she's attracted to you.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"Sal",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"attracted",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Some",
+						false
+					],
+					[
+						"people",
+						false
+					],
+					[
+						"say",
+						false
+					],
+					[
+						"she's",
+						false
+					],
+					[
+						"attracted",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			}
+		]
+	}
+}
