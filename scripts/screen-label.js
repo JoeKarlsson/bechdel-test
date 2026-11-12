@@ -5,8 +5,13 @@
  * data/eval/screen-gold.json as line numbers and text hashes, never text.
  *
  *   npm run screen:label             draw the sample (first run), then label what's left; quit any time
- *   npm run screen:label -- --again  label 100 already-labelled items a second time (agreement with yourself)
+ *   npm run screen:label -- --again  label a fixed 100 of the items a second time, for agreement between labellers
  *   npm run screen:label -- --audio  for test-set lines labelled cut or changed, note what the film's audio says
+ *
+ * For labelling outside this prompt (docs/page-vs-screen/CODEBOOK.md):
+ *   npm run screen:label -- --export <dir> [--again]  each film's items, with context and no prediction, plus its full
+ *                                                    script and subtitles to search (text: keep the folder off the repo)
+ *   npm run screen:label -- --import <labels.json> [--again]  { "<item key>": "<label>" } into the gold file
  */
 const crypto = require('crypto');
 const fs = require('fs');
@@ -142,6 +147,9 @@ const ask = async (rl, film, item, detail) => {
 
 const main = async () => {
 	process.loadEnvFile(path.join(ROOT, '.env'));
+	const argAfter = flag => (process.argv.includes(flag) ? process.argv[process.argv.indexOf(flag) + 1] : null);
+	const exportDir = argAfter('--export');
+	const importFile = argAfter('--import');
 	const mode = process.argv.includes('--again') ? 'again' : process.argv.includes('--audio') ? 'audio' : 'label';
 	const records = loadFilmRecords();
 	let gold = fs.existsSync(GOLD_FILE) ? JSON.parse(fs.readFileSync(GOLD_FILE, 'utf8')) : null;
@@ -160,12 +168,10 @@ const main = async () => {
 		save(gold);
 	}
 
-	const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 	const details = new Map();
 	const detailOf = async entry => {
 		if (!details.has(entry._id)) {
-			const { detail } = await compareFilmOnDisk(records.find(f => f._id === entry._id));
-			if (detail.primary !== entry.primary) throw new Error(`${entry.title}: the subtitle version changed since sampling`);
+			const { detail } = await compareFilmOnDisk(records.find(f => f._id === entry._id), { primaryId: entry.primary });
 			details.set(entry._id, detail);
 		}
 		return details.get(entry._id);
@@ -173,10 +179,61 @@ const main = async () => {
 	const textOf = (detail, item) => (item.kind === 'page' ? detail.dialogue[item.line].text : detail.screenLines[item.line].text);
 
 	const todo = gold.films.flatMap(entry => entry.items.map(item => ({ entry, item, key: itemKey(entry, item) })));
+	// the second labelling's items are fixed by the seed alone, not by the first labels
+	const againItems = seeded(todo, t => `again:${t.key}`).slice(0, AGAIN_ITEMS);
+
+	if (importFile) {
+		const labels = JSON.parse(fs.readFileSync(importFile, 'utf8'));
+		const target = mode === 'again' ? gold.again : gold.labels;
+		const allowed = new Map((mode === 'again' ? againItems : todo).map(t => [t.key, t.item.kind === 'page' ? Object.values(PAGE_KEYS) : Object.values(SCREEN_KEYS)]));
+		for (const [key, label] of Object.entries(labels)) {
+			if (!allowed.has(key)) throw new Error(`${key} isn't an item to label${mode === 'again' ? ' a second time' : ''}`);
+			if (!allowed.get(key).includes(label)) throw new Error(`${key}: "${label}" isn't one of ${allowed.get(key).join(', ')}`);
+			target[key] = label;
+		}
+		save(gold);
+		console.log(`${Object.keys(labels).length} labels imported; ${Object.keys(target).length} of ${allowed.size} done`);
+		return;
+	}
+	if (exportDir) {
+		fs.mkdirSync(exportDir, { recursive: true });
+		const chosen = new Set((mode === 'again' ? againItems : todo).map(t => t.key));
+		for (const [n, entry] of gold.films.entries()) {
+			const detail = await detailOf(entry);
+			const items = entry.items.filter(item => chosen.has(itemKey(entry, item))).map(item => {
+				if (hashOf(textOf(detail, item)) !== item.hash) throw new Error(`${entry.title}: line ${item.line} changed since sampling`);
+				const around = (list, center, radius, show) => list.slice(Math.max(0, center - radius), center + radius + 1).map(show);
+				const subtitle = l => `${clock(l.start)}  ${l.text}`;
+				const script = d => `${d.speaker}: ${d.text}`;
+				return item.kind === 'page'
+					? {
+						key: itemKey(entry, item), kind: 'script line', question: 'Is this script line said in the film?',
+						line: script(detail.dialogue[item.line]),
+						scriptAround: around(detail.dialogue, item.line, 2, script),
+						subtitlesNearWhereItWouldBe: around(detail.screenLines, anchorFor(detail, item.line), 10, subtitle),
+					}
+					: {
+						key: itemKey(entry, item), kind: 'subtitle line', question: 'Is this subtitle line in the script, even reworded?',
+						line: detail.screenLines[item.line].text,
+						subtitlesAround: around(detail.screenLines, item.line, 3, subtitle),
+						scriptNearWhereItWouldBe: around(detail.dialogue, scriptAnchorFor(detail, item.line), 10, script),
+					};
+			});
+			if (items.length === 0) continue;
+			const name = `${String(n + 1).padStart(2, '0')}-${entry._id}`;
+			fs.writeFileSync(path.join(exportDir, `${name}-items.json`), `${JSON.stringify({ film: `${entry.title} (${entry.year})`, items }, null, '\t')}\n`);
+			fs.writeFileSync(path.join(exportDir, `${name}-subtitles.txt`), `${detail.screenLines.map(l => `${clock(l.start)}  ${l.text}`).join('\n')}\n`);
+			fs.writeFileSync(path.join(exportDir, `${name}-script.txt`), `${detail.dialogue.map(d => `${d.speaker}: ${d.text}`).join('\n')}\n`);
+			console.log(`${name}: ${entry.title}, ${items.length} items`);
+		}
+		return;
+	}
+
 	const queue = mode === 'label' ? todo.filter(t => !gold.labels[t.key])
-		: mode === 'again' ? seeded(todo.filter(t => gold.labels[t.key] && gold.labels[t.key] !== 'unsure'), t => `again:${t.key}`).slice(0, AGAIN_ITEMS).filter(t => !gold.again[t.key])
+		: mode === 'again' ? againItems.filter(t => !gold.again[t.key])
 			: todo.filter(t => t.entry.split === 'test' && t.item.kind === 'page' && ['cut', 'changed'].includes(gold.labels[t.key])).slice(0, AUDIO_ITEMS).filter(t => !gold.audio[t.key]);
 	console.log(`${queue.length} to go`);
+	const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 	try {
 		for (const { entry, item, key } of queue) {
 			const detail = await detailOf(entry);

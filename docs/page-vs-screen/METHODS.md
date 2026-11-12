@@ -1,6 +1,6 @@
 # Page vs screen: methods
 
-**Status: draft 0.3 (2026-11-12).** The thresholds in §5 are provisional. They get tuned on the development half of the hand-labelled sample (§6), then frozen as version 1.0 in a dated commit before the test half is scored and before any shelf-wide result is reported. Anything not listed in §2 is exploratory.
+**Status: version 1.0 (2026-11-12).** The thresholds in §5.4 were tuned on the development half of the labelled sample (§6) and frozen before the test half was scored for the record. §6.1 reports the accuracy and every departure from the plan. Anything not listed in §2 is exploratory.
 
 Code: `src/opus.js` (corpus access), `src/subtitles.js` (cleaning), `src/align.js` (alignment), `src/pageVsScreen.js` (selection, labels, the Bechdel test on screen), `scripts/fetch-subtitles.js`, `scripts/screen.js`. Every output file (`data/screen/<id>.json`) records the method version and thresholds it was made with.
 
@@ -97,14 +97,42 @@ The word measures in §2 use no thresholds. Line labels do (provisional, see Sta
 - **Gold sample.**
   - Twenty films drawn with a recorded seed, stratified by era (before 1990, 1990–2005, after 2005) and by whether the primary version is SDH.
   - Per film: 30 script lines (stratified by predicted label) and 10 subtitle lines predicted *not in the script* (these measure that label's precision; its recall isn't measured).
-  - A person labels each item blind to the prediction, seeing the line and five subtitle lines of context on each side (`npm run screen:label`).
+  - Each item is labelled blind to the prediction, following a written codebook (`CODEBOOK.md`). The labeller sees the line, its context, and the film's full script dialogue and subtitles to search (`npm run screen:label -- --export`).
   - Labels are stored as line indexes, not text (`data/eval/screen-gold.json`).
 
 - **Split.** Ten films (development) tune §5.4's thresholds and §7's transcript rule. The other ten (test) are scored once, after version 1.0 is frozen. Each script line is weighted by how many lines of its film its sampling stratum stands for, so the scores describe whole films. We report weighted precision, recall and F1 per label, with 95% bootstrap intervals that resample films.
 
-- **Intra-rater agreement.** 100 items are labelled again a week later, and we report Cohen's κ.
+- **Agreement between labellers.** A second, independent labeller labels a seeded 100 of the items, and we report Cohen's κ.
 
 - **Audio spot-check.** About 100 test-set lines labelled *cut* or *changed* are checked against the film's audio, separating real changes from subtitler shortening. This gives the false-cut rate.
+
+### 6.1 What was done, and the results
+
+**Who labelled.** The sample was labelled by AI annotators, not people: five separate instances of Anthropic's Claude.
+- Four split the 20 films and labelled all 800 items. A fifth labelled the seeded 100-item second set without access to the others' labels.
+- Each worked only from the exported items, the films' script and subtitle text, and the codebook. None could see the pipeline's predictions or code.
+- Annotators of the same model are not independent the way two people are, so the agreement below is an upper bound on what two human labellers would reach.
+
+| | Development (10 films) | Test (10 films, scored once) |
+|---|---|---|
+| Macro F1, script line labels | 0.80 [0.75, 0.83] | 0.80 [0.75, 0.83] |
+| *Heard as written*: precision / recall | 0.94 / 0.86 | 0.95 / 0.85 |
+| *Changed*: precision / recall | 0.64 / 0.58 | 0.68 / 0.55 |
+| *Cut*: precision / recall | 0.82 / 0.98 | 0.81 / 0.98 |
+| *Not in the script*: precision | 0.65 | 0.73 |
+
+Intervals are 95%, from bootstrapping films. Agreement between the two labellings is Cohen's κ = 0.92 over 100 items.
+
+- **Tuned thresholds.** Heard as written at 65% or more of a line's words, changed at 15% or more (provisional values were 80% and 30%). *Not in the script* stays at 20%: since only lines predicted not in the script were sampled, its threshold can't be tuned on this sample.
+- **What the scores mean.**
+  - The aligner is reliable on lines heard as written and on cuts.
+  - *Changed* is the hardest label, for labellers too.
+  - *Not in the script* measures wording. About a third of the lines it flags are script lines said in different words, which the codebook counts as scripted. RQ2's figure is therefore an upper bound on new material: read it as "words not in the script".
+- **Departures from the plan.**
+  1. The tuning run printed the test films' scores before the thresholds were frozen. They were not used to choose anything, and the frozen thresholds are the ones the development films picked. The script no longer shows test scores while tuning.
+  2. After the development results, two aligner settings were tried on the development films only: a larger exact-alignment limit and short anchors in larger gaps. Neither changed the *not in the script* precision, so both were dropped and the aligner is unchanged.
+  3. While labelling, two annotators wrote helper scripts (no labels) to the same scratch folder, and one overwrote the other's. Neither read the other's labels.
+  4. The audio spot-check was not done: nobody listened to the films. The share of "cut" and "changed" lines that are really subtitlers shortening speech is unmeasured. The SDH-only robustness check (§9) is a partial stand-in, since SDH subtitles are closer to verbatim.
 
 ## 7. Exclusions
 
@@ -168,7 +196,7 @@ Comparing women's lines with women's lines keeps speaker gender fixed, which RQ3
 - Scripts that are online skew popular, American and recent. Subtitles on opensubtitles.org skew the same way.
 - Results describe "shelf films with an English script and English subtitles", not film in general.
 - Word survival has a chance floor of about 2%: unrelated dialogue shares that many words in matching order (§7).
-- Subtitles are not a transcript of speech: §6's audio spot-check estimates how far apart they are.
+- Subtitles are not a transcript of speech, and the audio spot-check that would measure the gap wasn't done (§6.1).
 - Speaker attribution on screen is borrowed from the script. Lines not in the script often have no known speaker, which is why §8 reports two readings.
 
 ## References
