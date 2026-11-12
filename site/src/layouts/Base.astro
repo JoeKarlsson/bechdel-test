@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { createHash } from 'node:crypto';
 import { loadFilms } from '../lib/films.mjs';
 
 interface Props {
@@ -35,17 +34,11 @@ const pageTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const imageUrl = new URL(image, Astro.site).href;
 
-// Chromium fetches a film page when a link to it is hovered or pressed, so the click lands at once.
-// Prefetch, not prerender, so analytics never counts a page nobody opened. The CSP allows it by
-// hash: Safari rejects the 'inline-speculation-rules' keyword.
-const SPECULATION_RULES = JSON.stringify({ prefetch: [{ where: { href_matches: '/films/*' }, eagerness: 'moderate' }] });
-const speculationHash = createHash('sha256').update(SPECULATION_RULES).digest('base64');
-
 // GitHub Pages can't send headers, so the policy rides in a meta tag. It can't
 // carry frame-ancestors or report-uri; see DEPLOYMENT.md.
 const CSP = [
 	"default-src 'self'",
-	`script-src 'self' https://plausible.joekarlsson.io 'sha256-${speculationHash}'`,
+	"script-src 'self' https://plausible.joekarlsson.io",
 	"style-src 'self'",
 	// Chart bars set their own width and height in a style attribute
 	"style-src-attr 'unsafe-inline'",
@@ -98,7 +91,6 @@ const NAV = [
 		<link rel="preconnect" href="https://image.tmdb.org" />
 		<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
-		<script is:inline type="speculationrules" set:html={SPECULATION_RULES} />
 
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content={SITE_NAME} />
