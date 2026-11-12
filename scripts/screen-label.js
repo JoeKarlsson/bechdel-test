@@ -29,7 +29,7 @@ const hashOf = text => crypto.createHash('sha1').update(text).digest('hex').slic
 const itemKey = (film, item) => `${film._id}:${item.kind}:${item.line}`;
 const save = gold => fs.writeFileSync(GOLD_FILE, `${JSON.stringify(gold, null, '\t')}\n`);
 
-/** 20 films, round-robin over era x SDH strata in seeded order; alternate films in a stratum go to dev and test */
+/** 20 films, round-robin over era x SDH strata in seeded order, alternately to dev and test */
 const drawFilms = films => {
 	const era = year => (year < 1990 ? 'before 1990' : year <= 2005 ? '1990-2005' : 'after 2005');
 	const strata = new Map();
@@ -40,7 +40,8 @@ const drawFilms = films => {
 	const picked = [];
 	for (let round = 0; picked.length < FILMS && [...strata.values()].some(fs => fs.length > round); round++) {
 		for (const [stratum, fs] of [...strata].sort()) {
-			if (fs[round] && picked.length < FILMS) picked.push({ film: fs[round], stratum, split: round % 2 === 0 ? 'dev' : 'test' });
+			// alternate by pick order, so dev and test get ten films each and the same mix of strata
+			if (fs[round] && picked.length < FILMS) picked.push({ film: fs[round], stratum, split: picked.length % 2 === 0 ? 'dev' : 'test' });
 		}
 	}
 	return picked;

@@ -33,7 +33,8 @@ const loadItems = async () => {
 		const share = s => s.matched / s.words;
 		const eligible = detail.pageShares.filter(s => s.words >= 2);
 		const stratumSize = label => eligible.filter(s => labelWith(gold.sampledThresholds, share(s)) === label).length;
-		const sampled = entry.items.filter(item => item.kind === 'page');
+		// only lines with a usable label count: an "unsure" line stands for nothing
+		const sampled = entry.items.filter(item => item.kind === 'page' && !['unsure', undefined].includes(gold.labels[`${entry._id}:page:${item.line}`]));
 		const sampledIn = label => sampled.filter(item => labelWith(gold.sampledThresholds, share(detail.pageShares[item.line])) === label).length;
 		for (const item of entry.items) {
 			const text = item.kind === 'page' ? detail.dialogue[item.line].text : detail.screenLines[item.line].text;
