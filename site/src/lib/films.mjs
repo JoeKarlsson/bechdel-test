@@ -10,6 +10,8 @@ const DATA_DIR = resolve(process.cwd(), '../data/films');
 // AI reads stay out of the repo (npm run analyze -- --ai writes them here), so
 // only a local build has them
 const AI_DIR = resolve(process.cwd(), '../data/local/ai');
+// Page vs screen comparisons (npm run screen), one per film that has one
+const SCREEN_DIR = resolve(process.cwd(), '../data/screen');
 
 // Every model that has written a film's AI analysis, keyed by the id the
 // analyzer stores as enhancedAnalytics.aiModel (src/aiAnalyzer.js). Analyses
@@ -268,6 +270,41 @@ function aiFrom(ea) {
 	};
 }
 
+const share = (n, d) => (d > 0 ? n / d : null);
+// Women's and men's cut rates are compared only when both say this many lines in the script
+export const CUT_RATE_MIN_LINES = 20;
+
+/**
+ * A film's page vs screen comparison (data/screen/<id>.json): how much of
+ * the script reaches the screen, what's said that isn't in it, and the
+ * Bechdel test on what's said. null when the film wasn't compared.
+ */
+export function screenFrom(s) {
+	if (!s) return null;
+	if (s.excluded) return { excluded: s.excluded, draft: s.script.draft };
+	const cutShare = (g) => share(s.byGender[g].cut, s.byGender[g].lines);
+	const { page, strict, lenient, change } = s.bechdel;
+	return {
+		excluded: null,
+		draft: s.script.draft,
+		survival: share(s.words.kept, s.words.page),
+		notInScript: share(s.words.notInScript, s.words.screen),
+		words: s.words,
+		lines: s.lines,
+		cut: { w: cutShare('w'), m: cutShare('m'), wLines: s.byGender.w.lines, mLines: s.byGender.m.lines },
+		byScriptOrder: s.byScriptOrder.map((b) => ({ kept: b.kept ?? 0, changed: b.changed ?? 0, cut: b.cut ?? 0 })),
+		byMinute: s.byMinute,
+		runtimeMinutes: Math.round(s.runtimeSeconds / 60),
+		// both readings of lines nobody in the script says agree on pass or fail, unless change is 'unclear'
+		bechdel: { page: page.score, low: Math.min(strict.score, lenient.score), high: Math.max(strict.score, lenient.score), change },
+		quotes: s.quotes,
+		subtitles: { versions: s.subtitles.used, sdh: s.subtitles.sdh, agreement: s.subtitles.meanAgreement },
+	};
+}
+
+/** The film passes on the page and fails on screen, or the other way round */
+export const changesOnScreen = (film) => ['page-pass-screen-fail', 'page-fail-screen-pass'].includes(film.screen?.bechdel?.change);
+
 /** One raw export record -> what the site needs */
 export function normalizeFilm(raw) {
 	const b = raw.bechdelResults ?? {};
@@ -342,6 +379,7 @@ export function normalizeFilm(raw) {
 			.filter((a) => Number.isFinite(a.age) && (a.actorActress === '1' || a.actorActress === '2'))
 			.map((a) => ({ actor: a.actorName, role: a.character || null, age: a.age, gender: a.actorActress === '1' ? 'w' : 'm' })),
 		ai: aiFrom(ea),
+		screen: screenFrom(raw.screen),
 	};
 }
 
@@ -431,8 +469,35 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 			fiveYearWomenLines: median(around(year).map(womenLineShare).filter((x) => x !== null)),
 		}));
 
+	// Page vs screen: films compared with their subtitles (data/screen)
+	const compared = films.filter((f) => f.screen && !f.screen.excluded);
+	const DRAFTS = ['shooting', 'early', 'unknown'];
+	const bothCut = compared.filter((f) => f.screen.cut.wLines >= CUT_RATE_MIN_LINES && f.screen.cut.mLines >= CUT_RATE_MIN_LINES);
+	const changed = (kind) => compared.filter((f) => f.screen.bechdel.change === kind);
+	const pageVsScreen = {
+		films: compared.length,
+		excluded: films.filter((f) => f.screen?.excluded).length,
+		survival: median(compared.map((f) => f.screen.survival)),
+		notInScript: median(compared.map((f) => f.screen.notInScript)),
+		byDraft: DRAFTS.map((draft) => {
+			const fs = compared.filter((f) => f.screen.draft === draft);
+			return { draft, films: fs.length, survival: median(fs.map((f) => f.screen.survival)) };
+		}).filter((d) => d.films >= minGroup),
+		cut: {
+			films: bothCut.length,
+			w: median(bothCut.map((f) => f.screen.cut.w)),
+			m: median(bothCut.map((f) => f.screen.cut.m)),
+			womenMore: bothCut.filter((f) => f.screen.cut.w > f.screen.cut.m).length,
+			menMore: bothCut.filter((f) => f.screen.cut.m > f.screen.cut.w).length,
+		},
+		unclear: changed('unclear').length,
+		passToFail: changed('page-pass-screen-fail').map((f) => ({ slug: f.slug, title: f.title, year: f.year })),
+		failToPass: changed('page-fail-screen-pass').map((f) => ({ slug: f.slug, title: f.title, year: f.year })),
+	};
+
 	return {
 		...rate(films),
+		pageVsScreen,
 		readers: { films: rated.length, agree: rated.filter((f) => f.bechdel.pass === (f.readers.score === 3)).length },
 		byYear,
 		byGenre,
@@ -503,17 +568,22 @@ export function peopleRanking(films, namesOf, minFilms) {
  * neither go last). Reads the export once per build.
  */
 let cache;
-/** A film record with its AI read from data/local/ai, when this machine has one */
-function withLocalAiRead(raw) {
-	const file = join(AI_DIR, `${raw._id}.json`);
-	return existsSync(file) ? { ...raw, enhancedAnalytics: JSON.parse(readFileSync(file, 'utf8')) } : raw;
+/** A film record with its AI read from data/local/ai, when this machine has one, and its page vs screen comparison */
+function withSideFiles(raw) {
+	const ai = join(AI_DIR, `${raw._id}.json`);
+	const screen = join(SCREEN_DIR, `${raw._id}.json`);
+	return {
+		...raw,
+		...(existsSync(ai) ? { enhancedAnalytics: JSON.parse(readFileSync(ai, 'utf8')) } : {}),
+		...(existsSync(screen) ? { screen: JSON.parse(readFileSync(screen, 'utf8')) } : {}),
+	};
 }
 
 export function loadFilms(dir = DATA_DIR) {
 	if (cache && dir === DATA_DIR) return cache;
 	const films = readdirSync(dir)
 		.filter((f) => f.endsWith('.json'))
-		.map((f) => normalizeFilm(withLocalAiRead(JSON.parse(readFileSync(join(dir, f), 'utf8')))))
+		.map((f) => normalizeFilm(withSideFiles(JSON.parse(readFileSync(join(dir, f), 'utf8')))))
 		.sort((a, b) => (b.imdbRating ?? -1) - (a.imdbRating ?? -1) || (b.metascore ?? -1) - (a.metascore ?? -1) || a.title.localeCompare(b.title));
 	const slugs = new Set();
 	for (const f of films) {

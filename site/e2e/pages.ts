@@ -6,6 +6,7 @@ export const PAGE_TYPES = {
 	'film that passes': '/films/gone-girl-2014/',
 	'film that fails': '/films/fight-club-1999/',
 	'film with no timeline': '/films/dawn-of-the-dead-1978/',
+	'film compared with its subtitles': '/films/pulp-fiction-1994/',
 	numbers: '/numbers/',
 	'every film': '/films/',
 	about: '/about/',

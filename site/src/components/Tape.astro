@@ -2,6 +2,7 @@
 // One film on the shelf: its poster in a tape box, a PASSES or FAILS sticker,
 // and a label with the year and Bechdel score.
 import { posterFor } from '../lib/images';
+import { changesOnScreen } from '../lib/films.mjs';
 
 interface Props {
 	film: {
@@ -13,6 +14,7 @@ interface Props {
 		popularity: number;
 		bechdel: { score: number; pass: boolean };
 		images: { poster: string | null };
+		screen?: { bechdel?: { change: string } } | null;
 	};
 	/** The first row loads right away; the rest wait until scrolled to */
 	eager?: boolean;
@@ -31,6 +33,7 @@ const verdict = film.bechdel.pass ? 'Passes' : 'Fails';
 	data-score={film.bechdel.score}
 	data-year={film.year ?? 0}
 	data-popularity={film.popularity}
+	data-change={changesOnScreen(film) ? '' : undefined}
 >
 	<a href={`/films/${film.slug}/`}>
 		<div class="box">

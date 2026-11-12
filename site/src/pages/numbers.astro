@@ -114,6 +114,17 @@ const byRating = films.filter((f) => f.bookends?.last && f.imdbRating !== null).
 const lastOf = (gender: 'w' | 'm') => byRating.filter((f) => f.bookends!.last!.gender === gender).slice(0, 3);
 const quotes = lastOf('w').flatMap((f, i) => [f, lastOf('m')[i]]).filter(Boolean);
 
+// Page vs screen: the scripts against the films' subtitles
+const ps = s.pageVsScreen;
+const DRAFT_NAMES: Record<string, string> = { shooting: 'Shooting drafts', early: 'Early drafts', unknown: 'Drafts of unknown date' };
+const draftRows: Row[] = ps.byDraft.map((d) => ({
+	label: DRAFT_NAMES[d.draft],
+	share: d.survival ?? 0,
+	value: percent(d.survival),
+	aria: `${DRAFT_NAMES[d.draft]}: in the median film, ${percent(d.survival)} of the script's words are heard (${d.films} films)`,
+}));
+const filmList = (fs: { slug: string; title: string; year: number | null }[]) => fs.sort((a, b) => a.title.localeCompare(b.title));
+
 // The page's sections, for the contents list at the top
 const CONTENTS = [
 	{ id: 'trust-title', label: 'How far to trust these' },
@@ -121,6 +132,7 @@ const CONTENTS = [
 	{ id: 'fail-title', label: 'How far films get' },
 	{ id: 'genre-title', label: 'By genre' },
 	{ id: 'heard-title', label: 'Who gets heard' },
+	...(ps.films > 0 ? [{ id: 'screen-title', label: 'Page vs screen' }] : []),
 	{ id: 'words-title', label: 'Last words' },
 	{ id: 'crew-title', label: 'Behind the camera' },
 	{ id: 'directors-title', label: 'By director' },
@@ -233,6 +245,77 @@ const CONTENTS = [
 				</div>
 			</dl>
 		</section>
+
+		{
+			ps.films > 0 && (
+				<section class="section" aria-labelledby="screen-title">
+					<h2 id="screen-title" class="section-title">Page vs screen</h2>
+					<dl class="tiles">
+						<div>
+							<dt>{percent(ps.survival)}</dt>
+							<dd>of the script's words are heard in the film, in the median film.</dd>
+						</div>
+						<div>
+							<dt>{percent(ps.notInScript)}</dt>
+							<dd>of what's said on screen isn't in the script we have, in the median film.</dd>
+						</div>
+						<div>
+							<dt>{n(ps.passToFail.length + ps.failToPass.length)}</dt>
+							<dd>
+								of {n(ps.films)} films get a different verdict on screen. {n(ps.unclear)} more depend on who says lines that aren't in the
+								script.
+							</dd>
+						</div>
+					</dl>
+					{draftRows.length > 1 && (
+						<>
+							<h3>Words heard, by kind of script</h3>
+							<ul class="hbars wide-labels">
+								{draftRows.map((r) => (
+									<li>
+										<div class="hb-row" role="img" aria-label={r.aria}>
+											<span class="hb-label">{r.label}</span>
+											<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+											<span class="hb-value">{r.value}</span>
+										</div>
+									</li>
+								))}
+							</ul>
+						</>
+					)}
+					{ps.cut.films > 0 && (
+						<div class="prose">
+							<p>
+								In the median film, {percent(ps.cut.w)} of women's lines are cut and {percent(ps.cut.m)} of men's. Women lose a bigger
+								share of their lines in {n(ps.cut.womenMore)} of {n(ps.cut.films)} films, men in {n(ps.cut.menMore)}.
+							</p>
+						</div>
+					)}
+					<div class="two">
+						{ps.passToFail.length > 0 && (
+							<div>
+								<h3>Pass on the page, fail on screen</h3>
+								<ul class="film-list">
+									{filmList(ps.passToFail).map((f) => <li><a href={`/films/${f.slug}/`}>{f.title}</a> ({f.year})</li>)}
+								</ul>
+							</div>
+						)}
+						{ps.failToPass.length > 0 && (
+							<div>
+								<h3>Fail on the page, pass on screen</h3>
+								<ul class="film-list">
+									{filmList(ps.failToPass).map((f) => <li><a href={`/films/${f.slug}/`}>{f.title}</a> ({f.year})</li>)}
+								</ul>
+							</div>
+						)}
+					</div>
+					<p class="note">
+						{n(ps.films)} films compared with their English subtitles; {n(ps.excluded)} more were left out, most because their script was
+						typed up from the finished film. <a href="/about/#page-vs-screen">How we compare</a>.
+					</p>
+				</section>
+			)
+		}
 
 		<section class="section" aria-labelledby="words-title">
 			<h2 id="words-title" class="section-title">Last words</h2>
@@ -431,6 +514,11 @@ const CONTENTS = [
 </Base>
 
 <style>
+	.film-list {
+		columns: 2 14rem;
+		padding-left: var(--space-4);
+		margin: 0 0 var(--space-5);
+	}
 	.two {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));

@@ -1,0 +1,153 @@
+# Page vs screen: methods
+
+**Status: draft 0.1 (2026-11-12).** The thresholds in §5 are provisional. They get tuned on the development half of the hand-labelled sample (§6), then frozen as version 1.0 in a dated commit before the test half is scored and before any shelf-wide result is reported. Anything not listed in §2 is exploratory.
+
+Code: `src/opus.js` (corpus access), `src/subtitles.js` (cleaning), `src/align.js` (alignment), `src/pageVsScreen.js` (selection, labels, the Bechdel test on screen), `scripts/fetch-subtitles.js`, `scripts/screen.js`. Every output file (`data/screen/<id>.json`) records the method version and thresholds it was made with.
+
+## 1. Question
+
+A screenplay is a draft. Between the page and the release, lines are cut in the edit, rewritten on set, improvised or moved. bechdel.io scores films from their scripts, so we measure how far each script is from the film as released, and whether that changes its Bechdel verdict.
+
+## 2. Research questions
+
+- **RQ1.** How much of a script's dialogue reaches the screen? Measure: *word survival*, the share of script dialogue words heard in the film (§5).
+- **RQ2.** How much of what's said on screen isn't in the script? Measure: the share of subtitle words with no match in the script.
+- **RQ3.** Are women's lines cut at a different rate than men's?
+- **RQ4.** How often does the Bechdel verdict differ between page and screen, and in which direction?
+
+## 3. Data
+
+**Scripts.** The scripts already on the shelf, parsed by the same parser that scores them (`src/screenplay.js`). Speaker genders come from the same cast matching and hand corrections (`data/gender-overrides.json`).
+
+**Subtitles.** The English part of the OPUS OpenSubtitles corpus, release v2024 (Lison & Tiedemann 2016; Lison, Tiedemann & Kouylekov 2018): subtitles uploaded to opensubtitles.org, filed by IMDb id, split into timed sentences.
+- 2,273 of the 2,354 shelf films are in it, with a median of 17 English versions each.
+- Only the needed files are read out of the 36 GB archive, with HTTP range requests.
+- Subtitle text stays off the public repository (`subtitles/local/` is gitignored).
+
+## 4. Which subtitles stand for a film
+
+Rules are applied to every candidate version, in this order, from metadata and content alone:
+
+1. Not machine-translated.
+2. Language confidence at least 0.9, when the corpus gives one.
+3. One file for the whole film (`cds` 1/1). Multi-CD uploads restart their timing.
+4. At least 300 lines after cleaning (§5.1).
+5. The last line falls between 85% and 110% of TMDB's runtime, which removes partial files and other cuts of the film.
+6. Not a duplicate: versions identical after normalization (§5.2) count once.
+
+Of the versions left, up to nine are taken in a fixed pseudo-random order: sorted by the SHA-1 of `page-vs-screen-2026-11-12:<subtitle id>`.
+
+- **Consensus.** A script word is *heard* when it matches in more than half of the versions used. One subtitler's shortening or omission can't make a line look cut.
+- **Primary version.** The version with the highest mean agreement with the others (the medoid) supplies timing, line text for quotes, and the Bechdel test on screen.
+- **Agreement** between two versions is the share of their words that align with each other (2 × matched ÷ total). The mean over all pairs is stored per film as a reliability figure.
+
+## 5. Alignment
+
+### 5.1 Cleaning subtitles
+
+- Strip markup (`<i>`, `{\an8}`).
+- Drop lines with ♪, ♫ or # (lyrics), and credit or advertising lines (subtitler credits, web addresses).
+- Remove sound tags in `[...]` or `(...)`.
+- Keep speaker labels (`KAT:`, `[Kat]`) as evidence of who speaks, and take them out of the text.
+- Strip leading dialogue dashes.
+- Drop lines of only hesitations.
+
+A version counts as SDH (subtitles for the deaf and hard of hearing) when at least 3% of its lines carry sound tags or speaker labels.
+
+### 5.2 Normalization, on both sides
+
+- Lower-case; strip accents; use one apostrophe form, then remove apostrophes.
+- Write numbers 0–99 as words.
+- Split on anything that isn't a letter or digit.
+- Map a fixed list of spoken forms to one spelling: gonna → going to, wanna → want to, gotta → got to, ok → okay, mr → mister, 'em → them, til → until, cause → because, and dropped-g forms such as talkin → talking. The full list is in `src/align.js`.
+- Drop the hesitations uh, um, uhm, er, erm, ah, hmm, mm, mmm, hm.
+
+### 5.3 Word alignment
+
+Script dialogue (in script order) and subtitle lines (in time order) each become one sequence of words.
+
+1. **Anchors.** Word 4-grams that occur exactly once in each sequence. The longest chain of them that increases on both sides is kept, as in patience diff.
+2. **Recursion.** Between neighbouring anchors, the search repeats with 3-grams. Inside gaps of at most 80 words on both sides it continues with 2-grams and single words.
+3. **Exact alignment.** A gap with no anchors and at most 250,000 cells (script words × subtitle words) gets an exact longest common subsequence.
+4. **Lone matches.** A one-word match with no matched neighbour is dropped, unless that word is its whole script line or whole subtitle line.
+5. **Moved passages.** Unmatched script runs of 12 or more words are matched against unmatched subtitle words anywhere in the film, by shared unique 4-grams extended forward. These are labelled *moved*.
+
+### 5.4 Labels
+
+The word measures in §2 use no thresholds. Line labels do (provisional, see Status):
+
+- A script line is **heard as written** when at least 80% of its words are heard, **changed** at 30–80%, and **cut** below 30%.
+- A subtitle line in the primary version is **not in the script** when under 20% of its words match. Otherwise it is assigned to the script line most of its matched words came from.
+
+"Not in the script" means *not in this draft*. An improvisation, a rewrite in a later draft, ADR and a reshoot look the same. "Cut" includes words a subtitler shortened, which §6 measures.
+
+## 6. Validation
+
+- **Known-answer controls.** These lines are documented as improvised or rewritten, and must come out *not in the script*:
+  - Taxi Driver: "You talking to me?"
+  - Midnight Cowboy: "I'm walking here!"
+  - Blade Runner: "tears in rain"
+  - Jaws: "bigger boat"
+  - Good Will Hunting: the therapist's wife story
+
+  When the script is a transcript, these lines match, which is how transcripts were noticed (§7). In the pilot, The Shining's post-production script matched "Here's Johnny!" and Casablanca's matched "Here's looking at you, kid".
+
+- **Gold sample.**
+  - Twenty films drawn with a recorded seed, stratified by era (before 1990, 1990–2005, after 2005) and by whether the primary version is SDH.
+  - Per film: 30 script lines (stratified by predicted label) and 10 subtitle lines predicted *not in the script* (these measure that label's precision; its recall isn't measured).
+  - A person labels each item blind to the prediction, seeing the line and five subtitle lines of context on each side (`npm run screen:label`).
+  - Labels are stored as line indexes, not text (`data/eval/screen-gold.json`).
+
+- **Split.** Ten films (development) tune §5.4's thresholds and §7's transcript rule. The other ten (test) are scored once, after version 1.0 is frozen. Each script line is weighted by how many lines of its film its sampling stratum stands for, so the scores describe whole films. We report weighted precision, recall and F1 per label, with 95% bootstrap intervals that resample films.
+
+- **Intra-rater agreement.** 100 items are labelled again a week later, and we report Cohen's κ.
+
+- **Audio spot-check.** About 100 test-set lines labelled *cut* or *changed* are checked against the film's audio, separating real changes from subtitler shortening. This gives the false-cut rate.
+
+## 7. Exclusions
+
+Decided from inputs, never from results:
+
+- **Transcripts.** Some scripts online were written from the finished film ("post-production script", "transcript", "as broadcast", "continuity script", "dialogue list", or a title page with release date and running time). They can't show change, so they are excluded. Films with survival above 95% are listed for a manual look but are not excluded for their result.
+- **No usable subtitles.** No version passes §4.
+- **Wrong film or language.** Under 20% of script words align with the primary version.
+
+Each script's draft is labelled from its title page as *shooting* (shooting script, final, revised, coloured revision pages), *early* (first, second or rough draft) or *unknown*. Results are reported by draft, since earlier drafts are expected to show more change.
+
+## 8. The Bechdel test on screen
+
+The unchanged scorer (`src/bechdel/score.js`) runs on a "screen screenplay":
+
+- the primary version's lines in time order;
+- each matched line with the speaker and scene of its script line, and the subtitle's words;
+- each line not in the script placed in the scene of the line before it, with its speaker taken from an SDH label when that names a script speaker.
+
+Lines with no known speaker are read two ways:
+
+- **strict**: as an unnamed man, which breaks a conversation between women;
+- **lenient**: as absent.
+
+A verdict differs from the page's only when both readings agree. Otherwise it is reported as *unclear*. Because the same instrument scores both sides, its known errors (80% agreement with bechdeltest.com readers, `npm run eval`) affect page and screen alike.
+
+## 9. Analysis (`npm run screen:stats`)
+
+- **RQ1/RQ2.** Median and interquartile range of word survival and of the not-in-script share, overall and by draft, decade and SDH.
+- **RQ3.** The unit is the film, to avoid counting each line as an independent observation.
+  - For films where women and men each speak at least 20 lines, take the paired difference in the share of lines cut (women minus men).
+  - Report a Wilcoxon signed-rank test, and the median difference with a 95% bootstrap interval (10,000 resamples, fixed seed).
+- **RQ4.** The share of films whose verdict differs, with a 95% Wilson interval, and McNemar's test on paired page and screen pass.
+- **Robustness.** Every headline is re-run on SDH-primary films only, shooting drafts only, and versions with mean agreement of at least 0.8. We report whether each conclusion holds.
+
+## 10. Limits
+
+- Scripts that are online skew popular, American and recent. Subtitles on opensubtitles.org skew the same way.
+- Results describe "shelf films with an English script and English subtitles", not film in general.
+- Subtitles are not a transcript of speech: §6's audio spot-check estimates how far apart they are.
+- Speaker attribution on screen is borrowed from the script. Lines not in the script often have no known speaker, which is why §8 reports two readings.
+
+## References
+
+- Lison, P. & Tiedemann, J. (2016). OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles. *LREC 2016*. https://aclanthology.org/L16-1147/
+- Lison, P., Tiedemann, J. & Kouylekov, M. (2018). OpenSubtitles2018: Statistical Rescoring of Sentence Alignments in Large, Noisy Parallel Corpora. *LREC 2018*. https://aclanthology.org/L18-1275/
+- Everingham, M., Sivic, J. & Zisserman, A. (2006). "Hello! My name is... Buffy": automatic naming of characters in TV video. *BMVC 2006*. (Subtitles aligned with transcripts by dynamic time warping.)
+- Agarwal, A., Zheng, J., Kamath, S., Balasubramanian, S. & Ann Dey, S. (2015). Key Female Characters in Film Have More to Talk About Besides Men: Automating the Bechdel Test. *NAACL 2015*. https://aclanthology.org/N15-1084/

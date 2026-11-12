@@ -8,7 +8,7 @@ import { closest, squash, titleKeys } from '../lib/search.mjs';
 import { motionKind } from './motion';
 
 type Sort = 'popularity' | 'score' | 'new' | 'old' | 'az';
-type ShelfFilm = { slug: string; title: string; year: number | null; director: string; score: number; popularity: number; poster: string | null };
+type ShelfFilm = { slug: string; title: string; year: number | null; director: string; score: number; popularity: number; poster: string | null; change?: true };
 
 const num = (el: HTMLElement, key: string) => Number(el.dataset[key] ?? 0);
 const n = (x: number) => x.toLocaleString('en-US');
@@ -32,6 +32,7 @@ export function makeTape(template: HTMLTemplateElement, film: ShelfFilm): HTMLEl
 		year: String(film.year ?? 0),
 		popularity: String(film.popularity),
 	});
+	if (film.change) tape.dataset.change = '';
 	tape.querySelector('a')!.href = `/films/${film.slug}/`;
 	const img = tape.querySelector<HTMLImageElement>('img.poster');
 	const poster = posterFor(film.poster);
@@ -149,8 +150,9 @@ export function setUpShelf() {
 		let passing = 0;
 		for (const tape of sorted) {
 			const pass = num(tape, 'score') === 3;
+			const shown = show === 'all' || (show === 'change' ? 'change' in tape.dataset : show === 'pass' ? pass : !pass);
 			const matches =
-				(show === 'all' || (show === 'pass' ? pass : !pass)) &&
+				shown &&
 				(!q || keysOf(tape).some((k) => k.includes(q)));
 			if (matches) {
 				matched++;

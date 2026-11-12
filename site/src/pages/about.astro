@@ -17,6 +17,7 @@ const CONTENTS = [
 	{ id: 'where-it-comes-from', label: 'Where it comes from' },
 	{ id: 'what-it-cant-tell-you', label: "What it can't tell you" },
 	{ id: 'how-we-check', label: 'How we check a film' },
+	{ id: 'page-vs-screen', label: 'Page vs screen' },
 	{ id: 'artist-statement', label: 'Artist statement' },
 	{ id: 'why-we-built-it', label: 'Why we built it' },
 	{ id: 'read-more', label: 'Read more' },
@@ -161,6 +162,52 @@ const CONTENTS = [
 				</div>
 			</figure>
 
+			<h2 id="page-vs-screen">Page vs screen</h2>
+			<p>
+				A script is a plan, not the film. Lines get cut in the edit, rewritten on set, made up on the spot, or moved to another
+				scene. So for each film we also line its script up with the film's English subtitles, word by word, to see what made it
+				to the screen. Then we run the Bechdel test again on what's said on screen.
+			</p>
+			<h3>How we compare</h3>
+			<ul>
+				<li>
+					The subtitles come from the OpenSubtitles corpus, a research collection of subtitles from opensubtitles.org that most
+					films have several versions of. We take up to nine versions per film, picked the same way for every film: whole
+					films only, in English, not machine-translated, with a running time that matches the film.
+				</li>
+				<li>
+					A script word counts as heard when most of those versions have it, so one subtitler's shortcut can't make a line
+					look cut. Each film page says how closely its versions agree.
+				</li>
+				<li>
+					A script line is "heard as written" when nearly all its words are heard, "changed" when some are, and "cut" when
+					almost none are. A line on screen that matches nothing in the script is "not in the script".
+				</li>
+				<li>
+					For the Bechdel test on screen, each line keeps the speaker and scene of the script line it matches. Nobody can say
+					who speaks a line that isn't in the script, so we score the film twice: once as if those lines break up a
+					conversation, once as if they weren't there. When the two disagree, the page says the result is unclear.
+				</li>
+			</ul>
+			<h3>What it can't tell you</h3>
+			<ul>
+				<li>
+					"Not in the script" means not in the draft we have. An ad-lib, a rewrite in a later draft and a reshoot all look the
+					same. Older drafts show more changes than shooting scripts, and each film page says which kind of draft we have.
+				</li>
+				<li>
+					Subtitles aren't a perfect record of speech. Subtitlers shorten long lines to fit the screen, which can make a line
+					look changed when it wasn't.
+				</li>
+				<li>
+					Some scripts online were typed up from the finished film. They match the film by design, so we don't compare them.
+				</li>
+				<li>
+					Only short quotes appear on film pages. The full scripts and subtitles belong to their writers and subtitlers, so we
+					keep them off the site.
+				</li>
+			</ul>
+
 			<h2 id="artist-statement">Artist statement</h2>
 			<p>
 				Bechdel.io checks movie scripts against the Bechdel Test. The test comes from a 1985 Alison Bechdel comic strip, and it asks three things: are there at least two women, do they talk to each other, and do they talk about something other than a man.
@@ -215,6 +262,7 @@ const CONTENTS = [
 				<li><a href="https://en.wikipedia.org/wiki/A_Room_of_One%27s_Own" {...ext}><cite>A Room of One's Own</cite></a>, Virginia Woolf's 1929 essay behind the idea</li>
 				<li><a href="https://feministfrequency.com/video/the-bechdel-test-for-women-in-movies/" {...ext}><cite>The Bechdel Test for Women in Movies</cite></a>, a short video from Feminist Frequency</li>
 				<li><a href="https://dhq.digitalhumanities.org/vol/8/4/000190/000190.html" {...ext}><cite>Visualizing and Analyzing the Hollywood Screenplay with ScripThreads</cite></a>, Digital Humanities Quarterly</li>
+				<li><a href="https://aclanthology.org/L16-1147/" {...ext}><cite>OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles</cite></a>, the paper behind the subtitle collection we compare scripts with</li>
 			</ul>
 
 			<h2 id="thanks">Thanks</h2>
@@ -230,6 +278,10 @@ const CONTENTS = [
 				</li>
 				<li><a href="https://www.themoviedb.org/" {...ext}>The Movie Database (TMDB)</a>, for posters, backdrops and cast lists</li>
 				<li><a href="https://www.omdbapi.com/" {...ext}>The Open Movie Database (OMDb)</a>, for plots, ratings and awards</li>
+				<li>
+					<a href="https://opus.nlpl.eu/" {...ext}>OPUS</a> and the subtitlers of opensubtitles.org, for the subtitles we compare
+					scripts with
+				</li>
 				<li>Chase Elliott Clark, for the photo of Alison Bechdel</li>
 			</ul>
 			<p class="tmdb">
