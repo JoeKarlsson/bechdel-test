@@ -102,4 +102,6 @@ jobs:
       # Pages has dropped files from a deploy before (/.well-known/ until
       # include-hidden-files), so check the live site serves them
       - name: Live site serves security.txt
+        # This job has no checkout, so the default site/ directory doesn't exist
+        working-directory: .
         run: curl --fail --silent --show-error --retry 5 --retry-delay 10 --retry-all-errors -o /dev/null "${{ steps.deployment.outputs.page_url }}.well-known/security.txt"
