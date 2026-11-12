@@ -46,7 +46,7 @@ const last = points.at(-1)!;
 			{decades.map((p) => <span style={`left: ${x(p.year).toFixed(2)}%`}>{p.year}</span>)}
 		</div>
 	</div>
-	<p class="readout" data-year-readout aria-live="polite">{last.says}</p>
+	<p class="readout" data-year-readout>{last.says}</p>
 </figure>
 
 <script>

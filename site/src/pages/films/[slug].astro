@@ -286,7 +286,7 @@ const credit = [
 	</section>
 
 	<div class="page">
-		<section class="bechdel paper" aria-labelledby="bt-title">
+		<section class="bechdel paper">
 			<h2 id="bt-title">The Bechdel test</h2>
 			<div class="bechdel-row">
 				<div class="score">
@@ -362,7 +362,7 @@ const credit = [
 			</div>
 		</section>
 
-		<section class="section film-info" aria-labelledby="film-title">
+		<section class="section film-info">
 			{
 				poster && (
 					<img src={poster.src} srcset={poster.srcset} sizes="240px" width={poster.width} height={poster.height} alt={`Poster for ${film.title}`} loading="lazy" decoding="async" class:list={['info-poster', { 'has-hero': !!backdrop }]} />
@@ -398,7 +398,7 @@ const credit = [
 
 		{
 			topSpeakers.length > 0 && (
-				<section class="section" aria-labelledby="starring-title">
+				<section class="section">
 					<h2 id="starring-title" class="section-title">
 						Starring, by lines spoken
 					</h2>
@@ -426,7 +426,7 @@ const credit = [
 		{
 			film.cast.length > 0 && (
 				<details class="cast">
-					<summary>Full cast, {film.cast.length} {film.cast.length === 1 ? 'person' : 'people'}</summary>
+					<summary>Full cast, {film.cast.length} {film.cast.length === 1 ? 'person' : 'people'}<FoldMark /></summary>
 					<ul>
 						{film.cast.map((c) => (
 							<li class:list={{ woman: c.gender === 'w' }}>
@@ -440,19 +440,19 @@ const credit = [
 
 		{
 			film.timeline.length > 0 ? (
-				<section class="section" aria-labelledby="timeline-title">
+				<section class="section">
 					<h2 id="timeline-title" class="section-title">
 						Who talks, scene by scene
 					</h2>
 					<p class="note chart-note">
-						Lines of dialogue in groups of {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below.
+						Lines of dialogue in groups of {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below. The arrow keys move between groups of scenes.
 						{unknownShare > 0 && ` ${unknownShare}% of lines come from characters we couldn't match to the cast list and aren't shown.`}
 					</p>
 					<p class="axis-label women">Women</p>
 					<div
 						class="timeline"
 						role="group"
-						aria-label={`Lines by women and men across ${film.sceneCount} scenes. Use the arrow keys to move between groups of scenes.`}
+						aria-label={`Lines by women and men across ${film.sceneCount} scenes`}
 						data-timeline
 					>
 						{film.timeline.map((b, i) => (
@@ -460,7 +460,7 @@ const credit = [
 								type="button"
 								class="col"
 								tabindex={i === 0 ? 0 : -1}
-								aria-label={`Scenes ${b.from} to ${b.to}: women ${b.w} lines, men ${b.m}`}
+								aria-label={`Scenes ${b.from} to ${b.to}: women ${b.w} lines, men ${b.m}.${b.places.length ? ` Where: ${b.places.join(', ')}.` : ''}${b.speakers.length ? ` Most lines: ${b.speakers.map((s) => `${s.name} ${s.lines}`).join(', ')}.` : ''}`}
 								data-from={b.from}
 								data-to={b.to}
 								data-w={b.w}
@@ -478,11 +478,11 @@ const credit = [
 						<span>Scene 1</span>
 						<span>Scene {film.sceneCount}</span>
 					</p>
-					<div class="readout" aria-live="polite" data-readout>
+					<div class="readout" data-readout>
 						<p class="note">Hover, tap or tab to a bar to see those scenes: where they happen and who's talking.</p>
 					</div>
 					<details class="data-table">
-						<summary>Show the numbers</summary>
+						<summary>Show the numbers<FoldMark /></summary>
 						<table>
 							<thead>
 								<tr><th scope="col">Scenes</th><th scope="col">Women's lines</th><th scope="col">Men's lines</th></tr>
@@ -496,7 +496,7 @@ const credit = [
 					</details>
 				</section>
 			) : (
-				<section class="section" aria-labelledby="timeline-title">
+				<section class="section">
 					<h2 id="timeline-title" class="section-title">
 						Who talks, scene by scene
 					</h2>
@@ -511,7 +511,7 @@ const credit = [
 
 		{
 			order.length > 0 && (
-				<section class="section" aria-labelledby="evidence-title">
+				<section class="section">
 					<h2 id="evidence-title" class="section-title evidence-title">The evidence</h2>
 					<ul class="legend">
 						<li><span class="swatch paper-swatch" />Straight from the script</li>
@@ -584,9 +584,9 @@ const credit = [
 						{has.cast && (
 							<section class="exhibit panel narrow tilt-l">
 								<h3 id="ex-cast" data-fold="ex-cast-body">Exhibit {letter('cast')}: who's in it<FoldMark /></h3>
-								<p class="gist">{bechdel.womenChars} women and {bechdel.menChars} men in the cast. In the script, {bechdel.womenSpeaking} women and {bechdel.menSpeaking} men get lines.</p>
+								<p class="gist">{plural(bechdel.womenChars, 'woman', 'women')} and {plural(bechdel.menChars, 'man', 'men')} in the cast. In the script, {plural(bechdel.womenSpeaking, 'woman', 'women')} and {plural(bechdel.menSpeaking, 'man', 'men')} get lines.</p>
 								<div class="fold-body" id="ex-cast-body">
-									<div role="img" aria-label={`Characters: ${bechdel.womenChars} women and ${bechdel.menChars} men. With lines: ${bechdel.womenSpeaking} women and ${bechdel.menSpeaking} men.`}>
+									<div role="img" aria-label={`Characters: ${plural(bechdel.womenChars, 'woman', 'women')} and ${plural(bechdel.menChars, 'man', 'men')}. With lines: ${plural(bechdel.womenSpeaking, 'woman', 'women')} and ${plural(bechdel.menSpeaking, 'man', 'men')}.`}>
 										<p class="note">Characters</p>
 										<div class="squares">
 											{Array.from({ length: bechdel.womenChars ?? 0 }, () => <span class="sq w" />)}
@@ -670,8 +670,8 @@ const credit = [
 															<blockquote><span class="end-who">{said.name}:</span> {said.text}</blockquote>
 															<p class="end-tag">
 																<span class:list={['end-swatch', said.gender ?? 'unknown', { lead: said.lead }]} />
-																<strong>{said.gender === 'w' ? 'Woman' : said.gender === 'm' ? 'Man' : 'Gender not known'}, {said.lead ? 'a lead' : 'side character'}</strong>
-																<span class="end-rank">· {said.rank === 1 ? 'most lines' : `${nth(said.rank)}-most lines`} ({said.lines.toLocaleString('en-US')})</span>
+																<strong>{said.gender === 'w' ? 'Woman' : said.gender === 'm' ? 'Man' : 'Gender not known'}, {said.lead ? 'a lead' : 'side character'}</strong>,
+																<span class="end-rank">{said.rank === 1 ? 'most lines' : `${nth(said.rank)}-most lines`} ({said.lines.toLocaleString('en-US')})</span>
 															</p>
 														</>
 													) : (
@@ -819,7 +819,7 @@ const credit = [
 												Script: {draftWords[onScreen.draft]}. Film: {plural(onScreen.subtitles.versions, 'set')} of English subtitles{onScreen.subtitles.agreement !== null && `, ${percent(onScreen.subtitles.agreement)} in agreement`}. <a href="/about/#page-vs-screen">How we compare</a>
 											</p>
 											<details class="data-table">
-												<summary>Show the numbers</summary>
+												<summary>Show the numbers<FoldMark /></summary>
 												<table>
 													<tbody>
 														<tr><th scope="row">Script lines</th><td>{n(onScreen.lines.page)}: {n(onScreen.lines.kept)} heard as written, {n(onScreen.lines.changed)} changed, {n(onScreen.lines.cut)} cut</td></tr>
@@ -885,7 +885,7 @@ const credit = [
 															{d.nb > 0 && <span class="part nb" style={`flex-grow: ${d.nb}`} />}
 															{d.unknown > 0 && <span class="part unknown" style={`flex-grow: ${d.unknown}`} />}
 														</div>
-														<p class="dept-n note">{d.w} women, {d.m} men{d.nb ? `, ${d.nb} non-binary` : ''}{d.unknown ? `, ${d.unknown} not listed` : ''}</p>
+														<p class="dept-n note">{plural(d.w, 'woman', 'women')}, {plural(d.m, 'man', 'men')}{d.nb ? `, ${d.nb} non-binary` : ''}{d.unknown ? `, ${d.unknown} not listed` : ''}</p>
 													</li>
 												))}
 											</ul>
@@ -1128,7 +1128,7 @@ const credit = [
 			)
 		}
 
-		<section class="section about" aria-labelledby="how-title">
+		<section class="section about">
 			<h2 id="how-title" class="section-title">About this analysis</h2>
 			<p>
 				Our parser read the script{film.sceneCount > 0 && `: ${plural(film.sceneCount, 'scene')} and ${film.dialogueCount.toLocaleString('en-US')} ${film.dialogueCount === 1 ? 'line' : 'lines'} of dialogue`}.
@@ -1137,9 +1137,9 @@ const credit = [
 			</p>
 		</section>
 
-		<section class="section" aria-labelledby="more-title">
+		<section class="section">
 			<h2 id="more-title" class="section-title">Related films</h2>
-			<ul class="related">
+			<ul class="related poster-grid">
 				{related.map((f) => <Tape film={f} />)}
 			</ul>
 			<p class="back"><a href="/">Back to the whole shelf</a></p>
@@ -2149,9 +2149,12 @@ const credit = [
 	.swatch-changed {
 		background: var(--muted);
 	}
+	/* An edge keeps "cut" from reading as an empty track */
 	.ps-part.cut,
 	.swatch-cut {
 		background: var(--plank);
+		outline: 1px solid var(--muted);
+		outline-offset: -1px;
 	}
 	.ps-part.added,
 	.swatch-added {
@@ -2460,20 +2463,6 @@ const credit = [
 	}
 	.share-row {
 		margin-top: var(--space-6);
-	}
-	.related {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-		gap: var(--space-6) var(--space-4);
-	}
-	@media (max-width: 560px) {
-		.related {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: var(--space-5) var(--space-2);
-		}
 	}
 	.about p {
 		max-width: 46em;

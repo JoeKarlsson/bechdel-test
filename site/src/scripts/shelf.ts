@@ -182,6 +182,16 @@ export function setUpShelf() {
 		}
 		moreWrap.hidden = left === 0;
 		more.textContent = `Show ${Math.min(pageSize, left)} more`;
+		saveToAddress(typed, show, sort);
+	};
+	// The search, filter and sort live in the address, so Back, a refresh or a shared link keeps them
+	const saveToAddress = (typed: string, show: string, sort: Sort) => {
+		const params = new URLSearchParams();
+		if (typed) params.set('q', typed);
+		if (show !== 'all') params.set('show', show);
+		if (sort !== 'popularity') params.set('sort', sort);
+		const query = params.toString();
+		history.replaceState(history.state, '', `${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
 	};
 	// Screen readers hear the count once typing pauses, not on every key
 	let announceTimer: number | undefined;
@@ -199,8 +209,11 @@ export function setUpShelf() {
 		limit = pageSize;
 		clearTimeout(typingTimer);
 		if (e.target instanceof HTMLSelectElement) {
-			// Sort and Show re-deal the shelf; typing doesn't, or it would flicker on every key
-			refresh().then(() => dealIn(visibleTapes()));
+			// Sort and Show crossfade the old shelf into the new one; typing doesn't, or it would flicker on every key
+			loadAll().then(
+				() => (motionKind() !== 'none' && document.startViewTransition ? document.startViewTransition(update) : update()),
+				() => {},
+			);
 		} else {
 			typingTimer = window.setTimeout(refresh, 150);
 		}
@@ -226,4 +239,18 @@ export function setUpShelf() {
 	// "Show more" button needs setting up until someone uses the shelf
 	moreWrap.hidden = total <= pageSize;
 	more.textContent = `Show ${Math.min(pageSize, total - pageSize)} more`;
+
+	// Arriving with a search in the address: fill the form from it and run it
+	const fromAddress = new URLSearchParams(location.search);
+	let restored = false;
+	for (const name of ['q', 'show', 'sort']) {
+		const value = fromAddress.get(name);
+		const control = form.elements.namedItem(name);
+		if (value === null || !(control instanceof HTMLInputElement || control instanceof HTMLSelectElement)) continue;
+		// A select given a value it has no option for goes blank, which would filter the shelf to nothing sensible
+		if (control instanceof HTMLSelectElement && ![...control.options].some((o) => o.value === value)) continue;
+		control.value = value;
+		restored = true;
+	}
+	if (restored) refresh();
 }
