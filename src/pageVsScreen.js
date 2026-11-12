@@ -8,10 +8,10 @@ const { scoreBechdel, runTest } = require('./bechdel/score');
 const { normalizeSpeaker } = require('./screenplay');
 
 const METHOD = {
-	version: '0.3-provisional',
-	// line labels (§1.5): kept at or above KEPT of its words on screen, cut below CHANGED;
-	// a subtitle line is not in the script below SCRIPTED of its words matched
-	thresholds: { kept: 0.8, changed: 0.3, scripted: 0.2 },
+	version: '1.0',
+	// line labels (§5.4): kept at or above KEPT of its words on screen, cut below CHANGED; a subtitle line is not in the
+	// script below SCRIPTED of its words matched. kept and changed were tuned on the dev films' hand labels (§6)
+	thresholds: { kept: 0.65, changed: 0.15, scripted: 0.2 },
 	// version selection (§1.3)
 	minLanguageConfidence: 0.9,
 	runtimeShare: { min: 0.85, max: 1.1 },
@@ -163,9 +163,10 @@ const rulesOf = score => [score >= 1, score >= 2, score >= 3];
  * @param {number} film.pageScore - the page's Bechdel score
  * @param {Array<{id, sentences, meta}>} film.versions - every corpus subtitle for the film
  * @param {number|null} film.runtimeSeconds - TMDB's runtime
+ * @param {string|null} [film.primaryId] - use this subtitle version as the primary instead of the medoid
  * @returns {{record: object, detail?: object}} record is data/screen/<id>.json; detail has the per-line results
  */
-const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, versions, runtimeSeconds }) => {
+const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, versions, runtimeSeconds, primaryId = null }) => {
 	const draft = draftLabel(scriptText);
 	const { eligible, available, rejected } = eligibleVersions(versions, runtimeSeconds);
 	const base = { method: METHOD, script: { draft }, subtitles: { candidates: versions.length, eligible: available, rejected } };
@@ -185,7 +186,10 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 	const pageLines = lineShares(dialogue.length, page.owner, onScreen);
 	const pageLabels = pageLines.map(label);
 
-	const { primary, meanAgreement } = primaryVersion(eligible);
+	const { primary: medoid, meanAgreement } = primaryVersion(eligible);
+	// checking against hand labels pins the version that was labelled
+	const primary = primaryId ? eligible.find(v => v.id === primaryId) : medoid;
+	if (!primary) throw new Error(`subtitle version ${primaryId} is no longer eligible`);
 	const primaryAlignment = alignments[eligible.indexOf(primary)];
 	const screenLines = primary.lines;
 	const screenShares = lineShares(screenLines.length, primaryAlignment.screen.owner, j => primaryAlignment.screen.matched[j]);

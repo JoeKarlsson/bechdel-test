@@ -3,7 +3,7 @@
  * Score page vs screen against the hand labels in data/eval/screen-gold.json
  * (docs/page-vs-screen/METHODS.md §6).
  *
- *   npm run screen:eval          tune the line thresholds on the dev films, report both splits
+ *   npm run screen:eval          tune the line thresholds on the dev films, and report the dev films only
  *   npm run screen:eval -- --test-only  score the test films with the thresholds in src/pageVsScreen.js (once, after freezing)
  *
  * Script lines were sampled evenly across the predicted labels, so each is
@@ -28,8 +28,7 @@ const loadItems = async () => {
 	const items = [];
 	const notInScript = [];
 	for (const entry of gold.films) {
-		const { detail } = await compareFilmOnDisk(records.find(f => f._id === entry._id));
-		if (detail.primary !== entry.primary) throw new Error(`${entry.title}: the subtitle version changed since sampling`);
+		const { detail } = await compareFilmOnDisk(records.find(f => f._id === entry._id), { primaryId: entry.primary });
 		const share = s => s.matched / s.words;
 		const eligible = detail.pageShares.filter(s => s.words >= 2);
 		const stratumSize = label => eligible.filter(s => labelWith(gold.sampledThresholds, share(s)) === label).length;
@@ -42,7 +41,8 @@ const loadItems = async () => {
 			const truth = gold.labels[`${entry._id}:${item.kind}:${item.line}`];
 			if (!truth || truth === 'unsure') continue;
 			if (item.kind === 'screen') {
-				notInScript.push({ film: entry._id, split: entry.split, correct: truth === 'not in script' });
+				// precision counts only lines the current alignment still leaves out of the script
+				if (detail.lineOwner[item.line] === null) notInScript.push({ film: entry._id, split: entry.split, correct: truth === 'not in script' });
 				continue;
 			}
 			const s = detail.pageShares[item.line];
@@ -105,14 +105,16 @@ const main = async () => {
 		console.log(`Best on dev: kept >= ${chosen.kept}, changed >= ${chosen.changed} (now in src/pageVsScreen.js: ${METHOD.thresholds.kept} / ${METHOD.thresholds.changed})`);
 		report('dev', dev, chosen);
 	}
-	report(testOnly ? 'test (frozen thresholds)' : 'test (preview; score it for real with --test-only after freezing)', test, chosen);
+	// the test films are scored once, after the method is frozen (METHODS.md §6)
+	if (testOnly) report('test (frozen thresholds)', test, chosen);
 
-	const precisionNotInScript = rows => (rows.length ? rows.filter(r => r.correct).length / rows.length : null);
-	console.log(`\n"Not in the script" lines: ${notInScript.filter(r => r.correct).length} of ${notInScript.length} confirmed (precision ${precisionNotInScript(notInScript)?.toFixed(3)}); recall isn't measured, since only predicted lines were sampled`);
+	const split = testOnly ? 'test' : 'dev';
+	const rows = notInScript.filter(r => r.split === split);
+	console.log(`\n"Not in the script" lines (${split}): ${rows.filter(r => r.correct).length} of ${rows.length} confirmed (precision ${(rows.filter(r => r.correct).length / rows.length).toFixed(3)}); recall isn't measured, since only predicted lines were sampled`);
 
 	const again = Object.keys(gold.again).filter(key => gold.labels[key]);
 	if (again.length > 0) {
-		console.log(`Agreement with yourself: Cohen's kappa ${cohensKappa(again.map(k => gold.labels[k]), again.map(k => gold.again[k])).toFixed(3)} over ${again.length} items`);
+		console.log(`Agreement between the two labellings: Cohen's kappa ${cohensKappa(again.map(k => gold.labels[k]), again.map(k => gold.again[k])).toFixed(3)} over ${again.length} items`);
 	}
 	const audio = Object.values(gold.audio);
 	if (audio.length > 0) {
