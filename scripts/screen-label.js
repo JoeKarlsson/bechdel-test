@@ -39,10 +39,11 @@ const drawFilms = films => {
 	}
 	const picked = [];
 	for (let round = 0; picked.length < FILMS && [...strata.values()].some(fs => fs.length > round); round++) {
-		for (const [stratum, fs] of [...strata].sort()) {
-			// alternate by pick order, so dev and test get ten films each and the same mix of strata
-			if (fs[round] && picked.length < FILMS) picked.push({ film: fs[round], stratum, split: picked.length % 2 === 0 ? 'dev' : 'test' });
-		}
+		[...strata].sort().forEach(([stratum, fs], index) => {
+			// a stratum's films alternate between dev and test from round to round, and neighbouring strata start on opposite
+			// sides, so each split gets ten films and the same mix (alternating by pick order alone lined up with SDH or not)
+			if (fs[round] && picked.length < FILMS) picked.push({ film: fs[round], stratum, split: (index + round) % 2 === 0 ? 'dev' : 'test' });
+		});
 	}
 	return picked;
 };
