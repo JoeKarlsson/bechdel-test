@@ -238,10 +238,18 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 			: passes(pageBechdel) ? 'page-pass-screen-fail' : 'page-fail-screen-pass';
 
 	// RQ5 (§8.1): the conversations that pass, in screen time, first line's start to last line's end
-	const passingLengths = passes(strict) ? runTest(strictScreenplay, resolved, characters, 'w').clean
-		.map(({ lines }) => (lines.at(-1).end ?? lines.at(-1).start) - lines[0].start).filter(Number.isFinite) : [];
+	const passingSpans = passes(strict) ? runTest(strictScreenplay, resolved, characters, 'w').clean
+		.map(({ lines }) => [lines[0].start, lines.at(-1).end ?? lines.at(-1).start])
+		.filter(([start, end]) => Number.isFinite(start) && Number.isFinite(end)) : [];
+	const passingLengths = passingSpans.map(([start, end]) => end - start);
 	const passingConversations = passingLengths.length > 0
-		? { count: passingLengths.length, seconds: +passingLengths.reduce((a, b) => a + b, 0).toFixed(1), longest: +Math.max(...passingLengths).toFixed(1) }
+		? {
+			count: passingLengths.length,
+			seconds: +passingLengths.reduce((a, b) => a + b, 0).toFixed(1),
+			longest: +Math.max(...passingLengths).toFixed(1),
+			// when each one happens, in seconds from the start, for drawing them on the film's timeline
+			spans: passingSpans.map(span => span.map(t => +t.toFixed(1))),
+		}
 		: null;
 
 	// RQ6 (§8.2): named women's (or men's) lines in conversations with each other against their other lines
@@ -260,6 +268,25 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 	const fits = text => wordCount(text) >= minWords && wordCount(text) <= maxWords;
 	const screenTextOf = owner => screenLines.filter((_, j) => lineOwner[j] === owner).map(l => l.text).join(' ');
 	const named = speaker => resolved.get(speaker)?.named;
+	// each word of a quote with whether it was matched, so a page can mark them: [["shot", true], ["throat", false]]
+	const wordIndexes = owner => owner.reduce((byLine, line, k) => (byLine[line] ??= []).push(k) && byLine, []);
+	const pageWordsByLine = wordIndexes(page.owner);
+	const screenWordsByLine = wordIndexes(primaryAlignment.screen.owner);
+	const marked = (text, flags) => {
+		const tokens = text.split(/\s+/).filter(Boolean);
+		let k = 0;
+		const out = tokens.map(token => {
+			const n = normalizeWords(token).length;
+			const mark = n === 0 ? null : flags.slice(k, k + n).every(Boolean);
+			k += n;
+			return [token, mark];
+		});
+		// a token that normalizes differently on its own than in its line: leave the quote unmarked rather than mismarked
+		return k === flags.length ? out : tokens.map(token => [token, null]);
+	};
+	const pageMarks = i => marked(dialogue[i].text, (pageWordsByLine[i] ?? []).map(onScreen));
+	const screenMarks = owner => screenLines.flatMap((line, j) => (lineOwner[j] === owner
+		? marked(line.text, (screenWordsByLine[j] ?? []).map(k => primaryAlignment.screen.matched[k] === 1)) : []));
 	const quotes = {
 		cut: spread(dialogue.map((d, i) => ({ ...d, i })).filter(d => pageLabels[d.i] === 'cut' && named(d.speaker) && fits(d.text)), perKind)
 			.map(d => ({ speaker: d.speaker, text: d.text })),
@@ -267,7 +294,7 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 			.map(line => ({ at: Math.round(line.start ?? 0), text: line.text })),
 		changed: spread(dialogue.map((d, i) => ({ ...d, i, screen: screenTextOf(i) }))
 			.filter(d => pageLabels[d.i] === 'changed' && named(d.speaker) && fits(d.text) && fits(d.screen)), perKind)
-			.map(d => ({ speaker: d.speaker, page: d.text, screen: d.screen })),
+			.map(d => ({ speaker: d.speaker, page: d.text, screen: d.screen, pageWords: pageMarks(d.i), screenWords: screenMarks(d.i) })),
 	};
 
 	const record = {
