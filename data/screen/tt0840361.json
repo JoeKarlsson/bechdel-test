@@ -1,0 +1,1090 @@
+{
+	"_id": "tt0840361",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 26,
+		"eligible": 10,
+		"rejected": {
+			"split across CDs": 2,
+			"runtime mismatch": 12,
+			"duplicate": 1,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1952666862",
+		"versions": [
+			"1952889789",
+			"1952671964",
+			"1952836825",
+			"1954297604",
+			"1952666862",
+			"1956470337",
+			"1952665779",
+			"1952665264",
+			"1952665266"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9953585028563013,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7500,
+	"quality": {
+		"anchoredShare": 0.3609868928296068
+	},
+	"words": {
+		"page": 12970,
+		"screen": 10189,
+		"kept": 4678,
+		"cut": 8292,
+		"notInScript": 5507,
+		"moved": 737
+	},
+	"lines": {
+		"page": 1239,
+		"kept": 390,
+		"changed": 171,
+		"cut": 677,
+		"screen": 1877,
+		"notInScript": 969
+	},
+	"byGender": {
+		"w": {
+			"lines": 293,
+			"kept": 98,
+			"changed": 31,
+			"cut": 164
+		},
+		"m": {
+			"lines": 894,
+			"kept": 276,
+			"changed": 135,
+			"cut": 483
+		},
+		"unknown": {
+			"lines": 51,
+			"kept": 16,
+			"changed": 5,
+			"cut": 30
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 14,
+			"kept": 12
+		},
+		{
+			"kept": 11,
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"changed": 4,
+			"cut": 20,
+			"kept": 2
+		},
+		{
+			"cut": 17,
+			"changed": 2,
+			"kept": 7
+		},
+		{
+			"kept": 19,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"cut": 14,
+			"changed": 5
+		},
+		{
+			"cut": 22,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 10
+		},
+		{
+			"cut": 21,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"changed": 3,
+			"kept": 11,
+			"cut": 11
+		},
+		{
+			"cut": 20,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 2,
+			"cut": 22,
+			"changed": 2
+		},
+		{
+			"cut": 26
+		},
+		{
+			"cut": 25,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"cut": 15,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"changed": 5,
+			"cut": 18,
+			"kept": 3
+		},
+		{
+			"cut": 21,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"changed": 7,
+			"kept": 9,
+			"cut": 10
+		},
+		{
+			"cut": 16,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 9
+		},
+		{
+			"kept": 12,
+			"changed": 8,
+			"cut": 5
+		},
+		{
+			"kept": 13,
+			"cut": 6,
+			"changed": 7
+		},
+		{
+			"kept": 15,
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"cut": 13,
+			"kept": 6,
+			"changed": 7
+		},
+		{
+			"cut": 23,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 18,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"cut": 10,
+			"kept": 10,
+			"changed": 6
+		},
+		{
+			"cut": 13,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"kept": 13,
+			"cut": 10,
+			"changed": 3
+		},
+		{
+			"cut": 13,
+			"changed": 1,
+			"kept": 12
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"cut": 15,
+			"kept": 6,
+			"changed": 5
+		},
+		{
+			"kept": 14,
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"kept": 16,
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"cut": 16,
+			"changed": 3
+		},
+		{
+			"kept": 14,
+			"cut": 8,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"changed": 2,
+			"cut": 14
+		},
+		{
+			"kept": 5,
+			"cut": 17,
+			"changed": 4
+		},
+		{
+			"cut": 10,
+			"kept": 10,
+			"changed": 6
+		},
+		{
+			"kept": 11,
+			"cut": 9,
+			"changed": 6
+		},
+		{
+			"cut": 17,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"kept": 6,
+			"changed": 5
+		},
+		{
+			"cut": 18,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 12,
+			"cut": 10
+		},
+		{
+			"cut": 8,
+			"kept": 11,
+			"changed": 7
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"changed": 4,
+			"cut": 19,
+			"kept": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 28,
+			"notInScript": 96
+		},
+		{
+			"scripted": 38,
+			"notInScript": 202
+		},
+		{
+			"scripted": 60,
+			"notInScript": 75
+		},
+		{
+			"scripted": 205,
+			"notInScript": 87
+		},
+		{
+			"scripted": 245,
+			"notInScript": 141
+		},
+		{
+			"scripted": 118,
+			"notInScript": 175
+		},
+		{
+			"scripted": 78,
+			"notInScript": 166
+		},
+		{
+			"scripted": 89,
+			"notInScript": 71
+		},
+		{
+			"scripted": 224,
+			"notInScript": 24
+		},
+		{
+			"scripted": 159,
+			"notInScript": 183
+		},
+		{
+			"scripted": 284,
+			"notInScript": 97
+		},
+		{
+			"scripted": 144,
+			"notInScript": 83
+		},
+		{
+			"scripted": 229,
+			"notInScript": 8
+		},
+		{
+			"scripted": 300,
+			"notInScript": 13
+		},
+		{
+			"scripted": 270,
+			"notInScript": 56
+		},
+		{
+			"scripted": 213,
+			"notInScript": 110
+		},
+		{
+			"scripted": 242,
+			"notInScript": 51
+		},
+		{
+			"scripted": 63,
+			"notInScript": 158
+		},
+		{
+			"scripted": 199,
+			"notInScript": 48
+		},
+		{
+			"scripted": 69,
+			"notInScript": 71
+		},
+		{
+			"scripted": 31,
+			"notInScript": 103
+		},
+		{
+			"scripted": 16,
+			"notInScript": 68
+		},
+		{
+			"scripted": 121,
+			"notInScript": 29
+		},
+		{
+			"scripted": 160,
+			"notInScript": 175
+		},
+		{
+			"scripted": 273,
+			"notInScript": 24
+		},
+		{
+			"scripted": 251,
+			"notInScript": 94
+		},
+		{
+			"scripted": 227,
+			"notInScript": 56
+		},
+		{
+			"scripted": 210,
+			"notInScript": 89
+		},
+		{
+			"scripted": 306,
+			"notInScript": 53
+		},
+		{
+			"scripted": 145,
+			"notInScript": 48
+		},
+		{
+			"scripted": 207,
+			"notInScript": 48
+		},
+		{
+			"scripted": 131,
+			"notInScript": 101
+		},
+		{
+			"scripted": 246,
+			"notInScript": 6
+		},
+		{
+			"scripted": 179,
+			"notInScript": 137
+		},
+		{
+			"scripted": 43,
+			"notInScript": 35
+		},
+		{
+			"scripted": 101,
+			"notInScript": 83
+		},
+		{
+			"scripted": 114,
+			"notInScript": 156
+		},
+		{
+			"scripted": 36,
+			"notInScript": 81
+		},
+		{
+			"scripted": 12,
+			"notInScript": 58
+		},
+		{
+			"scripted": 77,
+			"notInScript": 85
+		},
+		{
+			"scripted": 39,
+			"notInScript": 37
+		},
+		{
+			"scripted": 10,
+			"notInScript": 26
+		},
+		{
+			"scripted": 136,
+			"notInScript": 104
+		},
+		{
+			"scripted": 60,
+			"notInScript": 43
+		},
+		{
+			"scripted": 26,
+			"notInScript": 38
+		},
+		{
+			"scripted": 10,
+			"notInScript": 73
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 290,
+				"kept": 97,
+				"changed": 31,
+				"cut": 162
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 519,
+				"kept": 172,
+				"changed": 71,
+				"cut": 276
+			},
+			"other": {
+				"lines": 365,
+				"kept": 102,
+				"changed": 62,
+				"cut": 201
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "CLAIRE",
+				"text": "They have assault rifles and my driver's license. So I hope you're focusing on this."
+			},
+			{
+				"speaker": "CLAIRE",
+				"text": "I knew you were going to make fun of me."
+			},
+			{
+				"speaker": "DOUG",
+				"text": "Yeah. That's too bad."
+			},
+			{
+				"speaker": "DOUG",
+				"text": "You, you won't regret that. I'll -- just let me, let's go tomorrow."
+			},
+			{
+				"speaker": "JEM",
+				"text": "Was it you who called?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 372,
+				"text": "Come on, let's go."
+			},
+			{
+				"at": 1461,
+				"text": "I volunteer at the Boys Girls Club in Charlestown"
+			},
+			{
+				"at": 2969,
+				"text": "They sent me home and that was it."
+			},
+			{
+				"at": 4397,
+				"text": "You know what I mean?"
+			},
+			{
+				"at": 6119,
+				"text": "All right, go, go, go."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DOUG",
+				"page": "Can't say the same for the assistant manager.",
+				"screen": "Hey, Jem, what happened with the assistant manager?",
+				"pageWords": [
+					[
+						"Can't",
+						false
+					],
+					[
+						"say",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"same",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"assistant",
+						true
+					],
+					[
+						"manager.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Hey,",
+						false
+					],
+					[
+						"Jem,",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"happened",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"assistant",
+						true
+					],
+					[
+						"manager?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DOUG",
+				"page": "I don't need to be up there killin' people.",
+				"screen": "I can't be up there killing people, man.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"there",
+						true
+					],
+					[
+						"killin'",
+						false
+					],
+					[
+						"people.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"can't",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"up",
+						true
+					],
+					[
+						"there",
+						true
+					],
+					[
+						"killing",
+						false
+					],
+					[
+						"people,",
+						false
+					],
+					[
+						"man.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DOUG",
+				"page": "Courier, get on the ground. You're going to get hurt.",
+				"screen": "You're gonna get the fucking electric chair brought back over to Charlestown.",
+				"pageWords": [
+					[
+						"Courier,",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"ground.",
+						false
+					],
+					[
+						"You're",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"hurt.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"gonna",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"fucking",
+						false
+					],
+					[
+						"electric",
+						false
+					],
+					[
+						"chair",
+						false
+					],
+					[
+						"brought",
+						false
+					],
+					[
+						"back",
+						false
+					],
+					[
+						"over",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"Charlestown.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JEM",
+				"page": "Tools are set. Got the armor. Uniforms?",
+				"screen": "All right, the tools are set. Got our body armor.",
+				"pageWords": [
+					[
+						"Tools",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"set.",
+						true
+					],
+					[
+						"Got",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"armor.",
+						false
+					],
+					[
+						"Uniforms?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"All",
+						false
+					],
+					[
+						"right,",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"tools",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"set.",
+						true
+					],
+					[
+						"Got",
+						true
+					],
+					[
+						"our",
+						false
+					],
+					[
+						"body",
+						false
+					],
+					[
+						"armor.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "BRAGGING COP",
+				"page": "To reload, at which point I fired, struck the suspect. I believe at least once in the clavicle...",
+				"screen": "At that point, I fired, struck the suspect at least once or twice.",
+				"pageWords": [
+					[
+						"To",
+						false
+					],
+					[
+						"reload,",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"which",
+						false
+					],
+					[
+						"point",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"fired,",
+						true
+					],
+					[
+						"struck",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"suspect.",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"believe",
+						false
+					],
+					[
+						"at",
+						true
+					],
+					[
+						"least",
+						true
+					],
+					[
+						"once",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"clavicle...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"At",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"point,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"fired,",
+						true
+					],
+					[
+						"struck",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"suspect",
+						true
+					],
+					[
+						"at",
+						true
+					],
+					[
+						"least",
+						true
+					],
+					[
+						"once",
+						true
+					],
+					[
+						"or",
+						false
+					],
+					[
+						"twice.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

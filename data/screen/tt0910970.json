@@ -1,0 +1,591 @@
+{
+	"_id": "tt0910970",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 62,
+		"eligible": 41,
+		"rejected": {
+			"duplicate": 17,
+			"split across CDs": 1,
+			"runtime mismatch": 2,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1958145321",
+		"versions": [
+			"1951993316",
+			"1951963349",
+			"1951963348",
+			"1951977919",
+			"1955362216",
+			"1952259149",
+			"1956803133",
+			"1954623393",
+			"1958145321"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8900726105176173,
+		"lyricsDropped": 91
+	},
+	"runtimeSeconds": 5880,
+	"quality": {
+		"anchoredShare": 0.8038147138964578
+	},
+	"words": {
+		"page": 2202,
+		"screen": 2259,
+		"kept": 1767,
+		"cut": 435,
+		"notInScript": 489,
+		"moved": 0
+	},
+	"lines": {
+		"page": 362,
+		"kept": 244,
+		"changed": 20,
+		"cut": 97,
+		"screen": 758,
+		"notInScript": 298
+	},
+	"byGender": {
+		"w": {
+			"lines": 110,
+			"kept": 86,
+			"changed": 4,
+			"cut": 20
+		},
+		"m": {
+			"lines": 210,
+			"kept": 120,
+			"changed": 14,
+			"cut": 76
+		},
+		"unknown": {
+			"lines": 41,
+			"kept": 38,
+			"changed": 2,
+			"cut": 1
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 3,
+			"cut": 5
+		},
+		{
+			"cut": 3,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 2,
+			"cut": 6
+		},
+		{
+			"kept": 1,
+			"cut": 6
+		},
+		{
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 7
+		},
+		{
+			"cut": 2,
+			"changed": 1,
+			"kept": 5
+		},
+		{
+			"changed": 2,
+			"kept": 4,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 5,
+			"cut": 2
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 8
+		},
+		{
+			"kept": 7
+		},
+		{
+			"kept": 8
+		},
+		{
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 3
+		},
+		{
+			"kept": 5,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 8
+		},
+		{
+			"kept": 6,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"cut": 1
+		},
+		{
+			"kept": 3,
+			"cut": 4
+		},
+		{
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"cut": 1
+		},
+		{
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"kept": 3,
+			"cut": 5
+		},
+		{
+			"cut": 1,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"kept": 5,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 2,
+			"kept": 6
+		},
+		{
+			"kept": 7
+		},
+		{
+			"kept": 8
+		},
+		{
+			"kept": 7
+		},
+		{
+			"kept": 8
+		},
+		{
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"cut": 4,
+			"kept": 3
+		},
+		{
+			"kept": 5,
+			"cut": 3
+		},
+		{
+			"kept": 6,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 7
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"cut": 1
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 8
+		},
+		{
+			"cut": 4,
+			"kept": 3
+		},
+		{
+			"kept": 4,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 4,
+			"cut": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 102,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 6
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 6
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		},
+		{
+			"scripted": 15,
+			"notInScript": 11
+		},
+		{
+			"scripted": 6,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 9
+		},
+		{
+			"scripted": 1,
+			"notInScript": 8
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 12
+		},
+		{
+			"scripted": 0,
+			"notInScript": 3
+		},
+		{
+			"scripted": 0,
+			"notInScript": 15
+		},
+		{
+			"scripted": 66,
+			"notInScript": 22
+		},
+		{
+			"scripted": 146,
+			"notInScript": 32
+		},
+		{
+			"scripted": 23,
+			"notInScript": 8
+		},
+		{
+			"scripted": 146,
+			"notInScript": 37
+		},
+		{
+			"scripted": 165,
+			"notInScript": 1
+		},
+		{
+			"scripted": 115,
+			"notInScript": 9
+		},
+		{
+			"scripted": 75,
+			"notInScript": 11
+		},
+		{
+			"scripted": 12,
+			"notInScript": 11
+		},
+		{
+			"scripted": 15,
+			"notInScript": 14
+		},
+		{
+			"scripted": 39,
+			"notInScript": 12
+		},
+		{
+			"scripted": 78,
+			"notInScript": 8
+		},
+		{
+			"scripted": 83,
+			"notInScript": 15
+		},
+		{
+			"scripted": 64,
+			"notInScript": 11
+		},
+		{
+			"scripted": 132,
+			"notInScript": 8
+		},
+		{
+			"scripted": 234,
+			"notInScript": 4
+		},
+		{
+			"scripted": 54,
+			"notInScript": 24
+		},
+		{
+			"scripted": 15,
+			"notInScript": 12
+		},
+		{
+			"scripted": 19,
+			"notInScript": 11
+		},
+		{
+			"scripted": 88,
+			"notInScript": 21
+		},
+		{
+			"scripted": 51,
+			"notInScript": 17
+		},
+		{
+			"scripted": 19,
+			"notInScript": 14
+		},
+		{
+			"scripted": 24,
+			"notInScript": 15
+		},
+		{
+			"scripted": 6,
+			"notInScript": 4
+		},
+		{
+			"scripted": 8,
+			"notInScript": 3
+		},
+		{
+			"scripted": 28,
+			"notInScript": 3
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 0,
+				"changed": 0,
+				"cut": 2
+			},
+			"other": {
+				"lines": 75,
+				"kept": 53,
+				"changed": 4,
+				"cut": 18
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 13,
+				"kept": 7,
+				"changed": 2,
+				"cut": 4
+			},
+			"other": {
+				"lines": 95,
+				"kept": 31,
+				"changed": 7,
+				"cut": 57
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "EVE",
+				"text": "[Hey watch it! Don't come any closer!]"
+			},
+			{
+				"speaker": "EVE",
+				"text": "[Wall-E, what are you doing here?! You can't be here! You're going to get me in trouble!...]"
+			},
+			{
+				"speaker": "WALL-E",
+				"text": "[Hey look! We're on TV -- !]"
+			},
+			{
+				"speaker": "EVE",
+				"text": "[Come on. Time's a wastin'.]"
+			},
+			{
+				"speaker": "WALL-E",
+				"text": "[You can't have it!]"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 2146,
+				"text": "Whoa, whoa, whoa, whoa, whoa."
+			},
+			{
+				"at": 2348,
+				"text": "A service-bot will be here to assist you momentarily."
+			},
+			{
+				"at": 2573,
+				"text": "I'm good, I am good."
+			},
+			{
+				"at": 2683,
+				"text": "Wow, look at that!"
+			},
+			{
+				"at": 4413,
+				"text": "That style suits you."
+			}
+		],
+		"changed": []
+	}
+}

@@ -1,0 +1,931 @@
+{
+	"_id": "tt2209764",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 33,
+		"eligible": 22,
+		"rejected": {
+			"runtime mismatch": 2,
+			"duplicate": 8,
+			"not English": 1
+		},
+		"used": 9,
+		"primary": "1954598755",
+		"versions": [
+			"1954326498",
+			"1954326565",
+			"1959452484",
+			"1954598755",
+			"1954318807",
+			"1954321864",
+			"1954456882",
+			"1954774787",
+			"1954326563"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9722015661555466,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7140,
+	"quality": {
+		"anchoredShare": 0.05813364832939588
+	},
+	"excluded": "the subtitles match the script no better than chance",
+	"words": {
+		"page": 11852,
+		"screen": 5667,
+		"kept": 688,
+		"cut": 11164,
+		"notInScript": 4978,
+		"moved": 96
+	},
+	"lines": {
+		"page": 737,
+		"kept": 28,
+		"changed": 81,
+		"cut": 628,
+		"screen": 1084,
+		"notInScript": 905
+	},
+	"byGender": {
+		"w": {
+			"lines": 255,
+			"kept": 13,
+			"changed": 33,
+			"cut": 209
+		},
+		"m": {
+			"lines": 412,
+			"kept": 12,
+			"changed": 42,
+			"cut": 358
+		},
+		"unknown": {
+			"lines": 70,
+			"kept": 3,
+			"changed": 6,
+			"cut": 61
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 15,
+			"kept": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"cut": 14
+		},
+		{
+			"cut": 12,
+			"changed": 4
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 13,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"kept": 2,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 13,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"kept": 1,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 4
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 1,
+			"changed": 6
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"kept": 2,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"cut": 14,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 15
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 26
+		},
+		{
+			"scripted": 7,
+			"notInScript": 159
+		},
+		{
+			"scripted": 20,
+			"notInScript": 186
+		},
+		{
+			"scripted": 0,
+			"notInScript": 267
+		},
+		{
+			"scripted": 44,
+			"notInScript": 173
+		},
+		{
+			"scripted": 43,
+			"notInScript": 259
+		},
+		{
+			"scripted": 71,
+			"notInScript": 195
+		},
+		{
+			"scripted": 18,
+			"notInScript": 127
+		},
+		{
+			"scripted": 5,
+			"notInScript": 55
+		},
+		{
+			"scripted": 69,
+			"notInScript": 76
+		},
+		{
+			"scripted": 24,
+			"notInScript": 89
+		},
+		{
+			"scripted": 22,
+			"notInScript": 49
+		},
+		{
+			"scripted": 0,
+			"notInScript": 70
+		},
+		{
+			"scripted": 43,
+			"notInScript": 39
+		},
+		{
+			"scripted": 34,
+			"notInScript": 94
+		},
+		{
+			"scripted": 108,
+			"notInScript": 186
+		},
+		{
+			"scripted": 8,
+			"notInScript": 118
+		},
+		{
+			"scripted": 31,
+			"notInScript": 106
+		},
+		{
+			"scripted": 20,
+			"notInScript": 82
+		},
+		{
+			"scripted": 29,
+			"notInScript": 192
+		},
+		{
+			"scripted": 13,
+			"notInScript": 149
+		},
+		{
+			"scripted": 34,
+			"notInScript": 98
+		},
+		{
+			"scripted": 21,
+			"notInScript": 95
+		},
+		{
+			"scripted": 0,
+			"notInScript": 129
+		},
+		{
+			"scripted": 18,
+			"notInScript": 77
+		},
+		{
+			"scripted": 17,
+			"notInScript": 62
+		},
+		{
+			"scripted": 0,
+			"notInScript": 38
+		},
+		{
+			"scripted": 0,
+			"notInScript": 92
+		},
+		{
+			"scripted": 0,
+			"notInScript": 125
+		},
+		{
+			"scripted": 16,
+			"notInScript": 117
+		},
+		{
+			"scripted": 70,
+			"notInScript": 123
+		},
+		{
+			"scripted": 11,
+			"notInScript": 67
+		},
+		{
+			"scripted": 62,
+			"notInScript": 47
+		},
+		{
+			"scripted": 55,
+			"notInScript": 41
+		},
+		{
+			"scripted": 9,
+			"notInScript": 37
+		},
+		{
+			"scripted": 11,
+			"notInScript": 39
+		},
+		{
+			"scripted": 62,
+			"notInScript": 125
+		},
+		{
+			"scripted": 59,
+			"notInScript": 160
+		},
+		{
+			"scripted": 4,
+			"notInScript": 2
+		},
+		{
+			"scripted": 82,
+			"notInScript": 68
+		},
+		{
+			"scripted": 2,
+			"notInScript": 31
+		},
+		{
+			"scripted": 0,
+			"notInScript": 100
+		},
+		{
+			"scripted": 24,
+			"notInScript": 48
+		},
+		{
+			"scripted": 6,
+			"notInScript": 30
+		},
+		{
+			"scripted": 0,
+			"notInScript": 47
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 8,
+		"longest": 8,
+		"spans": [
+			[
+				5578.1,
+				5586.1
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 6,
+				"kept": 1,
+				"changed": 2,
+				"cut": 3
+			},
+			"other": {
+				"lines": 249,
+				"kept": 12,
+				"changed": 31,
+				"cut": 206
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 144,
+				"kept": 5,
+				"changed": 15,
+				"cut": 124
+			},
+			"other": {
+				"lines": 265,
+				"kept": 7,
+				"changed": 27,
+				"cut": 231
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "page-fail-screen-pass"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MAX",
+				"text": "It could be the shock. You could be coming down with the flu. Either way, you’re going home to rest."
+			},
+			{
+				"speaker": "EVELYN",
+				"text": "Will? Did you do that? Will doesn’t respond. The pace of coding gets faster."
+			},
+			{
+				"speaker": "EVELYN",
+				"text": "You from around here, Martin?"
+			},
+			{
+				"speaker": "WILL IN THE WALLS",
+				"text": "I can explain it to you."
+			},
+			{
+				"speaker": "WILL",
+				"text": "It will take some time, but it will heal you. EVELYN'S POV: of Will’s face. Calm and comforting."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 529,
+				"text": "And it couldn't be more relevant than it is today."
+			},
+			{
+				"at": 1349,
+				"text": "And take care of yourself."
+			},
+			{
+				"at": 2842,
+				"text": "That you're gonna recruit me?"
+			},
+			{
+				"at": 4083,
+				"text": "They have no hope."
+			},
+			{
+				"at": 5622,
+				"text": "There's a chance it won't detect it until it's too late."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "WILL",
+				"page": "Promise me. When it happens, you’11 take care of her.",
+				"screen": "Take care of her.",
+				"pageWords": [
+					[
+						"Promise",
+						false
+					],
+					[
+						"me.",
+						false
+					],
+					[
+						"When",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"happens,",
+						false
+					],
+					[
+						"you’11",
+						false
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"care",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"her.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Take",
+						true
+					],
+					[
+						"care",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"her.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "WILL IN THE MACHINE",
+				"page": "Evelyn. I need more. We need to grow.",
+				"screen": "You need to get me online.",
+				"pageWords": [
+					[
+						"Evelyn.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"more.",
+						false
+					],
+					[
+						"We",
+						false
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"grow.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"online.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "WILL",
+				"page": "I've made a breakthrough. Let me show you. Evelyn nods.",
+				"screen": "We've made a breakthrough with the nanotechnology.",
+				"pageWords": [
+					[
+						"I've",
+						false
+					],
+					[
+						"made",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"breakthrough.",
+						true
+					],
+					[
+						"Let",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"show",
+						false
+					],
+					[
+						"you.",
+						false
+					],
+					[
+						"Evelyn",
+						false
+					],
+					[
+						"nods.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We've",
+						false
+					],
+					[
+						"made",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"breakthrough",
+						true
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"nanotechnology.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EVELYN",
+				"page": "Wait. You’re measuring my hormones?",
+				"screen": "Are you measuring my hormones?",
+				"pageWords": [
+					[
+						"Wait.",
+						false
+					],
+					[
+						"You’re",
+						false
+					],
+					[
+						"measuring",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"hormones?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Are",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"measuring",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"hormones?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "EVELYN",
+				"page": "I left you once. I’m not leaving you again.",
+				"screen": "I'm not leaving you again.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"left",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"once.",
+						false
+					],
+					[
+						"I’m",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"leaving",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"again.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"leaving",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"again.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

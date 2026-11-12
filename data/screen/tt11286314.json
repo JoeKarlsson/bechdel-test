@@ -1,0 +1,944 @@
+{
+	"_id": "tt11286314",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 4,
+		"eligible": 3,
+		"rejected": {
+			"runtime mismatch": 1
+		},
+		"used": 3,
+		"primary": "1957486804",
+		"versions": [
+			"1957486803",
+			"1957495946",
+			"1957486804"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9882767006096858,
+		"lyricsDropped": 2
+	},
+	"runtimeSeconds": 8280,
+	"quality": {
+		"anchoredShare": 0.3441434566959176
+	},
+	"words": {
+		"page": 18347,
+		"screen": 14269,
+		"kept": 6314,
+		"cut": 12033,
+		"notInScript": 7955,
+		"moved": 414
+	},
+	"lines": {
+		"page": 1244,
+		"kept": 369,
+		"changed": 249,
+		"cut": 626,
+		"screen": 2432,
+		"notInScript": 1351
+	},
+	"byGender": {
+		"w": {
+			"lines": 450,
+			"kept": 161,
+			"changed": 92,
+			"cut": 197
+		},
+		"m": {
+			"lines": 699,
+			"kept": 192,
+			"changed": 145,
+			"cut": 362
+		},
+		"unknown": {
+			"lines": 95,
+			"kept": 16,
+			"changed": 12,
+			"cut": 67
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 25,
+			"changed": 1
+		},
+		{
+			"kept": 3,
+			"cut": 22,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 9,
+			"cut": 7
+		},
+		{
+			"kept": 10,
+			"cut": 11,
+			"changed": 5
+		},
+		{
+			"cut": 9,
+			"changed": 7,
+			"kept": 10
+		},
+		{
+			"cut": 6,
+			"kept": 14,
+			"changed": 6
+		},
+		{
+			"changed": 2,
+			"cut": 18,
+			"kept": 6
+		},
+		{
+			"cut": 9,
+			"kept": 12,
+			"changed": 5
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 10
+		},
+		{
+			"changed": 9,
+			"kept": 6,
+			"cut": 11
+		},
+		{
+			"cut": 24,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"cut": 14,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 10,
+			"kept": 11,
+			"changed": 5
+		},
+		{
+			"cut": 16,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"cut": 7,
+			"changed": 8,
+			"kept": 11
+		},
+		{
+			"cut": 8,
+			"kept": 7,
+			"changed": 11
+		},
+		{
+			"kept": 12,
+			"changed": 10,
+			"cut": 4
+		},
+		{
+			"cut": 17,
+			"changed": 1,
+			"kept": 8
+		},
+		{
+			"kept": 12,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 7,
+			"kept": 10
+		},
+		{
+			"changed": 6,
+			"kept": 13,
+			"cut": 7
+		},
+		{
+			"changed": 10,
+			"cut": 7,
+			"kept": 8
+		},
+		{
+			"cut": 15,
+			"changed": 2,
+			"kept": 9
+		},
+		{
+			"cut": 24,
+			"kept": 2
+		},
+		{
+			"cut": 22,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"changed": 10,
+			"cut": 8,
+			"kept": 8
+		},
+		{
+			"changed": 6,
+			"kept": 5,
+			"cut": 15
+		},
+		{
+			"changed": 8,
+			"kept": 11,
+			"cut": 7
+		},
+		{
+			"cut": 12,
+			"kept": 8,
+			"changed": 6
+		},
+		{
+			"cut": 12,
+			"changed": 5,
+			"kept": 9
+		},
+		{
+			"kept": 10,
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 20,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 16
+		},
+		{
+			"kept": 7,
+			"changed": 5,
+			"cut": 14
+		},
+		{
+			"cut": 11,
+			"changed": 10,
+			"kept": 5
+		},
+		{
+			"cut": 6,
+			"changed": 10,
+			"kept": 10
+		},
+		{
+			"changed": 9,
+			"cut": 12,
+			"kept": 5
+		},
+		{
+			"cut": 9,
+			"kept": 11,
+			"changed": 6
+		},
+		{
+			"changed": 3,
+			"kept": 4,
+			"cut": 19
+		},
+		{
+			"changed": 8,
+			"cut": 15,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 11
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 8,
+			"changed": 3,
+			"cut": 15
+		},
+		{
+			"cut": 16,
+			"kept": 6,
+			"changed": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 183,
+			"notInScript": 129
+		},
+		{
+			"scripted": 233,
+			"notInScript": 139
+		},
+		{
+			"scripted": 127,
+			"notInScript": 123
+		},
+		{
+			"scripted": 159,
+			"notInScript": 90
+		},
+		{
+			"scripted": 257,
+			"notInScript": 136
+		},
+		{
+			"scripted": 234,
+			"notInScript": 182
+		},
+		{
+			"scripted": 385,
+			"notInScript": 78
+		},
+		{
+			"scripted": 231,
+			"notInScript": 135
+		},
+		{
+			"scripted": 363,
+			"notInScript": 60
+		},
+		{
+			"scripted": 221,
+			"notInScript": 109
+		},
+		{
+			"scripted": 190,
+			"notInScript": 163
+		},
+		{
+			"scripted": 285,
+			"notInScript": 198
+		},
+		{
+			"scripted": 269,
+			"notInScript": 152
+		},
+		{
+			"scripted": 273,
+			"notInScript": 175
+		},
+		{
+			"scripted": 252,
+			"notInScript": 147
+		},
+		{
+			"scripted": 226,
+			"notInScript": 153
+		},
+		{
+			"scripted": 289,
+			"notInScript": 115
+		},
+		{
+			"scripted": 248,
+			"notInScript": 163
+		},
+		{
+			"scripted": 161,
+			"notInScript": 122
+		},
+		{
+			"scripted": 249,
+			"notInScript": 68
+		},
+		{
+			"scripted": 121,
+			"notInScript": 156
+		},
+		{
+			"scripted": 102,
+			"notInScript": 124
+		},
+		{
+			"scripted": 206,
+			"notInScript": 146
+		},
+		{
+			"scripted": 232,
+			"notInScript": 125
+		},
+		{
+			"scripted": 306,
+			"notInScript": 110
+		},
+		{
+			"scripted": 274,
+			"notInScript": 118
+		},
+		{
+			"scripted": 288,
+			"notInScript": 80
+		},
+		{
+			"scripted": 199,
+			"notInScript": 197
+		},
+		{
+			"scripted": 219,
+			"notInScript": 153
+		},
+		{
+			"scripted": 227,
+			"notInScript": 103
+		},
+		{
+			"scripted": 329,
+			"notInScript": 154
+		},
+		{
+			"scripted": 222,
+			"notInScript": 115
+		},
+		{
+			"scripted": 65,
+			"notInScript": 73
+		},
+		{
+			"scripted": 129,
+			"notInScript": 267
+		},
+		{
+			"scripted": 108,
+			"notInScript": 101
+		},
+		{
+			"scripted": 43,
+			"notInScript": 78
+		},
+		{
+			"scripted": 57,
+			"notInScript": 94
+		},
+		{
+			"scripted": 39,
+			"notInScript": 319
+		},
+		{
+			"scripted": 80,
+			"notInScript": 113
+		},
+		{
+			"scripted": 90,
+			"notInScript": 103
+		},
+		{
+			"scripted": 139,
+			"notInScript": 161
+		},
+		{
+			"scripted": 91,
+			"notInScript": 79
+		},
+		{
+			"scripted": 85,
+			"notInScript": 58
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 60,
+			"notInScript": 29
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 2,
+			"notInScript": 24
+		}
+	],
+	"passingConversations": {
+		"count": 5,
+		"seconds": 40.8,
+		"longest": 13.5,
+		"spans": [
+			[
+				1225.3,
+				1234.8
+			],
+			[
+				1265.3,
+				1269.7
+			],
+			[
+				2592.6,
+				2597.8
+			],
+			[
+				4802.8,
+				4816.3
+			],
+			[
+				7063.3,
+				7071.5
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 63,
+				"kept": 25,
+				"changed": 14,
+				"cut": 24
+			},
+			"other": {
+				"lines": 352,
+				"kept": 127,
+				"changed": 67,
+				"cut": 158
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 386,
+				"kept": 104,
+				"changed": 80,
+				"cut": 202
+			},
+			"other": {
+				"lines": 288,
+				"kept": 79,
+				"changed": 60,
+				"cut": 149
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "RANDALL",
+				"text": "Alright everyone... Time to go back to sleep."
+			},
+			{
+				"speaker": "DR. OGLETHORPE",
+				"text": "We’re going. We’re going."
+			},
+			{
+				"speaker": "DR. OGLETHORPE",
+				"text": "You did good. Kept it professional."
+			},
+			{
+				"speaker": "RANDALL",
+				"text": "I do. But science is an ongoing process of inquiry. And the stakes are too high to be complacent."
+			},
+			{
+				"speaker": "JASON",
+				"text": "People! Listen! It’s okay! Yes, that’s the comet but we have a plan!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 932,
+				"text": "Hey, peeps, uh, it's not looking like it's gonna happen tonight, and I feel horrible."
+			},
+			{
+				"at": 2250,
+				"text": "We'll never get out of here."
+			},
+			{
+				"at": 3794,
+				"text": "Timed that shit perfect."
+			},
+			{
+				"at": 5336,
+				"text": "I mean, these movies..."
+			},
+			{
+				"at": 6852,
+				"text": "Nice to meet you."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "KATE",
+				"page": "Really? What for? I mean, this is-",
+				"screen": "What? This is very important.",
+				"pageWords": [
+					[
+						"Really?",
+						false
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"for?",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"mean,",
+						false
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"is-",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What?",
+						true
+					],
+					[
+						"This",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"very",
+						false
+					],
+					[
+						"important.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "STAGE MANAGER",
+				"page": "Yes, but the break up first.",
+				"screen": "Yes, but the, uh, breakup first.",
+				"pageWords": [
+					[
+						"Yes,",
+						true
+					],
+					[
+						"but",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"break",
+						false
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"first.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yes,",
+						true
+					],
+					[
+						"but",
+						true
+					],
+					[
+						"the,",
+						true
+					],
+					[
+						"uh,",
+						null
+					],
+					[
+						"breakup",
+						false
+					],
+					[
+						"first.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JASON",
+				"page": "No. It’s totally different.",
+				"screen": "No, that's something totally different.",
+				"pageWords": [
+					[
+						"No.",
+						false
+					],
+					[
+						"It’s",
+						false
+					],
+					[
+						"totally",
+						true
+					],
+					[
+						"different.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"something",
+						false
+					],
+					[
+						"totally",
+						true
+					],
+					[
+						"different.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PETER ISHERWELL",
+				"page": "I call this one Primo for first. He’s my beautiful baby boy.",
+				"screen": "I call this one Primo, the first.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"call",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"Primo",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"first.",
+						false
+					],
+					[
+						"He’s",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"beautiful",
+						false
+					],
+					[
+						"baby",
+						false
+					],
+					[
+						"boy.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"call",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"Primo,",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"first.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KATE",
+				"page": "Yeah. Randall got really famous.",
+				"screen": "Dr. Mindy got really famous.",
+				"pageWords": [
+					[
+						"Yeah.",
+						false
+					],
+					[
+						"Randall",
+						false
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"really",
+						true
+					],
+					[
+						"famous.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Dr.",
+						false
+					],
+					[
+						"Mindy",
+						false
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"really",
+						true
+					],
+					[
+						"famous.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

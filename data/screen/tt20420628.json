@@ -1,0 +1,971 @@
+{
+	"_id": "tt20420628",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 7,
+		"eligible": 5,
+		"rejected": {
+			"duplicate": 1,
+			"too few lines": 1
+		},
+		"used": 5,
+		"primary": "1958467710",
+		"versions": [
+			"1958462654",
+			"1961457575",
+			"1958461985",
+			"1958462658",
+			"1958467710"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9957363619724389,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6540,
+	"quality": {
+		"anchoredShare": 0.5711645101663586
+	},
+	"words": {
+		"page": 8115,
+		"screen": 8626,
+		"kept": 4635,
+		"cut": 3480,
+		"notInScript": 3991,
+		"moved": 76
+	},
+	"lines": {
+		"page": 790,
+		"kept": 412,
+		"changed": 132,
+		"cut": 245,
+		"screen": 1611,
+		"notInScript": 728
+	},
+	"byGender": {
+		"w": {
+			"lines": 168,
+			"kept": 86,
+			"changed": 25,
+			"cut": 57
+		},
+		"m": {
+			"lines": 567,
+			"kept": 309,
+			"changed": 97,
+			"cut": 161
+		},
+		"unknown": {
+			"lines": 54,
+			"kept": 17,
+			"changed": 10,
+			"cut": 27
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 9,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"changed": 5,
+			"kept": 6,
+			"cut": 6
+		},
+		{
+			"cut": 5,
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"cut": 11,
+			"kept": 6
+		},
+		{
+			"cut": 3,
+			"changed": 2,
+			"kept": 11
+		},
+		{
+			"cut": 3,
+			"changed": 4,
+			"kept": 9
+		},
+		{
+			"cut": 4,
+			"changed": 3,
+			"kept": 10
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 9
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"kept": 3
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 10,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"cut": 7,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"cut": 4,
+			"changed": 6
+		},
+		{
+			"changed": 2,
+			"cut": 5,
+			"kept": 9
+		},
+		{
+			"cut": 4,
+			"changed": 4,
+			"kept": 9
+		},
+		{
+			"cut": 2,
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"kept": 11,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 6
+		},
+		{
+			"changed": 2,
+			"kept": 14
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 9
+		},
+		{
+			"changed": 6,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"kept": 9,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 1,
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 3,
+			"kept": 7,
+			"changed": 6
+		},
+		{
+			"kept": 12,
+			"changed": 5
+		},
+		{
+			"kept": 7,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"changed": 7,
+			"kept": 8,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"cut": 4
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 60
+		},
+		{
+			"scripted": 156,
+			"notInScript": 29
+		},
+		{
+			"scripted": 123,
+			"notInScript": 15
+		},
+		{
+			"scripted": 225,
+			"notInScript": 34
+		},
+		{
+			"scripted": 142,
+			"notInScript": 74
+		},
+		{
+			"scripted": 171,
+			"notInScript": 108
+		},
+		{
+			"scripted": 239,
+			"notInScript": 45
+		},
+		{
+			"scripted": 145,
+			"notInScript": 109
+		},
+		{
+			"scripted": 131,
+			"notInScript": 32
+		},
+		{
+			"scripted": 125,
+			"notInScript": 73
+		},
+		{
+			"scripted": 86,
+			"notInScript": 105
+		},
+		{
+			"scripted": 185,
+			"notInScript": 75
+		},
+		{
+			"scripted": 262,
+			"notInScript": 42
+		},
+		{
+			"scripted": 123,
+			"notInScript": 43
+		},
+		{
+			"scripted": 138,
+			"notInScript": 135
+		},
+		{
+			"scripted": 116,
+			"notInScript": 82
+		},
+		{
+			"scripted": 63,
+			"notInScript": 42
+		},
+		{
+			"scripted": 72,
+			"notInScript": 164
+		},
+		{
+			"scripted": 72,
+			"notInScript": 120
+		},
+		{
+			"scripted": 92,
+			"notInScript": 164
+		},
+		{
+			"scripted": 74,
+			"notInScript": 18
+		},
+		{
+			"scripted": 193,
+			"notInScript": 33
+		},
+		{
+			"scripted": 199,
+			"notInScript": 51
+		},
+		{
+			"scripted": 255,
+			"notInScript": 46
+		},
+		{
+			"scripted": 196,
+			"notInScript": 93
+		},
+		{
+			"scripted": 110,
+			"notInScript": 22
+		},
+		{
+			"scripted": 14,
+			"notInScript": 16
+		},
+		{
+			"scripted": 132,
+			"notInScript": 33
+		},
+		{
+			"scripted": 222,
+			"notInScript": 32
+		},
+		{
+			"scripted": 180,
+			"notInScript": 68
+		},
+		{
+			"scripted": 132,
+			"notInScript": 85
+		},
+		{
+			"scripted": 75,
+			"notInScript": 54
+		},
+		{
+			"scripted": 155,
+			"notInScript": 133
+		},
+		{
+			"scripted": 234,
+			"notInScript": 101
+		},
+		{
+			"scripted": 59,
+			"notInScript": 76
+		},
+		{
+			"scripted": 141,
+			"notInScript": 43
+		},
+		{
+			"scripted": 161,
+			"notInScript": 32
+		},
+		{
+			"scripted": 125,
+			"notInScript": 71
+		},
+		{
+			"scripted": 215,
+			"notInScript": 23
+		},
+		{
+			"scripted": 65,
+			"notInScript": 76
+		},
+		{
+			"scripted": 184,
+			"notInScript": 35
+		},
+		{
+			"scripted": 108,
+			"notInScript": 30
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 9
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 5,
+		"seconds": 38.2,
+		"longest": 11.1,
+		"spans": [
+			[
+				954.7,
+				964.4
+			],
+			[
+				2140,
+				2146.5
+			],
+			[
+				2207,
+				2208.5
+			],
+			[
+				3126.6,
+				3135.9
+			],
+			[
+				4209.2,
+				4220.3
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 63,
+				"kept": 40,
+				"changed": 10,
+				"cut": 13
+			},
+			"other": {
+				"lines": 104,
+				"kept": 46,
+				"changed": 15,
+				"cut": 43
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 450,
+				"kept": 265,
+				"changed": 83,
+				"cut": 102
+			},
+			"other": {
+				"lines": 108,
+				"kept": 43,
+				"changed": 14,
+				"cut": 51
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "ANNA",
+				"text": "He used to make you laugh. The most wonderful sense of humor you said..."
+			},
+			{
+				"speaker": "WARREN",
+				"text": "Don't blame me! The Bugger was in the middle of the road! And speeding!"
+			},
+			{
+				"speaker": "ANNA",
+				"text": "When they take you, it will be too late."
+			},
+			{
+				"speaker": "CHEMIST",
+				"text": "I do a good deed once a war. Who's your Doctor?"
+			},
+			{
+				"speaker": "FREUD",
+				"text": "That I am dying? Of course."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 960,
+				"text": "We did in Vienna."
+			},
+			{
+				"at": 2004,
+				"text": "But this is only my humble scientific opinion."
+			},
+			{
+				"at": 2830,
+				"text": "Dr. Sigmund Freud, with his oral obsession, finally rendered speechless."
+			},
+			{
+				"at": 4272,
+				"text": "Sophie, look at him walking."
+			},
+			{
+				"at": 4940,
+				"text": "Do you have a question for me, Professor Lewis?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "FREUD",
+				"page": "A chow. Highly intelligent. He is my assistant.",
+				"screen": "He's a Chow. He's highly intelligent.",
+				"pageWords": [
+					[
+						"A",
+						true
+					],
+					[
+						"chow.",
+						true
+					],
+					[
+						"Highly",
+						true
+					],
+					[
+						"intelligent.",
+						true
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"assistant.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"He's",
+						false
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"Chow.",
+						true
+					],
+					[
+						"He's",
+						false
+					],
+					[
+						"highly",
+						true
+					],
+					[
+						"intelligent.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LEWIS",
+				"page": "He was so flustered he left before my shock wore off. Weldon's always been an atheist.",
+				"screen": "He's always been an atheist.",
+				"pageWords": [
+					[
+						"He",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"flustered",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"left",
+						false
+					],
+					[
+						"before",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"shock",
+						false
+					],
+					[
+						"wore",
+						false
+					],
+					[
+						"off.",
+						false
+					],
+					[
+						"Weldon's",
+						false
+					],
+					[
+						"always",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"atheist.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"He's",
+						false
+					],
+					[
+						"always",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"atheist.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "FREUD",
+				"page": "Lesbianism is a much different matter.",
+				"screen": "Well, perhaps lesbianism is different.",
+				"pageWords": [
+					[
+						"Lesbianism",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"much",
+						false
+					],
+					[
+						"different",
+						false
+					],
+					[
+						"matter.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"perhaps",
+						false
+					],
+					[
+						"lesbianism",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"different.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SOPHIE",
+				"page": "Hurry Heinle! She's going to catch you! Hurry!",
+				"screen": "She's going to catch you.",
+				"pageWords": [
+					[
+						"Hurry",
+						false
+					],
+					[
+						"Heinle!",
+						false
+					],
+					[
+						"She's",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"catch",
+						true
+					],
+					[
+						"you!",
+						true
+					],
+					[
+						"Hurry!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"She's",
+						true
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"catch",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "FREUD",
+				"page": "We're waiting for news.",
+				"screen": "I'm waiting for the next news broadcast.",
+				"pageWords": [
+					[
+						"We're",
+						false
+					],
+					[
+						"waiting",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"news.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"waiting",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"next",
+						false
+					],
+					[
+						"news",
+						false
+					],
+					[
+						"broadcast.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

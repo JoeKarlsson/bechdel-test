@@ -1,0 +1,982 @@
+{
+	"_id": "tt0099365",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 15,
+		"eligible": 12,
+		"rejected": {
+			"duplicate": 3
+		},
+		"used": 9,
+		"primary": "1951990283",
+		"versions": [
+			"1951674835",
+			"1951612260",
+			"1953787852",
+			"1953765788",
+			"1952306825",
+			"1958484686",
+			"1951990283",
+			"1958500698",
+			"1952355148"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9568894949541408,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5700,
+	"quality": {
+		"anchoredShare": 0.12304657866788045
+	},
+	"words": {
+		"page": 13182,
+		"screen": 4272,
+		"kept": 1622,
+		"cut": 11560,
+		"notInScript": 2650,
+		"moved": 73
+	},
+	"lines": {
+		"page": 880,
+		"kept": 89,
+		"changed": 95,
+		"cut": 694,
+		"screen": 924,
+		"notInScript": 587
+	},
+	"byGender": {
+		"w": {
+			"lines": 140,
+			"kept": 10,
+			"changed": 18,
+			"cut": 112
+		},
+		"m": {
+			"lines": 473,
+			"kept": 71,
+			"changed": 63,
+			"cut": 339
+		},
+		"unknown": {
+			"lines": 265,
+			"kept": 8,
+			"changed": 14,
+			"cut": 243
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 12,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"kept": 1,
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"cut": 8,
+			"kept": 5
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"kept": 1,
+			"cut": 14
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 4
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 10,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"kept": 3,
+			"cut": 14
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"changed": 7,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 8
+		},
+		{
+			"cut": 14,
+			"kept": 4
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"changed": 6,
+			"kept": 4,
+			"cut": 8
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 10
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 15,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"kept": 2
+		},
+		{
+			"changed": 6,
+			"kept": 4,
+			"cut": 9
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 18
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 13,
+			"notInScript": 53
+		},
+		{
+			"scripted": 30,
+			"notInScript": 72
+		},
+		{
+			"scripted": 32,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 5
+		},
+		{
+			"scripted": 53,
+			"notInScript": 73
+		},
+		{
+			"scripted": 89,
+			"notInScript": 86
+		},
+		{
+			"scripted": 204,
+			"notInScript": 29
+		},
+		{
+			"scripted": 91,
+			"notInScript": 116
+		},
+		{
+			"scripted": 60,
+			"notInScript": 74
+		},
+		{
+			"scripted": 4,
+			"notInScript": 19
+		},
+		{
+			"scripted": 18,
+			"notInScript": 19
+		},
+		{
+			"scripted": 188,
+			"notInScript": 64
+		},
+		{
+			"scripted": 33,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 10
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 1,
+			"notInScript": 49
+		},
+		{
+			"scripted": 4,
+			"notInScript": 23
+		},
+		{
+			"scripted": 70,
+			"notInScript": 35
+		},
+		{
+			"scripted": 9,
+			"notInScript": 88
+		},
+		{
+			"scripted": 0,
+			"notInScript": 5
+		},
+		{
+			"scripted": 12,
+			"notInScript": 33
+		},
+		{
+			"scripted": 55,
+			"notInScript": 42
+		},
+		{
+			"scripted": 31,
+			"notInScript": 55
+		},
+		{
+			"scripted": 3,
+			"notInScript": 61
+		},
+		{
+			"scripted": 67,
+			"notInScript": 138
+		},
+		{
+			"scripted": 87,
+			"notInScript": 123
+		},
+		{
+			"scripted": 52,
+			"notInScript": 22
+		},
+		{
+			"scripted": 95,
+			"notInScript": 42
+		},
+		{
+			"scripted": 46,
+			"notInScript": 67
+		},
+		{
+			"scripted": 69,
+			"notInScript": 53
+		},
+		{
+			"scripted": 116,
+			"notInScript": 95
+		},
+		{
+			"scripted": 18,
+			"notInScript": 42
+		},
+		{
+			"scripted": 75,
+			"notInScript": 29
+		},
+		{
+			"scripted": 88,
+			"notInScript": 50
+		},
+		{
+			"scripted": 109,
+			"notInScript": 15
+		},
+		{
+			"scripted": 0,
+			"notInScript": 15
+		},
+		{
+			"scripted": 6,
+			"notInScript": 39
+		},
+		{
+			"scripted": 0,
+			"notInScript": 64
+		},
+		{
+			"scripted": 2,
+			"notInScript": 34
+		},
+		{
+			"scripted": 2,
+			"notInScript": 45
+		},
+		{
+			"scripted": 109,
+			"notInScript": 29
+		},
+		{
+			"scripted": 95,
+			"notInScript": 80
+		},
+		{
+			"scripted": 1,
+			"notInScript": 19
+		},
+		{
+			"scripted": 1,
+			"notInScript": 80
+		},
+		{
+			"scripted": 8,
+			"notInScript": 95
+		},
+		{
+			"scripted": 1,
+			"notInScript": 11
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 119,
+				"kept": 10,
+				"changed": 18,
+				"cut": 91
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 200,
+				"kept": 36,
+				"changed": 31,
+				"cut": 133
+			},
+			"other": {
+				"lines": 172,
+				"kept": 32,
+				"changed": 28,
+				"cut": 112
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PEYTON",
+				"text": "Go on! Again he pump-fakes. Yakitito flinches."
+			},
+			{
+				"speaker": "STRACK",
+				"text": "My father was a great man, and his"
+			},
+			{
+				"speaker": "DARKMAN/PAULY",
+				"text": "shrugs an exaggerated \"haw-would-I-know?\" Guzman is too angry to notice."
+			},
+			{
+				"speaker": "GUZMAN",
+				"text": "draws his gun and waits, sweating."
+			},
+			{
+				"speaker": "DURANT",
+				"text": "Where are you?! Pilot.and Durant look toward the entrance of the warehouse. The door is closed. Suddenly..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 578,
+				"text": "Here she is... the girl of your dreams."
+			},
+			{
+				"at": 1691,
+				"text": "Oh, my God, no."
+			},
+			{
+				"at": 2922,
+				"text": "I just need a little time."
+			},
+			{
+				"at": 3589,
+				"text": "I'm going to win for you the biggest, fuzziest, pinkest doll on that rack."
+			},
+			{
+				"at": 4956,
+				"text": "I'm joking, of course."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "STRACK",
+				"page": "Yes yes, I know the memo. Julie continues, hesitantly:",
+				"screen": "Yes, I know the memo.",
+				"pageWords": [
+					[
+						"Yes",
+						false
+					],
+					[
+						"yes,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"memo.",
+						true
+					],
+					[
+						"Julie",
+						false
+					],
+					[
+						"continues,",
+						false
+					],
+					[
+						"hesitantly:",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yes,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"memo.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DARKMAN",
+				"page": "My hands.. They took my hands. He sits on the lab stool studying his charred palms in the dark. P193",
+				"screen": "My hands. They took...",
+				"pageWords": [
+					[
+						"My",
+						true
+					],
+					[
+						"hands..",
+						true
+					],
+					[
+						"They",
+						true
+					],
+					[
+						"took",
+						true
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"hands.",
+						false
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"sits",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"lab",
+						false
+					],
+					[
+						"stool",
+						false
+					],
+					[
+						"studying",
+						false
+					],
+					[
+						"his",
+						false
+					],
+					[
+						"charred",
+						false
+					],
+					[
+						"palms",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"dark.",
+						false
+					],
+					[
+						"P193",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"My",
+						true
+					],
+					[
+						"hands.",
+						true
+					],
+					[
+						"They",
+						true
+					],
+					[
+						"took...",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DURANT",
+				"page": "Yeah, I'.m Robert G. Durant... The camera is pulling back to reveal that he is",
+				"screen": "I'm Robert G. Durant.",
+				"pageWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"I'.m",
+						false
+					],
+					[
+						"Robert",
+						true
+					],
+					[
+						"G.",
+						true
+					],
+					[
+						"Durant...",
+						true
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"camera",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"pulling",
+						false
+					],
+					[
+						"back",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"reveal",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"is",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"Robert",
+						true
+					],
+					[
+						"G.",
+						true
+					],
+					[
+						"Durant.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JULIE",
+				"page": "Why didn't you tell me? If you loved me, why didn't you tell me?",
+				"screen": "Why didn't you tell me, Peyton?",
+				"pageWords": [
+					[
+						"Why",
+						false
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"tell",
+						false
+					],
+					[
+						"me?",
+						false
+					],
+					[
+						"If",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"loved",
+						false
+					],
+					[
+						"me,",
+						false
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"didn't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"Peyton?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "STRACK",
+				"page": "Yes. The Belasarious memorandum.",
+				"screen": "Yes. The Bellasarious memorandum.",
+				"pageWords": [
+					[
+						"Yes.",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"Belasarious",
+						false
+					],
+					[
+						"memorandum.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yes.",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"Bellasarious",
+						false
+					],
+					[
+						"memorandum.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

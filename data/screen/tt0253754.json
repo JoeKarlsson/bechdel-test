@@ -1,0 +1,915 @@
+{
+	"_id": "tt0253754",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 28,
+		"eligible": 17,
+		"rejected": {
+			"duplicate": 9,
+			"too few lines": 1,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1958110792",
+		"versions": [
+			"183478",
+			"1956109720",
+			"1955717065",
+			"1957175224",
+			"1956952782",
+			"58091",
+			"1951654168",
+			"1958091503",
+			"1958110792"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9237814007319272,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6960,
+	"quality": {
+		"anchoredShare": 0.4915201654601861
+	},
+	"words": {
+		"page": 9670,
+		"screen": 6761,
+		"kept": 4747,
+		"cut": 4923,
+		"notInScript": 2008,
+		"moved": 158
+	},
+	"lines": {
+		"page": 859,
+		"kept": 425,
+		"changed": 85,
+		"cut": 349,
+		"screen": 1109,
+		"notInScript": 269
+	},
+	"byGender": {
+		"w": {
+			"lines": 96,
+			"kept": 38,
+			"changed": 9,
+			"cut": 49
+		},
+		"m": {
+			"lines": 709,
+			"kept": 364,
+			"changed": 75,
+			"cut": 270
+		},
+		"unknown": {
+			"lines": 54,
+			"kept": 23,
+			"changed": 1,
+			"cut": 30
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 4,
+			"changed": 1,
+			"kept": 13
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"cut": 16,
+			"kept": 2
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 14
+		},
+		{
+			"cut": 16,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 6
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"kept": 2,
+			"cut": 11,
+			"changed": 4
+		},
+		{
+			"cut": 7,
+			"kept": 8,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"changed": 1,
+			"cut": 8
+		},
+		{
+			"kept": 8,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"kept": 13,
+			"cut": 5
+		},
+		{
+			"cut": 7,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"kept": 13,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"cut": 15,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 12,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"kept": 11,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"cut": 1,
+			"kept": 16,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 5
+		},
+		{
+			"cut": 3,
+			"kept": 15
+		},
+		{
+			"kept": 9,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"kept": 8,
+			"changed": 4
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"kept": 5
+		},
+		{
+			"cut": 16,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 7,
+			"notInScript": 111
+		},
+		{
+			"scripted": 118,
+			"notInScript": 50
+		},
+		{
+			"scripted": 133,
+			"notInScript": 75
+		},
+		{
+			"scripted": 215,
+			"notInScript": 10
+		},
+		{
+			"scripted": 252,
+			"notInScript": 10
+		},
+		{
+			"scripted": 29,
+			"notInScript": 23
+		},
+		{
+			"scripted": 60,
+			"notInScript": 11
+		},
+		{
+			"scripted": 62,
+			"notInScript": 22
+		},
+		{
+			"scripted": 235,
+			"notInScript": 39
+		},
+		{
+			"scripted": 331,
+			"notInScript": 18
+		},
+		{
+			"scripted": 187,
+			"notInScript": 12
+		},
+		{
+			"scripted": 110,
+			"notInScript": 0
+		},
+		{
+			"scripted": 222,
+			"notInScript": 4
+		},
+		{
+			"scripted": 149,
+			"notInScript": 13
+		},
+		{
+			"scripted": 113,
+			"notInScript": 67
+		},
+		{
+			"scripted": 0,
+			"notInScript": 80
+		},
+		{
+			"scripted": 151,
+			"notInScript": 106
+		},
+		{
+			"scripted": 188,
+			"notInScript": 96
+		},
+		{
+			"scripted": 236,
+			"notInScript": 29
+		},
+		{
+			"scripted": 120,
+			"notInScript": 32
+		},
+		{
+			"scripted": 58,
+			"notInScript": 19
+		},
+		{
+			"scripted": 157,
+			"notInScript": 21
+		},
+		{
+			"scripted": 207,
+			"notInScript": 6
+		},
+		{
+			"scripted": 110,
+			"notInScript": 22
+		},
+		{
+			"scripted": 58,
+			"notInScript": 11
+		},
+		{
+			"scripted": 125,
+			"notInScript": 7
+		},
+		{
+			"scripted": 176,
+			"notInScript": 13
+		},
+		{
+			"scripted": 214,
+			"notInScript": 16
+		},
+		{
+			"scripted": 82,
+			"notInScript": 4
+		},
+		{
+			"scripted": 204,
+			"notInScript": 22
+		},
+		{
+			"scripted": 143,
+			"notInScript": 28
+		},
+		{
+			"scripted": 198,
+			"notInScript": 21
+		},
+		{
+			"scripted": 138,
+			"notInScript": 3
+		},
+		{
+			"scripted": 91,
+			"notInScript": 8
+		},
+		{
+			"scripted": 52,
+			"notInScript": 12
+		},
+		{
+			"scripted": 42,
+			"notInScript": 9
+		},
+		{
+			"scripted": 106,
+			"notInScript": 24
+		},
+		{
+			"scripted": 8,
+			"notInScript": 2
+		},
+		{
+			"scripted": 67,
+			"notInScript": 23
+		},
+		{
+			"scripted": 69,
+			"notInScript": 47
+		},
+		{
+			"scripted": 0,
+			"notInScript": 18
+		},
+		{
+			"scripted": 18,
+			"notInScript": 24
+		},
+		{
+			"scripted": 55,
+			"notInScript": 21
+		},
+		{
+			"scripted": 28,
+			"notInScript": 97
+		},
+		{
+			"scripted": 138,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 4,
+				"kept": 1,
+				"changed": 0,
+				"cut": 3
+			},
+			"other": {
+				"lines": 80,
+				"kept": 29,
+				"changed": 8,
+				"cut": 43
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 581,
+				"kept": 305,
+				"changed": 65,
+				"cut": 211
+			},
+			"other": {
+				"lines": 128,
+				"kept": 59,
+				"changed": 10,
+				"cut": 59
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PICARD",
+				"text": "So... To happy endings."
+			},
+			{
+				"speaker": "DATA",
+				"text": "He is very observant."
+			},
+			{
+				"speaker": "PICARD",
+				"text": "When was he... created?"
+			},
+			{
+				"speaker": "VICEROY",
+				"text": "I look forward to the sport. Take him."
+			},
+			{
+				"speaker": "DATA",
+				"text": "What is our approximate distance?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 314,
+				"text": "You all know him."
+			},
+			{
+				"at": 2146,
+				"text": "It's something I demand from those who serve me."
+			},
+			{
+				"at": 2509,
+				"text": "I would have to take it."
+			},
+			{
+				"at": 4095,
+				"text": "Initiate the force field."
+			},
+			{
+				"at": 6189,
+				"text": "You've earned a friend in the Romulan Empire today, Captain."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "WORF",
+				"page": "I won't do it.",
+				"screen": "I will not do it.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"won't",
+						false
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"it.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"will",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"it.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "VICEROY",
+				"page": "Don't forget our mission, Shinzon. We should act. Now. Time is running out.",
+				"screen": "Do not forget our mission, Shinzon. We must act.",
+				"pageWords": [
+					[
+						"Don't",
+						false
+					],
+					[
+						"forget",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"mission,",
+						true
+					],
+					[
+						"Shinzon.",
+						true
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"act.",
+						false
+					],
+					[
+						"Now.",
+						false
+					],
+					[
+						"Time",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"running",
+						false
+					],
+					[
+						"out.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"forget",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"mission,",
+						true
+					],
+					[
+						"Shinzon.",
+						true
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"act.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PICARD",
+				"page": "What are you doing to Counsellor Troi?",
+				"screen": "What are you doing?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"doing",
+						true
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"Counsellor",
+						false
+					],
+					[
+						"Troi?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"doing?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PICARD",
+				"page": "Show me our current position.",
+				"screen": "Data, what's our current position?",
+				"pageWords": [
+					[
+						"Show",
+						false
+					],
+					[
+						"me",
+						false
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"current",
+						true
+					],
+					[
+						"position.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Data,",
+						false
+					],
+					[
+						"what's",
+						false
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"current",
+						true
+					],
+					[
+						"position?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PICARD",
+				"page": "This isn't about me anymore.",
+				"screen": "It's not about me anymore.",
+				"pageWords": [
+					[
+						"This",
+						false
+					],
+					[
+						"isn't",
+						false
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"anymore.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"anymore.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

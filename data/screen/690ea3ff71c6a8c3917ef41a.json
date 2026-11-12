@@ -1,0 +1,989 @@
+{
+	"_id": "690ea3ff71c6a8c3917ef41a",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 13,
+		"eligible": 10,
+		"rejected": {
+			"runtime mismatch": 1,
+			"split across CDs": 2
+		},
+		"used": 9,
+		"primary": "1952318973",
+		"versions": [
+			"62231",
+			"1955559759",
+			"1956992955",
+			"1954864025",
+			"258342",
+			"1772",
+			"1952318973",
+			"1953743057",
+			"1952894049"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8733872650319419,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7380,
+	"quality": {
+		"anchoredShare": 0.18500935117249317
+	},
+	"words": {
+		"page": 6951,
+		"screen": 6049,
+		"kept": 1276,
+		"cut": 5675,
+		"notInScript": 4763,
+		"moved": 47
+	},
+	"lines": {
+		"page": 710,
+		"kept": 113,
+		"changed": 82,
+		"cut": 515,
+		"screen": 1246,
+		"notInScript": 950
+	},
+	"byGender": {
+		"w": {
+			"lines": 140,
+			"kept": 17,
+			"changed": 18,
+			"cut": 105
+		},
+		"m": {
+			"lines": 533,
+			"kept": 94,
+			"changed": 63,
+			"cut": 376
+		},
+		"unknown": {
+			"lines": 37,
+			"kept": 2,
+			"changed": 1,
+			"cut": 34
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"kept": 2,
+			"cut": 13
+		},
+		{
+			"changed": 3,
+			"cut": 12
+		},
+		{
+			"cut": 4,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"kept": 2,
+			"cut": 12
+		},
+		{
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 7
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"changed": 2,
+			"cut": 13
+		},
+		{
+			"cut": 10,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"kept": 1,
+			"cut": 11
+		},
+		{
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 13,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 11,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"kept": 2,
+			"cut": 11,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"kept": 4,
+			"cut": 9,
+			"changed": 1
+		},
+		{
+			"kept": 3,
+			"cut": 12
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"changed": 2,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"kept": 12,
+			"cut": 3
+		},
+		{
+			"kept": 3,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 7,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"kept": 1,
+			"cut": 14
+		},
+		{
+			"cut": 10,
+			"kept": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 4,
+			"notInScript": 86
+		},
+		{
+			"scripted": 60,
+			"notInScript": 79
+		},
+		{
+			"scripted": 66,
+			"notInScript": 138
+		},
+		{
+			"scripted": 50,
+			"notInScript": 160
+		},
+		{
+			"scripted": 22,
+			"notInScript": 92
+		},
+		{
+			"scripted": 21,
+			"notInScript": 259
+		},
+		{
+			"scripted": 17,
+			"notInScript": 110
+		},
+		{
+			"scripted": 28,
+			"notInScript": 118
+		},
+		{
+			"scripted": 61,
+			"notInScript": 192
+		},
+		{
+			"scripted": 81,
+			"notInScript": 265
+		},
+		{
+			"scripted": 46,
+			"notInScript": 303
+		},
+		{
+			"scripted": 64,
+			"notInScript": 127
+		},
+		{
+			"scripted": 85,
+			"notInScript": 256
+		},
+		{
+			"scripted": 16,
+			"notInScript": 200
+		},
+		{
+			"scripted": 18,
+			"notInScript": 173
+		},
+		{
+			"scripted": 27,
+			"notInScript": 83
+		},
+		{
+			"scripted": 0,
+			"notInScript": 101
+		},
+		{
+			"scripted": 0,
+			"notInScript": 10
+		},
+		{
+			"scripted": 4,
+			"notInScript": 5
+		},
+		{
+			"scripted": 16,
+			"notInScript": 45
+		},
+		{
+			"scripted": 6,
+			"notInScript": 54
+		},
+		{
+			"scripted": 26,
+			"notInScript": 82
+		},
+		{
+			"scripted": 14,
+			"notInScript": 40
+		},
+		{
+			"scripted": 22,
+			"notInScript": 81
+		},
+		{
+			"scripted": 29,
+			"notInScript": 71
+		},
+		{
+			"scripted": 0,
+			"notInScript": 192
+		},
+		{
+			"scripted": 46,
+			"notInScript": 98
+		},
+		{
+			"scripted": 46,
+			"notInScript": 51
+		},
+		{
+			"scripted": 23,
+			"notInScript": 37
+		},
+		{
+			"scripted": 42,
+			"notInScript": 61
+		},
+		{
+			"scripted": 37,
+			"notInScript": 98
+		},
+		{
+			"scripted": 19,
+			"notInScript": 147
+		},
+		{
+			"scripted": 48,
+			"notInScript": 11
+		},
+		{
+			"scripted": 132,
+			"notInScript": 37
+		},
+		{
+			"scripted": 134,
+			"notInScript": 51
+		},
+		{
+			"scripted": 49,
+			"notInScript": 80
+		},
+		{
+			"scripted": 14,
+			"notInScript": 68
+		},
+		{
+			"scripted": 94,
+			"notInScript": 68
+		},
+		{
+			"scripted": 33,
+			"notInScript": 12
+		},
+		{
+			"scripted": 23,
+			"notInScript": 67
+		},
+		{
+			"scripted": 1,
+			"notInScript": 6
+		},
+		{
+			"scripted": 24,
+			"notInScript": 13
+		},
+		{
+			"scripted": 18,
+			"notInScript": 36
+		},
+		{
+			"scripted": 41,
+			"notInScript": 45
+		},
+		{
+			"scripted": 22,
+			"notInScript": 78
+		},
+		{
+			"scripted": 3,
+			"notInScript": 31
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 39,
+				"kept": 4,
+				"changed": 2,
+				"cut": 33
+			},
+			"other": {
+				"lines": 90,
+				"kept": 10,
+				"changed": 14,
+				"cut": 66
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 339,
+				"kept": 62,
+				"changed": 45,
+				"cut": 232
+			},
+			"other": {
+				"lines": 143,
+				"kept": 20,
+				"changed": 12,
+				"cut": 111
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "JUSTINE",
+				"text": "Poor William! What indignant tears!"
+			},
+			{
+				"speaker": "VICTOR",
+				"text": "You're a comfort to me, Henry."
+			},
+			{
+				"speaker": "JUSTINE",
+				"text": "It's been months. It's not like him."
+			},
+			{
+				"speaker": "ELIZABETH",
+				"text": "What is Father's outlook?"
+			},
+			{
+				"speaker": "VICTOR",
+				"text": "Be especially on your guard. Stay cautious to a fault."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 596,
+				"text": "There's such fun to be had."
+			},
+			{
+				"at": 1462,
+				"text": "What are you here for?"
+			},
+			{
+				"at": 2102,
+				"text": "What if the authorities--?"
+			},
+			{
+				"at": 3711,
+				"text": "We'd need 20 men to do this."
+			},
+			{
+				"at": 5377,
+				"text": "And then we can be married and we can forget this whole business."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "GRIGORI",
+				"page": "Then you run the danger of pushing them to mutiny.",
+				"screen": "Then you run the risk of mutiny, captain.",
+				"pageWords": [
+					[
+						"Then",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"run",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"danger",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"pushing",
+						false
+					],
+					[
+						"them",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"mutiny.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Then",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"run",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"risk",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"mutiny,",
+						false
+					],
+					[
+						"captain.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "HENRY",
+				"page": "Of course I am. It pays to humor the insane.",
+				"screen": "My dear fellow, of course you're not.",
+				"pageWords": [
+					[
+						"Of",
+						true
+					],
+					[
+						"course",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"am.",
+						false
+					],
+					[
+						"It",
+						false
+					],
+					[
+						"pays",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"humor",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"insane.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"My",
+						false
+					],
+					[
+						"dear",
+						false
+					],
+					[
+						"fellow,",
+						false
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"course",
+						true
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"not.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "VICTOR",
+				"page": "I want to go home.",
+				"screen": "I want to make this house live again.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"home.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"make",
+						false
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"house",
+						false
+					],
+					[
+						"live",
+						false
+					],
+					[
+						"again.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "VICTOR",
+				"page": "Fine words from a child killer. You who murdered my brother.",
+				"screen": "You murdered my brother, didn't you?",
+				"pageWords": [
+					[
+						"Fine",
+						false
+					],
+					[
+						"words",
+						false
+					],
+					[
+						"from",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"child",
+						false
+					],
+					[
+						"killer.",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"murdered",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"brother.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"murdered",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"brother,",
+						true
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"you?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CREATURE",
+				"page": "You're more lovely than I could ever have imagined.",
+				"screen": "You are lovelier than I ever could have imagined.",
+				"pageWords": [
+					[
+						"You're",
+						false
+					],
+					[
+						"more",
+						false
+					],
+					[
+						"lovely",
+						false
+					],
+					[
+						"than",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"ever",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"imagined.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"lovelier",
+						false
+					],
+					[
+						"than",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"ever",
+						false
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"imagined.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

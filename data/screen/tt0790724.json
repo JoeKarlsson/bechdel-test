@@ -1,0 +1,989 @@
+{
+	"_id": "tt0790724",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 26,
+		"eligible": 19,
+		"rejected": {
+			"duplicate": 5,
+			"split across CDs": 1,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1954840961",
+		"versions": [
+			"1954840961",
+			"1953482619",
+			"1958602525",
+			"1959071162",
+			"1953481132",
+			"1959071054",
+			"1953480458",
+			"1953480391",
+			"1953438903"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9336981817367297,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7800,
+	"quality": {
+		"anchoredShare": 0.7195261353008418
+	},
+	"words": {
+		"page": 9623,
+		"screen": 9494,
+		"kept": 6928,
+		"cut": 2695,
+		"notInScript": 2570,
+		"moved": 643
+	},
+	"lines": {
+		"page": 933,
+		"kept": 650,
+		"changed": 107,
+		"cut": 176,
+		"screen": 1621,
+		"notInScript": 356
+	},
+	"byGender": {
+		"w": {
+			"lines": 274,
+			"kept": 198,
+			"changed": 29,
+			"cut": 47
+		},
+		"m": {
+			"lines": 579,
+			"kept": 409,
+			"changed": 64,
+			"cut": 106
+		},
+		"unknown": {
+			"lines": 80,
+			"kept": 43,
+			"changed": 14,
+			"cut": 23
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 10,
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 13
+		},
+		{
+			"kept": 18,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"cut": 6,
+			"kept": 11
+		},
+		{
+			"kept": 17,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 2
+		},
+		{
+			"kept": 15,
+			"cut": 5
+		},
+		{
+			"kept": 16,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"changed": 6,
+			"kept": 8
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 11,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"changed": 3
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 13,
+			"cut": 4
+		},
+		{
+			"cut": 3,
+			"kept": 15,
+			"changed": 2
+		},
+		{
+			"kept": 16,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"cut": 2,
+			"kept": 16,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"cut": 12,
+			"kept": 7
+		},
+		{
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 17,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 6,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 6,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 10,
+			"changed": 5
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 5,
+			"changed": 4
+		},
+		{
+			"cut": 3,
+			"kept": 14,
+			"changed": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 299,
+			"notInScript": 9
+		},
+		{
+			"scripted": 401,
+			"notInScript": 40
+		},
+		{
+			"scripted": 377,
+			"notInScript": 29
+		},
+		{
+			"scripted": 337,
+			"notInScript": 44
+		},
+		{
+			"scripted": 234,
+			"notInScript": 20
+		},
+		{
+			"scripted": 93,
+			"notInScript": 45
+		},
+		{
+			"scripted": 175,
+			"notInScript": 34
+		},
+		{
+			"scripted": 246,
+			"notInScript": 116
+		},
+		{
+			"scripted": 153,
+			"notInScript": 4
+		},
+		{
+			"scripted": 128,
+			"notInScript": 51
+		},
+		{
+			"scripted": 255,
+			"notInScript": 13
+		},
+		{
+			"scripted": 332,
+			"notInScript": 74
+		},
+		{
+			"scripted": 334,
+			"notInScript": 24
+		},
+		{
+			"scripted": 266,
+			"notInScript": 37
+		},
+		{
+			"scripted": 159,
+			"notInScript": 43
+		},
+		{
+			"scripted": 208,
+			"notInScript": 38
+		},
+		{
+			"scripted": 171,
+			"notInScript": 43
+		},
+		{
+			"scripted": 137,
+			"notInScript": 15
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 219,
+			"notInScript": 26
+		},
+		{
+			"scripted": 396,
+			"notInScript": 28
+		},
+		{
+			"scripted": 308,
+			"notInScript": 42
+		},
+		{
+			"scripted": 103,
+			"notInScript": 49
+		},
+		{
+			"scripted": 201,
+			"notInScript": 41
+		},
+		{
+			"scripted": 139,
+			"notInScript": 10
+		},
+		{
+			"scripted": 26,
+			"notInScript": 18
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 393,
+			"notInScript": 26
+		},
+		{
+			"scripted": 249,
+			"notInScript": 7
+		},
+		{
+			"scripted": 91,
+			"notInScript": 23
+		},
+		{
+			"scripted": 290,
+			"notInScript": 27
+		},
+		{
+			"scripted": 244,
+			"notInScript": 57
+		},
+		{
+			"scripted": 35,
+			"notInScript": 7
+		},
+		{
+			"scripted": 227,
+			"notInScript": 0
+		},
+		{
+			"scripted": 170,
+			"notInScript": 129
+		},
+		{
+			"scripted": 110,
+			"notInScript": 79
+		},
+		{
+			"scripted": 6,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 5
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 87,
+			"notInScript": 31
+		},
+		{
+			"scripted": 223,
+			"notInScript": 81
+		},
+		{
+			"scripted": 196,
+			"notInScript": 7
+		},
+		{
+			"scripted": 37,
+			"notInScript": 46
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 264,
+				"kept": 195,
+				"changed": 29,
+				"cut": 40
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 302,
+				"kept": 217,
+				"changed": 32,
+				"cut": 53
+			},
+			"other": {
+				"lines": 266,
+				"kept": 187,
+				"changed": 32,
+				"cut": 47
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "REACHER",
+				"text": "Saner than he is guilty."
+			},
+			{
+				"speaker": "LINSKY",
+				"text": "Relax, no one'll find it."
+			},
+			{
+				"speaker": "THE ZEC",
+				"text": "Then you kill him. Him and the lawyer. But not before."
+			},
+			{
+				"speaker": "EMERSON",
+				"text": "Which one's the biggest?"
+			},
+			{
+				"speaker": "REACHER",
+				"text": "Long enough for me to reach the compound."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1341,
+				"text": "That is to say, who they were as people."
+			},
+			{
+				"at": 2493,
+				"text": "So what'd you learn?"
+			},
+			{
+				"at": 4088,
+				"text": "Go to this address."
+			},
+			{
+				"at": 6213,
+				"text": "He can cover both roads coming and going."
+			},
+			{
+				"at": 7200,
+				"text": "I have an emergency."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "FARRIOR",
+				"page": "And you had some questions about Jessie?",
+				"screen": "And you have questions about my daughter?",
+				"pageWords": [
+					[
+						"And",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"questions",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"Jessie?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"And",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"questions",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"daughter?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "THE ZEC",
+				"page": "Always the bullet ... I just don't understand.",
+				"screen": "Always the bullet. I can't!",
+				"pageWords": [
+					[
+						"Always",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"bullet",
+						true
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"understand.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Always",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"bullet.",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"can't!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "REACHER",
+				"page": "Leave town for a couple days. Think about your future.",
+				"screen": "Get out of town for a couple of days.",
+				"pageWords": [
+					[
+						"Leave",
+						false
+					],
+					[
+						"town",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"couple",
+						true
+					],
+					[
+						"days.",
+						false
+					],
+					[
+						"Think",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"future.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Get",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"town",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"couple",
+						true
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"days.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "EMERSON",
+				"page": "Let me take it from here.",
+				"screen": "Look, let me handle it.",
+				"pageWords": [
+					[
+						"Let",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"take",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"from",
+						false
+					],
+					[
+						"here.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Look,",
+						false
+					],
+					[
+						"let",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"handle",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "REACHER",
+				"page": "Chelovek ... Chelovek ... Human? Prisoner Human being? That 1 s your name?",
+				"screen": "Chelovek? Chelovek? Human. Prisoner Human Being. That's your real name?",
+				"pageWords": [
+					[
+						"Chelovek",
+						true
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"Chelovek",
+						true
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"Human?",
+						true
+					],
+					[
+						"Prisoner",
+						true
+					],
+					[
+						"Human",
+						true
+					],
+					[
+						"being?",
+						true
+					],
+					[
+						"That",
+						false
+					],
+					[
+						"1",
+						false
+					],
+					[
+						"s",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"name?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Chelovek?",
+						true
+					],
+					[
+						"Chelovek?",
+						true
+					],
+					[
+						"Human.",
+						true
+					],
+					[
+						"Prisoner",
+						true
+					],
+					[
+						"Human",
+						true
+					],
+					[
+						"Being.",
+						true
+					],
+					[
+						"That's",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"real",
+						false
+					],
+					[
+						"name?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

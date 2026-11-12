@@ -1,0 +1,1023 @@
+{
+	"_id": "tt0109831",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 27,
+		"eligible": 17,
+		"rejected": {
+			"duplicate": 6,
+			"split across CDs": 3,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "81091",
+		"versions": [
+			"1954828299",
+			"1958570545",
+			"1958721850",
+			"81091",
+			"1952070956",
+			"1958701772",
+			"145919",
+			"1958894989",
+			"1957306151"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9412639769069894,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7020,
+	"quality": {
+		"anchoredShare": 0.35144359376441286
+	},
+	"words": {
+		"page": 10841,
+		"screen": 8449,
+		"kept": 3819,
+		"cut": 7022,
+		"notInScript": 4639,
+		"moved": 185
+	},
+	"lines": {
+		"page": 1040,
+		"kept": 355,
+		"changed": 163,
+		"cut": 520,
+		"screen": 1593,
+		"notInScript": 766
+	},
+	"byGender": {
+		"w": {
+			"lines": 302,
+			"kept": 101,
+			"changed": 55,
+			"cut": 146
+		},
+		"m": {
+			"lines": 656,
+			"kept": 219,
+			"changed": 102,
+			"cut": 335
+		},
+		"unknown": {
+			"lines": 80,
+			"kept": 35,
+			"changed": 6,
+			"cut": 39
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 13,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"kept": 15,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"kept": 13,
+			"cut": 7
+		},
+		{
+			"kept": 6,
+			"cut": 13,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"kept": 11,
+			"changed": 7,
+			"cut": 3
+		},
+		{
+			"changed": 2,
+			"cut": 14,
+			"kept": 6
+		},
+		{
+			"cut": 6,
+			"kept": 13,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"kept": 13,
+			"cut": 3
+		},
+		{
+			"cut": 8,
+			"changed": 6,
+			"kept": 8
+		},
+		{
+			"kept": 12,
+			"cut": 3,
+			"changed": 7
+		},
+		{
+			"kept": 15,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 8
+		},
+		{
+			"kept": 6,
+			"cut": 16
+		},
+		{
+			"changed": 2,
+			"cut": 1,
+			"kept": 18
+		},
+		{
+			"kept": 13,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"cut": 22
+		},
+		{
+			"kept": 2,
+			"cut": 19
+		},
+		{
+			"cut": 16,
+			"kept": 6
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 14
+		},
+		{
+			"cut": 9,
+			"kept": 8,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 8,
+			"changed": 1
+		},
+		{
+			"cut": 20,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"cut": 16,
+			"kept": 2,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"changed": 5,
+			"kept": 8
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 13,
+			"kept": 9
+		},
+		{
+			"cut": 15,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"changed": 3,
+			"kept": 3,
+			"cut": 15
+		},
+		{
+			"kept": 7,
+			"cut": 10,
+			"changed": 5
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"changed": 8,
+			"kept": 7,
+			"cut": 6
+		},
+		{
+			"cut": 13,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"changed": 5,
+			"cut": 10,
+			"kept": 7
+		},
+		{
+			"cut": 17,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"kept": 17,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"changed": 6,
+			"kept": 9,
+			"cut": 7
+		},
+		{
+			"cut": 11,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"cut": 12,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 15,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 3,
+			"cut": 14,
+			"changed": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 21
+		},
+		{
+			"scripted": 24,
+			"notInScript": 26
+		},
+		{
+			"scripted": 84,
+			"notInScript": 7
+		},
+		{
+			"scripted": 186,
+			"notInScript": 29
+		},
+		{
+			"scripted": 129,
+			"notInScript": 68
+		},
+		{
+			"scripted": 134,
+			"notInScript": 61
+		},
+		{
+			"scripted": 94,
+			"notInScript": 180
+		},
+		{
+			"scripted": 113,
+			"notInScript": 64
+		},
+		{
+			"scripted": 151,
+			"notInScript": 51
+		},
+		{
+			"scripted": 118,
+			"notInScript": 24
+		},
+		{
+			"scripted": 92,
+			"notInScript": 83
+		},
+		{
+			"scripted": 250,
+			"notInScript": 26
+		},
+		{
+			"scripted": 147,
+			"notInScript": 39
+		},
+		{
+			"scripted": 84,
+			"notInScript": 44
+		},
+		{
+			"scripted": 69,
+			"notInScript": 12
+		},
+		{
+			"scripted": 220,
+			"notInScript": 6
+		},
+		{
+			"scripted": 17,
+			"notInScript": 189
+		},
+		{
+			"scripted": 57,
+			"notInScript": 150
+		},
+		{
+			"scripted": 239,
+			"notInScript": 78
+		},
+		{
+			"scripted": 84,
+			"notInScript": 67
+		},
+		{
+			"scripted": 90,
+			"notInScript": 19
+		},
+		{
+			"scripted": 158,
+			"notInScript": 64
+		},
+		{
+			"scripted": 36,
+			"notInScript": 105
+		},
+		{
+			"scripted": 137,
+			"notInScript": 117
+		},
+		{
+			"scripted": 148,
+			"notInScript": 113
+		},
+		{
+			"scripted": 189,
+			"notInScript": 76
+		},
+		{
+			"scripted": 141,
+			"notInScript": 51
+		},
+		{
+			"scripted": 26,
+			"notInScript": 153
+		},
+		{
+			"scripted": 202,
+			"notInScript": 52
+		},
+		{
+			"scripted": 98,
+			"notInScript": 66
+		},
+		{
+			"scripted": 76,
+			"notInScript": 46
+		},
+		{
+			"scripted": 94,
+			"notInScript": 193
+		},
+		{
+			"scripted": 49,
+			"notInScript": 69
+		},
+		{
+			"scripted": 42,
+			"notInScript": 218
+		},
+		{
+			"scripted": 24,
+			"notInScript": 163
+		},
+		{
+			"scripted": 142,
+			"notInScript": 123
+		},
+		{
+			"scripted": 46,
+			"notInScript": 140
+		},
+		{
+			"scripted": 88,
+			"notInScript": 141
+		},
+		{
+			"scripted": 113,
+			"notInScript": 62
+		},
+		{
+			"scripted": 136,
+			"notInScript": 23
+		},
+		{
+			"scripted": 137,
+			"notInScript": 47
+		},
+		{
+			"scripted": 103,
+			"notInScript": 17
+		},
+		{
+			"scripted": 86,
+			"notInScript": 121
+		},
+		{
+			"scripted": 114,
+			"notInScript": 182
+		},
+		{
+			"scripted": 0,
+			"notInScript": 96
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 7.4,
+		"longest": 7.4,
+		"spans": [
+			[
+				366.7,
+				374
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 10,
+				"kept": 3,
+				"changed": 0,
+				"cut": 7
+			},
+			"other": {
+				"lines": 257,
+				"kept": 89,
+				"changed": 50,
+				"cut": 118
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 337,
+				"kept": 105,
+				"changed": 52,
+				"cut": 180
+			},
+			"other": {
+				"lines": 279,
+				"kept": 89,
+				"changed": 48,
+				"cut": 142
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "CHARLES",
+				"text": "catch you for a bop later."
+			},
+			{
+				"speaker": "DAVID",
+				"text": "Did you pork Mrs Piggy?"
+			},
+			{
+				"speaker": "CHARLES",
+				"text": "It's no wonder husbands aren't allowed to see this - they would realise they were not worthy."
+			},
+			{
+				"speaker": "CHARLES",
+				"text": "Is he going to be all right?"
+			},
+			{
+				"speaker": "MATTHEW",
+				"text": "That ' s it that ' s the baby. Excellent film. What about it?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1017,
+				"text": "There are no skeletons in his cupboard."
+			},
+			{
+				"at": 2707,
+				"text": "I don't remember ever mentioning it."
+			},
+			{
+				"at": 4088,
+				"text": "How awfully nice to meet you."
+			},
+			{
+				"at": 5000,
+				"text": "Bring out the coffin, let the mourners come."
+			},
+			{
+				"at": 5746,
+				"text": "And I'll see you afterwards."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "CHARLES",
+				"page": "Hello John - this is ••• sorry, I don't know your •••",
+				"screen": "Hello, dear John. This is...",
+				"pageWords": [
+					[
+						"Hello",
+						true
+					],
+					[
+						"John",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"•••",
+						null
+					],
+					[
+						"sorry,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"•••",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"Hello,",
+						true
+					],
+					[
+						"dear",
+						false
+					],
+					[
+						"John.",
+						false
+					],
+					[
+						"This",
+						true
+					],
+					[
+						"is...",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CARRIE",
+				"page": "Maybe. Maybe this. • . would be better.",
+				"screen": "Maybe this might be better.",
+				"pageWords": [
+					[
+						"Maybe.",
+						true
+					],
+					[
+						"Maybe",
+						false
+					],
+					[
+						"this.",
+						false
+					],
+					[
+						"•",
+						null
+					],
+					[
+						".",
+						null
+					],
+					[
+						"would",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"better.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Maybe",
+						true
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"might",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"better.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CHARLES",
+				"page": "one really strange thing is thinking you' 11 never sleep with anyone else. You don't think you'll ever be unfaithful?",
+				"screen": "It's strange thinking you'll never sleep with anyone else. You don't think you'll be unfaithful?",
+				"pageWords": [
+					[
+						"one",
+						false
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"strange",
+						false
+					],
+					[
+						"thing",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"thinking",
+						false
+					],
+					[
+						"you'",
+						false
+					],
+					[
+						"11",
+						false
+					],
+					[
+						"never",
+						true
+					],
+					[
+						"sleep",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"anyone",
+						true
+					],
+					[
+						"else.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"you'll",
+						true
+					],
+					[
+						"ever",
+						false
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"unfaithful?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						false
+					],
+					[
+						"strange",
+						false
+					],
+					[
+						"thinking",
+						false
+					],
+					[
+						"you'll",
+						false
+					],
+					[
+						"never",
+						true
+					],
+					[
+						"sleep",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"anyone",
+						true
+					],
+					[
+						"else.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"you'll",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"unfaithful?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CHARLES",
+				"page": "Yes. That would be lovely.",
+				"screen": "Yeah, that would be grand.",
+				"pageWords": [
+					[
+						"Yes.",
+						false
+					],
+					[
+						"That",
+						true
+					],
+					[
+						"would",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"lovely.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"would",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"grand.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MATTHEW",
+				"page": "Can I ask what about?",
+				"screen": "Can I ask about what?",
+				"pageWords": [
+					[
+						"Can",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"ask",
+						true
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"about?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Can",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"ask",
+						true
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"what?",
+						false
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,930 @@
+{
+	"_id": "tt0087957",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 18,
+		"eligible": 12,
+		"rejected": {
+			"duplicate": 3,
+			"too few lines": 2,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1955181264",
+		"versions": [
+			"1955181264",
+			"1954681740",
+			"1952887745",
+			"58951",
+			"1955352513",
+			"1955352514",
+			"146100",
+			"1956963817",
+			"1958059186"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8490953246118447,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6660,
+	"quality": {
+		"anchoredShare": 0.29898788783806207
+	},
+	"words": {
+		"page": 6027,
+		"screen": 3478,
+		"kept": 1893,
+		"cut": 4134,
+		"notInScript": 1676,
+		"moved": 194
+	},
+	"lines": {
+		"page": 661,
+		"kept": 225,
+		"changed": 66,
+		"cut": 369,
+		"screen": 704,
+		"notInScript": 281
+	},
+	"byGender": {
+		"w": {
+			"lines": 237,
+			"kept": 71,
+			"changed": 12,
+			"cut": 154
+		},
+		"m": {
+			"lines": 394,
+			"kept": 151,
+			"changed": 49,
+			"cut": 194
+		},
+		"unknown": {
+			"lines": 29,
+			"kept": 3,
+			"changed": 5,
+			"cut": 21
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 5,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"cut": 6,
+			"kept": 2
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 2
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 13
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"kept": 7
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"cut": 10,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 8
+		},
+		{
+			"cut": 12,
+			"kept": 2
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 11,
+			"kept": 3
+		},
+		{
+			"kept": 4,
+			"cut": 9
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 2,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"changed": 2,
+			"cut": 11
+		},
+		{
+			"cut": 13,
+			"kept": 1
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"kept": 10,
+			"cut": 4
+		},
+		{
+			"cut": 11,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"kept": 1,
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"changed": 1,
+			"cut": 11
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 37,
+			"notInScript": 5
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 70,
+			"notInScript": 0
+		},
+		{
+			"scripted": 41,
+			"notInScript": 4
+		},
+		{
+			"scripted": 9,
+			"notInScript": 0
+		},
+		{
+			"scripted": 103,
+			"notInScript": 226
+		},
+		{
+			"scripted": 186,
+			"notInScript": 12
+		},
+		{
+			"scripted": 56,
+			"notInScript": 7
+		},
+		{
+			"scripted": 43,
+			"notInScript": 80
+		},
+		{
+			"scripted": 31,
+			"notInScript": 49
+		},
+		{
+			"scripted": 212,
+			"notInScript": 8
+		},
+		{
+			"scripted": 177,
+			"notInScript": 14
+		},
+		{
+			"scripted": 49,
+			"notInScript": 38
+		},
+		{
+			"scripted": 131,
+			"notInScript": 16
+		},
+		{
+			"scripted": 0,
+			"notInScript": 82
+		},
+		{
+			"scripted": 0,
+			"notInScript": 111
+		},
+		{
+			"scripted": 54,
+			"notInScript": 31
+		},
+		{
+			"scripted": 61,
+			"notInScript": 4
+		},
+		{
+			"scripted": 14,
+			"notInScript": 1
+		},
+		{
+			"scripted": 71,
+			"notInScript": 37
+		},
+		{
+			"scripted": 49,
+			"notInScript": 117
+		},
+		{
+			"scripted": 68,
+			"notInScript": 0
+		},
+		{
+			"scripted": 69,
+			"notInScript": 14
+		},
+		{
+			"scripted": 80,
+			"notInScript": 51
+		},
+		{
+			"scripted": 19,
+			"notInScript": 92
+		},
+		{
+			"scripted": 62,
+			"notInScript": 5
+		},
+		{
+			"scripted": 23,
+			"notInScript": 11
+		},
+		{
+			"scripted": 37,
+			"notInScript": 15
+		},
+		{
+			"scripted": 17,
+			"notInScript": 0
+		},
+		{
+			"scripted": 150,
+			"notInScript": 12
+		},
+		{
+			"scripted": 17,
+			"notInScript": 0
+		},
+		{
+			"scripted": 60,
+			"notInScript": 0
+		},
+		{
+			"scripted": 26,
+			"notInScript": 16
+		},
+		{
+			"scripted": 0,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 6
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 11,
+			"notInScript": 28
+		},
+		{
+			"scripted": 22,
+			"notInScript": 35
+		},
+		{
+			"scripted": 0,
+			"notInScript": 60
+		},
+		{
+			"scripted": 0,
+			"notInScript": 112
+		},
+		{
+			"scripted": 0,
+			"notInScript": 26
+		},
+		{
+			"scripted": 2,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 79
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 34,
+		"longest": 34,
+		"spans": [
+			[
+				1601.5,
+				1635.5
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 46,
+				"kept": 18,
+				"changed": 5,
+				"cut": 23
+			},
+			"other": {
+				"lines": 160,
+				"kept": 46,
+				"changed": 7,
+				"cut": 107
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 138,
+				"kept": 57,
+				"changed": 19,
+				"cut": 62
+			},
+			"other": {
+				"lines": 105,
+				"kept": 24,
+				"changed": 15,
+				"cut": 66
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "VANITY",
+				"text": "My psychic told rne I was going to be famous."
+			},
+			{
+				"speaker": "VANITY",
+				"text": "Great. See you later, Billy."
+			},
+			{
+				"speaker": "JEROME",
+				"text": "Will you be having a virgin as well?"
+			},
+			{
+				"speaker": "VANITY",
+				"text": "What we talked about last time."
+			},
+			{
+				"speaker": "VANITY",
+				"text": "flushes with embarrassment. Billy and Morris notice this and glare at Prince."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 774,
+				"text": "I'm telling you, you need to get rid of him."
+			},
+			{
+				"at": 2002,
+				"text": "\"Is it him or is it me?"
+			},
+			{
+				"at": 2777,
+				"text": "The Kid's going to help me."
+			},
+			{
+				"at": 3615,
+				"text": "You got a girlfriend?"
+			},
+			{
+				"at": 5526,
+				"text": "\"But u can't seem 2 make up your mind"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "JILL",
+				"page": "Well, I'll be here -- I always like what you do.",
+				"screen": "Well, I'll be here.",
+				"pageWords": [
+					[
+						"Well,",
+						true
+					],
+					[
+						"I'll",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"always",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"do.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						true
+					],
+					[
+						"I'll",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"here.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MORRIS",
+				"page": "I know that's right. Hey -- watch it now.",
+				"screen": "Hey! Watch it, man!",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"right.",
+						false
+					],
+					[
+						"Hey",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"watch",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"now.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Hey!",
+						true
+					],
+					[
+						"Watch",
+						true
+					],
+					[
+						"it,",
+						true
+					],
+					[
+						"man!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MORRIS",
+				"page": "The pleasure's all mine.",
+				"screen": "The pleasure is all mine.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"pleasure's",
+						false
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"mine.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"pleasure",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"mine.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CHICK",
+				"page": "Prince. Billy Sparks wants to see you.",
+				"screen": "The boss wants to see you.",
+				"pageWords": [
+					[
+						"Prince.",
+						false
+					],
+					[
+						"Billy",
+						false
+					],
+					[
+						"Sparks",
+						false
+					],
+					[
+						"wants",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"boss",
+						false
+					],
+					[
+						"wants",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BILLY",
+				"page": "The Duke of Dick is in rare form tonight.",
+				"screen": "The Kid is in rare form tonight.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"Duke",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"Dick",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"rare",
+						true
+					],
+					[
+						"form",
+						true
+					],
+					[
+						"tonight.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"Kid",
+						false
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"rare",
+						true
+					],
+					[
+						"form",
+						true
+					],
+					[
+						"tonight.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

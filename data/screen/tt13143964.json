@@ -1,0 +1,949 @@
+{
+	"_id": "tt13143964",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 9,
+		"eligible": 7,
+		"rejected": {
+			"too few lines": 2
+		},
+		"used": 7,
+		"primary": "1956997724",
+		"versions": [
+			"1956964045",
+			"1956984961",
+			"1960872409",
+			"1956964422",
+			"1956964042",
+			"1956997724",
+			"1956997723"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9799148879681373,
+		"lyricsDropped": 142
+	},
+	"runtimeSeconds": 5760,
+	"quality": {
+		"anchoredShare": 0.9093076172933146
+	},
+	"words": {
+		"page": 9229,
+		"screen": 9292,
+		"kept": 8392,
+		"cut": 837,
+		"notInScript": 900,
+		"moved": 0
+	},
+	"lines": {
+		"page": 1183,
+		"kept": 1070,
+		"changed": 37,
+		"cut": 72,
+		"screen": 1900,
+		"notInScript": 231
+	},
+	"byGender": {
+		"w": {
+			"lines": 310,
+			"kept": 289,
+			"changed": 8,
+			"cut": 13
+		},
+		"m": {
+			"lines": 555,
+			"kept": 505,
+			"changed": 22,
+			"cut": 28
+		},
+		"unknown": {
+			"lines": 314,
+			"kept": 276,
+			"changed": 7,
+			"cut": 31
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 4,
+			"kept": 21
+		},
+		{
+			"kept": 20,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 22,
+			"changed": 2
+		},
+		{
+			"kept": 19,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 25
+		},
+		{
+			"changed": 3,
+			"kept": 17,
+			"cut": 4
+		},
+		{
+			"kept": 24,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 21,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"cut": 2
+		},
+		{
+			"kept": 25
+		},
+		{
+			"kept": 19,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 24,
+			"cut": 1
+		},
+		{
+			"kept": 25
+		},
+		{
+			"kept": 24
+		},
+		{
+			"kept": 22,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"cut": 1
+		},
+		{
+			"kept": 25
+		},
+		{
+			"kept": 20,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 24
+		},
+		{
+			"kept": 23,
+			"cut": 2
+		},
+		{
+			"kept": 24,
+			"changed": 1
+		},
+		{
+			"kept": 24
+		},
+		{
+			"kept": 23,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 24,
+			"changed": 1
+		},
+		{
+			"kept": 24
+		},
+		{
+			"kept": 24,
+			"changed": 1
+		},
+		{
+			"kept": 24
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 25
+		},
+		{
+			"kept": 21,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 24
+		},
+		{
+			"kept": 21,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 21,
+			"changed": 2
+		},
+		{
+			"cut": 2,
+			"kept": 21,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 21,
+			"cut": 2
+		},
+		{
+			"kept": 23,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"cut": 3
+		},
+		{
+			"kept": 23,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"cut": 2
+		},
+		{
+			"kept": 21,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 20,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 21,
+			"cut": 3
+		},
+		{
+			"cut": 2,
+			"kept": 23
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 114,
+			"notInScript": 4
+		},
+		{
+			"scripted": 222,
+			"notInScript": 0
+		},
+		{
+			"scripted": 193,
+			"notInScript": 2
+		},
+		{
+			"scripted": 181,
+			"notInScript": 22
+		},
+		{
+			"scripted": 218,
+			"notInScript": 5
+		},
+		{
+			"scripted": 113,
+			"notInScript": 21
+		},
+		{
+			"scripted": 137,
+			"notInScript": 0
+		},
+		{
+			"scripted": 159,
+			"notInScript": 12
+		},
+		{
+			"scripted": 226,
+			"notInScript": 11
+		},
+		{
+			"scripted": 217,
+			"notInScript": 7
+		},
+		{
+			"scripted": 265,
+			"notInScript": 10
+		},
+		{
+			"scripted": 179,
+			"notInScript": 5
+		},
+		{
+			"scripted": 219,
+			"notInScript": 6
+		},
+		{
+			"scripted": 275,
+			"notInScript": 15
+		},
+		{
+			"scripted": 260,
+			"notInScript": 13
+		},
+		{
+			"scripted": 181,
+			"notInScript": 10
+		},
+		{
+			"scripted": 40,
+			"notInScript": 5
+		},
+		{
+			"scripted": 89,
+			"notInScript": 1
+		},
+		{
+			"scripted": 151,
+			"notInScript": 7
+		},
+		{
+			"scripted": 157,
+			"notInScript": 35
+		},
+		{
+			"scripted": 202,
+			"notInScript": 15
+		},
+		{
+			"scripted": 247,
+			"notInScript": 12
+		},
+		{
+			"scripted": 196,
+			"notInScript": 0
+		},
+		{
+			"scripted": 198,
+			"notInScript": 3
+		},
+		{
+			"scripted": 221,
+			"notInScript": 22
+		},
+		{
+			"scripted": 272,
+			"notInScript": 0
+		},
+		{
+			"scripted": 94,
+			"notInScript": 14
+		},
+		{
+			"scripted": 237,
+			"notInScript": 10
+		},
+		{
+			"scripted": 223,
+			"notInScript": 0
+		},
+		{
+			"scripted": 203,
+			"notInScript": 8
+		},
+		{
+			"scripted": 278,
+			"notInScript": 7
+		},
+		{
+			"scripted": 205,
+			"notInScript": 11
+		},
+		{
+			"scripted": 241,
+			"notInScript": 13
+		},
+		{
+			"scripted": 276,
+			"notInScript": 17
+		},
+		{
+			"scripted": 267,
+			"notInScript": 28
+		},
+		{
+			"scripted": 93,
+			"notInScript": 18
+		},
+		{
+			"scripted": 228,
+			"notInScript": 1
+		},
+		{
+			"scripted": 207,
+			"notInScript": 1
+		},
+		{
+			"scripted": 133,
+			"notInScript": 1
+		},
+		{
+			"scripted": 256,
+			"notInScript": 26
+		},
+		{
+			"scripted": 252,
+			"notInScript": 45
+		},
+		{
+			"scripted": 163,
+			"notInScript": 21
+		},
+		{
+			"scripted": 157,
+			"notInScript": 4
+		},
+		{
+			"scripted": 173,
+			"notInScript": 12
+		},
+		{
+			"scripted": 183,
+			"notInScript": 7
+		},
+		{
+			"scripted": 4,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 9.3,
+		"longest": 9.3,
+		"spans": [
+			[
+				5395,
+				5404.2
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 212,
+				"kept": 198,
+				"changed": 5,
+				"cut": 9
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 59,
+				"kept": 55,
+				"changed": 2,
+				"cut": 2
+			},
+			"other": {
+				"lines": 473,
+				"kept": 428,
+				"changed": 20,
+				"cut": 25
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "page-fail-screen-pass"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "BORAT",
+				"text": "Never mind that, where’s Jonny?"
+			},
+			{
+				"speaker": "JERRY",
+				"text": "We ain’t got the right ones."
+			},
+			{
+				"speaker": "BORAT",
+				"text": "Obama, what we gonna do? Inject him with the Wuhan Flu. Inject him with the Wuhan Flu. Let’s hear it!"
+			},
+			{
+				"speaker": "BORAT",
+				"text": "Journalists, what we gonna do?"
+			},
+			{
+				"speaker": "SECURITY",
+				"text": "I’ve called the police, sir."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1616,
+				"text": "It has a heart..."
+			},
+			{
+				"at": 2285,
+				"text": "You just hit me."
+			},
+			{
+				"at": 2628,
+				"text": "One, two, three, four, five, six, seven..."
+			},
+			{
+				"at": 4215,
+				"text": "Do you know, um..."
+			},
+			{
+				"at": 4945,
+				"text": "I would love to marry you."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BORAT",
+				"page": "I back, everybody, I back!",
+				"screen": "I'm back, everybody! I'm back!",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"back,",
+						true
+					],
+					[
+						"everybody,",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"back!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"back,",
+						true
+					],
+					[
+						"everybody!",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"back!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BORAT",
+				"page": "The operation was five hours away. Luckily, I get hired to do a job.",
+				"screen": "The mutilations would commence in five hours. Luckily, I get hired for job.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"operation",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"five",
+						true
+					],
+					[
+						"hours",
+						true
+					],
+					[
+						"away.",
+						false
+					],
+					[
+						"Luckily,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"hired",
+						true
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"job.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"mutilations",
+						false
+					],
+					[
+						"would",
+						false
+					],
+					[
+						"commence",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"five",
+						true
+					],
+					[
+						"hours.",
+						true
+					],
+					[
+						"Luckily,",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"hired",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"job.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BORAT",
+				"page": "You must put him in jail... Is he in jail?",
+				"screen": "Is he in jail?",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"put",
+						false
+					],
+					[
+						"him",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"jail...",
+						false
+					],
+					[
+						"Is",
+						true
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"jail?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Is",
+						true
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"jail?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BORAT",
+				"page": "Over there, she’s over there! She’s over there to the right...",
+				"screen": "Over there. She's over there.",
+				"pageWords": [
+					[
+						"Over",
+						true
+					],
+					[
+						"there,",
+						true
+					],
+					[
+						"she’s",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"there!",
+						true
+					],
+					[
+						"She’s",
+						false
+					],
+					[
+						"over",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"right...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Over",
+						true
+					],
+					[
+						"there.",
+						true
+					],
+					[
+						"She's",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"there.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BORAT",
+				"page": "Wow, that was close.",
+				"screen": "That one was close.",
+				"pageWords": [
+					[
+						"Wow,",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"close.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"close.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

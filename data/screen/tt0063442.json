@@ -1,0 +1,941 @@
+{
+	"_id": "tt0063442",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 13,
+		"eligible": 9,
+		"rejected": {
+			"duplicate": 4
+		},
+		"used": 9,
+		"primary": "1954954202",
+		"versions": [
+			"1961462852",
+			"1952910993",
+			"1954954202",
+			"1954283236",
+			"1951669312",
+			"1957139567",
+			"1955973443",
+			"1952926553",
+			"1952192956"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9786906421743387,
+		"lyricsDropped": 1
+	},
+	"runtimeSeconds": 6720,
+	"quality": {
+		"anchoredShare": 0.6665392456676861
+	},
+	"words": {
+		"page": 7848,
+		"screen": 6769,
+		"kept": 5228,
+		"cut": 2620,
+		"notInScript": 1538,
+		"moved": 27
+	},
+	"lines": {
+		"page": 688,
+		"kept": 451,
+		"changed": 93,
+		"cut": 144,
+		"screen": 1137,
+		"notInScript": 170
+	},
+	"byGender": {
+		"w": {
+			"lines": 125,
+			"kept": 94,
+			"changed": 10,
+			"cut": 21
+		},
+		"m": {
+			"lines": 498,
+			"kept": 318,
+			"changed": 76,
+			"cut": 104
+		},
+		"unknown": {
+			"lines": 65,
+			"kept": 39,
+			"changed": 7,
+			"cut": 19
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 5,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"kept": 10,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"kept": 6
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"cut": 4
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"changed": 1,
+			"kept": 13
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"changed": 7,
+			"cut": 7,
+			"kept": 1
+		},
+		{
+			"kept": 10,
+			"cut": 4
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 2,
+			"changed": 3,
+			"kept": 10
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 5,
+			"cut": 6
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"changed": 2,
+			"kept": 13
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 2
+		},
+		{
+			"kept": 1,
+			"cut": 14
+		},
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 8
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"cut": 3,
+			"kept": 5
+		},
+		{
+			"cut": 2,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"cut": 7,
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 182,
+			"notInScript": 23
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 47,
+			"notInScript": 3
+		},
+		{
+			"scripted": 9,
+			"notInScript": 1
+		},
+		{
+			"scripted": 186,
+			"notInScript": 20
+		},
+		{
+			"scripted": 128,
+			"notInScript": 4
+		},
+		{
+			"scripted": 62,
+			"notInScript": 0
+		},
+		{
+			"scripted": 318,
+			"notInScript": 27
+		},
+		{
+			"scripted": 38,
+			"notInScript": 3
+		},
+		{
+			"scripted": 4,
+			"notInScript": 1
+		},
+		{
+			"scripted": 9,
+			"notInScript": 10
+		},
+		{
+			"scripted": 15,
+			"notInScript": 0
+		},
+		{
+			"scripted": 33,
+			"notInScript": 18
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 72,
+			"notInScript": 2
+		},
+		{
+			"scripted": 237,
+			"notInScript": 5
+		},
+		{
+			"scripted": 198,
+			"notInScript": 16
+		},
+		{
+			"scripted": 88,
+			"notInScript": 10
+		},
+		{
+			"scripted": 119,
+			"notInScript": 13
+		},
+		{
+			"scripted": 98,
+			"notInScript": 8
+		},
+		{
+			"scripted": 162,
+			"notInScript": 6
+		},
+		{
+			"scripted": 272,
+			"notInScript": 2
+		},
+		{
+			"scripted": 156,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 11
+		},
+		{
+			"scripted": 47,
+			"notInScript": 11
+		},
+		{
+			"scripted": 119,
+			"notInScript": 49
+		},
+		{
+			"scripted": 75,
+			"notInScript": 32
+		},
+		{
+			"scripted": 280,
+			"notInScript": 3
+		},
+		{
+			"scripted": 221,
+			"notInScript": 12
+		},
+		{
+			"scripted": 163,
+			"notInScript": 23
+		},
+		{
+			"scripted": 213,
+			"notInScript": 11
+		},
+		{
+			"scripted": 165,
+			"notInScript": 0
+		},
+		{
+			"scripted": 282,
+			"notInScript": 1
+		},
+		{
+			"scripted": 213,
+			"notInScript": 28
+		},
+		{
+			"scripted": 155,
+			"notInScript": 36
+		},
+		{
+			"scripted": 189,
+			"notInScript": 14
+		},
+		{
+			"scripted": 126,
+			"notInScript": 12
+		},
+		{
+			"scripted": 76,
+			"notInScript": 7
+		},
+		{
+			"scripted": 253,
+			"notInScript": 18
+		},
+		{
+			"scripted": 169,
+			"notInScript": 0
+		},
+		{
+			"scripted": 283,
+			"notInScript": 24
+		},
+		{
+			"scripted": 27,
+			"notInScript": 26
+		},
+		{
+			"scripted": 241,
+			"notInScript": 21
+		},
+		{
+			"scripted": 210,
+			"notInScript": 8
+		},
+		{
+			"scripted": 160,
+			"notInScript": 25
+		},
+		{
+			"scripted": 96,
+			"notInScript": 3
+		},
+		{
+			"scripted": 3,
+			"notInScript": 23
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 122,
+				"kept": 94,
+				"changed": 7,
+				"cut": 21
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 380,
+				"kept": 243,
+				"changed": 64,
+				"cut": 73
+			},
+			"other": {
+				"lines": 113,
+				"kept": 70,
+				"changed": 12,
+				"cut": 31
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LANDON",
+				"text": "My God..they look almost human."
+			},
+			{
+				"speaker": "ZIRA",
+				"text": "'And you're a fool'."
+			},
+			{
+				"speaker": "ZAIUS",
+				"text": "Take this creature back to his cage."
+			},
+			{
+				"speaker": "TAYLOR",
+				"text": "You threw us together, remember? And you guessed right. Men, like apes, get despondent without a mate."
+			},
+			{
+				"speaker": "TAYLOR",
+				"text": "Tell him to pull back!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1166,
+				"text": "I'll clue you in."
+			},
+			{
+				"at": 3651,
+				"text": "Leave her alone, damn you!"
+			},
+			{
+				"at": 4337,
+				"text": "You cut up his brain, you bloody baboon!"
+			},
+			{
+				"at": 5197,
+				"text": "This must be close to home for her."
+			},
+			{
+				"at": 6301,
+				"text": "Remember, never trust anybody over 30."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "TAYLOR",
+				"page": "Never mind the scarecrows.",
+				"screen": "To hell with the scarecrows.",
+				"pageWords": [
+					[
+						"Never",
+						false
+					],
+					[
+						"mind",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"scarecrows.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"To",
+						false
+					],
+					[
+						"hell",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"scarecrows.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TAYLOR",
+				"page": "Ape! Apes wearing clothes! It's a madhouse! A madhouse!",
+				"screen": "It's a madhouse! A madhouse!",
+				"pageWords": [
+					[
+						"Ape!",
+						false
+					],
+					[
+						"Apes",
+						false
+					],
+					[
+						"wearing",
+						false
+					],
+					[
+						"clothes!",
+						false
+					],
+					[
+						"It's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"madhouse!",
+						true
+					],
+					[
+						"A",
+						true
+					],
+					[
+						"madhouse!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"madhouse!",
+						true
+					],
+					[
+						"A",
+						true
+					],
+					[
+						"madhouse!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ZIRA",
+				"page": "All right... Get in...hurry. Put this on.",
+				"screen": "Oh, all right. Here, put this on.",
+				"pageWords": [
+					[
+						"All",
+						true
+					],
+					[
+						"right...",
+						true
+					],
+					[
+						"Get",
+						false
+					],
+					[
+						"in...hurry.",
+						false
+					],
+					[
+						"Put",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"on.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"right.",
+						true
+					],
+					[
+						"Here,",
+						false
+					],
+					[
+						"put",
+						true
+					],
+					[
+						"this",
+						true
+					],
+					[
+						"on.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ZAIUS",
+				"page": "You're all under arrest! You seditious scoundrel. Drop that rifle.",
+				"screen": "You're all under arrest.",
+				"pageWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"under",
+						true
+					],
+					[
+						"arrest!",
+						true
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"seditious",
+						false
+					],
+					[
+						"scoundrel.",
+						false
+					],
+					[
+						"Drop",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"rifle.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"all",
+						true
+					],
+					[
+						"under",
+						true
+					],
+					[
+						"arrest.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TAYLOR",
+				"page": "I'll start by following the shoreline. And my nose.",
+				"screen": "To start with, I'll follow the shoreline and my nose.",
+				"pageWords": [
+					[
+						"I'll",
+						false
+					],
+					[
+						"start",
+						false
+					],
+					[
+						"by",
+						false
+					],
+					[
+						"following",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"shoreline.",
+						true
+					],
+					[
+						"And",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"nose.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"To",
+						false
+					],
+					[
+						"start",
+						false
+					],
+					[
+						"with,",
+						false
+					],
+					[
+						"I'll",
+						false
+					],
+					[
+						"follow",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"shoreline",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"nose.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

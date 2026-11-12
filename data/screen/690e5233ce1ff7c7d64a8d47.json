@@ -1,0 +1,1155 @@
+{
+	"_id": "690e5233ce1ff7c7d64a8d47",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 47,
+		"eligible": 36,
+		"rejected": {
+			"split across CDs": 4,
+			"duplicate": 5,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1954962128",
+		"versions": [
+			"1952283300",
+			"1952168485",
+			"1953775179",
+			"1954962128",
+			"1952079458",
+			"1955850416",
+			"1956178288",
+			"1955676307",
+			"1952038485"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9636385595751632,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7260,
+	"quality": {
+		"anchoredShare": 0.2572390572390572
+	},
+	"words": {
+		"page": 5940,
+		"screen": 5655,
+		"kept": 1528,
+		"cut": 4412,
+		"notInScript": 4127,
+		"moved": 224
+	},
+	"lines": {
+		"page": 567,
+		"kept": 110,
+		"changed": 100,
+		"cut": 356,
+		"screen": 1187,
+		"notInScript": 879
+	},
+	"byGender": {
+		"w": {
+			"lines": 159,
+			"kept": 31,
+			"changed": 24,
+			"cut": 104
+		},
+		"m": {
+			"lines": 386,
+			"kept": 73,
+			"changed": 72,
+			"cut": 241
+		},
+		"unknown": {
+			"lines": 21,
+			"kept": 6,
+			"changed": 4,
+			"cut": 11
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 5,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 2,
+			"changed": 6
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 4,
+			"changed": 1,
+			"kept": 7
+		},
+		{
+			"cut": 9,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"kept": 3,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"cut": 8,
+			"kept": 1,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"kept": 1,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"changed": 3,
+			"kept": 4,
+			"cut": 5
+		},
+		{
+			"changed": 4,
+			"kept": 3,
+			"cut": 5
+		},
+		{
+			"kept": 2,
+			"changed": 2,
+			"cut": 8
+		},
+		{
+			"changed": 4,
+			"cut": 2,
+			"kept": 5
+		},
+		{
+			"kept": 4,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"changed": 2,
+			"cut": 10
+		},
+		{
+			"cut": 9,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 6
+		},
+		{
+			"changed": 2,
+			"kept": 3,
+			"cut": 7
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"changed": 2,
+			"cut": 8,
+			"kept": 1
+		},
+		{
+			"cut": 6,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 12
+		},
+		{
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 11
+		},
+		{
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"kept": 2,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 34,
+			"notInScript": 36
+		},
+		{
+			"scripted": 12,
+			"notInScript": 43
+		},
+		{
+			"scripted": 3,
+			"notInScript": 27
+		},
+		{
+			"scripted": 8,
+			"notInScript": 37
+		},
+		{
+			"scripted": 113,
+			"notInScript": 64
+		},
+		{
+			"scripted": 38,
+			"notInScript": 78
+		},
+		{
+			"scripted": 7,
+			"notInScript": 10
+		},
+		{
+			"scripted": 60,
+			"notInScript": 67
+		},
+		{
+			"scripted": 83,
+			"notInScript": 107
+		},
+		{
+			"scripted": 20,
+			"notInScript": 6
+		},
+		{
+			"scripted": 28,
+			"notInScript": 91
+		},
+		{
+			"scripted": 182,
+			"notInScript": 89
+		},
+		{
+			"scripted": 47,
+			"notInScript": 53
+		},
+		{
+			"scripted": 12,
+			"notInScript": 7
+		},
+		{
+			"scripted": 110,
+			"notInScript": 137
+		},
+		{
+			"scripted": 112,
+			"notInScript": 105
+		},
+		{
+			"scripted": 143,
+			"notInScript": 19
+		},
+		{
+			"scripted": 37,
+			"notInScript": 60
+		},
+		{
+			"scripted": 21,
+			"notInScript": 204
+		},
+		{
+			"scripted": 42,
+			"notInScript": 142
+		},
+		{
+			"scripted": 39,
+			"notInScript": 76
+		},
+		{
+			"scripted": 87,
+			"notInScript": 63
+		},
+		{
+			"scripted": 12,
+			"notInScript": 34
+		},
+		{
+			"scripted": 147,
+			"notInScript": 72
+		},
+		{
+			"scripted": 5,
+			"notInScript": 236
+		},
+		{
+			"scripted": 22,
+			"notInScript": 152
+		},
+		{
+			"scripted": 100,
+			"notInScript": 116
+		},
+		{
+			"scripted": 127,
+			"notInScript": 65
+		},
+		{
+			"scripted": 58,
+			"notInScript": 160
+		},
+		{
+			"scripted": 37,
+			"notInScript": 61
+		},
+		{
+			"scripted": 28,
+			"notInScript": 84
+		},
+		{
+			"scripted": 33,
+			"notInScript": 13
+		},
+		{
+			"scripted": 24,
+			"notInScript": 227
+		},
+		{
+			"scripted": 0,
+			"notInScript": 72
+		},
+		{
+			"scripted": 43,
+			"notInScript": 88
+		},
+		{
+			"scripted": 25,
+			"notInScript": 93
+		},
+		{
+			"scripted": 72,
+			"notInScript": 203
+		},
+		{
+			"scripted": 11,
+			"notInScript": 45
+		},
+		{
+			"scripted": 24,
+			"notInScript": 46
+		},
+		{
+			"scripted": 14,
+			"notInScript": 123
+		},
+		{
+			"scripted": 10,
+			"notInScript": 30
+		},
+		{
+			"scripted": 0,
+			"notInScript": 34
+		},
+		{
+			"scripted": 13,
+			"notInScript": 31
+		},
+		{
+			"scripted": 4,
+			"notInScript": 18
+		},
+		{
+			"scripted": 1,
+			"notInScript": 40
+		},
+		{
+			"scripted": 0,
+			"notInScript": 43
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 3,
+				"kept": 0,
+				"changed": 0,
+				"cut": 3
+			},
+			"other": {
+				"lines": 138,
+				"kept": 30,
+				"changed": 24,
+				"cut": 84
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 203,
+				"kept": 37,
+				"changed": 36,
+				"cut": 130
+			},
+			"other": {
+				"lines": 176,
+				"kept": 35,
+				"changed": 33,
+				"cut": 108
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "WHISTLER",
+				"text": "If Blade hadn't brought you here, you would've wound up like him."
+			},
+			{
+				"speaker": "KAREN",
+				"text": "What if you've made a mistake?"
+			},
+			{
+				"speaker": "BLADE",
+				"text": "You get used to the darkness."
+			},
+			{
+				"speaker": "BLADE",
+				"text": "Jesus, Whistler, what did they do to you?"
+			},
+			{
+				"speaker": "BLADE",
+				"text": "Get out of here --"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1342,
+				"text": "Do we have any other business to discuss?"
+			},
+			{
+				"at": 2775,
+				"text": "I've been telling these bitches all about you, man."
+			},
+			{
+				"at": 3720,
+				"text": "I want him alive."
+			},
+			{
+				"at": 4844,
+				"text": "You seem a bit... tense."
+			},
+			{
+				"at": 5567,
+				"text": "These guys are complete scums, man."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "KAREN",
+				"page": "Curtis, it's three in the morning. I'm really not in the mood for one of your practical jokes.",
+				"screen": "OK, Curtis, it's 3.00 in the morning--",
+				"pageWords": [
+					[
+						"Curtis,",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"three",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"morning.",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"mood",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"practical",
+						false
+					],
+					[
+						"jokes.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"OK,",
+						false
+					],
+					[
+						"Curtis,",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"3.00",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"morning--",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KAREN",
+				"page": "I can go to the police. I have blood samples back at the hospital. I can show them.",
+				"screen": "I have blood samples. I can go to the police.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"go",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"police.",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"blood",
+						true
+					],
+					[
+						"samples",
+						true
+					],
+					[
+						"back",
+						false
+					],
+					[
+						"at",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"hospital.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"show",
+						false
+					],
+					[
+						"them.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"blood",
+						true
+					],
+					[
+						"samples.",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						true
+					],
+					[
+						"go",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"police.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TANAKA",
+				"page": "I can't -- they'll kill me!",
+				"screen": "I can't tell you that, man.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"they'll",
+						false
+					],
+					[
+						"kill",
+						false
+					],
+					[
+						"me!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"tell",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"that,",
+						false
+					],
+					[
+						"man.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "FROST",
+				"page": "When was the last time you stopped to appreciate a sunrise, Dragonetti? Three, four hundred years?",
+				"screen": "When was the last time you stopped to appreciate a good sunrise?",
+				"pageWords": [
+					[
+						"When",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"last",
+						true
+					],
+					[
+						"time",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"stopped",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"appreciate",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"sunrise,",
+						false
+					],
+					[
+						"Dragonetti?",
+						false
+					],
+					[
+						"Three,",
+						false
+					],
+					[
+						"four",
+						false
+					],
+					[
+						"hundred",
+						false
+					],
+					[
+						"years?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"When",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"last",
+						true
+					],
+					[
+						"time",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"stopped",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"appreciate",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"good",
+						false
+					],
+					[
+						"sunrise?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "FROST",
+				"page": "How long has it been since you had your serum? Twelve hours? More? You must be quite thirsty by now.",
+				"screen": "How long's it been since you shot up?",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"long",
+						false
+					],
+					[
+						"has",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"since",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"had",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"serum?",
+						false
+					],
+					[
+						"Twelve",
+						false
+					],
+					[
+						"hours?",
+						false
+					],
+					[
+						"More?",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"quite",
+						false
+					],
+					[
+						"thirsty",
+						false
+					],
+					[
+						"by",
+						false
+					],
+					[
+						"now.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"long's",
+						false
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"since",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"shot",
+						false
+					],
+					[
+						"up?",
+						false
+					]
+				]
+			}
+		]
+	}
+}

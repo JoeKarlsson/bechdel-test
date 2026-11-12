@@ -1,0 +1,1046 @@
+{
+	"_id": "tt0310910",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 13,
+		"eligible": 7,
+		"rejected": {
+			"duplicate": 2,
+			"runtime mismatch": 2,
+			"split across CDs": 2
+		},
+		"used": 7,
+		"primary": "157268",
+		"versions": [
+			"67399",
+			"1953327609",
+			"68718",
+			"157268",
+			"1954809696",
+			"1954122333",
+			"261498"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9944003785456589,
+		"lyricsDropped": 3
+	},
+	"runtimeSeconds": 5820,
+	"quality": {
+		"anchoredShare": 0.3540506855006232
+	},
+	"words": {
+		"page": 12035,
+		"screen": 12650,
+		"kept": 4261,
+		"cut": 7774,
+		"notInScript": 8389,
+		"moved": 710
+	},
+	"lines": {
+		"page": 970,
+		"kept": 302,
+		"changed": 209,
+		"cut": 458,
+		"screen": 2151,
+		"notInScript": 1339
+	},
+	"byGender": {
+		"w": {
+			"lines": 121,
+			"kept": 47,
+			"changed": 22,
+			"cut": 52
+		},
+		"m": {
+			"lines": 784,
+			"kept": 232,
+			"changed": 179,
+			"cut": 373
+		},
+		"unknown": {
+			"lines": 64,
+			"kept": 23,
+			"changed": 8,
+			"cut": 33
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 4
+		},
+		{
+			"kept": 8,
+			"changed": 9,
+			"cut": 3
+		},
+		{
+			"cut": 11,
+			"kept": 6,
+			"changed": 3
+		},
+		{
+			"changed": 3,
+			"cut": 6,
+			"kept": 12
+		},
+		{
+			"cut": 8,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"cut": 7,
+			"kept": 9
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"changed": 7,
+			"cut": 11,
+			"kept": 3
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"changed": 9,
+			"kept": 5
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"kept": 14,
+			"changed": 6
+		},
+		{
+			"kept": 6,
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 6,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"changed": 9,
+			"kept": 2,
+			"cut": 9
+		},
+		{
+			"cut": 16,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 5,
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 11,
+			"changed": 4
+		},
+		{
+			"cut": 15,
+			"changed": 5,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"cut": 6,
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 14,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"kept": 12,
+			"changed": 6
+		},
+		{
+			"kept": 8,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"changed": 9,
+			"kept": 5,
+			"cut": 6
+		},
+		{
+			"cut": 1,
+			"changed": 9,
+			"kept": 10
+		},
+		{
+			"cut": 13,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"cut": 19,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 9,
+			"cut": 8,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"cut": 5,
+			"kept": 8
+		},
+		{
+			"changed": 9,
+			"kept": 8,
+			"cut": 3
+		},
+		{
+			"kept": 11,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 16,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"cut": 7,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 5
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 6
+		},
+		{
+			"cut": 15,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"kept": 3,
+			"cut": 12
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 5
+		},
+		{
+			"kept": 12,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 3,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 145,
+			"notInScript": 49
+		},
+		{
+			"scripted": 218,
+			"notInScript": 47
+		},
+		{
+			"scripted": 301,
+			"notInScript": 73
+		},
+		{
+			"scripted": 179,
+			"notInScript": 113
+		},
+		{
+			"scripted": 94,
+			"notInScript": 128
+		},
+		{
+			"scripted": 142,
+			"notInScript": 93
+		},
+		{
+			"scripted": 182,
+			"notInScript": 147
+		},
+		{
+			"scripted": 121,
+			"notInScript": 89
+		},
+		{
+			"scripted": 81,
+			"notInScript": 170
+		},
+		{
+			"scripted": 0,
+			"notInScript": 328
+		},
+		{
+			"scripted": 45,
+			"notInScript": 316
+		},
+		{
+			"scripted": 62,
+			"notInScript": 298
+		},
+		{
+			"scripted": 42,
+			"notInScript": 162
+		},
+		{
+			"scripted": 92,
+			"notInScript": 137
+		},
+		{
+			"scripted": 102,
+			"notInScript": 182
+		},
+		{
+			"scripted": 275,
+			"notInScript": 30
+		},
+		{
+			"scripted": 241,
+			"notInScript": 85
+		},
+		{
+			"scripted": 192,
+			"notInScript": 175
+		},
+		{
+			"scripted": 68,
+			"notInScript": 280
+		},
+		{
+			"scripted": 28,
+			"notInScript": 239
+		},
+		{
+			"scripted": 74,
+			"notInScript": 135
+		},
+		{
+			"scripted": 178,
+			"notInScript": 174
+		},
+		{
+			"scripted": 134,
+			"notInScript": 104
+		},
+		{
+			"scripted": 37,
+			"notInScript": 298
+		},
+		{
+			"scripted": 189,
+			"notInScript": 177
+		},
+		{
+			"scripted": 153,
+			"notInScript": 89
+		},
+		{
+			"scripted": 163,
+			"notInScript": 64
+		},
+		{
+			"scripted": 198,
+			"notInScript": 142
+		},
+		{
+			"scripted": 217,
+			"notInScript": 68
+		},
+		{
+			"scripted": 165,
+			"notInScript": 157
+		},
+		{
+			"scripted": 100,
+			"notInScript": 111
+		},
+		{
+			"scripted": 173,
+			"notInScript": 50
+		},
+		{
+			"scripted": 114,
+			"notInScript": 187
+		},
+		{
+			"scripted": 266,
+			"notInScript": 103
+		},
+		{
+			"scripted": 216,
+			"notInScript": 89
+		},
+		{
+			"scripted": 207,
+			"notInScript": 145
+		},
+		{
+			"scripted": 79,
+			"notInScript": 209
+		},
+		{
+			"scripted": 141,
+			"notInScript": 89
+		},
+		{
+			"scripted": 103,
+			"notInScript": 137
+		},
+		{
+			"scripted": 78,
+			"notInScript": 176
+		},
+		{
+			"scripted": 73,
+			"notInScript": 109
+		},
+		{
+			"scripted": 81,
+			"notInScript": 49
+		},
+		{
+			"scripted": 34,
+			"notInScript": 126
+		},
+		{
+			"scripted": 190,
+			"notInScript": 98
+		},
+		{
+			"scripted": 74,
+			"notInScript": 145
+		},
+		{
+			"scripted": 35,
+			"notInScript": 132
+		},
+		{
+			"scripted": 0,
+			"notInScript": 32
+		},
+		{
+			"scripted": 0,
+			"notInScript": 32
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 23,
+		"longest": 13,
+		"spans": [
+			[
+				3138.4,
+				3151.4
+			],
+			[
+				3151.5,
+				3161.5
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 6,
+				"kept": 5,
+				"changed": 1,
+				"cut": 0
+			},
+			"other": {
+				"lines": 113,
+				"kept": 42,
+				"changed": 21,
+				"cut": 50
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 529,
+				"kept": 153,
+				"changed": 126,
+				"cut": 250
+			},
+			"other": {
+				"lines": 238,
+				"kept": 76,
+				"changed": 52,
+				"cut": 110
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "KING PIN",
+				"text": "Every time, you get the pinkie and I get a hang nail. You Jake?"
+			},
+			{
+				"speaker": "MILES",
+				"text": "I'm with Jack LaLane. That guy's untouchable."
+			},
+			{
+				"speaker": "LILY",
+				"text": "Then show me how."
+			},
+			{
+				"speaker": "JAKE",
+				"text": "You guys got busted. This is a great neck."
+			},
+			{
+				"speaker": "GORDO",
+				"text": "Let me just say that there is no way I'm using the bathroom on this plane."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 829,
+				"text": "The guy with the face spaz?"
+			},
+			{
+				"at": 1521,
+				"text": "The rest of it depends on you."
+			},
+			{
+				"at": 2459,
+				"text": "Okay, now I want you to take your lovely, lovely lady home."
+			},
+			{
+				"at": 3674,
+				"text": "It's not about the rush."
+			},
+			{
+				"at": 5054,
+				"text": "Black man, brown suit."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "SOBOZINSKI",
+				"page": "Do you have any idea what those monks charge for that medieval torture?",
+				"screen": "Do you have any idea what you've done?",
+				"pageWords": [
+					[
+						"Do",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"any",
+						true
+					],
+					[
+						"idea",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"those",
+						false
+					],
+					[
+						"monks",
+						false
+					],
+					[
+						"charge",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"medieval",
+						false
+					],
+					[
+						"torture?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"any",
+						true
+					],
+					[
+						"idea",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"you've",
+						false
+					],
+					[
+						"done?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JAKE",
+				"page": "We're getting a little old for running.",
+				"screen": "We're getting too old to run, Miles.",
+				"pageWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"getting",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"little",
+						false
+					],
+					[
+						"old",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"running.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"getting",
+						true
+					],
+					[
+						"too",
+						false
+					],
+					[
+						"old",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"run,",
+						false
+					],
+					[
+						"Miles.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LILY",
+				"page": "Nice to see you too. Why are you getting so bent?",
+				"screen": "Nice to see you too.",
+				"pageWords": [
+					[
+						"Nice",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"too.",
+						true
+					],
+					[
+						"Why",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"getting",
+						false
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"bent?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Nice",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"too.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JAKE",
+				"page": "You're worried about recouping the loan. I already told you.",
+				"screen": "You're worried about recouping the loan, we got the letter of intent.",
+				"pageWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"worried",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"recouping",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"loan.",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"already",
+						false
+					],
+					[
+						"told",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"worried",
+						true
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"recouping",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"loan,",
+						true
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"got",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"letter",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"intent.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KING PIN",
+				"page": "Good. Good. Do not let Vig out of your sight.",
+				"screen": "Do not under any circumstances apprehend.",
+				"pageWords": [
+					[
+						"Good.",
+						false
+					],
+					[
+						"Good.",
+						false
+					],
+					[
+						"Do",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"let",
+						false
+					],
+					[
+						"Vig",
+						false
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"sight.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"under",
+						false
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"circumstances",
+						false
+					],
+					[
+						"apprehend.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,956 @@
+{
+	"_id": "tt0099528",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 19,
+		"eligible": 13,
+		"rejected": {
+			"split across CDs": 2,
+			"duplicate": 4
+		},
+		"used": 9,
+		"primary": "1956777177",
+		"versions": [
+			"102608",
+			"1957796907",
+			"1956777177",
+			"1951959756",
+			"1957419847",
+			"1954353906",
+			"1952627774",
+			"1959873469",
+			"1955367877"
+		],
+		"sdh": true,
+		"meanAgreement": 0.8915666287590371,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6600,
+	"quality": {
+		"anchoredShare": 0.5084564985524912
+	},
+	"words": {
+		"page": 6563,
+		"screen": 6965,
+		"kept": 3319,
+		"cut": 3244,
+		"notInScript": 3628,
+		"moved": 32
+	},
+	"lines": {
+		"page": 724,
+		"kept": 361,
+		"changed": 80,
+		"cut": 283,
+		"screen": 1212,
+		"notInScript": 531
+	},
+	"byGender": {
+		"w": {
+			"lines": 144,
+			"kept": 73,
+			"changed": 14,
+			"cut": 57
+		},
+		"m": {
+			"lines": 529,
+			"kept": 266,
+			"changed": 65,
+			"cut": 198
+		},
+		"unknown": {
+			"lines": 51,
+			"kept": 22,
+			"changed": 1,
+			"cut": 28
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 11,
+			"kept": 5
+		},
+		{
+			"cut": 7,
+			"kept": 8
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"kept": 8,
+			"changed": 1,
+			"cut": 6
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 9,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"kept": 7,
+			"cut": 3
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 8,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 8,
+			"kept": 7
+		},
+		{
+			"cut": 8,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 7,
+			"cut": 8
+		},
+		{
+			"cut": 9,
+			"kept": 6
+		},
+		{
+			"cut": 2,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 5,
+			"kept": 8
+		},
+		{
+			"cut": 2,
+			"kept": 14
+		},
+		{
+			"cut": 5,
+			"kept": 4,
+			"changed": 6
+		},
+		{
+			"changed": 2,
+			"kept": 13
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"cut": 5
+		},
+		{
+			"kept": 7,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 3,
+			"cut": 13
+		},
+		{
+			"cut": 9,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"changed": 2,
+			"cut": 8
+		},
+		{
+			"cut": 9,
+			"changed": 5,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"kept": 7,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"kept": 3,
+			"cut": 12
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 15
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 22
+		},
+		{
+			"scripted": 0,
+			"notInScript": 16
+		},
+		{
+			"scripted": 154,
+			"notInScript": 48
+		},
+		{
+			"scripted": 265,
+			"notInScript": 50
+		},
+		{
+			"scripted": 241,
+			"notInScript": 66
+		},
+		{
+			"scripted": 251,
+			"notInScript": 16
+		},
+		{
+			"scripted": 176,
+			"notInScript": 14
+		},
+		{
+			"scripted": 84,
+			"notInScript": 11
+		},
+		{
+			"scripted": 78,
+			"notInScript": 0
+		},
+		{
+			"scripted": 245,
+			"notInScript": 65
+		},
+		{
+			"scripted": 256,
+			"notInScript": 14
+		},
+		{
+			"scripted": 66,
+			"notInScript": 55
+		},
+		{
+			"scripted": 16,
+			"notInScript": 38
+		},
+		{
+			"scripted": 85,
+			"notInScript": 41
+		},
+		{
+			"scripted": 40,
+			"notInScript": 184
+		},
+		{
+			"scripted": 167,
+			"notInScript": 4
+		},
+		{
+			"scripted": 154,
+			"notInScript": 77
+		},
+		{
+			"scripted": 239,
+			"notInScript": 10
+		},
+		{
+			"scripted": 164,
+			"notInScript": 12
+		},
+		{
+			"scripted": 30,
+			"notInScript": 8
+		},
+		{
+			"scripted": 21,
+			"notInScript": 228
+		},
+		{
+			"scripted": 15,
+			"notInScript": 3
+		},
+		{
+			"scripted": 55,
+			"notInScript": 85
+		},
+		{
+			"scripted": 144,
+			"notInScript": 28
+		},
+		{
+			"scripted": 177,
+			"notInScript": 28
+		},
+		{
+			"scripted": 87,
+			"notInScript": 135
+		},
+		{
+			"scripted": 48,
+			"notInScript": 111
+		},
+		{
+			"scripted": 0,
+			"notInScript": 212
+		},
+		{
+			"scripted": 27,
+			"notInScript": 135
+		},
+		{
+			"scripted": 186,
+			"notInScript": 41
+		},
+		{
+			"scripted": 85,
+			"notInScript": 29
+		},
+		{
+			"scripted": 34,
+			"notInScript": 3
+		},
+		{
+			"scripted": 27,
+			"notInScript": 48
+		},
+		{
+			"scripted": 34,
+			"notInScript": 1
+		},
+		{
+			"scripted": 0,
+			"notInScript": 177
+		},
+		{
+			"scripted": 0,
+			"notInScript": 191
+		},
+		{
+			"scripted": 7,
+			"notInScript": 179
+		},
+		{
+			"scripted": 24,
+			"notInScript": 137
+		},
+		{
+			"scripted": 60,
+			"notInScript": 31
+		},
+		{
+			"scripted": 73,
+			"notInScript": 22
+		},
+		{
+			"scripted": 30,
+			"notInScript": 31
+		},
+		{
+			"scripted": 65,
+			"notInScript": 79
+		},
+		{
+			"scripted": 6,
+			"notInScript": 193
+		},
+		{
+			"scripted": 6,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 84
+		},
+		{
+			"scripted": 3,
+			"notInScript": 65
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 3,
+		"seconds": 17.6,
+		"longest": 10.1,
+		"spans": [
+			[
+				581.8,
+				591.9
+			],
+			[
+				5282.1,
+				5286.7
+			],
+			[
+				5639,
+				5641.8
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 34,
+				"kept": 10,
+				"changed": 3,
+				"cut": 21
+			},
+			"other": {
+				"lines": 97,
+				"kept": 58,
+				"changed": 11,
+				"cut": 28
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 328,
+				"kept": 183,
+				"changed": 42,
+				"cut": 103
+			},
+			"other": {
+				"lines": 180,
+				"kept": 79,
+				"changed": 23,
+				"cut": 78
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "KINDERMAN",
+				"text": "The ?salms of Lance?"
+			},
+			{
+				"speaker": "OLD MAN IN DREAM",
+				"text": "But I don't belonq here! FRONT MOVING SHOT~ KINDERMAN POV"
+			},
+			{
+				"speaker": "ALLERTON",
+				"text": "You want to hit people, that's what happens."
+			},
+			{
+				"speaker": "KINDERMAN",
+				"text": "{consulting slip of paper) May I speak to Father Healy? It's urgent."
+			},
+			{
+				"speaker": "JULIE",
+				"text": "Look, I'm talking on the phone. do you mind? Steve, I'll ca~l you back later."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1277,
+				"text": "You mean they couldn't find the rabbit?"
+			},
+			{
+				"at": 2849,
+				"text": "Kanavan had my job back then."
+			},
+			{
+				"at": 3769,
+				"text": "It's a little extra I throw in for no added charge."
+			},
+			{
+				"at": 4906,
+				"text": "Not too well at the time,"
+			},
+			{
+				"at": 5847,
+				"text": "I see, we are praying now."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DYER",
+				"page": "You look beat, Bill. Go home and get a rest.",
+				"screen": "Maybe you should go home and rest.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"beat,",
+						false
+					],
+					[
+						"Bill.",
+						false
+					],
+					[
+						"Go",
+						true
+					],
+					[
+						"home",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"rest.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Maybe",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"go",
+						true
+					],
+					[
+						"home",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"rest.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KINDERMAN",
+				"page": "Eat half. It's White Castle.",
+				"screen": "Eat half. It's from Clyde's.",
+				"pageWords": [
+					[
+						"Eat",
+						true
+					],
+					[
+						"half.",
+						true
+					],
+					[
+						"It's",
+						true
+					],
+					[
+						"White",
+						false
+					],
+					[
+						"Castle.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Eat",
+						true
+					],
+					[
+						"half.",
+						true
+					],
+					[
+						"It's",
+						true
+					],
+					[
+						"from",
+						false
+					],
+					[
+						"Clyde's.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ATKINS",
+				"page": "Doctor Freedman's really pissed. He wants to see you.",
+				"screen": "Dr. Freedman's gone ballistic, sir.",
+				"pageWords": [
+					[
+						"Doctor",
+						true
+					],
+					[
+						"Freedman's",
+						true
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"pissed.",
+						false
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"wants",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Dr.",
+						true
+					],
+					[
+						"Freedman's",
+						true
+					],
+					[
+						"gone",
+						false
+					],
+					[
+						"ballistic,",
+						false
+					],
+					[
+						"sir.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KINDERMAN",
+				"page": "Pleasant dreams, Julie~ dearest.",
+				"screen": "Good night, Julie dearest.",
+				"pageWords": [
+					[
+						"Pleasant",
+						false
+					],
+					[
+						"dreams,",
+						false
+					],
+					[
+						"Julie~",
+						true
+					],
+					[
+						"dearest.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Good",
+						false
+					],
+					[
+						"night,",
+						false
+					],
+					[
+						"Julie",
+						true
+					],
+					[
+						"dearest.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KINDERMAN",
+				"page": "Come on, move it! Move it! Hurry! Break laws!",
+				"screen": "Roll it, roll it, move it, move it, go, go!",
+				"pageWords": [
+					[
+						"Come",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"move",
+						true
+					],
+					[
+						"it!",
+						true
+					],
+					[
+						"Move",
+						true
+					],
+					[
+						"it!",
+						true
+					],
+					[
+						"Hurry!",
+						false
+					],
+					[
+						"Break",
+						false
+					],
+					[
+						"laws!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Roll",
+						false
+					],
+					[
+						"it,",
+						false
+					],
+					[
+						"roll",
+						false
+					],
+					[
+						"it,",
+						false
+					],
+					[
+						"move",
+						true
+					],
+					[
+						"it,",
+						true
+					],
+					[
+						"move",
+						true
+					],
+					[
+						"it,",
+						true
+					],
+					[
+						"go,",
+						false
+					],
+					[
+						"go!",
+						false
+					]
+				]
+			}
+		]
+	}
+}

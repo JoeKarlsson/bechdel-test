@@ -1,0 +1,987 @@
+{
+	"_id": "tt0053125",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 28,
+		"eligible": 12,
+		"rejected": {
+			"split across CDs": 11,
+			"duplicate": 5
+		},
+		"used": 9,
+		"primary": "1952214270",
+		"versions": [
+			"1952214270",
+			"1955691253",
+			"1957108149",
+			"1951620511",
+			"1952007111",
+			"1957158242",
+			"1956164838",
+			"1952717785",
+			"1955690743"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9037630644535751,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 8220,
+	"quality": {
+		"anchoredShare": 0.6178424858315419
+	},
+	"words": {
+		"page": 10234,
+		"screen": 11366,
+		"kept": 6320,
+		"cut": 3914,
+		"notInScript": 5043,
+		"moved": 8
+	},
+	"lines": {
+		"page": 893,
+		"kept": 524,
+		"changed": 222,
+		"cut": 146,
+		"screen": 2118,
+		"notInScript": 818
+	},
+	"byGender": {
+		"w": {
+			"lines": 248,
+			"kept": 165,
+			"changed": 53,
+			"cut": 30
+		},
+		"m": {
+			"lines": 518,
+			"kept": 299,
+			"changed": 133,
+			"cut": 86
+		},
+		"unknown": {
+			"lines": 126,
+			"kept": 60,
+			"changed": 36,
+			"cut": 30
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 11
+		},
+		{
+			"kept": 6,
+			"changed": 9,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 12,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 6,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 5
+		},
+		{
+			"kept": 13,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 12,
+			"changed": 7
+		},
+		{
+			"kept": 12,
+			"changed": 6
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 11
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"cut": 2,
+			"kept": 12,
+			"changed": 4
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 8,
+			"changed": 8,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 4
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"changed": 10,
+			"kept": 8,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"changed": 10
+		},
+		{
+			"changed": 8,
+			"cut": 3,
+			"kept": 8
+		},
+		{
+			"kept": 10,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"changed": 7,
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"changed": 4,
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"cut": 4,
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"changed": 7,
+			"kept": 9,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"kept": 6,
+			"cut": 8
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 9,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"kept": 8,
+			"cut": 7
+		},
+		{
+			"kept": 7,
+			"cut": 9,
+			"changed": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 116,
+			"notInScript": 12
+		},
+		{
+			"scripted": 249,
+			"notInScript": 197
+		},
+		{
+			"scripted": 175,
+			"notInScript": 40
+		},
+		{
+			"scripted": 215,
+			"notInScript": 41
+		},
+		{
+			"scripted": 357,
+			"notInScript": 20
+		},
+		{
+			"scripted": 4,
+			"notInScript": 5
+		},
+		{
+			"scripted": 156,
+			"notInScript": 83
+		},
+		{
+			"scripted": 292,
+			"notInScript": 111
+		},
+		{
+			"scripted": 281,
+			"notInScript": 84
+		},
+		{
+			"scripted": 151,
+			"notInScript": 141
+		},
+		{
+			"scripted": 234,
+			"notInScript": 84
+		},
+		{
+			"scripted": 171,
+			"notInScript": 66
+		},
+		{
+			"scripted": 152,
+			"notInScript": 73
+		},
+		{
+			"scripted": 329,
+			"notInScript": 32
+		},
+		{
+			"scripted": 335,
+			"notInScript": 65
+		},
+		{
+			"scripted": 129,
+			"notInScript": 22
+		},
+		{
+			"scripted": 156,
+			"notInScript": 26
+		},
+		{
+			"scripted": 208,
+			"notInScript": 53
+		},
+		{
+			"scripted": 336,
+			"notInScript": 24
+		},
+		{
+			"scripted": 148,
+			"notInScript": 83
+		},
+		{
+			"scripted": 103,
+			"notInScript": 49
+		},
+		{
+			"scripted": 184,
+			"notInScript": 98
+		},
+		{
+			"scripted": 156,
+			"notInScript": 40
+		},
+		{
+			"scripted": 35,
+			"notInScript": 31
+		},
+		{
+			"scripted": 41,
+			"notInScript": 25
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 50,
+			"notInScript": 34
+		},
+		{
+			"scripted": 142,
+			"notInScript": 13
+		},
+		{
+			"scripted": 206,
+			"notInScript": 93
+		},
+		{
+			"scripted": 132,
+			"notInScript": 32
+		},
+		{
+			"scripted": 14,
+			"notInScript": 434
+		},
+		{
+			"scripted": 19,
+			"notInScript": 377
+		},
+		{
+			"scripted": 227,
+			"notInScript": 74
+		},
+		{
+			"scripted": 159,
+			"notInScript": 119
+		},
+		{
+			"scripted": 360,
+			"notInScript": 84
+		},
+		{
+			"scripted": 235,
+			"notInScript": 47
+		},
+		{
+			"scripted": 244,
+			"notInScript": 88
+		},
+		{
+			"scripted": 116,
+			"notInScript": 92
+		},
+		{
+			"scripted": 401,
+			"notInScript": 18
+		},
+		{
+			"scripted": 214,
+			"notInScript": 98
+		},
+		{
+			"scripted": 9,
+			"notInScript": 11
+		},
+		{
+			"scripted": 120,
+			"notInScript": 50
+		},
+		{
+			"scripted": 191,
+			"notInScript": 83
+		},
+		{
+			"scripted": 81,
+			"notInScript": 62
+		},
+		{
+			"scripted": 104,
+			"notInScript": 80
+		},
+		{
+			"scripted": 63,
+			"notInScript": 46
+		},
+		{
+			"scripted": 52,
+			"notInScript": 25
+		},
+		{
+			"scripted": 29,
+			"notInScript": 20
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 177,
+				"kept": 119,
+				"changed": 36,
+				"cut": 22
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 131,
+				"kept": 69,
+				"changed": 28,
+				"cut": 34
+			},
+			"other": {
+				"lines": 257,
+				"kept": 151,
+				"changed": 64,
+				"cut": 42
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LEONARD",
+				"text": "Not a quart, Mr. Kaplan. It's only a fifth."
+			},
+			{
+				"speaker": "THORNHILL",
+				"text": "Never stuch the tu.ff."
+			},
+			{
+				"speaker": "THORNHILL",
+				"text": "The rest 1s unimpa,rtant."
+			},
+			{
+				"speaker": "THORNHILL",
+				"text": "I've been· acting childish •••"
+			},
+			{
+				"speaker": "VALERIAN",
+				"text": "Don't worry, six. The gates are locked. 219-231"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1127,
+				"text": "I don't want a cell."
+			},
+			{
+				"at": 2957,
+				"text": "I'm an industrial designer."
+			},
+			{
+				"at": 5200,
+				"text": "Nine hundred is bid."
+			},
+			{
+				"at": 5455,
+				"text": "I still say 1,500."
+			},
+			{
+				"at": 7154,
+				"text": "I know how terribly fond you are of Miss Kendall..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DR. CROSS",
+				"page": "Have you been drinking? ·-:IBORNHILL D::>ctor - I am gassedc ~",
+				"screen": "Have you been drinking? Doctor, I am gassed.",
+				"pageWords": [
+					[
+						"Have",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"drinking?",
+						true
+					],
+					[
+						"·-:IBORNHILL",
+						false
+					],
+					[
+						"D::>ctor",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"am",
+						true
+					],
+					[
+						"gassedc",
+						false
+					],
+					[
+						"~",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"Have",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"drinking?",
+						true
+					],
+					[
+						"Doctor,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"am",
+						true
+					],
+					[
+						"gassed.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "THORNHILL",
+				"page": "Don•t come any nearer! Get backl",
+				"screen": "Don't come nearer. Get back.",
+				"pageWords": [
+					[
+						"Don•t",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"nearer!",
+						true
+					],
+					[
+						"Get",
+						true
+					],
+					[
+						"backl",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Don't",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"nearer.",
+						true
+					],
+					[
+						"Get",
+						true
+					],
+					[
+						"back.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "THORNHILL",
+				"page": "How will I lmow him?",
+				"screen": "Well, how will I know him?",
+				"pageWords": [
+					[
+						"How",
+						true
+					],
+					[
+						"will",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"lmow",
+						false
+					],
+					[
+						"him?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"how",
+						true
+					],
+					[
+						"will",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"him?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "THORNHILL",
+				"page": "Oh-huh. Well what 1 s Mt. Rushmore got to do with all this?",
+				"screen": "Oh, I see. What's all this got to do with Mount Rushmore?",
+				"pageWords": [
+					[
+						"Oh-huh.",
+						false
+					],
+					[
+						"Well",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"1",
+						false
+					],
+					[
+						"s",
+						false
+					],
+					[
+						"Mt.",
+						false
+					],
+					[
+						"Rushmore",
+						false
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"this?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"see.",
+						false
+					],
+					[
+						"What's",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"Mount",
+						false
+					],
+					[
+						"Rushmore?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "VANDAMM",
+				"page": "Jump in. The champagne 1s fine.",
+				"screen": "Jump in, Leonard. The champagne's fine.",
+				"pageWords": [
+					[
+						"Jump",
+						true
+					],
+					[
+						"in.",
+						true
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"champagne",
+						false
+					],
+					[
+						"1s",
+						false
+					],
+					[
+						"fine.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Jump",
+						true
+					],
+					[
+						"in,",
+						true
+					],
+					[
+						"Leonard.",
+						false
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"champagne's",
+						false
+					],
+					[
+						"fine.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,1223 @@
+{
+	"_id": "tt0086250",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 90,
+		"eligible": 45,
+		"rejected": {
+			"runtime mismatch": 6,
+			"split across CDs": 11,
+			"duplicate": 24,
+			"too few lines": 4
+		},
+		"used": 9,
+		"primary": "1956618773",
+		"versions": [
+			"1952924833",
+			"1952802680",
+			"1954139347",
+			"1952918137",
+			"146131",
+			"1951884317",
+			"1956618773",
+			"1955734984",
+			"1953106604"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9494783844441064,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 10200,
+	"quality": {
+		"anchoredShare": 0.3786805555555556
+	},
+	"words": {
+		"page": 14400,
+		"screen": 13402,
+		"kept": 5450,
+		"cut": 8950,
+		"notInScript": 7949,
+		"moved": 227
+	},
+	"lines": {
+		"page": 919,
+		"kept": 295,
+		"changed": 265,
+		"cut": 358,
+		"screen": 2660,
+		"notInScript": 1461
+	},
+	"byGender": {
+		"w": {
+			"lines": 114,
+			"kept": 49,
+			"changed": 30,
+			"cut": 35
+		},
+		"m": {
+			"lines": 741,
+			"kept": 233,
+			"changed": 224,
+			"cut": 284
+		},
+		"unknown": {
+			"lines": 63,
+			"kept": 13,
+			"changed": 11,
+			"cut": 39
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"kept": 11,
+			"changed": 6
+		},
+		{
+			"kept": 8,
+			"changed": 6,
+			"cut": 5
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 17,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"cut": 5,
+			"kept": 9
+		},
+		{
+			"changed": 4,
+			"cut": 11,
+			"kept": 5
+		},
+		{
+			"cut": 4,
+			"kept": 7,
+			"changed": 8
+		},
+		{
+			"changed": 3,
+			"cut": 6,
+			"kept": 10
+		},
+		{
+			"cut": 8,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 7,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"cut": 11,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 3,
+			"changed": 9,
+			"kept": 7
+		},
+		{
+			"changed": 6,
+			"kept": 4,
+			"cut": 10
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 10,
+			"changed": 7,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"kept": 3,
+			"changed": 7
+		},
+		{
+			"kept": 11,
+			"cut": 5,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"kept": 10,
+			"cut": 3
+		},
+		{
+			"changed": 9,
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"cut": 13,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"changed": 8,
+			"cut": 3
+		},
+		{
+			"kept": 4,
+			"cut": 11,
+			"changed": 4
+		},
+		{
+			"kept": 8,
+			"changed": 8,
+			"cut": 3
+		},
+		{
+			"changed": 9,
+			"cut": 4,
+			"kept": 6
+		},
+		{
+			"kept": 7,
+			"changed": 5,
+			"cut": 7
+		},
+		{
+			"kept": 5,
+			"cut": 8,
+			"changed": 6
+		},
+		{
+			"changed": 5,
+			"cut": 6,
+			"kept": 9
+		},
+		{
+			"changed": 10,
+			"cut": 5,
+			"kept": 4
+		},
+		{
+			"changed": 8,
+			"cut": 4,
+			"kept": 7
+		},
+		{
+			"kept": 6,
+			"cut": 5,
+			"changed": 8
+		},
+		{
+			"cut": 3,
+			"changed": 6,
+			"kept": 10
+		},
+		{
+			"changed": 5,
+			"cut": 5,
+			"kept": 9
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 6
+		},
+		{
+			"changed": 8,
+			"kept": 7,
+			"cut": 4
+		},
+		{
+			"cut": 7,
+			"changed": 2,
+			"kept": 10
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 6
+		},
+		{
+			"cut": 5,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"kept": 4,
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"changed": 10,
+			"kept": 6
+		},
+		{
+			"changed": 4,
+			"kept": 3,
+			"cut": 12
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"cut": 13,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 8,
+			"cut": 5
+		},
+		{
+			"kept": 1,
+			"changed": 8,
+			"cut": 10
+		},
+		{
+			"cut": 14,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"changed": 10,
+			"cut": 6,
+			"kept": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 334,
+			"notInScript": 165
+		},
+		{
+			"scripted": 130,
+			"notInScript": 243
+		},
+		{
+			"scripted": 12,
+			"notInScript": 39
+		},
+		{
+			"scripted": 170,
+			"notInScript": 227
+		},
+		{
+			"scripted": 120,
+			"notInScript": 140
+		},
+		{
+			"scripted": 172,
+			"notInScript": 86
+		},
+		{
+			"scripted": 43,
+			"notInScript": 46
+		},
+		{
+			"scripted": 159,
+			"notInScript": 120
+		},
+		{
+			"scripted": 163,
+			"notInScript": 171
+		},
+		{
+			"scripted": 201,
+			"notInScript": 119
+		},
+		{
+			"scripted": 186,
+			"notInScript": 140
+		},
+		{
+			"scripted": 77,
+			"notInScript": 290
+		},
+		{
+			"scripted": 236,
+			"notInScript": 220
+		},
+		{
+			"scripted": 55,
+			"notInScript": 105
+		},
+		{
+			"scripted": 110,
+			"notInScript": 298
+		},
+		{
+			"scripted": 187,
+			"notInScript": 192
+		},
+		{
+			"scripted": 282,
+			"notInScript": 189
+		},
+		{
+			"scripted": 281,
+			"notInScript": 84
+		},
+		{
+			"scripted": 183,
+			"notInScript": 153
+		},
+		{
+			"scripted": 164,
+			"notInScript": 78
+		},
+		{
+			"scripted": 165,
+			"notInScript": 81
+		},
+		{
+			"scripted": 256,
+			"notInScript": 114
+		},
+		{
+			"scripted": 111,
+			"notInScript": 143
+		},
+		{
+			"scripted": 135,
+			"notInScript": 300
+		},
+		{
+			"scripted": 52,
+			"notInScript": 142
+		},
+		{
+			"scripted": 154,
+			"notInScript": 187
+		},
+		{
+			"scripted": 219,
+			"notInScript": 87
+		},
+		{
+			"scripted": 115,
+			"notInScript": 59
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 232,
+			"notInScript": 177
+		},
+		{
+			"scripted": 259,
+			"notInScript": 218
+		},
+		{
+			"scripted": 261,
+			"notInScript": 232
+		},
+		{
+			"scripted": 240,
+			"notInScript": 149
+		},
+		{
+			"scripted": 323,
+			"notInScript": 76
+		},
+		{
+			"scripted": 316,
+			"notInScript": 87
+		},
+		{
+			"scripted": 266,
+			"notInScript": 143
+		},
+		{
+			"scripted": 171,
+			"notInScript": 53
+		},
+		{
+			"scripted": 129,
+			"notInScript": 62
+		},
+		{
+			"scripted": 214,
+			"notInScript": 103
+		},
+		{
+			"scripted": 232,
+			"notInScript": 198
+		},
+		{
+			"scripted": 21,
+			"notInScript": 65
+		},
+		{
+			"scripted": 41,
+			"notInScript": 71
+		},
+		{
+			"scripted": 24,
+			"notInScript": 15
+		},
+		{
+			"scripted": 77,
+			"notInScript": 68
+		},
+		{
+			"scripted": 31,
+			"notInScript": 130
+		},
+		{
+			"scripted": 7,
+			"notInScript": 21
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 111,
+				"kept": 48,
+				"changed": 29,
+				"cut": 34
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 456,
+				"kept": 146,
+				"changed": 138,
+				"cut": 172
+			},
+			"other": {
+				"lines": 254,
+				"kept": 70,
+				"changed": 79,
+				"cut": 105
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "TONY",
+				"text": "Whatcha hanging around with that hustler for?"
+			},
+			{
+				"speaker": "TONY",
+				"text": "thataway. Hey, She whips off the floor, pissed. He watches her, amused."
+			},
+			{
+				"speaker": "TONY",
+				"text": "You saying I'm not being straight tx: with you Frank?"
+			},
+			{
+				"speaker": "TONY",
+				"text": "'Cause Frank was dumb."
+			},
+			{
+				"speaker": "TONY",
+				"text": "I see 'im! I see `im!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1006,
+				"text": "That was something else."
+			},
+			{
+				"at": 2785,
+				"text": "She's too big for you."
+			},
+			{
+				"at": 4639,
+				"text": "All your enemies are gone."
+			},
+			{
+				"at": 6543,
+				"text": "Better than you are."
+			},
+			{
+				"at": 8410,
+				"text": "Look at you now."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "TONY",
+				"page": "So what do we do, walk in and start over?",
+				"screen": "We start over again?",
+				"pageWords": [
+					[
+						"So",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"do,",
+						false
+					],
+					[
+						"walk",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"start",
+						true
+					],
+					[
+						"over?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"start",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"again?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "TONY",
+				"page": "Communists you know, they're always trying to tell you what to do.",
+				"screen": "What I try to tell you? What I try to tell you?",
+				"pageWords": [
+					[
+						"Communists",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"know,",
+						false
+					],
+					[
+						"they're",
+						false
+					],
+					[
+						"always",
+						false
+					],
+					[
+						"trying",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"do.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"try",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"you?",
+						true
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"try",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"tell",
+						false
+					],
+					[
+						"you?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "LOPEZ",
+				"page": "You're fucking right I am. I'm giving you orders. 1X) Blow. The bodyguard moves closer to Tony who doesn't move.",
+				"screen": "You're fucking right I'm going to do something! I'm giving you orders. Blow!",
+				"pageWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"fucking",
+						true
+					],
+					[
+						"right",
+						true
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"am.",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"giving",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"orders.",
+						true
+					],
+					[
+						"1X)",
+						false
+					],
+					[
+						"Blow.",
+						true
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"bodyguard",
+						false
+					],
+					[
+						"moves",
+						false
+					],
+					[
+						"closer",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"Tony",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"doesn't",
+						false
+					],
+					[
+						"move.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"fucking",
+						true
+					],
+					[
+						"right",
+						true
+					],
+					[
+						"I'm",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"something!",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"giving",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"orders.",
+						true
+					],
+					[
+						"Blow!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ELVIRA",
+				"page": "You know what you've become Tony -- an arriviste, an immigrant spit millionaire who can't stop talking.",
+				"screen": "You know what you're becoming? You're an immigrant spic millionaire who can't stop talking...",
+				"pageWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"you've",
+						false
+					],
+					[
+						"become",
+						false
+					],
+					[
+						"Tony",
+						false
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"an",
+						false
+					],
+					[
+						"arriviste,",
+						false
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"immigrant",
+						true
+					],
+					[
+						"spit",
+						false
+					],
+					[
+						"millionaire",
+						true
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"stop",
+						true
+					],
+					[
+						"talking.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"becoming?",
+						false
+					],
+					[
+						"You're",
+						false
+					],
+					[
+						"an",
+						true
+					],
+					[
+						"immigrant",
+						true
+					],
+					[
+						"spic",
+						false
+					],
+					[
+						"millionaire",
+						true
+					],
+					[
+						"who",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"stop",
+						true
+					],
+					[
+						"talking...",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TONY",
+				"page": "What! Where! I left that sunufabitch in charge! What the hell is going on here, can't 1 trust anybody anymore.",
+				"screen": "What? Where? I left him in fucking charge, man! You can't trust nobody anymore!",
+				"pageWords": [
+					[
+						"What!",
+						true
+					],
+					[
+						"Where!",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"sunufabitch",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"charge!",
+						false
+					],
+					[
+						"What",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"hell",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"here,",
+						false
+					],
+					[
+						"can't",
+						false
+					],
+					[
+						"1",
+						false
+					],
+					[
+						"trust",
+						false
+					],
+					[
+						"anybody",
+						false
+					],
+					[
+						"anymore.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What?",
+						true
+					],
+					[
+						"Where?",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"left",
+						true
+					],
+					[
+						"him",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"fucking",
+						false
+					],
+					[
+						"charge,",
+						false
+					],
+					[
+						"man!",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"can't",
+						false
+					],
+					[
+						"trust",
+						false
+					],
+					[
+						"nobody",
+						false
+					],
+					[
+						"anymore!",
+						true
+					]
+				]
+			}
+		]
+	}
+}

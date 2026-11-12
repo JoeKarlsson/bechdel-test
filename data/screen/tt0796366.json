@@ -1,0 +1,974 @@
+{
+	"_id": "tt0796366",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 29,
+		"eligible": 21,
+		"rejected": {
+			"split across CDs": 2,
+			"duplicate": 4,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1952487505",
+		"versions": [
+			"1952487505",
+			"1954881587",
+			"1952334038",
+			"1952198107",
+			"1952279210",
+			"1956238531",
+			"1956676925",
+			"1952192801",
+			"1954457635"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9563915530628009,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7620,
+	"quality": {
+		"anchoredShare": 0.4785028635960313
+	},
+	"words": {
+		"page": 12397,
+		"screen": 9606,
+		"kept": 5935,
+		"cut": 6462,
+		"notInScript": 3674,
+		"moved": 197
+	},
+	"lines": {
+		"page": 1061,
+		"kept": 453,
+		"changed": 166,
+		"cut": 440,
+		"screen": 1664,
+		"notInScript": 605
+	},
+	"byGender": {
+		"w": {
+			"lines": 114,
+			"kept": 49,
+			"changed": 23,
+			"cut": 42
+		},
+		"m": {
+			"lines": 870,
+			"kept": 392,
+			"changed": 137,
+			"cut": 341
+		},
+		"unknown": {
+			"lines": 75,
+			"kept": 12,
+			"changed": 6,
+			"cut": 57
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 23
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"cut": 12,
+			"changed": 6,
+			"kept": 4
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 10
+		},
+		{
+			"kept": 7,
+			"cut": 5,
+			"changed": 10
+		},
+		{
+			"cut": 11,
+			"kept": 8,
+			"changed": 3
+		},
+		{
+			"cut": 22
+		},
+		{
+			"cut": 4,
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"changed": 6,
+			"kept": 14,
+			"cut": 2
+		},
+		{
+			"changed": 6,
+			"kept": 13,
+			"cut": 4
+		},
+		{
+			"cut": 8,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 6
+		},
+		{
+			"cut": 9,
+			"kept": 9,
+			"changed": 4
+		},
+		{
+			"changed": 3,
+			"kept": 15,
+			"cut": 4
+		},
+		{
+			"kept": 16,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"cut": 11,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"cut": 6,
+			"changed": 7
+		},
+		{
+			"cut": 7,
+			"kept": 12,
+			"changed": 4
+		},
+		{
+			"kept": 14,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"kept": 6,
+			"cut": 10,
+			"changed": 6
+		},
+		{
+			"cut": 11,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"kept": 7,
+			"changed": 2,
+			"cut": 13
+		},
+		{
+			"kept": 12,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"changed": 7,
+			"kept": 7,
+			"cut": 8
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 5
+		},
+		{
+			"changed": 3,
+			"cut": 5,
+			"kept": 14
+		},
+		{
+			"kept": 17,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"changed": 2,
+			"cut": 10,
+			"kept": 10
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 8
+		},
+		{
+			"cut": 12,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"kept": 18,
+			"cut": 4
+		},
+		{
+			"kept": 13,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 10
+		},
+		{
+			"cut": 21,
+			"kept": 1
+		},
+		{
+			"cut": 22
+		},
+		{
+			"cut": 22
+		},
+		{
+			"cut": 22
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 8,
+			"notInScript": 134
+		},
+		{
+			"scripted": 91,
+			"notInScript": 40
+		},
+		{
+			"scripted": 124,
+			"notInScript": 62
+		},
+		{
+			"scripted": 139,
+			"notInScript": 35
+		},
+		{
+			"scripted": 14,
+			"notInScript": 81
+		},
+		{
+			"scripted": 60,
+			"notInScript": 74
+		},
+		{
+			"scripted": 168,
+			"notInScript": 8
+		},
+		{
+			"scripted": 283,
+			"notInScript": 32
+		},
+		{
+			"scripted": 281,
+			"notInScript": 26
+		},
+		{
+			"scripted": 67,
+			"notInScript": 31
+		},
+		{
+			"scripted": 148,
+			"notInScript": 108
+		},
+		{
+			"scripted": 182,
+			"notInScript": 227
+		},
+		{
+			"scripted": 323,
+			"notInScript": 24
+		},
+		{
+			"scripted": 216,
+			"notInScript": 65
+		},
+		{
+			"scripted": 221,
+			"notInScript": 22
+		},
+		{
+			"scripted": 201,
+			"notInScript": 65
+		},
+		{
+			"scripted": 199,
+			"notInScript": 91
+		},
+		{
+			"scripted": 322,
+			"notInScript": 66
+		},
+		{
+			"scripted": 243,
+			"notInScript": 43
+		},
+		{
+			"scripted": 199,
+			"notInScript": 29
+		},
+		{
+			"scripted": 24,
+			"notInScript": 125
+		},
+		{
+			"scripted": 0,
+			"notInScript": 19
+		},
+		{
+			"scripted": 216,
+			"notInScript": 69
+		},
+		{
+			"scripted": 92,
+			"notInScript": 41
+		},
+		{
+			"scripted": 84,
+			"notInScript": 16
+		},
+		{
+			"scripted": 198,
+			"notInScript": 94
+		},
+		{
+			"scripted": 463,
+			"notInScript": 56
+		},
+		{
+			"scripted": 51,
+			"notInScript": 24
+		},
+		{
+			"scripted": 109,
+			"notInScript": 8
+		},
+		{
+			"scripted": 51,
+			"notInScript": 166
+		},
+		{
+			"scripted": 236,
+			"notInScript": 54
+		},
+		{
+			"scripted": 292,
+			"notInScript": 21
+		},
+		{
+			"scripted": 324,
+			"notInScript": 36
+		},
+		{
+			"scripted": 102,
+			"notInScript": 39
+		},
+		{
+			"scripted": 222,
+			"notInScript": 11
+		},
+		{
+			"scripted": 230,
+			"notInScript": 58
+		},
+		{
+			"scripted": 162,
+			"notInScript": 53
+		},
+		{
+			"scripted": 78,
+			"notInScript": 47
+		},
+		{
+			"scripted": 51,
+			"notInScript": 104
+		},
+		{
+			"scripted": 51,
+			"notInScript": 69
+		},
+		{
+			"scripted": 0,
+			"notInScript": 66
+		},
+		{
+			"scripted": 125,
+			"notInScript": 12
+		},
+		{
+			"scripted": 81,
+			"notInScript": 20
+		},
+		{
+			"scripted": 262,
+			"notInScript": 10
+		},
+		{
+			"scripted": 121,
+			"notInScript": 11
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 8.1,
+		"longest": 8.1,
+		"spans": [
+			[
+				1837.1,
+				1845.2
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 12,
+				"kept": 1,
+				"changed": 3,
+				"cut": 8
+			},
+			"other": {
+				"lines": 90,
+				"kept": 44,
+				"changed": 18,
+				"cut": 28
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 606,
+				"kept": 270,
+				"changed": 93,
+				"cut": 243
+			},
+			"other": {
+				"lines": 198,
+				"kept": 95,
+				"changed": 31,
+				"cut": 72
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "AYEL",
+				"text": "That was hardly an attack. My commander will easily destroy your ship. If you do not respond to the question."
+			},
+			{
+				"speaker": "KIRK",
+				"text": "Your hearing is scary-- you sure both your parents are human?"
+			},
+			{
+				"speaker": "SPOCK PRIME",
+				"text": "My sacrifice, in service of all races, seemed only logical."
+			},
+			{
+				"speaker": "KIRK",
+				"text": "Spock, you'll be piloting the ship alone."
+			},
+			{
+				"speaker": "ROMULAN OFFICER",
+				"text": "Security team to the docking bay. Report."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 237,
+				"text": "and get off this ship."
+			},
+			{
+				"at": 1782,
+				"text": "You've got to be kidding."
+			},
+			{
+				"at": 2724,
+				"text": "It's not a rescue mission."
+			},
+			{
+				"at": 4618,
+				"text": "That is where I am from, Jim."
+			},
+			{
+				"at": 6069,
+				"text": "Sulu, please tell me you have them."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "AYEL",
+				"page": "A final question. What is the current stardate?",
+				"screen": "What is the current stardate?",
+				"pageWords": [
+					[
+						"A",
+						false
+					],
+					[
+						"final",
+						false
+					],
+					[
+						"question.",
+						false
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"current",
+						true
+					],
+					[
+						"stardate?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"current",
+						true
+					],
+					[
+						"stardate?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KIRK",
+				"page": "Because I've failed the test twice.",
+				"screen": "I'm taking the test again.",
+				"pageWords": [
+					[
+						"Because",
+						false
+					],
+					[
+						"I've",
+						false
+					],
+					[
+						"failed",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"test",
+						true
+					],
+					[
+						"twice.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"taking",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"test",
+						true
+					],
+					[
+						"again.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KIRK",
+				"page": "Who was it who escaped? What was the ship that was stolen--?! -- what's happening to my mouth?",
+				"screen": "What's happening to my mouth?",
+				"pageWords": [
+					[
+						"Who",
+						true
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"escaped?",
+						false
+					],
+					[
+						"What",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"ship",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"stolen--?!",
+						false
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"what's",
+						true
+					],
+					[
+						"happening",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"mouth?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What's",
+						true
+					],
+					[
+						"happening",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"mouth?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SULU",
+				"page": "As Admiral he knows details of Starfleet's defenses.",
+				"screen": "As captain he does know details of Starfleet's defenses.",
+				"pageWords": [
+					[
+						"As",
+						true
+					],
+					[
+						"Admiral",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"knows",
+						false
+					],
+					[
+						"details",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Starfleet's",
+						true
+					],
+					[
+						"defenses.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"As",
+						true
+					],
+					[
+						"captain",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"does",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"details",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"Starfleet's",
+						true
+					],
+					[
+						"defenses.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SCOTTY",
+				"page": "Well done, Mr. Sulu.",
+				"screen": "Fine job, Mr. Sulu, well done.",
+				"pageWords": [
+					[
+						"Well",
+						false
+					],
+					[
+						"done,",
+						false
+					],
+					[
+						"Mr.",
+						true
+					],
+					[
+						"Sulu.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Fine",
+						false
+					],
+					[
+						"job,",
+						false
+					],
+					[
+						"Mr.",
+						true
+					],
+					[
+						"Sulu,",
+						true
+					],
+					[
+						"well",
+						false
+					],
+					[
+						"done.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

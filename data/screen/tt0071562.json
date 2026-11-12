@@ -1,0 +1,949 @@
+{
+	"_id": "tt0071562",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 59,
+		"eligible": 38,
+		"rejected": {
+			"split across CDs": 7,
+			"duplicate": 7,
+			"too few lines": 1,
+			"runtime mismatch": 6
+		},
+		"used": 9,
+		"primary": "1957589416",
+		"versions": [
+			"1954315281",
+			"1957584948",
+			"1957584612",
+			"1953317211",
+			"1960586838",
+			"1957589416",
+			"1956622438",
+			"1952201025",
+			"1952917302"
+		],
+		"sdh": false,
+		"meanAgreement": 0.6010512769487752,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 12120,
+	"quality": {
+		"anchoredShare": 0.28187297171998144
+	},
+	"words": {
+		"page": 17256,
+		"screen": 11457,
+		"kept": 4779,
+		"cut": 12477,
+		"notInScript": 6593,
+		"moved": 1009
+	},
+	"lines": {
+		"page": 1185,
+		"kept": 225,
+		"changed": 246,
+		"cut": 714,
+		"screen": 1888,
+		"notInScript": 976
+	},
+	"byGender": {
+		"w": {
+			"lines": 163,
+			"kept": 38,
+			"changed": 27,
+			"cut": 98
+		},
+		"m": {
+			"lines": 930,
+			"kept": 171,
+			"changed": 196,
+			"cut": 563
+		},
+		"unknown": {
+			"lines": 92,
+			"kept": 16,
+			"changed": 23,
+			"cut": 53
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"kept": 5,
+			"changed": 13
+		},
+		{
+			"kept": 1,
+			"cut": 23,
+			"changed": 1
+		},
+		{
+			"cut": 16,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"changed": 3,
+			"kept": 1,
+			"cut": 20
+		},
+		{
+			"cut": 16,
+			"changed": 6,
+			"kept": 3
+		},
+		{
+			"kept": 7,
+			"changed": 5,
+			"cut": 13
+		},
+		{
+			"cut": 18,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"changed": 8,
+			"kept": 7,
+			"cut": 10
+		},
+		{
+			"cut": 11,
+			"kept": 8,
+			"changed": 6
+		},
+		{
+			"changed": 4,
+			"cut": 13,
+			"kept": 7
+		},
+		{
+			"cut": 21,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 18,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"cut": 22,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"cut": 21
+		},
+		{
+			"cut": 17,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 14
+		},
+		{
+			"changed": 6,
+			"cut": 18,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 7,
+			"kept": 5
+		},
+		{
+			"changed": 7,
+			"cut": 16,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"cut": 25
+		},
+		{
+			"cut": 11,
+			"kept": 3,
+			"changed": 11
+		},
+		{
+			"cut": 24
+		},
+		{
+			"cut": 24,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 4,
+			"changed": 7
+		},
+		{
+			"kept": 3,
+			"cut": 21
+		},
+		{
+			"cut": 21,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 14,
+			"changed": 7
+		},
+		{
+			"cut": 11,
+			"changed": 6,
+			"kept": 7
+		},
+		{
+			"changed": 3,
+			"cut": 20,
+			"kept": 2
+		},
+		{
+			"cut": 17,
+			"kept": 2,
+			"changed": 6
+		},
+		{
+			"cut": 12,
+			"changed": 8,
+			"kept": 4
+		},
+		{
+			"changed": 8,
+			"cut": 17
+		},
+		{
+			"cut": 19,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"cut": 21,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"kept": 15,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"changed": 5,
+			"kept": 5,
+			"cut": 15
+		},
+		{
+			"cut": 7,
+			"changed": 9,
+			"kept": 9
+		},
+		{
+			"cut": 6,
+			"kept": 8,
+			"changed": 10
+		},
+		{
+			"cut": 3,
+			"kept": 17,
+			"changed": 5
+		},
+		{
+			"cut": 8,
+			"changed": 9,
+			"kept": 8
+		},
+		{
+			"changed": 6,
+			"cut": 11,
+			"kept": 7
+		},
+		{
+			"cut": 4,
+			"kept": 15,
+			"changed": 6
+		},
+		{
+			"changed": 8,
+			"kept": 8,
+			"cut": 9
+		},
+		{
+			"kept": 11,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"changed": 5,
+			"kept": 11,
+			"cut": 9
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 17
+		},
+		{
+			"cut": 19,
+			"changed": 4,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 47,
+			"notInScript": 13
+		},
+		{
+			"scripted": 88,
+			"notInScript": 52
+		},
+		{
+			"scripted": 41,
+			"notInScript": 40
+		},
+		{
+			"scripted": 249,
+			"notInScript": 152
+		},
+		{
+			"scripted": 235,
+			"notInScript": 150
+		},
+		{
+			"scripted": 232,
+			"notInScript": 149
+		},
+		{
+			"scripted": 186,
+			"notInScript": 104
+		},
+		{
+			"scripted": 342,
+			"notInScript": 64
+		},
+		{
+			"scripted": 30,
+			"notInScript": 34
+		},
+		{
+			"scripted": 200,
+			"notInScript": 88
+		},
+		{
+			"scripted": 76,
+			"notInScript": 89
+		},
+		{
+			"scripted": 29,
+			"notInScript": 111
+		},
+		{
+			"scripted": 19,
+			"notInScript": 115
+		},
+		{
+			"scripted": 31,
+			"notInScript": 80
+		},
+		{
+			"scripted": 81,
+			"notInScript": 35
+		},
+		{
+			"scripted": 244,
+			"notInScript": 79
+		},
+		{
+			"scripted": 152,
+			"notInScript": 192
+		},
+		{
+			"scripted": 44,
+			"notInScript": 210
+		},
+		{
+			"scripted": 199,
+			"notInScript": 55
+		},
+		{
+			"scripted": 185,
+			"notInScript": 274
+		},
+		{
+			"scripted": 195,
+			"notInScript": 140
+		},
+		{
+			"scripted": 214,
+			"notInScript": 123
+		},
+		{
+			"scripted": 229,
+			"notInScript": 93
+		},
+		{
+			"scripted": 71,
+			"notInScript": 81
+		},
+		{
+			"scripted": 63,
+			"notInScript": 62
+		},
+		{
+			"scripted": 129,
+			"notInScript": 62
+		},
+		{
+			"scripted": 92,
+			"notInScript": 223
+		},
+		{
+			"scripted": 69,
+			"notInScript": 133
+		},
+		{
+			"scripted": 19,
+			"notInScript": 21
+		},
+		{
+			"scripted": 0,
+			"notInScript": 11
+		},
+		{
+			"scripted": 126,
+			"notInScript": 26
+		},
+		{
+			"scripted": 134,
+			"notInScript": 127
+		},
+		{
+			"scripted": 125,
+			"notInScript": 193
+		},
+		{
+			"scripted": 285,
+			"notInScript": 148
+		},
+		{
+			"scripted": 456,
+			"notInScript": 75
+		},
+		{
+			"scripted": 339,
+			"notInScript": 24
+		},
+		{
+			"scripted": 210,
+			"notInScript": 59
+		},
+		{
+			"scripted": 295,
+			"notInScript": 117
+		},
+		{
+			"scripted": 200,
+			"notInScript": 110
+		},
+		{
+			"scripted": 12,
+			"notInScript": 56
+		},
+		{
+			"scripted": 36,
+			"notInScript": 56
+		},
+		{
+			"scripted": 115,
+			"notInScript": 7
+		},
+		{
+			"scripted": 319,
+			"notInScript": 129
+		},
+		{
+			"scripted": 257,
+			"notInScript": 26
+		},
+		{
+			"scripted": 69,
+			"notInScript": 37
+		},
+		{
+			"scripted": 140,
+			"notInScript": 172
+		},
+		{
+			"scripted": 37,
+			"notInScript": 114
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 7,
+				"kept": 4,
+				"changed": 2,
+				"cut": 1
+			},
+			"other": {
+				"lines": 128,
+				"kept": 30,
+				"changed": 19,
+				"cut": 79
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 677,
+				"kept": 115,
+				"changed": 146,
+				"cut": 416
+			},
+			"other": {
+				"lines": 213,
+				"kept": 47,
+				"changed": 45,
+				"cut": 121
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "NERI",
+				"text": "...came over around 1956. Sponsored by the Barzini Family."
+			},
+			{
+				"speaker": "VITO",
+				"text": "But thank you for speaking to me as a Godfather."
+			},
+			{
+				"speaker": "ROSATO",
+				"text": "Then Carmine Fucillo and Tony Blue DeRosa will need to be fitted for slabs."
+			},
+			{
+				"speaker": "FREDO",
+				"text": "Mike said let him gamble."
+			},
+			{
+				"speaker": "KAY",
+				"text": "You would have killed his brother?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1506,
+				"text": "Al, please get him a drink!"
+			},
+			{
+				"at": 4137,
+				"text": "I want him relaxed and confident in our friendship."
+			},
+			{
+				"at": 5857,
+				"text": "Did I tell you or did I tell you?"
+			},
+			{
+				"at": 8162,
+				"text": "We're practically paisan, do me this favor."
+			},
+			{
+				"at": 10714,
+				"text": "Why did you ask me if something was wrong when I came in?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MERLE",
+				"page": "We're going to get married first.",
+				"screen": "We're getting married first.",
+				"pageWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"married",
+						true
+					],
+					[
+						"first.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"getting",
+						false
+					],
+					[
+						"married",
+						true
+					],
+					[
+						"first.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ANTHONY",
+				"page": "I can help you.",
+				"screen": "I could help you.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"help",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"could",
+						false
+					],
+					[
+						"help",
+						false
+					],
+					[
+						"you.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PENTANGELI",
+				"page": "Jesus Christ, Michael, then let's hit 'em now, while we still got the muscle.",
+				"screen": "Jesus Christ, Mike. Now while we've got the muscle.",
+				"pageWords": [
+					[
+						"Jesus",
+						true
+					],
+					[
+						"Christ,",
+						true
+					],
+					[
+						"Michael,",
+						false
+					],
+					[
+						"then",
+						false
+					],
+					[
+						"let's",
+						false
+					],
+					[
+						"hit",
+						false
+					],
+					[
+						"'em",
+						false
+					],
+					[
+						"now,",
+						true
+					],
+					[
+						"while",
+						true
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"still",
+						false
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"muscle.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Jesus",
+						true
+					],
+					[
+						"Christ,",
+						true
+					],
+					[
+						"Mike.",
+						false
+					],
+					[
+						"Now",
+						true
+					],
+					[
+						"while",
+						true
+					],
+					[
+						"we've",
+						false
+					],
+					[
+						"got",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"muscle.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ITALIAN BOY",
+				"page": "I don't believe it. In our neighborhood, with a name like that!",
+				"screen": "I don't believe it already.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"believe",
+						true
+					],
+					[
+						"it.",
+						true
+					],
+					[
+						"In",
+						false
+					],
+					[
+						"our",
+						false
+					],
+					[
+						"neighborhood,",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"name",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"that!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"believe",
+						true
+					],
+					[
+						"it",
+						true
+					],
+					[
+						"already.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "HAGEN",
+				"page": "I know he's in Israel.",
+				"screen": "I hear that he's in Israel.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"he's",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"Israel.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"hear",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"he's",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"Israel.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

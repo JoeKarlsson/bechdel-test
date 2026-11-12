@@ -1,0 +1,919 @@
+{
+	"_id": "tt0029162",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 8,
+		"eligible": 5,
+		"rejected": {
+			"split across CDs": 2,
+			"duplicate": 1
+		},
+		"used": 5,
+		"primary": "1953636512",
+		"versions": [
+			"1955311752",
+			"1958606461",
+			"1951655702",
+			"56026",
+			"1953636512"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9655879228633137,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7920,
+	"quality": {
+		"anchoredShare": 0.8312521093486331
+	},
+	"words": {
+		"page": 8889,
+		"screen": 11166,
+		"kept": 7389,
+		"cut": 1500,
+		"notInScript": 3777,
+		"moved": 0
+	},
+	"lines": {
+		"page": 712,
+		"kept": 581,
+		"changed": 82,
+		"cut": 49,
+		"screen": 1764,
+		"notInScript": 548
+	},
+	"byGender": {
+		"w": {
+			"lines": 61,
+			"kept": 54,
+			"changed": 3,
+			"cut": 4
+		},
+		"m": {
+			"lines": 629,
+			"kept": 514,
+			"changed": 75,
+			"cut": 40
+		},
+		"unknown": {
+			"lines": 22,
+			"kept": 13,
+			"changed": 4,
+			"cut": 5
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"changed": 5,
+			"kept": 9,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"cut": 2,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"changed": 6
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"changed": 1,
+			"kept": 14
+		},
+		{
+			"cut": 2,
+			"kept": 13
+		},
+		{
+			"kept": 9,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"changed": 3,
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 11,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 4
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"cut": 1,
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"changed": 2,
+			"kept": 10,
+			"cut": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 145,
+			"notInScript": 86
+		},
+		{
+			"scripted": 50,
+			"notInScript": 107
+		},
+		{
+			"scripted": 259,
+			"notInScript": 89
+		},
+		{
+			"scripted": 173,
+			"notInScript": 169
+		},
+		{
+			"scripted": 219,
+			"notInScript": 37
+		},
+		{
+			"scripted": 180,
+			"notInScript": 64
+		},
+		{
+			"scripted": 79,
+			"notInScript": 79
+		},
+		{
+			"scripted": 64,
+			"notInScript": 55
+		},
+		{
+			"scripted": 45,
+			"notInScript": 52
+		},
+		{
+			"scripted": 255,
+			"notInScript": 91
+		},
+		{
+			"scripted": 169,
+			"notInScript": 37
+		},
+		{
+			"scripted": 4,
+			"notInScript": 21
+		},
+		{
+			"scripted": 131,
+			"notInScript": 8
+		},
+		{
+			"scripted": 226,
+			"notInScript": 89
+		},
+		{
+			"scripted": 274,
+			"notInScript": 68
+		},
+		{
+			"scripted": 320,
+			"notInScript": 61
+		},
+		{
+			"scripted": 197,
+			"notInScript": 85
+		},
+		{
+			"scripted": 266,
+			"notInScript": 33
+		},
+		{
+			"scripted": 353,
+			"notInScript": 62
+		},
+		{
+			"scripted": 8,
+			"notInScript": 56
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 265,
+			"notInScript": 92
+		},
+		{
+			"scripted": 241,
+			"notInScript": 79
+		},
+		{
+			"scripted": 168,
+			"notInScript": 66
+		},
+		{
+			"scripted": 255,
+			"notInScript": 27
+		},
+		{
+			"scripted": 146,
+			"notInScript": 119
+		},
+		{
+			"scripted": 58,
+			"notInScript": 62
+		},
+		{
+			"scripted": 29,
+			"notInScript": 50
+		},
+		{
+			"scripted": 267,
+			"notInScript": 72
+		},
+		{
+			"scripted": 338,
+			"notInScript": 43
+		},
+		{
+			"scripted": 298,
+			"notInScript": 30
+		},
+		{
+			"scripted": 39,
+			"notInScript": 133
+		},
+		{
+			"scripted": 173,
+			"notInScript": 67
+		},
+		{
+			"scripted": 259,
+			"notInScript": 132
+		},
+		{
+			"scripted": 175,
+			"notInScript": 83
+		},
+		{
+			"scripted": 238,
+			"notInScript": 89
+		},
+		{
+			"scripted": 199,
+			"notInScript": 46
+		},
+		{
+			"scripted": 149,
+			"notInScript": 75
+		},
+		{
+			"scripted": 264,
+			"notInScript": 105
+		},
+		{
+			"scripted": 133,
+			"notInScript": 238
+		},
+		{
+			"scripted": 242,
+			"notInScript": 85
+		},
+		{
+			"scripted": 100,
+			"notInScript": 24
+		},
+		{
+			"scripted": 39,
+			"notInScript": 53
+		},
+		{
+			"scripted": 0,
+			"notInScript": 4
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 67,
+			"notInScript": 150
+		},
+		{
+			"scripted": 249,
+			"notInScript": 85
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 59,
+				"kept": 52,
+				"changed": 3,
+				"cut": 4
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 540,
+				"kept": 442,
+				"changed": 62,
+				"cut": 36
+			},
+			"other": {
+				"lines": 89,
+				"kept": 72,
+				"changed": 13,
+				"cut": 4
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "GEORGE",
+				"text": "What is it? Has he fainted?"
+			},
+			{
+				"speaker": "GEORGE",
+				"text": "Come along, Bob. Coming, Bob?"
+			},
+			{
+				"speaker": "GLORIA",
+				"text": "As Conway's voice continues, talking to Chang:"
+			},
+			{
+				"speaker": "SONDRA",
+				"text": "All right, children. We will now sing–"
+			},
+			{
+				"speaker": "CONWAY",
+				"text": "What's she got to do with it?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 679,
+				"text": "They can't stop you now."
+			},
+			{
+				"at": 2339,
+				"text": "Get me a doctor."
+			},
+			{
+				"at": 4119,
+				"text": "It's astonishing and incredible, but..."
+			},
+			{
+				"at": 5779,
+				"text": "I want to show this layout to Chang."
+			},
+			{
+				"at": 6855,
+				"text": "I don't believe it."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "GEORGE",
+				"page": "The power house - they've blown it up! The planes can't land without lights.",
+				"screen": "They've blown up the powerhouse! The planes can't land without lights.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"power",
+						false
+					],
+					[
+						"house",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"they've",
+						true
+					],
+					[
+						"blown",
+						true
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"up!",
+						false
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"planes",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"land",
+						true
+					],
+					[
+						"without",
+						true
+					],
+					[
+						"lights.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"They've",
+						true
+					],
+					[
+						"blown",
+						true
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"powerhouse!",
+						false
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"planes",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"land",
+						true
+					],
+					[
+						"without",
+						true
+					],
+					[
+						"lights.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BARNARD",
+				"page": "Wonder what's happened to Fenner.",
+				"screen": "I wonder what happened to Fenner.",
+				"pageWords": [
+					[
+						"Wonder",
+						false
+					],
+					[
+						"what's",
+						false
+					],
+					[
+						"happened",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"Fenner.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"wonder",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"happened",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"Fenner.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BARNARD",
+				"page": "Will you stop squawking!",
+				"screen": "Will you quit squawking?",
+				"pageWords": [
+					[
+						"Will",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"stop",
+						false
+					],
+					[
+						"squawking!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Will",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"quit",
+						false
+					],
+					[
+						"squawking?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CONWAY",
+				"page": "That's unkind. Doesn't Miss Stone always look beautiful?",
+				"screen": "That's unkind. Miss Stone always looks beautiful.",
+				"pageWords": [
+					[
+						"That's",
+						true
+					],
+					[
+						"unkind.",
+						true
+					],
+					[
+						"Doesn't",
+						false
+					],
+					[
+						"Miss",
+						true
+					],
+					[
+						"Stone",
+						true
+					],
+					[
+						"always",
+						true
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"beautiful?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"That's",
+						true
+					],
+					[
+						"unkind.",
+						true
+					],
+					[
+						"Miss",
+						true
+					],
+					[
+						"Stone",
+						true
+					],
+					[
+						"always",
+						true
+					],
+					[
+						"looks",
+						false
+					],
+					[
+						"beautiful.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CONWAY",
+				"page": "I don't need any proof.",
+				"screen": "I don't need proof.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"proof.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"need",
+						true
+					],
+					[
+						"proof.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

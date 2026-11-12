@@ -1,0 +1,906 @@
+{
+	"_id": "tt0106519",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 32,
+		"eligible": 15,
+		"rejected": {
+			"duplicate": 6,
+			"split across CDs": 10,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1951976894",
+		"versions": [
+			"1957920954",
+			"1951976894",
+			"1953077150",
+			"1953103227",
+			"186588",
+			"1954273694",
+			"1955412902",
+			"1958243260",
+			"1957436404"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9831993514498846,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 8640,
+	"quality": {
+		"anchoredShare": 0.3315663350519207
+	},
+	"words": {
+		"page": 13771,
+		"screen": 11776,
+		"kept": 4567,
+		"cut": 9204,
+		"notInScript": 7210,
+		"moved": 294
+	},
+	"lines": {
+		"page": 803,
+		"kept": 234,
+		"changed": 242,
+		"cut": 327,
+		"screen": 2097,
+		"notInScript": 1153
+	},
+	"byGender": {
+		"w": {
+			"lines": 98,
+			"kept": 34,
+			"changed": 27,
+			"cut": 37
+		},
+		"m": {
+			"lines": 694,
+			"kept": 197,
+			"changed": 213,
+			"cut": 284
+		},
+		"unknown": {
+			"lines": 11,
+			"kept": 3,
+			"changed": 2,
+			"cut": 6
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 4
+		},
+		{
+			"kept": 5,
+			"changed": 5,
+			"cut": 6
+		},
+		{
+			"cut": 15,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 9
+		},
+		{
+			"cut": 3,
+			"kept": 5,
+			"changed": 8
+		},
+		{
+			"kept": 4,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"kept": 8,
+			"cut": 2,
+			"changed": 7
+		},
+		{
+			"kept": 7,
+			"changed": 8,
+			"cut": 2
+		},
+		{
+			"kept": 5,
+			"changed": 7,
+			"cut": 4
+		},
+		{
+			"changed": 8,
+			"cut": 5,
+			"kept": 4
+		},
+		{
+			"kept": 3,
+			"cut": 14
+		},
+		{
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"kept": 5,
+			"cut": 8,
+			"changed": 4
+		},
+		{
+			"changed": 7,
+			"kept": 4,
+			"cut": 5
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 7
+		},
+		{
+			"cut": 5,
+			"changed": 8,
+			"kept": 4
+		},
+		{
+			"cut": 5,
+			"changed": 5,
+			"kept": 7
+		},
+		{
+			"changed": 9,
+			"kept": 4,
+			"cut": 3
+		},
+		{
+			"changed": 9,
+			"kept": 5,
+			"cut": 3
+		},
+		{
+			"changed": 4,
+			"cut": 7,
+			"kept": 6
+		},
+		{
+			"cut": 9,
+			"kept": 4,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"cut": 9,
+			"kept": 2
+		},
+		{
+			"changed": 10,
+			"cut": 2,
+			"kept": 5
+		},
+		{
+			"kept": 3,
+			"changed": 6,
+			"cut": 8
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 3
+		},
+		{
+			"changed": 7,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"changed": 1,
+			"kept": 10,
+			"cut": 6
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"changed": 4,
+			"kept": 11,
+			"cut": 1
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 9
+		},
+		{
+			"cut": 9,
+			"changed": 7,
+			"kept": 1
+		},
+		{
+			"changed": 4,
+			"kept": 6,
+			"cut": 6
+		},
+		{
+			"cut": 10,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"changed": 9,
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"cut": 5,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 6,
+			"changed": 6
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 5
+		},
+		{
+			"changed": 2,
+			"kept": 2,
+			"cut": 13
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 4
+		},
+		{
+			"changed": 8,
+			"cut": 5,
+			"kept": 3
+		},
+		{
+			"cut": 10,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"changed": 4,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 4,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 214,
+			"notInScript": 79
+		},
+		{
+			"scripted": 265,
+			"notInScript": 128
+		},
+		{
+			"scripted": 264,
+			"notInScript": 137
+		},
+		{
+			"scripted": 247,
+			"notInScript": 99
+		},
+		{
+			"scripted": 224,
+			"notInScript": 137
+		},
+		{
+			"scripted": 185,
+			"notInScript": 123
+		},
+		{
+			"scripted": 51,
+			"notInScript": 285
+		},
+		{
+			"scripted": 53,
+			"notInScript": 29
+		},
+		{
+			"scripted": 205,
+			"notInScript": 69
+		},
+		{
+			"scripted": 331,
+			"notInScript": 102
+		},
+		{
+			"scripted": 80,
+			"notInScript": 312
+		},
+		{
+			"scripted": 16,
+			"notInScript": 116
+		},
+		{
+			"scripted": 138,
+			"notInScript": 105
+		},
+		{
+			"scripted": 102,
+			"notInScript": 151
+		},
+		{
+			"scripted": 198,
+			"notInScript": 87
+		},
+		{
+			"scripted": 93,
+			"notInScript": 143
+		},
+		{
+			"scripted": 156,
+			"notInScript": 203
+		},
+		{
+			"scripted": 181,
+			"notInScript": 199
+		},
+		{
+			"scripted": 89,
+			"notInScript": 89
+		},
+		{
+			"scripted": 58,
+			"notInScript": 119
+		},
+		{
+			"scripted": 60,
+			"notInScript": 208
+		},
+		{
+			"scripted": 156,
+			"notInScript": 172
+		},
+		{
+			"scripted": 133,
+			"notInScript": 197
+		},
+		{
+			"scripted": 162,
+			"notInScript": 93
+		},
+		{
+			"scripted": 90,
+			"notInScript": 168
+		},
+		{
+			"scripted": 69,
+			"notInScript": 23
+		},
+		{
+			"scripted": 175,
+			"notInScript": 143
+		},
+		{
+			"scripted": 40,
+			"notInScript": 225
+		},
+		{
+			"scripted": 161,
+			"notInScript": 157
+		},
+		{
+			"scripted": 225,
+			"notInScript": 105
+		},
+		{
+			"scripted": 150,
+			"notInScript": 102
+		},
+		{
+			"scripted": 85,
+			"notInScript": 133
+		},
+		{
+			"scripted": 142,
+			"notInScript": 92
+		},
+		{
+			"scripted": 131,
+			"notInScript": 42
+		},
+		{
+			"scripted": 228,
+			"notInScript": 146
+		},
+		{
+			"scripted": 279,
+			"notInScript": 44
+		},
+		{
+			"scripted": 181,
+			"notInScript": 115
+		},
+		{
+			"scripted": 48,
+			"notInScript": 161
+		},
+		{
+			"scripted": 128,
+			"notInScript": 227
+		},
+		{
+			"scripted": 88,
+			"notInScript": 83
+		},
+		{
+			"scripted": 17,
+			"notInScript": 37
+		},
+		{
+			"scripted": 5,
+			"notInScript": 60
+		},
+		{
+			"scripted": 0,
+			"notInScript": 135
+		},
+		{
+			"scripted": 19,
+			"notInScript": 43
+		},
+		{
+			"scripted": 80,
+			"notInScript": 49
+		},
+		{
+			"scripted": 99,
+			"notInScript": 3
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 98,
+				"kept": 34,
+				"changed": 27,
+				"cut": 37
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 526,
+				"kept": 152,
+				"changed": 159,
+				"cut": 215
+			},
+			"other": {
+				"lines": 127,
+				"kept": 29,
+				"changed": 44,
+				"cut": 54
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "SECOND BASEMAN",
+				"text": "Hey! Where you goin'?!"
+			},
+			{
+				"speaker": "CARLITO",
+				"text": "You shouldn't do that shit, Gail. It's no good for you."
+			},
+			{
+				"speaker": "CARLITO",
+				"text": "Oh . . . Christ."
+			},
+			{
+				"speaker": "CARLITO",
+				"text": "Dave, give me a hand!"
+			},
+			{
+				"speaker": "KLEINFELD",
+				"text": "Maybe they know you were with me."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1170,
+				"text": "And the legend, me, I'm walkin' right in with him."
+			},
+			{
+				"at": 2519,
+				"text": "It was for my own good."
+			},
+			{
+				"at": 3872,
+				"text": "Yo la vi por ahí."
+			},
+			{
+				"at": 5282,
+				"text": "Can you believe this loser?"
+			},
+			{
+				"at": 7139,
+				"text": "There's an angle here."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "CARLITO",
+				"page": "No kiddin 1 ? Doin' what?",
+				"screen": "No kidding. Doing what?",
+				"pageWords": [
+					[
+						"No",
+						true
+					],
+					[
+						"kiddin",
+						false
+					],
+					[
+						"1",
+						false
+					],
+					[
+						"?",
+						null
+					],
+					[
+						"Doin'",
+						true
+					],
+					[
+						"what?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"No",
+						true
+					],
+					[
+						"kidding.",
+						false
+					],
+					[
+						"Doing",
+						true
+					],
+					[
+						"what?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CARLITO",
+				"page": "Kleinfeld's like my brother. Understand?",
+				"screen": "Kleinfeld is my brother.",
+				"pageWords": [
+					[
+						"Kleinfeld's",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"brother.",
+						true
+					],
+					[
+						"Understand?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Kleinfeld",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"brother.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GAIL",
+				"page": "No, :lQY wait a minute. I don't judge you, you know.",
+				"screen": "I don't judge you.",
+				"pageWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						":lQY",
+						false
+					],
+					[
+						"wait",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"minute.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"judge",
+						true
+					],
+					[
+						"you,",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"know.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"judge",
+						true
+					],
+					[
+						"you.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KLEINFELD",
+				"page": "Yeah, just a little boat trip, no big deal.",
+				"screen": "Just a little boat ride.",
+				"pageWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"little",
+						true
+					],
+					[
+						"boat",
+						true
+					],
+					[
+						"trip,",
+						false
+					],
+					[
+						"no",
+						false
+					],
+					[
+						"big",
+						false
+					],
+					[
+						"deal.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Just",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"little",
+						true
+					],
+					[
+						"boat",
+						true
+					],
+					[
+						"ride.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CARLITO",
+				"page": "Good. Here! Pull over here!",
+				"screen": "Pull over here, please.",
+				"pageWords": [
+					[
+						"Good.",
+						false
+					],
+					[
+						"Here!",
+						false
+					],
+					[
+						"Pull",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"here!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Pull",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"here,",
+						true
+					],
+					[
+						"please.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

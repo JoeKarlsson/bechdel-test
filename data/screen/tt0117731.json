@@ -1,0 +1,966 @@
+{
+	"_id": "tt0117731",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 41,
+		"eligible": 29,
+		"rejected": {
+			"split across CDs": 5,
+			"runtime mismatch": 1,
+			"duplicate": 6
+		},
+		"used": 9,
+		"primary": "1958058721",
+		"versions": [
+			"1956612485",
+			"146165",
+			"1958815490",
+			"1954553606",
+			"1952151720",
+			"1958091502",
+			"149608",
+			"1955858301",
+			"1958058721"
+		],
+		"sdh": true,
+		"meanAgreement": 0.8740919398379625,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6660,
+	"quality": {
+		"anchoredShare": 0.09734897870491091
+	},
+	"words": {
+		"page": 6903,
+		"screen": 7243,
+		"kept": 668,
+		"cut": 6235,
+		"notInScript": 6571,
+		"moved": 69
+	},
+	"lines": {
+		"page": 708,
+		"kept": 52,
+		"changed": 62,
+		"cut": 594,
+		"screen": 1212,
+		"notInScript": 1057
+	},
+	"byGender": {
+		"w": {
+			"lines": 163,
+			"kept": 13,
+			"changed": 8,
+			"cut": 142
+		},
+		"m": {
+			"lines": 493,
+			"kept": 39,
+			"changed": 49,
+			"cut": 405
+		},
+		"unknown": {
+			"lines": 52,
+			"kept": 0,
+			"changed": 5,
+			"cut": 47
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"kept": 2,
+			"cut": 9
+		},
+		{
+			"cut": 11,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 15
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 9
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 9,
+			"changed": 1,
+			"kept": 5
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 8,
+			"kept": 3
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 6
+		},
+		{
+			"changed": 2,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 3,
+			"cut": 10
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 2
+		},
+		{
+			"cut": 8,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"kept": 1,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 17,
+			"notInScript": 30
+		},
+		{
+			"scripted": 14,
+			"notInScript": 242
+		},
+		{
+			"scripted": 14,
+			"notInScript": 281
+		},
+		{
+			"scripted": 0,
+			"notInScript": 153
+		},
+		{
+			"scripted": 99,
+			"notInScript": 67
+		},
+		{
+			"scripted": 12,
+			"notInScript": 155
+		},
+		{
+			"scripted": 65,
+			"notInScript": 78
+		},
+		{
+			"scripted": 44,
+			"notInScript": 192
+		},
+		{
+			"scripted": 10,
+			"notInScript": 220
+		},
+		{
+			"scripted": 1,
+			"notInScript": 246
+		},
+		{
+			"scripted": 0,
+			"notInScript": 303
+		},
+		{
+			"scripted": 15,
+			"notInScript": 129
+		},
+		{
+			"scripted": 0,
+			"notInScript": 125
+		},
+		{
+			"scripted": 17,
+			"notInScript": 99
+		},
+		{
+			"scripted": 0,
+			"notInScript": 34
+		},
+		{
+			"scripted": 105,
+			"notInScript": 76
+		},
+		{
+			"scripted": 36,
+			"notInScript": 219
+		},
+		{
+			"scripted": 21,
+			"notInScript": 161
+		},
+		{
+			"scripted": 14,
+			"notInScript": 177
+		},
+		{
+			"scripted": 69,
+			"notInScript": 123
+		},
+		{
+			"scripted": 35,
+			"notInScript": 172
+		},
+		{
+			"scripted": 6,
+			"notInScript": 83
+		},
+		{
+			"scripted": 7,
+			"notInScript": 169
+		},
+		{
+			"scripted": 23,
+			"notInScript": 247
+		},
+		{
+			"scripted": 117,
+			"notInScript": 117
+		},
+		{
+			"scripted": 15,
+			"notInScript": 156
+		},
+		{
+			"scripted": 23,
+			"notInScript": 166
+		},
+		{
+			"scripted": 12,
+			"notInScript": 146
+		},
+		{
+			"scripted": 4,
+			"notInScript": 2
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		},
+		{
+			"scripted": 0,
+			"notInScript": 9
+		},
+		{
+			"scripted": 9,
+			"notInScript": 287
+		},
+		{
+			"scripted": 10,
+			"notInScript": 343
+		},
+		{
+			"scripted": 24,
+			"notInScript": 250
+		},
+		{
+			"scripted": 0,
+			"notInScript": 112
+		},
+		{
+			"scripted": 10,
+			"notInScript": 135
+		},
+		{
+			"scripted": 61,
+			"notInScript": 93
+		},
+		{
+			"scripted": 0,
+			"notInScript": 79
+		},
+		{
+			"scripted": 3,
+			"notInScript": 210
+		},
+		{
+			"scripted": 64,
+			"notInScript": 85
+		},
+		{
+			"scripted": 8,
+			"notInScript": 23
+		},
+		{
+			"scripted": 0,
+			"notInScript": 59
+		},
+		{
+			"scripted": 51,
+			"notInScript": 24
+		},
+		{
+			"scripted": 17,
+			"notInScript": 53
+		},
+		{
+			"scripted": 15,
+			"notInScript": 39
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 0,
+				"changed": 0,
+				"cut": 2
+			},
+			"other": {
+				"lines": 150,
+				"kept": 8,
+				"changed": 8,
+				"cut": 134
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 349,
+				"kept": 32,
+				"changed": 33,
+				"cut": 284
+			},
+			"other": {
+				"lines": 143,
+				"kept": 7,
+				"changed": 16,
+				"cut": 120
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PICARD",
+				"text": "What year is it?"
+			},
+			{
+				"speaker": "PICARD",
+				"text": "Yes. But until then, you'll have to make do with what you've got."
+			},
+			{
+				"speaker": "PICARD",
+				"text": "Are you always sucha good judge of character?"
+			},
+			{
+				"speaker": "DATA",
+				"text": "My creator did not intend for me to experience these things."
+			},
+			{
+				"speaker": "BORG QUEEN",
+				"text": "Can you configure it?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 640,
+				"text": "I am reading fluctuations in their power grid."
+			},
+			{
+				"at": 1633,
+				"text": "First thing they'll do in Engineering is establish a collective, a central point from which they can control the hive."
+			},
+			{
+				"at": 2988,
+				"text": "There are 24 decks, almost 700 meters long."
+			},
+			{
+				"at": 4447,
+				"text": "I got a four-alarm hangover, either from the whiskey or your laser beam, or both,"
+			},
+			{
+				"at": 5259,
+				"text": "You ain't seen nothing yet."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "RIKER",
+				"page": "We're caught in some kind of energy wake from the vortex...",
+				"screen": "We appear to be caught in a temporal wake.",
+				"pageWords": [
+					[
+						"We're",
+						false
+					],
+					[
+						"caught",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"kind",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"energy",
+						false
+					],
+					[
+						"wake",
+						false
+					],
+					[
+						"from",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"vortex...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We",
+						false
+					],
+					[
+						"appear",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"caught",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"temporal",
+						false
+					],
+					[
+						"wake.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "PICARD",
+				"page": "We're here to find Zephram Cochrane. He may be injured or dead.",
+				"screen": "We're here to help you!",
+				"pageWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"find",
+						false
+					],
+					[
+						"Zephram",
+						false
+					],
+					[
+						"Cochrane.",
+						false
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"may",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"injured",
+						false
+					],
+					[
+						"or",
+						false
+					],
+					[
+						"dead.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We're",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"help",
+						false
+					],
+					[
+						"you!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DATA",
+				"page": "You are the guiding intelligence behind the Borg...?",
+				"screen": "Do you control the Borg collective?",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"guiding",
+						false
+					],
+					[
+						"intelligence",
+						false
+					],
+					[
+						"behind",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Borg...?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"control",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Borg",
+						true
+					],
+					[
+						"collective?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DATA",
+				"page": "No. I will not betray my friends.",
+				"screen": "No! I will not sacrifice the Enterprise.",
+				"pageWords": [
+					[
+						"No.",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"will",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"betray",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"friends.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"No!",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"will",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"sacrifice",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"Enterprise.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DATA",
+				"page": "I am re-routing Bridge command functions to this location.",
+				"screen": "I am bringing the external sensors online.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"am",
+						true
+					],
+					[
+						"re-routing",
+						false
+					],
+					[
+						"Bridge",
+						false
+					],
+					[
+						"command",
+						false
+					],
+					[
+						"functions",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"location.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"am",
+						true
+					],
+					[
+						"bringing",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"external",
+						false
+					],
+					[
+						"sensors",
+						false
+					],
+					[
+						"online.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

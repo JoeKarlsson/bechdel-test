@@ -1,0 +1,926 @@
+{
+	"_id": "tt0435761",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 37,
+		"eligible": 22,
+		"rejected": {
+			"too few lines": 4,
+			"duplicate": 9,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1958146397",
+		"versions": [
+			"1952409877",
+			"1952785170",
+			"1953634186",
+			"1952683700",
+			"1958146397",
+			"1952880459",
+			"1952591560",
+			"1952569561",
+			"1956290013"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9472410164465521,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6180,
+	"quality": {
+		"anchoredShare": 0.9093616470283569
+	},
+	"words": {
+		"page": 7723,
+		"screen": 8115,
+		"kept": 7057,
+		"cut": 666,
+		"notInScript": 1092,
+		"moved": 0
+	},
+	"lines": {
+		"page": 1119,
+		"kept": 995,
+		"changed": 44,
+		"cut": 80,
+		"screen": 1932,
+		"notInScript": 244
+	},
+	"byGender": {
+		"w": {
+			"lines": 272,
+			"kept": 247,
+			"changed": 10,
+			"cut": 15
+		},
+		"m": {
+			"lines": 824,
+			"kept": 733,
+			"changed": 32,
+			"cut": 59
+		},
+		"unknown": {
+			"lines": 23,
+			"kept": 15,
+			"changed": 2,
+			"cut": 6
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 1,
+			"kept": 19,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 24
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 23
+		},
+		{
+			"kept": 21,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 21,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"cut": 1
+		},
+		{
+			"kept": 23,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 20,
+			"cut": 3
+		},
+		{
+			"kept": 21,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 20,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 16,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 21,
+			"cut": 2
+		},
+		{
+			"kept": 19,
+			"cut": 4
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 23
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"cut": 1
+		},
+		{
+			"kept": 20,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 20,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"cut": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 21,
+			"changed": 2
+		},
+		{
+			"kept": 21,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 23,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"cut": 1
+		},
+		{
+			"kept": 21,
+			"cut": 2
+		},
+		{
+			"kept": 22,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 7
+		},
+		{
+			"kept": 17,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 20,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 23
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"kept": 18,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 19,
+			"changed": 2
+		},
+		{
+			"kept": 20,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 19,
+			"cut": 1,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"changed": 1
+		},
+		{
+			"kept": 22,
+			"cut": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 68,
+			"notInScript": 4
+		},
+		{
+			"scripted": 68,
+			"notInScript": 0
+		},
+		{
+			"scripted": 149,
+			"notInScript": 26
+		},
+		{
+			"scripted": 223,
+			"notInScript": 8
+		},
+		{
+			"scripted": 338,
+			"notInScript": 7
+		},
+		{
+			"scripted": 249,
+			"notInScript": 2
+		},
+		{
+			"scripted": 91,
+			"notInScript": 8
+		},
+		{
+			"scripted": 210,
+			"notInScript": 1
+		},
+		{
+			"scripted": 307,
+			"notInScript": 2
+		},
+		{
+			"scripted": 219,
+			"notInScript": 15
+		},
+		{
+			"scripted": 296,
+			"notInScript": 1
+		},
+		{
+			"scripted": 288,
+			"notInScript": 13
+		},
+		{
+			"scripted": 199,
+			"notInScript": 3
+		},
+		{
+			"scripted": 27,
+			"notInScript": 13
+		},
+		{
+			"scripted": 97,
+			"notInScript": 0
+		},
+		{
+			"scripted": 298,
+			"notInScript": 14
+		},
+		{
+			"scripted": 200,
+			"notInScript": 28
+		},
+		{
+			"scripted": 150,
+			"notInScript": 63
+		},
+		{
+			"scripted": 289,
+			"notInScript": 0
+		},
+		{
+			"scripted": 245,
+			"notInScript": 3
+		},
+		{
+			"scripted": 260,
+			"notInScript": 23
+		},
+		{
+			"scripted": 289,
+			"notInScript": 6
+		},
+		{
+			"scripted": 160,
+			"notInScript": 2
+		},
+		{
+			"scripted": 131,
+			"notInScript": 2
+		},
+		{
+			"scripted": 142,
+			"notInScript": 0
+		},
+		{
+			"scripted": 245,
+			"notInScript": 9
+		},
+		{
+			"scripted": 216,
+			"notInScript": 22
+		},
+		{
+			"scripted": 119,
+			"notInScript": 0
+		},
+		{
+			"scripted": 62,
+			"notInScript": 2
+		},
+		{
+			"scripted": 186,
+			"notInScript": 5
+		},
+		{
+			"scripted": 156,
+			"notInScript": 71
+		},
+		{
+			"scripted": 29,
+			"notInScript": 35
+		},
+		{
+			"scripted": 266,
+			"notInScript": 9
+		},
+		{
+			"scripted": 191,
+			"notInScript": 13
+		},
+		{
+			"scripted": 95,
+			"notInScript": 9
+		},
+		{
+			"scripted": 90,
+			"notInScript": 11
+		},
+		{
+			"scripted": 32,
+			"notInScript": 3
+		},
+		{
+			"scripted": 153,
+			"notInScript": 3
+		},
+		{
+			"scripted": 141,
+			"notInScript": 8
+		},
+		{
+			"scripted": 156,
+			"notInScript": 16
+		},
+		{
+			"scripted": 179,
+			"notInScript": 1
+		},
+		{
+			"scripted": 78,
+			"notInScript": 79
+		},
+		{
+			"scripted": 0,
+			"notInScript": 37
+		},
+		{
+			"scripted": 0,
+			"notInScript": 151
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 5,
+		"seconds": 33.6,
+		"longest": 12.6,
+		"spans": [
+			[
+				829.6,
+				832.9
+			],
+			[
+				1071.6,
+				1083
+			],
+			[
+				1521.2,
+				1524.5
+			],
+			[
+				1545.4,
+				1548.5
+			],
+			[
+				4207.8,
+				4220.3
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 30,
+				"kept": 27,
+				"changed": 0,
+				"cut": 3
+			},
+			"other": {
+				"lines": 189,
+				"kept": 170,
+				"changed": 8,
+				"cut": 11
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 626,
+				"kept": 560,
+				"changed": 23,
+				"cut": 43
+			},
+			"other": {
+				"lines": 180,
+				"kept": 157,
+				"changed": 8,
+				"cut": 15
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "REX",
+				"text": "What’s a transom, Buzz?"
+			},
+			{
+				"speaker": "KEN",
+				"text": "Haiii-Yaaa! Wah! Whaaa-aaa-aaa --"
+			},
+			{
+				"speaker": "SPANISH BUZZ",
+				"text": "¿Quién anda ahí? ¿Amigo? O Enemigo?"
+			},
+			{
+				"speaker": "SPANISH BUZZ",
+				"text": "Mi nave. ¿Lo encontraste? !Excelente!"
+			},
+			{
+				"speaker": "SPANISH BUZZ",
+				"text": "Senorita! Senorita, donde estas...?!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1483,
+				"text": "Thank you, buddy boy."
+			},
+			{
+				"at": 3889,
+				"text": "I've awakened from hyper-sleep on a strange planet."
+			},
+			{
+				"at": 5332,
+				"text": "We need to get in the spaceship."
+			},
+			{
+				"at": 5538,
+				"text": "\"Hugs and kisses to everyone.\""
+			},
+			{
+				"at": 5591,
+				"text": "But soft, what light through yonder window breaks?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "WOODY",
+				"page": "Think, Woody...! Think! Think! Oooh! Buster! C’mere, boy! C’mere!",
+				"screen": "Think, think, Woody. Think, think, think. Buster!",
+				"pageWords": [
+					[
+						"Think,",
+						true
+					],
+					[
+						"Woody...!",
+						true
+					],
+					[
+						"Think!",
+						true
+					],
+					[
+						"Think!",
+						true
+					],
+					[
+						"Oooh!",
+						false
+					],
+					[
+						"Buster!",
+						true
+					],
+					[
+						"C’mere,",
+						false
+					],
+					[
+						"boy!",
+						false
+					],
+					[
+						"C’mere!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Think,",
+						true
+					],
+					[
+						"think,",
+						false
+					],
+					[
+						"Woody.",
+						true
+					],
+					[
+						"Think,",
+						true
+					],
+					[
+						"think,",
+						true
+					],
+					[
+						"think.",
+						false
+					],
+					[
+						"Buster!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "WOODY",
+				"page": "Whoa, whoa, whoa, whoa...",
+				"screen": "Whoa, whoa, no, no, no...",
+				"pageWords": [
+					[
+						"Whoa,",
+						true
+					],
+					[
+						"whoa,",
+						true
+					],
+					[
+						"whoa,",
+						false
+					],
+					[
+						"whoa...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Whoa,",
+						true
+					],
+					[
+						"whoa,",
+						true
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"no...",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KEN",
+				"page": "How ‘bout that Spaceguy? He could be useful.",
+				"screen": "But that space guy, he could be useful.",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"‘bout",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"Spaceguy?",
+						false
+					],
+					[
+						"He",
+						true
+					],
+					[
+						"could",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"useful.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"But",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"space",
+						false
+					],
+					[
+						"guy,",
+						false
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"could",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"useful.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "WOODY",
+				"page": "Okay, here’s the plan...",
+				"screen": "Okay, here's what we're gonna do.",
+				"pageWords": [
+					[
+						"Okay,",
+						true
+					],
+					[
+						"here’s",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"plan...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Okay,",
+						true
+					],
+					[
+						"here's",
+						true
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"we're",
+						false
+					],
+					[
+						"gonna",
+						false
+					],
+					[
+						"do.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "LOTSO",
+				"page": "Put me down! What’re you doing?",
+				"screen": "Put me down, you idiot!",
+				"pageWords": [
+					[
+						"Put",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"down!",
+						true
+					],
+					[
+						"What’re",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"doing?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Put",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"down,",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"idiot!",
+						false
+					]
+				]
+			}
+		]
+	}
+}

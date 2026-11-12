@@ -1,0 +1,986 @@
+{
+	"_id": "tt1403981",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 15,
+		"eligible": 14,
+		"rejected": {
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1952857812",
+		"versions": [
+			"1952857812",
+			"1952495446",
+			"1953665484",
+			"1952845332",
+			"1952336056",
+			"1953023725",
+			"1954964054",
+			"1952504554",
+			"1955795638"
+		],
+		"sdh": true,
+		"meanAgreement": 0.9732250451266022,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6780,
+	"quality": {
+		"anchoredShare": 0.5408508759016635
+	},
+	"words": {
+		"page": 6793,
+		"screen": 7752,
+		"kept": 3674,
+		"cut": 3119,
+		"notInScript": 4078,
+		"moved": 69
+	},
+	"lines": {
+		"page": 863,
+		"kept": 437,
+		"changed": 165,
+		"cut": 259,
+		"screen": 1665,
+		"notInScript": 829
+	},
+	"byGender": {
+		"w": {
+			"lines": 327,
+			"kept": 167,
+			"changed": 45,
+			"cut": 115
+		},
+		"m": {
+			"lines": 466,
+			"kept": 236,
+			"changed": 106,
+			"cut": 124
+		},
+		"unknown": {
+			"lines": 68,
+			"kept": 34,
+			"changed": 14,
+			"cut": 20
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"kept": 7,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 9,
+			"changed": 6
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 10
+		},
+		{
+			"changed": 4,
+			"cut": 7,
+			"kept": 7
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"cut": 6,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 12
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 4
+		},
+		{
+			"cut": 3,
+			"kept": 8,
+			"changed": 6
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"cut": 3,
+			"changed": 4
+		},
+		{
+			"kept": 11,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 5
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"changed": 8,
+			"kept": 8,
+			"cut": 2
+		},
+		{
+			"changed": 3,
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"changed": 8,
+			"cut": 3,
+			"kept": 7
+		},
+		{
+			"changed": 5,
+			"kept": 13
+		},
+		{
+			"kept": 5,
+			"changed": 7,
+			"cut": 6
+		},
+		{
+			"kept": 3,
+			"changed": 4,
+			"cut": 11
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18
+		},
+		{
+			"kept": 8,
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"kept": 8,
+			"cut": 7
+		},
+		{
+			"changed": 6,
+			"cut": 2,
+			"kept": 10
+		},
+		{
+			"changed": 2,
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 13,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"changed": 4,
+			"cut": 7
+		},
+		{
+			"cut": 12,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"kept": 14,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"changed": 5,
+			"kept": 8,
+			"cut": 5
+		},
+		{
+			"cut": 8,
+			"kept": 10
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 6,
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 16,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"kept": 13,
+			"changed": 5
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 5,
+			"notInScript": 87
+		},
+		{
+			"scripted": 0,
+			"notInScript": 1
+		},
+		{
+			"scripted": 63,
+			"notInScript": 13
+		},
+		{
+			"scripted": 138,
+			"notInScript": 88
+		},
+		{
+			"scripted": 112,
+			"notInScript": 185
+		},
+		{
+			"scripted": 247,
+			"notInScript": 20
+		},
+		{
+			"scripted": 103,
+			"notInScript": 201
+		},
+		{
+			"scripted": 129,
+			"notInScript": 202
+		},
+		{
+			"scripted": 154,
+			"notInScript": 53
+		},
+		{
+			"scripted": 115,
+			"notInScript": 94
+		},
+		{
+			"scripted": 185,
+			"notInScript": 55
+		},
+		{
+			"scripted": 244,
+			"notInScript": 103
+		},
+		{
+			"scripted": 213,
+			"notInScript": 32
+		},
+		{
+			"scripted": 136,
+			"notInScript": 35
+		},
+		{
+			"scripted": 180,
+			"notInScript": 74
+		},
+		{
+			"scripted": 117,
+			"notInScript": 64
+		},
+		{
+			"scripted": 155,
+			"notInScript": 28
+		},
+		{
+			"scripted": 190,
+			"notInScript": 45
+		},
+		{
+			"scripted": 60,
+			"notInScript": 104
+		},
+		{
+			"scripted": 157,
+			"notInScript": 56
+		},
+		{
+			"scripted": 56,
+			"notInScript": 84
+		},
+		{
+			"scripted": 91,
+			"notInScript": 109
+		},
+		{
+			"scripted": 33,
+			"notInScript": 10
+		},
+		{
+			"scripted": 25,
+			"notInScript": 19
+		},
+		{
+			"scripted": 137,
+			"notInScript": 62
+		},
+		{
+			"scripted": 83,
+			"notInScript": 107
+		},
+		{
+			"scripted": 40,
+			"notInScript": 155
+		},
+		{
+			"scripted": 113,
+			"notInScript": 105
+		},
+		{
+			"scripted": 161,
+			"notInScript": 31
+		},
+		{
+			"scripted": 131,
+			"notInScript": 59
+		},
+		{
+			"scripted": 146,
+			"notInScript": 102
+		},
+		{
+			"scripted": 100,
+			"notInScript": 78
+		},
+		{
+			"scripted": 109,
+			"notInScript": 61
+		},
+		{
+			"scripted": 84,
+			"notInScript": 8
+		},
+		{
+			"scripted": 39,
+			"notInScript": 53
+		},
+		{
+			"scripted": 105,
+			"notInScript": 36
+		},
+		{
+			"scripted": 33,
+			"notInScript": 130
+		},
+		{
+			"scripted": 116,
+			"notInScript": 120
+		},
+		{
+			"scripted": 49,
+			"notInScript": 74
+		},
+		{
+			"scripted": 108,
+			"notInScript": 18
+		},
+		{
+			"scripted": 101,
+			"notInScript": 28
+		},
+		{
+			"scripted": 25,
+			"notInScript": 3
+		},
+		{
+			"scripted": 57,
+			"notInScript": 39
+		},
+		{
+			"scripted": 48,
+			"notInScript": 28
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 3,
+		"seconds": 27.6,
+		"longest": 11.8,
+		"spans": [
+			[
+				3911.6,
+				3920.1
+			],
+			[
+				4229.7,
+				4236.9
+			],
+			[
+				5119.9,
+				5131.7
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 48,
+				"kept": 24,
+				"changed": 8,
+				"cut": 16
+			},
+			"other": {
+				"lines": 265,
+				"kept": 137,
+				"changed": 36,
+				"cut": 92
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 200,
+				"kept": 115,
+				"changed": 41,
+				"cut": 44
+			},
+			"other": {
+				"lines": 263,
+				"kept": 119,
+				"changed": 65,
+				"cut": 79
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "TYLER",
+				"text": "You ever actually been to any of those places?"
+			},
+			{
+				"speaker": "ALLY",
+				"text": "Please. It's very bad ass. All that ritualistic scarring."
+			},
+			{
+				"speaker": "TYLER",
+				"text": "I wish she'd told me. It was a unilateral Caroline decision. Will you make sausage and peppers?"
+			},
+			{
+				"speaker": "TYLER",
+				"text": "I have something I've got to do."
+			},
+			{
+				"speaker": "ALLY",
+				"text": "Okay. Now what? I'm supposed to just forgive you?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 636,
+				"text": "Do you think women will buy this with actual money?"
+			},
+			{
+				"at": 1295,
+				"text": "This is a bowl?"
+			},
+			{
+				"at": 2930,
+				"text": "My phone died, so..."
+			},
+			{
+				"at": 3942,
+				"text": "Embryonic stem cell research offers both great promise and great peril..."
+			},
+			{
+				"at": 5243,
+				"text": "I just need you to come get me right away."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "TYLER",
+				"page": "You realize interventions typically discourage binge drinking?",
+				"screen": "You do realize that interventions typically don't involve binge drinking.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"realize",
+						false
+					],
+					[
+						"interventions",
+						true
+					],
+					[
+						"typically",
+						true
+					],
+					[
+						"discourage",
+						false
+					],
+					[
+						"binge",
+						true
+					],
+					[
+						"drinking?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"realize",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"interventions",
+						true
+					],
+					[
+						"typically",
+						true
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"involve",
+						false
+					],
+					[
+						"binge",
+						true
+					],
+					[
+						"drinking.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TYLER",
+				"page": "Indeed they are. Lucky for you, I'm undecided.",
+				"screen": "Lucky for you, I'm undecided.",
+				"pageWords": [
+					[
+						"Indeed",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"are.",
+						false
+					],
+					[
+						"Lucky",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"you,",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"undecided.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Lucky",
+						true
+					],
+					[
+						"for",
+						true
+					],
+					[
+						"you,",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"undecided.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CRAIG",
+				"page": "Then stop acting like one.",
+				"screen": "When you act like one.",
+				"pageWords": [
+					[
+						"Then",
+						false
+					],
+					[
+						"stop",
+						false
+					],
+					[
+						"acting",
+						false
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"one.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"When",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"act",
+						false
+					],
+					[
+						"like",
+						true
+					],
+					[
+						"one.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CAROLINE",
+				"page": "Mine too. The Met is one of my favorite places in the world.",
+				"screen": "The Met's one of my favorite places in the world.",
+				"pageWords": [
+					[
+						"Mine",
+						false
+					],
+					[
+						"too.",
+						false
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"Met",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"favorite",
+						true
+					],
+					[
+						"places",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"world.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"Met's",
+						false
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"favorite",
+						true
+					],
+					[
+						"places",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"world.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TYLER",
+				"page": "Don't do that. What are you doing?",
+				"screen": "What are you doing?",
+				"pageWords": [
+					[
+						"Don't",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"that.",
+						false
+					],
+					[
+						"What",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"doing?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"doing?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,995 @@
+{
+	"_id": "tt0109288",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 1,
+		"eligible": 1,
+		"rejected": {},
+		"used": 1,
+		"primary": "1955015610",
+		"versions": [
+			"1955015610"
+		],
+		"sdh": false,
+		"meanAgreement": null,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 5760,
+	"quality": {
+		"anchoredShare": 0.2061284046692607
+	},
+	"words": {
+		"page": 10280,
+		"screen": 8076,
+		"kept": 2119,
+		"cut": 8161,
+		"notInScript": 5957,
+		"moved": 103
+	},
+	"lines": {
+		"page": 841,
+		"kept": 136,
+		"changed": 200,
+		"cut": 505,
+		"screen": 1496,
+		"notInScript": 986
+	},
+	"byGender": {
+		"w": {
+			"lines": 110,
+			"kept": 28,
+			"changed": 27,
+			"cut": 55
+		},
+		"m": {
+			"lines": 587,
+			"kept": 83,
+			"changed": 147,
+			"cut": 357
+		},
+		"unknown": {
+			"lines": 144,
+			"kept": 25,
+			"changed": 26,
+			"cut": 93
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 10,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"cut": 9,
+			"kept": 4
+		},
+		{
+			"changed": 9,
+			"cut": 5,
+			"kept": 3
+		},
+		{
+			"changed": 3,
+			"kept": 8,
+			"cut": 7
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 9
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"changed": 5,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"kept": 5,
+			"cut": 10,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 2,
+			"changed": 8
+		},
+		{
+			"changed": 4,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 6
+		},
+		{
+			"cut": 6,
+			"kept": 6,
+			"changed": 5
+		},
+		{
+			"cut": 3,
+			"changed": 8,
+			"kept": 7
+		},
+		{
+			"cut": 12,
+			"kept": 2,
+			"changed": 3
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 4,
+			"changed": 6
+		},
+		{
+			"cut": 8,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"cut": 10,
+			"changed": 5,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"kept": 6,
+			"changed": 8,
+			"cut": 4
+		},
+		{
+			"changed": 6,
+			"cut": 3,
+			"kept": 8
+		},
+		{
+			"cut": 13,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"kept": 1,
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"kept": 1,
+			"cut": 11
+		},
+		{
+			"cut": 7,
+			"changed": 6,
+			"kept": 5
+		},
+		{
+			"changed": 6,
+			"cut": 9,
+			"kept": 2
+		},
+		{
+			"changed": 8,
+			"kept": 5,
+			"cut": 5
+		},
+		{
+			"cut": 8,
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"kept": 2,
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 1,
+			"changed": 3,
+			"cut": 14
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"changed": 6,
+			"cut": 7
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 16,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"changed": 7,
+			"cut": 10
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 7
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 26,
+			"notInScript": 85
+		},
+		{
+			"scripted": 44,
+			"notInScript": 35
+		},
+		{
+			"scripted": 116,
+			"notInScript": 105
+		},
+		{
+			"scripted": 120,
+			"notInScript": 127
+		},
+		{
+			"scripted": 66,
+			"notInScript": 124
+		},
+		{
+			"scripted": 104,
+			"notInScript": 137
+		},
+		{
+			"scripted": 95,
+			"notInScript": 123
+		},
+		{
+			"scripted": 72,
+			"notInScript": 143
+		},
+		{
+			"scripted": 34,
+			"notInScript": 48
+		},
+		{
+			"scripted": 80,
+			"notInScript": 111
+		},
+		{
+			"scripted": 116,
+			"notInScript": 70
+		},
+		{
+			"scripted": 126,
+			"notInScript": 112
+		},
+		{
+			"scripted": 146,
+			"notInScript": 41
+		},
+		{
+			"scripted": 113,
+			"notInScript": 54
+		},
+		{
+			"scripted": 130,
+			"notInScript": 98
+		},
+		{
+			"scripted": 148,
+			"notInScript": 133
+		},
+		{
+			"scripted": 145,
+			"notInScript": 58
+		},
+		{
+			"scripted": 60,
+			"notInScript": 69
+		},
+		{
+			"scripted": 30,
+			"notInScript": 12
+		},
+		{
+			"scripted": 128,
+			"notInScript": 52
+		},
+		{
+			"scripted": 61,
+			"notInScript": 149
+		},
+		{
+			"scripted": 107,
+			"notInScript": 108
+		},
+		{
+			"scripted": 85,
+			"notInScript": 40
+		},
+		{
+			"scripted": 34,
+			"notInScript": 35
+		},
+		{
+			"scripted": 82,
+			"notInScript": 65
+		},
+		{
+			"scripted": 36,
+			"notInScript": 72
+		},
+		{
+			"scripted": 102,
+			"notInScript": 146
+		},
+		{
+			"scripted": 20,
+			"notInScript": 122
+		},
+		{
+			"scripted": 70,
+			"notInScript": 143
+		},
+		{
+			"scripted": 40,
+			"notInScript": 124
+		},
+		{
+			"scripted": 27,
+			"notInScript": 147
+		},
+		{
+			"scripted": 54,
+			"notInScript": 131
+		},
+		{
+			"scripted": 94,
+			"notInScript": 101
+		},
+		{
+			"scripted": 50,
+			"notInScript": 164
+		},
+		{
+			"scripted": 52,
+			"notInScript": 123
+		},
+		{
+			"scripted": 27,
+			"notInScript": 142
+		},
+		{
+			"scripted": 100,
+			"notInScript": 158
+		},
+		{
+			"scripted": 13,
+			"notInScript": 136
+		},
+		{
+			"scripted": 43,
+			"notInScript": 128
+		},
+		{
+			"scripted": 16,
+			"notInScript": 79
+		},
+		{
+			"scripted": 52,
+			"notInScript": 118
+		},
+		{
+			"scripted": 19,
+			"notInScript": 198
+		},
+		{
+			"scripted": 66,
+			"notInScript": 103
+		},
+		{
+			"scripted": 16,
+			"notInScript": 91
+		},
+		{
+			"scripted": 35,
+			"notInScript": 141
+		},
+		{
+			"scripted": 61,
+			"notInScript": 114
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 76,
+				"kept": 17,
+				"changed": 17,
+				"cut": 42
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 429,
+				"kept": 62,
+				"changed": 109,
+				"cut": 258
+			},
+			"other": {
+				"lines": 143,
+				"kept": 18,
+				"changed": 35,
+				"cut": 90
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MINELLI",
+				"text": "I just came to congratulate you. Where can we talk in private?"
+			},
+			{
+				"speaker": "JOE",
+				"text": "Boss, he came out of nowhere!"
+			},
+			{
+				"speaker": "KIMBERLY",
+				"text": "What do your parents think about this?"
+			},
+			{
+				"speaker": "MINELLI",
+				"text": "He's a crime fighter. We'll corrmit some crimes."
+			},
+			{
+				"speaker": "KEVIN",
+				"text": "I would have took the bullet."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 573,
+				"text": "That's journalism, my friend!"
+			},
+			{
+				"at": 1725,
+				"text": "I'll go get him."
+			},
+			{
+				"at": 3179,
+				"text": "Easy with that chair."
+			},
+			{
+				"at": 4136,
+				"text": "What is it you want from me?"
+			},
+			{
+				"at": 5016,
+				"text": "The building's going to blow."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "KEVIN",
+				"page": "Oh... hi- caught me stealing some coff••·",
+				"screen": "Caught me stealing coffee!",
+				"pageWords": [
+					[
+						"Oh...",
+						false
+					],
+					[
+						"hi-",
+						false
+					],
+					[
+						"caught",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"stealing",
+						true
+					],
+					[
+						"some",
+						false
+					],
+					[
+						"coff••·",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Caught",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"stealing",
+						true
+					],
+					[
+						"coffee!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JOE",
+				"page": "Oh, shit, my hands are getting sore. Why don't we just finish this?",
+				"screen": "Why don't we just go through the front?",
+				"pageWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"shit,",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"hands",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"getting",
+						false
+					],
+					[
+						"sore.",
+						false
+					],
+					[
+						"Why",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"finish",
+						false
+					],
+					[
+						"this?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"we",
+						true
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"through",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"front?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KEVIN",
+				"page": "I guess we have to deliver the baby.",
+				"screen": "We're going to have to deliver this baby.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"guess",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"deliver",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"baby.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"We're",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"deliver",
+						true
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"baby.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KEVIN",
+				"page": "Darryl, we can't save him.",
+				"screen": "You can't save him.",
+				"pageWords": [
+					[
+						"Darryl,",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"save",
+						true
+					],
+					[
+						"him.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"save",
+						true
+					],
+					[
+						"him.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DARRYL",
+				"page": "Holy double Jeopardy! You're good, Minelli. Now that-you've won, you don't need Kimberly anymore. Why don't you let her go?",
+				"screen": "Holy double jeopardy. You're good. Minelli!",
+				"pageWords": [
+					[
+						"Holy",
+						true
+					],
+					[
+						"double",
+						true
+					],
+					[
+						"Jeopardy!",
+						true
+					],
+					[
+						"You're",
+						true
+					],
+					[
+						"good,",
+						true
+					],
+					[
+						"Minelli.",
+						true
+					],
+					[
+						"Now",
+						false
+					],
+					[
+						"that-you've",
+						false
+					],
+					[
+						"won,",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"Kimberly",
+						false
+					],
+					[
+						"anymore.",
+						false
+					],
+					[
+						"Why",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"let",
+						false
+					],
+					[
+						"her",
+						false
+					],
+					[
+						"go?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Holy",
+						true
+					],
+					[
+						"double",
+						true
+					],
+					[
+						"jeopardy.",
+						true
+					],
+					[
+						"You're",
+						true
+					],
+					[
+						"good.",
+						true
+					],
+					[
+						"Minelli!",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,999 @@
+{
+	"_id": "tt0758752",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 24,
+		"eligible": 14,
+		"rejected": {
+			"duplicate": 6,
+			"split across CDs": 4
+		},
+		"used": 9,
+		"primary": "1952977136",
+		"versions": [
+			"1956606266",
+			"1955412313",
+			"1952949333",
+			"1952776468",
+			"1952977136",
+			"1952860483",
+			"1953269992",
+			"1952783897",
+			"1952782983"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9890703409647236,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6720,
+	"quality": {
+		"anchoredShare": 0.3584193072955048
+	},
+	"words": {
+		"page": 10856,
+		"screen": 11763,
+		"kept": 3891,
+		"cut": 6965,
+		"notInScript": 7872,
+		"moved": 228
+	},
+	"lines": {
+		"page": 1138,
+		"kept": 367,
+		"changed": 152,
+		"cut": 618,
+		"screen": 2370,
+		"notInScript": 1569
+	},
+	"byGender": {
+		"w": {
+			"lines": 355,
+			"kept": 120,
+			"changed": 43,
+			"cut": 192
+		},
+		"m": {
+			"lines": 709,
+			"kept": 239,
+			"changed": 102,
+			"cut": 368
+		},
+		"unknown": {
+			"lines": 73,
+			"kept": 8,
+			"changed": 7,
+			"cut": 58
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 5,
+			"cut": 3,
+			"kept": 16
+		},
+		{
+			"kept": 16,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"kept": 11,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"changed": 5,
+			"cut": 6
+		},
+		{
+			"cut": 7,
+			"kept": 13,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 12
+		},
+		{
+			"cut": 3,
+			"changed": 4,
+			"kept": 17
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"kept": 15,
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"changed": 4,
+			"kept": 11,
+			"cut": 9
+		},
+		{
+			"changed": 5,
+			"cut": 8,
+			"kept": 10
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 10
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 16
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 9
+		},
+		{
+			"cut": 22,
+			"changed": 1
+		},
+		{
+			"cut": 22,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 4,
+			"changed": 5
+		},
+		{
+			"cut": 19,
+			"kept": 4
+		},
+		{
+			"cut": 13,
+			"kept": 6,
+			"changed": 5
+		},
+		{
+			"kept": 12,
+			"cut": 9,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"changed": 9,
+			"cut": 12,
+			"kept": 3
+		},
+		{
+			"cut": 18,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 20,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 11,
+			"changed": 4
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"changed": 3,
+			"kept": 12,
+			"cut": 9
+		},
+		{
+			"cut": 15,
+			"kept": 4,
+			"changed": 4
+		},
+		{
+			"cut": 14,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"kept": 1,
+			"cut": 23
+		},
+		{
+			"changed": 5,
+			"cut": 17,
+			"kept": 2
+		},
+		{
+			"cut": 19,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 18
+		},
+		{
+			"cut": 20,
+			"changed": 4
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 10
+		},
+		{
+			"changed": 7,
+			"cut": 12,
+			"kept": 5
+		},
+		{
+			"kept": 11,
+			"changed": 7,
+			"cut": 6
+		},
+		{
+			"cut": 10,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"cut": 9,
+			"kept": 10,
+			"changed": 4
+		},
+		{
+			"kept": 6,
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 21,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 21,
+			"kept": 2
+		},
+		{
+			"cut": 24
+		},
+		{
+			"cut": 9,
+			"kept": 9,
+			"changed": 6
+		},
+		{
+			"kept": 6,
+			"changed": 6,
+			"cut": 11
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 19,
+			"notInScript": 194
+		},
+		{
+			"scripted": 234,
+			"notInScript": 154
+		},
+		{
+			"scripted": 251,
+			"notInScript": 149
+		},
+		{
+			"scripted": 195,
+			"notInScript": 54
+		},
+		{
+			"scripted": 233,
+			"notInScript": 108
+		},
+		{
+			"scripted": 255,
+			"notInScript": 93
+		},
+		{
+			"scripted": 180,
+			"notInScript": 69
+		},
+		{
+			"scripted": 136,
+			"notInScript": 142
+		},
+		{
+			"scripted": 310,
+			"notInScript": 69
+		},
+		{
+			"scripted": 198,
+			"notInScript": 101
+		},
+		{
+			"scripted": 158,
+			"notInScript": 114
+		},
+		{
+			"scripted": 46,
+			"notInScript": 217
+		},
+		{
+			"scripted": 22,
+			"notInScript": 209
+		},
+		{
+			"scripted": 106,
+			"notInScript": 127
+		},
+		{
+			"scripted": 159,
+			"notInScript": 80
+		},
+		{
+			"scripted": 134,
+			"notInScript": 44
+		},
+		{
+			"scripted": 17,
+			"notInScript": 261
+		},
+		{
+			"scripted": 59,
+			"notInScript": 108
+		},
+		{
+			"scripted": 135,
+			"notInScript": 231
+		},
+		{
+			"scripted": 114,
+			"notInScript": 69
+		},
+		{
+			"scripted": 213,
+			"notInScript": 250
+		},
+		{
+			"scripted": 8,
+			"notInScript": 303
+		},
+		{
+			"scripted": 91,
+			"notInScript": 200
+		},
+		{
+			"scripted": 83,
+			"notInScript": 75
+		},
+		{
+			"scripted": 123,
+			"notInScript": 195
+		},
+		{
+			"scripted": 45,
+			"notInScript": 94
+		},
+		{
+			"scripted": 0,
+			"notInScript": 243
+		},
+		{
+			"scripted": 89,
+			"notInScript": 65
+		},
+		{
+			"scripted": 116,
+			"notInScript": 128
+		},
+		{
+			"scripted": 70,
+			"notInScript": 72
+		},
+		{
+			"scripted": 33,
+			"notInScript": 166
+		},
+		{
+			"scripted": 27,
+			"notInScript": 186
+		},
+		{
+			"scripted": 24,
+			"notInScript": 195
+		},
+		{
+			"scripted": 126,
+			"notInScript": 129
+		},
+		{
+			"scripted": 76,
+			"notInScript": 158
+		},
+		{
+			"scripted": 154,
+			"notInScript": 147
+		},
+		{
+			"scripted": 91,
+			"notInScript": 46
+		},
+		{
+			"scripted": 100,
+			"notInScript": 148
+		},
+		{
+			"scripted": 140,
+			"notInScript": 120
+		},
+		{
+			"scripted": 170,
+			"notInScript": 134
+		},
+		{
+			"scripted": 95,
+			"notInScript": 106
+		},
+		{
+			"scripted": 21,
+			"notInScript": 182
+		},
+		{
+			"scripted": 108,
+			"notInScript": 164
+		},
+		{
+			"scripted": 13,
+			"notInScript": 97
+		},
+		{
+			"scripted": 89,
+			"notInScript": 101
+		},
+		{
+			"scripted": 139,
+			"notInScript": 40
+		},
+		{
+			"scripted": 12,
+			"notInScript": 186
+		},
+		{
+			"scripted": 0,
+			"notInScript": 23
+		}
+	],
+	"passingConversations": {
+		"count": 1,
+		"seconds": 7.2,
+		"longest": 7.2,
+		"spans": [
+			[
+				286.5,
+				293.7
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 14,
+				"kept": 9,
+				"changed": 2,
+				"cut": 3
+			},
+			"other": {
+				"lines": 326,
+				"kept": 103,
+				"changed": 40,
+				"cut": 183
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 350,
+				"kept": 123,
+				"changed": 55,
+				"cut": 172
+			},
+			"other": {
+				"lines": 341,
+				"kept": 104,
+				"changed": 45,
+				"cut": 192
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MAGGIE",
+				"text": "I could sue you."
+			},
+			{
+				"speaker": "JAMIE",
+				"text": "You slept with Trey Hillman..."
+			},
+			{
+				"speaker": "MAGGIE",
+				"text": "Sandy, Jamie. Jamie, Sandy."
+			},
+			{
+				"speaker": "TREY",
+				"text": "She's good. Kids are good too. Damn Clay is almost taller than me, I'm gonna kill him."
+			},
+			{
+				"speaker": "TREY",
+				"text": "Give the people what they want."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 667,
+				"text": "That's why I wanna talk to you about Zithromax, okay?"
+			},
+			{
+				"at": 2301,
+				"text": "Am I not allowed to say that?"
+			},
+			{
+				"at": 3317,
+				"text": "You want to meet me?"
+			},
+			{
+				"at": 4636,
+				"text": "You have to understand that you're still yourself."
+			},
+			{
+				"at": 5891,
+				"text": "I didn't actually want to go to Chicago."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "GINA",
+				"page": "You will do well by doing good. The health care industry today is worth two trillion a year. Two trillion.",
+				"screen": "The health care industry today is worth $2 trillion a year.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"will",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"well",
+						false
+					],
+					[
+						"by",
+						false
+					],
+					[
+						"doing",
+						false
+					],
+					[
+						"good.",
+						false
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"health",
+						true
+					],
+					[
+						"care",
+						true
+					],
+					[
+						"industry",
+						true
+					],
+					[
+						"today",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"worth",
+						true
+					],
+					[
+						"two",
+						true
+					],
+					[
+						"trillion",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"year.",
+						true
+					],
+					[
+						"Two",
+						false
+					],
+					[
+						"trillion.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"health",
+						true
+					],
+					[
+						"care",
+						true
+					],
+					[
+						"industry",
+						true
+					],
+					[
+						"today",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"worth",
+						true
+					],
+					[
+						"$2",
+						true
+					],
+					[
+						"trillion",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"year.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JOSH",
+				"page": "Shut up. You don't have any Ativan, do you?",
+				"screen": "Do you have any Ativan?",
+				"pageWords": [
+					[
+						"Shut",
+						false
+					],
+					[
+						"up.",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"any",
+						true
+					],
+					[
+						"Ativan,",
+						true
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"you?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"any",
+						true
+					],
+					[
+						"Ativan?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "TREY",
+				"page": "Jamie's \"friends\" with our friend, Maggie Murdock.",
+				"screen": "Now, you're banging Maggie Murdock, aren't you?",
+				"pageWords": [
+					[
+						"Jamie's",
+						false
+					],
+					[
+						"\"friends\"",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"our",
+						false
+					],
+					[
+						"friend,",
+						false
+					],
+					[
+						"Maggie",
+						true
+					],
+					[
+						"Murdock.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Now,",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"banging",
+						false
+					],
+					[
+						"Maggie",
+						true
+					],
+					[
+						"Murdock,",
+						true
+					],
+					[
+						"aren't",
+						false
+					],
+					[
+						"you?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JAMIE",
+				"page": "You are so twisted.",
+				"screen": "This is so twisted.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"so",
+						true
+					],
+					[
+						"twisted.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"This",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"so",
+						true
+					],
+					[
+						"twisted.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "JOSH",
+				"page": "Will they have to amputate?",
+				"screen": "Do you think they'll have to amputate?",
+				"pageWords": [
+					[
+						"Will",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"amputate?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"they'll",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"amputate?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

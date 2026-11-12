@@ -1,0 +1,1052 @@
+{
+	"_id": "tt1320253",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 33,
+		"eligible": 27,
+		"rejected": {
+			"too few lines": 1,
+			"duplicate": 4,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1958318391",
+		"versions": [
+			"1952988772",
+			"1952701254",
+			"1952786876",
+			"1952618428",
+			"1952447348",
+			"1957006129",
+			"1952447211",
+			"1952447231",
+			"1958318391"
+		],
+		"sdh": true,
+		"meanAgreement": 0.8860027993391753,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6180,
+	"quality": {
+		"anchoredShare": 0.24633431085043989
+	},
+	"words": {
+		"page": 6138,
+		"screen": 5407,
+		"kept": 1508,
+		"cut": 4630,
+		"notInScript": 3895,
+		"moved": 132
+	},
+	"lines": {
+		"page": 753,
+		"kept": 159,
+		"changed": 113,
+		"cut": 481,
+		"screen": 1105,
+		"notInScript": 721
+	},
+	"byGender": {
+		"w": {
+			"lines": 78,
+			"kept": 28,
+			"changed": 15,
+			"cut": 35
+		},
+		"m": {
+			"lines": 659,
+			"kept": 126,
+			"changed": 96,
+			"cut": 437
+		},
+		"unknown": {
+			"lines": 16,
+			"kept": 5,
+			"changed": 2,
+			"cut": 9
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 5,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 7,
+			"changed": 2,
+			"kept": 7
+		},
+		{
+			"kept": 5,
+			"cut": 10
+		},
+		{
+			"cut": 15,
+			"kept": 1
+		},
+		{
+			"kept": 8,
+			"cut": 4,
+			"changed": 4
+		},
+		{
+			"cut": 4,
+			"changed": 5,
+			"kept": 6
+		},
+		{
+			"changed": 4,
+			"cut": 11,
+			"kept": 1
+		},
+		{
+			"changed": 6,
+			"cut": 10
+		},
+		{
+			"changed": 3,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"changed": 4
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 13,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"kept": 4
+		},
+		{
+			"cut": 12,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 14,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"kept": 5,
+			"changed": 3,
+			"cut": 7
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 10
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"cut": 10,
+			"kept": 1
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 9,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 10
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"kept": 6,
+			"cut": 8
+		},
+		{
+			"kept": 8,
+			"changed": 3,
+			"cut": 5
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 3,
+			"changed": 6
+		},
+		{
+			"cut": 9,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 5
+		},
+		{
+			"kept": 7,
+			"cut": 7,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"changed": 5,
+			"kept": 7
+		},
+		{
+			"kept": 3,
+			"changed": 4,
+			"cut": 9
+		},
+		{
+			"cut": 6,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"changed": 1,
+			"cut": 15
+		},
+		{
+			"changed": 3,
+			"cut": 12,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 30,
+			"notInScript": 31
+		},
+		{
+			"scripted": 62,
+			"notInScript": 169
+		},
+		{
+			"scripted": 25,
+			"notInScript": 47
+		},
+		{
+			"scripted": 163,
+			"notInScript": 69
+		},
+		{
+			"scripted": 44,
+			"notInScript": 180
+		},
+		{
+			"scripted": 104,
+			"notInScript": 177
+		},
+		{
+			"scripted": 39,
+			"notInScript": 15
+		},
+		{
+			"scripted": 50,
+			"notInScript": 235
+		},
+		{
+			"scripted": 6,
+			"notInScript": 179
+		},
+		{
+			"scripted": 53,
+			"notInScript": 243
+		},
+		{
+			"scripted": 50,
+			"notInScript": 122
+		},
+		{
+			"scripted": 47,
+			"notInScript": 58
+		},
+		{
+			"scripted": 33,
+			"notInScript": 115
+		},
+		{
+			"scripted": 176,
+			"notInScript": 62
+		},
+		{
+			"scripted": 119,
+			"notInScript": 25
+		},
+		{
+			"scripted": 37,
+			"notInScript": 33
+		},
+		{
+			"scripted": 70,
+			"notInScript": 40
+		},
+		{
+			"scripted": 22,
+			"notInScript": 17
+		},
+		{
+			"scripted": 0,
+			"notInScript": 23
+		},
+		{
+			"scripted": 43,
+			"notInScript": 186
+		},
+		{
+			"scripted": 100,
+			"notInScript": 114
+		},
+		{
+			"scripted": 29,
+			"notInScript": 20
+		},
+		{
+			"scripted": 175,
+			"notInScript": 86
+		},
+		{
+			"scripted": 85,
+			"notInScript": 89
+		},
+		{
+			"scripted": 0,
+			"notInScript": 45
+		},
+		{
+			"scripted": 71,
+			"notInScript": 161
+		},
+		{
+			"scripted": 22,
+			"notInScript": 31
+		},
+		{
+			"scripted": 0,
+			"notInScript": 21
+		},
+		{
+			"scripted": 20,
+			"notInScript": 77
+		},
+		{
+			"scripted": 121,
+			"notInScript": 62
+		},
+		{
+			"scripted": 55,
+			"notInScript": 10
+		},
+		{
+			"scripted": 53,
+			"notInScript": 0
+		},
+		{
+			"scripted": 57,
+			"notInScript": 22
+		},
+		{
+			"scripted": 46,
+			"notInScript": 106
+		},
+		{
+			"scripted": 0,
+			"notInScript": 5
+		},
+		{
+			"scripted": 50,
+			"notInScript": 32
+		},
+		{
+			"scripted": 24,
+			"notInScript": 49
+		},
+		{
+			"scripted": 0,
+			"notInScript": 9
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		},
+		{
+			"scripted": 21,
+			"notInScript": 36
+		},
+		{
+			"scripted": 105,
+			"notInScript": 57
+		},
+		{
+			"scripted": 55,
+			"notInScript": 74
+		},
+		{
+			"scripted": 8,
+			"notInScript": 3
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 77,
+				"kept": 27,
+				"changed": 15,
+				"cut": 35
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 575,
+				"kept": 100,
+				"changed": 75,
+				"cut": 400
+			},
+			"other": {
+				"lines": 77,
+				"kept": 26,
+				"changed": 18,
+				"cut": 33
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "GUNNAR",
+				"text": "Fifteen years. Cuff me before I kill somebody. I mean it - Do it -"
+			},
+			{
+				"speaker": "GENERAL GARZA",
+				"text": "I understand, but if I can’t see inside of you - How do I know if you’re telling the truth?"
+			},
+			{
+				"speaker": "BARNEY",
+				"text": "Like to see it anyway."
+			},
+			{
+				"speaker": "CHRISTMAS",
+				"text": "Look, I’m not ready to let this go."
+			},
+			{
+				"speaker": "LACY",
+				"text": "Stop pickin’ on them. They’re trying."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 751,
+				"text": "Don't leave like this."
+			},
+			{
+				"at": 1289,
+				"text": "Oh, like I said."
+			},
+			{
+				"at": 1846,
+				"text": "Aren't you the guy who said, \"The man who best gets along with women...\""
+			},
+			{
+				"at": 3165,
+				"text": "This here paint is gonna dry."
+			},
+			{
+				"at": 4564,
+				"text": "You're a real tough guy, aren't you?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "CHRISTMAS",
+				"page": "I hate his voice - Take it - Show it to him.",
+				"screen": "I hate his voice.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"hate",
+						true
+					],
+					[
+						"his",
+						true
+					],
+					[
+						"voice",
+						true
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"Take",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"Show",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"him.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"hate",
+						true
+					],
+					[
+						"his",
+						true
+					],
+					[
+						"voice.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GUARD",
+				"page": "When you want them gone, General?",
+				"screen": "You want your apes' respect?",
+				"pageWords": [
+					[
+						"When",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"them",
+						false
+					],
+					[
+						"gone,",
+						false
+					],
+					[
+						"General?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"want",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"apes'",
+						false
+					],
+					[
+						"respect?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SANDRA",
+				"page": "I know you’re not what you say you are.",
+				"screen": "Sandra, how do I know you're not setting us up?",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"you’re",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"say",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"are.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Sandra,",
+						false
+					],
+					[
+						"how",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"you're",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"setting",
+						false
+					],
+					[
+						"us",
+						true
+					],
+					[
+						"up?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "YANG",
+				"page": "Difficult because I have to work harder than the rest of them.",
+				"screen": "I work harder than the rest.",
+				"pageWords": [
+					[
+						"Difficult",
+						false
+					],
+					[
+						"because",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"work",
+						true
+					],
+					[
+						"harder",
+						true
+					],
+					[
+						"than",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"rest",
+						true
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"them.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"work",
+						true
+					],
+					[
+						"harder",
+						true
+					],
+					[
+						"than",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"rest.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MONROE",
+				"page": "You dumb bastard, I woulda paid double what the agency parasites paid you to stay away!",
+				"screen": "The agency parasites hired you, didn't they? I'd have paid you twice as much to go fishing.",
+				"pageWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"dumb",
+						false
+					],
+					[
+						"bastard,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"woulda",
+						false
+					],
+					[
+						"paid",
+						false
+					],
+					[
+						"double",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"agency",
+						true
+					],
+					[
+						"parasites",
+						true
+					],
+					[
+						"paid",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"stay",
+						false
+					],
+					[
+						"away!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						true
+					],
+					[
+						"agency",
+						true
+					],
+					[
+						"parasites",
+						true
+					],
+					[
+						"hired",
+						false
+					],
+					[
+						"you,",
+						false
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"they?",
+						false
+					],
+					[
+						"I'd",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"paid",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"twice",
+						false
+					],
+					[
+						"as",
+						false
+					],
+					[
+						"much",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"go",
+						false
+					],
+					[
+						"fishing.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

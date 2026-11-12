@@ -1,0 +1,987 @@
+{
+	"_id": "tt0810988",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 17,
+		"eligible": 9,
+		"rejected": {
+			"duplicate": 5,
+			"split across CDs": 1,
+			"too few lines": 2
+		},
+		"used": 9,
+		"primary": "1951969472",
+		"versions": [
+			"1951826282",
+			"1951969472",
+			"1953064344",
+			"1954144898",
+			"1951855106",
+			"1957732335",
+			"1957732336",
+			"1954144896",
+			"1951733379"
+		],
+		"sdh": false,
+		"meanAgreement": 0.6533606005257719,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6000,
+	"quality": {
+		"anchoredShare": 0.7966503397061148
+	},
+	"words": {
+		"page": 6329,
+		"screen": 8647,
+		"kept": 5042,
+		"cut": 1287,
+		"notInScript": 3605,
+		"moved": 102
+	},
+	"lines": {
+		"page": 692,
+		"kept": 547,
+		"changed": 62,
+		"cut": 83,
+		"screen": 1472,
+		"notInScript": 525
+	},
+	"byGender": {
+		"w": {
+			"lines": 353,
+			"kept": 284,
+			"changed": 33,
+			"cut": 36
+		},
+		"m": {
+			"lines": 319,
+			"kept": 253,
+			"changed": 27,
+			"cut": 39
+		},
+		"unknown": {
+			"lines": 20,
+			"kept": 10,
+			"changed": 2,
+			"cut": 8
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"kept": 8,
+			"cut": 6
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 11,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 8,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"cut": 1,
+			"kept": 13
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 2
+		},
+		{
+			"kept": 14
+		},
+		{
+			"changed": 1,
+			"kept": 14
+		},
+		{
+			"changed": 2,
+			"kept": 9,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"changed": 3,
+			"kept": 10,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 11,
+			"cut": 1,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"kept": 13,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"changed": 6,
+			"kept": 6,
+			"cut": 3
+		},
+		{
+			"kept": 10,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"cut": 2,
+			"kept": 11,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 15
+		},
+		{
+			"kept": 9,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"cut": 5
+		},
+		{
+			"kept": 12,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"kept": 12,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 13
+		},
+		{
+			"changed": 2,
+			"kept": 13
+		},
+		{
+			"cut": 4,
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 11,
+			"cut": 1,
+			"changed": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 21,
+			"notInScript": 4
+		},
+		{
+			"scripted": 102,
+			"notInScript": 1
+		},
+		{
+			"scripted": 192,
+			"notInScript": 0
+		},
+		{
+			"scripted": 255,
+			"notInScript": 4
+		},
+		{
+			"scripted": 17,
+			"notInScript": 11
+		},
+		{
+			"scripted": 146,
+			"notInScript": 0
+		},
+		{
+			"scripted": 153,
+			"notInScript": 0
+		},
+		{
+			"scripted": 29,
+			"notInScript": 0
+		},
+		{
+			"scripted": 242,
+			"notInScript": 1
+		},
+		{
+			"scripted": 122,
+			"notInScript": 16
+		},
+		{
+			"scripted": 41,
+			"notInScript": 37
+		},
+		{
+			"scripted": 193,
+			"notInScript": 41
+		},
+		{
+			"scripted": 161,
+			"notInScript": 20
+		},
+		{
+			"scripted": 151,
+			"notInScript": 1
+		},
+		{
+			"scripted": 84,
+			"notInScript": 11
+		},
+		{
+			"scripted": 110,
+			"notInScript": 6
+		},
+		{
+			"scripted": 173,
+			"notInScript": 0
+		},
+		{
+			"scripted": 126,
+			"notInScript": 107
+		},
+		{
+			"scripted": 85,
+			"notInScript": 75
+		},
+		{
+			"scripted": 126,
+			"notInScript": 170
+		},
+		{
+			"scripted": 31,
+			"notInScript": 240
+		},
+		{
+			"scripted": 114,
+			"notInScript": 157
+		},
+		{
+			"scripted": 169,
+			"notInScript": 73
+		},
+		{
+			"scripted": 205,
+			"notInScript": 204
+		},
+		{
+			"scripted": 117,
+			"notInScript": 223
+		},
+		{
+			"scripted": 137,
+			"notInScript": 158
+		},
+		{
+			"scripted": 72,
+			"notInScript": 149
+		},
+		{
+			"scripted": 234,
+			"notInScript": 98
+		},
+		{
+			"scripted": 36,
+			"notInScript": 221
+		},
+		{
+			"scripted": 119,
+			"notInScript": 121
+		},
+		{
+			"scripted": 172,
+			"notInScript": 134
+		},
+		{
+			"scripted": 164,
+			"notInScript": 48
+		},
+		{
+			"scripted": 142,
+			"notInScript": 0
+		},
+		{
+			"scripted": 135,
+			"notInScript": 6
+		},
+		{
+			"scripted": 192,
+			"notInScript": 23
+		},
+		{
+			"scripted": 139,
+			"notInScript": 0
+		},
+		{
+			"scripted": 161,
+			"notInScript": 15
+		},
+		{
+			"scripted": 181,
+			"notInScript": 93
+		},
+		{
+			"scripted": 159,
+			"notInScript": 14
+		},
+		{
+			"scripted": 179,
+			"notInScript": 27
+		},
+		{
+			"scripted": 67,
+			"notInScript": 168
+		},
+		{
+			"scripted": 64,
+			"notInScript": 18
+		},
+		{
+			"scripted": 59,
+			"notInScript": 3
+		},
+		{
+			"scripted": 137,
+			"notInScript": 0
+		},
+		{
+			"scripted": 63,
+			"notInScript": 82
+		},
+		{
+			"scripted": 0,
+			"notInScript": 90
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 34,
+		"longest": 20.5,
+		"spans": [
+			[
+				2926.1,
+				2946.6
+			],
+			[
+				2946.6,
+				2960.2
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 32,
+				"kept": 28,
+				"changed": 2,
+				"cut": 2
+			},
+			"other": {
+				"lines": 318,
+				"kept": 254,
+				"changed": 31,
+				"cut": 33
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 14,
+				"kept": 6,
+				"changed": 2,
+				"cut": 6
+			},
+			"other": {
+				"lines": 303,
+				"kept": 246,
+				"changed": 25,
+				"cut": 32
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MARGARET",
+				"text": "Famous fuck-ups. Don't worry. Mama's gonna take good care of you."
+			},
+			{
+				"speaker": "GARY",
+				"text": "Why don't you drink coffee? You're always drinking tea."
+			},
+			{
+				"speaker": "MELISSA",
+				"text": "Gavin, are you alright?"
+			},
+			{
+				"speaker": "GAVIN",
+				"text": "I heard your show was gone."
+			},
+			{
+				"speaker": "GABRIEL",
+				"text": "Am I crazy, or is it getting hotter?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 2513,
+				"text": "There's you and there's Daddy."
+			},
+			{
+				"at": 2872,
+				"text": "He was a terrible comedian and his mom ran the Improv."
+			},
+			{
+				"at": 3335,
+				"text": "I'm sorry, I'm sorry."
+			},
+			{
+				"at": 3762,
+				"text": "It certainly inspires a newfound sympathy for my characters."
+			},
+			{
+				"at": 5174,
+				"text": "It was your universe."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "GARY",
+				"page": "Your mom, your dad. Where are they?",
+				"screen": "No, no, no, your mom and dad.",
+				"pageWords": [
+					[
+						"Your",
+						true
+					],
+					[
+						"mom,",
+						true
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"dad.",
+						false
+					],
+					[
+						"Where",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"they?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"mom",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"dad.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MELISSA",
+				"page": "It's really hard to leave a show like \"Gilmore Girls,\" but I really believe in Gavin.",
+				"screen": "I totally trust Gavin.",
+				"pageWords": [
+					[
+						"It's",
+						true
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"hard",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"leave",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"show",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"\"Gilmore",
+						true
+					],
+					[
+						"Girls,\"",
+						true
+					],
+					[
+						"but",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"believe",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"Gavin.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"totally",
+						false
+					],
+					[
+						"trust",
+						false
+					],
+					[
+						"Gavin.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GAVIN",
+				"page": "Do they like the show?",
+				"screen": "I'm wondering if they liked the show.",
+				"pageWords": [
+					[
+						"Do",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"show?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"wondering",
+						false
+					],
+					[
+						"if",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"liked",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"show.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GAVIN",
+				"page": "Get on. Come join reality television.",
+				"screen": "Welcome to reality television.",
+				"pageWords": [
+					[
+						"Get",
+						false
+					],
+					[
+						"on.",
+						false
+					],
+					[
+						"Come",
+						false
+					],
+					[
+						"join",
+						false
+					],
+					[
+						"reality",
+						true
+					],
+					[
+						"television.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Welcome",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"reality",
+						true
+					],
+					[
+						"television.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MARY",
+				"page": "It's just the little battery that's dead, right? The big one is probably fine.",
+				"screen": "Just the little battery, right? The big one's probably fine.",
+				"pageWords": [
+					[
+						"It's",
+						false
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"little",
+						true
+					],
+					[
+						"battery",
+						true
+					],
+					[
+						"that's",
+						false
+					],
+					[
+						"dead,",
+						false
+					],
+					[
+						"right?",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"big",
+						true
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"probably",
+						true
+					],
+					[
+						"fine.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Just",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"little",
+						true
+					],
+					[
+						"battery,",
+						true
+					],
+					[
+						"right?",
+						true
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"big",
+						true
+					],
+					[
+						"one's",
+						false
+					],
+					[
+						"probably",
+						true
+					],
+					[
+						"fine.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,1083 @@
+{
+	"_id": "tt1371111",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 29,
+		"eligible": 21,
+		"rejected": {
+			"too few lines": 1,
+			"duplicate": 6,
+			"split across CDs": 1
+		},
+		"used": 9,
+		"primary": "1954253335",
+		"versions": [
+			"1953653048",
+			"1953536023",
+			"1956858754",
+			"1957296510",
+			"1953653045",
+			"1953312071",
+			"1954253335",
+			"1953457564",
+			"1953535900"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9332457775103404,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 10320,
+	"quality": {
+		"anchoredShare": 0.34671513892495454
+	},
+	"words": {
+		"page": 19255,
+		"screen": 12292,
+		"kept": 6672,
+		"cut": 12583,
+		"notInScript": 5616,
+		"moved": 2079
+	},
+	"lines": {
+		"page": 1553,
+		"kept": 460,
+		"changed": 229,
+		"cut": 864,
+		"screen": 1944,
+		"notInScript": 842
+	},
+	"byGender": {
+		"w": {
+			"lines": 421,
+			"kept": 106,
+			"changed": 57,
+			"cut": 258
+		},
+		"m": {
+			"lines": 1062,
+			"kept": 340,
+			"changed": 153,
+			"cut": 569
+		},
+		"unknown": {
+			"lines": 70,
+			"kept": 14,
+			"changed": 19,
+			"cut": 37
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 11,
+			"changed": 7,
+			"kept": 15
+		},
+		{
+			"cut": 16,
+			"changed": 7,
+			"kept": 9
+		},
+		{
+			"kept": 12,
+			"changed": 7,
+			"cut": 14
+		},
+		{
+			"cut": 17,
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"changed": 6,
+			"kept": 12,
+			"cut": 14
+		},
+		{
+			"changed": 11,
+			"cut": 11,
+			"kept": 11
+		},
+		{
+			"cut": 17,
+			"changed": 9,
+			"kept": 6
+		},
+		{
+			"changed": 3,
+			"cut": 27,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"kept": 17,
+			"changed": 4
+		},
+		{
+			"cut": 20,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 18,
+			"changed": 5
+		},
+		{
+			"cut": 12,
+			"kept": 16,
+			"changed": 5
+		},
+		{
+			"cut": 22,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"cut": 19,
+			"changed": 7,
+			"kept": 6
+		},
+		{
+			"cut": 26,
+			"changed": 5,
+			"kept": 2
+		},
+		{
+			"cut": 21,
+			"kept": 8,
+			"changed": 3
+		},
+		{
+			"changed": 12,
+			"kept": 13,
+			"cut": 8
+		},
+		{
+			"changed": 7,
+			"cut": 20,
+			"kept": 5
+		},
+		{
+			"kept": 13,
+			"cut": 14,
+			"changed": 5
+		},
+		{
+			"kept": 7,
+			"cut": 19,
+			"changed": 7
+		},
+		{
+			"cut": 20,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"changed": 6,
+			"cut": 15,
+			"kept": 11
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 18
+		},
+		{
+			"kept": 12,
+			"cut": 17,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"kept": 10,
+			"changed": 7
+		},
+		{
+			"cut": 20,
+			"changed": 2,
+			"kept": 11
+		},
+		{
+			"kept": 3,
+			"cut": 26,
+			"changed": 3
+		},
+		{
+			"cut": 20,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"changed": 2,
+			"cut": 24,
+			"kept": 7
+		},
+		{
+			"cut": 12,
+			"changed": 7,
+			"kept": 13
+		},
+		{
+			"kept": 13,
+			"changed": 3,
+			"cut": 16
+		},
+		{
+			"cut": 18,
+			"changed": 6,
+			"kept": 9
+		},
+		{
+			"kept": 10,
+			"cut": 22
+		},
+		{
+			"cut": 23,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 6,
+			"kept": 12
+		},
+		{
+			"changed": 7,
+			"cut": 20,
+			"kept": 5
+		},
+		{
+			"cut": 23,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 26,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"cut": 23,
+			"changed": 2
+		},
+		{
+			"changed": 7,
+			"cut": 14,
+			"kept": 12
+		},
+		{
+			"changed": 4,
+			"kept": 10,
+			"cut": 18
+		},
+		{
+			"cut": 17,
+			"kept": 10,
+			"changed": 5
+		},
+		{
+			"cut": 11,
+			"changed": 2,
+			"kept": 20
+		},
+		{
+			"cut": 27,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 30,
+			"kept": 2
+		},
+		{
+			"cut": 19,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"cut": 15,
+			"kept": 13,
+			"changed": 4
+		},
+		{
+			"kept": 13,
+			"changed": 7,
+			"cut": 12
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 231,
+			"notInScript": 14
+		},
+		{
+			"scripted": 266,
+			"notInScript": 156
+		},
+		{
+			"scripted": 176,
+			"notInScript": 106
+		},
+		{
+			"scripted": 272,
+			"notInScript": 53
+		},
+		{
+			"scripted": 222,
+			"notInScript": 84
+		},
+		{
+			"scripted": 326,
+			"notInScript": 27
+		},
+		{
+			"scripted": 301,
+			"notInScript": 75
+		},
+		{
+			"scripted": 198,
+			"notInScript": 68
+		},
+		{
+			"scripted": 58,
+			"notInScript": 127
+		},
+		{
+			"scripted": 174,
+			"notInScript": 137
+		},
+		{
+			"scripted": 136,
+			"notInScript": 88
+		},
+		{
+			"scripted": 318,
+			"notInScript": 98
+		},
+		{
+			"scripted": 414,
+			"notInScript": 74
+		},
+		{
+			"scripted": 116,
+			"notInScript": 71
+		},
+		{
+			"scripted": 77,
+			"notInScript": 236
+		},
+		{
+			"scripted": 229,
+			"notInScript": 124
+		},
+		{
+			"scripted": 242,
+			"notInScript": 58
+		},
+		{
+			"scripted": 111,
+			"notInScript": 94
+		},
+		{
+			"scripted": 373,
+			"notInScript": 70
+		},
+		{
+			"scripted": 213,
+			"notInScript": 134
+		},
+		{
+			"scripted": 211,
+			"notInScript": 170
+		},
+		{
+			"scripted": 169,
+			"notInScript": 73
+		},
+		{
+			"scripted": 179,
+			"notInScript": 44
+		},
+		{
+			"scripted": 147,
+			"notInScript": 91
+		},
+		{
+			"scripted": 144,
+			"notInScript": 132
+		},
+		{
+			"scripted": 281,
+			"notInScript": 20
+		},
+		{
+			"scripted": 202,
+			"notInScript": 145
+		},
+		{
+			"scripted": 92,
+			"notInScript": 86
+		},
+		{
+			"scripted": 115,
+			"notInScript": 71
+		},
+		{
+			"scripted": 99,
+			"notInScript": 61
+		},
+		{
+			"scripted": 180,
+			"notInScript": 106
+		},
+		{
+			"scripted": 219,
+			"notInScript": 122
+		},
+		{
+			"scripted": 148,
+			"notInScript": 117
+		},
+		{
+			"scripted": 156,
+			"notInScript": 52
+		},
+		{
+			"scripted": 217,
+			"notInScript": 111
+		},
+		{
+			"scripted": 129,
+			"notInScript": 151
+		},
+		{
+			"scripted": 119,
+			"notInScript": 86
+		},
+		{
+			"scripted": 157,
+			"notInScript": 78
+		},
+		{
+			"scripted": 77,
+			"notInScript": 20
+		},
+		{
+			"scripted": 40,
+			"notInScript": 53
+		},
+		{
+			"scripted": 38,
+			"notInScript": 59
+		},
+		{
+			"scripted": 75,
+			"notInScript": 79
+		},
+		{
+			"scripted": 111,
+			"notInScript": 108
+		},
+		{
+			"scripted": 129,
+			"notInScript": 109
+		},
+		{
+			"scripted": 138,
+			"notInScript": 140
+		},
+		{
+			"scripted": 65,
+			"notInScript": 22
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 2
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 26,
+				"kept": 2,
+				"changed": 1,
+				"cut": 23
+			},
+			"other": {
+				"lines": 233,
+				"kept": 66,
+				"changed": 29,
+				"cut": 138
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 469,
+				"kept": 173,
+				"changed": 63,
+				"cut": 233
+			},
+			"other": {
+				"lines": 496,
+				"kept": 134,
+				"changed": 77,
+				"cut": 285
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"lenient": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MERONYM",
+				"text": "I don't wan'ta 'cause no strife."
+			},
+			{
+				"speaker": "AURORA ANGEL",
+				"text": "The only thing that matters is that you've arrived safely."
+			},
+			{
+				"speaker": "CATKIN",
+				"text": "Then pact with me. Promise, you'll come back, safewise, both'a you."
+			},
+			{
+				"speaker": "MERONYM",
+				"text": "Same as ev'ry'un wants ... a home."
+			},
+			{
+				"speaker": "VERONICA",
+				"text": "Oh bother. I had so hoped to see the wild mountain thyme, all across the blooming heather ..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1487,
+				"text": "May I say you speak Consumer surprisingly well."
+			},
+			{
+				"at": 3105,
+				"text": "I needing a guide."
+			},
+			{
+				"at": 5065,
+				"text": "But the relationship was doomed."
+			},
+			{
+				"at": 6929,
+				"text": "I sayso truesome, we not s'vive."
+			},
+			{
+				"at": 9045,
+				"text": "Corporal, update the log book..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "CAVENDISH",
+				"page": "'Twas the Night of the Lemon Prizes, no bigger waste of time in the entire publishing industry.",
+				"screen": "'Twas the Night of the Lemon Prizes... and amidst all that forced jollity...",
+				"pageWords": [
+					[
+						"'Twas",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Night",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Lemon",
+						true
+					],
+					[
+						"Prizes,",
+						true
+					],
+					[
+						"no",
+						false
+					],
+					[
+						"bigger",
+						false
+					],
+					[
+						"waste",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"time",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"entire",
+						false
+					],
+					[
+						"publishing",
+						false
+					],
+					[
+						"industry.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"'Twas",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Night",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Lemon",
+						true
+					],
+					[
+						"Prizes...",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"amidst",
+						false
+					],
+					[
+						"all",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"forced",
+						false
+					],
+					[
+						"jollity...",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CAVENDISH",
+				"page": "There she was. Ursula. My first real regret, like a first cigarette, that began a lifelong addiction.",
+				"screen": "And yet, there she was. Ursula.",
+				"pageWords": [
+					[
+						"There",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"was.",
+						true
+					],
+					[
+						"Ursula.",
+						true
+					],
+					[
+						"My",
+						false
+					],
+					[
+						"first",
+						false
+					],
+					[
+						"real",
+						false
+					],
+					[
+						"regret,",
+						false
+					],
+					[
+						"like",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"first",
+						false
+					],
+					[
+						"cigarette,",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"began",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"lifelong",
+						false
+					],
+					[
+						"addiction.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"And",
+						true
+					],
+					[
+						"yet,",
+						true
+					],
+					[
+						"there",
+						true
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"was.",
+						true
+					],
+					[
+						"Ursula.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "AYRS",
+				"page": "Wait, no, I don't know, help me, Robert! Help me, it's sipping away!",
+				"screen": "Wait. Help me, Robert! Help me! It's slipping away.",
+				"pageWords": [
+					[
+						"Wait,",
+						true
+					],
+					[
+						"no,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"know,",
+						false
+					],
+					[
+						"help",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"Robert!",
+						true
+					],
+					[
+						"Help",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"it's",
+						true
+					],
+					[
+						"sipping",
+						false
+					],
+					[
+						"away!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Wait.",
+						true
+					],
+					[
+						"Help",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"Robert!",
+						true
+					],
+					[
+						"Help",
+						true
+					],
+					[
+						"me!",
+						true
+					],
+					[
+						"It's",
+						true
+					],
+					[
+						"slipping",
+						false
+					],
+					[
+						"away.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MERONYM",
+				"page": "Nay, not 'zactly same as.",
+				"screen": "Nay, not 'cisely same.",
+				"pageWords": [
+					[
+						"Nay,",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"'zactly",
+						false
+					],
+					[
+						"same",
+						false
+					],
+					[
+						"as.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Nay,",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"'cisely",
+						false
+					],
+					[
+						"same.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "ERNIE",
+				"page": "Then we'll fly apart on impact. So, foot to the floor, Cavendish!",
+				"screen": "Foot to the floor, Cavendish!",
+				"pageWords": [
+					[
+						"Then",
+						false
+					],
+					[
+						"we'll",
+						false
+					],
+					[
+						"fly",
+						false
+					],
+					[
+						"apart",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"impact.",
+						false
+					],
+					[
+						"So,",
+						false
+					],
+					[
+						"foot",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"floor,",
+						true
+					],
+					[
+						"Cavendish!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Foot",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"floor,",
+						true
+					],
+					[
+						"Cavendish!",
+						true
+					]
+				]
+			}
+		]
+	}
+}

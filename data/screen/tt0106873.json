@@ -1,0 +1,977 @@
+{
+	"_id": "tt0106873",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 8,
+		"eligible": 7,
+		"rejected": {
+			"runtime mismatch": 1
+		},
+		"used": 7,
+		"primary": "1952488837",
+		"versions": [
+			"1952302547",
+			"1952302551",
+			"196120",
+			"1955153010",
+			"1952488837",
+			"261289",
+			"1955153011"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9750363998858973,
+		"lyricsDropped": 30
+	},
+	"runtimeSeconds": 5400,
+	"quality": {
+		"anchoredShare": 0.4922865595942519
+	},
+	"words": {
+		"page": 9464,
+		"screen": 6725,
+		"kept": 4658,
+		"cut": 4806,
+		"notInScript": 2066,
+		"moved": 93
+	},
+	"lines": {
+		"page": 842,
+		"kept": 421,
+		"changed": 101,
+		"cut": 319,
+		"screen": 1209,
+		"notInScript": 353
+	},
+	"byGender": {
+		"w": {
+			"lines": 322,
+			"kept": 191,
+			"changed": 28,
+			"cut": 103
+		},
+		"m": {
+			"lines": 470,
+			"kept": 220,
+			"changed": 64,
+			"cut": 186
+		},
+		"unknown": {
+			"lines": 49,
+			"kept": 10,
+			"changed": 9,
+			"cut": 30
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 9,
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"changed": 3,
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"kept": 13,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 3
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"kept": 8,
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"cut": 13,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"kept": 16,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 4,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"cut": 6,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 6
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"cut": 4,
+			"changed": 8,
+			"kept": 6
+		},
+		{
+			"kept": 3,
+			"changed": 1,
+			"cut": 12
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"kept": 6,
+			"cut": 11
+		},
+		{
+			"kept": 15,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"cut": 7
+		},
+		{
+			"kept": 13,
+			"changed": 5
+		},
+		{
+			"changed": 7,
+			"cut": 8,
+			"kept": 3
+		},
+		{
+			"changed": 4,
+			"cut": 3,
+			"kept": 10
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 12
+		},
+		{
+			"cut": 5,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"changed": 3,
+			"kept": 7,
+			"cut": 8
+		},
+		{
+			"kept": 5,
+			"cut": 11,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 10,
+			"kept": 6
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 11,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"changed": 4,
+			"cut": 9
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 6
+		},
+		{
+			"kept": 13,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 12,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"cut": 5,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"cut": 2,
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 1,
+			"cut": 6
+		},
+		{
+			"kept": 14,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 2
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 44,
+			"notInScript": 7
+		},
+		{
+			"scripted": 254,
+			"notInScript": 1
+		},
+		{
+			"scripted": 100,
+			"notInScript": 64
+		},
+		{
+			"scripted": 131,
+			"notInScript": 10
+		},
+		{
+			"scripted": 162,
+			"notInScript": 8
+		},
+		{
+			"scripted": 177,
+			"notInScript": 20
+		},
+		{
+			"scripted": 138,
+			"notInScript": 5
+		},
+		{
+			"scripted": 167,
+			"notInScript": 13
+		},
+		{
+			"scripted": 156,
+			"notInScript": 25
+		},
+		{
+			"scripted": 194,
+			"notInScript": 19
+		},
+		{
+			"scripted": 210,
+			"notInScript": 13
+		},
+		{
+			"scripted": 40,
+			"notInScript": 121
+		},
+		{
+			"scripted": 50,
+			"notInScript": 150
+		},
+		{
+			"scripted": 59,
+			"notInScript": 65
+		},
+		{
+			"scripted": 49,
+			"notInScript": 34
+		},
+		{
+			"scripted": 88,
+			"notInScript": 81
+		},
+		{
+			"scripted": 166,
+			"notInScript": 30
+		},
+		{
+			"scripted": 77,
+			"notInScript": 16
+		},
+		{
+			"scripted": 35,
+			"notInScript": 24
+		},
+		{
+			"scripted": 140,
+			"notInScript": 38
+		},
+		{
+			"scripted": 89,
+			"notInScript": 65
+		},
+		{
+			"scripted": 123,
+			"notInScript": 45
+		},
+		{
+			"scripted": 161,
+			"notInScript": 12
+		},
+		{
+			"scripted": 157,
+			"notInScript": 16
+		},
+		{
+			"scripted": 40,
+			"notInScript": 15
+		},
+		{
+			"scripted": 89,
+			"notInScript": 98
+		},
+		{
+			"scripted": 166,
+			"notInScript": 23
+		},
+		{
+			"scripted": 91,
+			"notInScript": 25
+		},
+		{
+			"scripted": 29,
+			"notInScript": 25
+		},
+		{
+			"scripted": 73,
+			"notInScript": 59
+		},
+		{
+			"scripted": 47,
+			"notInScript": 21
+		},
+		{
+			"scripted": 142,
+			"notInScript": 78
+		},
+		{
+			"scripted": 160,
+			"notInScript": 59
+		},
+		{
+			"scripted": 210,
+			"notInScript": 8
+		},
+		{
+			"scripted": 124,
+			"notInScript": 23
+		},
+		{
+			"scripted": 112,
+			"notInScript": 17
+		},
+		{
+			"scripted": 153,
+			"notInScript": 26
+		},
+		{
+			"scripted": 138,
+			"notInScript": 25
+		},
+		{
+			"scripted": 187,
+			"notInScript": 24
+		},
+		{
+			"scripted": 111,
+			"notInScript": 8
+		},
+		{
+			"scripted": 217,
+			"notInScript": 10
+		},
+		{
+			"scripted": 60,
+			"notInScript": 9
+		},
+		{
+			"scripted": 47,
+			"notInScript": 1
+		},
+		{
+			"scripted": 103,
+			"notInScript": 6
+		},
+		{
+			"scripted": 17,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 15,
+				"kept": 6,
+				"changed": 0,
+				"cut": 9
+			},
+			"other": {
+				"lines": 305,
+				"kept": 185,
+				"changed": 28,
+				"cut": 92
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 139,
+				"kept": 51,
+				"changed": 21,
+				"cut": 67
+			},
+			"other": {
+				"lines": 314,
+				"kept": 164,
+				"changed": 42,
+				"cut": 108
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 2,
+			"rules": [
+				true,
+				true,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "LANA",
+				"text": "Take off the hat, Frank."
+			},
+			{
+				"speaker": "ARCH",
+				"text": "And a damn good job, too. One of 'em even did it in Spanish."
+			},
+			{
+				"speaker": "NED",
+				"text": "See you tonight, Junior."
+			},
+			{
+				"speaker": "PROSECUTOR",
+				"text": "Now would you tell the court, in your own words, what you said to Mr. Ravine?"
+			},
+			{
+				"speaker": "FRANK",
+				"text": "Hey... I knew he'd spring ya."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1200,
+				"text": "Stay with me, Frank."
+			},
+			{
+				"at": 1474,
+				"text": "But what if he still harbours some deep resentment towards you?"
+			},
+			{
+				"at": 2318,
+				"text": "Do you have a statement?"
+			},
+			{
+				"at": 3082,
+				"text": "We'll make it, baby."
+			},
+			{
+				"at": 3724,
+				"text": "You may continue, Mr Ravine."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "NED",
+				"page": "I'm not as dumb as I look.",
+				"screen": "I don't look as dumb as I am.",
+				"pageWords": [
+					[
+						"I'm",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"dumb",
+						true
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"look.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"dumb",
+						true
+					],
+					[
+						"as",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"am.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NED",
+				"page": "Gee, has it been seven years already?",
+				"screen": "Is it seven years already?",
+				"pageWords": [
+					[
+						"Gee,",
+						false
+					],
+					[
+						"has",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"been",
+						false
+					],
+					[
+						"seven",
+						true
+					],
+					[
+						"years",
+						true
+					],
+					[
+						"already?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Is",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"seven",
+						true
+					],
+					[
+						"years",
+						true
+					],
+					[
+						"already?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "NED",
+				"page": "...stick a knife in your... ...rip the eyeballs out of your... ...drive razor-sharp spikes under your...",
+				"screen": "\"Stick a knife in you... The eyeballs... Razor-sharp spikes... \"",
+				"pageWords": [
+					[
+						"...stick",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"knife",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"your...",
+						false
+					],
+					[
+						"...rip",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"eyeballs",
+						true
+					],
+					[
+						"out",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"your...",
+						false
+					],
+					[
+						"...drive",
+						false
+					],
+					[
+						"razor-sharp",
+						true
+					],
+					[
+						"spikes",
+						true
+					],
+					[
+						"under",
+						false
+					],
+					[
+						"your...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"\"Stick",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"knife",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"you...",
+						false
+					],
+					[
+						"The",
+						true
+					],
+					[
+						"eyeballs...",
+						true
+					],
+					[
+						"Razor-sharp",
+						true
+					],
+					[
+						"spikes...",
+						true
+					],
+					[
+						"\"",
+						null
+					]
+				]
+			},
+			{
+				"speaker": "LANA",
+				"page": "For my peace of mind... take the train.",
+				"screen": "Honey, why don't you take the train?",
+				"pageWords": [
+					[
+						"For",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"peace",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"mind...",
+						false
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"train.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Honey,",
+						false
+					],
+					[
+						"why",
+						false
+					],
+					[
+						"don't",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"train?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "NED",
+				"page": "The defense calls... Lana Ravine!",
+				"screen": "The defence calls Lana Ravine.",
+				"pageWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"defense",
+						false
+					],
+					[
+						"calls...",
+						true
+					],
+					[
+						"Lana",
+						true
+					],
+					[
+						"Ravine!",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"The",
+						false
+					],
+					[
+						"defence",
+						false
+					],
+					[
+						"calls",
+						true
+					],
+					[
+						"Lana",
+						true
+					],
+					[
+						"Ravine.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

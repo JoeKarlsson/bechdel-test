@@ -1,0 +1,988 @@
+{
+	"_id": "tt0143145",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 41,
+		"eligible": 27,
+		"rejected": {
+			"split across CDs": 1,
+			"duplicate": 12,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1958456540",
+		"versions": [
+			"1959174691",
+			"1953021243",
+			"146234",
+			"1955200320",
+			"1952610055",
+			"1954991211",
+			"1956375347",
+			"1958456540",
+			"1956950082"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9546243584873833,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7680,
+	"quality": {
+		"anchoredShare": 0.3225360761436905
+	},
+	"words": {
+		"page": 6514,
+		"screen": 6683,
+		"kept": 2099,
+		"cut": 4415,
+		"notInScript": 4582,
+		"moved": 140
+	},
+	"lines": {
+		"page": 667,
+		"kept": 200,
+		"changed": 97,
+		"cut": 370,
+		"screen": 1233,
+		"notInScript": 779
+	},
+	"byGender": {
+		"w": {
+			"lines": 258,
+			"kept": 97,
+			"changed": 36,
+			"cut": 125
+		},
+		"m": {
+			"lines": 385,
+			"kept": 101,
+			"changed": 55,
+			"cut": 229
+		},
+		"unknown": {
+			"lines": 24,
+			"kept": 2,
+			"changed": 6,
+			"cut": 16
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 6,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"cut": 8,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"changed": 6,
+			"cut": 6,
+			"kept": 2
+		},
+		{
+			"changed": 5,
+			"kept": 2,
+			"cut": 7
+		},
+		{
+			"cut": 10,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 13,
+			"kept": 1
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"cut": 7,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"changed": 4,
+			"kept": 3,
+			"cut": 7
+		},
+		{
+			"cut": 10,
+			"kept": 1,
+			"changed": 3
+		},
+		{
+			"cut": 5,
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"kept": 5,
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"cut": 1,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"kept": 3,
+			"changed": 2,
+			"cut": 9
+		},
+		{
+			"changed": 5,
+			"cut": 3,
+			"kept": 5
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 4,
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 7,
+			"changed": 3,
+			"cut": 4
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 4,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"kept": 4,
+			"cut": 10
+		},
+		{
+			"kept": 1,
+			"changed": 4,
+			"cut": 9
+		},
+		{
+			"cut": 7,
+			"kept": 7
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"kept": 5,
+			"changed": 1,
+			"cut": 8
+		},
+		{
+			"kept": 2,
+			"changed": 2,
+			"cut": 10
+		},
+		{
+			"kept": 13,
+			"cut": 1
+		},
+		{
+			"kept": 14
+		},
+		{
+			"kept": 8,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"kept": 4,
+			"cut": 8,
+			"changed": 2
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 12,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 7,
+			"cut": 3
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 135,
+			"notInScript": 112
+		},
+		{
+			"scripted": 17,
+			"notInScript": 50
+		},
+		{
+			"scripted": 48,
+			"notInScript": 144
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 14
+		},
+		{
+			"scripted": 0,
+			"notInScript": 44
+		},
+		{
+			"scripted": 26,
+			"notInScript": 140
+		},
+		{
+			"scripted": 67,
+			"notInScript": 140
+		},
+		{
+			"scripted": 46,
+			"notInScript": 156
+		},
+		{
+			"scripted": 72,
+			"notInScript": 127
+		},
+		{
+			"scripted": 126,
+			"notInScript": 106
+		},
+		{
+			"scripted": 47,
+			"notInScript": 136
+		},
+		{
+			"scripted": 38,
+			"notInScript": 183
+		},
+		{
+			"scripted": 28,
+			"notInScript": 36
+		},
+		{
+			"scripted": 28,
+			"notInScript": 43
+		},
+		{
+			"scripted": 123,
+			"notInScript": 36
+		},
+		{
+			"scripted": 18,
+			"notInScript": 139
+		},
+		{
+			"scripted": 32,
+			"notInScript": 208
+		},
+		{
+			"scripted": 13,
+			"notInScript": 202
+		},
+		{
+			"scripted": 50,
+			"notInScript": 20
+		},
+		{
+			"scripted": 0,
+			"notInScript": 44
+		},
+		{
+			"scripted": 40,
+			"notInScript": 126
+		},
+		{
+			"scripted": 26,
+			"notInScript": 130
+		},
+		{
+			"scripted": 136,
+			"notInScript": 123
+		},
+		{
+			"scripted": 4,
+			"notInScript": 23
+		},
+		{
+			"scripted": 84,
+			"notInScript": 47
+		},
+		{
+			"scripted": 254,
+			"notInScript": 12
+		},
+		{
+			"scripted": 93,
+			"notInScript": 184
+		},
+		{
+			"scripted": 32,
+			"notInScript": 156
+		},
+		{
+			"scripted": 118,
+			"notInScript": 86
+		},
+		{
+			"scripted": 87,
+			"notInScript": 192
+		},
+		{
+			"scripted": 186,
+			"notInScript": 17
+		},
+		{
+			"scripted": 52,
+			"notInScript": 17
+		},
+		{
+			"scripted": 27,
+			"notInScript": 123
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		},
+		{
+			"scripted": 36,
+			"notInScript": 111
+		},
+		{
+			"scripted": 80,
+			"notInScript": 109
+		},
+		{
+			"scripted": 55,
+			"notInScript": 56
+		},
+		{
+			"scripted": 104,
+			"notInScript": 57
+		},
+		{
+			"scripted": 208,
+			"notInScript": 0
+		},
+		{
+			"scripted": 49,
+			"notInScript": 17
+		},
+		{
+			"scripted": 23,
+			"notInScript": 13
+		},
+		{
+			"scripted": 1,
+			"notInScript": 70
+		},
+		{
+			"scripted": 5,
+			"notInScript": 91
+		},
+		{
+			"scripted": 20,
+			"notInScript": 45
+		},
+		{
+			"scripted": 9,
+			"notInScript": 53
+		},
+		{
+			"scripted": 58,
+			"notInScript": 37
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 6,
+				"kept": 0,
+				"changed": 0,
+				"cut": 6
+			},
+			"other": {
+				"lines": 179,
+				"kept": 76,
+				"changed": 24,
+				"cut": 79
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 166,
+				"kept": 33,
+				"changed": 24,
+				"cut": 109
+			},
+			"other": {
+				"lines": 210,
+				"kept": 66,
+				"changed": 30,
+				"cut": 114
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "BOND",
+				"text": "I could come for a second opinion?"
+			},
+			{
+				"speaker": "BOND",
+				"text": "I think you're one of the bravest people I've ever met."
+			},
+			{
+				"speaker": "BOND",
+				"text": "You never take this off?"
+			},
+			{
+				"speaker": "BOND",
+				"text": "Loud and clear. I have to speak to M."
+			},
+			{
+				"speaker": "BOND",
+				"text": "How do you want to die? That? Or this?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1081,
+				"text": "And King's lapel pin was switched for a copy which contained a radio transmitter to trigger the blast."
+			},
+			{
+				"at": 1933,
+				"text": "But you didn't come here to talk about oil, did you?"
+			},
+			{
+				"at": 3011,
+				"text": "It was wrong of me to expect so much of you."
+			},
+			{
+				"at": 4495,
+				"text": "Are you gonna do what I think you're gonna do?"
+			},
+			{
+				"at": 6002,
+				"text": "Two six-digit numbers cycled every 15 seconds."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BOND",
+				"page": "Thought you might want one of these.",
+				"screen": "I thought you'd enjoy one of these.",
+				"pageWords": [
+					[
+						"Thought",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"might",
+						false
+					],
+					[
+						"want",
+						false
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"these.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"thought",
+						false
+					],
+					[
+						"you'd",
+						false
+					],
+					[
+						"enjoy",
+						false
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"these.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BOND",
+				"page": "I have to go.",
+				"screen": "After I find him, you won't have to.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"go.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"After",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"find",
+						false
+					],
+					[
+						"him,",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"won't",
+						false
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BOND",
+				"page": "Revenge isn't so hard to fathom. What's clever is getting someone else to pay for it.",
+				"screen": "Revenge is not hard to fathom for a man who believes in nothing.",
+				"pageWords": [
+					[
+						"Revenge",
+						true
+					],
+					[
+						"isn't",
+						false
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"hard",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"fathom.",
+						true
+					],
+					[
+						"What's",
+						false
+					],
+					[
+						"clever",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"getting",
+						false
+					],
+					[
+						"someone",
+						false
+					],
+					[
+						"else",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"pay",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"it.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Revenge",
+						true
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"hard",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"fathom",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"man",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"believes",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"nothing.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CHRISTMAS",
+				"page": "What the hell are you talking about?",
+				"screen": "What are you talking about?",
+				"pageWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"hell",
+						false
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "ELEKTRA",
+				"page": "Zukovsky really hated you. Time to say goodnight.",
+				"screen": "Time to say good night.",
+				"pageWords": [
+					[
+						"Zukovsky",
+						false
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"hated",
+						false
+					],
+					[
+						"you.",
+						false
+					],
+					[
+						"Time",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"say",
+						true
+					],
+					[
+						"goodnight.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Time",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"say",
+						true
+					],
+					[
+						"good",
+						false
+					],
+					[
+						"night.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

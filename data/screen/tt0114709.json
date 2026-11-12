@@ -1,0 +1,873 @@
+{
+	"_id": "tt0114709",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 36,
+		"eligible": 25,
+		"rejected": {
+			"runtime mismatch": 1,
+			"duplicate": 10
+		},
+		"used": 9,
+		"primary": "1961444251",
+		"versions": [
+			"1956369584",
+			"1955693752",
+			"1956052383",
+			"1952329203",
+			"1952616691",
+			"1961444251",
+			"1958665618",
+			"1961444252",
+			"1951708473"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9427493980737423,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 4860,
+	"quality": {
+		"anchoredShare": 0.8981229402493194
+	},
+	"words": {
+		"page": 6979,
+		"screen": 7481,
+		"kept": 6294,
+		"cut": 685,
+		"notInScript": 1213,
+		"moved": 4
+	},
+	"lines": {
+		"page": 923,
+		"kept": 794,
+		"changed": 48,
+		"cut": 81,
+		"screen": 1753,
+		"notInScript": 254
+	},
+	"byGender": {
+		"w": {
+			"lines": 79,
+			"kept": 69,
+			"changed": 4,
+			"cut": 6
+		},
+		"m": {
+			"lines": 783,
+			"kept": 703,
+			"changed": 41,
+			"cut": 39
+		},
+		"unknown": {
+			"lines": 61,
+			"kept": 22,
+			"changed": 3,
+			"cut": 36
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"kept": 15,
+			"changed": 2
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 20
+		},
+		{
+			"kept": 16,
+			"cut": 3
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"changed": 2
+		},
+		{
+			"kept": 19,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 16,
+			"changed": 3
+		},
+		{
+			"kept": 19,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"cut": 2
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"cut": 2,
+			"changed": 2
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 18
+		},
+		{
+			"kept": 16,
+			"cut": 3
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 2
+		},
+		{
+			"changed": 1,
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 20
+		},
+		{
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 14,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"changed": 1,
+			"kept": 18
+		},
+		{
+			"kept": 16,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 15,
+			"cut": 4
+		},
+		{
+			"kept": 17,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 15,
+			"changed": 2
+		},
+		{
+			"kept": 14,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 15,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"cut": 2,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 73,
+			"notInScript": 2
+		},
+		{
+			"scripted": 72,
+			"notInScript": 135
+		},
+		{
+			"scripted": 120,
+			"notInScript": 44
+		},
+		{
+			"scripted": 194,
+			"notInScript": 13
+		},
+		{
+			"scripted": 281,
+			"notInScript": 5
+		},
+		{
+			"scripted": 164,
+			"notInScript": 10
+		},
+		{
+			"scripted": 82,
+			"notInScript": 41
+		},
+		{
+			"scripted": 261,
+			"notInScript": 18
+		},
+		{
+			"scripted": 182,
+			"notInScript": 14
+		},
+		{
+			"scripted": 233,
+			"notInScript": 0
+		},
+		{
+			"scripted": 296,
+			"notInScript": 2
+		},
+		{
+			"scripted": 150,
+			"notInScript": 0
+		},
+		{
+			"scripted": 5,
+			"notInScript": 136
+		},
+		{
+			"scripted": 182,
+			"notInScript": 14
+		},
+		{
+			"scripted": 172,
+			"notInScript": 6
+		},
+		{
+			"scripted": 144,
+			"notInScript": 3
+		},
+		{
+			"scripted": 175,
+			"notInScript": 8
+		},
+		{
+			"scripted": 195,
+			"notInScript": 0
+		},
+		{
+			"scripted": 146,
+			"notInScript": 9
+		},
+		{
+			"scripted": 225,
+			"notInScript": 5
+		},
+		{
+			"scripted": 159,
+			"notInScript": 12
+		},
+		{
+			"scripted": 133,
+			"notInScript": 43
+		},
+		{
+			"scripted": 104,
+			"notInScript": 40
+		},
+		{
+			"scripted": 157,
+			"notInScript": 8
+		},
+		{
+			"scripted": 87,
+			"notInScript": 0
+		},
+		{
+			"scripted": 139,
+			"notInScript": 2
+		},
+		{
+			"scripted": 155,
+			"notInScript": 2
+		},
+		{
+			"scripted": 143,
+			"notInScript": 4
+		},
+		{
+			"scripted": 26,
+			"notInScript": 83
+		},
+		{
+			"scripted": 166,
+			"notInScript": 2
+		},
+		{
+			"scripted": 265,
+			"notInScript": 6
+		},
+		{
+			"scripted": 213,
+			"notInScript": 3
+		},
+		{
+			"scripted": 120,
+			"notInScript": 12
+		},
+		{
+			"scripted": 111,
+			"notInScript": 2
+		},
+		{
+			"scripted": 250,
+			"notInScript": 0
+		},
+		{
+			"scripted": 105,
+			"notInScript": 5
+		},
+		{
+			"scripted": 101,
+			"notInScript": 1
+		},
+		{
+			"scripted": 65,
+			"notInScript": 0
+		},
+		{
+			"scripted": 127,
+			"notInScript": 7
+		},
+		{
+			"scripted": 87,
+			"notInScript": 14
+		},
+		{
+			"scripted": 74,
+			"notInScript": 5
+		},
+		{
+			"scripted": 39,
+			"notInScript": 20
+		},
+		{
+			"scripted": 87,
+			"notInScript": 16
+		},
+		{
+			"scripted": 51,
+			"notInScript": 9
+		},
+		{
+			"scripted": 100,
+			"notInScript": 1
+		},
+		{
+			"scripted": 125,
+			"notInScript": 44
+		},
+		{
+			"scripted": 0,
+			"notInScript": 134
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 76,
+				"kept": 66,
+				"changed": 4,
+				"cut": 6
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 646,
+				"kept": 583,
+				"changed": 34,
+				"cut": 29
+			},
+			"other": {
+				"lines": 111,
+				"kept": 100,
+				"changed": 5,
+				"cut": 6
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "SID",
+				"text": "Yessss! Ah, ha, ha, ha..."
+			},
+			{
+				"speaker": "ROBOT GUARDS",
+				"text": "You are clear to enter. Welcome to Pizza Planet."
+			},
+			{
+				"speaker": "WOODY",
+				"text": "C'mon, c'mon, that's it..."
+			},
+			{
+				"speaker": "HANNAH",
+				"text": "Sid, give her back! Give her back now! I'm telling!"
+			},
+			{
+				"speaker": "MR. POTATO HEAD",
+				"text": "That a boy, Slink!!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 169,
+				"text": "But none of them will ever love you the way I do"
+			},
+			{
+				"at": 784,
+				"text": "Mom, what is it?"
+			},
+			{
+				"at": 1320,
+				"text": "Ain't no doubt about it"
+			},
+			{
+				"at": 2898,
+				"text": "Like a bird in the sky"
+			},
+			{
+				"at": 4699,
+				"text": "You've got a friend in me"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "WOODY",
+				"page": "Oh, how ya doin', Rex?",
+				"screen": "How're you doin', Rex?",
+				"pageWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"how",
+						false
+					],
+					[
+						"ya",
+						true
+					],
+					[
+						"doin',",
+						true
+					],
+					[
+						"Rex?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"How're",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"doin',",
+						true
+					],
+					[
+						"Rex?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BUZZ",
+				"page": "What kind of a toy -- ?",
+				"screen": "What kind of toy...",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"kind",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"toy",
+						false
+					],
+					[
+						"--",
+						null
+					],
+					[
+						"?",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"kind",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"toy...",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HAMM",
+				"page": "Well waddah-ya-know, the weasel ran away.",
+				"screen": "Yeah, boy, the weasel ran away.",
+				"pageWords": [
+					[
+						"Well",
+						false
+					],
+					[
+						"waddah-ya-know,",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"weasel",
+						true
+					],
+					[
+						"ran",
+						true
+					],
+					[
+						"away.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"boy,",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"weasel",
+						true
+					],
+					[
+						"ran",
+						true
+					],
+					[
+						"away.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "WOODY",
+				"page": "Ha, ha, oh, I love you, too.",
+				"screen": "Boy, I love you too.",
+				"pageWords": [
+					[
+						"Ha,",
+						false
+					],
+					[
+						"ha,",
+						false
+					],
+					[
+						"oh,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"you,",
+						true
+					],
+					[
+						"too.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Boy,",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"love",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"too.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SLINKY",
+				"page": "I shoulda held on longer.",
+				"screen": "I should have held on longer.",
+				"pageWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"shoulda",
+						false
+					],
+					[
+						"held",
+						true
+					],
+					[
+						"on",
+						true
+					],
+					[
+						"longer.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"held",
+						true
+					],
+					[
+						"on",
+						true
+					],
+					[
+						"longer.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,986 @@
+{
+	"_id": "tt0109445",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 25,
+		"eligible": 17,
+		"rejected": {
+			"split across CDs": 2,
+			"duplicate": 3,
+			"not English": 1,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1952669350",
+		"versions": [
+			"1953670758",
+			"1953179844",
+			"1952870025",
+			"1957532165",
+			"1958722338",
+			"1951926353",
+			"1952669350",
+			"1954141302",
+			"1952459433"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9218908810217745,
+		"lyricsDropped": 111
+	},
+	"runtimeSeconds": 5520,
+	"quality": {
+		"anchoredShare": 0.6682899064002024
+	},
+	"words": {
+		"page": 15812,
+		"screen": 12800,
+		"kept": 10623,
+		"cut": 5189,
+		"notInScript": 2233,
+		"moved": 16
+	},
+	"lines": {
+		"page": 1517,
+		"kept": 1060,
+		"changed": 254,
+		"cut": 203,
+		"screen": 2249,
+		"notInScript": 191
+	},
+	"byGender": {
+		"w": {
+			"lines": 229,
+			"kept": 188,
+			"changed": 21,
+			"cut": 20
+		},
+		"m": {
+			"lines": 1196,
+			"kept": 819,
+			"changed": 216,
+			"cut": 161
+		},
+		"unknown": {
+			"lines": 92,
+			"kept": 53,
+			"changed": 17,
+			"cut": 22
+		}
+	},
+	"byScriptOrder": [
+		{
+			"kept": 25,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"kept": 26,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"cut": 11,
+			"changed": 7,
+			"kept": 13
+		},
+		{
+			"cut": 14,
+			"changed": 5,
+			"kept": 13
+		},
+		{
+			"cut": 2,
+			"kept": 29,
+			"changed": 1
+		},
+		{
+			"kept": 26,
+			"changed": 4,
+			"cut": 1
+		},
+		{
+			"kept": 25,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 28,
+			"changed": 1,
+			"cut": 2
+		},
+		{
+			"kept": 27,
+			"changed": 5
+		},
+		{
+			"kept": 27,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 25,
+			"cut": 2,
+			"changed": 4
+		},
+		{
+			"kept": 16,
+			"changed": 15,
+			"cut": 1
+		},
+		{
+			"changed": 10,
+			"cut": 7,
+			"kept": 14
+		},
+		{
+			"changed": 4,
+			"kept": 24,
+			"cut": 4
+		},
+		{
+			"kept": 12,
+			"changed": 1,
+			"cut": 19
+		},
+		{
+			"kept": 19,
+			"cut": 2,
+			"changed": 10
+		},
+		{
+			"kept": 26,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 22,
+			"changed": 9
+		},
+		{
+			"kept": 22,
+			"cut": 3,
+			"changed": 7
+		},
+		{
+			"cut": 4,
+			"kept": 25,
+			"changed": 3
+		},
+		{
+			"kept": 18,
+			"changed": 4,
+			"cut": 9
+		},
+		{
+			"kept": 23,
+			"changed": 8,
+			"cut": 1
+		},
+		{
+			"changed": 7,
+			"kept": 21,
+			"cut": 3
+		},
+		{
+			"kept": 26,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"changed": 11,
+			"cut": 4
+		},
+		{
+			"kept": 23,
+			"cut": 2,
+			"changed": 6
+		},
+		{
+			"kept": 27,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 23,
+			"changed": 8
+		},
+		{
+			"kept": 23,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"kept": 25,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 21,
+			"cut": 5,
+			"changed": 5
+		},
+		{
+			"cut": 3,
+			"kept": 24,
+			"changed": 5
+		},
+		{
+			"kept": 15,
+			"changed": 4,
+			"cut": 12
+		},
+		{
+			"kept": 17,
+			"cut": 10,
+			"changed": 5
+		},
+		{
+			"kept": 25,
+			"cut": 2,
+			"changed": 5
+		},
+		{
+			"kept": 28,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 26,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 21,
+			"changed": 7,
+			"cut": 3
+		},
+		{
+			"cut": 8,
+			"kept": 20,
+			"changed": 4
+		},
+		{
+			"kept": 27,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 26,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 23,
+			"cut": 3,
+			"changed": 6
+		},
+		{
+			"kept": 26,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"kept": 21,
+			"changed": 11
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 15
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 16
+		},
+		{
+			"kept": 24,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"changed": 11,
+			"kept": 16,
+			"cut": 4
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 61,
+			"notInScript": 1
+		},
+		{
+			"scripted": 1,
+			"notInScript": 0
+		},
+		{
+			"scripted": 121,
+			"notInScript": 13
+		},
+		{
+			"scripted": 247,
+			"notInScript": 23
+		},
+		{
+			"scripted": 293,
+			"notInScript": 30
+		},
+		{
+			"scripted": 250,
+			"notInScript": 16
+		},
+		{
+			"scripted": 343,
+			"notInScript": 1
+		},
+		{
+			"scripted": 292,
+			"notInScript": 19
+		},
+		{
+			"scripted": 364,
+			"notInScript": 3
+		},
+		{
+			"scripted": 300,
+			"notInScript": 11
+		},
+		{
+			"scripted": 230,
+			"notInScript": 5
+		},
+		{
+			"scripted": 348,
+			"notInScript": 3
+		},
+		{
+			"scripted": 262,
+			"notInScript": 5
+		},
+		{
+			"scripted": 184,
+			"notInScript": 9
+		},
+		{
+			"scripted": 315,
+			"notInScript": 6
+		},
+		{
+			"scripted": 339,
+			"notInScript": 16
+		},
+		{
+			"scripted": 215,
+			"notInScript": 15
+		},
+		{
+			"scripted": 260,
+			"notInScript": 12
+		},
+		{
+			"scripted": 358,
+			"notInScript": 30
+		},
+		{
+			"scripted": 283,
+			"notInScript": 37
+		},
+		{
+			"scripted": 283,
+			"notInScript": 13
+		},
+		{
+			"scripted": 307,
+			"notInScript": 5
+		},
+		{
+			"scripted": 132,
+			"notInScript": 46
+		},
+		{
+			"scripted": 184,
+			"notInScript": 33
+		},
+		{
+			"scripted": 265,
+			"notInScript": 42
+		},
+		{
+			"scripted": 365,
+			"notInScript": 18
+		},
+		{
+			"scripted": 161,
+			"notInScript": 4
+		},
+		{
+			"scripted": 330,
+			"notInScript": 8
+		},
+		{
+			"scripted": 337,
+			"notInScript": 6
+		},
+		{
+			"scripted": 330,
+			"notInScript": 29
+		},
+		{
+			"scripted": 256,
+			"notInScript": 4
+		},
+		{
+			"scripted": 294,
+			"notInScript": 16
+		},
+		{
+			"scripted": 418,
+			"notInScript": 15
+		},
+		{
+			"scripted": 391,
+			"notInScript": 11
+		},
+		{
+			"scripted": 248,
+			"notInScript": 12
+		},
+		{
+			"scripted": 274,
+			"notInScript": 14
+		},
+		{
+			"scripted": 236,
+			"notInScript": 24
+		},
+		{
+			"scripted": 330,
+			"notInScript": 10
+		},
+		{
+			"scripted": 269,
+			"notInScript": 6
+		},
+		{
+			"scripted": 318,
+			"notInScript": 7
+		},
+		{
+			"scripted": 300,
+			"notInScript": 47
+		},
+		{
+			"scripted": 418,
+			"notInScript": 7
+		},
+		{
+			"scripted": 206,
+			"notInScript": 10
+		},
+		{
+			"scripted": 314,
+			"notInScript": 6
+		},
+		{
+			"scripted": 94,
+			"notInScript": 26
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 208,
+				"kept": 175,
+				"changed": 18,
+				"cut": 15
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 828,
+				"kept": 566,
+				"changed": 151,
+				"cut": 111
+			},
+			"other": {
+				"lines": 309,
+				"kept": 218,
+				"changed": 48,
+				"cut": 43
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "VERONICA",
+				"text": "You look bushed. What time did you get to bed?"
+			},
+			{
+				"speaker": "OLAF",
+				"text": "MY LOVE FOR YOU IS LIKE A ROCK BERSERKER!WOULD YOU LIKE TO SMOKE SOME POT? BERSERKER!"
+			},
+			{
+				"speaker": "DANTE",
+				"text": "I said go ahead."
+			},
+			{
+				"speaker": "RANDAL",
+				"text": "Hey, what about Veronica?"
+			},
+			{
+				"speaker": "DANTE",
+				"text": "We were going to start again, I think."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 852,
+				"text": "How you been, man?"
+			},
+			{
+				"at": 2215,
+				"text": "In order to join they have to have an I.Q. Less than their shoe size."
+			},
+			{
+				"at": 2808,
+				"text": "A paper or something?"
+			},
+			{
+				"at": 3813,
+				"text": "What are we supposed to do?"
+			},
+			{
+				"at": 4709,
+				"text": "Come on, limp dick!"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "DANTE",
+				"page": "Oh my God-I feel so nauseous...",
+				"screen": "I feel so nauseous.",
+				"pageWords": [
+					[
+						"Oh",
+						false
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"God-I",
+						false
+					],
+					[
+						"feel",
+						true
+					],
+					[
+						"so",
+						true
+					],
+					[
+						"nauseous...",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"feel",
+						true
+					],
+					[
+						"so",
+						true
+					],
+					[
+						"nauseous.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "BLUE-COLLAR MAN",
+				"page": "Excuse me. I don't mean to interrupt, but what were you talking about?",
+				"screen": "I don't mean to interrupt, what are you talking about?",
+				"pageWords": [
+					[
+						"Excuse",
+						false
+					],
+					[
+						"me.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"mean",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"interrupt,",
+						true
+					],
+					[
+						"but",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"were",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"mean",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"interrupt,",
+						true
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"about?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DANTE",
+				"page": "If you can just wait a few more minutes.",
+				"screen": "Just wait a few minutes.",
+				"pageWords": [
+					[
+						"If",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"just",
+						true
+					],
+					[
+						"wait",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"few",
+						true
+					],
+					[
+						"more",
+						false
+					],
+					[
+						"minutes.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Just",
+						true
+					],
+					[
+						"wait",
+						true
+					],
+					[
+						"a",
+						true
+					],
+					[
+						"few",
+						true
+					],
+					[
+						"minutes.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DANTE",
+				"page": "What, it's worse? You're pregnant with an Asian design major's child?",
+				"screen": "You're pregnant with the Asian design major's child?",
+				"pageWords": [
+					[
+						"What,",
+						false
+					],
+					[
+						"it's",
+						false
+					],
+					[
+						"worse?",
+						false
+					],
+					[
+						"You're",
+						true
+					],
+					[
+						"pregnant",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"an",
+						false
+					],
+					[
+						"Asian",
+						true
+					],
+					[
+						"design",
+						true
+					],
+					[
+						"major's",
+						true
+					],
+					[
+						"child?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						true
+					],
+					[
+						"pregnant",
+						true
+					],
+					[
+						"with",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"Asian",
+						true
+					],
+					[
+						"design",
+						true
+					],
+					[
+						"major's",
+						true
+					],
+					[
+						"child?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DANTE",
+				"page": "Done poisoning the youth for the day?",
+				"screen": "Done poisoning the youth?",
+				"pageWords": [
+					[
+						"Done",
+						true
+					],
+					[
+						"poisoning",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"youth",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"day?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Done",
+						true
+					],
+					[
+						"poisoning",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"youth?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

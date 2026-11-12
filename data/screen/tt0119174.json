@@ -1,0 +1,975 @@
+{
+	"_id": "tt0119174",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 30,
+		"eligible": 20,
+		"rejected": {
+			"split across CDs": 3,
+			"duplicate": 6,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1953199117",
+		"versions": [
+			"1953221848",
+			"1957569822",
+			"1952184110",
+			"1952707289",
+			"1958711184",
+			"1952161536",
+			"1959455227",
+			"1958421414",
+			"1953199117"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8958303802174385,
+		"lyricsDropped": 3
+	},
+	"runtimeSeconds": 7740,
+	"quality": {
+		"anchoredShare": 0.1148854531091299
+	},
+	"words": {
+		"page": 8861,
+		"screen": 8008,
+		"kept": 1018,
+		"cut": 7843,
+		"notInScript": 6990,
+		"moved": 179
+	},
+	"lines": {
+		"page": 876,
+		"kept": 68,
+		"changed": 139,
+		"cut": 668,
+		"screen": 1615,
+		"notInScript": 1323
+	},
+	"byGender": {
+		"w": {
+			"lines": 222,
+			"kept": 18,
+			"changed": 35,
+			"cut": 169
+		},
+		"m": {
+			"lines": 607,
+			"kept": 48,
+			"changed": 96,
+			"cut": 463
+		},
+		"unknown": {
+			"lines": 46,
+			"kept": 2,
+			"changed": 8,
+			"cut": 36
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"cut": 13
+		},
+		{
+			"cut": 13,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"cut": 8,
+			"changed": 8,
+			"kept": 3
+		},
+		{
+			"kept": 1,
+			"changed": 4,
+			"cut": 13
+		},
+		{
+			"changed": 3,
+			"kept": 2,
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 3
+		},
+		{
+			"kept": 4,
+			"changed": 4,
+			"cut": 10
+		},
+		{
+			"cut": 6,
+			"kept": 7,
+			"changed": 5
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"changed": 1,
+			"cut": 18
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 4
+		},
+		{
+			"changed": 1,
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 15,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 4
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 16,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 6,
+			"kept": 1
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 16,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 13,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 7,
+			"changed": 10,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 11,
+			"kept": 5,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"changed": 7,
+			"cut": 10,
+			"kept": 1
+		},
+		{
+			"kept": 7,
+			"cut": 6,
+			"changed": 5
+		},
+		{
+			"kept": 4,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"changed": 5
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"cut": 17,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 3
+		},
+		{
+			"scripted": 25,
+			"notInScript": 240
+		},
+		{
+			"scripted": 41,
+			"notInScript": 269
+		},
+		{
+			"scripted": 31,
+			"notInScript": 141
+		},
+		{
+			"scripted": 96,
+			"notInScript": 137
+		},
+		{
+			"scripted": 46,
+			"notInScript": 210
+		},
+		{
+			"scripted": 22,
+			"notInScript": 156
+		},
+		{
+			"scripted": 54,
+			"notInScript": 239
+		},
+		{
+			"scripted": 90,
+			"notInScript": 207
+		},
+		{
+			"scripted": 41,
+			"notInScript": 131
+		},
+		{
+			"scripted": 49,
+			"notInScript": 231
+		},
+		{
+			"scripted": 43,
+			"notInScript": 53
+		},
+		{
+			"scripted": 31,
+			"notInScript": 189
+		},
+		{
+			"scripted": 31,
+			"notInScript": 167
+		},
+		{
+			"scripted": 69,
+			"notInScript": 181
+		},
+		{
+			"scripted": 28,
+			"notInScript": 193
+		},
+		{
+			"scripted": 7,
+			"notInScript": 134
+		},
+		{
+			"scripted": 0,
+			"notInScript": 127
+		},
+		{
+			"scripted": 9,
+			"notInScript": 98
+		},
+		{
+			"scripted": 10,
+			"notInScript": 208
+		},
+		{
+			"scripted": 23,
+			"notInScript": 193
+		},
+		{
+			"scripted": 0,
+			"notInScript": 11
+		},
+		{
+			"scripted": 3,
+			"notInScript": 154
+		},
+		{
+			"scripted": 27,
+			"notInScript": 213
+		},
+		{
+			"scripted": 0,
+			"notInScript": 30
+		},
+		{
+			"scripted": 55,
+			"notInScript": 182
+		},
+		{
+			"scripted": 27,
+			"notInScript": 175
+		},
+		{
+			"scripted": 12,
+			"notInScript": 58
+		},
+		{
+			"scripted": 7,
+			"notInScript": 198
+		},
+		{
+			"scripted": 8,
+			"notInScript": 136
+		},
+		{
+			"scripted": 7,
+			"notInScript": 78
+		},
+		{
+			"scripted": 25,
+			"notInScript": 74
+		},
+		{
+			"scripted": 113,
+			"notInScript": 124
+		},
+		{
+			"scripted": 67,
+			"notInScript": 111
+		},
+		{
+			"scripted": 79,
+			"notInScript": 57
+		},
+		{
+			"scripted": 25,
+			"notInScript": 46
+		},
+		{
+			"scripted": 6,
+			"notInScript": 85
+		},
+		{
+			"scripted": 9,
+			"notInScript": 98
+		},
+		{
+			"scripted": 64,
+			"notInScript": 197
+		},
+		{
+			"scripted": 101,
+			"notInScript": 143
+		},
+		{
+			"scripted": 54,
+			"notInScript": 108
+		},
+		{
+			"scripted": 32,
+			"notInScript": 93
+		},
+		{
+			"scripted": 52,
+			"notInScript": 188
+		},
+		{
+			"scripted": 13,
+			"notInScript": 105
+		},
+		{
+			"scripted": 24,
+			"notInScript": 118
+		},
+		{
+			"scripted": 0,
+			"notInScript": 163
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 207,
+				"kept": 17,
+				"changed": 34,
+				"cut": 156
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 391,
+				"kept": 32,
+				"changed": 66,
+				"cut": 293
+			},
+			"other": {
+				"lines": 205,
+				"kept": 15,
+				"changed": 29,
+				"cut": 161
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "unclear"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "SCHUYLER",
+				"text": "Speaking of little brothers, I saw David today."
+			},
+			{
+				"speaker": "SCHUYLER",
+				"text": "What's next, a giant banana peel?"
+			},
+			{
+				"speaker": "SCHUYLER",
+				"text": "Jesus, David, you scared the shit out of me--"
+			},
+			{
+				"speaker": "SCHUYLER",
+				"text": "No, enough already. I've had it."
+			},
+			{
+				"speaker": "CHRISTINE",
+				"text": "Schuyler this is all fake, tricks, it's all part of the game--"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 693,
+				"text": "Have you had a nice birthday?"
+			},
+			{
+				"at": 2049,
+				"text": "You promised to meet the projections, Anson."
+			},
+			{
+				"at": 3249,
+				"text": "We'll see about that."
+			},
+			{
+				"at": 4820,
+				"text": "Are you telling me this is not you?"
+			},
+			{
+				"at": 6766,
+				"text": "Get your boss up here."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "SCHUYLER",
+				"page": "Really. Congratulations-- two kids, an official nuclear family, you must be very happy.",
+				"screen": "Official nuclear family. You must be very pleased.",
+				"pageWords": [
+					[
+						"Really.",
+						false
+					],
+					[
+						"Congratulations--",
+						false
+					],
+					[
+						"two",
+						false
+					],
+					[
+						"kids,",
+						false
+					],
+					[
+						"an",
+						false
+					],
+					[
+						"official",
+						true
+					],
+					[
+						"nuclear",
+						true
+					],
+					[
+						"family,",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"must",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"happy.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Official",
+						true
+					],
+					[
+						"nuclear",
+						true
+					],
+					[
+						"family.",
+						true
+					],
+					[
+						"You",
+						true
+					],
+					[
+						"must",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"very",
+						true
+					],
+					[
+						"pleased.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CYNTHIA",
+				"page": "--and I'm afraid you didn't qualify.",
+				"screen": "I'm afraid it was rejected.",
+				"pageWords": [
+					[
+						"--and",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"afraid",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"qualify.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"afraid",
+						true
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"rejected.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SCHUYLER",
+				"page": "What?! What friends? Get a grip, David-- why would I do that?",
+				"screen": "Why would I do what you're describing?",
+				"pageWords": [
+					[
+						"What?!",
+						false
+					],
+					[
+						"What",
+						false
+					],
+					[
+						"friends?",
+						false
+					],
+					[
+						"Get",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"grip,",
+						false
+					],
+					[
+						"David--",
+						false
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"would",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"that?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Why",
+						true
+					],
+					[
+						"would",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"describing?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SCHUYLER",
+				"page": "OK, they've gotten to him. OK. Is there anyone I can trust?",
+				"screen": "How did they get to him?",
+				"pageWords": [
+					[
+						"OK,",
+						false
+					],
+					[
+						"they've",
+						false
+					],
+					[
+						"gotten",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"him.",
+						true
+					],
+					[
+						"OK.",
+						false
+					],
+					[
+						"Is",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"anyone",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"trust?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"they",
+						false
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"him?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SCHUYLER",
+				"page": "Guess you fucked up again.",
+				"screen": "Well, I guess you missed this.",
+				"pageWords": [
+					[
+						"Guess",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"fucked",
+						false
+					],
+					[
+						"up",
+						false
+					],
+					[
+						"again.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"guess",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"missed",
+						false
+					],
+					[
+						"this.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

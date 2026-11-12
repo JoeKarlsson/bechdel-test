@@ -1,0 +1,992 @@
+{
+	"_id": "tt0285823",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 13,
+		"eligible": 10,
+		"rejected": {
+			"split across CDs": 1,
+			"duplicate": 1,
+			"too few lines": 1
+		},
+		"used": 9,
+		"primary": "1952697474",
+		"versions": [
+			"1952697474",
+			"1951885915",
+			"1961325402",
+			"1952788935",
+			"1952725262",
+			"1954872516",
+			"1952976291",
+			"1954833330",
+			"1957253991"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9820311671221729,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6120,
+	"quality": {
+		"anchoredShare": 0.4237563923756392
+	},
+	"words": {
+		"page": 4302,
+		"screen": 4783,
+		"kept": 1823,
+		"cut": 2479,
+		"notInScript": 2960,
+		"moved": 117
+	},
+	"lines": {
+		"page": 402,
+		"kept": 164,
+		"changed": 71,
+		"cut": 167,
+		"screen": 810,
+		"notInScript": 455
+	},
+	"byGender": {
+		"w": {
+			"lines": 30,
+			"kept": 11,
+			"changed": 4,
+			"cut": 15
+		},
+		"m": {
+			"lines": 361,
+			"kept": 152,
+			"changed": 65,
+			"cut": 144
+		},
+		"unknown": {
+			"lines": 11,
+			"kept": 1,
+			"changed": 2,
+			"cut": 8
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 5,
+			"kept": 3,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 3,
+			"kept": 3,
+			"changed": 3
+		},
+		{
+			"cut": 5,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"cut": 2,
+			"kept": 2
+		},
+		{
+			"kept": 4,
+			"changed": 2,
+			"cut": 3
+		},
+		{
+			"kept": 6,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 3
+		},
+		{
+			"changed": 2,
+			"kept": 7
+		},
+		{
+			"changed": 3,
+			"kept": 2,
+			"cut": 3
+		},
+		{
+			"kept": 3,
+			"changed": 1,
+			"cut": 5
+		},
+		{
+			"cut": 3,
+			"changed": 1,
+			"kept": 4
+		},
+		{
+			"changed": 5,
+			"cut": 1,
+			"kept": 2
+		},
+		{
+			"cut": 4,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 3,
+			"cut": 2
+		},
+		{
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"kept": 4,
+			"cut": 3,
+			"changed": 2
+		},
+		{
+			"kept": 5,
+			"cut": 3
+		},
+		{
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"kept": 3
+		},
+		{
+			"kept": 2,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 2,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"kept": 3,
+			"changed": 4,
+			"cut": 2
+		},
+		{
+			"kept": 2,
+			"changed": 1,
+			"cut": 5
+		},
+		{
+			"kept": 6,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 5,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 2
+		},
+		{
+			"cut": 9
+		},
+		{
+			"changed": 2,
+			"cut": 1,
+			"kept": 5
+		},
+		{
+			"kept": 4,
+			"cut": 4
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"kept": 1
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"changed": 4,
+			"cut": 2,
+			"kept": 2
+		},
+		{
+			"changed": 1,
+			"kept": 3,
+			"cut": 4
+		},
+		{
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"cut": 1,
+			"kept": 7
+		},
+		{
+			"cut": 2,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"changed": 3,
+			"cut": 4,
+			"kept": 2
+		},
+		{
+			"cut": 4,
+			"kept": 4
+		},
+		{
+			"cut": 6,
+			"changed": 1,
+			"kept": 2
+		},
+		{
+			"cut": 8
+		},
+		{
+			"cut": 6,
+			"kept": 2
+		},
+		{
+			"cut": 5,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"kept": 5,
+			"cut": 2,
+			"changed": 1
+		},
+		{
+			"cut": 8
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 101,
+			"notInScript": 32
+		},
+		{
+			"scripted": 72,
+			"notInScript": 19
+		},
+		{
+			"scripted": 163,
+			"notInScript": 43
+		},
+		{
+			"scripted": 3,
+			"notInScript": 22
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 1,
+			"notInScript": 44
+		},
+		{
+			"scripted": 65,
+			"notInScript": 68
+		},
+		{
+			"scripted": 197,
+			"notInScript": 80
+		},
+		{
+			"scripted": 126,
+			"notInScript": 86
+		},
+		{
+			"scripted": 87,
+			"notInScript": 80
+		},
+		{
+			"scripted": 29,
+			"notInScript": 26
+		},
+		{
+			"scripted": 94,
+			"notInScript": 19
+		},
+		{
+			"scripted": 0,
+			"notInScript": 6
+		},
+		{
+			"scripted": 128,
+			"notInScript": 72
+		},
+		{
+			"scripted": 182,
+			"notInScript": 20
+		},
+		{
+			"scripted": 57,
+			"notInScript": 86
+		},
+		{
+			"scripted": 74,
+			"notInScript": 69
+		},
+		{
+			"scripted": 85,
+			"notInScript": 32
+		},
+		{
+			"scripted": 52,
+			"notInScript": 24
+		},
+		{
+			"scripted": 192,
+			"notInScript": 64
+		},
+		{
+			"scripted": 71,
+			"notInScript": 31
+		},
+		{
+			"scripted": 19,
+			"notInScript": 58
+		},
+		{
+			"scripted": 114,
+			"notInScript": 97
+		},
+		{
+			"scripted": 16,
+			"notInScript": 109
+		},
+		{
+			"scripted": 59,
+			"notInScript": 113
+		},
+		{
+			"scripted": 0,
+			"notInScript": 105
+		},
+		{
+			"scripted": 34,
+			"notInScript": 51
+		},
+		{
+			"scripted": 0,
+			"notInScript": 70
+		},
+		{
+			"scripted": 0,
+			"notInScript": 51
+		},
+		{
+			"scripted": 21,
+			"notInScript": 59
+		},
+		{
+			"scripted": 28,
+			"notInScript": 0
+		},
+		{
+			"scripted": 34,
+			"notInScript": 4
+		},
+		{
+			"scripted": 51,
+			"notInScript": 99
+		},
+		{
+			"scripted": 131,
+			"notInScript": 7
+		},
+		{
+			"scripted": 112,
+			"notInScript": 78
+		},
+		{
+			"scripted": 32,
+			"notInScript": 34
+		},
+		{
+			"scripted": 0,
+			"notInScript": 89
+		},
+		{
+			"scripted": 17,
+			"notInScript": 69
+		},
+		{
+			"scripted": 0,
+			"notInScript": 28
+		},
+		{
+			"scripted": 16,
+			"notInScript": 17
+		},
+		{
+			"scripted": 12,
+			"notInScript": 17
+		},
+		{
+			"scripted": 30,
+			"notInScript": 54
+		},
+		{
+			"scripted": 0,
+			"notInScript": 22
+		},
+		{
+			"scripted": 0,
+			"notInScript": 80
+		},
+		{
+			"scripted": 0,
+			"notInScript": 39
+		},
+		{
+			"scripted": 0,
+			"notInScript": 5
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 2,
+				"kept": 1,
+				"changed": 0,
+				"cut": 1
+			},
+			"other": {
+				"lines": 25,
+				"kept": 10,
+				"changed": 4,
+				"cut": 11
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 271,
+				"kept": 117,
+				"changed": 46,
+				"cut": 108
+			},
+			"other": {
+				"lines": 71,
+				"kept": 27,
+				"changed": 11,
+				"cut": 33
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "BELINI",
+				"text": "Mariachi already had a shady past involving the cartels... so now they ALL wanted him dead."
+			},
+			{
+				"speaker": "MARIACHI",
+				"text": "Still drinking | see."
+			},
+			{
+				"speaker": "FBI",
+				"text": "Helio, can you help me? He pulls out his badge."
+			},
+			{
+				"speaker": "MARIACHI",
+				"text": "There’s been a change of plans, my friend."
+			},
+			{
+				"speaker": "LORENZO",
+				"text": "Que bonitos ojos tienes..."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 874,
+				"text": "Did you order my pibil?"
+			},
+			{
+				"at": 2106,
+				"text": "I am the man behind the prince."
+			},
+			{
+				"at": 3108,
+				"text": "You don't know what Barillo's up to?"
+			},
+			{
+				"at": 3757,
+				"text": "Then I will simply disappear."
+			},
+			{
+				"at": 5091,
+				"text": "It feels like you need some protection, sir."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "BELINI",
+				"page": "Yeah. And let’s just say... he knew how to play.",
+				"screen": "Believe me, he really knew how to play it too.",
+				"pageWords": [
+					[
+						"Yeah.",
+						false
+					],
+					[
+						"And",
+						false
+					],
+					[
+						"let’s",
+						false
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"say...",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"knew",
+						true
+					],
+					[
+						"how",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"play.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Believe",
+						false
+					],
+					[
+						"me,",
+						false
+					],
+					[
+						"he",
+						false
+					],
+					[
+						"really",
+						false
+					],
+					[
+						"knew",
+						true
+					],
+					[
+						"how",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"play",
+						true
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"too.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MARIACHI",
+				"page": "Forgive me father for | have sinned.",
+				"screen": "Forgive me... for what I am about to become.",
+				"pageWords": [
+					[
+						"Forgive",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"father",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"|",
+						null
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"sinned.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Forgive",
+						true
+					],
+					[
+						"me...",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"am",
+						false
+					],
+					[
+						"about",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"become.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SANDS",
+				"page": "| do... unspeakable things for a thankless - government. So here’s the plan. Wanna hear it?",
+				"screen": "Want to hear my plan?",
+				"pageWords": [
+					[
+						"|",
+						null
+					],
+					[
+						"do...",
+						false
+					],
+					[
+						"unspeakable",
+						false
+					],
+					[
+						"things",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"thankless",
+						false
+					],
+					[
+						"-",
+						null
+					],
+					[
+						"government.",
+						false
+					],
+					[
+						"So",
+						false
+					],
+					[
+						"here’s",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"plan.",
+						false
+					],
+					[
+						"Wanna",
+						true
+					],
+					[
+						"hear",
+						true
+					],
+					[
+						"it?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Want",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"hear",
+						true
+					],
+					[
+						"my",
+						false
+					],
+					[
+						"plan?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "CHICLE BOY",
+				"page": "Are you sure you don’t need another...",
+				"screen": "What are you talking about, \"fortified\"?",
+				"pageWords": [
+					[
+						"Are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"sure",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"don’t",
+						false
+					],
+					[
+						"need",
+						false
+					],
+					[
+						"another...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"are",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"talking",
+						false
+					],
+					[
+						"about,",
+						false
+					],
+					[
+						"\"fortified\"?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "SANDS",
+				"page": "Ever see one of these?",
+				"screen": "Listen, have you ever seen one of these?",
+				"pageWords": [
+					[
+						"Ever",
+						false
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"these?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Listen,",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"ever",
+						false
+					],
+					[
+						"seen",
+						false
+					],
+					[
+						"one",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"these?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

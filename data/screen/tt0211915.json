@@ -1,0 +1,996 @@
+{
+	"_id": "tt0211915",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 33,
+		"eligible": 13,
+		"rejected": {
+			"duplicate": 8,
+			"split across CDs": 2,
+			"runtime mismatch": 4,
+			"too few lines": 6
+		},
+		"used": 9,
+		"primary": "1952264213",
+		"versions": [
+			"1953813414",
+			"1957298237",
+			"1953188748",
+			"1952772953",
+			"1955542942",
+			"1952264213",
+			"1951841070",
+			"1955700717",
+			"157713"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8589711264874824,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7320,
+	"quality": {
+		"anchoredShare": 0.22593256230656458
+	},
+	"words": {
+		"page": 6139,
+		"screen": 6336,
+		"kept": 1300,
+		"cut": 4839,
+		"notInScript": 4949,
+		"moved": 8
+	},
+	"lines": {
+		"page": 451,
+		"kept": 63,
+		"changed": 173,
+		"cut": 214,
+		"screen": 1190,
+		"notInScript": 803
+	},
+	"byGender": {
+		"w": {
+			"lines": 203,
+			"kept": 36,
+			"changed": 78,
+			"cut": 89
+		},
+		"m": {
+			"lines": 157,
+			"kept": 21,
+			"changed": 61,
+			"cut": 75
+		},
+		"unknown": {
+			"lines": 90,
+			"kept": 6,
+			"changed": 34,
+			"cut": 50
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 1
+		},
+		{
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"changed": 4,
+			"cut": 4,
+			"kept": 1
+		},
+		{
+			"cut": 2,
+			"kept": 2,
+			"changed": 5
+		},
+		{
+			"kept": 1,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"kept": 1,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"changed": 6,
+			"cut": 3,
+			"kept": 1
+		},
+		{
+			"cut": 2,
+			"kept": 3,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"kept": 1,
+			"cut": 4
+		},
+		{
+			"cut": 4,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"cut": 6,
+			"changed": 3
+		},
+		{
+			"kept": 1,
+			"changed": 4,
+			"cut": 5
+		},
+		{
+			"changed": 5,
+			"cut": 4
+		},
+		{
+			"changed": 6,
+			"cut": 2,
+			"kept": 1
+		},
+		{
+			"cut": 4,
+			"changed": 5,
+			"kept": 1
+		},
+		{
+			"cut": 4,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"kept": 4,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 2,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"changed": 5,
+			"cut": 5
+		},
+		{
+			"cut": 4,
+			"changed": 4,
+			"kept": 1
+		},
+		{
+			"kept": 2,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"cut": 7,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 6,
+			"kept": 2,
+			"cut": 2
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"kept": 2,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"changed": 6,
+			"cut": 2,
+			"kept": 1
+		},
+		{
+			"cut": 5,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"changed": 6,
+			"kept": 3,
+			"cut": 1
+		},
+		{
+			"cut": 3,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"cut": 5
+		},
+		{
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"cut": 5,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"kept": 3,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"changed": 3,
+			"cut": 6
+		},
+		{
+			"kept": 2,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"cut": 4,
+			"kept": 1,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"cut": 3,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"cut": 5,
+			"kept": 1
+		},
+		{
+			"changed": 2,
+			"cut": 7,
+			"kept": 1
+		},
+		{
+			"cut": 7,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"kept": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 28,
+			"notInScript": 78
+		},
+		{
+			"scripted": 8,
+			"notInScript": 164
+		},
+		{
+			"scripted": 0,
+			"notInScript": 154
+		},
+		{
+			"scripted": 30,
+			"notInScript": 148
+		},
+		{
+			"scripted": 118,
+			"notInScript": 152
+		},
+		{
+			"scripted": 85,
+			"notInScript": 43
+		},
+		{
+			"scripted": 97,
+			"notInScript": 165
+		},
+		{
+			"scripted": 121,
+			"notInScript": 108
+		},
+		{
+			"scripted": 41,
+			"notInScript": 108
+		},
+		{
+			"scripted": 107,
+			"notInScript": 112
+		},
+		{
+			"scripted": 62,
+			"notInScript": 79
+		},
+		{
+			"scripted": 81,
+			"notInScript": 149
+		},
+		{
+			"scripted": 41,
+			"notInScript": 60
+		},
+		{
+			"scripted": 82,
+			"notInScript": 139
+		},
+		{
+			"scripted": 13,
+			"notInScript": 154
+		},
+		{
+			"scripted": 20,
+			"notInScript": 43
+		},
+		{
+			"scripted": 35,
+			"notInScript": 115
+		},
+		{
+			"scripted": 118,
+			"notInScript": 105
+		},
+		{
+			"scripted": 118,
+			"notInScript": 92
+		},
+		{
+			"scripted": 61,
+			"notInScript": 73
+		},
+		{
+			"scripted": 102,
+			"notInScript": 142
+		},
+		{
+			"scripted": 27,
+			"notInScript": 20
+		},
+		{
+			"scripted": 73,
+			"notInScript": 48
+		},
+		{
+			"scripted": 20,
+			"notInScript": 76
+		},
+		{
+			"scripted": 51,
+			"notInScript": 79
+		},
+		{
+			"scripted": 5,
+			"notInScript": 51
+		},
+		{
+			"scripted": 84,
+			"notInScript": 65
+		},
+		{
+			"scripted": 61,
+			"notInScript": 50
+		},
+		{
+			"scripted": 66,
+			"notInScript": 62
+		},
+		{
+			"scripted": 55,
+			"notInScript": 1
+		},
+		{
+			"scripted": 18,
+			"notInScript": 60
+		},
+		{
+			"scripted": 49,
+			"notInScript": 133
+		},
+		{
+			"scripted": 0,
+			"notInScript": 94
+		},
+		{
+			"scripted": 29,
+			"notInScript": 36
+		},
+		{
+			"scripted": 27,
+			"notInScript": 120
+		},
+		{
+			"scripted": 52,
+			"notInScript": 80
+		},
+		{
+			"scripted": 15,
+			"notInScript": 20
+		},
+		{
+			"scripted": 44,
+			"notInScript": 124
+		},
+		{
+			"scripted": 50,
+			"notInScript": 32
+		},
+		{
+			"scripted": 30,
+			"notInScript": 71
+		},
+		{
+			"scripted": 31,
+			"notInScript": 11
+		},
+		{
+			"scripted": 94,
+			"notInScript": 137
+		},
+		{
+			"scripted": 90,
+			"notInScript": 121
+		},
+		{
+			"scripted": 21,
+			"notInScript": 8
+		},
+		{
+			"scripted": 20,
+			"notInScript": 7
+		},
+		{
+			"scripted": 12,
+			"notInScript": 55
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 4,
+		"seconds": 35.7,
+		"longest": 12.8,
+		"spans": [
+			[
+				1506.2,
+				1516.9
+			],
+			[
+				2694.1,
+				2706.9
+			],
+			[
+				2763.2,
+				2768.8
+			],
+			[
+				5583,
+				5589.7
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 94,
+				"kept": 13,
+				"changed": 39,
+				"cut": 42
+			},
+			"other": {
+				"lines": 96,
+				"kept": 21,
+				"changed": 34,
+				"cut": 41
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 42,
+				"kept": 6,
+				"changed": 19,
+				"cut": 17
+			},
+			"other": {
+				"lines": 91,
+				"kept": 10,
+				"changed": 33,
+				"cut": 48
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "AMELIE",
+				"text": "Well they all look pretty happy to be there."
+			},
+			{
+				"speaker": "SUZANNE",
+				"text": "Still not ... ? HIPOLITO The thirtieth ... !"
+			},
+			{
+				"speaker": "GEORGETTE",
+				"text": "Oh, well done' Do excuse me, I'll be right back."
+			},
+			{
+				"speaker": "JOSEPH",
+				"text": "That's right ... the fair-haired bloke with the suede jacket, he was 'just absent minded' as well ..."
+			},
+			{
+				"speaker": "AMELIE",
+				"text": "No, thank you. Another time, I'd rather get home."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 528,
+				"text": "Amandine Poulain is killed instantly."
+			},
+			{
+				"at": 1398,
+				"text": "No, I've had him for years."
+			},
+			{
+				"at": 2562,
+				"text": "Was that prenuptial or post-coital smooching?"
+			},
+			{
+				"at": 4094,
+				"text": "Nino will be so pleased!"
+			},
+			{
+				"at": 5952,
+				"text": "She's fond of stratagems."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "JOSEPH",
+				"page": "12:15. A throaty laugh evoking the sound of orgasm.",
+				"screen": "12:15, laughs orgasmically to attract alpha male.",
+				"pageWords": [
+					[
+						"12:15.",
+						true
+					],
+					[
+						"A",
+						false
+					],
+					[
+						"throaty",
+						false
+					],
+					[
+						"laugh",
+						false
+					],
+					[
+						"evoking",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"sound",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"orgasm.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"12:15,",
+						true
+					],
+					[
+						"laughs",
+						false
+					],
+					[
+						"orgasmically",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"attract",
+						false
+					],
+					[
+						"alpha",
+						false
+					],
+					[
+						"male.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "GEORGETTE",
+				"page": "Nooo ... I don't think so.",
+				"screen": "I don't get it!",
+				"pageWords": [
+					[
+						"Nooo",
+						false
+					],
+					[
+						"...",
+						null
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"think",
+						false
+					],
+					[
+						"so.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"get",
+						false
+					],
+					[
+						"it!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "JOSEPH",
+				"page": "A ''Scratch and Win\" please.",
+				"screen": "A scratch card, please.",
+				"pageWords": [
+					[
+						"A",
+						true
+					],
+					[
+						"''Scratch",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"Win\"",
+						false
+					],
+					[
+						"please.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"A",
+						true
+					],
+					[
+						"scratch",
+						true
+					],
+					[
+						"card,",
+						false
+					],
+					[
+						"please.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "AMELIE",
+				"page": "I know who the unknown man in the photo booth is, Mr. Quincampoix.",
+				"screen": "I know the stranger in the pictures.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"unknown",
+						false
+					],
+					[
+						"man",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"photo",
+						false
+					],
+					[
+						"booth",
+						false
+					],
+					[
+						"is,",
+						false
+					],
+					[
+						"Mr.",
+						false
+					],
+					[
+						"Quincampoix.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"stranger",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"pictures.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "GEORGETTE",
+				"page": "Stop it! Stop it! My red blotches have started again! I hope you're happy'",
+				"screen": "Stop it! My rash has come back!",
+				"pageWords": [
+					[
+						"Stop",
+						false
+					],
+					[
+						"it!",
+						false
+					],
+					[
+						"Stop",
+						true
+					],
+					[
+						"it!",
+						true
+					],
+					[
+						"My",
+						true
+					],
+					[
+						"red",
+						false
+					],
+					[
+						"blotches",
+						false
+					],
+					[
+						"have",
+						false
+					],
+					[
+						"started",
+						false
+					],
+					[
+						"again!",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"hope",
+						false
+					],
+					[
+						"you're",
+						false
+					],
+					[
+						"happy'",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Stop",
+						true
+					],
+					[
+						"it!",
+						true
+					],
+					[
+						"My",
+						true
+					],
+					[
+						"rash",
+						false
+					],
+					[
+						"has",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"back!",
+						false
+					]
+				]
+			}
+		]
+	}
+}

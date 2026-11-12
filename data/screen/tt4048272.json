@@ -1,0 +1,993 @@
+{
+	"_id": "tt4048272",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 15,
+		"eligible": 10,
+		"rejected": {
+			"duplicate": 5
+		},
+		"used": 9,
+		"primary": "1955471110",
+		"versions": [
+			"1955410398",
+			"1955422979",
+			"1955486466",
+			"1955413714",
+			"1955414166",
+			"1955537490",
+			"1955537489",
+			"1955537617",
+			"1955471110"
+		],
+		"sdh": false,
+		"meanAgreement": 0.7078169199319153,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 9720,
+	"quality": {
+		"anchoredShare": 0.34986677597868415
+	},
+	"words": {
+		"page": 4879,
+		"screen": 4886,
+		"kept": 1708,
+		"cut": 3171,
+		"notInScript": 3179,
+		"moved": 13
+	},
+	"lines": {
+		"page": 985,
+		"kept": 250,
+		"changed": 59,
+		"cut": 567,
+		"screen": 1002,
+		"notInScript": 610
+	},
+	"byGender": {
+		"w": {
+			"lines": 373,
+			"kept": 122,
+			"changed": 24,
+			"cut": 227
+		},
+		"m": {
+			"lines": 330,
+			"kept": 118,
+			"changed": 32,
+			"cut": 180
+		},
+		"unknown": {
+			"lines": 173,
+			"kept": 10,
+			"changed": 3,
+			"cut": 160
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 10,
+			"kept": 6,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 4,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"kept": 15,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 7,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"changed": 4,
+			"kept": 6
+		},
+		{
+			"cut": 9,
+			"kept": 5,
+			"changed": 2
+		},
+		{
+			"cut": 7,
+			"kept": 10,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 8,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"kept": 7,
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"kept": 8,
+			"cut": 12
+		},
+		{
+			"kept": 6,
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 5,
+			"changed": 1
+		},
+		{
+			"cut": 5,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 2,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 4,
+			"changed": 4,
+			"kept": 13
+		},
+		{
+			"cut": 15,
+			"kept": 2
+		},
+		{
+			"cut": 19,
+			"changed": 1
+		},
+		{
+			"cut": 8,
+			"kept": 9,
+			"changed": 1
+		},
+		{
+			"cut": 21
+		},
+		{
+			"cut": 20,
+			"kept": 1
+		},
+		{
+			"cut": 20
+		},
+		{
+			"cut": 16,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"kept": 11,
+			"changed": 3,
+			"cut": 5
+		},
+		{
+			"kept": 16,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"cut": 6,
+			"kept": 11,
+			"changed": 3
+		},
+		{
+			"cut": 9,
+			"kept": 10
+		},
+		{
+			"kept": 10,
+			"cut": 9,
+			"changed": 2
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 13,
+			"kept": 3
+		},
+		{
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 2
+		},
+		{
+			"cut": 16
+		},
+		{
+			"cut": 14,
+			"kept": 2
+		},
+		{
+			"kept": 10,
+			"cut": 11
+		},
+		{
+			"kept": 7,
+			"cut": 10,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 8,
+			"kept": 7,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 39,
+			"notInScript": 133
+		},
+		{
+			"scripted": 73,
+			"notInScript": 109
+		},
+		{
+			"scripted": 74,
+			"notInScript": 129
+		},
+		{
+			"scripted": 167,
+			"notInScript": 104
+		},
+		{
+			"scripted": 91,
+			"notInScript": 119
+		},
+		{
+			"scripted": 7,
+			"notInScript": 26
+		},
+		{
+			"scripted": 85,
+			"notInScript": 98
+		},
+		{
+			"scripted": 91,
+			"notInScript": 104
+		},
+		{
+			"scripted": 67,
+			"notInScript": 91
+		},
+		{
+			"scripted": 15,
+			"notInScript": 31
+		},
+		{
+			"scripted": 92,
+			"notInScript": 68
+		},
+		{
+			"scripted": 70,
+			"notInScript": 58
+		},
+		{
+			"scripted": 95,
+			"notInScript": 77
+		},
+		{
+			"scripted": 96,
+			"notInScript": 76
+		},
+		{
+			"scripted": 56,
+			"notInScript": 88
+		},
+		{
+			"scripted": 54,
+			"notInScript": 58
+		},
+		{
+			"scripted": 98,
+			"notInScript": 148
+		},
+		{
+			"scripted": 22,
+			"notInScript": 36
+		},
+		{
+			"scripted": 37,
+			"notInScript": 82
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 7,
+			"notInScript": 2
+		},
+		{
+			"scripted": 158,
+			"notInScript": 198
+		},
+		{
+			"scripted": 130,
+			"notInScript": 145
+		},
+		{
+			"scripted": 81,
+			"notInScript": 72
+		},
+		{
+			"scripted": 14,
+			"notInScript": 36
+		},
+		{
+			"scripted": 76,
+			"notInScript": 132
+		},
+		{
+			"scripted": 39,
+			"notInScript": 67
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 24,
+			"notInScript": 27
+		},
+		{
+			"scripted": 6,
+			"notInScript": 4
+		},
+		{
+			"scripted": 5,
+			"notInScript": 0
+		},
+		{
+			"scripted": 14,
+			"notInScript": 14
+		},
+		{
+			"scripted": 13,
+			"notInScript": 76
+		},
+		{
+			"scripted": 13,
+			"notInScript": 9
+		},
+		{
+			"scripted": 0,
+			"notInScript": 8
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 5,
+			"notInScript": 8
+		},
+		{
+			"scripted": 74,
+			"notInScript": 24
+		},
+		{
+			"scripted": 42,
+			"notInScript": 66
+		},
+		{
+			"scripted": 14,
+			"notInScript": 32
+		},
+		{
+			"scripted": 0,
+			"notInScript": 14
+		},
+		{
+			"scripted": 3,
+			"notInScript": 5
+		},
+		{
+			"scripted": 48,
+			"notInScript": 72
+		},
+		{
+			"scripted": 11,
+			"notInScript": 127
+		},
+		{
+			"scripted": 0,
+			"notInScript": 7
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 16.5,
+		"longest": 8.8,
+		"spans": [
+			[
+				3412.7,
+				3420.4
+			],
+			[
+				8272.1,
+				8280.9
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 131,
+				"kept": 17,
+				"changed": 4,
+				"cut": 110
+			},
+			"other": {
+				"lines": 228,
+				"kept": 105,
+				"changed": 20,
+				"cut": 103
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 105,
+				"kept": 35,
+				"changed": 6,
+				"cut": 64
+			},
+			"other": {
+				"lines": 200,
+				"kept": 81,
+				"changed": 26,
+				"cut": 93
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "INES",
+				"text": "Aha. And what kind of stuff does she do?"
+			},
+			{
+				"speaker": "INES",
+				"text": "Because I don’t find them funny."
+			},
+			{
+				"speaker": "TATJANA",
+				"text": "Do you work here in Bucharest, Toni?"
+			},
+			{
+				"speaker": "TONI",
+				"text": "I work a lot with bowel movements. It’s like"
+			},
+			{
+				"speaker": "TONI",
+				"text": "It’s your turn now."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 434,
+				"text": "Will you be fine?"
+			},
+			{
+				"at": 1603,
+				"text": "We will be able to make a well-founded statement on Monday."
+			},
+			{
+				"at": 3213,
+				"text": "I think he's become more cautious of outsourcing... or that he has new opponents..."
+			},
+			{
+				"at": 4541,
+				"text": "Then it's probably me."
+			},
+			{
+				"at": 8204,
+				"text": "Am I the first?"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "WINFRIED",
+				"page": "Congratulations. I’m pleased you’re going to be",
+				"screen": "You are going to be parents, congratulations!",
+				"pageWords": [
+					[
+						"Congratulations.",
+						false
+					],
+					[
+						"I’m",
+						false
+					],
+					[
+						"pleased",
+						false
+					],
+					[
+						"you’re",
+						false
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"be",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"be",
+						true
+					],
+					[
+						"parents,",
+						false
+					],
+					[
+						"congratulations!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "INES",
+				"page": "How long were you actually sitting there?",
+				"screen": "How long were you waiting?",
+				"pageWords": [
+					[
+						"How",
+						true
+					],
+					[
+						"long",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"actually",
+						false
+					],
+					[
+						"sitting",
+						false
+					],
+					[
+						"there?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"How",
+						true
+					],
+					[
+						"long",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"waiting?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NATALJA",
+				"page": "I have to hurry... Thank you Ines, you saved my",
+				"screen": "I have to meet Natalja, Henneberg's wife.",
+				"pageWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"hurry...",
+						false
+					],
+					[
+						"Thank",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"Ines,",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"saved",
+						false
+					],
+					[
+						"my",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"have",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"meet",
+						false
+					],
+					[
+						"Natalja,",
+						false
+					],
+					[
+						"Henneberg's",
+						false
+					],
+					[
+						"wife.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "INES",
+				"page": "So on what basis should I continue my work?",
+				"screen": "So how can I continue my work?",
+				"pageWords": [
+					[
+						"So",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"what",
+						false
+					],
+					[
+						"basis",
+						false
+					],
+					[
+						"should",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"continue",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"work?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"So",
+						false
+					],
+					[
+						"how",
+						false
+					],
+					[
+						"can",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"continue",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"work?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "INES",
+				"page": "Don’t lose your sense of humor. I couldn’t believe",
+				"screen": "I couldn't believe you told them not to lose their sense of humor.",
+				"pageWords": [
+					[
+						"Don’t",
+						false
+					],
+					[
+						"lose",
+						false
+					],
+					[
+						"your",
+						false
+					],
+					[
+						"sense",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"humor.",
+						false
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"couldn’t",
+						true
+					],
+					[
+						"believe",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"I",
+						true
+					],
+					[
+						"couldn't",
+						true
+					],
+					[
+						"believe",
+						true
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"told",
+						false
+					],
+					[
+						"them",
+						false
+					],
+					[
+						"not",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"lose",
+						false
+					],
+					[
+						"their",
+						false
+					],
+					[
+						"sense",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"humor.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

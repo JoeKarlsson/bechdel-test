@@ -1,0 +1,988 @@
+{
+	"_id": "tt0122151",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 28,
+		"eligible": 19,
+		"rejected": {
+			"split across CDs": 3,
+			"duplicate": 5,
+			"runtime mismatch": 1
+		},
+		"used": 9,
+		"primary": "1951886144",
+		"versions": [
+			"187752",
+			"1951886144",
+			"1957252767",
+			"20314",
+			"29473",
+			"70678",
+			"72949",
+			"1951737809",
+			"1952723576"
+		],
+		"sdh": false,
+		"meanAgreement": 0.8984462987197323,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7620,
+	"quality": {
+		"anchoredShare": 0.32907642010625254
+	},
+	"words": {
+		"page": 9788,
+		"screen": 9501,
+		"kept": 3212,
+		"cut": 6576,
+		"notInScript": 6280,
+		"moved": 140
+	},
+	"lines": {
+		"page": 1213,
+		"kept": 313,
+		"changed": 274,
+		"cut": 626,
+		"screen": 2176,
+		"notInScript": 1338
+	},
+	"byGender": {
+		"w": {
+			"lines": 111,
+			"kept": 27,
+			"changed": 27,
+			"cut": 57
+		},
+		"m": {
+			"lines": 1056,
+			"kept": 278,
+			"changed": 239,
+			"cut": 539
+		},
+		"unknown": {
+			"lines": 46,
+			"kept": 8,
+			"changed": 8,
+			"cut": 30
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 12,
+			"kept": 7,
+			"changed": 7
+		},
+		{
+			"cut": 16,
+			"changed": 5,
+			"kept": 4
+		},
+		{
+			"changed": 4,
+			"cut": 13,
+			"kept": 8
+		},
+		{
+			"kept": 8,
+			"cut": 13,
+			"changed": 5
+		},
+		{
+			"cut": 3,
+			"kept": 15,
+			"changed": 7
+		},
+		{
+			"kept": 2,
+			"changed": 8,
+			"cut": 15
+		},
+		{
+			"cut": 17,
+			"changed": 4,
+			"kept": 4
+		},
+		{
+			"cut": 12,
+			"kept": 9,
+			"changed": 5
+		},
+		{
+			"kept": 7,
+			"cut": 15,
+			"changed": 3
+		},
+		{
+			"kept": 6,
+			"changed": 4,
+			"cut": 15
+		},
+		{
+			"kept": 11,
+			"changed": 10,
+			"cut": 4
+		},
+		{
+			"changed": 9,
+			"cut": 12,
+			"kept": 5
+		},
+		{
+			"cut": 11,
+			"changed": 7,
+			"kept": 7
+		},
+		{
+			"cut": 12,
+			"changed": 4,
+			"kept": 9
+		},
+		{
+			"cut": 18,
+			"changed": 3,
+			"kept": 5
+		},
+		{
+			"cut": 11,
+			"changed": 5,
+			"kept": 9
+		},
+		{
+			"cut": 9,
+			"changed": 8,
+			"kept": 8
+		},
+		{
+			"changed": 7,
+			"cut": 12,
+			"kept": 6
+		},
+		{
+			"cut": 18,
+			"changed": 6,
+			"kept": 2
+		},
+		{
+			"kept": 8,
+			"changed": 5,
+			"cut": 12
+		},
+		{
+			"cut": 10,
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 7
+		},
+		{
+			"cut": 11,
+			"kept": 7,
+			"changed": 8
+		},
+		{
+			"cut": 22,
+			"kept": 3
+		},
+		{
+			"kept": 4,
+			"cut": 19,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"kept": 13,
+			"changed": 3
+		},
+		{
+			"cut": 11,
+			"changed": 10,
+			"kept": 4
+		},
+		{
+			"cut": 9,
+			"kept": 9,
+			"changed": 7
+		},
+		{
+			"changed": 10,
+			"cut": 13,
+			"kept": 2
+		},
+		{
+			"cut": 22,
+			"changed": 2,
+			"kept": 2
+		},
+		{
+			"cut": 23,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"kept": 4,
+			"changed": 8,
+			"cut": 13
+		},
+		{
+			"cut": 12,
+			"kept": 6,
+			"changed": 7
+		},
+		{
+			"cut": 15,
+			"changed": 4,
+			"kept": 7
+		},
+		{
+			"cut": 6,
+			"changed": 11,
+			"kept": 8
+		},
+		{
+			"cut": 14,
+			"changed": 3,
+			"kept": 8
+		},
+		{
+			"kept": 8,
+			"cut": 13,
+			"changed": 5
+		},
+		{
+			"kept": 10,
+			"changed": 6,
+			"cut": 9
+		},
+		{
+			"cut": 14,
+			"changed": 7,
+			"kept": 4
+		},
+		{
+			"cut": 13,
+			"changed": 5,
+			"kept": 7
+		},
+		{
+			"kept": 11,
+			"changed": 5,
+			"cut": 10
+		},
+		{
+			"cut": 12,
+			"kept": 7,
+			"changed": 6
+		},
+		{
+			"cut": 10,
+			"changed": 9,
+			"kept": 6
+		},
+		{
+			"changed": 7,
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 11,
+			"kept": 11,
+			"changed": 4
+		},
+		{
+			"changed": 10,
+			"cut": 12,
+			"kept": 3
+		},
+		{
+			"cut": 15,
+			"kept": 4,
+			"changed": 6
+		},
+		{
+			"cut": 15,
+			"kept": 4,
+			"changed": 6
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 110,
+			"notInScript": 118
+		},
+		{
+			"scripted": 121,
+			"notInScript": 55
+		},
+		{
+			"scripted": 177,
+			"notInScript": 87
+		},
+		{
+			"scripted": 142,
+			"notInScript": 149
+		},
+		{
+			"scripted": 40,
+			"notInScript": 105
+		},
+		{
+			"scripted": 37,
+			"notInScript": 66
+		},
+		{
+			"scripted": 154,
+			"notInScript": 84
+		},
+		{
+			"scripted": 79,
+			"notInScript": 175
+		},
+		{
+			"scripted": 129,
+			"notInScript": 91
+		},
+		{
+			"scripted": 158,
+			"notInScript": 221
+		},
+		{
+			"scripted": 168,
+			"notInScript": 148
+		},
+		{
+			"scripted": 128,
+			"notInScript": 206
+		},
+		{
+			"scripted": 181,
+			"notInScript": 113
+		},
+		{
+			"scripted": 176,
+			"notInScript": 136
+		},
+		{
+			"scripted": 194,
+			"notInScript": 147
+		},
+		{
+			"scripted": 78,
+			"notInScript": 292
+		},
+		{
+			"scripted": 155,
+			"notInScript": 121
+		},
+		{
+			"scripted": 5,
+			"notInScript": 108
+		},
+		{
+			"scripted": 27,
+			"notInScript": 173
+		},
+		{
+			"scripted": 124,
+			"notInScript": 47
+		},
+		{
+			"scripted": 145,
+			"notInScript": 46
+		},
+		{
+			"scripted": 159,
+			"notInScript": 231
+		},
+		{
+			"scripted": 114,
+			"notInScript": 228
+		},
+		{
+			"scripted": 21,
+			"notInScript": 80
+		},
+		{
+			"scripted": 0,
+			"notInScript": 27
+		},
+		{
+			"scripted": 124,
+			"notInScript": 116
+		},
+		{
+			"scripted": 0,
+			"notInScript": 73
+		},
+		{
+			"scripted": 0,
+			"notInScript": 63
+		},
+		{
+			"scripted": 24,
+			"notInScript": 42
+		},
+		{
+			"scripted": 147,
+			"notInScript": 108
+		},
+		{
+			"scripted": 145,
+			"notInScript": 126
+		},
+		{
+			"scripted": 126,
+			"notInScript": 75
+		},
+		{
+			"scripted": 126,
+			"notInScript": 40
+		},
+		{
+			"scripted": 123,
+			"notInScript": 40
+		},
+		{
+			"scripted": 104,
+			"notInScript": 169
+		},
+		{
+			"scripted": 99,
+			"notInScript": 99
+		},
+		{
+			"scripted": 28,
+			"notInScript": 90
+		},
+		{
+			"scripted": 84,
+			"notInScript": 59
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 35,
+			"notInScript": 80
+		},
+		{
+			"scripted": 134,
+			"notInScript": 151
+		},
+		{
+			"scripted": 131,
+			"notInScript": 175
+		},
+		{
+			"scripted": 126,
+			"notInScript": 182
+		},
+		{
+			"scripted": 73,
+			"notInScript": 108
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 4,
+				"kept": 0,
+				"changed": 0,
+				"cut": 4
+			},
+			"other": {
+				"lines": 107,
+				"kept": 27,
+				"changed": 27,
+				"cut": 53
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 922,
+				"kept": 250,
+				"changed": 207,
+				"cut": 465
+			},
+			"other": {
+				"lines": 103,
+				"kept": 22,
+				"changed": 22,
+				"cut": 59
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "page-pass-screen-fail"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "MURTAUGH",
+				"text": "That was a terrible thing. But Lorna's a cop, too. I don't see the problem."
+			},
+			{
+				"speaker": "RIGGS",
+				"text": "Right here... So long."
+			},
+			{
+				"speaker": "RIGGS",
+				"text": "Strong for a small guy... What else can you do?"
+			},
+			{
+				"speaker": "RIGGS",
+				"text": "I'm psycho. I mean, psychic."
+			},
+			{
+				"speaker": "RIGGS",
+				"text": "Trish never mentioned a rich aunt."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 724,
+				"text": "You didn't say you'd shoot!"
+			},
+			{
+				"at": 1887,
+				"text": "Can we exercise maturity?"
+			},
+			{
+				"at": 2892,
+				"text": "A bit more to the left!"
+			},
+			{
+				"at": 4361,
+				"text": "Son of a bitch!"
+			},
+			{
+				"at": 6464,
+				"text": "He was my best friend, the only thing I ever loved."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MURTAUGH",
+				"page": "Back of the cabin, right side.",
+				"screen": "In the back on the right side, Leo!",
+				"pageWords": [
+					[
+						"Back",
+						false
+					],
+					[
+						"of",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"cabin,",
+						false
+					],
+					[
+						"right",
+						true
+					],
+					[
+						"side.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"In",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"back",
+						false
+					],
+					[
+						"on",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"right",
+						true
+					],
+					[
+						"side,",
+						true
+					],
+					[
+						"Leo!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "RIGGS",
+				"page": "You're breaking the law.",
+				"screen": "As in, \"against the law.\"",
+				"pageWords": [
+					[
+						"You're",
+						false
+					],
+					[
+						"breaking",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"law.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"As",
+						false
+					],
+					[
+						"in,",
+						false
+					],
+					[
+						"\"against",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"law.\"",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MURTAUGH",
+				"page": "To dads and their kids. And their kids' kids.",
+				"screen": "Dads and their kids.",
+				"pageWords": [
+					[
+						"To",
+						false
+					],
+					[
+						"dads",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"their",
+						true
+					],
+					[
+						"kids.",
+						true
+					],
+					[
+						"And",
+						false
+					],
+					[
+						"their",
+						false
+					],
+					[
+						"kids'",
+						false
+					],
+					[
+						"kids.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Dads",
+						true
+					],
+					[
+						"and",
+						true
+					],
+					[
+						"their",
+						true
+					],
+					[
+						"kids.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MURTAUGH",
+				"page": "What the hell'd they take the Hongs for, anyway?",
+				"screen": "Why'd they take the Hongs?",
+				"pageWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"hell'd",
+						false
+					],
+					[
+						"they",
+						true
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Hongs",
+						true
+					],
+					[
+						"for,",
+						false
+					],
+					[
+						"anyway?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Why'd",
+						false
+					],
+					[
+						"they",
+						true
+					],
+					[
+						"take",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"Hongs?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "RIGGS",
+				"page": "Yeah, he took my gun apart, for Christ's sake. How the hell'd he do that?",
+				"screen": "He took my gun apart with one move. How'd he do that?",
+				"pageWords": [
+					[
+						"Yeah,",
+						false
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"took",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"gun",
+						true
+					],
+					[
+						"apart,",
+						true
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"Christ's",
+						false
+					],
+					[
+						"sake.",
+						false
+					],
+					[
+						"How",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"hell'd",
+						false
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"that?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"He",
+						true
+					],
+					[
+						"took",
+						true
+					],
+					[
+						"my",
+						true
+					],
+					[
+						"gun",
+						true
+					],
+					[
+						"apart",
+						true
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"move.",
+						false
+					],
+					[
+						"How'd",
+						false
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"that?",
+						true
+					]
+				]
+			}
+		]
+	}
+}

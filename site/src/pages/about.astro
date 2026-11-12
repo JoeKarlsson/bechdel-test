@@ -12,6 +12,14 @@ const ext = { rel: 'noopener noreferrer', target: '_blank' } as const;
 const films = loadFilms();
 const failShare = Math.round((films.filter((f) => !f.bechdel.pass).length / films.length) * 100);
 
+// Page vs screen labels, precision on the test films (docs/page-vs-screen/METHODS.md, section 6.1)
+const ACCURACY = [
+	{ label: 'Heard as written', share: 95 },
+	{ label: 'Cut', share: 81 },
+	{ label: 'Not in the script', share: 73 },
+	{ label: 'Changed', share: 68 },
+];
+
 // The page's sections, for the contents list at the top
 const CONTENTS = [
 	{ id: 'where-it-comes-from', label: 'Where it comes from' },
@@ -164,48 +172,43 @@ const CONTENTS = [
 
 			<h2 id="page-vs-screen">Page vs screen</h2>
 			<p>
-				A script is a plan, not the film. Lines get cut in the edit, rewritten on set, made up on the spot, or moved to another
-				scene. So for each film we also line its script up with the film's English subtitles, word by word, to see what made it
-				to the screen. Then we run the Bechdel test again on what's said on screen.
+				A script is a plan. Lines get cut, rewritten on set or made up on the spot. We line each script up with the film's
+				English subtitles, word by word, and run the Bechdel test again on what's said.
 			</p>
-			<h3>How we compare</h3>
-			<ul>
-				<li>
-					The subtitles come from the OpenSubtitles corpus, a research collection of subtitles from opensubtitles.org that most
-					films have several versions of. We take up to nine versions per film, picked the same way for every film: whole
-					films only, in English, not machine-translated, with a running time that matches the film.
-				</li>
-				<li>
-					A script word counts as heard when most of those versions have it, so one subtitler's shortcut can't make a line
-					look cut. Each film page says how closely its versions agree.
-				</li>
-				<li>
-					A script line is "heard as written" when nearly all its words are heard, "changed" when some are, and "cut" when
-					almost none are. A line on screen that matches nothing in the script is "not in the script".
-				</li>
-				<li>
-					For the Bechdel test on screen, each line keeps the speaker and scene of the script line it matches. Nobody can say
-					who speaks a line that isn't in the script, so we score the film twice: once as if those lines break up a
-					conversation, once as if they weren't there. When the two disagree, the page says the result is unclear.
-				</li>
-			</ul>
+			<figure class="said">
+				<figcaption class="note">One line from <cite>Pulp Fiction</cite></figcaption>
+				<p><span class="said-label">Script</span> MIA: I don't know what <del>that</del> <del>was.</del> <del>Music</del> <del>and</del> drinks!</p>
+				<p><span class="said-label">Film</span> I don't know what <ins>you</ins> <ins>call</ins> <ins>that.</ins> Drinks!</p>
+				<p class="note"><del>Struck</del> words are cut. <ins>Underlined</ins> words aren't in the script.</p>
+			</figure>
+			<p>
+				Most films have several sets of subtitles. We use up to nine, and a word counts as heard when most of them have it.
+			</p>
+			<figure class="accuracy">
+				<figcaption class="note">How often each label is right, checked against 800 labelled lines from 20 films</figcaption>
+				<ul class="hbars wide-labels">
+					{ACCURACY.map((r) => (
+						<li>
+							<div class="hb-row" role="img" aria-label={`${r.label}: right ${r.share}% of the time`}>
+								<span class="hb-label">{r.label}</span>
+								<span class="hb-track"><span class="hb-bar neutral" style={`width: ${r.share}%`} /></span>
+								<span class="hb-value">{r.share}%</span>
+							</div>
+						</li>
+					))}
+				</ul>
+				<p class="note">
+					<a href="https://github.com/JoeKarlsson/bechdel-test/blob/main/docs/page-vs-screen/METHODS.md" {...ext}>The full method and its accuracy</a>
+				</p>
+			</figure>
 			<h3>What it can't tell you</h3>
 			<ul>
 				<li>
-					"Not in the script" means not in the draft we have. An ad-lib, a rewrite in a later draft and a reshoot all look the
-					same. Older drafts show more changes than shooting scripts, and each film page says which kind of draft we have.
+					"Not in the script" means not in the words of this draft. An ad-lib, a later rewrite and a reshoot look the same,
+					and so does a line said in new words, which is about a third of them.
 				</li>
-				<li>
-					Subtitles aren't a perfect record of speech. Subtitlers shorten long lines to fit the screen, which can make a line
-					look changed when it wasn't.
-				</li>
-				<li>
-					Some scripts online were typed up from the finished film. They match the film by design, so we don't compare them.
-				</li>
-				<li>
-					Only short quotes appear on film pages. The full scripts and subtitles belong to their writers and subtitlers, so we
-					keep them off the site.
-				</li>
+				<li>Subtitlers shorten long lines, which can look like a cut. We haven't measured how often.</li>
+				<li>Some scripts online were typed up from the finished film. They match it by design, so we leave them out.</li>
 			</ul>
 
 			<h2 id="artist-statement">Artist statement</h2>
@@ -294,6 +297,31 @@ const CONTENTS = [
 </Base>
 
 <style>
+	.said p {
+		margin: 0 0 var(--space-1);
+		font-size: var(--text-lead);
+	}
+	.said del {
+		color: var(--muted);
+		text-decoration-thickness: 2px;
+	}
+	.said ins,
+	.said .note ins {
+		text-decoration: underline 3px var(--tangerine);
+		text-underline-offset: 3px;
+	}
+	.said .note {
+		margin-top: var(--space-3);
+	}
+	.said-label {
+		display: inline-block;
+		min-width: 4rem;
+		font-size: var(--text-small);
+		color: var(--muted);
+	}
+	.accuracy {
+		margin: var(--space-5) 0 var(--space-6);
+	}
 	figure {
 		margin: 0 0 var(--space-5);
 	}

@@ -1,0 +1,972 @@
+{
+	"_id": "tt1327773",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 10,
+		"eligible": 8,
+		"rejected": {
+			"too few lines": 1,
+			"duplicate": 1
+		},
+		"used": 8,
+		"primary": "1954061256",
+		"versions": [
+			"1954050073",
+			"1957905316",
+			"1954061256",
+			"1954043081",
+			"1954056820",
+			"1954050194",
+			"1954049954",
+			"1955209472"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9457227472665076,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 7920,
+	"quality": {
+		"anchoredShare": 0.8930331432988694
+	},
+	"words": {
+		"page": 10349,
+		"screen": 12290,
+		"kept": 9244,
+		"cut": 1105,
+		"notInScript": 3048,
+		"moved": 15
+	},
+	"lines": {
+		"page": 873,
+		"kept": 798,
+		"changed": 39,
+		"cut": 36,
+		"screen": 1931,
+		"notInScript": 472
+	},
+	"byGender": {
+		"w": {
+			"lines": 172,
+			"kept": 165,
+			"changed": 4,
+			"cut": 3
+		},
+		"m": {
+			"lines": 664,
+			"kept": 610,
+			"changed": 32,
+			"cut": 22
+		},
+		"unknown": {
+			"lines": 37,
+			"kept": 23,
+			"changed": 3,
+			"cut": 11
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 3,
+			"kept": 15,
+			"changed": 1
+		},
+		{
+			"kept": 12,
+			"cut": 4,
+			"changed": 2
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 18,
+			"cut": 1
+		},
+		{
+			"kept": 15,
+			"changed": 3
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"kept": 15
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 14,
+			"changed": 1
+		},
+		{
+			"cut": 1,
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 16
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"changed": 1
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18,
+			"changed": 1
+		},
+		{
+			"kept": 18
+		},
+		{
+			"changed": 3,
+			"kept": 14,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 17
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 2
+		},
+		{
+			"kept": 15,
+			"cut": 3,
+			"changed": 1
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"changed": 1,
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 16,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 19
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18
+		},
+		{
+			"kept": 18
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 106,
+			"notInScript": 23
+		},
+		{
+			"scripted": 97,
+			"notInScript": 24
+		},
+		{
+			"scripted": 140,
+			"notInScript": 9
+		},
+		{
+			"scripted": 170,
+			"notInScript": 19
+		},
+		{
+			"scripted": 329,
+			"notInScript": 2
+		},
+		{
+			"scripted": 272,
+			"notInScript": 16
+		},
+		{
+			"scripted": 225,
+			"notInScript": 23
+		},
+		{
+			"scripted": 396,
+			"notInScript": 153
+		},
+		{
+			"scripted": 346,
+			"notInScript": 46
+		},
+		{
+			"scripted": 150,
+			"notInScript": 57
+		},
+		{
+			"scripted": 313,
+			"notInScript": 21
+		},
+		{
+			"scripted": 271,
+			"notInScript": 59
+		},
+		{
+			"scripted": 208,
+			"notInScript": 47
+		},
+		{
+			"scripted": 264,
+			"notInScript": 79
+		},
+		{
+			"scripted": 296,
+			"notInScript": 71
+		},
+		{
+			"scripted": 17,
+			"notInScript": 222
+		},
+		{
+			"scripted": 292,
+			"notInScript": 18
+		},
+		{
+			"scripted": 296,
+			"notInScript": 109
+		},
+		{
+			"scripted": 286,
+			"notInScript": 1
+		},
+		{
+			"scripted": 110,
+			"notInScript": 59
+		},
+		{
+			"scripted": 181,
+			"notInScript": 178
+		},
+		{
+			"scripted": 326,
+			"notInScript": 37
+		},
+		{
+			"scripted": 160,
+			"notInScript": 63
+		},
+		{
+			"scripted": 184,
+			"notInScript": 39
+		},
+		{
+			"scripted": 244,
+			"notInScript": 91
+		},
+		{
+			"scripted": 435,
+			"notInScript": 55
+		},
+		{
+			"scripted": 152,
+			"notInScript": 82
+		},
+		{
+			"scripted": 173,
+			"notInScript": 114
+		},
+		{
+			"scripted": 156,
+			"notInScript": 120
+		},
+		{
+			"scripted": 257,
+			"notInScript": 9
+		},
+		{
+			"scripted": 300,
+			"notInScript": 49
+		},
+		{
+			"scripted": 319,
+			"notInScript": 7
+		},
+		{
+			"scripted": 262,
+			"notInScript": 69
+		},
+		{
+			"scripted": 195,
+			"notInScript": 103
+		},
+		{
+			"scripted": 118,
+			"notInScript": 13
+		},
+		{
+			"scripted": 207,
+			"notInScript": 9
+		},
+		{
+			"scripted": 154,
+			"notInScript": 69
+		},
+		{
+			"scripted": 206,
+			"notInScript": 0
+		},
+		{
+			"scripted": 212,
+			"notInScript": 7
+		},
+		{
+			"scripted": 212,
+			"notInScript": 0
+		},
+		{
+			"scripted": 138,
+			"notInScript": 19
+		},
+		{
+			"scripted": 209,
+			"notInScript": 21
+		},
+		{
+			"scripted": 201,
+			"notInScript": 24
+		},
+		{
+			"scripted": 123,
+			"notInScript": 114
+		},
+		{
+			"scripted": 136,
+			"notInScript": 19
+		},
+		{
+			"scripted": 77,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 3,
+		"seconds": 30.9,
+		"longest": 16.4,
+		"spans": [
+			[
+				1168.1,
+				1184.5
+			],
+			[
+				4131.4,
+				4136.8
+			],
+			[
+				4932.3,
+				4941.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 28,
+				"kept": 27,
+				"changed": 1,
+				"cut": 0
+			},
+			"other": {
+				"lines": 141,
+				"kept": 135,
+				"changed": 3,
+				"cut": 3
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 436,
+				"kept": 400,
+				"changed": 21,
+				"cut": 15
+			},
+			"other": {
+				"lines": 206,
+				"kept": 194,
+				"changed": 8,
+				"cut": 4
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "CECIL V.O",
+				"text": "And even though I knew the law was against me..."
+			},
+			{
+				"speaker": "MAYNARD",
+				"text": "Smile with your eyes."
+			},
+			{
+				"speaker": "CECIL",
+				"text": "Well it look like someone is talking..."
+			},
+			{
+				"speaker": "RD WARNER",
+				"text": "What do you want?"
+			},
+			{
+				"speaker": "GLORIA",
+				"text": "What you talking about?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 1299,
+				"text": "Well, if you was at home, I could be giving it to you."
+			},
+			{
+				"at": 2489,
+				"text": "Are you listening to us?"
+			},
+			{
+				"at": 3161,
+				"text": "You like peanuts or...?"
+			},
+			{
+				"at": 4375,
+				"text": "They marched in small groups through the city of Selma"
+			},
+			{
+				"at": 5997,
+				"text": "Half of our oil is now imported..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "HOWARD",
+				"page": "Get over here and lets celebrate! Celebrate the right way.",
+				"screen": "Come on, get over here, let's celebrate! Celebrate.",
+				"pageWords": [
+					[
+						"Get",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"here",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"lets",
+						true
+					],
+					[
+						"celebrate!",
+						true
+					],
+					[
+						"Celebrate",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"right",
+						false
+					],
+					[
+						"way.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Come",
+						false
+					],
+					[
+						"on,",
+						false
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"over",
+						true
+					],
+					[
+						"here,",
+						true
+					],
+					[
+						"let's",
+						true
+					],
+					[
+						"celebrate!",
+						true
+					],
+					[
+						"Celebrate.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CHARLIE",
+				"page": "I’m too young for Playboys. Mom, Louis is leaving me his filthy magazines.",
+				"screen": "Ma, Louis is leaving me his filthy magazines.",
+				"pageWords": [
+					[
+						"I’m",
+						false
+					],
+					[
+						"too",
+						false
+					],
+					[
+						"young",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"Playboys.",
+						false
+					],
+					[
+						"Mom,",
+						false
+					],
+					[
+						"Louis",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"leaving",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"his",
+						true
+					],
+					[
+						"filthy",
+						true
+					],
+					[
+						"magazines.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Ma,",
+						false
+					],
+					[
+						"Louis",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"leaving",
+						true
+					],
+					[
+						"me",
+						true
+					],
+					[
+						"his",
+						true
+					],
+					[
+						"filthy",
+						true
+					],
+					[
+						"magazines.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "GLORIA",
+				"page": "That says Addison’s Disease.",
+				"screen": "It said \"Addison's disease.\"",
+				"pageWords": [
+					[
+						"That",
+						false
+					],
+					[
+						"says",
+						false
+					],
+					[
+						"Addison’s",
+						true
+					],
+					[
+						"Disease.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It",
+						false
+					],
+					[
+						"said",
+						false
+					],
+					[
+						"\"Addison's",
+						true
+					],
+					[
+						"disease.\"",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HOLLOWAY",
+				"page": "Who she talking to?",
+				"screen": "She talking too damned much.",
+				"pageWords": [
+					[
+						"Who",
+						false
+					],
+					[
+						"she",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"to?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"She",
+						true
+					],
+					[
+						"talking",
+						true
+					],
+					[
+						"too",
+						false
+					],
+					[
+						"damned",
+						false
+					],
+					[
+						"much.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "NIXON",
+				"page": "There’s a God damned fly. A God damned fly in here. Jesus fucking Christ.",
+				"screen": "A goddamn fly, a goddamn fly in here. Jesus Christ.",
+				"pageWords": [
+					[
+						"There’s",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"God",
+						false
+					],
+					[
+						"damned",
+						false
+					],
+					[
+						"fly.",
+						false
+					],
+					[
+						"A",
+						false
+					],
+					[
+						"God",
+						false
+					],
+					[
+						"damned",
+						false
+					],
+					[
+						"fly",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"here.",
+						true
+					],
+					[
+						"Jesus",
+						true
+					],
+					[
+						"fucking",
+						false
+					],
+					[
+						"Christ.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"A",
+						false
+					],
+					[
+						"goddamn",
+						false
+					],
+					[
+						"fly,",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"goddamn",
+						false
+					],
+					[
+						"fly",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"here.",
+						true
+					],
+					[
+						"Jesus",
+						true
+					],
+					[
+						"Christ.",
+						false
+					]
+				]
+			}
+		]
+	}
+}

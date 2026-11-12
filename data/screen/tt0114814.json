@@ -1,0 +1,982 @@
+{
+	"_id": "tt0114814",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "shooting"
+	},
+	"subtitles": {
+		"candidates": 35,
+		"eligible": 20,
+		"rejected": {
+			"split across CDs": 3,
+			"duplicate": 12
+		},
+		"used": 9,
+		"primary": "1954380449",
+		"versions": [
+			"1952327070",
+			"1952903535",
+			"1952990883",
+			"1955770851",
+			"1953055931",
+			"1956361032",
+			"101802",
+			"1956460859",
+			"1954380449"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9335728889439413,
+		"lyricsDropped": 4
+	},
+	"runtimeSeconds": 6360,
+	"quality": {
+		"anchoredShare": 0.5490788575884589
+	},
+	"words": {
+		"page": 10259,
+		"screen": 9336,
+		"kept": 5636,
+		"cut": 4623,
+		"notInScript": 3703,
+		"moved": 133
+	},
+	"lines": {
+		"page": 779,
+		"kept": 370,
+		"changed": 149,
+		"cut": 260,
+		"screen": 1572,
+		"notInScript": 574
+	},
+	"byGender": {
+		"w": {
+			"lines": 27,
+			"kept": 7,
+			"changed": 2,
+			"cut": 18
+		},
+		"m": {
+			"lines": 674,
+			"kept": 334,
+			"changed": 136,
+			"cut": 204
+		},
+		"unknown": {
+			"lines": 78,
+			"kept": 29,
+			"changed": 11,
+			"cut": 38
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 9,
+			"kept": 7,
+			"changed": 1
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"changed": 5,
+			"kept": 5
+		},
+		{
+			"kept": 11,
+			"cut": 4,
+			"changed": 1
+		},
+		{
+			"changed": 3,
+			"kept": 5,
+			"cut": 9
+		},
+		{
+			"cut": 4,
+			"kept": 9,
+			"changed": 3
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"changed": 7,
+			"kept": 9
+		},
+		{
+			"cut": 6,
+			"kept": 9,
+			"changed": 2
+		},
+		{
+			"cut": 16
+		},
+		{
+			"changed": 4,
+			"kept": 10,
+			"cut": 2
+		},
+		{
+			"kept": 10,
+			"changed": 2,
+			"cut": 4
+		},
+		{
+			"cut": 6,
+			"changed": 2,
+			"kept": 8
+		},
+		{
+			"changed": 4,
+			"kept": 12,
+			"cut": 1
+		},
+		{
+			"kept": 12,
+			"changed": 3,
+			"cut": 1
+		},
+		{
+			"kept": 8,
+			"changed": 4,
+			"cut": 4
+		},
+		{
+			"cut": 15,
+			"changed": 1
+		},
+		{
+			"cut": 14,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"kept": 9,
+			"changed": 2,
+			"cut": 5
+		},
+		{
+			"cut": 3,
+			"kept": 12,
+			"changed": 1
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 3
+		},
+		{
+			"cut": 4,
+			"changed": 4,
+			"kept": 9
+		},
+		{
+			"cut": 2,
+			"changed": 3,
+			"kept": 11
+		},
+		{
+			"changed": 2,
+			"kept": 5,
+			"cut": 9
+		},
+		{
+			"cut": 12,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"cut": 10,
+			"kept": 2
+		},
+		{
+			"kept": 10,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"kept": 3,
+			"cut": 9,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 6,
+			"cut": 4
+		},
+		{
+			"kept": 10,
+			"changed": 6
+		},
+		{
+			"kept": 6,
+			"changed": 3,
+			"cut": 8
+		},
+		{
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"cut": 3,
+			"changed": 3
+		},
+		{
+			"kept": 11,
+			"changed": 5
+		},
+		{
+			"changed": 2,
+			"kept": 6,
+			"cut": 9
+		},
+		{
+			"cut": 10,
+			"kept": 5,
+			"changed": 1
+		},
+		{
+			"cut": 9,
+			"kept": 6,
+			"changed": 1
+		},
+		{
+			"cut": 3,
+			"kept": 10,
+			"changed": 3
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"changed": 3,
+			"kept": 11,
+			"cut": 3
+		},
+		{
+			"cut": 5,
+			"kept": 8,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"changed": 4,
+			"cut": 3
+		},
+		{
+			"cut": 10,
+			"kept": 4,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"changed": 6,
+			"kept": 6
+		},
+		{
+			"kept": 12,
+			"changed": 4
+		},
+		{
+			"kept": 10,
+			"cut": 2,
+			"changed": 4
+		},
+		{
+			"changed": 3,
+			"kept": 10,
+			"cut": 3
+		},
+		{
+			"cut": 2,
+			"kept": 9,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 8,
+			"notInScript": 9
+		},
+		{
+			"scripted": 61,
+			"notInScript": 60
+		},
+		{
+			"scripted": 162,
+			"notInScript": 71
+		},
+		{
+			"scripted": 262,
+			"notInScript": 100
+		},
+		{
+			"scripted": 234,
+			"notInScript": 98
+		},
+		{
+			"scripted": 193,
+			"notInScript": 125
+		},
+		{
+			"scripted": 140,
+			"notInScript": 61
+		},
+		{
+			"scripted": 277,
+			"notInScript": 83
+		},
+		{
+			"scripted": 105,
+			"notInScript": 118
+		},
+		{
+			"scripted": 305,
+			"notInScript": 68
+		},
+		{
+			"scripted": 231,
+			"notInScript": 8
+		},
+		{
+			"scripted": 160,
+			"notInScript": 76
+		},
+		{
+			"scripted": 141,
+			"notInScript": 5
+		},
+		{
+			"scripted": 95,
+			"notInScript": 160
+		},
+		{
+			"scripted": 80,
+			"notInScript": 81
+		},
+		{
+			"scripted": 238,
+			"notInScript": 11
+		},
+		{
+			"scripted": 95,
+			"notInScript": 118
+		},
+		{
+			"scripted": 187,
+			"notInScript": 136
+		},
+		{
+			"scripted": 175,
+			"notInScript": 68
+		},
+		{
+			"scripted": 57,
+			"notInScript": 76
+		},
+		{
+			"scripted": 106,
+			"notInScript": 137
+		},
+		{
+			"scripted": 298,
+			"notInScript": 67
+		},
+		{
+			"scripted": 319,
+			"notInScript": 0
+		},
+		{
+			"scripted": 131,
+			"notInScript": 104
+		},
+		{
+			"scripted": 207,
+			"notInScript": 30
+		},
+		{
+			"scripted": 226,
+			"notInScript": 6
+		},
+		{
+			"scripted": 365,
+			"notInScript": 1
+		},
+		{
+			"scripted": 166,
+			"notInScript": 84
+		},
+		{
+			"scripted": 92,
+			"notInScript": 19
+		},
+		{
+			"scripted": 217,
+			"notInScript": 26
+		},
+		{
+			"scripted": 189,
+			"notInScript": 10
+		},
+		{
+			"scripted": 51,
+			"notInScript": 14
+		},
+		{
+			"scripted": 84,
+			"notInScript": 27
+		},
+		{
+			"scripted": 5,
+			"notInScript": 28
+		},
+		{
+			"scripted": 48,
+			"notInScript": 7
+		},
+		{
+			"scripted": 109,
+			"notInScript": 53
+		},
+		{
+			"scripted": 5,
+			"notInScript": 46
+		},
+		{
+			"scripted": 14,
+			"notInScript": 7
+		},
+		{
+			"scripted": 122,
+			"notInScript": 50
+		},
+		{
+			"scripted": 268,
+			"notInScript": 13
+		},
+		{
+			"scripted": 266,
+			"notInScript": 35
+		},
+		{
+			"scripted": 174,
+			"notInScript": 33
+		},
+		{
+			"scripted": 35,
+			"notInScript": 190
+		},
+		{
+			"scripted": 0,
+			"notInScript": 114
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 27,
+				"kept": 7,
+				"changed": 2,
+				"cut": 18
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 448,
+				"kept": 253,
+				"changed": 102,
+				"cut": 93
+			},
+			"other": {
+				"lines": 131,
+				"kept": 60,
+				"changed": 24,
+				"cut": 47
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "FORTIER",
+				"text": "Monsieur Fortier. So nice to finally meet you."
+			},
+			{
+				"speaker": "VERBAL",
+				"text": "How do you do?"
+			},
+			{
+				"speaker": "KEATON",
+				"text": "I swore I'd live above myself."
+			},
+			{
+				"speaker": "HOCKNEY",
+				"text": "...And the fat guy comes out of the car with his pants on backwards and says -"
+			},
+			{
+				"speaker": "HOCKNEY",
+				"text": "Are we ready, kids?"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 636,
+				"text": "Got a team of monkeys workin' on this?"
+			},
+			{
+				"at": 1317,
+				"text": "Get me one too while you're at it."
+			},
+			{
+				"at": 2332,
+				"text": "He says his life's in danger."
+			},
+			{
+				"at": 3350,
+				"text": "Everybody I've ever worked with or did time with."
+			},
+			{
+				"at": 5758,
+				"text": "Mr Redfoot knew nothing."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "FENSTER",
+				"page": "Hey, are we talking about the same thing?",
+				"screen": "Oh, is that the one about the hooker with dysentery?",
+				"pageWords": [
+					[
+						"Hey,",
+						false
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"we",
+						false
+					],
+					[
+						"talking",
+						false
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"same",
+						false
+					],
+					[
+						"thing?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Oh,",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"that",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"one",
+						false
+					],
+					[
+						"about",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hooker",
+						false
+					],
+					[
+						"with",
+						false
+					],
+					[
+						"dysentery?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "VERBAL",
+				"page": "That's been suppressed. Anything in there is inadmissible.",
+				"screen": "It's been suppressed. It's inadmissible.",
+				"pageWords": [
+					[
+						"That's",
+						false
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"suppressed.",
+						true
+					],
+					[
+						"Anything",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"there",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"inadmissible.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"It's",
+						false
+					],
+					[
+						"been",
+						true
+					],
+					[
+						"suppressed.",
+						true
+					],
+					[
+						"It's",
+						false
+					],
+					[
+						"inadmissible.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "VERBAL",
+				"page": "Back when I was in that barber shop quartet in Skokie, Illinois I used to have",
+				"screen": "When I was in that barbershop quartet...",
+				"pageWords": [
+					[
+						"Back",
+						false
+					],
+					[
+						"when",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"barber",
+						false
+					],
+					[
+						"shop",
+						false
+					],
+					[
+						"quartet",
+						false
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"Skokie,",
+						false
+					],
+					[
+						"Illinois",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"used",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"have",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"When",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"was",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"that",
+						true
+					],
+					[
+						"barbershop",
+						false
+					],
+					[
+						"quartet...",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "KUJAN",
+				"page": "What was the money for?",
+				"screen": "What's the money for?",
+				"pageWords": [
+					[
+						"What",
+						false
+					],
+					[
+						"was",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"money",
+						true
+					],
+					[
+						"for?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"What's",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"money",
+						true
+					],
+					[
+						"for?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "KUJAN",
+				"page": "TRY TO REEF LYING TO ME NOW. I KNOW EVERYTHING .",
+				"screen": "You're lying to me!",
+				"pageWords": [
+					[
+						"TRY",
+						false
+					],
+					[
+						"TO",
+						false
+					],
+					[
+						"REEF",
+						false
+					],
+					[
+						"LYING",
+						true
+					],
+					[
+						"TO",
+						true
+					],
+					[
+						"ME",
+						true
+					],
+					[
+						"NOW.",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"KNOW",
+						false
+					],
+					[
+						"EVERYTHING",
+						false
+					],
+					[
+						".",
+						null
+					]
+				],
+				"screenWords": [
+					[
+						"You're",
+						false
+					],
+					[
+						"lying",
+						true
+					],
+					[
+						"to",
+						true
+					],
+					[
+						"me!",
+						true
+					]
+				]
+			}
+		]
+	}
+}

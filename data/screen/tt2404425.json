@@ -1,0 +1,982 @@
+{
+	"_id": "tt2404425",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 12,
+		"eligible": 7,
+		"rejected": {
+			"too few lines": 3,
+			"duplicate": 2
+		},
+		"used": 7,
+		"primary": "1954789788",
+		"versions": [
+			"1954789789",
+			"1954745798",
+			"1954798410",
+			"1954762413",
+			"1954789788",
+			"1954745800",
+			"1954803665"
+		],
+		"sdh": true,
+		"meanAgreement": 0.6892000487168224,
+		"lyricsDropped": 10
+	},
+	"runtimeSeconds": 6540,
+	"quality": {
+		"anchoredShare": 0.5684491532493534
+	},
+	"words": {
+		"page": 11987,
+		"screen": 9872,
+		"kept": 6813,
+		"cut": 5174,
+		"notInScript": 3058,
+		"moved": 57
+	},
+	"lines": {
+		"page": 883,
+		"kept": 434,
+		"changed": 184,
+		"cut": 265,
+		"screen": 1391,
+		"notInScript": 402
+	},
+	"byGender": {
+		"w": {
+			"lines": 367,
+			"kept": 162,
+			"changed": 86,
+			"cut": 119
+		},
+		"m": {
+			"lines": 474,
+			"kept": 250,
+			"changed": 97,
+			"cut": 127
+		},
+		"unknown": {
+			"lines": 42,
+			"kept": 22,
+			"changed": 1,
+			"cut": 19
+		}
+	},
+	"byScriptOrder": [
+		{
+			"changed": 7,
+			"cut": 8,
+			"kept": 4
+		},
+		{
+			"changed": 3,
+			"kept": 8,
+			"cut": 7
+		},
+		{
+			"cut": 7,
+			"kept": 10,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"kept": 8,
+			"changed": 1
+		},
+		{
+			"changed": 6,
+			"cut": 4,
+			"kept": 8
+		},
+		{
+			"cut": 10,
+			"kept": 7,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"changed": 6,
+			"cut": 4
+		},
+		{
+			"kept": 12,
+			"changed": 6,
+			"cut": 1
+		},
+		{
+			"cut": 14,
+			"changed": 1,
+			"kept": 3
+		},
+		{
+			"kept": 15,
+			"changed": 2,
+			"cut": 1
+		},
+		{
+			"kept": 10,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"changed": 7,
+			"kept": 9,
+			"cut": 2
+		},
+		{
+			"kept": 11,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"cut": 6,
+			"changed": 2
+		},
+		{
+			"changed": 6,
+			"cut": 8,
+			"kept": 4
+		},
+		{
+			"kept": 12,
+			"changed": 5,
+			"cut": 2
+		},
+		{
+			"changed": 5,
+			"cut": 13
+		},
+		{
+			"cut": 5,
+			"changed": 13,
+			"kept": 1
+		},
+		{
+			"kept": 11,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"changed": 7,
+			"cut": 6,
+			"kept": 5
+		},
+		{
+			"cut": 7,
+			"changed": 3,
+			"kept": 9
+		},
+		{
+			"changed": 2,
+			"kept": 8,
+			"cut": 8
+		},
+		{
+			"cut": 6,
+			"changed": 4,
+			"kept": 9
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"kept": 8,
+			"cut": 3,
+			"changed": 7
+		},
+		{
+			"kept": 9,
+			"cut": 4,
+			"changed": 6
+		},
+		{
+			"changed": 6,
+			"cut": 12
+		},
+		{
+			"cut": 2,
+			"kept": 13,
+			"changed": 4
+		},
+		{
+			"kept": 17,
+			"cut": 1
+		},
+		{
+			"kept": 9,
+			"changed": 8,
+			"cut": 1
+		},
+		{
+			"cut": 1,
+			"kept": 14,
+			"changed": 4
+		},
+		{
+			"changed": 4,
+			"kept": 9,
+			"cut": 5
+		},
+		{
+			"kept": 14,
+			"changed": 3,
+			"cut": 2
+		},
+		{
+			"kept": 7,
+			"changed": 6,
+			"cut": 5
+		},
+		{
+			"kept": 16,
+			"changed": 1,
+			"cut": 1
+		},
+		{
+			"cut": 14,
+			"kept": 3,
+			"changed": 2
+		},
+		{
+			"cut": 3,
+			"kept": 12,
+			"changed": 3
+		},
+		{
+			"changed": 5,
+			"kept": 7,
+			"cut": 7
+		},
+		{
+			"cut": 8,
+			"changed": 1,
+			"kept": 9
+		},
+		{
+			"kept": 16,
+			"changed": 2
+		},
+		{
+			"kept": 10,
+			"cut": 9
+		},
+		{
+			"kept": 6,
+			"cut": 10,
+			"changed": 2
+		},
+		{
+			"kept": 12,
+			"cut": 5,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"kept": 15,
+			"cut": 1
+		},
+		{
+			"cut": 4,
+			"kept": 12,
+			"changed": 2
+		},
+		{
+			"cut": 5,
+			"changed": 2,
+			"kept": 12
+		},
+		{
+			"kept": 10,
+			"changed": 5,
+			"cut": 3
+		},
+		{
+			"cut": 13,
+			"changed": 5
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 80,
+			"notInScript": 0
+		},
+		{
+			"scripted": 242,
+			"notInScript": 50
+		},
+		{
+			"scripted": 189,
+			"notInScript": 32
+		},
+		{
+			"scripted": 247,
+			"notInScript": 29
+		},
+		{
+			"scripted": 332,
+			"notInScript": 47
+		},
+		{
+			"scripted": 234,
+			"notInScript": 38
+		},
+		{
+			"scripted": 200,
+			"notInScript": 10
+		},
+		{
+			"scripted": 161,
+			"notInScript": 37
+		},
+		{
+			"scripted": 171,
+			"notInScript": 21
+		},
+		{
+			"scripted": 188,
+			"notInScript": 8
+		},
+		{
+			"scripted": 119,
+			"notInScript": 103
+		},
+		{
+			"scripted": 149,
+			"notInScript": 20
+		},
+		{
+			"scripted": 176,
+			"notInScript": 15
+		},
+		{
+			"scripted": 55,
+			"notInScript": 66
+		},
+		{
+			"scripted": 21,
+			"notInScript": 64
+		},
+		{
+			"scripted": 93,
+			"notInScript": 94
+		},
+		{
+			"scripted": 301,
+			"notInScript": 3
+		},
+		{
+			"scripted": 390,
+			"notInScript": 37
+		},
+		{
+			"scripted": 272,
+			"notInScript": 73
+		},
+		{
+			"scripted": 292,
+			"notInScript": 48
+		},
+		{
+			"scripted": 55,
+			"notInScript": 109
+		},
+		{
+			"scripted": 11,
+			"notInScript": 99
+		},
+		{
+			"scripted": 0,
+			"notInScript": 25
+		},
+		{
+			"scripted": 0,
+			"notInScript": 123
+		},
+		{
+			"scripted": 260,
+			"notInScript": 5
+		},
+		{
+			"scripted": 230,
+			"notInScript": 30
+		},
+		{
+			"scripted": 154,
+			"notInScript": 32
+		},
+		{
+			"scripted": 118,
+			"notInScript": 25
+		},
+		{
+			"scripted": 265,
+			"notInScript": 20
+		},
+		{
+			"scripted": 294,
+			"notInScript": 76
+		},
+		{
+			"scripted": 365,
+			"notInScript": 31
+		},
+		{
+			"scripted": 282,
+			"notInScript": 46
+		},
+		{
+			"scripted": 255,
+			"notInScript": 35
+		},
+		{
+			"scripted": 186,
+			"notInScript": 24
+		},
+		{
+			"scripted": 260,
+			"notInScript": 12
+		},
+		{
+			"scripted": 240,
+			"notInScript": 24
+		},
+		{
+			"scripted": 253,
+			"notInScript": 27
+		},
+		{
+			"scripted": 166,
+			"notInScript": 15
+		},
+		{
+			"scripted": 294,
+			"notInScript": 0
+		},
+		{
+			"scripted": 206,
+			"notInScript": 20
+		},
+		{
+			"scripted": 163,
+			"notInScript": 17
+		},
+		{
+			"scripted": 81,
+			"notInScript": 57
+		},
+		{
+			"scripted": 124,
+			"notInScript": 20
+		},
+		{
+			"scripted": 8,
+			"notInScript": 23
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": {
+		"count": 2,
+		"seconds": 22.3,
+		"longest": 13.8,
+		"spans": [
+			[
+				171.6,
+				185.4
+			],
+			[
+				1020.9,
+				1029.4
+			]
+		]
+	},
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 49,
+				"kept": 24,
+				"changed": 13,
+				"cut": 12
+			},
+			"other": {
+				"lines": 315,
+				"kept": 136,
+				"changed": 73,
+				"cut": 106
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 165,
+				"kept": 104,
+				"changed": 26,
+				"cut": 35
+			},
+			"other": {
+				"lines": 299,
+				"kept": 140,
+				"changed": 67,
+				"cut": 92
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"strict": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"lenient": {
+			"score": 3,
+			"rules": [
+				true,
+				true,
+				true
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PAM",
+				"text": "All of the above. And we could get somewhere with a little room I could turn into a studio."
+			},
+			{
+				"speaker": "RANDY",
+				"text": "Thanks, Maria, that’s kind."
+			},
+			{
+				"speaker": "MARIA",
+				"text": "That’s what happens when he gets excited. He starts expanding his vocabulary."
+			},
+			{
+				"speaker": "PAM",
+				"text": "They need as many friends as they can get?"
+			},
+			{
+				"speaker": "TOMAN",
+				"text": "So we’re happy to consider other options. Austria is all ears."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 652,
+				"text": "I know a very nice place."
+			},
+			{
+				"at": 1866,
+				"text": "It's Mrs. Klein, the doctor's wife."
+			},
+			{
+				"at": 2805,
+				"text": "But first, I have to say goodbye to them."
+			},
+			{
+				"at": 3601,
+				"text": "I'll be right back."
+			},
+			{
+				"at": 5017,
+				"text": "We're so close, you..."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "MARIA",
+				"page": "And you think that’s what it’s about, do you?",
+				"screen": "You think that's what this is about?",
+				"pageWords": [
+					[
+						"And",
+						false
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"that’s",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"it’s",
+						false
+					],
+					[
+						"about,",
+						false
+					],
+					[
+						"do",
+						false
+					],
+					[
+						"you?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						true
+					],
+					[
+						"think",
+						true
+					],
+					[
+						"that's",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"this",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"about?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MARIA",
+				"page": "Just round the corner, yes.",
+				"screen": "Uh, just around the corner, yes.",
+				"pageWords": [
+					[
+						"Just",
+						false
+					],
+					[
+						"round",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"corner,",
+						true
+					],
+					[
+						"yes.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Uh,",
+						null
+					],
+					[
+						"just",
+						false
+					],
+					[
+						"around",
+						false
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"corner,",
+						true
+					],
+					[
+						"yes.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "HUBERTUS",
+				"page": "We’ve kept the best for last. Randy why don’t you show Maria our trump card?",
+				"screen": "Randy, why don't you show Maria our trump card?",
+				"pageWords": [
+					[
+						"We’ve",
+						false
+					],
+					[
+						"kept",
+						false
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"best",
+						false
+					],
+					[
+						"for",
+						false
+					],
+					[
+						"last.",
+						false
+					],
+					[
+						"Randy",
+						true
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"don’t",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"show",
+						true
+					],
+					[
+						"Maria",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"trump",
+						true
+					],
+					[
+						"card?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Randy,",
+						true
+					],
+					[
+						"why",
+						true
+					],
+					[
+						"don't",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"show",
+						true
+					],
+					[
+						"Maria",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"trump",
+						true
+					],
+					[
+						"card?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MARIA",
+				"page": "Selling a book in Barnes and Noble?",
+				"screen": "Selling books in Barnes Noble?",
+				"pageWords": [
+					[
+						"Selling",
+						true
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"book",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"Barnes",
+						true
+					],
+					[
+						"and",
+						false
+					],
+					[
+						"Noble?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Selling",
+						true
+					],
+					[
+						"books",
+						false
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"Barnes",
+						true
+					],
+					[
+						"Noble?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "RANDY",
+				"page": "We’ve come so far...just hang in there.",
+				"screen": "Just hang in there.",
+				"pageWords": [
+					[
+						"We’ve",
+						false
+					],
+					[
+						"come",
+						false
+					],
+					[
+						"so",
+						false
+					],
+					[
+						"far...just",
+						false
+					],
+					[
+						"hang",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"there.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Just",
+						true
+					],
+					[
+						"hang",
+						true
+					],
+					[
+						"in",
+						true
+					],
+					[
+						"there.",
+						true
+					]
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,607 @@
+{
+	"_id": "tt0097289",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 15,
+		"eligible": 4,
+		"rejected": {
+			"runtime mismatch": 7,
+			"too few lines": 4
+		},
+		"used": 4,
+		"primary": "1954470996",
+		"versions": [
+			"1954408948",
+			"1955207469",
+			"1954470996",
+			"1958676004"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9596358989802686,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6420,
+	"quality": {
+		"anchoredShare": 0.2771003410147773
+	},
+	"words": {
+		"page": 19354,
+		"screen": 6607,
+		"kept": 5359,
+		"cut": 13995,
+		"notInScript": 1244,
+		"moved": 63
+	},
+	"lines": {
+		"page": 1052,
+		"kept": 505,
+		"changed": 229,
+		"cut": 316,
+		"screen": 1325,
+		"notInScript": 206
+	},
+	"byGender": {
+		"w": {
+			"lines": 155,
+			"kept": 87,
+			"changed": 34,
+			"cut": 34
+		},
+		"m": {
+			"lines": 821,
+			"kept": 400,
+			"changed": 181,
+			"cut": 240
+		},
+		"unknown": {
+			"lines": 74,
+			"kept": 18,
+			"changed": 14,
+			"cut": 42
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 4,
+			"kept": 14,
+			"changed": 4
+		},
+		{
+			"cut": 3,
+			"kept": 13,
+			"changed": 5
+		},
+		{
+			"changed": 4,
+			"cut": 6,
+			"kept": 12
+		},
+		{
+			"cut": 9,
+			"kept": 11,
+			"changed": 2
+		},
+		{
+			"kept": 13,
+			"changed": 8,
+			"cut": 1
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 5
+		},
+		{
+			"cut": 3,
+			"kept": 14,
+			"changed": 5
+		},
+		{
+			"kept": 6,
+			"changed": 2,
+			"cut": 14
+		},
+		{
+			"kept": 16,
+			"changed": 5,
+			"cut": 1
+		},
+		{
+			"kept": 20,
+			"cut": 1,
+			"changed": 1
+		},
+		{
+			"kept": 10,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"kept": 14,
+			"cut": 4,
+			"changed": 3
+		},
+		{
+			"kept": 13,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"changed": 6,
+			"kept": 12,
+			"cut": 4
+		},
+		{
+			"cut": 8,
+			"changed": 6,
+			"kept": 8
+		},
+		{
+			"kept": 10,
+			"changed": 7,
+			"cut": 5
+		},
+		{
+			"changed": 8,
+			"cut": 7,
+			"kept": 7
+		},
+		{
+			"cut": 13,
+			"kept": 5,
+			"changed": 4
+		},
+		{
+			"cut": 14,
+			"kept": 2,
+			"changed": 6
+		},
+		{
+			"cut": 8,
+			"kept": 13,
+			"changed": 1
+		},
+		{
+			"kept": 9,
+			"cut": 6,
+			"changed": 7
+		},
+		{
+			"kept": 16,
+			"changed": 3,
+			"cut": 3
+		},
+		{
+			"kept": 13,
+			"changed": 7,
+			"cut": 2
+		},
+		{
+			"changed": 3,
+			"kept": 15,
+			"cut": 3
+		},
+		{
+			"kept": 18,
+			"changed": 1,
+			"cut": 3
+		},
+		{
+			"kept": 5,
+			"cut": 14,
+			"changed": 3
+		},
+		{
+			"cut": 3,
+			"changed": 5,
+			"kept": 14
+		},
+		{
+			"changed": 8,
+			"kept": 8,
+			"cut": 6
+		},
+		{
+			"changed": 4,
+			"kept": 13,
+			"cut": 5
+		},
+		{
+			"cut": 21,
+			"changed": 1
+		},
+		{
+			"cut": 6,
+			"changed": 3,
+			"kept": 13
+		},
+		{
+			"kept": 13,
+			"changed": 6,
+			"cut": 3
+		},
+		{
+			"kept": 7,
+			"cut": 10,
+			"changed": 5
+		},
+		{
+			"cut": 12,
+			"kept": 6,
+			"changed": 4
+		},
+		{
+			"changed": 7,
+			"kept": 9,
+			"cut": 6
+		},
+		{
+			"kept": 8,
+			"changed": 11,
+			"cut": 2
+		},
+		{
+			"changed": 4,
+			"cut": 12,
+			"kept": 6
+		},
+		{
+			"cut": 10,
+			"changed": 4,
+			"kept": 8
+		},
+		{
+			"cut": 7,
+			"changed": 5,
+			"kept": 9
+		},
+		{
+			"kept": 6,
+			"cut": 7,
+			"changed": 9
+		},
+		{
+			"cut": 2,
+			"kept": 17,
+			"changed": 3
+		},
+		{
+			"kept": 9,
+			"cut": 8,
+			"changed": 5
+		},
+		{
+			"cut": 9,
+			"kept": 8,
+			"changed": 5
+		},
+		{
+			"changed": 6,
+			"kept": 10,
+			"cut": 6
+		},
+		{
+			"cut": 7,
+			"changed": 4,
+			"kept": 11
+		},
+		{
+			"kept": 13,
+			"changed": 2,
+			"cut": 7
+		},
+		{
+			"cut": 5,
+			"kept": 9,
+			"changed": 8
+		},
+		{
+			"cut": 14,
+			"kept": 6,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 124,
+			"notInScript": 5
+		},
+		{
+			"scripted": 221,
+			"notInScript": 1
+		},
+		{
+			"scripted": 9,
+			"notInScript": 0
+		},
+		{
+			"scripted": 63,
+			"notInScript": 8
+		},
+		{
+			"scripted": 75,
+			"notInScript": 1
+		},
+		{
+			"scripted": 195,
+			"notInScript": 4
+		},
+		{
+			"scripted": 166,
+			"notInScript": 4
+		},
+		{
+			"scripted": 223,
+			"notInScript": 5
+		},
+		{
+			"scripted": 218,
+			"notInScript": 1
+		},
+		{
+			"scripted": 233,
+			"notInScript": 4
+		},
+		{
+			"scripted": 231,
+			"notInScript": 4
+		},
+		{
+			"scripted": 251,
+			"notInScript": 15
+		},
+		{
+			"scripted": 83,
+			"notInScript": 47
+		},
+		{
+			"scripted": 11,
+			"notInScript": 129
+		},
+		{
+			"scripted": 72,
+			"notInScript": 157
+		},
+		{
+			"scripted": 151,
+			"notInScript": 18
+		},
+		{
+			"scripted": 48,
+			"notInScript": 6
+		},
+		{
+			"scripted": 76,
+			"notInScript": 16
+		},
+		{
+			"scripted": 67,
+			"notInScript": 23
+		},
+		{
+			"scripted": 130,
+			"notInScript": 5
+		},
+		{
+			"scripted": 72,
+			"notInScript": 6
+		},
+		{
+			"scripted": 136,
+			"notInScript": 0
+		},
+		{
+			"scripted": 311,
+			"notInScript": 6
+		},
+		{
+			"scripted": 173,
+			"notInScript": 8
+		},
+		{
+			"scripted": 190,
+			"notInScript": 13
+		},
+		{
+			"scripted": 195,
+			"notInScript": 13
+		},
+		{
+			"scripted": 185,
+			"notInScript": 12
+		},
+		{
+			"scripted": 152,
+			"notInScript": 42
+		},
+		{
+			"scripted": 52,
+			"notInScript": 32
+		},
+		{
+			"scripted": 83,
+			"notInScript": 28
+		},
+		{
+			"scripted": 45,
+			"notInScript": 12
+		},
+		{
+			"scripted": 204,
+			"notInScript": 12
+		},
+		{
+			"scripted": 110,
+			"notInScript": 8
+		},
+		{
+			"scripted": 208,
+			"notInScript": 7
+		},
+		{
+			"scripted": 140,
+			"notInScript": 12
+		},
+		{
+			"scripted": 68,
+			"notInScript": 9
+		},
+		{
+			"scripted": 220,
+			"notInScript": 11
+		},
+		{
+			"scripted": 73,
+			"notInScript": 5
+		},
+		{
+			"scripted": 39,
+			"notInScript": 7
+		},
+		{
+			"scripted": 83,
+			"notInScript": 0
+		},
+		{
+			"scripted": 29,
+			"notInScript": 23
+		},
+		{
+			"scripted": 154,
+			"notInScript": 15
+		},
+		{
+			"scripted": 171,
+			"notInScript": 8
+		},
+		{
+			"scripted": 80,
+			"notInScript": 9
+		},
+		{
+			"scripted": 22,
+			"notInScript": 14
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 1,
+				"kept": 0,
+				"changed": 1,
+				"cut": 0
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [],
+		"notInScript": [
+			{
+				"at": 1624,
+				"text": "Ornulf sit where Ulf is."
+			},
+			{
+				"at": 1842,
+				"text": "Take all his sheep."
+			},
+			{
+				"at": 1920,
+				"text": "Who do they think they are?"
+			},
+			{
+				"at": 3354,
+				"text": "I would walk right in and surprise you."
+			},
+			{
+				"at": 4675,
+				"text": "Here, let me have a go."
+			}
+		],
+		"changed": []
+	}
+}

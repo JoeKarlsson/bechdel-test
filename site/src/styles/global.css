@@ -389,3 +389,59 @@ dd > a:only-child,
 .prose li + li {
 	margin-top: var(--space-2);
 }
+
+/* Horizontal bars, one per row on a 0-100% track: Numbers and About */
+ul.hbars {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 var(--space-4);
+	max-width: 760px;
+}
+.hb-row {
+	display: grid;
+	grid-template-columns: 4.5rem 1fr 5.5rem;
+	align-items: center;
+	gap: var(--space-3);
+}
+.hbars.wide-labels .hb-row {
+	grid-template-columns: minmax(7rem, 13rem) 1fr 5.5rem;
+}
+.hbars.score-labels .hb-row {
+	grid-template-columns: minmax(7rem, 16rem) 1fr 5.5rem;
+}
+.hbars li + li {
+	margin-top: var(--space-2);
+}
+.hb-track {
+	display: block;
+	height: 1.25rem;
+	background: var(--plank);
+	border-radius: 4px;
+}
+.hb-bar {
+	display: block;
+	height: 100%;
+	min-width: 3px;
+	background: var(--pink);
+	border-radius: 4px;
+}
+.hb-bar.fail {
+	background: var(--fail);
+}
+.hb-value {
+	font-variant-numeric: tabular-nums;
+	text-align: right;
+	white-space: nowrap;
+}
+.hb-bar.neutral {
+	background: var(--chalk);
+}
+@media (max-width: 480px) {
+	.hbars li,
+	.hbars.wide-labels .hb-row {
+		grid-template-columns: 1fr auto;
+	}
+	.hb-label {
+		grid-column: 1 / -1;
+	}
+}

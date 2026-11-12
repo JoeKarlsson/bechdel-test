@@ -1,0 +1,993 @@
+{
+	"_id": "tt1217613",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "unknown"
+	},
+	"subtitles": {
+		"candidates": 36,
+		"eligible": 28,
+		"rejected": {
+			"duplicate": 5,
+			"split across CDs": 1,
+			"runtime mismatch": 2
+		},
+		"used": 9,
+		"primary": "1952860728",
+		"versions": [
+			"1952860728",
+			"1958941715",
+			"1952895633",
+			"1952909719",
+			"1953164337",
+			"1952868329",
+			"1952917615",
+			"1952860740",
+			"1952862670"
+		],
+		"sdh": false,
+		"meanAgreement": 0.991087996269169,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6960,
+	"quality": {
+		"anchoredShare": 0.09098353943165997
+	},
+	"words": {
+		"page": 12211,
+		"screen": 9681,
+		"kept": 1111,
+		"cut": 11100,
+		"notInScript": 8570,
+		"moved": 316
+	},
+	"lines": {
+		"page": 685,
+		"kept": 38,
+		"changed": 110,
+		"cut": 537,
+		"screen": 1976,
+		"notInScript": 1719
+	},
+	"byGender": {
+		"w": {
+			"lines": 26,
+			"kept": 0,
+			"changed": 5,
+			"cut": 21
+		},
+		"m": {
+			"lines": 559,
+			"kept": 33,
+			"changed": 93,
+			"cut": 433
+		},
+		"unknown": {
+			"lines": 100,
+			"kept": 5,
+			"changed": 12,
+			"cut": 83
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"kept": 2,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"changed": 4,
+			"kept": 4,
+			"cut": 6
+		},
+		{
+			"cut": 8,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"kept": 4,
+			"changed": 5,
+			"cut": 6
+		},
+		{
+			"cut": 11,
+			"kept": 1,
+			"changed": 2
+		},
+		{
+			"cut": 9,
+			"changed": 2,
+			"kept": 3
+		},
+		{
+			"cut": 8,
+			"kept": 2,
+			"changed": 4
+		},
+		{
+			"cut": 12,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"changed": 2,
+			"cut": 13
+		},
+		{
+			"cut": 8,
+			"changed": 4,
+			"kept": 2
+		},
+		{
+			"cut": 9,
+			"changed": 3,
+			"kept": 2
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"changed": 5,
+			"cut": 7,
+			"kept": 3
+		},
+		{
+			"cut": 12,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"changed": 6,
+			"kept": 2,
+			"cut": 7
+		},
+		{
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"changed": 5
+		},
+		{
+			"changed": 3,
+			"cut": 11
+		},
+		{
+			"cut": 10,
+			"changed": 4
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 15
+		},
+		{
+			"cut": 11,
+			"changed": 3
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 14
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 13,
+			"kept": 1,
+			"changed": 1
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 3
+		},
+		{
+			"cut": 14,
+			"changed": 1
+		},
+		{
+			"cut": 11,
+			"changed": 3
+		},
+		{
+			"cut": 10,
+			"kept": 2,
+			"changed": 2
+		},
+		{
+			"cut": 8,
+			"changed": 6
+		},
+		{
+			"cut": 14,
+			"kept": 1
+		},
+		{
+			"cut": 12,
+			"changed": 2
+		},
+		{
+			"changed": 2,
+			"cut": 12
+		},
+		{
+			"cut": 13,
+			"changed": 1
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 10,
+			"notInScript": 195
+		},
+		{
+			"scripted": 22,
+			"notInScript": 220
+		},
+		{
+			"scripted": 53,
+			"notInScript": 155
+		},
+		{
+			"scripted": 37,
+			"notInScript": 243
+		},
+		{
+			"scripted": 96,
+			"notInScript": 200
+		},
+		{
+			"scripted": 96,
+			"notInScript": 203
+		},
+		{
+			"scripted": 153,
+			"notInScript": 232
+		},
+		{
+			"scripted": 61,
+			"notInScript": 299
+		},
+		{
+			"scripted": 32,
+			"notInScript": 173
+		},
+		{
+			"scripted": 114,
+			"notInScript": 121
+		},
+		{
+			"scripted": 28,
+			"notInScript": 204
+		},
+		{
+			"scripted": 21,
+			"notInScript": 170
+		},
+		{
+			"scripted": 27,
+			"notInScript": 206
+		},
+		{
+			"scripted": 60,
+			"notInScript": 98
+		},
+		{
+			"scripted": 20,
+			"notInScript": 136
+		},
+		{
+			"scripted": 34,
+			"notInScript": 279
+		},
+		{
+			"scripted": 72,
+			"notInScript": 155
+		},
+		{
+			"scripted": 20,
+			"notInScript": 263
+		},
+		{
+			"scripted": 61,
+			"notInScript": 269
+		},
+		{
+			"scripted": 51,
+			"notInScript": 292
+		},
+		{
+			"scripted": 112,
+			"notInScript": 177
+		},
+		{
+			"scripted": 14,
+			"notInScript": 222
+		},
+		{
+			"scripted": 42,
+			"notInScript": 129
+		},
+		{
+			"scripted": 15,
+			"notInScript": 80
+		},
+		{
+			"scripted": 38,
+			"notInScript": 90
+		},
+		{
+			"scripted": 33,
+			"notInScript": 122
+		},
+		{
+			"scripted": 20,
+			"notInScript": 232
+		},
+		{
+			"scripted": 0,
+			"notInScript": 170
+		},
+		{
+			"scripted": 14,
+			"notInScript": 163
+		},
+		{
+			"scripted": 24,
+			"notInScript": 62
+		},
+		{
+			"scripted": 18,
+			"notInScript": 185
+		},
+		{
+			"scripted": 0,
+			"notInScript": 272
+		},
+		{
+			"scripted": 27,
+			"notInScript": 227
+		},
+		{
+			"scripted": 25,
+			"notInScript": 102
+		},
+		{
+			"scripted": 18,
+			"notInScript": 152
+		},
+		{
+			"scripted": 60,
+			"notInScript": 148
+		},
+		{
+			"scripted": 0,
+			"notInScript": 238
+		},
+		{
+			"scripted": 21,
+			"notInScript": 86
+		},
+		{
+			"scripted": 50,
+			"notInScript": 111
+		},
+		{
+			"scripted": 33,
+			"notInScript": 80
+		},
+		{
+			"scripted": 32,
+			"notInScript": 176
+		},
+		{
+			"scripted": 61,
+			"notInScript": 151
+		},
+		{
+			"scripted": 1,
+			"notInScript": 102
+		},
+		{
+			"scripted": 0,
+			"notInScript": 120
+		},
+		{
+			"scripted": 0,
+			"notInScript": 41
+		},
+		{
+			"scripted": 7,
+			"notInScript": 197
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 22,
+				"kept": 0,
+				"changed": 5,
+				"cut": 17
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 447,
+				"kept": 28,
+				"changed": 75,
+				"cut": 344
+			},
+			"other": {
+				"lines": 96,
+				"kept": 4,
+				"changed": 14,
+				"cut": 78
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 1,
+			"rules": [
+				true,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "PVT. KERNS",
+				"text": "Alcohol? No, sir. Definitely not. The psychiatrist stares at this. Then WRITES in the file."
+			},
+			{
+				"speaker": "PVT. GUERRERO",
+				"text": "I can't see, Motorola. Mottola, horrified, steadies his voice."
+			},
+			{
+				"speaker": "PVT. MOTTOLA",
+				"text": "Where the hell is that bus?!"
+			},
+			{
+				"speaker": "CPL. CORREGGIO",
+				"text": "Some goddamn tanks. Beat. Everyone stares as... The CLOCK ticks to NINE..."
+			},
+			{
+				"speaker": "PVT. IMLAY",
+				"text": "But we were getting out...!"
+			}
+		],
+		"notInScript": [
+			{
+				"at": 614,
+				"text": "I'm a Navy corpsman."
+			},
+			{
+				"at": 1794,
+				"text": "We have an exit!"
+			},
+			{
+				"at": 2890,
+				"text": "Lieutenant, we got a bus."
+			},
+			{
+				"at": 4398,
+				"text": "Maybe they wanna be friends.\""
+			},
+			{
+				"at": 5866,
+				"text": "Up that ladder, go!"
+			}
+		],
+		"changed": [
+			{
+				"speaker": "PVT. IMLAY",
+				"page": "They shifted Nantz into our unit. Something must be going on.",
+				"screen": "They're shifting Nantz into our unit. Something's going on.",
+				"pageWords": [
+					[
+						"They",
+						false
+					],
+					[
+						"shifted",
+						false
+					],
+					[
+						"Nantz",
+						true
+					],
+					[
+						"into",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"unit.",
+						true
+					],
+					[
+						"Something",
+						false
+					],
+					[
+						"must",
+						false
+					],
+					[
+						"be",
+						false
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"on.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"They're",
+						false
+					],
+					[
+						"shifting",
+						false
+					],
+					[
+						"Nantz",
+						true
+					],
+					[
+						"into",
+						true
+					],
+					[
+						"our",
+						true
+					],
+					[
+						"unit.",
+						true
+					],
+					[
+						"Something's",
+						false
+					],
+					[
+						"going",
+						true
+					],
+					[
+						"on.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "MARINE",
+				"page": "This is it, Lieutenant. Everyone else is dead or missing. The news hits Martinez hard. He eyes Nantz.",
+				"screen": "Everyone else is either dead or missing.",
+				"pageWords": [
+					[
+						"This",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"it,",
+						false
+					],
+					[
+						"Lieutenant.",
+						false
+					],
+					[
+						"Everyone",
+						true
+					],
+					[
+						"else",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"dead",
+						true
+					],
+					[
+						"or",
+						true
+					],
+					[
+						"missing.",
+						true
+					],
+					[
+						"The",
+						false
+					],
+					[
+						"news",
+						false
+					],
+					[
+						"hits",
+						false
+					],
+					[
+						"Martinez",
+						false
+					],
+					[
+						"hard.",
+						false
+					],
+					[
+						"He",
+						false
+					],
+					[
+						"eyes",
+						false
+					],
+					[
+						"Nantz.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Everyone",
+						true
+					],
+					[
+						"else",
+						true
+					],
+					[
+						"is",
+						true
+					],
+					[
+						"either",
+						false
+					],
+					[
+						"dead",
+						true
+					],
+					[
+						"or",
+						true
+					],
+					[
+						"missing.",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "PVT. KERNS",
+				"page": "Shit. You seeing what I'm seeing? Correggio pulls BINOCULARS...",
+				"screen": "You see what I'm seeing?",
+				"pageWords": [
+					[
+						"Shit.",
+						false
+					],
+					[
+						"You",
+						false
+					],
+					[
+						"seeing",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"seeing?",
+						true
+					],
+					[
+						"Correggio",
+						false
+					],
+					[
+						"pulls",
+						false
+					],
+					[
+						"BINOCULARS...",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"see",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"seeing?",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "SGT. NANTZ",
+				"page": "I'm not leaving you here to die.",
+				"screen": "No, I'm not leaving you!",
+				"pageWords": [
+					[
+						"I'm",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"leaving",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"here",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"die.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"No,",
+						false
+					],
+					[
+						"I'm",
+						true
+					],
+					[
+						"not",
+						true
+					],
+					[
+						"leaving",
+						true
+					],
+					[
+						"you!",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "CPL. CORREGGIO",
+				"page": "What the hell, sergeant? What's going on?",
+				"screen": "Staff sergeant, what the hell are you doing?",
+				"pageWords": [
+					[
+						"What",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hell,",
+						true
+					],
+					[
+						"sergeant?",
+						false
+					],
+					[
+						"What's",
+						false
+					],
+					[
+						"going",
+						false
+					],
+					[
+						"on?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Staff",
+						false
+					],
+					[
+						"sergeant,",
+						false
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"hell",
+						true
+					],
+					[
+						"are",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"doing?",
+						false
+					]
+				]
+			}
+		]
+	}
+}

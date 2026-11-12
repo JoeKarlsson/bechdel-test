@@ -3,6 +3,7 @@ import OnThisPage from '../components/OnThisPage.astro';
 import Base from '../layouts/Base.astro';
 import YearChart from '../components/YearChart.astro';
 import PeopleRanking from '../components/PeopleRanking.astro';
+import Tape from '../components/Tape.astro';
 import { loadFilms, shelfStats, peopleRanking } from '../lib/films.mjs';
 
 const films = loadFilms();
@@ -123,7 +124,35 @@ const draftRows: Row[] = ps.byDraft.map((d) => ({
 	value: percent(d.survival),
 	aria: `${DRAFT_NAMES[d.draft]}: in the median film, ${percent(d.survival)} of the script's words are heard (${d.films} films)`,
 }));
-const filmList = (fs: { slug: string; title: string; year: number | null }[]) => fs.sort((a, b) => a.title.localeCompare(b.title));
+// What each page verdict becomes on screen
+const FLOWS = [
+	{ label: 'Pass on the page', ...ps.flows.pass, flipLabel: 'fail on screen' },
+	{ label: 'Fail on the page', ...ps.flows.fail, flipLabel: 'pass on screen' },
+].map((f) => ({
+	...f,
+	parts: [
+		{ label: 'same on screen', count: f.same, css: 'same' },
+		{ label: f.flipLabel, count: f.flips, css: 'flip' },
+		{ label: 'unclear', count: f.unclear, css: 'unclear' },
+	],
+}));
+const survivalMax = Math.max(1, ...ps.survivalBins);
+const PASSING_NAMES = ['Under 10 seconds', '10 to 30 seconds', '30 seconds to a minute', '1 to 2 minutes', '2 to 5 minutes', 'Over 5 minutes'];
+const passingFilms = ps.passingBins.reduce((a, b) => a + b, 0);
+const passingRows: Row[] = ps.passingBins.map((c, k) => ({
+	label: PASSING_NAMES[k],
+	share: c / Math.max(1, passingFilms),
+	value: n(c),
+	aria: `${PASSING_NAMES[k]}: ${c} films`,
+}));
+const cutRows = [
+	{ label: 'Two women talking', share: ps.conversations.w.conversation, men: false },
+	{ label: "Women's other lines", share: ps.conversations.w.other, men: false },
+	{ label: 'Two men talking', share: ps.conversations.m.conversation, men: true },
+	{ label: "Men's other lines", share: ps.conversations.m.other, men: true },
+].map((r) => ({ ...r, share: r.share ?? 0, value: percent(r.share), aria: `${r.label}: ${percent(r.share)} cut in the median film` }));
+// the best-known films whose verdict changes, as tapes
+const SHELF_ROW = 6;
 
 // The page's sections, for the contents list at the top
 const CONTENTS = [
@@ -250,37 +279,54 @@ const CONTENTS = [
 			ps.films > 0 && (
 				<section class="section" aria-labelledby="screen-title">
 					<h2 id="screen-title" class="section-title">Page vs screen</h2>
+					<p class="section-lead">{n(ps.films)} scripts lined up with what's said in the film. <a href="/about/#page-vs-screen">How we compare</a></p>
 					<dl class="tiles">
 						<div>
 							<dt>{percent(ps.survival)}</dt>
-							<dd>of the script's words are heard in the film, in the median film.</dd>
+							<dd>of a script's words are heard in the film</dd>
 						</div>
 						<div>
-							<dt>{percent(ps.notInScript)}</dt>
-							<dd>of what's said on screen isn't in the script we have, in the median film.</dd>
+							<dt>{Math.round(ps.passing.seconds!)} seconds</dt>
+							<dd>of women talking to each other is enough to pass</dd>
 						</div>
-						{ps.passing.films > 0 && (
-							<div>
-								<dt>{Math.round(ps.passing.seconds!)} seconds</dt>
-								<dd>
-									of women talking to each other is all it takes to pass, in the median film that passes on screen. {percent(ps.passing.under30)} pass on
-									under 30 seconds.
-								</dd>
-							</div>
-						)}
 						<div>
-							<dt>{n(ps.passToFail.length + ps.failToPass.length)}</dt>
-							<dd>
-								of {n(ps.films)} films get a different verdict on screen. {n(ps.unclear)} more depend on who says lines that aren't in the
-								script.
-							</dd>
+							<dt>{percent((ps.passToFail.length + ps.failToPass.length) / ps.films)}</dt>
+							<dd>of films get a different verdict on screen</dd>
 						</div>
 					</dl>
-					{draftRows.length > 1 && (
-						<>
-							<h3>Words heard, by kind of script</h3>
+					<p class="note">The first two are for the median film.</p>
+
+					<h3>The verdict on screen</h3>
+					<ul class="flows">
+						{FLOWS.map((f) => (
+							<li>
+								<p class="flow-label">{f.label} <span class="note">{n(f.films)} films</span></p>
+								<div class="flow-bar" role="img" aria-label={`${f.label}, ${f.films} films: ${f.parts.map((p) => `${p.label} ${p.count}`).join(', ')}`}>
+									{f.parts.map((p) => p.count > 0 && <span class:list={['flow-part', p.css]} style={`flex-grow: ${p.count}`} />)}
+								</div>
+								<p class="note flow-values">{f.parts.map((p) => `${p.label}: ${n(p.count)}`).join(' · ')}</p>
+							</li>
+						))}
+					</ul>
+					<ul class="legend small">
+						<li><span class="swatch flow-swatch same" />Same verdict</li>
+						<li><span class="swatch flow-swatch flip" />Different verdict</li>
+						<li><span class="swatch flow-swatch unclear" />Depends on who says lines that aren't in the script</li>
+					</ul>
+
+					<div class="two">
+						<div>
+							<h3>How much of the script is heard</h3>
+							<div class="columns" role="img" aria-label={`Films by share of the script's words heard: ${ps.survivalBins.map((c, k) => `${k * 10} to ${k * 10 + 10}%: ${c}`).join(', ')}`}>
+								{ps.survivalBins.map((c) => <span class="column" style={`height: ${((c / survivalMax) * 100).toFixed(1)}%`} />)}
+							</div>
+							<p class="note axis-ends"><span>0%</span><span>50%</span><span>100%</span></p>
+							<p class="note">Films, by share of the script's words heard on screen</p>
+						</div>
+						<div>
+							<h3>How long the passing talk lasts</h3>
 							<ul class="hbars wide-labels">
-								{draftRows.map((r) => (
+								{passingRows.map((r) => (
 									<li>
 										<div class="hb-row" role="img" aria-label={r.aria}>
 											<span class="hb-label">{r.label}</span>
@@ -290,43 +336,65 @@ const CONTENTS = [
 									</li>
 								))}
 							</ul>
-						</>
-					)}
-					{ps.cut.films > 0 && (
-						<div class="prose">
-							{ps.conversations.films > 0 && (
-								<p>
-									In the median film, {percent(ps.conversations.conversation)} of the lines in conversations between women are cut, and{' '}
-									{percent(ps.conversations.other)} of women's other lines ({n(ps.conversations.films)} films with enough of both).
-								</p>
-							)}
-							<p>
-								In the median film, {percent(ps.cut.w)} of women's lines are cut and {percent(ps.cut.m)} of men's. Women lose a bigger
-								share of their lines in {n(ps.cut.womenMore)} of {n(ps.cut.films)} films, men in {n(ps.cut.menMore)}.
-							</p>
+							<p class="note">Films that pass on screen, by how long women talk to each other in all</p>
 						</div>
-					)}
+					</div>
+
 					<div class="two">
-						{ps.passToFail.length > 0 && (
+						<div>
+							<h3>Which lines get cut</h3>
+							<ul class="hbars wide-labels">
+								{cutRows.map((r) => (
+									<li>
+										<div class="hb-row" role="img" aria-label={r.aria}>
+											<span class="hb-label">{r.label}</span>
+											<span class="hb-track"><span class:list={['hb-bar', { neutral: r.men }]} style={`width: ${(r.share * 100).toFixed(1)}%`} /></span>
+											<span class="hb-value">{r.value}</span>
+										</div>
+									</li>
+								))}
+							</ul>
+							<p class="note">Share of each kind of line cut, in the median film</p>
+						</div>
+						{draftRows.length > 1 && (
 							<div>
-								<h3>Pass on the page, fail on screen</h3>
-								<ul class="film-list">
-									{filmList(ps.passToFail).map((f) => <li><a href={`/films/${f.slug}/`}>{f.title}</a> ({f.year})</li>)}
-								</ul>
-							</div>
-						)}
-						{ps.failToPass.length > 0 && (
-							<div>
-								<h3>Fail on the page, pass on screen</h3>
-								<ul class="film-list">
-									{filmList(ps.failToPass).map((f) => <li><a href={`/films/${f.slug}/`}>{f.title}</a> ({f.year})</li>)}
+								<h3>Words heard, by kind of script</h3>
+								<ul class="hbars wide-labels">
+									{draftRows.map((r) => (
+										<li>
+											<div class="hb-row" role="img" aria-label={r.aria}>
+												<span class="hb-label">{r.label}</span>
+												<span class="hb-track">{r.share > 0 && <span class="hb-bar neutral" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+												<span class="hb-value">{r.value}</span>
+											</div>
+										</li>
+									))}
 								</ul>
 							</div>
 						)}
 					</div>
+
+					{[
+						{ title: 'Passes on the page, fails on screen', list: ps.passToFail },
+						{ title: 'Fails on the page, passes on screen', list: ps.failToPass },
+					].map(({ title, list }) => list.length > 0 && (
+						<>
+							<h3>{title}</h3>
+							<ul class="shelf-row">
+								{list.slice(0, SHELF_ROW).map((film) => <Tape film={film} />)}
+							</ul>
+							{list.length > SHELF_ROW && (
+								<details class="table-view">
+									<summary>All {n(list.length)} films</summary>
+									<ul class="film-list">
+										{[...list].sort((a, b) => a.title.localeCompare(b.title)).map((f) => <li><a href={`/films/${f.slug}/`}>{f.title}</a> ({f.year})</li>)}
+									</ul>
+								</details>
+							)}
+						</>
+					))}
 					<p class="note">
-						{n(ps.films)} films compared with their English subtitles. Left out: {ps.excluded.map((x) => `${n(x.films)} because ${x.reason}`).join('; ')}.{' '}
-						<a href="/about/#page-vs-screen">How we compare</a>.
+						Left out: {ps.excluded.map((x) => `${n(x.films)} because ${x.reason}`).join('; ')}.
 					</p>
 				</section>
 			)
@@ -530,9 +598,93 @@ const CONTENTS = [
 
 <style>
 	.film-list {
-		columns: 2 14rem;
+		columns: 3 12rem;
 		padding-left: var(--space-4);
+		margin: var(--space-3) 0 var(--space-5);
+	}
+	.section-lead {
 		margin: 0 0 var(--space-5);
+	}
+	#screen-title ~ h3,
+	#screen-title ~ .two h3 {
+		margin-top: var(--space-6);
+	}
+	/* The verdict on screen: one bar per page verdict, split by what it becomes */
+	.flows {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-3);
+		max-width: 760px;
+	}
+	.flows li + li {
+		margin-top: var(--space-4);
+	}
+	.flow-label {
+		margin: 0 0 var(--space-1);
+		font-weight: 700;
+	}
+	.flow-label .note {
+		font-weight: 400;
+	}
+	.flow-bar {
+		display: flex;
+		gap: 2px;
+		height: 1.5rem;
+	}
+	.flow-part {
+		display: block;
+		min-width: 3px;
+	}
+	.flow-part:first-child {
+		border-radius: 4px 0 0 4px;
+	}
+	.flow-part:last-child {
+		border-radius: 0 4px 4px 0;
+	}
+	.flow-part.same,
+	.flow-swatch.same {
+		background: var(--chalk);
+	}
+	.flow-part.flip,
+	.flow-swatch.flip {
+		background: var(--pink);
+	}
+	.flow-part.unclear,
+	.flow-swatch.unclear {
+		background: var(--plank);
+	}
+	.flow-values {
+		margin: var(--space-1) 0 0;
+		font-variant-numeric: tabular-nums;
+	}
+	/* How much of the script is heard: ten columns, 0-100% */
+	.columns {
+		display: flex;
+		align-items: flex-end;
+		gap: 2px;
+		height: 8rem;
+		max-width: 480px;
+	}
+	.column {
+		flex: 1 1 0;
+		min-height: 2px;
+		background: var(--chalk);
+		border-radius: 4px 4px 0 0;
+	}
+	.columns + .axis-ends {
+		display: flex;
+		justify-content: space-between;
+		max-width: 480px;
+		margin: var(--space-1) 0 0;
+	}
+	/* The best-known films whose verdict changes, as a row of tapes */
+	.shelf-row {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-3);
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: var(--space-4);
 	}
 	.two {
 		display: grid;
@@ -542,48 +694,6 @@ const CONTENTS = [
 	h3 {
 		font-size: clamp(1.5rem, 3vw, 1.875rem);
 		margin-bottom: var(--space-3);
-	}
-	.hbars {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 var(--space-4);
-		max-width: 760px;
-	}
-	.hb-row {
-		display: grid;
-		grid-template-columns: 4.5rem 1fr 5.5rem;
-		align-items: center;
-		gap: var(--space-3);
-	}
-	.hbars.wide-labels .hb-row {
-		grid-template-columns: minmax(7rem, 13rem) 1fr 5.5rem;
-	}
-	.hbars.score-labels .hb-row {
-		grid-template-columns: minmax(7rem, 16rem) 1fr 5.5rem;
-	}
-	.hbars li + li {
-		margin-top: var(--space-2);
-	}
-	.hb-track {
-		display: block;
-		height: 1.25rem;
-		background: var(--plank);
-		border-radius: 4px;
-	}
-	.hb-bar {
-		display: block;
-		height: 100%;
-		min-width: 3px;
-		background: var(--pink);
-		border-radius: 4px;
-	}
-	.hb-bar.fail {
-		background: var(--fail);
-	}
-	.hb-value {
-		font-variant-numeric: tabular-nums;
-		text-align: right;
-		white-space: nowrap;
 	}
 	.tiles {
 		display: grid;
@@ -694,14 +804,5 @@ const CONTENTS = [
 	.table-view thead th {
 		color: var(--muted);
 		font-weight: normal;
-	}
-	@media (max-width: 480px) {
-		.hbars li,
-		.hbars.wide-labels .hb-row {
-			grid-template-columns: 1fr auto;
-		}
-		.hb-label {
-			grid-column: 1 / -1;
-		}
 	}
 </style>

@@ -125,7 +125,7 @@ test('screenFrom turns a page vs screen record into shares, and keeps why a film
 	};
 	const s = screenFrom(raw);
 	assert.deepEqual(s.passing, { count: 3, seconds: 41, longest: 9 });
-	assert.deepEqual(s.conversationCut, { conversation: 0.5, other: 0.1, conversationLines: 20, otherLines: 20 });
+	assert.deepEqual(s.conversationCut, { w: { conversation: 0.5, other: 0.1, conversationLines: 20, otherLines: 20 }, m: { conversation: 0.1, other: 0.1, conversationLines: 10, otherLines: 40 } });
 	assert.equal(s.survival, 0.6);
 	assert.equal(s.notInScript, 0.25);
 	assert.deepEqual(s.cut, { w: 0.25, m: 0.1, wLines: 40, mLines: 50 });
@@ -141,10 +141,14 @@ test('screenFrom turns a page vs screen record into shares, and keeps why a film
 	assert.deepEqual(stats.pageVsScreen.excluded, [{ reason: 'transcript', films: 1 }]);
 	assert.equal(stats.pageVsScreen.survival, 0.7);
 	assert.equal(stats.pageVsScreen.unclear, 1);
-	assert.deepEqual(stats.pageVsScreen.passToFail, [{ slug: 'x', title: 'X', year: 2000 }]);
+	assert.deepEqual(stats.pageVsScreen.passToFail.map((f) => f.slug), ['x']);
+	assert.deepEqual(stats.pageVsScreen.flows.pass, { films: 2, same: 0, flips: 1, unclear: 1 });
+	assert.deepEqual(stats.pageVsScreen.survivalBins, [0, 0, 0, 0, 0, 0, 1, 0, 1, 0]);
+	assert.deepEqual(stats.pageVsScreen.passingBins, [0, 0, 2, 0, 0, 0]);
 	assert.deepEqual(stats.pageVsScreen.cut, { films: 2, w: 0.25, m: 0.1, womenMore: 2, menMore: 0 });
 	assert.deepEqual(stats.pageVsScreen.passing, { films: 2, seconds: 41, under30: 0 });
-	assert.deepEqual(stats.pageVsScreen.conversations, { films: 2, conversation: 0.5, other: 0.1 });
+	assert.deepEqual(stats.pageVsScreen.conversations.w, { films: 2, conversation: 0.5, other: 0.1 });
+	assert.deepEqual(stats.pageVsScreen.conversations.m, { films: 2, conversation: 0.1, other: 0.1 });
 });
 
 test('shelfStats gives each year with enough films its own rate and the five years around it', () => {

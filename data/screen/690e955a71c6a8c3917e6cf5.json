@@ -1,0 +1,966 @@
+{
+	"_id": "690e955a71c6a8c3917e6cf5",
+	"method": {
+		"version": "1.0",
+		"thresholds": {
+			"kept": 0.65,
+			"changed": 0.15,
+			"scripted": 0.2
+		},
+		"minLanguageConfidence": 0.9,
+		"runtimeShare": {
+			"min": 0.85,
+			"max": 1.1
+		},
+		"minLines": 300,
+		"minAnchoredShare": 0.06,
+		"maxVersions": 9,
+		"seed": "page-vs-screen-2026-11-12",
+		"quotes": {
+			"perKind": 5,
+			"maxWords": 20,
+			"minWords": 4
+		},
+		"bins": 48
+	},
+	"script": {
+		"draft": "early"
+	},
+	"subtitles": {
+		"candidates": 12,
+		"eligible": 8,
+		"rejected": {
+			"split across CDs": 1,
+			"duplicate": 1,
+			"runtime mismatch": 2
+		},
+		"used": 8,
+		"primary": "1952169104",
+		"versions": [
+			"1955128294",
+			"271278",
+			"1953391202",
+			"1956490238",
+			"1953564039",
+			"1953156011",
+			"1952169104",
+			"1954405632"
+		],
+		"sdh": false,
+		"meanAgreement": 0.9602854662984258,
+		"lyricsDropped": 0
+	},
+	"runtimeSeconds": 6720,
+	"quality": {
+		"anchoredShare": 0.021887651821862347
+	},
+	"excluded": "the subtitles match the script no better than chance",
+	"words": {
+		"page": 7904,
+		"screen": 5899,
+		"kept": 173,
+		"cut": 7731,
+		"notInScript": 5726,
+		"moved": 35
+	},
+	"lines": {
+		"page": 903,
+		"kept": 12,
+		"changed": 35,
+		"cut": 855,
+		"screen": 1288,
+		"notInScript": 1232
+	},
+	"byGender": {
+		"w": {
+			"lines": 365,
+			"kept": 7,
+			"changed": 17,
+			"cut": 341
+		},
+		"m": {
+			"lines": 498,
+			"kept": 5,
+			"changed": 17,
+			"cut": 476
+		},
+		"unknown": {
+			"lines": 39,
+			"kept": 0,
+			"changed": 1,
+			"cut": 38
+		}
+	},
+	"byScriptOrder": [
+		{
+			"cut": 19
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 16,
+			"kept": 2
+		},
+		{
+			"cut": 18,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 19
+		},
+		{
+			"changed": 2,
+			"cut": 16,
+			"kept": 1
+		},
+		{
+			"cut": 17,
+			"kept": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 17,
+			"changed": 1,
+			"kept": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 16,
+			"changed": 3
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 17
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 16,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 16,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18,
+			"kept": 1
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 16,
+			"changed": 2,
+			"kept": 1
+		},
+		{
+			"cut": 15,
+			"changed": 3,
+			"kept": 1
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18,
+			"changed": 1
+		},
+		{
+			"cut": 18
+		},
+		{
+			"kept": 1,
+			"cut": 18
+		},
+		{
+			"cut": 17,
+			"changed": 2
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 19
+		},
+		{
+			"cut": 18
+		}
+	],
+	"byMinute": [
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 24,
+			"notInScript": 139
+		},
+		{
+			"scripted": 18,
+			"notInScript": 226
+		},
+		{
+			"scripted": 21,
+			"notInScript": 126
+		},
+		{
+			"scripted": 5,
+			"notInScript": 111
+		},
+		{
+			"scripted": 23,
+			"notInScript": 198
+		},
+		{
+			"scripted": 25,
+			"notInScript": 134
+		},
+		{
+			"scripted": 23,
+			"notInScript": 112
+		},
+		{
+			"scripted": 34,
+			"notInScript": 166
+		},
+		{
+			"scripted": 0,
+			"notInScript": 233
+		},
+		{
+			"scripted": 9,
+			"notInScript": 172
+		},
+		{
+			"scripted": 7,
+			"notInScript": 301
+		},
+		{
+			"scripted": 0,
+			"notInScript": 94
+		},
+		{
+			"scripted": 6,
+			"notInScript": 241
+		},
+		{
+			"scripted": 0,
+			"notInScript": 24
+		},
+		{
+			"scripted": 14,
+			"notInScript": 166
+		},
+		{
+			"scripted": 21,
+			"notInScript": 106
+		},
+		{
+			"scripted": 0,
+			"notInScript": 70
+		},
+		{
+			"scripted": 0,
+			"notInScript": 33
+		},
+		{
+			"scripted": 1,
+			"notInScript": 36
+		},
+		{
+			"scripted": 4,
+			"notInScript": 28
+		},
+		{
+			"scripted": 0,
+			"notInScript": 39
+		},
+		{
+			"scripted": 15,
+			"notInScript": 133
+		},
+		{
+			"scripted": 0,
+			"notInScript": 184
+		},
+		{
+			"scripted": 21,
+			"notInScript": 270
+		},
+		{
+			"scripted": 1,
+			"notInScript": 126
+		},
+		{
+			"scripted": 0,
+			"notInScript": 98
+		},
+		{
+			"scripted": 6,
+			"notInScript": 226
+		},
+		{
+			"scripted": 0,
+			"notInScript": 123
+		},
+		{
+			"scripted": 0,
+			"notInScript": 39
+		},
+		{
+			"scripted": 0,
+			"notInScript": 261
+		},
+		{
+			"scripted": 0,
+			"notInScript": 112
+		},
+		{
+			"scripted": 0,
+			"notInScript": 112
+		},
+		{
+			"scripted": 9,
+			"notInScript": 112
+		},
+		{
+			"scripted": 0,
+			"notInScript": 134
+		},
+		{
+			"scripted": 0,
+			"notInScript": 92
+		},
+		{
+			"scripted": 0,
+			"notInScript": 77
+		},
+		{
+			"scripted": 0,
+			"notInScript": 22
+		},
+		{
+			"scripted": 16,
+			"notInScript": 114
+		},
+		{
+			"scripted": 0,
+			"notInScript": 37
+		},
+		{
+			"scripted": 19,
+			"notInScript": 254
+		},
+		{
+			"scripted": 35,
+			"notInScript": 122
+		},
+		{
+			"scripted": 8,
+			"notInScript": 113
+		},
+		{
+			"scripted": 5,
+			"notInScript": 13
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		},
+		{
+			"scripted": 0,
+			"notInScript": 0
+		}
+	],
+	"passingConversations": null,
+	"conversations": {
+		"w": {
+			"conversation": {
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
+			},
+			"other": {
+				"lines": 364,
+				"kept": 7,
+				"changed": 17,
+				"cut": 340
+			}
+		},
+		"m": {
+			"conversation": {
+				"lines": 26,
+				"kept": 0,
+				"changed": 1,
+				"cut": 25
+			},
+			"other": {
+				"lines": 434,
+				"kept": 5,
+				"changed": 14,
+				"cut": 415
+			}
+		}
+	},
+	"bechdel": {
+		"page": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"strict": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"lenient": {
+			"score": 0,
+			"rules": [
+				false,
+				false,
+				false
+			]
+		},
+		"change": "same"
+	},
+	"quotes": {
+		"cut": [
+			{
+				"speaker": "GIN",
+				"text": "Really, this can all wait. I'll handle it."
+			},
+			{
+				"speaker": "GIN",
+				"text": "You hate round num..."
+			},
+			{
+				"speaker": "GIN",
+				"text": "You gotta work on that impatient streak."
+			},
+			{
+				"speaker": "GIN",
+				"text": "Come to think of it, I need some dresses for evening..."
+			},
+			{
+				"speaker": "MAC",
+				"text": "You ran your calls."
+			}
+		],
+		"notInScript": [
+			{
+				"at": 807,
+				"text": "I've got a proposition for you."
+			},
+			{
+				"at": 1632,
+				"text": "And I know all of them."
+			},
+			{
+				"at": 2593,
+				"text": "It is a masked ball."
+			},
+			{
+				"at": 4131,
+				"text": "I... couldn't do it."
+			},
+			{
+				"at": 5606,
+				"text": "I will be there."
+			}
+		],
+		"changed": [
+			{
+				"speaker": "GIN",
+				"page": "GET THE FUCK OUT OF HERE!",
+				"screen": "You were supposed to get the damn vase!",
+				"pageWords": [
+					[
+						"GET",
+						true
+					],
+					[
+						"THE",
+						true
+					],
+					[
+						"FUCK",
+						false
+					],
+					[
+						"OUT",
+						false
+					],
+					[
+						"OF",
+						false
+					],
+					[
+						"HERE!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"You",
+						false
+					],
+					[
+						"were",
+						false
+					],
+					[
+						"supposed",
+						false
+					],
+					[
+						"to",
+						false
+					],
+					[
+						"get",
+						true
+					],
+					[
+						"the",
+						true
+					],
+					[
+						"damn",
+						false
+					],
+					[
+						"vase!",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MAC",
+				"page": "How do I know who you are, hmmn?",
+				"screen": "Why, do I make you uneasy, Mac?",
+				"pageWords": [
+					[
+						"How",
+						false
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"know",
+						false
+					],
+					[
+						"who",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"are,",
+						false
+					],
+					[
+						"hmmn?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Why,",
+						false
+					],
+					[
+						"do",
+						true
+					],
+					[
+						"I",
+						true
+					],
+					[
+						"make",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"uneasy,",
+						false
+					],
+					[
+						"Mac?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "GIN",
+				"page": "Eight billion dollars. That's eight thousand million.",
+				"screen": "Eight billion dollars in total.",
+				"pageWords": [
+					[
+						"Eight",
+						true
+					],
+					[
+						"billion",
+						true
+					],
+					[
+						"dollars.",
+						true
+					],
+					[
+						"That's",
+						false
+					],
+					[
+						"eight",
+						false
+					],
+					[
+						"thousand",
+						false
+					],
+					[
+						"million.",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Eight",
+						true
+					],
+					[
+						"billion",
+						true
+					],
+					[
+						"dollars",
+						true
+					],
+					[
+						"in",
+						false
+					],
+					[
+						"total.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "MAC",
+				"page": "HOW DO YOU EXPECT TO MAKE A CAREER OF THIS, IF YOU CAN'T TAKE A LITTLE INCONVENIENCE?",
+				"screen": "If you can't feel alive now, you never will.",
+				"pageWords": [
+					[
+						"HOW",
+						false
+					],
+					[
+						"DO",
+						false
+					],
+					[
+						"YOU",
+						false
+					],
+					[
+						"EXPECT",
+						false
+					],
+					[
+						"TO",
+						false
+					],
+					[
+						"MAKE",
+						false
+					],
+					[
+						"A",
+						false
+					],
+					[
+						"CAREER",
+						false
+					],
+					[
+						"OF",
+						false
+					],
+					[
+						"THIS,",
+						false
+					],
+					[
+						"IF",
+						true
+					],
+					[
+						"YOU",
+						true
+					],
+					[
+						"CAN'T",
+						true
+					],
+					[
+						"TAKE",
+						false
+					],
+					[
+						"A",
+						false
+					],
+					[
+						"LITTLE",
+						false
+					],
+					[
+						"INCONVENIENCE?",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"If",
+						true
+					],
+					[
+						"you",
+						true
+					],
+					[
+						"can't",
+						true
+					],
+					[
+						"feel",
+						false
+					],
+					[
+						"alive",
+						false
+					],
+					[
+						"now,",
+						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"never",
+						false
+					],
+					[
+						"will.",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "GIN",
+				"page": "Well, I promised him a bonus. Five million. Comes out of your share.",
+				"screen": "Well, it comes out of your share.",
+				"pageWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"I",
+						false
+					],
+					[
+						"promised",
+						false
+					],
+					[
+						"him",
+						false
+					],
+					[
+						"a",
+						false
+					],
+					[
+						"bonus.",
+						false
+					],
+					[
+						"Five",
+						false
+					],
+					[
+						"million.",
+						false
+					],
+					[
+						"Comes",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"share.",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"it",
+						false
+					],
+					[
+						"comes",
+						true
+					],
+					[
+						"out",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"share.",
+						true
+					]
+				]
+			}
+		]
+	}
+}
