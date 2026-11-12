@@ -54,6 +54,8 @@ describe('cleanSubtitles', () => {
 describe('alignDialogue', () => {
 	it('treats spelling variants as the same words', () => {
 		expect(normalizeWords("I'm gonna be 26, Mr. Bickle!")).toEqual(['im', 'going', 'to', 'be', 'twenty', 'six', 'mister', 'bickle']);
+		// words that are also built-in object properties aren't spelling variants
+		expect(normalizeWords('constructor toString')).toEqual(['constructor', 'tostring']);
 	});
 
 	it('finds kept, cut, moved and unscripted words', () => {
