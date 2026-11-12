@@ -93,6 +93,12 @@ describe('eligibleVersions', () => {
 	const lines = n => Array.from({ length: n }, (_, i) => ({ start: i * 20, end: i * 20 + 2, text: `line number ${i} is here` }));
 	const version = (id, overrides = {}) => ({ id, sentences: lines(320), meta: { machineTranslated: false, languageConfidence: 1, cds: '1/1' }, ...overrides });
 
+	it('drops lines of only hesitations', () => {
+		const sentences = lines(320).concat({ start: 6390, end: 6391, text: 'Mm-hmm.' });
+		const [kept] = eligibleVersions([version('a', { sentences })], 6400).eligible;
+		expect(kept.lines.map(l => l.text)).not.toContain('Mm-hmm.');
+	});
+
 	it('keeps whole, English, single-file versions that fit the runtime, once each', () => {
 		const { eligible, rejected } = eligibleVersions([
 			version('a'),

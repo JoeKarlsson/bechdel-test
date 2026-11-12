@@ -32,9 +32,10 @@ const main = async () => {
 	console.log(`${imdbIds.length} films, ${none} not in the corpus, ${jobs.length} subtitles to download`);
 
 	let done = 0;
+	let next = 0;
 	const failures = [];
 	const worker = async () => {
-		for (let job = jobs.shift(); job; job = jobs.shift()) {
+		for (let job = jobs[next++]; job; job = jobs[next++]) {
 			try {
 				const xml = await fetchMember(job.member);
 				fs.mkdirSync(path.dirname(job.file), { recursive: true });
