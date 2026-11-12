@@ -14,6 +14,8 @@ A screenplay is a draft. Between the page and the release, lines are cut in the 
 - **RQ2.** How much of what's said on screen isn't in the script? Measure: the share of subtitle words with no match in the script.
 - **RQ3.** Are women's lines cut at a different rate than men's?
 - **RQ4.** How often does the Bechdel verdict differ between page and screen, and in which direction?
+- **RQ5** (added 2026-11-12, before computing). How long, in screen time, are the conversations that make a film pass?
+- **RQ6** (added 2026-11-12, before computing). Are conversations between women cut more than the rest of women's dialogue in the same film?
 
 ## 3. Data
 
@@ -129,6 +131,23 @@ Lines with no known speaker are read two ways:
 
 A verdict differs from the page's only when both readings agree. Otherwise it is reported as *unclear*. Because the same instrument scores both sides, its known errors (80% agreement with bechdeltest.com readers, `npm run eval`) affect page and screen alike.
 
+### 8.1 Passing conversations in screen time (RQ5)
+
+For a film that passes on screen under the strict reading, the *passing conversations* are the exchanges that meet rule 3 in the strict screen screenplay: consecutive lines in one scene, spoken only by named women, at least two of them, mentioning no man.
+
+- A conversation's length is the end of its last subtitle line minus the start of its first.
+- Per film we store the number of passing conversations, their total length and the longest.
+- Subtitle timing is display time, which subtitlers pad for reading, so lengths are approximate. Offsets between releases don't matter, since only differences are used.
+
+### 8.2 Which dialogue gets cut (RQ6)
+
+On the page, using the line labels of §5.4 (consensus across versions), each script line by a named woman falls in one of two groups:
+
+- **in a women's conversation**: part of a rule-2 exchange (two or more named women, consecutive lines in a scene, any topic);
+- **other women's lines**: every other line by a named woman.
+
+Comparing women's lines with women's lines keeps speaker gender fixed, which RQ3 already covers. The mirror comparison, men's conversations against men's other lines, tests whether any effect is about conversations between women or about same-gender conversations in general.
+
 ## 9. Analysis (`npm run screen:stats`)
 
 - **RQ1/RQ2.** Median and interquartile range of word survival and of the not-in-script share, overall and by draft, decade and SDH.
@@ -136,6 +155,12 @@ A verdict differs from the page's only when both readings agree. Otherwise it is
   - For films where women and men each speak at least 20 lines, take the paired difference in the share of lines cut (women minus men).
   - Report a Wilcoxon signed-rank test, and the median difference with a 95% bootstrap interval (10,000 resamples, fixed seed).
 - **RQ4.** The share of films whose verdict differs, with a 95% Wilson interval, and McNemar's test on paired page and screen pass.
+- **RQ5.** Descriptive: median and interquartile range of the total and the longest passing conversation, and the share of passing films whose passing conversations total under 10, 30 and 60 seconds. No test.
+- **RQ6.** The unit is the film: those with at least 10 script lines in each group (§8.2).
+  - The outcome is the share of lines cut. We take the paired difference (women's conversations minus other women's lines).
+  - Report a Wilcoxon signed-rank test, and the median difference with a 95% bootstrap interval (10,000 resamples, fixed seed).
+  - The same test on men's conversations against men's other lines is the control.
+  - The share changed (rather than cut) is exploratory.
 - **Robustness.** Every headline is re-run on SDH-primary films only, shooting drafts only, versions with mean agreement of at least 0.8, and with the chance-level films (§7) put back. We report whether each conclusion holds.
 
 ## 10. Limits
