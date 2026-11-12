@@ -37,11 +37,12 @@ const compareOne = async film => {
 	if (!fs.existsSync(path.join(SUBTITLES_DIR, film.idIMDB))) return 'skipped (no subtitles; npm run fetch-subtitles)';
 	const scriptText = fs.readFileSync(scriptPath, 'utf8');
 	const characters = charactersFromCast(await fetchCast(film.idIMDB));
-	const { screenplay, resolved, bechdelResults } = analyzeScriptText(scriptText, characters, GENDER_OVERRIDES[film.script.file]);
+	const { screenplay, resolved } = analyzeScriptText(scriptText, characters, GENDER_OVERRIDES[film.script.file]);
 	const { runtime } = await fetchTmdbDetails(film.idIMDB);
 	const record = compareFilm({
 		scriptText, screenplay, resolved, characters,
-		pageScore: bechdelResults.bechdelScore,
+		// the score on the site, so a film analyzed with an older parser stops here
+		pageScore: film.bechdelResults.bechdelScore,
 		versions: loadVersions(film.idIMDB),
 		runtimeSeconds: runtime ? runtime * 60 : null,
 	});

@@ -45,7 +45,11 @@ const eligibleVersions = (versions, runtimeSeconds) => {
 	const rejected = {};
 	const reject = reason => { rejected[reason] = (rejected[reason] ?? 0) + 1; return false; };
 	const seen = new Set();
-	const eligible = versions.map(version => ({ ...version, ...cleanSubtitles(version.sentences) })).filter(version => {
+	const eligible = versions.map(version => {
+		const cleaned = cleanSubtitles(version.sentences);
+		// a line of only hesitations ("Mm-hmm.") has no words to match, and would read as a line not in the script
+		return { ...version, ...cleaned, lines: cleaned.lines.filter(line => normalizeWords(line.text).length > 0) };
+	}).filter(version => {
 		const { meta } = version;
 		if (meta.machineTranslated) return reject('machine translated');
 		if (meta.languageConfidence !== null && meta.languageConfidence < METHOD.minLanguageConfidence) return reject('not English');

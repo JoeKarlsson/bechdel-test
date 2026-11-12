@@ -199,7 +199,4 @@ const parseOpusXml = xml => {
 	};
 };
 
-module.exports = {
-	OPUS_EN_URL, loadOpusIndex, fetchMember, parseOpusXml, parseCentralDirectory, centralDirectoryLocation, imdbIdOfMember,
-	toSeconds,
-};
+module.exports = { OPUS_EN_URL, loadOpusIndex, fetchMember, parseOpusXml };
