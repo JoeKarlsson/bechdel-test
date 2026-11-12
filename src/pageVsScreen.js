@@ -162,14 +162,14 @@ const rulesOf = score => [score >= 1, score >= 2, score >= 3];
  * @param {number} film.pageScore - the page's Bechdel score
  * @param {Array<{id, sentences, meta}>} film.versions - every corpus subtitle for the film
  * @param {number|null} film.runtimeSeconds - TMDB's runtime
- * @returns {object} the data/screen/<id>.json record
+ * @returns {{record: object, detail?: object}} record is data/screen/<id>.json; detail has the per-line results
  */
 const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, versions, runtimeSeconds }) => {
 	const draft = draftLabel(scriptText);
 	const { eligible, available, rejected } = eligibleVersions(versions, runtimeSeconds);
 	const base = { method: METHOD, script: { draft }, subtitles: { candidates: versions.length, eligible: available, rejected } };
-	if (draft === 'transcript') return { ...base, excluded: 'the script is a transcript of the film' };
-	if (eligible.length === 0) return { ...base, excluded: 'no subtitle version passed the selection rules' };
+	if (draft === 'transcript') return { record: { ...base, excluded: 'the script is a transcript of the film' } };
+	if (eligible.length === 0) return { record: { ...base, excluded: 'no subtitle version passed the selection rules' } };
 
 	const dialogue = screenplay.scenes.flatMap((scene, sceneIndex) => scene.blocks
 		.filter(block => block.kind === 'dialogue').map(block => ({ ...block, sceneIndex })));
@@ -209,7 +209,7 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 	const movedWords = primaryAlignment.page.moved.reduce((a, b) => a + b, 0);
 	const anchoredShare = primaryAlignment.page.match.filter(j => j >= 0).length / Math.max(1, page.words.length);
 	// so little in common that the subtitles are likely another film or language (§1.4)
-	if (anchoredShare < METHOD.minAnchoredShare) return { ...base, excluded: 'the subtitles barely match the script', quality: { anchoredShare } };
+	if (anchoredShare < METHOD.minAnchoredShare) return { record: { ...base, excluded: 'the subtitles barely match the script', quality: { anchoredShare } } };
 
 	const count = (labels, value) => labels.filter(l => l === value).length;
 	const byGender = {};
@@ -247,7 +247,7 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 			.map(d => ({ speaker: d.speaker, page: d.text, screen: d.screen })),
 	};
 
-	return {
+	const record = {
 		...base,
 		subtitles: {
 			...base.subtitles,
@@ -275,6 +275,9 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 		bechdel: { page: { score: pageBechdel, rules: rulesOf(pageBechdel) }, strict: { score: strict, rules: rulesOf(strict) }, lenient: { score: lenient, rules: rulesOf(lenient) }, change },
 		quotes,
 	};
+	// per-line results for checking by hand (npm run screen:label); they hold script and subtitle text, so they aren't published
+	const detail = { dialogue, pageShares: pageLines, screenLines, screenShares, lineOwner, primary: primary.id };
+	return { record, detail };
 };
 
 module.exports = { compareFilm, draftLabel, eligibleVersions, screenScreenplay, METHOD };

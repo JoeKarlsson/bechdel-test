@@ -15,6 +15,7 @@ import {
 	crewFrom,
 	shelfStats,
 	peopleRanking,
+	screenFrom,
 } from '../src/lib/films.mjs';
 
 test('cleanTitle drops a trailing year', () => {
@@ -104,6 +105,40 @@ test('shelfStats groups by genre, and compares films with and without women in k
 	assert.deepEqual(stats.womanDirector, { yes: { films: 1, pass: 1 }, no: { films: 3, pass: 1 } });
 	assert.deepEqual(stats.jobs, [{ label: 'Directed by', w: 1, m: 2, nb: 0, unknown: 0, films: 3 }]);
 	assert.deepEqual(stats.money, { pass: { films: 1, multiple: 5 }, fail: { films: 1, multiple: 3 } });
+});
+
+test('screenFrom turns a page vs screen record into shares, and keeps why a film was left out', () => {
+	const gender = (lines, cut) => ({ lines, kept: lines - cut, changed: 0, cut });
+	const raw = {
+		script: { draft: 'shooting' },
+		subtitles: { used: 9, sdh: false, meanAgreement: 0.9 },
+		runtimeSeconds: 5400,
+		words: { page: 1000, screen: 800, kept: 600, cut: 400, notInScript: 200, moved: 0 },
+		lines: { page: 100, kept: 60, changed: 20, cut: 20, screen: 120, notInScript: 30 },
+		byGender: { w: gender(40, 10), m: gender(50, 5), unknown: gender(10, 5) },
+		byScriptOrder: [{ kept: 2 }, { cut: 1 }],
+		byMinute: [{ scripted: 10, notInScript: 2 }],
+		bechdel: { page: { score: 3 }, strict: { score: 2 }, lenient: { score: 3 }, change: 'unclear' },
+		quotes: { cut: [], notInScript: [], changed: [] },
+	};
+	const s = screenFrom(raw);
+	assert.equal(s.survival, 0.6);
+	assert.equal(s.notInScript, 0.25);
+	assert.deepEqual(s.cut, { w: 0.25, m: 0.1, wLines: 40, mLines: 50 });
+	assert.deepEqual(s.byScriptOrder, [{ kept: 2, changed: 0, cut: 0 }, { kept: 0, changed: 0, cut: 1 }]);
+	assert.deepEqual(s.bechdel, { page: 3, low: 2, high: 3, change: 'unclear' });
+	assert.equal(s.runtimeMinutes, 90);
+	assert.deepEqual(screenFrom({ excluded: 'the script is a transcript of the film', script: { draft: 'transcript' } }), { excluded: 'the script is a transcript of the film', draft: 'transcript' });
+	assert.equal(screenFrom(undefined), null);
+
+	const film = (screen) => ({ year: 2000, genres: [], bechdel: { pass: true, score: 3 }, readers: null, lines: { w: 1, m: 1, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0, screen, slug: 'x', title: 'X' });
+	const stats = shelfStats([film(s), film({ ...s, survival: 0.8, bechdel: { ...s.bechdel, change: 'page-pass-screen-fail' } }), film({ excluded: 'transcript' }), film(null)]);
+	assert.equal(stats.pageVsScreen.films, 2);
+	assert.equal(stats.pageVsScreen.excluded, 1);
+	assert.equal(stats.pageVsScreen.survival, 0.7);
+	assert.equal(stats.pageVsScreen.unclear, 1);
+	assert.deepEqual(stats.pageVsScreen.passToFail, [{ slug: 'x', title: 'X', year: 2000 }]);
+	assert.deepEqual(stats.pageVsScreen.cut, { films: 2, w: 0.25, m: 0.1, womenMore: 2, menMore: 0 });
 });
 
 test('shelfStats gives each year with enough films its own rate and the five years around it', () => {
