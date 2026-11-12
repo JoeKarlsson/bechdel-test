@@ -462,12 +462,15 @@ ul.hbars {
 	}
 }
 /* High contrast modes swap every background for one system color, which would
-   blank charts drawn with backgrounds. Here the color is the data, so it stays. */
+   blank charts drawn with backgrounds. Here the color is the data, so it stays,
+   but only on the bars: labels keep the theme's colors so they stay readable. */
 @media (forced-colors: active) {
-	div[role='img'],
+	div[role='img']:not(:has(p, .hb-label)),
+	.hb-track,
+	.pair-bar,
 	.timeline,
 	.squares,
-	.ychart,
+	.ychart :is(svg, .years),
 	.swatch,
 	.end-swatch,
 	.marks {
