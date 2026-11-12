@@ -38,6 +38,25 @@ test.describe('the shelf', () => {
 		expect(passing.filter((f) => f.year === oldest).map((f) => f.title)).toContain(await titles.first().textContent());
 	});
 
+	test('keeps the search, filter and sort in the address, and restores them from it', async ({ page }) => {
+		const fincherPasses = films.filter((f) => f.director.toLowerCase().includes('fincher') && f.score === 3);
+		expect(fincherPasses.length).toBeGreaterThan(1);
+		await page.getByLabel('Search').fill('fincher');
+		await page.getByLabel('Show').selectOption('pass');
+		await page.getByLabel('Sort').selectOption('az');
+		await expect(page).toHaveURL(/\?q=fincher&show=pass&sort=az$/);
+		// A refresh or a shared link lands on the same shelf
+		await page.reload();
+		await expect(page.getByLabel('Search')).toHaveValue('fincher');
+		await expect(page.getByLabel('Show')).toHaveValue('pass');
+		await expect(page.getByLabel('Sort')).toHaveValue('az');
+		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(fincherPasses.length);
+		// A value the form doesn't offer is ignored, not turned into a blank filter
+		await page.goto('/?show=nonsense');
+		await expect(page.getByLabel('Show')).toHaveValue('all');
+		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(PAGE_SIZE);
+	});
+
 	test('says so when nothing matches, and clears', async ({ page }) => {
 		await page.getByLabel('Search').fill('no film has this title');
 		await expect(page.getByText('Nothing on the shelf matches')).toBeVisible();

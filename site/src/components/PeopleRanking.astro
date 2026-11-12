@@ -1,6 +1,7 @@
 ---
 // A ranked list of people, one square per film: pink passes, gray fails.
 // Each row opens to list the films, linked.
+import FoldMark from './FoldMark.astro';
 interface Props {
 	people: { name: string; pass: number; films: { slug: string; title: string; year: number | null; pass: boolean }[] }[];
 }
@@ -16,7 +17,7 @@ const named = (f: { title: string; year: number | null }) => (f.year ? `${f.titl
 			<li>
 				<details>
 					<summary>
-						<span class="name">{p.name}</span>
+						<span class="name">{p.name}<FoldMark /></span>
 						<span class="squares" aria-hidden="true">
 							{p.films.map((f) => <span class:list={['sq', { pass: f.pass }]} title={`${named(f)}: ${f.pass ? 'passes' : 'fails'}`} />)}
 						</span>

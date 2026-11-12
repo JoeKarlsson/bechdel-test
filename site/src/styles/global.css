@@ -242,6 +242,22 @@ dd > a:only-child,
 	align-items: center;
 	gap: var(--space-2);
 }
+/* Rows of tapes: the shelf, a film's related films, Numbers' verdict changes */
+.poster-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: var(--space-6) var(--space-4);
+}
+/* Three tapes across on phones, so a long row is a third as tall */
+@media (max-width: 560px) {
+	.poster-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: var(--space-5) var(--space-2);
+	}
+}
 .swatch {
 	display: inline-block;
 	width: 1rem;
@@ -317,7 +333,7 @@ dd > a:only-child,
 	}
 	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
 		:is(.people details, details.charge, details.contents)::details-content,
-		.fold-body {
+		:root[data-folds-ready] .fold-body {
 			transition:
 				opacity 150ms ease-out,
 				content-visibility 150ms allow-discrete !important;
@@ -443,5 +459,18 @@ ul.hbars {
 	}
 	.hb-label {
 		grid-column: 1 / -1;
+	}
+}
+/* High contrast modes swap every background for one system color, which would
+   blank charts drawn with backgrounds. Here the color is the data, so it stays. */
+@media (forced-colors: active) {
+	div[role='img'],
+	.timeline,
+	.squares,
+	.ychart,
+	.swatch,
+	.end-swatch,
+	.marks {
+		forced-color-adjust: none;
 	}
 }

@@ -6,6 +6,7 @@ type Plausible = ((event: string, options?: { props?: Record<string, string> }) 
 declare global {
 	interface Window {
 		plausible?: Plausible;
+		trustedTypes?: { createPolicy: (name: string, rules: { createScriptURL: (url: string) => string }) => { createScriptURL: (url: string) => unknown } };
 	}
 }
 
@@ -23,7 +24,15 @@ if (!isBot) {
 	const s = document.createElement('script');
 	s.defer = true;
 	s.dataset.domain = 'bechdel.joekarlsson.com';
-	s.src = 'https://plausible.joekarlsson.io/js/script.tagged-events.outbound-links.js';
+	// Trusted Types (the CSP in Base.astro) lets a script URL through only via this policy, and it passes only this one
+	const plausibleURL = 'https://plausible.joekarlsson.io/js/script.tagged-events.outbound-links.js';
+	const policy = window.trustedTypes?.createPolicy('plausible', {
+		createScriptURL: (url) => {
+			if (url !== plausibleURL) throw new Error(`Blocked script URL: ${url}`);
+			return url;
+		},
+	});
+	s.src = (policy?.createScriptURL(plausibleURL) ?? plausibleURL) as string;
 	document.head.appendChild(s);
 
 	if (document.body.dataset.notFound) queue('404', { props: { path: location.pathname + location.hash } });

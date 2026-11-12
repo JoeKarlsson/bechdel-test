@@ -87,7 +87,7 @@ const n = (x: number) => x.toLocaleString('en-US');
 
 			<!-- Old /#/film/<id> links forward to the film's page (scripts/legacy-redirect.ts) -->
 			<script type="application/json" id="legacy-film-slugs" set:html={JSON.stringify(legacySlugs)} />
-			<ul class="shelf" role="list" data-shelf data-page-size={PAGE_SIZE} data-total={films.length}>
+			<ul class="shelf poster-grid" role="list" data-shelf data-page-size={PAGE_SIZE} data-total={films.length}>
 				{firstPage.map((film, i) => <Tape film={film} eager={i < 6} />)}
 			</ul>
 			<!-- One tape for scripts/shelf.ts to copy for each film it adds -->
@@ -214,12 +214,6 @@ const n = (x: number) => x.toLocaleString('en-US');
 		min-height: 44px;
 	}
 	.shelf {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-		gap: var(--space-6) var(--space-4);
 		transition: opacity 120ms ease-in;
 	}
 	/* Dims only if the films take longer than 200 ms to arrive */
@@ -250,13 +244,6 @@ const n = (x: number) => x.toLocaleString('en-US');
 		.tally {
 			margin-top: var(--space-3);
 			font-size: 2.5rem;
-		}
-	}
-	/* Three tapes across on phones, so the whole shelf is a third shorter */
-	@media (max-width: 560px) {
-		.shelf {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: var(--space-5) var(--space-2);
 		}
 	}
 	.more {

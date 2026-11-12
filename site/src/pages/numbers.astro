@@ -9,6 +9,8 @@ import { loadFilms, shelfStats, peopleRanking } from '../lib/films.mjs';
 const films = loadFilms();
 const s = shelfStats(films);
 
+// Counts over 999 get a thousands comma, like the rest of the site
+const n = (x: number) => x.toLocaleString('en-US');
 const pct = (n: number, d: number) => Math.round((n / d) * 100);
 const percent = (x: number | null) => (x === null ? '?' : `${Math.round(x * 100)}%`);
 const times = (x: number | null) => (x === null ? '?' : `${x.toFixed(1)} times`);
@@ -19,7 +21,7 @@ const passPoints = s.byYear.map((y) => ({
 	year: y.year,
 	value: y.pass / y.films,
 	average: y.fiveYearPass,
-	says: `${y.year}: ${y.pass} of ${y.films} films pass (${pct(y.pass, y.films)}%). Five years around it: ${percent(y.fiveYearPass)}.`,
+	says: `${y.year}: ${n(y.pass)} of ${n(y.films)} films pass (${pct(y.pass, y.films)}%). Five years around it: ${percent(y.fiveYearPass)}.`,
 }));
 const linesPoints = s.byYear
 	.filter((y) => y.womenLines !== null)
@@ -52,8 +54,8 @@ const starWomen = starRanking.filter((p) => womenStars.has(p.name)).length;
 const genreRows: Row[] = s.byGenre.map((g) => ({
 	label: g.label,
 	share: g.pass / g.films,
-	value: `${g.pass} of ${g.films}`,
-	aria: `${g.label}: ${g.pass} of ${g.films} films pass`,
+	value: `${n(g.pass)} of ${n(g.films)}`,
+	aria: `${g.label}: ${n(g.pass)} of ${n(g.films)} films pass`,
 }));
 const JOB_NAMES: Record<string, string> = {
 	'Directed by': 'Directors',
@@ -71,15 +73,13 @@ const jobRows: Row[] = s.jobs.map((j) => {
 	return {
 		label: JOB_NAMES[j.label] ?? j.label,
 		share: j.w / known,
-		value: `${j.w} of ${known}`,
-		aria: `${JOB_NAMES[j.label] ?? j.label}: ${j.w} of ${known} credits with a listed gender are women`,
+		value: `${n(j.w)} of ${n(known)}`,
+		aria: `${JOB_NAMES[j.label] ?? j.label}: ${n(j.w)} of ${n(known)} credits with a listed gender are women`,
 	};
 });
 const directors = s.jobs.find((j) => j.label === 'Directed by');
 const shooters = s.jobs.find((j) => j.label === 'Shot by');
 const h = s.heard;
-// Counts over 999 get a thousands comma, like the rest of the site
-const n = (x: number) => x.toLocaleString('en-US');
 
 // Last words: who has the first and last line
 const lw = s.lastWords;
@@ -104,12 +104,12 @@ const decadeRows = (end: 'first' | 'last'): Row[] =>
 		label: decadeName(d.decade),
 		share: d[end].w / d[end].films,
 		value: `${pct(d[end].w, d[end].films)}%`,
-		aria: `${decadeName(d.decade)}: ${d[end].w} of ${d[end].films} films ${end === 'first' ? 'open' : 'end'} on a woman's line`,
+		aria: `${decadeName(d.decade)}: ${n(d[end].w)} of ${n(d[end].films)} films ${end === 'first' ? 'open' : 'end'} on a woman's line`,
 	}));
 const passRows: Row[] = [
 	{ label: 'Passes', ...lw.pass },
 	{ label: 'Fails', ...lw.fail },
-].map((r) => ({ label: r.label, share: r.w / r.films, value: `${pct(r.w, r.films)}%`, aria: `Films that ${r.label.toLowerCase().replace(/s$/, '')}: ${r.w} of ${r.films} end on a woman's line` }));
+].map((r) => ({ label: r.label, share: r.w / r.films, value: `${pct(r.w, r.films)}%`, aria: `Films that ${r.label.toLowerCase().replace(/s$/, '')}: ${n(r.w)} of ${n(r.films)} end on a woman's line` }));
 // The best-rated films' last lines, three said by women and three by men
 const byRating = films.filter((f) => f.bookends?.last && f.imdbRating !== null).sort((a, b) => b.imdbRating! - a.imdbRating!);
 const lastOf = (gender: 'w' | 'm') => byRating.filter((f) => f.bookends!.last!.gender === gender).slice(0, 3);
@@ -181,7 +181,7 @@ const CONTENTS = [
 		<p class="page-lead">{n(s.films)} films. {n(s.pass)} of them pass the Bechdel test, {pct(s.pass, s.films)}%.</p>
 		<OnThisPage items={CONTENTS} />
 
-		<section class="section" aria-labelledby="trust-title">
+		<section class="section">
 			<h2 id="trust-title" class="section-title">How far to trust these</h2>
 			<div class="prose">
 				<p>
@@ -196,7 +196,7 @@ const CONTENTS = [
 			</div>
 		</section>
 
-		<section class="section" aria-labelledby="time-title">
+		<section class="section">
 			<h2 id="time-title" class="section-title">Year by year</h2>
 			<div class="two">
 				<YearChart title="Films that pass" points={passPoints} />
@@ -222,7 +222,7 @@ const CONTENTS = [
 			</details>
 		</section>
 
-		<section class="section" aria-labelledby="fail-title">
+		<section class="section">
 			<h2 id="fail-title" class="section-title">How far films get</h2>
 			<ul class="hbars wide-labels score-labels">
 				{scoreRows.map((r) => (
@@ -238,7 +238,7 @@ const CONTENTS = [
 			<p class="note">The three rules build on each other, so each film counts once, at the last rule it clears.</p>
 		</section>
 
-		<section class="section" aria-labelledby="genre-title">
+		<section class="section">
 			<h2 id="genre-title" class="section-title">By genre</h2>
 			<ul class="hbars wide-labels">
 				{genreRows.map((r) => (
@@ -254,7 +254,7 @@ const CONTENTS = [
 			<p class="note">Most films have more than one genre, so they count in each. Genres with fewer than five films are left out.</p>
 		</section>
 
-		<section class="section" aria-labelledby="heard-title">
+		<section class="section">
 			<h2 id="heard-title" class="section-title">Who gets heard</h2>
 			<dl class="tiles">
 				<div>
@@ -277,7 +277,7 @@ const CONTENTS = [
 
 		{
 			ps.films > 0 && (
-				<section class="section" aria-labelledby="screen-title">
+				<section class="section">
 					<h2 id="screen-title" class="section-title">Page vs screen</h2>
 					<p class="section-lead">{n(ps.films)} scripts lined up with what's said in the film. <a href="/about/#page-vs-screen">How we compare</a></p>
 					<dl class="tiles">
@@ -304,7 +304,7 @@ const CONTENTS = [
 								<div class="flow-bar" role="img" aria-label={`${f.label}, ${f.films} films: ${f.parts.map((p) => `${p.label} ${p.count}`).join(', ')}`}>
 									{f.parts.map((p) => p.count > 0 && <span class:list={['flow-part', p.css]} style={`flex-grow: ${p.count}`} />)}
 								</div>
-								<p class="note flow-values">{f.parts.map((p) => `${p.label}: ${n(p.count)}`).join(' · ')}</p>
+								<p class="note flow-values">{f.parts.map((p) => `${p.label}: ${n(p.count)}`).join(', ')}</p>
 							</li>
 						))}
 					</ul>
@@ -380,7 +380,7 @@ const CONTENTS = [
 					].map(({ title, list }) => list.length > 0 && (
 						<>
 							<h3>{title}</h3>
-							<ul class="shelf-row">
+							<ul class="shelf-row poster-grid">
 								{list.slice(0, SHELF_ROW).map((film) => <Tape film={film} />)}
 							</ul>
 							{list.length > SHELF_ROW && (
@@ -400,7 +400,7 @@ const CONTENTS = [
 			)
 		}
 
-		<section class="section" aria-labelledby="words-title">
+		<section class="section">
 			<h2 id="words-title" class="section-title">Last words</h2>
 			<dl class="tiles">
 				<div>
@@ -504,7 +504,7 @@ const CONTENTS = [
 			</p>
 		</section>
 
-		<section class="section" aria-labelledby="crew-title">
+		<section class="section">
 			<h2 id="crew-title" class="section-title">Behind the camera</h2>
 			<h3>Women in each job</h3>
 			<ul class="hbars wide-labels">
@@ -520,7 +520,7 @@ const CONTENTS = [
 			</ul>
 			<div class="prose">
 				<p>
-					{directors && `Women directed ${directors.w} of the ${directors.w + directors.m + directors.nb} director credits.`}
+					{directors && `Women directed ${n(directors.w)} of the ${n(directors.w + directors.m + directors.nb)} director credits.`}
 					{shooters && shooters.w === 0 && ' None of the films was shot by a woman.'}
 					{` Films with a woman director pass ${n(s.womanDirector.yes.pass)} of ${n(s.womanDirector.yes.films)} times (${pct(s.womanDirector.yes.pass, s.womanDirector.yes.films)}%), the rest ${n(s.womanDirector.no.pass)} of ${n(s.womanDirector.no.films)} (${pct(s.womanDirector.no.pass, s.womanDirector.no.films)}%).`}
 					{` With a woman among the writers, ${n(s.womanWriter.yes.pass)} of ${n(s.womanWriter.yes.films)} pass (${pct(s.womanWriter.yes.pass, s.womanWriter.yes.films)}%), against ${n(s.womanWriter.no.pass)} of ${n(s.womanWriter.no.films)} (${pct(s.womanWriter.no.pass, s.womanWriter.no.films)}%) without.`}
@@ -533,7 +533,7 @@ const CONTENTS = [
 			</div>
 		</section>
 
-		<section class="section" aria-labelledby="directors-title">
+		<section class="section">
 			<h2 id="directors-title" class="section-title">By director</h2>
 			<PeopleRanking people={directorRanking} />
 			<p class="note">
@@ -543,7 +543,7 @@ const CONTENTS = [
 			</p>
 		</section>
 
-		<section class="section" aria-labelledby="stars-title">
+		<section class="section">
 			<h2 id="stars-title" class="section-title">By star</h2>
 			<div class="two">
 				<div>
@@ -561,7 +561,7 @@ const CONTENTS = [
 			</p>
 		</section>
 
-		<section class="section" aria-labelledby="ages-title">
+		<section class="section">
 			<h2 id="ages-title" class="section-title">How old the stars were</h2>
 			<dl class="tiles">
 				<div>
@@ -580,7 +580,7 @@ const CONTENTS = [
 			<p class="note">The ten top-billed actors of each film, from TMDB birthdays, for the {n(s.ages.films)} films with at least one woman and one man among them.</p>
 		</section>
 
-		<section class="section" aria-labelledby="money-title">
+		<section class="section">
 			<h2 id="money-title" class="section-title">The money</h2>
 			<div class="prose">
 				<p>
@@ -588,7 +588,7 @@ const CONTENTS = [
 					made {times(s.money.fail.multiple)} its budget.
 				</p>
 				<p class="note">
-					Budgets and worldwide box office from TMDB, not adjusted for inflation, for the {s.money.pass.films + s.money.fail.films}
+					Budgets and worldwide box office from TMDB, not adjusted for inflation, for the {n(s.money.pass.films + s.money.fail.films)}
 					films that have both numbers.
 				</p>
 			</div>
@@ -645,13 +645,17 @@ const CONTENTS = [
 	.flow-swatch.same {
 		background: var(--chalk);
 	}
+	/* Tangerine is the site's "disputed" color, as on the film pages: pink means passes */
 	.flow-part.flip,
 	.flow-swatch.flip {
-		background: var(--pink);
+		background: var(--tangerine);
 	}
+	/* An edge keeps "unclear" from reading as the empty track */
 	.flow-part.unclear,
 	.flow-swatch.unclear {
 		background: var(--plank);
+		outline: 1px solid var(--muted);
+		outline-offset: -1px;
 	}
 	.flow-values {
 		margin: var(--space-1) 0 0;
@@ -679,12 +683,7 @@ const CONTENTS = [
 	}
 	/* The best-known films whose verdict changes, as a row of tapes */
 	.shelf-row {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 var(--space-3);
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-		gap: var(--space-4);
+		margin-bottom: var(--space-3);
 	}
 	.two {
 		display: grid;

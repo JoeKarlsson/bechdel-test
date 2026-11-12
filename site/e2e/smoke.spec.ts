@@ -86,6 +86,21 @@ test('exhibits fold on phones, without animating shut on load', async ({ page },
 	expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
 });
 
+test('with reduced motion on a phone, no fold starts a transition on load', async ({ page }, info) => {
+	test.skip(info.project.name === 'desktop', 'the finger fade only applies to touch screens');
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	// Count transitions as they start, since a 150ms one may be over before the page is checked
+	await page.addInitScript(() => {
+		(window as unknown as { foldTransitions: number }).foldTransitions = 0;
+		document.addEventListener('transitionrun', (e) => {
+			if ((e.target as Element).classList?.contains('fold-body')) (window as unknown as { foldTransitions: number }).foldTransitions++;
+		});
+	});
+	await page.goto('/films/gone-girl-2014/');
+	await expect(page.locator('html')).toHaveAttribute('data-folds-ready', '');
+	expect(await page.evaluate(() => (window as unknown as { foldTransitions: number }).foldTransitions)).toBe(0);
+});
+
 test('an exhibit is a heading with a button that folds its body', async ({ page }) => {
 	await page.goto('/films/gone-girl-2014/');
 	// The heading keeps its name without the + or − mark, and screen readers can jump to it

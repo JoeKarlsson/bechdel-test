@@ -58,8 +58,8 @@ test('every page has the head the launch checklist asks for', () => {
 test('no inline scripts, and new-tab links are safe', () => {
 	for (const p of pages) {
 		for (const tag of p.html.match(/<script\b[^>]*>/g) ?? []) {
-			// JSON data blocks never run; anything else must be an external file
-			assert.ok(/type="application\/(ld\+)?json"/.test(tag) || /\ssrc="/.test(tag), `inline script on ${p.path}: ${tag}`);
+			// JSON data blocks never run, and speculation rules only list pages to fetch; anything else must be an external file
+			assert.ok(/type="(application\/(ld\+)?json|speculationrules)"/.test(tag) || /\ssrc="/.test(tag), `inline script on ${p.path}: ${tag}`);
 		}
 		for (const a of p.html.match(/<a\b[^>]*target="_blank"[^>]*>/g) ?? []) {
 			assert.match(a, /rel="noopener noreferrer"/, `target=_blank without rel on ${p.path}: ${a}`);
