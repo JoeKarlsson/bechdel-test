@@ -122,4 +122,4 @@ const fetchMetadata = async imdbId => {
 	return { omdb, cast: credits.cast, crew: credits.crew || [], images, details, birthdays };
 };
 
-module.exports = { fetchMetadata, fetchCast, fetchReleaseYear, matchScriptByTitle, titleFromScriptName, comparableTitle };
+module.exports = { fetchMetadata, fetchCast, fetchTmdbDetails, fetchReleaseYear, matchScriptByTitle, titleFromScriptName, comparableTitle };
