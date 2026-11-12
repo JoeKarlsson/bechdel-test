@@ -8,7 +8,7 @@ const { scoreBechdel } = require('./bechdel/score');
 const { normalizeSpeaker } = require('./screenplay');
 
 const METHOD = {
-	version: '0.1-provisional',
+	version: '0.3-provisional',
 	// line labels (§1.5): kept at or above KEPT of its words on screen, cut below CHANGED;
 	// a subtitle line is not in the script below SCRIPTED of its words matched
 	thresholds: { kept: 0.8, changed: 0.3, scripted: 0.2 },
@@ -16,7 +16,8 @@ const METHOD = {
 	minLanguageConfidence: 0.9,
 	runtimeShare: { min: 0.85, max: 1.1 },
 	minLines: 300,
-	minAnchoredShare: 0.2,
+	// above every one of 300 scripts aligned with another film's subtitles (max 5.7%, METHODS.md §7)
+	minAnchoredShare: 0.06,
 	maxVersions: 9,
 	seed: 'page-vs-screen-2026-11-12',
 	// quotes shown on the site: at most this many per kind, each at most this many words
@@ -208,8 +209,6 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 	const addedWords = primaryAlignment.screen.matched.filter(m => !m).length;
 	const movedWords = primaryAlignment.page.moved.reduce((a, b) => a + b, 0);
 	const anchoredShare = primaryAlignment.page.match.filter(j => j >= 0).length / Math.max(1, page.words.length);
-	// so little in common that the subtitles are likely another film or language (§1.4)
-	if (anchoredShare < METHOD.minAnchoredShare) return { record: { ...base, excluded: 'the subtitles barely match the script', quality: { anchoredShare } } };
 
 	const count = (labels, value) => labels.filter(l => l === value).length;
 	const byGender = {};
@@ -260,6 +259,8 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 		},
 		runtimeSeconds,
 		quality: { anchoredShare },
+		// no more in common than another film's subtitles (§7): left out of the results, but measured, so a robustness check can put them back
+		...(anchoredShare < METHOD.minAnchoredShare ? { excluded: 'the subtitles match the script no better than chance' } : {}),
 		words: { page: page.words.length, screen: screenWords, kept: keptWords, cut: page.words.length - keptWords, notInScript: addedWords, moved: movedWords },
 		lines: {
 			page: dialogue.length,

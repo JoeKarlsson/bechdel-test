@@ -20,6 +20,8 @@ const films = fs.readdirSync(path.join(ROOT, 'data/screen')).filter(f => f.endsW
 	return { ...screen, year: film.year, title: film.title };
 });
 const compared = films.filter(f => !f.excluded);
+// below chance: measured, but left out of the headline (METHODS.md §7)
+const chanceLevel = films.filter(f => f.excluded && f.words);
 
 const summary = xs => ({ n: xs.length, median: median(xs), q1: quantile(xs, 0.25), q3: quantile(xs, 0.75) });
 const survival = f => f.words.kept / f.words.page;
@@ -75,6 +77,7 @@ const results = {
 		headline(compared.filter(f => f.subtitles.sdh), 'SDH primary only'),
 		headline(compared.filter(f => f.script.draft === 'shooting'), 'shooting drafts only'),
 		headline(compared.filter(f => (f.subtitles.meanAgreement ?? 0) >= 0.8), 'versions agree on 80%+'),
+		headline([...compared, ...chanceLevel], 'with the chance-level films put back'),
 	],
 	changedFilms: compared.filter(f => ['page-pass-screen-fail', 'page-fail-screen-pass'].includes(f.bechdel.change))
 		.map(f => ({ _id: f._id, title: f.title, year: f.year, change: f.bechdel.change })),

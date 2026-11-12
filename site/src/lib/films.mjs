@@ -476,7 +476,10 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 	const changed = (kind) => compared.filter((f) => f.screen.bechdel.change === kind);
 	const pageVsScreen = {
 		films: compared.length,
-		excluded: films.filter((f) => f.screen?.excluded).length,
+		// why films were left out, most common first: { reason, films }
+		excluded: Object.entries(Object.groupBy(films.filter((f) => f.screen?.excluded), (f) => f.screen.excluded))
+			.map(([reason, fs]) => ({ reason, films: fs.length }))
+			.sort((a, b) => b.films - a.films),
 		survival: median(compared.map((f) => f.screen.survival)),
 		notInScript: median(compared.map((f) => f.screen.notInScript)),
 		byDraft: DRAFTS.map((draft) => {

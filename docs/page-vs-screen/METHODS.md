@@ -1,6 +1,6 @@
 # Page vs screen: methods
 
-**Status: draft 0.1 (2026-11-12).** The thresholds in §5 are provisional. They get tuned on the development half of the hand-labelled sample (§6), then frozen as version 1.0 in a dated commit before the test half is scored and before any shelf-wide result is reported. Anything not listed in §2 is exploratory.
+**Status: draft 0.3 (2026-11-12).** The thresholds in §5 are provisional. They get tuned on the development half of the hand-labelled sample (§6), then frozen as version 1.0 in a dated commit before the test half is scored and before any shelf-wide result is reported. Anything not listed in §2 is exploratory.
 
 Code: `src/opus.js` (corpus access), `src/subtitles.js` (cleaning), `src/align.js` (alignment), `src/pageVsScreen.js` (selection, labels, the Bechdel test on screen), `scripts/fetch-subtitles.js`, `scripts/screen.js`. Every output file (`data/screen/<id>.json`) records the method version and thresholds it was made with.
 
@@ -110,7 +110,7 @@ Decided from inputs, never from results:
 
 - **Transcripts.** Some scripts online were written from the finished film ("post-production script", "transcript", "as broadcast", "continuity script", "dialogue list", or a title page with release date and running time). They can't show change, so they are excluded. Films with survival above 95% are listed for a manual look but are not excluded for their result.
 - **No usable subtitles.** No version passes §4.
-- **Wrong film or language.** Under 20% of script words align with the primary version.
+- **Wrong film or language.** Under 6% of script words align with the primary version. The bar is set at chance: 300 scripts, each aligned with another film's subtitles (seeded pairing), matched a median 1.7% of their words, 3.9% at the 99th percentile and 5.7% at most. A script below 6% matches its film no better than an unrelated one. These films are still measured, and a robustness check puts them back (§9). Below chance, a wrong match and a draft rewritten beyond recognition look the same (Rush Hour's original screenplay, written before Jackie Chan was cast, is one), so the bar can't tell which a film is. A check on character names was tried to separate them and rejected: real films failed it whenever the subtitles use a nickname (Lady Bird matched 91% of its words but 10% of its names). (Draft 0.1 used 20%, which excluded heavily rewritten drafts for their result. The null distribution replaced it before any result was reported.)
 
 Each script's draft is labelled from its title page as *shooting* (shooting script, final, revised, coloured revision pages), *early* (first, second or rough draft) or *unknown*. Results are reported by draft, since earlier drafts are expected to show more change.
 
@@ -136,12 +136,13 @@ A verdict differs from the page's only when both readings agree. Otherwise it is
   - For films where women and men each speak at least 20 lines, take the paired difference in the share of lines cut (women minus men).
   - Report a Wilcoxon signed-rank test, and the median difference with a 95% bootstrap interval (10,000 resamples, fixed seed).
 - **RQ4.** The share of films whose verdict differs, with a 95% Wilson interval, and McNemar's test on paired page and screen pass.
-- **Robustness.** Every headline is re-run on SDH-primary films only, shooting drafts only, and versions with mean agreement of at least 0.8. We report whether each conclusion holds.
+- **Robustness.** Every headline is re-run on SDH-primary films only, shooting drafts only, versions with mean agreement of at least 0.8, and with the chance-level films (§7) put back. We report whether each conclusion holds.
 
 ## 10. Limits
 
 - Scripts that are online skew popular, American and recent. Subtitles on opensubtitles.org skew the same way.
 - Results describe "shelf films with an English script and English subtitles", not film in general.
+- Word survival has a chance floor of about 2%: unrelated dialogue shares that many words in matching order (§7).
 - Subtitles are not a transcript of speech: §6's audio spot-check estimates how far apart they are.
 - Speaker attribution on screen is borrowed from the script. Lines not in the script often have no known speaker, which is why §8 reports two readings.
 

@@ -310,8 +310,8 @@ const CONTENTS = [
 						)}
 					</div>
 					<p class="note">
-						{n(ps.films)} films compared with their English subtitles; {n(ps.excluded)} more were left out, most because their script was
-						typed up from the finished film. <a href="/about/#page-vs-screen">How we compare</a>.
+						{n(ps.films)} films compared with their English subtitles. Left out: {ps.excluded.map((x) => `${n(x.films)} because ${x.reason}`).join('; ')}.{' '}
+						<a href="/about/#page-vs-screen">How we compare</a>.
 					</p>
 				</section>
 			)
