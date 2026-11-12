@@ -273,6 +273,8 @@ function aiFrom(ea) {
 const share = (n, d) => (d > 0 ? n / d : null);
 // Women's and men's cut rates are compared only when both say this many lines in the script
 export const CUT_RATE_MIN_LINES = 20;
+// Conversations between women and women's other lines are compared only when each has this many lines
+export const CONVERSATION_MIN_LINES = 10;
 
 /**
  * A film's page vs screen comparison (data/screen/<id>.json): how much of
@@ -298,6 +300,12 @@ export function screenFrom(s) {
 		// both readings of lines nobody in the script says agree on pass or fail, unless change is 'unclear'
 		bechdel: { page: page.score, low: Math.min(strict.score, lenient.score), high: Math.max(strict.score, lenient.score), change },
 		quotes: s.quotes,
+		// the conversations that pass on screen, in seconds (null when the film doesn't pass on screen)
+		passing: s.passingConversations ?? null,
+		// share of named women's lines cut, in conversations between women and elsewhere
+		conversationCut: s.conversations
+			? { conversation: share(s.conversations.w.conversation.cut, s.conversations.w.conversation.lines), other: share(s.conversations.w.other.cut, s.conversations.w.other.lines), conversationLines: s.conversations.w.conversation.lines, otherLines: s.conversations.w.other.lines }
+			: null,
 		subtitles: { versions: s.subtitles.used, sdh: s.subtitles.sdh, agreement: s.subtitles.meanAgreement },
 	};
 }
@@ -493,6 +501,14 @@ export function shelfStats(films, { minGroup = 5, minYear = 10 } = {}) {
 			womenMore: bothCut.filter((f) => f.screen.cut.w > f.screen.cut.m).length,
 			menMore: bothCut.filter((f) => f.screen.cut.m > f.screen.cut.w).length,
 		},
+		passing: (() => {
+			const seconds = compared.map((f) => f.screen.passing?.seconds).filter((x) => x !== undefined);
+			return { films: seconds.length, seconds: median(seconds), under30: seconds.length ? seconds.filter((x) => x < 30).length / seconds.length : null };
+		})(),
+		conversations: (() => {
+			const fs = compared.filter((f) => f.screen.conversationCut?.conversationLines >= CONVERSATION_MIN_LINES && f.screen.conversationCut.otherLines >= CONVERSATION_MIN_LINES);
+			return { films: fs.length, conversation: median(fs.map((f) => f.screen.conversationCut.conversation)), other: median(fs.map((f) => f.screen.conversationCut.other)) };
+		})(),
 		unclear: changed('unclear').length,
 		passToFail: changed('page-pass-screen-fail').map((f) => ({ slug: f.slug, title: f.title, year: f.year })),
 		failToPass: changed('page-fail-screen-pass').map((f) => ({ slug: f.slug, title: f.title, year: f.year })),
