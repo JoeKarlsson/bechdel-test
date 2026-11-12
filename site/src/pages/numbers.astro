@@ -259,6 +259,15 @@ const CONTENTS = [
 							<dt>{percent(ps.notInScript)}</dt>
 							<dd>of what's said on screen isn't in the script we have, in the median film.</dd>
 						</div>
+						{ps.passing.films > 0 && (
+							<div>
+								<dt>{Math.round(ps.passing.seconds!)} seconds</dt>
+								<dd>
+									of women talking to each other is all it takes to pass, in the median film that passes on screen. {percent(ps.passing.under30)} pass on
+									under 30 seconds.
+								</dd>
+							</div>
+						)}
 						<div>
 							<dt>{n(ps.passToFail.length + ps.failToPass.length)}</dt>
 							<dd>
@@ -285,6 +294,12 @@ const CONTENTS = [
 					)}
 					{ps.cut.films > 0 && (
 						<div class="prose">
+							{ps.conversations.films > 0 && (
+								<p>
+									In the median film, {percent(ps.conversations.conversation)} of the lines in conversations between women are cut, and{' '}
+									{percent(ps.conversations.other)} of women's other lines ({n(ps.conversations.films)} films with enough of both).
+								</p>
+							)}
 							<p>
 								In the median film, {percent(ps.cut.w)} of women's lines are cut and {percent(ps.cut.m)} of men's. Women lose a bigger
 								share of their lines in {n(ps.cut.womenMore)} of {n(ps.cut.films)} films, men in {n(ps.cut.menMore)}.

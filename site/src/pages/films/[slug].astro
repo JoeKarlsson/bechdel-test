@@ -4,7 +4,7 @@ import FoldMark from '../../components/FoldMark.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
 import Term from '../../components/Term.astro';
-import { loadFilms, relatedFilms, CUT_RATE_MIN_LINES } from '../../lib/films.mjs';
+import { loadFilms, relatedFilms, CUT_RATE_MIN_LINES, CONVERSATION_MIN_LINES } from '../../lib/films.mjs';
 import { posterFor, backdropFor } from '../../lib/images';
 
 export function getStaticPaths() {
@@ -71,6 +71,10 @@ const draftWords: Record<string, string> = { shooting: 'a shooting draft', early
 const clock = (seconds: number) => `${Math.floor(seconds / 3600)}:${String(Math.floor((seconds % 3600) / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
 const minuteMax = onScreen ? Math.max(1, ...onScreen.byMinute.map((b) => b.scripted + b.notInScript)) : 1;
 const showCutRates = !!onScreen && onScreen.cut.wLines >= CUT_RATE_MIN_LINES && onScreen.cut.mLines >= CUT_RATE_MIN_LINES;
+const conversationCut = onScreen?.conversationCut;
+const showConversationCut = !!conversationCut && conversationCut.conversationLines >= CONVERSATION_MIN_LINES && conversationCut.otherLines >= CONVERSATION_MIN_LINES;
+// "41 seconds", "9 minutes"
+const duration = (seconds: number) => (seconds < 90 ? plural(Math.round(seconds), 'second') : plural(Math.round(seconds / 60), 'minute'));
 
 // The AI's five scores, turned so higher is always better for women, each
 // placed among every film on the shelf
@@ -332,7 +336,7 @@ const credit = [
 								<a href="#exhibit-screen">What's said on screen</a>, from the film's subtitles,
 								{onScreen.bechdel.change === 'unclear'
 									? ` scores ${screenScore} out of 3, depending on who says the lines that aren't in the script.`
-									: ` scores ${screenScore} out of 3${screenTag === 'agree' ? '.' : `, so on screen it ${bechdel.pass ? 'fails' : 'passes'}.`}`}
+									: ` scores ${screenScore} out of 3${screenTag === 'agree' ? '' : `, so on screen it ${bechdel.pass ? 'fails' : 'passes'}`}${onScreen.passing ? `, on ${duration(onScreen.passing.seconds)} of women talking to each other` : ''}.`}
 							</p>
 						)
 					}
@@ -763,6 +767,12 @@ const credit = [
 												</>
 											)}
 
+											{showConversationCut && (
+												<p>
+													{percent(conversationCut!.conversation!)} of the lines in conversations between women are cut, against {percent(conversationCut!.other!)} of women's other lines.
+												</p>
+											)}
+
 											<table class="ps-rules">
 												<caption class="note">The Bechdel test, page and screen</caption>
 												<thead>
@@ -774,6 +784,13 @@ const credit = [
 													))}
 												</tbody>
 											</table>
+
+											{onScreen.passing && (
+												<p>
+													On screen, the conversations that pass the test add up to {duration(onScreen.passing.seconds)}: {plural(onScreen.passing.count, 'conversation')}
+													{onScreen.passing.count > 1 && `, the longest ${duration(onScreen.passing.longest)}`}.
+												</p>
+											)}
 
 											<div class="ps-quotes">
 												{onScreen.quotes.cut.length > 0 && (

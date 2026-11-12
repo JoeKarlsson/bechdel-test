@@ -2,6 +2,7 @@ const { parseOpusXml } = require('./opus');
 const { cleanSubtitles } = require('./subtitles');
 const { alignDialogue, normalizeWords } = require('./align');
 const { draftLabel, eligibleVersions, screenScreenplay } = require('./pageVsScreen');
+const { runTest } = require('./bechdel/score');
 
 describe('parseOpusXml', () => {
 	const xml = `<?xml version="1.0" encoding="utf-8"?>
@@ -127,5 +128,11 @@ describe('screenScreenplay', () => {
 		const lenient = screenScreenplay(dialogue, screen, [0, null, 1], resolved, 'skip');
 		expect(strict.scenes[0].blocks.map(b => b.speaker)).toEqual(['ANN', 'SOMEONE UNHEARD', 'BEA']);
 		expect(lenient.scenes[0].blocks.map(b => b.speaker)).toEqual(['ANN', 'BEA']);
+	});
+
+	it('keeps each line\'s screen time, so a passing conversation can be timed', () => {
+		const timed = [{ text: 'a', start: 10, end: 12 }, { text: 'b', start: 13, end: 19.5 }];
+		const { clean } = runTest(screenScreenplay(dialogue, timed, [0, 1], resolved, 'skip'), resolved, [], 'w');
+		expect(clean.map(({ lines }) => lines.at(-1).end - lines[0].start)).toEqual([9.5]);
 	});
 });

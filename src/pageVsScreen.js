@@ -4,7 +4,7 @@
 const crypto = require('crypto');
 const { alignDialogue, lineShares, normalizeWords } = require('./align');
 const { cleanSubtitles, isSdh } = require('./subtitles');
-const { scoreBechdel } = require('./bechdel/score');
+const { scoreBechdel, runTest } = require('./bechdel/score');
 const { normalizeSpeaker } = require('./screenplay');
 
 const METHOD = {
@@ -145,7 +145,7 @@ const screenScreenplay = (dialogue, screenLines, lineOwner, resolved, unknownAs)
 			speaker = unknownAs;
 		}
 		const last = scenes[scenes.length - 1];
-		const block = { kind: 'dialogue', speaker, text: line.text };
+		const block = { kind: 'dialogue', speaker, text: line.text, start: line.start, end: line.end };
 		if (last && last.sceneIndex === sceneIndex) last.blocks.push(block);
 		else scenes.push({ sceneIndex, heading: null, blocks: [block] });
 	}
@@ -225,12 +225,32 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 
 	const pageBechdel = scoreBechdel(screenplay, resolved, characters).bechdelScore;
 	if (pageBechdel !== pageScore) throw new Error(`page score ${pageBechdel} differs from the film's ${pageScore}: re-run npm run analyze for it first`);
-	const strict = scoreBechdel(screenScreenplay(dialogue, screenLines, lineOwner, resolved, 'SOMEONE UNHEARD'), resolved, characters).bechdelScore;
+	const strictScreenplay = screenScreenplay(dialogue, screenLines, lineOwner, resolved, 'SOMEONE UNHEARD');
+	const strict = scoreBechdel(strictScreenplay, resolved, characters).bechdelScore;
 	const lenient = scoreBechdel(screenScreenplay(dialogue, screenLines, lineOwner, resolved, 'skip'), resolved, characters).bechdelScore;
 	const passes = score => score === 3;
 	const change = passes(strict) !== passes(lenient) ? 'unclear'
 		: passes(pageBechdel) === passes(strict) ? 'same'
 			: passes(pageBechdel) ? 'page-pass-screen-fail' : 'page-fail-screen-pass';
+
+	// RQ5 (§8.1): the conversations that pass, in screen time, first line's start to last line's end
+	const passingLengths = passes(strict) ? runTest(strictScreenplay, resolved, characters, 'w').clean
+		.map(({ lines }) => (lines.at(-1).end ?? lines.at(-1).start) - lines[0].start).filter(Number.isFinite) : [];
+	const passingConversations = passingLengths.length > 0
+		? { count: passingLengths.length, seconds: +passingLengths.reduce((a, b) => a + b, 0).toFixed(1), longest: +Math.max(...passingLengths).toFixed(1) }
+		: null;
+
+	// RQ6 (§8.2): named women's (or men's) lines in conversations with each other against their other lines
+	const indexOfBlock = new Map(screenplay.scenes.flatMap(scene => scene.blocks).filter(block => block.kind === 'dialogue').map((block, i) => [block, i]));
+	const tally = indices => {
+		const labels = indices.map(i => pageLabels[i]).filter(Boolean);
+		return { lines: labels.length, kept: count(labels, 'kept'), changed: count(labels, 'changed'), cut: count(labels, 'cut') };
+	};
+	const conversationsOf = focus => {
+		const inConversation = new Set(runTest(screenplay, resolved, characters, focus).exchanges.flatMap(e => e.lines.map(block => indexOfBlock.get(block))));
+		const own = dialogue.map((_, i) => i).filter(i => resolved.get(dialogue[i].speaker)?.gender === focus && resolved.get(dialogue[i].speaker)?.named);
+		return { conversation: tally(own.filter(i => inConversation.has(i))), other: tally(own.filter(i => !inConversation.has(i))) };
+	};
 
 	const { perKind, maxWords, minWords } = METHOD.quotes;
 	const fits = text => wordCount(text) >= minWords && wordCount(text) <= maxWords;
@@ -273,6 +293,8 @@ const compareFilm = ({ scriptText, screenplay, resolved, characters, pageScore, 
 		byGender,
 		byScriptOrder: binsOf(dialogue.length, METHOD.bins, i => pageLabels[i]),
 		byMinute,
+		passingConversations,
+		conversations: { w: conversationsOf('w'), m: conversationsOf('m') },
 		bechdel: { page: { score: pageBechdel, rules: rulesOf(pageBechdel) }, strict: { score: strict, rules: rulesOf(strict) }, lenient: { score: lenient, rules: rulesOf(lenient) }, change },
 		quotes,
 	};

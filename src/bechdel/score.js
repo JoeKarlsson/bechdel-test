@@ -116,4 +116,4 @@ const scoreBechdel = (screenplay, resolved, cast) => {
 	};
 };
 
-module.exports = { scoreBechdel, MALE_REFERENCE, FEMALE_REFERENCE };
+module.exports = { scoreBechdel, runTest, MALE_REFERENCE, FEMALE_REFERENCE };

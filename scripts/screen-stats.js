@@ -12,6 +12,8 @@ const { median, quantile, bootstrap, wilson, wilcoxonSignedRank, mcnemar } = req
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'data/eval/page-vs-screen.json');
 const MIN_LINES = 20;
+// RQ6: lines needed in each group (§9)
+const MIN_GROUP_LINES = 10;
 const SEED = 'page-vs-screen-stats-2026-11-12';
 
 const films = fs.readdirSync(path.join(ROOT, 'data/screen')).filter(f => f.endsWith('.json')).map(f => {
@@ -40,9 +42,31 @@ const headline = (fs, label) => {
 	const changed = decided.filter(f => f.bechdel.change !== 'same');
 	const passToFail = decided.filter(f => f.bechdel.change === 'page-pass-screen-fail').length;
 	const failToPass = decided.filter(f => f.bechdel.change === 'page-fail-screen-pass').length;
+	const passing = fs.map(f => f.passingConversations).filter(Boolean);
+	const under = seconds => (passing.length ? passing.filter(p => p.seconds < seconds).length / passing.length : null);
+	const conversationTest = focus => {
+		const eligible = fs.filter(f => f.conversations[focus].conversation.lines >= MIN_GROUP_LINES && f.conversations[focus].other.lines >= MIN_GROUP_LINES);
+		const cutShare = g => g.cut / g.lines;
+		const differences = eligible.map(f => cutShare(f.conversations[focus].conversation) - cutShare(f.conversations[focus].other));
+		return {
+			films: eligible.length,
+			median: median(differences),
+			ci95: bootstrap(differences, median, { seed: `${SEED}:${label}:conversations:${focus}` }),
+			wilcoxon: wilcoxonSignedRank(differences),
+		};
+	};
 	return {
 		label,
 		films: fs.length,
+		passingConversations: {
+			films: passing.length,
+			totalSeconds: summary(passing.map(p => p.seconds)),
+			longestSeconds: summary(passing.map(p => p.longest)),
+			under10: under(10),
+			under30: under(30),
+			under60: under(60),
+		},
+		conversationsCut: { women: conversationTest('w'), menControl: conversationTest('m') },
 		survival: summary(fs.map(survival)),
 		notInScript: summary(fs.map(notInScript)),
 		cutWomenMinusMen: {
@@ -95,6 +119,11 @@ for (const h of [results.all, ...results.robustness]) {
 	const c = h.cutWomenMinusMen;
 	console.log(`  RQ3 women's minus men's cut rate: median ${pct(c.median)} [${pct(c.ci95[0])}, ${pct(c.ci95[1])}], Wilcoxon p = ${c.wilcoxon.p.toFixed(4)} (${c.films} films)`);
 	const v = h.verdict;
+	const p = h.passingConversations;
+	console.log(`  RQ5 passing conversations (${p.films} films that pass on screen): total median ${p.totalSeconds.median?.toFixed(1)} s (IQR ${p.totalSeconds.q1?.toFixed(1)}-${p.totalSeconds.q3?.toFixed(1)}), longest median ${p.longestSeconds.median?.toFixed(1)} s; under 10 s ${pct(p.under10)}, under 30 s ${pct(p.under30)}, under 60 s ${pct(p.under60)}`);
+	for (const [name, t] of [['women', h.conversationsCut.women], ['men (control)', h.conversationsCut.menControl]]) {
+		console.log(`  RQ6 ${name}: conversation lines minus other lines, cut share median ${pct(t.median)} [${pct(t.ci95[0])}, ${pct(t.ci95[1])}], Wilcoxon p = ${t.wilcoxon.p.toFixed(4)} (${t.films} films)`);
+	}
 	console.log(`  RQ4 verdict differs: ${v.changed} of ${v.decided} (${pct(v.share)} [${pct(v.ci95[0])}, ${pct(v.ci95[1])}]); pass->fail ${v.passToFail}, fail->pass ${v.failToPass}, McNemar p = ${v.mcnemar.p.toFixed(4)}; ${v.unclear} unclear`);
 }
 console.log(`\nwritten to ${path.relative(ROOT, OUT)}`);
