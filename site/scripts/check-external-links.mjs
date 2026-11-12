@@ -6,7 +6,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
-const SKIP = /bsky\.app\/intent|threads\.net\/intent|reddit\.com\/submit|news\.ycombinator\.com\/submitlink|x\.com\/intent/;
+const SKIP = /bsky\.app\/intent|threads\.net\/intent|reddit\.com\/submit|news\.ycombinator\.com\/submitlink|x\.com\/intent|linkedin\.com\/sharing\//;
 const BLOCKS_BOTS = /(^|\.)imdb\.com$/;
 
 const files = (dir) =>
