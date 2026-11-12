@@ -836,7 +836,9 @@ const credit = [
 										<p class="note">
 											{screen.draft === 'transcript'
 												? "This script was written down from the finished film, so it can't show what changed between page and screen."
-												: 'See how we compare scripts with what\'s said on screen.'}{' '}
+												: screen.excluded.includes('chance')
+													? "The film's subtitles share no more of this script's dialogue than an unrelated film's would. It may be an early draft rewritten beyond recognition, or a script for another version of the story."
+													: 'No complete English subtitles fit this film.'}{' '}
 											<a href="/about/#page-vs-screen">How we compare</a>.
 										</p>
 									)}

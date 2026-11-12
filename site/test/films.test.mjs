@@ -134,7 +134,7 @@ test('screenFrom turns a page vs screen record into shares, and keeps why a film
 	const film = (screen) => ({ year: 2000, genres: [], bechdel: { pass: true, score: 3 }, readers: null, lines: { w: 1, m: 1, unknown: 0 }, crew: null, money: null, ages: [], measures: null, dialogueCount: 0, screen, slug: 'x', title: 'X' });
 	const stats = shelfStats([film(s), film({ ...s, survival: 0.8, bechdel: { ...s.bechdel, change: 'page-pass-screen-fail' } }), film({ excluded: 'transcript' }), film(null)]);
 	assert.equal(stats.pageVsScreen.films, 2);
-	assert.equal(stats.pageVsScreen.excluded, 1);
+	assert.deepEqual(stats.pageVsScreen.excluded, [{ reason: 'transcript', films: 1 }]);
 	assert.equal(stats.pageVsScreen.survival, 0.7);
 	assert.equal(stats.pageVsScreen.unclear, 1);
 	assert.deepEqual(stats.pageVsScreen.passToFail, [{ slug: 'x', title: 'X', year: 2000 }]);

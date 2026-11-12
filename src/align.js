@@ -34,7 +34,7 @@ const normalizeWords = text => text
 	.replace(/'/g, '')
 	.split(/[^a-z0-9]+/)
 	.filter(Boolean)
-	.flatMap(word => (EQUIVALENT[word] ?? word).split(' '))
+	.flatMap(word => (Object.hasOwn(EQUIVALENT, word) ? EQUIVALENT[word] : word).split(' '))
 	.filter(word => !FILLERS.has(word));
 
 /** Every line's words, flattened, with the index of the line each word came from */
