@@ -9,122 +9,147 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 6,
-    "numScenesDontPass": 175,
+    "numScenesPass": 9,
+    "numScenesDontPass": 172,
     "numOfFemalesChars": 28,
     "numOfMaleChars": 21,
-    "numOfFemalesCharsWithDialogue": 9,
+    "numOfFemalesCharsWithDialogue": 10,
     "numOfMaleCharsWithDialogue": 6,
-    "totalLinesFemaleDialogue": 97,
-    "totalLinesMaleDialogue": 79,
+    "totalLinesFemaleDialogue": 211,
+    "totalLinesMaleDialogue": 149,
     "scenesThatPass": [
-      "BIANCA: Let's not let one rotten apple spoil the party. I give you\nSELENA: And now, ,I call upon the Great Mother--the spirit",
-      "BIANCA: What is it?\nSELENA: The Coffer of Shadow. Look at it.\nSELENA: What does it mean?\nBIANCA: But which one?",
-      "BIANCA: Sure glad you didn't let make a monkey of you.\nSELENA: Shut up, and get me a hacksaw.\nBIANCA: She didn't take it from you, did she?\nSELENA: That little girl? Ha. Now go on, get me some tools.",
-      "BIANCA: And the first thing we do is get rid of Supergirl!\nSELENA: What do you mean we?",
-      "KARA: Then send someone else. I failed.\nALURA: We can't. The' dimension barrier is stronger. We no\nALURA' S VOICE: You must try. . . it's cold. And dark. . ."
+      "KARA: I allowed it to escape the City.\nALURA: Ever since we told you how your cousin Superman was sent there as an infant, all you have wanted to do was visit this place.\nKARA: Yes, I do want to go. But someone must go. Our scanning shows the Power Source has finally reached the Earth. It could destroy everything un…",
+      "LUCY: No sweat. When's the rest of your stuff arriving?\nLUCY: Since what?? Did you have a fire at your house or something?\nLINDA: I'd rather not talk about it.\nLUCY: You're not...an orphan are you?",
+      "BIANCA: What is it?\nSELENA: The Coffer of Shadow. Look at it.\nSELENA: What does it mean?\nBIANCA: Softball.",
+      "LINDA: Mother! Is it you? Where are you???\nALURA: In Argo City. Have you found the Power Source?\nLINDA: Mother, this world is so big. I don't know where to begin to look.",
+      "SELENA: That's easy for you to say, Bianca.\nBIANCA: You can do it. You're the most powerful woman on Earth.\nBIANCA: The Naming of Names is not necessary. Just concentrate\nBIANCA: Whatever you say."
     ]
   },
   "script": {
     "file": "supergirl.txt",
     "layout": "indented",
-    "dialogueLines": 186,
+    "dialogueLines": 375,
     "speakers": [
       {
         "name": "ETHAN",
-        "lines": 38,
+        "lines": 66,
         "gender": "m",
         "named": true,
         "actor": "Hart Bochner"
       },
       {
         "name": "SELENA",
-        "lines": 36,
+        "lines": 61,
         "gender": "w",
         "named": true,
         "actor": "Faye Dunaway"
       },
       {
         "name": "SUPERGIRL",
-        "lines": 23,
+        "lines": 60,
         "gender": "w",
         "named": true,
         "actor": "Helen Slater"
       },
       {
         "name": "ZALTAR",
-        "lines": 19,
+        "lines": 41,
         "gender": "m",
         "named": true,
         "actor": "Peter O'Toole"
       },
       {
         "name": "LUCY",
-        "lines": 11,
+        "lines": 27,
         "gender": "w",
         "named": true,
         "actor": "Maureen Teefy"
       },
       {
         "name": "BIANCA",
-        "lines": 10,
+        "lines": 16,
         "gender": "w",
         "named": true,
         "actor": "Brenda Vaccaro"
       },
       {
         "name": "JIMMY",
-        "lines": 10,
+        "lines": 16,
         "gender": "m",
         "named": true,
         "actor": "Marc McClure"
       },
       {
         "name": "KARA",
-        "lines": 6,
+        "lines": 16,
         "gender": "w",
         "named": true
       },
       {
-        "name": "NIGEL",
-        "lines": 6,
-        "gender": "m",
-        "named": true,
-        "actor": "Peter Cook"
-      },
-      {
         "name": "LINDA",
-        "lines": 5,
+        "lines": 14,
         "gender": "w",
         "named": true,
         "actor": "Helen Slater"
       },
       {
-        "name": "GEORGE",
-        "lines": 3,
-        "gender": null,
-        "named": true
-      },
-      {
-        "name": "MR. DANVERS",
-        "lines": 3,
-        "gender": "m",
-        "named": true,
-        "actor": "David Healy"
-      },
-      {
         "name": "ALURA",
-        "lines": 2,
+        "lines": 10,
         "gender": "w",
         "named": true,
         "actor": "Mia Farrow"
       },
       {
+        "name": "NIGEL",
+        "lines": 10,
+        "gender": "m",
+        "named": true,
+        "actor": "Peter Cook"
+      },
+      {
+        "name": "ELDERLY MAN",
+        "lines": 6,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "GEORGE",
+        "lines": 4,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "MR. DANVERS",
+        "lines": 4,
+        "gender": "m",
+        "named": true,
+        "actor": "David Healy"
+      },
+      {
+        "name": "ZOR-EL",
+        "lines": 4,
+        "gender": "m",
+        "named": true,
+        "actor": "Simon Ward"
+      },
+      {
         "name": "SECOND SELENA",
-        "lines": 2,
+        "lines": 3,
         "gender": "w",
         "named": true,
         "actor": "Faye Dunaway"
+      },
+      {
+        "name": "PRESIDENT",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SECOND INTERN",
+        "lines": 2,
+        "gender": null,
+        "named": true
       },
       {
         "name": "TEACHER",
@@ -134,6 +159,13 @@
         "actor": "Sally Cranfield"
       },
       {
+        "name": "ALURA. S VOICE",
+        "lines": 1,
+        "gender": "w",
+        "named": true,
+        "actor": "Mia Farrow"
+      },
+      {
         "name": "ALURA' S VOICE",
         "lines": 1,
         "gender": "w",
@@ -141,15 +173,33 @@
         "actor": "Mia Farrow"
       },
       {
-        "name": "ELDERLY MAN",
+        "name": "DOCTOR",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "ELD ERL Y MAN",
         "lines": 1,
         "gender": "m",
-        "named": true
+        "named": false
+      },
+      {
+        "name": "ERICA",
+        "lines": 1,
+        "gender": null,
+        "named": false
       },
       {
         "name": "FIRST INTERN",
         "lines": 1,
         "gender": null,
+        "named": false
+      },
+      {
+        "name": "INDIAN WOMAN",
+        "lines": 1,
+        "gender": "w",
         "named": false
       },
       {
@@ -166,12 +216,6 @@
         "named": false
       },
       {
-        "name": "PRESIDENT",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "REAL SELENA",
         "lines": 1,
         "gender": "w",
@@ -179,23 +223,10 @@
         "actor": "Faye Dunaway"
       },
       {
-        "name": "SECOND INTERN",
-        "lines": 1,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "SECRETARY",
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "ZOR-EL",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Simon Ward"
       }
     ],
     "scenes": [
@@ -210,19 +241,21 @@
       {
         "place": "Argo city",
         "lines": {
-          "3": 4,
-          "7": 2,
-          "14": 1
+          "3": 12,
+          "7": 6,
+          "9": 5,
+          "18": 1
         }
       },
       {
         "place": "A springtime meadow",
         "lines": {
-          "7": 3,
-          "10": 3,
-          "12": 1,
-          "14": 1,
-          "24": 1
+          "1": 1,
+          "7": 8,
+          "9": 2,
+          "12": 4,
+          "14": 4,
+          "18": 1
         }
       },
       {
@@ -248,16 +281,17 @@
       {
         "place": "Mansion --- garden party",
         "lines": {
-          "1": 3,
+          "1": 7,
           "5": 1,
-          "8": 4
+          "10": 5,
+          "11": 2
         }
       },
       {
         "place": "Selena's house.  living room",
         "lines": {
           "1": 1,
-          "16": 1
+          "11": 1
         }
       },
       {
@@ -275,8 +309,8 @@
       {
         "place": "Registrar's office",
         "lines": {
-          "9": 1,
-          "11": 1
+          "8": 2,
+          "13": 1
         }
       },
       {
@@ -290,14 +324,16 @@
       {
         "place": "Dorm room",
         "lines": {
-          "11": 1,
-          "18": 1
+          "4": 4,
+          "8": 2,
+          "13": 1,
+          "26": 1
         }
       },
       {
         "place": "School playing fields. day",
         "lines": {
-          "4": 1
+          "4": 2
         }
       },
       {
@@ -350,7 +386,7 @@
         "place": "Cadillac",
         "lines": {
           "1": 2,
-          "5": 2
+          "5": 5
         }
       },
       {
@@ -368,7 +404,7 @@
       {
         "place": "Dorm",
         "lines": {
-          "4": 2
+          "4": 3
         }
       },
       {
@@ -377,7 +413,10 @@
       },
       {
         "place": "Linda's dorm room",
-        "lines": {}
+        "lines": {
+          "8": 2,
+          "9": 1
+        }
       },
       {
         "place": "School grounds. bench. day",
@@ -409,15 +448,15 @@
       {
         "place": "Selena's house. living room. day",
         "lines": {
-          "0": 2,
-          "1": 1
+          "0": 5,
+          "1": 4
         }
       },
       {
         "place": "Front door of mansion",
         "lines": {
-          "1": 1,
-          "8": 1
+          "1": 2,
+          "10": 1
         }
       },
       {
@@ -442,7 +481,9 @@
       },
       {
         "place": "The danvers' living room. night",
-        "lines": {}
+        "lines": {
+          "13": 1
+        }
       },
       {
         "place": "Selena's living room. night",
@@ -451,7 +492,8 @@
       {
         "place": "Hamburger heaven. night",
         "lines": {
-          "4": 2
+          "4": 4,
+          "8": 1
         }
       },
       {
@@ -460,7 +502,9 @@
       },
       {
         "place": "Street opposite h]1..mbup.ger restaurant. night",
-        "lines": {}
+        "lines": {
+          "4": 1
+        }
       },
       {
         "place": "Gas station. night",
@@ -488,7 +532,9 @@
       },
       {
         "place": "Selena's living room",
-        "lines": {}
+        "lines": {
+          "1": 1
+        }
       },
       {
         "place": "Accident scene/gas station. bulldozer. ring of fire",
@@ -508,7 +554,9 @@
       },
       {
         "place": "Selena's living room. night",
-        "lines": {}
+        "lines": {
+          "1": 1
+        }
       },
       {
         "place": "Hospital entrance. night",
@@ -516,25 +564,30 @@
       },
       {
         "place": "Hospital emergency room. night",
-        "lines": {}
+        "lines": {
+          "17": 1
+        }
       },
       {
         "place": "Hospital entrance. night",
         "lines": {
-          "0": 1
+          "0": 2,
+          "2": 2
         }
       },
       {
         "place": "Hospital emergency room. night",
         "lines": {
+          "0": 1,
           "17": 1,
-          "22": 1
+          "24": 1
         }
       },
       {
         "place": "Selena' s mansion.  night",
         "lines": {
-          "5": 2
+          "1": 1,
+          "5": 3
         }
       },
       {
@@ -600,7 +653,7 @@
       {
         "place": "Linda's room. night",
         "lines": {
-          "11": 1
+          "13": 1
         }
       },
       {
@@ -619,8 +672,8 @@
         "place": "Hospital. day",
         "lines": {
           "4": 1,
-          "6": 3,
-          "9": 3
+          "6": 4,
+          "8": 5
         }
       },
       {
@@ -634,9 +687,9 @@
       {
         "place": "Ethan's room. day",
         "lines": {
-          "0": 5,
-          "1": 5,
-          "19": 1
+          "0": 8,
+          "1": 9,
+          "27": 1
         }
       },
       {
@@ -645,7 +698,9 @@
       },
       {
         "place": "Operating theatre",
-        "lines": {}
+        "lines": {
+          "21": 1
+        }
       },
       {
         "place": "X-ray room",
@@ -658,13 +713,16 @@
       {
         "place": "Lucy's hospital room",
         "lines": {
+          "4": 3,
           "6": 1,
-          "9": 1
+          "8": 2
         }
       },
       {
         "place": "Hospital corridor",
-        "lines": {}
+        "lines": {
+          "6": 1
+        }
       },
       {
         "place": "Roof of hospital sunset",
@@ -687,7 +745,7 @@
       {
         "place": "Hospital entry.  jimmy's car",
         "lines": {
-          "6": 1
+          "6": 2
         }
       },
       {
@@ -731,13 +789,15 @@
       {
         "place": "Hospital entry",
         "lines": {
+          "5": 1,
           "6": 1
         }
       },
       {
         "place": "High in the air above the hospital. sunset",
         "lines": {
-          "2": 1
+          "0": 3,
+          "2": 3
         }
       },
       {
@@ -750,8 +810,8 @@
       {
         "place": "Amusement park. night",
         "lines": {
-          "0": 4,
-          "2": 3
+          "0": 9,
+          "2": 7
         }
       },
       {
@@ -761,9 +821,9 @@
       {
         "place": "Top of ferris wheel",
         "lines": {
-          "0": 2,
+          "0": 4,
           "1": 2,
-          "2": 3
+          "2": 4
         }
       },
       {
@@ -772,7 +832,9 @@
       },
       {
         "place": "Amusement park",
-        "lines": {}
+        "lines": {
+          "2": 1
+        }
       },
       {
         "place": "Dodgem car tent",
@@ -788,25 +850,34 @@
       {
         "place": "Tropical beach. day",
         "lines": {
-          "0": 1
+          "0": 2,
+          "2": 1
         }
       },
       {
         "place": "Selena's mansion. night",
-        "lines": {}
+        "lines": {
+          "1": 1,
+          "11": 1,
+          "22": 1
+        }
       },
       {
         "place": "Selena's living room. candlelit. night",
         "lines": {
-          "1": 4,
-          "8": 1
+          "1": 8,
+          "5": 1,
+          "10": 4,
+          "11": 2,
+          "23": 1,
+          "25": 1
         }
       },
       {
         "place": "Tropical beach. day",
         "lines": {
-          "0": 5,
-          "2": 3
+          "0": 6,
+          "2": 4
         }
       },
       {
@@ -819,8 +890,8 @@
       {
         "place": "Beside a stream. tropical paradise. day",
         "lines": {
-          "0": 5,
-          "2": 3
+          "0": 7,
+          "2": 7
         }
       },
       {
@@ -830,8 +901,8 @@
       {
         "place": "Tropial island",
         "lines": {
-          "0": 1,
-          "2": 2
+          "0": 4,
+          "2": 5
         }
       },
       {
@@ -852,13 +923,15 @@
       },
       {
         "place": "Selena's mansion. front hall/living room",
-        "lines": {}
+        "lines": {
+          "2": 1
+        }
       },
       {
         "place": "Selena's new house (a mountain-top palace)",
         "lines": {
-          "0": 2,
-          "1": 1
+          "0": 3,
+          "1": 3
         }
       },
       {
@@ -892,9 +965,10 @@
       {
         "place": "Phantom zone",
         "lines": {
-          "7": 1,
-          "12": 1,
-          "15": 1
+          "7": 2,
+          "9": 2,
+          "19": 1,
+          "20": 1
         }
       },
       {
@@ -908,20 +982,22 @@
       {
         "place": "Translator\"s booth . general assembly",
         "lines": {
-          "20": 1
+          "1": 1,
+          "16": 2
         }
       },
       {
         "place": "The phantom zone",
         "lines": {
-          "2": 1,
-          "3": 2
+          "2": 6,
+          "3": 8
         }
       },
       {
         "place": "Zaltar's house",
         "lines": {
-          "3": 4
+          "2": 2,
+          "3": 5
         }
       },
       {
@@ -939,7 +1015,7 @@
       {
         "place": "Ante room in selena's new house",
         "lines": {
-          "23": 1
+          "29": 1
         }
       },
       {
@@ -960,7 +1036,9 @@
       },
       {
         "place": "Zaltar's house. phantom zone",
-        "lines": {}
+        "lines": {
+          "3": 1
+        }
       },
       {
         "place": "Hamburger heaven. midvale. day",
@@ -969,28 +1047,30 @@
       {
         "place": "Hamburger heaven. day",
         "lines": {
-          "4": 1,
-          "6": 2
+          "4": 2,
+          "6": 3
         }
       },
       {
         "place": "Prison",
         "lines": {
-          "0": 2,
-          "4": 2,
+          "0": 4,
+          "4": 3,
           "6": 1
         }
       },
       {
         "place": "Zaltar's house in the zone",
         "lines": {
-          "2": 1,
-          "3": 5
+          "2": 6,
+          "3": 10
         }
       },
       {
         "place": "Zaltar' s house. phantom zone",
-        "lines": {}
+        "lines": {
+          "3": 1
+        }
       },
       {
         "place": "Selena's new house. hallway",
@@ -1019,7 +1099,9 @@
       {
         "place": "Conservatory. day",
         "lines": {
-          "1": 1
+          "1": 1,
+          "4": 2,
+          "6": 2
         }
       },
       {
@@ -1036,7 +1118,7 @@
       {
         "place": "The phantom zone/quantum vortex",
         "lines": {
-          "2": 1,
+          "2": 3,
           "3": 1
         }
       },
@@ -1051,7 +1133,9 @@
       {
         "place": "Selena's living room",
         "lines": {
-          "0": 1
+          "0": 1,
+          "1": 1,
+          "2": 1
         }
       },
       {
@@ -1064,8 +1148,8 @@
           "0": 3,
           "1": 2,
           "2": 2,
-          "13": 2,
-          "21": 1
+          "15": 3,
+          "28": 1
         }
       },
       {
@@ -1083,7 +1167,7 @@
       {
         "place": "Inner space",
         "lines": {
-          "2": 1
+          "2": 3
         }
       }
     ],
@@ -1100,16 +1184,16 @@
       }
     },
     "measures": {
-      "firstWomanLine": 5,
-      "longestWithoutWoman": 8,
-      "longestWithoutWomanStart": 138,
+      "firstWomanLine": 4,
+      "longestWithoutWoman": 6,
+      "longestWithoutWomanStart": 301,
       "words": {
-        "w": 679,
-        "m": 537,
-        "unknown": 91
+        "w": 1790,
+        "m": 1281,
+        "unknown": 153
       },
-      "womenConversations": 10,
-      "menConversations": 1,
+      "womenConversations": 18,
+      "menConversations": 3,
       "reverseScore": 2
     }
   },

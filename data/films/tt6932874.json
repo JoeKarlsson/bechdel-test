@@ -13,16 +13,16 @@
     "numScenesDontPass": 8,
     "numOfFemalesChars": 9,
     "numOfMaleChars": 16,
-    "numOfFemalesCharsWithDialogue": 11,
-    "numOfMaleCharsWithDialogue": 25,
+    "numOfFemalesCharsWithDialogue": 8,
+    "numOfMaleCharsWithDialogue": 21,
     "totalLinesFemaleDialogue": 554,
-    "totalLinesMaleDialogue": 1055,
+    "totalLinesMaleDialogue": 1059,
     "scenesThatPass": [
       "TABITHA: Set!\nCAROL: Go!",
       "CAROL: Woo! Daddio Andretti!\nTABITHA: Yay Templetons!",
       "TABITHA: Thank you!\nCAROL: Yay Tabitha!",
-      "TABITHA: Oh no!\nTABITHA O.S: Good night Dr. Hawking!\nTABITHA: Carbon, boron, beryllium, lithium, helium, hydrogen. Nailed it! Boom shakalaka!\nTABITHA: Carry the four! Gosh...",
-      "CAROL: And special guest, baby Tina!\nTABITHA: Good night little Tina!\nCAROL: Come back here you!\nTABITHA: Good night mom!"
+      "CAROL: And special guest, baby Tina!\nTABITHA: Good night little Tina!\nCAROL: Come back here you!\nTABITHA: Good night mom!",
+      "TABITHA: Woohoo!\nCAROL: What brings you into town?"
     ]
   },
   "script": {
@@ -32,7 +32,7 @@
     "speakers": [
       {
         "name": "TIM",
-        "lines": 412,
+        "lines": 444,
         "gender": "m",
         "named": true,
         "actor": "James Marsden"
@@ -46,61 +46,54 @@
       },
       {
         "name": "TABITHA",
-        "lines": 198,
+        "lines": 200,
         "gender": "w",
         "named": true,
         "actor": "Ariana Greenblatt"
       },
       {
         "name": "BABY TINA",
-        "lines": 170,
+        "lines": 173,
         "gender": "w",
         "named": true,
         "actor": "Amy Sedaris"
       },
       {
         "name": "DR. ARMSTRONG",
-        "lines": 160,
+        "lines": 162,
         "gender": "m",
         "named": true,
         "actor": "Jeff Goldblum"
       },
       {
         "name": "CAROL",
-        "lines": 97,
+        "lines": 98,
         "gender": "w",
         "named": true,
         "actor": "Eva Longoria"
       },
       {
         "name": "TED",
-        "lines": 66,
+        "lines": 70,
         "gender": "m",
         "named": true
       },
       {
         "name": "WIZZIE",
-        "lines": 37,
+        "lines": 39,
         "gender": "m",
         "named": true,
         "actor": "James McGrath"
       },
       {
-        "name": "TIM V.O",
-        "lines": 31,
-        "gender": "m",
-        "named": true,
-        "actor": "James Marsden"
-      },
-      {
         "name": "TIM’S MOM",
-        "lines": 28,
+        "lines": 30,
         "gender": "w",
         "named": false
       },
       {
         "name": "TIM’S DAD",
-        "lines": 27,
+        "lines": 28,
         "gender": "m",
         "named": false
       },
@@ -152,6 +145,12 @@
         "actor": "Molly K. Gray"
       },
       {
+        "name": "NAVIGATION",
+        "lines": 6,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "CLASS",
         "lines": 5,
         "gender": null,
@@ -197,13 +196,6 @@
         "named": false
       },
       {
-        "name": "BABY TINA V.O",
-        "lines": 3,
-        "gender": "w",
-        "named": true,
-        "actor": "Amy Sedaris"
-      },
-      {
         "name": "JIMBO",
         "lines": 3,
         "gender": "m",
@@ -215,24 +207,6 @@
         "lines": 3,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "NAVIGATION",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "NAVIGATION V.O",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "TED V.O",
-        "lines": 3,
-        "gender": null,
-        "named": true
       },
       {
         "name": "TIM TED",
@@ -260,14 +234,13 @@
         "named": false
       },
       {
-        "name": "DR. ARMSTRONG V.O",
+        "name": "ELEVATOR",
         "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Jeff Goldblum"
+        "gender": null,
+        "named": false
       },
       {
-        "name": "ELEVATOR",
+        "name": "MUFFLED VOICE",
         "lines": 2,
         "gender": null,
         "named": false
@@ -280,7 +253,7 @@
         "actor": "Kristin Lowe"
       },
       {
-        "name": "PHONE LADY V.O",
+        "name": "PHONE LADY",
         "lines": 2,
         "gender": "w",
         "named": true
@@ -295,19 +268,6 @@
         "name": "STAMP DUM-DUM",
         "lines": 2,
         "gender": null,
-        "named": false
-      },
-      {
-        "name": "TABITHA O.S",
-        "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Ariana Greenblatt"
-      },
-      {
-        "name": "TIM’S MOM O.S",
-        "lines": 2,
-        "gender": "w",
         "named": false
       },
       {
@@ -329,13 +289,6 @@
         "named": false
       },
       {
-        "name": "WIZZIE O.S",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "James McGrath"
-      },
-      {
         "name": "YOUNG TIM",
         "lines": 2,
         "gender": "m",
@@ -349,7 +302,7 @@
         "named": false
       },
       {
-        "name": "ARMSTRONG V.O",
+        "name": "ARMSTRONG",
         "lines": 1,
         "gender": "m",
         "named": true,
@@ -405,20 +358,13 @@
         "actor": "Reyn Doi"
       },
       {
-        "name": "CAROL O.S",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Eva Longoria"
-      },
-      {
         "name": "CAROL/TABITHA",
         "lines": 1,
         "gender": "w",
         "named": true
       },
       {
-        "name": "CHILD’S VOICE O.S",
+        "name": "CHILD",
         "lines": 1,
         "gender": null,
         "named": false
@@ -485,7 +431,7 @@
         "named": false
       },
       {
-        "name": "HECKLER O.S",
+        "name": "HECKLER",
         "lines": 1,
         "gender": null,
         "named": false
@@ -542,18 +488,6 @@
       },
       {
         "name": "LITTLE KIDS",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "MUFFLED VOICE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "MUFFLED VOICE O.S",
         "lines": 1,
         "gender": null,
         "named": false
@@ -659,12 +593,6 @@
         "named": true
       },
       {
-        "name": "TED O.S",
-        "lines": 1,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "THE BOSS BABY",
         "lines": 1,
         "gender": "m",
@@ -685,23 +613,10 @@
         "actor": "Tom McGrath"
       },
       {
-        "name": "TIM O.S",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "James Marsden"
-      },
-      {
         "name": "TIM TABITHA",
         "lines": 1,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "TIM’S DAD O.S",
-        "lines": 1,
-        "gender": "m",
-        "named": false
       },
       {
         "name": "TIM'S MOM TIM’S DAD",
@@ -742,7 +657,7 @@
         "named": false
       },
       {
-        "name": "YOUNG TIM’S V.O",
+        "name": "YOUNG TIM’S",
         "lines": 1,
         "gender": null,
         "named": false
@@ -758,29 +673,27 @@
       {
         "place": null,
         "lines": {
-          "0": 14,
+          "0": 40,
           "2": 15,
           "5": 8,
-          "8": 26,
+          "8": 2,
           "9": 2,
-          "10": 2,
-          "43": 1,
-          "44": 1,
-          "45": 1,
-          "47": 2,
-          "64": 1,
+          "37": 1,
+          "38": 1,
+          "39": 1,
+          "40": 2,
+          "56": 1,
+          "60": 1,
           "68": 1,
-          "76": 1,
-          "100": 1
+          "89": 1
         }
       },
       {
         "place": "Tabitha’s room",
         "lines": {
           "0": 13,
-          "2": 15,
-          "5": 4,
-          "41": 1
+          "2": 16,
+          "5": 4
         }
       },
       {
@@ -788,38 +701,33 @@
         "lines": {
           "0": 48,
           "3": 21,
-          "7": 25,
-          "38": 2,
-          "46": 2,
-          "60": 1,
-          "81": 1,
-          "82": 1,
-          "96": 1
+          "7": 27,
+          "32": 2,
+          "34": 2,
+          "52": 1,
+          "86": 1
         }
       },
       {
         "place": "Tina’s nursery",
         "lines": {
-          "0": 16,
+          "0": 17,
           "2": 10,
           "3": 1,
           "5": 7,
           "6": 17,
-          "8": 1,
-          "74": 1
+          "66": 1
         }
       },
       {
         "place": "In the kitchen",
         "lines": {
-          "0": 18,
-          "2": 4,
+          "0": 19,
+          "2": 5,
           "3": 6,
           "5": 5,
           "6": 16,
-          "31": 1,
-          "41": 1,
-          "103": 1
+          "27": 1
         }
       },
       {
@@ -830,13 +738,12 @@
           "2": 10,
           "3": 36,
           "4": 8,
-          "5": 20,
+          "5": 21,
           "6": 19,
-          "11": 1,
-          "36": 2,
-          "39": 2,
-          "49": 1,
-          "58": 1
+          "10": 1,
+          "31": 2,
+          "35": 2,
+          "42": 1
         }
       },
       {
@@ -848,12 +755,12 @@
           "3": 13,
           "5": 7,
           "7": 2,
+          "8": 1,
           "9": 1,
-          "10": 1,
           "19": 5,
-          "67": 1,
-          "71": 1,
-          "79": 1
+          "59": 1,
+          "63": 1,
+          "71": 1
         }
       },
       {
@@ -879,14 +786,13 @@
           "2": 1,
           "3": 1,
           "5": 10,
-          "27": 2,
-          "28": 1,
-          "29": 2,
-          "43": 1,
-          "44": 1,
-          "45": 1,
-          "72": 1,
-          "73": 1
+          "17": 3,
+          "26": 2,
+          "37": 1,
+          "38": 1,
+          "39": 1,
+          "64": 1,
+          "65": 1
         }
       },
       {
@@ -895,34 +801,32 @@
           "0": 58,
           "1": 56,
           "2": 14,
-          "4": 34,
+          "4": 35,
           "5": 5,
-          "11": 12,
-          "12": 4,
-          "13": 6,
-          "15": 6,
-          "17": 1,
+          "10": 12,
+          "11": 4,
+          "12": 6,
+          "14": 6,
+          "16": 1,
+          "17": 3,
           "18": 5,
           "20": 3,
           "24": 1,
-          "26": 2,
-          "27": 1,
-          "28": 2,
+          "25": 2,
+          "26": 1,
           "29": 1,
-          "33": 1,
-          "35": 1,
-          "40": 2,
-          "52": 1,
+          "36": 2,
+          "45": 1,
+          "50": 1,
+          "51": 1,
           "57": 1,
-          "59": 1,
-          "65": 1,
-          "77": 1,
-          "78": 1,
-          "80": 1,
-          "86": 1,
-          "92": 1,
-          "102": 1,
-          "109": 1
+          "69": 1,
+          "70": 1,
+          "72": 1,
+          "76": 1,
+          "82": 1,
+          "91": 1,
+          "96": 1
         }
       },
       {
@@ -956,29 +860,27 @@
           "3": 6,
           "4": 34,
           "5": 19,
-          "9": 12,
-          "10": 12,
-          "11": 7,
-          "12": 6,
-          "13": 2,
-          "14": 12,
-          "15": 1,
-          "16": 9,
-          "17": 2,
+          "8": 14,
+          "9": 13,
+          "10": 7,
+          "11": 6,
+          "12": 2,
+          "13": 12,
+          "14": 1,
+          "15": 9,
+          "16": 2,
           "20": 1,
           "21": 4,
           "22": 4,
-          "33": 1,
-          "42": 2,
-          "53": 1,
-          "69": 1,
-          "75": 1,
+          "29": 1,
+          "46": 1,
+          "61": 1,
+          "67": 1,
+          "73": 1,
           "83": 1,
-          "93": 1,
-          "98": 1,
-          "104": 1,
-          "105": 1,
-          "106": 1
+          "88": 1,
+          "92": 1,
+          "93": 1
         }
       },
       {
@@ -987,14 +889,14 @@
           "0": 30,
           "2": 33,
           "5": 1,
-          "9": 2,
-          "10": 1,
-          "34": 2,
-          "62": 1,
-          "85": 1,
-          "101": 1,
-          "107": 1,
-          "108": 1
+          "8": 2,
+          "9": 1,
+          "30": 2,
+          "54": 1,
+          "75": 1,
+          "90": 1,
+          "94": 1,
+          "95": 1
         }
       },
       {
@@ -1007,13 +909,13 @@
           "4": 4,
           "5": 1,
           "7": 1,
+          "8": 2,
           "9": 2,
-          "10": 2,
-          "11": 1,
-          "13": 1,
+          "10": 1,
+          "12": 1,
           "20": 1,
-          "91": 1,
-          "112": 1
+          "81": 1,
+          "99": 1
         }
       },
       {
@@ -1025,16 +927,16 @@
           "3": 6,
           "4": 14,
           "5": 4,
+          "8": 3,
           "9": 3,
-          "10": 3,
-          "12": 5,
+          "11": 5,
           "23": 4,
-          "32": 2,
-          "61": 1,
-          "63": 1,
-          "84": 1,
-          "89": 1,
-          "111": 1
+          "28": 2,
+          "53": 1,
+          "55": 1,
+          "74": 1,
+          "79": 1,
+          "98": 1
         }
       },
       {
@@ -1044,26 +946,25 @@
           "1": 17,
           "2": 16,
           "3": 20,
-          "4": 10,
-          "11": 2,
-          "12": 3,
-          "13": 2,
-          "15": 1,
-          "17": 3,
+          "4": 11,
+          "10": 2,
+          "11": 3,
+          "12": 2,
+          "14": 1,
+          "16": 3,
           "24": 1,
-          "35": 1,
-          "37": 1,
-          "55": 1,
-          "56": 1,
-          "66": 1,
-          "70": 1,
-          "87": 1,
-          "88": 1,
-          "90": 1,
-          "94": 1,
-          "95": 1,
-          "110": 1,
-          "113": 1
+          "33": 1,
+          "48": 1,
+          "49": 1,
+          "58": 1,
+          "62": 1,
+          "77": 1,
+          "78": 1,
+          "80": 1,
+          "84": 1,
+          "85": 1,
+          "97": 1,
+          "100": 1
         }
       },
       {
@@ -1077,48 +978,44 @@
           "5": 2,
           "6": 10,
           "7": 6,
-          "9": 2,
-          "10": 3,
-          "13": 1,
-          "15": 1,
-          "17": 1,
-          "26": 1,
-          "31": 2,
-          "37": 1,
-          "48": 2,
-          "97": 1
+          "8": 2,
+          "9": 3,
+          "12": 1,
+          "14": 1,
+          "16": 1,
+          "25": 1,
+          "27": 2,
+          "33": 1,
+          "41": 2,
+          "87": 1
         }
       },
       {
         "place": "The templeton house",
         "lines": {
-          "0": 9,
+          "0": 13,
           "1": 1,
           "2": 8,
-          "3": 2,
+          "3": 5,
           "4": 1,
           "5": 2,
-          "6": 4,
+          "6": 8,
           "8": 4,
-          "9": 4,
-          "10": 3,
-          "25": 3,
-          "30": 3,
-          "50": 1,
-          "51": 1,
-          "54": 1,
-          "99": 1
+          "9": 3,
+          "43": 1,
+          "44": 1,
+          "47": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 47,
+        "speaker": 40,
         "line": 4,
         "text": "One, two, three..."
       },
       "last": {
-        "speaker": 8,
+        "speaker": 0,
         "line": 1707,
         "text": "The end."
       }
@@ -1129,11 +1026,11 @@
       "longestWithoutWomanStart": 779,
       "words": {
         "w": 3673,
-        "m": 7019,
-        "unknown": 528
+        "m": 7062,
+        "unknown": 485
       },
-      "womenConversations": 55,
-      "menConversations": 125,
+      "womenConversations": 54,
+      "menConversations": 119,
       "reverseScore": 3
     }
   },

@@ -14,7 +14,7 @@
     "numOfFemalesChars": 2,
     "numOfMaleChars": 16,
     "numOfFemalesCharsWithDialogue": 1,
-    "numOfMaleCharsWithDialogue": 5,
+    "numOfMaleCharsWithDialogue": 4,
     "totalLinesFemaleDialogue": 296,
     "totalLinesMaleDialogue": 282,
     "scenesThatPass": [
@@ -24,7 +24,7 @@
   "script": {
     "file": "whiteout.txt",
     "layout": "indented",
-    "dialogueLines": 601,
+    "dialogueLines": 600,
     "speakers": [
       {
         "name": "CARRIE",
@@ -48,7 +48,7 @@
       },
       {
         "name": "DELFY",
-        "lines": 51,
+        "lines": 52,
         "gender": "m",
         "named": true,
         "actor": "Columbus Short"
@@ -149,13 +149,6 @@
         "named": false
       },
       {
-        "name": "DELFY O.C",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Columbus Short"
-      },
-      {
         "name": "FRED",
         "lines": 1,
         "gender": null,
@@ -186,12 +179,6 @@
         "named": false
       },
       {
-        "name": "SUPER TITLE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "WOMAN",
         "lines": 1,
         "gender": "w",
@@ -209,14 +196,14 @@
           "0": 1,
           "12": 1,
           "18": 1,
-          "24": 1,
-          "26": 1
+          "23": 1,
+          "24": 1
         }
       },
       {
         "place": "Mcmurdo station",
         "lines": {
-          "22": 1
+          "21": 1
         }
       },
       {
@@ -224,8 +211,8 @@
         "lines": {
           "0": 11,
           "8": 8,
-          "20": 1,
-          "23": 1
+          "19": 1,
+          "22": 1
         }
       },
       {
@@ -238,8 +225,7 @@
       {
         "place": "Amundsen-scott station (asb)",
         "lines": {
-          "0": 1,
-          "25": 1
+          "0": 1
         }
       },
       {
@@ -336,7 +322,7 @@
           "0": 5,
           "4": 3,
           "7": 1,
-          "21": 1
+          "20": 1
         }
       },
       {
@@ -435,7 +421,7 @@
         "place": "Motel",
         "lines": {
           "0": 2,
-          "19": 1
+          "3": 1
         }
       },
       {
@@ -864,24 +850,24 @@
     ],
     "bookends": {
       "first": {
-        "speaker": 26,
+        "speaker": 24,
         "line": 3,
         "text": "...Yeah?"
       },
       "last": {
         "speaker": 0,
-        "line": 601,
+        "line": 600,
         "text": "Nah. Freedom's just a sunrise away."
       }
     },
     "measures": {
       "firstWomanLine": 3,
       "longestWithoutWoman": 9,
-      "longestWithoutWomanStart": 63,
+      "longestWithoutWomanStart": 62,
       "words": {
         "w": 2266,
         "m": 2836,
-        "unknown": 246
+        "unknown": 235
       },
       "womenConversations": 5,
       "menConversations": 18,

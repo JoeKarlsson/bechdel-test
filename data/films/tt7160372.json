@@ -16,7 +16,7 @@
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 14,
     "totalLinesFemaleDialogue": 153,
-    "totalLinesMaleDialogue": 140,
+    "totalLinesMaleDialogue": 141,
     "scenesThatPass": [
       "HEDWIG: This one needs mending please.\nANIELA: Yes.",
       "GERMAN WOMAN: She was admiring a jacket I had and\nHEDWIG: She thought you meant the country.",
@@ -28,7 +28,7 @@
   "script": {
     "file": "the-zone-of-interest.txt",
     "layout": "indented",
-    "dialogueLines": 312,
+    "dialogueLines": 307,
     "speakers": [
       {
         "name": "RUDOLF",
@@ -120,17 +120,18 @@
         "actor": "Luis Noah Witte"
       },
       {
+        "name": "MALE CCI TANNOY ANNOUNCER",
+        "lines": 3,
+        "gender": "m",
+        "named": false,
+        "actor": "Leo Meier"
+      },
+      {
         "name": "MAURER",
         "lines": 3,
         "gender": "m",
         "named": true,
         "actor": "Daniel Holzberg"
-      },
-      {
-        "name": "OFF SCREEN",
-        "lines": 3,
-        "gender": null,
-        "named": false
       },
       {
         "name": "SOPHIE",
@@ -152,19 +153,6 @@
         "gender": "w",
         "named": true,
         "actor": "Lilli Falk"
-      },
-      {
-        "name": "MALE CCI TANNOY ANNOUNCER",
-        "lines": 2,
-        "gender": "m",
-        "named": false,
-        "actor": "Leo Meier"
-      },
-      {
-        "name": "PRE-LAP",
-        "lines": 2,
-        "gender": null,
-        "named": false
       },
       {
         "name": "VOICE OF BRACHT",
@@ -192,12 +180,6 @@
         "gender": "m",
         "named": true,
         "actor": "Johann Karthaus"
-      },
-      {
-        "name": "CONT'D",
-        "lines": 1,
-        "gender": null,
-        "named": false
       },
       {
         "name": "GERMAN WOMAN",
@@ -293,7 +275,7 @@
         "lines": {
           "0": 2,
           "4": 1,
-          "23": 1
+          "21": 1
         }
       },
       {
@@ -303,7 +285,7 @@
           "1": 2,
           "4": 2,
           "17": 1,
-          "21": 1
+          "19": 1
         }
       },
       {
@@ -328,7 +310,7 @@
         "place": "Stairs, höss villa",
         "lines": {
           "1": 1,
-          "22": 1
+          "20": 1
         }
       },
       {
@@ -342,7 +324,7 @@
           "6": 1,
           "7": 3,
           "8": 4,
-          "25": 1
+          "22": 1
         }
       },
       {
@@ -396,7 +378,7 @@
         "place": "Back garden, höss villa",
         "lines": {
           "0": 1,
-          "32": 1
+          "29": 1
         }
       },
       {
@@ -412,7 +394,7 @@
       {
         "place": "Reeds, auschwitz region",
         "lines": {
-          "26": 1
+          "23": 1
         }
       },
       {
@@ -478,20 +460,18 @@
       },
       {
         "place": "Railway spur, auschwitz station",
-        "lines": {
-          "14": 3
-        }
+        "lines": {}
       },
       {
         "place": "Front of höss villa",
         "lines": {
-          "20": 1
+          "18": 1
         }
       },
       {
         "place": "Living room, höss villa",
         "lines": {
-          "20": 1
+          "18": 1
         }
       },
       {
@@ -600,7 +580,7 @@
         "lines": {
           "0": 1,
           "1": 4,
-          "28": 1
+          "25": 1
         }
       },
       {
@@ -618,7 +598,7 @@
         "place": "Top garden, höss villa",
         "lines": {
           "0": 1,
-          "33": 1
+          "30": 1
         }
       },
       {
@@ -736,8 +716,8 @@
       {
         "place": "Aleksandra's bedroom, apartment, brzeszcze",
         "lines": {
-          "29": 1,
-          "30": 1
+          "26": 1,
+          "27": 1
         }
       },
       {
@@ -824,7 +804,7 @@
         "place": "Boys' bedroom, höss villa",
         "lines": {
           "12": 1,
-          "31": 1
+          "28": 1
         }
       },
       {
@@ -837,14 +817,13 @@
         "place": "Bandstand, town park, oranienburg",
         "lines": {
           "0": 3,
-          "18": 1,
-          "19": 1
+          "13": 1
         }
       },
       {
         "place": "Oranienburg, near berlin",
         "lines": {
-          "27": 1
+          "24": 1
         }
       },
       {
@@ -860,7 +839,7 @@
         "lines": {
           "0": 3,
           "11": 4,
-          "13": 2
+          "14": 2
         }
       },
       {
@@ -882,21 +861,20 @@
       {
         "place": "Top garden, höss villa",
         "lines": {
-          "18": 1,
-          "19": 1
+          "13": 1
         }
       },
       {
         "place": "Waiting room, outside glück's office, cci, oranienburg -",
         "lines": {
-          "24": 1
+          "13": 1
         }
       },
       {
         "place": "Richard glücks office, cci, oranienburg",
         "lines": {
           "0": 9,
-          "13": 1
+          "14": 1
         }
       },
       {
@@ -1036,18 +1014,18 @@
       },
       "last": {
         "speaker": 1,
-        "line": 312,
+        "line": 307,
         "text": "Yes. Goodnight."
       }
     },
     "measures": {
       "firstWomanLine": 9,
-      "longestWithoutWoman": 46,
-      "longestWithoutWomanStart": 258,
+      "longestWithoutWoman": 44,
+      "longestWithoutWomanStart": 255,
       "words": {
         "w": 957,
-        "m": 781,
-        "unknown": 198
+        "m": 782,
+        "unknown": 157
       },
       "womenConversations": 15,
       "menConversations": 9,

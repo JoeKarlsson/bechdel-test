@@ -14,7 +14,7 @@
     "numOfMaleChars": 40,
     "numOfFemalesCharsWithDialogue": 11,
     "numOfMaleCharsWithDialogue": 30,
-    "totalLinesFemaleDialogue": 66,
+    "totalLinesFemaleDialogue": 68,
     "totalLinesMaleDialogue": 571,
     "scenesThatPass": [
       "DISPATCHER: It's the same address as that fire signal --\nSUPERVISOR: -- the false alarm? I'll handle it.\nSUPERVISOR: Attention, whoever you are. This channel is reserved for emergency calls only --"
@@ -23,7 +23,7 @@
   "script": {
     "file": "die-hard.txt",
     "layout": "indented",
-    "dialogueLines": 657,
+    "dialogueLines": 656,
     "speakers": [
       {
         "name": "MCCLANE",
@@ -138,6 +138,13 @@
         "actor": "Bruno Doyon"
       },
       {
+        "name": "DISPATCHER",
+        "lines": 5,
+        "gender": "w",
+        "named": true,
+        "actor": "Shelley Pogoda"
+      },
+      {
         "name": "LUCY",
         "lines": 5,
         "gender": "w",
@@ -180,13 +187,6 @@
         "actor": "Harri James"
       },
       {
-        "name": "DISPATCHER",
-        "lines": 3,
-        "gender": "w",
-        "named": true,
-        "actor": "Shelley Pogoda"
-      },
-      {
         "name": "ENGINEER",
         "lines": 3,
         "gender": "m",
@@ -226,12 +226,6 @@
         "gender": "m",
         "named": true,
         "actor": "Andreas Wisniewski"
-      },
-      {
-        "name": "DISPATCHER'S VOICE/RADIO",
-        "lines": 2,
-        "gender": null,
-        "named": false
       },
       {
         "name": "ELLIS' VOICE",
@@ -369,12 +363,6 @@
         "named": false
       },
       {
-        "name": "NOTE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "OFFICER",
         "lines": 1,
         "gender": null,
@@ -448,8 +436,8 @@
       {
         "place": null,
         "lines": {
-          "39": 1,
-          "56": 1
+          "38": 1,
+          "54": 1
         }
       },
       {
@@ -457,7 +445,7 @@
         "lines": {
           "0": 5,
           "27": 3,
-          "34": 2
+          "33": 2
         }
       },
       {
@@ -466,16 +454,16 @@
           "3": 2,
           "6": 3,
           "11": 1,
-          "18": 1,
-          "35": 1
+          "19": 1,
+          "34": 1
         }
       },
       {
         "place": "Nice house in santa monica",
         "lines": {
           "3": 6,
-          "16": 4,
-          "20": 3
+          "17": 4,
+          "21": 3
         }
       },
       {
@@ -506,7 +494,7 @@
           "3": 3,
           "6": 4,
           "11": 7,
-          "46": 1
+          "45": 1
         }
       },
       {
@@ -530,14 +518,14 @@
         "lines": {
           "0": 12,
           "3": 13,
-          "18": 1
+          "19": 1
         }
       },
       {
         "place": "Building lobby",
         "lines": {
           "7": 2,
-          "47": 1
+          "46": 1
         }
       },
       {
@@ -619,7 +607,7 @@
           "7": 3,
           "10": 2,
           "11": 5,
-          "38": 1
+          "37": 1
         }
       },
       {
@@ -634,7 +622,7 @@
       {
         "place": "Main floor",
         "lines": {
-          "36": 1
+          "35": 1
         }
       },
       {
@@ -657,7 +645,7 @@
           "0": 1,
           "1": 4,
           "12": 1,
-          "31": 2
+          "30": 2
         }
       },
       {
@@ -687,8 +675,8 @@
         "place": "Los angles emergency dispatch center",
         "lines": {
           "0": 1,
-          "21": 2,
-          "22": 1
+          "16": 1,
+          "22": 2
         }
       },
       {
@@ -701,7 +689,7 @@
         "place": "Upper roof",
         "lines": {
           "0": 2,
-          "21": 1
+          "22": 1
         }
       },
       {
@@ -715,16 +703,16 @@
       {
         "place": "Emergency dispatch",
         "lines": {
-          "21": 1
+          "22": 1
         }
       },
       {
         "place": "7-",
         "lines": {
           "2": 4,
-          "29": 2,
-          "41": 1,
-          "42": 1
+          "16": 2,
+          "40": 1,
+          "41": 1
         }
       },
       {
@@ -774,21 +762,21 @@
         "place": "Lobby",
         "lines": {
           "12": 1,
-          "17": 1
+          "18": 1
         }
       },
       {
         "place": "Front door of nakatomi",
         "lines": {
           "2": 1,
-          "17": 1
+          "18": 1
         }
       },
       {
         "place": "34th floor",
         "lines": {
           "0": 3,
-          "17": 1
+          "18": 1
         }
       },
       {
@@ -796,8 +784,8 @@
         "lines": {
           "0": 2,
           "2": 1,
-          "44": 1,
-          "48": 1
+          "43": 1,
+          "47": 1
         }
       },
       {
@@ -816,7 +804,7 @@
         "place": "Powell's police car",
         "lines": {
           "2": 4,
-          "22": 2
+          "16": 2
         }
       },
       {
@@ -825,8 +813,8 @@
           "0": 1,
           "2": 1,
           "9": 3,
-          "35": 1,
-          "53": 1
+          "34": 1,
+          "51": 1
         }
       },
       {
@@ -863,8 +851,7 @@
           "0": 6,
           "1": 2,
           "2": 6,
-          "15": 1,
-          "50": 1
+          "15": 1
         }
       },
       {
@@ -930,7 +917,7 @@
         "place": "3rd floor",
         "lines": {
           "12": 1,
-          "37": 1
+          "36": 1
         }
       },
       {
@@ -973,7 +960,7 @@
       {
         "place": "Underground parking garage",
         "lines": {
-          "59": 1
+          "57": 1
         }
       },
       {
@@ -982,7 +969,7 @@
           "1": 1,
           "9": 2,
           "15": 1,
-          "40": 1
+          "39": 1
         }
       },
       {
@@ -1016,9 +1003,9 @@
           "10": 2,
           "12": 2,
           "24": 2,
-          "30": 1,
-          "32": 1,
-          "58": 1
+          "29": 1,
+          "31": 1,
+          "56": 1
         }
       },
       {
@@ -1027,7 +1014,7 @@
           "0": 3,
           "1": 1,
           "6": 3,
-          "30": 1
+          "29": 1
         }
       },
       {
@@ -1056,15 +1043,15 @@
       {
         "place": "Tv studio",
         "lines": {
-          "19": 2,
+          "20": 2,
           "24": 1,
-          "32": 1
+          "31": 1
         }
       },
       {
         "place": "Nakatomi",
         "lines": {
-          "19": 1
+          "20": 1
         }
       },
       {
@@ -1076,8 +1063,8 @@
           "4": 5,
           "8": 6,
           "13": 3,
-          "54": 1,
-          "60": 1
+          "52": 1,
+          "58": 1
         }
       },
       {
@@ -1087,9 +1074,9 @@
           "3": 1,
           "7": 1,
           "9": 1,
-          "18": 1,
           "19": 1,
-          "49": 1
+          "20": 1,
+          "48": 1
         }
       },
       {
@@ -1114,8 +1101,8 @@
           "2": 1,
           "7": 2,
           "13": 1,
-          "33": 1,
-          "43": 1
+          "32": 1,
+          "42": 1
         }
       },
       {
@@ -1136,7 +1123,7 @@
           "0": 6,
           "2": 3,
           "9": 2,
-          "20": 1
+          "21": 1
         }
       },
       {
@@ -1150,15 +1137,15 @@
           "9": 1,
           "10": 1,
           "13": 3,
-          "16": 1,
           "17": 1,
           "18": 1,
-          "45": 1,
-          "51": 1,
-          "52": 1,
+          "19": 1,
+          "44": 1,
+          "49": 1,
+          "50": 1,
+          "53": 1,
           "55": 1,
-          "57": 1,
-          "61": 1
+          "59": 1
         }
       },
       {
@@ -1167,7 +1154,7 @@
           "0": 2,
           "1": 2,
           "8": 1,
-          "33": 1
+          "32": 1
         }
       },
       {
@@ -1211,18 +1198,18 @@
       },
       "last": {
         "speaker": 5,
-        "line": 657,
+        "line": 656,
         "text": "If this is their idea of Christmas I gotta be there for New Year's."
       }
     },
     "measures": {
       "firstWomanLine": 9,
       "longestWithoutWoman": 72,
-      "longestWithoutWomanStart": 400,
+      "longestWithoutWomanStart": 399,
       "words": {
-        "w": 762,
+        "w": 777,
         "m": 7267,
-        "unknown": 184
+        "unknown": 162
       },
       "womenConversations": 2,
       "menConversations": 46,

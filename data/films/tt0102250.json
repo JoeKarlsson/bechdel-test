@@ -7,65 +7,56 @@
     "Fantasy"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 79,
+    "pass": false,
+    "bechdelScore": 2,
+    "numScenesPass": 0,
+    "numScenesDontPass": 80,
     "numOfFemalesChars": 13,
     "numOfMaleChars": 29,
-    "numOfFemalesCharsWithDialogue": 16,
-    "numOfMaleCharsWithDialogue": 24,
-    "totalLinesFemaleDialogue": 54,
-    "totalLinesMaleDialogue": 136,
-    "scenesThatPass": [
-      "SARA. -: ‘She was with, ‘that: agent; “ Prank,. wasn’t. she? She had a Very sweet. quality.\nSARA: “oh God! “What is wrong with me? ‘If I do it again,.tie me up and gag me. -"
-    ]
+    "numOfFemalesCharsWithDialogue": 13,
+    "numOfMaleCharsWithDialogue": 20,
+    "totalLinesFemaleDialogue": 56,
+    "totalLinesMaleDialogue": 138,
+    "scenesThatPass": []
   },
   "script": {
     "file": "la-story-1991.txt",
     "layout": "indented",
-    "dialogueLines": 244,
+    "dialogueLines": 246,
     "speakers": [
       {
         "name": "HARRIS",
-        "lines": 85,
+        "lines": 91,
         "gender": "m",
         "named": true,
         "actor": "Steve Martin"
       },
       {
         "name": "SARA",
-        "lines": 23,
+        "lines": 26,
         "gender": "w",
         "named": true,
         "actor": "Victoria Tennant"
       },
       {
         "name": "SANDY",
-        "lines": 19,
+        "lines": 22,
         "gender": null,
         "named": true
       },
       {
         "name": "ROLAND",
-        "lines": 14,
+        "lines": 16,
         "gender": "m",
         "named": true,
         "actor": "Richard E. Grant"
       },
       {
         "name": "TRUDI",
-        "lines": 11,
+        "lines": 12,
         "gender": "w",
         "named": true,
         "actor": "Marilu Henner"
-      },
-      {
-        "name": "HARRIS -",
-        "lines": 5,
-        "gender": "m",
-        "named": true,
-        "actor": "Steve Martin"
       },
       {
         "name": "HE",
@@ -79,6 +70,18 @@
         "gender": "m",
         "named": true,
         "actor": "Sam McMurray"
+      },
+      {
+        "name": "ARTEL",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "FREEWAY SIGN",
+        "lines": 3,
+        "gender": "w",
+        "named": true
       },
       {
         "name": "GRAVEDIGGER",
@@ -95,10 +98,18 @@
         "actor": "Susan Forristal"
       },
       {
-        "name": "ARTEL",
+        "name": "CHEF",
         "lines": 2,
-        "gender": null,
-        "named": false
+        "gender": "m",
+        "named": false,
+        "actor": "Pierre Epstein"
+      },
+      {
+        "name": "FRANK",
+        "lines": 2,
+        "gender": "m",
+        "named": true,
+        "actor": "Kevin Pollak"
       },
       {
         "name": "HARRY ZELL",
@@ -107,20 +118,7 @@
         "named": true
       },
       {
-        "name": "SANDY -",
-        "lines": 2,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "SARA --",
-        "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Victoria Tennant"
-      },
-      {
-        "name": "SARA. -",
         "lines": 2,
         "gender": "w",
         "named": true,
@@ -155,7 +153,7 @@
         "actor": "Sam McMurray"
       },
       {
-        "name": "7 SARA -",
+        "name": "7 SARA",
         "lines": 1,
         "gender": "w",
         "named": false,
@@ -181,13 +179,7 @@
         "named": false
       },
       {
-        "name": "ARTEL .",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "ATTENDANT -",
+        "name": "ATTENDANT",
         "lines": 1,
         "gender": null,
         "named": false
@@ -197,20 +189,6 @@
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "CHEF",
-        "lines": 1,
-        "gender": "m",
-        "named": false,
-        "actor": "Pierre Epstein"
-      },
-      {
-        "name": "CHEF.",
-        "lines": 1,
-        "gender": "m",
-        "named": false,
-        "actor": "Pierre Epstein"
       },
       {
         "name": "CLOSE-UP",
@@ -250,13 +228,6 @@
         "named": true
       },
       {
-        "name": "FRANK",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Kevin Pollak"
-      },
-      {
         "name": "FRANK EE",
         "lines": 1,
         "gender": "m",
@@ -267,19 +238,13 @@
         "name": "FREEWAY - SIGN",
         "lines": 1,
         "gender": "w",
-        "named": false
-      },
-      {
-        "name": "FREEWAY SIGN",
-        "lines": 1,
-        "gender": "w",
-        "named": false
+        "named": true
       },
       {
         "name": "FREEWAY STGN",
         "lines": 1,
         "gender": null,
-        "named": false
+        "named": true
       },
       {
         "name": "FRENCHMAN",
@@ -316,14 +281,7 @@
         "actor": "Steve Martin"
       },
       {
-        "name": "HARRIS. .",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Steve Martin"
-      },
-      {
-        "name": "HARRTS -",
+        "name": "HARRTS",
         "lines": 1,
         "gender": null,
         "named": false
@@ -341,7 +299,7 @@
         "named": false
       },
       {
-        "name": "I SAID HIYA.",
+        "name": "I SAID HIYA",
         "lines": 1,
         "gender": null,
         "named": false
@@ -374,12 +332,6 @@
         "actor": "Steve Martin"
       },
       {
-        "name": "NOTE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "OM",
         "lines": 1,
         "gender": null,
@@ -392,17 +344,10 @@
         "named": true
       },
       {
-        "name": "PRANK.",
+        "name": "PRANK",
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "ROLAND -",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Richard E. Grant"
       },
       {
         "name": "ROLAND OE OS",
@@ -435,19 +380,6 @@
         "lines": 1,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "SANDY. -",
-        "lines": 1,
-        "gender": null,
-        "named": true
-      },
-      {
-        "name": "SARA -",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Victoria Tennant"
       },
       {
         "name": "SARA - A",
@@ -497,24 +429,11 @@
         "named": false
       },
       {
-        "name": "THOSE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "TOM",
         "lines": 1,
         "gender": "m",
         "named": true,
         "actor": "Larry Miller"
-      },
-      {
-        "name": "TRUDI -",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Marilu Henner"
       },
       {
         "name": "UNE",
@@ -533,9 +452,8 @@
       {
         "place": null,
         "lines": {
-          "53": 1,
-          "69": 1,
-          "71": 1
+          "59": 1,
+          "61": 1
         }
       },
       {
@@ -554,8 +472,8 @@
         "place": "“ beverly. ‘allis -~ -day",
         "lines": {
           "0": 1,
-          "32": 1,
-          "49": 1
+          "29": 1,
+          "43": 1
         }
       },
       {
@@ -593,36 +511,34 @@
         "place": "Restaurant",
         "lines": {
           "0": 2,
-          "1": 3,
+          "1": 4,
           "3": 3,
           "4": 1,
-          "7": 3,
-          "14": 1,
+          "6": 3,
+          "12": 1,
           "18": 1,
-          "29": 1,
+          "26": 1,
+          "28": 1,
           "31": 1,
-          "34": 1,
-          "35": 1,
-          "54": 1,
-          "56": 1,
-          "70": 1,
-          "73": 1
+          "47": 1,
+          "49": 1,
+          "60": 1,
+          "62": 1
         }
       },
       {
         "place": "Street ~. day",
         "lines": {
           "0": 1,
-          "1": 1,
+          "1": 2,
           "2": 3,
-          "4": 1,
-          "14": 1
+          "4": 1
         }
       },
       {
         "place": "‘esprit _  dusk",
         "lines": {
-          "5": 1
+          "0": 1
         }
       },
       {
@@ -630,8 +546,8 @@
         "lines": {
           "0": 4,
           "4": 1,
-          "47": 1,
-          "48": 1
+          "41": 1,
+          "42": 1
         }
       },
       {
@@ -650,7 +566,7 @@
         "place": "Sara‘s. apartment",
         "lines": {
           "0": 2,
-          "13": 1
+          "14": 1
         }
       },
       {
@@ -662,13 +578,12 @@
       {
         "place": "Artel‘s\" ‘apartment. ~ “pay",
         "lines": {
-          "0": 11,
+          "0": 12,
           "1": 1,
-          "5": 1,
-          "9": 1,
+          "7": 1,
           "10": 1,
           "21": 1,
-          "55": 1
+          "48": 1
         }
       },
       {
@@ -680,13 +595,12 @@
       {
         "place": "Church",
         "lines": {
-          "0": 4,
-          "5": 1,
-          "8": 3,
-          "33": 1,
-          "42": 1,
-          "50": 1,
-          "66": 1
+          "0": 5,
+          "9": 3,
+          "30": 1,
+          "37": 1,
+          "44": 1,
+          "56": 1
         }
       },
       {
@@ -697,11 +611,9 @@
         "place": "Hard rock cafe",
         "lines": {
           "0": 3,
-          "2": 4,
-          "12": 1,
-          "60": 1,
-          "61": 1,
-          "63": 1
+          "2": 6,
+          "52": 1,
+          "53": 1
         }
       },
       {
@@ -719,24 +631,23 @@
           "1": 1,
           "2": 2,
           "3": 4,
-          "6": 1
+          "5": 1
         }
       },
       {
         "place": "Harris* -apartment. \"= day |",
         "lines": {
+          "0": 1,
           "2": 2,
           "4": 1,
-          "5": 1,
-          "44": 1
+          "38": 1
         }
       },
       {
         "place": "Trudi’s apartment",
         "lines": {
           "0": 1,
-          "4": 2,
-          "74": 1
+          "4": 3
         }
       },
       {
@@ -747,8 +658,8 @@
         "place": "Santa monica. freeway",
         "lines": {
           "0": 2,
-          "36": 1,
-          "37": 1
+          "8": 2,
+          "32": 1
         }
       },
       {
@@ -762,31 +673,27 @@
       {
         "place": "Outdoor restaurant",
         "lines": {
-          "0": 2,
+          "0": 4,
           "1": 1,
           "2": 2,
           "5": 1,
-          "6": 1,
-          "9": 1,
+          "7": 2,
           "10": 1,
-          "11": 1,
-          "23": 1,
-          "41": 1,
-          "43": 1,
+          "13": 1,
+          "36": 1,
+          "40": 1,
+          "45": 1,
           "46": 1,
-          "51": 1,
-          "52": 1,
-          "75": 1,
-          "76": 1
+          "63": 1,
+          "64": 1
         }
       },
       {
         "place": "Bank",
         "lines": {
           "0": 2,
-          "26": 1,
-          "27": 1,
-          "39": 1
+          "11": 2,
+          "34": 1
         }
       },
       {
@@ -803,7 +710,7 @@
         "place": "Yard = day",
         "lines": {
           "0": 1,
-          "30": 1
+          "27": 1
         }
       },
       {
@@ -818,7 +725,8 @@
         "lines": {
           "0": 3,
           "1": 2,
-          "57": 1
+          "3": 1,
+          "12": 1
         }
       },
       {
@@ -826,7 +734,7 @@
         "lines": {
           "0": 3,
           "1": 1,
-          "67": 1
+          "57": 1
         }
       },
       {
@@ -838,7 +746,7 @@
       {
         "place": "Sara’s apartment",
         "lines": {
-          "6": 1
+          "5": 1
         }
       },
       {
@@ -853,9 +761,9 @@
         "lines": {
           "0": 3,
           "1": 1,
-          "13": 1,
-          "24": 1,
-          "40": 1
+          "14": 1,
+          "23": 1,
+          "35": 1
         }
       },
       {
@@ -887,10 +795,10 @@
         "lines": {
           "0": 2,
           "1": 3,
+          "2": 1,
           "3": 1,
-          "12": 1,
           "19": 1,
-          "59": 1
+          "51": 1
         }
       },
       {
@@ -907,19 +815,18 @@
           "3": 3,
           "17": 1,
           "22": 1,
-          "25": 1
+          "24": 1
         }
       },
       {
         "place": "Beach night",
         "lines": {
           "0": 2,
-          "1": 2,
+          "1": 3,
           "2": 2,
           "3": 1,
-          "62": 1,
-          "64": 1,
-          "68": 1
+          "54": 1,
+          "58": 1
         }
       },
       {
@@ -936,12 +843,14 @@
           "0": 2,
           "2": 1,
           "3": 2,
-          "58": 1
+          "50": 1
         }
       },
       {
         "place": "Roland’s car",
-        "lines": {}
+        "lines": {
+          "3": 1
+        }
       },
       {
         "place": "Tv studio",
@@ -950,10 +859,10 @@
       {
         "place": "Tv .studio ‘-day",
         "lines": {
-          "7": 1,
+          "6": 1,
           "15": 2,
-          "45": 1,
-          "65": 1
+          "39": 1,
+          "55": 1
         }
       },
       {
@@ -976,7 +885,7 @@
         "place": "Sign'= night:  ©                 oo",
         "lines": {
           "0": 2,
-          "38": 1
+          "33": 1
         }
       },
       {
@@ -998,7 +907,7 @@
       {
         "place": "Harris’. apartment = night’",
         "lines": {
-          "6": 1
+          "5": 1
         }
       },
       {
@@ -1032,7 +941,7 @@
       {
         "place": "Cockpit. ~ night",
         "lines": {
-          "28": 1
+          "25": 1
         }
       },
       {
@@ -1047,34 +956,34 @@
         "lines": {
           "0": 1,
           "1": 1,
-          "11": 1,
-          "72": 1
+          "8": 1,
+          "13": 1
         }
       }
     ],
     "bookends": {
       "first": {
         "speaker": 0,
-        "line": 5,
+        "line": 4,
         "text": "My name is Harris K. Telemacher. I. live = in Los Angeles and I’ve had seven-heart attacks...all imagined. That is to say, r I was deeply unhappy, But I didn’t :know it because I was so happy all the -time...that is to say,. if: I-hadn‘t met - her, I-wouldn’t have."
       },
       "last": {
         "speaker": 0,
-        "line": 243,
+        "line": 245,
         "text": "Yes. . oo '- {to Sara) It’s a a riddle. Too tough for me. - She- looks at the’ riddle. “Then: - SARA oo, . “> I. can: ‘solve. its: It's a British . >: Grossword: clue. Unscramble means you | . unseramble. ‘the’ letters of show is daddy » doing\" ete a, oo."
       }
     },
     "measures": {
-      "firstWomanLine": 14,
+      "firstWomanLine": 13,
       "longestWithoutWoman": 24,
-      "longestWithoutWomanStart": 85,
+      "longestWithoutWomanStart": 84,
       "words": {
-        "w": 1626,
-        "m": 5048,
-        "unknown": 1609
+        "w": 1690,
+        "m": 5065,
+        "unknown": 1504
       },
-      "womenConversations": 4,
-      "menConversations": 12,
+      "womenConversations": 3,
+      "menConversations": 10,
       "reverseScore": 3
     }
   },

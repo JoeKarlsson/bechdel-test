@@ -28,7 +28,7 @@
   "script": {
     "file": "rent-2005.txt",
     "layout": "indented",
-    "dialogueLines": 849,
+    "dialogueLines": 850,
     "speakers": [
       {
         "name": "ROGER",
@@ -110,16 +110,16 @@
         "named": true
       },
       {
+        "name": "ALL",
+        "lines": 7,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "ROGER AND MARK",
         "lines": 7,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "ALL",
-        "lines": 6,
-        "gender": null,
-        "named": false
       },
       {
         "name": "MANAGER",
@@ -969,7 +969,7 @@
       {
         "place": "The park",
         "lines": {
-          "13": 1
+          "12": 1
         }
       },
       {
@@ -986,12 +986,14 @@
       },
       {
         "place": "Bus stop",
-        "lines": {}
+        "lines": {
+          "12": 1
+        }
       },
       {
         "place": "Elementary school",
         "lines": {
-          "13": 1
+          "12": 1
         }
       },
       {
@@ -1014,7 +1016,7 @@
         "lines": {
           "4": 7,
           "7": 4,
-          "13": 2,
+          "12": 2,
           "42": 1,
           "74": 1,
           "75": 1
@@ -1421,14 +1423,14 @@
       {
         "place": "Santa fe",
         "lines": {
-          "12": 1
+          "13": 1
         }
       },
       {
         "place": "Bus stop",
         "lines": {
           "1": 1,
-          "12": 1
+          "13": 1
         }
       },
       {
@@ -1447,7 +1449,7 @@
         "place": "George washington bridge",
         "lines": {
           "0": 1,
-          "12": 1
+          "13": 1
         }
       },
       {
@@ -1465,19 +1467,19 @@
       {
         "place": "East village street",
         "lines": {
-          "12": 1
+          "13": 1
         }
       },
       {
         "place": "Lofty",
         "lines": {
-          "12": 2
+          "13": 2
         }
       },
       {
         "place": "Boys' loft",
         "lines": {
-          "12": 1,
+          "13": 1,
           "36": 1
         }
       },
@@ -1559,7 +1561,7 @@
           "5": 1,
           "6": 1,
           "10": 1,
-          "13": 2
+          "12": 2
         }
       }
     ],
@@ -1570,8 +1572,8 @@
         "text": "Smile."
       },
       "last": {
-        "speaker": 13,
-        "line": 848,
+        "speaker": 12,
+        "line": 849,
         "text": "No other road. No other way. No day but today."
       }
     },
@@ -1582,7 +1584,7 @@
       "words": {
         "w": 2759,
         "m": 4965,
-        "unknown": 918
+        "unknown": 933
       },
       "womenConversations": 12,
       "menConversations": 52,

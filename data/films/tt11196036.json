@@ -7,19 +7,17 @@
     "Thriller"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 84,
+    "pass": false,
+    "bechdelScore": 2,
+    "numScenesPass": 0,
+    "numScenesDontPass": 85,
     "numOfFemalesChars": 11,
     "numOfMaleChars": 15,
-    "numOfFemalesCharsWithDialogue": 6,
-    "numOfMaleCharsWithDialogue": 10,
+    "numOfFemalesCharsWithDialogue": 5,
+    "numOfMaleCharsWithDialogue": 7,
     "totalLinesFemaleDialogue": 117,
     "totalLinesMaleDialogue": 444,
-    "scenesThatPass": [
-      "LA LINDA: Trust me on this.\nLA LINDA O.S: It’s a, well, it’s sort of a botantical garden but they light it up for the holidays. My mom took me when I was a kid. Like this, better."
-    ]
+    "scenesThatPass": []
   },
   "script": {
     "file": "the-card-counter-2021.txt",
@@ -28,35 +26,28 @@
     "speakers": [
       {
         "name": "TELL",
-        "lines": 239,
+        "lines": 280,
         "gender": "m",
         "named": true,
         "actor": "Oscar Isaac"
       },
       {
         "name": "LA LINDA",
-        "lines": 101,
+        "lines": 103,
         "gender": "w",
         "named": true,
         "actor": "Tiffany Haddish"
       },
       {
         "name": "CIRK",
-        "lines": 100,
+        "lines": 101,
         "gender": "m",
         "named": true,
         "actor": "Tye Sheridan"
       },
       {
-        "name": "TELL V.O",
-        "lines": 41,
-        "gender": "m",
-        "named": true,
-        "actor": "Oscar Isaac"
-      },
-      {
         "name": "GORDO",
-        "lines": 19,
+        "lines": 20,
         "gender": "m",
         "named": true,
         "actor": "Willem Dafoe"
@@ -129,13 +120,6 @@
         "named": false
       },
       {
-        "name": "LA LINDA O.S",
-        "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Tiffany Haddish"
-      },
-      {
         "name": "A75 TIMECUT",
         "lines": 1,
         "gender": null,
@@ -154,13 +138,6 @@
         "named": false
       },
       {
-        "name": "CIRK O.S",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Tye Sheridan"
-      },
-      {
         "name": "COUNT DOWN",
         "lines": 1,
         "gender": "m",
@@ -171,13 +148,6 @@
         "lines": 1,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "GORDO O.S",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Willem Dafoe"
       },
       {
         "name": "GUARD",
@@ -227,20 +197,19 @@
       {
         "place": "Casino",
         "lines": {
-          "3": 3
+          "0": 3
         }
       },
       {
         "place": "Leavenworth prison",
         "lines": {
-          "3": 3
+          "0": 3
         }
       },
       {
         "place": "Casino",
         "lines": {
-          "0": 2,
-          "3": 4
+          "0": 6
         }
       },
       {
@@ -259,7 +228,7 @@
         "place": "Motel #1 office",
         "lines": {
           "0": 5,
-          "10": 4
+          "9": 4
         }
       },
       {
@@ -277,32 +246,30 @@
       {
         "place": "Grand opening casino",
         "lines": {
-          "0": 8,
-          "3": 1,
-          "5": 10
+          "0": 9,
+          "4": 10
         }
       },
       {
         "place": "Washa casino, gaming floor",
         "lines": {
-          "0": 19,
+          "0": 20,
           "1": 18,
-          "3": 1,
-          "5": 6
+          "4": 6
         }
       },
       {
         "place": "Casino card room",
         "lines": {
-          "3": 2
+          "0": 2
         }
       },
       {
         "place": "Motel room #",
         "lines": {
-          "3": 1,
-          "8": 2,
-          "17": 1
+          "0": 1,
+          "7": 2,
+          "15": 1
         }
       },
       {
@@ -317,13 +284,13 @@
         "place": "Conference room",
         "lines": {
           "2": 2,
-          "4": 4
+          "3": 4
         }
       },
       {
         "place": "Roulette table",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
@@ -359,7 +326,7 @@
         "place": "Ac casino, hotel corridor",
         "lines": {
           "0": 1,
-          "19": 1
+          "2": 1
         }
       },
       {
@@ -371,22 +338,20 @@
       {
         "place": "Tell’s car",
         "lines": {
-          "0": 10,
-          "2": 11,
-          "3": 1
+          "0": 11,
+          "2": 11
         }
       },
       {
         "place": "Delaware downs racino",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "Delaware downs sports book",
         "lines": {
-          "0": 3,
-          "3": 1
+          "0": 4
         }
       },
       {
@@ -398,7 +363,7 @@
       {
         "place": "Motel room #",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
@@ -437,14 +402,14 @@
           "0": 2,
           "1": 9,
           "2": 1,
-          "11": 4,
-          "28": 1
+          "10": 4,
+          "24": 1
         }
       },
       {
         "place": "Poconos casino",
         "lines": {
-          "3": 2
+          "0": 2
         }
       },
       {
@@ -473,13 +438,13 @@
       {
         "place": "Motel room #",
         "lines": {
-          "3": 2
+          "0": 2
         }
       },
       {
         "place": "Sere training facility",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
@@ -489,65 +454,63 @@
       {
         "place": "Guantanamo doc footage",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "Black sites",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "Parwan detention camp doc footage- day",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "Motel #",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "Abu ghraib, military office",
         "lines": {
-          "0": 6,
-          "3": 1,
-          "6": 8
+          "0": 7,
+          "5": 8
         }
       },
       {
         "place": "Tier 1a, abu ghraib",
         "lines": {
-          "0": 3,
-          "3": 1,
-          "4": 7
+          "0": 4,
+          "3": 7
         }
       },
       {
         "place": "Motel room #",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "Fort leavenworth, jail cell",
         "lines": {
-          "3": 2
+          "0": 2
         }
       },
       {
         "place": "U.s.d.b. common area",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
         "place": "U.s.d.b. cell",
         "lines": {
-          "3": 1
+          "0": 1
         }
       },
       {
@@ -573,8 +536,8 @@
         "lines": {
           "0": 21,
           "2": 23,
-          "18": 1,
-          "26": 1
+          "16": 1,
+          "22": 1
         }
       },
       {
@@ -595,11 +558,11 @@
       {
         "place": "Panama city tournament",
         "lines": {
-          "3": 2,
-          "12": 3,
-          "14": 2,
-          "25": 1,
-          "27": 1
+          "0": 2,
+          "11": 3,
+          "13": 2,
+          "21": 1,
+          "23": 1
         }
       },
       {
@@ -607,23 +570,21 @@
         "lines": {
           "0": 13,
           "1": 12,
-          "12": 1
+          "11": 1
         }
       },
       {
         "place": "Motel #",
         "lines": {
-          "0": 5,
-          "1": 5,
-          "3": 1,
-          "15": 1
+          "0": 6,
+          "1": 6
         }
       },
       {
         "place": "Panama casino tournament",
         "lines": {
-          "8": 1,
-          "24": 1
+          "7": 1,
+          "20": 1
         }
       },
       {
@@ -631,7 +592,7 @@
         "lines": {
           "0": 14,
           "2": 11,
-          "20": 1
+          "17": 1
         }
       },
       {
@@ -655,27 +616,25 @@
         "place": "Panama city casino hallway",
         "lines": {
           "0": 2,
-          "1": 1,
-          "15": 1
+          "1": 2
         }
       },
       {
         "place": "La linda’s room",
         "lines": {
-          "0": 17,
+          "0": 18,
           "1": 14,
-          "3": 1,
-          "7": 5,
-          "9": 4,
-          "16": 1
+          "6": 5,
+          "8": 4,
+          "14": 1
         }
       },
       {
         "place": "Pananma city casino tournament",
         "lines": {
           "0": 1,
-          "8": 2,
-          "13": 2
+          "7": 2,
+          "12": 2
         }
       },
       {
@@ -689,14 +648,14 @@
         "place": "Panama city tournament",
         "lines": {
           "0": 1,
-          "13": 1,
-          "21": 1
+          "12": 1,
+          "18": 1
         }
       },
       {
         "place": "Motel room #",
         "lines": {
-          "4": 1
+          "3": 1
         }
       },
       {
@@ -715,8 +674,7 @@
         "place": "Gordo’s suburban home",
         "lines": {
           "0": 13,
-          "4": 7,
-          "22": 1
+          "3": 8
         }
       },
       {
@@ -730,8 +688,8 @@
       {
         "place": "Leavenworth prison, tell’s cell",
         "lines": {
-          "3": 1,
-          "23": 1
+          "0": 1,
+          "19": 1
         }
       },
       {
@@ -745,12 +703,12 @@
     ],
     "bookends": {
       "first": {
-        "speaker": 3,
+        "speaker": 0,
         "line": 1,
         "text": "I had never imagined myself as someone suited to a life of incarceration. As a boy I was afraid of confined spaces. I feared elevators. When I was older I just wanted to get in the car, roll the windows and drive, drive. Drive wherever my eyes would take me."
       },
       "last": {
-        "speaker": 3,
+        "speaker": 0,
         "line": 569,
         "text": "I had never imagined myself as someone suited to a life of incarceration."
       }
@@ -764,8 +722,8 @@
         "m": 5190,
         "unknown": 163
       },
-      "womenConversations": 2,
-      "menConversations": 26,
+      "womenConversations": 1,
+      "menConversations": 21,
       "reverseScore": 3
     }
   },

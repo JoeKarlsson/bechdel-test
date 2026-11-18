@@ -15,7 +15,7 @@
     "numOfMaleChars": 19,
     "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 13,
-    "totalLinesFemaleDialogue": 439,
+    "totalLinesFemaleDialogue": 440,
     "totalLinesMaleDialogue": 416,
     "scenesThatPass": [
       "VI: See you around, babe.\nSALLY: Vi 1s that Violet?\nVI: Would you believe Viola?\nSALLY: I wanted to say thanks tor coming to get me, Viola.",
@@ -28,7 +28,7 @@
   "script": {
     "file": "coming-home-1978.txt",
     "layout": "indented",
-    "dialogueLines": 1000,
+    "dialogueLines": 1001,
     "speakers": [
       {
         "name": "SALLY",
@@ -119,17 +119,17 @@
         "actor": "Olivia Cole"
       },
       {
+        "name": "FLETA",
+        "lines": 8,
+        "gender": "w",
+        "named": true,
+        "actor": "Mary Jackson"
+      },
+      {
         "name": "AMANDA",
         "lines": 7,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "FLETA",
-        "lines": 7,
-        "gender": "w",
-        "named": true,
-        "actor": "Mary Jackson"
       },
       {
         "name": "LT. JOHNS",
@@ -630,7 +630,7 @@
         "named": false
       },
       {
-        "name": "UJ. -",
+        "name": "UJ",
         "lines": 1,
         "gender": null,
         "named": false
@@ -680,7 +680,7 @@
         "lines": {
           "0": 3,
           "2": 2,
-          "13": 5,
+          "14": 5,
           "32": 2,
           "62": 1,
           "79": 1
@@ -853,13 +853,15 @@
       },
       {
         "place": "Hospital corridor- day",
-        "lines": {}
+        "lines": {
+          "13": 1
+        }
       },
       {
         "place": "Office",
         "lines": {
           "0": 2,
-          "14": 2
+          "13": 2
         }
       },
       {
@@ -895,7 +897,7 @@
         "place": "Va lockerroom- morning",
         "lines": {
           "0": 2,
-          "14": 3
+          "13": 3
         }
       },
       {
@@ -1072,7 +1074,7 @@
         "place": "Patio",
         "lines": {
           "0": 1,
-          "14": 2
+          "13": 2
         }
       },
       {
@@ -1802,7 +1804,7 @@
         "place": "Navalcemetery",
         "lines": {
           "0": 1,
-          "13": 2,
+          "14": 2,
           "30": 1
         }
       },
@@ -1821,16 +1823,16 @@
       },
       "last": {
         "speaker": 1,
-        "line": 1000,
+        "line": 1001,
         "text": "Fuck this want to be alone shit. .."
       }
     },
     "measures": {
       "firstWomanLine": 3,
       "longestWithoutWoman": 27,
-      "longestWithoutWomanStart": 324,
+      "longestWithoutWomanStart": 325,
       "words": {
-        "w": 6042,
+        "w": 6048,
         "m": 7252,
         "unknown": 2570
       },

@@ -9,16 +9,17 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 93,
+    "numScenesPass": 2,
+    "numScenesDontPass": 92,
     "numOfFemalesChars": 21,
     "numOfMaleChars": 45,
-    "numOfFemalesCharsWithDialogue": 12,
+    "numOfFemalesCharsWithDialogue": 13,
     "numOfMaleCharsWithDialogue": 34,
-    "totalLinesFemaleDialogue": 161,
+    "totalLinesFemaleDialogue": 162,
     "totalLinesMaleDialogue": 459,
     "scenesThatPass": [
-      "WINNIE: It's awful, I hate it.\nNORMA: You don't hate it. You love it. It's gonna make you win that contest."
+      "WINNIE: It's awful, I hate it.\nNORMA: You don't hate it. You love it. It's gonna make you win that contest.",
+      "VERA . .: And we'll get drunker and drunker, and drift about night clubs so\nVERA: You're going the wrong way. The theater's downtown."
     ]
   },
   "script": {
@@ -543,17 +544,18 @@
         "named": false
       },
       {
-        "name": "VERA '",
+        "name": "VERA . .",
         "lines": 1,
         "gender": "w",
         "named": true,
         "actor": "Diane Lane"
       },
       {
-        "name": "VIEW",
+        "name": "VERA '",
         "lines": 1,
-        "gender": null,
-        "named": true
+        "gender": "w",
+        "named": true,
+        "actor": "Diane Lane"
       },
       {
         "name": "VIEW OF HARLEM BOULEVARD",
@@ -997,7 +999,8 @@
         "place": "Dusenberg",
         "lines": {
           "0": 1,
-          "1": 1
+          "1": 1,
+          "79": 1
         }
       },
       {
@@ -1069,7 +1072,7 @@
           "0": 4,
           "1": 3,
           "5": 1,
-          "79": 1
+          "80": 1
         }
       },
       {
@@ -1162,7 +1165,6 @@
       {
         "place": "Street near cotton club",
         "lines": {
-          "80": 1,
           "85": 1
         }
       },
@@ -1361,11 +1363,11 @@
       "longestWithoutWoman": 42,
       "longestWithoutWomanStart": 130,
       "words": {
-        "w": 2492,
+        "w": 2504,
         "m": 7374,
-        "unknown": 879
+        "unknown": 852
       },
-      "womenConversations": 3,
+      "womenConversations": 4,
       "menConversations": 53,
       "reverseScore": 3
     }

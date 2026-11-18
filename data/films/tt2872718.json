@@ -13,10 +13,10 @@
     "numScenesDontPass": 0,
     "numOfFemalesChars": 15,
     "numOfMaleChars": 25,
-    "numOfFemalesCharsWithDialogue": 8,
+    "numOfFemalesCharsWithDialogue": 7,
     "numOfMaleCharsWithDialogue": 21,
     "totalLinesFemaleDialogue": 153,
-    "totalLinesMaleDialogue": 490,
+    "totalLinesMaleDialogue": 498,
     "scenesThatPass": [
       "FREELANCER: S’over. Shot the place to shit.\nNINA: Great shot. Oh that’s fantastic. That’s a great piece of tape."
     ]
@@ -28,13 +28,13 @@
     "speakers": [
       {
         "name": "LOU",
-        "lines": 284,
+        "lines": 294,
         "gender": "m",
         "named": true
       },
       {
         "name": "NINA",
-        "lines": 128,
+        "lines": 129,
         "gender": "w",
         "named": true,
         "actor": "Rene Russo"
@@ -91,12 +91,6 @@
         "gender": "w",
         "named": false,
         "actor": "Michael Hyatt"
-      },
-      {
-        "name": "LOU/INTO PHONE",
-        "lines": 8,
-        "gender": null,
-        "named": true
       },
       {
         "name": "TECHNICAL DIRECTOR",
@@ -220,12 +214,6 @@
         "named": false
       },
       {
-        "name": "LOU V.O",
-        "lines": 2,
-        "gender": "m",
-        "named": true
-      },
-      {
         "name": "REPORTER",
         "lines": 2,
         "gender": null,
@@ -252,19 +240,25 @@
         "named": false
       },
       {
+        "name": "WOMAN",
+        "lines": 2,
+        "gender": "w",
+        "named": false
+      },
+      {
         "name": "9-1-1/OVER",
         "lines": 1,
         "gender": null,
         "named": false
       },
       {
-        "name": "911 DISPATCH/OVER",
+        "name": "911",
         "lines": 1,
         "gender": null,
         "named": false
       },
       {
-        "name": "911/INTO PHONE",
+        "name": "911 DISPATCH/OVER",
         "lines": 1,
         "gender": null,
         "named": false
@@ -350,13 +344,6 @@
         "actor": "Dig Wayne"
       },
       {
-        "name": "NINA/ON PHONE",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Rene Russo"
-      },
-      {
         "name": "PRODUCTIONS",
         "lines": 1,
         "gender": null,
@@ -393,26 +380,14 @@
         "lines": 1,
         "gender": "m",
         "named": false
-      },
-      {
-        "name": "WOMAN",
-        "lines": 1,
-        "gender": "w",
-        "named": false
-      },
-      {
-        "name": "WOMAN/ON SCREEN",
-        "lines": 1,
-        "gender": "w",
-        "named": false
       }
     ],
     "scenes": [
       {
         "place": null,
         "lines": {
-          "0": 284,
-          "1": 128,
+          "0": 294,
+          "1": 129,
           "2": 99,
           "3": 31,
           "4": 18,
@@ -421,19 +396,19 @@
           "7": 17,
           "8": 12,
           "9": 8,
-          "10": 8,
-          "11": 7,
+          "10": 7,
+          "11": 6,
           "12": 6,
           "13": 6,
-          "14": 6,
+          "14": 5,
           "15": 5,
           "16": 5,
           "17": 5,
-          "18": 5,
+          "18": 4,
           "19": 4,
-          "20": 4,
+          "20": 3,
           "21": 3,
-          "22": 3,
+          "22": 2,
           "23": 2,
           "24": 2,
           "25": 2,
@@ -444,7 +419,7 @@
           "30": 2,
           "31": 2,
           "32": 2,
-          "33": 2,
+          "33": 1,
           "34": 1,
           "35": 1,
           "36": 1,
@@ -464,17 +439,13 @@
           "50": 1,
           "51": 1,
           "52": 1,
-          "53": 1,
-          "54": 1,
-          "55": 1,
-          "56": 1,
-          "57": 1
+          "53": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 16,
+        "speaker": 15,
         "line": 1,
         "text": "What are you doing out here?"
       },
@@ -490,8 +461,8 @@
       "longestWithoutWomanStart": 516,
       "words": {
         "w": 1506,
-        "m": 6456,
-        "unknown": 2026
+        "m": 6621,
+        "unknown": 1861
       },
       "womenConversations": 1,
       "menConversations": 27,

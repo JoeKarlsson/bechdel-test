@@ -14,7 +14,7 @@
     "numOfFemalesChars": 34,
     "numOfMaleChars": 94,
     "numOfFemalesCharsWithDialogue": 4,
-    "numOfMaleCharsWithDialogue": 45,
+    "numOfMaleCharsWithDialogue": 36,
     "totalLinesFemaleDialogue": 24,
     "totalLinesMaleDialogue": 726,
     "scenesThatPass": []
@@ -22,18 +22,18 @@
   "script": {
     "file": "american-gangster.txt",
     "layout": "indented",
-    "dialogueLines": 856,
+    "dialogueLines": 848,
     "speakers": [
       {
         "name": "FRANK",
-        "lines": 205,
+        "lines": 208,
         "gender": "m",
         "named": true,
         "actor": "Denzel Washington"
       },
       {
         "name": "RICHIE",
-        "lines": 184,
+        "lines": 198,
         "gender": "m",
         "named": true,
         "actor": "Russell Crowe"
@@ -46,14 +46,14 @@
       },
       {
         "name": "RIVERA",
-        "lines": 28,
+        "lines": 32,
         "gender": "m",
         "named": true,
         "actor": "John Ortiz"
       },
       {
         "name": "TOBACK",
-        "lines": 26,
+        "lines": 29,
         "gender": "m",
         "named": true,
         "actor": "Ted Levine"
@@ -67,7 +67,7 @@
       },
       {
         "name": "TEDDY",
-        "lines": 21,
+        "lines": 22,
         "gender": "m",
         "named": true
       },
@@ -112,13 +112,6 @@
         "actor": "Roger Bart"
       },
       {
-        "name": "RICHIE V/O",
-        "lines": 12,
-        "gender": "m",
-        "named": true,
-        "actor": "Russell Crowe"
-      },
-      {
         "name": "SHEILA",
         "lines": 12,
         "gender": null,
@@ -142,6 +135,13 @@
         "gender": "w",
         "named": true,
         "actor": "Carla Gugino"
+      },
+      {
+        "name": "BUMPY",
+        "lines": 10,
+        "gender": "m",
+        "named": true,
+        "actor": "Clarence Williams III"
       },
       {
         "name": "CHARLIE",
@@ -178,17 +178,11 @@
         "actor": "Idris Elba"
       },
       {
-        "name": "BUMPY",
-        "lines": 8,
+        "name": "ROSSI",
+        "lines": 6,
         "gender": "m",
         "named": true,
-        "actor": "Clarence Williams III"
-      },
-      {
-        "name": "LEGEND",
-        "lines": 8,
-        "gender": null,
-        "named": false
+        "actor": "Jon Polito"
       },
       {
         "name": "ABRUZZO",
@@ -219,20 +213,6 @@
         "actor": "Bari K. Willerford"
       },
       {
-        "name": "RIVERA V/O",
-        "lines": 4,
-        "gender": "m",
-        "named": true,
-        "actor": "John Ortiz"
-      },
-      {
-        "name": "ROSSI",
-        "lines": 4,
-        "gender": "m",
-        "named": true,
-        "actor": "Jon Polito"
-      },
-      {
         "name": "SERVICEMAN 1",
         "lines": 4,
         "gender": "m",
@@ -251,13 +231,6 @@
         "lines": 3,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "FRANK V/O",
-        "lines": 3,
-        "gender": "m",
-        "named": true,
-        "actor": "Denzel Washington"
       },
       {
         "name": "REPORTER ON TV",
@@ -294,13 +267,6 @@
       },
       {
         "name": "BUMPY O/S",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Clarence Williams III"
-      },
-      {
-        "name": "BUMPY V/O",
         "lines": 2,
         "gender": "m",
         "named": true,
@@ -360,18 +326,11 @@
         "actor": "Myo Campbell"
       },
       {
-        "name": "RICHIE V.O",
+        "name": "REPORTER",
         "lines": 2,
         "gender": "m",
-        "named": true,
-        "actor": "Russell Crowe"
-      },
-      {
-        "name": "ROSSI V/O",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Jon Polito"
+        "named": false,
+        "actor": "Chris McKinney"
       },
       {
         "name": "SIBOTA",
@@ -385,13 +344,6 @@
         "gender": "m",
         "named": true,
         "actor": "T.I."
-      },
-      {
-        "name": "TOBACK V/O",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Ted Levine"
       },
       {
         "name": "TURNER",
@@ -540,20 +492,6 @@
         "actor": "Melissia Hill"
       },
       {
-        "name": "REPORTER",
-        "lines": 1,
-        "gender": "m",
-        "named": false,
-        "actor": "Chris McKinney"
-      },
-      {
-        "name": "REPORTER V/O",
-        "lines": 1,
-        "gender": "m",
-        "named": false,
-        "actor": "Chris McKinney"
-      },
-      {
         "name": "SERVICEMAN 2",
         "lines": 1,
         "gender": "m",
@@ -597,26 +535,13 @@
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "TEDDY V/O",
-        "lines": 1,
-        "gender": "m",
-        "named": true
-      },
-      {
-        "name": "TOBACK V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Ted Levine"
       }
     ],
     "scenes": [
       {
         "place": null,
         "lines": {
-          "67": 1
+          "60": 1
         }
       },
       {
@@ -629,35 +554,33 @@
       },
       {
         "place": "Harlem street",
-        "lines": {
-          "24": 1
-        }
+        "lines": {}
       },
       {
         "place": "Ext. street / discount emporium",
         "lines": {
           "0": 2,
-          "23": 5,
-          "40": 2
+          "17": 5,
+          "36": 2
         }
       },
       {
         "place": "Bumpy's apartment",
         "lines": {
-          "78": 1
+          "45": 1
         }
       },
       {
         "place": "Bumpy's apartment",
         "lines": {
           "0": 3,
+          "1": 2,
           "7": 1,
           "18": 4,
           "22": 1,
-          "26": 3,
-          "35": 1,
-          "48": 2,
-          "50": 2
+          "25": 3,
+          "31": 1,
+          "43": 2
         }
       },
       {
@@ -665,8 +588,7 @@
         "lines": {
           "1": 3,
           "3": 5,
-          "24": 1,
-          "64": 1
+          "57": 1
         }
       },
       {
@@ -677,14 +599,12 @@
         "place": "Ambulance",
         "lines": {
           "1": 1,
-          "32": 2
+          "29": 2
         }
       },
       {
         "place": "Ny police hq",
-        "lines": {
-          "24": 1
-        }
+        "lines": {}
       },
       {
         "place": "New york police annex",
@@ -707,20 +627,20 @@
       {
         "place": "Under expressway",
         "lines": {
-          "51": 1
+          "23": 1
         }
       },
       {
         "place": "Italian bar",
         "lines": {
-          "51": 1
+          "23": 1
         }
       },
       {
         "place": "Italian bar",
         "lines": {
           "0": 2,
-          "30": 4
+          "23": 4
         }
       },
       {
@@ -731,7 +651,7 @@
         "place": "Diner",
         "lines": {
           "0": 2,
-          "63": 1
+          "56": 1
         }
       },
       {
@@ -742,15 +662,15 @@
         "place": "Redtop's apartment",
         "lines": {
           "0": 3,
-          "31": 4,
-          "49": 2,
-          "80": 1
+          "28": 4,
+          "44": 2,
+          "71": 1
         }
       },
       {
         "place": "Social club",
         "lines": {
-          "32": 1
+          "29": 1
         }
       },
       {
@@ -821,14 +741,13 @@
       {
         "place": "Richie's apartment",
         "lines": {
-          "41": 1
+          "17": 1
         }
       },
       {
         "place": "Coney island",
         "lines": {
-          "23": 2,
-          "41": 1
+          "17": 3
         }
       },
       {
@@ -842,7 +761,7 @@
       {
         "place": "Boardwalk",
         "lines": {
-          "23": 1
+          "17": 1
         }
       },
       {
@@ -859,7 +778,7 @@
         "place": "Park",
         "lines": {
           "1": 13,
-          "17": 8
+          "16": 8
         }
       },
       {
@@ -877,7 +796,7 @@
         "lines": {
           "0": 1,
           "9": 3,
-          "36": 3
+          "32": 3
         }
       },
       {
@@ -885,18 +804,18 @@
         "lines": {
           "0": 12,
           "9": 11,
-          "15": 8,
-          "43": 2,
-          "65": 1,
-          "69": 1
+          "14": 8,
+          "38": 2,
+          "58": 1,
+          "62": 1
         }
       },
       {
         "place": "Richie's apartment",
         "lines": {
           "1": 6,
-          "29": 4,
-          "33": 3
+          "3": 4,
+          "30": 3
         }
       },
       {
@@ -907,7 +826,7 @@
         "place": "Stephen crane projects",
         "lines": {
           "1": 3,
-          "47": 2
+          "42": 2
         }
       },
       {
@@ -915,38 +834,37 @@
         "lines": {
           "1": 9,
           "3": 9,
-          "37": 2
+          "33": 2
         }
       },
       {
         "place": "Army base, new jersey",
         "lines": {
-          "38": 1
+          "34": 1
         }
       },
       {
         "place": "Frank's apartment",
         "lines": {
           "0": 1,
-          "42": 2
+          "37": 2
         }
       },
       {
         "place": "Greensboro, north carolina",
         "lines": {
+          "0": 2,
           "6": 4,
           "11": 1,
-          "24": 1,
-          "34": 2,
-          "68": 1
+          "61": 1
         }
       },
       {
         "place": "Courtroom",
         "lines": {
           "1": 8,
-          "14": 10,
-          "39": 1
+          "13": 10,
+          "35": 1
         }
       },
       {
@@ -957,7 +875,7 @@
         "place": "Frank's teaneck house",
         "lines": {
           "0": 2,
-          "55": 2
+          "48": 2
         }
       },
       {
@@ -970,7 +888,7 @@
       {
         "place": "Hudson river",
         "lines": {
-          "34": 1
+          "0": 1
         }
       },
       {
@@ -990,7 +908,7 @@
         "place": "Redtop's apartment",
         "lines": {
           "0": 1,
-          "77": 1
+          "70": 1
         }
       },
       {
@@ -1015,17 +933,17 @@
         "lines": {
           "1": 2,
           "19": 3,
-          "35": 1,
-          "74": 1,
-          "79": 1
+          "31": 1,
+          "45": 1,
+          "67": 1
         }
       },
       {
         "place": "Police gym",
         "lines": {
-          "13": 1,
-          "35": 1,
-          "54": 1
+          "1": 1,
+          "4": 1,
+          "31": 1
         }
       },
       {
@@ -1076,7 +994,7 @@
         "lines": {
           "0": 1,
           "18": 1,
-          "81": 1
+          "72": 1
         }
       },
       {
@@ -1094,7 +1012,7 @@
         "place": "Small's paradise",
         "lines": {
           "0": 3,
-          "28": 3
+          "27": 3
         }
       },
       {
@@ -1221,8 +1139,8 @@
           "11": 4,
           "18": 1,
           "19": 6,
-          "26": 2,
-          "52": 2
+          "25": 2,
+          "46": 2
         }
       },
       {
@@ -1238,7 +1156,7 @@
           "1": 1,
           "10": 1,
           "20": 3,
-          "25": 2
+          "24": 2
         }
       },
       {
@@ -1260,7 +1178,7 @@
       {
         "place": "Storefront apartment",
         "lines": {
-          "76": 1
+          "69": 1
         }
       },
       {
@@ -1278,7 +1196,7 @@
         "place": "Gas station garage",
         "lines": {
           "1": 2,
-          "46": 2
+          "41": 2
         }
       },
       {
@@ -1292,18 +1210,18 @@
         "place": "East harlem street",
         "lines": {
           "1": 2,
-          "86": 1
+          "77": 1
         }
       },
       {
         "place": "East harlem",
         "lines": {
           "1": 3,
+          "4": 1,
           "5": 2,
-          "82": 1,
-          "83": 1,
-          "84": 1,
-          "88": 1
+          "73": 1,
+          "74": 1,
+          "75": 1
         }
       },
       {
@@ -1311,7 +1229,7 @@
         "lines": {
           "1": 6,
           "4": 7,
-          "56": 2
+          "49": 2
         }
       },
       {
@@ -1327,7 +1245,7 @@
           "0": 1,
           "2": 1,
           "7": 1,
-          "75": 1
+          "68": 1
         }
       },
       {
@@ -1354,7 +1272,7 @@
       {
         "place": "Narcotics squad hq",
         "lines": {
-          "57": 1
+          "50": 1
         }
       },
       {
@@ -1383,7 +1301,7 @@
         "lines": {
           "1": 2,
           "7": 1,
-          "28": 1
+          "27": 1
         }
       },
       {
@@ -1396,7 +1314,7 @@
       {
         "place": "Baptist church",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
@@ -1418,25 +1336,25 @@
       {
         "place": "Dry cleaners",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
         "place": "Electrical shop",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
         "place": "Metal door shop",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
         "place": "Tire service shop",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
@@ -1446,7 +1364,7 @@
       {
         "place": "Int. body shop",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
@@ -1462,7 +1380,7 @@
       {
         "place": "Frank's penthouse building",
         "lines": {
-          "13": 1
+          "1": 1
         }
       },
       {
@@ -1565,7 +1483,7 @@
         "place": "Jimmy racine's apartment",
         "lines": {
           "11": 2,
-          "66": 1
+          "59": 1
         }
       },
       {
@@ -1576,8 +1494,8 @@
         "place": "Richie's apartment",
         "lines": {
           "1": 1,
-          "14": 1,
-          "85": 1
+          "13": 1,
+          "76": 1
         }
       },
       {
@@ -1590,7 +1508,7 @@
       {
         "place": "Narcotics squad hq",
         "lines": {
-          "13": 2
+          "1": 2
         }
       },
       {
@@ -1634,7 +1552,7 @@
         "lines": {
           "0": 3,
           "6": 1,
-          "53": 2
+          "47": 2
         }
       },
       {
@@ -1652,7 +1570,7 @@
         "place": "Jackie fox's club",
         "lines": {
           "0": 11,
-          "16": 11
+          "15": 11
         }
       },
       {
@@ -1698,31 +1616,31 @@
           "1": 6,
           "4": 1,
           "10": 1,
-          "44": 2,
-          "45": 2,
-          "58": 1
+          "39": 2,
+          "40": 2,
+          "51": 1
         }
       },
       {
         "place": "Courtroom",
         "lines": {
           "1": 1,
-          "17": 3,
-          "39": 1
+          "16": 3,
+          "35": 1
         }
       },
       {
         "place": "Courtroom",
         "lines": {
           "1": 2,
-          "14": 1
+          "13": 1
         }
       },
       {
         "place": "Ext. frank's car / frank's penthouse",
         "lines": {
           "0": 2,
-          "27": 1
+          "26": 1
         }
       },
       {
@@ -1747,7 +1665,7 @@
         "place": "Small's paradise",
         "lines": {
           "0": 2,
-          "27": 1
+          "26": 1
         }
       },
       {
@@ -1755,7 +1673,7 @@
         "lines": {
           "0": 2,
           "2": 1,
-          "27": 1
+          "26": 1
         }
       },
       {
@@ -1776,7 +1694,7 @@
       {
         "place": "Chinese place",
         "lines": {
-          "27": 1
+          "26": 1
         }
       },
       {
@@ -1787,7 +1705,7 @@
         "place": "Ext. chinese place",
         "lines": {
           "0": 1,
-          "27": 1
+          "26": 1
         }
       },
       {
@@ -1810,8 +1728,8 @@
           "5": 3,
           "7": 2,
           "10": 1,
-          "59": 1,
-          "61": 1
+          "52": 1,
+          "54": 1
         }
       },
       {
@@ -1835,7 +1753,7 @@
         "place": "Bamboo dwelling",
         "lines": {
           "0": 2,
-          "15": 3
+          "14": 3
         }
       },
       {
@@ -1852,7 +1770,7 @@
         "place": "Soul brothers bar",
         "lines": {
           "0": 2,
-          "87": 1
+          "6": 1
         }
       },
       {
@@ -1868,7 +1786,7 @@
           "10": 1,
           "11": 5,
           "20": 2,
-          "25": 3
+          "24": 3
         }
       },
       {
@@ -1950,7 +1868,7 @@
         "place": "Airport hangar",
         "lines": {
           "1": 3,
-          "38": 1
+          "34": 1
         }
       },
       {
@@ -1989,8 +1907,8 @@
           "0": 3,
           "4": 2,
           "21": 5,
-          "60": 1,
-          "62": 1
+          "53": 1,
+          "55": 1
         }
       },
       {
@@ -2028,15 +1946,15 @@
       {
         "place": "Toback's house",
         "lines": {
-          "4": 2,
-          "13": 2
+          "1": 2,
+          "4": 2
         }
       },
       {
         "place": "Stephen crane projects",
         "lines": {
           "1": 2,
-          "54": 1
+          "4": 1
         }
       },
       {
@@ -2083,7 +2001,7 @@
         "place": "17th floor hallway",
         "lines": {
           "10": 2,
-          "72": 1
+          "65": 1
         }
       },
       {
@@ -2121,7 +2039,7 @@
         "place": "Courtroom",
         "lines": {
           "1": 1,
-          "73": 1
+          "66": 1
         }
       },
       {
@@ -2151,15 +2069,11 @@
       },
       {
         "place": "Prison cell",
-        "lines": {
-          "24": 2
-        }
+        "lines": {}
       },
       {
         "place": "Narcotics squad hq",
-        "lines": {
-          "24": 2
-        }
+        "lines": {}
       },
       {
         "place": "Prison",
@@ -2170,34 +2084,34 @@
         "lines": {
           "0": 14,
           "1": 5,
-          "70": 1,
-          "71": 1
+          "63": 1,
+          "64": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 24,
+        "speaker": 36,
         "line": 2,
-        "text": "Harlem"
+        "text": "This is the problem. This is what's wrong with America."
       },
       "last": {
         "speaker": 0,
-        "line": 856,
+        "line": 848,
         "text": "Let's get out of here."
       }
     },
     "measures": {
-      "firstWomanLine": 54,
+      "firstWomanLine": 51,
       "longestWithoutWoman": 185,
-      "longestWithoutWomanStart": 446,
+      "longestWithoutWomanStart": 442,
       "words": {
         "w": 401,
         "m": 9096,
-        "unknown": 953
+        "unknown": 854
       },
       "womenConversations": 0,
-      "menConversations": 72,
+      "menConversations": 71,
       "reverseScore": 3
     }
   },
