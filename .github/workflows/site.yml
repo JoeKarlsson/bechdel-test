@@ -26,9 +26,9 @@ jobs:
     container: mcr.microsoft.com/playwright:v1.65.0-resolute
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: '22'
           cache: npm
@@ -41,7 +41,18 @@ jobs:
       - run: npm ci
 
       - name: Audit what ships
-        run: npm audit --omit=dev --audit-level=high
+        # GHSA-fc5q-39xc-vjpf: a picomatch ReDoS with no fixed version yet (2026-11-18).
+        # picomatch only runs in the build, on this repo's own globs. Drop it once a fix ships.
+        run: |
+          npm audit --omit=dev --json > "$RUNNER_TEMP/audit.json" || true
+          node -e '
+            const ignored = new Set(["GHSA-fc5q-39xc-vjpf"]);
+            const { vulnerabilities = {} } = require(process.argv[1]);
+            const found = Object.values(vulnerabilities).flatMap((v) => v.via.filter((a) => typeof a === "object" && ["high", "critical"].includes(a.severity)));
+            const left = found.filter((a) => !ignored.has(a.url.split("/").pop()));
+            for (const a of left) console.log(a.severity, a.name, a.url);
+            process.exit(left.length ? 1 : 0);
+          ' "$RUNNER_TEMP/audit.json"
 
       - name: Build
         run: npm run build
@@ -54,7 +65,7 @@ jobs:
 
       - name: Screenshot baselines (commit any new ones from this artifact)
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: screenshots
           path: site/e2e/__screenshots__
@@ -68,7 +79,7 @@ jobs:
 
       - name: Lighthouse reports
         if: failure()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: lighthouse
           path: site/.lighthouseci
@@ -77,7 +88,7 @@ jobs:
       - name: Outside links
         run: npm run check-links
 
-      - uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: site/dist
           # Or /.well-known/security.txt is left out of the deploy
@@ -98,7 +109,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
       # Pages has dropped files from a deploy before (/.well-known/ until
       # include-hidden-files), so check the live site serves them
       - name: Live site serves security.txt
