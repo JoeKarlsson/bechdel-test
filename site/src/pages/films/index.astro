@@ -21,6 +21,12 @@ const anchor = (letter: string) => (letter === '#' ? 'digits' : letter.toLowerCa
 	title="Every film, A to Z"
 	description={`All ${films.length.toLocaleString('en-US')} films we've checked against the Bechdel test, A to Z, with each one's score.`}
 	nav="shelf"
+	structuredData={{
+		'@type': 'CollectionPage',
+		name: 'Every film, A to Z',
+		url: 'https://bechdel.joekarlsson.com/films/',
+		isPartOf: { '@type': 'WebSite', name: 'bechdel.io', url: 'https://bechdel.joekarlsson.com/' },
+	}}
 >
 	<div class="page">
 		<h1 class="page-title">Every film, A to Z</h1>
@@ -60,7 +66,8 @@ const anchor = (letter: string) => (letter === '#' ? 'digits' : letter.toLowerCa
 		min-width: 44px;
 		min-height: 44px;
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		color: var(--chalk);
 	}
 	.jump a:hover {

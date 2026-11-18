@@ -20,7 +20,7 @@ const NETWORKS = [
 ---
 
 <p class="share">
-	Share it on
+	Share it on<span class="sr-only"> (each link opens a new tab)</span>
 	{
 		NETWORKS.map(([label, href], i) => [
 			<a href={href} target="_blank" rel="noopener noreferrer" class={`plausible-event-name=Share+Click plausible-event-network=${label.replace(/ /g, '+')}`}>{label}</a>,
@@ -71,7 +71,8 @@ const NETWORKS = [
 		line-height: 2;
 	}
 	.share a {
-		padding: var(--space-1) 0;
+		/* "X" alone is a 14px-wide target */
+		padding: var(--space-1) 0.2em;
 	}
 	.copy {
 		background: none;
@@ -93,9 +94,9 @@ const NETWORKS = [
 	.copy > span {
 		grid-area: 1 / 1;
 		transition:
-			opacity 150ms ease-out,
-			filter 150ms ease-out,
-			scale 150ms ease-out;
+			opacity 150ms var(--ease-enter),
+			filter 150ms var(--ease-enter),
+			scale 150ms var(--ease-enter);
 	}
 	.copy-done,
 	.copy[data-copied] .copy-label {
@@ -109,7 +110,7 @@ const NETWORKS = [
 		filter: none;
 	}
 	.copy[data-copied] {
-		animation: copied-pulse 240ms ease-out;
+		animation: copied-pulse 240ms var(--ease-enter);
 	}
 	@keyframes copied-pulse {
 		35% {
@@ -119,7 +120,7 @@ const NETWORKS = [
 	/* Reduced motion on a finger: the labels only fade */
 	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
 		.copy > span {
-			transition: opacity 150ms ease-out !important;
+			transition: opacity 150ms var(--ease-enter) !important;
 		}
 		.copy-done,
 		.copy[data-copied] .copy-label {

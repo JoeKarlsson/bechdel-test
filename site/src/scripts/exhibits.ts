@@ -49,7 +49,7 @@ export function setUpExhibits() {
 			if (side === split.dataset.show) return;
 			show(side);
 			if (motionKind() === 'none') return;
-			for (const cell of split.querySelectorAll<HTMLElement>(`.split-cell.${side}`)) cell.animate({ opacity: [0.001, 1] }, { duration: 160, easing: 'ease-out' });
+			for (const cell of split.querySelectorAll<HTMLElement>(`.split-cell.${side}`)) cell.animate({ opacity: [0.001, 1] }, { duration: 160, easing: getComputedStyle(cell).getPropertyValue('--ease-enter') });
 		});
 	sw.hidden = false;
 	show('w');

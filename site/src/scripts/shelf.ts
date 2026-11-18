@@ -12,6 +12,9 @@ type ShelfFilm = { slug: string; title: string; year: number | null; director: s
 
 const num = (el: HTMLElement, key: string) => Number(el.dataset[key] ?? 0);
 const n = (x: number) => x.toLocaleString('en-US');
+// scheduler.yield() keeps this task's place in line; Safari doesn't have it yet
+const yieldToMain = (): Promise<void> =>
+	(globalThis as { scheduler?: { yield?: () => Promise<void> } }).scheduler?.yield?.() ?? new Promise((resolve) => setTimeout(resolve));
 
 const comparators: Record<Sort, (a: HTMLElement, b: HTMLElement) => number> = {
 	popularity: (a, b) => num(a, 'popularity') - num(b, 'popularity'),
@@ -98,9 +101,19 @@ export function setUpShelf() {
 				if (!res.ok) throw new Error(`HTTP ${res.status}`);
 				return res.json() as Promise<ShelfFilm[]>;
 			})
-			.then((films) => {
+			.then(async (films) => {
 				const onPage = new Map(tapes.map((t) => [t.dataset.slug, t]));
-				tapes = films.map((f) => onPage.get(f.slug) ?? makeTape(template, f));
+				// Built in 50 ms slices, so a tap while 2,000+ tapes are made isn't kept waiting
+				const built: HTMLElement[] = [];
+				let sliceEnds = performance.now() + 50;
+				for (const f of films) {
+					built.push(onPage.get(f.slug) ?? makeTape(template, f));
+					if (performance.now() > sliceEnds) {
+						await yieldToMain();
+						sliceEnds = performance.now() + 50;
+					}
+				}
+				tapes = built;
 			})
 			.catch((error) => {
 				loading = null;
@@ -120,11 +133,13 @@ export function setUpShelf() {
 		const kind = motionKind();
 		if (!list.length || kind === 'none') return;
 		const cols = getComputedStyle(shelf).gridTemplateColumns.split(' ').length;
-		const easing = getComputedStyle(document.documentElement).getPropertyValue('--ease-enter');
+		const root = getComputedStyle(document.documentElement);
+		const easing = root.getPropertyValue('--ease-enter');
+		const duration = parseFloat(root.getPropertyValue('--duration-enter'));
 		list.slice(0, cols * 8).forEach((tape, i) =>
 			tape.animate(
 				kind === 'fade' ? { opacity: [0.001, 1] } : { opacity: [0.001, 1], translate: ['0 8px', '0 0'] },
-				{ duration: kind === 'fade' ? 150 : 220, delay: kind === 'fade' ? 0 : Math.floor(i / cols) * 30, easing, fill: 'backwards' },
+				{ duration: kind === 'fade' ? 150 : duration, delay: kind === 'fade' ? 0 : Math.floor(i / cols) * 30, easing, fill: 'backwards' },
 			),
 		);
 	};
@@ -140,10 +155,6 @@ export function setUpShelf() {
 		const sort = String(data.get('sort') ?? 'popularity') as Sort;
 
 		const sorted = [...tapes].sort(comparators[sort] ?? comparators.popularity);
-		if (sort !== orderOnPage || shelf.childElementCount !== sorted.length) {
-			shelf.append(...sorted);
-			orderOnPage = sort;
-		}
 
 		const browsing = !q && show === 'all';
 		let matched = 0;
@@ -160,6 +171,11 @@ export function setUpShelf() {
 			}
 			tape.hidden = !matches || matched > limit;
 		}
+		// After hiding, so the browser never lays out 2,000+ visible tapes at once
+		if (sort !== orderOnPage || shelf.childElementCount !== sorted.length) {
+			shelf.append(...sorted);
+			orderOnPage = sort;
+		}
 		const visible = Math.min(limit, matched);
 		const left = matched - visible;
 
@@ -170,7 +186,11 @@ export function setUpShelf() {
 					? `Showing ${n(visible)} of ${n(total)}, ${n(passing)} pass in all`
 					: left > 0
 						? `Showing ${n(visible)} of ${n(matched)} matches, ${n(passing)} pass`
-						: `Showing ${n(matched)} of ${n(total)}, ${n(passing)} pass`;
+						: matched === 0
+							? 'No films match'
+							: `${n(matched)} ${matched === 1 ? 'film matches' : 'films match'}, ${n(passing)} pass`;
+		// The empty message below says it already; the text stays for the screen reader announcement
+		count.hidden = matched === 0;
 		announce();
 		empty.hidden = matched > 0;
 		// Nothing matched: offer the nearest title, if one is close

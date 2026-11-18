@@ -237,8 +237,50 @@ const waffle = womenShare !== null ? Array.from({ length: 100 }, (_, i) => i < w
 const verdictWord = bechdel.pass ? 'Passes' : 'Fails';
 // Under 160 characters: long titles drop the second sentence
 const verdictSentence = `${film.title} (${film.year}) ${bechdel.pass ? 'passes' : 'fails'} the Bechdel test with a score of ${bechdel.score} out of 3.`;
-const descriptionTail = ' See who talks, scene by scene.';
+// One fact about this film, so search results don't read like a template
+const descriptionTail =
+	bechdel.pass && bechdel.scenesTotal > 0
+		? ` Women talk to each other in ${plural(bechdel.scenesPass, 'scene')} out of ${bechdel.scenesTotal}.`
+		: womenShare !== null
+			? ` Women speak ${womenShare}% of the lines.`
+			: ' See who talks, scene by scene.';
 const description = verdictSentence.length + descriptionTail.length <= 160 ? verdictSentence + descriptionTail : verdictSentence;
+const checked = film.added ? new Date(film.added) : null;
+// Search engines tell films with the same name apart by their IMDb page
+const structuredData = {
+	'@graph': [
+		{
+			'@type': 'WebPage',
+			'@id': pageUrl,
+			url: pageUrl,
+			name: `${film.title} (${film.year}): ${verdictWord.toLowerCase()} the Bechdel test`,
+			description,
+			dateModified: checked?.toISOString(),
+			isPartOf: { '@type': 'WebSite', name: 'bechdel.io', url: 'https://bechdel.joekarlsson.com/' },
+			about: { '@id': `${pageUrl}#movie` },
+			breadcrumb: {
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{ '@type': 'ListItem', position: 1, name: 'The shelf', item: 'https://bechdel.joekarlsson.com/' },
+					{ '@type': 'ListItem', position: 2, name: 'Every film', item: 'https://bechdel.joekarlsson.com/films/' },
+					{ '@type': 'ListItem', position: 3, name: film.title, item: pageUrl },
+				],
+			},
+		},
+		{
+			'@type': 'Movie',
+			'@id': `${pageUrl}#movie`,
+			name: film.title,
+			sameAs: film.imdbUrl ?? undefined,
+			image: poster?.src,
+			datePublished: film.released && !Number.isNaN(Date.parse(film.released)) ? new Date(`${film.released} UTC`).toISOString().slice(0, 10) : film.year ? String(film.year) : undefined,
+			genre: film.genres.length ? film.genres : undefined,
+			director: film.directors.map((name: string) => ({ '@type': 'Person', name })),
+			actor: film.cast.slice(0, 5).map((c: { actor: string }) => ({ '@type': 'Person', name: c.actor })),
+			description: film.plot ?? undefined,
+		},
+	],
+};
 const facts = [
 	['Released', film.released],
 	['Genres', film.genres.join(', ') || null],
@@ -264,13 +306,9 @@ const credit = [
 	description={description}
 	image={`/og/${film.slug}.jpg`}
 	imageAlt={`${film.title}: ${verdictWord.toLowerCase()} the Bechdel test, score ${bechdel.score} out of 3`}
-	structuredData={{
-		'@type': 'Movie',
-		name: film.title,
-		datePublished: film.year ? String(film.year) : undefined,
-		director: film.directors.map((name: string) => ({ '@type': 'Person', name })),
-		url: `https://bechdel.joekarlsson.com/films/${film.slug}/`,
-	}}
+	structuredData={structuredData}
+	posters
+	ogType="article"
 >
 	<section class:list={['hero', { 'no-image': !backdrop }]}>
 		{
@@ -288,6 +326,10 @@ const credit = [
 	<div class="page">
 		<section class="bechdel paper">
 			<h2 id="bt-title">The Bechdel test</h2>
+			<p class="verdict-line">
+				{verdictSentence}
+				{checked && <> Checked <time datetime={film.added}>{checked.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</time>.</>}
+			</p>
 			<div class="bechdel-row">
 				<div class="score">
 					<p class="score-label">Bechdel score</p>
@@ -308,7 +350,7 @@ const credit = [
 									{i === 2 && has.scene && (
 										<>
 											{' '}
-											<a href="#exhibit-scene">See the scene</a>.
+											<a href="#ex-scene-body">See the scene</a>.
 										</>
 									)}
 								</span>
@@ -325,10 +367,9 @@ const credit = [
 							readers ? (
 								<>
 									<strong class:list={['tag', readersAgree ? 'agree' : 'disagree']}>{readersAgree ? 'Agree' : 'Disagree'}</strong>{' '}
-									<a href={readers.id ? `https://bechdeltest.com/view/${readers.id}/` : 'https://bechdeltest.com/'} rel="noopener noreferrer" target="_blank">
-										bechdeltest.com readers
-									</a>{' '}
+									<a href={readers.id ? `https://bechdeltest.com/view/${readers.id}/` : 'https://bechdeltest.com/'} rel="noopener noreferrer" target="_blank" aria-label="bechdeltest.com readers (opens in a new tab)">bechdeltest.com readers</a>{' '}
 									give it {readers.score} out of 3{readers.dubious ? ', though someone marked that rating as dubious.' : '.'}
+									{!readersAgree && ' They rate the film they watched; we count the lines in its script, and the two can differ.'}
 								</>
 							) : (
 								<>
@@ -341,7 +382,7 @@ const credit = [
 						onScreen && (
 							<p>
 								<strong class:list={['tag', screenTag]}>{screenTag === 'agree' ? 'Agree' : screenTag === 'none' ? 'Unclear' : 'Disagree'}</strong>{' '}
-								<a href="#exhibit-screen">What's said on screen</a>, from the film's subtitles,
+								<a href="#ex-screen-body">What's said on screen</a>, from the film's subtitles,
 								{onScreen.bechdel.change === 'unclear'
 									? ` scores ${screenScore} out of 3, depending on who says the lines that aren't in the script.`
 									: ` scores ${screenScore} out of 3${screenTag === 'agree' ? '' : `, so on screen it ${bechdel.pass ? 'fails' : 'passes'}`}${onScreen.passing ? `, on ${duration(onScreen.passing.seconds)} of women talking to each other` : ''}.`}
@@ -445,7 +486,7 @@ const credit = [
 						Who talks, scene by scene
 					</h2>
 					<p class="note chart-note">
-						Lines of dialogue in groups of {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below. The arrow keys move between groups of scenes.
+						Lines of dialogue in groups of {plural(film.timeline[0].to - film.timeline[0].from + 1, 'scene')}, start to finish. Women above the line, men below.
 						{unknownShare > 0 && ` ${unknownShare}% of lines come from characters we couldn't match to the cast list and aren't shown.`}
 					</p>
 					<p class="axis-label women">Women</p>
@@ -479,7 +520,7 @@ const credit = [
 						<span>Scene {film.sceneCount}</span>
 					</p>
 					<div class="readout" data-readout>
-						<p class="note">Hover, tap or tab to a bar to see those scenes: where they happen and who's talking.</p>
+						<p class="note">Hover, tap or tab to a bar (then use the arrow keys) to see those scenes: where they happen and who's talking.</p>
 					</div>
 					<details class="data-table">
 						<summary>Show the numbers<FoldMark /></summary>
@@ -1210,7 +1251,6 @@ const credit = [
 	.hero h1 {
 		--fit: calc((min(100vw, var(--page)) - 2 * var(--gutter) - 2 * var(--space-4)) / (var(--longest, 8) * 0.55));
 		font-size: min(clamp(3.5rem, 11vw, 10rem), var(--fit));
-		line-height: 1.05;
 	}
 	.hero h1.long {
 		font-size: min(clamp(2.75rem, 7vw, 6.5rem), var(--fit));
@@ -1241,7 +1281,10 @@ const credit = [
 	}
 	.bechdel h2 {
 		font-size: 2rem;
-		margin-bottom: var(--space-5);
+	}
+	.verdict-line {
+		margin: var(--space-2) 0 var(--space-5);
+		max-width: 34em;
 	}
 	.bechdel-row {
 		display: flex;
@@ -1256,7 +1299,8 @@ const credit = [
 	}
 	.score-label {
 		font-family: var(--poster);
-		font-size: 1.375rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
 	.score-n {
@@ -1301,7 +1345,7 @@ const credit = [
 	.rules strong {
 		font-family: var(--poster);
 		font-weight: 400;
-		font-size: 1.625rem;
+		font-size: var(--heading-sm);
 		text-transform: uppercase;
 	}
 	.mark {
@@ -1338,7 +1382,8 @@ const credit = [
 	.tag {
 		font-family: var(--poster);
 		font-weight: 400;
-		font-size: 1.375rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		padding: 0 var(--space-2);
 	}
@@ -1436,7 +1481,8 @@ const credit = [
 	.vs-name {
 		margin: 0 0 var(--space-2);
 		font-family: var(--poster);
-		font-size: 1.375rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
 	.hist {
@@ -1481,7 +1527,7 @@ const credit = [
 	.vs-score {
 		font-family: var(--poster);
 		font-weight: 400;
-		font-size: 1.5rem;
+		font-size: var(--heading-sm);
 	}
 
 	/* Exhibit: drive or react */
@@ -1490,7 +1536,8 @@ const credit = [
 		gap: var(--mark-gap);
 		margin-bottom: var(--space-5);
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
 	.tug span {
@@ -1531,7 +1578,8 @@ const credit = [
 	}
 	.cc-label {
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		margin-bottom: var(--space-2) !important;
 	}
@@ -1569,7 +1617,8 @@ const credit = [
 	}
 	.side-switch button {
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		background: var(--ink);
 		color: var(--chalk);
@@ -1577,7 +1626,7 @@ const credit = [
 		padding: var(--space-2) var(--space-4);
 		min-height: 44px;
 		cursor: pointer;
-		transition: scale 120ms ease-out;
+		transition: scale 120ms var(--ease-enter);
 	}
 	.side-switch button:active {
 		scale: 0.97;
@@ -1617,7 +1666,7 @@ const credit = [
 	}
 	.split-head {
 		font-family: var(--poster);
-		font-size: 1.5rem;
+		font-size: var(--heading-sm);
 		text-transform: uppercase;
 	}
 	.split-head.w,
@@ -1633,7 +1682,8 @@ const credit = [
 	.split-label {
 		text-align: center;
 		font-family: var(--poster);
-		font-size: 1rem;
+		font-size: var(--label);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		color: var(--muted);
 		padding-top: 0.2rem;
@@ -1671,7 +1721,7 @@ const credit = [
 	.charge-name {
 		grid-area: name;
 		font-family: var(--poster);
-		font-size: 1.5rem;
+		font-size: var(--heading-sm);
 		text-transform: uppercase;
 	}
 	.charge-name :global(.fold-mark) {
@@ -1695,7 +1745,8 @@ const credit = [
 	.charge-n {
 		grid-area: n;
 		font-family: var(--poster);
-		font-size: 1.125rem;
+		font-size: var(--label);
+		letter-spacing: 0.02em;
 		color: var(--tangerine);
 	}
 	.charge ul {
@@ -1715,7 +1766,7 @@ const credit = [
 		min-width: 0;
 	}
 	.plot {
-		max-width: 38em;
+		max-width: 34em;
 		margin: 0;
 	}
 	.facts {
@@ -1726,7 +1777,8 @@ const credit = [
 	}
 	.facts dt {
 		font-family: var(--poster);
-		font-size: 1.125rem;
+		font-size: var(--label);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		color: var(--muted);
 	}
@@ -1763,7 +1815,7 @@ const credit = [
 	}
 	.star-n {
 		font-family: var(--book);
-		font-size: 1rem;
+		font-size: var(--text-small);
 		color: var(--chalk);
 		margin-left: var(--space-1);
 		vertical-align: super;
@@ -1785,7 +1837,8 @@ const credit = [
 	.cast > summary,
 	.data-table > summary {
 		font-family: var(--poster);
-		font-size: 1.375rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		color: var(--pink);
 		cursor: pointer;
@@ -1812,12 +1865,12 @@ const credit = [
 	/* Timeline */
 	.chart-note {
 		margin-bottom: var(--space-6);
-		max-width: 48em;
 	}
 	.axis-label {
 		margin: 0;
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
 	.axis-label.women {
@@ -1907,7 +1960,7 @@ const credit = [
 	}
 	.readout :global(.readout-title) {
 		font-family: var(--poster);
-		font-size: 1.5rem;
+		font-size: var(--heading-sm);
 		text-transform: uppercase;
 	}
 	.readout :global(.w) {
@@ -2149,12 +2202,9 @@ const credit = [
 	.swatch-changed {
 		background: var(--muted);
 	}
-	/* An edge keeps "cut" from reading as an empty track */
 	.ps-part.cut,
 	.swatch-cut {
-		background: var(--plank);
-		outline: 1px solid var(--muted);
-		outline-offset: -1px;
+		background: var(--cut);
 	}
 	.ps-part.added,
 	.swatch-added {
@@ -2222,7 +2272,6 @@ const credit = [
 		min-width: 3.25rem;
 		font-size: var(--text-small);
 		color: var(--muted);
-		font-variant-numeric: tabular-nums;
 	}
 
 	/* First and last word: two lines from the script, side by side */
@@ -2242,7 +2291,6 @@ const credit = [
 	.end-where {
 		font-size: var(--text-small);
 		color: var(--fail-on-chalk);
-		font-variant-numeric: tabular-nums;
 	}
 	.end-where strong {
 		font-family: var(--poster);
@@ -2319,7 +2367,7 @@ const credit = [
 	}
 	.pair-n {
 		font-family: var(--poster);
-		font-size: 1.5rem;
+		font-size: var(--heading-sm);
 	}
 
 	/* Behind the camera */
@@ -2334,7 +2382,8 @@ const credit = [
 	}
 	.roles dt {
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		margin-top: var(--space-3);
 	}
 	.roles dt:first-child {
@@ -2374,7 +2423,8 @@ const credit = [
 	}
 	.age-label {
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		margin: 0;
 	}
 	.age-line {
@@ -2428,7 +2478,8 @@ const credit = [
 	}
 	.power-score {
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		margin: 0 0 var(--space-3);
 	}

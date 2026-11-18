@@ -87,14 +87,12 @@ const passing = rows.filter((r) => r.score === 3).length;
 				Picture, Best Actor, Best Actress, Best Supporting Actor and Best Supporting Actress.
 			</p>
 			<ul>
-				<li>5 of the 13 films pass, about 38%.</li>
-				<li>Only 2 of the 7 Best Picture nominees we tested pass, about 29%.</li>
 				<li>Every Best Picture nominee has a man in the lead.</li>
 				<li>Half the films with a Best Actress nominee pass, against 1 in 5 films with a Best Actor nominee.</li>
 			</ul>
 			<p>
 				Best Picture is the best overview of the year's acclaimed films, because it isn't tied to the gender of the lead the way
-				Best Actor and Best Actress are. This year, every Best Picture nominee had a man in the lead.
+				Best Actor and Best Actress are.
 			</p>
 			<p>
 				Only one film with a Best Actress nominee was also up for Best Picture: <cite>The Theory of Everything</cite>. Four films
@@ -163,7 +161,8 @@ const passing = rows.filter((r) => r.score === 3).length;
 	}
 	.verdict {
 		font-family: var(--poster);
-		font-size: 1.25rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
 	.verdict.pass {

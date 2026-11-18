@@ -14,6 +14,9 @@ interface Props {
 	nav?: 'shelf' | 'numbers' | 'about' | 'case-study' | 'privacy';
 	/** The 404 page: reported to analytics as a 404 event */
 	notFound?: boolean;
+	/** The page shows TMDB posters, so it's worth connecting early */
+	posters?: boolean;
+	ogType?: 'website' | 'article';
 }
 
 const {
@@ -25,12 +28,15 @@ const {
 	structuredData,
 	nav,
 	notFound = false,
+	posters = false,
+	ogType = 'website',
 } = Astro.props;
 
 const SITE_NAME = 'bechdel.io';
 const allFilms = loadFilms();
 const failShare = Math.round((allFilms.filter((f) => !f.bechdel.pass).length / allFilms.length) * 100);
-const pageTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
+// Search results cut titles near 60 characters; the brand is what gives way
+const pageTitle = title === SITE_NAME || title.length > 47 ? title : `${title} | ${SITE_NAME}`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const imageUrl = new URL(image, Astro.site).href;
 
@@ -88,11 +94,13 @@ const NAV = [
 		<link rel="sitemap" href="/sitemap.xml" />
 		<link rel="alternate" type="application/rss+xml" title="bechdel.io: new films" href="/rss.xml" />
 		<!-- Posters and backdrops come from TMDB's image CDN -->
-		<link rel="preconnect" href="https://image.tmdb.org" />
+		{posters && <link rel="preconnect" href="https://image.tmdb.org" />}
+		<!-- A page-to-page crossfade waits for the main content, not a half-parsed page -->
+		<link rel="expect" href="#main" blocking="render" />
 		<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
 
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:site_name" content={SITE_NAME} />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:url" content={canonical} />
@@ -141,7 +149,7 @@ const NAV = [
 					<a href="/about/">About</a>
 					<a href="/case-study/">Case study</a>
 					<a href="/privacy/">Privacy</a>
-					<a href="https://github.com/JoeKarlsson/bechdel-test" rel="noopener noreferrer" target="_blank">Code on GitHub</a>
+					<a href="https://github.com/JoeKarlsson/bechdel-test" rel="noopener noreferrer" target="_blank" aria-label="Code on GitHub (opens in a new tab)">Code on GitHub</a>
 				</nav>
 				<p class="note">A Karlsson production, by Joe and Laurel Karlsson</p>
 			</div>
@@ -171,7 +179,7 @@ const NAV = [
 	}
 	.wordmark-question {
 		display: block;
-		font-size: 0.45em;
+		font-size: max(0.45em, var(--text-small));
 		color: var(--chalk);
 		margin-bottom: var(--space-1);
 	}
@@ -187,7 +195,8 @@ const NAV = [
 	}
 	.site-header nav a {
 		font-family: var(--poster);
-		font-size: 1.375rem;
+		font-size: var(--label-lg);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 		color: var(--chalk);
 		text-decoration: none;
@@ -196,12 +205,19 @@ const NAV = [
 		align-items: center;
 	}
 	@media (max-width: 600px) {
-		/* Four links fit on one line on a 375px phone */
+		/* Four links fit on one line on a 375px phone, in Anton or the fallback
+		   font, with room to spare */
 		.site-header nav {
-			column-gap: var(--space-3);
+			column-gap: var(--space-2);
 		}
 		.site-header nav a {
 			font-size: 1.25rem;
+		}
+	}
+	@media (max-width: 359px) {
+		/* and on a 320px one */
+		.site-header nav a {
+			font-size: 1.0625rem;
 		}
 	}
 	.site-header nav a[aria-current='page'] {
