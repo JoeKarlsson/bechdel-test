@@ -4,7 +4,7 @@ import FoldMark from '../../components/FoldMark.astro';
 import ShareLinks from '../../components/ShareLinks.astro';
 import Tape from '../../components/Tape.astro';
 import Term from '../../components/Term.astro';
-import { loadFilms, relatedFilms, CUT_RATE_MIN_LINES, CONVERSATION_MIN_LINES } from '../../lib/films.mjs';
+import { loadFilms, relatedLists, hubs, hubHref, CUT_RATE_MIN_LINES, CONVERSATION_MIN_LINES } from '../../lib/films.mjs';
 import { posterFor, backdropFor } from '../../lib/images';
 
 export function getStaticPaths() {
@@ -13,8 +13,8 @@ export function getStaticPaths() {
 
 const { film } = Astro.props;
 const allFilms = loadFilms();
-// Films most like this one, by genre, director and year
-const related = relatedFilms(film, allFilms);
+// Films most like this one, by genre, director and year; every film is someone's related film
+const related = relatedLists(allFilms).get(film.id);
 const pageUrl = `https://bechdel.joekarlsson.com/films/${film.slug}/`;
 const { bechdel, readers } = film;
 // The AI readings stay in the data but are off the site. Set this to true to show
@@ -281,9 +281,14 @@ const structuredData = {
 		},
 	],
 };
-const facts = [
+// Genres and directors with a hub page link to it
+const { genres: genreHubs, directors: directorHubs } = hubs(allFilms);
+const hubLinks = (keys: string[], list: { key: string }[], href: (k: string) => string) =>
+	keys.map((k) => ({ label: k, href: list.some((h) => h.key === k) ? href(k) : null }));
+const facts: [string, string | null | { label: string; href: string | null }[]][] = [
 	['Released', film.released],
-	['Genres', film.genres.join(', ') || null],
+	['Directed by', film.directors.length ? hubLinks(film.directors, directorHubs, hubHref.director) : null],
+	['Genres', film.genres.length ? hubLinks(film.genres, genreHubs, hubHref.genre) : null],
 	['Rated', film.rated],
 	['IMDb', film.imdbRating !== null ? `${film.imdbRating} / 10` : null],
 	['Metascore', film.metascore !== null ? `${film.metascore} / 100` : null],
@@ -417,7 +422,7 @@ const credit = [
 						facts.map(([k, v]) => (
 							<div>
 								<dt>{k}</dt>
-								<dd>{v}</dd>
+								<dd>{Array.isArray(v) ? v.map((x, i) => <>{i > 0 && ', '}{x.href ? <a href={x.href}>{x.label}</a> : x.label}</>) : v}</dd>
 							</div>
 						))
 					}
@@ -1784,6 +1789,12 @@ const credit = [
 	}
 	.facts dd {
 		margin: 0;
+	}
+	/* Genre and director links, a finger's height each */
+	.facts dd a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
 	}
 
 	/* Starring */

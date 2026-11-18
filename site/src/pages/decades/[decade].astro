@@ -1,0 +1,11 @@
+---
+import HubPage from '../../components/HubPage.astro';
+import { loadFilms, hubs } from '../../lib/films.mjs';
+
+export function getStaticPaths() {
+	return hubs(loadFilms()).decades.map((hub) => ({ params: { decade: hub.slug }, props: { hub } }));
+}
+const { hub } = Astro.props;
+---
+
+<HubPage hub={hub} title={`${hub.key}s films and the Bechdel test`} noun={`films from the ${hub.key}s`} parent={{ name: 'Decades', href: '/decades/' }} />

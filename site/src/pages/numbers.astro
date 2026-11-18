@@ -5,7 +5,7 @@ import YearChart from '../components/YearChart.astro';
 import PeopleRanking from '../components/PeopleRanking.astro';
 import Tape from '../components/Tape.astro';
 import FoldMark from '../components/FoldMark.astro';
-import { loadFilms, shelfStats, peopleRanking } from '../lib/films.mjs';
+import { loadFilms, shelfStats, peopleRanking, hubHref } from '../lib/films.mjs';
 
 const films = loadFilms();
 const s = shelfStats(films);
@@ -57,6 +57,7 @@ const genreRows: Row[] = s.byGenre.map((g) => ({
 	share: g.pass / g.films,
 	value: `${n(g.pass)} of ${n(g.films)}`,
 	aria: `${g.label}: ${n(g.pass)} of ${n(g.films)} films pass`,
+	href: hubHref.genre(g.label),
 }));
 const JOB_NAMES: Record<string, string> = {
 	'Directed by': 'Directors',
@@ -207,7 +208,7 @@ const CONTENTS = [
 			<p class="note">
 				Gray dots are single years; the pink line pools the five years around each one. The share of lines is for the median film,
 				counting lines whose speaker we could place. Years with fewer than ten films on the shelf, all of them before {firstYear}, are
-				left out.
+				left out. <a href="/decades/">Decade by decade</a>, with each decade's films.
 			</p>
 			<details class="table-view">
 				<summary>The numbers by year<FoldMark /></summary>
@@ -248,15 +249,15 @@ const CONTENTS = [
 			<ul class="hbars wide-labels">
 				{genreRows.map((r) => (
 					<li>
-								<div class="hb-row" role="img" aria-label={r.aria}>
-						<span class="hb-label">{r.label}</span>
-						<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
-						<span class="hb-value">{r.value}</span>
-						</div>
+						<a class="hb-row hub-row" href={r.href} aria-label={r.aria}>
+							<span class="hb-label">{r.label}</span>
+							<span class="hb-track">{r.share > 0 && <span class="hb-bar" style={`width: ${(r.share * 100).toFixed(1)}%`} />}</span>
+							<span class="hb-value">{r.value}</span>
+						</a>
 					</li>
 				))}
 			</ul>
-			<p class="note">Most films have more than one genre, so they count in each. Genres with fewer than five films are left out.</p>
+			<p class="note">Most films have more than one genre, so they count in each. Genres with fewer than five films are left out. Open a genre for its films, or see <a href="/genres/">every genre</a>.</p>
 		</section>
 
 		<section class="section">
@@ -540,11 +541,11 @@ const CONTENTS = [
 
 		<section class="section">
 			<h2 id="directors-title" class="section-title">By director</h2>
-			<PeopleRanking people={directorRanking} />
+			<PeopleRanking people={directorRanking} hrefFor={hubHref.director} />
 			<p class="note">
 				The {directorRanking.length} directors with {MIN_DIRECTOR_FILMS} or more films on the shelf, one square per film. Open a name for
 				the films. Co-directors, like Joel and Ethan Coen, each count the film. With this few films each, one film moves a director a long
-				way.
+				way. <a href="/directors/">Every director with three or more films</a> has a page.
 			</p>
 		</section>
 
@@ -602,6 +603,18 @@ const CONTENTS = [
 </Base>
 
 <style>
+	/* Genre rows open that genre's page */
+	.hub-row {
+		color: inherit;
+		text-decoration: none;
+	}
+	.hub-row .hb-label {
+		text-decoration: underline dotted var(--muted);
+		text-underline-offset: 0.2em;
+	}
+	.hub-row:hover .hb-label {
+		color: var(--pink);
+	}
 	.film-list {
 		columns: 3 12rem;
 		padding-left: var(--space-4);

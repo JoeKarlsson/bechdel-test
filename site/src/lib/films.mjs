@@ -179,6 +179,95 @@ export function relatedFilms(film, films, n = 6) {
 		.map(({ f }) => f);
 }
 
+/**
+ * Every film's related films (id -> films), with no film left out: when the
+ * closest matches never point at a film, it takes the last slot of the film
+ * most like it whose last pick is linked from elsewhere too. Similarity is
+ * symmetric, so the film's own nearest neighbours are the best hosts.
+ */
+const relatedCache = new WeakMap();
+export function relatedLists(films, n = 6) {
+	if (relatedCache.has(films)) return relatedCache.get(films);
+	const byId = new Map(films.map((f) => [f.id, f]));
+	const lists = new Map(films.map((f) => [f.id, relatedFilms(f, films, n)]));
+	const inbound = new Map(films.map((f) => [f.id, 0]));
+	for (const list of lists.values()) for (const f of list) inbound.set(f.id, inbound.get(f.id) + 1);
+	const hosted = new Set();
+	for (const orphan of films.filter((f) => inbound.get(f.id) === 0)) {
+		for (const host of relatedFilms(orphan, films, films.length)) {
+			const list = lists.get(host.id);
+			const last = list.at(-1);
+			if (hosted.has(host.id) || !last || inbound.get(last.id) < 2) continue;
+			list[list.length - 1] = byId.get(orphan.id);
+			inbound.set(last.id, inbound.get(last.id) - 1);
+			inbound.set(orphan.id, 1);
+			hosted.add(host.id);
+			break;
+		}
+	}
+	relatedCache.set(films, lists);
+	return lists;
+}
+
+// Hub pages: one per genre, decade and director with enough films to say something
+export const HUB_MIN_FILMS = { genre: 5, decade: 5, director: 3 };
+// Genre names as a sentence uses them: "horror films", "animated films"
+const GENRE_ADJECTIVES = {
+	Animation: 'animated',
+	Biography: 'biographical',
+	'Film-Noir': 'film noir',
+	History: 'historical',
+	'Sci-Fi': 'science fiction',
+	Sport: 'sports',
+};
+export const genreAdjective = (genre) => GENRE_ADJECTIVES[genre] ?? genre.toLowerCase();
+export const decadeOfYear = (year) => Math.floor(year / 10) * 10;
+export const hubHref = {
+	genre: (genre) => `/genres/${slugify(genre)}/`,
+	decade: (decade) => `/decades/${decade}s/`,
+	director: (name) => `/directors/${slugify(name)}/`,
+};
+
+/**
+ * Genre, decade and director hubs: { genres, decades, directors }, each a list
+ * of { key, slug, href, films, pass, womenLines } with films most popular
+ * first. Groups under HUB_MIN_FILMS get no hub. Slugs must not collide.
+ */
+const hubCache = new WeakMap();
+export function hubs(films) {
+	if (hubCache.has(films)) return hubCache.get(films);
+	const group = (kind, keysOf) => {
+		const byKey = new Map();
+		for (const f of films) for (const key of new Set(keysOf(f))) byKey.set(key, [...(byKey.get(key) ?? []), f]);
+		const list = [...byKey]
+			.filter(([, fs]) => fs.length >= HUB_MIN_FILMS[kind])
+			.map(([key, fs]) => {
+				const href = hubHref[kind](key);
+				return {
+					key,
+					slug: href.split('/').at(-2),
+					href,
+					films: [...fs].sort((a, b) => a.popularity - b.popularity),
+					pass: fs.filter((f) => f.bechdel.pass).length,
+					womenLines: median(fs.map(womenLineShare).filter((x) => x !== null)),
+				};
+			});
+		const slugs = new Set();
+		for (const h of list) {
+			if (!h.slug || slugs.has(h.slug)) throw new Error(`Two ${kind} hubs share the slug "${h.slug}" (${h.key})`);
+			slugs.add(h.slug);
+		}
+		return list;
+	};
+	const result = {
+		genres: group('genre', (f) => f.genres).sort((a, b) => b.films.length - a.films.length),
+		decades: group('decade', (f) => (f.year ? [decadeOfYear(f.year)] : [])).sort((a, b) => a.key - b.key),
+		directors: group('director', (f) => f.directors).sort((a, b) => a.key.localeCompare(b.key)),
+	};
+	hubCache.set(films, result);
+	return result;
+}
+
 function titleCase(name) {
 	return name.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase());
 }

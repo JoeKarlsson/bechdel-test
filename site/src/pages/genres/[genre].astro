@@ -1,0 +1,13 @@
+---
+import HubPage from '../../components/HubPage.astro';
+import { loadFilms, hubs, genreAdjective } from '../../lib/films.mjs';
+
+export function getStaticPaths() {
+	return hubs(loadFilms()).genres.map((hub) => ({ params: { genre: hub.slug }, props: { hub } }));
+}
+const { hub } = Astro.props;
+const noun = `${genreAdjective(hub.key)} films`;
+const title = `${noun[0].toUpperCase()}${noun.slice(1)} and the Bechdel test`;
+---
+
+<HubPage hub={hub} title={title} noun={noun} parent={{ name: 'Genres', href: '/genres/' }} />
