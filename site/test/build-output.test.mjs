@@ -15,7 +15,8 @@ function htmlFiles(dir) {
 	return readdirSync(dir).flatMap((name) => {
 		const path = join(dir, name);
 		if (statSync(path).isDirectory()) return htmlFiles(path);
-		return name.endsWith('.html') ? [path] : [];
+		// Search Console's verification file is .html but not a page
+		return name.endsWith('.html') && !/^google[0-9a-f]+\.html$/.test(name) ? [path] : [];
 	});
 }
 
@@ -108,12 +109,12 @@ test('security.txt has a contact and won’t expire in the next 30 days', () => 
 	assert.ok(days > 30, `security.txt expires in ${Math.round(days)} days: renew it`);
 });
 
-test('the RSS feed lists every film and every page points to it', () => {
+test('the RSS feed lists the newest 50 films and every page points to it', () => {
 	const xml = readFileSync(join(DIST, 'rss.xml'), 'utf8');
 	assert.match(xml, /^<\?xml version="1.0" encoding="UTF-8"\?>\s*<rss version="2.0"/);
 	// Film pages, not the A-to-Z list at /films/
 	const films = pages.filter((p) => p.path.startsWith('/films/') && p.path !== '/films/');
-	assert.equal((xml.match(/<item>/g) ?? []).length, films.length);
+	assert.equal((xml.match(/<item>/g) ?? []).length, Math.min(50, films.length));
 	for (const p of pages) assert.match(p.html, /<link rel="alternate" type="application\/rss\+xml"[^>]*href="\/rss\.xml"/, `feed link on ${p.path}`);
 });
 
