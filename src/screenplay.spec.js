@@ -114,6 +114,20 @@ describe('parseScreenplay', () => {
 		expect(normalizeSpeaker('JAKE (V.O.)')).toBe('JAKE');
 		expect(normalizeSpeaker("BONNIE'S VOICE")).toBe('BONNIE');
 	});
+
+	it('cleans trailing dashes, colons and unbracketed extensions', () => {
+		expect(['RIPLEY -', 'AINE (V.O.):-', 'SCRAP V.O.', 'FRANK V/O', 'SYKES O.S.', 'MAYA/OVER PHONE'].map(normalizeSpeaker))
+			.toEqual(['RIPLEY', 'AINE', 'SCRAP', 'FRANK', 'SYKES', 'MAYA']);
+		// A line cut off mid-word keeps its dashes
+		expect(normalizeSpeaker('BUT --')).toBe('BUT --');
+	});
+
+	it('reads sound, music and on-screen cues as action, not speakers', () => {
+		const text = ['MUSIC', 'Strings swell.', 'AINE', 'Come here.', 'SFX', 'A door slams.', 'TEXT ON SCREEN', 'Belfast, 1981.', 'AINE', 'Now.', ''].join('\n');
+		const screenplay = parseScreenplay(text);
+		expect(dialogueOf(screenplay).map(d => d.speaker)).toEqual(['AINE', 'AINE']);
+		expect(screenplay.scenes[0].blocks.filter(b => b.kind === 'action').map(b => b.text)).toContain('Strings swell.');
+	});
 });
 
 describe('resolveSpeakers', () => {
