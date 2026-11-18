@@ -1,6 +1,9 @@
 // Plausible (self-hosted, as on joekarlsson.com and Punc). No cookies, no
 // personal data. Skipped for bots and headless browsers. Also reports 404s
-// and script errors as events, so broken links and crashes show up.
+// and the first script error on each page as events, so broken links and
+// crashes show up (errors from browser extensions are skipped).
+import { isExtensionNoise } from '../lib/error-noise.mjs';
+
 type Plausible = ((event: string, options?: { props?: Record<string, string> }) => void) & { q?: unknown[] };
 
 declare global {
@@ -37,10 +40,17 @@ if (!isBot) {
 
 	if (document.body.dataset.notFound) queue('404', { props: { path: location.pathname + location.hash } });
 
-	const report = (message: unknown) =>
-		queue('JS Error', { props: { message: String(message).slice(0, 200), path: location.pathname } });
-	window.addEventListener('error', (e) => report(e.message));
-	window.addEventListener('unhandledrejection', (e) => report(e.reason instanceof Error ? e.reason.message : e.reason));
+	// Only the first error per page: one crash can throw on every frame
+	let reported = false;
+	const report = (message: unknown, source: string, where: string) => {
+		if (reported || isExtensionNoise(message, where, ['plausible'])) return;
+		reported = true;
+		queue('JS Error', { props: { message: String(message).slice(0, 200), source, path: location.pathname } });
+	};
+	window.addEventListener('error', (e) => report(e.message, `${e.filename}:${e.lineno}`, `${e.filename} ${e.error?.stack ?? ''}`));
+	window.addEventListener('unhandledrejection', (e) =>
+		report(e.reason instanceof Error ? e.reason.message : e.reason, 'promise', e.reason instanceof Error ? (e.reason.stack ?? '') : ''),
+	);
 }
 
 export {};

@@ -6,6 +6,7 @@
 // every exhibit stays open, with no button that does nothing.
 // Also runs the Her side / His side switch on the comparison exhibit.
 import { motionKind } from './motion';
+import { track } from './track';
 
 export function setUpExhibits() {
 	const startOpen = !window.matchMedia('(max-width: 600px)').matches;
@@ -23,7 +24,12 @@ export function setUpExhibits() {
 			button.setAttribute('aria-expanded', String(open));
 		};
 		setOpen(startOpen);
-		button.addEventListener('click', () => setOpen(body.hasAttribute('hidden')));
+		const exhibit = title.id.replace(/^ex-/, '');
+		button.addEventListener('click', () => {
+			const opening = body.hasAttribute('hidden');
+			setOpen(opening);
+			if (opening) track('Exhibit Open', { exhibit });
+		});
 		// Find-in-page opens the body itself; the button follows
 		body.addEventListener('beforematch', () => button.setAttribute('aria-expanded', 'true'));
 	}
@@ -48,6 +54,7 @@ export function setUpExhibits() {
 			const side = b.dataset.side ?? 'w';
 			if (side === split.dataset.show) return;
 			show(side);
+			track('Side Switch', { side: side === 'm' ? 'his' : 'her' });
 			if (motionKind() === 'none') return;
 			for (const cell of split.querySelectorAll<HTMLElement>(`.split-cell.${side}`)) cell.animate({ opacity: [0.001, 1] }, { duration: 160, easing: getComputedStyle(cell).getPropertyValue('--ease-enter') });
 		});
