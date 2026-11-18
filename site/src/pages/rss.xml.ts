@@ -5,7 +5,8 @@ const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&
 
 // New films first, one item per film, so readers hear when one is added
 export const GET: APIRoute = ({ site }) => {
-	const films = [...loadFilms()].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? ''));
+	// The newest 50: a feed of every film was 900 KB, fetched in full on every poll
+	const films = [...loadFilms()].sort((a, b) => (b.added ?? '').localeCompare(a.added ?? '')).slice(0, 50);
 	const items = films
 		.map((f) => {
 			const url = new URL(`/films/${f.slug}/`, site).href;
