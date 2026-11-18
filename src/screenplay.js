@@ -13,6 +13,7 @@ const NOT_A_SPEAKER = new Set([
 	'TITLE', 'TITLES', 'THE END', 'WIDE', 'WIDE SHOT', 'FLASHBACK', 'END FLASHBACK', 'BACK TO PRESENT', 'SILENCE', 'BLACK',
 	'BLACKNESS', 'DARKNESS', 'OMITTED', 'MORE', 'NIGHT', 'DAY', 'DAWN', 'DUSK', 'MORNING', 'CONTINUOUS', 'SAME', 'THE', 'A', 'AND',
 	'CREDITS', 'DRAFT', 'MAIN TITLES', 'TITLE CARD', 'CARD', 'CHYRON', 'OPENING CREDITS', 'END CREDITS', 'FREEZE FRAME', 'SLOW MOTION', 'TIME CUT', 'JUMP CUT',
+	"CONT'D", 'CONT’D', 'CONTD',
 ]);
 const SPEAKER_SUFFIX = /\s*(?:\((?:V\.?\s?O|O\.?\s?S|O\.?\s?C|CONT['’]?D|CONTD|CONT|INTO PHONE|ON PHONE|PHONE|FILTERED|OVER|PRE-?LAP|SUBTITLED?|CONT['’]?D\.?|[^)]{0,30})\.?\)\s*)+$/i;
 const PAGE_NUMBER = /^\s*\d+\.?\s*$/;
@@ -25,6 +26,20 @@ const isHeading = t => t === t.toUpperCase() && (SCENE_HEADING.test(t) || PLACE_
  * "NGLE ON" from a scan that split off the A)
  */
 const isSpeakerName = name => !NOT_A_SPEAKER.has(name) && !/\bPOV\b|\bANGLES?\b|\bSHOT\b|\sON$/.test(name);
+
+// Cues for what's heard or shown rather than who speaks ("FX: HELICOPTER",
+// "MUSIC UP", "TEXT ON SCREEN", "LYRICS"): every word is a sound or on-screen
+// word, or a word that goes with one. Their lines are action, not dialogue.
+const SOUND_OR_SCREEN_WORDS = new Set([
+	'FX', 'SFX', 'VFX', 'MUSIC', 'SCORE', 'SONG', 'LYRIC', 'LYRICS', 'SOUND', 'SOUNDS', 'NOISE', 'EFFECT', 'EFFECTS', 'CHATTER',
+	'DIALOGUE', 'SUPER', 'SUPERIMPOSE', 'CAPTION', 'SUBTITLE', 'SUBTITLES', 'TITLE', 'TEXT', 'GRAPHIC', 'LEGEND', 'SIGN', 'NOTE',
+	'IMAGE', 'INSERT', 'REVEAL', 'CUT', 'CU', 'ECU', 'PRE-LAP', 'PRELAP', 'SCREEN', 'VIEW',
+]);
+const CUE_FILLER_WORDS = new Set(['ON', 'OFF', 'UP', 'DOWN', 'IN', 'OUT', 'OVER', 'TO', 'THE', 'BACK', 'PULL', 'FLASH', 'QUICK', 'CUE', 'READS', 'CONTINUES']);
+const isSoundOrScreenCue = name => {
+	const words = name.split(/[\s/]+/);
+	return words.some(w => SOUND_OR_SCREEN_WORDS.has(w)) && words.every(w => SOUND_OR_SCREEN_WORDS.has(w) || CUE_FILLER_WORDS.has(w));
+};
 
 // A running page header: a label and colon, repeated on most pages with only
 // its numbers changed ("HTTYD: The Hidden World - 12/05/18 - Final  12.",
@@ -41,12 +56,20 @@ const dropRunningHeaders = lines => {
 	return lines.filter(line => (counts[keyOf(line)] ?? 0) < RUNNING_HEADER_MIN_PAGES);
 };
 
+// "MRS.", "AINE:-", "RIPLEY -"; not "BUT --", which is a line cut off
+const TRAILING_PUNCTUATION = /(?::-|\s-|[:.])+\s*$/;
+
 /** "JAKE (V.O.)" -> "JAKE"; "NICK (CONT’D) *" -> "NICK"; "Mrs. Smith" -> "MRS. SMITH" */
 const normalizeSpeaker = raw => raw
 	.replace(/[*]+/g, ' ')
+	// Trailing punctuation first, or it hides the suffix: "AINE (V.O.):-", "RIPLEY -"
+	.replace(TRAILING_PUNCTUATION, '')
 	.replace(SPEAKER_SUFFIX, '')
-	.replace(/\s+CONT['’]?D\.?$/i, '')
-	.replace(/[:.]+$/, '')
+	// The same notes without brackets: "SCRAP V.O.", "FRANK V/O", "SYKES O.S.", "NICK CONT'D"
+	.replace(/\s*(?:V[./]\s?O|O\.\s?[SC]|\sVO|\sCONT['’]?D)\.?$/i, '')
+	// "MAYA/OVER PHONE", "TERRY/RADIO" is Maya, Terry
+	.replace(/\s*\/\s*(?:(?:OVER|INTO|ON)\s+)?(?:PHONE|RADIO|SCREEN|TV)$/i, '')
+	.replace(TRAILING_PUNCTUATION, '')
 	// "BONNIE'S VOICE" is Bonnie
 	.replace(/^(.+?)['’]S VOICE$/i, '$1')
 	.replace(/\s+/g, ' ')
@@ -208,7 +231,7 @@ const parseScreenplay = rawText => {
 			.replace(/[*]+/g, ' ')
 			.replace(/\s+/g, ' ')
 			.trim();
-		if (text) scene().blocks.push({ kind: 'dialogue', speaker, text });
+		if (text) scene().blocks.push(isSoundOrScreenCue(speaker) ? { kind: 'action', text } : { kind: 'dialogue', speaker, text });
 	};
 
 	for (let i = 0; i < lines.length; i++) {
