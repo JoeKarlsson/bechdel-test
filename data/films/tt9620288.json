@@ -9,26 +9,26 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 10,
-    "numScenesDontPass": 104,
+    "numScenesPass": 9,
+    "numScenesDontPass": 105,
     "numOfFemalesChars": 23,
     "numOfMaleChars": 41,
     "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 23,
-    "totalLinesFemaleDialogue": 232,
+    "totalLinesFemaleDialogue": 236,
     "totalLinesMaleDialogue": 582,
     "scenesThatPass": [
       "VENUS: Serena, what are you doing? Those books are bigger than you are.\nSERENA: No, they’re not. I can do it. I can carry more than you.\nVENUS: And break your back while you’re at it.\nSERENA: Wanna bet?",
       "ORACENE: Hey, girls. Dinner’s ready. How was practice?\nSERENA: It was good!",
       "TUNDE: If we eat fast enough, we probably have time for the talent show.\nSERENA: Hold on! I’m going first. I already know what I’m singing.",
       "SERENA: What’s so funny? It’s a good song.\nORACENE: You all go wash up.\nORACENE: What happened?",
-      "THE WHOLE FAMILY: Amen.\nORACENE: You’re not eating?"
+      "SERENA: These houses are huge.\nVENUS: That one looks like a castle!"
     ]
   },
   "script": {
     "file": "king-richard-2021.txt",
     "layout": "indented",
-    "dialogueLines": 879,
+    "dialogueLines": 874,
     "speakers": [
       {
         "name": "RICHARD",
@@ -155,7 +155,7 @@
       {
         "name": "VENUS AND SERENA",
         "lines": 5,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -177,12 +177,6 @@
         "gender": "m",
         "named": true,
         "actor": "Brad Greenquist"
-      },
-      {
-        "name": "SUPERIMPOSE",
-        "lines": 4,
-        "gender": null,
-        "named": false
       },
       {
         "name": "VIC",
@@ -383,12 +377,6 @@
         "actor": "Jon Bernthal"
       },
       {
-        "name": "SCREEN",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "TENNIS PRO",
         "lines": 1,
         "gender": "m",
@@ -398,7 +386,7 @@
       {
         "name": "THE WHOLE FAMILY",
         "lines": 1,
-        "gender": "w",
+        "gender": null,
         "named": true
       },
       {
@@ -439,8 +427,7 @@
       {
         "place": null,
         "lines": {
-          "22": 1,
-          "51": 1
+          "50": 1
         }
       },
       {
@@ -455,7 +442,7 @@
         "place": "Palos verdes country club",
         "lines": {
           "0": 2,
-          "54": 1
+          "52": 1
         }
       },
       {
@@ -510,7 +497,7 @@
       {
         "place": "Fancy tennis club",
         "lines": {
-          "57": 1
+          "55": 1
         }
       },
       {
@@ -524,7 +511,7 @@
         "place": "Another fancy tennis club",
         "lines": {
           "0": 2,
-          "25": 2
+          "24": 2
         }
       },
       {
@@ -561,7 +548,7 @@
           "3": 1,
           "5": 1,
           "8": 3,
-          "48": 1
+          "47": 1
         }
       },
       {
@@ -623,7 +610,7 @@
         "place": "L.a. country club",
         "lines": {
           "0": 8,
-          "23": 4
+          "22": 4
         }
       },
       {
@@ -638,7 +625,7 @@
           "0": 4,
           "2": 2,
           "11": 1,
-          "55": 1
+          "53": 1
         }
       },
       {
@@ -646,7 +633,7 @@
         "lines": {
           "8": 6,
           "16": 1,
-          "40": 1
+          "39": 1
         }
       },
       {
@@ -672,7 +659,7 @@
           "0": 9,
           "3": 4,
           "5": 6,
-          "31": 2
+          "30": 2
         }
       },
       {
@@ -687,8 +674,8 @@
           "4": 24,
           "5": 4,
           "18": 1,
-          "24": 3,
-          "50": 1
+          "23": 3,
+          "49": 1
         }
       },
       {
@@ -765,7 +752,7 @@
           "0": 1,
           "3": 1,
           "4": 3,
-          "36": 1
+          "35": 1
         }
       },
       {
@@ -789,15 +776,15 @@
           "5": 2,
           "9": 1,
           "18": 1,
-          "33": 2,
+          "32": 2,
+          "40": 1,
           "41": 1,
           "42": 1,
           "43": 1,
           "44": 1,
           "45": 1,
-          "46": 1,
-          "56": 1,
-          "60": 1
+          "54": 1,
+          "58": 1
         }
       },
       {
@@ -860,7 +847,7 @@
       {
         "place": "Williams’ home (compton)",
         "lines": {
-          "58": 1
+          "56": 1
         }
       },
       {
@@ -869,7 +856,7 @@
           "0": 6,
           "2": 3,
           "19": 1,
-          "32": 2
+          "31": 2
         }
       },
       {
@@ -886,15 +873,15 @@
           "0": 1,
           "3": 1,
           "5": 1,
-          "35": 2
+          "34": 2
         }
       },
       {
         "place": "California u",
         "lines": {
           "0": 2,
-          "26": 2,
-          "49": 1
+          "25": 2,
+          "48": 1
         }
       },
       {
@@ -920,15 +907,15 @@
           "5": 3,
           "13": 2,
           "14": 1,
-          "28": 1,
-          "29": 2
+          "27": 1,
+          "28": 2
         }
       },
       {
         "place": "Riviera country club",
         "lines": {
           "4": 1,
-          "28": 1
+          "27": 1
         }
       },
       {
@@ -938,7 +925,7 @@
           "4": 3,
           "10": 9,
           "12": 8,
-          "59": 1
+          "57": 1
         }
       },
       {
@@ -947,7 +934,7 @@
           "0": 5,
           "3": 1,
           "5": 3,
-          "37": 1
+          "36": 1
         }
       },
       {
@@ -970,7 +957,7 @@
         "place": "Rick macci tennis academy",
         "lines": {
           "1": 1,
-          "52": 1
+          "51": 1
         }
       },
       {
@@ -1028,7 +1015,7 @@
           "9": 1,
           "14": 1,
           "18": 1,
-          "38": 1
+          "37": 1
         }
       },
       {
@@ -1079,8 +1066,7 @@
         "place": "Rick macci tennis academy",
         "lines": {
           "0": 1,
-          "47": 1,
-          "53": 1
+          "46": 1
         }
       },
       {
@@ -1177,7 +1163,7 @@
           "1": 4,
           "3": 2,
           "21": 1,
-          "30": 2
+          "29": 2
         }
       },
       {
@@ -1209,13 +1195,13 @@
       {
         "place": "Oakland colosseum arena",
         "lines": {
-          "27": 1
+          "26": 1
         }
       },
       {
         "place": "Announcers booth, oakland colosseum arena",
         "lines": {
-          "27": 1
+          "26": 1
         }
       },
       {
@@ -1223,7 +1209,7 @@
         "lines": {
           "0": 2,
           "3": 1,
-          "34": 2
+          "33": 2
         }
       },
       {
@@ -1274,33 +1260,32 @@
         "lines": {
           "0": 3,
           "1": 2,
-          "22": 3,
-          "39": 1
+          "38": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 54,
-        "line": 3,
+        "speaker": 52,
+        "line": 2,
         "text": "Grounds crew threw out most of ‘em. Got a few here but they look pretty dead."
       },
       "last": {
         "speaker": 0,
-        "line": 876,
+        "line": 874,
         "text": "Oh yeah, she did it."
       }
     },
     "measures": {
-      "firstWomanLine": 24,
-      "longestWithoutWoman": 32,
-      "longestWithoutWomanStart": 596,
+      "firstWomanLine": 23,
+      "longestWithoutWoman": 29,
+      "longestWithoutWomanStart": 449,
       "words": {
-        "w": 2211,
+        "w": 2226,
         "m": 9343,
-        "unknown": 590
+        "unknown": 495
       },
-      "womenConversations": 26,
+      "womenConversations": 25,
       "menConversations": 49,
       "reverseScore": 3
     }

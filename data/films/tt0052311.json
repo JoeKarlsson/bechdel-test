@@ -7,19 +7,17 @@
     "Film-Noir"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 41,
+    "pass": false,
+    "bechdelScore": 2,
+    "numScenesPass": 0,
+    "numScenesDontPass": 42,
     "numOfFemalesChars": 8,
     "numOfMaleChars": 23,
-    "numOfFemalesCharsWithDialogue": 4,
-    "numOfMaleCharsWithDialogue": 25,
+    "numOfFemalesCharsWithDialogue": 3,
+    "numOfMaleCharsWithDialogue": 23,
     "totalLinesFemaleDialogue": 96,
     "totalLinesMaleDialogue": 596,
-    "scenesThatPass": [
-      "SUSAN: Hello! -- Hello!\nSUSAN -: What is it?\nSUSAN: Is there somebody out there?\nSUSAN: The door's locked. Go away..."
-    ]
+    "scenesThatPass": []
   },
   "script": {
     "file": "touch-of-evil-1958.txt",
@@ -35,20 +33,20 @@
       },
       {
         "name": "MIKE",
-        "lines": 152,
+        "lines": 153,
         "gender": "m",
         "named": true
       },
       {
         "name": "SUSAN",
-        "lines": 73,
+        "lines": 75,
         "gender": "w",
         "named": true,
         "actor": "Janet Leigh"
       },
       {
         "name": "MENZIES",
-        "lines": 70,
+        "lines": 71,
         "gender": "m",
         "named": true,
         "actor": "Joseph Calleia"
@@ -76,7 +74,7 @@
       },
       {
         "name": "GOULD",
-        "lines": 23,
+        "lines": 24,
         "gender": "m",
         "named": true,
         "actor": "Harry Shannon"
@@ -242,13 +240,6 @@
         "named": false
       },
       {
-        "name": "SUSAN -",
-        "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Janet Leigh"
-      },
-      {
         "name": "THE BLONDE",
         "lines": 2,
         "gender": null,
@@ -343,13 +334,6 @@
         "named": false
       },
       {
-        "name": "GOULD -",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Harry Shannon"
-      },
-      {
         "name": "GOULD 7",
         "lines": 1,
         "gender": "m",
@@ -383,13 +367,6 @@
         "named": false
       },
       {
-        "name": "MENZIES -",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Joseph Calleia"
-      },
-      {
         "name": "MENZIES 'T VOICE",
         "lines": 1,
         "gender": "m",
@@ -421,12 +398,6 @@
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "MIKE -",
-        "lines": 1,
-        "gender": "m",
-        "named": true
       },
       {
         "name": "MIKE #",
@@ -531,22 +502,21 @@
           "3": 7,
           "5": 4,
           "6": 3,
-          "7": 4,
+          "7": 5,
           "10": 2,
           "11": 8,
           "19": 3,
           "21": 3,
           "26": 2,
           "29": 1,
-          "34": 2,
+          "33": 2,
+          "43": 1,
           "44": 1,
-          "45": 1,
-          "47": 1,
-          "49": 1,
-          "53": 1,
-          "64": 1,
-          "69": 1,
-          "70": 1
+          "46": 1,
+          "51": 1,
+          "60": 1,
+          "65": 1,
+          "66": 1
         }
       },
       {
@@ -556,9 +526,9 @@
           "1": 1,
           "5": 1,
           "6": 1,
-          "54": 1,
-          "74": 1,
-          "76": 1
+          "52": 1,
+          "70": 1,
+          "72": 1
         }
       },
       {
@@ -572,7 +542,7 @@
           "6": 3,
           "7": 4,
           "25": 1,
-          "51": 1
+          "49": 1
         }
       },
       {
@@ -581,19 +551,18 @@
           "0": 2,
           "3": 2,
           "10": 1,
-          "40": 1
+          "39": 1
         }
       },
       {
         "place": "Alley",
         "lines": {
           "0": 17,
-          "1": 12,
+          "1": 13,
           "5": 1,
           "6": 3,
           "10": 2,
-          "38": 1,
-          "61": 1
+          "37": 1
         }
       },
       {
@@ -608,7 +577,7 @@
         "lines": {
           "1": 6,
           "2": 10,
-          "35": 2
+          "34": 2
         }
       },
       {
@@ -639,10 +608,10 @@
           "3": 7,
           "5": 1,
           "24": 1,
-          "41": 1,
-          "60": 1,
-          "73": 1,
-          "75": 1
+          "40": 1,
+          "57": 1,
+          "69": 1,
+          "71": 1
         }
       },
       {
@@ -650,8 +619,8 @@
         "lines": {
           "0": 15,
           "1": 7,
-          "2": 2,
-          "3": 8,
+          "2": 3,
+          "3": 9,
           "4": 9,
           "5": 6,
           "8": 10,
@@ -661,14 +630,12 @@
           "27": 2,
           "28": 2,
           "29": 1,
-          "33": 1,
-          "37": 1,
-          "39": 1,
-          "43": 1,
-          "55": 1,
-          "66": 1,
-          "67": 1,
-          "71": 1
+          "36": 1,
+          "38": 1,
+          "42": 1,
+          "62": 1,
+          "63": 1,
+          "67": 1
         }
       },
       {
@@ -683,7 +650,7 @@
         "place": ", apartment building",
         "lines": {
           "1": 2,
-          "65": 1
+          "61": 1
         }
       },
       {
@@ -716,9 +683,9 @@
           "3": 7,
           "8": 8,
           "25": 1,
-          "62": 1,
-          "63": 1,
-          "72": 1
+          "58": 1,
+          "59": 1,
+          "68": 1
         }
       },
       {
@@ -751,7 +718,7 @@
         "lines": {
           "0": 3,
           "4": 6,
-          "42": 1
+          "41": 1
         }
       },
       {
@@ -764,7 +731,7 @@
           "7": 15,
           "10": 5,
           "24": 1,
-          "50": 1
+          "48": 1
         }
       },
       {
@@ -781,16 +748,15 @@
       {
         "place": "Susan's room in the motel",
         "lines": {
-          "2": 9,
+          "2": 10,
           "12": 2,
           "14": 7,
           "17": 1,
           "18": 1,
           "22": 3,
           "32": 2,
-          "33": 1,
-          "48": 1,
-          "52": 1
+          "47": 1,
+          "50": 1
         }
       },
       {
@@ -818,7 +784,7 @@
         "lines": {
           "1": 11,
           "9": 11,
-          "46": 1
+          "45": 1
         }
       },
       {
@@ -871,15 +837,15 @@
           "1": 9,
           "3": 11,
           "31": 2,
-          "36": 1
+          "35": 1
         }
       },
       {
         "place": ", street near house",
         "lines": {
           "30": 2,
-          "57": 1,
-          "68": 1
+          "54": 1,
+          "64": 1
         }
       },
       {
@@ -887,7 +853,7 @@
         "lines": {
           "0": 10,
           "3": 3,
-          "56": 1
+          "53": 1
         }
       },
       {
@@ -895,7 +861,7 @@
         "lines": {
           "0": 7,
           "3": 2,
-          "59": 1
+          "56": 1
         }
       },
       {
@@ -906,7 +872,7 @@
           "2": 1,
           "3": 1,
           "5": 4,
-          "58": 1
+          "55": 1
         }
       }
     ],
@@ -931,7 +897,7 @@
         "m": 8794,
         "unknown": 799
       },
-      "womenConversations": 2,
+      "womenConversations": 1,
       "menConversations": 57,
       "reverseScore": 3
     }

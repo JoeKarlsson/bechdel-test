@@ -15,20 +15,20 @@
     "numOfMaleChars": 13,
     "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 8,
-    "totalLinesFemaleDialogue": 417,
+    "totalLinesFemaleDialogue": 338,
     "totalLinesMaleDialogue": 363,
     "scenesThatPass": [
-      "ABBEY: Thanks.\nTHE REAL DR. TYLER: When I flew, I felt at peace. It was just me , the wind and the clouds.\nTHE REAL DR. TYLER: I think Alaskans are lucky in that way--that flying is one of the only ways to get around the state.\nABBEY: Thanks--descending to one-fifty and holding, ten-twenty-three.",
       "ABBEY: An owl?\nJESSICA: A white owl. It was just looking at\nABBEY: How long was it there?",
       "ABBEY: Have you seen it before?\nJESSICA: Yeah I think so. once ... when I was a kid.\nABBEY: Before then?",
       "ABBEY: Was the window open?\nABBEY: Then how did it come inside?\nJESSICA: I don't know. I remewber it looking down at me,",
-      "ASHLEY: Mom?\nABBEY: Yes sweetheart.\nASHLEY: When's dinner gonna be ready?\nABBEY: Soon."
+      "ASHLEY: Mom?\nABBEY: Yes sweetheart.\nASHLEY: When's dinner gonna be ready?\nABBEY: Soon.",
+      "ABBEY: Not in front of your sister.\nASHLEY: What do you mean?\nABBEY: Nothing honey."
     ]
   },
   "script": {
     "file": "the-fourth-kind-2009.txt",
     "layout": "indented",
-    "dialogueLines": 902,
+    "dialogueLines": 900,
     "speakers": [
       {
         "name": "ABBEY",
@@ -46,8 +46,8 @@
       },
       {
         "name": "THE REAL DR. TYLER",
-        "lines": 79,
-        "gender": "w",
+        "lines": 80,
+        "gender": null,
         "named": true,
         "actor": "Milla Jovovich"
       },
@@ -243,12 +243,6 @@
       },
       {
         "name": "OPERATOR",
-        "lines": 2,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "TEXT",
         "lines": 2,
         "gender": null,
         "named": false
@@ -555,12 +549,6 @@
         "named": false
       },
       {
-        "name": "SOUND",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "SPLIT SCREEN",
         "lines": 1,
         "gender": "w",
@@ -603,7 +591,7 @@
         "lines": {
           "0": 288,
           "1": 91,
-          "2": 79,
+          "2": 80,
           "3": 75,
           "4": 49,
           "5": 43,
@@ -635,7 +623,7 @@
           "31": 2,
           "32": 2,
           "33": 2,
-          "34": 2,
+          "34": 1,
           "35": 1,
           "36": 1,
           "37": 1,
@@ -690,9 +678,7 @@
           "86": 1,
           "87": 1,
           "88": 1,
-          "89": 1,
-          "90": 1,
-          "91": 1
+          "89": 1
         }
       }
     ],
@@ -704,20 +690,20 @@
       },
       "last": {
         "speaker": 5,
-        "line": 901,
+        "line": 899,
         "text": "In the end ... what you believe, is yours to decide."
       }
     },
     "measures": {
-      "firstWomanLine": 6,
-      "longestWithoutWoman": 19,
-      "longestWithoutWomanStart": 244,
+      "firstWomanLine": 16,
+      "longestWithoutWoman": 46,
+      "longestWithoutWomanStart": 661,
       "words": {
-        "w": 4785,
+        "w": 3017,
         "m": 3918,
-        "unknown": 1380
+        "unknown": 3128
       },
-      "womenConversations": 28,
+      "womenConversations": 20,
       "menConversations": 20,
       "reverseScore": 3
     }

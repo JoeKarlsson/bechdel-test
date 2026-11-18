@@ -13,10 +13,10 @@
     "numScenesDontPass": 144,
     "numOfFemalesChars": 15,
     "numOfMaleChars": 36,
-    "numOfFemalesCharsWithDialogue": 17,
-    "numOfMaleCharsWithDialogue": 29,
+    "numOfFemalesCharsWithDialogue": 15,
+    "numOfMaleCharsWithDialogue": 28,
     "totalLinesFemaleDialogue": 291,
-    "totalLinesMaleDialogue": 347,
+    "totalLinesMaleDialogue": 349,
     "scenesThatPass": [
       "VALERIE: Too dangerous. This network has avoided detection for years. Expect meticulous operational security and counter surveillance. Any questions?\nDEPUTY CPD: Val. The chief wants to see you."
     ]
@@ -24,25 +24,25 @@
   "script": {
     "file": "fair-game.txt",
     "layout": "indented",
-    "dialogueLines": 827,
+    "dialogueLines": 824,
     "speakers": [
       {
         "name": "VALERIE",
-        "lines": 218,
+        "lines": 219,
         "gender": "w",
         "named": true,
         "actor": "Naomi Watts"
       },
       {
         "name": "JOE",
-        "lines": 90,
+        "lines": 91,
         "gender": "m",
         "named": true,
         "actor": "Kristoffer Ryan Winters"
       },
       {
         "name": "JOE WILSON",
-        "lines": 65,
+        "lines": 67,
         "gender": "m",
         "named": true
       },
@@ -93,6 +93,12 @@
         "actor": "Bruce McGill"
       },
       {
+        "name": "PRESIDENT",
+        "lines": 14,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "HAFIZ",
         "lines": 12,
         "gender": "m",
@@ -105,12 +111,6 @@
         "gender": "m",
         "named": true,
         "actor": "Sam Shepard"
-      },
-      {
-        "name": "PRESIDENT",
-        "lines": 12,
-        "gender": null,
-        "named": false
       },
       {
         "name": "PROFESSOR AZIZ",
@@ -147,11 +147,24 @@
         "actor": "David Warshofsky"
       },
       {
+        "name": "VOICE",
+        "lines": 8,
+        "gender": null,
+        "named": false
+      },
+      {
         "name": "ALI",
         "lines": 7,
         "gender": "m",
         "named": true,
         "actor": "Sunil Malhotra"
+      },
+      {
+        "name": "CPD AGENT",
+        "lines": 7,
+        "gender": "w",
+        "named": true,
+        "actor": "Iris Bahr"
       },
       {
         "name": "REPORTER",
@@ -173,19 +186,6 @@
         "gender": "m",
         "named": true,
         "actor": "Norbert Leo Butz"
-      },
-      {
-        "name": "VOICE",
-        "lines": 7,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "CPD AGENT",
-        "lines": 6,
-        "gender": "w",
-        "named": true,
-        "actor": "Iris Bahr"
       },
       {
         "name": "DR FORSTER",
@@ -384,12 +384,6 @@
         "named": true
       },
       {
-        "name": "JOE WILSON V/O",
-        "lines": 2,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "MCLENNAN",
         "lines": 2,
         "gender": null,
@@ -403,12 +397,6 @@
       },
       {
         "name": "MUKHBARAT OFFICER",
-        "lines": 2,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "PRESIDENT V/O",
         "lines": 2,
         "gender": null,
         "named": false
@@ -439,12 +427,6 @@
         "gender": null,
         "named": false,
         "actor": "Vanessa Chong"
-      },
-      {
-        "name": "SFX",
-        "lines": 2,
-        "gender": null,
-        "named": false
       },
       {
         "name": "TABIR",
@@ -518,19 +500,6 @@
       },
       {
         "name": "CONDOLEEZZA",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "CPD AGENT V/O",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Iris Bahr"
-      },
-      {
-        "name": "CU",
         "lines": 1,
         "gender": null,
         "named": false
@@ -621,13 +590,6 @@
         "lines": 1,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "JOE V/O",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Kristoffer Ryan Winters"
       },
       {
         "name": "JOE WILSON NEWS",
@@ -826,20 +788,7 @@
         "named": true
       },
       {
-        "name": "VALERIE V/O",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Naomi Watts"
-      },
-      {
         "name": "VAZIRI",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "VOICE V/O",
         "lines": 1,
         "gender": null,
         "named": false
@@ -849,10 +798,8 @@
       {
         "place": null,
         "lines": {
-          "22": 4,
-          "63": 1,
-          "69": 1,
-          "126": 1
+          "18": 5,
+          "66": 1
         }
       },
       {
@@ -872,10 +819,10 @@
         "place": "Presidential suite, westin hotel, kl. day",
         "lines": {
           "0": 7,
-          "10": 7,
-          "22": 1,
+          "11": 7,
+          "18": 1,
           "36": 1,
-          "62": 1
+          "60": 1
         }
       },
       {
@@ -886,21 +833,21 @@
         "place": "Ground floor, mansion. night",
         "lines": {
           "0": 2,
-          "64": 2
+          "61": 2
         }
       },
       {
         "place": "Library. night",
         "lines": {
           "0": 1,
-          "10": 1
+          "11": 1
         }
       },
       {
         "place": "Ext. hafiz's bmw. (moving) night",
         "lines": {
           "0": 10,
-          "10": 4,
+          "11": 4,
           "41": 3
         }
       },
@@ -912,11 +859,11 @@
           "5": 1,
           "14": 1,
           "16": 3,
-          "21": 5,
+          "23": 5,
           "26": 1,
           "33": 1,
-          "91": 1,
-          "96": 1
+          "86": 1,
+          "90": 1
         }
       },
       {
@@ -932,7 +879,7 @@
         "lines": {
           "0": 2,
           "1": 5,
-          "23": 1,
+          "20": 1,
           "27": 1,
           "53": 1
         }
@@ -941,16 +888,15 @@
         "place": "Counter proliferation division. basement. day",
         "lines": {
           "0": 2,
-          "18": 1,
-          "23": 5,
-          "76": 1
+          "19": 1,
+          "20": 6
         }
       },
       {
         "place": "Valerie's office, cpd langley. day",
         "lines": {
           "0": 1,
-          "18": 1
+          "19": 1
         }
       },
       {
@@ -968,11 +914,10 @@
       {
         "place": "Bonded customs warehouse. port newark. night",
         "lines": {
-          "0": 1,
-          "18": 1,
+          "0": 2,
+          "19": 1,
           "24": 1,
-          "114": 1,
-          "124": 1
+          "108": 1
         }
       },
       {
@@ -986,8 +931,8 @@
         "place": "Counter proliferation division. langley. day",
         "lines": {
           "0": 4,
-          "18": 1,
-          "78": 1
+          "19": 1,
+          "73": 1
         }
       },
       {
@@ -996,16 +941,15 @@
           "0": 6,
           "3": 1,
           "5": 6,
-          "58": 1
+          "10": 1
         }
       },
       {
         "place": "Joe wilson's den. charleston terrace. washingtion. day",
         "lines": {
           "1": 2,
-          "12": 1,
-          "58": 1,
-          "87": 1
+          "10": 2,
+          "82": 1
         }
       },
       {
@@ -1013,7 +957,7 @@
         "lines": {
           "0": 2,
           "3": 3,
-          "22": 2,
+          "18": 2,
           "29": 1,
           "34": 1
         }
@@ -1039,7 +983,7 @@
           "1": 2,
           "2": 1,
           "3": 5,
-          "80": 1
+          "75": 1
         }
       },
       {
@@ -1075,8 +1019,7 @@
       {
         "place": "Desert road. day",
         "lines": {
-          "1": 1,
-          "92": 1
+          "1": 2
         }
       },
       {
@@ -1097,7 +1040,7 @@
         "place": "Chief's office. day",
         "lines": {
           "0": 1,
-          "105": 1
+          "99": 1
         }
       },
       {
@@ -1155,7 +1098,7 @@
         "lines": {
           "0": 11,
           "13": 7,
-          "59": 1
+          "57": 1
         }
       },
       {
@@ -1169,7 +1112,7 @@
       {
         "place": "Chief of cpd's office. day",
         "lines": {
-          "62": 1
+          "60": 1
         }
       },
       {
@@ -1184,8 +1127,7 @@
         "lines": {
           "6": 13,
           "8": 13,
-          "29": 1,
-          "63": 1
+          "29": 1
         }
       },
       {
@@ -1235,7 +1177,7 @@
         "lines": {
           "0": 2,
           "4": 4,
-          "18": 1,
+          "19": 1,
           "46": 2,
           "47": 2
         }
@@ -1247,14 +1189,12 @@
       {
         "place": "Queen alia international airport. amman. jordan",
         "lines": {
-          "18": 1
+          "19": 1
         }
       },
       {
         "place": "Ali's hotel room, grand hyatt. night",
-        "lines": {
-          "77": 1
-        }
+        "lines": {}
       },
       {
         "place": "Gymnasium, grand hyatt amman. night",
@@ -1262,10 +1202,10 @@
           "0": 1,
           "3": 1,
           "49": 1,
-          "72": 1,
-          "74": 1,
-          "110": 1,
-          "113": 1
+          "69": 1,
+          "71": 1,
+          "104": 1,
+          "107": 1
         }
       },
       {
@@ -1274,7 +1214,7 @@
           "0": 1,
           "3": 1,
           "49": 1,
-          "75": 1
+          "72": 1
         }
       },
       {
@@ -1285,17 +1225,17 @@
           "2": 5,
           "14": 1,
           "16": 5,
-          "21": 2,
+          "23": 2,
           "26": 2,
           "33": 3,
           "40": 3,
           "51": 2,
           "52": 2,
-          "66": 1,
-          "79": 1,
-          "89": 1,
-          "121": 1,
-          "122": 1
+          "63": 1,
+          "74": 1,
+          "84": 1,
+          "115": 1,
+          "116": 1
         }
       },
       {
@@ -1303,9 +1243,9 @@
         "lines": {
           "4": 1,
           "7": 1,
-          "57": 2,
-          "102": 1,
-          "103": 1
+          "56": 2,
+          "96": 1,
+          "97": 1
         }
       },
       {
@@ -1335,13 +1275,13 @@
       {
         "place": "Dulles airport security. day",
         "lines": {
-          "12": 1
+          "10": 1
         }
       },
       {
         "place": "Langley basement. night",
         "lines": {
-          "18": 1
+          "19": 1
         }
       },
       {
@@ -1360,7 +1300,7 @@
         "place": "University of boston franklin theater. night",
         "lines": {
           "1": 1,
-          "59": 1
+          "57": 1
         }
       },
       {
@@ -1374,7 +1314,7 @@
       {
         "place": "House of representatives. night",
         "lines": {
-          "12": 1
+          "10": 1
         }
       },
       {
@@ -1386,7 +1326,7 @@
       {
         "place": "Logan airport. night",
         "lines": {
-          "12": 1
+          "10": 1
         }
       },
       {
@@ -1395,9 +1335,9 @@
           "2": 2,
           "5": 3,
           "9": 2,
-          "12": 7,
-          "90": 1,
-          "106": 1
+          "10": 7,
+          "85": 1,
+          "100": 1
         }
       },
       {
@@ -1408,8 +1348,8 @@
         "place": "Sa'ad's house. baghdad. night",
         "lines": {
           "7": 5,
-          "60": 2,
-          "61": 2
+          "58": 2,
+          "59": 2
         }
       },
       {
@@ -1417,7 +1357,7 @@
         "lines": {
           "0": 2,
           "5": 4,
-          "120": 1
+          "114": 1
         }
       },
       {
@@ -1431,7 +1371,7 @@
         "lines": {
           "0": 4,
           "3": 2,
-          "70": 1
+          "67": 1
         }
       },
       {
@@ -1461,13 +1401,13 @@
           "2": 5,
           "17": 8,
           "50": 2,
-          "81": 1
+          "76": 1
         }
       },
       {
         "place": "Scooter libby's office, old executive building. day",
         "lines": {
-          "19": 1
+          "21": 1
         }
       },
       {
@@ -1476,7 +1416,7 @@
           "31": 2,
           "39": 2,
           "43": 2,
-          "94": 1
+          "88": 1
         }
       },
       {
@@ -1490,21 +1430,21 @@
         "lines": {
           "31": 1,
           "39": 1,
-          "86": 1
+          "81": 1
         }
       },
       {
         "place": "Rove's office. day",
         "lines": {
-          "20": 1
+          "22": 1
         }
       },
       {
         "place": "Lobby outside scooter's office. day",
         "lines": {
           "6": 1,
-          "97": 1,
-          "98": 1
+          "91": 1,
+          "92": 1
         }
       },
       {
@@ -1515,14 +1455,14 @@
         "place": "Scooter libby's office. day",
         "lines": {
           "6": 1,
-          "20": 1
+          "22": 1
         }
       },
       {
         "place": "West wing. night",
         "lines": {
           "6": 2,
-          "20": 1
+          "22": 1
         }
       },
       {
@@ -1531,13 +1471,13 @@
           "0": 3,
           "1": 3,
           "2": 1,
-          "66": 1
+          "63": 1
         }
       },
       {
         "place": "Wilson house. day",
         "lines": {
-          "101": 1
+          "95": 1
         }
       },
       {
@@ -1580,8 +1520,8 @@
           "1": 3,
           "2": 2,
           "27": 1,
-          "117": 1,
-          "118": 1
+          "111": 1,
+          "112": 1
         }
       },
       {
@@ -1596,11 +1536,11 @@
         "place": "Television studio. day",
         "lines": {
           "1": 4,
-          "12": 1,
-          "19": 1,
-          "55": 2,
-          "68": 1,
-          "82": 1
+          "10": 1,
+          "21": 1,
+          "54": 2,
+          "65": 1,
+          "77": 1
         }
       },
       {
@@ -1616,8 +1556,8 @@
           "1": 2,
           "2": 3,
           "14": 1,
-          "73": 1,
-          "100": 1
+          "70": 1,
+          "94": 1
         }
       },
       {
@@ -1642,7 +1582,7 @@
         "lines": {
           "0": 2,
           "27": 2,
-          "104": 1
+          "98": 1
         }
       },
       {
@@ -1674,8 +1614,8 @@
         "lines": {
           "1": 3,
           "2": 1,
-          "115": 1,
-          "116": 1
+          "109": 1,
+          "110": 1
         }
       },
       {
@@ -1691,23 +1631,23 @@
           "0": 5,
           "1": 2,
           "2": 4,
-          "93": 1,
-          "109": 1,
-          "112": 1,
-          "119": 1
+          "87": 1,
+          "103": 1,
+          "106": 1,
+          "113": 1
         }
       },
       {
         "place": "White house. day",
         "lines": {
           "6": 2,
-          "20": 4
+          "22": 4
         }
       },
       {
         "place": "Park. day",
         "lines": {
-          "65": 1
+          "62": 1
         }
       },
       {
@@ -1717,22 +1657,22 @@
           "1": 3,
           "2": 10,
           "48": 2,
-          "123": 1
+          "117": 1
         }
       },
       {
         "place": "House. day",
         "lines": {
           "2": 2,
-          "19": 5,
-          "108": 1
+          "21": 5,
+          "102": 1
         }
       },
       {
         "place": "House. night",
         "lines": {
-          "85": 1,
-          "111": 1
+          "80": 1,
+          "105": 1
         }
       },
       {
@@ -1755,7 +1695,7 @@
           "0": 2,
           "2": 3,
           "27": 1,
-          "65": 1
+          "62": 1
         }
       },
       {
@@ -1765,17 +1705,17 @@
       {
         "place": "Kitchen. day",
         "lines": {
-          "11": 1,
-          "67": 1,
-          "95": 1
+          "12": 1,
+          "64": 1,
+          "89": 1
         }
       },
       {
         "place": "Basement workshop. day",
         "lines": {
           "0": 1,
-          "11": 2,
-          "67": 1
+          "12": 2,
+          "64": 1
         }
       },
       {
@@ -1785,7 +1725,7 @@
           "2": 6,
           "32": 4,
           "35": 3,
-          "71": 1
+          "68": 1
         }
       },
       {
@@ -1800,14 +1740,14 @@
         "place": "Back field. day",
         "lines": {
           "0": 4,
-          "11": 9,
-          "99": 1
+          "12": 9,
+          "93": 1
         }
       },
       {
         "place": "Capitol. old assembly hall. night",
         "lines": {
-          "88": 1
+          "83": 1
         }
       },
       {
@@ -1822,9 +1762,9 @@
         "place": "West wing. day",
         "lines": {
           "37": 2,
-          "56": 2,
-          "83": 1,
-          "84": 1
+          "55": 2,
+          "78": 1,
+          "79": 1
         }
       },
       {
@@ -1852,14 +1792,13 @@
       {
         "place": "Taxi (moving). day",
         "lines": {
-          "2": 4,
-          "54": 1
+          "2": 5
         }
       },
       {
         "place": "Airport terminal tehran. day",
         "lines": {
-          "54": 1
+          "2": 1
         }
       },
       {
@@ -1871,7 +1810,7 @@
       {
         "place": "Natanz nuclear research facility, iran. day",
         "lines": {
-          "125": 1
+          "118": 1
         }
       },
       {
@@ -1884,33 +1823,33 @@
         "place": "Rayburn house. capitol hill. day",
         "lines": {
           "0": 1,
-          "107": 1
+          "101": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 22,
-        "line": 4,
-        "text": "Everything that stands in your way."
+        "speaker": 18,
+        "line": 2,
+        "text": "Everything you face in life. Everything you come up against.."
       },
       "last": {
-        "speaker": 107,
-        "line": 827,
+        "speaker": 101,
+        "line": 824,
         "text": "...of safeguarding classified information. I'm grateful for this opportunity to set the record straight. I served the United States loyally and to the best of my ability as a covert operations officer for the Central Intelligence Agency."
       }
     },
     "measures": {
-      "firstWomanLine": 8,
-      "longestWithoutWoman": 41,
-      "longestWithoutWomanStart": 274,
+      "firstWomanLine": 7,
+      "longestWithoutWoman": 40,
+      "longestWithoutWomanStart": 273,
       "words": {
         "w": 3990,
-        "m": 5464,
-        "unknown": 3335
+        "m": 5512,
+        "unknown": 3265
       },
       "womenConversations": 14,
-      "menConversations": 25,
+      "menConversations": 24,
       "reverseScore": 3
     }
   },

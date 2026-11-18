@@ -7,42 +7,40 @@
     "War"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 94,
+    "pass": false,
+    "bechdelScore": 1,
+    "numScenesPass": 0,
+    "numScenesDontPass": 95,
     "numOfFemalesChars": 2,
     "numOfMaleChars": 20,
-    "numOfFemalesCharsWithDialogue": 3,
-    "numOfMaleCharsWithDialogue": 19,
-    "totalLinesFemaleDialogue": 37,
-    "totalLinesMaleDialogue": 769,
-    "scenesThatPass": [
-      "CONNIE O.S: Will, I can't wait until you come home.\nCONNIE: Will?"
-    ]
+    "numOfFemalesCharsWithDialogue": 2,
+    "numOfMaleCharsWithDialogue": 17,
+    "totalLinesFemaleDialogue": 39,
+    "totalLinesMaleDialogue": 767,
+    "scenesThatPass": []
   },
   "script": {
     "file": "the-hurt-locker.txt",
     "layout": "indented",
-    "dialogueLines": 900,
+    "dialogueLines": 895,
     "speakers": [
       {
         "name": "JAMES",
-        "lines": 284,
+        "lines": 289,
         "gender": "m",
         "named": true,
         "actor": "Jeremy Renner"
       },
       {
         "name": "SANBORN",
-        "lines": 208,
+        "lines": 213,
         "gender": "m",
         "named": true,
         "actor": "Anthony Mackie"
       },
       {
         "name": "ELDRIDGE",
-        "lines": 112,
+        "lines": 115,
         "gender": "m",
         "named": true,
         "actor": "Brian Geraghty"
@@ -56,7 +54,7 @@
       },
       {
         "name": "SOLDIER",
-        "lines": 24,
+        "lines": 26,
         "gender": "w",
         "named": true,
         "actor": "Kate Mines"
@@ -99,6 +97,13 @@
         "named": true
       },
       {
+        "name": "CONNIE",
+        "lines": 11,
+        "gender": "w",
+        "named": true,
+        "actor": "Evangeline Lilly"
+      },
+      {
         "name": "GUARD",
         "lines": 8,
         "gender": null,
@@ -120,37 +125,10 @@
         "actor": "Suhail Dabbach"
       },
       {
-        "name": "CONNIE O.S",
-        "lines": 6,
-        "gender": "w",
-        "named": true,
-        "actor": "Evangeline Lilly"
-      },
-      {
         "name": "HUMVEE",
         "lines": 6,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "CONNIE",
-        "lines": 5,
-        "gender": "w",
-        "named": true,
-        "actor": "Evangeline Lilly"
-      },
-      {
-        "name": "CU",
-        "lines": 5,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "JAMES O.S",
-        "lines": 5,
-        "gender": "m",
-        "named": true,
-        "actor": "Jeremy Renner"
       },
       {
         "name": "KALIM",
@@ -159,18 +137,17 @@
         "named": false
       },
       {
-        "name": "SANBORN O.S",
-        "lines": 5,
-        "gender": "m",
-        "named": true,
-        "actor": "Anthony Mackie"
-      },
-      {
         "name": "SOLDIER 1",
         "lines": 5,
         "gender": null,
         "named": false,
         "actor": "Kristoffer Ryan Winters"
+      },
+      {
+        "name": "DISPATCH",
+        "lines": 4,
+        "gender": null,
+        "named": false
       },
       {
         "name": "LT. COL CAMBRIDGE",
@@ -199,24 +176,11 @@
         "actor": "Christian Camargo"
       },
       {
-        "name": "DISPATCH O.S",
-        "lines": 3,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "DVD MAN",
         "lines": 3,
         "gender": "m",
         "named": true,
         "actor": "Hasan Darwish"
-      },
-      {
-        "name": "ELDRIDGE O.S",
-        "lines": 3,
-        "gender": "m",
-        "named": true,
-        "actor": "Brian Geraghty"
       },
       {
         "name": "EXECUTIVE",
@@ -276,13 +240,6 @@
         "lines": 2,
         "gender": "m",
         "named": false
-      },
-      {
-        "name": "SOLDIER O.S",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Kristoffer Ryan Winters"
       },
       {
         "name": "SUDDENLY--",
@@ -367,12 +324,6 @@
       },
       {
         "name": "DARK STREET",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "DISPATCH",
         "lines": 1,
         "gender": null,
         "named": false
@@ -512,7 +463,7 @@
       {
         "place": null,
         "lines": {
-          "45": 1
+          "39": 1
         }
       },
       {
@@ -528,7 +479,7 @@
           "8": 2,
           "9": 3,
           "15": 1,
-          "62": 1
+          "55": 1
         }
       },
       {
@@ -539,18 +490,17 @@
           "3": 14,
           "8": 4,
           "9": 4,
-          "46": 1,
-          "48": 1,
-          "63": 1,
-          "66": 1
+          "40": 1,
+          "42": 1,
+          "56": 1,
+          "59": 1
         }
       },
       {
         "place": "Camp victory   trailer   day",
         "lines": {
           "0": 16,
-          "1": 12,
-          "20": 1
+          "1": 13
         }
       },
       {
@@ -618,18 +568,16 @@
       {
         "place": "Baghdad street   early morning",
         "lines": {
-          "0": 20,
-          "1": 30,
+          "0": 22,
+          "1": 31,
           "2": 11,
           "4": 2,
           "7": 1,
           "8": 4,
-          "18": 2,
-          "20": 1,
-          "26": 3,
-          "30": 3,
-          "54": 1,
-          "58": 1
+          "18": 3,
+          "25": 3,
+          "47": 1,
+          "51": 1
         }
       },
       {
@@ -658,14 +606,14 @@
         "place": "Head shed   porch",
         "lines": {
           "1": 1,
-          "34": 1
+          "29": 1
         }
       },
       {
         "place": "Head shed   side office",
         "lines": {
           "2": 3,
-          "22": 3
+          "19": 3
         }
       },
       {
@@ -679,7 +627,7 @@
         "lines": {
           "0": 4,
           "1": 4,
-          "65": 1
+          "58": 1
         }
       },
       {
@@ -698,24 +646,22 @@
         "place": "Road behind embassy",
         "lines": {
           "0": 1,
-          "21": 2,
-          "43": 1,
-          "69": 1
+          "17": 2,
+          "37": 1,
+          "62": 1
         }
       },
       {
         "place": "Ambassador's office",
         "lines": {
-          "0": 8,
-          "1": 9,
+          "0": 11,
+          "1": 12,
           "2": 9,
           "6": 9,
           "15": 1,
-          "18": 3,
-          "20": 3,
-          "29": 3,
-          "33": 1,
-          "44": 1
+          "24": 3,
+          "28": 1,
+          "38": 1
         }
       },
       {
@@ -723,12 +669,11 @@
         "lines": {
           "0": 6,
           "1": 8,
-          "2": 9,
+          "2": 12,
           "6": 7,
-          "28": 3,
-          "32": 2,
-          "33": 1,
-          "42": 1
+          "27": 2,
+          "28": 1,
+          "36": 1
         }
       },
       {
@@ -739,7 +684,7 @@
           "2": 2,
           "5": 12,
           "15": 2,
-          "61": 1
+          "54": 1
         }
       },
       {
@@ -761,8 +706,8 @@
         "place": "Camp victory   head shed",
         "lines": {
           "2": 7,
-          "22": 1,
-          "23": 4
+          "19": 1,
+          "20": 4
         }
       },
       {
@@ -793,7 +738,7 @@
         "lines": {
           "0": 1,
           "1": 1,
-          "51": 1
+          "45": 1
         }
       },
       {
@@ -805,11 +750,11 @@
           "4": 8,
           "7": 9,
           "15": 1,
-          "24": 4,
-          "31": 3,
-          "53": 1,
-          "55": 1,
-          "70": 1
+          "18": 1,
+          "21": 4,
+          "26": 3,
+          "48": 1,
+          "63": 1
         }
       },
       {
@@ -818,7 +763,7 @@
           "0": 22,
           "1": 11,
           "2": 6,
-          "72": 1
+          "65": 1
         }
       },
       {
@@ -839,8 +784,7 @@
         "place": "Camp victory   after midnight",
         "lines": {
           "0": 4,
-          "14": 6,
-          "16": 1
+          "11": 7
         }
       },
       {
@@ -874,22 +818,22 @@
         "place": "Head shed day",
         "lines": {
           "2": 1,
-          "34": 1,
-          "40": 2
+          "29": 1,
+          "34": 2
         }
       },
       {
         "place": "Humvee    camp victory   parking lot",
         "lines": {
           "0": 3,
-          "36": 2
+          "31": 2
         }
       },
       {
         "place": "Abu graib center   bombed out building   day",
         "lines": {
           "0": 2,
-          "21": 3
+          "17": 3
         }
       },
       {
@@ -898,7 +842,7 @@
           "0": 1,
           "1": 1,
           "2": 1,
-          "50": 1
+          "44": 1
         }
       },
       {
@@ -911,9 +855,8 @@
           "0": 14,
           "1": 4,
           "2": 1,
-          "4": 4,
-          "38": 2,
-          "68": 1
+          "4": 6,
+          "61": 1
         }
       },
       {
@@ -927,8 +870,8 @@
           "1": 3,
           "2": 3,
           "15": 1,
-          "25": 3,
-          "35": 2
+          "22": 3,
+          "30": 2
         }
       },
       {
@@ -956,8 +899,8 @@
         "place": "Camp victory   mess tent   morning",
         "lines": {
           "0": 5,
-          "11": 3,
-          "27": 2
+          "12": 3,
+          "23": 2
         }
       },
       {
@@ -970,20 +913,20 @@
         "place": "Dvd man's car   camp victory gate   dusk",
         "lines": {
           "0": 1,
-          "11": 2
+          "12": 2
         }
       },
       {
         "place": "Baghdad street     night",
         "lines": {
           "0": 1,
-          "27": 1
+          "23": 1
         }
       },
       {
         "place": "Baghdad street     house",
         "lines": {
-          "39": 1
+          "33": 1
         }
       },
       {
@@ -1002,8 +945,8 @@
         "place": "Iraqi house   living room",
         "lines": {
           "0": 5,
-          "19": 5,
-          "39": 1
+          "16": 5,
+          "33": 1
         }
       },
       {
@@ -1014,8 +957,8 @@
         "place": "Camp victory gate   night",
         "lines": {
           "0": 2,
-          "11": 3,
-          "59": 1
+          "12": 3,
+          "52": 1
         }
       },
       {
@@ -1041,13 +984,13 @@
           "2": 6,
           "4": 1,
           "5": 5,
-          "37": 2,
-          "41": 2,
+          "32": 2,
+          "35": 2,
+          "43": 1,
+          "46": 1,
           "49": 1,
-          "52": 1,
-          "56": 1,
-          "57": 1,
-          "67": 1
+          "50": 1,
+          "60": 1
         }
       },
       {
@@ -1065,7 +1008,7 @@
         "place": "Camp victory   head shed   morning",
         "lines": {
           "10": 2,
-          "60": 1
+          "53": 1
         }
       },
       {
@@ -1083,7 +1026,7 @@
           "1": 3,
           "8": 1,
           "9": 2,
-          "64": 1
+          "57": 1
         }
       },
       {
@@ -1094,10 +1037,9 @@
           "7": 3,
           "8": 3,
           "9": 3,
-          "12": 8,
-          "13": 7,
-          "17": 5,
-          "73": 1
+          "13": 8,
+          "14": 7,
+          "66": 1
         }
       },
       {
@@ -1115,14 +1057,14 @@
         "place": "Knoxville, tennessee   supermarket   day",
         "lines": {
           "0": 1,
-          "74": 1
+          "67": 1
         }
       },
       {
         "place": "Knoxville   james house   kitchen   morning some days later",
         "lines": {
           "0": 2,
-          "16": 3
+          "11": 3
         }
       },
       {
@@ -1133,7 +1075,7 @@
         "place": "James house    continuous",
         "lines": {
           "1": 1,
-          "16": 1
+          "11": 1
         }
       },
       {
@@ -1147,7 +1089,7 @@
         "place": "James' son's bedroom   later that night",
         "lines": {
           "0": 10,
-          "47": 1
+          "41": 1
         }
       },
       {
@@ -1175,7 +1117,7 @@
         "place": "Airplane",
         "lines": {
           "0": 1,
-          "71": 1
+          "64": 1
         }
       },
       {
@@ -1197,7 +1139,7 @@
       },
       "last": {
         "speaker": 4,
-        "line": 900,
+        "line": 895,
         "text": "Welcome to Delta-Company."
       }
     },
@@ -1206,12 +1148,12 @@
       "longestWithoutWoman": 258,
       "longestWithoutWomanStart": 196,
       "words": {
-        "w": 327,
-        "m": 7202,
-        "unknown": 1115
+        "w": 342,
+        "m": 7187,
+        "unknown": 1086
       },
-      "womenConversations": 1,
-      "menConversations": 83,
+      "womenConversations": 0,
+      "menConversations": 78,
       "reverseScore": 3
     }
   },

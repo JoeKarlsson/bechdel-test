@@ -9,8 +9,8 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 3,
-    "numScenesDontPass": 181,
+    "numScenesPass": 4,
+    "numScenesDontPass": 180,
     "numOfFemalesChars": 29,
     "numOfMaleChars": 30,
     "numOfFemalesCharsWithDialogue": 9,
@@ -19,6 +19,7 @@
     "totalLinesMaleDialogue": 453,
     "scenesThatPass": [
       "HELGA: AHHH!!!\nZOE: Uh-oh.",
+      "LULU: I pressed two player. I thought you liked combat. Unless you're scared.\nVIDEO GAME/LULU: Prepare to be annihilated!",
       "JULIE: AGGGH!\nJULIE: Keep going! RUN! Go GET HELP!!!\nZOE/TODD: Hurry! C'mon! Buckle up!!",
       "LULU: Look out Zoe! Rollers!\nZOE: Come on. Use the gas, not the brake, 5-0."
     ]
@@ -26,7 +27,7 @@
   "script": {
     "file": "the-pacifier.txt",
     "layout": "indented",
-    "dialogueLines": 727,
+    "dialogueLines": 726,
     "speakers": [
       {
         "name": "SHANE",
@@ -439,12 +440,6 @@
         "named": false
       },
       {
-        "name": "ON THE SCREEN",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "PAPERBOY",
         "lines": 1,
         "gender": null,
@@ -544,7 +539,7 @@
       {
         "place": null,
         "lines": {
-          "77": 1
+          "76": 1
         }
       },
       {
@@ -554,7 +549,7 @@
       {
         "place": "Fishing boat/control deck",
         "lines": {
-          "69": 1
+          "68": 1
         }
       },
       {
@@ -597,7 +592,7 @@
         "place": "Fishing boat/control deck",
         "lines": {
           "30": 2,
-          "70": 1
+          "69": 1
         }
       },
       {
@@ -672,7 +667,7 @@
       {
         "place": "Pave hawk",
         "lines": {
-          "71": 1
+          "70": 1
         }
       },
       {
@@ -763,7 +758,7 @@
           "5": 1,
           "8": 2,
           "48": 1,
-          "78": 1
+          "77": 1
         }
       },
       {
@@ -828,7 +823,7 @@
           "2": 2,
           "16": 1,
           "18": 1,
-          "65": 1
+          "64": 1
         }
       },
       {
@@ -1039,7 +1034,7 @@
         "place": "Living room",
         "lines": {
           "1": 1,
-          "74": 1
+          "73": 1
         }
       },
       {
@@ -1100,8 +1095,7 @@
           "0": 8,
           "2": 7,
           "12": 4,
-          "64": 1,
-          "75": 1
+          "74": 1
         }
       },
       {
@@ -1122,7 +1116,7 @@
         "lines": {
           "1": 2,
           "28": 1,
-          "72": 1
+          "71": 1
         }
       },
       {
@@ -1231,8 +1225,8 @@
       {
         "place": "Lulu's classroom",
         "lines": {
-          "68": 1,
-          "76": 1
+          "67": 1,
+          "75": 1
         }
       },
       {
@@ -1591,14 +1585,14 @@
         "place": "Front door",
         "lines": {
           "4": 2,
-          "79": 1
+          "78": 1
         }
       },
       {
         "place": "House",
         "lines": {
           "3": 1,
-          "67": 1
+          "66": 1
         }
       },
       {
@@ -1640,7 +1634,7 @@
           "1": 1,
           "5": 2,
           "18": 1,
-          "66": 1
+          "65": 1
         }
       },
       {
@@ -1692,7 +1686,7 @@
         "lines": {
           "0": 1,
           "4": 1,
-          "73": 1
+          "72": 1
         }
       },
       {
@@ -1743,13 +1737,13 @@
     ],
     "bookends": {
       "first": {
-        "speaker": 70,
+        "speaker": 69,
         "line": 5,
         "text": "What happened?"
       },
       "last": {
         "speaker": 0,
-        "line": 727,
+        "line": 726,
         "text": "YESSS! Huu-ah!"
       }
     },
@@ -1760,9 +1754,9 @@
       "words": {
         "w": 1636,
         "m": 4980,
-        "unknown": 1082
+        "unknown": 1053
       },
-      "womenConversations": 9,
+      "womenConversations": 10,
       "menConversations": 50,
       "reverseScore": 3
     }

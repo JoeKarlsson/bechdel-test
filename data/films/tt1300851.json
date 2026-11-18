@@ -8,25 +8,25 @@
   ],
   "bechdelResults": {
     "pass": false,
-    "bechdelScore": 1,
+    "bechdelScore": 0,
     "numScenesPass": 0,
     "numScenesDontPass": 178,
     "numOfFemalesChars": 4,
     "numOfMaleChars": 61,
-    "numOfFemalesCharsWithDialogue": 2,
-    "numOfMaleCharsWithDialogue": 62,
+    "numOfFemalesCharsWithDialogue": 1,
+    "numOfMaleCharsWithDialogue": 54,
     "totalLinesFemaleDialogue": 146,
-    "totalLinesMaleDialogue": 713,
+    "totalLinesMaleDialogue": 712,
     "scenesThatPass": []
   },
   "script": {
     "file": "boondock-saints-2-all-saints-day.txt",
     "layout": "indented",
-    "dialogueLines": 929,
+    "dialogueLines": 928,
     "speakers": [
       {
         "name": "EUNICE",
-        "lines": 145,
+        "lines": 146,
         "gender": "w",
         "named": true,
         "actor": "Julie Benz"
@@ -47,10 +47,17 @@
       },
       {
         "name": "ROMEO",
-        "lines": 83,
+        "lines": 84,
         "gender": "m",
         "named": true,
         "actor": "Clifton Collins Jr."
+      },
+      {
+        "name": "POPPA M",
+        "lines": 55,
+        "gender": "m",
+        "named": true,
+        "actor": "Billy Connolly"
       },
       {
         "name": "GREENLY",
@@ -61,7 +68,7 @@
       },
       {
         "name": "DUFFY",
-        "lines": 37,
+        "lines": 38,
         "gender": "m",
         "named": true,
         "actor": "Brian Mahoney"
@@ -74,25 +81,11 @@
         "actor": "Bob Rubin"
       },
       {
-        "name": "POPPA M",
-        "lines": 33,
-        "gender": "m",
-        "named": true,
-        "actor": "Billy Connolly"
-      },
-      {
         "name": "DOLLY",
         "lines": 29,
         "gender": "m",
         "named": true,
         "actor": "David Ferry"
-      },
-      {
-        "name": "POPPA M V.O",
-        "lines": 22,
-        "gender": "m",
-        "named": true,
-        "actor": "Billy Connolly"
       },
       {
         "name": "SLO-MO",
@@ -142,6 +135,13 @@
         "named": false
       },
       {
+        "name": "ROCCO",
+        "lines": 9,
+        "gender": "m",
+        "named": true,
+        "actor": "David Della Rocco"
+      },
+      {
         "name": "SIBEAL",
         "lines": 9,
         "gender": "m",
@@ -149,25 +149,18 @@
         "actor": "Mairtin O'Carrigan"
       },
       {
+        "name": "CESAR",
+        "lines": 8,
+        "gender": "m",
+        "named": true,
+        "actor": "Pedro Salvín"
+      },
+      {
         "name": "JO JO",
         "lines": 8,
         "gender": "m",
         "named": true,
         "actor": "Aaron Berg"
-      },
-      {
-        "name": "ROCCO",
-        "lines": 8,
-        "gender": "m",
-        "named": true,
-        "actor": "David Della Rocco"
-      },
-      {
-        "name": "CESAR",
-        "lines": 7,
-        "gender": "m",
-        "named": true,
-        "actor": "Pedro Salvín"
       },
       {
         "name": "GUN DEALER",
@@ -202,6 +195,13 @@
         "actor": "Robb Wells"
       },
       {
+        "name": "REPORTER #1",
+        "lines": 6,
+        "gender": "m",
+        "named": false,
+        "actor": "Howard Hoover"
+      },
+      {
         "name": "LLOYD",
         "lines": 5,
         "gender": "m",
@@ -227,13 +227,6 @@
         "gender": "m",
         "named": true,
         "actor": "Robert Mauriell"
-      },
-      {
-        "name": "REPORTER #1 V.O",
-        "lines": 4,
-        "gender": "m",
-        "named": false,
-        "actor": "Howard Hoover"
       },
       {
         "name": "S.S. BRUGLIONE #3",
@@ -295,6 +288,13 @@
         "actor": "Louis Di Bianco"
       },
       {
+        "name": "REPORTER #2",
+        "lines": 3,
+        "gender": "m",
+        "named": false,
+        "actor": "Joey Amorosino"
+      },
+      {
         "name": "ROY",
         "lines": 3,
         "gender": "m",
@@ -334,7 +334,7 @@
         "actor": "Joey Amorosino"
       },
       {
-        "name": "HOST V.O",
+        "name": "HOST",
         "lines": 2,
         "gender": "m",
         "named": false
@@ -384,24 +384,10 @@
         "named": false
       },
       {
-        "name": "RADIO ANNOUNCER V.O",
+        "name": "RADIO ANNOUNCER",
         "lines": 2,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "REPORTER #1",
-        "lines": 2,
-        "gender": "m",
-        "named": false,
-        "actor": "Howard Hoover"
-      },
-      {
-        "name": "REPORTER #2",
-        "lines": 2,
-        "gender": "m",
-        "named": false,
-        "actor": "Joey Amorosino"
       },
       {
         "name": "REPORTER #3",
@@ -443,7 +429,7 @@
         "actor": "Joseph Di Mambro"
       },
       {
-        "name": "ACTOR V.O",
+        "name": "ACTOR",
         "lines": 1,
         "gender": "m",
         "named": false
@@ -475,13 +461,6 @@
         "actor": "Paulino Nunes"
       },
       {
-        "name": "CESAR V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Pedro Salvín"
-      },
-      {
         "name": "COMEDIAN",
         "lines": 1,
         "gender": null,
@@ -506,27 +485,13 @@
         "named": true
       },
       {
-        "name": "DUFFY V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Brian Mahoney"
-      },
-      {
-        "name": "EUNICE V.O",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Julie Benz"
-      },
-      {
         "name": "FANTASY SEQUENCE",
         "lines": 1,
         "gender": null,
         "named": false
       },
       {
-        "name": "FEDERAL OPERATOR V.O",
+        "name": "FEDERAL OPERATOR",
         "lines": 1,
         "gender": null,
         "named": false
@@ -552,7 +517,7 @@
         "actor": "Sweeney MacArthur"
       },
       {
-        "name": "MAN V.O",
+        "name": "MAN",
         "lines": 1,
         "gender": "m",
         "named": false
@@ -584,37 +549,10 @@
         "named": false
       },
       {
-        "name": "PRIEST V.O",
+        "name": "PRIEST",
         "lines": 1,
         "gender": "m",
         "named": false
-      },
-      {
-        "name": "QUICK CUT",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Daniel DeSanto"
-      },
-      {
-        "name": "REPORTER #2 V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": false
-      },
-      {
-        "name": "ROCCO V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "David Della Rocco"
-      },
-      {
-        "name": "ROMEO V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Clifton Collins Jr."
       },
       {
         "name": "ROUGHNECK #1",
@@ -650,8 +588,8 @@
       {
         "place": "Boyleston street, boston -- morning",
         "lines": {
-          "80": 1,
-          "88": 1
+          "16": 1,
+          "75": 1
         }
       },
       {
@@ -659,20 +597,20 @@
         "lines": {
           "1": 1,
           "2": 1,
-          "59": 1
+          "57": 1
         }
       },
       {
         "place": "Fields -- later",
         "lines": {
-          "9": 3,
+          "4": 3,
           "51": 1
         }
       },
       {
         "place": "Farmhouse -- night",
         "lines": {
-          "9": 1
+          "4": 1
         }
       },
       {
@@ -686,16 +624,15 @@
       {
         "place": "Farm -- moments later",
         "lines": {
-          "9": 1,
-          "32": 3,
-          "36": 3
+          "4": 1,
+          "31": 3,
+          "35": 3
         }
       },
       {
         "place": "Field -- later",
         "lines": {
-          "7": 1,
-          "9": 1
+          "4": 2
         }
       },
       {
@@ -707,9 +644,8 @@
       {
         "place": "Church -- morning",
         "lines": {
-          "30": 3,
-          "53": 2,
-          "55": 2
+          "25": 5,
+          "53": 2
         }
       },
       {
@@ -733,8 +669,8 @@
       {
         "place": "Vestibule -- same time",
         "lines": {
-          "4": 1,
-          "5": 2,
+          "5": 1,
+          "6": 2,
           "8": 1
         }
       },
@@ -745,10 +681,10 @@
       {
         "place": "Back to present, vestibule -- moments later",
         "lines": {
-          "4": 2,
-          "5": 1,
+          "5": 2,
+          "6": 1,
           "8": 1,
-          "82": 1
+          "77": 1
         }
       },
       {
@@ -758,8 +694,8 @@
       {
         "place": "Church -- moments later",
         "lines": {
-          "4": 2,
-          "5": 3,
+          "5": 2,
+          "6": 3,
           "8": 2
         }
       },
@@ -767,7 +703,7 @@
         "place": "Farmhouse -- moments later",
         "lines": {
           "2": 1,
-          "7": 3,
+          "4": 3,
           "17": 5
         }
       },
@@ -775,17 +711,17 @@
         "place": "Church -- later",
         "lines": {
           "0": 10,
-          "4": 4,
           "5": 4,
+          "6": 4,
           "8": 4,
-          "10": 1
+          "9": 1
         }
       },
       {
         "place": "Vestibule -- moments later",
         "lines": {
           "0": 5,
-          "5": 2,
+          "6": 2,
           "8": 2
         }
       },
@@ -793,8 +729,8 @@
         "place": "Church, altar -- moments later",
         "lines": {
           "0": 5,
-          "4": 1,
-          "5": 1
+          "5": 1,
+          "6": 1
         }
       },
       {
@@ -805,7 +741,7 @@
         "place": "Back to present, church -- moments later",
         "lines": {
           "0": 3,
-          "5": 1
+          "6": 1
         }
       },
       {
@@ -822,14 +758,14 @@
       {
         "place": "Flashback, church -- night before",
         "lines": {
-          "74": 1
+          "0": 1
         }
       },
       {
         "place": "Back to present, church -- moments later",
         "lines": {
           "0": 2,
-          "4": 1
+          "5": 1
         }
       },
       {
@@ -839,7 +775,7 @@
       {
         "place": "Ship's dry storage lock -- moments later",
         "lines": {
-          "71": 1
+          "68": 1
         }
       },
       {
@@ -848,7 +784,7 @@
           "1": 1,
           "2": 2,
           "3": 4,
-          "23": 1,
+          "22": 1,
           "50": 2
         }
       },
@@ -858,30 +794,30 @@
           "1": 2,
           "2": 2,
           "3": 6,
-          "90": 1
+          "81": 1
         }
       },
       {
         "place": "Vessel, berth -- night",
         "lines": {
-          "23": 1
+          "22": 1
         }
       },
       {
         "place": "Berth -- later",
         "lines": {
-          "23": 1,
+          "22": 1,
           "54": 2
         }
       },
       {
         "place": "High class home, dining room -- night",
         "lines": {
-          "11": 5,
+          "10": 5,
           "27": 2,
-          "33": 1,
+          "32": 1,
           "44": 1,
-          "66": 1
+          "64": 1
         }
       },
       {
@@ -890,7 +826,7 @@
           "1": 14,
           "2": 13,
           "3": 5,
-          "92": 1
+          "83": 1
         }
       },
       {
@@ -904,19 +840,19 @@
       {
         "place": "Ext. news footage, man on the street interviews",
         "lines": {
-          "65": 1,
-          "77": 1,
-          "83": 1
+          "63": 1,
+          "72": 1,
+          "78": 1
         }
       },
       {
         "place": "Boston p.d., war room -- morning",
         "lines": {
           "0": 4,
-          "4": 3,
-          "5": 4,
+          "5": 3,
+          "6": 4,
           "8": 3,
-          "16": 4
+          "15": 4
         }
       },
       {
@@ -928,8 +864,8 @@
       {
         "place": "War room -- moments later",
         "lines": {
-          "4": 1,
-          "5": 3,
+          "5": 1,
+          "6": 3,
           "8": 1
         }
       },
@@ -962,8 +898,8 @@
       {
         "place": "\"the plan,\" warehouse -- night",
         "lines": {
-          "10": 2,
-          "78": 1
+          "9": 2,
+          "73": 1
         }
       },
       {
@@ -978,24 +914,24 @@
       {
         "place": "Warehouse -- later",
         "lines": {
-          "5": 1,
+          "6": 1,
           "8": 1,
-          "70": 1
+          "67": 1
         }
       },
       {
         "place": "Warehouse -- same time",
         "lines": {
           "0": 1,
-          "16": 2
+          "15": 2
         }
       },
       {
         "place": "Warehouse -- continuous",
         "lines": {
           "0": 3,
-          "4": 1,
-          "16": 3
+          "5": 1,
+          "15": 3
         }
       },
       {
@@ -1011,7 +947,7 @@
           "1": 5,
           "2": 2,
           "3": 2,
-          "35": 3
+          "34": 3
         }
       },
       {
@@ -1020,10 +956,10 @@
           "1": 4,
           "2": 5,
           "3": 2,
-          "10": 1,
-          "24": 2,
+          "9": 1,
+          "23": 2,
           "47": 2,
-          "81": 1
+          "76": 1
         }
       },
       {
@@ -1034,22 +970,22 @@
         "place": "Back to present, warehouse -- night",
         "lines": {
           "0": 5,
-          "4": 3,
           "5": 3,
+          "6": 3,
           "8": 3
         }
       },
       {
         "place": "Greenhouse -- night",
         "lines": {
-          "57": 1
+          "55": 1
         }
       },
       {
         "place": "Ext. news footage",
         "lines": {
-          "30": 1,
-          "87": 1
+          "25": 1,
+          "39": 1
         }
       },
       {
@@ -1058,7 +994,7 @@
           "1": 1,
           "2": 2,
           "3": 2,
-          "13": 4
+          "12": 4
         }
       },
       {
@@ -1067,15 +1003,15 @@
           "1": 1,
           "2": 1,
           "3": 3,
-          "13": 2,
-          "93": 1
+          "12": 2,
+          "84": 1
         }
       },
       {
         "place": "\"hide out party montage\" -- night",
         "lines": {
           "1": 3,
-          "13": 3
+          "12": 3
         }
       },
       {
@@ -1086,13 +1022,13 @@
         "place": "Massage room -- moments later",
         "lines": {
           "0": 11,
-          "6": 11
+          "7": 11
         }
       },
       {
         "place": "Establishing shot, \"el cava\" restaurant -- day",
         "lines": {
-          "89": 1
+          "3": 1
         }
       },
       {
@@ -1101,7 +1037,7 @@
           "1": 1,
           "2": 1,
           "3": 3,
-          "20": 6
+          "18": 6
         }
       },
       {
@@ -1115,13 +1051,13 @@
       {
         "place": "Prudential building, luxury apartment -- day",
         "lines": {
-          "6": 6,
-          "11": 5,
+          "7": 6,
+          "10": 5,
           "27": 1,
-          "33": 1,
-          "34": 2,
+          "32": 1,
+          "33": 2,
           "44": 1,
-          "67": 1
+          "65": 1
         }
       },
       {
@@ -1131,8 +1067,8 @@
       {
         "place": "Auto body -- evening",
         "lines": {
-          "6": 7,
-          "18": 7
+          "7": 7,
+          "19": 7
         }
       },
       {
@@ -1147,8 +1083,8 @@
         "place": "Boston police department, war room -- night",
         "lines": {
           "0": 7,
-          "4": 4,
-          "5": 2,
+          "5": 4,
+          "6": 2,
           "8": 1
         }
       },
@@ -1162,14 +1098,14 @@
           "1": 5,
           "2": 5,
           "3": 2,
-          "20": 1,
+          "18": 1,
           "40": 1
         }
       },
       {
         "place": "Tanning salon -- night",
         "lines": {
-          "68": 1
+          "18": 1
         }
       },
       {
@@ -1191,29 +1127,29 @@
           "1": 5,
           "2": 3,
           "3": 1,
-          "6": 8
+          "7": 8
         }
       },
       {
         "place": "Eunice's mercedes -- night",
         "lines": {
           "0": 4,
-          "4": 5
+          "5": 5
         }
       },
       {
         "place": "\"el cava,\" kitchen -- later",
         "lines": {
           "2": 1,
-          "6": 2
+          "7": 2
         }
       },
       {
         "place": "El cava, bar -- moments later",
         "lines": {
           "3": 1,
-          "31": 1,
-          "37": 1,
+          "30": 1,
+          "36": 1,
           "41": 1
         }
       },
@@ -1239,8 +1175,8 @@
       {
         "place": "Suv -- moments later",
         "lines": {
-          "15": 2,
-          "22": 2
+          "14": 2,
+          "21": 2
         }
       },
       {
@@ -1258,12 +1194,12 @@
           "1": 9,
           "2": 7,
           "3": 5,
-          "6": 1,
-          "10": 1,
-          "18": 1,
-          "31": 1,
-          "38": 1,
-          "58": 1
+          "7": 1,
+          "9": 1,
+          "19": 1,
+          "30": 1,
+          "37": 1,
+          "56": 1
         }
       },
       {
@@ -1280,12 +1216,12 @@
         "place": "Flashback, el cava -- never",
         "lines": {
           "0": 8,
-          "31": 2,
+          "30": 2,
+          "36": 2,
           "37": 2,
-          "38": 2,
           "41": 2,
           "52": 2,
-          "58": 1
+          "56": 1
         }
       },
       {
@@ -1298,7 +1234,7 @@
         "place": "El cava -- moments later",
         "lines": {
           "0": 5,
-          "4": 4,
+          "5": 4,
           "8": 1
         }
       },
@@ -1313,14 +1249,14 @@
         "place": "Mcginty's pub -- later",
         "lines": {
           "0": 2,
-          "4": 1
+          "5": 1
         }
       },
       {
         "place": "Mcginty's -- continuous",
         "lines": {
           "1": 1,
-          "5": 1
+          "6": 1
         }
       },
       {
@@ -1329,22 +1265,22 @@
           "0": 9,
           "1": 7,
           "2": 8,
-          "4": 2,
+          "5": 2,
           "8": 1,
-          "72": 1
+          "69": 1
         }
       },
       {
         "place": "Greenhouse -- later",
         "lines": {
-          "15": 1,
-          "22": 1
+          "14": 1,
+          "21": 1
         }
       },
       {
         "place": "Basement -- night",
         "lines": {
-          "21": 1
+          "20": 1
         }
       },
       {
@@ -1353,35 +1289,35 @@
           "1": 2,
           "2": 4,
           "3": 5,
-          "21": 6
+          "20": 6
         }
       },
       {
         "place": "Common home -- morning",
         "lines": {
-          "22": 1
+          "21": 1
         }
       },
       {
         "place": "Bedroom -- continuous",
         "lines": {
-          "22": 1
+          "21": 1
         }
       },
       {
         "place": "Panic room -- afternoon",
         "lines": {
-          "11": 2,
-          "25": 1
+          "10": 2,
+          "24": 1
         }
       },
       {
         "place": "Luxury apartment -- moments later",
         "lines": {
-          "11": 1,
+          "10": 1,
           "27": 1,
-          "33": 1,
-          "34": 1
+          "32": 1,
+          "33": 1
         }
       },
       {
@@ -1410,17 +1346,17 @@
         "place": "Luxury apartment -- night",
         "lines": {
           "0": 9,
-          "4": 2,
-          "5": 1,
+          "5": 2,
+          "6": 1,
           "8": 1,
-          "12": 9
+          "11": 9
         }
       },
       {
         "place": "Luxury apartment -- earlier",
         "lines": {
           "0": 3,
-          "11": 4
+          "10": 4
         }
       },
       {
@@ -1434,7 +1370,7 @@
         "lines": {
           "1": 3,
           "2": 1,
-          "5": 1
+          "6": 1
         }
       },
       {
@@ -1450,9 +1386,9 @@
           "0": 1,
           "1": 3,
           "2": 4,
-          "4": 2,
           "5": 2,
-          "24": 2
+          "6": 2,
+          "23": 2
         }
       },
       {
@@ -1466,20 +1402,20 @@
         "place": "Scaffold -- same time",
         "lines": {
           "2": 1,
-          "5": 1
+          "6": 1
         }
       },
       {
         "place": "Hallway -- same time",
         "lines": {
-          "73": 1
+          "6": 1
         }
       },
       {
         "place": "Back to present, luxury apartment -- night",
         "lines": {
           "0": 3,
-          "75": 1
+          "70": 1
         }
       },
       {
@@ -1500,7 +1436,7 @@
         "place": "Luxury apartment -- moments later",
         "lines": {
           "0": 1,
-          "10": 2
+          "9": 2
         }
       },
       {
@@ -1514,42 +1450,41 @@
           "1": 2,
           "2": 2,
           "3": 3,
-          "10": 6,
-          "23": 3,
-          "28": 1,
-          "86": 1
+          "9": 6,
+          "22": 3,
+          "28": 1
         }
       },
       {
         "place": "Back to present, luxury apartment -- later",
         "lines": {
           "0": 1,
-          "4": 3,
-          "5": 2,
-          "12": 1
+          "5": 3,
+          "6": 2,
+          "11": 1
         }
       },
       {
         "place": "Panic room -- continuous",
         "lines": {
           "0": 4,
-          "25": 5
+          "24": 5
         }
       },
       {
         "place": "Luxury apartment -- moments later",
         "lines": {
           "0": 2,
-          "4": 1,
+          "5": 1,
           "8": 1,
-          "12": 1
+          "11": 1
         }
       },
       {
         "place": "Prudential building, ground plaza -- night",
         "lines": {
           "0": 2,
-          "5": 1,
+          "6": 1,
           "8": 1
         }
       },
@@ -1562,12 +1497,12 @@
         "lines": {
           "1": 5,
           "2": 6,
-          "4": 2,
-          "7": 6,
-          "10": 1,
-          "13": 2,
-          "15": 7,
-          "24": 2,
+          "4": 6,
+          "5": 2,
+          "9": 1,
+          "12": 2,
+          "14": 7,
+          "23": 2,
           "28": 1
         }
       },
@@ -1575,21 +1510,21 @@
         "place": "Uncle cesar's house, kitchen -- later",
         "lines": {
           "2": 1,
-          "7": 3
+          "4": 3
         }
       },
       {
         "place": "Flashback, cobbler shop -- day",
         "lines": {
-          "9": 2,
+          "4": 2,
           "29": 1,
-          "79": 1
+          "74": 1
         }
       },
       {
         "place": "Funeral -- morning",
         "lines": {
-          "9": 1
+          "4": 1
         }
       },
       {
@@ -1597,14 +1532,14 @@
         "lines": {
           "29": 1,
           "42": 3,
-          "60": 1,
-          "61": 2
+          "58": 1,
+          "59": 2
         }
       },
       {
         "place": "Cobbler shop -- afternoon",
         "lines": {
-          "9": 1,
+          "4": 1,
           "29": 1,
           "48": 2,
           "49": 2
@@ -1617,8 +1552,7 @@
       {
         "place": "Cobbler shop -- day",
         "lines": {
-          "7": 1,
-          "9": 5,
+          "4": 6,
           "29": 1
         }
       },
@@ -1627,7 +1561,7 @@
         "lines": {
           "1": 3,
           "2": 2,
-          "7": 3
+          "4": 3
         }
       },
       {
@@ -1638,14 +1572,14 @@
         "place": "Back to present, kitchen -- moments later",
         "lines": {
           "1": 1,
-          "7": 2
+          "4": 2
         }
       },
       {
         "place": "Side walk outside mcginty's -- same time",
         "lines": {
           "1": 1,
-          "5": 1
+          "6": 1
         }
       },
       {
@@ -1657,8 +1591,8 @@
       {
         "place": "Illegal book -- later",
         "lines": {
-          "22": 2,
-          "39": 3
+          "21": 2,
+          "38": 3
         }
       },
       {
@@ -1668,7 +1602,7 @@
       {
         "place": "Dream sequence, fenway park -- day",
         "lines": {
-          "19": 3
+          "16": 3
         }
       },
       {
@@ -1676,7 +1610,7 @@
         "lines": {
           "1": 1,
           "2": 1,
-          "19": 5
+          "16": 5
         }
       },
       {
@@ -1690,13 +1624,13 @@
         "place": "Boston commons, jogging tunnel -- morning",
         "lines": {
           "0": 3,
-          "7": 2
+          "4": 2
         }
       },
       {
         "place": "Fbi head quarters, boston branch, kitchenette -- later",
         "lines": {
-          "12": 2,
+          "11": 2,
           "45": 2
         }
       },
@@ -1715,8 +1649,8 @@
       {
         "place": "Suv -- moments later",
         "lines": {
-          "12": 2,
-          "76": 1
+          "11": 2,
+          "71": 1
         }
       },
       {
@@ -1730,20 +1664,20 @@
       {
         "place": "Greenhouse -- same time",
         "lines": {
-          "7": 4,
-          "14": 5
+          "4": 4,
+          "13": 5
         }
       },
       {
         "place": "Behind greenhouse -- same time",
         "lines": {
-          "60": 1
+          "58": 1
         }
       },
       {
         "place": "Parlor, upstairs -- same time",
         "lines": {
-          "62": 1
+          "60": 1
         }
       },
       {
@@ -1757,39 +1691,39 @@
       {
         "place": "Greenhouse -- moments later",
         "lines": {
-          "7": 4,
-          "14": 5
+          "4": 4,
+          "13": 5
         }
       },
       {
         "place": "Suv -- moments later",
         "lines": {
-          "12": 2
+          "11": 2
         }
       },
       {
         "place": "Greenhouse -- moments later",
         "lines": {
-          "7": 1,
-          "14": 1
+          "4": 1,
+          "13": 1
         }
       },
       {
         "place": "Parlor, upstairs -- same time",
         "lines": {
-          "62": 1
+          "60": 1
         }
       },
       {
         "place": "Neighboring room -- same time",
         "lines": {
-          "64": 1
+          "62": 1
         }
       },
       {
         "place": "Parlor -- same time",
         "lines": {
-          "10": 1
+          "9": 1
         }
       },
       {
@@ -1805,40 +1739,39 @@
         "lines": {
           "1": 1,
           "2": 1,
-          "7": 3,
-          "9": 1,
+          "4": 4,
           "28": 1
         }
       },
       {
         "place": "Street -- moments later",
         "lines": {
-          "9": 1
+          "4": 1
         }
       },
       {
         "place": "House -- moments later",
         "lines": {
-          "9": 1,
-          "10": 1
+          "4": 1,
+          "9": 1
         }
       },
       {
         "place": "Various locations -- same time",
         "lines": {
-          "9": 1
+          "4": 1
         }
       },
       {
         "place": "Front of house -- moments later",
         "lines": {
-          "9": 1
+          "4": 1
         }
       },
       {
         "place": "Greenhouse -- moments later",
         "lines": {
-          "9": 1
+          "4": 1
         }
       },
       {
@@ -1846,25 +1779,25 @@
         "lines": {
           "1": 1,
           "2": 1,
-          "9": 1,
-          "10": 3,
-          "59": 1
+          "4": 1,
+          "9": 3,
+          "57": 1
         }
       },
       {
         "place": "Ext. news footage",
         "lines": {
-          "56": 2,
-          "57": 1,
-          "91": 1
+          "39": 2,
+          "55": 1,
+          "82": 1
         }
       },
       {
         "place": "T.v. talk show, \"boston banter\" -- day",
         "lines": {
           "43": 1,
-          "69": 1,
-          "84": 1
+          "66": 1,
+          "79": 1
         }
       },
       {
@@ -1872,20 +1805,20 @@
         "lines": {
           "43": 1,
           "46": 2,
-          "63": 1,
-          "85": 1
+          "61": 1,
+          "80": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 80,
+        "speaker": 75,
         "line": 1,
         "text": "There's two kinds of people in this world when you boil it all down. You got your talkers and you got your doers."
       },
       "last": {
         "speaker": 46,
-        "line": 929,
+        "line": 928,
         "text": "Maybe that's just the place for them."
       }
     },
@@ -1895,11 +1828,11 @@
       "longestWithoutWomanStart": 112,
       "words": {
         "w": 2189,
-        "m": 7922,
+        "m": 7901,
         "unknown": 1003
       },
       "womenConversations": 0,
-      "menConversations": 76,
+      "menConversations": 75,
       "reverseScore": 3
     }
   },

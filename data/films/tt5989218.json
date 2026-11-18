@@ -9,8 +9,8 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 4,
-    "numScenesDontPass": 113,
+    "numScenesPass": 3,
+    "numScenesDontPass": 114,
     "numOfFemalesChars": 19,
     "numOfMaleChars": 25,
     "numOfFemalesCharsWithDialogue": 10,
@@ -18,7 +18,6 @@
     "totalLinesFemaleDialogue": 280,
     "totalLinesMaleDialogue": 376,
     "scenesThatPass": [
-      "BOB DYLAN: There’s not even room enough, to be anywhere/It’s not dark yet, but it’s getting there.\nABBY: Don’t.",
       "LINDA: Abby! My God, look at you. You’re positively...\nABBY: Revolting?\nLINDA: No, you’re--\nABBY: Gassy?",
       "ABBY: Well, that makes them all worth it.\nABBY: I’m almost afraid to ask, but did you...\nLINDA: Meatloaf just came out of the oven.\nABBY: Oh, God bless you, I’ve never craved anything like this. Linda, get me to that meatloaf and you can nag, pester, and back-handedly insult me…",
       "IRWIN/DYLAN: Ahhhhhh.\nDYLAN: Peace.",
@@ -28,7 +27,7 @@
   "script": {
     "file": "life-itself-2018.txt",
     "layout": "indented",
-    "dialogueLines": 782,
+    "dialogueLines": 768,
     "speakers": [
       {
         "name": "WILL",
@@ -127,12 +126,6 @@
         "actor": "Lorenza Izzo"
       },
       {
-        "name": "CUE SONG",
-        "lines": 6,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "HERO",
         "lines": 6,
         "gender": "m",
@@ -143,12 +136,6 @@
         "name": "WOMAN",
         "lines": 6,
         "gender": "w",
-        "named": false
-      },
-      {
-        "name": "NOTE",
-        "lines": 5,
-        "gender": null,
         "named": false
       },
       {
@@ -194,12 +181,6 @@
         "name": "MAN",
         "lines": 3,
         "gender": "m",
-        "named": false
-      },
-      {
-        "name": "REVEAL",
-        "lines": 3,
-        "gender": null,
         "named": false
       },
       {
@@ -295,7 +276,7 @@
         "name": "GOOD SAMARITAN",
         "lines": 1,
         "gender": null,
-        "named": false
+        "named": true
       },
       {
         "name": "HOT GUY",
@@ -358,17 +339,16 @@
         "lines": {
           "1": 4,
           "10": 15,
-          "14": 1,
-          "15": 6,
-          "29": 2,
-          "32": 2
+          "14": 6,
+          "26": 2,
+          "29": 2
         }
       },
       {
         "place": "New york city street",
         "lines": {
           "10": 7,
-          "40": 1
+          "37": 1
         }
       },
       {
@@ -376,13 +356,11 @@
         "lines": {
           "0": 14,
           "1": 2,
-          "14": 1,
-          "16": 1,
-          "17": 1,
-          "18": 5,
-          "19": 4,
-          "26": 1,
-          "45": 1
+          "15": 1,
+          "16": 5,
+          "17": 4,
+          "23": 1,
+          "42": 1
         }
       },
       {
@@ -391,17 +369,16 @@
           "0": 5,
           "1": 2,
           "2": 9,
-          "14": 1,
-          "16": 2,
-          "20": 1,
-          "24": 3
+          "15": 2,
+          "18": 1,
+          "22": 3
         }
       },
       {
         "place": "Fraternity party",
         "lines": {
           "0": 2,
-          "41": 1
+          "38": 1
         }
       },
       {
@@ -409,13 +386,13 @@
         "lines": {
           "0": 16,
           "2": 13,
-          "46": 1
+          "43": 1
         }
       },
       {
         "place": "New york street",
         "lines": {
-          "20": 2
+          "18": 2
         }
       },
       {
@@ -423,9 +400,8 @@
         "lines": {
           "0": 14,
           "6": 10,
-          "16": 2,
-          "21": 3,
-          "25": 1
+          "15": 2,
+          "19": 3
         }
       },
       {
@@ -441,8 +417,7 @@
           "0": 2,
           "2": 5,
           "11": 1,
-          "12": 7,
-          "17": 1
+          "12": 7
         }
       },
       {
@@ -479,14 +454,14 @@
         "lines": {
           "0": 5,
           "6": 1,
-          "30": 2
+          "27": 2
         }
       },
       {
         "place": "Therapist’s office",
         "lines": {
           "0": 4,
-          "39": 1
+          "36": 1
         }
       },
       {
@@ -565,16 +540,15 @@
         "lines": {
           "0": 6,
           "6": 5,
-          "14": 1,
-          "23": 1,
-          "47": 1
+          "21": 1,
+          "44": 1
         }
       },
       {
         "place": "Bedroom",
         "lines": {
           "1": 4,
-          "23": 2
+          "21": 2
         }
       },
       {
@@ -604,7 +578,7 @@
           "1": 4,
           "8": 3,
           "11": 5,
-          "38": 1
+          "35": 1
         }
       },
       {
@@ -623,29 +597,28 @@
           "1": 2,
           "8": 10,
           "11": 12,
-          "42": 1
+          "39": 1
         }
       },
       {
         "place": "Car",
         "lines": {
-          "35": 1
+          "32": 1
         }
       },
       {
         "place": "Bar",
         "lines": {
           "8": 5,
-          "17": 1,
-          "36": 1,
-          "37": 1
+          "33": 1,
+          "34": 1
         }
       },
       {
         "place": "Backstage room",
         "lines": {
           "8": 3,
-          "22": 1
+          "20": 1
         }
       },
       {
@@ -655,7 +628,7 @@
           "1": 1,
           "2": 5,
           "8": 6,
-          "44": 1
+          "41": 1
         }
       },
       {
@@ -665,14 +638,13 @@
           "3": 3,
           "5": 2,
           "7": 3,
-          "14": 1,
-          "33": 1
+          "30": 1
         }
       },
       {
         "place": "Olive tree grove (seville, spain)",
         "lines": {
-          "43": 1
+          "40": 1
         }
       },
       {
@@ -711,8 +683,7 @@
         "place": "Small home",
         "lines": {
           "1": 2,
-          "25": 1,
-          "27": 1
+          "24": 1
         }
       },
       {
@@ -728,7 +699,7 @@
         "lines": {
           "3": 2,
           "5": 3,
-          "34": 1
+          "31": 1
         }
       },
       {
@@ -898,7 +869,7 @@
       {
         "place": "Room",
         "lines": {
-          "27": 1
+          "24": 1
         }
       },
       {
@@ -947,10 +918,10 @@
           "4": 2,
           "5": 2,
           "7": 5,
-          "22": 2,
+          "20": 2,
+          "25": 2,
           "28": 2,
-          "31": 2,
-          "48": 1
+          "45": 1
         }
       },
       {
@@ -1074,14 +1045,13 @@
           "1": 1,
           "4": 4,
           "5": 4,
-          "26": 1
+          "23": 1
         }
       },
       {
         "place": "Farmhouse",
         "lines": {
-          "1": 3,
-          "17": 1
+          "1": 3
         }
       },
       {
@@ -1124,8 +1094,7 @@
       {
         "place": "Dorm room",
         "lines": {
-          "1": 1,
-          "14": 1
+          "1": 1
         }
       },
       {
@@ -1133,15 +1102,14 @@
         "lines": {
           "1": 2,
           "7": 1,
-          "25": 1,
-          "26": 1
+          "23": 1
         }
       },
       {
         "place": "Ballroom",
         "lines": {
           "13": 5,
-          "16": 1
+          "15": 1
         }
       },
       {
@@ -1149,8 +1117,7 @@
         "lines": {
           "5": 3,
           "7": 1,
-          "13": 1,
-          "17": 1
+          "13": 1
         }
       },
       {
@@ -1168,18 +1135,18 @@
       },
       "last": {
         "speaker": 13,
-        "line": 782,
+        "line": 768,
         "text": "If we go far enough, there’s love."
       }
     },
     "measures": {
-      "firstWomanLine": 68,
-      "longestWithoutWoman": 67,
+      "firstWomanLine": 65,
+      "longestWithoutWoman": 64,
       "longestWithoutWomanStart": 1,
       "words": {
         "w": 3421,
         "m": 4949,
-        "unknown": 2405
+        "unknown": 2282
       },
       "womenConversations": 9,
       "menConversations": 6,

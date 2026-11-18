@@ -9,13 +9,13 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 12,
-    "numScenesDontPass": 100,
+    "numScenesPass": 11,
+    "numScenesDontPass": 101,
     "numOfFemalesChars": 10,
     "numOfMaleChars": 9,
     "numOfFemalesCharsWithDialogue": 3,
     "numOfMaleCharsWithDialogue": 5,
-    "totalLinesFemaleDialogue": 253,
+    "totalLinesFemaleDialogue": 252,
     "totalLinesMaleDialogue": 308,
     "scenesThatPass": [
       "SONYA: Princess Anastasia - you're late and it's all my fault!\nANASTASIA: Don't worry, Sonya, no one'll notice. . .\nANASTASIA: . . . owwwwwwwww!",
@@ -28,7 +28,7 @@
   "script": {
     "file": "anastasia.txt",
     "layout": "indented",
-    "dialogueLines": 608,
+    "dialogueLines": 606,
     "speakers": [
       {
         "name": "ANYA",
@@ -285,12 +285,6 @@
         "named": false
       },
       {
-        "name": "MUSIC",
-        "lines": 1,
-        "gender": "w",
-        "named": true
-      },
-      {
         "name": "MUSIC BEGINS",
         "lines": 1,
         "gender": null,
@@ -375,12 +369,6 @@
         "named": true
       },
       {
-        "name": "SUPERIMPOSE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "THEIR CABIN",
         "lines": 1,
         "gender": null,
@@ -439,7 +427,7 @@
           "13": 3,
           "18": 2,
           "37": 1,
-          "55": 1
+          "54": 1
         }
       },
       {
@@ -465,8 +453,7 @@
         "lines": {
           "3": 5,
           "7": 2,
-          "23": 1,
-          "56": 1
+          "23": 1
         }
       },
       {
@@ -517,13 +504,13 @@
           "0": 6,
           "11": 1,
           "12": 4,
+          "42": 1,
           "43": 1,
           "44": 1,
           "45": 1,
           "46": 1,
           "47": 1,
-          "48": 1,
-          "49": 1
+          "48": 1
         }
       },
       {
@@ -533,9 +520,9 @@
           "20": 2,
           "21": 2,
           "32": 1,
+          "49": 1,
           "50": 1,
-          "51": 1,
-          "59": 1
+          "57": 1
         }
       },
       {
@@ -577,7 +564,7 @@
           "0": 10,
           "1": 3,
           "4": 3,
-          "52": 1
+          "51": 1
         }
       },
       {
@@ -634,8 +621,7 @@
           "4": 6,
           "5": 1,
           "23": 1,
-          "41": 1,
-          "58": 1
+          "56": 1
         }
       },
       {
@@ -683,7 +669,7 @@
         "lines": {
           "1": 3,
           "4": 4,
-          "61": 1
+          "59": 1
         }
       },
       {
@@ -699,7 +685,7 @@
           "1": 6,
           "4": 4,
           "11": 3,
-          "63": 1
+          "61": 1
         }
       },
       {
@@ -851,8 +837,8 @@
           "14": 3,
           "34": 1,
           "39": 1,
-          "57": 1,
-          "60": 1
+          "55": 1,
+          "58": 1
         }
       },
       {
@@ -877,7 +863,7 @@
         "place": "Wagon",
         "lines": {
           "5": 2,
-          "53": 1
+          "52": 1
         }
       },
       {
@@ -899,7 +885,7 @@
       {
         "place": "Deck",
         "lines": {
-          "54": 1
+          "53": 1
         }
       },
       {
@@ -968,7 +954,7 @@
           "4": 4,
           "24": 1,
           "38": 1,
-          "42": 1
+          "41": 1
         }
       },
       {
@@ -980,7 +966,7 @@
         "lines": {
           "2": 4,
           "5": 3,
-          "62": 1
+          "60": 1
         }
       },
       {
@@ -1164,20 +1150,20 @@
       },
       "last": {
         "speaker": 0,
-        "line": 608,
+        "line": 606,
         "text": "I am home."
       }
     },
     "measures": {
       "firstWomanLine": 1,
       "longestWithoutWoman": 38,
-      "longestWithoutWomanStart": 215,
+      "longestWithoutWomanStart": 213,
       "words": {
-        "w": 2424,
+        "w": 2423,
         "m": 3165,
-        "unknown": 528
+        "unknown": 523
       },
-      "womenConversations": 21,
+      "womenConversations": 20,
       "menConversations": 38,
       "reverseScore": 3
     }

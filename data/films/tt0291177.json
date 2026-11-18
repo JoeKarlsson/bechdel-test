@@ -5,61 +5,132 @@
     "Drama"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 1,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 1,
+    "numScenesDontPass": 0,
     "numOfFemalesChars": 7,
     "numOfMaleChars": 5,
-    "numOfFemalesCharsWithDialogue": 5,
-    "numOfMaleCharsWithDialogue": 4,
-    "totalLinesFemaleDialogue": 33,
-    "totalLinesMaleDialogue": 7,
-    "scenesThatPass": []
+    "numOfFemalesCharsWithDialogue": 9,
+    "numOfMaleCharsWithDialogue": 5,
+    "totalLinesFemaleDialogue": 569,
+    "totalLinesMaleDialogue": 113,
+    "scenesThatPass": [
+      "AINE: Get out of my cell.\nEILEEN: You're going grey.",
+      "EILEEN: Look, come on, let us out.\nMARGARET: Open the door.",
+      "EILEEN: SIGHS\nEILEEN: Gonna have to.\nMARGARET: No.",
+      "EILEEN: Er, yeah. Yeah.\nAINE: All right. I'm coming.\nEILEEN: Well, you have us on twenty- three hour lock-up. We've no access to toilet facilities. What do you expect?",
+      "AINE: SHOUTS\nAINE: No, I will not calm down. Get your hands off me.\nANN BATES: She says she's a Republican prisoner. She doesn't want to be with the O.D.C.'s."
+    ]
   },
   "script": {
     "file": "silent-grace.txt",
     "layout": "indented",
-    "dialogueLines": 216,
+    "dialogueLines": 771,
     "speakers": [
       {
-        "name": "FX",
-        "lines": 69,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "MUSIC",
-        "lines": 66,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "AINE",
-        "lines": 17,
+        "lines": 214,
         "gender": "w",
         "named": true,
         "actor": "Cathleen Bradley"
       },
       {
-        "name": "DIALOGUE",
-        "lines": 14,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "EILEEN",
-        "lines": 7,
+        "lines": 191,
         "gender": "w",
         "named": true,
         "actor": "Orla Brady"
       },
       {
         "name": "GERALDINE",
-        "lines": 6,
+        "lines": 74,
+        "gender": "w",
+        "named": false,
+        "actor": "Dawn Bradfield"
+      },
+      {
+        "name": "CUNNINGHAM",
+        "lines": 53,
+        "gender": "m",
+        "named": true,
+        "actor": "Conor Mullen"
+      },
+      {
+        "name": "MARGARET",
+        "lines": 51,
         "gender": "w",
         "named": true,
-        "actor": "Dawn Bradfield"
+        "actor": "Cara Seymour"
+      },
+      {
+        "name": "FATHER MCGARRY",
+        "lines": 33,
+        "gender": "m",
+        "named": false,
+        "actor": "Rob Newman"
+      },
+      {
+        "name": "MRS QUINN",
+        "lines": 26,
+        "gender": "w",
+        "named": false,
+        "actor": "Carol Moore"
+      },
+      {
+        "name": "MARK",
+        "lines": 17,
+        "gender": "m",
+        "named": false,
+        "actor": "Michael Liebman"
+      },
+      {
+        "name": "SUSAN",
+        "lines": 17,
+        "gender": null,
+        "named": false,
+        "actor": "Abbie Spallen"
+      },
+      {
+        "name": "BONES",
+        "lines": 12,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "PETER",
+        "lines": 9,
+        "gender": "m",
+        "named": false,
+        "actor": "Patrick Bergin"
+      },
+      {
+        "name": "PATSY",
+        "lines": 6,
+        "gender": null,
+        "named": false,
+        "actor": "Dean Pritchard"
+      },
+      {
+        "name": "ROISIN",
+        "lines": 6,
+        "gender": "w",
+        "named": false,
+        "actor": "Maeve Murphy"
+      },
+      {
+        "name": "SOLDIER",
+        "lines": 6,
+        "gender": null,
+        "named": false,
+        "actor": "Christian McCashin"
+      },
+      {
+        "name": "ANN",
+        "lines": 5,
+        "gender": "w",
+        "named": true,
+        "actor": "Sarah Boyd-Wilson"
       },
       {
         "name": "CELL DOOR",
@@ -68,10 +139,30 @@
         "named": false
       },
       {
-        "name": "CHATTER",
-        "lines": 3,
+        "name": "CONOR",
+        "lines": 5,
+        "gender": null,
+        "named": true,
+        "actor": "Colm Ó Maonlaí"
+      },
+      {
+        "name": "FIRST PRISONER",
+        "lines": 4,
         "gender": null,
         "named": false
+      },
+      {
+        "name": "THATCHER",
+        "lines": 4,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "DEFENCE LAWYER",
+        "lines": 3,
+        "gender": null,
+        "named": false,
+        "actor": "Roisin Loughrey"
       },
       {
         "name": "DOOR",
@@ -80,44 +171,36 @@
         "named": false
       },
       {
-        "name": "CUNNINGHAM",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Conor Mullen"
-      },
-      {
-        "name": "FATHER MCGARRY",
-        "lines": 2,
-        "gender": "m",
-        "named": false,
-        "actor": "Rob Newman"
-      },
-      {
-        "name": "MARK",
-        "lines": 2,
-        "gender": "m",
-        "named": false,
-        "actor": "Michael Liebman"
-      },
-      {
-        "name": "MRS QUINN",
-        "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Carol Moore"
-      },
-      {
         "name": "PRISONERS",
-        "lines": 2,
+        "lines": 3,
         "gender": null,
         "named": false
+      },
+      {
+        "name": "WARDER",
+        "lines": 3,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "MARIE",
+        "lines": 2,
+        "gender": null,
+        "named": false,
+        "actor": "Nessa Millet"
       },
       {
         "name": "SCREAMS",
         "lines": 2,
         "gender": null,
         "named": false
+      },
+      {
+        "name": "ANN BATES",
+        "lines": 1,
+        "gender": "w",
+        "named": true,
+        "actor": "Sarah Boyd-Wilson"
       },
       {
         "name": "B.G. SHOUTS",
@@ -138,13 +221,20 @@
         "named": false
       },
       {
-        "name": "FLAMES",
+        "name": "CLERK",
         "lines": 1,
         "gender": null,
         "named": false
       },
       {
-        "name": "FOLLOWING DIALOGUE",
+        "name": "DR CARSON",
+        "lines": 1,
+        "gender": null,
+        "named": false,
+        "actor": "Robbie Fry"
+      },
+      {
+        "name": "FLAMES",
         "lines": 1,
         "gender": null,
         "named": false
@@ -156,7 +246,7 @@
         "named": false
       },
       {
-        "name": "HEAVILY",
+        "name": "JUDGE",
         "lines": 1,
         "gender": null,
         "named": false
@@ -168,30 +258,34 @@
         "named": false
       },
       {
-        "name": "MARGARET",
+        "name": "MARGARET/GERALDINE",
         "lines": 1,
         "gender": "w",
-        "named": true,
-        "actor": "Cara Seymour"
+        "named": true
       },
       {
-        "name": "NIO",
+        "name": "NEWSREADER",
         "lines": 1,
         "gender": null,
         "named": false
       },
       {
-        "name": "NORTHERN IRELAND 1980",
+        "name": "PRISON WARDER",
         "lines": 1,
         "gender": null,
         "named": false
       },
       {
-        "name": "PETER",
+        "name": "PRISONER",
         "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Patrick Bergin"
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "SECOND PRISONER",
+        "lines": 1,
+        "gender": null,
+        "named": false
       },
       {
         "name": "SINGING",
@@ -200,9 +294,9 @@
         "named": false
       },
       {
-        "name": "UNDER",
+        "name": "SUSAN/MARK",
         "lines": 1,
-        "gender": null,
+        "gender": "m",
         "named": false
       }
     ],
@@ -210,54 +304,75 @@
       {
         "place": null,
         "lines": {
-          "0": 69,
-          "1": 66,
-          "2": 17,
-          "3": 14,
-          "4": 7,
-          "5": 6,
-          "6": 5,
-          "7": 3,
-          "8": 3,
-          "9": 2,
-          "10": 2,
-          "11": 2,
-          "12": 2,
-          "13": 2,
-          "14": 2,
-          "15": 1,
-          "16": 1,
-          "17": 1,
-          "18": 1,
-          "19": 1,
-          "20": 1,
-          "21": 1,
-          "22": 1,
-          "23": 1,
-          "24": 1,
+          "0": 214,
+          "1": 191,
+          "2": 74,
+          "3": 53,
+          "4": 51,
+          "5": 33,
+          "6": 26,
+          "7": 17,
+          "8": 17,
+          "9": 12,
+          "10": 9,
+          "11": 6,
+          "12": 6,
+          "13": 6,
+          "14": 5,
+          "15": 5,
+          "16": 5,
+          "17": 4,
+          "18": 4,
+          "19": 3,
+          "20": 3,
+          "21": 3,
+          "22": 3,
+          "23": 2,
+          "24": 2,
           "25": 1,
           "26": 1,
           "27": 1,
-          "28": 1
+          "28": 1,
+          "29": 1,
+          "30": 1,
+          "31": 1,
+          "32": 1,
+          "33": 1,
+          "34": 1,
+          "35": 1,
+          "36": 1,
+          "37": 1,
+          "38": 1,
+          "39": 1,
+          "40": 1,
+          "41": 1
         }
       }
     ],
     "bookends": {
-      "first": null,
-      "last": null
+      "first": {
+        "speaker": 18,
+        "line": 1,
+        "text": "There can be no question of political status for someone who is serving a sentence for crime."
+      },
+      "last": {
+        "speaker": 6,
+        "line": 770,
+        "text": "You are a torture to me."
+      }
     },
     "measures": {
-      "firstWomanLine": 22,
-      "longestWithoutWoman": 25,
-      "longestWithoutWomanStart": 99,
+      "firstWomanLine": 2,
+      "longestWithoutWoman": 13,
+      "longestWithoutWomanStart": 612,
       "words": {
-        "w": 36,
-        "m": 15,
-        "unknown": 635
+        "w": 4311,
+        "m": 929,
+        "unknown": 473
       },
-      "womenConversations": 0,
+      "womenConversations": 35,
       "menConversations": 0,
-      "reverseScore": 1
+      "reverseScore": 0
     }
   },
   "images": {

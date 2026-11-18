@@ -5,24 +5,22 @@
     "Drama"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 151,
+    "pass": false,
+    "bechdelScore": 2,
+    "numScenesPass": 0,
+    "numScenesDontPass": 152,
     "numOfFemalesChars": 8,
     "numOfMaleChars": 7,
-    "numOfFemalesCharsWithDialogue": 6,
+    "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 7,
     "totalLinesFemaleDialogue": 110,
     "totalLinesMaleDialogue": 473,
-    "scenesThatPass": [
-      "CAROL: What’re you looking at?\nVIV: Let’s get back in bed, Mom."
-    ]
+    "scenesThatPass": []
   },
   "script": {
     "file": "cmon-cmon-2021.txt",
     "layout": "indented",
-    "dialogueLines": 614,
+    "dialogueLines": 613,
     "speakers": [
       {
         "name": "JOHNNY",
@@ -40,7 +38,7 @@
       },
       {
         "name": "VIV",
-        "lines": 96,
+        "lines": 97,
         "gender": "w",
         "named": true,
         "actor": "Gaby Hoffmann"
@@ -236,12 +234,6 @@
         "actor": "Scoot McNairy"
       },
       {
-        "name": "REVEAL",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "ROXEANNE",
         "lines": 1,
         "gender": null,
@@ -252,13 +244,6 @@
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "VIV V.O",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Gaby Hoffmann"
       },
       {
         "name": "WAITRESS",
@@ -403,8 +388,7 @@
         "place": "Carol’s house",
         "lines": {
           "2": 1,
-          "6": 4,
-          "33": 1
+          "6": 4
         }
       },
       {
@@ -572,7 +556,7 @@
           "4": 1,
           "9": 2,
           "17": 1,
-          "34": 1
+          "33": 1
         }
       },
       {
@@ -658,8 +642,8 @@
         "lines": {
           "0": 11,
           "1": 4,
-          "35": 1,
-          "38": 1
+          "34": 1,
+          "36": 1
         }
       },
       {
@@ -753,7 +737,7 @@
         "lines": {
           "0": 11,
           "1": 11,
-          "37": 1
+          "35": 1
         }
       },
       {
@@ -763,8 +747,8 @@
       {
         "place": "Ext paul’s house",
         "lines": {
-          "30": 1,
-          "36": 1
+          "2": 1,
+          "30": 1
         }
       },
       {
@@ -1201,18 +1185,18 @@
       },
       "last": {
         "speaker": 0,
-        "line": 614,
+        "line": 613,
         "text": "...and I said I hope you do..."
       }
     },
     "measures": {
       "firstWomanLine": 5,
       "longestWithoutWoman": 54,
-      "longestWithoutWomanStart": 403,
+      "longestWithoutWomanStart": 402,
       "words": {
         "w": 1633,
         "m": 4727,
-        "unknown": 593
+        "unknown": 566
       },
       "womenConversations": 1,
       "menConversations": 45,

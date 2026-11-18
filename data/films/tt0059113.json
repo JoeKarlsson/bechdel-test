@@ -7,19 +7,17 @@
     "War"
   ],
   "bechdelResults": {
-    "pass": true,
-    "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 147,
+    "pass": false,
+    "bechdelScore": 2,
+    "numScenesPass": 0,
+    "numScenesDontPass": 148,
     "numOfFemalesChars": 13,
     "numOfMaleChars": 26,
-    "numOfFemalesCharsWithDialogue": 9,
-    "numOfMaleCharsWithDialogue": 19,
+    "numOfFemalesCharsWithDialogue": 8,
+    "numOfMaleCharsWithDialogue": 17,
     "totalLinesFemaleDialogue": 190,
     "totalLinesMaleDialogue": 437,
-    "scenesThatPass": [
-      "LARA -: What are you thinking about?\nLARA: Now 1ou're thinking."
-    ]
+    "scenesThatPass": []
   },
   "script": {
     "file": "doctor-zhivago-1965.txt",
@@ -35,7 +33,7 @@
       },
       {
         "name": "LARA",
-        "lines": 105,
+        "lines": 107,
         "gender": "w",
         "named": true,
         "actor": "Julie Christie"
@@ -63,7 +61,7 @@
       },
       {
         "name": "YEVGRAF",
-        "lines": 30,
+        "lines": 31,
         "gender": "m",
         "named": true,
         "actor": "Alec Guinness"
@@ -91,7 +89,7 @@
       },
       {
         "name": "KOSTOYED",
-        "lines": 11,
+        "lines": 12,
         "gender": "m",
         "named": true,
         "actor": "Robert Rietti"
@@ -263,13 +261,6 @@
         "lines": 2,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "LARA -",
-        "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Julie Christie"
       },
       {
         "name": "OLD SOLDIER",
@@ -453,13 +444,6 @@
         "named": false
       },
       {
-        "name": "KOSTOYED -",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Robert Rietti"
-      },
-      {
         "name": "LAF.A",
         "lines": 1,
         "gender": null,
@@ -607,7 +591,7 @@
         "named": false
       },
       {
-        "name": "STATION MASTER . .",
+        "name": "STATION MASTER .",
         "lines": 1,
         "gender": "m",
         "named": true
@@ -697,13 +681,6 @@
         "named": true
       },
       {
-        "name": "YEVGRAF.",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Alec Guinness"
-      },
-      {
         "name": "YEVGRAF'",
         "lines": 1,
         "gender": "m",
@@ -742,14 +719,14 @@
           "5": 2,
           "27": 2,
           "28": 1,
-          "59": 1,
-          "94": 1,
-          "95": 1,
-          "98": 1,
-          "104": 1,
-          "105": 1,
-          "109": 1,
-          "110": 1
+          "58": 1,
+          "92": 1,
+          "93": 1,
+          "96": 1,
+          "102": 1,
+          "103": 1,
+          "106": 1,
+          "107": 1
         }
       },
       {
@@ -758,8 +735,8 @@
           "0": 7,
           "6": 2,
           "8": 3,
-          "39": 2,
-          "47": 1
+          "38": 2,
+          "46": 1
         }
       },
       {
@@ -770,25 +747,24 @@
         "place": "Erior monastery cell           studio        night",
         "lines": {
           "5": 1,
-          "97": 1
+          "95": 1
         }
       },
       {
         "place": "Erior rail!\"ay            location         su~1'er       day",
         "lines": {
           "0": 8,
-          "1": 4,
+          "1": 5,
           "3": 9,
           "7": 2,
           "8": 2,
           "19": 1,
-          "36": 1,
-          "38": 2,
-          "50": 1,
-          "52": 1,
-          "56": 1,
-          "70": 1,
-          "103": 1
+          "37": 2,
+          "49": 1,
+          "51": 1,
+          "55": 1,
+          "68": 1,
+          "101": 1
         }
       },
       {
@@ -797,9 +773,9 @@
           "1": 3,
           "15": 4,
           "22": 3,
-          "64": 1,
-          "68": 1,
-          "69": 1
+          "63": 1,
+          "66": 1,
+          "67": 1
         }
       },
       {
@@ -808,7 +784,7 @@
           "0": 1,
           "6": 1,
           "8": 2,
-          "78": 1
+          "76": 1
         }
       },
       {
@@ -831,11 +807,11 @@
           "2": 1,
           "8": 1,
           "15": 1,
-          "61": 1,
+          "60": 1,
+          "64": 1,
           "65": 1,
-          "66": 1,
-          "73": 1,
-          "74": 1
+          "71": 1,
+          "72": 1
         }
       },
       {
@@ -865,8 +841,8 @@
         "place": "Erior gromeko street . location night winter -",
         "lines": {
           "6": 2,
-          "58": 1,
-          "88": 1
+          "57": 1,
+          "86": 1
         }
       },
       {
@@ -878,8 +854,8 @@
         "lines": {
           "0": 1,
           "8": 1,
-          "93": 1,
-          "100": 1
+          "91": 1,
+          "98": 1
         }
       },
       {
@@ -889,9 +865,9 @@
           "2": 7,
           "3": 5,
           "23": 1,
-          "83": 1,
-          "96": 1,
-          "101": 1
+          "81": 1,
+          "94": 1,
+          "99": 1
         }
       },
       {
@@ -921,7 +897,7 @@
         "lines": {
           "0": 4,
           "7": 3,
-          "77": 1
+          "75": 1
         }
       },
       {
@@ -931,15 +907,15 @@
           "2": 13,
           "3": 5,
           "23": 2,
-          "63": 1
+          "62": 1
         }
       },
       {
         "place": "Erior hallway komarovsky's apartment                     studio",
         "lines": {
-          "60": 1,
-          "76": 1,
-          "81": 1
+          "59": 1,
+          "74": 1,
+          "79": 1
         }
       },
       {
@@ -950,8 +926,8 @@
           "2": 2,
           "3": 2,
           "20": 3,
-          "72": 1,
-          "84": 1
+          "70": 1,
+          "82": 1
         }
       },
       {
@@ -991,8 +967,8 @@
         "lines": {
           "3": 3,
           "5": 2,
-          "82": 1,
-          "106": 1
+          "80": 1,
+          "104": 1
         }
       },
       {
@@ -1002,9 +978,9 @@
           "13": 4,
           "30": 2,
           "31": 2,
+          "47": 1,
           "48": 1,
-          "49": 1,
-          "54": 1
+          "53": 1
         }
       },
       {
@@ -1021,9 +997,9 @@
           "1": 6,
           "19": 2,
           "29": 1,
-          "37": 1,
-          "85": 1,
-          "112": 1
+          "36": 1,
+          "83": 1,
+          "109": 1
         }
       },
       {
@@ -1042,10 +1018,10 @@
           "19": 1,
           "33": 2,
           "34": 1,
-          "37": 1,
-          "45": 1,
-          "71": 1,
-          "79": 1
+          "36": 1,
+          "44": 1,
+          "69": 1,
+          "77": 1
         }
       },
       {
@@ -1055,7 +1031,7 @@
           "4": 5,
           "6": 2,
           "11": 5,
-          "86": 1
+          "84": 1
         }
       },
       {
@@ -1068,7 +1044,7 @@
         "place": "Erior gromeko soose           studio          night",
         "lines": {
           "6": 1,
-          "75": 1
+          "73": 1
         }
       },
       {
@@ -1080,8 +1056,8 @@
           "6": 1,
           "32": 2,
           "34": 1,
-          "53": 1,
-          "108": 1
+          "52": 1,
+          "105": 1
         }
       },
       {
@@ -1140,7 +1116,7 @@
       {
         "place": "Erior cattle-waggon           . studio     day",
         "lines": {
-          "46": 1
+          "45": 1
         }
       },
       {
@@ -1182,7 +1158,7 @@
       {
         "place": "Erior railway         burnt village location          day",
         "lines": {
-          "102": 1
+          "100": 1
         }
       },
       {
@@ -1207,10 +1183,9 @@
         "place": "Erior cattle-waggon              studio     night",
         "lines": {
           "0": 1,
-          "9": 3,
+          "9": 4,
           "12": 2,
-          "67": 1,
-          "80": 1
+          "78": 1
         }
       },
       {
@@ -1218,8 +1193,8 @@
         "lines": {
           "4": 2,
           "12": 1,
-          "41": 2,
-          "90": 1
+          "40": 2,
+          "88": 1
         }
       },
       {
@@ -1232,7 +1207,7 @@
         "place": "Erior cattle-waggon           studio       day",
         "lines": {
           "0": 1,
-          "91": 1
+          "89": 1
         }
       },
       {
@@ -1240,8 +1215,8 @@
         "lines": {
           "0": 1,
           "17": 3,
-          "87": 1,
-          "89": 1
+          "85": 1,
+          "87": 1
         }
       },
       {
@@ -1258,7 +1233,7 @@
           "0": 4,
           "3": 3,
           "17": 1,
-          "57": 1
+          "56": 1
         }
       },
       {
@@ -1280,7 +1255,7 @@
         "place": "Erior fore5t road           location       spring",
         "lines": {
           "6": 1,
-          "43": 1
+          "42": 1
         }
       },
       {
@@ -1288,8 +1263,8 @@
         "lines": {
           "0": 2,
           "6": 1,
-          "42": 2,
-          "92": 1
+          "41": 2,
+          "90": 1
         }
       },
       {
@@ -1298,7 +1273,7 @@
           "0": 4,
           "4": 1,
           "6": 5,
-          "43": 1
+          "42": 1
         }
       },
       {
@@ -1348,8 +1323,7 @@
       {
         "place": "Erior cornfield.                location.   day      summer",
         "lines": {
-          "1": 1,
-          "36": 1
+          "1": 2
         }
       },
       {
@@ -1384,15 +1358,15 @@
           "10": 6,
           "12": 5,
           "14": 3,
-          "40": 2,
-          "62": 1
+          "39": 2,
+          "61": 1
         }
       },
       {
         "place": "Erior plain          location        day       winter-snow-mist",
         "lines": {
           "14": 1,
-          "55": 1
+          "54": 1
         }
       },
       {
@@ -1450,8 +1424,8 @@
         "place": "Erior yuriatinstation              location         day snowing",
         "lines": {
           "0": 3,
-          "44": 1,
-          "51": 1
+          "43": 1,
+          "50": 1
         }
       },
       {
@@ -1685,12 +1659,11 @@
       {
         "place": "Erior hut           studio        day",
         "lines": {
-          "5": 3,
+          "5": 4,
           "27": 1,
           "28": 1,
-          "99": 1,
-          "107": 1,
-          "111": 1
+          "97": 1,
+          "108": 1
         }
       }
     ],
@@ -1715,8 +1688,8 @@
         "m": 6720,
         "unknown": 1997
       },
-      "womenConversations": 4,
-      "menConversations": 52,
+      "womenConversations": 3,
+      "menConversations": 51,
       "reverseScore": 3
     }
   },

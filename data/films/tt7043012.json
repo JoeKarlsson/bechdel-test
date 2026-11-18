@@ -13,14 +13,14 @@
     "numScenesDontPass": 0,
     "numOfFemalesChars": 28,
     "numOfMaleChars": 47,
-    "numOfFemalesCharsWithDialogue": 17,
-    "numOfMaleCharsWithDialogue": 20,
+    "numOfFemalesCharsWithDialogue": 8,
+    "numOfMaleCharsWithDialogue": 18,
     "totalLinesFemaleDialogue": 396,
     "totalLinesMaleDialogue": 276,
     "scenesThatPass": [
       "GRETCHEN: You’ re peddling a Wolfson knock-off and lecturing me on playing it safe?\nRHODORA: Your website doesn’t give a sense of scale or texture but seeing your work for the first time today at the new artists fair I had that oh-my…",
-      "COCO/INTO PHONE: Haze Gallery please hold ... Haze Gallery Please hold ... Haze Gallery please hold--\nRHODORA/OVERHEARD ON PHONE: You’re sure it’s the same Dease?",
-      "RHODORA/OVER PHONE: Send them over and wash your hands of it. And double your bill.\nCOCO/INTO PHONE: Haze Gallery, can I help you?",
+      "COCO: Haze Gallery please hold ... Haze Gallery Please hold ... Haze Gallery please hold--\nRHODORA/OVERHEARD ON PHONE: You’re sure it’s the same Dease?",
+      "RHODORA: Send them over and wash your hands of it. And double your bill.\nCOCO: Haze Gallery, can I help you?",
       "GRETCHEN: I want them exhibited ASAP. Main hall, new wing, event marketing.\nMUSEUM CURATING WOMAN: You know we have a process Gretchen.\nGRETCHEN: I had a glorious concept to support my former employer and supposedly premier contemporary art museum in Los Angeles with the first showing …",
       "RHODORA: Don’t try to tart this up or I’1l bar the rights for all Dease images and repros. Wouldn’t be much of a book then would it?\nRHODORA: Your girl’s got the hots for artists.\nJOSEPHINA: Jesus did you take Viagra or something?"
     ]
@@ -31,39 +31,46 @@
     "dialogueLines": 747,
     "speakers": [
       {
-        "name": "MORF",
-        "lines": 141,
-        "gender": "m",
-        "named": true,
-        "actor": "Jake Gyllenhaal"
-      },
-      {
         "name": "RHODORA",
-        "lines": 129,
+        "lines": 157,
         "gender": "w",
         "named": true,
         "actor": "Rene Russo"
       },
       {
+        "name": "MORF",
+        "lines": 150,
+        "gender": "m",
+        "named": true,
+        "actor": "Jake Gyllenhaal"
+      },
+      {
         "name": "JOSEPHINA",
-        "lines": 120,
+        "lines": 138,
         "gender": "w",
         "named": true,
         "actor": "Zawe Ashton"
       },
       {
         "name": "GRETCHEN",
-        "lines": 44,
+        "lines": 52,
         "gender": "w",
         "named": true,
         "actor": "Toni Collette"
       },
       {
         "name": "COCO",
-        "lines": 27,
+        "lines": 30,
         "gender": "w",
         "named": true,
         "actor": "Natalia Dyer"
+      },
+      {
+        "name": "JON",
+        "lines": 27,
+        "gender": null,
+        "named": true,
+        "actor": "Tom Sturridge"
       },
       {
         "name": "DAMRISH",
@@ -73,13 +80,6 @@
         "actor": "Daveed Diggs"
       },
       {
-        "name": "JON",
-        "lines": 23,
-        "gender": null,
-        "named": true,
-        "actor": "Tom Sturridge"
-      },
-      {
         "name": "PIERS",
         "lines": 16,
         "gender": "m",
@@ -87,11 +87,10 @@
         "actor": "John Malkovich"
       },
       {
-        "name": "RHODORA/INTO PHONE",
-        "lines": 14,
-        "gender": "w",
-        "named": true,
-        "actor": "Rene Russo"
+        "name": "MAN",
+        "lines": 12,
+        "gender": "m",
+        "named": false
       },
       {
         "name": "JON DONDON",
@@ -101,27 +100,14 @@
         "actor": "Tom Sturridge"
       },
       {
-        "name": "MAN",
-        "lines": 11,
-        "gender": "m",
-        "named": false
-      },
-      {
-        "name": "RHODORA/OVER PHONE",
-        "lines": 10,
-        "gender": "w",
-        "named": true,
-        "actor": "Rene Russo"
-      },
-      {
-        "name": "VOICE",
+        "name": "ARCHIVIST",
         "lines": 10,
         "gender": null,
         "named": false
       },
       {
-        "name": "ARCHIVIST",
-        "lines": 9,
+        "name": "VOICE",
+        "lines": 10,
         "gender": null,
         "named": false
       },
@@ -147,45 +133,10 @@
         "actor": "Darren Richardson"
       },
       {
-        "name": "JOSEPHINA/INTO PHONE",
-        "lines": 7,
-        "gender": "w",
-        "named": true,
-        "actor": "Zawe Ashton"
-      },
-      {
-        "name": "MORF/OVER PHONE",
-        "lines": 7,
-        "gender": "m",
-        "named": true,
-        "actor": "Jake Gyllenhaal"
-      },
-      {
-        "name": "JOSEPHINA/OVER PHONE",
-        "lines": 6,
-        "gender": "w",
-        "named": true,
-        "actor": "Zawe Ashton"
-      },
-      {
         "name": "MORE’",
         "lines": 6,
         "gender": "m",
         "named": true
-      },
-      {
-        "name": "GRETCHEN/OVER PHONE",
-        "lines": 5,
-        "gender": "w",
-        "named": true,
-        "actor": "Toni Collette"
-      },
-      {
-        "name": "JOSEPHINA/ON PHONE",
-        "lines": 5,
-        "gender": "w",
-        "named": true,
-        "actor": "Zawe Ashton"
       },
       {
         "name": "DETECTIVE",
@@ -208,13 +159,6 @@
         "named": true
       },
       {
-        "name": "RHODORA/ON PHONE",
-        "lines": 4,
-        "gender": "w",
-        "named": true,
-        "actor": "Rene Russo"
-      },
-      {
         "name": "ADMINISTRATOR",
         "lines": 3,
         "gender": "m",
@@ -222,31 +166,10 @@
         "actor": "David Alan Graf"
       },
       {
-        "name": "COCO/INTO PHONE",
-        "lines": 3,
-        "gender": "w",
-        "named": true,
-        "actor": "Natalia Dyer"
-      },
-      {
         "name": "DOCTOR",
         "lines": 3,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "GRETCHEN/ON PHONE",
-        "lines": 3,
-        "gender": "w",
-        "named": true,
-        "actor": "Toni Collette"
-      },
-      {
-        "name": "JON/ON PHONE",
-        "lines": 3,
-        "gender": null,
-        "named": true,
-        "actor": "Tom Sturridge"
       },
       {
         "name": "MORF'",
@@ -293,6 +216,13 @@
         "lines": 3,
         "gender": "w",
         "named": false
+      },
+      {
+        "name": "ASSISTANT",
+        "lines": 2,
+        "gender": null,
+        "named": true,
+        "actor": "Sydney Lemmon"
       },
       {
         "name": "ATTORNEY #2",
@@ -347,13 +277,6 @@
         "named": true
       },
       {
-        "name": "MORF/ON PHONE",
-        "lines": 2,
-        "gender": "m",
-        "named": true,
-        "actor": "Jake Gyllenhaal"
-      },
-      {
         "name": "MUSEUM CURATING WOMAN",
         "lines": 2,
         "gender": "w",
@@ -386,27 +309,7 @@
         "actor": "Nitya Vidyasagar"
       },
       {
-        "name": "ARCHIVIST/ON PHONE",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "ASSISTANT",
-        "lines": 1,
-        "gender": null,
-        "named": true,
-        "actor": "Sydney Lemmon"
-      },
-      {
         "name": "ASSISTANT/OVER INTERCOM",
-        "lines": 1,
-        "gender": null,
-        "named": true,
-        "actor": "Sydney Lemmon"
-      },
-      {
-        "name": "ASSISTANT/OVER PHONE",
         "lines": 1,
         "gender": null,
         "named": true,
@@ -457,19 +360,6 @@
         "gender": null,
         "named": false,
         "actor": "Tom Sturridge"
-      },
-      {
-        "name": "JON/INTO PHONE",
-        "lines": 1,
-        "gender": null,
-        "named": true,
-        "actor": "Tom Sturridge"
-      },
-      {
-        "name": "MAN V.O",
-        "lines": 1,
-        "gender": "m",
-        "named": false
       },
       {
         "name": "MAN/OVERHEARD ON PHONE",
@@ -529,91 +419,75 @@
       {
         "place": null,
         "lines": {
-          "0": 141,
-          "1": 129,
-          "2": 120,
-          "3": 44,
-          "4": 27,
-          "5": 24,
-          "6": 23,
+          "0": 157,
+          "1": 150,
+          "2": 138,
+          "3": 52,
+          "4": 30,
+          "5": 27,
+          "6": 24,
           "7": 16,
-          "8": 14,
+          "8": 12,
           "9": 11,
-          "10": 11,
+          "10": 10,
           "11": 10,
-          "12": 10,
-          "13": 9,
-          "14": 8,
-          "15": 7,
-          "16": 7,
-          "17": 7,
-          "18": 7,
-          "19": 6,
-          "20": 6,
-          "21": 5,
-          "22": 5,
-          "23": 4,
-          "24": 4,
-          "25": 4,
-          "26": 4,
+          "12": 8,
+          "13": 7,
+          "14": 7,
+          "15": 6,
+          "16": 4,
+          "17": 4,
+          "18": 4,
+          "19": 3,
+          "20": 3,
+          "21": 3,
+          "22": 3,
+          "23": 3,
+          "24": 3,
+          "25": 3,
+          "26": 3,
           "27": 3,
-          "28": 3,
-          "29": 3,
-          "30": 3,
-          "31": 3,
-          "32": 3,
-          "33": 3,
-          "34": 3,
-          "35": 3,
-          "36": 3,
-          "37": 3,
-          "38": 3,
+          "28": 2,
+          "29": 2,
+          "30": 2,
+          "31": 2,
+          "32": 2,
+          "33": 2,
+          "34": 2,
+          "35": 2,
+          "36": 2,
+          "37": 2,
+          "38": 2,
           "39": 2,
           "40": 2,
-          "41": 2,
-          "42": 2,
-          "43": 2,
-          "44": 2,
-          "45": 2,
-          "46": 2,
-          "47": 2,
-          "48": 2,
-          "49": 2,
-          "50": 2,
-          "51": 2,
+          "41": 1,
+          "42": 1,
+          "43": 1,
+          "44": 1,
+          "45": 1,
+          "46": 1,
+          "47": 1,
+          "48": 1,
+          "49": 1,
+          "50": 1,
+          "51": 1,
           "52": 1,
           "53": 1,
           "54": 1,
           "55": 1,
           "56": 1,
-          "57": 1,
-          "58": 1,
-          "59": 1,
-          "60": 1,
-          "61": 1,
-          "62": 1,
-          "63": 1,
-          "64": 1,
-          "65": 1,
-          "66": 1,
-          "67": 1,
-          "68": 1,
-          "69": 1,
-          "70": 1,
-          "71": 1,
-          "72": 1,
-          "73": 1
+          "57": 1
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 22,
+        "speaker": 2,
         "line": 2,
         "text": "Hey ... No, I’m just heading inside. What?"
       },
       "last": {
-        "speaker": 10,
+        "speaker": 8,
         "line": 747,
         "text": "Okay."
       }
@@ -627,7 +501,7 @@
         "m": 3322,
         "unknown": 1052
       },
-      "womenConversations": 29,
+      "womenConversations": 26,
       "menConversations": 12,
       "reverseScore": 3
     }

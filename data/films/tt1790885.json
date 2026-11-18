@@ -16,13 +16,13 @@
     "numOfFemalesCharsWithDialogue": 4,
     "numOfMaleCharsWithDialogue": 30,
     "totalLinesFemaleDialogue": 206,
-    "totalLinesMaleDialogue": 396,
+    "totalLinesMaleDialogue": 283,
     "scenesThatPass": []
   },
   "script": {
     "file": "zero-dark-thirty.txt",
     "layout": "indented",
-    "dialogueLines": 674,
+    "dialogueLines": 643,
     "speakers": [
       {
         "name": "MAYA",
@@ -34,7 +34,7 @@
       {
         "name": "DANIEL",
         "lines": 113,
-        "gender": "m",
+        "gender": null,
         "named": true
       },
       {
@@ -78,12 +78,6 @@
         "gender": "m",
         "named": true,
         "actor": "Chris Pratt"
-      },
-      {
-        "name": "SUPERIMPOSE",
-        "lines": 17,
-        "gender": null,
-        "named": false
       },
       {
         "name": "CIA DIRECTOR",
@@ -183,12 +177,6 @@
         "actor": "Fredric Lehne"
       },
       {
-        "name": "ECU",
-        "lines": 5,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "SABER",
         "lines": 5,
         "gender": "m",
@@ -227,18 +215,6 @@
         "lines": 4,
         "gender": null,
         "named": true
-      },
-      {
-        "name": "TITLE OVER",
-        "lines": 4,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "CU",
-        "lines": 3,
-        "gender": null,
-        "named": false
       },
       {
         "name": "DAVID",
@@ -346,12 +322,6 @@
         "actor": "Jonathan Olley"
       },
       {
-        "name": "CU SCREEN",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "CU TV",
         "lines": 1,
         "gender": null,
@@ -389,16 +359,10 @@
         "named": false
       },
       {
-        "name": "LATER -",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
         "name": "LAUREN",
         "lines": 1,
         "gender": "w",
-        "named": false,
+        "named": true,
         "actor": "Lauren Shaw"
       },
       {
@@ -414,7 +378,7 @@
         "named": true
       },
       {
-        "name": "PASS -",
+        "name": "PASS",
         "lines": 1,
         "gender": null,
         "named": false
@@ -427,7 +391,7 @@
         "actor": "Alan Pietruszewski"
       },
       {
-        "name": "RISK -",
+        "name": "RISK",
         "lines": 1,
         "gender": null,
         "named": false
@@ -455,16 +419,14 @@
         "name": "ZIED",
         "lines": 1,
         "gender": null,
-        "named": false,
+        "named": true,
         "actor": "Eyad Zoubi"
       }
     ],
     "scenes": [
       {
         "place": null,
-        "lines": {
-          "30": 2
-        }
+        "lines": {}
       },
       {
         "place": "Black site",
@@ -484,21 +446,16 @@
         "lines": {
           "0": 1,
           "1": 21,
-          "5": 4,
-          "8": 1
+          "5": 4
         }
       },
       {
         "place": "Islamabad, pakistan",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Diplomatic quarter",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "American embassy cia section",
@@ -525,8 +482,8 @@
           "0": 2,
           "1": 9,
           "2": 8,
-          "15": 4,
-          "16": 4
+          "14": 4,
+          "15": 4
         }
       },
       {
@@ -539,20 +496,16 @@
           "0": 1,
           "1": 21,
           "5": 12,
-          "54": 1
+          "49": 1
         }
       },
       {
         "place": "Khobar towers",
-        "lines": {
-          "23": 1
-        }
+        "lines": {}
       },
       {
         "place": "Khobar towers",
-        "lines": {
-          "30": 1
-        }
+        "lines": {}
       },
       {
         "place": "American embassy cia section",
@@ -560,7 +513,7 @@
           "0": 4,
           "1": 3,
           "2": 4,
-          "49": 1
+          "44": 1
         }
       },
       {
@@ -574,45 +527,44 @@
       {
         "place": "American embassy",
         "lines": {
-          "10": 5,
-          "21": 6,
-          "42": 1
+          "9": 5,
+          "20": 6,
+          "38": 1
         }
       },
       {
         "place": "Research room",
         "lines": {
-          "10": 1,
-          "63": 1
+          "9": 1,
+          "57": 1
         }
       },
       {
         "place": "Research room",
         "lines": {
-          "10": 2,
-          "12": 2
+          "9": 2,
+          "11": 2
         }
       },
       {
         "place": "Research room",
         "lines": {
-          "10": 1,
-          "12": 1,
-          "48": 1
+          "9": 1,
+          "11": 1
         }
       },
       {
         "place": "Research room",
         "lines": {
-          "10": 1,
-          "12": 2
+          "9": 1,
+          "11": 2
         }
       },
       {
         "place": "Research room",
         "lines": {
-          "10": 2,
-          "12": 4
+          "9": 2,
+          "11": 4
         }
       },
       {
@@ -628,15 +580,13 @@
       },
       {
         "place": "Warsaw shipyard",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Frigate",
         "lines": {
           "0": 3,
-          "14": 1
+          "13": 1
         }
       },
       {
@@ -653,10 +603,7 @@
       },
       {
         "place": "Ext. double decker bus",
-        "lines": {
-          "30": 1,
-          "31": 1
-        }
+        "lines": {}
       },
       {
         "place": "American embassy cia section",
@@ -665,21 +612,20 @@
       {
         "place": "Black site",
         "lines": {
-          "45": 1
+          "41": 1
         }
       },
       {
         "place": "Islamabad traffic",
         "lines": {
-          "0": 1,
-          "8": 1
+          "0": 1
         }
       },
       {
         "place": "Pakistani detention area",
         "lines": {
           "0": 9,
-          "18": 8
+          "17": 8
         }
       },
       {
@@ -693,7 +639,7 @@
       {
         "place": "Garden complex",
         "lines": {
-          "62": 1
+          "56": 1
         }
       },
       {
@@ -723,7 +669,7 @@
         "place": "Interrogation room",
         "lines": {
           "0": 9,
-          "19": 7
+          "18": 7
         }
       },
       {
@@ -749,15 +695,14 @@
         "place": "Islamabad",
         "lines": {
           "0": 2,
-          "40": 2
+          "36": 2
         }
       },
       {
         "place": "Marriott hotel restaurant",
         "lines": {
           "0": 7,
-          "2": 10,
-          "8": 1
+          "2": 10
         }
       },
       {
@@ -767,14 +712,12 @@
       {
         "place": "Marriott hotel",
         "lines": {
-          "44": 1
+          "40": 1
         }
       },
       {
         "place": "Mountainous tribal area",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Tribal village hut",
@@ -804,15 +747,13 @@
         "lines": {
           "0": 2,
           "2": 5,
-          "32": 3,
-          "61": 1
+          "28": 3,
+          "55": 1
         }
       },
       {
         "place": "Camp chapman cia compound",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Camp chapman",
@@ -830,26 +771,24 @@
         "place": "Dining area",
         "lines": {
           "2": 3,
-          "38": 1
+          "34": 1
         }
       },
       {
         "place": "Camp chapman cia compound",
         "lines": {
           "2": 5,
-          "8": 1,
-          "25": 1,
-          "38": 1,
-          "55": 1,
-          "56": 1,
-          "65": 1
+          "23": 1,
+          "34": 1,
+          "50": 1,
+          "59": 1
         }
       },
       {
         "place": "Camp chapman",
         "lines": {
           "2": 3,
-          "25": 2
+          "23": 2
         }
       },
       {
@@ -859,7 +798,16 @@
       {
         "place": "Camp chapman",
         "lines": {
-          "0": 1,
+          "0": 1
+        }
+      },
+      {
+        "place": "American embassy",
+        "lines": {}
+      },
+      {
+        "place": "Camp chapman",
+        "lines": {
           "23": 1
         }
       },
@@ -870,19 +818,9 @@
       {
         "place": "Camp chapman",
         "lines": {
-          "25": 1
-        }
-      },
-      {
-        "place": "American embassy",
-        "lines": {}
-      },
-      {
-        "place": "Camp chapman",
-        "lines": {
-          "25": 1,
-          "35": 2,
-          "36": 2
+          "23": 1,
+          "31": 2,
+          "32": 2
         }
       },
       {
@@ -901,9 +839,9 @@
         "place": "Maya's cubicle",
         "lines": {
           "0": 1,
-          "10": 2,
-          "12": 1,
-          "16": 3
+          "9": 2,
+          "11": 1,
+          "15": 3
         }
       },
       {
@@ -922,7 +860,7 @@
         "place": "American embassy cia section",
         "lines": {
           "0": 1,
-          "27": 4
+          "25": 4
         }
       },
       {
@@ -941,15 +879,14 @@
         "place": "Langley, va",
         "lines": {
           "1": 5,
-          "22": 4
+          "21": 4
         }
       },
       {
         "place": "Kuwaiti underground hooker bar",
         "lines": {
           "1": 4,
-          "8": 1,
-          "34": 2
+          "30": 2
         }
       },
       {
@@ -962,21 +899,19 @@
         "place": "Lamborghini dealership",
         "lines": {
           "1": 4,
-          "34": 1,
-          "39": 2
+          "30": 1,
+          "35": 2
         }
       },
       {
         "place": "Server room",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Islamabad embassy",
         "lines": {
           "0": 2,
-          "15": 1
+          "14": 1
         }
       },
       {
@@ -1008,7 +943,7 @@
       {
         "place": "Rawal call center",
         "lines": {
-          "50": 1
+          "45": 1
         }
       },
       {
@@ -1022,7 +957,7 @@
         "place": "American embassy american bar",
         "lines": {
           "0": 1,
-          "15": 2
+          "14": 2
         }
       },
       {
@@ -1043,8 +978,8 @@
         "place": "Minivan",
         "lines": {
           "6": 1,
-          "14": 1,
-          "17": 1
+          "13": 1,
+          "16": 1
         }
       },
       {
@@ -1054,7 +989,7 @@
       {
         "place": "Minivan",
         "lines": {
-          "14": 1
+          "13": 1
         }
       },
       {
@@ -1063,14 +998,12 @@
       },
       {
         "place": "Roads/highway",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Suv",
         "lines": {
-          "47": 1
+          "43": 1
         }
       },
       {
@@ -1093,7 +1026,7 @@
         "place": "U.s. embassy",
         "lines": {
           "0": 1,
-          "15": 2
+          "14": 2
         }
       },
       {
@@ -1130,8 +1063,8 @@
         "place": "Ext larry's minivan",
         "lines": {
           "6": 9,
-          "17": 8,
-          "58": 1
+          "16": 8,
+          "52": 1
         }
       },
       {
@@ -1145,14 +1078,12 @@
         "place": "American embassy cia section",
         "lines": {
           "0": 2,
-          "26": 2
+          "24": 2
         }
       },
       {
         "place": "Grand trunk road",
-        "lines": {
-          "23": 1
-        }
+        "lines": {}
       },
       {
         "place": "Farther down grand truck road/highway",
@@ -1174,7 +1105,7 @@
         "place": "Maya's apartment building",
         "lines": {
           "0": 1,
-          "53": 1
+          "48": 1
         }
       },
       {
@@ -1193,7 +1124,7 @@
         "place": "American embassy station chief's office",
         "lines": {
           "0": 1,
-          "26": 2
+          "24": 2
         }
       },
       {
@@ -1204,8 +1135,7 @@
         "place": "Cia headquarters predator bay",
         "lines": {
           "0": 1,
-          "8": 1,
-          "11": 2
+          "10": 2
         }
       },
       {
@@ -1213,8 +1143,8 @@
         "lines": {
           "0": 3,
           "3": 3,
-          "9": 6,
-          "11": 3
+          "8": 6,
+          "10": 3
         }
       },
       {
@@ -1238,7 +1168,7 @@
       {
         "place": "Cia headquarters",
         "lines": {
-          "11": 1
+          "10": 1
         }
       },
       {
@@ -1249,21 +1179,20 @@
         "place": "Cia headquarters",
         "lines": {
           "0": 7,
-          "11": 8
+          "10": 8
         }
       },
       {
         "place": "White house",
         "lines": {
-          "3": 2,
-          "8": 1
+          "3": 2
         }
       },
       {
         "place": "Compound",
         "lines": {
           "3": 8,
-          "51": 1
+          "46": 1
         }
       },
       {
@@ -1288,16 +1217,15 @@
           "0": 7,
           "3": 2,
           "7": 3,
-          "8": 1,
-          "13": 1,
-          "37": 2
+          "12": 1,
+          "33": 2
         }
       },
       {
         "place": "Cia headquarters",
         "lines": {
           "3": 2,
-          "22": 1
+          "21": 1
         }
       },
       {
@@ -1313,32 +1241,29 @@
           "0": 1,
           "1": 2,
           "3": 1,
-          "9": 4,
-          "16": 1,
-          "22": 1,
-          "33": 3
+          "8": 4,
+          "15": 1,
+          "21": 1,
+          "29": 3
         }
       },
       {
         "place": "Cia headquarters",
         "lines": {
-          "9": 2,
-          "16": 1
+          "8": 2,
+          "15": 1
         }
       },
       {
         "place": "Langely cafeteria",
         "lines": {
           "0": 3,
-          "8": 1,
-          "9": 4
+          "8": 4
         }
       },
       {
         "place": "Jalalabad forward operating base",
-        "lines": {
-          "8": 1
-        }
+        "lines": {}
       },
       {
         "place": "Jalalabad forward operating base",
@@ -1346,7 +1271,7 @@
           "0": 1,
           "3": 2,
           "7": 4,
-          "13": 2
+          "12": 2
         }
       },
       {
@@ -1359,7 +1284,7 @@
         "place": "Jalalabad forward operating base",
         "lines": {
           "0": 4,
-          "14": 3
+          "13": 3
         }
       },
       {
@@ -1369,7 +1294,7 @@
       {
         "place": "Forward operating base jalalabad, afghanistan",
         "lines": {
-          "57": 1
+          "51": 1
         }
       },
       {
@@ -1384,15 +1309,15 @@
         "place": "Prince",
         "lines": {
           "7": 2,
-          "28": 2,
-          "41": 1,
-          "60": 1
+          "26": 2,
+          "37": 1,
+          "54": 1
         }
       },
       {
         "place": "Prince 51 and prince",
         "lines": {
-          "13": 2
+          "12": 2
         }
       },
       {
@@ -1402,7 +1327,7 @@
       {
         "place": "Tora bora mountains",
         "lines": {
-          "59": 1
+          "53": 1
         }
       },
       {
@@ -1416,14 +1341,14 @@
       {
         "place": "Prince",
         "lines": {
-          "20": 1
+          "19": 1
         }
       },
       {
         "place": "Prince",
         "lines": {
-          "20": 1,
-          "46": 1
+          "19": 1,
+          "42": 1
         }
       },
       {
@@ -1433,7 +1358,7 @@
       {
         "place": "Ext stealth blackhawk",
         "lines": {
-          "52": 1
+          "47": 1
         }
       },
       {
@@ -1443,7 +1368,7 @@
       {
         "place": "Prince",
         "lines": {
-          "20": 1
+          "19": 1
         }
       },
       {
@@ -1453,27 +1378,22 @@
       {
         "place": "Ext. stealth blackhawk helicopter prince",
         "lines": {
-          "13": 1
+          "12": 1
         }
       },
       {
         "place": "Prince",
         "lines": {
-          "31": 1,
-          "41": 1
+          "37": 1
         }
       },
       {
         "place": "Compound",
-        "lines": {
-          "23": 1
-        }
+        "lines": {}
       },
       {
         "place": "Prince",
-        "lines": {
-          "23": 1
-        }
+        "lines": {}
       },
       {
         "place": "Compound",
@@ -1514,7 +1434,7 @@
       {
         "place": "Guest house",
         "lines": {
-          "28": 1
+          "26": 1
         }
       },
       {
@@ -1528,8 +1448,8 @@
       {
         "place": "Compound walls outside main gate",
         "lines": {
-          "24": 1,
-          "29": 1
+          "22": 1,
+          "27": 1
         }
       },
       {
@@ -1554,21 +1474,21 @@
         "place": "Main house",
         "lines": {
           "7": 2,
-          "43": 1
+          "39": 1
         }
       },
       {
         "place": "Main house",
         "lines": {
           "7": 3,
-          "13": 3
+          "12": 3
         }
       },
       {
         "place": "Main house",
         "lines": {
           "7": 1,
-          "29": 1
+          "27": 1
         }
       },
       {
@@ -1584,7 +1504,7 @@
       {
         "place": "Main house",
         "lines": {
-          "24": 2
+          "22": 2
         }
       },
       {
@@ -1594,8 +1514,8 @@
       {
         "place": "Compound",
         "lines": {
-          "14": 3,
-          "29": 2
+          "13": 3,
+          "27": 2
         }
       },
       {
@@ -1609,7 +1529,7 @@
       {
         "place": "Main house second to third floor stairway",
         "lines": {
-          "24": 1
+          "22": 1
         }
       },
       {
@@ -1619,9 +1539,9 @@
       {
         "place": "Main house",
         "lines": {
-          "13": 1,
-          "28": 1,
-          "64": 1
+          "12": 1,
+          "26": 1,
+          "58": 1
         }
       },
       {
@@ -1650,7 +1570,7 @@
         "place": "Main house",
         "lines": {
           "7": 1,
-          "24": 1
+          "22": 1
         }
       },
       {
@@ -1741,9 +1661,7 @@
       },
       {
         "place": "Hangar",
-        "lines": {
-          "31": 1
-        }
+        "lines": {}
       },
       {
         "place": "Jalalabad airstrip",
@@ -1753,33 +1671,33 @@
         "place": "C-",
         "lines": {
           "0": 1,
-          "20": 4
+          "19": 4
         }
       }
     ],
     "bookends": {
       "first": {
         "speaker": 1,
-        "line": 3,
+        "line": 1,
         "text": "I own you, Ammar. You belong to me. Look at me."
       },
       "last": {
-        "speaker": 20,
-        "line": 674,
+        "speaker": 19,
+        "line": 643,
         "text": "Where do you want to go? She's speechless. Overwhelmed. Finally, she lets go. Those luminous eyes become pools of relief and pain."
       }
     },
     "measures": {
-      "firstWomanLine": 7,
-      "longestWithoutWoman": 45,
-      "longestWithoutWomanStart": 617,
+      "firstWomanLine": 5,
+      "longestWithoutWoman": 42,
+      "longestWithoutWomanStart": 590,
       "words": {
         "w": 3288,
-        "m": 6114,
-        "unknown": 1209
+        "m": 4211,
+        "unknown": 2456
       },
-      "womenConversations": 7,
-      "menConversations": 35,
+      "womenConversations": 8,
+      "menConversations": 18,
       "reverseScore": 3
     }
   },

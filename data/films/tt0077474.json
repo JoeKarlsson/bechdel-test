@@ -9,23 +9,22 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 2,
-    "numScenesDontPass": 7,
+    "numScenesPass": 1,
+    "numScenesDontPass": 8,
     "numOfFemalesChars": 4,
     "numOfMaleChars": 17,
-    "numOfFemalesCharsWithDialogue": 12,
-    "numOfMaleCharsWithDialogue": 23,
+    "numOfFemalesCharsWithDialogue": 10,
+    "numOfMaleCharsWithDialogue": 22,
     "totalLinesFemaleDialogue": 88,
     "totalLinesMaleDialogue": 365,
     "scenesThatPass": [
-      "CONNECTION -: All straight about tonight. j PLAYER I just welk outside and take & look,\nCONNECTION: Whoever you see, you say it was somebody else.\nPLAYER: If anybody asks.\nCONNECTION: If anybody asks. Chances are nobody will.",
-      "PLAYER -: You don't ever fool anybody, do you.\nPLAYER: About being a cop. People could spot you a mile off."
+      "CONNECTION: All straight about tonight. j PLAYER I just welk outside and take & look,\nCONNECTION: Whoever you see, you say it was somebody else.\nPLAYER: If anybody asks.\nCONNECTION: If anybody asks. Chances are nobody will."
     ]
   },
   "script": {
     "file": "the-driver-1978.txt",
     "layout": "indented",
-    "dialogueLines": 496,
+    "dialogueLines": 494,
     "speakers": [
       {
         "name": "DETECTIVE",
@@ -35,14 +34,14 @@
       },
       {
         "name": "DRIVER",
-        "lines": 104,
+        "lines": 105,
         "gender": "m",
         "named": true,
         "actor": "Steve Moriarty"
       },
       {
         "name": "PLAYER",
-        "lines": 52,
+        "lines": 54,
         "gender": "w",
         "named": true,
         "actor": "Isabelle Adjani"
@@ -90,7 +89,7 @@
       },
       {
         "name": "CONNECTION",
-        "lines": 5,
+        "lines": 6,
         "gender": "w",
         "named": true,
         "actor": "Ronee Blakley"
@@ -141,12 +140,6 @@
         "actor": "Peter Jason"
       },
       {
-        "name": "CUT TO",
-        "lines": 2,
-        "gender": null,
-        "named": true
-      },
-      {
         "name": "FIRST PATRON",
         "lines": 2,
         "gender": "m",
@@ -161,11 +154,10 @@
         "actor": "Bob Minor"
       },
       {
-        "name": "PLAYER -",
+        "name": "OUT",
         "lines": 2,
-        "gender": "w",
-        "named": true,
-        "actor": "Isabelle Adjani"
+        "gender": null,
+        "named": false
       },
       {
         "name": "SECOND PATRON",
@@ -194,13 +186,6 @@
         "actor": "Ronee Blakley"
       },
       {
-        "name": "CONNECTION -",
-        "lines": 1,
-        "gender": "w",
-        "named": true,
-        "actor": "Ronee Blakley"
-      },
-      {
         "name": "DET VER",
         "lines": 1,
         "gender": null,
@@ -223,13 +208,6 @@
         "lines": 1,
         "gender": null,
         "named": false
-      },
-      {
-        "name": "DRIVER -",
-        "lines": 1,
-        "gender": "m",
-        "named": true,
-        "actor": "Steve Moriarty"
       },
       {
         "name": "EETH",
@@ -283,18 +261,6 @@
         "gender": "w",
         "named": true,
         "actor": "Ronee Blakley"
-      },
-      {
-        "name": "OUT",
-        "lines": 1,
-        "gender": null,
-        "named": false
-      },
-      {
-        "name": "OUT -",
-        "lines": 1,
-        "gender": null,
-        "named": false
       },
       {
         "name": "PASSENGER",
@@ -425,33 +391,30 @@
           "0": 3,
           "2": 2,
           "6": 1,
-          "9": 5,
-          "17": 1,
-          "25": 1,
-          "34": 1,
-          "53": 1,
-          "55": 1
+          "9": 6,
+          "31": 1,
+          "48": 1,
+          "50": 1
         }
       },
       {
         "place": "Street",
         "lines": {
           "0": 27,
-          "1": 10,
+          "1": 11,
           "2": 14,
           "6": 5,
           "8": 2,
           "12": 3,
           "14": 1,
           "15": 2,
+          "17": 2,
           "18": 2,
-          "19": 2,
-          "21": 2,
+          "19": 1,
+          "20": 2,
+          "24": 1,
           "26": 1,
-          "28": 1,
-          "30": 1,
-          "40": 1,
-          "43": 1
+          "38": 1
         }
       },
       {
@@ -459,7 +422,7 @@
         "lines": {
           "0": 78,
           "1": 58,
-          "2": 20,
+          "2": 22,
           "3": 34,
           "4": 23,
           "5": 6,
@@ -470,21 +433,20 @@
           "11": 4,
           "13": 3,
           "14": 2,
-          "20": 2,
-          "22": 1,
+          "19": 1,
+          "21": 1,
+          "25": 1,
           "27": 1,
-          "29": 1,
-          "31": 1,
+          "28": 1,
+          "34": 1,
           "37": 1,
           "39": 1,
+          "40": 1,
           "42": 1,
-          "44": 1,
+          "43": 1,
           "45": 1,
-          "47": 1,
-          "48": 1,
-          "50": 1,
-          "51": 1,
-          "52": 1
+          "46": 1,
+          "47": 1
         }
       },
       {
@@ -498,9 +460,9 @@
           "6": 2,
           "7": 9,
           "8": 1,
-          "35": 1,
-          "46": 1,
-          "58": 1
+          "32": 1,
+          "41": 1,
+          "53": 1
         }
       },
       {
@@ -508,7 +470,7 @@
         "lines": {
           "0": 6,
           "8": 1,
-          "23": 1
+          "22": 1
         }
       },
       {
@@ -519,11 +481,11 @@
           "2": 2,
           "5": 5,
           "8": 1,
-          "24": 1,
-          "32": 1,
-          "33": 1,
-          "38": 1,
-          "56": 1
+          "23": 1,
+          "29": 1,
+          "30": 1,
+          "35": 1,
+          "51": 1
         }
       },
       {
@@ -539,11 +501,11 @@
           "6": 2,
           "10": 1,
           "16": 2,
+          "33": 1,
           "36": 1,
-          "41": 1,
+          "44": 1,
           "49": 1,
-          "54": 1,
-          "57": 1
+          "52": 1
         }
       },
       {
@@ -551,34 +513,33 @@
         "lines": {
           "0": 4,
           "1": 9,
-          "2": 3,
-          "17": 1
+          "2": 3
         }
       }
     ],
     "bookends": {
       "first": {
-        "speaker": 55,
+        "speaker": 50,
         "line": 2,
         "text": "Lives alone."
       },
       "last": {
         "speaker": 1,
-        "line": 496,
+        "line": 494,
         "text": "Take care of yourself."
       }
     },
     "measures": {
       "firstWomanLine": 2,
       "longestWithoutWoman": 99,
-      "longestWithoutWomanStart": 194,
+      "longestWithoutWomanStart": 193,
       "words": {
         "w": 771,
         "m": 3603,
-        "unknown": 564
+        "unknown": 382
       },
-      "womenConversations": 4,
-      "menConversations": 21,
+      "womenConversations": 3,
+      "menConversations": 20,
       "reverseScore": 3
     }
   },
