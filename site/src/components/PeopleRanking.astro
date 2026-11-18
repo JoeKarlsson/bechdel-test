@@ -4,8 +4,10 @@
 import FoldMark from './FoldMark.astro';
 interface Props {
 	people: { name: string; pass: number; films: { slug: string; title: string; year: number | null; pass: boolean }[] }[];
+	/** A link to each person's own page, when they have one */
+	hrefFor?: (name: string) => string;
 }
-const { people } = Astro.props;
+const { people, hrefFor } = Astro.props;
 const named = (f: { title: string; year: number | null }) => (f.year ? `${f.title} (${f.year})` : f.title);
 ---
 
@@ -36,6 +38,7 @@ const named = (f: { title: string; year: number | null }) => (f.year ? `${f.titl
 								{failed.map((f, i) => <>{i > 0 && ', '}<a href={`/films/${f.slug}/`}>{named(f)}</a></>)}
 							</p>
 						)}
+						{hrefFor && <p><a href={hrefFor(p.name)}>All of {p.name}'s films</a></p>}
 					</div>
 				</details>
 			</li>

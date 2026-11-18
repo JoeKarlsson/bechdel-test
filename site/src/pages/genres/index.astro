@@ -1,0 +1,13 @@
+---
+import HubIndex from '../../components/HubIndex.astro';
+import { loadFilms, hubs, HUB_MIN_FILMS } from '../../lib/films.mjs';
+
+const genres = [...hubs(loadFilms()).genres].sort((a, b) => b.pass / b.films.length - a.pass / a.films.length);
+---
+
+<HubIndex
+	title="Genres and the Bechdel test"
+	lead={`How often each genre passes, best first. Most films have more than one genre, so they count in each. Genres with fewer than ${HUB_MIN_FILMS.genre} films are left out.`}
+	description={`Which film genres pass the Bechdel test most often: ${genres.length} genres, each with a page of its films.`}
+	rows={genres.map((g) => ({ ...g, label: g.key }))}
+/>

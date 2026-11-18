@@ -1,12 +1,15 @@
 import type { APIRoute } from 'astro';
-import { loadFilms } from '../lib/films.mjs';
+import { loadFilms, hubs } from '../lib/films.mjs';
 
 // Every indexable page: the 404 page is noindex and stays out
 export const GET: APIRoute = ({ site }) => {
+	const films = loadFilms();
+	const { genres, decades, directors } = hubs(films);
 	const paths: [string, string | null][] = [
-		...['/', '/films/', '/numbers/', '/about/', '/case-study/', '/privacy/'].map((p): [string, null] => [p, null]),
+		...['/', '/films/', '/numbers/', '/about/', '/case-study/', '/privacy/', '/genres/', '/decades/', '/directors/'].map((p): [string, null] => [p, null]),
+		...[...genres, ...decades, ...directors].map((h): [string, null] => [h.href, null]),
 		// A film page changes when its film is analyzed, so that's its lastmod (never the build time)
-		...loadFilms().map((f): [string, string | null] => [`/films/${f.slug}/`, f.added ? f.added.slice(0, 10) : null]),
+		...films.map((f): [string, string | null] => [`/films/${f.slug}/`, f.added ? f.added.slice(0, 10) : null]),
 	];
 	const urls = paths
 		.map(([p, lastmod]) => `  <url><loc>${new URL(p, site).href}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`)

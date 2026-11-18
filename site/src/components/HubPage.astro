@@ -1,0 +1,124 @@
+---
+// One genre, decade or director: the pass rate, the best known films as tapes,
+// and (for big groups) every film as a plain list
+import Base from '../layouts/Base.astro';
+import Tape from './Tape.astro';
+import { loadFilms } from '../lib/films.mjs';
+
+interface Props {
+	hub: { href: string; films: any[]; pass: number; womenLines: number | null };
+	/** "Horror films and the Bechdel test" */
+	title: string;
+	/** Plural noun phrase for sentences: "horror films", "films by Nora Ephron" */
+	noun: string;
+	/** Breadcrumb parent: { name: 'Genres', href: '/genres/' } */
+	parent: { name: string; href: string };
+}
+
+const { hub, title, noun, parent } = Astro.props;
+const TAPES = 24;
+const all = loadFilms();
+const n = (x: number) => x.toLocaleString('en-US');
+const pct = (a: number, b: number) => Math.round((a / b) * 100);
+const shelfRate = pct(all.filter((f) => f.bechdel.pass).length, all.length);
+const total = hub.films.length;
+const share = hub.pass === total ? `All ${n(total)}` : hub.pass === 0 ? `None of the ${n(total)}` : `${n(hub.pass)} of the ${n(total)}`;
+const verdict = `${share} ${noun} on the shelf pass the Bechdel test.`;
+const tapes = hub.films.slice(0, TAPES);
+const aToZ = total > TAPES ? [...hub.films].sort((a, b) => a.title.localeCompare(b.title)) : [];
+const site = Astro.site!;
+const url = new URL(hub.href, site).href;
+const structuredData = {
+	'@graph': [
+		{
+			'@type': 'CollectionPage',
+			'@id': url,
+			url,
+			name: title,
+			description: verdict,
+			isPartOf: { '@type': 'WebSite', name: 'bechdel.io', url: site.href },
+			mainEntity: {
+				'@type': 'ItemList',
+				numberOfItems: total,
+				itemListElement: tapes.map((f, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(`/films/${f.slug}/`, site).href, name: f.title })),
+			},
+		},
+		{
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'bechdel.io', item: site.href },
+				{ '@type': 'ListItem', position: 2, name: parent.name, item: new URL(parent.href, site).href },
+				{ '@type': 'ListItem', position: 3, name: title, item: url },
+			],
+		},
+	],
+};
+---
+
+<Base title={title} description={`${verdict} See each one's score, scene by scene.`} structuredData={structuredData} posters>
+	<div class="page">
+		<h1 class="page-title">{title}</h1>
+		<p class="page-lead">
+			{verdict} That's {pct(hub.pass, total)}%, against {shelfRate}% across the whole shelf.
+			{hub.womenLines !== null && ` In the median one, women have ${Math.round(hub.womenLines * 100)}% of the lines.`}
+		</p>
+
+		<section class="section">
+			<h2 class="section-title">{aToZ.length ? 'Best known' : 'The films'}</h2>
+			<ul class="poster-grid">
+				{tapes.map((f, i) => <Tape film={f} eager={i < 6} />)}
+			</ul>
+		</section>
+
+		{
+			aToZ.length > 0 && (
+				<section class="section">
+					<h2 class="section-title">All {n(total)}, A to Z</h2>
+					<ol class="all">
+						{aToZ.map((f) => (
+							<li>
+								<a href={`/films/${f.slug}/`}>{f.title}</a>
+								{f.year && ` (${f.year})`}, {f.bechdel.score} of 3, <span class:list={['verdict', f.bechdel.pass ? 'pass' : 'fail']}>{f.bechdel.pass ? 'passes' : 'fails'}</span>
+							</li>
+						))}
+					</ol>
+				</section>
+			)
+		}
+
+		<nav class="back" aria-label="More"><a href={parent.href}>All {parent.name.toLowerCase()}</a><a href="/numbers/">The numbers</a></nav>
+	</div>
+</Base>
+
+<style>
+	.all {
+		list-style: none;
+		padding: 0;
+		columns: 3 300px;
+		column-gap: var(--space-6);
+	}
+	.all li {
+		break-inside: avoid;
+		padding: var(--space-1) 0;
+	}
+	.all a {
+		color: var(--chalk);
+	}
+	.verdict.pass {
+		color: var(--pink);
+	}
+	.verdict.fail {
+		color: var(--fail);
+	}
+	.back {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-6);
+		margin-top: var(--section);
+	}
+	.back a {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+</style>

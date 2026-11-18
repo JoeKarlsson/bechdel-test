@@ -9,6 +9,12 @@ export const PAGE_TYPES = {
 	'film compared with its subtitles': '/films/pulp-fiction-1994/',
 	numbers: '/numbers/',
 	'every film': '/films/',
+	genres: '/genres/',
+	'a genre': '/genres/horror/',
+	'a big genre, with its A-to-Z list': '/genres/drama/',
+	'a decade': '/decades/1990s/',
+	directors: '/directors/',
+	'a director': '/directors/greta-gerwig/',
 	about: '/about/',
 	'case study': '/case-study/',
 	privacy: '/privacy/',
@@ -29,6 +35,7 @@ export function shelf(): ShelfFilm[] {
 }
 
 const FILM_PAGE = /^\/films\/[^/]+\/$/;
+const DIRECTOR_PAGE = /^\/directors\/[^/]+\/$/;
 const longestWord = (text: string) => Math.max(0, ...text.split(/\s+/).map((word) => word.length));
 
 /**
@@ -46,5 +53,8 @@ export function layoutSample(): string[] {
 		...pick((f) => longestWord(f.director) + f.director.length / 100, 15),
 		...films.filter((_, i) => i % step === 0),
 	].map((f) => `/films/${f.slug}/`);
-	return [...new Set([...allPages().filter((path) => !FILM_PAGE.test(path)), ...sampled])];
+	// Director pages share one layout: the longest names and an even spread
+	const directors = allPages().filter((path) => DIRECTOR_PAGE.test(path));
+	const directorSample = [...[...directors].sort((a, b) => b.length - a.length).slice(0, 5), ...directors.filter((_, i) => i % 25 === 0)];
+	return [...new Set([...allPages().filter((path) => !FILM_PAGE.test(path) && !DIRECTOR_PAGE.test(path)), ...directorSample, ...sampled])];
 }

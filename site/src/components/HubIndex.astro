@@ -1,0 +1,73 @@
+---
+// The list of genre, decade or director hubs, each with its pass rate as a bar
+import Base from '../layouts/Base.astro';
+
+interface Props {
+	title: string;
+	lead: string;
+	description: string;
+	rows: { label: string; href: string; films: unknown[]; pass: number }[];
+	/** Directors: a plain list in columns instead of bars */
+	plain?: boolean;
+}
+
+const { title, lead, description, rows, plain = false } = Astro.props;
+const n = (x: number) => x.toLocaleString('en-US');
+---
+
+<Base title={title} description={description}>
+	<div class="page">
+		<h1 class="page-title">{title}</h1>
+		<p class="page-lead">{lead}</p>
+		{
+			plain ? (
+				<ul class="names">
+					{rows.map((r) => (
+						<li>
+							<a href={r.href}>{r.label}</a>, {n(r.pass)} of {n(r.films.length)} pass
+						</li>
+					))}
+				</ul>
+			) : (
+				<ul class="hbars wide-labels section">
+					{rows.map((r) => (
+						<li class="hb-row">
+							<a class="hb-label" href={r.href}>{r.label}</a>
+							<span class="hb-track" aria-hidden="true">
+								{r.pass > 0 && <span class="hb-bar" style={`width: ${((r.pass / r.films.length) * 100).toFixed(1)}%`} />}
+							</span>
+							<span class="hb-value">{n(r.pass)} of {n(r.films.length)}</span>
+						</li>
+					))}
+				</ul>
+			)
+		}
+		{!plain && <p class="note">Each bar is the share of that group's films that pass.</p>}
+	</div>
+</Base>
+
+<style>
+	.hb-label {
+		color: var(--chalk);
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+	.hb-label:hover {
+		color: var(--pink);
+	}
+	.names {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--section);
+		columns: 3 300px;
+		column-gap: var(--space-6);
+	}
+	.names li {
+		break-inside: avoid;
+		padding: var(--space-1) 0;
+	}
+	.names a {
+		color: var(--chalk);
+	}
+</style>

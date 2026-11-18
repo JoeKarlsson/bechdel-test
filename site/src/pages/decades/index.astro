@@ -1,0 +1,13 @@
+---
+import HubIndex from '../../components/HubIndex.astro';
+import { loadFilms, hubs } from '../../lib/films.mjs';
+
+const decades = hubs(loadFilms()).decades;
+---
+
+<HubIndex
+	title="Decades and the Bechdel test"
+	lead="How often films from each decade pass. Few films before 1980 are on the shelf, so read those rows loosely."
+	description={`How often films pass the Bechdel test, decade by decade, from the ${decades[0].key}s to the ${decades.at(-1)!.key}s.`}
+	rows={decades.map((d) => ({ ...d, label: `${d.key}s` }))}
+/>

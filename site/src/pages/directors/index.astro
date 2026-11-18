@@ -1,0 +1,16 @@
+---
+import HubIndex from '../../components/HubIndex.astro';
+import { loadFilms, hubs, HUB_MIN_FILMS } from '../../lib/films.mjs';
+
+// By surname: "Kathryn Bigelow" files under B
+const surname = (name: string) => name.split(' ').at(-1)!;
+const directors = [...hubs(loadFilms()).directors].sort((a, b) => surname(a.key).localeCompare(surname(b.key)) || a.key.localeCompare(b.key));
+---
+
+<HubIndex
+	title="Directors and the Bechdel test"
+	lead={`Every director with ${HUB_MIN_FILMS.director} or more films on the shelf, by surname, with how many of their films pass.`}
+	description={`How often films by ${directors.length} directors pass the Bechdel test, each with a page of their films.`}
+	rows={directors.map((d) => ({ ...d, label: d.key }))}
+	plain
+/>
