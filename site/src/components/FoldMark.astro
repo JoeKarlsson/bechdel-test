@@ -15,9 +15,9 @@
 	.fold-mark > span {
 		grid-area: 1 / 1;
 		transition:
-			opacity 150ms ease-out,
-			scale 150ms ease-out,
-			filter 150ms ease-out;
+			opacity 150ms var(--ease-enter),
+			scale 150ms var(--ease-enter),
+			filter 150ms var(--ease-enter);
 	}
 	.fold-mark > span:last-child,
 	:global(:is(details[open] > summary, [aria-expanded='true'])) .fold-mark > span:first-child {
@@ -32,7 +32,7 @@
 	}
 	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
 		.fold-mark > span {
-			transition: opacity 150ms ease-out !important;
+			transition: opacity 150ms var(--ease-enter) !important;
 			scale: 1 !important;
 			filter: none !important;
 		}

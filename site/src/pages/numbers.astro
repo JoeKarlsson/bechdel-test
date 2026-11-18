@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import YearChart from '../components/YearChart.astro';
 import PeopleRanking from '../components/PeopleRanking.astro';
 import Tape from '../components/Tape.astro';
+import FoldMark from '../components/FoldMark.astro';
 import { loadFilms, shelfStats, peopleRanking } from '../lib/films.mjs';
 
 const films = loadFilms();
@@ -175,6 +176,7 @@ const CONTENTS = [
 	title="The shelf in numbers"
 	description={`All ${n(s.films)} films on the shelf, counted: pass rates by year, genre, director and star, who gets heard, who made the films, and what they earned.`}
 	nav="numbers"
+	posters
 >
 	<div class="page">
 		<h1 class="page-title">The shelf in numbers</h1>
@@ -208,8 +210,10 @@ const CONTENTS = [
 				left out.
 			</p>
 			<details class="table-view">
-				<summary>The numbers by year</summary>
+				<summary>The numbers by year<FoldMark /></summary>
+				<div class="table-scroll">
 				<table>
+					<caption class="sr-only">Films and passes by year</caption>
 					<thead>
 						<tr><th scope="col">Year</th><th scope="col">Films</th><th scope="col">Pass</th><th scope="col">Women's lines</th></tr>
 					</thead>
@@ -219,6 +223,7 @@ const CONTENTS = [
 						))}
 					</tbody>
 				</table>
+				</div>
 			</details>
 		</section>
 
@@ -385,7 +390,7 @@ const CONTENTS = [
 							</ul>
 							{list.length > SHELF_ROW && (
 								<details class="table-view">
-									<summary>All {n(list.length)} films</summary>
+									<summary>All {n(list.length)} films<FoldMark /></summary>
 									<ul class="film-list">
 										{[...list].sort((a, b) => a.title.localeCompare(b.title)).map((f) => <li><a href={`/films/${f.slug}/`}>{f.title}</a> ({f.year})</li>)}
 									</ul>
@@ -658,7 +663,6 @@ const CONTENTS = [
 	}
 	.flow-values {
 		margin: var(--space-1) 0 0;
-		font-variant-numeric: tabular-nums;
 	}
 	/* How much of the script is heard: ten columns, 0-100% */
 	.columns {
@@ -691,7 +695,8 @@ const CONTENTS = [
 	}
 	h3 {
 		font-size: clamp(1.5rem, 3vw, 1.875rem);
-		margin-bottom: var(--space-3);
+		/* Closer to its own chart than to the one above */
+		margin: var(--space-6) 0 var(--space-3);
 	}
 	.tiles {
 		display: grid;
@@ -780,19 +785,27 @@ const CONTENTS = [
 			gap: var(--space-1);
 		}
 	}
+	/* The same fold look as "On this page" */
 	.table-view summary {
-		/* 44px tall, for a thumb */
+		display: inline-flex;
+		align-items: center;
 		min-height: 44px;
-		padding-block: var(--space-2);
+		list-style: none;
 		cursor: pointer;
-		text-decoration: underline dotted var(--muted);
-		text-underline-offset: 0.2em;
-		width: fit-content;
+		font-family: var(--poster);
+		font-size: var(--text-lead);
+		text-transform: uppercase;
+		color: var(--pink);
+	}
+	.table-view summary::-webkit-details-marker {
+		display: none;
+	}
+	.table-scroll {
+		overflow-x: auto;
 	}
 	.table-view table {
 		margin-top: var(--space-3);
 		border-collapse: collapse;
-		font-variant-numeric: tabular-nums;
 	}
 	.table-view th,
 	.table-view td {

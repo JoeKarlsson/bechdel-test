@@ -19,9 +19,10 @@ const n = (x: number) => x.toLocaleString('en-US');
 ---
 
 <Base
-	title="bechdel.io"
+	title={`Does it pass the Bechdel test? ${n(films.length)} films checked`}
 	description={description}
 	nav="shelf"
+	posters
 	structuredData={{ '@type': 'WebSite', name: 'bechdel.io', url: 'https://bechdel.joekarlsson.com/', description }}
 >
 	<div class="page">
@@ -30,8 +31,8 @@ const n = (x: number) => x.toLocaleString('en-US');
 				<h1>Do two women talk to each other about <span class="pink">something other than a man?</span></h1>
 				<Scribble kind="underline" />
 				<p class="lead">
-					We read each film's script and check it against the three rules from Alison Bechdel's 1985 comic. Browse the
-					whole shelf below.
+					We read each film's script and check it against the Bechdel test, the three rules from Alison Bechdel's 1985
+					comic.
 				</p>
 			</div>
 			<aside class="rules paper" aria-labelledby="rules-title">
@@ -175,7 +176,8 @@ const n = (x: number) => x.toLocaleString('en-US');
 	}
 	.field span {
 		font-family: var(--poster);
-		font-size: 1.125rem;
+		font-size: var(--label);
+		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
 	.field input,
@@ -214,12 +216,12 @@ const n = (x: number) => x.toLocaleString('en-US');
 		min-height: 44px;
 	}
 	.shelf {
-		transition: opacity 120ms ease-in;
+		transition: opacity 120ms var(--ease-enter);
 	}
 	/* Dims only if the films take longer than 200 ms to arrive */
 	.shelf[aria-busy='true'] {
 		opacity: 0.5;
-		transition: opacity 150ms ease-out 200ms;
+		transition: opacity 150ms var(--ease-exit) 200ms;
 	}
 	/* Phones: a shorter question and a compact rules card, so the shelf shows sooner */
 	@media (max-width: 600px) {
@@ -252,7 +254,7 @@ const n = (x: number) => x.toLocaleString('en-US');
 	}
 	.more-button {
 		font-family: var(--poster);
-		font-size: 1.5rem;
+		font-size: var(--heading-sm);
 		text-transform: uppercase;
 		background: var(--pink);
 		color: var(--ink);
@@ -260,7 +262,7 @@ const n = (x: number) => x.toLocaleString('en-US');
 		padding: var(--space-3) var(--space-5);
 		min-height: 44px;
 		cursor: pointer;
-		transition: scale 120ms ease-out;
+		transition: scale 120ms var(--ease-enter);
 	}
 	.more-button:hover {
 		background: var(--chalk);

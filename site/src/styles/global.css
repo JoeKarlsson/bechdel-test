@@ -33,6 +33,48 @@
 	src: url(/fonts/fraunces-latin.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+/* Fraunces has no tabular figures, so number columns wouldn't line up. These are
+   its digits at equal widths (scripts/make-tabular-figures.py). */
+@font-face {
+	font-family: 'Fraunces Figures';
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/fraunces-figures-400.woff2) format('woff2');
+	unicode-range: U+0030-0039;
+}
+@font-face {
+	font-family: 'Fraunces Figures';
+	font-weight: 700;
+	font-display: swap;
+	src: url(/fonts/fraunces-figures-700.woff2) format('woff2');
+	unicode-range: U+0030-0039;
+}
+/* Local fonts scaled to the web fonts' widths, so text doesn't reflow (and the
+   nav doesn't wrap) when the web fonts arrive. Ratios measured against each. */
+@font-face {
+	font-family: 'Anton Impact';
+	src: local('Impact');
+	size-adjust: 94.4%;
+	ascent-override: 124.6%;
+	descent-override: 34.9%;
+	line-gap-override: 0%;
+}
+@font-face {
+	font-family: 'Anton Fallback';
+	src: local('Arial'), local('Roboto'), local('Helvetica');
+	size-adjust: 70.3%;
+	ascent-override: 167.3%;
+	descent-override: 46.8%;
+	line-gap-override: 0%;
+}
+@font-face {
+	font-family: 'Fraunces Fallback';
+	src: local('Georgia'), local('Noto Serif'), local('NotoSerif-Regular');
+	size-adjust: 84.5%;
+	ascent-override: 115.7%;
+	descent-override: 30.2%;
+	line-gap-override: 0%;
+}
 
 :root {
 	color-scheme: only dark;
@@ -54,13 +96,18 @@
 	--fail: #8f8f8f; /* 6.9:1 against black text, 7.3:1 on the black page */
 	--fail-on-chalk: #5c5c5c;
 	--score-low: #4a4a4a;
+	--cut: #6a6a6a; /* script lines cut on screen: 3.1:1 on the panel */
 
 	/* Type */
-	--poster: 'Anton', Impact, 'Arial Narrow', sans-serif;
-	--book: 'Fraunces', Georgia, serif;
+	--poster: 'Anton', 'Anton Impact', 'Anton Fallback', sans-serif;
+	--book: 'Fraunces Figures', 'Fraunces', 'Fraunces Fallback', serif;
 	--text: 1.1875rem; /* 19px body */
 	--text-small: 1.0625rem; /* 17px, the smallest size used */
 	--text-lead: 1.3125rem;
+	/* Anton labels and small headings: three steps, not eight */
+	--label: 1.125rem;
+	--label-lg: 1.375rem;
+	--heading-sm: 1.5rem;
 
 	/* Space: one scale for every margin and gap */
 	--space-1: 0.25rem;
@@ -129,6 +176,13 @@ a:hover {
 	outline: 3px solid var(--pink);
 	outline-offset: 3px;
 }
+/* Pink is 2.3:1 on chalk; a focus ring needs 3:1 */
+.paper :focus-visible {
+	outline-color: var(--ink);
+}
+cite {
+	font-style: normal; /* no italic face is loaded, so the browser would fake one */
+}
 
 h1,
 h2,
@@ -160,7 +214,7 @@ h4 {
 	color: var(--muted);
 	font-size: var(--text-small);
 	margin: 0;
-	max-width: 40em;
+	max-width: 36em;
 }
 
 /* No one-word last lines; headings break into even lines */
@@ -170,7 +224,8 @@ li {
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	text-wrap: balance;
 }
 
@@ -313,14 +368,14 @@ dd > a:only-child,
 		transition:
 			block-size var(--duration-exit) var(--ease-move),
 			opacity var(--duration-exit) var(--ease-exit),
-			content-visibility var(--duration-exit) allow-discrete;
+			content-visibility var(--duration-exit) var(--ease-move) allow-discrete;
 	}
 	:is(.people details, details.charge, details.contents)[open]::details-content,
 	:root[data-folds-ready] .fold-body:not([hidden]) {
 		transition:
 			block-size var(--duration-enter) var(--ease-enter),
 			opacity var(--duration-enter) var(--ease-enter),
-			content-visibility var(--duration-enter) allow-discrete;
+			content-visibility var(--duration-enter) var(--ease-enter) allow-discrete;
 	}
 	/* The * reset below doesn't reach ::details-content (and an unknown
 	   pseudo-element there would void that whole reset), so it gets its own.
@@ -332,11 +387,19 @@ dd > a:only-child,
 		}
 	}
 	@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
-		:is(.people details, details.charge, details.contents)::details-content,
-		:root[data-folds-ready] .fold-body {
+		:is(.people details, details.charge, details.contents)[open]::details-content,
+		:root[data-folds-ready] .fold-body:not([hidden]) {
 			transition:
-				opacity 150ms ease-out,
+				opacity 150ms var(--ease-enter),
 				content-visibility 150ms allow-discrete !important;
+		}
+		/* Closing, the text fades out first and the height lands after it */
+		:is(.people details, details.charge, details.contents):not([open])::details-content,
+		:root[data-folds-ready] .fold-body[hidden] {
+			transition:
+				opacity 150ms var(--ease-exit),
+				content-visibility 150ms allow-discrete,
+				block-size 0s 150ms !important;
 		}
 	}
 }
@@ -390,7 +453,7 @@ dd > a:only-child,
 	max-width: 34em;
 }
 .prose h2 {
-	font-size: clamp(2rem, 4vw, 2.75rem);
+	font-size: clamp(2.25rem, 5vw, 3rem); /* the same as .section-title */
 	margin: var(--section) 0 var(--space-4);
 }
 .prose h3 {
@@ -415,15 +478,15 @@ ul.hbars {
 }
 .hb-row {
 	display: grid;
-	grid-template-columns: 4.5rem 1fr 5.5rem;
+	grid-template-columns: 4.5rem 1fr 8rem;
 	align-items: center;
 	gap: var(--space-3);
 }
 .hbars.wide-labels .hb-row {
-	grid-template-columns: minmax(7rem, 13rem) 1fr 5.5rem;
+	grid-template-columns: minmax(7rem, 13rem) 1fr 8rem;
 }
 .hbars.score-labels .hb-row {
-	grid-template-columns: minmax(7rem, 16rem) 1fr 5.5rem;
+	grid-template-columns: minmax(7rem, 16rem) 1fr 8rem;
 }
 .hbars li + li {
 	margin-top: var(--space-2);
@@ -445,7 +508,6 @@ ul.hbars {
 	background: var(--fail);
 }
 .hb-value {
-	font-variant-numeric: tabular-nums;
 	text-align: right;
 	white-space: nowrap;
 }
@@ -453,9 +515,10 @@ ul.hbars {
 	background: var(--chalk);
 }
 @media (max-width: 480px) {
+	/* A fixed value column, so every track in a chart is the same length */
 	.hbars li,
-	.hbars.wide-labels .hb-row {
-		grid-template-columns: 1fr auto;
+	.hbars:is(.wide-labels, .score-labels) .hb-row {
+		grid-template-columns: 1fr 8rem;
 	}
 	.hb-label {
 		grid-column: 1 / -1;

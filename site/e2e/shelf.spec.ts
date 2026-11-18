@@ -22,7 +22,7 @@ test.describe('the shelf', () => {
 		await page.getByLabel('Search').fill('fincher');
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(fincher.length);
 		const fincherPasses = fincher.filter((f) => f.score === 3).length;
-		await expect(page.locator('[data-shelf-count]')).toHaveText(`Showing ${fincher.length} of ${films.length.toLocaleString('en-US')}, ${fincherPasses} pass`);
+		await expect(page.locator('[data-shelf-count]')).toHaveText(`${fincher.length} films match, ${fincherPasses} pass`);
 	});
 
 	test('filters to passing films and sorts them', async ({ page }) => {
@@ -60,8 +60,10 @@ test.describe('the shelf', () => {
 	test('says so when nothing matches, and clears', async ({ page }) => {
 		await page.getByLabel('Search').fill('no film has this title');
 		await expect(page.getByText('Nothing on the shelf matches')).toBeVisible();
+		await expect(page.locator('[data-shelf-count]')).toBeHidden();
 		await page.getByRole('button', { name: 'Clear the search' }).click();
 		await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(60);
+		await expect(page.locator('[data-shelf-count]')).toBeVisible();
 	});
 });
 
