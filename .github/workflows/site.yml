@@ -23,7 +23,7 @@ jobs:
     # Playwright's image ships its browsers and their system libraries, so the
     # job never waits on Ubuntu's apt mirrors (which failed every run on
     # 2026-11-11). Keep the tag in step with @playwright/test in site/package.json.
-    container: mcr.microsoft.com/playwright:v1.65.0-resolute
+    container: mcr.microsoft.com/playwright:v1.65.1-resolute
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
