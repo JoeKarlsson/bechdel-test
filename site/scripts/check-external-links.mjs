@@ -1,6 +1,8 @@
 // Checks every outside link in dist/ (run after `npm run build`). Share intents
 // are skipped (they need a signed-in user). Sites that refuse automated checks
-// (IMDb answers 403/202 to scripts) are reported as unverified, not broken.
+// (IMDb answers 403/202 to scripts) or rate-limit them (429, "too many
+// requests": bechdeltest.com after a few deploys in a row) are reported as
+// unverified, not broken.
 // Exits 1 if any link is broken.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
@@ -45,13 +47,13 @@ await Promise.all(
 			const result = await check(url);
 			if (result.ok) continue;
 			const line = `${url} (${result.status}) on /${links.get(url)}`;
-			(BLOCKS_BOTS.test(new URL(url).hostname) ? unverified : broken).push(line);
+			(BLOCKS_BOTS.test(new URL(url).hostname) || result.status === 429 ? unverified : broken).push(line);
 		}
 	}),
 );
 
 console.log(`Checked ${links.size} outside links`);
-if (unverified.length) console.log(`Couldn't verify ${unverified.length} on sites that block scripts:\n  ${unverified.slice(0, 5).join('\n  ')}${unverified.length > 5 ? '\n  ...' : ''}`);
+if (unverified.length) console.log(`Couldn't verify ${unverified.length} on sites that block or rate-limit scripts:\n  ${unverified.slice(0, 5).join('\n  ')}${unverified.length > 5 ? '\n  ...' : ''}`);
 if (broken.length) {
 	console.error(`Broken (${broken.length}):\n  ${broken.join('\n  ')}`);
 	process.exit(1);
