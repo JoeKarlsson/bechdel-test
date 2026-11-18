@@ -6,6 +6,7 @@
 import { posterFor } from '../lib/images';
 import { closest, squash, titleKeys } from '../lib/search.mjs';
 import { motionKind } from './motion';
+import { track } from './track';
 
 type Sort = 'popularity' | 'score' | 'new' | 'old' | 'az';
 type ShelfFilm = { slug: string; title: string; year: number | null; director: string; score: number; popularity: number; poster: string | null; change?: true };
@@ -203,6 +204,20 @@ export function setUpShelf() {
 		moreWrap.hidden = left === 0;
 		more.textContent = `Show ${Math.min(pageSize, left)} more`;
 		saveToAddress(typed, show, sort);
+		reportSearch(q, matched);
+	};
+	// One Shelf Search event per search someone settles on (typing paused a
+	// second), not per keystroke; the words typed are never sent
+	let searchTimer: number | undefined;
+	let lastSearch = '';
+	const reportSearch = (q: string, matched: number) => {
+		clearTimeout(searchTimer);
+		if (!q) lastSearch = '';
+		if (!q || q === lastSearch) return;
+		searchTimer = window.setTimeout(() => {
+			lastSearch = q;
+			track('Shelf Search', { results: matched === 0 ? 'none' : 'some' });
+		}, 1000);
 	};
 	// The search, filter and sort live in the address, so Back, a refresh or a shared link keeps them
 	const saveToAddress = (typed: string, show: string, sort: Sort) => {
@@ -239,6 +254,7 @@ export function setUpShelf() {
 		}
 	});
 	more.addEventListener('click', async () => {
+		track('Show More');
 		const firstNew = Math.min(limit, tapes.length);
 		limit += pageSize;
 		await refresh();

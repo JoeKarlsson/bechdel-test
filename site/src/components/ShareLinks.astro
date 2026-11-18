@@ -1,6 +1,6 @@
 ---
 // Share targets, as under joekarlsson.com posts and Punc books. Each click is a
-// Plausible event (tagged-events script), named by network.
+// Plausible "Share" event (tagged-events script), its method the network or "copy".
 interface Props {
 	url: string;
 	title: string;
@@ -23,10 +23,10 @@ const NETWORKS = [
 	Share it on<span class="sr-only"> (each link opens a new tab)</span>
 	{
 		NETWORKS.map(([label, href], i) => [
-			<a href={href} target="_blank" rel="noopener noreferrer" class={`plausible-event-name=Share+Click plausible-event-network=${label.replace(/ /g, '+')}`}>{label}</a>,
+			<a href={href} target="_blank" rel="noopener noreferrer" class={`plausible-event-name=Share plausible-event-method=${label.toLowerCase().replace(/ /g, '-')}`}>{label}</a>,
 			i < NETWORKS.length - 1 ? ', ' : '',
 		])
-	}, or <button type="button" class="copy plausible-event-name=Copy+Link" data-copy-link={url}
+	}, or <button type="button" class="copy plausible-event-name=Share plausible-event-method=copy" data-copy-link={url}
 		><span class="copy-label">copy the link</span><span class="copy-done" aria-hidden="true">link copied</span></button
 	><span class="sr-only" role="status" data-copy-status></span>.
 </p>
