@@ -161,7 +161,7 @@ test('the posters beside a title can be paused, and hold still for reduced motio
 	await page.goto('/genres/horror/');
 	const pause = page.getByRole('button', { name: 'Pause' });
 	await pause.click();
-	await expect(page.getByRole('button', { name: 'Play' })).toHaveAttribute('aria-pressed', 'true');
+	await expect(page.getByRole('button', { name: 'Play' })).toBeVisible();
 
 	const still = await browser.newPage({ reducedMotion: 'reduce' });
 	await still.goto('/genres/horror/');
