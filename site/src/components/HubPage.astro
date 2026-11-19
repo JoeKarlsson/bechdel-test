@@ -3,6 +3,7 @@
 // and (for big groups) every film as a plain list
 import Base from '../layouts/Base.astro';
 import Tape from './Tape.astro';
+import PosterBloom from './PosterBloom.astro';
 import { loadFilms } from '../lib/films.mjs';
 
 interface Props {
@@ -17,6 +18,8 @@ interface Props {
 
 const { hub, title, noun, parent } = Astro.props;
 const TAPES = 24;
+// Fewer posters than this repeat too often to read as a shelf
+const BLOOM_MIN = 12;
 const all = loadFilms();
 const n = (x: number) => x.toLocaleString('en-US');
 const pct = (a: number, b: number) => Math.round((a / b) * 100);
@@ -25,6 +28,8 @@ const total = hub.films.length;
 const share = hub.pass === total ? `All ${n(total)}` : hub.pass === 0 ? `None of the ${n(total)}` : `${n(hub.pass)} of the ${n(total)}`;
 const verdict = `${share} ${noun} on the shelf pass the Bechdel test.`;
 const tapes = hub.films.slice(0, TAPES);
+const hasBloom = hub.films.filter((f) => f.images.poster).length >= BLOOM_MIN;
+const passRate = pct(hub.pass, total);
 const aToZ = total > TAPES ? [...hub.films].sort((a, b) => a.title.localeCompare(b.title)) : [];
 const site = Astro.site!;
 const url = new URL(hub.href, site).href;
@@ -57,11 +62,17 @@ const structuredData = {
 
 <Base title={title} description={`${verdict} See each one's score, scene by scene.`} structuredData={structuredData} posters>
 	<div class="page">
-		<h1 class="page-title">{title}</h1>
-		<p class="page-lead">
-			{verdict} That's {pct(hub.pass, total)}%, against {shelfRate}% across the whole shelf.
-			{hub.womenLines !== null && ` In the median one, women have ${Math.round(hub.womenLines * 100)}% of the lines.`}
-		</p>
+		<div class:list={{ 'with-bloom': hasBloom }}>
+			<div>
+				<h1 class="page-title">{title}</h1>
+				<p class="page-lead">
+					{hub.pass === total ? <>All <span class="num">{n(total)}</span></> : hub.pass === 0 ? <>None of the <span class="num">{n(total)}</span></> : <><span class="num">{n(hub.pass)}</span> of the <span class="num">{n(total)}</span></>}
+					{noun} on the shelf pass the Bechdel test. That's <span class="num">{passRate}%</span>, against <span class="num">{shelfRate}%</span> across the whole shelf.
+					{hub.womenLines !== null && <>In the median one, women have <span class="num">{Math.round(hub.womenLines * 100)}%</span> of the lines.</>}
+				</p>
+			</div>
+			{hasBloom && <PosterBloom films={hub.films} />}
+		</div>
 
 		<section class="section">
 			<h2 class="section-title">{aToZ.length ? 'Best known' : 'The films'}</h2>
@@ -91,6 +102,9 @@ const structuredData = {
 </Base>
 
 <style>
+	.num {
+		color: var(--pink);
+	}
 	.all {
 		list-style: none;
 		padding: 0;

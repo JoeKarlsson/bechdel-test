@@ -1,0 +1,235 @@
+---
+// Posters that grow out from the middle and drift off the edges, one after
+// another, on a canvas beside a page's title. Failing films are gray. Drawn on a
+// canvas, not as images, so no poster ever becomes the page's LCP element.
+// Starts after the page loads, stops off screen, in a hidden tab or on Pause,
+// and holds still for reduced motion.
+import { posterFor } from '../lib/images';
+
+interface Props {
+	/** Best known first; the first MAX with a poster are used */
+	films: { title: string; year: number | null; images: { poster: string | null }; bechdel: { pass: boolean } }[];
+	/** Name the newest poster and its verdict under the posters */
+	caption?: boolean;
+}
+
+const MAX = 120;
+const { films, caption = false } = Astro.props;
+const posters = films
+	.flatMap((f) => {
+		const poster = posterFor(f.images.poster, [185]);
+		return poster ? [{ title: f.title, year: f.year, pass: f.bechdel.pass, src: poster.src }] : [];
+	})
+	.slice(0, MAX);
+---
+
+<div class="bloom" data-poster-bloom={JSON.stringify(posters)}>
+	<canvas aria-hidden="true"></canvas>
+	{caption && <p class="bloom-caption" aria-hidden="true"></p>}
+	<button type="button" class="bloom-pause" aria-pressed="false" hidden>Pause</button>
+</div>
+
+<script>
+	type Poster = { title: string; year: number | null; pass: boolean; src: string };
+	type Bloom = { poster: Poster; born: number; angle: number; offsetX: number; offsetY: number; tilt: number };
+
+	const LIFE = 9; // seconds from a dot in the middle to gone
+	const EVERY = 0.7; // seconds between new posters
+	const GROW = 3.2; // final size, in widths of a fifth of the stage
+	const FAIL_FILTER = 'grayscale(1) brightness(0.7)';
+	const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+	const easeOut = (k: number) => 1 - (1 - k) ** 3;
+
+	function shuffled<T>(list: T[]): T[] {
+		const out = [...list];
+		for (let i = out.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[out[i], out[j]] = [out[j], out[i]];
+		}
+		return out;
+	}
+
+	function startBloom(root: HTMLElement) {
+		const posters = shuffled(JSON.parse(root.dataset.posterBloom!) as Poster[]);
+		const canvas = root.querySelector('canvas')!;
+		const context = canvas.getContext('2d')!;
+		const caption = root.querySelector<HTMLElement>('.bloom-caption');
+		const pauseButton = root.querySelector<HTMLButtonElement>('.bloom-pause')!;
+		const images = new Map<Poster, HTMLImageElement>();
+
+		const imageFor = (poster: Poster) => {
+			let image = images.get(poster);
+			if (!image) {
+				image = new Image();
+				image.decoding = 'async';
+				image.src = poster.src;
+				images.set(poster, image);
+			}
+			return image;
+		};
+		// A poster only joins once its image is in, so none pops in blank
+		const isLoaded = (poster: Poster) => {
+			const image = images.get(poster);
+			return !!image && image.complete && image.naturalWidth > 0;
+		};
+
+		let blooms: Bloom[] = [];
+		let clock = 0;
+		let nextBirth = 0;
+		let cursor = 0;
+		let lastFrame: number | null = null;
+		let frame = 0;
+		let paused = false;
+		let onScreen = false;
+
+		function addPoster() {
+			for (let tries = 0; tries < posters.length; tries++) {
+				const poster = posters[cursor++ % posters.length];
+				imageFor(posters[(cursor + 6) % posters.length]); // load a few ahead
+				if (!isLoaded(poster)) continue;
+				blooms.push({ poster, born: nextBirth, angle: Math.random() * Math.PI * 2, offsetX: Math.random() - 0.5, offsetY: Math.random() - 0.5, tilt: (Math.random() - 0.5) * 6 });
+				return;
+			}
+		}
+
+		function advance(seconds: number) {
+			clock += seconds;
+			while (nextBirth <= clock) {
+				addPoster();
+				nextBirth += EVERY;
+			}
+			blooms = blooms.filter((b) => clock - b.born <= LIFE);
+		}
+
+		function draw() {
+			const ratio = devicePixelRatio || 1;
+			const width = canvas.clientWidth;
+			const height = canvas.clientHeight;
+			if (canvas.width !== Math.round(width * ratio) || canvas.height !== Math.round(height * ratio)) {
+				canvas.width = Math.round(width * ratio);
+				canvas.height = Math.round(height * ratio);
+			}
+			context.setTransform(ratio, 0, 0, ratio, 0, 0);
+			context.clearRect(0, 0, width, height);
+			const longSide = Math.max(width, height);
+			const baseWidth = longSide * 0.2;
+			for (const bloom of blooms) {
+				const age = clock - bloom.born;
+				const k = age / LIFE;
+				const eased = easeOut(k);
+				const distance = 0.33 * eased * longSide;
+				const x = width / 2 + bloom.offsetX * width * 0.25 + Math.cos(bloom.angle) * distance;
+				const y = height / 2 + bloom.offsetY * height * 0.25 + Math.sin(bloom.angle) * distance;
+				const posterWidth = baseWidth * (0.04 + (GROW - 0.04) * eased);
+				const posterHeight = posterWidth * 1.5;
+				context.save();
+				context.globalAlpha = Math.min(1, age / 0.25) * (k > 0.85 ? (1 - k) / 0.15 : 1);
+				context.filter = bloom.poster.pass ? 'none' : FAIL_FILTER;
+				context.translate(x, y);
+				context.rotate((bloom.tilt * Math.PI) / 180);
+				context.drawImage(images.get(bloom.poster)!, -posterWidth / 2, -posterHeight / 2, posterWidth, posterHeight);
+				context.restore();
+			}
+			const newest = blooms.at(-1);
+			if (caption && newest) {
+				const { title, year, pass } = newest.poster;
+				const verdict = document.createElement('span');
+				verdict.className = pass ? 'pass' : 'fail';
+				verdict.textContent = pass ? 'passes' : 'fails';
+				caption.replaceChildren(`${title}${year ? ` (${year})` : ''}, `, verdict);
+			}
+		}
+
+		function tick(now: number) {
+			advance(lastFrame === null ? 0 : Math.min(0.1, (now - lastFrame) / 1000));
+			lastFrame = now;
+			draw();
+			frame = requestAnimationFrame(tick);
+		}
+
+		function update() {
+			cancelAnimationFrame(frame);
+			lastFrame = null;
+			pauseButton.hidden = reducedMotion.matches;
+			if (onScreen && !paused && !reducedMotion.matches && !document.hidden) frame = requestAnimationFrame(tick);
+			else draw();
+		}
+
+		pauseButton.addEventListener('click', () => {
+			paused = !paused;
+			pauseButton.textContent = paused ? 'Play' : 'Pause';
+			pauseButton.setAttribute('aria-pressed', String(paused));
+			update();
+		});
+		// design-ok: stops the loop off screen, not a scroll reveal
+		new IntersectionObserver(([entry]) => {
+			onScreen = entry.isIntersecting;
+			update();
+		}).observe(root);
+		new ResizeObserver(() => draw()).observe(canvas);
+		document.addEventListener('visibilitychange', update);
+		reducedMotion.addEventListener('change', update);
+
+		// Fill the stage as if it had been running, from the first posters to arrive
+		const first = posters.slice(0, 16).map((p) => imageFor(p).decode().catch(() => undefined)); // a failed poster is just skipped
+		Promise.all(first).then(() => {
+			for (let t = 0; t < LIFE; t += EVERY) advance(EVERY);
+			update();
+		});
+	}
+
+	const start = () => document.querySelectorAll<HTMLElement>('[data-poster-bloom]').forEach(startBloom);
+	if (document.readyState === 'complete') start();
+	else addEventListener('load', start, { once: true });
+</script>
+
+<style>
+	.bloom {
+		position: relative;
+		min-height: 22rem;
+		overflow: hidden;
+	}
+	canvas {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.bloom-caption,
+	.bloom-pause {
+		position: absolute;
+		bottom: var(--space-3);
+		margin: 0;
+		background: var(--ink);
+		color: var(--chalk);
+	}
+	.bloom-caption {
+		left: var(--space-3);
+		max-width: calc(100% - 9rem);
+		padding: var(--space-1) var(--space-2);
+		font-size: var(--text-small);
+	}
+	.bloom-caption:empty {
+		display: none;
+	}
+	/* set by the script, so Astro's scoping can't see it */
+	.bloom-caption :global(.pass) {
+		color: var(--pass);
+	}
+	.bloom-caption :global(.fail) {
+		color: var(--fail);
+	}
+	.bloom-pause {
+		right: var(--space-3);
+		min-height: 44px;
+		padding: 0 var(--space-3);
+		border: 1px solid var(--plank);
+		font-family: var(--poster);
+		font-size: var(--label);
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+	.bloom-pause[hidden] {
+		display: none;
+	}
+</style>
