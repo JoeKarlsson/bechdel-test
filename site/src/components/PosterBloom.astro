@@ -26,7 +26,7 @@ const posters = films
 <div class="bloom" data-poster-bloom={JSON.stringify(posters)}>
 	<canvas aria-hidden="true"></canvas>
 	{caption && <p class="bloom-caption" aria-hidden="true"></p>}
-	<button type="button" class="bloom-pause" aria-pressed="false" hidden>Pause</button>
+	<button type="button" class="bloom-pause" hidden>Pause</button>
 </div>
 
 <script>
@@ -81,6 +81,7 @@ const posters = films
 		let frame = 0;
 		let paused = false;
 		let onScreen = false;
+		let ready = false; // nothing runs until the first posters are in, so the stage starts settled
 
 		function addPoster() {
 			for (let tries = 0; tries < posters.length; tries++) {
@@ -148,6 +149,7 @@ const posters = films
 		}
 
 		function update() {
+			if (!ready) return;
 			cancelAnimationFrame(frame);
 			lastFrame = null;
 			pauseButton.hidden = reducedMotion.matches;
@@ -158,7 +160,6 @@ const posters = films
 		pauseButton.addEventListener('click', () => {
 			paused = !paused;
 			pauseButton.textContent = paused ? 'Play' : 'Pause';
-			pauseButton.setAttribute('aria-pressed', String(paused));
 			update();
 		});
 		// design-ok: stops the loop off screen, not a scroll reveal
@@ -174,6 +175,7 @@ const posters = films
 		const first = posters.slice(0, 16).map((p) => imageFor(p).decode().catch(() => undefined)); // a failed poster is just skipped
 		Promise.all(first).then(() => {
 			for (let t = 0; t < LIFE; t += EVERY) advance(EVERY);
+			ready = true;
 			update();
 		});
 	}
