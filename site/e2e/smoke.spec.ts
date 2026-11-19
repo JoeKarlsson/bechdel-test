@@ -156,3 +156,20 @@ test('the long pages open a contents list whose links reach every section', asyn
 		}
 	}
 });
+
+test('the posters beside a title can be paused, and hold still for reduced motion', async ({ page, browser }) => {
+	await page.goto('/genres/horror/');
+	const pause = page.getByRole('button', { name: 'Pause' });
+	await pause.click();
+	await expect(page.getByRole('button', { name: 'Play' })).toHaveAttribute('aria-pressed', 'true');
+
+	const still = await browser.newPage({ reducedMotion: 'reduce' });
+	await still.goto('/genres/horror/');
+	await expect(still.locator('.bloom canvas')).toBeVisible();
+	await expect(still.locator('.bloom-pause')).toBeHidden();
+	await still.close();
+
+	// Too few posters to read as a shelf: no posters at all
+	await page.goto('/directors/aaron-sorkin/');
+	await expect(page.locator('.bloom')).toHaveCount(0);
+});

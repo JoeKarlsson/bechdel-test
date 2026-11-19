@@ -447,6 +447,24 @@ dd > a:only-child,
 	font-size: var(--text-lead);
 }
 
+/* A title block with posters growing beside it (PosterBloom): below it on
+   narrow screens, beside it once the title has room */
+.with-bloom > .bloom {
+	margin-top: var(--space-5);
+	height: 20rem;
+}
+@media (min-width: 1000px) {
+	.with-bloom {
+		display: grid;
+		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+		gap: var(--space-6);
+	}
+	.with-bloom > .bloom {
+		margin-top: var(--space-5);
+		height: auto;
+	}
+}
+
 /* Long-form text pages */
 /* About 70 characters a line */
 .prose {
