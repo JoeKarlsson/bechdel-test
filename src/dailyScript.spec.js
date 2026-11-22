@@ -24,5 +24,7 @@ describe('dailyScript', () => {
 		expect(await scriptTextFrom('https://x/scripts/a.txt', bytes('RICK\nHere\'s looking at you.'))).toBe('RICK\nHere\'s looking at you.');
 		expect(await scriptTextFrom('https://x/scripts/a.html', bytes('<pre>  RICK\n  Hello.</pre>'))).toBe('RICK\n  Hello.\n');
 		expect(await scriptTextFrom('https://x/scripts/a.doc', bytes('x'))).toBeNull();
+		// A page without <pre>, at a link with no extension
+		expect(await scriptTextFrom('https://x/script', bytes('<html><body><p>RICK<br>Here&#39;s looking at you.</p></body></html>'))).toBe('RICK\nHere\'s looking at you.\n');
 	});
 });
