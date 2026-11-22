@@ -33,6 +33,8 @@
 	ol.lines { list-style: none; margin: 0; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; font-size: .95rem; }
 	ol.lines li { padding: 3px 6px; border-radius: 4px; }
 	ol.lines li.here { background: var(--mark); font-weight: 600; }
+	ol.lines li.match { background: #dcecff; box-shadow: inset 3px 0 0 #1f5fbf; }
+	.hint { font-size: .85rem; color: var(--muted); margin: 6px 0 0; }
 	.time { font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--muted); margin-right: 8px; }
 	.search { margin-top: 24px; }
 	.search input { font: inherit; width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
@@ -62,7 +64,7 @@
 	</div>
 	<div class="cols">
 		<section><h2 id="leftTitle"></h2><ol class="lines" id="left"></ol></section>
-		<section><h2 id="rightTitle"></h2><ol class="lines" id="right"></ol></section>
+		<section><h2 id="rightTitle"></h2><ol class="lines" id="right"></ol><p class="hint" id="hint"></p></section>
 	</div>
 	<div class="search">
 		<input id="q" type="search" placeholder="Search this film's whole script and subtitles  ( / )" aria-label="Search this film's script and subtitles">
@@ -90,7 +92,24 @@ const $ = id => document.getElementById(id);
 let data;
 let at = 0;
 
-const fill = (list, lines, here = -1) => {
+// words of a line without its timestamp or speaker name, for spotting the closest line
+const words = text => new Set(text.replace(/^\d+:\d\d:\d\d\s+/, '').replace(/^[A-Z][A-Z .'-]*:\s*/, '')
+	.toLowerCase().match(/[a-z0-9']+/g) ?? []);
+// the line sharing the most words with the target (Dice overlap), or -1 if none shares at least a third
+const closest = (target, lines) => {
+	const want = words(target);
+	let best = -1;
+	let bestScore = 0.34;
+	lines.forEach((line, i) => {
+		const have = words(line);
+		const shared = [...want].filter(w => have.has(w)).length;
+		const score = (2 * shared) / (want.size + have.size || 1);
+		if (score >= bestScore) { best = i; bestScore = score; }
+	});
+	return best;
+};
+
+const fill = (list, lines, here = -1, match = -1) => {
 	list.replaceChildren(...lines.map((text, i) => {
 		const li = document.createElement('li');
 		const time = text.match(/^(\d+:\d\d:\d\d)\s+(.*)$/);
@@ -101,6 +120,7 @@ const fill = (list, lines, here = -1) => {
 			li.append(span, time[2]);
 		} else li.textContent = text;
 		if (i === here) li.className = 'here';
+		if (i === match) li.className = 'match';
 		return li;
 	}));
 };
@@ -131,16 +151,24 @@ const show = () => {
 		$('leftTitle').textContent = 'Script around it';
 		fill($('left'), item.scriptAround, item.scriptAround.indexOf(item.line));
 		$('rightTitle').textContent = 'Subtitles near where it would be';
-		fill($('right'), item.subtitlesNearWhereItWouldBe);
+		showClosest($('right'), item.subtitlesNearWhereItWouldBe, 'subtitle', item.line);
 	} else {
 		$('leftTitle').textContent = 'Subtitles around it';
 		fill($('left'), item.subtitlesAround, item.subtitlesAround.findIndex(l => l.endsWith(item.line)));
 		$('rightTitle').textContent = 'Script near where it would be';
-		fill($('right'), item.scriptNearWhereItWouldBe);
+		showClosest($('right'), item.scriptNearWhereItWouldBe, 'script line', item.line);
 	}
 	$('q').value = '';
 	$('results').hidden = true;
 	$('status').textContent = '';
+};
+
+const showClosest = (list, lines, what, target) => {
+	const match = closest(target, lines);
+	fill(list, lines, -1, match);
+	$('hint').textContent = match === -1
+		? `No ${what} nearby shares many words with it. Search to be sure.`
+		: `Blue: the ${what} sharing the most words with it. Only a word match, so check it.`;
 };
 
 const nextUnanswered = () => {
