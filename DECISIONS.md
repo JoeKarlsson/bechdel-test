@@ -14,3 +14,4 @@ Joe's standing verdicts for this site, one per line, dated. Read before changing
 - 2026-11-18: Hub pages for genre, decade and director, linked from film pages and Numbers.
 - 2026-11-19: Poster bloom (posters grow out from the middle, FoldOut Gallery style) goes on the 404 page and the genre, decade and director hub headers. Not on Numbers for now. No pink edges on the posters.
 - 2026-11-19: Hub page leads put their numbers in pink (the film counts and both percentages).
+- 2026-11-22: A film whose script's title page says it's a first or early draft shows an "Early draft" tag under the verdict, in the "Not rated" tag style, with the draft's date when the title page has one (option B).

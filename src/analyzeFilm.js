@@ -9,6 +9,7 @@ const scriptCleaner = require('./scriptCleaner');
 const AiAnalyzer = require('./aiAnalyzer');
 const { dialogueEnglishShare } = require('./scriptText');
 const { bookendLines } = require('./bookends');
+const { earlyDraftOf } = require('./earlyDraft');
 const { decodeHtmlEntities } = require('./imsdb');
 
 // Below this many lines of dialogue the script didn't parse (a layout the
@@ -128,6 +129,8 @@ const analyzeScriptText = (scriptText, characters, genderOverrides = {}) => {
 	const { namedWomen, exchanges, reverse, ...bechdelResults } = scoreBechdel(screenplay, resolved, characters);
 	const summary = summarizeScript(screenplay, resolved);
 	summary.bookends = bookendLines(dialogue, summary.speakers);
+	const earlyDraft = earlyDraftOf(scriptText);
+	if (earlyDraft) summary.earlyDraft = earlyDraft;
 	summary.measures = {
 		...measureDialogue(dialogue, resolved),
 		womenConversations: exchanges,

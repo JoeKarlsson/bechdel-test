@@ -335,6 +335,14 @@ const credit = [
 				{verdictSentence}
 				{checked && <> Checked <time datetime={film.added}>{checked.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</time>.</>}
 			</p>
+			{
+				film.earlyDraft && (
+					<p class="draft-note">
+						<strong class="tag none">Early draft</strong> The script we read is {film.earlyDraft.date ? `dated ${film.earlyDraft.date}` : 'an early draft'}, so the film may score
+						differently.
+					</p>
+				)
+			}
 			<div class="bechdel-row">
 				<div class="score">
 					<p class="score-label">Bechdel score</p>
@@ -1289,6 +1297,10 @@ const credit = [
 	}
 	.verdict-line {
 		margin: var(--space-2) 0 var(--space-5);
+		max-width: 34em;
+	}
+	.draft-note {
+		margin: calc(var(--space-5) / -2) 0 var(--space-5);
 		max-width: 34em;
 	}
 	.bechdel-row {

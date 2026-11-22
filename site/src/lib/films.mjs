@@ -475,6 +475,7 @@ export function normalizeFilm(raw) {
 		dialogueCount: raw.script.dialogueLines,
 		measures: raw.script.measures ?? null,
 		bookends: bookendsFrom(raw.script, speakers),
+		earlyDraft: raw.script.earlyDraft ?? null,
 		crew: crewFrom(raw.crew),
 		money: raw.money && (raw.money.budget || raw.money.revenue) ? { budget: raw.money.budget, revenue: raw.money.revenue } : null,
 		// Top-billed actors with a known age at release, women and men
