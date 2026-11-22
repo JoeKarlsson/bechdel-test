@@ -6,10 +6,12 @@
  * republish them). The year in the file name pins `npm run match`, which
  * gives each one its film next. PDFs need poppler and tesseract.
  *
- *   npm run fetch-daily-script
+ * --slow fetches one file every 8 seconds, for when the site throttles.
+ *
+ *   npm run fetch-daily-script [-- --slow]
  */
 const { LISTING_PAGES, parseListing, filmTitle } = require('../src/dailyScript');
-const { downloadScripts, fetchBytes } = require('../src/downloadScripts');
+const { downloadScripts, fetchBytes, SLOW_SITE } = require('../src/downloadScripts');
 const { queueNewTitles } = require('../src/scriptList');
 
 const main = async () => {
@@ -23,7 +25,7 @@ const main = async () => {
 	const failures = await downloadScripts(queue, script => {
 		added++;
 		console.log(`${script.file.padEnd(60)} ${script.title}`);
-	});
+	}, process.argv.includes('--slow') ? SLOW_SITE : {});
 	if (failures.length > 0) {
 		console.log(`\nNot downloaded (${failures.length}):\n${failures.join('\n')}`);
 	}

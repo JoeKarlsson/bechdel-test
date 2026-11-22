@@ -9,7 +9,7 @@
  *   npm run fetch-script-list -- list.json [--slow]
  */
 const fs = require('fs');
-const { downloadScripts } = require('../src/downloadScripts');
+const { downloadScripts, SLOW_SITE } = require('../src/downloadScripts');
 const { queueNewTitles } = require('../src/scriptList');
 
 const main = async () => {
@@ -22,7 +22,7 @@ const main = async () => {
 	const failures = await downloadScripts(queue, script => {
 		added++;
 		console.log(`${script.file.padEnd(60)} ${script.title}`);
-	}, args.includes('--slow') ? { concurrency: 1, pauseMs: 8000 } : {});
+	}, args.includes('--slow') ? SLOW_SITE : {});
 	if (failures.length > 0) {
 		console.log(`\nNot downloaded (${failures.length}):\n${failures.join('\n')}`);
 	}

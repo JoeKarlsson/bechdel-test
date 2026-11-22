@@ -8,10 +8,12 @@
  * `npm run match` isn't needed. Many of the 2016 links are dead; those are
  * listed at the end. PDFs need poppler and tesseract, as for Script Slug.
  *
- *   npm run fetch-pudding
+ * --slow fetches one file every 8 seconds, for when the site throttles.
+ *
+ *   npm run fetch-pudding [-- --slow]
  */
 const { SOURCES_URL, parseSources } = require('../src/pudding');
-const { downloadScripts, fetchBytes } = require('../src/downloadScripts');
+const { downloadScripts, fetchBytes, SLOW_SITE } = require('../src/downloadScripts');
 const { scriptFileName } = require('../src/imsdb');
 const { loadManifest, saveManifest, scriptPathFor } = require('../src/manifest');
 
@@ -33,7 +35,7 @@ const main = async () => {
 			manifest[film.file] = film.imdbId;
 			added++;
 			console.log(`${film.file.padEnd(60)} ${film.imdbId.padEnd(11)} ${film.title} (${film.year})`);
-		});
+		}, process.argv.includes('--slow') ? SLOW_SITE : {});
 	} finally {
 		saveManifest(manifest);
 	}
