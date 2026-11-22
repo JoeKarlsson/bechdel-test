@@ -42,6 +42,9 @@ scripts/<title>.txt --npm run analyze--> data/films/<id>.json --site/ build--> G
 ```sh
 npm run fetch-scripts                        # download IMSDb scripts we lack into scripts/local/
 npm run fetch-script-slug                    # same for Script Slug (needs pdftotext; tesseract for scans)
+npm run fetch-daily-script                   # same for The Daily Script
+npm run fetch-pudding                        # the scripts behind The Pudding's film dialogue study
+npm run fetch-script-list -- list.json       # any list of { title, year, url }
 npm run recover-scripts                      # swap unusable scripts for a clean Daily Script copy
 npm run match                                # guess the IMDb id for new scripts (check the guesses)
 npm run analyze                              # every scripts/*.txt not already on the site
