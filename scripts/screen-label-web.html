@@ -17,14 +17,16 @@
 	.bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s ease-out; }
 	h1 { font-size: 1.15rem; font-weight: 600; margin: 28px 0 8px; }
 	.target { font-size: 1.45rem; line-height: 1.35; background: #fff; border: 2px solid var(--ink); border-radius: 10px; padding: 16px 20px; }
-	.answers { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
-	.answers button { font: inherit; font-weight: 600; padding: 12px 18px; border-radius: 10px; border: 2px solid var(--ink); background: #fff; cursor: pointer; min-width: 150px; text-align: left; }
+	.answers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 18px 0 6px; }
+	@media (max-width: 760px) { .answers { grid-template-columns: repeat(2, 1fr); } }
+	.answers button { font: inherit; font-weight: 600; padding: 12px 18px; border-radius: 10px; border: 2px solid var(--ink); background: #fff; cursor: pointer; text-align: left; }
 	.answers button:hover { background: #f1efe9; }
 	.answers button:active { transform: scale(.97); }
 	.answers button[aria-pressed="true"] { background: var(--ink); color: #fff; }
 	.answers kbd { font: 600 .8rem system-ui, sans-serif; border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-right: 8px; }
 	.answers small { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); }
 	.answers button[aria-pressed="true"] small { color: #d8d8de; }
+	.answers button.empty { visibility: hidden; }
 	.nav { display: flex; gap: 10px; margin: 10px 0 0; color: var(--muted); font-size: .9rem; align-items: center; flex-wrap: wrap; }
 	.nav button { font: inherit; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
 	.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
@@ -62,7 +64,11 @@
 		<button id="skip">Next unanswered</button>
 		<span id="status" role="status"></span>
 	</div>
-	<div class="cols">
+	<div id="groups" hidden>
+		<p id="summary"></p>
+		<div class="cols" id="groupList"></div>
+	</div>
+	<div class="cols" id="cols">
 		<section><h2 id="leftTitle"></h2><ol class="lines" id="left"></ol></section>
 		<section><h2 id="rightTitle"></h2><ol class="lines" id="right"></ol><p class="hint" id="hint"></p></section>
 	</div>
@@ -75,18 +81,39 @@
 	</div>
 </main>
 <script>
+// Every kind of item uses the same four keys with the same meaning, so the answers never move:
+// 1 there as written, 2 there but changed, 3 not there, 4 can't tell. [label, name, hint]; null leaves the slot empty.
 const OPTIONS = {
 	'script line': [
-		['kept', '1', 'There, as written', 'small differences are fine'],
-		['changed', '2', 'There, but changed', 'reworded or only part of it'],
-		['cut', '3', 'Not there', 'not in the subtitles (search to be sure)'],
-		['unsure', '4', 'Can’t tell', 'the subtitles don’t settle it'],
+		['kept', 'There, as written', 'small differences are fine'],
+		['changed', 'There, but changed', 'reworded or only part of it'],
+		['cut', 'Not there', 'not in the subtitles (search to be sure)'],
+		['unsure', 'Can’t tell', 'the subtitles don’t settle it'],
 	],
 	'subtitle line': [
-		['scripted', '1', 'In the script', 'even reworded or partly'],
-		['not in script', '2', 'Not in the script', 'new or improvised'],
-		['unsure', '3', 'Can’t tell', 'e.g. a one-word line'],
+		['scripted', 'There, as written', 'small differences are fine'],
+		['scripted', 'There, but changed', 'reworded or only part of it'],
+		['not in script', 'Not there', 'new or improvised (search to be sure)'],
+		['unsure', 'Can’t tell', 'e.g. a one-word line'],
 	],
+	audio: [
+		['subtitles trimmed', 'Said as written', 'the subtitles just shortened it'],
+		['really changed', 'Said, but changed', 'reworded or only part of it'],
+		['really cut', 'Not said', 'nowhere near this point'],
+		['unsure', 'Can’t tell', 'can’t make it out'],
+	],
+	verdict: [
+		['passes on screen', 'Passes', 'two named women talk, not about a man'],
+		null,
+		['fails on screen', 'Fails', 'no such conversation in the film'],
+		['unsure', 'Can’t tell', 'the scenes don’t settle it'],
+	],
+};
+const QUESTIONS = {
+	'script line': () => 'Does this script line show up in the subtitles on the right?',
+	'subtitle line': () => 'Does this subtitle line show up in the script on the right, even reworded?',
+	audio: item => `Play the film at about ${item.at}. Is this script line said?`,
+	verdict: item => `${item.change === 'page-pass-screen-fail' ? 'The script passes; the subtitles don’t.' : 'The script fails; the subtitles pass.'} In the film, do two named women talk to each other about something other than a man?`,
 };
 const $ = id => document.getElementById(id);
 let data;
@@ -109,7 +136,7 @@ const closest = (target, lines) => {
 	return best;
 };
 
-const fill = (list, lines, here = -1, match = -1) => {
+const fill = (list, lines, here = -1, matches = []) => {
 	list.replaceChildren(...lines.map((text, i) => {
 		const li = document.createElement('li');
 		const time = text.match(/^(\d+:\d\d:\d\d)\s+(.*)$/);
@@ -120,7 +147,7 @@ const fill = (list, lines, here = -1, match = -1) => {
 			li.append(span, time[2]);
 		} else li.textContent = text;
 		if (i === here) li.className = 'here';
-		if (i === match) li.className = 'match';
+		if (matches.includes(i)) li.className = 'match';
 		return li;
 	}));
 };
@@ -132,22 +159,41 @@ const show = () => {
 	$('bar').style.width = `${(100 * done) / data.items.length}%`;
 	$('film').textContent = item.film;
 	// the subtitles are the record of what's said (CODEBOOK.md): nobody needs to know the film
-	$('question').textContent = item.kind === 'script line'
-		? 'Does this script line show up in the subtitles on the right?'
-		: 'Does this subtitle line show up in the script on the right, even reworded?';
-	$('target').textContent = item.line;
+	$('question').textContent = QUESTIONS[item.kind](item);
+	$('target').hidden = item.kind === 'verdict';
+	$('target').textContent = item.kind === 'verdict' ? '' : item.line;
+	$('cols').hidden = item.kind === 'verdict';
+	$('groups').hidden = item.kind !== 'verdict';
 	const chosen = data.labels[item.key];
-	$('answers').replaceChildren(...OPTIONS[item.kind].map(([label, key, name, hint]) => {
+	const options = OPTIONS[item.kind];
+	const firstChosen = options.findIndex(o => o?.[0] === chosen);
+	$('answers').replaceChildren(...options.map((option, i) => {
 		const b = document.createElement('button');
-		b.setAttribute('aria-pressed', String(chosen === label));
+		if (!option) { b.className = 'empty'; b.disabled = true; b.setAttribute('aria-hidden', 'true'); return b; }
+		const [label, name, hint] = option;
+		b.setAttribute('aria-pressed', String(i === firstChosen));
 		b.innerHTML = `<kbd></kbd><span></span><small></small>`;
-		b.querySelector('kbd').textContent = key.toUpperCase();
+		b.querySelector('kbd').textContent = String(i + 1);
 		b.querySelector('span').textContent = name;
 		b.querySelector('small').textContent = hint;
-		b.onclick = () => answer(label);
+		b.onclick = () => answer(i);
 		return b;
 	}));
-	if (item.kind === 'script line') {
+	if (item.kind === 'verdict') {
+		$('summary').textContent = item.summary;
+		$('groupList').replaceChildren(...item.groups.map((group, g) => {
+			const section = document.createElement('section');
+			const h2 = document.createElement('h2');
+			h2.textContent = group.title;
+			const ol = document.createElement('ol');
+			ol.className = 'lines';
+			// subtitles beside a script conversation: blue marks the closest subtitle to each script line
+			const script = g % 2 === 1 && item.change === 'page-pass-screen-fail' ? item.groups[g - 1].lines : [];
+			fill(ol, group.lines, -1, script.map(line => closest(line, group.lines)));
+			section.append(h2, ol);
+			return section;
+		}));
+	} else if (item.kind === 'script line' || item.kind === 'audio') {
 		$('leftTitle').textContent = 'Script around it';
 		fill($('left'), item.scriptAround, item.scriptAround.indexOf(item.line));
 		$('rightTitle').textContent = 'Subtitles near where it would be';
@@ -165,7 +211,7 @@ const show = () => {
 
 const showClosest = (list, lines, what, target) => {
 	const match = closest(target, lines);
-	fill(list, lines, -1, match);
+	fill(list, lines, -1, [match]);
 	$('hint').textContent = match === -1
 		? `No ${what} nearby shares many words with it. Search to be sure.`
 		: `Blue: the ${what} sharing the most words with it. Only a word match, so check it.`;
@@ -179,8 +225,11 @@ const nextUnanswered = () => {
 	return -1;
 };
 
-const answer = async label => {
+const answer = async slot => {
 	const item = data.items[at];
+	const option = OPTIONS[item.kind][slot];
+	if (!option) return;
+	const [label, name] = option;
 	const res = await fetch('/label', { method: 'POST', body: JSON.stringify({ key: item.key, label }) });
 	if (!res.ok) { $('status').textContent = `Not saved: ${(await res.json()).error}`; return; }
 	data.labels[item.key] = label;
@@ -193,7 +242,7 @@ const answer = async label => {
 	void $('target').offsetWidth;
 	$('target').classList.add('fresh');
 	$('status').innerHTML = '<span class="saved"></span>';
-	$('status').firstChild.textContent = `Saved item ${data.items.indexOf(item) + 1}: ${OPTIONS[item.kind].find(o => o[0] === label)[2]}`;
+	$('status').firstChild.textContent = `Saved item ${data.items.indexOf(item) + 1}: ${name}`;
 };
 
 const search = () => {
@@ -220,8 +269,7 @@ document.addEventListener('keydown', e => {
 	if (e.key === '/') { e.preventDefault(); $('q').focus(); return; }
 	if (e.key === 'ArrowRight') { at = Math.min(data.items.length - 1, at + 1); show(); return; }
 	if (e.key === 'ArrowLeft') { at = Math.max(0, at - 1); show(); return; }
-	const option = OPTIONS[data.items[at].kind].find(o => o[1] === e.key.toLowerCase());
-	if (option) answer(option[0]);
+	if (['1', '2', '3', '4'].includes(e.key)) answer(Number(e.key) - 1);
 });
 $('prev').onclick = () => { at = Math.max(0, at - 1); show(); };
 $('next').onclick = () => { at = Math.min(data.items.length - 1, at + 1); show(); };
