@@ -17,9 +17,10 @@ describe('fetchBytes', () => {
 		expect(global.fetch).toHaveBeenCalledTimes(1);
 	});
 
-	it('waits as long as the site asks, else longer each try', () => {
+	it('waits as long as the site asks, up to two minutes, else longer each try', () => {
 		expect(retryDelayMs('5', 1)).toBe(5000);
 		expect(retryDelayMs(null, 1)).toBe(30000);
 		expect(retryDelayMs('Wed, 21 Oct 2026 07:28:00 GMT', 2)).toBe(60000);
+		expect(retryDelayMs('86400', 1)).toBe(120000);
 	});
 });

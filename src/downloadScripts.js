@@ -19,8 +19,13 @@ const ATTEMPTS = 3;
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+// The longest wait between tries, whatever the site asks, so a run never stalls for hours
+const MAX_RETRY_SECONDS = 120;
+// For sites that throttle (the Wayback Machine allows about one request per 8s): the fetchers' --slow
+const SLOW_SITE = { concurrency: 1, pauseMs: 8000 };
+
 /** How long to wait before trying again: the site's Retry-After when it gives seconds, else 30s, then 60s */
-const retryDelayMs = (retryAfter, attempt) => (Number(retryAfter) > 0 ? Number(retryAfter) : 30 * attempt) * 1000;
+const retryDelayMs = (retryAfter, attempt) => Math.min(Number(retryAfter) > 0 ? Number(retryAfter) : 30 * attempt, MAX_RETRY_SECONDS) * 1000;
 
 const fetchBytes = async url => {
 	for (let attempt = 1; ; attempt++) {
@@ -33,9 +38,8 @@ const fetchBytes = async url => {
 
 /**
  * Save each script ({ url, file, ... }) as scripts/local/<file>, calling
- * onSaved(script) after each. Returns the failures, one line each. For a
- * fragile site (the Wayback Machine allows about one request per 8s), pass
- * { concurrency: 1, pauseMs: 8000 }.
+ * onSaved(script) after each. Returns the failures, one line each. Pass
+ * SLOW_SITE for a site that throttles.
  */
 const downloadScripts = async (queue, onSaved = () => {}, { concurrency = CONCURRENCY, pauseMs = 0 } = {}) => {
 	fs.mkdirSync(LOCAL_SCRIPTS_DIR, { recursive: true });
@@ -60,4 +64,4 @@ const downloadScripts = async (queue, onSaved = () => {}, { concurrency = CONCUR
 	return failures.sort();
 };
 
-module.exports = { downloadScripts, fetchBytes, retryDelayMs, MIN_SCRIPT_CHARACTERS };
+module.exports = { downloadScripts, fetchBytes, retryDelayMs, MIN_SCRIPT_CHARACTERS, SLOW_SITE };
