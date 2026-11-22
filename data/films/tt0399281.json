@@ -8,17 +8,19 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 2,
-    "numScenesDontPass": 195,
+    "numScenesPass": 3,
+    "numScenesDontPass": 194,
     "numOfFemalesChars": 5,
     "numOfMaleChars": 8,
     "numOfFemalesCharsWithDialogue": 5,
     "numOfMaleCharsWithDialogue": 10,
-    "totalLinesFemaleDialogue": 309,
+    "totalLinesFemaleDialogue": 372,
     "totalLinesMaleDialogue": 271,
     "scenesThatPass": [
       "DENISE: Where the hell are they? Okay, why do hummingbirds hum?\nWINNIE: Why?\nDENISE: They don't know the words.\nWINNIE: That's a sorry ass joke, Denise.",
-      "LUCY: Do you: know what Freud wrote?\nDENISE: Freud?\nLUCY: \"The final therapy is love and work.\""
+      "LUCY: Do you: know what Freud wrote?\nDENISE: Freud?\nLUCY: \"The final therapy is love and work.\"",
+      "CATHLEEN: .-.so I've been accepted to the dectoral program at Harvard.\nELEANOR: Congratulations, dear. Bitsy, you | must be so proud.",
+      "ELEANOR: Ricky, you remember Mrs. Cromwell and...Cathileen.\nCATHLEEN: We... used...to be..in the Same...class... in high school."
     ]
   },
   "script": {
@@ -43,7 +45,7 @@
       {
         "name": "ELEANOR",
         "lines": 63,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1663,14 +1665,14 @@
     },
     "measures": {
       "firstWomanLine": 1,
-      "longestWithoutWoman": 22,
-      "longestWithoutWomanStart": 298,
+      "longestWithoutWoman": 17,
+      "longestWithoutWomanStart": 327,
       "words": {
-        "w": 3972,
+        "w": 4955,
         "m": 3270,
-        "unknown": 2619
+        "unknown": 1636
       },
-      "womenConversations": 11,
+      "womenConversations": 30,
       "menConversations": 17,
       "reverseScore": 3
     }

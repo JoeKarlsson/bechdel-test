@@ -8,16 +8,18 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 108,
+    "numScenesPass": 3,
+    "numScenesDontPass": 106,
     "numOfFemalesChars": 14,
     "numOfMaleChars": 12,
     "numOfFemalesCharsWithDialogue": 6,
     "numOfMaleCharsWithDialogue": 14,
-    "totalLinesFemaleDialogue": 120,
+    "totalLinesFemaleDialogue": 186,
     "totalLinesMaleDialogue": 471,
     "scenesThatPass": [
-      "BETTY: Yes, I understand. I'll get back to you.\nCLAUDE: Good morning - Something wrong? You said to come in today, remember? You said you may have a book for m e to edit. Is it a bad time? Have I …\nBETTY: No, no, it's the right day and it's absolutely the perfect time. In fact, the timing is quite extraordinary. Do you believe in fate?\nCLAUDE: I'm sorry?"
+      "BETTY: Yes, I understand. I'll get back to you.\nCLAUDE: Good morning - Something wrong? You said to come in today, remember? You said you may have a book for m e to edit. Is it a bad time? Have I …\nBETTY: No, no, it's the right day and it's absolutely the perfect time. In fact, the timing is quite extraordinary. Do you believe in fate?\nCLAUDE: I'm sorry?",
+      "CELESTE: I'll sing it -\nSYLVIE: Not now, Celeste -\nCELESTE: 'The Kangaroo escaped the Zoo. \"Goodbye zoo!\" cried Kangaroo, Cleared the wall with one clean jump, Leaped across with a great big thump - '",
+      "CELESTE: Do you like it?\nSYLVIE: E-T- T. E - E.E-T-A-0-I-N-U-S-H-R- R.E-T-A-0-I-N-U-S-H-R- Terrific? You want m e to pin it up? I'll put it next to Theo's Mickey Mouse -\nSYLVIE: Say goodbye -\nCELESTE: Bye -"
     ]
   },
   "script": {
@@ -41,7 +43,7 @@
       {
         "name": "SYLVIE",
         "lines": 66,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1168,15 +1170,15 @@
       }
     },
     "measures": {
-      "firstWomanLine": 214,
-      "longestWithoutWoman": 213,
-      "longestWithoutWomanStart": 1,
+      "firstWomanLine": 98,
+      "longestWithoutWoman": 107,
+      "longestWithoutWomanStart": 107,
       "words": {
-        "w": 1054,
+        "w": 1713,
         "m": 6127,
-        "unknown": 1778
+        "unknown": 1119
       },
-      "womenConversations": 1,
+      "womenConversations": 6,
       "menConversations": 34,
       "reverseScore": 3
     }

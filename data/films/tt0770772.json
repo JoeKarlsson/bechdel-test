@@ -9,15 +9,16 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 2,
-    "numScenesDontPass": 178,
+    "numScenesPass": 4,
+    "numScenesDontPass": 176,
     "numOfFemalesChars": 13,
     "numOfMaleChars": 14,
     "numOfFemalesCharsWithDialogue": 8,
     "numOfMaleCharsWithDialogue": 12,
-    "totalLinesFemaleDialogue": 189,
+    "totalLinesFemaleDialogue": 274,
     "totalLinesMaleDialogue": 392,
     "scenesThatPass": [
+      "ERICA: Where’s Kelly’s nose?\nKELLY: Right here.",
       "NIKKI: Don’t worry about it.\nTRACY: Mary and I are leaving. Do you need anything before we go?",
       "TRACY: Good night.\nNIKKI: Good night.\nNIKKI: I don’t think your secretaries like me.",
       "LANDLADY: Here it is.\nNIKKI: The ad said there's a balcony.\nLANDLADY: I lied.\nNIKKI: Oh.",
@@ -46,7 +47,7 @@
       {
         "name": "ERICA",
         "lines": 85,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1648,15 +1649,15 @@
       }
     },
     "measures": {
-      "firstWomanLine": 39,
-      "longestWithoutWoman": 43,
-      "longestWithoutWomanStart": 478,
+      "firstWomanLine": 7,
+      "longestWithoutWoman": 24,
+      "longestWithoutWomanStart": 486,
       "words": {
-        "w": 2560,
+        "w": 3575,
         "m": 4840,
-        "unknown": 1955
+        "unknown": 940
       },
-      "womenConversations": 4,
+      "womenConversations": 11,
       "menConversations": 10,
       "reverseScore": 3
     }

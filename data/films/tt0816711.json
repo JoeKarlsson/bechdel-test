@@ -7,17 +7,20 @@
     "Horror"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 109,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 2,
+    "numScenesDontPass": 107,
     "numOfFemalesChars": 19,
     "numOfMaleChars": 61,
     "numOfFemalesCharsWithDialogue": 4,
     "numOfMaleCharsWithDialogue": 17,
-    "totalLinesFemaleDialogue": 32,
+    "totalLinesFemaleDialogue": 101,
     "totalLinesMaleDialogue": 465,
-    "scenesThatPass": []
+    "scenesThatPass": [
+      "CONSTANCE: I WANT MY BATH ROBE!\nKARIN: It’s packed Baby. I can’t get to it-",
+      "SEGEN: Don’t ever ask me that again. Give me a weapon. Show me what to do.\nKARIN: Baby?"
+    ]
   },
   "script": {
     "file": "world-war-z.txt",
@@ -34,7 +37,7 @@
       {
         "name": "KARIN",
         "lines": 69,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -1397,15 +1400,15 @@
       }
     },
     "measures": {
-      "firstWomanLine": 19,
-      "longestWithoutWoman": 433,
-      "longestWithoutWomanStart": 50,
+      "firstWomanLine": 12,
+      "longestWithoutWoman": 123,
+      "longestWithoutWomanStart": 249,
       "words": {
-        "w": 173,
+        "w": 652,
         "m": 4545,
-        "unknown": 2246
+        "unknown": 1767
       },
-      "womenConversations": 0,
+      "womenConversations": 3,
       "menConversations": 47,
       "reverseScore": 3
     }

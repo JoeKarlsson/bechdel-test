@@ -6,17 +6,23 @@
     "Thriller"
   ],
   "bechdelResults": {
-    "pass": false,
-    "bechdelScore": 1,
-    "numScenesPass": 0,
-    "numScenesDontPass": 74,
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 4,
+    "numScenesDontPass": 70,
     "numOfFemalesChars": 0,
     "numOfMaleChars": 2,
     "numOfFemalesCharsWithDialogue": 0,
     "numOfMaleCharsWithDialogue": 2,
-    "totalLinesFemaleDialogue": 49,
-    "totalLinesMaleDialogue": 244,
-    "scenesThatPass": []
+    "totalLinesFemaleDialogue": 386,
+    "totalLinesMaleDialogue": 438,
+    "scenesThatPass": [
+      "AMANDA: Lynn, hey.\nLYNN: Sorry I'm late. You'll never believe the morning I'm having.\nAMANDA: No worries. Everything's going pretty hokay. OOPS still hasn't delivered two of the pieces, but everything else is here.\nLYNN: Phil around?",
+      "AMANDA: Ass kisser.\nLYNN: Well, thanks. It means a lot to me.",
+      "LYNN: How...on earth...did you get all these people here?\nAMANDA: WWW dot I hate clowns dot com. I posted it on their message board.\nLYNN: But...if they hate clowns, why would they come?\nAMANDA: It's a love-hate thing.",
+      "AMANDA: Twenty thousand dollars...that'll buy a lot of bandwidth.\nAMANDA: Tres geek, huh?\nLYNN: Yeah.",
+      "LYNN: I'm sorry. I don't even know where to start.\nAMANDA: What? What happened?\nLYNN: You'll never believe it...get me some coffee and I'll tell you about it."
+    ]
   },
   "script": {
     "file": "fear-of-clowns.txt",
@@ -26,14 +32,14 @@
       {
         "name": "LYNN",
         "lines": 337,
-        "gender": null,
+        "gender": "w",
         "named": true,
         "actor": "Jacky Reres"
       },
       {
         "name": "TUCK",
         "lines": 194,
-        "gender": null,
+        "gender": "m",
         "named": true,
         "actor": "Rick Ganz"
       },
@@ -743,15 +749,15 @@
     },
     "measures": {
       "firstWomanLine": 2,
-      "longestWithoutWoman": 438,
-      "longestWithoutWomanStart": 488,
+      "longestWithoutWoman": 33,
+      "longestWithoutWomanStart": 678,
       "words": {
-        "w": 356,
-        "m": 2708,
-        "unknown": 4853
+        "w": 2900,
+        "m": 4204,
+        "unknown": 813
       },
-      "womenConversations": 0,
-      "menConversations": 2,
+      "womenConversations": 12,
+      "menConversations": 12,
       "reverseScore": 3
     }
   },

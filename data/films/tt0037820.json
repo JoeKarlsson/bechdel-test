@@ -9,15 +9,18 @@
   "bechdelResults": {
     "pass": true,
     "bechdelScore": 3,
-    "numScenesPass": 1,
-    "numScenesDontPass": 104,
+    "numScenesPass": 4,
+    "numScenesDontPass": 101,
     "numOfFemalesChars": 4,
     "numOfMaleChars": 7,
     "numOfFemalesCharsWithDialogue": 1,
     "numOfMaleCharsWithDialogue": 5,
-    "totalLinesFemaleDialogue": 86,
-    "totalLinesMaleDialogue": 193,
+    "totalLinesFemaleDialogue": 161,
+    "totalLinesMaleDialogue": 304,
     "scenesThatPass": [
+      "MISS WOLLSTEN: If you'll forgive me...I've letters to write.\nCATHY: I've just been admiring Thea's headdress. I think I shall have a hat made like it a little round cap with a veil ——",
+      "CATHY: She's in her room.\nTHEA: I'll get her --",
+      "THEA: You should sleep, Cathy. Lie down and close your eyes. Try to forget everything.\nCATHY: When I close my eyes, I see Miss Wollsten. I can't think of anything else.\nTHEA: She is dead — at peace.\nCATHY: Suppose, she isn't dead. Suppose it was a cataleptic attack?",
       "THEA: Cathy?\nMISS WOLLSTEN: Cathy!"
     ]
   },
@@ -29,7 +32,7 @@
       {
         "name": "GENERAL",
         "lines": 111,
-        "gender": null,
+        "gender": "m",
         "named": false
       },
       {
@@ -42,7 +45,7 @@
       {
         "name": "CATHY",
         "lines": 75,
-        "gender": null,
+        "gender": "w",
         "named": true
       },
       {
@@ -754,15 +757,15 @@
       }
     },
     "measures": {
-      "firstWomanLine": 51,
-      "longestWithoutWoman": 50,
+      "firstWomanLine": 37,
+      "longestWithoutWoman": 36,
       "longestWithoutWomanStart": 1,
       "words": {
-        "w": 1078,
-        "m": 2513,
-        "unknown": 2382
+        "w": 1936,
+        "m": 3892,
+        "unknown": 145
       },
-      "womenConversations": 1,
+      "womenConversations": 13,
       "menConversations": 15,
       "reverseScore": 3
     }
