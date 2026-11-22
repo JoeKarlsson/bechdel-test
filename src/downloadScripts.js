@@ -14,17 +14,30 @@ const CONCURRENCY = 4;
 // Shorter than this, the file holds a stub or an excerpt, not a screenplay
 const MIN_SCRIPT_CHARACTERS = 20000;
 
+// Tries per file when a site says it's busy (429) or down (5xx)
+const ATTEMPTS = 3;
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+/** How long to wait before trying again: the site's Retry-After when it gives seconds, else 30s, then 60s */
+const retryDelayMs = (retryAfter, attempt) => (Number(retryAfter) > 0 ? Number(retryAfter) : 30 * attempt) * 1000;
+
 const fetchBytes = async url => {
-	const response = await fetch(url, { headers: { 'User-Agent': 'bechdel-test script fetcher' }, signal: AbortSignal.timeout(60000) });
-	if (!response.ok) throw new Error(`${response.status}`);
-	return Buffer.from(await response.arrayBuffer());
+	for (let attempt = 1; ; attempt++) {
+		const response = await fetch(url, { headers: { 'User-Agent': 'bechdel-test script fetcher' }, signal: AbortSignal.timeout(60000) });
+		if (response.ok) return Buffer.from(await response.arrayBuffer());
+		if ((response.status !== 429 && response.status < 500) || attempt === ATTEMPTS) throw new Error(`${response.status}`);
+		await sleep(retryDelayMs(response.headers.get('retry-after'), attempt));
+	}
 };
 
 /**
  * Save each script ({ url, file, ... }) as scripts/local/<file>, calling
- * onSaved(script) after each. Returns the failures, one line each.
+ * onSaved(script) after each. Returns the failures, one line each. For a
+ * fragile site (the Wayback Machine allows about one request per 8s), pass
+ * { concurrency: 1, pauseMs: 8000 }.
  */
-const downloadScripts = async (queue, onSaved = () => {}) => {
+const downloadScripts = async (queue, onSaved = () => {}, { concurrency = CONCURRENCY, pauseMs = 0 } = {}) => {
 	fs.mkdirSync(LOCAL_SCRIPTS_DIR, { recursive: true });
 	const pending = [...queue];
 	const failures = [];
@@ -40,10 +53,11 @@ const downloadScripts = async (queue, onSaved = () => {}) => {
 			} catch (error) {
 				failures.push(`${script.file} ${script.url}: ${error.message}`);
 			}
+			await sleep(pauseMs);
 		}
 	};
-	await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+	await Promise.all(Array.from({ length: concurrency }, worker));
 	return failures.sort();
 };
 
-module.exports = { downloadScripts, fetchBytes };
+module.exports = { downloadScripts, fetchBytes, retryDelayMs, MIN_SCRIPT_CHARACTERS };
