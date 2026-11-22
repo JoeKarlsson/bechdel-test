@@ -63,11 +63,14 @@ const parseSources = (csv, filmsWeHave) => {
 	const [header, ...rows] = parseCsv(csv);
 	const column = name => header.indexOf(name);
 	const [imdbColumn, titleColumn, yearColumn, linkColumn] = ['imdb_id', 'title', 'year', 'link'].map(column);
-	return rows
+	const films = rows
 		.map(row => ({ imdbId: row[imdbColumn], title: row[titleColumn], year: row[yearColumn], link: row[linkColumn]?.trim() }))
 		.filter(({ imdbId, link }) => /^tt\d+$/.test(imdbId) && /^https?:\/\//.test(link) && !filmsWeHave.has(imdbId))
 		.filter(({ link }) => !EXCLUDED_HOSTS.some(host => new URL(link).hostname.endsWith(host)))
 		.map(({ link, ...film }) => ({ ...film, url: downloadUrl(link) }));
+	// A link shared by two films (Back to the Future II and III) is one combined script, right for neither
+	const urlCounts = Map.groupBy(films, film => film.url);
+	return films.filter(film => urlCounts.get(film.url).length === 1);
 };
 
 module.exports = { SOURCES_URL, parseCsv, parseSources };
