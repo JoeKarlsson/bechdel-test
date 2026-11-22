@@ -45,7 +45,7 @@ const textOfHtml = html => decodeHtmlEntities(html
  */
 const scriptTextFrom = async (url, bytes) => {
 	const extension = new URL(url).pathname.split('.').pop().toLowerCase();
-	if (bytes.subarray(0, 5).toString('latin1') === '%PDF-') return pdfToText(bytes);
+	if (extension === 'pdf' || bytes.subarray(0, 5).toString('latin1') === '%PDF-') return pdfToText(bytes);
 	if (['doc', 'docx', 'rtf', 'jpg', 'gif', 'png', 'zip'].includes(extension)) return null;
 	// Daily Script serves ISO-8859-1 (WHATWG's latin1 is Windows-1252)
 	const text = new TextDecoder('latin1').decode(bytes);

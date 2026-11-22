@@ -17,8 +17,8 @@ const { loadManifest, saveManifest, scriptPathFor } = require('../src/manifest')
 
 const main = async () => {
 	const manifest = loadManifest();
-	const taken = file => file in manifest || scriptPathFor(file) || queue.some(film => film.file === file);
 	const queue = [];
+	const taken = file => file in manifest || scriptPathFor(file) || queue.some(film => film.file === file);
 	for (const film of parseSources((await fetchBytes(SOURCES_URL)).toString(), new Set(Object.values(manifest).filter(Boolean)))) {
 		// A remake shares its title with the original, so the year tells them apart
 		const file = [scriptFileName(film.title), scriptFileName(`${film.title} ${film.year}`)].find(name => !taken(name));

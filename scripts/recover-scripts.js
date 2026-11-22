@@ -12,6 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const { LISTING_PAGES, parseListing, scriptTextFrom } = require('../src/dailyScript');
+const { fetchBytes } = require('../src/downloadScripts');
 const { loadManifest, scriptPathFor, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
 const { parseScreenplay } = require('../src/screenplay');
 const { comparableTitle, titleFromScriptName } = require('../src/fetchMetadata');
@@ -20,12 +21,6 @@ const { cleanScriptText, dialogueEnglishShare } = require('../src/scriptText');
 const { MIN_DIALOGUE_LINES, MIN_DIALOGUE_ENGLISH } = require('../src/analyzeFilm');
 // Main speakers a copy must share with the old text to count as the same film
 const MIN_SHARED_SPEAKERS = 2;
-
-const fetchBytes = async url => {
-	const response = await fetch(url, { headers: { 'User-Agent': 'bechdel-test script fetcher' } });
-	if (!response.ok) throw new Error(`${response.status} for ${url}`);
-	return Buffer.from(await response.arrayBuffer());
-};
 
 /** How usable a script's text is: its dialogue lines, English share, and most frequent speakers */
 const measure = text => {
