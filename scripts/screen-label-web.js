@@ -3,8 +3,8 @@
  * Label exported page-vs-screen items in the browser instead of the terminal.
  * Reads a folder written by `npm run screen:label -- --export <dir>` and saves
  * each answer to <dir>/labels.json as you go; import that file with
- * `npm run screen:label -- --import <dir>/labels.json` (plus --again or --check
- * if the folder was exported with it). Serves on this machine only: the
+ * `npm run screen:label -- --import <dir>/labels.json` plus the flag the folder
+ * was exported with (--again, --check, --audio or --verdicts). Serves on this machine only: the
  * folder holds script and subtitle text.
  *
  *   npm run screen:label-web -- <dir>
@@ -29,7 +29,12 @@ const films = fs.readdirSync(dir).filter(f => f.endsWith('-items.json')).sort().
 });
 const labels = fs.existsSync(LABELS_FILE) ? JSON.parse(fs.readFileSync(LABELS_FILE, 'utf8')) : {};
 const items = films.flatMap((f, filmIndex) => f.items.map(item => ({ ...item, film: f.film, filmIndex })));
-const allowed = { 'script line': ['kept', 'changed', 'cut', 'unsure'], 'subtitle line': ['scripted', 'not in script', 'unsure'] };
+const allowed = {
+	'script line': ['kept', 'changed', 'cut', 'unsure'],
+	'subtitle line': ['scripted', 'not in script', 'unsure'],
+	audio: ['subtitles trimmed', 'really changed', 'really cut', 'unsure'],
+	verdict: ['passes on screen', 'fails on screen', 'unsure'],
+};
 
 const PAGE = fs.readFileSync(path.join(__dirname, 'screen-label-web.html'), 'utf8');
 

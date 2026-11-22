@@ -116,10 +116,11 @@ const main = async () => {
 	if (again.length > 0) {
 		console.log(`Agreement between the two labellings: Cohen's kappa ${cohensKappa(again.map(k => gold.labels[k]), again.map(k => gold.again[k])).toFixed(3)} over ${again.length} items`);
 	}
-	const audio = Object.values(gold.audio);
+	const audio = Object.values(gold.audio).filter(a => a !== 'unsure');
 	if (audio.length > 0) {
 		const trimmed = audio.filter(a => a === 'subtitles trimmed').length;
-		console.log(`Audio check: ${trimmed} of ${audio.length} lines labelled cut or changed were said as written; the subtitles trimmed them`);
+		const [lo, hi] = wilson(trimmed, audio.length);
+		console.log(`Audio check: ${trimmed} of ${audio.length} lines labelled cut or changed were said as written; the subtitles trimmed them (95% CI ${(lo * 100).toFixed(0)}-${(hi * 100).toFixed(0)}%)`);
 	}
 	const check = Object.keys(gold.check ?? {}).filter(key => gold.check[key] !== 'unsure');
 	if (check.length > 0) {

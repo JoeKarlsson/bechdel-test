@@ -12,9 +12,10 @@
  *                                       from the film whether it passes on screen
  *
  * For labelling outside this prompt (docs/page-vs-screen/CODEBOOK.md):
- *   npm run screen:label -- --export <dir> [--again]  each film's items, with context and no prediction, plus its full
- *                                                    script and subtitles to search (text: keep the folder off the repo)
- *   npm run screen:label -- --import <labels.json> [--again]  { "<item key>": "<label>" } into the gold file
+ *   npm run screen:label -- --export <dir> [--again|--check|--audio|--verdicts]  each film's items, with context and no
+ *                                    prediction, plus its full script and subtitles to search (text: keep the folder off the repo)
+ *   npm run screen:label -- --import <labels.json> [same flag]  { "<item key>": "<label>" } into the gold file
+ *   npm run screen:label-web -- <dir>  label an exported folder in the browser
  */
 const crypto = require('crypto');
 const fs = require('fs');
@@ -163,33 +164,47 @@ const verdictSample = records => {
 	return seeded([...of('page-pass-screen-fail').slice(0, VERDICT_PASS_TO_FAIL), ...of('page-fail-screen-pass')], c => `verdict-order:${c.film._id}`);
 };
 
-/** Shows the conversations a changed verdict rests on, and asks whether the film passes on screen; null means quit */
-const askVerdict = async (rl, film, change) => {
+const VERDICT_SHOWN = 3;
+
+/** The conversations a changed verdict rests on, as titled groups of lines, plus the film's detail */
+const verdictEvidence = async (film, change, radius) => {
 	const input = await loadComparisonInput(film);
 	const { resolved, characters, screenplay } = input;
 	const { detail } = compareFilm(input);
-	const indexOfBlock = new Map(screenplay.scenes.flatMap(scene => scene.blocks).filter(block => block.kind === 'dialogue').map((block, i) => [block, i]));
-	const shown = 3;
+	const subtitlesAround = center => detail.screenLines
+		.slice(Math.max(0, center - radius), center + radius + 1).map(l => `${clock(l.start)}  ${l.text}`);
+	if (change === 'page-pass-screen-fail') {
+		const indexOfBlock = new Map(screenplay.scenes.flatMap(scene => scene.blocks).filter(block => block.kind === 'dialogue').map((block, i) => [block, i]));
+		const clean = runTest(screenplay, resolved, characters, 'w').clean;
+		return {
+			detail,
+			summary: `The script passes on ${clean.length} conversations. The first ${Math.min(VERDICT_SHOWN, clean.length)}, and the subtitles where each would be:`,
+			groups: clean.slice(0, VERDICT_SHOWN).flatMap((exchange, n) => [
+				{ title: `Script, conversation ${n + 1}`, lines: exchange.lines.map(line => `${line.speaker}: ${line.text}`) },
+				{ title: `Subtitles where it would be`, lines: subtitlesAround(anchorFor(detail, indexOfBlock.get(exchange.lines[0]))) },
+			]),
+		};
+	}
+	const strict = screenScreenplay(detail.dialogue, detail.screenLines, detail.lineOwner, resolved, 'SOMEONE UNHEARD');
+	const clean = runTest(strict, resolved, characters, 'w').clean;
+	return {
+		detail,
+		summary: `The subtitles pass on ${clean.length} conversations, each line with the speaker of the script line it matched. The first ${Math.min(VERDICT_SHOWN, clean.length)}:`,
+		groups: clean.slice(0, VERDICT_SHOWN).map((exchange, n) => ({
+			title: `Subtitles, conversation ${n + 1}`, lines: exchange.lines.map(line => `${clock(line.start)}  ${line.speaker}: ${line.text}`),
+		})),
+	};
+};
+
+/** Shows the conversations a changed verdict rests on, and asks whether the film passes on screen; null means quit */
+const askVerdict = async (rl, film, change) => {
 	let radius = 6;
 	for (;;) {
-		console.log(`\n=== ${film.title} (${film.year})`);
-		if (change === 'page-pass-screen-fail') {
-			const clean = runTest(screenplay, resolved, characters, 'w').clean;
-			console.log(`The script passes on ${clean.length} conversations. The first ${Math.min(shown, clean.length)}, and the subtitles where each would be:`);
-			for (const exchange of clean.slice(0, shown)) {
-				console.log('\nScript:');
-				for (const line of exchange.lines) console.log(`    ${line.speaker}: ${line.text}`);
-				console.log('Subtitles:');
-				showSubtitles(detail, anchorFor(detail, indexOfBlock.get(exchange.lines[0])), radius);
-			}
-		} else {
-			const strict = screenScreenplay(detail.dialogue, detail.screenLines, detail.lineOwner, resolved, 'SOMEONE UNHEARD');
-			const clean = runTest(strict, resolved, characters, 'w').clean;
-			console.log(`The subtitles pass on ${clean.length} conversations, each line with the speaker of the script line it matched. The first ${Math.min(shown, clean.length)}:`);
-			for (const exchange of clean.slice(0, shown)) {
-				console.log('');
-				for (const line of exchange.lines) console.log(`    ${clock(line.start)}  ${line.speaker}: ${line.text}`);
-			}
+		const { summary, groups } = await verdictEvidence(film, change, radius);
+		console.log(`\n=== ${film.title} (${film.year})\n${summary}`);
+		for (const group of groups) {
+			console.log(`\n${group.title}:`);
+			for (const line of group.lines) console.log(`    ${line}`);
 		}
 		console.log('\nIn the film, do two named women talk to each other about something other than a man?');
 		const options = Object.entries(VERDICT_KEYS).map(([k, v]) => `[${k}] ${v}`).join('  ');
@@ -199,6 +214,9 @@ const askVerdict = async (rl, film, change) => {
 		if (VERDICT_KEYS[answer]) return VERDICT_KEYS[answer];
 	}
 };
+
+/** What the audio check can record for a line: said as written means the subtitles trimmed it */
+const AUDIO_LABELS = ['subtitles trimmed', 'really changed', 'really cut', 'unsure'];
 
 const main = async () => {
 	process.loadEnvFile(path.join(ROOT, '.env'));
@@ -237,12 +255,36 @@ const main = async () => {
 	// the second labelling's items are fixed by the seed alone, not by the first labels
 	const againItems = seeded(todo, t => `again:${t.key}`).slice(0, AGAIN_ITEMS);
 
+	const audioItems = todo.filter(t => t.entry.split === 'test' && t.item.kind === 'page' && ['cut', 'changed'].includes(gold.labels[t.key])).slice(0, AUDIO_ITEMS);
+
 	gold.check ??= {};
 	gold.verdicts ??= {};
 	// --again and --check label the same seeded 100 items
 	const fixedItems = ['again', 'check'].includes(mode);
 	if (importFile) {
 		const labels = JSON.parse(fs.readFileSync(importFile, 'utf8'));
+		if (mode === 'verdicts') {
+			const changeOf = new Map(verdictSample(records).map(({ film, change }) => [`verdict:${film._id}`, change]));
+			for (const [key, verdict] of Object.entries(labels)) {
+				if (!changeOf.has(key)) throw new Error(`${key} isn't a verdict to check`);
+				if (!Object.values(VERDICT_KEYS).includes(verdict)) throw new Error(`${key}: "${verdict}" isn't one of ${Object.values(VERDICT_KEYS).join(', ')}`);
+				gold.verdicts[key.slice('verdict:'.length)] = { change: changeOf.get(key), verdict };
+			}
+			save(gold);
+			console.log(`${Object.keys(labels).length} verdicts imported; ${Object.keys(gold.verdicts).length} of ${changeOf.size} done`);
+			return;
+		}
+		if (mode === 'audio') {
+			const keys = new Set(audioItems.map(t => t.key));
+			for (const [key, label] of Object.entries(labels)) {
+				if (!keys.has(key)) throw new Error(`${key} isn't a line for the audio check`);
+				if (!AUDIO_LABELS.includes(label)) throw new Error(`${key}: "${label}" isn't one of ${AUDIO_LABELS.join(', ')}`);
+				gold.audio[key] = label;
+			}
+			save(gold);
+			console.log(`${Object.keys(labels).length} audio answers imported; ${Object.keys(gold.audio).length} of ${keys.size} done`);
+			return;
+		}
 		const target = { again: gold.again, check: gold.check }[mode] ?? gold.labels;
 		const allowed = new Map((fixedItems ? againItems : todo).map(t => [t.key, t.item.kind === 'page' ? Object.values(PAGE_KEYS) : Object.values(SCREEN_KEYS)]));
 		for (const [key, label] of Object.entries(labels)) {
@@ -252,6 +294,42 @@ const main = async () => {
 		}
 		save(gold);
 		console.log(`${Object.keys(labels).length} labels imported; ${Object.keys(target).length} of ${allowed.size} done`);
+		return;
+	}
+	const writeFilmFiles = (name, film, items, detail) => {
+		fs.writeFileSync(path.join(exportDir, `${name}-items.json`), `${JSON.stringify({ film, items }, null, '\t')}\n`);
+		fs.writeFileSync(path.join(exportDir, `${name}-subtitles.txt`), `${detail.screenLines.map(l => `${clock(l.start)}  ${l.text}`).join('\n')}\n`);
+		fs.writeFileSync(path.join(exportDir, `${name}-script.txt`), `${detail.dialogue.map(d => `${d.speaker}: ${d.text}`).join('\n')}\n`);
+		console.log(`${name}: ${film}, ${items.length} items`);
+	};
+	if (exportDir && mode === 'verdicts') {
+		fs.mkdirSync(exportDir, { recursive: true });
+		for (const [n, { film, change }] of verdictSample(records).entries()) {
+			const { detail, summary, groups } = await verdictEvidence(film, change, 10);
+			const item = { key: `verdict:${film._id}`, kind: 'verdict', change, summary, groups };
+			writeFilmFiles(`${String(n + 1).padStart(2, '0')}-${film._id}`, `${film.title} (${film.year})`, [item], detail);
+		}
+		return;
+	}
+	if (exportDir && mode === 'audio') {
+		fs.mkdirSync(exportDir, { recursive: true });
+		for (const [n, entry] of gold.films.entries()) {
+			const lines = audioItems.filter(t => t.entry === entry);
+			if (lines.length === 0) continue;
+			const detail = await detailOf(entry);
+			const script = d => `${d.speaker}: ${d.text}`;
+			const items = lines.map(({ item, key }) => {
+				if (hashOf(textOf(detail, item)) !== item.hash) throw new Error(`${entry.title}: line ${item.line} changed since sampling`);
+				const anchor = anchorFor(detail, item.line);
+				return {
+					key, kind: 'audio', at: clock(detail.screenLines[anchor].start), labelledAs: gold.labels[key],
+					line: script(detail.dialogue[item.line]),
+					scriptAround: detail.dialogue.slice(Math.max(0, item.line - 2), item.line + 3).map(script),
+					subtitlesNearWhereItWouldBe: detail.screenLines.slice(Math.max(0, anchor - 6), anchor + 7).map(l => `${clock(l.start)}  ${l.text}`),
+				};
+			});
+			writeFilmFiles(`${String(n + 1).padStart(2, '0')}-${entry._id}`, `${entry.title} (${entry.year})`, items, detail);
+		}
 		return;
 	}
 	if (exportDir) {
@@ -279,11 +357,7 @@ const main = async () => {
 					};
 			});
 			if (items.length === 0) continue;
-			const name = `${String(n + 1).padStart(2, '0')}-${entry._id}`;
-			fs.writeFileSync(path.join(exportDir, `${name}-items.json`), `${JSON.stringify({ film: `${entry.title} (${entry.year})`, items }, null, '\t')}\n`);
-			fs.writeFileSync(path.join(exportDir, `${name}-subtitles.txt`), `${detail.screenLines.map(l => `${clock(l.start)}  ${l.text}`).join('\n')}\n`);
-			fs.writeFileSync(path.join(exportDir, `${name}-script.txt`), `${detail.dialogue.map(d => `${d.speaker}: ${d.text}`).join('\n')}\n`);
-			console.log(`${name}: ${entry.title}, ${items.length} items`);
+			writeFilmFiles(`${String(n + 1).padStart(2, '0')}-${entry._id}`, `${entry.title} (${entry.year})`, items, detail);
 		}
 		return;
 	}
@@ -308,7 +382,7 @@ const main = async () => {
 	const queue = mode === 'label' ? todo.filter(t => !gold.labels[t.key])
 		: mode === 'again' ? againItems.filter(t => !gold.again[t.key])
 			: mode === 'check' ? againItems.filter(t => !gold.check[t.key])
-				: todo.filter(t => t.entry.split === 'test' && t.item.kind === 'page' && ['cut', 'changed'].includes(gold.labels[t.key])).slice(0, AUDIO_ITEMS).filter(t => !gold.audio[t.key]);
+				: audioItems.filter(t => !gold.audio[t.key]);
 	console.log(`${queue.length} to go`);
 	const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 	try {
