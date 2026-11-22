@@ -72,12 +72,33 @@ const comparableTitle = title => title
  */
 const matchScriptByTitle = async scriptName => {
 	const { title, year } = titleFromScriptName(scriptName);
-	const omdb = await fetchOmdb(year ? { t: title, y: year } : { t: title });
-	if (comparableTitle(omdb.Title) !== comparableTitle(title)) {
-		throw new Error(`OMDB's closest film is ${omdb.Title} (${omdb.Year}, ${omdb.imdbID}); set the id by hand if that's it`);
+	let omdbError;
+	try {
+		const omdb = await fetchOmdb(year ? { t: title, y: year } : { t: title });
+		if (comparableTitle(omdb.Title) === comparableTitle(title)) return { imdbId: omdb.imdbID, title: omdb.Title, year: omdb.Year };
+		omdbError = new Error(`OMDB's closest film is ${omdb.Title} (${omdb.Year}, ${omdb.imdbID}); set the id by hand if that's it`);
+	} catch (error) {
+		omdbError = error;
 	}
-	return { imdbId: omdb.imdbID, title: omdb.Title, year: omdb.Year };
+	// OMDB's title lookup is exact to the apostrophe ("tiffanys" misses) and skips some films; TMDB's search isn't
+	const search = await fetchJsonCached(`https://api.themoviedb.org/3/search/movie?api_key=${requireKey('THEMOVIEDB')}&query=${encodeURIComponent(title)}`);
+	const tmdb = exactTitleMatch(search.results, title, year);
+	if (!tmdb) throw omdbError;
+	const { imdb_id: imdbId } = await fetchJsonCached(`https://api.themoviedb.org/3/movie/${tmdb.id}?api_key=${requireKey('THEMOVIEDB')}`);
+	if (!imdbId) throw new Error(`TMDB's ${tmdb.title} has no IMDb id; ${omdbError.message}`);
+	return { imdbId, title: tmdb.title, year: tmdb.release_date?.slice(0, 4) ?? null };
 };
+
+/**
+ * The first TMDB search result whose title or original title is this title,
+ * released from a year before to two years after the year given: a script's
+ * year is often its draft's (Forbidden Planet's says 1954, the film is 1956)
+ */
+const exactTitleMatch = (results, title, year = null) => results.find(result => {
+	const released = parseInt(result.release_date, 10);
+	return [result.title, result.original_title].some(candidate => candidate && comparableTitle(candidate) === comparableTitle(title))
+		&& (!year || (released >= Number(year) - 1 && released <= Number(year) + 2));
+});
 
 const fetchTmdb = (imdbId, resource, query = '') =>
 	fetchJsonCached(`https://api.themoviedb.org/3/movie/${imdbId}/${resource}?api_key=${requireKey('THEMOVIEDB')}${query}`);
@@ -122,4 +143,4 @@ const fetchMetadata = async imdbId => {
 	return { omdb, cast: credits.cast, crew: credits.crew || [], images, details, birthdays };
 };
 
-module.exports = { fetchMetadata, fetchCast, fetchTmdbDetails, fetchReleaseYear, matchScriptByTitle, titleFromScriptName, comparableTitle };
+module.exports = { fetchMetadata, fetchCast, fetchTmdbDetails, fetchReleaseYear, matchScriptByTitle, exactTitleMatch, titleFromScriptName, comparableTitle };
