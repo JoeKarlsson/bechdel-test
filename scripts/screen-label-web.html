@@ -39,7 +39,9 @@
 	mark { background: var(--mark); }
 	.saved { color: var(--accent); font-weight: 600; font-size: 1rem; }
 	:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-	@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+	.target.fresh { animation: fresh .5s ease-out; }
+	@keyframes fresh { from { background: var(--mark); } to { background: #fff; } }
+	@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
@@ -158,6 +160,10 @@ const answer = async label => {
 	if (next === -1) { show(); $('status').innerHTML = '<span class="saved">All done. Tell Claude.</span>'; return; }
 	at = next;
 	show();
+	// restart the flash so every save shows, even two in a row
+	$('target').classList.remove('fresh');
+	void $('target').offsetWidth;
+	$('target').classList.add('fresh');
 	$('status').innerHTML = '<span class="saved"></span>';
 	$('status').firstChild.textContent = `Saved item ${data.items.indexOf(item) + 1}: ${OPTIONS[item.kind].find(o => o[0] === label)[2]}`;
 };
