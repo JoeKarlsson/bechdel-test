@@ -16,6 +16,7 @@ const fs = require('fs');
 const path = require('path');
 const { fetchMetadata } = require('../src/fetchMetadata');
 const { loadManifest, listScriptPaths } = require('../src/manifest');
+const { siteRating } = require('../src/readerRating');
 const {
 	charactersFromCast, analyzeScriptText, runAiAnalysis, aiSectionsOf, buildFilmRecord, unresolvedMainSpeakers,
 } = require('../src/analyzeFilm');
@@ -55,13 +56,6 @@ const loadExistingFilms = () => {
 		byImdbId.set(film.idIMDB, film);
 	}
 	return { byScript, byImdbId };
-};
-
-/** bechdeltest.com's reader rating, in the shape the site reads, if the film has one */
-const readersRating = imdbId => {
-	const rating = READER_RATINGS[imdbId];
-	if (!rating) return undefined;
-	return { rating: rating.rating, dubious: rating.dubious ? 1 : 0, id: Number(rating.url.match(/\/view\/(\d+)/)?.[1]) || undefined };
 };
 
 const analyzeOne = async (scriptPath, context) => {
@@ -104,7 +98,7 @@ const analyzeOne = async (scriptPath, context) => {
 		images,
 		bechdelResults,
 		script: { file: script, ...summary },
-		bechdelData: readersRating(imdbId) ?? existing?.bechdelData,
+		bechdelData: siteRating(READER_RATINGS[imdbId]) ?? existing?.bechdelData,
 	});
 	fs.writeFileSync(path.join(FILMS_DIR, `${record._id}.json`), `${JSON.stringify(record, null, 2)}\n`);
 	if (Object.keys(ai).length) {

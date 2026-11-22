@@ -12,6 +12,9 @@ const fs = require('fs');
 const path = require('path');
 const { fetchReleaseYear } = require('../src/fetchMetadata');
 const { loadManifest } = require('../src/manifest');
+const { siteRating } = require('../src/readerRating');
+
+const FILMS_DIR = path.resolve(__dirname, '../data/films');
 
 const OUT = path.resolve(__dirname, '../data/eval/bechdeltest-ratings.json');
 const USER_AGENT = 'bechdel-test analyzer (+https://github.com/JoeKarlsson/bechdel-test)';
@@ -50,7 +53,8 @@ const main = async () => {
 	const ids = Object.values(loadManifest()).filter(Boolean);
 	const yearOf = {};
 	for (const id of ids) {
-		yearOf[id] = await fetchReleaseYear(id);
+		// A film TMDB doesn't have can't be on the site, so it needs no rating
+		yearOf[id] = await fetchReleaseYear(id).catch(error => console.warn(`${id}: no release year (${error.message}), skipped`));
 	}
 	// Match by IMDb id across every year fetched: bechdeltest.com sometimes
 	// lists a film a year off from TMDB's release year
@@ -64,6 +68,17 @@ const main = async () => {
 	const sorted = Object.fromEntries(Object.entries(ratings).sort(([a], [b]) => a.localeCompare(b)));
 	fs.writeFileSync(OUT, `${JSON.stringify(sorted, null, '\t')}\n`);
 	console.log(`\n${Object.keys(ratings).length} of ${ids.length} films have a bechdeltest.com rating.`);
+	// Each film on the site carries its rating from when it was analyzed; bring them up to date
+	let updated = 0;
+	for (const file of fs.readdirSync(FILMS_DIR).filter(name => name.endsWith('.json'))) {
+		const filmPath = path.join(FILMS_DIR, file);
+		const film = JSON.parse(fs.readFileSync(filmPath, 'utf8'));
+		const bechdelData = siteRating(ratings[film.idIMDB]);
+		if (!bechdelData || JSON.stringify(bechdelData) === JSON.stringify(film.bechdelData)) continue;
+		fs.writeFileSync(filmPath, `${JSON.stringify({ ...film, bechdelData }, null, 2)}\n`);
+		updated++;
+	}
+	console.log(`${updated} films on the site got their newer rating.`);
 };
 
 main().catch(error => {
