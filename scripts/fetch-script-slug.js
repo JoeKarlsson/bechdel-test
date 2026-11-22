@@ -30,9 +30,10 @@ const fetchOk = async url => {
 const main = async () => {
 	fs.mkdirSync(LOCAL_SCRIPTS_DIR, { recursive: true });
 	const manifest = loadManifest();
-	const filmsWeHave = new Set(Object.values(manifest).filter(Boolean));
+	// Only films whose script is on disk: a manifest entry whose download was lost gets fetched again
+	const filmsWeHave = new Set(Object.entries(manifest).filter(([file, imdbId]) => imdbId && scriptPathFor(file)).map(([, imdbId]) => imdbId));
 	const queue = parseSitemap(await (await fetchOk(SITEMAP_URL)).text())
-		.filter(url => !(scriptFileName(url) in manifest) && !scriptPathFor(scriptFileName(url)));
+		.filter(url => manifest[scriptFileName(url)] !== null && !scriptPathFor(scriptFileName(url)));
 	console.log(`${queue.length} script pages to check\n`);
 
 	let added = 0;
