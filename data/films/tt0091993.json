@@ -1,0 +1,985 @@
+{
+  "_id": "tt0091993",
+  "title": "SpaceCamp",
+  "genres": [
+    "Adventure",
+    "Family",
+    "Sci-Fi"
+  ],
+  "bechdelResults": {
+    "pass": true,
+    "bechdelScore": 3,
+    "numScenesPass": 11,
+    "numScenesDontPass": 21,
+    "numOfFemalesChars": 4,
+    "numOfMaleChars": 12,
+    "numOfFemalesCharsWithDialogue": 6,
+    "numOfMaleCharsWithDialogue": 18,
+    "totalLinesFemaleDialogue": 316,
+    "totalLinesMaleDialogue": 378,
+    "scenesThatPass": [
+      "ANDIE: -~and I'm Andie Wickman, I'll be your team leader.\nKATHRYN: You're an astronaut -- aren't you? First female pilot?\nANDIE: Hope to be. How'd you know that?\nKATHRYN: I'm... in the Young Astronauts program... Hi, Kathryn Hawlsey.",
+      "ANDIE: But now that you re Shuttle Commander, you're gonna have to start to. Aren't you?\nANDIE: And I'm making you Pilot--\nKATHRYN: You can't!\nANDIE: Pilot. Because I'm not sure how well you take orders. But you'll learn. We're all here to learn, right?",
+      "ANDIE: And this is our Shuttle Simulator...\nANDIE: The instrument panel is made from actual schematics. Every switch, every readout on the Discovery, is also right here. And most of those swi…\nANDIE: --don't touch anything until you're told.\nKATHRYN: I presume this is a standard airplane type stick.",
+      "ANDIE: .. they realized that the capsule might start tumbling once it reentered the atmosphere ~- and the astronaut would have only a few seconds t…\nKATHRYN: Can't be any worse than flying a loop-the~loop...\nANDIE: Right. Not much worse at any rate... i\nANDIE: Grab your stick, with your right hand, grab your stick!",
+      "ANDIE: Okay, since everybody's in such a good mood, let's get started. Landing procedure. Let's get the playback-- You'll see the landing strip com…\nKATHRYN: Thank you... You really, this was very...sweet."
+    ]
+  },
+  "script": {
+    "file": "space-camp-1986.txt",
+    "layout": "indented",
+    "dialogueLines": 767,
+    "speakers": [
+      {
+        "name": "ANDIE",
+        "lines": 139,
+        "gender": "w",
+        "named": true,
+        "actor": "Kate Capshaw"
+      },
+      {
+        "name": "KEVIN",
+        "lines": 135,
+        "gender": "m",
+        "named": true,
+        "actor": "Tate Donovan"
+      },
+      {
+        "name": "KATHRYN",
+        "lines": 119,
+        "gender": "w",
+        "named": true,
+        "actor": "Lea Thompson"
+      },
+      {
+        "name": "MAX",
+        "lines": 59,
+        "gender": "m",
+        "named": true,
+        "actor": "Joaquin Phoenix"
+      },
+      {
+        "name": "ZACH",
+        "lines": 53,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "JINX",
+        "lines": 45,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "TISH",
+        "lines": 43,
+        "gender": "w",
+        "named": true,
+        "actor": "Kelly Preston"
+      },
+      {
+        "name": "RUDY",
+        "lines": 37,
+        "gender": "m",
+        "named": true,
+        "actor": "Larry B. Scott"
+      },
+      {
+        "name": "DIRECTOR",
+        "lines": 33,
+        "gender": "m",
+        "named": true,
+        "actor": "Terry O'Quinn"
+      },
+      {
+        "name": "NASA #1",
+        "lines": 21,
+        "gender": "m",
+        "named": false,
+        "actor": "Daryl Keith Roach"
+      },
+      {
+        "name": "VDT",
+        "lines": 12,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "NASA #3",
+        "lines": 7,
+        "gender": "m",
+        "named": false,
+        "actor": "Terry White"
+      },
+      {
+        "name": "MOTHER",
+        "lines": 6,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "MOM",
+        "lines": 5,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "NASA #4",
+        "lines": 5,
+        "gender": "m",
+        "named": false,
+        "actor": "Daryl Keith Roach"
+      },
+      {
+        "name": "FATHER",
+        "lines": 4,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "NASA #2",
+        "lines": 4,
+        "gender": "m",
+        "named": false,
+        "actor": "Peter Scranton"
+      },
+      {
+        "name": "NASA #5",
+        "lines": 4,
+        "gender": "m",
+        "named": false,
+        "actor": "Daryl Keith Roach"
+      },
+      {
+        "name": "NASA #7",
+        "lines": 4,
+        "gender": "m",
+        "named": false,
+        "actor": "Daryl Keith Roach"
+      },
+      {
+        "name": "KID/MISSION DIRECTOR",
+        "lines": 3,
+        "gender": "m",
+        "named": false,
+        "actor": "Terry O'Quinn"
+      },
+      {
+        "name": "TECHNICIAN",
+        "lines": 3,
+        "gender": "m",
+        "named": true,
+        "actor": "Ron Harris"
+      },
+      {
+        "name": "ATTENDANT",
+        "lines": 2,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BOY",
+        "lines": 2,
+        "gender": "m",
+        "named": false
+      },
+      {
+        "name": "KID/FLIGHT DIRECTOR",
+        "lines": 2,
+        "gender": "m",
+        "named": false,
+        "actor": "Terry O'Quinn"
+      },
+      {
+        "name": "NASA #6",
+        "lines": 2,
+        "gender": "m",
+        "named": false,
+        "actor": "Daryl Keith Roach"
+      },
+      {
+        "name": "ANDIE K",
+        "lines": 1,
+        "gender": "w",
+        "named": true,
+        "actor": "Kate Capshaw"
+      },
+      {
+        "name": "BEHIND THEM",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "BOY #2",
+        "lines": 1,
+        "gender": "m",
+        "named": false,
+        "actor": "Peter Scranton"
+      },
+      {
+        "name": "BOY #3",
+        "lines": 1,
+        "gender": "m",
+        "named": false,
+        "actor": "Terry White"
+      },
+      {
+        "name": "DRIVER",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "EGIL--",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "GREEN KID",
+        "lines": 1,
+        "gender": null,
+        "named": true
+      },
+      {
+        "name": "GUARD #1",
+        "lines": 1,
+        "gender": "m",
+        "named": false,
+        "actor": "Daryl Keith Roach"
+      },
+      {
+        "name": "JINX’",
+        "lines": 1,
+        "gender": "m",
+        "named": true
+      },
+      {
+        "name": "KEVIN OE",
+        "lines": 1,
+        "gender": "m",
+        "named": true,
+        "actor": "Tate Donovan"
+      },
+      {
+        "name": "KIDS",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "LAUNCH DIRECTOR",
+        "lines": 1,
+        "gender": "m",
+        "named": true,
+        "actor": "Terry O'Quinn"
+      },
+      {
+        "name": "LITTLE ANDIE",
+        "lines": 1,
+        "gender": "w",
+        "named": true,
+        "actor": "Kate Capshaw"
+      },
+      {
+        "name": "RUDY /",
+        "lines": 1,
+        "gender": "m",
+        "named": true,
+        "actor": "Larry B. Scott"
+      },
+      {
+        "name": "TECH",
+        "lines": 1,
+        "gender": null,
+        "named": false
+      },
+      {
+        "name": "TISH AMBROSE",
+        "lines": 1,
+        "gender": "w",
+        "named": true,
+        "actor": "Kelly Preston"
+      },
+      {
+        "name": "WOMAN",
+        "lines": 1,
+        "gender": "w",
+        "named": false
+      },
+      {
+        "name": "X RUDY",
+        "lines": 1,
+        "gender": "m",
+        "named": true,
+        "actor": "Larry B. Scott"
+      }
+    ],
+    "scenes": [
+      {
+        "place": null,
+        "lines": {}
+      },
+      {
+        "place": "Country         field",
+        "lines": {
+          "0": 5,
+          "13": 4,
+          "37": 1
+        }
+      },
+      {
+        "place": "Marshall           space     flight           center            ~    day",
+        "lines": {
+          "4": 1
+        }
+      },
+      {
+        "place": "Administration               building                +    day",
+        "lines": {
+          "0": 5,
+          "4": 5
+        }
+      },
+      {
+        "place": "Space camp",
+        "lines": {
+          "0": 1,
+          "1": 3,
+          "4": 2,
+          "12": 2,
+          "15": 2
+        }
+      },
+      {
+        "place": "The    plane",
+        "lines": {
+          "2": 1,
+          "15": 2
+        }
+      },
+      {
+        "place": "Marshall       airstrip               ~    day",
+        "lines": {
+          "2": 4,
+          "12": 4,
+          "13": 1
+        }
+      },
+      {
+        "place": "Space    park       ~    day",
+        "lines": {
+          "1": 4,
+          "2": 2,
+          "4": 8
+        }
+      },
+      {
+        "place": "Space     museum       -~    day",
+        "lines": {
+          "1": 4,
+          "2": 2,
+          "3": 3,
+          "5": 1,
+          "20": 3,
+          "39": 1
+        }
+      },
+      {
+        "place": "The   training    center         ~    day",
+        "lines": {
+          "0": 28,
+          "1": 6,
+          "2": 11,
+          "3": 6,
+          "6": 4,
+          "7": 3,
+          "40": 1
+        }
+      },
+      {
+        "place": "Girls   bunk",
+        "lines": {
+          "0": 7,
+          "1": 24,
+          "2": 19,
+          "3": 12,
+          "5": 4,
+          "6": 8,
+          "7": 11,
+          "27": 1,
+          "28": 1,
+          "38": 1
+        }
+      },
+      {
+        "place": "Marshall      space          center        ~    night",
+        "lines": {
+          "0": 1,
+          "1": 13,
+          "2": 12,
+          "5": 2
+        }
+      },
+      {
+        "place": "Boys         bunk",
+        "lines": {
+          "1": 1,
+          "3": 1
+        }
+      },
+      {
+        "place": "Boys         bunk     ~    dusk",
+        "lines": {
+          "1": 6,
+          "3": 8,
+          "5": 5
+        }
+      },
+      {
+        "place": "Security         checkpoint                ~    nasa           computer             bldg.         ~    night",
+        "lines": {
+          "32": 1
+        }
+      },
+      {
+        "place": "Computer         room",
+        "lines": {
+          "0": 7,
+          "1": 5,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "5": 4,
+          "6": 2,
+          "7": 1,
+          "10": 3
+        }
+      },
+      {
+        "place": "Zach's     office           ~    day",
+        "lines": {
+          "4": 6,
+          "5": 6
+        }
+      },
+      {
+        "place": "Simulator/mission             control          room      ~    day",
+        "lines": {
+          "0": 1,
+          "4": 1
+        }
+      },
+      {
+        "place": "Shuttle    simulator          ~     day",
+        "lines": {
+          "0": 11,
+          "1": 15,
+          "2": 8,
+          "3": 4,
+          "4": 4,
+          "5": 6,
+          "6": 4,
+          "7": 4,
+          "10": 7,
+          "19": 3,
+          "23": 2,
+          "34": 1
+        }
+      },
+      {
+        "place": "Computer             room        ~    night",
+        "lines": {
+          "5": 2
+        }
+      },
+      {
+        "place": "Nasa       test       control            ~    night",
+        "lines": {
+          "0": 1,
+          "1": 1,
+          "4": 2,
+          "8": 3
+        }
+      },
+      {
+        "place": "Launch        tower    elevator              ~    night",
+        "lines": {
+          "0": 3,
+          "1": 1,
+          "31": 1,
+          "35": 1
+        }
+      },
+      {
+        "place": "Computer room ~- night",
+        "lines": {}
+      },
+      {
+        "place": "Nasa    test    control        ~    night",
+        "lines": {
+          "0": 1,
+          "8": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "Shuttle           ~   night",
+        "lines": {
+          "0": 1,
+          "2": 1
+        }
+      },
+      {
+        "place": "Nasa       test          control               ~   night",
+        "lines": {
+          "8": 1,
+          "9": 1
+        }
+      },
+      {
+        "place": "The    shuttle              ~       night",
+        "lines": {
+          "0": 37,
+          "1": 9,
+          "2": 9,
+          "3": 6,
+          "4": 11,
+          "5": 5,
+          "6": 6,
+          "7": 1,
+          "8": 14,
+          "9": 14,
+          "10": 2,
+          "11": 5,
+          "14": 3,
+          "16": 4,
+          "18": 2,
+          "30": 1
+        }
+      },
+      {
+        "place": "Road        ~    nasa       compound        ~    night",
+        "lines": {
+          "0": 16,
+          "1": 12,
+          "2": 11,
+          "3": 10,
+          "4": 1,
+          "5": 3,
+          "6": 7,
+          "7": 4,
+          "21": 2,
+          "24": 1,
+          "25": 1,
+          "29": 1
+        }
+      },
+      {
+        "place": "Shuttle",
+        "lines": {
+          "0": 4,
+          "2": 4,
+          "7": 7,
+          "42": 1
+        }
+      },
+      {
+        "place": "Cargo       bay     ~    shuttle",
+        "lines": {
+          "0": 3,
+          "1": 2,
+          "2": 3,
+          "3": 3,
+          "6": 2,
+          "9": 2
+        }
+      },
+      {
+        "place": "Nasa       ~    night",
+        "lines": {
+          "0": 7,
+          "1": 27,
+          "2": 27,
+          "3": 4,
+          "4": 8,
+          "5": 7,
+          "6": 10,
+          "7": 6,
+          "8": 14,
+          "9": 3,
+          "11": 2,
+          "14": 2,
+          "17": 4,
+          "18": 2,
+          "24": 1,
+          "26": 1,
+          "33": 1,
+          "36": 1
+        }
+      },
+      {
+        "place": "Sky        ~    dawn",
+        "lines": {
+          "1": 2,
+          "22": 2,
+          "41": 1
+        }
+      }
+    ],
+    "bookends": {
+      "first": {
+        "speaker": 37,
+        "line": 1,
+        "text": "...only a shootin’ star..."
+      },
+      "last": {
+        "speaker": 1,
+        "line": 767,
+        "text": "After you, Pilot."
+      }
+    },
+    "measures": {
+      "firstWomanLine": 1,
+      "longestWithoutWoman": 41,
+      "longestWithoutWomanStart": 147,
+      "words": {
+        "w": 2922,
+        "m": 3208,
+        "unknown": 950
+      },
+      "womenConversations": 41,
+      "menConversations": 27,
+      "reverseScore": 3
+    }
+  },
+  "images": {
+    "backdrop": "https://image.tmdb.org/t/p/original/cX6eYmP3juvsf3TA4hMN7ZNdHvu.jpg",
+    "poster": "https://image.tmdb.org/t/p/w300/wWw2yJHQxqATtXw4roPDVuoE9Xs.jpg"
+  },
+  "actors": [
+    {
+      "actorName": "Kate Capshaw",
+      "character": "Andie",
+      "actorActress": "1",
+      "age": 32
+    },
+    {
+      "actorName": "Lea Thompson",
+      "character": "Kathryn",
+      "actorActress": "1",
+      "age": 25
+    },
+    {
+      "actorName": "Kelly Preston",
+      "character": "Tish",
+      "actorActress": "1",
+      "age": 23
+    },
+    {
+      "actorName": "Larry B. Scott",
+      "character": "Rudy",
+      "actorActress": "2",
+      "age": 24
+    },
+    {
+      "actorName": "Joaquin Phoenix",
+      "character": "Max",
+      "actorActress": "2",
+      "age": 11
+    },
+    {
+      "actorName": "Tate Donovan",
+      "character": "Kevin",
+      "actorActress": "2",
+      "age": 22
+    },
+    {
+      "actorName": "Tom Skerritt",
+      "character": "Zack",
+      "actorActress": "2",
+      "age": 52
+    },
+    {
+      "actorName": "Barry Primus",
+      "character": "Brennan",
+      "actorActress": "2",
+      "age": 48
+    },
+    {
+      "actorName": "Terry O'Quinn",
+      "character": "Launch Director",
+      "actorActress": "2",
+      "age": 33
+    },
+    {
+      "actorName": "Mitchell Anderson",
+      "character": "Banning",
+      "actorActress": "2",
+      "age": 24
+    },
+    {
+      "actorName": "Scott Coffey",
+      "character": "Gardener",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Daryl Keith Roach",
+      "character": "NASA #1",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Peter Scranton",
+      "character": "NASA #2"
+    },
+    {
+      "actorName": "Hollye Rebecca Suggs",
+      "character": "Young Andie"
+    },
+    {
+      "actorName": "Terry White",
+      "character": "NASA #3"
+    },
+    {
+      "actorName": "Susan Becton",
+      "character": "Senior Counselor"
+    },
+    {
+      "actorName": "D. Ben Casey",
+      "character": "Rudy's Father"
+    },
+    {
+      "actorName": "Kathy Hanson",
+      "character": "Girl"
+    },
+    {
+      "actorName": "Ron Harris",
+      "character": "Tom the Technician"
+    },
+    {
+      "actorName": "Scott Holcomb",
+      "character": "Hideo Takamini"
+    },
+    {
+      "actorName": "Kevin Gage",
+      "character": "Counselor #2",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Saundra McGuire",
+      "character": "Rudy's Mother"
+    },
+    {
+      "actorName": "Bill Phillips",
+      "character": "Kathryn's Father",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Jon Steigman",
+      "character": "Bully in Dorm"
+    },
+    {
+      "actorName": "Adrian Wells",
+      "character": "Rudy's Brother"
+    },
+    {
+      "actorName": "Frank Welker",
+      "character": "Special Vocal Effects",
+      "actorActress": "2"
+    },
+    {
+      "actorName": "Pamela Adlon",
+      "character": "Girl in Launch Control Gallery (uncredited)",
+      "actorActress": "1"
+    }
+  ],
+  "crew": {
+    "roles": [
+      {
+        "job": "Director",
+        "name": "Harry Winer",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Clifford Green",
+        "gender": "m"
+      },
+      {
+        "job": "Screenplay",
+        "name": "Casey T. Mitchell",
+        "gender": null
+      },
+      {
+        "job": "Story",
+        "name": "Larry B. Williams",
+        "gender": "m"
+      },
+      {
+        "job": "Story",
+        "name": "Patrick Bailey",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Walter Coblenz",
+        "gender": "m"
+      },
+      {
+        "job": "Producer",
+        "name": "Patrick Bailey",
+        "gender": "m"
+      },
+      {
+        "job": "Director of Photography",
+        "name": "William A. Fraker",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "John W. Wheeler",
+        "gender": "m"
+      },
+      {
+        "job": "Editor",
+        "name": "Scot Scalise",
+        "gender": "m"
+      },
+      {
+        "job": "Original Music Composer",
+        "name": "John Williams",
+        "gender": "m"
+      },
+      {
+        "job": "Production Design",
+        "name": "Richard Macdonald",
+        "gender": "m"
+      },
+      {
+        "job": "Costume Design",
+        "name": "Patricia Norris",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Jane Feinberg",
+        "gender": "w"
+      },
+      {
+        "job": "Casting",
+        "name": "Mike Fenton",
+        "gender": "m"
+      },
+      {
+        "job": "Casting",
+        "name": "Patricia McCorkle",
+        "gender": "w"
+      }
+    ],
+    "departments": {
+      "Directing": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Writing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Crew": {
+        "w": 1,
+        "m": 1,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Editing": {
+        "w": 0,
+        "m": 3,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Art": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Production": {
+        "w": 3,
+        "m": 7,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Camera": {
+        "w": 0,
+        "m": 7,
+        "nb": 0,
+        "unknown": 9
+      },
+      "Costume & Make-Up": {
+        "w": 1,
+        "m": 2,
+        "nb": 0,
+        "unknown": 1
+      },
+      "Visual Effects": {
+        "w": 0,
+        "m": 1,
+        "nb": 0,
+        "unknown": 4
+      },
+      "Lighting": {
+        "w": 0,
+        "m": 2,
+        "nb": 0,
+        "unknown": 2
+      },
+      "Sound": {
+        "w": 1,
+        "m": 9,
+        "nb": 0,
+        "unknown": 3
+      }
+    }
+  },
+  "money": {
+    "budget": 18000000,
+    "revenue": 9697739
+  },
+  "directors": [
+    {
+      "name": "Harry Winer"
+    }
+  ],
+  "writers": [
+    {
+      "name": "Clifford Green"
+    },
+    {
+      "name": "Casey T. Mitchell"
+    },
+    {
+      "name": "Patrick Bailey"
+    }
+  ],
+  "awards": [
+    {
+      "name": "1 nomination total"
+    }
+  ],
+  "dateUploaded": "2026-11-22T22:47:03.234Z",
+  "plot": "American kids go to a space camp during the summer holidays. They learn how to operate the Space Shuttle. A team consisting of a guy who just entered to meet girls, a wanna be astronaut and an instructor who wanted to go on a mission instead of teaching can sit in the Shuttle while testing the engines. Then they're launched by mistake ...",
+  "simplePlot": "American kids go to a space camp during the summer holidays. They learn how to operate the Space Shuttle. A team consisting of a guy who just entered to meet girls, a wanna be astronaut and an instructor who wanted to go on a mission instead of teaching can sit in the Shuttle while testing the engines. Then they're launched by mistake ...",
+  "year": 1986,
+  "releaseDate": "06 Jun 1986",
+  "rated": "PG",
+  "urlPoster": "https://m.media-amazon.com/images/M/MV5BZDE3ZmZlNjEtNjE1ZC00MmZhLWIzNmMtYmJhNzQ1OTY2ZjYyXkEyXkFqcGc@._V1_QL75_UX380_CR0,9,380,562_.jpg",
+  "idIMDB": "tt0091993",
+  "rating": "5.8",
+  "metascore": 40,
+  "urlIMDB": "https://www.imdb.com/title/tt0091993/"
+}
