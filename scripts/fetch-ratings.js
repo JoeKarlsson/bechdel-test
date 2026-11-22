@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const { fetchReleaseYear } = require('../src/fetchMetadata');
 const { loadManifest } = require('../src/manifest');
-const { siteRating } = require('../src/readerRating');
+const { updateFilmRatings } = require('../src/readerRating');
 
 const FILMS_DIR = path.resolve(__dirname, '../data/films');
 
@@ -68,16 +68,7 @@ const main = async () => {
 	const sorted = Object.fromEntries(Object.entries(ratings).sort(([a], [b]) => a.localeCompare(b)));
 	fs.writeFileSync(OUT, `${JSON.stringify(sorted, null, '\t')}\n`);
 	console.log(`\n${Object.keys(ratings).length} of ${ids.length} films have a bechdeltest.com rating.`);
-	// Each film on the site carries its rating from when it was analyzed; bring them up to date
-	let updated = 0;
-	for (const file of fs.readdirSync(FILMS_DIR).filter(name => name.endsWith('.json'))) {
-		const filmPath = path.join(FILMS_DIR, file);
-		const film = JSON.parse(fs.readFileSync(filmPath, 'utf8'));
-		const bechdelData = siteRating(ratings[film.idIMDB]);
-		if (!bechdelData || JSON.stringify(bechdelData) === JSON.stringify(film.bechdelData)) continue;
-		fs.writeFileSync(filmPath, `${JSON.stringify({ ...film, bechdelData }, null, 2)}\n`);
-		updated++;
-	}
+	const updated = updateFilmRatings(FILMS_DIR, ratings);
 	console.log(`${updated} films on the site got their newer rating.`);
 };
 
