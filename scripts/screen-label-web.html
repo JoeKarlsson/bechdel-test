@@ -17,6 +17,8 @@
 	.bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s ease-out; }
 	h1 { font-size: 1.15rem; font-weight: 600; margin: 28px 0 8px; }
 	.target { font-size: 1.45rem; line-height: 1.35; background: #fff; border: 2px solid var(--ink); border-radius: 10px; padding: 16px 20px; }
+	.player { display: flex; align-items: center; gap: 14px; margin-top: 12px; color: var(--muted); font-size: .9rem; }
+	.player audio { width: 420px; max-width: 100%; }
 	.answers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 18px 0 6px; }
 	@media (max-width: 760px) { .answers { grid-template-columns: repeat(2, 1fr); } }
 	.answers button { font: inherit; font-weight: 600; padding: 12px 18px; border-radius: 10px; border: 2px solid var(--ink); background: #fff; cursor: pointer; text-align: left; }
@@ -57,6 +59,10 @@
 	</header>
 	<h1 id="question"></h1>
 	<div class="target" id="target"></div>
+	<div class="player" id="player" hidden>
+		<audio id="clip" controls preload="auto"></audio>
+		<span>The line should come about 15 seconds in. P plays it again.</span>
+	</div>
 	<div class="answers" id="answers"></div>
 	<div class="nav">
 		<button id="prev">Previous</button>
@@ -112,7 +118,7 @@ const OPTIONS = {
 const QUESTIONS = {
 	'script line': () => 'Does this script line show up in the subtitles on the right?',
 	'subtitle line': () => 'Does this subtitle line show up in the script on the right, even reworded?',
-	audio: item => `Play the film at about ${item.at}. Is this script line said?`,
+	audio: item => `Listen to the clip (from about ${item.at} in the film). Is this script line said?`,
 	verdict: item => `${item.change === 'page-pass-screen-fail' ? 'The script passes; the subtitles don’t.' : 'The script fails; the subtitles pass.'} In the film, do two named women talk to each other about something other than a man?`,
 };
 const $ = id => document.getElementById(id);
@@ -163,6 +169,11 @@ const show = () => {
 	$('target').hidden = item.kind === 'verdict';
 	$('target').textContent = item.kind === 'verdict' ? '' : item.line;
 	$('cols').hidden = item.kind === 'verdict';
+	$('player').hidden = item.kind !== 'audio';
+	if (item.kind === 'audio') {
+		$('clip').src = `/clips/${item.key.replaceAll(':', '_')}.opus`;
+		$('clip').play().catch(() => {}); // the browser blocks autoplay until the first key press or click
+	} else $('clip').removeAttribute('src');
 	$('groups').hidden = item.kind !== 'verdict';
 	const chosen = data.labels[item.key];
 	const options = OPTIONS[item.kind];
@@ -270,6 +281,7 @@ document.addEventListener('keydown', e => {
 	if (e.key === 'ArrowRight') { at = Math.min(data.items.length - 1, at + 1); show(); return; }
 	if (e.key === 'ArrowLeft') { at = Math.max(0, at - 1); show(); return; }
 	if (['1', '2', '3', '4'].includes(e.key)) answer(Number(e.key) - 1);
+	if (e.key.toLowerCase() === 'p' && data.items[at].kind === 'audio') { $('clip').currentTime = 0; $('clip').play(); }
 });
 $('prev').onclick = () => { at = Math.max(0, at - 1); show(); };
 $('next').onclick = () => { at = Math.min(data.items.length - 1, at + 1); show(); };

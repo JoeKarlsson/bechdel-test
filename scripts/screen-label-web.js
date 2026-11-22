@@ -45,6 +45,14 @@ const send = (res, status, body, type = 'application/json') => {
 
 http.createServer((req, res) => {
 	if (req.method === 'GET' && req.url === '/') return send(res, 200, PAGE, 'text/html; charset=utf-8');
+	// audio check: <dir>/clips/<item key with : as _>.opus, cut from the film around the line
+	const clip = req.method === 'GET' && req.url.match(/^\/clips\/(tt\d+_[a-z]+_\d+\.opus)$/);
+	if (clip) {
+		const file = path.join(dir, 'clips', clip[1]);
+		if (!fs.existsSync(file)) return send(res, 404, { error: 'no clip yet' });
+		res.writeHead(200, { 'content-type': 'audio/ogg', 'cache-control': 'no-store' });
+		return fs.createReadStream(file).pipe(res);
+	}
 	if (req.method === 'GET' && req.url === '/data') return send(res, 200, { items, labels, films: films.map(f => ({ script: f.script, subtitles: f.subtitles })) });
 	if (req.method === 'POST' && req.url === '/label') {
 		let body = '';
