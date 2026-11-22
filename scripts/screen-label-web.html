@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page vs screen labels</title>
+<style>
+	:root { --ink: #1b1b1f; --muted: #6b6b75; --line: #e3e1dc; --paper: #fbfaf7; --mark: #fff1a8; --accent: #c2185b; }
+	* { box-sizing: border-box; }
+	[hidden] { display: none !important; }
+	body { margin: 0; font: 17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); }
+	main { max-width: 1100px; margin: 0 auto; padding: 20px 24px 60px; }
+	header { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+	header .count { font-weight: 600; }
+	header .film { color: var(--muted); }
+	.bar { flex: 1 1 200px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+	.bar span { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s ease-out; }
+	h1 { font-size: 1.15rem; font-weight: 600; margin: 28px 0 8px; }
+	.target { font-size: 1.45rem; line-height: 1.35; background: #fff; border: 2px solid var(--ink); border-radius: 10px; padding: 16px 20px; }
+	.answers { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 6px; }
+	.answers button { font: inherit; font-weight: 600; padding: 12px 18px; border-radius: 10px; border: 2px solid var(--ink); background: #fff; cursor: pointer; min-width: 150px; text-align: left; }
+	.answers button:hover { background: #f1efe9; }
+	.answers button:active { transform: scale(.97); }
+	.answers button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+	.answers kbd { font: 600 .8rem system-ui, sans-serif; border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-right: 8px; }
+	.answers small { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); }
+	.answers button[aria-pressed="true"] small { color: #d8d8de; }
+	.nav { display: flex; gap: 10px; margin: 10px 0 0; color: var(--muted); font-size: .9rem; align-items: center; flex-wrap: wrap; }
+	.nav button { font: inherit; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+	.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+	@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+	section h2 { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 8px; }
+	ol.lines { list-style: none; margin: 0; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; font-size: .95rem; }
+	ol.lines li { padding: 3px 6px; border-radius: 4px; }
+	ol.lines li.here { background: var(--mark); font-weight: 600; }
+	.time { font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--muted); margin-right: 8px; }
+	.search { margin-top: 24px; }
+	.search input { font: inherit; width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+	mark { background: var(--mark); }
+	.saved { color: var(--accent); }
+	:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+	@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+	<header>
+		<span class="count" id="count"></span>
+		<span class="bar" aria-hidden="true"><span id="bar"></span></span>
+		<span class="film" id="film"></span>
+	</header>
+	<h1 id="question"></h1>
+	<div class="target" id="target"></div>
+	<div class="answers" id="answers"></div>
+	<div class="nav">
+		<button id="prev">Previous</button>
+		<button id="next">Next</button>
+		<button id="skip">Next unanswered</button>
+		<span id="status" role="status"></span>
+	</div>
+	<div class="cols">
+		<section><h2 id="leftTitle"></h2><ol class="lines" id="left"></ol></section>
+		<section><h2 id="rightTitle"></h2><ol class="lines" id="right"></ol></section>
+	</div>
+	<div class="search">
+		<input id="q" type="search" placeholder="Search this film's whole script and subtitles  ( / )" aria-label="Search this film's script and subtitles">
+		<div class="cols" id="results" hidden>
+			<section><h2>Script</h2><ol class="lines" id="inScript"></ol></section>
+			<section><h2>Subtitles</h2><ol class="lines" id="inSubs"></ol></section>
+		</div>
+	</div>
+</main>
+<script>
+const OPTIONS = {
+	'script line': [
+		['kept', 'k', 'Said as written', 'small differences are fine'],
+		['changed', 'c', 'Changed', 'reworded or only partly said'],
+		['cut', 'x', 'Cut', 'not said anywhere in the film'],
+		['unsure', 'u', 'Can’t tell', 'the subtitles don’t settle it'],
+	],
+	'subtitle line': [
+		['scripted', 's', 'In the script', 'even reworded or partly'],
+		['not in script', 'n', 'Not in the script', 'new or improvised'],
+		['unsure', 'u', 'Can’t tell', 'e.g. a one-word line'],
+	],
+};
+const $ = id => document.getElementById(id);
+let data;
+let at = 0;
+
+const fill = (list, lines, here = -1) => {
+	list.replaceChildren(...lines.map((text, i) => {
+		const li = document.createElement('li');
+		const time = text.match(/^(\d+:\d\d:\d\d)\s+(.*)$/);
+		if (time) {
+			const span = document.createElement('span');
+			span.className = 'time';
+			span.textContent = time[1];
+			li.append(span, time[2]);
+		} else li.textContent = text;
+		if (i === here) li.className = 'here';
+		return li;
+	}));
+};
+
+const show = () => {
+	const item = data.items[at];
+	const done = Object.keys(data.labels).length;
+	$('count').textContent = `Item ${at + 1} of ${data.items.length} · ${done} answered`;
+	$('bar').style.width = `${(100 * done) / data.items.length}%`;
+	$('film').textContent = item.film;
+	$('question').textContent = item.question;
+	$('target').textContent = item.line;
+	const chosen = data.labels[item.key];
+	$('answers').replaceChildren(...OPTIONS[item.kind].map(([label, key, name, hint]) => {
+		const b = document.createElement('button');
+		b.setAttribute('aria-pressed', String(chosen === label));
+		b.innerHTML = `<kbd></kbd><span></span><small></small>`;
+		b.querySelector('kbd').textContent = key.toUpperCase();
+		b.querySelector('span').textContent = name;
+		b.querySelector('small').textContent = hint;
+		b.onclick = () => answer(label);
+		return b;
+	}));
+	if (item.kind === 'script line') {
+		$('leftTitle').textContent = 'Script around it';
+		fill($('left'), item.scriptAround, item.scriptAround.indexOf(item.line));
+		$('rightTitle').textContent = 'Subtitles near where it would be';
+		fill($('right'), item.subtitlesNearWhereItWouldBe);
+	} else {
+		$('leftTitle').textContent = 'Subtitles around it';
+		fill($('left'), item.subtitlesAround, item.subtitlesAround.findIndex(l => l.endsWith(item.line)));
+		$('rightTitle').textContent = 'Script near where it would be';
+		fill($('right'), item.scriptNearWhereItWouldBe);
+	}
+	$('q').value = '';
+	$('results').hidden = true;
+	$('status').textContent = '';
+};
+
+const nextUnanswered = () => {
+	for (let k = 1; k <= data.items.length; k++) {
+		const i = (at + k) % data.items.length;
+		if (!data.labels[data.items[i].key]) return i;
+	}
+	return -1;
+};
+
+const answer = async label => {
+	const item = data.items[at];
+	const res = await fetch('/label', { method: 'POST', body: JSON.stringify({ key: item.key, label }) });
+	if (!res.ok) { $('status').textContent = `Not saved: ${(await res.json()).error}`; return; }
+	data.labels[item.key] = label;
+	const next = nextUnanswered();
+	if (next === -1) { show(); $('status').innerHTML = '<span class="saved">All done. Tell Claude.</span>'; return; }
+	at = next;
+	show();
+	$('status').innerHTML = '<span class="saved">Saved</span>';
+};
+
+const search = () => {
+	const q = $('q').value.trim().toLowerCase();
+	if (q.length < 2) { $('results').hidden = true; return; }
+	const film = data.films[data.items[at].filmIndex];
+	const hits = lines => lines.filter(l => l.toLowerCase().includes(q)).slice(0, 40);
+	const mark = list => [...list.children].forEach(li => {
+		const node = [...li.childNodes].find(n => n.nodeType === 3 && n.textContent.toLowerCase().includes(q));
+		if (!node) return;
+		const i = node.textContent.toLowerCase().indexOf(q);
+		const m = document.createElement('mark');
+		m.textContent = node.textContent.slice(i, i + q.length);
+		node.replaceWith(node.textContent.slice(0, i), m, node.textContent.slice(i + q.length));
+	});
+	fill($('inScript'), hits(film.script)); mark($('inScript'));
+	fill($('inSubs'), hits(film.subtitles)); mark($('inSubs'));
+	$('results').hidden = false;
+};
+
+document.addEventListener('keydown', e => {
+	if (e.target === $('q')) { if (e.key === 'Escape') $('q').blur(); return; }
+	if (e.metaKey || e.ctrlKey || e.altKey) return;
+	if (e.key === '/') { e.preventDefault(); $('q').focus(); return; }
+	if (e.key === 'ArrowRight') { at = Math.min(data.items.length - 1, at + 1); show(); return; }
+	if (e.key === 'ArrowLeft') { at = Math.max(0, at - 1); show(); return; }
+	const option = OPTIONS[data.items[at].kind].find(o => o[1] === e.key.toLowerCase());
+	if (option) answer(option[0]);
+});
+$('prev').onclick = () => { at = Math.max(0, at - 1); show(); };
+$('next').onclick = () => { at = Math.min(data.items.length - 1, at + 1); show(); };
+$('skip').onclick = () => { const n = nextUnanswered(); if (n >= 0) { at = n; show(); } };
+$('q').addEventListener('input', search);
+
+fetch('/data').then(r => r.json()).then(d => {
+	data = d;
+	const first = data.items.findIndex(i => !data.labels[i.key]);
+	at = first === -1 ? 0 : first;
+	show();
+});
+</script>
+</body>
+</html>

@@ -237,12 +237,16 @@ const main = async () => {
 	// the second labelling's items are fixed by the seed alone, not by the first labels
 	const againItems = seeded(todo, t => `again:${t.key}`).slice(0, AGAIN_ITEMS);
 
+	gold.check ??= {};
+	gold.verdicts ??= {};
+	// --again and --check label the same seeded 100 items
+	const fixedItems = ['again', 'check'].includes(mode);
 	if (importFile) {
 		const labels = JSON.parse(fs.readFileSync(importFile, 'utf8'));
-		const target = mode === 'again' ? gold.again : gold.labels;
-		const allowed = new Map((mode === 'again' ? againItems : todo).map(t => [t.key, t.item.kind === 'page' ? Object.values(PAGE_KEYS) : Object.values(SCREEN_KEYS)]));
+		const target = { again: gold.again, check: gold.check }[mode] ?? gold.labels;
+		const allowed = new Map((fixedItems ? againItems : todo).map(t => [t.key, t.item.kind === 'page' ? Object.values(PAGE_KEYS) : Object.values(SCREEN_KEYS)]));
 		for (const [key, label] of Object.entries(labels)) {
-			if (!allowed.has(key)) throw new Error(`${key} isn't an item to label${mode === 'again' ? ' a second time' : ''}`);
+			if (!allowed.has(key)) throw new Error(`${key} isn't an item to label${fixedItems ? ` with --${mode}` : ''}`);
 			if (!allowed.get(key).includes(label)) throw new Error(`${key}: "${label}" isn't one of ${allowed.get(key).join(', ')}`);
 			target[key] = label;
 		}
@@ -252,7 +256,7 @@ const main = async () => {
 	}
 	if (exportDir) {
 		fs.mkdirSync(exportDir, { recursive: true });
-		const chosen = new Set((mode === 'again' ? againItems : todo).map(t => t.key));
+		const chosen = new Set((fixedItems ? againItems : todo).map(t => t.key));
 		for (const [n, entry] of gold.films.entries()) {
 			const detail = await detailOf(entry);
 			const items = entry.items.filter(item => chosen.has(itemKey(entry, item))).map(item => {
@@ -284,8 +288,6 @@ const main = async () => {
 		return;
 	}
 
-	gold.check ??= {};
-	gold.verdicts ??= {};
 	if (mode === 'verdicts') {
 		const queue = verdictSample(records).filter(({ film }) => !gold.verdicts[film._id]);
 		console.log(`${queue.length} to go`);
