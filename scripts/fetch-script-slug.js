@@ -15,24 +15,17 @@ const { SITEMAP_URL, parseSitemap, parseScriptPage, scriptFileName } = require('
 const { pdfToText } = require('../src/pdfText');
 const { loadManifest, saveManifest, scriptPathFor, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
 const { cleanScriptText } = require('../src/scriptText');
+const { fetchBytes, MIN_SCRIPT_CHARACTERS } = require('../src/downloadScripts');
 
 // Pages fetched at once, to stay gentle on Script Slug
 const CONCURRENCY = 4;
-// Shorter than this, even after OCR, the PDF is an excerpt or unreadable
-const MIN_SCRIPT_CHARACTERS = 20000;
-
-const fetchOk = async url => {
-	const response = await fetch(url, { headers: { 'User-Agent': 'bechdel-test script fetcher' } });
-	if (!response.ok) throw new Error(`${response.status} for ${url}`);
-	return response;
-};
 
 const main = async () => {
 	fs.mkdirSync(LOCAL_SCRIPTS_DIR, { recursive: true });
 	const manifest = loadManifest();
 	// Only films whose script is on disk: a manifest entry whose download was lost gets fetched again
 	const filmsWeHave = new Set(Object.entries(manifest).filter(([file, imdbId]) => imdbId && scriptPathFor(file)).map(([, imdbId]) => imdbId));
-	const queue = parseSitemap(await (await fetchOk(SITEMAP_URL)).text())
+	const queue = parseSitemap((await fetchBytes(SITEMAP_URL)).toString())
 		.filter(url => manifest[scriptFileName(url)] !== null && !scriptPathFor(scriptFileName(url)));
 	console.log(`${queue.length} script pages to check\n`);
 
@@ -43,14 +36,14 @@ const main = async () => {
 		while (queue.length > 0) {
 			const pageUrl = queue.shift();
 			try {
-				const film = parseScriptPage(await (await fetchOk(pageUrl)).text());
+				const film = parseScriptPage((await fetchBytes(pageUrl)).toString());
 				// Not a film with an IMDb id (a TV episode, say), or a film we already have
 				if (!film || filmsWeHave.has(film.imdbId)) {
 					skipped++;
 					continue;
 				}
 				filmsWeHave.add(film.imdbId);
-				const text = await pdfToText(Buffer.from(await (await fetchOk(film.pdfUrl)).arrayBuffer()));
+				const text = await pdfToText(await fetchBytes(film.pdfUrl));
 				if (text.trim().length < MIN_SCRIPT_CHARACTERS) {
 					throw new Error(`only ${text.trim().length} characters of text in the PDF`);
 				}
