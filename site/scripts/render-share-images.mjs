@@ -5,6 +5,7 @@
 import { chromium } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
 import { loadFilms } from '../src/lib/films.mjs';
+import { fetchBytes } from '../../src/downloadScripts.js';
 
 const root = new URL('../', import.meta.url);
 const file = (p) => new URL(p, root);
@@ -79,10 +80,10 @@ await tab.setViewportSize({ width: 1200, height: 630 });
 for (const f of films) {
 	// The poster from TMDB's CDN at the card's 2x width; a film without one gets a blank box
 	const posterUrl = f.images.poster?.replace(/\/t\/p\/[^/]+\//, '/t/p/w500/');
-	const poster = posterUrl ? await fetch(posterUrl) : null;
-	if (poster && !poster.ok) throw new Error(`HTTP ${poster.status} for ${f.title}'s poster`);
+	// fetchBytes tries again when the CDN is busy or the connection drops: one blip in 3,000 posters shouldn't stop the run
+	const poster = posterUrl ? await fetchBytes(posterUrl).catch((error) => { throw new Error(`${f.title}'s poster: ${error.message}`); }) : null;
 	const art = poster
-		? `<img class="poster" src="data:image/jpeg;base64,${Buffer.from(await poster.arrayBuffer()).toString('base64')}">`
+		? `<img class="poster" src="data:image/jpeg;base64,${poster.toString('base64')}">`
 		: `<div class="blank"><span>${esc(f.title)}</span></div>`;
 	await shoot(
 		page(`<div class="card">${art}<div class="text">

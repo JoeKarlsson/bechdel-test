@@ -11,6 +11,26 @@ describe('fetchBytes', () => {
 		expect(global.fetch).toHaveBeenCalledTimes(2);
 	});
 
+	it('tries again when the connection drops', async () => {
+		jest.useFakeTimers();
+		global.fetch = jest.fn().mockRejectedValueOnce(new TypeError('fetch failed')).mockResolvedValueOnce(reply(200));
+		const bytes = fetchBytes('https://x/a.jpg');
+		await jest.advanceTimersByTimeAsync(5000);
+		expect((await bytes).toString()).toBe('script');
+		expect(global.fetch).toHaveBeenCalledTimes(2);
+		jest.useRealTimers();
+	});
+
+	it('gives up after three dropped connections', async () => {
+		jest.useFakeTimers();
+		global.fetch = jest.fn().mockRejectedValue(new TypeError('fetch failed'));
+		const bytes = expect(fetchBytes('https://x/a.jpg')).rejects.toThrow('fetch failed');
+		await jest.advanceTimersByTimeAsync(15000);
+		await bytes;
+		expect(global.fetch).toHaveBeenCalledTimes(3);
+		jest.useRealTimers();
+	});
+
 	it('fails at once on a missing file', async () => {
 		global.fetch = jest.fn().mockResolvedValue(reply(404));
 		await expect(fetchBytes('https://x/a.pdf')).rejects.toThrow('404');

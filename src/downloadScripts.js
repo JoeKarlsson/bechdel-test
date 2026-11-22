@@ -27,9 +27,19 @@ const SLOW_SITE = { concurrency: 1, pauseMs: 8000 };
 /** How long to wait before trying again: the site's Retry-After when it gives seconds, else 30s, then 60s */
 const retryDelayMs = (retryAfter, attempt) => Math.min(Number(retryAfter) > 0 ? Number(retryAfter) : 30 * attempt, MAX_RETRY_SECONDS) * 1000;
 
+// A dropped connection or a timeout usually clears in seconds: the wait before trying again, longer each try
+const RECONNECT_MS = 5000;
+
 const fetchBytes = async url => {
 	for (let attempt = 1; ; attempt++) {
-		const response = await fetch(url, { headers: { 'User-Agent': 'bechdel-test script fetcher' }, signal: AbortSignal.timeout(60000) });
+		let response;
+		try {
+			response = await fetch(url, { headers: { 'User-Agent': 'bechdel-test script fetcher' }, signal: AbortSignal.timeout(60000) });
+		} catch (error) {
+			if (attempt === ATTEMPTS) throw error;
+			await sleep(RECONNECT_MS * attempt);
+			continue;
+		}
 		if (response.ok) return Buffer.from(await response.arrayBuffer());
 		if ((response.status !== 429 && response.status < 500) || attempt === ATTEMPTS) throw new Error(`${response.status}`);
 		await sleep(retryDelayMs(response.headers.get('retry-after'), attempt));
