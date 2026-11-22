@@ -134,6 +134,13 @@ Intervals are 95%, from bootstrapping films. Agreement between the two labelling
   3. While labelling, two annotators wrote helper scripts (no labels) to the same scratch folder, and one overwrote the other's. Neither read the other's labels.
   4. The audio spot-check was not done: nobody listened to the films. The share of "cut" and "changed" lines that are really subtitlers shortening speech is unmeasured. The SDH-only robustness check (§9) is a partial stand-in, since SDH subtitles are closer to verbatim.
 
+### 6.2 Checks added after the results
+
+Not in the plan, and not yet done. Each is a person working from the films:
+- **The audio spot-check** above: `npm run screen:label -- --audio`.
+- **Labels by a person** on the same seeded 100 items as the second labelling, blind to both labellings and the predictions: `npm run screen:label -- --check`. `screen:eval` reports κ against each labelling and how often the method's label matches.
+- **Changed verdicts against the film:** a seeded 30 of the films that pass on the page and fail on screen, and every film that does the reverse. For each, the conversations the verdict rests on are shown, and the labeller judges from the film whether two named women talk to each other about something other than a man: `npm run screen:label -- --verdicts`. The labeller sees which way the verdict changed. `screen:eval` reports the share confirmed, with Wilson intervals.
+
 ## 7. Exclusions
 
 Decided from inputs, never from results:

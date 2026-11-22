@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 const { compareFilmOnDisk, loadFilmRecords, ROOT } = require('../src/screenOnDisk');
 const { METHOD } = require('../src/pageVsScreen');
-const { bootstrap, cohensKappa } = require('../src/stats');
+const { bootstrap, cohensKappa, wilson } = require('../src/stats');
 
 const gold = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/screen-gold.json'), 'utf8'));
 const LABELS = ['kept', 'changed', 'cut'];
@@ -47,7 +47,7 @@ const loadItems = async () => {
 			}
 			const s = detail.pageShares[item.line];
 			const stratum = labelWith(gold.sampledThresholds, share(s));
-			items.push({ film: entry._id, split: entry.split, truth, share: share(s), weight: stratumSize(stratum) / sampledIn(stratum) });
+			items.push({ key: `${entry._id}:page:${item.line}`, film: entry._id, split: entry.split, truth, share: share(s), weight: stratumSize(stratum) / sampledIn(stratum) });
 		}
 	}
 	return { items, notInScript };
@@ -120,6 +120,24 @@ const main = async () => {
 	if (audio.length > 0) {
 		const trimmed = audio.filter(a => a === 'subtitles trimmed').length;
 		console.log(`Audio check: ${trimmed} of ${audio.length} lines labelled cut or changed were said as written; the subtitles trimmed them`);
+	}
+	const check = Object.keys(gold.check ?? {}).filter(key => gold.check[key] !== 'unsure');
+	if (check.length > 0) {
+		for (const [name, labels] of [['first labelling', gold.labels], ['second labelling', gold.again]]) {
+			const both = check.filter(key => labels[key] && labels[key] !== 'unsure');
+			console.log(`Check labels against the ${name}: Cohen's kappa ${cohensKappa(both.map(k => labels[k]), both.map(k => gold.check[k])).toFixed(3)} over ${both.length} items`);
+		}
+		const lines = items.filter(i => check.includes(i.key));
+		const agree = lines.filter(i => labelWith(METHOD.thresholds, i.share) === gold.check[i.key]).length;
+		console.log(`The method's label matches the check label on ${agree} of ${lines.length} script lines (unweighted)`);
+	}
+	const verdicts = Object.values(gold.verdicts ?? {}).filter(v => v.verdict !== 'unsure');
+	for (const [change, expected] of [['page-pass-screen-fail', 'fails on screen'], ['page-fail-screen-pass', 'passes on screen']]) {
+		const judged = verdicts.filter(v => v.change === change);
+		if (judged.length === 0) continue;
+		const confirmed = judged.filter(v => v.verdict === expected).length;
+		const [lo, hi] = wilson(confirmed, judged.length);
+		console.log(`Verdict check, ${change}: the film ${expected} in ${confirmed} of ${judged.length} (95% CI ${(lo * 100).toFixed(0)}-${(hi * 100).toFixed(0)}%)`);
 	}
 };
 

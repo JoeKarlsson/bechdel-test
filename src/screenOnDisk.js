@@ -29,8 +29,8 @@ const loadVersions = imdbId => {
 	}));
 };
 
-/** compareFilm for a data/films record; throws when its script or subtitles aren't on this machine */
-const compareFilmOnDisk = async (film, { primaryId = null } = {}) => {
+/** compareFilm's input for a data/films record; throws when its script or subtitles aren't on this machine */
+const loadComparisonInput = async film => {
 	const scriptPath = scriptPathFor(film.script.file);
 	if (!scriptPath) throw new Error('script not on this machine');
 	if (!hasSubtitles(film)) throw new Error('no subtitles; run npm run fetch-subtitles');
@@ -38,14 +38,16 @@ const compareFilmOnDisk = async (film, { primaryId = null } = {}) => {
 	const characters = charactersFromCast(await fetchCast(film.idIMDB));
 	const { screenplay, resolved } = analyzeScriptText(scriptText, characters, GENDER_OVERRIDES[film.script.file]);
 	const { runtime } = await fetchTmdbDetails(film.idIMDB);
-	return compareFilm({
+	return {
 		scriptText, screenplay, resolved, characters,
 		// the score on the site, so a film analyzed with an older parser stops here
 		pageScore: film.bechdelResults.bechdelScore,
 		versions: loadVersions(film.idIMDB),
 		runtimeSeconds: runtime ? runtime * 60 : null,
-		primaryId,
-	});
+	};
 };
 
-module.exports = { compareFilmOnDisk, loadFilmRecords, hasSubtitles, SCREEN_DIR, ROOT };
+/** compareFilm for a data/films record */
+const compareFilmOnDisk = async (film, { primaryId = null } = {}) => compareFilm({ ...(await loadComparisonInput(film)), primaryId });
+
+module.exports = { compareFilmOnDisk, loadComparisonInput, loadFilmRecords, hasSubtitles, SCREEN_DIR, ROOT };

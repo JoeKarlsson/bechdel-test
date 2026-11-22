@@ -7,6 +7,9 @@
  *   npm run screen:label             draw the sample (first run), then label what's left; quit any time
  *   npm run screen:label -- --again  label a fixed 100 of the items a second time, for agreement between labellers
  *   npm run screen:label -- --audio  for test-set lines labelled cut or changed, note what the film's audio says
+ *   npm run screen:label -- --check  label the same 100 items yourself, to check both labellings against
+ *   npm run screen:label -- --verdicts  for 30 films that lose a pass on screen and every film that gains one, judge
+ *                                       from the film whether it passes on screen
  *
  * For labelling outside this prompt (docs/page-vs-screen/CODEBOOK.md):
  *   npm run screen:label -- --export <dir> [--again]  each film's items, with context and no prediction, plus its full
@@ -17,8 +20,9 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline/promises');
-const { compareFilmOnDisk, loadFilmRecords, SCREEN_DIR, ROOT } = require('../src/screenOnDisk');
-const { METHOD } = require('../src/pageVsScreen');
+const { compareFilmOnDisk, loadComparisonInput, loadFilmRecords, SCREEN_DIR, ROOT } = require('../src/screenOnDisk');
+const { METHOD, compareFilm, screenScreenplay } = require('../src/pageVsScreen');
+const { runTest } = require('../src/bechdel/score');
 
 const GOLD_FILE = path.join(ROOT, 'data/eval/screen-gold.json');
 const SEED = 'screen-gold-2026-11-12';
@@ -27,6 +31,7 @@ const PAGE_ITEMS = 30;
 const SCREEN_ITEMS = 10;
 const AGAIN_ITEMS = 100;
 const AUDIO_ITEMS = 100;
+const VERDICT_PASS_TO_FAIL = 30;
 
 const order = key => crypto.createHash('sha1').update(`${SEED}:${key}`).digest('hex');
 const seeded = (items, keyOf) => [...items].sort((a, b) => order(keyOf(a)).localeCompare(order(keyOf(b))));
@@ -145,12 +150,62 @@ const ask = async (rl, film, item, detail) => {
 	}
 };
 
+const VERDICT_KEYS = { p: 'passes on screen', f: 'fails on screen', u: 'unsure' };
+
+/** The changed verdicts to check: a seeded 30 of the films that lose a pass on screen, and every film that gains one */
+const verdictSample = records => {
+	const changed = records.map(film => ({ film, file: path.join(SCREEN_DIR, `${film._id}.json`) }))
+		.filter(({ file }) => fs.existsSync(file))
+		.map(({ film, file }) => ({ film, screen: JSON.parse(fs.readFileSync(file, 'utf8')) }))
+		.filter(({ screen }) => !screen.excluded)
+		.map(({ film, screen }) => ({ film, change: screen.bechdel.change }));
+	const of = change => seeded(changed.filter(c => c.change === change), c => `verdict:${c.film._id}`);
+	return seeded([...of('page-pass-screen-fail').slice(0, VERDICT_PASS_TO_FAIL), ...of('page-fail-screen-pass')], c => `verdict-order:${c.film._id}`);
+};
+
+/** Shows the conversations a changed verdict rests on, and asks whether the film passes on screen; null means quit */
+const askVerdict = async (rl, film, change) => {
+	const input = await loadComparisonInput(film);
+	const { resolved, characters, screenplay } = input;
+	const { detail } = compareFilm(input);
+	const indexOfBlock = new Map(screenplay.scenes.flatMap(scene => scene.blocks).filter(block => block.kind === 'dialogue').map((block, i) => [block, i]));
+	const shown = 3;
+	let radius = 6;
+	for (;;) {
+		console.log(`\n=== ${film.title} (${film.year})`);
+		if (change === 'page-pass-screen-fail') {
+			const clean = runTest(screenplay, resolved, characters, 'w').clean;
+			console.log(`The script passes on ${clean.length} conversations. The first ${Math.min(shown, clean.length)}, and the subtitles where each would be:`);
+			for (const exchange of clean.slice(0, shown)) {
+				console.log('\nScript:');
+				for (const line of exchange.lines) console.log(`    ${line.speaker}: ${line.text}`);
+				console.log('Subtitles:');
+				showSubtitles(detail, anchorFor(detail, indexOfBlock.get(exchange.lines[0])), radius);
+			}
+		} else {
+			const strict = screenScreenplay(detail.dialogue, detail.screenLines, detail.lineOwner, resolved, 'SOMEONE UNHEARD');
+			const clean = runTest(strict, resolved, characters, 'w').clean;
+			console.log(`The subtitles pass on ${clean.length} conversations, each line with the speaker of the script line it matched. The first ${Math.min(shown, clean.length)}:`);
+			for (const exchange of clean.slice(0, shown)) {
+				console.log('');
+				for (const line of exchange.lines) console.log(`    ${clock(line.start)}  ${line.speaker}: ${line.text}`);
+			}
+		}
+		console.log('\nIn the film, do two named women talk to each other about something other than a man?');
+		const options = Object.entries(VERDICT_KEYS).map(([k, v]) => `[${k}] ${v}`).join('  ');
+		const answer = (await rl.question(`${options}  [w] wider  [q] quit > `)).trim().toLowerCase();
+		if (answer === 'q') return null;
+		if (answer === 'w') { radius *= 3; continue; }
+		if (VERDICT_KEYS[answer]) return VERDICT_KEYS[answer];
+	}
+};
+
 const main = async () => {
 	process.loadEnvFile(path.join(ROOT, '.env'));
 	const argAfter = flag => (process.argv.includes(flag) ? process.argv[process.argv.indexOf(flag) + 1] : null);
 	const exportDir = argAfter('--export');
 	const importFile = argAfter('--import');
-	const mode = process.argv.includes('--again') ? 'again' : process.argv.includes('--audio') ? 'audio' : 'label';
+	const mode = ['again', 'audio', 'check', 'verdicts'].find(m => process.argv.includes(`--${m}`)) ?? 'label';
 	const records = loadFilmRecords();
 	let gold = fs.existsSync(GOLD_FILE) ? JSON.parse(fs.readFileSync(GOLD_FILE, 'utf8')) : null;
 	if (!gold) {
@@ -229,9 +284,29 @@ const main = async () => {
 		return;
 	}
 
+	gold.check ??= {};
+	gold.verdicts ??= {};
+	if (mode === 'verdicts') {
+		const queue = verdictSample(records).filter(({ film }) => !gold.verdicts[film._id]);
+		console.log(`${queue.length} to go`);
+		const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+		try {
+			for (const { film, change } of queue) {
+				const verdict = await askVerdict(rl, film, change);
+				if (verdict === null) break;
+				gold.verdicts[film._id] = { change, verdict };
+				save(gold);
+			}
+		} finally {
+			rl.close();
+		}
+		return;
+	}
+
 	const queue = mode === 'label' ? todo.filter(t => !gold.labels[t.key])
 		: mode === 'again' ? againItems.filter(t => !gold.again[t.key])
-			: todo.filter(t => t.entry.split === 'test' && t.item.kind === 'page' && ['cut', 'changed'].includes(gold.labels[t.key])).slice(0, AUDIO_ITEMS).filter(t => !gold.audio[t.key]);
+			: mode === 'check' ? againItems.filter(t => !gold.check[t.key])
+				: todo.filter(t => t.entry.split === 'test' && t.item.kind === 'page' && ['cut', 'changed'].includes(gold.labels[t.key])).slice(0, AUDIO_ITEMS).filter(t => !gold.audio[t.key]);
 	console.log(`${queue.length} to go`);
 	const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 	try {
@@ -248,7 +323,7 @@ const main = async () => {
 			} else {
 				const label = await ask(rl, entry, item, detail);
 				if (label === null) break;
-				(mode === 'label' ? gold.labels : gold.again)[key] = label;
+				gold[{ label: 'labels', again: 'again', check: 'check' }[mode]][key] = label;
 			}
 			save(gold);
 		}
