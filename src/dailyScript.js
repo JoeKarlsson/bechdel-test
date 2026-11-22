@@ -18,6 +18,19 @@ const parseListing = html => [...html.matchAll(/<a href="(scripts\/[^"]+)">([^<]
 		url: `${DAILY_SCRIPT}/${encodeURI(href)}`,
 	}));
 
+/**
+ * The film's own title from a listing title: "American Bullshit (filmed as
+ * American Hustle)" -> "American Hustle", "8 Mile (aka Untitled Detroit
+ * Project)" -> "8 Mile", "Shining, The" -> "The Shining"
+ */
+const filmTitle = title => {
+	const releasedAs = title.match(/\((?:filmed|released) as ([^)]+)\)/i);
+	return (releasedAs ? releasedAs[1] : title.replace(/\s*\([^)]*\)/g, ''))
+		.replace(/:\s*$/, '')
+		.replace(/^(.*),\s*(The|A|An)$/i, '$2 $1')
+		.trim();
+};
+
 /** A script's text from its file, or null for formats we don't read (Word, RTF, images) */
 const scriptTextFrom = async (url, bytes) => {
 	const extension = new URL(url).pathname.split('.').pop().toLowerCase();
@@ -29,4 +42,4 @@ const scriptTextFrom = async (url, bytes) => {
 	return null;
 };
 
-module.exports = { LISTING_PAGES, parseListing, scriptTextFrom };
+module.exports = { LISTING_PAGES, parseListing, filmTitle, scriptTextFrom };

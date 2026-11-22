@@ -1,4 +1,4 @@
-const { parseListing, scriptTextFrom } = require('./dailyScript');
+const { parseListing, filmTitle, scriptTextFrom } = require('./dailyScript');
 
 describe('dailyScript', () => {
 	it('reads titles, years and links from a listing page', () => {
@@ -8,6 +8,15 @@ describe('dailyScript', () => {
 			{ title: 'Casablanca', year: '1942', url: 'https://www.dailyscript.com/scripts/casablanca.pdf' },
 			{ title: 'Mystery Men', year: null, url: 'https://www.dailyscript.com/scripts/Mystery+Men.txt' },
 		]);
+	});
+
+	it('takes the released title over a working title, and drops asides', () => {
+		expect(filmTitle('American Bullshit (filmed as American Hustle)')).toBe('American Hustle');
+		expect(filmTitle('Arac Attack (Released as Eight Legged Freaks)')).toBe('Eight Legged Freaks');
+		expect(filmTitle('8 Mile (aka Untitled Detroit Project)')).toBe('8 Mile');
+		expect(filmTitle('Conquest of Paradise: 1492')).toBe('Conquest of Paradise: 1492');
+		expect(filmTitle('1492: Conquest of Paradise:')).toBe('1492: Conquest of Paradise');
+		expect(filmTitle('Shining, The')).toBe('The Shining');
 	});
 
 	it('reads text and HTML scripts, and skips formats it cannot read', async () => {
