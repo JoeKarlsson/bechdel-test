@@ -45,21 +45,21 @@
 	},
 	"runtimeSeconds": 6600,
 	"quality": {
-		"anchoredShare": 0.4177123900187509
+		"anchoredShare": 0.4192847835529173
 	},
 	"words": {
-		"page": 6933,
+		"page": 6907,
 		"screen": 12193,
 		"kept": 2896,
-		"cut": 4037,
+		"cut": 4011,
 		"notInScript": 9297,
 		"moved": 41
 	},
 	"lines": {
-		"page": 614,
+		"page": 613,
 		"kept": 231,
 		"changed": 118,
-		"cut": 265,
+		"cut": 264,
 		"screen": 2009,
 		"notInScript": 1414
 	},
@@ -77,10 +77,10 @@
 			"cut": 197
 		},
 		"unknown": {
-			"lines": 31,
+			"lines": 30,
 			"kept": 4,
 			"changed": 3,
-			"cut": 24
+			"cut": 23
 		}
 	},
 	"byScriptOrder": [
@@ -124,24 +124,24 @@
 			"kept": 8
 		},
 		{
-			"cut": 8,
+			"cut": 7,
 			"kept": 3,
 			"changed": 2
 		},
 		{
-			"kept": 6,
+			"kept": 7,
 			"changed": 1,
 			"cut": 5
 		},
 		{
-			"kept": 3,
 			"cut": 7,
-			"changed": 3
+			"changed": 3,
+			"kept": 3
 		},
 		{
-			"kept": 4,
 			"cut": 6,
-			"changed": 3
+			"changed": 4,
+			"kept": 3
 		},
 		{
 			"changed": 5,
@@ -149,27 +149,27 @@
 			"cut": 4
 		},
 		{
-			"changed": 5,
+			"changed": 4,
 			"kept": 4,
 			"cut": 4
 		},
 		{
-			"cut": 8,
+			"cut": 9,
 			"changed": 3,
 			"kept": 1
 		},
 		{
-			"cut": 8,
-			"changed": 4,
+			"cut": 7,
+			"changed": 5,
 			"kept": 1
 		},
 		{
-			"changed": 4,
-			"kept": 3,
+			"changed": 3,
+			"kept": 4,
 			"cut": 6
 		},
 		{
-			"kept": 5,
+			"kept": 4,
 			"cut": 5,
 			"changed": 3
 		},
@@ -180,7 +180,7 @@
 		{
 			"cut": 5,
 			"changed": 5,
-			"kept": 2
+			"kept": 3
 		},
 		{
 			"kept": 6,
@@ -188,8 +188,8 @@
 			"cut": 4
 		},
 		{
-			"kept": 9,
 			"cut": 3,
+			"kept": 8,
 			"changed": 1
 		},
 		{
@@ -198,22 +198,22 @@
 			"changed": 2
 		},
 		{
-			"cut": 6,
+			"cut": 7,
 			"kept": 4,
 			"changed": 2
 		},
 		{
-			"cut": 7,
 			"changed": 2,
-			"kept": 4
+			"kept": 4,
+			"cut": 7
 		},
 		{
-			"cut": 6,
-			"kept": 6,
-			"changed": 1
+			"kept": 7,
+			"changed": 1,
+			"cut": 5
 		},
 		{
-			"kept": 3,
+			"kept": 2,
 			"cut": 9,
 			"changed": 1
 		},
@@ -225,17 +225,17 @@
 		{
 			"kept": 1,
 			"cut": 4,
-			"changed": 7
+			"changed": 8
 		},
 		{
-			"changed": 3,
 			"cut": 5,
+			"changed": 3,
 			"kept": 5
 		},
 		{
-			"changed": 3,
 			"kept": 2,
-			"cut": 8
+			"cut": 8,
+			"changed": 2
 		},
 		{
 			"cut": 8,
@@ -248,11 +248,11 @@
 		},
 		{
 			"kept": 8,
-			"cut": 3,
+			"cut": 4,
 			"changed": 1
 		},
 		{
-			"cut": 8,
+			"cut": 7,
 			"kept": 5
 		},
 		{
@@ -273,10 +273,10 @@
 		{
 			"cut": 2,
 			"changed": 3,
-			"kept": 7
+			"kept": 8
 		},
 		{
-			"kept": 6,
+			"kept": 5,
 			"cut": 6,
 			"changed": 1
 		},
@@ -517,14 +517,14 @@
 	"conversations": {
 		"w": {
 			"conversation": {
-				"lines": 2,
-				"kept": 0,
+				"lines": 5,
+				"kept": 3,
 				"changed": 0,
 				"cut": 2
 			},
 			"other": {
-				"lines": 105,
-				"kept": 40,
+				"lines": 102,
+				"kept": 37,
 				"changed": 26,
 				"cut": 39
 			}
@@ -546,11 +546,11 @@
 	},
 	"bechdel": {
 		"page": {
-			"score": 3,
+			"score": 2,
 			"rules": [
 				true,
 				true,
-				true
+				false
 			]
 		},
 		"strict": {
@@ -569,7 +569,7 @@
 				false
 			]
 		},
-		"change": "page-pass-screen-fail"
+		"change": "same"
 	},
 	"quotes": {
 		"cut": [

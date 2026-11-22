@@ -41,14 +41,14 @@
 	},
 	"runtimeSeconds": 6480,
 	"quality": {
-		"anchoredShare": 0.2465206602654008
+		"anchoredShare": 0.24678829752779877
 	},
 	"words": {
-		"page": 9269,
+		"page": 9263,
 		"screen": 11238,
-		"kept": 2285,
-		"cut": 6984,
-		"notInScript": 8953,
+		"kept": 2286,
+		"cut": 6977,
+		"notInScript": 8952,
 		"moved": 140
 	},
 	"lines": {
@@ -57,14 +57,14 @@
 		"changed": 195,
 		"cut": 438,
 		"screen": 2238,
-		"notInScript": 1728
+		"notInScript": 1727
 	},
 	"byGender": {
 		"w": {
-			"lines": 238,
+			"lines": 239,
 			"kept": 67,
 			"changed": 64,
-			"cut": 107
+			"cut": 108
 		},
 		"m": {
 			"lines": 475,
@@ -73,10 +73,10 @@
 			"cut": 289
 		},
 		"unknown": {
-			"lines": 48,
+			"lines": 47,
 			"kept": 3,
 			"changed": 3,
-			"cut": 42
+			"cut": 41
 		}
 	},
 	"byScriptOrder": [
@@ -218,19 +218,19 @@
 			"changed": 4
 		},
 		{
-			"cut": 8,
 			"kept": 7,
+			"cut": 8,
 			"changed": 1
 		},
 		{
-			"cut": 8,
 			"kept": 5,
-			"changed": 3
+			"changed": 3,
+			"cut": 8
 		},
 		{
-			"cut": 9,
 			"kept": 5,
-			"changed": 2
+			"changed": 2,
+			"cut": 9
 		},
 		{
 			"cut": 10,
@@ -238,18 +238,18 @@
 			"kept": 1
 		},
 		{
-			"cut": 6,
-			"kept": 4,
+			"kept": 5,
+			"cut": 5,
 			"changed": 6
 		},
 		{
-			"kept": 2,
 			"changed": 3,
-			"cut": 10
+			"cut": 11,
+			"kept": 1
 		},
 		{
-			"cut": 9,
 			"changed": 4,
+			"cut": 9,
 			"kept": 3
 		},
 		{
@@ -258,41 +258,41 @@
 			"changed": 4
 		},
 		{
-			"cut": 10,
-			"kept": 3,
+			"cut": 9,
+			"kept": 4,
 			"changed": 3
 		},
 		{
-			"kept": 6,
+			"kept": 5,
 			"changed": 5,
-			"cut": 5
+			"cut": 6
 		},
 		{
-			"cut": 10,
 			"changed": 5,
-			"kept": 1
-		},
-		{
-			"kept": 4,
-			"cut": 4,
-			"changed": 8
-		},
-		{
-			"changed": 7,
-			"cut": 5,
-			"kept": 3
+			"cut": 9,
+			"kept": 2
 		},
 		{
 			"kept": 3,
+			"cut": 4,
+			"changed": 9
+		},
+		{
+			"changed": 6,
+			"cut": 5,
+			"kept": 4
+		},
+		{
 			"changed": 2,
-			"cut": 11
+			"kept": 2,
+			"cut": 12
 		},
 		{
 			"cut": 16
 		},
 		{
-			"cut": 4,
-			"changed": 9,
+			"cut": 3,
+			"changed": 10,
 			"kept": 3
 		},
 		{
@@ -301,9 +301,9 @@
 			"kept": 2
 		},
 		{
-			"changed": 8,
 			"kept": 2,
-			"cut": 6
+			"changed": 7,
+			"cut": 7
 		},
 		{
 			"cut": 13,
@@ -492,8 +492,8 @@
 			"notInScript": 110
 		},
 		{
-			"scripted": 16,
-			"notInScript": 184
+			"scripted": 17,
+			"notInScript": 183
 		},
 		{
 			"scripted": 0,
@@ -508,30 +508,30 @@
 	"conversations": {
 		"w": {
 			"conversation": {
-				"lines": 23,
-				"kept": 6,
+				"lines": 20,
+				"kept": 4,
 				"changed": 2,
-				"cut": 15
+				"cut": 14
 			},
 			"other": {
-				"lines": 190,
-				"kept": 56,
+				"lines": 194,
+				"kept": 58,
 				"changed": 50,
-				"cut": 84
+				"cut": 86
 			}
 		},
 		"m": {
 			"conversation": {
-				"lines": 179,
-				"kept": 25,
+				"lines": 176,
+				"kept": 24,
 				"changed": 41,
-				"cut": 113
+				"cut": 111
 			},
 			"other": {
-				"lines": 276,
-				"kept": 30,
+				"lines": 279,
+				"kept": 31,
 				"changed": 82,
-				"cut": 164
+				"cut": 166
 			}
 		}
 	},
@@ -553,19 +553,19 @@
 			]
 		},
 		"lenient": {
-			"score": 3,
+			"score": 2,
 			"rules": [
 				true,
 				true,
-				true
+				false
 			]
 		},
-		"change": "unclear"
+		"change": "page-pass-screen-fail"
 	},
 	"quotes": {
 		"cut": [
 			{
-				"speaker": "DARNELL -",
+				"speaker": "DARNELL",
 				"text": "I don't know if I could ever be with just one."
 			},
 			{
@@ -577,12 +577,12 @@
 				"text": "Don't come near me."
 			},
 			{
-				"speaker": "ERICA",
-				"text": "Bye. See ya' later."
+				"speaker": "DARNELL",
+				"text": "Erica, you need me hit the pager?"
 			},
 			{
 				"speaker": "DARNELL",
-				"text": "As soon as mutha'fuckas take the law into their own hands..... we wrong!!"
+				"text": "Yo, what the fuck?!? No she did not fuck up my car in front the police station."
 			}
 		],
 		"notInScript": [

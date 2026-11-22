@@ -74,16 +74,16 @@
 			"cut": 22
 		},
 		"m": {
-			"lines": 463,
-			"kept": 222,
-			"changed": 60,
-			"cut": 181
+			"lines": 496,
+			"kept": 234,
+			"changed": 67,
+			"cut": 195
 		},
 		"unknown": {
-			"lines": 57,
-			"kept": 15,
-			"changed": 14,
-			"cut": 28
+			"lines": 24,
+			"kept": 3,
+			"changed": 7,
+			"cut": 14
 		}
 	},
 	"byScriptOrder": [
@@ -505,39 +505,39 @@
 	"conversations": {
 		"w": {
 			"conversation": {
-				"lines": 2,
+				"lines": 0,
 				"kept": 0,
-				"changed": 1,
-				"cut": 1
+				"changed": 0,
+				"cut": 0
 			},
 			"other": {
-				"lines": 40,
-				"kept": 16,
-				"changed": 7,
-				"cut": 17
+				"lines": 46,
+				"kept": 18,
+				"changed": 8,
+				"cut": 20
 			}
 		},
 		"m": {
 			"conversation": {
-				"lines": 365,
-				"kept": 181,
-				"changed": 46,
-				"cut": 138
+				"lines": 419,
+				"kept": 205,
+				"changed": 58,
+				"cut": 156
 			},
 			"other": {
-				"lines": 92,
-				"kept": 39,
-				"changed": 11,
-				"cut": 42
+				"lines": 71,
+				"kept": 27,
+				"changed": 6,
+				"cut": 38
 			}
 		}
 	},
 	"bechdel": {
 		"page": {
-			"score": 2,
+			"score": 1,
 			"rules": [
 				true,
-				true,
+				false,
 				false
 			]
 		},
@@ -562,8 +562,8 @@
 	"quotes": {
 		"cut": [
 			{
-				"speaker": "JIM",
-				"text": "A witch that was born in the dust, raised in the dust and some day •.."
+				"speaker": "WILL",
+				"text": "And look! Wild animals!"
 			},
 			{
 				"speaker": "DARK",
@@ -575,11 +575,11 @@
 			},
 			{
 				"speaker": "JIM",
-				"text": "•.• and there was two dwarfs pulling one of them..."
+				"text": "••• bright yellow! And ••• and the coffins ••• the coffins •••"
 			},
 			{
-				"speaker": "WILL",
-				"text": "I ••• I can't!"
+				"speaker": "HALLOWAY",
+				"text": "Sure I'm crazy! Come on, darn you! Jump!"
 			}
 		],
 		"notInScript": [
@@ -606,195 +606,150 @@
 		],
 		"changed": [
 			{
-				"speaker": "CROSETTI",
-				"page": "You can smell it, can you, Mr. Halloway?",
-				"screen": "You can't smell it, can you?",
+				"speaker": "ED",
+				"page": "Boy, you see what Notre Dame did?",
+				"screen": "Oh, Doc, did you see what Northwestern did last week?",
 				"pageWords": [
 					[
-						"You",
+						"Boy,",
 						false
 					],
 					[
-						"can",
+						"you",
+						true
+					],
+					[
+						"see",
+						true
+					],
+					[
+						"what",
+						true
+					],
+					[
+						"Notre",
 						false
 					],
 					[
-						"smell",
-						true
-					],
-					[
-						"it,",
-						true
-					],
-					[
-						"can",
-						true
-					],
-					[
-						"you,",
-						true
-					],
-					[
-						"Mr.",
+						"Dame",
 						false
 					],
 					[
-						"Halloway?",
+						"did?",
 						false
 					]
 				],
 				"screenWords": [
 					[
-						"You",
+						"Oh,",
 						false
 					],
 					[
-						"can't",
+						"Doc,",
 						false
 					],
 					[
-						"smell",
+						"did",
+						false
+					],
+					[
+						"you",
 						true
 					],
 					[
-						"it,",
+						"see",
 						true
 					],
 					[
-						"can",
+						"what",
 						true
 					],
 					[
-						"you?",
+						"Northwestern",
+						false
+					],
+					[
+						"did",
+						false
+					],
+					[
+						"last",
+						false
+					],
+					[
+						"week?",
+						false
+					]
+				]
+			},
+			{
+				"speaker": "DARK",
+				"page": "Well, isn't he brave!",
+				"screen": "Isn't he the brave one?",
+				"pageWords": [
+					[
+						"Well,",
+						false
+					],
+					[
+						"isn't",
 						true
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"brave!",
+						false
+					]
+				],
+				"screenWords": [
+					[
+						"Isn't",
+						true
+					],
+					[
+						"he",
+						true
+					],
+					[
+						"the",
+						false
+					],
+					[
+						"brave",
+						false
+					],
+					[
+						"one?",
+						false
 					]
 				]
 			},
 			{
 				"speaker": "JIM",
-				"page": "Of Dark's Pandemonium Carnival?",
-				"screen": "Of Dark's Pande-minium Carnival?",
+				"page": "When we saw you down the carnival you didn't look any too good, Miss Foley. We were kind of worried.",
+				"screen": "Yeah, we were kinda worried,",
 				"pageWords": [
 					[
-						"Of",
-						true
-					],
-					[
-						"Dark's",
-						true
-					],
-					[
-						"Pandemonium",
+						"When",
 						false
 					],
 					[
-						"Carnival?",
-						false
-					]
-				],
-				"screenWords": [
-					[
-						"Of",
-						true
-					],
-					[
-						"Dark's",
-						true
-					],
-					[
-						"Pande-minium",
+						"we",
 						false
 					],
 					[
-						"Carnival?",
-						false
-					]
-				]
-			},
-			{
-				"speaker": "JIM",
-				"page": "And that Mr. Cooger. He's going backwards!!",
-				"screen": "Look at Mr, Cooger,",
-				"pageWords": [
-					[
-						"And",
+						"saw",
 						false
 					],
 					[
-						"that",
+						"you",
 						false
 					],
 					[
-						"Mr.",
-						true
-					],
-					[
-						"Cooger.",
-						true
-					],
-					[
-						"He's",
-						false
-					],
-					[
-						"going",
-						false
-					],
-					[
-						"backwards!!",
-						false
-					]
-				],
-				"screenWords": [
-					[
-						"Look",
-						false
-					],
-					[
-						"at",
-						false
-					],
-					[
-						"Mr,",
-						true
-					],
-					[
-						"Cooger,",
-						true
-					]
-				]
-			},
-			{
-				"speaker": "MRS. NIGHTSHADE",
-				"page": "Why do boys want windows open all the time?",
-				"screen": "Why do boys always keep their windows open?",
-				"pageWords": [
-					[
-						"Why",
-						true
-					],
-					[
-						"do",
-						true
-					],
-					[
-						"boys",
-						true
-					],
-					[
-						"want",
-						false
-					],
-					[
-						"windows",
-						true
-					],
-					[
-						"open",
-						true
-					],
-					[
-						"all",
+						"down",
 						false
 					],
 					[
@@ -802,41 +757,158 @@
 						false
 					],
 					[
-						"time?",
+						"carnival",
 						false
+					],
+					[
+						"you",
+						false
+					],
+					[
+						"didn't",
+						false
+					],
+					[
+						"look",
+						false
+					],
+					[
+						"any",
+						false
+					],
+					[
+						"too",
+						false
+					],
+					[
+						"good,",
+						false
+					],
+					[
+						"Miss",
+						false
+					],
+					[
+						"Foley.",
+						false
+					],
+					[
+						"We",
+						true
+					],
+					[
+						"were",
+						true
+					],
+					[
+						"kind",
+						true
+					],
+					[
+						"of",
+						true
+					],
+					[
+						"worried.",
+						true
 					]
 				],
 				"screenWords": [
 					[
-						"Why",
-						true
-					],
-					[
-						"do",
-						true
-					],
-					[
-						"boys",
-						true
-					],
-					[
-						"always",
+						"Yeah,",
 						false
 					],
 					[
-						"keep",
-						false
-					],
-					[
-						"their",
-						false
-					],
-					[
-						"windows",
+						"we",
 						true
 					],
 					[
-						"open?",
+						"were",
+						true
+					],
+					[
+						"kinda",
+						true
+					],
+					[
+						"worried,",
+						true
+					]
+				]
+			},
+			{
+				"speaker": "DARK",
+				"page": "Now tell me, 21!! man. What is your name?",
+				"screen": "Now tell me, old man, what's your name?",
+				"pageWords": [
+					[
+						"Now",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"21!!",
+						false
+					],
+					[
+						"man.",
+						false
+					],
+					[
+						"What",
+						false
+					],
+					[
+						"is",
+						false
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"name?",
+						true
+					]
+				],
+				"screenWords": [
+					[
+						"Now",
+						true
+					],
+					[
+						"tell",
+						true
+					],
+					[
+						"me,",
+						true
+					],
+					[
+						"old",
+						false
+					],
+					[
+						"man,",
+						false
+					],
+					[
+						"what's",
+						false
+					],
+					[
+						"your",
+						true
+					],
+					[
+						"name?",
 						true
 					]
 				]

@@ -10,35 +10,35 @@
 		"label": "all",
 		"films": 2112,
 		"passingConversations": {
-			"films": 1115,
+			"films": 1114,
 			"totalSeconds": {
-				"n": 1115,
-				"median": 42.6,
-				"q1": 14.8,
-				"q3": 137.65
+				"n": 1114,
+				"median": 42.650000000000006,
+				"q1": 14.825000000000001,
+				"q3": 138.325
 			},
 			"longestSeconds": {
-				"n": 1115,
+				"n": 1114,
 				"median": 17.6,
 				"q1": 9.5,
-				"q3": 34.05
+				"q3": 34.075
 			},
-			"under10": 0.1757847533632287,
-			"under30": 0.4134529147982063,
-			"under60": 0.5757847533632287
+			"under10": 0.17594254937163376,
+			"under30": 0.4129263913824057,
+			"under60": 0.5754039497307002
 		},
 		"conversationsCut": {
 			"women": {
-				"films": 1211,
-				"median": -0.001161440185830434,
+				"films": 1210,
+				"median": -0.0011439417206257421,
 				"ci95": [
-					-0.007578397212543553,
-					0.0059457450761798425
+					-0.007580558900389424,
+					0.0061428957057270625
 				],
 				"wilcoxon": {
-					"n": 1207,
-					"statistic": 378210.5,
-					"p": 0.2581745727596495
+					"n": 1206,
+					"statistic": 377806.5,
+					"p": 0.2507155730962509
 				}
 			},
 			"menControl": {
@@ -50,7 +50,7 @@
 				],
 				"wilcoxon": {
 					"n": 2021,
-					"statistic": 713191.5,
+					"statistic": 713277.5,
 					"p": 0
 				}
 			}
@@ -76,24 +76,24 @@
 			],
 			"wilcoxon": {
 				"n": 2040,
-				"statistic": 1098401,
-				"p": 0.030723276469684646
+				"statistic": 1098400,
+				"p": 0.03072618197616528
 			}
 		},
 		"verdict": {
-			"decided": 1965,
-			"unclear": 147,
-			"changed": 208,
-			"share": 0.10585241730279898,
+			"decided": 1968,
+			"unclear": 144,
+			"changed": 206,
+			"share": 0.10467479674796748,
 			"ci95": [
-				0.09301038674494111,
-				0.12023251150236199
+				0.0919108998392643,
+				0.11897900563884618
 			],
-			"passToFail": 170,
-			"failToPass": 38,
+			"passToFail": 167,
+			"failToPass": 39,
 			"mcnemar": {
-				"b": 170,
-				"c": 38,
+				"b": 167,
+				"c": 39,
 				"p": 0
 			}
 		}
@@ -288,7 +288,7 @@
 		"SDH": {
 			"survival": {
 				"n": 452,
-				"median": 0.47512562457432767,
+				"median": 0.4755472896828891,
 				"q1": 0.2836722880505074,
 				"q3": 0.6750223678483338
 			},
@@ -365,14 +365,14 @@
 					],
 					"wilcoxon": {
 						"n": 426,
-						"statistic": 30998,
-						"p": 1.2470721011403896e-8
+						"statistic": 30976,
+						"p": 1.1853991011001597e-8
 					}
 				}
 			},
 			"survival": {
 				"n": 452,
-				"median": 0.47512562457432767,
+				"median": 0.4755472896828891,
 				"q1": 0.2836722880505074,
 				"q3": 0.6750223678483338
 			},
@@ -396,13 +396,13 @@
 				}
 			},
 			"verdict": {
-				"decided": 427,
-				"unclear": 25,
+				"decided": 428,
+				"unclear": 24,
 				"changed": 25,
-				"share": 0.0585480093676815,
+				"share": 0.05841121495327103,
 				"ci95": [
-					0.039968444649667215,
-					0.08499970261521851
+					0.03987432318067061,
+					0.08480443976343076
 				],
 				"passToFail": 19,
 				"failToPass": 6,
@@ -439,13 +439,13 @@
 					"films": 356,
 					"median": 0.00018527863888685714,
 					"ci95": [
-						-0.009793077547999506,
+						-0.012743121653213445,
 						0.02016806722689074
 					],
 					"wilcoxon": {
 						"n": 355,
-						"statistic": 34423,
-						"p": 0.14393793486454487
+						"statistic": 34318,
+						"p": 0.15942226592679698
 					}
 				},
 				"menControl": {
@@ -457,8 +457,8 @@
 					],
 					"wilcoxon": {
 						"n": 620,
-						"statistic": 65735,
-						"p": 7.967182469315048e-12
+						"statistic": 65661,
+						"p": 7.095546372681838e-12
 					}
 				}
 			},
@@ -483,25 +483,25 @@
 				],
 				"wilcoxon": {
 					"n": 623,
-					"statistic": 102891,
-					"p": 0.2045039963542511
+					"statistic": 102889,
+					"p": 0.20466279262806808
 				}
 			},
 			"verdict": {
-				"decided": 596,
-				"unclear": 44,
-				"changed": 77,
-				"share": 0.12919463087248323,
+				"decided": 598,
+				"unclear": 42,
+				"changed": 76,
+				"share": 0.12709030100334448,
 				"ci95": [
-					0.1046226138051456,
-					0.1585160148179413
+					0.10275409798147934,
+					0.15618695132903904
 				],
-				"passToFail": 68,
-				"failToPass": 9,
+				"passToFail": 66,
+				"failToPass": 10,
 				"mcnemar": {
-					"b": 68,
-					"c": 9,
-					"p": 3.870881393197578e-11
+					"b": 66,
+					"c": 10,
+					"p": 2.8219893088987646e-10
 				}
 			}
 		},
@@ -509,35 +509,35 @@
 			"label": "versions agree on 80%+",
 			"films": 1860,
 			"passingConversations": {
-				"films": 971,
+				"films": 970,
 				"totalSeconds": {
-					"n": 971,
-					"median": 42.1,
-					"q1": 14.1,
-					"q3": 134.45
+					"n": 970,
+					"median": 42.2,
+					"q1": 14.15,
+					"q3": 134.625
 				},
 				"longestSeconds": {
-					"n": 971,
+					"n": 970,
 					"median": 17.5,
 					"q1": 9.4,
-					"q3": 33.95
+					"q3": 33.975
 				},
-				"under10": 0.18125643666323377,
-				"under30": 0.41709577754891863,
-				"under60": 0.5829042224510813
+				"under10": 0.18144329896907216,
+				"under30": 0.41649484536082476,
+				"under60": 0.5824742268041238
 			},
 			"conversationsCut": {
 				"women": {
-					"films": 1054,
-					"median": -0.0008295339412360825,
+					"films": 1053,
+					"median": -0.0005952380952380931,
 					"ci95": [
 						-0.007582720588235295,
-						0.008256408858485767
+						0.008395934600088417
 					],
 					"wilcoxon": {
-						"n": 1050,
-						"statistic": 285854.5,
-						"p": 0.3105813306063021
+						"n": 1049,
+						"statistic": 285477.5,
+						"p": 0.30276044267749025
 					}
 				},
 				"menControl": {
@@ -549,14 +549,14 @@
 					],
 					"wilcoxon": {
 						"n": 1780,
-						"statistic": 552656.5,
+						"statistic": 552736.5,
 						"p": 0
 					}
 				}
 			},
 			"survival": {
 				"n": 1860,
-				"median": 0.41962807724957557,
+				"median": 0.41974425934861487,
 				"q1": 0.26417196941654086,
 				"q3": 0.6025994527728717
 			},
@@ -575,25 +575,25 @@
 				],
 				"wilcoxon": {
 					"n": 1794,
-					"statistic": 843159,
-					"p": 0.08251987245378789
+					"statistic": 843151,
+					"p": 0.08258432516285574
 				}
 			},
 			"verdict": {
-				"decided": 1722,
-				"unclear": 138,
-				"changed": 178,
-				"share": 0.10336817653890824,
+				"decided": 1724,
+				"unclear": 136,
+				"changed": 176,
+				"share": 0.10208816705336426,
 				"ci95": [
-					0.08986081268437741,
-					0.11864122383208688
+					0.08866963972545733,
+					0.11727602563187718
 				],
-				"passToFail": 145,
-				"failToPass": 33,
+				"passToFail": 142,
+				"failToPass": 34,
 				"mcnemar": {
-					"b": 145,
-					"c": 33,
-					"p": 1.1102230246251565e-16
+					"b": 142,
+					"c": 34,
+					"p": 7.771561172376096e-16
 				}
 			}
 		},
@@ -601,35 +601,35 @@
 			"label": "with the chance-level films put back",
 			"films": 2244,
 			"passingConversations": {
-				"films": 1130,
+				"films": 1129,
 				"totalSeconds": {
-					"n": 1130,
+					"n": 1129,
 					"median": 41.7,
-					"q1": 14.15,
-					"q3": 133.9
+					"q1": 14.3,
+					"q3": 134.1
 				},
 				"longestSeconds": {
-					"n": 1130,
-					"median": 17.35,
-					"q1": 9.325000000000001,
+					"n": 1129,
+					"median": 17.4,
+					"q1": 9.3,
 					"q3": 33.9
 				},
-				"under10": 0.18141592920353983,
-				"under30": 0.42123893805309737,
-				"under60": 0.5814159292035398
+				"under10": 0.18157661647475642,
+				"under30": 0.42072630646589904,
+				"under60": 0.5810451727192205
 			},
 			"conversationsCut": {
 				"women": {
-					"films": 1256,
-					"median": -0.0011066635727269257,
+					"films": 1255,
+					"median": -0.0011022160343427331,
 					"ci95": [
-						-0.006628787878787956,
-						0.005775430703368999
+						-0.006853749469783232,
+						0.0059457450761798425
 					],
 					"wilcoxon": {
-						"n": 1252,
-						"statistic": 406850.5,
-						"p": 0.25190113990334984
+						"n": 1251,
+						"statistic": 406428.5,
+						"p": 0.2447974868406504
 					}
 				},
 				"menControl": {
@@ -641,7 +641,7 @@
 					],
 					"wilcoxon": {
 						"n": 2145,
-						"statistic": 810713.5,
+						"statistic": 810823.5,
 						"p": 0
 					}
 				}
@@ -667,24 +667,24 @@
 				],
 				"wilcoxon": {
 					"n": 2164,
-					"statistic": 1231697.5,
-					"p": 0.037631862841963626
+					"statistic": 1231698.5,
+					"p": 0.03762870013462016
 				}
 			},
 			"verdict": {
-				"decided": 2085,
-				"unclear": 159,
-				"changed": 245,
-				"share": 0.11750599520383694,
+				"decided": 2088,
+				"unclear": 156,
+				"changed": 243,
+				"share": 0.11637931034482758,
 				"ci95": [
-					0.10438190794550303,
-					0.13203692450422186
+					0.10332360069606104,
+					0.13084398251230514
 				],
-				"passToFail": 206,
-				"failToPass": 39,
+				"passToFail": 203,
+				"failToPass": 40,
 				"mcnemar": {
-					"b": 206,
-					"c": 39,
+					"b": 203,
+					"c": 40,
 					"p": 0
 				}
 			}
@@ -758,16 +758,16 @@
 			"change": "page-pass-screen-fail"
 		},
 		{
+			"_id": "tt0052311",
+			"title": "Touch of Evil",
+			"year": 1958,
+			"change": "page-fail-screen-pass"
+		},
+		{
 			"_id": "tt0056923",
 			"title": "Charade",
 			"year": 1963,
 			"change": "page-fail-screen-pass"
-		},
-		{
-			"_id": "tt0059113",
-			"title": "Doctor Zhivago",
-			"year": 1965,
-			"change": "page-pass-screen-fail"
 		},
 		{
 			"_id": "tt0063426",
@@ -872,12 +872,6 @@
 			"change": "page-fail-screen-pass"
 		},
 		{
-			"_id": "tt0092654",
-			"title": "The Big Easy",
-			"year": 1987,
-			"change": "page-pass-screen-fail"
-		},
-		{
 			"_id": "tt0093260",
 			"title": "Innerspace",
 			"year": 1987,
@@ -928,12 +922,6 @@
 		{
 			"_id": "tt0097742",
 			"title": "Licence to Kill",
-			"year": 1989,
-			"change": "page-pass-screen-fail"
-		},
-		{
-			"_id": "tt0098273",
-			"title": "Sea of Love",
 			"year": 1989,
 			"change": "page-pass-screen-fail"
 		},
@@ -1096,6 +1084,12 @@
 		{
 			"_id": "tt0117218",
 			"title": "The Nutty Professor",
+			"year": 1996,
+			"change": "page-pass-screen-fail"
+		},
+		{
+			"_id": "tt0117891",
+			"title": "A Thin Line Between Love and Hate",
 			"year": 1996,
 			"change": "page-pass-screen-fail"
 		},
@@ -1478,6 +1472,12 @@
 			"change": "page-pass-screen-fail"
 		},
 		{
+			"_id": "tt0418279",
+			"title": "Transformers",
+			"year": 2007,
+			"change": "page-pass-screen-fail"
+		},
+		{
 			"_id": "tt0425112",
 			"title": "Hot Fuzz",
 			"year": 2007,
@@ -1562,12 +1562,6 @@
 			"change": "page-fail-screen-pass"
 		},
 		{
-			"_id": "tt0887912",
-			"title": "The Hurt Locker",
-			"year": 2009,
-			"change": "page-pass-screen-fail"
-		},
-		{
 			"_id": "tt0985694",
 			"title": "Machete",
 			"year": 2010,
@@ -1601,12 +1595,6 @@
 			"_id": "tt1092026",
 			"title": "Paul",
 			"year": 2011,
-			"change": "page-pass-screen-fail"
-		},
-		{
-			"_id": "tt10986222",
-			"title": "C'mon C'mon",
-			"year": 2021,
 			"change": "page-pass-screen-fail"
 		},
 		{

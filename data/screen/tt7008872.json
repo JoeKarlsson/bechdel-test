@@ -45,21 +45,21 @@
 	},
 	"runtimeSeconds": 6900,
 	"quality": {
-		"anchoredShare": 0.33711888684264374
+		"anchoredShare": 0.3374295954941116
 	},
 	"words": {
-		"page": 9774,
+		"page": 9765,
 		"screen": 8218,
 		"kept": 3294,
-		"cut": 6480,
+		"cut": 6471,
 		"notInScript": 4923,
 		"moved": 717
 	},
 	"lines": {
-		"page": 751,
+		"page": 750,
 		"kept": 203,
 		"changed": 126,
-		"cut": 419,
+		"cut": 418,
 		"screen": 1420,
 		"notInScript": 846
 	},
@@ -77,10 +77,10 @@
 			"cut": 326
 		},
 		"unknown": {
-			"lines": 23,
+			"lines": 22,
 			"kept": 3,
 			"changed": 2,
-			"cut": 18
+			"cut": 17
 		}
 	},
 	"byScriptOrder": [
@@ -117,12 +117,12 @@
 			"cut": 16
 		},
 		{
-			"cut": 15,
+			"cut": 14,
 			"kept": 1
 		},
 		{
+			"cut": 8,
 			"changed": 6,
-			"cut": 7,
 			"kept": 2
 		},
 		{
@@ -133,11 +133,11 @@
 		{
 			"cut": 8,
 			"kept": 6,
-			"changed": 2
+			"changed": 1
 		},
 		{
+			"changed": 3,
 			"kept": 6,
-			"changed": 2,
 			"cut": 7
 		},
 		{
@@ -146,20 +146,20 @@
 			"kept": 7
 		},
 		{
-			"kept": 13,
+			"kept": 12,
 			"cut": 1,
 			"changed": 2
 		},
 		{
-			"kept": 7,
+			"kept": 8,
 			"cut": 6,
 			"changed": 2
 		},
 		{
-			"cut": 16
+			"cut": 15
 		},
 		{
-			"cut": 13,
+			"cut": 14,
 			"changed": 1,
 			"kept": 1
 		},
@@ -169,13 +169,13 @@
 			"kept": 2
 		},
 		{
-			"kept": 8,
+			"kept": 7,
 			"cut": 7,
 			"changed": 1
 		},
 		{
+			"kept": 3,
 			"cut": 12,
-			"kept": 2,
 			"changed": 1
 		},
 		{
@@ -184,32 +184,32 @@
 			"cut": 5
 		},
 		{
-			"cut": 13,
+			"cut": 12,
 			"changed": 1,
 			"kept": 2
 		},
 		{
-			"cut": 7,
+			"cut": 8,
 			"kept": 5,
 			"changed": 3
 		},
 		{
 			"changed": 5,
-			"cut": 6,
+			"cut": 5,
 			"kept": 5
 		},
 		{
-			"cut": 6,
-			"kept": 6,
+			"cut": 7,
+			"kept": 5,
 			"changed": 4
 		},
 		{
-			"kept": 3,
+			"kept": 4,
 			"changed": 2,
 			"cut": 10
 		},
 		{
-			"cut": 13,
+			"cut": 12,
 			"changed": 2,
 			"kept": 1
 		},
@@ -220,11 +220,11 @@
 		},
 		{
 			"changed": 4,
-			"cut": 9,
+			"cut": 10,
 			"kept": 2
 		},
 		{
-			"cut": 5,
+			"cut": 4,
 			"kept": 6,
 			"changed": 5
 		},
@@ -242,11 +242,11 @@
 			"cut": 16
 		},
 		{
-			"cut": 14,
+			"cut": 15,
 			"changed": 1
 		},
 		{
-			"cut": 8,
+			"cut": 7,
 			"changed": 4,
 			"kept": 4
 		},
@@ -257,11 +257,11 @@
 		},
 		{
 			"cut": 6,
-			"kept": 8,
+			"kept": 9,
 			"changed": 1
 		},
 		{
-			"kept": 11,
+			"kept": 10,
 			"changed": 3,
 			"cut": 2
 		},
@@ -512,55 +512,55 @@
 	"conversations": {
 		"w": {
 			"conversation": {
-				"lines": 9,
-				"kept": 3,
-				"changed": 2,
-				"cut": 4
+				"lines": 0,
+				"kept": 0,
+				"changed": 0,
+				"cut": 0
 			},
 			"other": {
-				"lines": 113,
-				"kept": 25,
-				"changed": 20,
-				"cut": 68
+				"lines": 122,
+				"kept": 28,
+				"changed": 22,
+				"cut": 72
 			}
 		},
 		"m": {
 			"conversation": {
-				"lines": 441,
-				"kept": 136,
-				"changed": 80,
-				"cut": 225
+				"lines": 423,
+				"kept": 131,
+				"changed": 78,
+				"cut": 214
 			},
 			"other": {
-				"lines": 146,
-				"kept": 33,
-				"changed": 20,
-				"cut": 93
+				"lines": 164,
+				"kept": 38,
+				"changed": 22,
+				"cut": 104
 			}
 		}
 	},
 	"bechdel": {
 		"page": {
-			"score": 2,
+			"score": 1,
 			"rules": [
 				true,
-				true,
+				false,
 				false
 			]
 		},
 		"strict": {
-			"score": 2,
+			"score": 1,
 			"rules": [
 				true,
-				true,
+				false,
 				false
 			]
 		},
 		"lenient": {
-			"score": 2,
+			"score": 1,
 			"rules": [
 				true,
-				true,
+				false,
 				false
 			]
 		},
@@ -860,7 +860,7 @@
 				]
 			},
 			{
-				"speaker": "XAVIER O.S",
+				"speaker": "XAVIER",
 				"page": "I lived in thirteen countries before I left high school. Born in Vienna. Ended up in Canada. Now here.",
 				"screen": "I was born in Vienna. I ended up in Canada, and now I'm here.",
 				"pageWords": [

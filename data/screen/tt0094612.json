@@ -517,15 +517,15 @@
 	"conversations": {
 		"w": {
 			"conversation": {
-				"lines": 2,
+				"lines": 0,
 				"kept": 0,
-				"changed": 2,
+				"changed": 0,
 				"cut": 0
 			},
 			"other": {
-				"lines": 124,
+				"lines": 126,
 				"kept": 43,
-				"changed": 43,
+				"changed": 45,
 				"cut": 38
 			}
 		},
@@ -546,10 +546,10 @@
 	},
 	"bechdel": {
 		"page": {
-			"score": 2,
+			"score": 1,
 			"rules": [
 				true,
-				true,
+				false,
 				false
 			]
 		},
@@ -562,14 +562,14 @@
 			]
 		},
 		"lenient": {
-			"score": 3,
+			"score": 1,
 			"rules": [
 				true,
-				true,
-				true
+				false,
+				false
 			]
 		},
-		"change": "unclear"
+		"change": "same"
 	},
 	"quotes": {
 		"cut": [
