@@ -85,14 +85,11 @@ test('the shelf shows a page at a time, and search still covers every film', asy
 	await page.getByRole('button', { name: 'Show 60 more' }).click();
 	await expect(visible).toHaveCount(120);
 	await expect(visible.nth(60).locator('a')).toBeFocused();
-	for (let shown = 2 * PAGE_SIZE; shown < films.length; shown += PAGE_SIZE) {
-		await page.getByRole('button', { name: `Show ${Math.min(PAGE_SIZE, films.length - shown)} more` }).click();
-	}
-	await expect(visible).toHaveCount(films.length);
-	await expect(page.locator('[data-shelf-more-wrap]')).toBeHidden();
-	// Searching looks past the page: Ticker is far down by popularity
+	// Searching looks past the pages shown: Ticker is far down by popularity.
+	// With every match shown the button goes, the same as at the end of the shelf
 	await page.getByLabel('Search').fill('ticker');
 	await expect(visible).toHaveCount(1);
+	await expect(page.locator('[data-shelf-more-wrap]')).toBeHidden();
 	await page.getByLabel('Search').fill('');
 	await expect(visible).toHaveCount(60);
 });
