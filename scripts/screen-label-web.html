@@ -73,9 +73,9 @@
 <script>
 const OPTIONS = {
 	'script line': [
-		['kept', 'k', 'Said as written', 'small differences are fine'],
-		['changed', 'c', 'Changed', 'reworded or only partly said'],
-		['cut', 'x', 'Cut', 'not said anywhere in the film'],
+		['kept', 'k', 'There, as written', 'small differences are fine'],
+		['changed', 'c', 'There, but changed', 'reworded or only part of it'],
+		['cut', 'x', 'Not there', 'not in the subtitles (search to be sure)'],
 		['unsure', 'u', 'Can’t tell', 'the subtitles don’t settle it'],
 	],
 	'subtitle line': [
@@ -109,7 +109,10 @@ const show = () => {
 	$('count').textContent = `Item ${at + 1} of ${data.items.length} · ${done} answered`;
 	$('bar').style.width = `${(100 * done) / data.items.length}%`;
 	$('film').textContent = item.film;
-	$('question').textContent = item.question;
+	// the subtitles are the record of what's said (CODEBOOK.md): nobody needs to know the film
+	$('question').textContent = item.kind === 'script line'
+		? 'Does this script line show up in the subtitles on the right?'
+		: 'Does this subtitle line show up in the script on the right, even reworded?';
 	$('target').textContent = item.line;
 	const chosen = data.labels[item.key];
 	$('answers').replaceChildren(...OPTIONS[item.kind].map(([label, key, name, hint]) => {
