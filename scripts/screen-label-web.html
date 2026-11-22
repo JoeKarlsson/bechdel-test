@@ -73,15 +73,15 @@
 <script>
 const OPTIONS = {
 	'script line': [
-		['kept', 'k', 'There, as written', 'small differences are fine'],
-		['changed', 'c', 'There, but changed', 'reworded or only part of it'],
-		['cut', 'x', 'Not there', 'not in the subtitles (search to be sure)'],
-		['unsure', 'u', 'Can’t tell', 'the subtitles don’t settle it'],
+		['kept', '1', 'There, as written', 'small differences are fine'],
+		['changed', '2', 'There, but changed', 'reworded or only part of it'],
+		['cut', '3', 'Not there', 'not in the subtitles (search to be sure)'],
+		['unsure', '4', 'Can’t tell', 'the subtitles don’t settle it'],
 	],
 	'subtitle line': [
-		['scripted', 's', 'In the script', 'even reworded or partly'],
-		['not in script', 'n', 'Not in the script', 'new or improvised'],
-		['unsure', 'u', 'Can’t tell', 'e.g. a one-word line'],
+		['scripted', '1', 'In the script', 'even reworded or partly'],
+		['not in script', '2', 'Not in the script', 'new or improvised'],
+		['unsure', '3', 'Can’t tell', 'e.g. a one-word line'],
 	],
 };
 const $ = id => document.getElementById(id);
