@@ -69,8 +69,9 @@ site/playwright-report/
 # Claude Code worktrees for parallel sessions
 .claude/worktrees/
 
-# Scripts we analyze but do not republish (npm run fetch-script-slug)
+# Scripts we analyze but do not republish: they belong to their writers
 scripts/local/
+scripts/*.txt
 
 # Subtitles we align with scripts but do not republish (npm run fetch-subtitles)
 subtitles/local/
