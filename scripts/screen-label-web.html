@@ -37,7 +37,7 @@
 	.search { margin-top: 24px; }
 	.search input { font: inherit; width: 100%; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 	mark { background: var(--mark); }
-	.saved { color: var(--accent); }
+	.saved { color: var(--accent); font-weight: 600; font-size: 1rem; }
 	:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 	@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -158,7 +158,8 @@ const answer = async label => {
 	if (next === -1) { show(); $('status').innerHTML = '<span class="saved">All done. Tell Claude.</span>'; return; }
 	at = next;
 	show();
-	$('status').innerHTML = '<span class="saved">Saved</span>';
+	$('status').innerHTML = '<span class="saved"></span>';
+	$('status').firstChild.textContent = `Saved item ${data.items.indexOf(item) + 1}: ${OPTIONS[item.kind].find(o => o[0] === label)[2]}`;
 };
 
 const search = () => {
