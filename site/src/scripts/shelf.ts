@@ -1,7 +1,8 @@
 // Search, filter, sort and page through the shelf on the home page. The HTML
 // holds only the first page of tapes; the first time someone uses the shelf,
-// every film loads from /shelf.json and gets a tape copied from the page's
-// template. Without JavaScript the first page shows, with a link to every film.
+// every film loads from /shelf.json as data. A tape is copied from the page's
+// template only when its film is about to show, and the shelf only ever holds
+// the tapes on screen. Without JavaScript the first page shows, with a link to every film.
 
 import { posterFor } from '../lib/images';
 import { closest, squash, titleKeys } from '../lib/search.mjs';
@@ -11,18 +12,13 @@ import { track } from './track';
 type Sort = 'popularity' | 'score' | 'new' | 'old' | 'az';
 type ShelfFilm = { slug: string; title: string; year: number | null; director: string; score: number; popularity: number; poster: string | null; change?: true };
 
-const num = (el: HTMLElement, key: string) => Number(el.dataset[key] ?? 0);
 const n = (x: number) => x.toLocaleString('en-US');
-// scheduler.yield() keeps this task's place in line; Safari doesn't have it yet
-const yieldToMain = (): Promise<void> =>
-	(globalThis as { scheduler?: { yield?: () => Promise<void> } }).scheduler?.yield?.() ?? new Promise((resolve) => setTimeout(resolve));
-
-const comparators: Record<Sort, (a: HTMLElement, b: HTMLElement) => number> = {
-	popularity: (a, b) => num(a, 'popularity') - num(b, 'popularity'),
-	score: (a, b) => num(b, 'score') - num(a, 'score') || num(a, 'popularity') - num(b, 'popularity'),
-	new: (a, b) => num(b, 'year') - num(a, 'year'),
-	old: (a, b) => num(a, 'year') - num(b, 'year'),
-	az: (a, b) => (a.dataset.title ?? '').localeCompare(b.dataset.title ?? ''),
+const comparators: Record<Sort, (a: ShelfFilm, b: ShelfFilm) => number> = {
+	popularity: (a, b) => a.popularity - b.popularity,
+	score: (a, b) => b.score - a.score || a.popularity - b.popularity,
+	new: (a, b) => (b.year ?? 0) - (a.year ?? 0),
+	old: (a, b) => (a.year ?? 0) - (b.year ?? 0),
+	az: (a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()),
 };
 
 /** A tape for one film, copied from the page's template so it keeps the component's styles */
@@ -46,8 +42,10 @@ export function makeTape(template: HTMLTemplateElement, film: ShelfFilm): HTMLEl
 		// No poster: the title on a blank box, as the component draws it
 		const blank = document.createElement('span');
 		const inner = document.createElement('span');
-		for (const { name, value } of img.attributes) if (name.startsWith('data-astro-cid')) [blank, inner].forEach((el) => el.setAttribute(name, value));
-		blank.className = 'blank';
+		// Astro scopes the component's styles with an astro-* class; the new spans need it too
+		const scope = [...img.classList].filter((c) => c.startsWith('astro-'));
+		blank.classList.add('blank', ...scope);
+		inner.classList.add(...scope);
 		blank.setAttribute('aria-hidden', 'true');
 		inner.textContent = film.title;
 		blank.append(inner);
@@ -78,22 +76,36 @@ export function setUpShelf() {
 	if (!search || !form || !shelf || !template || !count || !empty || !clear || !moreWrap || !more || !suggest || !status) return;
 	const suggestLink = suggest.querySelector('a')!;
 
-	// Each tape's title and director squashed once, so "madmax" finds Mad Max
-	const keys = new WeakMap<HTMLElement, string[]>();
-	const keysOf = (tape: HTMLElement) => {
-		let k = keys.get(tape);
-		if (!k) keys.set(tape, (k = [squash(tape.dataset.title), squash(tape.dataset.director)]));
+	// Each film's title and director squashed once, so "madmax" finds Mad Max
+	const keys = new WeakMap<ShelfFilm, string[]>();
+	const keysOf = (film: ShelfFilm) => {
+		let k = keys.get(film);
+		if (!k) keys.set(film, (k = [squash(film.title), squash(film.director)]));
 		return k;
 	};
 
-	let tapes = [...shelf.querySelectorAll<HTMLElement>('li')];
-	const total = Number(shelf.dataset.total ?? tapes.length);
+	// Tapes are made once, when their film first shows; the ones in the HTML are reused
+	const tapeOf = new Map([...shelf.querySelectorAll<HTMLElement>('li')].map((t) => [t.dataset.slug!, t]));
+	const tapeFor = (film: ShelfFilm) => {
+		let tape = tapeOf.get(film.slug);
+		if (!tape) tapeOf.set(film.slug, (tape = makeTape(template, film)));
+		return tape;
+	};
+
+	let films: ShelfFilm[] = [];
+	const sortedBy = new Map<Sort, ShelfFilm[]>();
+	const sorted = (sort: Sort) => {
+		let list = sortedBy.get(sort);
+		if (!list) sortedBy.set(sort, (list = [...films].sort(comparators[sort] ?? comparators.popularity)));
+		return list;
+	};
+	const total = Number(shelf.dataset.total ?? tapeOf.size);
 	// Browsing, searching and filtering all show a page at a time: putting
 	// hundreds of tapes on screen at once made each keystroke take a second on phones
 	const pageSize = Number(shelf.dataset.pageSize ?? 60);
 	let limit = pageSize;
 
-	// Every film, fetched once; the tapes already on the page are reused
+	// Every film, fetched once, as data
 	let loading: Promise<void> | null = null;
 	// The shelf dims while the films load (CSS waits 200 ms, so a fast load never shows it)
 	const loadAll = () =>
@@ -102,19 +114,8 @@ export function setUpShelf() {
 				if (!res.ok) throw new Error(`HTTP ${res.status}`);
 				return res.json() as Promise<ShelfFilm[]>;
 			})
-			.then(async (films) => {
-				const onPage = new Map(tapes.map((t) => [t.dataset.slug, t]));
-				// Built in 50 ms slices, so a tap while 2,000+ tapes are made isn't kept waiting
-				const built: HTMLElement[] = [];
-				let sliceEnds = performance.now() + 50;
-				for (const f of films) {
-					built.push(onPage.get(f.slug) ?? makeTape(template, f));
-					if (performance.now() > sliceEnds) {
-						await yieldToMain();
-						sliceEnds = performance.now() + 50;
-					}
-				}
-				tapes = built;
+			.then((all) => {
+				films = all;
 			})
 			.catch((error) => {
 				loading = null;
@@ -144,10 +145,6 @@ export function setUpShelf() {
 			),
 		);
 	};
-	const visibleTapes = () => [...shelf.querySelectorAll<HTMLElement>('li:not([hidden])')];
-
-	// Re-appending 2,000+ tapes costs most of an update, so only do it when the order changes
-	let orderOnPage: Sort = 'popularity';
 	const update = () => {
 		const data = new FormData(form);
 		const typed = String(data.get('q') ?? '').trim();
@@ -155,28 +152,19 @@ export function setUpShelf() {
 		const show = String(data.get('show') ?? 'all');
 		const sort = String(data.get('sort') ?? 'popularity') as Sort;
 
-		const sorted = [...tapes].sort(comparators[sort] ?? comparators.popularity);
-
 		const browsing = !q && show === 'all';
 		let matched = 0;
 		let passing = 0;
-		for (const tape of sorted) {
-			const pass = num(tape, 'score') === 3;
-			const shown = show === 'all' || (show === 'change' ? 'change' in tape.dataset : show === 'pass' ? pass : !pass);
-			const matches =
-				shown &&
-				(!q || keysOf(tape).some((k) => k.includes(q)));
-			if (matches) {
-				matched++;
-				if (pass) passing++;
-			}
-			tape.hidden = !matches || matched > limit;
+		const onScreen: HTMLElement[] = [];
+		for (const film of sorted(sort)) {
+			const pass = film.score === 3;
+			const shown = show === 'all' || (show === 'change' ? film.change === true : show === 'pass' ? pass : !pass);
+			if (!shown || (q && !keysOf(film).some((k) => k.includes(q)))) continue;
+			matched++;
+			if (pass) passing++;
+			if (matched <= limit) onScreen.push(tapeFor(film));
 		}
-		// After hiding, so the browser never lays out 2,000+ visible tapes at once
-		if (sort !== orderOnPage || shelf.childElementCount !== sorted.length) {
-			shelf.append(...sorted);
-			orderOnPage = sort;
-		}
+		shelf.replaceChildren(...onScreen);
 		const visible = Math.min(limit, matched);
 		const left = matched - visible;
 
@@ -195,11 +183,11 @@ export function setUpShelf() {
 		announce();
 		empty.hidden = matched > 0;
 		// Nothing matched: offer the nearest title, if one is close
-		const near = matched === 0 && typed ? closest(typed, tapes, (t) => titleKeys(t.querySelector('.title')?.textContent ?? '')) : null;
+		const near = matched === 0 && typed ? closest(typed, films, (f) => titleKeys(f.title)) : null;
 		suggest.hidden = !near;
 		if (near) {
-			suggestLink.href = near.querySelector('a')!.href;
-			suggestLink.textContent = near.querySelector('.title')!.textContent;
+			suggestLink.href = `/films/${near.slug}/`;
+			suggestLink.textContent = near.title;
 		}
 		moreWrap.hidden = left === 0;
 		more.textContent = `Show ${Math.min(pageSize, left)} more`;
@@ -255,12 +243,13 @@ export function setUpShelf() {
 	});
 	more.addEventListener('click', async () => {
 		track('Show More');
-		const firstNew = Math.min(limit, tapes.length);
+		const firstNew = Math.min(limit, shelf.childElementCount);
 		limit += pageSize;
 		await refresh();
-		dealIn(visibleTapes().slice(firstNew));
+		const shown = [...shelf.children] as HTMLElement[];
+		dealIn(shown.slice(firstNew));
 		// Move focus to the first newly shown film, so keyboard users land there
-		shelf.querySelectorAll<HTMLElement>('li:not([hidden]) a')[firstNew]?.focus();
+		shown[firstNew]?.querySelector('a')?.focus();
 	});
 	form.addEventListener('submit', (e) => e.preventDefault());
 	clear.addEventListener('click', () => {

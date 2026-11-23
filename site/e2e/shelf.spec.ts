@@ -93,3 +93,35 @@ test('the shelf shows a page at a time, and search still covers every film', asy
 	await page.getByLabel('Search').fill('');
 	await expect(visible).toHaveCount(60);
 });
+
+test('the shelf holds only the tapes on screen, not every film hidden', async ({ page }) => {
+	await page.goto('/');
+	await page.getByRole('button', { name: 'Show 60 more' }).click();
+	// Every tape on the page is a visible one: building all 3,700 and hiding
+	// most of them froze a phone for a fifth of a second
+	await expect(page.locator('[data-shelf] li')).toHaveCount(120);
+	await page.getByLabel('Search').fill('fincher');
+	const fincher = films.filter((f) => f.director.toLowerCase().includes('fincher'));
+	await expect(page.locator('[data-shelf] li')).toHaveCount(fincher.length);
+});
+
+test('the first "Show more" never holds a frame past 150 ms on a slow phone', async ({ page, browserName }, testInfo) => {
+	// Long-animation-frame timing and CPU throttling are Chromium-only; the phone project is the one that matters
+	test.skip(browserName !== 'chromium' || testInfo.project.name !== 'pixel', 'Chromium phone only');
+	await page.goto('/');
+	const cdp = await page.context().newCDPSession(page);
+	await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+	await page.evaluate(() => {
+		const w = window as unknown as { longest: number };
+		w.longest = 0;
+		new PerformanceObserver((list) => {
+			for (const entry of list.getEntries()) w.longest = Math.max(w.longest, entry.duration);
+		}).observe({ type: 'long-animation-frame' });
+	});
+	await page.getByRole('button', { name: 'Show 60 more' }).click();
+	await expect(page.locator('[data-shelf] li:not([hidden])')).toHaveCount(120);
+	// One more frame, so the frame that drew the new tapes has been reported
+	await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => setTimeout(r, 50))));
+	const longest = await page.evaluate(() => (window as unknown as { longest: number }).longest);
+	expect(longest).toBeLessThan(150);
+});
