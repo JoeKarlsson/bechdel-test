@@ -37,7 +37,7 @@
 	ol.lines { list-style: none; margin: 0; padding: 10px 12px; background: #fff; border: 1px solid var(--line); border-radius: 10px; font-size: .95rem; }
 	ol.lines li { padding: 3px 6px; border-radius: 4px; }
 	ol.lines li.here { background: var(--mark); font-weight: 600; }
-	ol.lines li.match { background: #dcecff; box-shadow: inset 3px 0 0 #1f5fbf; }
+	ol.lines li.match { background: #dcecff; border-left: 3px solid #1f5fbf; }
 	.hint { font-size: .85rem; color: var(--muted); margin: 6px 0 0; }
 	.time { font-size: .8rem; font-variant-numeric: tabular-nums; color: var(--muted); margin-right: 8px; }
 	.search { margin-top: 24px; }
@@ -61,11 +61,11 @@
 	<div class="target" id="target"></div>
 	<div class="player" id="player" hidden>
 		<audio id="clip" controls preload="auto"></audio>
-		<span>The line should come about 15 seconds in. P plays it again.</span>
+		<span>The line should come about 15 seconds in. <kbd>R</kbd> replays, <kbd>Space</kbd> plays or pauses, <kbd>B</kbd> goes back.</span>
 	</div>
 	<div class="answers" id="answers"></div>
 	<div class="nav">
-		<button id="prev">Previous</button>
+		<button id="prev">Back (B)</button>
 		<button id="next">Next</button>
 		<button id="skip">Next unanswered</button>
 		<span id="status" role="status"></span>
@@ -87,38 +87,40 @@
 	</div>
 </main>
 <script>
-// Every kind of item uses the same four keys with the same meaning, so the answers never move:
-// 1 there as written, 2 there but changed, 3 not there, 4 can't tell. [label, name, hint]; null leaves the slot empty.
+// Every kind of item uses the same four keys with the same meaning, so the answers never move. Laid out for the
+// left hand, index finger on 4: 4 there as written, 3 there but changed, 2 not there, 1 can't tell.
+// [label, name, hint]; null leaves the slot empty.
 const OPTIONS = {
 	'script line': [
-		['kept', 'There, as written', 'small differences are fine'],
-		['changed', 'There, but changed', 'reworded or only part of it'],
-		['cut', 'Not there', 'not in the subtitles (search to be sure)'],
 		['unsure', 'Can’t tell', 'the subtitles don’t settle it'],
+		['cut', 'Not there', 'not in the subtitles (search to be sure)'],
+		['changed', 'There, but changed', 'reworded or only part of it'],
+		['kept', 'There, as written', 'small differences are fine'],
 	],
 	'subtitle line': [
-		['scripted', 'There, as written', 'small differences are fine'],
-		['scripted', 'There, but changed', 'reworded or only part of it'],
-		['not in script', 'Not there', 'new or improvised (search to be sure)'],
 		['unsure', 'Can’t tell', 'e.g. a one-word line'],
+		['not in script', 'Not there', 'new or improvised (search to be sure)'],
+		['scripted', 'There, but changed', 'reworded or only part of it'],
+		['scripted', 'There, as written', 'small differences are fine'],
 	],
 	audio: [
-		['subtitles trimmed', 'Said as written', 'the subtitles just shortened it'],
+		['unsure', 'Can’t tell', 'can’t make it out, or the clip misses the moment'],
+		['really cut', 'Not said', 'not in the clip: the subtitles are right'],
 		['really changed', 'Said, but changed', 'reworded or only part of it'],
-		['really cut', 'Not said', 'nowhere near this point'],
-		['unsure', 'Can’t tell', 'can’t make it out'],
+		['subtitles trimmed', 'Said as written', 'near enough word for word: the subtitles just shortened it'],
 	],
 	verdict: [
-		['passes on screen', 'Passes', 'two named women talk, not about a man'],
-		null,
-		['fails on screen', 'Fails', 'no such conversation in the film'],
 		['unsure', 'Can’t tell', 'the scenes don’t settle it'],
+		['fails on screen', 'Fails', 'no such conversation in the film'],
+		null,
+		['passes on screen', 'Passes', 'two named women talk, not about a man'],
 	],
 };
 const QUESTIONS = {
 	'script line': () => 'Does this script line show up in the subtitles on the right?',
 	'subtitle line': () => 'Does this subtitle line show up in the script on the right, even reworded?',
-	audio: item => `Listen to the clip (from about ${item.at} in the film). Is this script line said?`,
+	// the subtitles say this line was dropped or reworded; the film's sound settles whether that's true
+	audio: item => `The subtitles ${item.labelledAs === 'cut' ? 'leave this script line out' : 'have this script line reworded'}. Is it said in the film? Just listen; ignore the subtitles.`,
 	verdict: item => `${item.change === 'page-pass-screen-fail' ? 'The script passes; the subtitles don’t.' : 'The script fails; the subtitles pass.'} In the film, do two named women talk to each other about something other than a man?`,
 };
 const $ = id => document.getElementById(id);
@@ -279,9 +281,12 @@ document.addEventListener('keydown', e => {
 	if (e.metaKey || e.ctrlKey || e.altKey) return;
 	if (e.key === '/') { e.preventDefault(); $('q').focus(); return; }
 	if (e.key === 'ArrowRight') { at = Math.min(data.items.length - 1, at + 1); show(); return; }
-	if (e.key === 'ArrowLeft') { at = Math.max(0, at - 1); show(); return; }
+	if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'b') { at = Math.max(0, at - 1); show(); return; }
 	if (['1', '2', '3', '4'].includes(e.key)) answer(Number(e.key) - 1);
-	if (e.key.toLowerCase() === 'p' && data.items[at].kind === 'audio') { $('clip').load(); $('clip').play(); }
+	if (data.items[at].kind !== 'audio') return;
+	if (e.key.toLowerCase() === 'r') { $('clip').currentTime = 0; $('clip').play(); }
+	// Space would otherwise press the focused button or scroll the page
+	if (e.key === ' ') { e.preventDefault(); if ($('clip').paused) $('clip').play(); else $('clip').pause(); }
 });
 $('prev').onclick = () => { at = Math.max(0, at - 1); show(); };
 $('next').onclick = () => { at = Math.min(data.items.length - 1, at + 1); show(); };
