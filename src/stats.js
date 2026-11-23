@@ -96,4 +96,14 @@ const cohensKappa = (a, b) => {
 	return expected === 1 ? 1 : (observed - expected) / (1 - expected);
 };
 
-module.exports = { median, quantile, bootstrap, wilson, wilcoxonSignedRank, mcnemar, cohensKappa, seededRandom };
+/**
+ * Hand-judged screen verdicts against the page's: { changed, judged } over [{ pagePasses, verdict }], leaving out
+ * "unsure". A film changed when the judged screen verdict differs from the page verdict.
+ */
+const verdictChanges = answers => {
+	const judged = answers.filter(a => a.verdict !== 'unsure');
+	for (const a of judged) if (typeof a.pagePasses !== 'boolean') throw new Error(`no page verdict in ${JSON.stringify(a)}`);
+	return { changed: judged.filter(a => (a.verdict === 'passes on screen') !== a.pagePasses).length, judged: judged.length };
+};
+
+module.exports = { median, quantile, bootstrap, wilson, wilcoxonSignedRank, mcnemar, cohensKappa, seededRandom, verdictChanges };

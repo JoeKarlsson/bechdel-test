@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 const { compareFilmOnDisk, loadFilmRecords, ROOT } = require('../src/screenOnDisk');
 const { METHOD } = require('../src/pageVsScreen');
-const { bootstrap, cohensKappa, wilson } = require('../src/stats');
+const { bootstrap, cohensKappa, verdictChanges, wilson } = require('../src/stats');
 
 const gold = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/eval/screen-gold.json'), 'utf8'));
 const LABELS = ['kept', 'changed', 'cut'];
@@ -142,13 +142,12 @@ const main = async () => {
 	}
 	// verdict changes the method may have missed: a film it fails on both sides that passes on screen, or an unclear
 	// film whose judged screen verdict differs from its page verdict
-	const missed = Object.values(gold.missed ?? {}).filter(m => m.verdict !== 'unsure');
+	const missed = Object.values(gold.missed ?? {});
 	for (const [change, what] of [['fail-fail', 'fails on both sides but passes on screen'], ['unclear', 'is unclear and changes verdict on screen']]) {
-		const judged = missed.filter(m => m.change === change);
-		if (judged.length === 0) continue;
-		const changed = judged.filter(m => (m.verdict === 'passes on screen') !== m.pagePasses).length;
-		const [lo, hi] = wilson(changed, judged.length);
-		console.log(`Missed-verdict check: the film ${what} in ${changed} of ${judged.length} (95% CI ${(lo * 100).toFixed(0)}-${(hi * 100).toFixed(0)}%)`);
+		const { changed, judged } = verdictChanges(missed.filter(m => m.change === change));
+		if (judged === 0) continue;
+		const [lo, hi] = wilson(changed, judged);
+		console.log(`Missed-verdict check: the film ${what} in ${changed} of ${judged} (95% CI ${(lo * 100).toFixed(0)}-${(hi * 100).toFixed(0)}%)`);
 	}
 };
 
