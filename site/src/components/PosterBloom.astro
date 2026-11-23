@@ -73,6 +73,25 @@ const posters = films
 			}
 			return image;
 		};
+		// A failing film's poster is grayed once, into its own small canvas: a
+		// filter applied on every frame cost a browser drawing without a GPU
+		// over a second of blocked main thread on a hub page
+		const sprites = new Map<Poster, CanvasImageSource>();
+		const spriteFor = (poster: Poster) => {
+			const image = images.get(poster)!;
+			if (poster.pass) return image;
+			let sprite = sprites.get(poster);
+			if (!sprite) {
+				const gray = document.createElement('canvas');
+				gray.width = image.naturalWidth;
+				gray.height = image.naturalHeight;
+				const grayContext = gray.getContext('2d')!;
+				grayContext.filter = FAIL_FILTER;
+				grayContext.drawImage(image, 0, 0);
+				sprites.set(poster, (sprite = gray));
+			}
+			return sprite;
+		};
 		// A poster only joins once its image is in, so none pops in blank
 		const isLoaded = (poster: Poster) => {
 			const image = images.get(poster);
@@ -132,10 +151,9 @@ const posters = films
 				const posterHeight = posterWidth * 1.5;
 				context.save();
 				context.globalAlpha = Math.min(1, age / 0.25) * (k > 0.85 ? (1 - k) / 0.15 : 1);
-				context.filter = bloom.poster.pass ? 'none' : FAIL_FILTER;
 				context.translate(x, y);
 				context.rotate((bloom.tilt * Math.PI) / 180);
-				context.drawImage(images.get(bloom.poster)!, -posterWidth / 2, -posterHeight / 2, posterWidth, posterHeight);
+				context.drawImage(spriteFor(bloom.poster), -posterWidth / 2, -posterHeight / 2, posterWidth, posterHeight);
 				context.restore();
 			}
 			// The caption changes only when a new poster arrives, not on every frame
