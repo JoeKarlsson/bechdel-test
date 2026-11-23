@@ -16,3 +16,4 @@ Joe's standing verdicts for this site, one per line, dated. Read before changing
 - 2026-11-19: Hub page leads put their numbers in pink (the film counts and both percentages).
 - 2026-11-22: A film whose script's title page says it's a first or early draft shows an "Early draft" tag under the verdict, in the "Not rated" tag style, with the draft's date when the title page has one (option B).
 - 2026-11-23: Hosting stays on GitHub Pages for now. Moving to Cloudflare's free Workers plan (fixes 10-minute asset caching, adds headers, lifts the 1 GB limit) was looked at and put off; the other 20 Pages sites would follow it if it ever happens.
+- 2026-11-23: The site is named Bechdel Script Test (chosen over Does it pass?, Bechdel Shelf, Bechdel Check, Bechdel Scripts and others: Joe wants "Bechdel" in it and the name to say what the site does). The bechdel.io domain is being let go; the site lives at bechdel.joekarlsson.com.

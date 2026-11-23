@@ -43,7 +43,7 @@ body > .logo { position: absolute; right: 64px; bottom: 40px; font-size: 56px; t
 </style></head><body>${body}</body></html>`;
 
 // The site's logo: the question over the pink name, as in the header
-const logo = '<div class="logo"><span>Does it pass?</span>bechdel.io</div>';
+const logo = '<div class="logo"><span>Does it pass?</span>Bechdel Script Test</div>';
 
 // Long titles step down so they fit in three lines
 const titleSize = (t) => (t.length > 40 ? 64 : t.length > 24 ? 80 : t.length > 14 ? 104 : 128);

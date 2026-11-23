@@ -1,6 +1,6 @@
 # Triage new issues/PRs on GitHub
 
-This document illustrates the steps the bechdel.io community is taking to
+This document illustrates the steps the Bechdel Script Test community is taking to
 triage issues. The labels are used later on for `assigning work <#assigning-work>`.
 
 ## Triaging Process
@@ -53,14 +53,14 @@ This process based on the idea of minimizing user pain `from this blog post <htt
 
    * low - obscure issue affecting a handful of developers
    * moderate - impacts a common usage pattern
-   * high - impacts most or all bechdel.io apps
+   * high - impacts most or all Bechdel Script Test apps
 
 8. Label `severity: *` - How bad is the issue?
 
    * regression
    * memory leak
    * broken expected use - it's hard or impossible for a developer
-     using bechdel.io to accomplish something that bechdel.io should be able
+     using Bechdel Script Test to accomplish something that Bechdel Script Test should be able
      to do
    * confusing - unexpected or inconsistent behavior; hard-to-debug
    * inconvenience - causes ugly/boilerplate code in apps

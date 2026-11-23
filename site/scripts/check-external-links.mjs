@@ -32,7 +32,7 @@ for (const file of files(DIST)) {
 async function check(url) {
 	for (const method of ['HEAD', 'GET']) {
 		try {
-			const res = await fetch(url, { method, redirect: 'follow', signal: AbortSignal.timeout(15_000), headers: { 'User-Agent': 'bechdel.io link check' } });
+			const res = await fetch(url, { method, redirect: 'follow', signal: AbortSignal.timeout(15_000), headers: { 'User-Agent': 'Bechdel Script Test link check' } });
 			if (res.ok) return { ok: true };
 			if (method === 'GET') return { ok: false, status: res.status };
 		} catch (err) {

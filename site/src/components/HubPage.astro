@@ -41,7 +41,7 @@ const structuredData = {
 			url,
 			name: title,
 			description: verdict,
-			isPartOf: { '@type': 'WebSite', name: 'bechdel.io', url: site.href },
+			isPartOf: { '@type': 'WebSite', name: 'Bechdel Script Test', url: site.href },
 			mainEntity: {
 				'@type': 'ItemList',
 				numberOfItems: total,
@@ -51,7 +51,7 @@ const structuredData = {
 		{
 			'@type': 'BreadcrumbList',
 			itemListElement: [
-				{ '@type': 'ListItem', position: 1, name: 'bechdel.io', item: site.href },
+				{ '@type': 'ListItem', position: 1, name: 'Bechdel Script Test', item: site.href },
 				{ '@type': 'ListItem', position: 2, name: parent.name, item: new URL(parent.href, site).href },
 				{ '@type': 'ListItem', position: 3, name: title, item: url },
 			],

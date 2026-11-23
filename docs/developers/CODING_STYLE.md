@@ -1,9 +1,9 @@
 # Coding Style Guide
 
-Please see [Contributing to bechdel.io](/CONTRIBUTING.md) for more guidelines on
-contributing to bechdel.io.
+Please see [Contributing to Bechdel Script Test](/CONTRIBUTING.md) for more guidelines on
+contributing to Bechdel Script Test.
 
-bechdel.io uses the [AirBnb JavaScript Style guide](http://airbnb.io/javascript/)
+Bechdel Script Test uses the [AirBnb JavaScript Style guide](http://airbnb.io/javascript/)
 
 This file explains coding-style considerations that are beyond the
 syntax check of the _Standard_.

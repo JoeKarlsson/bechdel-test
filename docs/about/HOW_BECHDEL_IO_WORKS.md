@@ -1,4 +1,4 @@
-## How bechdel.io Works
+## How Bechdel Script Test Works
 
 Of all narrative textual forms, the motion picture screenplay may be the most perfectly pre-disposed for computational analysis [[Murtagh, Ganz, and Reddington 2011]](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Screenplays contain capitalized character names, indented dialogue, and other formatting conventions that enable an algorithmic approach to analyzing and visualizing film narratives [[Hoyt, Ponto, Roy]](http://www.digitalhumanities.org/dhq/vol/8/4/000190/000190.html). Coupled with massive online movie databases, we can parse through movie scripts and collect insights on a level not yet seen before. In this article, the authors introduce their new tool, Bechdel Test Visulizer, which parses screenplays, outputs statistical gender values which can be analyzed, and offers four different types of visualization, each with its own utility. In this analysis, the authors use the Bechdel Test Visualizer to analyze the 2014 Oscar Best Picture Nominees.
 

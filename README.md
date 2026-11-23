@@ -1,13 +1,13 @@
-# bechdel.io
+# Bechdel Script Test
 
 [![Website](https://img.shields.io/badge/website-bechdel.joekarlsson.com-ff4fd8)](https://bechdel.joekarlsson.com/)
 [![Site](https://github.com/JoeKarlsson/bechdel-test/actions/workflows/site.yml/badge.svg)](https://github.com/JoeKarlsson/bechdel-test/actions/workflows/site.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24451276.svg)](https://doi.org/10.5281/zenodo.24451276)
 
-![Bechdel.io: the headline "Do two women talk to each other about something other than a man?", the shelf of movie posters marked passes or fails, filtering to films that pass, then the Gone Girl page scoring 3 of 3 and its cast sized by lines spoken](.github/readme/2026-11-recording.gif)
+![Bechdel Script Test: the headline "Do two women talk to each other about something other than a man?", the shelf of movie posters marked passes or fails, filtering to films that pass, then the Gone Girl page scoring 3 of 3 and its cast sized by lines spoken](.github/readme/2026-11-recording.gif)
 
-Bechdel.io checks movie scripts against the Bechdel Test: are there at least two
+Bechdel Script Test checks movie scripts against the Bechdel Test: are there at least two
 women, do they talk to each other, and do they talk about something other than a
 man. It sorts a wall of movies most people have already seen into pass and fail,
 and more than a third of them fail, a lot of them favorites.

@@ -6,7 +6,7 @@ Code: `src/opus.js` (corpus access), `src/subtitles.js` (cleaning), `src/align.j
 
 ## 1. Question
 
-A screenplay is a draft. Between the page and the release, lines are cut in the edit, rewritten on set, improvised or moved. bechdel.io scores films from their scripts, so we measure how far each script is from the film as released, and whether that changes its Bechdel verdict.
+A screenplay is a draft. Between the page and the release, lines are cut in the edit, rewritten on set, improvised or moved. Bechdel Script Test scores films from their scripts, so we measure how far each script is from the film as released, and whether that changes its Bechdel verdict.
 
 ## 2. Research questions
 

@@ -23,7 +23,7 @@ const {
 	title,
 	description,
 	image = '/og.jpg',
-	imageAlt = 'bechdel.io: do two women talk to each other about something other than a man?',
+	imageAlt = 'Bechdel Script Test: do two women talk to each other about something other than a man?',
 	noindex = false,
 	structuredData,
 	nav,
@@ -32,7 +32,7 @@ const {
 	ogType = 'website',
 } = Astro.props;
 
-const SITE_NAME = 'bechdel.io';
+const SITE_NAME = 'Bechdel Script Test';
 const allFilms = loadFilms();
 const failShare = Math.round((allFilms.filter((f) => !f.bechdel.pass).length / allFilms.length) * 100);
 // Search results cut titles near 60 characters; the brand is what gives way
@@ -94,7 +94,7 @@ const NAV = [
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="sitemap" href="/sitemap.xml" />
-		<link rel="alternate" type="application/rss+xml" title="bechdel.io: new films" href="/rss.xml" />
+		<link rel="alternate" type="application/rss+xml" title="Bechdel Script Test: new films" href="/rss.xml" />
 		<!-- Posters and backdrops come from TMDB's image CDN -->
 		{posters && <link rel="preconnect" href="https://image.tmdb.org" />}
 		<!-- A page-to-page crossfade waits for the main content, not a half-parsed page -->
@@ -127,7 +127,7 @@ const NAV = [
 	<body data-not-found={notFound ? 'true' : undefined}>
 		<a class="skip-link" href="#main">Skip to the page</a>
 		<header class="site-header page">
-			<a class="wordmark" href="/"><span class="wordmark-question">Does it pass?</span> bechdel.io</a>
+			<a class="wordmark" href="/"><span class="wordmark-question">Does it pass?</span> Bechdel Script Test</a>
 			<nav aria-label="Main">
 				{NAV.map((n) => (
 					<a href={n.href} aria-current={n.key === nav ? 'page' : undefined}>
