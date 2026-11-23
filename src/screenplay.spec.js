@@ -115,6 +115,13 @@ describe('parseScreenplay', () => {
 		expect(normalizeSpeaker("BONNIE'S VOICE")).toBe('BONNIE');
 	});
 
+	it('strips bracketed notes in linear time, even on a long run of them', () => {
+		expect(normalizeSpeaker("NICK (INTO PHONE) (CONT'D.)")).toBe('NICK');
+		const start = performance.now();
+		normalizeSpeaker(`NICK (${'.)('.repeat(26)}x`);
+		expect(performance.now() - start).toBeLessThan(100);
+	});
+
 	it('cleans trailing dashes, colons and unbracketed extensions', () => {
 		expect(['RIPLEY -', 'AINE (V.O.):-', 'SCRAP V.O.', 'FRANK V/O', 'SYKES O.S.', 'MAYA/OVER PHONE'].map(normalizeSpeaker))
 			.toEqual(['RIPLEY', 'AINE', 'SCRAP', 'FRANK', 'SYKES', 'MAYA']);

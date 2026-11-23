@@ -15,7 +15,10 @@ const NOT_A_SPEAKER = new Set([
 	'CREDITS', 'DRAFT', 'MAIN TITLES', 'TITLE CARD', 'CARD', 'CHYRON', 'OPENING CREDITS', 'END CREDITS', 'FREEZE FRAME', 'SLOW MOTION', 'TIME CUT', 'JUMP CUT',
 	"CONT'D", 'CONT’D', 'CONTD',
 ]);
-const SPEAKER_SUFFIX = /\s*(?:\((?:V\.?\s?O|O\.?\s?S|O\.?\s?C|CONT['’]?D|CONTD|CONT|INTO PHONE|ON PHONE|PHONE|FILTERED|OVER|PRE-?LAP|SUBTITLED?|CONT['’]?D\.?|[^)]{0,30})\.?\)\s*)+$/i;
+// Bracketed notes after a name: (V.O.), (O.S.), (CONT'D), (INTO PHONE), or any
+// other short aside. One unambiguous pattern per bracket: overlapping
+// alternatives here backtracked exponentially on lines like "(.)(.)(.)...".
+const SPEAKER_SUFFIX = /\s*(?:\([^)]{0,31}\)\s*)+$/;
 const PAGE_NUMBER = /^\s*\d+\.?\s*$/;
 // A heading without INT./EXT.: "ANNIE'S KITCHEN - SEVERAL DAYS LATER"
 const PLACE_HEADING = /^[A-Z0-9][A-Z0-9 .,'’&/()#-]{2,60}\s[-–—]\s*(?:DAY|NIGHT|MORNING|EVENING|AFTERNOON|DAWN|DUSK|SUNSET|SUNRISE|LATER|CONTINUOUS|SAME(?: TIME)?|MOMENTS LATER|(?:A )?(?:FEW|SEVERAL) (?:MINUTES|HOURS|DAYS|WEEKS|MONTHS) LATER)\.?$/;
