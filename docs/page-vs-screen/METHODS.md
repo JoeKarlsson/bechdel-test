@@ -143,9 +143,10 @@ All three were done by one person, the author, after the results were known, so 
   - Pass to fail: none of the 28 films with an answer fails on screen (0% to 12%); 2 couldn't be judged. Judged from text, this check leans toward finding a pass (see the reader check below).
   - Fail to pass: 29 of the 30 films with an answer pass on screen (83% to 99%); 9 couldn't be judged. Whether those scripts really fail was not checked.
   - Where the subtitles named no speaker, the judge took the speaker from the script, as the method does.
-- **Changed verdicts against bechdeltest.com readers** (exploratory, added after the check above): readers rate the released film, so their rating is an outside view of the screen verdict. `node scripts/screen-readers.js` computes it from `data/screen`, `data/films` and `data/eval/bechdeltest-ratings.json`.
+- **Changed verdicts against bechdeltest.com readers** (exploratory, added after the check above): readers rate the released film, so their rating is an outside view of the screen verdict. It says nothing about the page: a flag counts as real here even if the scorer misread the script. `node scripts/screen-readers.js` computes it from `data/screen`, `data/films` and `data/eval/bechdeltest-ratings.json`.
   - Readers pass 80% of the 859 rated films the method passes on both page and screen, and 13% of the 578 it fails on both: the scorer's own disagreement with readers, with no flag involved. They pass 46% of the 122 rated pass-to-fail films and 45% of the 29 rated fail-to-pass films.
-  - Assuming a real lost pass looks to readers like a film that fails on both sides and a false one like a film that passes on both (and the same for gained passes), 51% of lost passes (38% to 65%, resampling films) and 47% of gained passes (20% to 74%) are real: about 104 of the 1,968 decided films (80 to 129), about 85 of them pass to fail. A film that barely passes on the page may also split readers, which this assumption ignores.
+  - Assuming a real lost pass looks to readers like a film that fails on both sides and a false one like a film that passes on both (and the same for gained passes), 51% of lost passes (39% to 64%, resampling films) and 47% of gained passes (21% to 74%) are real: about 104 of the 1,968 decided films (80 to 127), 86 of them pass to fail.
+  - The flagged films are borderline on the page (125 of 167 lost passes rest on one passing scene; 35 of 39 gained passes fail only rule 3), and borderline films split readers anyway, which inflates the shares above. Weighting the unflagged films to the flagged films' page profile (passing scenes for a pass, score for a fail) gives 28% of lost passes (4% to 48%) and 40% of gained passes (8% to 70%): about 63 films (21 to 98), 47 pass to fail. Leaving out ratings marked dubious gives 110 films (87 to 134). The estimate is about 3% to 5% of decided films.
   - On the 43 films both the person and readers rated, they agree on 24. Readers fail 7 of 20 lost passes the person called passing, and 13 of 23 gained passes.
   - Neither check looked for changes the method missed, so neither is a ceiling on how many films really change.
 
@@ -212,7 +213,7 @@ Comparing women's lines with women's lines keeps speaker gender fixed, which RQ3
 - Results describe "shelf films with an English script and English subtitles", not film in general.
 - Word survival has a chance floor of about 2%: unrelated dialogue shares that many words in matching order (§7).
 - Subtitles are not a transcript of speech. Listening to 100 apparent cuts and changes found about one in ten was only subtitle shortening (§6.2).
-- About half the screen verdict's changes hold up against bechdeltest.com readers (§6.2), so RQ4's 10.5% describes the method; real changes are nearer 5%.
+- A third to a half of the screen verdict's changes hold up against bechdeltest.com readers (§6.2), so RQ4's 10.5% describes the method; real changes are nearer 3% to 5%.
 - Speaker attribution on screen is borrowed from the script. Lines not in the script often have no known speaker, which is why §8 reports two readings.
 
 ## References
