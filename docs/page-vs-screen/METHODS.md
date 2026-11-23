@@ -140,10 +140,14 @@ All three were done by one person, the author, after the results were known, so 
 - **Labels by a person** on the same seeded 100 items as the second labelling, blind to both labellings and the predictions: `npm run screen:label -- --check`. κ = 0.55 against the first labelling (96 items, the same answer on 64) and 0.56 against the second (78 items). The method's label matches the person's on 49 of 76 script lines. Most disagreements are between *heard as written* and *changed*. On whether a script line is in the subtitles at all, the person and the first labelling agree on 66 of 76 lines (κ = 0.64).
 - **The audio spot-check:** `npm run screen:label -- --audio`. 100 test-set lines the first labelling called *cut* or *changed*, from 7 films. Each is a 40-second clip of the released film starting about 15 seconds before the line. Subtitle timing drifts against a given copy of a film (by up to about three minutes here), so each clip's offset was measured from the film's own speech, by matching a speech-recognition transcript of the clip (Whisper large-v3) to the subtitles. The transcript only placed the clip; the answers come from listening. 10 of the 99 lines with an answer were said as written, so the subtitles had only shortened them (95% Wilson interval 6% to 18%). The other 89 were really cut or reworded.
 - **Changed verdicts against the film:** a seeded 30 of the 167 films that pass on the page and fail on screen, and all 39 that do the reverse. For each, the conversations the verdict rests on were shown, and the person judged whether two named women talk to each other about something other than a man: `npm run screen:label -- --verdicts`. The judgment was made from the script and subtitle text shown, not by watching, and the person saw which way the verdict had changed.
-  - Pass to fail: none of the 28 films with an answer fails on screen (0% to 12%); 2 couldn't be judged. Subtitles rarely name speakers, so the screen version misses conversations between women that are still in the film. The method's pass-to-fail changes should not be read as real.
+  - Pass to fail: none of the 28 films with an answer fails on screen (0% to 12%); 2 couldn't be judged. Judged from text, this check leans toward finding a pass (see the reader check below).
   - Fail to pass: 29 of the 30 films with an answer pass on screen (83% to 99%); 9 couldn't be judged. Whether those scripts really fail was not checked.
-  - Together, roughly 30 to 60 of the method's 206 flags hold up (1.5% to 3% of the 1,968 decided films, about 2% at the point estimates), mostly from fail to pass and entirely so at the point estimates. Films the method calls unchanged or unclear were not checked, so this is not a ceiling on how many films really change.
   - Where the subtitles named no speaker, the judge took the speaker from the script, as the method does.
+- **Changed verdicts against bechdeltest.com readers** (exploratory, added after the check above): readers rate the released film, so their rating is an outside view of the screen verdict. `node scripts/screen-readers.js` computes it from `data/screen`, `data/films` and `data/eval/bechdeltest-ratings.json`.
+  - Readers pass 80% of the 859 rated films the method passes on both page and screen, and 13% of the 578 it fails on both: the scorer's own disagreement with readers, with no flag involved. They pass 46% of the 122 rated pass-to-fail films and 45% of the 29 rated fail-to-pass films.
+  - Assuming a real lost pass looks to readers like a film that fails on both sides and a false one like a film that passes on both (and the same for gained passes), 51% of lost passes (38% to 65%, resampling films) and 47% of gained passes (20% to 74%) are real: about 104 of the 1,968 decided films (80 to 129), about 85 of them pass to fail. A film that barely passes on the page may also split readers, which this assumption ignores.
+  - On the 43 films both the person and readers rated, they agree on 24. Readers fail 7 of 20 lost passes the person called passing, and 13 of 23 gained passes.
+  - Neither check looked for changes the method missed, so neither is a ceiling on how many films really change.
 
 ## 7. Exclusions
 
@@ -208,7 +212,7 @@ Comparing women's lines with women's lines keeps speaker gender fixed, which RQ3
 - Results describe "shelf films with an English script and English subtitles", not film in general.
 - Word survival has a chance floor of about 2%: unrelated dialogue shares that many words in matching order (§7).
 - Subtitles are not a transcript of speech. Listening to 100 apparent cuts and changes found about one in ten was only subtitle shortening (§6.2).
-- The screen verdict over-reports lost passes: none of 28 checked held up (§6.2). RQ4's share and direction describe the method more than the films.
+- About half the screen verdict's changes hold up against bechdeltest.com readers (§6.2), so RQ4's 10.5% describes the method; real changes are nearer 5%.
 - Speaker attribution on screen is borrowed from the script. Lines not in the script often have no known speaker, which is why §8 reports two readings.
 
 ## References
