@@ -10,11 +10,9 @@
  *   npm run screen:label -- --check  label the same 100 items yourself, to check both labellings against
  *   npm run screen:label -- --verdicts  for 30 films that lose a pass on screen and every film that gains one, judge
  *                                       from the film whether it passes on screen
- *   --missed (export and import only)   the same question, blind, for 50 films that fail on both page and screen and
- *                                       20 whose screen readings disagree: verdict changes the method may have missed
  *
  * For labelling outside this prompt (docs/page-vs-screen/CODEBOOK.md):
- *   npm run screen:label -- --export <dir> [--again|--check|--audio|--verdicts|--missed]  each film's items, with context and no
+ *   npm run screen:label -- --export <dir> [--again|--check|--audio|--verdicts]  each film's items, with context and no
  *                                    prediction, plus its full script and subtitles to search (text: keep the folder off the repo)
  *   npm run screen:label -- --import <labels.json> [same flag]  { "<item key>": "<label>" } into the gold file
  *   npm run screen:label-web -- <dir>  label an exported folder in the browser
@@ -155,88 +153,47 @@ const ask = async (rl, film, item, detail) => {
 
 const VERDICT_KEYS = { p: 'passes on screen', f: 'fails on screen', u: 'unsure' };
 
-/** Every compared film with its page and screen Bechdel results */
-const bechdelOf = records => records.map(film => ({ film, file: path.join(SCREEN_DIR, `${film._id}.json`) }))
-	.filter(({ file }) => fs.existsSync(file))
-	.map(({ film, file }) => ({ film, screen: JSON.parse(fs.readFileSync(file, 'utf8')) }))
-	.filter(({ screen }) => !screen.excluded)
-	.map(({ film, screen }) => ({ film, change: screen.bechdel.change, pagePasses: screen.bechdel.page.score === 3 }));
-
 /** The changed verdicts to check: a seeded 30 of the films that lose a pass on screen, and every film that gains one */
 const verdictSample = records => {
-	const changed = bechdelOf(records);
+	const changed = records.map(film => ({ film, file: path.join(SCREEN_DIR, `${film._id}.json`) }))
+		.filter(({ file }) => fs.existsSync(file))
+		.map(({ film, file }) => ({ film, screen: JSON.parse(fs.readFileSync(file, 'utf8')) }))
+		.filter(({ screen }) => !screen.excluded)
+		.map(({ film, screen }) => ({ film, change: screen.bechdel.change }));
 	const of = change => seeded(changed.filter(c => c.change === change), c => `verdict:${c.film._id}`);
 	return seeded([...of('page-pass-screen-fail').slice(0, VERDICT_PASS_TO_FAIL), ...of('page-fail-screen-pass')], c => `verdict-order:${c.film._id}`);
 };
 
-/**
- * Verdicts the method may have missed (added after the verdict check found its flags mostly wrong): a seeded 50 of
- * the films that fail on both page and screen, where the simulation says missed gained passes would sit, and 20 of
- * the films whose two screen readings disagree. Judged blind to the method's screen verdict.
- */
-const MISSED_FAIL_FAIL = 50;
-const MISSED_UNCLEAR = 20;
-const missedSample = records => {
-	const all = bechdelOf(records);
-	const of = (keep, kind, n) => seeded(all.filter(keep), c => `missed:${c.film._id}`).slice(0, n).map(c => ({ ...c, change: kind }));
-	return seeded([
-		...of(c => c.change === 'same' && !c.pagePasses, 'fail-fail', MISSED_FAIL_FAIL),
-		...of(c => c.change === 'unclear', 'unclear', MISSED_UNCLEAR),
-	], c => `missed-order:${c.film._id}`);
-};
-
 const VERDICT_SHOWN = 3;
 
-/**
- * The conversations a verdict rests on, as titled groups of lines, plus the film's detail. For a changed verdict the
- * summary says which way it changed; for the missed-verdict check ('fail-fail', 'unclear') it says nothing about the
- * method's screen verdict, so the judge is blind to it. pagePasses only matters for 'unclear'.
- */
-const verdictEvidence = async (film, change, radius, pagePasses) => {
+/** The conversations a changed verdict rests on, as titled groups of lines, plus the film's detail */
+const verdictEvidence = async (film, change, radius) => {
 	const input = await loadComparisonInput(film);
 	const { resolved, characters, screenplay } = input;
 	const { detail } = compareFilm(input);
 	const subtitlesAround = center => detail.screenLines
 		.slice(Math.max(0, center - radius), center + radius + 1).map(l => `${clock(l.start)}  ${l.text}`);
-	const shown = list => Math.min(VERDICT_SHOWN, list.length);
-	// script conversations, each followed by the subtitles where it would be (compare: the page marks the closest lines)
-	const scriptGroups = exchanges => {
-		const indexOfBlock = new Map(screenplay.scenes.flatMap(scene => scene.blocks).filter(block => block.kind === 'dialogue').map((block, i) => [block, i]));
-		return exchanges.slice(0, VERDICT_SHOWN).flatMap((exchange, n) => [
-			{ title: `Script, conversation ${n + 1}`, lines: exchange.lines.map(line => `${line.speaker}: ${line.text}`) },
-			{ title: 'Subtitles where it would be', lines: subtitlesAround(anchorFor(detail, indexOfBlock.get(exchange.lines[0]))), compare: true },
-		]);
-	};
-	const screenGroups = unknownAs => {
-		const screen = screenScreenplay(detail.dialogue, detail.screenLines, detail.lineOwner, resolved, unknownAs);
-		const { clean } = runTest(screen, resolved, characters, 'w');
-		return [clean, clean.slice(0, VERDICT_SHOWN).map((exchange, n) => ({
-			title: `Subtitles, conversation ${n + 1}`, lines: exchange.lines.map(line => `${clock(line.start)}  ${line.speaker}: ${line.text}`),
-		}))];
-	};
-	const page = runTest(screenplay, resolved, characters, 'w');
 	if (change === 'page-pass-screen-fail') {
-		return { detail, summary: `The script passes on ${page.clean.length} conversations. The first ${shown(page.clean)}, and the subtitles where each would be:`, groups: scriptGroups(page.clean) };
+		const indexOfBlock = new Map(screenplay.scenes.flatMap(scene => scene.blocks).filter(block => block.kind === 'dialogue').map((block, i) => [block, i]));
+		const clean = runTest(screenplay, resolved, characters, 'w').clean;
+		return {
+			detail,
+			summary: `The script passes on ${clean.length} conversations. The first ${Math.min(VERDICT_SHOWN, clean.length)}, and the subtitles where each would be:`,
+			groups: clean.slice(0, VERDICT_SHOWN).flatMap((exchange, n) => [
+				{ title: `Script, conversation ${n + 1}`, lines: exchange.lines.map(line => `${line.speaker}: ${line.text}`) },
+				{ title: `Subtitles where it would be`, lines: subtitlesAround(anchorFor(detail, indexOfBlock.get(exchange.lines[0]))) },
+			]),
+		};
 	}
-	if (change === 'page-fail-screen-pass') {
-		const [clean, groups] = screenGroups('SOMEONE UNHEARD');
-		return { detail, summary: `The subtitles pass on ${clean.length} conversations, each line with the speaker of the script line it matched. The first ${shown(clean)}:`, groups };
-	}
-	if (change === 'fail-fail' || (change === 'unclear' && pagePasses)) {
-		// fail-fail: rule 2 conversations, which mention a man (the page fails); unclear: the page's passing ones
-		const exchanges = change === 'fail-fail' ? page.exchanges : page.clean;
-		const women = [...page.named].sort();
-		const who = women.length === 0 ? 'No named woman speaks in the script.' : `Named women who speak in the script: ${women.join(', ')}.`;
-		const summary = exchanges.length === 0
-			? `${who} ${women.length < 2 ? 'Search the subtitles (/) for other women in the film.' : 'The script has no conversation between two of them. Search the subtitles (/) for them.'}`
-			: `${who} Conversations between them in the script (${exchanges.length}). The first ${shown(exchanges)}, and the subtitles where each would be:`;
-		return { detail, summary, groups: scriptGroups(exchanges) };
-	}
-	if (change === 'unclear') {
-		const [clean, groups] = screenGroups('skip');
-		return { detail, summary: `Conversations between named women in the subtitles (${clean.length}), each line with the speaker of the script line it matched, lines with no known speaker left out. The first ${shown(clean)}:`, groups };
-	}
-	throw new Error(`no evidence for a "${change}" verdict`);
+	const strict = screenScreenplay(detail.dialogue, detail.screenLines, detail.lineOwner, resolved, 'SOMEONE UNHEARD');
+	const clean = runTest(strict, resolved, characters, 'w').clean;
+	return {
+		detail,
+		summary: `The subtitles pass on ${clean.length} conversations, each line with the speaker of the script line it matched. The first ${Math.min(VERDICT_SHOWN, clean.length)}:`,
+		groups: clean.slice(0, VERDICT_SHOWN).map((exchange, n) => ({
+			title: `Subtitles, conversation ${n + 1}`, lines: exchange.lines.map(line => `${clock(line.start)}  ${line.speaker}: ${line.text}`),
+		})),
+	};
 };
 
 /** Shows the conversations a changed verdict rests on, and asks whether the film passes on screen; null means quit */
@@ -266,7 +223,7 @@ const main = async () => {
 	const argAfter = flag => (process.argv.includes(flag) ? process.argv[process.argv.indexOf(flag) + 1] : null);
 	const exportDir = argAfter('--export');
 	const importFile = argAfter('--import');
-	const mode = ['again', 'audio', 'check', 'verdicts', 'missed'].find(m => process.argv.includes(`--${m}`)) ?? 'label';
+	const mode = ['again', 'audio', 'check', 'verdicts'].find(m => process.argv.includes(`--${m}`)) ?? 'label';
 	const records = loadFilmRecords();
 	let gold = fs.existsSync(GOLD_FILE) ? JSON.parse(fs.readFileSync(GOLD_FILE, 'utf8')) : null;
 	if (!gold) {
@@ -302,7 +259,6 @@ const main = async () => {
 
 	gold.check ??= {};
 	gold.verdicts ??= {};
-	gold.missed ??= {};
 	// --again and --check label the same seeded 100 items
 	const fixedItems = ['again', 'check'].includes(mode);
 	if (importFile) {
@@ -316,18 +272,6 @@ const main = async () => {
 			}
 			save(gold);
 			console.log(`${Object.keys(labels).length} verdicts imported; ${Object.keys(gold.verdicts).length} of ${changeOf.size} done`);
-			return;
-		}
-		if (mode === 'missed') {
-			const sampleOf = new Map(missedSample(records).map(c => [`missed:${c.film._id}`, c]));
-			for (const [key, verdict] of Object.entries(labels)) {
-				if (!sampleOf.has(key)) throw new Error(`${key} isn't a film in the missed-verdict check`);
-				if (!Object.values(VERDICT_KEYS).includes(verdict)) throw new Error(`${key}: "${verdict}" isn't one of ${Object.values(VERDICT_KEYS).join(', ')}`);
-				const { change, pagePasses } = sampleOf.get(key);
-				gold.missed[key.slice('missed:'.length)] = { change, pagePasses, verdict };
-			}
-			save(gold);
-			console.log(`${Object.keys(labels).length} answers imported; ${Object.keys(gold.missed).length} of ${sampleOf.size} done`);
 			return;
 		}
 		if (mode === 'audio') {
@@ -367,17 +311,6 @@ const main = async () => {
 		}
 		return;
 	}
-	if (exportDir && mode === 'missed') {
-		fs.mkdirSync(exportDir, { recursive: true });
-		for (const [n, { film, change, pagePasses }] of missedSample(records).entries()) {
-			const { detail, summary, groups } = await verdictEvidence(film, change, 10, pagePasses);
-			// change stays out of the item: the page would show it, and this check is blind to the method's verdict
-			const item = { key: `missed:${film._id}`, kind: 'verdict', summary, groups };
-			writeFilmFiles(`${String(n + 1).padStart(2, '0')}-${film._id}`, `${film.title} (${film.year})`, [item], detail);
-		}
-		return;
-	}
-	if (mode === 'missed') throw new Error('--missed is labelled in the browser: --export <dir> --missed, then npm run screen:label-web -- <dir>');
 	if (exportDir && mode === 'audio') {
 		fs.mkdirSync(exportDir, { recursive: true });
 		for (const [n, entry] of gold.films.entries()) {

@@ -121,8 +121,7 @@ const QUESTIONS = {
 	'subtitle line': () => 'Does this subtitle line show up in the script on the right, even reworded?',
 	// the subtitles say this line was dropped or reworded; the film's sound settles whether that's true
 	audio: item => `The subtitles ${item.labelledAs === 'cut' ? 'leave this script line out' : 'have this script line reworded'}. Is it said in the film? Just listen; ignore the subtitles.`,
-	// the missed-verdict check leaves out which way the method went, so its question doesn't say
-	verdict: item => `${{ 'page-pass-screen-fail': 'The script passes; the subtitles don’t. ', 'page-fail-screen-pass': 'The script fails; the subtitles pass. ' }[item.change] ?? ''}In the film, do two named women talk to each other about something other than a man?`,
+	verdict: item => `${item.change === 'page-pass-screen-fail' ? 'The script passes; the subtitles don’t.' : 'The script fails; the subtitles pass.'} In the film, do two named women talk to each other about something other than a man?`,
 };
 const $ = id => document.getElementById(id);
 let data;
@@ -202,7 +201,7 @@ const show = () => {
 			const ol = document.createElement('ol');
 			ol.className = 'lines';
 			// subtitles beside a script conversation: blue marks the closest subtitle to each script line
-			const script = group.compare ? item.groups[g - 1].lines : [];
+			const script = g % 2 === 1 && item.change === 'page-pass-screen-fail' ? item.groups[g - 1].lines : [];
 			fill(ol, group.lines, -1, script.map(line => closest(line, group.lines)));
 			section.append(h2, ol);
 			return section;

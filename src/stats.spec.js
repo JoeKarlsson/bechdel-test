@@ -1,4 +1,4 @@
-const { wilson, wilcoxonSignedRank, mcnemar, cohensKappa, bootstrap, median, verdictChanges } = require('./stats');
+const { wilson, wilcoxonSignedRank, mcnemar, cohensKappa, bootstrap, median } = require('./stats');
 
 describe('stats', () => {
 	it('matches textbook values', () => {
@@ -6,17 +6,6 @@ describe('stats', () => {
 		// all or none: the bound sits exactly at 0 or 1, never a rounding error past it
 		expect(wilson(0, 28)[0]).toBe(0);
 		expect(wilson(28, 28)[1]).toBe(1);
-	});
-
-	it('counts a hand-judged verdict as changed only when it differs from the page', () => {
-		expect(verdictChanges([
-			{ pagePasses: false, verdict: 'passes on screen' }, // changed
-			{ pagePasses: true, verdict: 'passes on screen' },
-			{ pagePasses: false, verdict: 'fails on screen' },
-			{ pagePasses: true, verdict: 'fails on screen' }, // changed
-			{ pagePasses: false, verdict: 'unsure' },
-		])).toEqual({ changed: 2, judged: 4 });
-		expect(() => verdictChanges([{ verdict: 'fails on screen' }])).toThrow('no page verdict');
 		// Hollander & Wolfe's depression scores; R's wilcox.test(exact = FALSE) gives p = 0.04401
 		const differences = [1.83 - 0.878, 0.5 - 0.647, 1.62 - 0.598, 2.48 - 2.05, 1.68 - 1.06, 1.88 - 1.29, 1.55 - 1.06, 3.06 - 3.14, 1.3 - 1.29];
 		expect(wilcoxonSignedRank(differences)).toMatchObject({ n: 9, statistic: 40 });
