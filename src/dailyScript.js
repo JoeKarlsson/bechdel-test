@@ -8,13 +8,11 @@ const { pdfToText } = require('./pdfText');
 const DAILY_SCRIPT = 'https://www.dailyscript.com';
 const LISTING_PAGES = [`${DAILY_SCRIPT}/movie.html`, `${DAILY_SCRIPT}/movie_n-z.html`];
 
-const decodeEntities = text => text.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
-
 /** Every script on a listing page: [{ title, year, url }] (year null when unlisted) */
 const parseListing = html => [...html.matchAll(/<a href="(scripts\/[^"]+)">([^<]+)<\/a>([^<]*)/g)]
 	.map(([, href, title, after]) => ({
-		title: decodeEntities(title).trim(),
-		year: decodeEntities(after).match(/\b(19\d\d|20\d\d)\b/)?.[1] ?? null,
+		title: decodeHtmlEntities(title).trim(),
+		year: decodeHtmlEntities(after).match(/\b(19\d\d|20\d\d)\b/)?.[1] ?? null,
 		url: `${DAILY_SCRIPT}/${encodeURI(href)}`,
 	}));
 

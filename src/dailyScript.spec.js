@@ -8,6 +8,8 @@ describe('dailyScript', () => {
 			{ title: 'Casablanca', year: '1942', url: 'https://www.dailyscript.com/scripts/casablanca.pdf' },
 			{ title: 'Mystery Men', year: null, url: 'https://www.dailyscript.com/scripts/Mystery+Men.txt' },
 		]);
+		// An escaped entity stays as written: decoded once, not twice
+		expect(parseListing('<a href="scripts/x.txt">Tom &amp;quot;&amp; Jerry&#39;s</a>')[0].title).toBe('Tom &quot;& Jerry\'s');
 	});
 
 	it('takes the released title over a working title, and drops asides', () => {
