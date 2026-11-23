@@ -37,6 +37,11 @@ const posters = films
 	const EVERY = 0.7; // seconds between new posters
 	const GROW = 3.2; // final size, in widths of a fifth of the stage
 	const FAIL_FILTER = 'grayscale(1) brightness(0.7)';
+	// On a phone or with Save-Data on, the bloom cycles the best known 40 posters,
+	// not all 120: left running, it otherwise fetches every one (1.1 MB in a minute)
+	const SMALL_POOL = 40;
+	const wantsSmallPool = () =>
+		matchMedia('(max-width: 600px)').matches || (navigator as { connection?: { saveData?: boolean } }).connection?.saveData === true;
 	const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 	const easeOut = (k: number) => 1 - (1 - k) ** 3;
 
@@ -50,7 +55,8 @@ const posters = films
 	}
 
 	function startBloom(root: HTMLElement) {
-		const posters = shuffled(JSON.parse(root.dataset.posterBloom!) as Poster[]);
+		const all = JSON.parse(root.dataset.posterBloom!) as Poster[];
+		const posters = shuffled(wantsSmallPool() ? all.slice(0, SMALL_POOL) : all);
 		const canvas = root.querySelector('canvas')!;
 		const context = canvas.getContext('2d')!;
 		const caption = root.querySelector<HTMLElement>('.bloom-caption');
@@ -82,6 +88,7 @@ const posters = films
 		let paused = false;
 		let onScreen = false;
 		let ready = false; // nothing runs until the first posters are in, so the stage starts settled
+		let captioned: Bloom | undefined;
 
 		function addPoster() {
 			for (let tries = 0; tries < posters.length; tries++) {
@@ -131,8 +138,10 @@ const posters = films
 				context.drawImage(images.get(bloom.poster)!, -posterWidth / 2, -posterHeight / 2, posterWidth, posterHeight);
 				context.restore();
 			}
+			// The caption changes only when a new poster arrives, not on every frame
 			const newest = blooms.at(-1);
-			if (caption && newest) {
+			if (caption && newest && newest !== captioned) {
+				captioned = newest;
 				const { title, year, pass } = newest.poster;
 				const verdict = document.createElement('span');
 				verdict.className = pass ? 'pass' : 'fail';

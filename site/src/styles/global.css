@@ -404,6 +404,62 @@ dd > a:only-child,
 	}
 }
 
+/* The + / − after a fold's title (FoldMark.astro): both signs share one grid
+   cell and crossfade, so the mark never snaps or changes width. These small
+   component styles live here, not in their own stylesheet, so the pages that
+   use them don't wait on one more render-blocking file. */
+.fold-mark {
+	display: inline-grid;
+	margin-left: 0.25em;
+}
+.fold-mark > span {
+	grid-area: 1 / 1;
+	transition:
+		opacity 150ms var(--ease-enter),
+		scale 150ms var(--ease-enter),
+		filter 150ms var(--ease-enter);
+}
+.fold-mark > span:last-child,
+:is(details[open] > summary, [aria-expanded='true']) .fold-mark > span:first-child {
+	opacity: 0;
+	scale: 0.8;
+	filter: blur(2px);
+}
+:is(details[open] > summary, [aria-expanded='true']) .fold-mark > span:last-child {
+	opacity: 1;
+	scale: 1;
+	filter: none;
+}
+@media (prefers-reduced-motion: reduce) and (pointer: coarse) {
+	.fold-mark > span {
+		transition: opacity 150ms var(--ease-enter) !important;
+		scale: 1 !important;
+		filter: none !important;
+	}
+}
+
+/* Hand-drawn crayon marks in hot pink (Scribble.astro) */
+.scribble {
+	display: block;
+	overflow: visible;
+}
+.scribble path {
+	fill: none;
+	stroke: var(--pink);
+	stroke-linecap: round;
+}
+.scribble.underline {
+	width: min(100%, 620px);
+	height: 32px;
+	margin-top: var(--space-2);
+}
+.scribble.underline path {
+	stroke-width: 7;
+}
+.scribble.arrow path {
+	stroke-width: 3;
+}
+
 /* A quick crossfade between pages, where the browser supports it. It's
    opacity only, so a finger keeps it under reduced motion; a mouse doesn't. */
 @view-transition {

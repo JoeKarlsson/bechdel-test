@@ -101,6 +101,8 @@ const NAV = [
 		<link rel="expect" href="#main" blocking="render" />
 		<link rel="preload" href="/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+		<!-- First in the body font stack: arriving late, its digits nudged the A to Z list (2 KB) -->
+		<link rel="preload" href="/fonts/fraunces-figures-400.woff2" as="font" type="font/woff2" crossorigin />
 
 		<meta property="og:type" content={ogType} />
 		<meta property="og:site_name" content={SITE_NAME} />

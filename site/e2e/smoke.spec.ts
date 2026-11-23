@@ -173,3 +173,26 @@ test('the posters beside a title can be paused, and hold still for reduced motio
 	await page.goto('/directors/aaron-sorkin/');
 	await expect(page.locator('.bloom')).toHaveCount(0);
 });
+
+test('on a phone, the poster bloom cycles at most 40 posters', async ({ page }, testInfo) => {
+	test.skip(testInfo.project.name !== 'pixel', 'phone width only');
+	// Posters that never arrive make the bloom reach for the next one, and the
+	// next, until it has asked for its whole pool: all 120 before the cap
+	const requested = new Set<string>();
+	await page.route('**/w185/**', (route) => {
+		requested.add(route.request().url());
+		return route.abort();
+	});
+	await page.clock.install();
+	await page.goto('/genres/drama/');
+	await expect(page.locator('.bloom-pause')).toBeVisible();
+	await page.clock.runFor(5_000);
+	const { bloom, tapes } = await page.evaluate(() => ({
+		bloom: (JSON.parse(document.querySelector<HTMLElement>('[data-poster-bloom]')!.dataset.posterBloom!) as { src: string }[]).map((p) => p.src),
+		tapes: [...document.querySelectorAll('img')].flatMap((img) => img.srcset.split(',').map((s) => s.trim().split(' ')[0])),
+	}));
+	expect(bloom.length).toBeGreaterThan(40);
+	const bloomOnly = [...requested].filter((url) => bloom.includes(url) && !tapes.includes(url));
+	expect(bloomOnly.length).toBeGreaterThan(0);
+	expect(bloomOnly.length).toBeLessThanOrEqual(40);
+});

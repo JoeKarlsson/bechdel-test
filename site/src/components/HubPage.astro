@@ -83,7 +83,7 @@ const structuredData = {
 
 		{
 			aToZ.length > 0 && (
-				<section class="section">
+				<section class="section a-to-z">
 					<h2 class="section-title">All {n(total)}, A to Z</h2>
 					<ol class="all">
 						{aToZ.map((f) => (
@@ -104,6 +104,11 @@ const structuredData = {
 <style>
 	.num {
 		color: var(--pink);
+	}
+	/* Below the fold on every hub: skip its layout until it scrolls near */
+	.a-to-z {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 2400px;
 	}
 	.all {
 		list-style: none;

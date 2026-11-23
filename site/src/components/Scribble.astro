@@ -1,5 +1,6 @@
 ---
 // Hand-drawn crayon marks in hot pink. Decoration only, hidden from screen readers.
+// Styled in global.css, so pages don't load a separate stylesheet for it.
 interface Props {
 	kind: 'underline' | 'arrow';
 	class?: string;
@@ -26,25 +27,3 @@ const id = `crayon-${Math.random().toString(36).slice(2, 8)}`;
 	)
 }
 
-<style>
-	.scribble {
-		display: block;
-		overflow: visible;
-	}
-	.scribble path {
-		fill: none;
-		stroke: var(--pink);
-		stroke-linecap: round;
-	}
-	.underline {
-		width: min(100%, 620px);
-		height: 32px;
-		margin-top: var(--space-2);
-	}
-	.underline path {
-		stroke-width: 7;
-	}
-	.arrow path {
-		stroke-width: 3;
-	}
-</style>
