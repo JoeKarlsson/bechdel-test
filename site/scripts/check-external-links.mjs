@@ -10,6 +10,7 @@ import { join } from 'node:path';
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const SKIP = /bsky\.app\/intent|threads\.net\/intent|reddit\.com\/submit|news\.ycombinator\.com\/submitlink|x\.com\/intent|linkedin\.com\/sharing\//;
 const BLOCKS_BOTS = /(^|\.)imdb\.com$/;
+const OWN_HOST = 'bechdel.joekarlsson.com';
 
 const files = (dir) =>
 	readdirSync(dir).flatMap((n) => {
@@ -21,7 +22,7 @@ const links = new Map(); // url -> first page that links it
 for (const file of files(DIST)) {
 	for (const [, href] of readFileSync(file, 'utf8').matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) {
 		const url = href.replace(/&amp;/g, '&');
-		if (SKIP.test(url) || url.startsWith('https://bechdel.joekarlsson.com')) continue;
+		if (SKIP.test(url) || new URL(url).hostname === OWN_HOST) continue;
 		if (!links.has(url)) links.set(url, file.slice(DIST.length));
 	}
 }
