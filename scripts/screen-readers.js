@@ -28,8 +28,11 @@ for (const f of fs.readdirSync(path.join(ROOT, 'data/screen'))) {
 	// a pass's profile is its number of passing scenes (6+ together); a fail's is how far it got (score 0-2)
 	const profile = pagePasses ? Math.min(film.bechdelResults.numScenesPass, 6) : screen.bechdel.page.score;
 	const rating = ratings[film.idIMDB];
-	films.push({ id: film._id, category, profile, rated: Boolean(rating), passes: rating?.rating === 3, dubious: Boolean(rating?.dubious) });
+	films.push({ id: film._id, category, profile, sameReading: film.bechdelResults.bechdelScore === screen.bechdel.page.score, rated: Boolean(rating), passes: rating?.rating === 3, dubious: Boolean(rating?.dubious) });
 }
+// the profile comes from the site's page result, the category from the screen comparison's: they must agree
+const mismatched = films.filter(f => !f.sameReading).length;
+if (mismatched > 0) throw new Error(`${mismatched} films have a different page score on the site than in data/screen; rerun them first`);
 const count = category => films.filter(f => f.category === category).length;
 const pct = x => `${(x * 100).toFixed(0)}%`;
 
@@ -75,6 +78,15 @@ const report = (label, keep, matched) => {
 report('all ratings', () => true, false);
 report('not dubious', f => !f.dubious, false);
 report('matched baselines', () => true, true);
+report('matched, not dubious', f => !f.dubious, true);
+
+// the matched cells, and how often readers agree with the scorer on borderline unflagged films (one passing scene,
+// or failing only rule 3): the ceiling for any judge on films like the flagged ones
+for (const [category, profile] of [['pass-pass', 1], ['fail-fail', 2]]) {
+	const cell = films.filter(f => f.category === category && f.profile === profile && f.rated);
+	const agree = cell.filter(f => f.passes === (category === 'pass-pass')).length;
+	console.log(`${category}, profile ${profile}: ${cell.length} rated, readers agree with the scorer on ${agree} (${pct(agree / cell.length)})`);
+}
 
 // the hand-checked films: the judge against readers, where both gave an answer
 const readerPassOf = Object.fromEntries(films.filter(f => f.rated).map(f => [f.id, f.passes]));
