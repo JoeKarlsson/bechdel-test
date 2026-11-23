@@ -42,7 +42,8 @@ const wilson = (k, n, z = 1.959964) => {
 	const centre = p + (z * z) / (2 * n);
 	const margin = z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n));
 	const denominator = 1 + (z * z) / n;
-	return [(centre - margin) / denominator, (centre + margin) / denominator];
+	// at k = 0 or n the bound is exactly 0 or 1 in theory; clamp the rounding error past it
+	return [Math.max(0, (centre - margin) / denominator), Math.min(1, (centre + margin) / denominator)];
 };
 
 // Standard normal tail, by the Abramowitz-Stegun 7.1.26 approximation of erf (error under 1.5e-7)

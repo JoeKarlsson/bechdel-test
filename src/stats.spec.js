@@ -3,6 +3,9 @@ const { wilson, wilcoxonSignedRank, mcnemar, cohensKappa, bootstrap, median } = 
 describe('stats', () => {
 	it('matches textbook values', () => {
 		expect(wilson(5, 10).map(x => x.toFixed(4))).toEqual(['0.2366', '0.7634']);
+		// all or none: the bound sits exactly at 0 or 1, never a rounding error past it
+		expect(wilson(0, 28)[0]).toBe(0);
+		expect(wilson(28, 28)[1]).toBe(1);
 		// Hollander & Wolfe's depression scores; R's wilcox.test(exact = FALSE) gives p = 0.04401
 		const differences = [1.83 - 0.878, 0.5 - 0.647, 1.62 - 0.598, 2.48 - 2.05, 1.68 - 1.06, 1.88 - 1.29, 1.55 - 1.06, 3.06 - 3.14, 1.3 - 1.29];
 		expect(wilcoxonSignedRank(differences)).toMatchObject({ n: 9, statistic: 40 });
