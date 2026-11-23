@@ -132,14 +132,17 @@ Intervals are 95%, from bootstrapping films. Agreement between the two labelling
   1. The tuning run printed the test films' scores before the thresholds were frozen. They were not used to choose anything, and the frozen thresholds are the ones the development films picked. The script no longer shows test scores while tuning.
   2. After the development results, two aligner settings were tried on the development films only: a larger exact-alignment limit and short anchors in larger gaps. Neither changed the *not in the script* precision, so both were dropped and the aligner is unchanged.
   3. While labelling, two annotators wrote helper scripts (no labels) to the same scratch folder, and one overwrote the other's. Neither read the other's labels.
-  4. The audio spot-check was not done: nobody listened to the films. The share of "cut" and "changed" lines that are really subtitlers shortening speech is unmeasured. The SDH-only robustness check (§9) is a partial stand-in, since SDH subtitles are closer to verbatim.
+  4. The audio spot-check wasn't done in the planned order: it was done after the results, by one person (§6.2).
 
 ### 6.2 Checks added after the results
 
-Not in the plan, and not yet done. Each is a person working from the films:
-- **The audio spot-check** above: `npm run screen:label -- --audio`.
-- **Labels by a person** on the same seeded 100 items as the second labelling, blind to both labellings and the predictions: `npm run screen:label -- --check`. `screen:eval` reports κ against each labelling and how often the method's label matches.
-- **Changed verdicts against the film:** a seeded 30 of the films that pass on the page and fail on screen, and every film that does the reverse. For each, the conversations the verdict rests on are shown, and the labeller judges from the film whether two named women talk to each other about something other than a man: `npm run screen:label -- --verdicts`. The labeller sees which way the verdict changed. `screen:eval` reports the share confirmed, with Wilson intervals.
+All three were done by one person, the author, after the results were known, so they are exploratory. The answers are in `data/eval/screen-gold.json`, and `npm run screen:eval` reports them.
+- **Labels by a person** on the same seeded 100 items as the second labelling, blind to both labellings and the predictions: `npm run screen:label -- --check`. κ = 0.55 against the first labelling (96 items, the same answer on 64) and 0.56 against the second (78 items). The method's label matches the person's on 49 of 76 script lines. Most disagreements are between *heard as written* and *changed*. On whether a script line is in the subtitles at all, the person and the first labelling agree on 66 of 76 lines (κ = 0.64).
+- **The audio spot-check:** `npm run screen:label -- --audio`. 100 test-set lines the first labelling called *cut* or *changed*, from 7 films. Each is a 40-second clip of the released film starting about 15 seconds before the line. Subtitle timing drifts against a given copy of a film (by up to about three minutes here), so each clip's offset was measured from the film's own speech, by matching a speech-recognition transcript of the clip (Whisper large-v3) to the subtitles. The transcript only placed the clip; the answers come from listening. 10 of the 99 lines with an answer were said as written, so the subtitles had only shortened them (95% Wilson interval 6% to 18%). The other 89 were really cut or reworded.
+- **Changed verdicts against the film:** a seeded 30 of the 167 films that pass on the page and fail on screen, and all 39 that do the reverse. For each, the conversations the verdict rests on were shown, and the person judged whether two named women talk to each other about something other than a man: `npm run screen:label -- --verdicts`. The judgment was made from the script and subtitle text shown, not by watching, and the person saw which way the verdict had changed.
+  - Pass to fail: none of the 28 films with an answer fails on screen (0% to 12%); 2 couldn't be judged. Subtitles rarely name speakers, so the screen version misses conversations between women that are still in the film. The method's pass-to-fail changes should not be read as real.
+  - Fail to pass: 29 of the 30 films with an answer pass on screen (83% to 99%); 9 couldn't be judged. Whether those scripts really fail was not checked.
+  - Together, about 38 of the 1,968 decided films (about 2%, at most about 3%) change verdict between page and screen, nearly all from fail to pass, against the method's 206 (10.5%).
 
 ## 7. Exclusions
 
@@ -203,7 +206,8 @@ Comparing women's lines with women's lines keeps speaker gender fixed, which RQ3
 - Scripts that are online skew popular, American and recent. Subtitles on opensubtitles.org skew the same way.
 - Results describe "shelf films with an English script and English subtitles", not film in general.
 - Word survival has a chance floor of about 2%: unrelated dialogue shares that many words in matching order (§7).
-- Subtitles are not a transcript of speech, and the audio spot-check that would measure the gap wasn't done (§6.1).
+- Subtitles are not a transcript of speech. Listening to 100 apparent cuts and changes found about one in ten was only subtitle shortening (§6.2).
+- The screen verdict over-reports lost passes: none of 28 checked held up (§6.2). RQ4's share and direction describe the method more than the films.
 - Speaker attribution on screen is borrowed from the script. Lines not in the script often have no known speaker, which is why §8 reports two readings.
 
 ## References
