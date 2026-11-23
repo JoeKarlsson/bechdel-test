@@ -8,6 +8,10 @@ export default defineConfig({
 	// or <cite> ("Share it onBluesky") instead of leaving a space; browsers
 	// collapse whitespace correctly on their own
 	compressHTML: false,
+	// A short class per scoped element instead of a data-astro-cid-* attribute:
+	// those attributes were a quarter of a film page's bytes, and the 4,000-page
+	// build has to stay under GitHub Pages' 1 GB limit. Same specificity (+1).
+	scopedStyleStrategy: 'class',
 	build: {
 		format: 'directory',
 		// Every stylesheet is a hashed file, so the CSP can allow styles from 'self'

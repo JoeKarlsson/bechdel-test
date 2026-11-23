@@ -40,6 +40,10 @@ npm run lighthouse   # Lighthouse CI, mobile, every category 90 or above
 
 GitHub Pages can't set response headers. The Content-Security-Policy is a `<meta>` tag in `site/src/layouts/Base.astro`, which covers scripts, styles, images and connections but can't carry `frame-ancestors`, `report-uri` or `Permissions-Policy`. The site has no clickjacking protection beyond that; it needs a CDN or worker in front if that ever matters.
 
+It also can't change caching: every file, the hashed `_astro/` scripts and styles included, is cached for 10 minutes (`max-age=600`), and there's no Brotli or HTTP/3. Proxying the CNAME through Cloudflare would fix that but breaks GitHub's certificate, so it stays DNS-only.
+
+GitHub Pages won't publish a site over 1 GB. The build is about 650 MB, most of it the film pages and their share cards, and `npm test` fails once `dist/` passes 950 MB. The share cards are mozjpeg at quality 75 for that reason.
+
 ### Yearly
 
 `site/public/.well-known/security.txt` expires on 6 November 2027. `npm test` fails 30 days before that: bump the `Expires` date.

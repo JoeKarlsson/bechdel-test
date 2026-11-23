@@ -4,6 +4,7 @@
 // (set CHROME to a Chromium binary if Playwright's own isn't installed).
 import { chromium } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
+import sharp from 'sharp';
 import { loadFilms } from '../src/lib/films.mjs';
 import { fetchBytes } from '../../src/downloadScripts.js';
 
@@ -58,7 +59,12 @@ const tab = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 const shoot = async (html, out) => {
 	await tab.setContent(html, { waitUntil: 'load' });
 	await tab.evaluate(() => document.fonts.ready);
-	await tab.screenshot({ path: file(out).pathname, type: 'jpeg', quality: 85 });
+	// Captured losslessly, then one mozjpeg pass at 75: it looks the same as
+	// Chromium's quality 85 at about 60% of the bytes, and 3,700 cards count
+	// against GitHub Pages' 1 GB site limit
+	await sharp(await tab.screenshot({ type: 'png' }))
+		.jpeg({ quality: 75, mozjpeg: true })
+		.toFile(file(out).pathname);
 };
 
 await shoot(

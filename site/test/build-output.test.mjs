@@ -137,3 +137,31 @@ test('no page shows a double-escaped character like O&apos;Bannon', () => {
 	const escaped = pages.filter((p) => /&amp;(?:apos|amp|quot|lt|gt|#\d+);/.test(p.html)).map((p) => p.path);
 	assert.deepEqual(escaped, []);
 });
+
+// GitHub Pages refuses to publish a site over 1 GB; the deploy would fail, not warn
+test('the whole site stays under 950 MB, below GitHub Pages’ 1 GB limit', () => {
+	const size = (dir) => readdirSync(dir).reduce((sum, name) => {
+		const path = join(dir, name);
+		const stat = statSync(path);
+		return sum + (stat.isDirectory() ? size(path) : stat.size);
+	}, 0);
+	const bytes = size(DIST);
+	assert.ok(bytes < 950_000_000, `${(bytes / 1e6).toFixed(0)} MB in dist/`);
+});
+
+test('film pages and the A to Z list stay within their byte budgets', () => {
+	const films = pages.filter((p) => p.path.startsWith('/films/') && p.path !== '/films/');
+	const heavy = films.filter((p) => Buffer.byteLength(p.html) > 230_000).map((p) => `${p.path}: ${Buffer.byteLength(p.html)} bytes`);
+	assert.deepEqual(heavy, []);
+	const aToZ = pages.find((p) => p.path === '/films/');
+	assert.ok(Buffer.byteLength(aToZ.html) < 950_000, `/films/ is ${Buffer.byteLength(aToZ.html)} bytes`);
+});
+
+test('a film page’s backdrop loads first, never lazily', () => {
+	for (const p of pages.filter((p) => p.path.startsWith('/films/') && p.path !== '/films/')) {
+		const hero = p.html.match(/<img[^>]*class="hero-image[^"]*"[^>]*>/)?.[0];
+		if (!hero) continue; // no backdrop: the title leads instead
+		assert.match(hero, /fetchpriority="high"/, `hero priority on ${p.path}`);
+		assert.doesNotMatch(hero, /loading="lazy"/, `hero not lazy on ${p.path}`);
+	}
+});
