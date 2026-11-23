@@ -142,7 +142,8 @@ All three were done by one person, the author, after the results were known, so 
 - **Changed verdicts against the film:** a seeded 30 of the 167 films that pass on the page and fail on screen, and all 39 that do the reverse. For each, the conversations the verdict rests on were shown, and the person judged whether two named women talk to each other about something other than a man: `npm run screen:label -- --verdicts`. The judgment was made from the script and subtitle text shown, not by watching, and the person saw which way the verdict had changed.
   - Pass to fail: none of the 28 films with an answer fails on screen (0% to 12%); 2 couldn't be judged. Subtitles rarely name speakers, so the screen version misses conversations between women that are still in the film. The method's pass-to-fail changes should not be read as real.
   - Fail to pass: 29 of the 30 films with an answer pass on screen (83% to 99%); 9 couldn't be judged. Whether those scripts really fail was not checked.
-  - Together, about 38 of the 1,968 decided films (about 2%, at most about 3%) change verdict between page and screen, nearly all from fail to pass, against the method's 206 (10.5%).
+  - Together, roughly 30 to 60 of the method's 206 flags hold up (1.5% to 3% of the 1,968 decided films, about 2% at the point estimates), mostly from fail to pass and entirely so at the point estimates. Films the method calls unchanged or unclear were not checked, so this is not a ceiling on how many films really change.
+  - Where the subtitles named no speaker, the judge took the speaker from the script, as the method does.
 
 ## 7. Exclusions
 
