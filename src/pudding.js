@@ -11,6 +11,9 @@ const SOURCES_URL = 'https://docs.google.com/spreadsheets/d/1fbcldxxyRvHjDaaY0Ee
 // Hosts we won't take scripts from: wikileaks.org's come from the 2014 Sony hack
 const EXCLUDED_HOSTS = ['wikileaks.org'];
 
+/** True for the domain itself or a subdomain of it, not a lookalike such as notdropbox.com */
+const isOnDomain = (hostname, domain) => hostname === domain || hostname.endsWith(`.${domain}`);
+
 /** RFC 4180 CSV as rows of fields: quoted fields may hold commas, newlines and "" */
 const parseCsv = text => {
 	const rows = [];
@@ -50,7 +53,7 @@ const parseCsv = text => {
 /** A link as a fetchable URL (URL percent-encodes its spaces); Dropbox's dl=0 serves a preview page, dl=1 the file */
 const downloadUrl = link => {
 	const url = new URL(link);
-	if (url.hostname.endsWith('dropbox.com')) url.searchParams.set('dl', '1');
+	if (isOnDomain(url.hostname, 'dropbox.com')) url.searchParams.set('dl', '1');
 	return url.href;
 };
 
@@ -66,7 +69,7 @@ const parseSources = (csv, filmsWeHave) => {
 	const films = rows
 		.map(row => ({ imdbId: row[imdbColumn], title: row[titleColumn], year: row[yearColumn], link: row[linkColumn]?.trim() }))
 		.filter(({ imdbId, link }) => /^tt\d+$/.test(imdbId) && /^https?:\/\//.test(link) && !filmsWeHave.has(imdbId))
-		.filter(({ link }) => !EXCLUDED_HOSTS.some(host => new URL(link).hostname.endsWith(host)))
+		.filter(({ link }) => !EXCLUDED_HOSTS.some(host => isOnDomain(new URL(link).hostname, host)))
 		.map(({ link, ...film }) => ({ ...film, url: downloadUrl(link) }));
 	// A link shared by two films (Back to the Future II and III) is one combined script, right for neither
 	const urlCounts = Map.groupBy(films, film => film.url);

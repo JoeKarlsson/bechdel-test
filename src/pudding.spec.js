@@ -15,10 +15,14 @@ describe('pudding', () => {
 			'tt0000005,5,Shared,1997,,https://www.dropbox.com/sh/x/LIFE.pdf?dl=0',
 			'tt0000006,6,Part II,1989,,http://x.com/both.pdf',
 			'tt0000007,7,Part III,1990,,http://x.com/both.pdf',
+			'tt0000008,8,Lookalike,2001,,https://notdropbox.com/y.pdf?dl=0',
+			'tt0000009,9,Not Leaked,2002,,https://notwikileaks.org/z.pdf',
 		].join('\n');
 		expect(parseSources(csv, new Set(['tt0000001']))).toEqual([
 			{ imdbId: 'tt0000004', title: 'Grand Hotel, The', year: '1932', url: 'http://www.imsdb.com/Movie%20Scripts/Grand%20Hotel%20Script.html' },
 			{ imdbId: 'tt0000005', title: 'Shared', year: '1997', url: 'https://www.dropbox.com/sh/x/LIFE.pdf?dl=1' },
+			{ imdbId: 'tt0000008', title: 'Lookalike', year: '2001', url: 'https://notdropbox.com/y.pdf?dl=0' },
+			{ imdbId: 'tt0000009', title: 'Not Leaked', year: '2002', url: 'https://notwikileaks.org/z.pdf' },
 		]);
 	});
 });
