@@ -50,7 +50,7 @@ const parseScriptText = html => {
 		?? html.match(/<td class="scrtext">([\s\S]*?)<table width="85%"/i);
 	if (!screenplay) return null;
 	// Some <pre> blocks carry a frame-busting <script>, or the end of one opened before the <pre>
-	const withoutScripts = screenplay[1].replace(/<script[\s\S]*?<\/script>/gi, '').replace(/^[\s\S]*<\/script>/i, '');
+	const withoutScripts = screenplay[1].replace(/<script\b[\s\S]*?<\/script\b[^>]*>/gi, '').replace(/^[\s\S]*<\/script\b[^>]*>/i, '');
 	const text = decodeHtmlEntities(withoutScripts.replace(/\r\n?/g, '\n').replace(/\n<br>/gi, '\n').replace(/<[^>]*>/g, ''));
 	return text.trim() + '\n';
 };

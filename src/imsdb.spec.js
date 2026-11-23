@@ -23,6 +23,9 @@ describe('imsdb', () => {
 		expect(parseScriptText(html)).toBe('INT. HOUSE - DAY\n\nTom & Jerry run.\n');
 		expect(parseScriptText('<p>nothing</p>')).toBeNull();
 		expect(parseScriptText('<script><pre>if (window!= top)\n</script>Platoon</pre>')).toBe('Platoon\n');
+		// End tags with a space or attributes before the > still close the script
+		expect(parseScriptText('<pre><SCRIPT>top()</SCRIPT >Alien</pre>')).toBe('Alien\n');
+		expect(parseScriptText('<script><pre>top()\n</script foo>Heat</pre>')).toBe('Heat\n');
 	});
 
 	it('reads pages that break lines with <br> instead of <pre>', () => {
