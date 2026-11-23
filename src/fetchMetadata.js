@@ -143,4 +143,7 @@ const fetchMetadata = async imdbId => {
 	return { omdb, cast: credits.cast, crew: credits.crew || [], images, details, birthdays };
 };
 
-module.exports = { fetchMetadata, fetchCast, fetchTmdbDetails, fetchReleaseYear, matchScriptByTitle, exactTitleMatch, titleFromScriptName, comparableTitle };
+/** Whether a copy's year is within one of ours: a copy or our file with no year can't rule out a remake of the same title */
+const isSameRelease = (year, copyYear) => Boolean(year && copyYear) && Math.abs(Number(copyYear) - Number(year)) <= 1;
+
+module.exports = { isSameRelease, fetchMetadata, fetchCast, fetchTmdbDetails, fetchReleaseYear, matchScriptByTitle, exactTitleMatch, titleFromScriptName, comparableTitle };

@@ -47,7 +47,7 @@ npm run fetch-daily-script                   # same for The Daily Script
 npm run fetch-pudding                        # the scripts behind The Pudding's film dialogue study
 npm run fetch-script-list -- list.json       # any list of { title, year, url }; --slow for the Wayback Machine
 npm run fetch-moviesum                       # the MovieSum research dataset, IMDb ids included (no match needed)
-npm run recover-scripts                      # swap unusable scripts for a clean Daily Script copy
+npm run recover-scripts [-- list.json]       # swap unusable scripts for a clean copy from Daily Script or the lists
 npm run match                                # guess the IMDb id for new scripts (check the guesses)
 npm run analyze                              # every scripts/*.txt not already on the site
 npm run analyze -- scripts/heat.txt          # one film

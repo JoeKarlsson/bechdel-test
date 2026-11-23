@@ -2,12 +2,13 @@
 /**
  * Find a clean copy for every local script whose dialogue is unusable (under
  * 90% English words, a bad scan or garbled PDF, or too little dialogue
- * found), on The Daily Script. A copy replaces the file only if its dialogue
+ * found), on The Daily Script and in any lists given ([{ title, year, url }],
+ * as for fetch-script-list). A copy replaces the file only if its dialogue
  * is clean and it's the same film: same title, year within one, and (when
  * the old text has readable names) shared main speakers. Prints the scripts
  * no source could fix; analyze refuses those.
  *
- *   npm run recover-scripts
+ *   npm run recover-scripts [-- list.json ...]
  */
 const fs = require('fs');
 const path = require('path');
@@ -15,7 +16,7 @@ const { LISTING_PAGES, parseListing, scriptTextFrom } = require('../src/dailyScr
 const { fetchBytes } = require('../src/downloadScripts');
 const { loadManifest, scriptPathFor, LOCAL_SCRIPTS_DIR } = require('../src/manifest');
 const { parseScreenplay } = require('../src/screenplay');
-const { comparableTitle, titleFromScriptName } = require('../src/fetchMetadata');
+const { comparableTitle, titleFromScriptName, isSameRelease } = require('../src/fetchMetadata');
 const { cleanScriptText, dialogueEnglishShare } = require('../src/scriptText');
 // The bars analyze holds a script to
 const { MIN_DIALOGUE_LINES, MIN_DIALOGUE_ENGLISH } = require('../src/analyzeFilm');
@@ -35,6 +36,7 @@ const measure = text => {
 const main = async () => {
 	const listing = [];
 	for (const page of LISTING_PAGES) listing.push(...parseListing(new TextDecoder('latin1').decode(await fetchBytes(page))));
+	for (const list of process.argv.slice(2)) listing.push(...JSON.parse(fs.readFileSync(list, 'utf8')));
 
 	const broken = Object.entries(loadManifest())
 		.filter(([file, imdbId]) => imdbId && scriptPathFor(file)?.startsWith(LOCAL_SCRIPTS_DIR))
@@ -45,8 +47,7 @@ const main = async () => {
 	const unrecovered = [];
 	for (const { file, before } of broken) {
 		const { title, year } = titleFromScriptName(path.basename(file, '.txt'));
-		const candidates = listing.filter(entry => comparableTitle(entry.title) === comparableTitle(title)
-			&& (!year || !entry.year || Math.abs(Number(entry.year) - Number(year)) <= 1));
+		const candidates = listing.filter(entry => comparableTitle(entry.title) === comparableTitle(title) && isSameRelease(year, entry.year));
 		// Speakers are only a check when the old text's names are readable
 		const oldSpeakers = before.lines >= MIN_DIALOGUE_LINES ? before.speakers.slice(0, 5) : [];
 		let best = null;
@@ -65,7 +66,7 @@ const main = async () => {
 		}
 		const was = `${before.lines} lines, ${Math.round(before.english * 100)}% English`;
 		if (!best) {
-			unrecovered.push(`${file.padEnd(55)} ${was}; ${candidates.length ? `${candidates.length} Daily Script copies, none clean or the same film` : 'not on Daily Script'}`);
+			unrecovered.push(`${file.padEnd(55)} ${was}; ${candidates.length ? `${candidates.length} other copies, none clean or the same film` : 'no other copy'}`);
 			continue;
 		}
 		fs.writeFileSync(scriptPathFor(file), best.text);

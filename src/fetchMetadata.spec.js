@@ -1,4 +1,4 @@
-const { exactTitleMatch } = require('./fetchMetadata');
+const { exactTitleMatch, isSameRelease } = require('./fetchMetadata');
 
 describe('exactTitleMatch', () => {
 	it('matches a file-name title despite punctuation, or by original title, and nothing looser', () => {
@@ -19,5 +19,14 @@ describe('exactTitleMatch', () => {
 		];
 		expect(exactTitleMatch(results, 'forbidden planet', '1954').id).toBe(2);
 		expect(exactTitleMatch(results, 'forbidden planet', '1990')).toBeUndefined();
+	});
+});
+
+describe('isSameRelease', () => {
+	it('takes a copy a year either side, not a remake or a copy with no year', () => {
+		expect(isSameRelease('1991', '1992')).toBe(true);
+		expect(isSameRelease('1991', '2017')).toBe(false);
+		expect(isSameRelease('1991', '')).toBe(false);
+		expect(isSameRelease(undefined, '1991')).toBe(false);
 	});
 });
