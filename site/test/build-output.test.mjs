@@ -23,7 +23,7 @@ function htmlFiles(dir) {
 // "dist/films/gone-girl-2014/index.html" -> "/films/gone-girl-2014/"
 const urlPath = (file) => '/' + relative(DIST, file).replace(/index\.html$/, '').replace(/\.html$/, '');
 const meta = (html, attr, key) => html.match(new RegExp(`<meta[^>]*${attr}="${key}"[^>]*content="([^"]*)"`))?.[1] ?? null;
-const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+const decode = (s) => s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
 
 const pages = htmlFiles(DIST).map((file) => {
 	const html = readFileSync(file, 'utf8');
@@ -47,10 +47,10 @@ test('every page has the head the launch checklist asks for', () => {
 		assert.equal(meta(p.html, 'name', 'color-scheme'), 'only dark', `color-scheme ${where}`);
 		assert.match(p.html, /<meta name="darkreader-lock"/, `darkreader-lock ${where}`);
 		assert.equal((p.html.match(/<h1[\s>]/g) ?? []).length, 1, `exactly one h1 ${where}`);
-		if (!p.noindex) assert.match(p.html, new RegExp(`<link rel="canonical" href="${SITE}${p.path}"`), `canonical ${where}`);
+		if (!p.noindex) assert.equal(p.html.match(/<link rel="canonical" href="([^"]*)"/)?.[1], `${SITE}${p.path}`, `canonical ${where}`);
 
 		const image = meta(p.html, 'property', 'og:image');
-		assert.ok(image?.startsWith(SITE), `absolute og:image ${where}`);
+		assert.ok(image?.startsWith(`${SITE}/`), `absolute og:image ${where}`);
 		assert.ok(existsSync(join(DIST, image.slice(SITE.length))), `og:image file exists ${where}: ${image}`);
 		assert.ok(meta(p.html, 'property', 'og:image:alt'), `og:image:alt ${where}`);
 	}
@@ -58,7 +58,7 @@ test('every page has the head the launch checklist asks for', () => {
 
 test('no inline scripts, and new-tab links are safe', () => {
 	for (const p of pages) {
-		for (const tag of p.html.match(/<script\b[^>]*>/g) ?? []) {
+		for (const tag of p.html.match(/<script\b[^>]*>/gi) ?? []) {
 			// JSON data blocks never run; anything else must be an external file
 			assert.ok(/type="application\/(ld\+)?json"/.test(tag) || /\ssrc="/.test(tag), `inline script on ${p.path}: ${tag}`);
 		}
