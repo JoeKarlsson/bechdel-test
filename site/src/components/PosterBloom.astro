@@ -129,7 +129,10 @@ const posters = films
 		}
 
 		function draw() {
-			const ratio = devicePixelRatio || 1;
+			// Capped: at a phone's full 2.6x every frame redraws ~7x the pixels of 1x, which made each
+			// frame a long task on a slow phone (and failed Lighthouse's blocking time on the drama hub);
+			// posters this size and moving this fast don't look softer at 1.5x
+			const ratio = Math.min(devicePixelRatio || 1, 1.5);
 			const width = canvas.clientWidth;
 			const height = canvas.clientHeight;
 			if (canvas.width !== Math.round(width * ratio) || canvas.height !== Math.round(height * ratio)) {
