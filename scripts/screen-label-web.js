@@ -19,7 +19,7 @@ if (!dir || !fs.existsSync(dir)) {
 	process.exit(1);
 }
 const LABELS_FILE = path.join(dir, 'labels.json');
-const PORT = 4747;
+const PORT = Number(process.env.PORT ?? 4747); // PORT=4748 runs a second check alongside
 
 const films = fs.readdirSync(dir).filter(f => f.endsWith('-items.json')).sort().map(f => {
 	const prefix = f.replace(/-items\.json$/, '');
@@ -28,7 +28,10 @@ const films = fs.readdirSync(dir).filter(f => f.endsWith('-items.json')).sort().
 	return { film, items, script: read('script'), subtitles: read('subtitles') };
 });
 const labels = fs.existsSync(LABELS_FILE) ? JSON.parse(fs.readFileSync(LABELS_FILE, 'utf8')) : {};
-const items = films.flatMap((f, filmIndex) => f.items.map(item => ({ ...item, film: f.film, filmIndex })));
+const clipFile = key => path.join(dir, 'clips', `${key.replaceAll(':', '_')}.opus`);
+// audio lines wait until their clip is cut (a film still downloading); restart to pick up new clips
+const items = films.flatMap((f, filmIndex) => f.items.map(item => ({ ...item, film: f.film, filmIndex })))
+	.filter(item => item.kind !== 'audio' || fs.existsSync(clipFile(item.key)));
 const allowed = {
 	'script line': ['kept', 'changed', 'cut', 'unsure'],
 	'subtitle line': ['scripted', 'not in script', 'unsure'],
@@ -50,8 +53,15 @@ http.createServer((req, res) => {
 	if (clip) {
 		const file = path.join(dir, 'clips', clip[1]);
 		if (!fs.existsSync(file)) return send(res, 404, { error: 'no clip yet' });
-		res.writeHead(200, { 'content-type': 'audio/ogg', 'cache-control': 'no-store' });
-		return fs.createReadStream(file).pipe(res);
+		// byte ranges: the browser reads the end of an Ogg file for its length, and seeks with them
+		const body = fs.readFileSync(file);
+		const range = (req.headers.range ?? '').match(/^bytes=(\d*)-(\d*)$/);
+		const from = range?.[1] ? Number(range[1]) : range?.[2] ? body.length - Number(range[2]) : 0;
+		const to = range?.[1] && range[2] ? Math.min(Number(range[2]), body.length - 1) : body.length - 1;
+		const headers = { 'content-type': 'audio/ogg', 'accept-ranges': 'bytes', 'content-length': to - from + 1, 'cache-control': 'no-store' };
+		if (range) headers['content-range'] = `bytes ${from}-${to}/${body.length}`;
+		res.writeHead(range ? 206 : 200, headers);
+		return res.end(body.subarray(from, to + 1));
 	}
 	if (req.method === 'GET' && req.url === '/data') return send(res, 200, { items, labels, films: films.map(f => ({ script: f.script, subtitles: f.subtitles })) });
 	if (req.method === 'POST' && req.url === '/label') {

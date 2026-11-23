@@ -281,7 +281,7 @@ document.addEventListener('keydown', e => {
 	if (e.key === 'ArrowRight') { at = Math.min(data.items.length - 1, at + 1); show(); return; }
 	if (e.key === 'ArrowLeft') { at = Math.max(0, at - 1); show(); return; }
 	if (['1', '2', '3', '4'].includes(e.key)) answer(Number(e.key) - 1);
-	if (e.key.toLowerCase() === 'p' && data.items[at].kind === 'audio') { $('clip').currentTime = 0; $('clip').play(); }
+	if (e.key.toLowerCase() === 'p' && data.items[at].kind === 'audio') { $('clip').load(); $('clip').play(); }
 });
 $('prev').onclick = () => { at = Math.max(0, at - 1); show(); };
 $('next').onclick = () => { at = Math.min(data.items.length - 1, at + 1); show(); };
