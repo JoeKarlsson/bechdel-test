@@ -15,6 +15,10 @@ and more than a third of them fail, a lot of them favorites.
 [See the shelf at bechdel.joekarlsson.com](https://bechdel.joekarlsson.com/) ·
 [Read the full statement](https://www.joekarlsson.com/work/bechdel-script-test/)
 
+On the site: [the Bechdel test results for every film, A to Z](https://bechdel.joekarlsson.com/films/),
+[pass rates by year, genre and director](https://bechdel.joekarlsson.com/numbers/), and
+[how the 2015 Oscar nominees score](https://bechdel.joekarlsson.com/case-study/).
+
 ## Quick start
 
 Node 22 or later, and API keys for [OMDB](https://www.omdbapi.com/apikey.aspx)
