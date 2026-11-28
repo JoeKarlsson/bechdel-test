@@ -83,6 +83,10 @@ test('titles fit 60 characters, or drop the brand trying', () => {
 	assert.deepEqual(tooLong, []);
 });
 
+test('every indexable page carries structured data', () => {
+	assert.deepEqual(indexable.filter((p) => !p.html.includes('<script type="application/ld+json">')).map((p) => p.path), []);
+});
+
 test('the sitemap lists exactly the indexable pages', () => {
 	const xml = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
 	const listed = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].slice(SITE.length));

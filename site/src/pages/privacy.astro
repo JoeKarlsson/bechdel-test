@@ -6,6 +6,12 @@ import Base from '../layouts/Base.astro';
 	title="Privacy"
 	description="Bechdel Script Test counts visits with Plausible: no cookies, no personal data, nothing sold or shared. Here's exactly what's collected."
 	nav="privacy"
+	structuredData={{
+		'@type': 'WebPage',
+		name: 'Privacy',
+		url: 'https://bechdel.joekarlsson.com/privacy/',
+		isPartOf: { '@type': 'WebSite', name: 'Bechdel Script Test', url: 'https://bechdel.joekarlsson.com/' },
+	}}
 >
 	<div class="page">
 		<h1 class="page-title">Privacy</h1>

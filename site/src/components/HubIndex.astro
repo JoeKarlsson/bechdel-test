@@ -15,7 +15,16 @@ const { title, lead, description, rows, plain = false } = Astro.props;
 const n = (x: number) => x.toLocaleString('en-US');
 ---
 
-<Base title={title} description={description}>
+<Base
+	title={title}
+	description={description}
+	structuredData={{
+		'@type': 'CollectionPage',
+		name: title,
+		url: new URL(Astro.url.pathname, Astro.site).href,
+		isPartOf: { '@type': 'WebSite', name: 'Bechdel Script Test', url: Astro.site!.href },
+	}}
+>
 	<div class="page">
 		<h1 class="page-title">{title}</h1>
 		<p class="page-lead">{lead}</p>

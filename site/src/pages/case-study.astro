@@ -34,6 +34,16 @@ const passing = rows.filter((r) => r.score === 3).length;
 	title="Case study: the 2015 Oscar films"
 	description="How the films nominated at the 2015 Oscars score on the Bechdel test: 5 of the 13 we could test pass, and only 2 of the 7 Best Picture nominees."
 	nav="case-study"
+	structuredData={{
+		'@type': 'Article',
+		headline: 'Case study: the 2015 Oscar films',
+		url: 'https://bechdel.joekarlsson.com/case-study/',
+		author: [
+			{ '@type': 'Person', name: 'Laurel Karlsson' },
+			{ '@type': 'Person', name: 'Joe Karlsson' },
+		],
+		isPartOf: { '@type': 'WebSite', name: 'Bechdel Script Test', url: 'https://bechdel.joekarlsson.com/' },
+	}}
 >
 	<div class="page">
 		<h1 class="page-title">Case study: the 2015 Oscar films</h1>

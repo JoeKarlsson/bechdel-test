@@ -178,6 +178,12 @@ const CONTENTS = [
 	description={`All ${n(s.films)} films on the shelf, counted: pass rates by year, genre, director and star, who gets heard, who made the films, and what they earned.`}
 	nav="numbers"
 	posters
+	structuredData={{
+		'@type': 'WebPage',
+		name: 'The shelf in numbers',
+		url: 'https://bechdel.joekarlsson.com/numbers/',
+		isPartOf: { '@type': 'WebSite', name: 'Bechdel Script Test', url: 'https://bechdel.joekarlsson.com/' },
+	}}
 >
 	<div class="page">
 		<h1 class="page-title">The shelf in numbers</h1>
