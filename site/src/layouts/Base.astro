@@ -36,7 +36,8 @@ const SITE_NAME = 'Bechdel Script Test';
 const allFilms = loadFilms();
 const failShare = Math.round((allFilms.filter((f) => !f.bechdel.pass).length / allFilms.length) * 100);
 // Search results cut titles near 60 characters; the brand is what gives way
-const pageTitle = title === SITE_NAME || title.length > 47 ? title : `${title} | ${SITE_NAME}`;
+const branded = `${title} | ${SITE_NAME}`;
+const pageTitle = title === SITE_NAME || branded.length > 60 ? title : branded;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const imageUrl = new URL(image, Astro.site).href;
 

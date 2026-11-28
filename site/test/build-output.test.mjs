@@ -78,6 +78,11 @@ test('indexable pages have unique titles and descriptions', () => {
 	assert.deepEqual(seen('description'), []);
 });
 
+test('titles fit 60 characters, or drop the brand trying', () => {
+	const tooLong = indexable.filter((p) => p.title.endsWith(' | Bechdel Script Test') && p.title.length > 60).map((p) => `${p.path}: ${p.title}`);
+	assert.deepEqual(tooLong, []);
+});
+
 test('the sitemap lists exactly the indexable pages', () => {
 	const xml = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
 	const listed = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].slice(SITE.length));
