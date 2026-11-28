@@ -5,6 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { loadFilms, SITEMAP_FILMS } from '../src/lib/films.mjs';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const SITE = 'https://bechdel.joekarlsson.com';
@@ -87,12 +88,17 @@ test('every indexable page carries structured data', () => {
 	assert.deepEqual(indexable.filter((p) => !p.html.includes('<script type="application/ld+json">')).map((p) => p.path), []);
 });
 
-test('the sitemap lists exactly the indexable pages', () => {
+test('the sitemap lists the core pages and the most-searched films, all indexable', () => {
 	const xml = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
 	const listed = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].slice(SITE.length));
-	assert.deepEqual([...listed].sort(), indexable.map((p) => p.path).sort());
-	// Films come before hubs, so a sampled index check sees the pages people search for
-	assert.ok(listed.findLastIndex((p) => p.startsWith('/films/') && p !== '/films/') < listed.findIndex((p) => /^\/(genres|decades|directors)\/./.test(p)), 'films listed before hubs');
+	const indexablePaths = new Set(indexable.map((p) => p.path));
+	assert.deepEqual(listed.filter((p) => !indexablePaths.has(p)), [], 'every sitemap URL is indexable');
+	const core = ['/', '/films/', '/numbers/', '/about/', '/case-study/', '/privacy/', '/genres/', '/decades/', '/directors/'];
+	assert.deepEqual(core.filter((p) => !listed.includes(p)), [], 'every core page is listed');
+	const unranked = loadFilms().filter((f) => f.searchRank === Infinity).map((f) => f.title);
+	assert.deepEqual(unranked, [], 'every film is in data/search-rank.json (run npm run search-rank)');
+	const top = [...loadFilms()].sort((a, b) => a.searchRank - b.searchRank).slice(0, SITEMAP_FILMS).map((f) => `/films/${f.slug}/`);
+	assert.deepEqual(listed.filter((p) => !core.includes(p)).sort(), top.sort(), `the top ${SITEMAP_FILMS} films by search rank, nothing else`);
 	assert.match(readFileSync(join(DIST, 'robots.txt'), 'utf8'), /Sitemap: https:\/\/bechdel\.joekarlsson\.com\/sitemap\.xml/);
 });
 

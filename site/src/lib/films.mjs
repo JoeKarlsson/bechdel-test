@@ -12,6 +12,13 @@ const DATA_DIR = resolve(process.cwd(), '../data/films');
 const AI_DIR = resolve(process.cwd(), '../data/local/ai');
 // Page vs screen comparisons (npm run screen), one per film that has one
 const SCREEN_DIR = resolve(process.cwd(), '../data/screen');
+// Films ranked by IMDb votes, a stand-in for how often people search for them (npm run search-rank)
+const SEARCH_RANK_FILE = resolve(process.cwd(), '../data/search-rank.json');
+
+// The sitemap lists the core pages plus this many films, most searched first.
+// Google rations crawl on a new site: grow this by 300 to 500 once Search
+// Console shows most of the listed films indexed (scripts/analytics/gsc.py index).
+export const SITEMAP_FILMS = 300;
 
 // Every model that has written a film's AI analysis, keyed by the id the
 // analyzer stores as enhancedAnalytics.aiModel (src/aiAnalyzer.js). Analyses
@@ -433,6 +440,7 @@ export function normalizeFilm(raw) {
 	const scenesPass = toNumber(b.numScenesPass) ?? 0;
 	return {
 		id: String(raw._id),
+		imdbId: text(raw.idIMDB),
 		images: { poster: text(raw.images?.poster), backdrop: text(raw.images?.backdrop) },
 		slug: slugify(raw.title, year),
 		title: cleanTitle(raw.title),
@@ -717,6 +725,11 @@ export function loadFilms(dir = DATA_DIR) {
 		slugs.add(f.slug);
 	}
 	films.forEach((f, i) => (f.popularity = i + 1));
+	if (dir === DATA_DIR) {
+		const rank = new Map(JSON.parse(readFileSync(SEARCH_RANK_FILE, 'utf8')).map((r, i) => [r.imdb, i + 1]));
+		// A film added since the last npm run search-rank ranks last until it's rerun
+		for (const f of films) f.searchRank = rank.get(f.imdbId) ?? Infinity;
+	}
 	if (dir === DATA_DIR) cache = films;
 	return films;
 }

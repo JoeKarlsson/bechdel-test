@@ -71,6 +71,7 @@ Gotchas:
 npm test         # the parser and analysis
 npm run eval     # score the analysis against bechdeltest.com readers (-- --list for every miss)
 npm run ratings  # refresh those ratings after adding scripts
+npm run search-rank  # rank films by IMDb votes for the sitemap (data/search-rank.json); rerun after adding films
 npm run lint
 
 cd site
