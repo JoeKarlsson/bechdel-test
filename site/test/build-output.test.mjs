@@ -80,8 +80,10 @@ test('indexable pages have unique titles and descriptions', () => {
 
 test('the sitemap lists exactly the indexable pages', () => {
 	const xml = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
-	const listed = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].slice(SITE.length)).sort();
-	assert.deepEqual(listed, indexable.map((p) => p.path).sort());
+	const listed = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].slice(SITE.length));
+	assert.deepEqual([...listed].sort(), indexable.map((p) => p.path).sort());
+	// Films come before hubs, so a sampled index check sees the pages people search for
+	assert.ok(listed.findLastIndex((p) => p.startsWith('/films/') && p !== '/films/') < listed.findIndex((p) => /^\/(genres|decades|directors)\/./.test(p)), 'films listed before hubs');
 	assert.match(readFileSync(join(DIST, 'robots.txt'), 'utf8'), /Sitemap: https:\/\/bechdel\.joekarlsson\.com\/sitemap\.xml/);
 });
 
